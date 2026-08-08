@@ -92,14 +92,30 @@ invites exactly this kind of collaboration).
 - **H5**: the SF (−5)-map has the Session-7 functional form P²/(wR³),
   deg P = 14, deg R = 9, predicted miracle cancellation deg(P²−wR³) = 5.
 
-## The conditional gap: layers L1–L4 (the Sessions 8–15 analogs)
+### 4. Chart layer L1 — core CLOSED (d23_phase1_chart.py)
+
+The parsed Fig. 21 shows the SF Z-stem (−1)—(−3)—(−5)—(−2) and short branch
+(−1)—0(−3) are identical in K̄-structure and creation order to the First
+Framework's Z-stem; the chain breaks the same (−5)—(−2) edge, and the SF
+long-branch modifications happen strictly beyond the (−2)-multifork.
+Divisorial valuations of x₁, x₂ along existing curves are unchanged by later
+point blowups, so the Sessions 8–16 chart transfers verbatim:
+v = x₁x₂³ − 1, q = x₂/v³. Certified exactly: chart inversion, the monomial
+rule x₁ⁱx₂ʲ = (v+1)ⁱ q^(j−3i) v^(3j−9i) (so the (−2)-pole support cut keeps
+the same form with SF depths j−3i ≥ −15 / −10), and the chart factor
+det d(q,v)/d(x₁,x₂) = −x₂³/v³ = −q³v⁶, hence **the Keller condition reads
+J_(q,v) = −c·q⁻³v⁻⁶ exactly as in D=13**, with the kill point v = −1 at the
+corner x₁x₂³ = 0 and the chain corner v = ∞ at the order-23 marked point.
+Remaining L1 gap: only the total-degree support boxes (the [0,27]×[0,72]
+analogs summing to 435/290), which need the x-side degree split along the
+modified long branch.
+
+## The conditional gap: layers L1(boxes)–L4 (the Sessions 8–15 analogs)
 
 What separates "mechanism applies and kills at the endgame" from the
 unconditional theorem, with the FF session that built each layer:
 
-- **L1** (FF Session 8): the SF (q,v)-chart at the (−2)-multifork, chart
-  factor, and support boxes. Data-level anchor already in hand: Z-side
-  valuations (−15,−10), chain ledger C6.
+- **L1** (FF Session 8): ~closed — see item 4; open: support boxes only.
 - **L2** (FF Sessions 10–12): block-level chain unification — C7's
   valuation-level equivalence (23 vanishings) promoted to the block cascade
   and the sqrt-reduction.
