@@ -63,8 +63,22 @@ necklaces); Borisov's Figure 28 dessin identified as the real embedding
 - The sqrt-series reduction for P²/(wR³) maps implemented and **validated by
   re-deriving the certified Session-7 FF (p,r) and its conjugate from random
   starts — exactly 2 solutions, no spurious** (`d23_n3_sqrtmethod.py`).
-- SF (P,R) hunt (8 conditions h₁₅..h₂₂ = 0, deg-9 R) running; results to be
-  appended when available.
+- SF (P,R) hunt (8 conditions h₁₅..h₂₂ = 0, deg-9 R), batched LM at ~29k
+  restarts/min: **~7.46M complex restarts and ~1.19M real-restricted
+  restarts, zero valid solutions.** Two conclusions, calibrated against the
+  FF control (where the same machinery hits at ~1/1350 per restart in 8 real
+  dims):
+  1. The real-restricted zero (8 real dims, same effective difficulty as the
+     FF control, ~880× the FF-expected hit count) is strong evidence that
+     **no mirror-symmetric SF (−5)-curve dessin exists** — i.e. all dessins
+     of the passport 14×2 / 9×3+1 / 1×23+5×1 are chiral (checkable
+     combinatorially in N3), or their coefficients lie far outside the
+     sampled radius.
+  2. The complex zero in 16 real dims says only that blind multistart is the
+     wrong tool at this dimension (solutions exist by Belyi theory);
+     **Session N3 must construct, not search**: dessin-seeded Newton from the
+     parsed Fig. 27 combinatorics, or exact solving (msolve / homotopy
+     continuation) of the 8-equation sqrt-series system.
 
 ## Cross-checks that tie the epochs together
 
