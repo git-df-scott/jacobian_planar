@@ -3,10 +3,24 @@
 One-line: **Phase 0 complete and certified (all 15 dessins, one degree-15
 Galois orbit); Phase 1 endgame certified — the transfer mechanism applies and
 kills at every prefactor exponent; verdict: Second Framework DIES conditional
-on the L2–L4 layer rebuilds, by the 23/3 ∉ ℤ obstruction.**
+on the L2–L4 layer rebuilds, by the 23/3 ∉ ℤ obstruction. Family-wide: every
+chain degree in Borisov's entire published framework catalogue lies in
+{13, 23} — none divisible by 3 — so the one obstruction conditionally covers
+all of it.**
 
-After four empty sessions, this session produced five committed, certified
+After four empty sessions, this session produced six committed, certified
 deliverables plus a validated start on the next session's target.
+
+## 0. Family-wide data verdict (d23_phase2_preview.py — gate-respecting)
+
+Section 5 extraction + the certified general-D lemma: the isotope series
+(k = 2..6, degrees (36k+27, 24k+18) = (12k+9)·(3,2)) all keep chain degree
+D = 13 with the SAME target graph and (−5)-curve data as the First
+Framework; the "complicated" framework ((108,72) = 36·(3,2)) reuses the
+FF (−2)-curve Belyi map (D = 13). With T₁₃ (rank 14) and T₂₃ (rank 24)
+exactly certified, the entire published family dies conditionally to the
+single obstruction 3 ∤ D. (No Phase-2 tower work done — data extraction and
+corollary only; the Phase 2 gate stays respected.)
 
 ## 1. Phase 0 (complete) — the degree-23 Belyi map nobody had computed
 
