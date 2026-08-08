@@ -255,6 +255,26 @@ print("C7  SF chain layer <=> val_(-2)mf(y1^2 - y2^3) >= -7 <=> exactly 23")
 print("    block vanishings W_n = 0, n = -30..-8  (FF analog: -5, 13")
 print("    vanishings n = -18..-6, Sessions 10-12).")
 chk_c7 = chk_pub and (c2v - 3*y2v == 23)
+
+# ---------- C8: per-curve cusp-contact profile along the chain ----------
+# boundary-part valuation of phi^*(y1^2 - y2^3) along each chain curve
+# (the affine cusp curve contributes only >= 0 through these corners,
+# mirroring the FF Session-10 equivalence):
+c2Y = {"F-5mf": -6, "F-4": -5, "F-3": -4, "F-2": -3, "F-1'": -2,
+       "F-1": val["F-1"][2], "F-2mf": val["F-2mf"][2]}
+print()
+print("C8  chain cusp-contact ledger: val phi^*c2 | 3*val phi^*y2 | depth:")
+ok8 = True
+for i in range(1, N - 1):
+    cv = sum(phiF[F][i]*c2Y[F] for F in phiF) \
+         + n5[i]*c2Y["F-5mf"] + n2[i]*c2Y["F-2mf"]
+    v2 = sum(phiF[F][i]*Yval[F][1] for F in phiF) \
+         + n5[i]*Yval["F-5mf"][1] + n2[i]*Yval["F-2mf"][1]
+    depth = cv - 3*v2
+    ok8 &= (depth >= 0 and depth == int(depth))
+    print(f"      {names[i]:6s}  {cv}  |  {3*v2}  |  depth {depth}")
+print("C8  all contact depths nonnegative integers (cancellation demanded")
+print("    along the ENTIRE chain, peaking at 23 on the e=23 carriers):", ok8)
 print()
 print("ALL CHAIN DATA CHECKS:", all([seq == [-5, -2], ok_int, ok3, ok4,
-                                     ok5, ok6a, ok6b, chk_c7]))
+                                     ok5, ok6a, ok6b, chk_c7, ok8]))
