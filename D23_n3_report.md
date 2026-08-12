@@ -67,28 +67,53 @@ Profile certified: {0}: 14×2; {∞}: 9×3 + 1×1; {1}: 1×23 + 5×1 — all 14
 embeddings at once. (msolve parametrization convention resolved exactly via
 the forced cascade value p₁₃ = 3/2: coordinates are −par_i(θ)/(E′(θ)·cst_i).)
 
-**5. The SF NEAR-MISS (d23_n3_jacobian_identity.py).** Abstract theorem,
-proved symbolically for arbitrary P, R:
+**5. The SF MIRACLE MAP — with an honest correction
+(d23_n3_jacobian_identity.py).** Abstract theorem, proved symbolically for
+arbitrary P, R:
 
     y₁ = x₁³x₂⁸·P(w),  y₂ = x₁²x₂⁵·v·R(w),  v = x₁x₂³−1, w = v³/x₂
-    ⟹  J(y₁, y₂) = −h(w)·x₁⁴·x₂¹².
+    ⟹  J(y₁, y₂) = −h(w)·x₁⁴·x₂¹²,
 
-With h ≡ h₀ certified: **J = −h₀·x₁⁴x₂¹² exactly** — the Second Framework's
-near-miss map, bidegrees (45,120)/(30,80), degree pair (165,110) = the
-paper's first reconstruction rung. (This also upgrades Session 7's FF
-near-miss spot-check to a degree-independent identity.)
+and the general-prefactor computation shows the collapse to −h is SPECIAL
+to the (3,2)-prefactor pair: for y₁ = x₁ᵃx₂^{3a−1}P, y₂ = x₁ᶜx₂^{3c−1}vR,
+
+    J = (v+1)^{a+c−1}·[(c−a)vPR + (v+1)PR + w(((3−a)v+3)PR′ + ((c−2)v−2)P′R)],
+
+which equals −(v+1)^{a+c−1}h iff (a,c) = (3,2). With h ≡ h₀ certified, the
+(3,8)/(2,5) map is a genuine miracle map for SF — **but it is LAURENT, not
+polynomial** (deg P = 14 > 8 leaves x₂-negative terms; caught by the NM1
+support check in d23_n3_layer1_nearmiss.py). CORRECTION to the earlier
+box claim: the (45,120)/(30,80) boxes and the "(165,110) = pre-surgery
+degrees" reading are withdrawn; (165,110) is the pole pair on the
+reconstructed curve 2. The polynomial SF near-miss requires the
+long-branch surgery structure, and the paper's reconstruction ladder is
+now recognized as **Fibonacci**: (60,40), (105,70), (165,110), (270,180),
+(435,290) — each rung the sum of the previous two, the signature of
+iterated elementary (de Jonquières-type) transformations; likewise the
+isotope family's degrees grow by exact steps 36k+27 = 99 + 36(k−2).
+Constructing the polynomial near-miss through that surgery is the first
+N4 task. Independent of this, NM2–NM4 certify the Laurent object's
+(−2)-pole saturation (−15,−10), all 460 (−5)-pole conditions, and the
+G-block reproduction G₁ = P(w)/w², G₂ = R(w)/w — the (−5)-side and chain
+anchoring stand.
 
 ## Data
 
 `d23_PR_data/`: eliminant E (deg 14), h₀ and all coefficients p₀..p₁₃,
 r₀..r₇ as exact elements of K₁₄ (polynomials in θ), raw msolve output.
 
-## Still open in N3 (next session)
+## Still open (N4 queue)
 
-- Layer-1 near-miss certification (support membership, pole saturation,
-  G-block extraction G₁ = P(w)/w², G₂ = R(w)/w) — machinery in
-  `d23_n3_layer1.py`, data now available.
+- **Polynomial near-miss via the surgery**: track the long-branch
+  reconstruction (the Fibonacci ladder) as explicit elementary
+  transformations; derive the true support region/box caps in the final
+  coordinates (the reopened L1-box gap, now with the right picture).
 - Identification of Borisov's Fig. 27 dessin among the 14 embeddings
   (clean-dessin arc tracing).
-- Then L2 (block cascade on the near-miss) → L3 (rigidity pins) → L4 →
-  unconditional D=23 endgame closure.
+- Then L2 (block cascade anchored on the certified G-blocks) → L3
+  (rigidity pins) → L4 → unconditional D=23 endgame closure.
+
+Note: the layer-1 CONDITIONS (pole cuts j−3i ≥ −15/−10, the 460
+(−5)-pole equations, ranks 314/144) are box-independent and stand; only
+the box CAPS in d23_n3_layer1.py are provisional pending the surgery
+analysis.

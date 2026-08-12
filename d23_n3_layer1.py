@@ -4,7 +4,7 @@ The SECOND FRAMEWORK (99,66)-analog decision system at degrees (165,110):
 support boxes, (-2)-pole cuts, (-5)-pole linear conditions, exact ranks.
 (The Session-8 layer-1 construction, rebuilt for D = 23.)
 
-BOX DERIVATION (closes the L1 gap flagged in D23_phase1_report.md).
+BOX DERIVATION -- PROVISIONAL (see the correction in D23_n3_report.md).
 The First Framework's boxes [0,27]x[0,72], [0,18]x[0,48] (stated in the
 paper, Sec. 3) are exactly the bidegrees of the near-miss shape
     y1 = x1^3 x2^8 p(w),   y2 = x1^2 x2^5 v r(w),   w = v^3/x2,
@@ -15,13 +15,14 @@ same prefactors saturate and the SF near-miss shape is
     y1 = x1^3 x2^8 P(w),   y2 = x1^2 x2^5 v R(w),  deg P = 14, deg R = 9,
 with bidegrees
     y1: (3,8) + 14*(3,8) = (45, 120),    y2: (3,8) + 9*(3,8) = (30, 80).
-CROSS-CHECK against the paper: the totals (45+120, 30+80) = (165, 110)
-are EXACTLY the first rung of the paper's reconstruction ladder
-(165,110) -> (270,180) -> (435,290).  The remaining rungs are the
-long-branch surgery; both coordinate systems are polynomial coordinate
-systems on the same A^2, so they differ by a polynomial AUTOMORPHISM
-(constant Jacobian): the Keller demand is equivalent in either system,
-and the decision system may be built at (165,110) in stem coordinates.
+CORRECTION (caught by the NM1 support certification): with deg P = 14 > 8
+the (3,8)/(2,5)-prefactor object is LAURENT (x2-poles to order 6), so
+these boxes describe the Laurent object's polynomial part, not the
+framework solution's support; (165,110) is the pole pair on the
+reconstructed curve 2 (the paper's ladder is Fibonacci: each rung the
+sum of the previous two -- iterated elementary transformations).  The
+true box caps await the N4 surgery analysis.  The CONDITIONS below
+(pole cuts and (-5)-pole equations) are box-independent and stand.
 
 LAYER-1 SYSTEM (this file, all exact over Q):
   support boxes with the (-2)-pole support cut  j - 3i >= -15 (y1),
