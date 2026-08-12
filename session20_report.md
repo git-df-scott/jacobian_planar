@@ -146,6 +146,26 @@ range is far below Moh's bound, and the 2022 literature result (`max ≥ 125` ex
 `(72,108)`) makes brute force at these sizes moot. Reported because the coverage
 is what it is, not because it establishes anything.
 
+### 4b. Tractability of the raw Keller system — a useful negative result
+
+Singular 4.x was installed and benchmarked against the same wall. Sanity-checked
+first (returns `_[1] = 1` on an inconsistent ideal, correct basis sizes on toy
+systems), so the engine is sound.
+
+On the `(5,4)` Keller system — 25 equations, 23 unknowns after normalizing both
+leading coefficients to 1 (WLOG over `C`: `(P,Q)→(sP,Q/s)` and `(x,y)→(ux,vy)`
+with `uv = 1` normalize both, and triviality of the ideal over `Q` still decides
+emptiness over `Q̄` by the Nullstellensatz) — **Singular does not finish in 100
+seconds either.** Same wall as sympy, one degree pair past `(5,3)`.
+
+**Conclusion: the bottleneck is the formulation, not the engine.** The raw
+Keller-coefficient ideal is intractable by general-purpose Gröbner methods at
+degrees an order of magnitude below the frontier. This is precisely why the
+literature attacks JC2 through Newton-polygon combinatorics rather than direct
+elimination, and it means **Path A's feasibility rests entirely on GGHV's
+*reduced* system being small** — not on throwing more compute at the problem.
+Any plan of the form "install a better solver and grind" is dead on arrival.
+
 ---
 
 ## 5. Scorecard
