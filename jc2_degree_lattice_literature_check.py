@@ -146,6 +146,48 @@ for k in range(2, 7):
            f"max{computed} = {max(computed)}")
 
 # ---------------------------------------------------------------
+# 6. Reconstruction of the FULL 10-case table of [GGHV22] Section 2
+#    from (A0, (m,n), max) -> actual (deg P, deg Q), using the rule
+#    "the pair is the unique integer multiple of (m,n) whose max
+#    component equals the table's max{deg P, deg Q} value". Cross-
+#    checked against every pair the paper states explicitly in prose
+#    (56,84),(66,99),(72,108),(80,120),(80,112).
+# ---------------------------------------------------------------
+table_rows = [
+    # (A0, (m,n), max_deg, discarded_by)
+    ((4, 12), (3, 4), 64,  "Moh 1983 (full detail) + Heitmann 1990 (independent)"),
+    ((4, 12), (5, 7), 112, "Guccione-Guccione-Valqui, Pro Mathematica 2013, Sec 3.5"),
+    ((5, 20), (2, 3), 75,  "Guccione-Guccione-Valqui arXiv:1406.0886 Sec 5"),
+    ((5, 20), (3, 2), 75,  "Guccione-Guccione-Valqui arXiv:1406.0886 Sec 5"),
+    ((7, 21), (2, 3), 84,  "GGHV22 Sec 3 (via [6, Thm 7.3]) and Sec 6 (2nd proof)"),
+    ((8, 24), (2, 3), 96,  "Guccione et al. arXiv:1708.07936, Prop 6.1"),
+    ((8, 28), (3, 2), 108, "OPEN -- system of polynomial equations unsolved [GGHV22]"),
+    ((8, 32), (3, 2), 120, "GGHV22 Sec 3 (via [2, Remark 3.31])"),
+    ((9, 24), (2, 3), 99,  "GGHV22 Sec 5, Thm 5.1 / Cor 5.7 (Moh's pair)"),
+    ((9, 27), (2, 3), 108, "GGHV22 Sec 5, Thm 5.1 / Cor 5.7"),
+]
+
+# explicit pairs GGHV22 states in prose, used only to cross-check the
+# reconstruction rule below (not used to derive it):
+known_pairs_from_prose = {64: None, 112: (80, 112), 75: (50, 75),
+                           84: (56, 84), 96: None, 108: (72, 108),
+                           120: (80, 120), 99: (66, 99)}
+
+print("\n--- Reconstructed full <125 table ---")
+for A0, (m, n), maxdeg, who in table_rows:
+    scale = Rational(maxdeg, max(m, n))
+    pair = (scale * m, scale * n)
+    is_int = pair[0].q == 1 and pair[1].q == 1
+    record(f"A0={A0} (m,n)=({m},{n}) max={maxdeg}: reconstructed pair {pair}",
+           is_int, f"scale={scale}, pair={pair}, discarded by: {who}")
+    kp = known_pairs_from_prose.get(maxdeg)
+    if kp is not None:
+        match = (int(pair[0]), int(pair[1])) in (kp, (kp[1], kp[0]))
+        record(f"  cross-check vs prose-stated pair {kp} for max={maxdeg}",
+               match, f"reconstructed {pair} vs prose {kp}")
+    print(f"  A0={A0} (m,n)=({m},{n}) max={maxdeg} -> pair={tuple(int(x) for x in pair)}  [{who}]")
+
+# ---------------------------------------------------------------
 # Report
 # ---------------------------------------------------------------
 n_pass = sum(1 for _, ok, _ in checks if ok)
