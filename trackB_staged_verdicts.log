@@ -28,3 +28,12 @@
 14:32:17 BRANCH r4: stage2b vars=21 gens=50 -> BRANCH r4 RESIDUAL DIM: -1 | BRANCH r4 EMPTY
 14:32:17 BRANCH r4: total 1s
 14:33:15 BRANCH r0b: stage1 done (['DIM: 0', 'VDIM: 338']), 0 pinned vars
+20:55:02 BRANCH r0b: edge fiber dim 0 vdim 338 (depth 0)
+20:55:02 BRANCH r0b: splitting on d_8_13 (deg 6) -> 1 factors
+20:55:02 BRANCH r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+20:55:02 BRANCH r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+20:55:02 BRANCH r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+20:55:02 BRANCH r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+20:55:02 BRANCH r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+20:55:02 BRANCH r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+20:55:02 BRANCH r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
