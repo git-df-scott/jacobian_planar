@@ -1,0 +1,4 @@
+eliminator: 283 equations, 165 variables, nonzero=['c_1_0', 'c_8_14', 'd_12_21', 's_4_8'], normalize={}, mode=mod 65521 (SCOUTING ONLY)
+  [t=2s] node 0: 20 rule apps, 265 eqs, largest eq 82 terms, total terms 9062
+  [t=6s] node 0: 40 rule apps, 245 eqs, largest eq 386 terms, total terms 28130
+  [t=22s] node 0: 60 rule apps, 225 eqs, largest eq 16534 terms, total terms 494368
