@@ -133,9 +133,7 @@ def section2_the_828_case():
 
     # [1, Prop 2.1(2)]: l10(P) = R^m, l10(Q) = R^n with n*v10P = m*v10Q,
     # gcd(m,n)=1.  8n = 12m => 2n = 3m => (m,n) = (2,3) (coprime, minimal).
-    from sympy import gcd as sgcd, Rational as R_
-    ratio = Rational(v10Q, v10P)  # n/m target check: we need n*8=m*12
-    # solve 8n=12m in lowest terms:
+    from sympy import gcd as sgcd
     m, n = 2, 3
     assert v10P * n == v10Q * m and sgcd(m, n) == 1
     print(f"l10(P) = R^{m}, l10(Q) = R^{n}  (same exponents 2,3 as the closed case,")
@@ -179,9 +177,6 @@ def section2_the_828_case():
     # x^p*f(y), x^q*g(y) identity  [x^p f, x^q g] = x^{p+q-1}(p f g' - q f' g):
     #   C_a^{n-a} = 2*a*(C_a f1' ...)   with f1 := C_a^{-N} ... -- see .md
     # for the full symbolic derivation; the closed-form result:
-    f1sym, C4sym = symbols('f1 C4')
-    # closed case check (a=3,n=3 -> degenerate power count differs from
-    # ours because a=n=3 there while a=4,n=3 here): rebuild directly.
     print("Re-deriving the ODE for our case via the SAME bracket-algebra")
     print("template already verified in Section 1 (chain rule [A^2,B]=2A[A,B]")
     print("and [x^p f, x^q g] = x^{p+q-1}(p f g' - q f' g)):\n")
@@ -327,7 +322,7 @@ def section3_Dk_and_valuation_bounds():
     print("cross-checked in Section 1 against GGHV22's own 26/39/52/34/51):")
     for k in (3, 2, 1, 0, -1):
         deg_ub = 60 - 15*k
-        minpow_lb = 48 + 12*k
+        minpow_lb = 48 - 12*k
         print(f"  D_{k}: deg_y <= {deg_ub},  y^{minpow_lb} | D_{k}  "
               f"(width {deg_ub-minpow_lb}, {deg_ub-minpow_lb+1} monomials)")
 
