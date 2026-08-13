@@ -706,35 +706,42 @@ def singular_system(sys_path, p, name=None, timeout=3900, memcap_kb=1800000):
         lines.append("I[%d] = %s;" % (i + 1, e))
     for j, t in enumerate(wties):
         lines.append("I[%d] = %s;" % (len(polys) + j + 1, t))
+    nm = name or ("trackB1_sys_p%d" % p)
     lines += [
         "short = 0;",
         '"NVARS: %d (incl %d rabinowitsch)";' % (len(vs) + len(ws), len(ws)),
         '"NEQS: %d";' % (len(polys) + len(wties)),
+        "option(prot);",
         "ideal G = groebner(I);",
+        "option(noprot);",
         '"GB done";',
+        '"MEM-KB: " + string(memory(2) div 1024);',
+        '"GBSIZE: " + string(size(G));',
         "int d = dim(G);",
         '"DIM: " + string(d) + " (ring includes %d rabinowitsch vars)";'
         % len(ws),
         'if (d == 0) { "VDIM: " + string(vdim(G)); }',
-        'if (d == 0) { "GBSIZE: " + string(size(G)); }',
         'if (d == -1) { "EMPTY: ideal = whole ring; system DEAD mod %d '
         '(with side conditions)"; }' % p,
+        'write(":w %s", G);' % os.path.join(HERE, nm + ".gb.txt"),
+        '"GB written";',
         "quit;"]
-    nm = name or ("trackB1_sys_p%d" % p)
     sname = os.path.join(HERE, nm + ".sing")
     open(sname, "w").write("\n".join(lines))
-    cmd = ("ulimit -v %d; exec nice -n 10 Singular -q %s" % (memcap_kb, sname))
+    outp = os.path.join(HERE, nm + ".out")
+    # Stream Singular output DIRECTLY to the .out file so a container restart
+    # cannot destroy the partial protocol (checkpoint discipline).
+    cmd = ("ulimit -v %d; exec nice -n 10 Singular -q %s > %s 2>&1"
+           % (memcap_kb, sname, outp))
     t0 = time.time()
     try:
-        r = subprocess.run(["bash", "-c", cmd], capture_output=True,
-                          text=True, timeout=timeout)
-        out = r.stdout + ("\n[stderr]\n" + r.stderr if r.stderr.strip() else "")
+        r = subprocess.run(["bash", "-c", cmd], timeout=timeout)
         status = "exit %d" % r.returncode
-    except subprocess.TimeoutExpired as ex:
-        out = ((ex.stdout or "") if isinstance(ex.stdout, str) else
-               (ex.stdout or b"").decode("utf8", "replace"))
+    except subprocess.TimeoutExpired:
         status = "TIMEOUT after %ds" % timeout
-    open(os.path.join(HERE, nm + ".out"), "w").write(out)
+    out = open(outp).read() if os.path.exists(outp) else ""
+    with open(outp, "a") as fh:
+        fh.write("\n[runner status] %s after %.1fs\n" % (status, time.time() - t0))
     print("# %s: %s, %.1fs" % (nm, status, time.time() - t0))
     for ln in out.splitlines():
         if any(t in ln for t in ("NVARS", "NEQS", "DIM", "VDIM", "GBSIZE",

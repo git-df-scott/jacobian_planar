@@ -219,11 +219,39 @@ shape for a GB engine (massively linear-solvable), which motivates a direct
 Singular mod-p scout of the substituted system after the deeper elimination
 pass completes.
 
-(full-system deep elimination cap-120 in flight; mod-p scout pending)
+### Deep elimination beyond the tight leaf: ABANDONED (measured blowup)
+
+Both the exact cap-120 run and a mod-65521 eliminator run were killed by a
+container restart while exhibiting super-exponential fill-in: largest equation
+2018 -> 16534 terms between rule apps 50 and 60, total terms 75k -> 494k
+(trackB1_elim_cap120.log, trackB1_elim_modp.log — identical growth mod p, so
+this is structural fill-in, not coefficient swell). The eliminator's role ends
+at the tight leaf (233/116); the core goes to a GB engine instead.
 
 ## B1c. mod-p scout
 
-(pending)
+RESUME NOTE (2026-08-13 ~14:30 UTC, post-restart). First scout attempt before
+the restart targeted the RAW W=19 truncation (26 vars + 1 Rabinowitsch var,
+21 eqs) and ran out of memory at ~866MB under a 1.8GB address-space cap
+(trackB1_trunc19_p65521.out) — an expensive way to learn what the witness
+already certifies: truncations W >= 8 are ALIVE (high-dimensional), and GB of
+a high-dimensional alive truncation is both hard and pointless. Scouting
+truncations W >= 8 is hereby dropped; per Structure Theorem 1 any kill engages
+weight <= 7, so the scout target is the FULL normalized substituted system
+(283 eqs / 165 vars + 4 Rabinowitsch ties for c_1_0, c_8_14, d_12_21, s_4_8;
+input total ~8.6k terms, far sparser than the eliminator leaf whose
+substitutions inflated it to ~67k terms).
+
+Plan of record (in flight):
+1. Full system, p = 65521, dp, Rabinowitsch, option(prot), 6.2GB vmem cap,
+   output streamed to trackB1_sysfull_p65521.out (survives restarts).
+2. If it finishes: repeat at p = 65497, 65479 (one Singular at a time — CPU
+   courtesy to the Track B/C jobs sharing this box).
+3. If it blows up: weight-peeling fallback — incremental GB down the tower
+   (G_{W} = groebner(G_{W+1} + level W), checkpointed per level), which
+   localizes both the cost and the death level.
+
+(running)
 
 ## B1d. Verdicts
 

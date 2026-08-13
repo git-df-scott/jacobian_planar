@@ -1,0 +1,29 @@
+14:27:14 BRANCH r1: stage1 done (['DIM: 0', 'VDIM: 1']), 7 pinned vars
+14:27:14 BRANCH r1: stage2 vars=15 eqs=38 -> BRANCH r1 RESIDUAL DIM: -1 | BRANCH r1 EMPTY
+14:27:14 BRANCH r1: total 14s
+14:27:51 BRANCH r2: stage1 done (['DIM: 0', 'VDIM: 1']), 7 pinned vars
+14:27:52 BRANCH r2: stage2 vars=15 eqs=38 -> BRANCH r2 RESIDUAL DIM: -1 | BRANCH r2 EMPTY
+14:27:52 BRANCH r2: total 14s
+14:28:04 BRANCH r3: stage1 done (['DIM: 0', 'VDIM: 1']), 7 pinned vars
+14:28:04 BRANCH r3: stage2 vars=15 eqs=38 -> BRANCH r3 RESIDUAL DIM: -1 | BRANCH r3 EMPTY
+14:28:04 BRANCH r3: total 12s
+14:28:16 BRANCH r5: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:28:16 BRANCH r5: stage1 did not pin all edge vars (2/7) — GB lines in trackB_st1_r5.json; needs manual look
+14:28:16 BRANCH r5: total 12s
+14:28:28 BRANCH r6: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:28:28 BRANCH r6: stage1 did not pin all edge vars (2/7) — GB lines in trackB_st1_r6.json; needs manual look
+14:28:28 BRANCH r6: total 12s
+14:30:29 BRANCH r4: stage1 done (['DIM: 0', 'VDIM: 2']), 1 pinned vars
+14:30:29 BRANCH r4: stage1 did not pin all edge vars (1/7) — GB lines in trackB_st1_r4.json; needs manual look
+14:30:29 BRANCH r4: total 121s
+14:31:34 BRANCH r5: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:32:01 BRANCH r5: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:32:14 BRANCH r5: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:32:16 BRANCH r5: stage2b vars=20 gens=49 -> BRANCH r5 RESIDUAL DIM: -1 | BRANCH r5 EMPTY
+14:32:16 BRANCH r5: total 1s
+14:32:16 BRANCH r6: stage1 done (['DIM: 0', 'VDIM: 2']), 2 pinned vars
+14:32:16 BRANCH r6: stage2b vars=20 gens=49 -> BRANCH r6 RESIDUAL DIM: -1 | BRANCH r6 EMPTY
+14:32:17 BRANCH r6: total 1s
+14:32:17 BRANCH r4: stage1 done (['DIM: 0', 'VDIM: 2']), 1 pinned vars
+14:32:17 BRANCH r4: stage2b vars=21 gens=50 -> BRANCH r4 RESIDUAL DIM: -1 | BRANCH r4 EMPTY
+14:32:17 BRANCH r4: total 1s
