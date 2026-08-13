@@ -1312,7 +1312,8 @@ def tower_skeleton(pre, p, a, b, svec):
 
 
 def tower_singular(p, a, b, svec, name, timeout=6600, memcap_kb=6500000,
-                   assert_residuals=True, early_ties=True, run=True):
+                   assert_residuals=True, early_ties=True, run=True,
+                   engine="std"):
     """Generate (and run) a Singular script executing the whole tower for one
     numeric sample (a, b, svec) mod p with per-level GB compression:
 
@@ -1328,11 +1329,18 @@ def tower_singular(p, a, b, svec, name, timeout=6600, memcap_kb=6500000,
     - at the end: dim/vdim of G, GB and all component polys written to disk.
     """
     assert p % 3 == 1
+    engine = os.environ.get("JCENGINE", engine)
+    assert engine in ("std", "slimgb"), engine
     pre = tower_precompute()
     levels, ntau, topval = tower_skeleton(pre, p, a, b, svec)
     ringvars = ["t%d" % i for i in range(max(1, ntau))] + ["w1", "w2"]
+    # engine: "std" (Buchberger, reduced) or "slimgb" (fill-in resistant).
+    # redSB fully interreduces after every level; that is what we pay for on
+    # the deep levels and it buys nothing for a dim/emptiness verdict, so the
+    # slimgb route drops it.
     L = ["ring R = %d, (%s), dp;" % (p, ",".join(ringvars)),
-         "short = 0;", "option(redSB);", "ideal G = 0;", "int tt;",
+         "short = 0;"] + (["option(redSB);"] if engine == "std" else []) + [
+         "ideal G = 0;", "int tt;",
          'link lg = ":w %s";' % os.path.join(HERE, name + ".levels.log")]
     # top components + d_2_1 as numeric polys
     for v, c in topval.items():
@@ -1386,13 +1394,16 @@ def tower_singular(p, a, b, svec, name, timeout=6600, memcap_kb=6500000,
                 obparts.append(" + ".join(parts))
         if obparts:
             L.append("ideal OB_%d = %s;" % (w, ",".join(obparts)))
-            L.append("G = std(G, OB_%d);" % w)
+            L.append("G = std(G, OB_%d);" % w if engine == "std"
+                     else "G = slimgb(G + OB_%d);" % w)
         # early nonzero ties once the variable exists
         if early_ties:
             for tievar, tw_ in (("c_8_14", "w1"), ("d_12_21", "w2")):
                 if tievar not in nz_tie_done and \
                         any(v == tievar for v in lev["newvars"]):
-                    L.append("G = std(G, ideal(%s*v_%s - 1));" % (tw_, tievar))
+                    L.append("G = std(G, ideal(%s*v_%s - 1));" % (tw_, tievar)
+                             if engine == "std" else
+                             "G = slimgb(G + ideal(%s*v_%s - 1));" % (tw_, tievar))
                     nz_tie_done.add(tievar)
         L.append('if (reduce(1, G) == 0) { "DEAD-AT-LEVEL: %d"; '
                  'fprintf(lg, "DEAD-AT-LEVEL: %d"); close(lg); quit; }' % (w, w))
@@ -1590,6 +1601,9 @@ def tower_lift(name, p, maxpoints=200):
     # is only feasible for small vdim; do it in python with poly evaluation.
     # (Left as data for the orchestrator if vdim is large.)
     return
+
+
+def tower_check(p=65521, seed=12345, n=5):
     """Structural validation: for random FULL assignments (all c, d numeric),
     the per-level assembled equations (M z - R with actual values) must equal
     the raw equations' values. Validates term classification/indexing/signs."""

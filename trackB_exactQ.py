@@ -39,12 +39,20 @@ def q_eliminant_factors():
             "ideal E = eliminate(I, d_3_3*d_4_5*d_5_7*d_6_9*d_7_11*d_8_13);",
             '"ELIMDEG: " + string(deg(E[1]));',
             "list f = factorize(E[1]);", '"FACTORS:"; f[1];', "quit;"]
-    out = qsing("\n".join(scr), "trackB_Q_elim.sing", 3600)
+    out = qsing("\n".join(scr), "trackB_Q_elim.sing", int(os.environ.get("QELIM_TIMEOUT", "10800")))
     facs = []
     for ln in out.splitlines():
         m = re.match(r"_\[\d+\]=(.+)$", ln.strip())
         if m and m.group(1) != "1":
             facs.append(m.group(1))
+    # Soundness guard: only cache a factor list from a run that actually
+    # reached the factorization. A timeout/crash returns "" (or no FACTORS
+    # block); caching [] there would silently skip every rk-branch on rerun
+    # and read as a closure. Raise instead.
+    if "FACTORS:" not in out or not facs:
+        S.log("Q-SWEEP: eliminant factorization produced NO factors "
+              "(timeout/crash) — marker NOT written; use the P1 fallback route")
+        raise SystemExit("Q-eliminant factorization did not complete")
     json.dump(facs, open(mark, "w"))
     S.log(f"Q-SWEEP: eliminant factors over Q: {len(facs)}  "
           f"degs {[max((len(x) // 40, 1)) for x in facs] if facs else []}")
