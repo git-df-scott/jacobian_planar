@@ -1,4 +1,26 @@
-# RESUME STATE — hard stop at monthly spend limit, 2026-08-13 ~05:2x UTC
+# RESUME STATE — updated 2026-08-13 ~05:5x UTC (main loop continuing on CPU)
+
+## CAMPAIGN-REDEFINING FINDINGS (Track A, complete — see trackA_report.md)
+
+1. The lost session's ENTIRE r0-r6 hunt lived in the d_2_2 = 0 slice (leaf 1).
+   The unsound R1 dropped the sibling at the FIRST fork. Leaf 2 (d_3_5 := 0,
+   d_2_2 free; 44 eqs / 22 vars) is never-explored generic ground, and
+   Sol(case 2) = Sol(leaf 2), so closing leaf 2 closes case (2).
+2. Prop 4.3 has a SECOND case the handoff never saw: pentagon polygons,
+   186 unknowns / 302 equations (trackA_system_case1.json). Attack route:
+   top-edge leading forms force lP = a*S^2, lQ = b*S^3 for one slope-1 form S
+   (5 coeffs) — parametrize and reduce. Case (1) must die too before any
+   (8,28) closure claim.
+
+## Compute in flight (survives nothing — restart from these commands if lost)
+
+- Leaf 2 mod 65521:  python3 trackB_leaf_runner.py trackA_reduced_system.json 2 65521
+- Leaf 1 control:    python3 trackB_leaf_runner.py trackA_reduced_system.json 1 65521
+  (leaf 1 must reproduce handoff-compatible numbers: their vdim 1144 / deg-43
+   eliminant story lived in this slice, mod the same prime)
+- Outputs land in trackB_leaf{1,2}_p65521.out; Singular script files .sing.
+
+# Original hard-stop record (2026-08-13 ~05:2x UTC)
 
 The account's monthly spend limit terminated the running agents (Tracks A and C).
 Per the N2 hard-stop discipline: this is an expected pause point, not a failure.
