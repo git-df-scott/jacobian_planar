@@ -60,6 +60,7 @@ Exact arithmetic throughout.  No floating point.
 
 from fractions import Fraction as Fr
 from math import gcd, ceil
+import sympy as sp
 from sympy import (symbols, Function, Rational, expand, cancel, diff, simplify,
                    Poly, together, S, solve, symarray, linsolve, factor)
 
@@ -117,7 +118,15 @@ def escape_solution(k, D, m, sig, a, b, verbose=False):
     if not sol or sol == S.EmptySet:
         return None
     sol = list(sol)[0]
-    return sol, P.coeff_monomial(v**0), d, p
+    const = P.coeff_monomial(v**0)
+    # BACK-PORTED FIX.  k*p != D*m is NECESSARY but NOT SUFFICIENT: the ODE's
+    # forced constant can vanish anyway, giving c = 0 and contradicting the
+    # Keller condition c != 0.  Without this test 7 of the 20 points this
+    # function reported OPEN are false; the true count is 13 of 40.
+    c0 = const.subs({cs[i]: sol[i] for i in range(d + 1)})
+    if sp.simplify(c0) == 0:
+        return None
+    return sol, const, d, p
 
 
 # --- Borisov's First Framework parameters -------------------------------

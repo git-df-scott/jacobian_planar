@@ -88,7 +88,7 @@ condition holds: `3·4 = 12 ≠ 13`.
   as low as 2. (The near-miss sits at 6.) Forced block:
   `W̃₋₅ = α⁶·U²·(U−1)⁹·S(U−1)`, degree 15 — same degree as the near-miss, and not
   the 28 the 13-realization demands, exactly as a non-realizing branch should be.
-- **Open at 20 of 40 lattice points**, including `D = 13, 23, 28` — because
+- **Open at 13 of 40 lattice points**, including `D = 13, 23, 28` — because
   `m + σ = 0` makes `k | D(m+σ)` automatic for every `k`. The governing
   divisibility in this branch is `k | D(m+σ)`, **not** `k | D`.
 
@@ -125,7 +125,7 @@ Session 19 endgame transfers verbatim. Chain-degree lattice `D = 5k − 2`,
 |---|---|
 | all 12 points | die immediately unless `R` has a pole of order exactly 4 at `v = −1` |
 | **`k = 2`, `D = 8`** | **killed outright** — `k·p = D·m = 8`, so the `v = −1` residue `(kp − Dm)S(−1)` vanishes and the escape degenerates |
-| other 11 | open at the endgame level |
+| other 10 | open at the endgame level |
 
 Closed form: `p = 4`, `D = 5k − 2`, so `kp = Dm ⟺ 4k = 5k − 2 ⟺ k = 2`. Exactly
 one chain degree in the whole family is self-killing, and `(72,108)` contains it.
@@ -182,7 +182,7 @@ flagship target was already settled.
 
 **Where a counterexample would have to be:** `(72,108)` with `max ≥ 125` the only
 other territory. Within the chart/blowup geometry, it must have `R` with a pole of
-order exactly `(a+b)m − 1` at `v = −1` and must fail the realization layer. Eleven
+order exactly `(a+b)m − 1` at `v = −1` and must fail the realization layer. Ten
 of the twelve `(72,108)` chain degrees survive everything this session could throw
 at them.
 

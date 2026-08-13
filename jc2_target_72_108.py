@@ -1,4 +1,13 @@
 """
+SUPERSEDED IN PART -- see jc2_phase4_direct.py.
+This file predates the forced-constant fix and therefore reports k = 1 (D = 3)
+as "ESCAPE OPEN" and concludes ELEVEN open chain degrees.  That is WRONG: k = 1
+dies because the escape ODE forces c = 0, so the correct count is TEN.  The
+lattice relation n = b*k + H used below is also NOT general -- G = b*k holds
+only because rho = b and m+sigma = 0 happen to coincide in Borisov's
+construction; at other admissible rho it fails.  Retained for its derivation
+and retrodiction only.
+
 Plane Jacobian campaign - Session 20
 RETARGETING: the Session-19/20 machinery applied to (72,108), the ONLY degree
 pair below 125 still open in the literature.
