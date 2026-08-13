@@ -111,3 +111,5 @@
 21:42:28 BRANCH p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
 21:52:28 BRANCH p65599_r0b_f0_f0_f0_f0: stage2b vars=21 gens=50 -> BRANCH p65599_r0b_f0_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH p65599_r0b_f0_f0_f0_f0 EMPTY
 21:52:28 SWEEP p=65599: COMPLETE in 1248s (4 eliminant branches + r0a + r0b)
+22:11:57 trackB_Q_elim.sing: STALLED/ERROR (TimeoutExpired: Command '['Singular', '-q', '/home/user/jacobian_planar/trackB_Q_elim.sing']' timed out after 3600 seconds)
+22:11:57 Q-SWEEP: eliminant factors over Q: 0  degs []
