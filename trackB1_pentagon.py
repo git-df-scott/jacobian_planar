@@ -679,29 +679,124 @@ def level19():
     return ok
 
 
+# ------------------------------------------------------- shared singular runner
+def run_singular(nm, lines, timeout, memcap_kb):
+    """Write nm.sing, run Singular niced + vmem-capped, stream output straight
+    to nm.out (survives container restarts), append a runner-status line."""
+    sname = os.path.join(HERE, nm + ".sing")
+    open(sname, "w").write("\n".join(lines))
+    outp = os.path.join(HERE, nm + ".out")
+    cmd = ("ulimit -v %d; exec nice -n 10 Singular -q %s > %s 2>&1"
+           % (memcap_kb, sname, outp))
+    t0 = time.time()
+    try:
+        r = subprocess.run(["bash", "-c", cmd], timeout=timeout)
+        status = "exit %d" % r.returncode
+    except subprocess.TimeoutExpired:
+        status = "TIMEOUT after %ds" % timeout
+    out = open(outp).read() if os.path.exists(outp) else ""
+    with open(outp, "a") as fh:
+        fh.write("\n[runner status] %s after %.1fs\n" % (status, time.time() - t0))
+    print("# %s: %s, %.1fs" % (nm, status, time.time() - t0))
+    for ln in out.splitlines():
+        if any(t in ln for t in ("NVARS", "NEQS", "DIM", "VDIM", "GBSIZE",
+                                 "EMPTY", "error", "STAGE", "DIED", "MEM-KB")):
+            print(ln)
+    return out
+
+
+def poly_str(terms):
+    """JSON term list -> Singular polynomial string."""
+    parts = []
+    for t in terms:
+        mono = "*".join("%s^%d" % (v, ex) if ex > 1 else v for v, ex in t[0])
+        num, den = t[1]
+        cs = "%d" % num if den == 1 else "(%d/%d)" % (num, den)
+        parts.append(cs + ("*" + mono if mono else ""))
+    return " + ".join(parts)
+
+
+# --------------------------------------------------- B1c weight-peeling scout
+def peel(p, name=None, timeout=6600, memcap_kb=6500000):
+    """Incremental GB down the weight tower, mod p, with per-stage ASCII
+    checkpoints (NAME_W{W}.gbtxt) and RESUME from the lowest existing one.
+    Ideal at stage W = ties + all equations of weight >= W; if 1 appears at
+    stage W, print DIED-AT-STAGE W and stop (mod-p scouting evidence that the
+    system with side conditions is empty, localized to weight level W)."""
+    assert p % 3 == 1
+    data = json.load(open(os.path.join(HERE, "trackB1_param_system.json")))
+    nm = name or ("trackB1_peel_p%d" % p)
+    vs = list(data["variables"])
+    wties = ["w%d*(%s)-1" % (i + 1, v) for i, v in enumerate(data["nonzero"])]
+    ws = ["w%d" % (i + 1) for i in range(len(wties))]
+    by_w = {}
+    for e in data["equations"]:
+        a, b = e["bracket_point"]
+        by_w.setdefault(b - a, []).append(poly_str(e["terms"]))
+    levels = sorted(by_w, reverse=True)
+    # resume: lowest W with an existing checkpoint
+    done = [W for W in levels
+            if os.path.exists(os.path.join(HERE, "%s_W%d.gbtxt" % (nm, W)))]
+    start_after = min(done) if done else None
+    todo = [W for W in levels if start_after is None or W < start_after]
+    if not todo:
+        print("peel: all stages already checkpointed; nothing to do")
+        return
+    lines = ["ring R = %d, (%s), dp;" % (p, ",".join(vs + ws)),
+             "short = 0;", "ideal G;"]
+    if start_after is None:
+        lines.append("G = %s;" % ",".join(wties))
+        lines.append('"PEEL start from ties (%d), levels %s down to %s";'
+                     % (len(wties), todo[0], todo[-1]))
+    else:
+        ck = os.path.join(HERE, "%s_W%d.gbtxt" % (nm, start_after))
+        lines.append('string s_ck = read("%s");' % ck)
+        lines.append('execute("G = ideal(" + s_ck + ");");')
+        lines.append('"PEEL resume after W=%d (GB size " + string(size(G)) + '
+                     '"), levels %s down to %s";' % (start_after, todo[0],
+                                                     todo[-1]))
+    for W in todo:
+        lines.append("ideal L%d = %s;" % (W + 100, ",".join(by_w[W])))
+        lines.append("G = groebner(G + L%d);" % (W + 100))
+        lines.append('"STAGE W=%d: GBSIZE: " + string(size(G)) + '
+                     '" MEM-KB: " + string(memory(2) div 1024);' % W)
+        lines.append('if (reduce(1, G) == 0) { "DIED-AT-STAGE: %d"; '
+                     '"EMPTY: ideal = whole ring; system DEAD mod %d '
+                     '(with side conditions)"; write(":w %s", "1"); quit; }'
+                     % (W, p, os.path.join(HERE, "%s_W%d.gbtxt" % (nm, W))))
+        lines.append('write(":w %s", G);'
+                     % os.path.join(HERE, "%s_W%d.gbtxt" % (nm, W)))
+    lines += ["int d = dim(G);",
+              '"DIM: " + string(d) + " (ring includes %d rabinowitsch vars)";'
+              % len(ws),
+              'if (d == 0) { "VDIM: " + string(vdim(G)); }',
+              'if (d == -1) { "EMPTY: ideal = whole ring; system DEAD mod %d '
+              '(with side conditions)"; }' % p,
+              "quit;"]
+    return run_singular(nm, lines, timeout, memcap_kb)
+
+
 # ------------------------------------------------------- B1c singular (system)
-def singular_system(sys_path, p, name=None, timeout=3900, memcap_kb=1800000):
+def singular_system(sys_path, p, name=None, timeout=3900, memcap_kb=1800000,
+                    order="dp"):
     """mod-p Singular scout of a system JSON (trackB1_param_system.json schema):
     ideal = all equations + Rabinowitsch inverses for the nonzero list.
     Memory-capped via ulimit -v so it cannot disturb the Track B jobs."""
     assert p % 3 == 1, "scouting prime must be = 1 mod 3"
     data = json.load(open(sys_path))
     vs = list(data["variables"])
-    polys = []
-    for e in data["equations"]:
-        parts = []
-        for t in e["terms"]:
-            mono = "*".join("%s^%d" % (v, ex) if ex > 1 else v
-                            for v, ex in t[0])
-            num, den = t[1]
-            cs = "%d" % num if den == 1 else "(%d/%d)" % (num, den)
-            parts.append(cs + ("*" + mono if mono else ""))
-        polys.append(" + ".join(parts))
+    polys = [poly_str(e["terms"]) for e in data["equations"]]
     wties = []
     for i, v in enumerate(data["nonzero"]):
         wties.append("w%d*(%s)-1" % (i + 1, v))
     ws = ["w%d" % (i + 1) for i in range(len(wties))]
-    lines = ["ring R = %d, (%s), dp;" % (p, ",".join(vs + ws)), "ideal I;"]
+    if order == "blockc":
+        nc = sum(1 for v in vs if v.startswith("c_"))
+        ordstr = "(dp(%d), dp(%d))" % (nc, len(vs) - nc + len(ws))
+    else:
+        ordstr = order
+    lines = ["ring R = %d, (%s), %s;" % (p, ",".join(vs + ws), ordstr),
+             "ideal I;"]
     for i, e in enumerate(polys):
         lines.append("I[%d] = %s;" % (i + 1, e))
     for j, t in enumerate(wties):
@@ -726,28 +821,7 @@ def singular_system(sys_path, p, name=None, timeout=3900, memcap_kb=1800000):
         'write(":w %s", G);' % os.path.join(HERE, nm + ".gb.txt"),
         '"GB written";',
         "quit;"]
-    sname = os.path.join(HERE, nm + ".sing")
-    open(sname, "w").write("\n".join(lines))
-    outp = os.path.join(HERE, nm + ".out")
-    # Stream Singular output DIRECTLY to the .out file so a container restart
-    # cannot destroy the partial protocol (checkpoint discipline).
-    cmd = ("ulimit -v %d; exec nice -n 10 Singular -q %s > %s 2>&1"
-           % (memcap_kb, sname, outp))
-    t0 = time.time()
-    try:
-        r = subprocess.run(["bash", "-c", cmd], timeout=timeout)
-        status = "exit %d" % r.returncode
-    except subprocess.TimeoutExpired:
-        status = "TIMEOUT after %ds" % timeout
-    out = open(outp).read() if os.path.exists(outp) else ""
-    with open(outp, "a") as fh:
-        fh.write("\n[runner status] %s after %.1fs\n" % (status, time.time() - t0))
-    print("# %s: %s, %.1fs" % (nm, status, time.time() - t0))
-    for ln in out.splitlines():
-        if any(t in ln for t in ("NVARS", "NEQS", "DIM", "VDIM", "GBSIZE",
-                                 "EMPTY", "error")):
-            print(ln)
-    return out
+    return run_singular(nm, lines, timeout, memcap_kb)
 
 
 # ----------------------------------------------------------------------- main
@@ -762,7 +836,10 @@ def main():
     ap.add_argument("--singular", nargs="+", metavar="ARG",
                     help="TREE LEAF_ID P [NAME]")
     ap.add_argument("--singular-system", nargs="+", metavar="ARG",
-                    help="SYSTEM_JSON P [NAME [TIMEOUT_S [MEMCAP_KB]]]")
+                    help="SYSTEM_JSON P [NAME [TIMEOUT_S [MEMCAP_KB [ORDER]]]]")
+    ap.add_argument("--peel", nargs="+", metavar="ARG",
+                    help="P [NAME [TIMEOUT_S [MEMCAP_KB]]] — weight-peeling "
+                         "incremental GB with checkpoints + resume")
     args = ap.parse_args()
     if args.derive:
         ok = derive()
@@ -787,7 +864,14 @@ def main():
         singular_system(a[0], int(a[1]),
                         a[2] if len(a) > 2 else None,
                         int(a[3]) if len(a) > 3 else 3900,
-                        int(a[4]) if len(a) > 4 else 1800000)
+                        int(a[4]) if len(a) > 4 else 1800000,
+                        a[5] if len(a) > 5 else "dp")
+        return
+    if args.peel:
+        a = args.peel
+        peel(int(a[0]), a[1] if len(a) > 1 else None,
+             int(a[2]) if len(a) > 2 else 6600,
+             int(a[3]) if len(a) > 3 else 6500000)
         return
     if args.singular:
         tree = args.singular[0]

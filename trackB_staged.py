@@ -89,20 +89,29 @@ EDGE_VARS = ["d_3_3", "d_4_5", "d_5_7", "d_6_9", "d_7_11", "d_8_13", "d_9_15"]
 REST_IDX = [i for i in range(len(EQS)) if i not in EDGE_IDX]
 
 BRANCHES = {
-    "r1": "d_9_15-28232", "r2": "d_9_15-21444", "r3": "d_9_15-16066",
-    "r5": "d_9_15-19859", "r6": "d_9_15-796",
-    "r4": "d_9_15^2-13963*d_9_15+24777",
+    "r1": {"pin": "d_3_3-1", "factor": "d_9_15-28232"},
+    "r2": {"pin": "d_3_3-1", "factor": "d_9_15-21444"},
+    "r3": {"pin": "d_3_3-1", "factor": "d_9_15-16066"},
+    "r5": {"pin": "d_3_3-1", "factor": "d_9_15-19859"},
+    "r6": {"pin": "d_3_3-1", "factor": "d_9_15-796"},
+    "r4": {"pin": "d_3_3-1", "factor": "d_9_15^2-13963*d_9_15+24777"},
+    # r0a: d_9_15 = 0 on the normalized (d_3_3 != 0) chart.
+    # r0b: d_3_3 = 0; d_9_15 = 0 is then forced (edge-zero eliminant = d_9_15^8,
+    #      certified in trackB_edge_zero.out) — included as derived, not assumed.
+    "r0a": {"pin": "d_3_3-1", "factor": "d_9_15"},
+    "r0b": {"pin": "d_3_3", "factor": "d_9_15"},
 }
 
-def stage1(tag, factor):
-    """Edge GB with d_3_3=1 and the branch factor; parse points (expect vdim small)."""
+def stage1(tag, spec):
+    """Edge GB with the branch pin + factor; parse points (vdim may exceed 1)."""
     mark = os.path.join(WD, f"trackB_st1_{tag}.json")
     if os.path.exists(mark):
         return json.load(open(mark))
+    factor = spec["factor"]
     scr = [f"ring R = {P}, ({','.join(EDGE_VARS)}), lp;", "ideal I;"]
     for k, i in enumerate(EDGE_IDX):
         scr.append(f"I[{k+1}] = {leaf['equations'][i]};")
-    scr.append(f"I[{len(EDGE_IDX)+1}] = d_3_3-1;")
+    scr.append(f"I[{len(EDGE_IDX)+1}] = {spec['pin']};")
     scr.append(f"I[{len(EDGE_IDX)+2}] = {factor};")
     scr += ["short=0;", "option(redSB);", "ideal G = groebner(I);",
             '"DIM: " + string(dim(G));', '"VDIM: " + string(vdim(G));',
@@ -120,13 +129,13 @@ def stage1(tag, factor):
     json.dump(res, open(mark, "w"), indent=1)
     return res
 
-def stage2(tag, vals):
+def stage2(tag, vals, d33=1):
     """Substitute edge point into non-edge equations; residual GB; verdict."""
     mark = os.path.join(WD, f"trackB_st2_{tag}.done")
     if os.path.exists(mark):
         return
     sub = dict(vals)
-    sub["d_3_3"] = 1
+    sub["d_3_3"] = d33
     res_eqs = []
     contradiction = False
     for i in REST_IDX:
@@ -173,14 +182,14 @@ def normalize_sing(s):
     """Singular compact poly ('a2-3*b+4') -> parse_poly format ('a^2 + -3*b + 4')."""
     return re.sub(r"(?<=[0-9a-zA-Z_])([+-])", r" + \1", s)
 
-def stage2b(tag, vals, gb_lines):
+def stage2b(tag, vals, gb_lines, d33=1):
     """Two-point (or extension) edge fiber: keep unpinned edge vars symbolic;
     ideal = all 44 eqs + stage-1 GB relations, pinned vals substituted."""
     mark = os.path.join(WD, f"trackB_st2_{tag}.done")
     if os.path.exists(mark):
         return
     sub = dict(vals)
-    sub["d_3_3"] = 1
+    sub["d_3_3"] = d33
     gens = []
     for i in range(len(EQS)):
         q = subst(EQS[i], sub)
@@ -231,10 +240,11 @@ def main():
         s1 = stage1(tag, BRANCHES[tag])
         nvals = len(s1["vals"])
         log(f"BRANCH {tag}: stage1 done ({s1['raw_dim_vdim']}), {nvals} pinned vars")
+        d33 = 0 if BRANCHES[tag]["pin"] == "d_3_3" else 1
         if nvals == len(EDGE_VARS):
-            stage2(tag, s1["vals"])
+            stage2(tag, s1["vals"], d33)
         else:
-            stage2b(tag, s1["vals"], s1["full_gb_lines"])
+            stage2b(tag, s1["vals"], s1["full_gb_lines"], d33)
         log(f"BRANCH {tag}: total {time.time()-t0:.0f}s")
 
 if __name__ == "__main__":

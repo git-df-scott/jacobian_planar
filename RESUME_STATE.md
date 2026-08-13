@@ -64,3 +64,25 @@ Everything below is exact resume instructions.
   waits for the next manual "go".
 
 PR: https://github.com/git-df-scott/jacobian_planar/pull/3
+
+## Branch-hunt scoreboard at spend-limit stop #2 (2026-08-13 ~14:45 UTC)
+
+CASE (2), leaf 2 (d_2_2 free — never explored before tonight), mod 65521:
+  r1 EMPTY | r2 EMPTY | r3 EMPTY | r4 EMPTY | r5 EMPTY | r6 EMPTY   (all DEAD)
+  r0b: stage 1 DONE (d_3_3=0 edge fiber: dim 0, VDIM 338, trackB_st1_r0b.json);
+       stage 2b CRASHED inside the Singular call (likely 2400s timeout or kill;
+       trackB_st2_r0b.sing is on disk — inspect trackB_st2_r0b.sing.out, rerun:
+       python3 trackB_staged.py r0b   — markers skip completed stage 1).
+       If heavy: sub-branch the 338-point fiber via its lex GB univariate factor.
+  r0a: NOT STARTED — run: python3 trackB_staged.py r0a
+       (d_9_15=0 fiber, expect vdim ~280 per handoff; same sub-branch plan.)
+NEXT after r0a/r0b: repeat all verdicts at primes 65539, 65599 (edit P in
+trackB_staged.py or parametrize), then exact over Q; then leaf 1 same treatment
+(old campaign's slice, unverified by us beyond edge numbers); then case (1).
+
+Track B1 (pentagons): agent died on spend limit AFTER progress — see
+trackB1_report.md (checkpointed; includes full-system mod-p artifacts).
+Track C: died early again; trackC_report.md has its state.
+
+NO scheduled triggers remain armed (all previous ticks consumed). On resume,
+re-arm the 45-min tick chain per agent_prompts.md header.

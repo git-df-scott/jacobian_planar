@@ -27,3 +27,4 @@
 14:32:17 BRANCH r4: stage1 done (['DIM: 0', 'VDIM: 2']), 1 pinned vars
 14:32:17 BRANCH r4: stage2b vars=21 gens=50 -> BRANCH r4 RESIDUAL DIM: -1 | BRANCH r4 EMPTY
 14:32:17 BRANCH r4: total 1s
+14:33:15 BRANCH r0b: stage1 done (['DIM: 0', 'VDIM: 338']), 0 pinned vars

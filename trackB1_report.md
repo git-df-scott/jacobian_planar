@@ -149,7 +149,11 @@ is dead**. Sizes (equations of weight >= W / variables in the tower):
 | 15 | 99 | 105 | | 8 | 211 | 165 |
 | 14 | 118 | 120 | | -2 | 283 | 165 (full) |
 
-Crossover to formally overdetermined at W = 13. The top level (W = 19) is the
+Crossover to formally overdetermined at W = 13. Full census of levels
+(#equations of weight exactly w): w = 19..16: 20 each; 15,14: 19; 13: 18;
+12: 17; 11: 16; 10: 15; 9: 14; 8: 13; 7: 12; 6: 11; 5: 10; 4: 9; 3: 8; 2: 7;
+1: 6; 0: 5; -1: 3; -2: 1 (the x^2 equation) — cumulative 211 at W = 8,
+283 at W = -2. The top level (W = 19) is the
 relation S*(2[S, Q_11] - 3*S*[S, P_7]) = 0 for the first sub-top lines; the
 inhomogeneous x^2 equation sits at weight -2 (bottom of the tower only).
 Eliminator on the near-top truncations (exact Q, verified terminating): W=19:
@@ -247,9 +251,15 @@ Plan of record (in flight):
    output streamed to trackB1_sysfull_p65521.out (survives restarts).
 2. If it finishes: repeat at p = 65497, 65479 (one Singular at a time — CPU
    courtesy to the Track B/C jobs sharing this box).
-3. If it blows up: weight-peeling fallback — incremental GB down the tower
-   (G_{W} = groebner(G_{W+1} + level W), checkpointed per level), which
-   localizes both the cost and the death level.
+Fallback ladder if 1. blows up (machinery already in trackB1_pentagon.py):
+F1. the tight eliminator leaf (233 eqs / 116 vars, c-cascade already solved
+    soundly) via --singular on trackB1_reduced_tight.json;
+F2. full system with block order (dp(c-block), dp(rest)) — GB eliminates the
+    51 linearly-solvable c-vars first (--singular-system ... blockc);
+F3. --peel: incremental GB down the weight tower, per-stage ASCII checkpoints
+    trackB1_peel_p*_W*.gbtxt + resume + early DIED-AT-STAGE detection.
+    Caveat: the top stage repeats the trunc19 GB, which needed > 866MB —
+    peeling is not obviously cheaper, but it localizes any death level.
 
 (running)
 
