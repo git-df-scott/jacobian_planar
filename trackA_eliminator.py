@@ -723,28 +723,75 @@ def _replay_one(eqs0, root_nonzero, steps):
     return False, "certificate ended without contradiction"
 
 
+def _replay_leaf(eqs0, root_nonzero, n):
+    """Replay a leaf's steps and compare the resulting state to the stored one."""
+    eqs = [dict(p) for p in eqs0]
+    nonzero = set(root_nonzero)
+    for step in n["steps"]:
+        tag = step[0]
+        if tag == "sub":
+            eqs = [psub_var(p, step[1], parse_poly(step[2])) for p in eqs]
+            if step[1] in nonzero:
+                nonzero.discard(step[1])
+        elif tag == "branch":
+            if step[1] in nonzero:
+                return False, "branch on nonzero var"
+            eqs = [psub_var(p, step[1], {}) for p in eqs]
+        elif tag == "nonzero":
+            nonzero.update(step[1])
+    eqs, contra = simplify_eqs(eqs)
+    if contra is not None:
+        return False, "replay reached a contradiction but node is an open leaf"
+    got = sorted(pcanon(p) for p in eqs)
+    want = []
+    for eq in n["equations_raw"]:
+        p = {}
+        for mono, (num, den) in eq:
+            p[tuple((v, e) for v, e in mono)] = cfrac(Fraction(num, den))
+        want.append(p)
+    want = sorted(pcanon(p) for p in want)
+    if got != want:
+        return False, "replayed equations differ from stored (%d vs %d)" % (
+            len(got), len(want))
+    if nonzero != set(n["nonzero"]):
+        return False, "replayed nonzero set differs"
+    return True, "ok"
+
+
 def verify_tree(tree_path, system_path):
-    """Independent replay of every closed branch's certificate."""
+    """Independent replay: closed-branch certificates AND open-leaf states."""
     global MODP
     data = json.load(open(tree_path))
     MODP = data["meta"].get("mod")
     sysdata, eqs0 = load_system(system_path)
+    if data["meta"].get("system_hash") and sysdata.get("content_hash") \
+            and data["meta"]["system_hash"] != sysdata["content_hash"]:
+        print("verify: SYSTEM HASH MISMATCH — wrong input system")
+        return False
     norm = data["meta"].get("normalize", {})
     for v, val in norm.items():
         eqs0 = [psub_var(p, v, pconst(cfrac(Fraction(val)))) for p in eqs0]
     root_nonzero = set(data["meta"]["root_nonzero"])
     n_ok = n_closed = 0
+    l_ok = n_leaf = 0
     for n in data["nodes"]:
-        if n["status"] != "closed":
-            continue
-        n_closed += 1
-        ok, msg = _replay_one(eqs0, root_nonzero, n["steps"])
-        if ok:
-            n_ok += 1
-        else:
-            print("REPLAY FAILURE at node %d: %s" % (n["id"], msg))
+        if n["status"] == "closed":
+            n_closed += 1
+            ok, msg = _replay_one(eqs0, root_nonzero, n["steps"])
+            if ok:
+                n_ok += 1
+            else:
+                print("REPLAY FAILURE at closed node %d: %s" % (n["id"], msg))
+        elif n["status"] == "leaf":
+            n_leaf += 1
+            ok, msg = _replay_leaf(eqs0, root_nonzero, n)
+            if ok:
+                l_ok += 1
+            else:
+                print("REPLAY FAILURE at leaf %d: %s" % (n["id"], msg))
     print("verify: %d/%d closed-branch certificates replayed OK" % (n_ok, n_closed))
-    return n_ok == n_closed
+    print("verify: %d/%d open-leaf reduced systems replayed OK" % (l_ok, n_leaf))
+    return n_ok == n_closed and l_ok == n_leaf
 
 
 def parse_poly(s):
@@ -893,6 +940,7 @@ def main():
     meta = {"system": os.path.basename(args.system),
             "system_hash": sysdata.get("content_hash"),
             "normalize": norm, "root_nonzero": nonzero, "mod": MODP,
+            "max_nodes": args.max_nodes, "max_repl_terms": args.max_repl_terms,
             "stats": stats, "elapsed_sec": dt,
             "soundness": "R1 or-branching over every variable of the monomial; "
                          "R2 pivots only unit*nonzero-monomial with divisibility "

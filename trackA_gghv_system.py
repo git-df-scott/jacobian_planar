@@ -210,6 +210,59 @@ def inert_variables(eqs, variables):
     return [v for v in variables if v not in used]
 
 
+# ------------------------------------------- independent cross-check: slope-2 edge ODE
+def check_edge_ode(case_no=2):
+    """The slope-2 edges carry P-> x f(z), Q-> x^2 y g(z), z = x y^2 (f_k = c_{1+k,2k},
+    g_k = d_{2+k,1+2k}, deg f = 7, deg g = 10).  Hand derivation:
+        [x f, x^2 y g] = x^2 (f g + z (2 f g' - 3 f' g)).
+    Since v_{2,-1}(P)=2, v_{2,-1}(Q)=3, v_{2,-1}(x^2)=4 = 2+3-v_{2,-1}(xy), the bracket
+    points on the line 2a - b = 4 receive ONLY edge x edge contributions, so the system
+    equations there must equal the coefficients of  f g + z(2 f g' - 3 f' g) - 1.
+    This re-derives 18 of the 92 equations by a completely different route.
+    """
+    SP, SQ, cvars, dvars, eqs, _, _ = build_case(case_no)
+    # coefficients of z^n in f*g + z*(2 f g' - 3 f' g) - 1, symbolically:
+    # term z^n gets sum_{k+l=n} f_k g_l  + sum_{k+l=n-1+1... } careful:
+    # z*(2 f g' - 3 f' g) coefficient at z^n: sum_{k+l=n} (2 l - 3 k) f_k g_l.
+    # (z * f_k z^k * l g_l z^(l-1) etc.)
+    derived = {}
+    for n in range(0, 18):
+        acc = {}
+        for k in range(0, 8):
+            l = n - k
+            if 0 <= l <= 10:
+                w = 1 + 2 * l - 3 * k
+                if w == 0:
+                    continue
+                mono = tuple(sorted([vname("c", 1 + k, 2 * k),
+                                     vname("d", 2 + l, 1 + 2 * l)]))
+                mono = ((mono[0], 1), (mono[1], 1))
+                acc[mono] = acc.get(mono, Fraction(0)) + w
+        if n == 0:
+            acc[()] = Fraction(-1)
+        derived[n] = {m: c for m, c in acc.items() if c != 0}
+    ok = True
+    for n, dq in derived.items():
+        a = n + 2                      # z^n lives at x^(n+2) y^(2n): (a,b)=(n+2,2n)
+        b = 2 * n
+        assert 2 * a - b == 4
+        sys_eq = eqs.get((a, b))
+        if dq == {}:
+            match = sys_eq is None
+        else:
+            match = (sys_eq == dq)
+        if not match:
+            ok = False
+            print("  MISMATCH at z^%d (bracket point (%d,%d)):" % (n, a, b))
+            print("    derived:", sorted(dq.items())[:4])
+            print("    system :", sorted(sys_eq.items())[:4] if sys_eq else None)
+    print("edge-ODE cross-check, case (%d): %s (%d bracket points on 2a-b=4)"
+          % (case_no, "PASS — system equations on the edge line equal the "
+             "coefficients of f*g + z*(2*f*g' - 3*f'*g) - 1" if ok else "FAIL",
+             len(derived)))
+    return ok
+
+
 # ------------------------------------------------------------- A2: normalization proof
 def check_normalization(case_no):
     """Executable proof of the A2 claim.
