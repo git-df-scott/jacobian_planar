@@ -11,7 +11,8 @@ mod-p is scouting evidence only; exact Q follows for anything interesting.
 """
 import json, re, subprocess, sys, os, time
 
-P = 65521
+P = int(os.environ.get("JCP", "65521"))  # prime, must be 1 mod 3
+assert P % 3 == 1
 WD = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(WD, "trackB_staged_verdicts.log")
 

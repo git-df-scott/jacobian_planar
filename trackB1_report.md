@@ -321,6 +321,23 @@ T5. One concurrent slimgb lottery ticket on the full system, p = 65521.
 
 (in flight)
 
+FIRST TOWER MEASUREMENTS (--tower-check PASS; --tower-one on the witness S,
+p = 65521): the level maps have LARGE kernels — per level (w: eqs/new/rank/
+kernel/obstructions): 19: 20/22/13/9/0, 18: 20/22/13/9/6, 17: 20/21/13/8/7,
+16: 20/19/11/8/9, 15: 19/17/11/6/8, 14: 19/15/10/5/9, 13: 18/13/9/4/9,
+12: 17/10/7/3/10. Kernel structure explained: (T, (3b/2a) S T) is in the
+level kernel for EVERY T in the c-slice (P += T, Q += (3/2)ST preserves the
+current level), so the moduli at level w contain the whole c-slice(w-12) —
+these are the commuting-family deformation directions, confirming Structure
+Theorem 1 quantitatively. tau-count grows to 52 by w = 12 and the dense
+symbolic carry OVERFLOWS a 200k-term cap there. Obstructions begin at w = 18
+(6 quadratic conditions) and accumulate at 6-10 per level; by the bottom the
+tower yields ~120 obstruction equations on ~55+ taus — heavily
+overdetermined, so per-(a,b,S) death MAY be detected mid-tower once
+substitutions collapse enough taus. Next: lazy-substitution + per-level
+checkpointing + big cap, run the tower to the bottom or to death on
+(i) the witness S, (ii) random S.
+
 ## B1d. Verdicts
 
 (pending)
