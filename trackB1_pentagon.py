@@ -824,6 +824,463 @@ def singular_system(sys_path, p, name=None, timeout=3900, memcap_kb=1800000,
     return run_singular(nm, lines, timeout, memcap_kb)
 
 
+# ===================================================================== TOWER
+# Level-by-level linear tower solver (re-plan after the full-system GB blowup;
+# see trackB1_report.md "Re-plan"). For FIXED (a, b, S) in F_p the case-(1)
+# system with the top-edge parametrization is TRIANGULAR in the (-1,1)-weight:
+# descending levels w = 19..-2, the level-w equations are affine-linear in the
+# newest components P_{w-12} (c-vars on line j-i = w-12) and Q_{w-8} (d-vars on
+# line l-k = w-8) — every other term pairs already-known components (a c-line
+# pairs with the d-TOP line iff it is the newest one, and vice versa; mixed
+# lower pairs were introduced at strictly higher levels). Free parameters
+# (level-map kernels = moduli of the commuting family) are carried SYMBOLICALLY
+# as tau-variables with mod-p polynomial arithmetic; consistency rows give
+# obstruction polynomials in tau, which are substituted away when linear in
+# some tau (exact operation over the field) or recorded. End state per sample:
+# DEAD-at-level-w (an obstruction is a nonzero constant), or SURVIVOR with a
+# residual tau-system (possibly empty = explicit point).
+#
+# Soundness: per sample this is Gaussian elimination over F_p on the exact
+# level equations of the RAW hash-pinned system (with the identity C4 removing
+# level 20), so verdicts are exact for that (a, b, S). The structural split
+# (level equations == raw equations restricted, term classification) is
+# machine-checked by --tower-check against random full assignments.
+
+def _tw_madd(d, m, c, p):
+    v = (d.get(m, 0) + c) % p
+    if v:
+        d[m] = v
+    elif m in d:
+        del d[m]
+
+
+def tw_add(f, g, p):
+    out = dict(f)
+    for m, c in g.items():
+        _tw_madd(out, m, c, p)
+    return out
+
+
+def tw_scale(f, c, p):
+    c %= p
+    if c == 0:
+        return {}
+    return {m: (cc * c) % p for m, cc in f.items()}
+
+
+def tw_mul(f, g, p):
+    out = {}
+    for m1, c1 in f.items():
+        for m2, c2 in g.items():
+            md = dict(m1)
+            for v, e in m2:
+                md[v] = md.get(v, 0) + e
+            _tw_madd(out, tuple(sorted(md.items())), c1 * c2, p)
+    return out
+
+
+def tw_const(f):
+    """If f is a constant polynomial return the constant, else None."""
+    if not f:
+        return 0
+    if len(f) == 1 and () in f:
+        return f[()]
+    return None
+
+
+def tw_subst(f, var, rep, p):
+    """Substitute tau-variable var := rep (a tau-poly) into f."""
+    out = {}
+    for m, c in f.items():
+        md = dict(m)
+        e = md.pop(var, 0)
+        base = {tuple(sorted(md.items())): c}
+        for _ in range(e):
+            base = tw_mul(base, rep, p)
+        out = tw_add(out, base, p)
+    return out
+
+
+def tower_precompute():
+    """Sample-independent structure: slices, per-level classified equations."""
+    data, eqs = load_case1()
+    inert = {"c_0_0", "d_0_0"}
+    cvars = {}
+    dvars = {}
+    for v in data["variables"]:
+        if v in inert:
+            continue
+        kind, i, j = v.split("_")
+        i, j = int(i), int(j)
+        (cvars if kind == "c" else dvars)[v] = j - i
+    # slices: weight -> ordered var list
+    psl, qsl = {}, {}
+    for v, w in cvars.items():
+        psl.setdefault(w, []).append(v)
+    for v, w in dvars.items():
+        qsl.setdefault(w, []).append(v)
+    for sl in (psl, qsl):
+        for w in sl:
+            sl[w].sort(key=lambda s: int(s.split("_")[1]))
+    assert sorted(psl) == list(range(-1, 9)), sorted(psl)
+    assert sorted(qsl) == list(range(-1, 13)), sorted(qsl)
+    assert qsl[-1] == ["d_2_1"] and psl[-1] == ["c_1_0"]
+    # group equations by weight; classify terms per level
+    levels = {}
+    for bp, poly in eqs:
+        w = bp[1] - bp[0]
+        levels.setdefault(w, []).append((bp, poly))
+    assert max(levels) == 20 and min(levels) == -2
+    # level-20 equations are killed identically by the parametrization (C4).
+    lv = {}
+    for w in range(19, -3, -1):
+        lst = []
+        for bp, poly in levels.get(w, []):
+            newc, newd, known, const = [], [], [], 0
+            for mono, coeff in poly.items():
+                if len(mono) == 0:
+                    const = coeff
+                    continue
+                # bilinear c*d terms (exponents always 1 in the raw system),
+                # or the single inhomogeneous constant
+                assert len(mono) == 2 and mono[0][1] == 1 and mono[1][1] == 1, \
+                    (bp, mono)
+                names = sorted(v for v, _ in mono)
+                cn = [v for v in names if v.startswith("c")][0]
+                dn = [v for v in names if v.startswith("d")][0]
+                vc, vd = cvars[cn], dvars[dn]
+                assert vc + vd == w, (bp, mono, vc, vd)
+                if vc == w - 12 and -1 <= w - 12 <= 7 and vd == 12:
+                    newc.append((cn, dn, coeff))
+                elif vd == w - 8 and 0 <= w - 8 <= 11 and vc == 8:
+                    newd.append((cn, dn, coeff))
+                else:
+                    known.append((cn, dn, coeff))
+            lst.append({"bp": bp, "newc": newc, "newd": newd,
+                        "known": known, "const": const})
+        lv[w] = lst
+    return {"psl": psl, "qsl": qsl, "cvars": cvars, "dvars": dvars,
+            "levels": lv, "raw_eqs": eqs, "data": data}
+
+
+def s_powers(svec, p):
+    """[S^2] and [S^3] coefficient lists mod p for S with coeffs svec (len 5)."""
+    s2 = [0] * 9
+    for i in range(5):
+        for j in range(5):
+            s2[i + j] = (s2[i + j] + svec[i] * svec[j]) % p
+    s3 = [0] * 13
+    for i in range(9):
+        for j in range(5):
+            s3[i + j] = (s3[i + j] + s2[i] * svec[j]) % p
+    return s2, s3
+
+
+def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
+    """Run the tower for one (a, b, svec) sample mod p.
+
+    Returns dict with outcome in {"DEAD", "SURVIVOR"}, dead_level,
+    per-level stats, residual obstructions, component values (tau-polys),
+    and the tau substitution log."""
+    s2, s3 = s_powers(svec, p)
+    topc = {v: (a * s2[i]) % p for i, v in enumerate(pre["psl"][8])}
+    topd = {v: (b * s3[k]) % p for k, v in enumerate(pre["qsl"][12])}
+    # value store: var name -> tau-poly (constants for top and d_2_1)
+    val = {v: ({(): c} if c else {}) for v, c in topc.items()}
+    for v, c in topd.items():
+        val[v] = {(): c} if c else {}
+    val["d_2_1"] = {(): 1}
+    ntau = 0
+    obstructions = []        # list of (level, tau-poly)
+    subs_log = []            # (tau, level) substitutions applied
+    stats = []
+    dead = None
+
+    def substitute(tau, rep, level):
+        nonlocal obstructions
+        for k in list(val):
+            val[k] = tw_subst(val[k], tau, rep, p)
+        newo = []
+        for (lw, ob) in obstructions:
+            ob2 = tw_subst(ob, tau, rep, p)
+            c = tw_const(ob2)
+            if c is None:
+                newo.append((lw, ob2))
+            elif c != 0:
+                return ("DEAD", lw)
+        obstructions = newo
+        subs_log.append((tau, level))
+        return None
+
+    for w in range(19, -3, -1):
+        eqs = pre["levels"][w]
+        newvars = []
+        if -1 <= w - 12 <= 7:
+            newvars += pre["psl"][w - 12]
+        if 0 <= w - 8 <= 11:
+            newvars += pre["qsl"][w - 8]
+        col = {v: i for i, v in enumerate(newvars)}
+        nrow, ncol = len(eqs), len(newvars)
+        M = [[0] * ncol for _ in range(nrow)]
+        R = []
+        for r, e in enumerate(eqs):
+            if e["const"]:
+                cst = (e["const"].numerator *
+                       pow(e["const"].denominator, p - 2, p)) % p
+            else:
+                cst = 0
+            rhs = {(): (-cst) % p} if cst else {}
+            for cn, dn, coeff in e["newc"]:
+                M[r][col[cn]] = (M[r][col[cn]] + coeff.numerator *
+                                pow(coeff.denominator, p - 2, p) *
+                                tw_const(val[dn])) % p
+            for cn, dn, coeff in e["newd"]:
+                M[r][col[dn]] = (M[r][col[dn]] + coeff.numerator *
+                                pow(coeff.denominator, p - 2, p) *
+                                tw_const(val[cn])) % p
+            for cn, dn, coeff in e["known"]:
+                cc = (coeff.numerator * pow(coeff.denominator, p - 2, p)) % p
+                prod = tw_mul(val[cn], val[dn], p)
+                rhs = tw_add(rhs, tw_scale(prod, (-cc) % p, p), p)
+            R.append(rhs)
+        # Gaussian elimination on M (numeric), applying row ops to R (tau-polys)
+        piv = {}      # col -> row
+        rowperm = list(range(nrow))
+        rank = 0
+        for c in range(ncol):
+            sel = None
+            for r in range(rank, nrow):
+                if M[rowperm[r]][c] % p:
+                    sel = r
+                    break
+            if sel is None:
+                continue
+            rowperm[rank], rowperm[sel] = rowperm[sel], rowperm[rank]
+            pr = rowperm[rank]
+            inv = pow(M[pr][c], p - 2, p)
+            M[pr] = [(x * inv) % p for x in M[pr]]
+            R[pr] = tw_scale(R[pr], inv, p)
+            for r2 in range(nrow):
+                pr2 = rowperm[r2]
+                if pr2 != pr and M[pr2][c]:
+                    f = M[pr2][c]
+                    M[pr2] = [(x - f * y) % p for x, y in zip(M[pr2], M[pr])]
+                    if R[pr]:
+                        R[pr2] = tw_add(R[pr2], tw_scale(R[pr], (-f) % p, p), p)
+            piv[c] = pr
+            rank += 1
+        # free columns -> fresh taus
+        freecols = [c for c in range(ncol) if c not in piv]
+        tau_of = {}
+        for c in freecols:
+            tau_of[c] = "t%d" % ntau
+            ntau += 1
+        # assign new component values
+        for c, v in enumerate(newvars):
+            if c in piv:
+                expr = dict(R[piv[c]])
+                for fc in freecols:
+                    coefffc = M[piv[c]][fc]
+                    if coefffc:
+                        _tw_madd(expr, ((tau_of[fc], 1),), (-coefffc) % p, p)
+                val[v] = expr
+            else:
+                val[v] = {((tau_of[c], 1),): 1}
+        # consistency rows: zero M-row but nonzero RHS -> obstruction
+        level_obs = 0
+        for r in range(rank, nrow):
+            pr = rowperm[r]
+            ob = R[pr]
+            cst = tw_const(ob)
+            if cst is None:
+                obstructions.append((w, ob))
+                level_obs += 1
+            elif cst != 0:
+                dead = ("DEAD", w)
+                break
+        stats.append({"w": w, "eqs": nrow, "new": ncol, "rank": rank,
+                      "kernel": len(freecols), "obstructions": level_obs})
+        if dead:
+            break
+        # try to resolve obstructions LINEAR in a tau (exact substitution)
+        progress = True
+        while progress and not dead:
+            progress = False
+            for idx, (lw, ob) in enumerate(obstructions):
+                lin = None
+                for m, c in ob.items():
+                    if len(m) == 1 and m[0][1] == 1:
+                        t = m[0][0]
+                        others = any(t == mv for mm, _ in ob.items()
+                                     for mv, me in mm
+                                     if mm != m and (mv == t))
+                        if not others:
+                            lin = (t, c, m)
+                            break
+                if lin:
+                    t, c, m = lin
+                    rest = {mm: cc for mm, cc in ob.items() if mm != m}
+                    rep = tw_scale(rest, (-pow(c, p - 2, p)) % p, p)
+                    del obstructions[idx]
+                    dd = substitute(t, rep, lw)
+                    if dd:
+                        dead = dd
+                    progress = True
+                    break
+        if dead:
+            break
+        # size guard
+        total_terms = sum(len(v) for v in val.values())
+        if total_terms > max_tau_terms:
+            return {"outcome": "OVERFLOW", "level": w, "stats": stats,
+                    "ntau": ntau, "total_terms": total_terms}
+    if dead:
+        return {"outcome": "DEAD", "dead_level": dead[1], "stats": stats,
+                "ntau": ntau, "nsub": len(subs_log)}
+    # survivor: residual obstruction system in surviving taus
+    live_taus = sorted({v for (_, ob) in obstructions for m in ob
+                        for v, _ in m},
+                       key=lambda s: int(s[1:]))
+    # vertex nonzero conditions that are tau-polys
+    nz = {}
+    for v in ("c_8_14", "d_12_21", "c_1_0"):
+        nz[v] = val[v]
+    return {"outcome": "SURVIVOR", "stats": stats, "ntau": ntau,
+            "nsub": len(subs_log),
+            "obstructions": [(lw, ob) for lw, ob in obstructions],
+            "live_taus": live_taus, "val": val, "nonzero_polys": nz}
+
+
+def tower_check(p=65521, seed=12345, n=5):
+    """Structural validation: for random FULL assignments (all c, d numeric),
+    the per-level assembled equations (M z - R with actual values) must equal
+    the raw equations' values. Validates term classification/indexing/signs."""
+    import random
+    rng = random.Random(seed)
+    pre = tower_precompute()
+    ok_all = True
+    for trial in range(n):
+        assign = {}
+        for v in list(pre["cvars"]) + list(pre["dvars"]):
+            assign[v] = rng.randrange(p)
+        # honest raw residuals by weight
+        raw_by_bp = {}
+        for bp, poly in pre["raw_eqs"]:
+            tot = 0
+            for mono, coeff in poly.items():
+                t = (coeff.numerator * pow(coeff.denominator, p - 2, p)) % p
+                for v, e in mono:
+                    t = (t * pow(assign[v], e, p)) % p
+                tot = (tot + t) % p
+            raw_by_bp[bp] = tot
+        # tower-side: for each level w <= 19, rebuild M,R with val := assign
+        # (numeric) and check M z + (-R) == raw residual rowwise.
+        for w in range(19, -3, -1):
+            for e in pre["levels"][w]:
+                tot = 0
+                if e["const"]:
+                    tot = (e["const"].numerator *
+                           pow(e["const"].denominator, p - 2, p)) % p
+                for grp in ("newc", "newd", "known"):
+                    for cn, dn, coeff in e[grp]:
+                        cc = (coeff.numerator *
+                              pow(coeff.denominator, p - 2, p)) % p
+                        cv = assign[cn] if cn != "d_2_1" else 1
+                        dv = assign[dn]
+                        tot = (tot + cc * cv * dv) % p
+                if tot != raw_by_bp[e["bp"]]:
+                    ok_all = False
+                    print("tower-check MISMATCH at %s (w=%d)" % (e["bp"], w))
+        # also: level-20 must be exactly the 19 parametrized-away equations
+    n20 = sum(1 for bp, _ in pre["raw_eqs"] if bp[1] - bp[0] == 20)
+    print("tower-check: level-20 equation count = %d (expect 19)" % n20)
+    print("tower-check: raw-vs-assembled residual agreement on %d random "
+          "assignments: %s" % (n, "PASS" if ok_all and n20 == 19 else "FAIL"))
+    return ok_all and n20 == 19
+
+
+def tower_scan(p, nsamples, seed=1, out_name=None, witness_first=True):
+    """Random (a, b, S) scan mod p. Aggregates outcomes; checkpoints every
+    25 samples; dumps any survivor's residual system."""
+    import random
+    assert p % 3 == 1
+    rng = random.Random(seed)
+    pre = tower_precompute()
+    nm = out_name or ("trackB1_tower_scan_p%d" % p)
+    path = os.path.join(HERE, nm + ".json")
+    state = {"p": p, "seed": seed, "done": 0, "outcomes": {},
+             "dead_levels": {}, "kernel_profile": None, "survivors": [],
+             "overflow": 0, "started": time.time()}
+    if os.path.exists(path):
+        try:
+            old = json.load(open(path))
+            if old.get("p") == p and old.get("seed") == seed:
+                state = old
+                # fast-forward rng deterministically
+                for _ in range(state["done"]):
+                    for _ in range(6):
+                        rng.randrange(p)
+                print("tower-scan: resuming at sample %d" % state["done"])
+        except Exception:
+            pass
+    t0 = time.time()
+    first = state["done"] == 0
+    while state["done"] < nsamples:
+        if first and witness_first:
+            a, b = 1, 1
+            svec = [1, 0, 0, 0, 1]      # the exact-witness S (h = 1 + u^4)
+            first = False
+        else:
+            a = 1 + rng.randrange(p - 1)
+            b = 1 + rng.randrange(p - 1)
+            svec = [1, rng.randrange(p), rng.randrange(p), rng.randrange(p),
+                    1 + rng.randrange(p - 1)]
+            rng.randrange(p)            # keep stride = 6 draws/sample
+        res = tower_run(pre, p, a, b, svec)
+        oc = res["outcome"]
+        state["outcomes"][oc] = state["outcomes"].get(oc, 0) + 1
+        if oc == "DEAD":
+            dl = str(res["dead_level"])
+            state["dead_levels"][dl] = state["dead_levels"].get(dl, 0) + 1
+        elif oc == "OVERFLOW":
+            state["overflow"] += 1
+        elif oc == "SURVIVOR":
+            surv = {"a": a, "b": b, "svec": svec,
+                    "ntau": res["ntau"], "live_taus": res["live_taus"],
+                    "n_obstructions": len(res["obstructions"]),
+                    "obstruction_levels": sorted({lw for lw, _ in
+                                                  res["obstructions"]}),
+                    "obstruction_sizes": [len(ob) for _, ob in
+                                          res["obstructions"]],
+                    "nonzero_poly_sizes": {k: len(v) for k, v in
+                                           res["nonzero_polys"].items()}}
+            # store the residual system itself for small ones
+            if sum(len(ob) for _, ob in res["obstructions"]) < 20000:
+                surv["obstructions"] = [
+                    [lw, [[list(map(list, m)), c] for m, c in ob.items()]]
+                    for lw, ob in res["obstructions"]]
+                surv["nonzero_polys"] = {
+                    k: [[list(map(list, m)), c] for m, c in v.items()]
+                    for k, v in res["nonzero_polys"].items()}
+            state["survivors"].append(surv)
+        if state["kernel_profile"] is None and oc in ("DEAD", "SURVIVOR"):
+            state["kernel_profile"] = res["stats"]
+        state["done"] += 1
+        if state["done"] % 25 == 0 or state["done"] == nsamples:
+            state["rate_per_s"] = state["done"] / max(1e-9, time.time() - t0)
+            with open(path, "w") as fh:
+                json.dump(state, fh)
+            print("tower-scan: %d/%d done (%.1f/s) outcomes=%s dead_levels=%s"
+                  " survivors=%d" % (state["done"], nsamples,
+                                     state["rate_per_s"], state["outcomes"],
+                                     state["dead_levels"],
+                                     len(state["survivors"])), flush=True)
+    with open(path, "w") as fh:
+        json.dump(state, fh)
+    print("tower-scan: DONE -> %s" % path)
+    return state
+
+
 # ----------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -840,7 +1297,45 @@ def main():
     ap.add_argument("--peel", nargs="+", metavar="ARG",
                     help="P [NAME [TIMEOUT_S [MEMCAP_KB]]] — weight-peeling "
                          "incremental GB with checkpoints + resume")
+    ap.add_argument("--tower-check", action="store_true",
+                    help="validate the tower level split against random full "
+                         "assignments of the raw system")
+    ap.add_argument("--tower-scan", nargs="+", metavar="ARG",
+                    help="P NSAMPLES [SEED [NAME]] — random (a,b,S) tower scan")
+    ap.add_argument("--tower-one", nargs="+", metavar="ARG",
+                    help="P a b s1 s2 s3 s4 — run one tower sample verbosely "
+                         "(s0 = 1)")
     args = ap.parse_args()
+    if args.tower_check:
+        ok = tower_check()
+        sys.exit(0 if ok else 1)
+    if args.tower_scan:
+        a = args.tower_scan
+        tower_scan(int(a[0]), int(a[1]), int(a[2]) if len(a) > 2 else 1,
+                   a[3] if len(a) > 3 else None)
+        return
+    if args.tower_one:
+        a = [int(x) for x in args.tower_one]
+        p = a[0]
+        pre = tower_precompute()
+        res = tower_run(pre, p, a[1], a[2], [1] + a[3:7])
+        print("outcome:", res["outcome"],
+              "dead_level:", res.get("dead_level"))
+        for st in res["stats"]:
+            print("  w=%3d eqs=%2d new=%2d rank=%2d ker=%2d obs=%2d"
+                  % (st["w"], st["eqs"], st["new"], st["rank"], st["kernel"],
+                     st["obstructions"]))
+        print("ntau:", res.get("ntau"), "nsub:", res.get("nsub"))
+        if res["outcome"] == "SURVIVOR":
+            print("live taus:", res["live_taus"])
+            print("residual obstructions (level, #terms):",
+                  [(lw, len(ob)) for lw, ob in res["obstructions"]])
+            for lw, ob in res["obstructions"]:
+                if len(ob) <= 12:
+                    print("   w=%d: %s" % (lw, ob))
+            print("nonzero polys sizes:",
+                  {k: len(v) for k, v in res["nonzero_polys"].items()})
+        return
     if args.derive:
         ok = derive()
         sys.exit(0 if ok else 1)

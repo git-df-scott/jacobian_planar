@@ -246,7 +246,7 @@ weight <= 7, so the scout target is the FULL normalized substituted system
 input total ~8.6k terms, far sparser than the eliminator leaf whose
 substitutions inflated it to ~67k terms).
 
-Plan of record (in flight):
+Plan of record (superseded — see POST-MORTEM below):
 1. Full system, p = 65521, dp, Rabinowitsch, option(prot), 6.2GB vmem cap,
    output streamed to trackB1_sysfull_p65521.out (survives restarts).
 2. If it finishes: repeat at p = 65497, 65479 (one Singular at a time — CPU
@@ -261,7 +261,65 @@ F3. --peel: incremental GB down the weight tower, per-stage ASCII checkpoints
     Caveat: the top stage repeats the trunc19 GB, which needed > 866MB —
     peeling is not obviously cheaper, but it localizes any death level.
 
-(running)
+POST-MORTEM of run 1 (read from trackB1_sysfull_p65521.out, 2026-08-13 ~20:5x UTC):
+the std run was killed by the container restart at 15:40 UTC after ~70 min.
+Protocol tail shows the critical-pair queue at ~365,000 AND STILL GROWING
+(341k -> 365k across the last output block), basis still absorbing new
+elements. No basis, no dim, no verdict. VERDICT ON THE METHOD: plain
+std/dp on the full 287-gen system mod p is not going to terminate in
+container-lifetime; the queue growth is super-linear. Next Singular attempt
+(one process at a time per CPU courtesy): slimgb (fill-in-resistant) on the
+same input. But the PRIMARY attack is re-planned around the weight-tower
+triangularity (below) — linear algebra, not GB.
+
+### Re-plan (2026-08-13 20:5x UTC): the tower is TRIANGULAR — solve it by
+### level-by-level linear algebra, not GB
+
+Structural observation (derivable from B1a machinery, to be machine-verified):
+grade everything by v(x^i y^j) = j - i. P = sum_{w=-1}^{8} P_w,
+Q = sum_{w=-1}^{12} Q_w (support slices of the pentagons), and [P,Q] = x^2
+splits into weight levels w = 20 .. -2:
+  sum_{p+q=w} [P_p, Q_q] = (w == -2 ? x^2 : 0).
+Level 20 is [P_8, Q_12] = 0 = the S-parametrization (B1a: P_8 = a S^2,
+Q_12 = b S^3). For w < 20 the ONLY terms containing the newest components
+P_{w-12}, Q_{w-8} are [P_{w-12}, Q_12] + [P_8, Q_{w-8}]
+  = 3 b S^2 [P_{w-12}, S] + 2 a S [S, Q_{w-8}]   (Leibniz),
+everything else involving components already introduced at HIGHER levels.
+So for FIXED (S, a, b) the system is a triangular tower of LINEAR solves
+(new components) with obstruction residuals (cokernel conditions), levels
+19 down to 11 introduce (P_{w-12}, Q_{w-8}), levels 10..7 only Q_{w-8},
+levels 6..-2 introduce NOTHING — pure obstruction equations. Kernel of the
+level map = free parameters (carried forward); centralizer theory says for
+squarefree h the kernels should be tiny (Cent(S) at weight v nonzero iff
+w^4 = c h^v solvable, i.e. v = 0 mod 4 for h not a perfect power).
+
+Consequences for compute: per fixed (S, a, b) in F_p the whole tower is a
+few dozen small (<= ~30-dim) F_p linear solves — microseconds-to-
+milliseconds, no GB, no fill-in. Verification anchor: any surviving
+(S, a, b, components) point is assembled into full (c, d) coefficient
+vectors and checked against the hash-pinned RAW case-1 system (302
+equations) + vertex nonzero conditions — the tower is a search
+reorganization, the raw system is the judge.
+
+New plan of record:
+T1. Implement --tower (build slices/operators) + --tower-scan (random
+    (S,a,b) samples mod p, kernel-dim profile + obstruction outcomes +
+    survivor extraction) in trackB1_pentagon.py. Cross-validate the tower
+    on the exact witness family (must reproduce its 7 known violations).
+T2. Random scan at p = 65521 (>= 10k samples): if survivors, verify vs raw
+    system, save trackB1_tower_survivors.json, characterize. If none:
+    kernel-profile census tells us where life could hide (factorization
+    types of the quartic h).
+T3. Special loci: h with repeated roots (types 211/22/31/4), small
+    parametric families — exhaustive scan per type mod p.
+T4. If per-sample cost allows: EXHAUSTIVE sweep at p = 31 (31 = 1 mod 3,
+    and 31 > 24 = deg f^3 keeps the B1a UFD derivation valid mod p, so an
+    empty sweep = genuine "case (1) has no F_31-point with d_2_1
+    normalized" statement — modulo (a,b)-coset care for the degree-5
+    isogeny, enumerate coker representatives).
+T5. One concurrent slimgb lottery ticket on the full system, p = 65521.
+
+(in flight)
 
 ## B1d. Verdicts
 
