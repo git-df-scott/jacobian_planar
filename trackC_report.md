@@ -69,12 +69,48 @@ Verdict: C1 VERIFIED (with the rho-vs-s refinement noted above).
 
 ## C2 — the ten forced R's at (72,108)
 
-- [ ] Derive actual D(k) from C1 relations (test the handoff guess D = 3k+4)
-- [ ] Pole order p = (a+b)m - 1 forced (derive from ODE local analysis at U=0)
-- [ ] Solve the ODE for S (deg-4 polynomial) for k = 3..12; uniqueness up to scalar
-- [ ] Check handoff k=3: S = 243v^4 - 81v^3 + 54v^2 - 42v + 35, c = -455
+STATUS: COMPLETE (OPUS_PLAN P4, mechanical part). Executable:
+`python3 trackC_phase4.py c2` — 5 PASS, 0 FAIL, exact over Q.
+Artifact: trackC_c2_tenR.json.
 
-Table: PENDING
+- [x] D(k) DERIVED from the C1 q-order matching, not guessed:
+      D = (a+b)k + 1 - s = **5k - 2** in the handoff frame (a+b = 5, s = 3).
+      **The handoff guess D = 3k+4 is WRONG.** It coincides at k = 3
+      (13 = 13) and diverges from k = 4 on (18 vs 16). See the discrepancy
+      log — this one is not cosmetic: under the guessed D, the k = 4 slice
+      comes back DEAD_resonance, i.e. the wrong relation manufactures a
+      spurious death. Under the derived D it is alive with a forced R.
+- [x] Pole order p = (a+b)m - 1 = 4 confirmed EXACT, not just an upper bound:
+      S(-1) != 0 for all ten instances, verified via the consistency identity
+      E(-1) = -(D*m - k*p)*S(-1) = -c.
+- [x] ODE solved for k = 3..12: every one of the ten carries a forced R with
+      deg S = 4, each passing the exact block check.
+- [x] Uniqueness up to scalar for all ten (k never divides D on this range, and
+      no pole resonance D*m = k*p occurs), so the scalar is absorbed by
+      alpha^(a+b) and the R's are genuinely forced.
+- [x] Handoff k = 3 cross-check: our forced S is **identical** to the handoff's
+      S = 243v^4 - 81v^3 + 54v^2 - 42v + 35. |c| = 455 agrees; the sign does
+      not (ours +455 in the C1e-verified convention, handoff -455) — logged
+      below as a convention discrepancy, not a mathematical one.
+
+| k | D = 5k-2 | S (primitive, leading coeff > 0) | c (alpha = 1) |
+|---|---|---|---|
+| 3 | 13 | 243v^4 - 81v^3 + 54v^2 - 42v + 35 | 455 |
+| 4 | 18 | 128v^4 - 64v^3 + 48v^2 - 40v + 35 | 630 |
+| 5 | 23 | 625v^4 - 375v^3 + 300v^2 - 260v + 234 | 5382 |
+| 6 | 28 | 243v^4 - 162v^3 + 135v^2 - 120v + 110 | 3080 |
+| 7 | 33 | 2401v^4 - 1715v^3 + 1470v^2 - 1330v + 1235 | 40755 |
+| 8 | 38 | 2048v^4 - 1536v^3 + 1344v^2 - 1232v + 1155 | 43890 |
+| 9 | 43 | 19683v^4 - 15309v^3 + 13608v^2 - 12600v + 11900 | 511700 |
+| 10 | 48 | 625v^4 - 500v^3 + 450v^2 - 420v + 399 | 19152 |
+| 11 | 53 | 14641v^4 - 11979v^3 + 10890v^2 - 10230v + 9765 | 517545 |
+| 12 | 58 | 31104v^4 - 25920v^3 + 23760v^2 - 22440v + 21505 | 1247290 |
+
+SCOPE NOTE (not a conclusion — input for C4/Fable). The D-relation
+D = (a+b)k + 1 - s carries two unknowns; the table above fixes s = 3, the
+handoff frame. Which (rho, s, m, sigma) slices are admissible at all is the
+C4 lattice question, which OPUS_PLAN P4 marks Fable-grade and which is
+therefore NOT decided here. Every number above is conditional on s = 3.
 
 ## C3 — k=3, D=13 realization layer at (72,108)
 
@@ -88,11 +124,48 @@ Verdict: PENDING
 ## C4 — admissible (rho, m) lattice beyond (3,1)
 
 Constraints: sigma = (1 + rho - rho^2)/(a+b) integral; positivity; D = (a+b)k + 1 - rho >= 1.
-List of unexamined slices: PENDING
+
+STATUS: **INPUTS PREPARED, CONCLUSIONS DEFERRED.** OPUS_PLAN P4 marks C4
+Fable-grade ("do NOT attempt conclusions there; prepare clean inputs and
+escalate"), so this session ran the enumeration and stopped there. It draws no
+verdict about which slices matter.
+
+`python3 trackC_phase4.py c4` — 4 PASS, 0 FAIL, artifact trackC_c4_lattice.json.
+What the run produced, as data:
+
+- the admissible (rho, m) slices in the window with, per slice, the k values
+  admitting a forced R (e.g. (28,7) admits k in {6, 8, 12});
+- 12 slices in the window that are dead for every k = 1..14 — (3,2), (8,4),
+  (13,2), (13,8), (18,2), (18,3), (18,4), (18,8), (23,4), (23,7), (28,2), (28,6);
+- explicit forced R's (S primitive, c/alpha^5) for the first unexamined
+  instances (3,1,k), k = 4..11 — these coincide with the C2 table, which is a
+  consistency check between the two code paths, not new information;
+- an independent sympy cross-check of a novel instance
+  (k, D, m, sigma) = (4, 18, 1, -1): block == const * v^(5 sigma - 1), const = -630;
+- the REFINED frame with rho != s allowed (the C1d generalization): the
+  integrality condition becomes rho*(s-1) = 1 (mod 5); in the window
+  rho, s <= 12 that is 23 slices, 22 of them unexamined. sigma = 0 occurs only
+  at (rho, s) = (1, 2), where k*t + D*sigma = 0 at t = 0 forces c = 0.
+
+For Fable: the open question this data poses — which of the 22 unexamined
+refined slices are geometrically realizable at (72,108), and whether the
+t != 0 branch at (1,2) is live — is exactly the C4 judgment call, untouched
+here.
 
 ## Discrepancy log
 
 (every mismatch vs the handoff gets a line here)
+
+- **C1d, rho vs s**: the handoff's order-matching relations are the special
+  case rho = s. The D-relation involves only s; rho enters only through sigma.
+- **C2, D(k)**: handoff guess D = 3k+4 vs derived D = 5k-2. Agree at k = 3
+  only. Consequence: the guess makes k = 4 look DEAD (resonance) when the
+  derived relation gives it a forced R. Any handoff statement about k >= 4
+  slices that leaned on D = 3k+4 must be re-read.
+- **C2, sign of c**: handoff c = -455 at k = 3; our C1e-verified convention
+  gives c = +455. |c| agrees and S agrees exactly. Convention, not
+  mathematics — but it must be pinned before any statement compares a c
+  across the two epochs.
 
 ## Final verdicts
 

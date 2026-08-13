@@ -64,6 +64,21 @@ above-125 chains is in scope, with the intended method; or (b) redirect P3's
 CPU to the tracks that still have well-posed inputs (P1/P2 exact-Q work, and
 the pentagon endgame's bottom-weight structure, item 2).
 
+**Engine calibration (P3's first step) — done, and it says something useful.**
+P3 says to benchmark the new engine on the known-EMPTY (8,28) case-(2) system
+before starting. msolve was installed and pointed at exactly that: the RAW
+hash-pinned case-(2) system (`trackA_system_case2.json`, f27a28a2..., 72
+unknowns / 92 equations, plus one Rabinowitsch tie for the six vertex
+conditions = 73 vars / 93 polys), p = 65521, DRL, 2 threads. It grew past
+10 GB in about 8 minutes and was killed by the kernel without producing a
+basis or a verdict. Under an explicit address-space cap it instead dies inside
+its monomial hash-table growth. Conclusion for planning: **msolve is not
+usable on the raw, un-eliminated systems of this family on this box** — the
+campaign's elimination-first pipeline (sound or-branching, edge eliminant,
+per-branch staged closure) is not an accident of taste, it is what makes these
+systems finite. Any above-125 plan should assume the same pipeline, not a
+direct GB, whatever the engine.
+
 ---
 
 ## Item 2 (measured, P0/T2 and P0/T4) — per-sample tower cost is 4-6 orders of magnitude off

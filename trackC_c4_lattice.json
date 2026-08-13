@@ -1,0 +1,5038 @@
+{
+ "frame": "rho=s, t=0, (a,b)=(2,3)",
+ "relations": {
+  "D": "5k+1-rho",
+  "sigma": "(1+rho-rho^2)/5",
+  "p": "5m-1",
+  "d": "(5m-1) - D(m+sigma)/k",
+  "c": "-alpha^5*(kt+D sigma)*s_0"
+ },
+ "window": {
+  "rho": "3..28 (rho=3 mod 5)",
+  "m": "1..8",
+  "k": "1..14"
+ },
+ "slices": [
+  {
+   "rho": 3,
+   "m": 1,
+   "sigma": -1,
+   "m_plus_sigma": 0,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 4
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 4
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "13",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "18",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "23",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "28",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "38",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "43",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "48",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "53",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "58",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "63",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "FORCED_R",
+     "d": 4,
+     "c_over_alpha5_s0norm": "68",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 2,
+   "sigma": -1,
+   "m_plus_sigma": 1,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 6
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 5
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 3,
+   "m": 3,
+   "sigma": -1,
+   "m_plus_sigma": 2,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 8
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 6
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "18",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 4,
+   "sigma": -1,
+   "m_plus_sigma": 3,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 10
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 7
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 6,
+     "c_over_alpha5_s0norm": "13",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "28",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 5,
+   "sigma": -1,
+   "m_plus_sigma": 4,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 12
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 8
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 6,
+     "c_over_alpha5_s0norm": "18",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "38",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 6,
+   "sigma": -1,
+   "m_plus_sigma": 5,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 14
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 9
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 6,
+     "c_over_alpha5_s0norm": "23",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "48",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 7,
+   "sigma": -1,
+   "m_plus_sigma": 6,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 16
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 10
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 8,
+     "c_over_alpha5_s0norm": "13",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 7,
+     "c_over_alpha5_s0norm": "18",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 6,
+     "c_over_alpha5_s0norm": "28",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "58",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 3,
+   "m": 8,
+   "sigma": -1,
+   "m_plus_sigma": 7,
+   "instances": [
+    {
+     "k": 1,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 18
+    },
+    {
+     "k": 2,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 11
+    },
+    {
+     "k": 3,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 6,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 68,
+     "verdict": "FORCED_R",
+     "d": 5,
+     "c_over_alpha5_s0norm": "68",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 1,
+   "sigma": -11,
+   "m_plus_sigma": -10,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 19,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 40,
+     "c_over_alpha5_s0norm": "198",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 44
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "473",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "FORCED_R",
+     "d": 49,
+     "c_over_alpha5_s0norm": "693",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 2,
+   "sigma": -11,
+   "m_plus_sigma": -9,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 33,
+     "c_over_alpha5_s0norm": "88",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 45
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "418",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 3,
+   "sigma": -11,
+   "m_plus_sigma": -8,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 26,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 40,
+     "c_over_alpha5_s0norm": "143",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 46
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "363",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "FORCED_R",
+     "d": 50,
+     "c_over_alpha5_s0norm": "693",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 4,
+   "sigma": -11,
+   "m_plus_sigma": -7,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 47
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 8,
+   "m": 5,
+   "sigma": -11,
+   "m_plus_sigma": -6,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 33,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 40,
+     "c_over_alpha5_s0norm": "88",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "253",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 48
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "FORCED_R",
+     "d": 51,
+     "c_over_alpha5_s0norm": "693",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 6,
+   "sigma": -11,
+   "m_plus_sigma": -5,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "198",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 49
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 7,
+   "sigma": -11,
+   "m_plus_sigma": -4,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 40,
+     "c_over_alpha5_s0norm": "33",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "143",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 50
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "FORCED_R",
+     "d": 52,
+     "c_over_alpha5_s0norm": "693",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 8,
+   "m": 8,
+   "sigma": -11,
+   "m_plus_sigma": -3,
+   "instances": [
+    {
+     "k": 1,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 3,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 47,
+     "c_over_alpha5_s0norm": "88",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 4,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 28,
+     "verdict": "DEAD_resonance",
+     "d": 51
+    },
+    {
+     "k": 8,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 63,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 1,
+   "sigma": -31,
+   "m_plus_sigma": -30,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 34
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 64
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 82,
+     "c_over_alpha5_s0norm": "403",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 94
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 109,
+     "c_over_alpha5_s0norm": "868",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 114,
+     "c_over_alpha5_s0norm": "1023",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 118,
+     "c_over_alpha5_s0norm": "1178",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 124
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 2,
+   "sigma": -31,
+   "m_plus_sigma": -29,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 38
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 67
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 96
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 125
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 13,
+   "m": 3,
+   "sigma": -31,
+   "m_plus_sigma": -28,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 42
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 70
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 98
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 106,
+     "c_over_alpha5_s0norm": "713",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 112,
+     "c_over_alpha5_s0norm": "868",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 126
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "FORCED_R",
+     "d": 130,
+     "c_over_alpha5_s0norm": "1798",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 4,
+   "sigma": -31,
+   "m_plus_sigma": -27,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 46
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 73
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 100
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 118,
+     "c_over_alpha5_s0norm": "1023",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 127
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 5,
+   "sigma": -31,
+   "m_plus_sigma": -26,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 50
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 76
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 102
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 115,
+     "c_over_alpha5_s0norm": "868",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 128
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "FORCED_R",
+     "d": 130,
+     "c_over_alpha5_s0norm": "1643",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 6,
+   "sigma": -31,
+   "m_plus_sigma": -25,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 54
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 79
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 94,
+     "c_over_alpha5_s0norm": "403",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 104
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 124,
+     "c_over_alpha5_s0norm": "1178",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 129
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 7,
+   "sigma": -31,
+   "m_plus_sigma": -24,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 58
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 82
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 106
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 118,
+     "c_over_alpha5_s0norm": "868",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 122,
+     "c_over_alpha5_s0norm": "1023",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 130
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 13,
+   "m": 8,
+   "sigma": -31,
+   "m_plus_sigma": -23,
+   "instances": [
+    {
+     "k": 1,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": 3,
+     "verdict": "DEAD_resonance",
+     "d": 62
+    },
+    {
+     "k": 4,
+     "D": 8,
+     "verdict": "DEAD_resonance",
+     "d": 85
+    },
+    {
+     "k": 5,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 108
+    },
+    {
+     "k": 7,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 48,
+     "verdict": "DEAD_resonance",
+     "d": 131
+    },
+    {
+     "k": 13,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 58,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 18,
+   "m": 1,
+   "sigma": -61,
+   "m_plus_sigma": -60,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 49,
+     "c_over_alpha5_s0norm": "183",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 100,
+     "c_over_alpha5_s0norm": "488",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 134,
+     "c_over_alpha5_s0norm": "793",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 202,
+     "c_over_alpha5_s0norm": "2013",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "FORCED_R",
+     "d": 219,
+     "c_over_alpha5_s0norm": "2623",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 18,
+   "m": 2,
+   "sigma": -61,
+   "m_plus_sigma": -59,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 18,
+   "m": 3,
+   "sigma": -61,
+   "m_plus_sigma": -58,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 18,
+   "m": 4,
+   "sigma": -61,
+   "m_plus_sigma": -57,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 18,
+   "m": 5,
+   "sigma": -61,
+   "m_plus_sigma": -56,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 66,
+     "c_over_alpha5_s0norm": "183",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 168,
+     "c_over_alpha5_s0norm": "1098",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 185,
+     "c_over_alpha5_s0norm": "1403",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "FORCED_R",
+     "d": 236,
+     "c_over_alpha5_s0norm": "3233",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 18,
+   "m": 6,
+   "sigma": -61,
+   "m_plus_sigma": -55,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 117,
+     "c_over_alpha5_s0norm": "488",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 219,
+     "c_over_alpha5_s0norm": "2318",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 18,
+   "m": 7,
+   "sigma": -61,
+   "m_plus_sigma": -54,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 151,
+     "c_over_alpha5_s0norm": "793",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 202,
+     "c_over_alpha5_s0norm": "1708",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 18,
+   "m": 8,
+   "sigma": -61,
+   "m_plus_sigma": -53,
+   "instances": [
+    {
+     "k": 1,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 5,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 53,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 23,
+   "m": 1,
+   "sigma": -101,
+   "m_plus_sigma": -100,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 64,
+     "c_over_alpha5_s0norm": "303",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 229,
+     "c_over_alpha5_s0norm": "1818",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 284,
+     "c_over_alpha5_s0norm": "2828",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 304
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 23,
+   "m": 2,
+   "sigma": -101,
+   "m_plus_sigma": -99,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 141,
+     "c_over_alpha5_s0norm": "808",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 262,
+     "c_over_alpha5_s0norm": "2323",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 306
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 23,
+   "m": 3,
+   "sigma": -101,
+   "m_plus_sigma": -98,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 196,
+     "c_over_alpha5_s0norm": "1313",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 308
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "FORCED_R",
+     "d": 350,
+     "c_over_alpha5_s0norm": "4848",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 23,
+   "m": 4,
+   "sigma": -101,
+   "m_plus_sigma": -97,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 310
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 23,
+   "m": 5,
+   "sigma": -101,
+   "m_plus_sigma": -96,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 152,
+     "c_over_alpha5_s0norm": "808",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "FORCED_R",
+     "d": 240,
+     "c_over_alpha5_s0norm": "1818",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 312
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 328,
+     "c_over_alpha5_s0norm": "3838",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 23,
+   "m": 6,
+   "sigma": -101,
+   "m_plus_sigma": -95,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 86,
+     "c_over_alpha5_s0norm": "303",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 295,
+     "c_over_alpha5_s0norm": "2828",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 314
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 23,
+   "m": 7,
+   "sigma": -101,
+   "m_plus_sigma": -94,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 316
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 23,
+   "m": 8,
+   "sigma": -101,
+   "m_plus_sigma": -93,
+   "instances": [
+    {
+     "k": 1,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 6,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 163,
+     "c_over_alpha5_s0norm": "808",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 18,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 10,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 33,
+     "verdict": "DEAD_resonance",
+     "d": 318
+    },
+    {
+     "k": 12,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 48,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 1,
+   "sigma": -151,
+   "m_plus_sigma": -150,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 79,
+     "c_over_alpha5_s0norm": "453",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 304
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "FORCED_R",
+     "d": 349,
+     "c_over_alpha5_s0norm": "3473",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 2,
+   "sigma": -151,
+   "m_plus_sigma": -149,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 307
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 28,
+   "m": 3,
+   "sigma": -151,
+   "m_plus_sigma": -148,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 88,
+     "c_over_alpha5_s0norm": "453",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 310
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 421,
+     "c_over_alpha5_s0norm": "4983",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 4,
+   "sigma": -151,
+   "m_plus_sigma": -147,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "FORCED_R",
+     "d": 187,
+     "c_over_alpha5_s0norm": "1208",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 313
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 5,
+   "sigma": -151,
+   "m_plus_sigma": -146,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 97,
+     "c_over_alpha5_s0norm": "453",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 316
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 6,
+   "sigma": -151,
+   "m_plus_sigma": -145,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 319
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": false
+  },
+  {
+   "rho": 28,
+   "m": 7,
+   "sigma": -151,
+   "m_plus_sigma": -144,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "FORCED_R",
+     "d": 106,
+     "c_over_alpha5_s0norm": "453",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "FORCED_R",
+     "d": 268,
+     "c_over_alpha5_s0norm": "1963",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 322
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "FORCED_R",
+     "d": 430,
+     "c_over_alpha5_s0norm": "4983",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  },
+  {
+   "rho": 28,
+   "m": 8,
+   "sigma": -151,
+   "m_plus_sigma": -143,
+   "instances": [
+    {
+     "k": 1,
+     "D": -22,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 2,
+     "D": -17,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 3,
+     "D": -12,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 4,
+     "D": -7,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 5,
+     "D": -2,
+     "verdict": "DEAD_D"
+    },
+    {
+     "k": 6,
+     "D": 3,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 7,
+     "D": 8,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 8,
+     "D": 13,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 9,
+     "D": 18,
+     "verdict": "DEAD_resonance",
+     "d": 325
+    },
+    {
+     "k": 10,
+     "D": 23,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 11,
+     "D": 28,
+     "verdict": "FORCED_R",
+     "d": 403,
+     "c_over_alpha5_s0norm": "4228",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 12,
+     "D": 33,
+     "verdict": "DEAD_degree",
+     "d": null
+    },
+    {
+     "k": 13,
+     "D": 38,
+     "verdict": "FORCED_R",
+     "d": 457,
+     "c_over_alpha5_s0norm": "5738",
+     "kernel_rational": false,
+     "pole_res_flag": false
+    },
+    {
+     "k": 14,
+     "D": 43,
+     "verdict": "DEAD_degree",
+     "d": null
+    }
+   ],
+   "carries_forced_R": true
+  }
+ ],
+ "resonant_ladder": [
+  [
+   3,
+   1
+  ],
+  [
+   8,
+   11
+  ],
+  [
+   13,
+   31
+  ],
+  [
+   18,
+   61
+  ],
+  [
+   23,
+   101
+  ],
+  [
+   28,
+   151
+  ]
+ ],
+ "explicit_unexamined": [
+  {
+   "k": 4,
+   "D": 18,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "18",
+   "S_at_minus1": "9",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 35,
+    "1": -40,
+    "2": 48,
+    "3": -64,
+    "4": 128
+   },
+   "c_int_alpha1": "630"
+  },
+  {
+   "k": 5,
+   "D": 23,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "23",
+   "S_at_minus1": "23/3",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 234,
+    "1": -260,
+    "2": 300,
+    "3": -375,
+    "4": 625
+   },
+   "c_int_alpha1": "5382"
+  },
+  {
+   "k": 6,
+   "D": 28,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "28",
+   "S_at_minus1": "7",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 110,
+    "1": -120,
+    "2": 135,
+    "3": -162,
+    "4": 243
+   },
+   "c_int_alpha1": "3080"
+  },
+  {
+   "k": 7,
+   "D": 33,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "33",
+   "S_at_minus1": "33/5",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 1235,
+    "1": -1330,
+    "2": 1470,
+    "3": -1715,
+    "4": 2401
+   },
+   "c_int_alpha1": "40755"
+  },
+  {
+   "k": 8,
+   "D": 38,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "38",
+   "S_at_minus1": "19/3",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 1155,
+    "1": -1232,
+    "2": 1344,
+    "3": -1536,
+    "4": 2048
+   },
+   "c_int_alpha1": "43890"
+  },
+  {
+   "k": 9,
+   "D": 43,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "43",
+   "S_at_minus1": "43/7",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 11900,
+    "1": -12600,
+    "2": 13608,
+    "3": -15309,
+    "4": 19683
+   },
+   "c_int_alpha1": "511700"
+  },
+  {
+   "k": 10,
+   "D": 48,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "48",
+   "S_at_minus1": "6",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 399,
+    "1": -420,
+    "2": 450,
+    "3": -500,
+    "4": 625
+   },
+   "c_int_alpha1": "19152"
+  },
+  {
+   "k": 11,
+   "D": 53,
+   "m": 1,
+   "sigma": -1,
+   "t": 0,
+   "p": 4,
+   "pole_resonance_Dm_eq_kp": false,
+   "d": 4,
+   "exact_block_check": true,
+   "c_over_alpha5": "53",
+   "S_at_minus1": "53/9",
+   "S0_nonzero": true,
+   "kernel_rational": false,
+   "verdict": "FORCED_R",
+   "S_int": {
+    "0": 9765,
+    "1": -10230,
+    "2": 10890,
+    "3": -11979,
+    "4": 14641
+   },
+   "c_int_alpha1": "517545"
+  }
+ ],
+ "sympy_crosscheck": {
+  "instance": {
+   "k": 4,
+   "D": 18,
+   "m": 1,
+   "sigma": -1
+  },
+  "ok": true
+ },
+ "refined_frame_window": [
+  {
+   "rho": 1,
+   "s": 2,
+   "sigma": 0,
+   "D_formula": "5k+1-2",
+   "examined": false
+  },
+  {
+   "rho": 1,
+   "s": 7,
+   "sigma": -1,
+   "D_formula": "5k+1-7",
+   "examined": false
+  },
+  {
+   "rho": 1,
+   "s": 12,
+   "sigma": -2,
+   "D_formula": "5k+1-12",
+   "examined": false
+  },
+  {
+   "rho": 2,
+   "s": 4,
+   "sigma": -1,
+   "D_formula": "5k+1-4",
+   "examined": false
+  },
+  {
+   "rho": 2,
+   "s": 9,
+   "sigma": -3,
+   "D_formula": "5k+1-9",
+   "examined": false
+  },
+  {
+   "rho": 3,
+   "s": 3,
+   "sigma": -1,
+   "D_formula": "5k+1-3",
+   "examined": true
+  },
+  {
+   "rho": 3,
+   "s": 8,
+   "sigma": -4,
+   "D_formula": "5k+1-8",
+   "examined": false
+  },
+  {
+   "rho": 4,
+   "s": 5,
+   "sigma": -3,
+   "D_formula": "5k+1-5",
+   "examined": false
+  },
+  {
+   "rho": 4,
+   "s": 10,
+   "sigma": -7,
+   "D_formula": "5k+1-10",
+   "examined": false
+  },
+  {
+   "rho": 6,
+   "s": 2,
+   "sigma": -1,
+   "D_formula": "5k+1-2",
+   "examined": false
+  },
+  {
+   "rho": 6,
+   "s": 7,
+   "sigma": -7,
+   "D_formula": "5k+1-7",
+   "examined": false
+  },
+  {
+   "rho": 6,
+   "s": 12,
+   "sigma": -13,
+   "D_formula": "5k+1-12",
+   "examined": false
+  },
+  {
+   "rho": 7,
+   "s": 4,
+   "sigma": -4,
+   "D_formula": "5k+1-4",
+   "examined": false
+  },
+  {
+   "rho": 7,
+   "s": 9,
+   "sigma": -11,
+   "D_formula": "5k+1-9",
+   "examined": false
+  },
+  {
+   "rho": 8,
+   "s": 3,
+   "sigma": -3,
+   "D_formula": "5k+1-3",
+   "examined": false
+  },
+  {
+   "rho": 8,
+   "s": 8,
+   "sigma": -11,
+   "D_formula": "5k+1-8",
+   "examined": false
+  },
+  {
+   "rho": 9,
+   "s": 5,
+   "sigma": -7,
+   "D_formula": "5k+1-5",
+   "examined": false
+  },
+  {
+   "rho": 9,
+   "s": 10,
+   "sigma": -16,
+   "D_formula": "5k+1-10",
+   "examined": false
+  },
+  {
+   "rho": 11,
+   "s": 2,
+   "sigma": -2,
+   "D_formula": "5k+1-2",
+   "examined": false
+  },
+  {
+   "rho": 11,
+   "s": 7,
+   "sigma": -13,
+   "D_formula": "5k+1-7",
+   "examined": false
+  },
+  {
+   "rho": 11,
+   "s": 12,
+   "sigma": -24,
+   "D_formula": "5k+1-12",
+   "examined": false
+  },
+  {
+   "rho": 12,
+   "s": 4,
+   "sigma": -7,
+   "D_formula": "5k+1-4",
+   "examined": false
+  },
+  {
+   "rho": 12,
+   "s": 9,
+   "sigma": -19,
+   "D_formula": "5k+1-9",
+   "examined": false
+  }
+ ]
+}
