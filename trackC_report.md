@@ -112,7 +112,46 @@ handoff frame. Which (rho, s, m, sigma) slices are admissible at all is the
 C4 lattice question, which OPUS_PLAN P4 marks Fable-grade and which is
 therefore NOT decided here. Every number above is conditional on s = 3.
 
-## C3 — k=3, D=13 realization layer at (72,108)
+## C3 layer 1 — sqrt-reduction / divisibility ladder: FORMALIZED
+
+`python3 trackC_c3_ladder.py` — 13 PASS, 0 FAIL, exact over Q, generic
+symbols. Artifact trackC_c3_ladder.json.
+
+Provenance discipline, because it decides what may be leaned on: **Session 10
+is executable and Track-F-certified** (the chain <=> thirteen block vanishings
+W_n = 0, n = -18..-6). **Sessions 11-14 are prose and their executable engines
+were lost with the transcripts.** So they are re-derived here, not imported;
+nothing below cites them as authority.
+
+- **L1 — the formal (b/a)-th root exists and is unique with S_0 = 1.** Verified
+  to order 8 with fully generic T for (a,b) = (2,3), (2,5), (3,5), (4,7). For
+  (2,3) this is Sessions 12-14's THEOREM 1 statement
+  (sum S_m x^m)^2 = (1+T)^3, now independently checked. S_1 = (3/2)T_1
+  reproduces their "condition-free first level"; S_2 = 3T_1^2/8 + 3T_2/2.
+- **L2 — chain <=> square-root agreement.** With y2 = g^2(1+T) and
+  y1 = g^3(S + Delta), every W-block below the deviation order vanishes
+  identically iff Delta = O(x^D). Checked for D = 1..6. This is the precise
+  form of the Sessions 16-18 sentence "the chain layer forces y1 to be the
+  formal square root of y2^3 through order twelve".
+- **L3 — the deviation enters LINEARLY.** The first surviving W-block is
+  2*g^6*delta. That linearity is exactly why the endgame is an ODE in R and
+  not a quadratic condition — it is the structural reason C1's master identity
+  has the shape it has.
+- **L4 — ladder operator.** The divisibility ladder is "g^b * S_m polynomial
+  for m = 0..D-1"; the operator decides it for a given (g, tower). Sanity
+  check: perturbing level 2 off the divisibility makes the ladder fail first
+  at **level 4**, not level 2 — correct, because g^3 * g^(-2) is still
+  polynomial and the pole only bites once T_2^2 brings g^(-4). The operator is
+  therefore tracking real divisibility, not a bookkeeping artifact.
+
+**What this does NOT certify, and both are load-bearing.** THEOREM 2 (total
+rigidity, g = alpha U (U-1)^8) and THEOREM 3 (pole-fiber => R is a polynomial)
+remain prose with no surviving certificate. C1 forces the pole *order*; the
+fiber-counting step that makes R a *polynomial* is not reproduced. **Every
+(72,108) statement that assumes a polynomial R inherits this gap** — including
+the C2 table, which is conditional on it.
+
+## C3 layer 2 — k=3, D=13 realization layer at (72,108)
 
 Method: impose the Sessions 10-13 chain/boundary structure (chain <=> W-block
 vanishings; sqrt-reduction; divisibility ladder; boundary rigidity g0 = alpha U^m v^sigma)

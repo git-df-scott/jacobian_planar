@@ -92,11 +92,31 @@ def run_chart(name, pin):
               f"({type(e).__name__}) — no verdict, nothing claimed")
         return
     lines = [l for l in out.splitlines() if "QF-CHART" in l]
+    secs = time.time() - t0
     if lines:
-        S.log(f"{PFX} {name}: ({time.time()-t0:.0f}s) " + " | ".join(lines))
+        # Mandated verdict format. CLOSED requires dim == -1 (1 in I) — a
+        # Nullstellensatz-strong statement. vdim == 0 is NOT a closure
+        # criterion: a finite non-empty zero-set also has dim 0, and the
+        # ideal (1) is the only thing dim == -1 reports.
+        dim = None
+        for l in lines:
+            m = re.search(r"DIM: (-?\d+)", l)
+            if m:
+                dim = int(m.group(1))
+        status = ("CLOSED (dim = -1)" if dim == -1 else
+                  f"SURVIVOR (dim = {dim})" if dim is not None else "NO DIM")
+        S.log(f"BRANCH {PFX}_{name}: STATUS {status} | ENGINE Singular std "
+              f"| TIME {secs:.0f} sec")
+        S.log(f"{PFX} {name}: ({secs:.0f}s) " + " | ".join(lines))
         open(mark, "w").write(out[-3000:])
+        if dim is not None and dim >= 0:
+            S.log(f"BRANCH {PFX}_{name}: SURVIVOR — ESCALATION TRIGGER "
+                  f"(OPUS_PLAN §E: any verdict that is not EMPTY). "
+                  f"Extract points before any claim.")
     else:
-        S.log(f"{PFX} {name}: NO VERDICT after {time.time()-t0:.0f}s "
+        S.log(f"BRANCH {PFX}_{name}: STATUS STALLED (no verdict) | ENGINE "
+              f"Singular std | TIME {secs:.0f} sec")
+        S.log(f"{PFX} {name}: NO VERDICT after {secs:.0f}s "
               f"(crashed or killed) — see trackB_{PFX}_{name}.sing.out")
 
 
