@@ -417,7 +417,8 @@ def divide_B_by_cof(B, cof, c):
 
 # ----------------------------------------------------------------------- the tree
 def eliminate(root_eqs, root_nonzero, max_nodes=200000, max_repl_terms=400,
-              progress=None, checkpoint_path=None, checkpoint_every=2000):
+              progress=None, checkpoint_path=None, checkpoint_every=2000,
+              max_seconds=None, step_progress=0):
     nodes = []
     dedup = {}
     stats = {"r1_det": 0, "r2": 0, "enrich": 0, "branch_nodes": 0, "contra": 0,
@@ -455,7 +456,19 @@ def eliminate(root_eqs, root_nonzero, max_nodes=200000, max_repl_terms=400,
 
         # ---- deterministic closure loop
         closed = False
+        nsteps_here = 0
+        timed_out = False
         while True:
+            nsteps_here += 1
+            if step_progress and nsteps_here % step_progress == 0:
+                sizes = sorted(len(p) for p in eqs)
+                print("  [t=%.0fs] node %d: %d rule apps, %d eqs, largest eq %d "
+                      "terms, total terms %d"
+                      % (time.time() - t0, nid, nsteps_here, len(eqs),
+                         sizes[-1] if sizes else 0, sum(sizes)), flush=True)
+            if max_seconds is not None and time.time() - t0 > max_seconds:
+                timed_out = True
+                break
             eqs, contra = simplify_eqs(eqs)
             if contra is not None:
                 node.status = "closed"
@@ -540,6 +553,17 @@ def eliminate(root_eqs, root_nonzero, max_nodes=200000, max_repl_terms=400,
         node.nonzero = frozenset(nonzero)
         node.nonzero_exprs = nonzero_exprs
         node.eqs = eqs
+        if timed_out:
+            node.status = "capped"
+            node.reason = {"type": "time_cap",
+                           "note": "deterministic cascade interrupted mid-node; "
+                                   "eqs/steps are a valid intermediate state"}
+            stats["capped"] += 1
+            for other in stack:
+                nodes[other].status = "capped"
+                stats["capped"] += 1
+            stack.clear()
+            break
         if closed:
             continue
 
@@ -892,6 +916,8 @@ def main():
     ap.add_argument("--max-nodes", type=int, default=200000)
     ap.add_argument("--max-repl-terms", type=int, default=400)
     ap.add_argument("--progress", type=int, default=500)
+    ap.add_argument("--max-seconds", type=int, default=None)
+    ap.add_argument("--step-progress", type=int, default=0)
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--verify", nargs=2, metavar=("TREE", "SYSTEM"))
     args = ap.parse_args()
@@ -925,7 +951,9 @@ def main():
     nodes, stats = eliminate(eqs, nonzero, max_nodes=args.max_nodes,
                              max_repl_terms=args.max_repl_terms,
                              progress=args.progress,
-                             checkpoint_path=args.out + ".ckpt")
+                             checkpoint_path=args.out + ".ckpt",
+                             max_seconds=args.max_seconds,
+                             step_progress=args.step_progress)
     dt = time.time() - t0
     print("done in %.1fs; stats: %s" % (dt, stats))
     leaves = [n for n in nodes if n.status == "leaf"]
