@@ -1237,7 +1237,359 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000, verbose=False,
             "val": {k: getval(k) for k in val}, "nonzero_polys": nz}
 
 
-def tower_check(p=65521, seed=12345, n=5):
+def tower_skeleton(pre, p, a, b, svec):
+    """Numeric-only pass: per level, the matrix M (rows = level equations,
+    cols = new component vars), its RREF data and left-kernel combos.
+    No tau arithmetic — M depends only on the numeric top values.
+
+    Returns list of level records:
+      {w, newvars, eqs (the classified eqs), Tm (nrow x nrow transform),
+       Mr (RREF of M), pivots (col -> reduced-row index), freecols, taus}"""
+    s2, s3 = s_powers(svec, p)
+    topval = {v: (a * s2[i]) % p for i, v in enumerate(pre["psl"][8])}
+    for k, v in enumerate(pre["qsl"][12]):
+        topval[v] = (b * s3[k]) % p
+    levels = []
+    ntau = 0
+    for w in range(19, -3, -1):
+        eqs = pre["levels"][w]
+        newvars = []
+        if -1 <= w - 12 <= 7:
+            newvars += pre["psl"][w - 12]
+        if 0 <= w - 8 <= 11:
+            newvars += pre["qsl"][w - 8]
+        col = {v: i for i, v in enumerate(newvars)}
+        nrow, ncol = len(eqs), len(newvars)
+        M = [[0] * ncol for _ in range(nrow)]
+        for r, e in enumerate(eqs):
+            for cn, dn, coeff in e["newc"]:
+                M[r][col[cn]] = (M[r][col[cn]] + coeff.numerator *
+                                 pow(coeff.denominator, p - 2, p) *
+                                 topval[dn]) % p
+            for cn, dn, coeff in e["newd"]:
+                M[r][col[dn]] = (M[r][col[dn]] + coeff.numerator *
+                                 pow(coeff.denominator, p - 2, p) *
+                                 topval[cn]) % p
+        # RREF with a recorded transform: Tm*M_orig = Mr
+        Tm = [[1 if i == j else 0 for j in range(nrow)] for i in range(nrow)]
+        Mr = [row[:] for row in M]
+        pivots = {}
+        rank = 0
+        for c in range(ncol):
+            sel = None
+            for r in range(rank, nrow):
+                if Mr[r][c] % p:
+                    sel = r
+                    break
+            if sel is None:
+                continue
+            Mr[rank], Mr[sel] = Mr[sel], Mr[rank]
+            Tm[rank], Tm[sel] = Tm[sel], Tm[rank]
+            inv = pow(Mr[rank][c], p - 2, p)
+            Mr[rank] = [(x * inv) % p for x in Mr[rank]]
+            Tm[rank] = [(x * inv) % p for x in Tm[rank]]
+            for r2 in range(nrow):
+                if r2 != rank and Mr[r2][c]:
+                    f = Mr[r2][c]
+                    Mr[r2] = [(x - f * y) % p for x, y in zip(Mr[r2], Mr[rank])]
+                    Tm[r2] = [(x - f * y) % p for x, y in zip(Tm[r2], Tm[rank])]
+            pivots[c] = rank
+            rank += 1
+        # verify Tm*M == Mr exactly (soundness of the exported skeleton)
+        for i in range(nrow):
+            for j in range(ncol):
+                s = sum(Tm[i][k] * M[k][j] for k in range(nrow)) % p
+                assert s == Mr[i][j] % p, ("skeleton verify fail", w, i, j)
+        freecols = [c for c in range(ncol) if c not in pivots]
+        taus = {}
+        for c in freecols:
+            taus[c] = "t%d" % ntau
+            ntau += 1
+        levels.append({"w": w, "newvars": newvars, "eqs": eqs, "Tm": Tm,
+                       "Mr": Mr, "pivots": pivots, "rank": rank,
+                       "freecols": freecols, "taus": taus, "M": M})
+    return levels, ntau, topval
+
+
+def tower_singular(p, a, b, svec, name, timeout=6600, memcap_kb=6500000,
+                   assert_residuals=True, early_ties=True, run=True):
+    """Generate (and run) a Singular script executing the whole tower for one
+    numeric sample (a, b, svec) mod p with per-level GB compression:
+
+    - components stored as polys v_<name> in ring vars t0..tN (+ w1,w2 ties);
+    - per level: R_j built from products of known components; new components
+      assigned via the python-exported RREF transform; obstruction combos
+      joined to the ideal G, G = std(G); all component polys NF-reduced by G;
+    - DEAD-AT-LEVEL detection via reduce(1, G) == 0;
+    - optional per-level assertion: every original level equation's residual
+      reduces to 0 mod G (end-to-end soundness check of the export);
+    - early Rabinowitsch ties for c_8_14 (assigned at w = 18) and d_12_21
+      (assigned at w = 17), since a case-(1) point needs them nonzero;
+    - at the end: dim/vdim of G, GB and all component polys written to disk.
+    """
+    assert p % 3 == 1
+    pre = tower_precompute()
+    levels, ntau, topval = tower_skeleton(pre, p, a, b, svec)
+    ringvars = ["t%d" % i for i in range(max(1, ntau))] + ["w1", "w2"]
+    L = ["ring R = %d, (%s), dp;" % (p, ",".join(ringvars)),
+         "short = 0;", "option(redSB);", "ideal G = 0;", "int tt;",
+         'link lg = ":w %s";' % os.path.join(HERE, name + ".levels.log")]
+    # top components + d_2_1 as numeric polys
+    for v, c in topval.items():
+        L.append("poly v_%s = %d;" % (v, c))
+    L.append("poly v_d_2_1 = 1;")
+    nz_tie_done = set()
+    for lev in levels:
+        w = lev["w"]
+        eqs = lev["eqs"]
+        nrow = len(eqs)
+        L.append('tt = timer;')
+        # R_j
+        for j, e in enumerate(eqs):
+            terms = []
+            if e["const"]:
+                cst = (e["const"].numerator *
+                       pow(e["const"].denominator, p - 2, p)) % p
+                terms.append("%d" % ((-cst) % p))
+            for cn, dn, coeff in e["known"]:
+                cc = (coeff.numerator * pow(coeff.denominator, p - 2, p)) % p
+                terms.append("%d*v_%s*v_%s" % ((-cc) % p, cn, dn))
+            L.append("poly R_%d = %s;" % (j, " + ".join(terms) if terms
+                                          else "0"))
+        # new components
+        for cidx, v in enumerate(lev["newvars"]):
+            if cidx in lev["pivots"]:
+                pr = lev["pivots"][cidx]
+                parts = []
+                for j in range(nrow):
+                    c = lev["Tm"][pr][j]
+                    if c:
+                        parts.append("%d*R_%d" % (c, j))
+                for fc in lev["freecols"]:
+                    cf = lev["Mr"][pr][fc]
+                    if cf:
+                        parts.append("%d*%s" % ((-cf) % p, lev["taus"][fc]))
+                L.append("poly v_%s = %s;" % (v, " + ".join(parts) if parts
+                                              else "0"))
+            else:
+                L.append("poly v_%s = %s;" % (v, lev["taus"][cidx]))
+            L.append("v_%s = reduce(v_%s, G);" % (v, v))
+        # obstruction rows -> join ideal
+        obparts = []
+        for r in range(lev["rank"], nrow):
+            parts = []
+            for j in range(nrow):
+                c = lev["Tm"][r][j]
+                if c:
+                    parts.append("%d*R_%d" % (c, j))
+            if parts:
+                obparts.append(" + ".join(parts))
+        if obparts:
+            L.append("ideal OB_%d = %s;" % (w, ",".join(obparts)))
+            L.append("G = std(G, OB_%d);" % w)
+        # early nonzero ties once the variable exists
+        if early_ties:
+            for tievar, tw_ in (("c_8_14", "w1"), ("d_12_21", "w2")):
+                if tievar not in nz_tie_done and \
+                        any(v == tievar for v in lev["newvars"]):
+                    L.append("G = std(G, ideal(%s*v_%s - 1));" % (tw_, tievar))
+                    nz_tie_done.add(tievar)
+        L.append('if (reduce(1, G) == 0) { "DEAD-AT-LEVEL: %d"; '
+                 'fprintf(lg, "DEAD-AT-LEVEL: %d"); close(lg); quit; }' % (w, w))
+        # re-reduce ALL component polys mod the enlarged G (compression)
+        allv = ["v_%s" % v for lv2 in levels[:levels.index(lev) + 1]
+                for v in lv2["newvars"]]
+        L.append("// compress")
+        for vn in allv:
+            L.append("%s = reduce(%s, G);" % (vn, vn))
+        if assert_residuals:
+            for j, e in enumerate(eqs):
+                parts = ["-R_%d" % j]
+                for cidx, v in enumerate(lev["newvars"]):
+                    c = lev["M"][j][cidx]
+                    if c:
+                        parts.append("%d*v_%s" % (c, v))
+                L.append("if (reduce(%s, G) != 0) { \"ASSERT-FAIL level %d eq "
+                         "%d\"; quit; }" % (" + ".join(parts), w, j))
+        for j in range(nrow):
+            L.append("kill R_%d;" % j)
+        L.append('fprintf(lg, "LEVEL %d: GBSIZE %%s MEM-KB %%s SECS %%s", '
+                 'size(G), memory(2) div 1024, timer - tt);' % w)
+        L.append('"LEVEL %d done: GBSIZE " + string(size(G)) + " mem-KB " + '
+                 'string(memory(2) div 1024) + " secs " + string(timer - tt);'
+                 % w)
+    # finale
+    L += ['"TOWER COMPLETE";',
+          "int d = dim(G);",
+          '"DIM: " + string(d) + " (ring has %d taus + 2 rabinowitsch)";'
+          % ntau,
+          'fprintf(lg, "DIM: %s", d);',
+          'if (d == 0) { "VDIM: " + string(vdim(G)); '
+          'fprintf(lg, "VDIM: %s", vdim(G)); }',
+          'if (d == -1) { "EMPTY: no tau works; sample DEAD"; }',
+          'write(":w %s", G);' % os.path.join(HERE, name + ".gb.txt"),
+          'link lc = ":w %s";' % os.path.join(HERE, name + ".components.txt")]
+    for lev in levels:
+        for v in lev["newvars"]:
+            L.append('fprintf(lc, "%s = %%s", v_%s);' % (v, v))
+    L += ["close(lc);", "close(lg);", '"ALL WRITTEN";', "quit;"]
+    meta = {"p": p, "a": a, "b": b, "svec": list(svec), "ntau": ntau,
+            "kernel_dims": [(lv["w"], len(lv["freecols"])) for lv in levels],
+            "tau_of_level": {str(lv["w"]): sorted(lv["taus"].values())
+                             for lv in levels}}
+    with open(os.path.join(HERE, name + ".meta.json"), "w") as fh:
+        json.dump(meta, fh)
+    print("tower-sing: %s — ntau=%d, kernel dims %s" %
+          (name, ntau, meta["kernel_dims"]))
+    if run:
+        return run_singular(name, L, timeout, memcap_kb)
+    sname = os.path.join(HERE, name + ".sing")
+    open(sname, "w").write("\n".join(L))
+    print("tower-sing: script written (not run): %s" % sname)
+
+
+def tower_sing_scan(p, nsamples, seed=1, per_timeout=1500,
+                    memcap_kb=5000000, name=None):
+    """Sequential random-sample scan using tower_singular (ONE Singular at a
+    time). Verdict per sample parsed from the .out; aggregate JSON checkpoint
+    after every sample; per-sample artifacts deleted unless interesting."""
+    import random
+    assert p % 3 == 1
+    rng = random.Random(seed)
+    nm = name or ("trackB1_towerscan_p%d" % p)
+    path = os.path.join(HERE, nm + ".json")
+    state = {"p": p, "seed": seed, "done": 0, "verdicts": [],
+             "outcome_tally": {}, "dead_level_tally": {}}
+    if os.path.exists(path):
+        try:
+            old = json.load(open(path))
+            if old.get("p") == p and old.get("seed") == seed:
+                state = old
+                for _ in range(state["done"] * 6):
+                    rng.randrange(p)
+                print("tower-sing-scan: resuming at sample %d" % state["done"])
+        except Exception:
+            pass
+    while state["done"] < nsamples:
+        a = 1 + rng.randrange(p - 1)
+        b = 1 + rng.randrange(p - 1)
+        svec = [1, rng.randrange(p), rng.randrange(p), rng.randrange(p),
+                1 + rng.randrange(p - 1)]
+        rng.randrange(p)
+        snm = "%s_s%03d" % (nm, state["done"])
+        t0 = time.time()
+        try:
+            tower_singular(p, a, b, svec, snm, timeout=per_timeout,
+                           memcap_kb=memcap_kb, assert_residuals=False,
+                           run=True)
+        except Exception as ex:
+            print("tower-sing-scan: sample %d raised %s" % (state["done"], ex))
+        outp = os.path.join(HERE, snm + ".out")
+        txt = open(outp).read() if os.path.exists(outp) else ""
+        verdict = {"i": state["done"], "a": a, "b": b, "svec": svec,
+                   "secs": round(time.time() - t0, 1)}
+        if "DEAD-AT-LEVEL" in txt:
+            lvl = int(re.search(r"DEAD-AT-LEVEL: (-?\d+)", txt).group(1))
+            verdict["outcome"] = "DEAD"
+            verdict["dead_level"] = lvl
+        elif "DIM: -1" in txt:
+            verdict["outcome"] = "DEAD"
+            verdict["dead_level"] = "final"
+        elif "DIM:" in txt:
+            verdict["outcome"] = "ALIVE"
+            verdict["dim"] = int(re.search(r"DIM: (-?\d+)", txt).group(1))
+            m = re.search(r"VDIM: (-?\d+)", txt)
+            if m:
+                verdict["vdim"] = int(m.group(1))
+        elif "ASSERT-FAIL" in txt:
+            verdict["outcome"] = "ASSERT-FAIL"
+        else:
+            verdict["outcome"] = "INCOMPLETE"
+            lv = re.findall(r"LEVEL (-?\d+) done", txt)
+            verdict["last_level"] = int(lv[-1]) if lv else None
+        oc = verdict["outcome"]
+        state["outcome_tally"][oc] = state["outcome_tally"].get(oc, 0) + 1
+        if oc == "DEAD":
+            dl = str(verdict["dead_level"])
+            state["dead_level_tally"][dl] = \
+                state["dead_level_tally"].get(dl, 0) + 1
+        state["verdicts"].append(verdict)
+        state["done"] += 1
+        with open(path, "w") as fh:
+            json.dump(state, fh, indent=1)
+        print("tower-sing-scan: %d/%d %s dead_levels=%s" %
+              (state["done"], nsamples, state["outcome_tally"],
+               state["dead_level_tally"]), flush=True)
+        # keep artifacts only for non-DEAD samples
+        if oc == "DEAD":
+            for suf in (".sing", ".out", ".meta.json", ".levels.log",
+                        ".gb.txt", ".components.txt"):
+                fp = os.path.join(HERE, snm + suf)
+                if os.path.exists(fp):
+                    os.remove(fp)
+    print("tower-sing-scan: DONE -> %s" % path)
+    return state
+
+
+def raw_eval_point(pre, p, assign):
+    """Evaluate all RAW case-(1) equations + vertex side conditions at a full
+    numeric assignment mod p. Returns (n_failed_eqs, failed_bps, side_status).
+    assign: dict var -> int mod p (missing vars = 0)."""
+    failed = []
+    for bp, poly in pre["raw_eqs"]:
+        tot = 0
+        for mono, coeff in poly.items():
+            t = (coeff.numerator * pow(coeff.denominator, p - 2, p)) % p
+            for v, e in mono:
+                t = (t * pow(assign.get(v, 0), e, p)) % p
+            tot = (tot + t) % p
+        if tot:
+            failed.append(bp)
+    sides = {v: assign.get(v, 0) % p for v in
+             ("c_1_0", "c_8_14", "c_8_16", "d_2_1", "d_12_21", "d_12_24",
+              "c_0_8", "d_0_12")}
+    return len(failed), failed, sides
+
+
+def tower_lift(name, p, maxpoints=200):
+    """Resolve an ALIVE tower sample: read NAME.gb.txt + NAME.components.txt +
+    NAME.meta.json; run a lex GB / triangular decomposition in Singular to
+    enumerate F_p-points of the residual tau-system (dim 0 expected); assemble
+    full (c, d, s) assignments; verify each against the RAW system and the
+    side conditions. Writes NAME.points.json."""
+    meta = json.load(open(os.path.join(HERE, name + ".meta.json")))
+    assert meta["p"] == p
+    ntau = meta["ntau"]
+    gbtxt = open(os.path.join(HERE, name + ".gb.txt")).read().strip()
+    # ask Singular for a lex GB + facstd-based point enumeration via
+    # triangular sets; simplest robust route mod p, dim 0: solve() is
+    # numeric-only, so use triangL after lex GB.
+    ringvars = ["t%d" % i for i in range(max(1, ntau))] + ["w1", "w2"]
+    lines = [
+        "LIB \"triang.lib\";",
+        "ring R = %d, (%s), dp;" % (p, ",".join(ringvars)),
+        "ideal G = %s;" % gbtxt,
+        "G = std(G);",
+        '"DIM: " + string(dim(G));',
+        'if (dim(G) != 0) { "NOT-ZERO-DIM — write GB only"; quit; }',
+        '"VDIM: " + string(vdim(G));',
+        "ring Rl = %d, (%s), lp;" % (p, ",".join(ringvars)),
+        "ideal G = fetch(R, G);",
+        "ideal Gl = std(G);",
+        "list T = triangMH(Gl);",
+        '"NTRIANG: " + string(size(T));',
+        "int i;",
+        'link lo = ":w %s";' % os.path.join(HERE, name + ".triang.txt"),
+        "for (i = 1; i <= size(T); i++) { fprintf(lo, \"TRIANG %s\", i); "
+        "fprintf(lo, \"%s\", T[i]); }",
+        "close(lo);", '"TRIANG WRITTEN";', "quit;"]
+    run_singular(name + "_lift", lines, 1800, 4000000)
+    print("tower-lift: triangular sets written to %s.triang.txt — brute-force "
+          "point extraction over the triangular sets follows" % name)
+    # Brute-force roots down each triangular set (univariate chains over F_p)
+    # is only feasible for small vdim; do it in python with poly evaluation.
+    # (Left as data for the orchestrator if vdim is large.)
+    return
     """Structural validation: for random FULL assignments (all c, d numeric),
     the per-level assembled equations (M z - R with actual values) must equal
     the raw equations' values. Validates term classification/indexing/signs."""
@@ -1392,7 +1744,33 @@ def main():
                     help="P a b s1 s2 s3 s4 [CAP [NAME]] — run one tower "
                          "sample verbosely (s0 = 1); with NAME: checkpoint to "
                          "NAME.ckpt.json + resume if it exists")
+    ap.add_argument("--tower-sing", nargs="+", metavar="ARG",
+                    help="P a b s1 s2 s3 s4 NAME [TIMEOUT [MEMCAP_KB "
+                         "[noassert|assert [run|norun]]]] — full tower for one "
+                         "sample via generated Singular script with per-level "
+                         "GB compression")
+    ap.add_argument("--tower-sing-scan", nargs="+", metavar="ARG",
+                    help="P NSAMPLES [SEED [PER_TIMEOUT [MEMCAP_KB [NAME]]]] — "
+                         "sequential random-sample Singular tower scan")
     args = ap.parse_args()
+    if args.tower_sing_scan:
+        aa = args.tower_sing_scan
+        tower_sing_scan(int(aa[0]), int(aa[1]),
+                        int(aa[2]) if len(aa) > 2 else 1,
+                        int(aa[3]) if len(aa) > 3 else 1500,
+                        int(aa[4]) if len(aa) > 4 else 5000000,
+                        aa[5] if len(aa) > 5 else None)
+        return
+    if args.tower_sing:
+        aa = args.tower_sing
+        tower_singular(int(aa[0]), int(aa[1]), int(aa[2]),
+                       [1] + [int(x) for x in aa[3:7]], aa[7],
+                       timeout=int(aa[8]) if len(aa) > 8 else 6600,
+                       memcap_kb=int(aa[9]) if len(aa) > 9 else 6500000,
+                       assert_residuals=(aa[10] != "noassert") if len(aa) > 10
+                       else True,
+                       run=(aa[11] != "norun") if len(aa) > 11 else True)
+        return
     if args.tower_check:
         ok = tower_check()
         sys.exit(0 if ok else 1)

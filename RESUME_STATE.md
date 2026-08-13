@@ -86,3 +86,23 @@ Track C: died early again; trackC_report.md has its state.
 
 NO scheduled triggers remain armed (all previous ticks consumed). On resume,
 re-arm the 45-min tick chain per agent_prompts.md header.
+
+## PAUSE POINT (user-ordered), 2026-08-13 21:25 UTC
+
+VERDICT SCOREBOARD:
+- Case (2) mod 65521: FULLY CLOSED — r1-r6, r0a, r0b all EMPTY.
+- Case (2) mod 65539: rk0-rk4 EMPTY, r0a EMPTY (all terminals); r0b was at its
+  final vdim-6 stage2b when paused. p65599 sweep NOT started.
+  Resume: JCP=65539 python3 trackB_prime_sweep.py && JCP=65599 python3 trackB_prime_sweep.py
+  (markers auto-skip everything finished)
+- Exact-Q: eliminant factorization over Q was mid-run (trackB_Q_elim.sing).
+  Resume: python3 trackB_exactQ.py
+- Case (1) pentagons: NO VERDICT YET — tower machinery built+validated, kernels
+  explained by structure theorem, ~120 obstructions on ~55 params; plan T1-T5 in
+  trackB1_report.md (agent was mid-T1/T2, actively checkpointing at 21:21).
+  Resume: relaunch TRACK B1 agent per agent_prompts.md (reads its own report).
+- Track C: checkpoint stale since 13:56 — relaunch per agent_prompts.md; C1
+  (master identity) + C4 (slice enumeration) are the priorities.
+- Track D: untouched.
+No triggers armed (21:41 tick deleted at pause). All processes die with the
+container; every computation resumes from markers.

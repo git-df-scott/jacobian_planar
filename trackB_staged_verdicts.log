@@ -59,3 +59,25 @@
 21:15:02 BRANCH p65539_rk3: stage2b vars=20 gens=49 -> BRANCH p65539_rk3 RESIDUAL DIM: -1 | BRANCH p65539_rk3 EMPTY
 21:15:09 BRANCH p65539_rk4: stage2b vars=20 gens=49 -> BRANCH p65539_rk4 RESIDUAL DIM: -1 | BRANCH p65539_rk4 EMPTY
 21:15:14 BRANCH p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+21:16:31 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+21:16:31 BRANCH p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+21:16:31 BRANCH p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+21:16:31 BRANCH p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+21:16:31 BRANCH p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+21:16:31 BRANCH p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+21:16:31 BRANCH p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+21:16:31 BRANCH p65539_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+21:16:43 BRANCH p65539_r0a_f0_f0_f0: stage2b vars=21 gens=50 -> BRANCH p65539_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH p65539_r0a_f0_f0_f0 EMPTY
+21:16:43 BRANCH p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+21:16:43 BRANCH p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+21:16:43 BRANCH p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+21:21:30 BRANCH p65539_r0a_f0_f0_f1_f0: stage2b vars=21 gens=50 -> BRANCH p65539_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH p65539_r0a_f0_f0_f1_f0 EMPTY
+21:21:30 BRANCH p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
+21:21:30 BRANCH p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+21:21:30 BRANCH p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+21:21:30 BRANCH p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+21:21:30 BRANCH p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+21:21:30 BRANCH p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+21:21:30 BRANCH p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+21:21:30 BRANCH p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+21:21:30 BRANCH p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)

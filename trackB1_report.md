@@ -330,13 +330,58 @@ level kernel for EVERY T in the c-slice (P += T, Q += (3/2)ST preserves the
 current level), so the moduli at level w contain the whole c-slice(w-12) —
 these are the commuting-family deformation directions, confirming Structure
 Theorem 1 quantitatively. tau-count grows to 52 by w = 12 and the dense
-symbolic carry OVERFLOWS a 200k-term cap there. Obstructions begin at w = 18
-(6 quadratic conditions) and accumulate at 6-10 per level; by the bottom the
-tower yields ~120 obstruction equations on ~55+ taus — heavily
-overdetermined, so per-(a,b,S) death MAY be detected mid-tower once
-substitutions collapse enough taus. Next: lazy-substitution + per-level
-checkpointing + big cap, run the tower to the bottom or to death on
-(i) the witness S, (ii) random S.
+symbolic carry OVERFLOWS a 200k-term cap there (sizes x3 per level, 383k
+terms at w = 12, 23 s/level and climbing; obstructions are NEVER tau-linear,
+so eager substitution never fires). Pure-python symbolic carry to the bottom:
+INFEASIBLE — measured, not guessed.
+
+### The working architecture: python skeleton + Singular tower with
+### per-level Groebner compression (--tower-sing)
+
+Key structural facts (all machine-verified):
+- kernel dims per level (witness sample): 9,9,8,8,6,5,4,3,1 (levels 19..11),
+  0 from level 10 down — total ntau = 53;
+- levels <= 7 introduce NO new components: everything below w = 8 is a pure
+  obstruction pile on the taus already present;
+- per level, the linear solve depends on tau only through the RHS: the level
+  matrix M is NUMERIC (entries = bracket coefficients x top values a[S^2],
+  b[S^3]). So python precomputes, per level, M, its RREF Mr, the transform
+  Tm with Tm*M = Mr (asserted exactly), pivot/free columns; the heavy
+  polynomial arithmetic (products in the RHS R_j, linear combos, normal
+  forms) is EMITTED as a generated Singular script:
+  * new components v_x := (Tm-combo of R_j's) - (free-col coeffs)*taus,
+    then immediately NF-reduced modulo the current constraint GB G;
+  * obstruction rows (zero rows of Mr) joined to G, G = std(G, OB_w) per
+    level, DEAD-AT-LEVEL printed if 1 in G (per-sample death localized);
+  * ALL stored components re-reduced mod G each level (compression — sound
+    on the variety: components only matter modulo the constraint ideal);
+  * optional per-level end-to-end assertion: every original level equation's
+    residual M*z - R must NF to 0 mod G (catches any export bug);
+  * early Rabinowitsch ties w1*c_8_14 - 1, w2*d_12_21 - 1 joined as soon as
+    those components exist (w = 18 resp. 17) — a case-(1) point needs them
+    nonzero, and they can only accelerate collapse;
+  * finale: dim/vdim of G, GB + all component polys written to disk; any
+    ALIVE sample's point(s) get verified in python against the RAW
+    hash-pinned 302-equation system (the tower is a search reorganization;
+    the raw system is the judge).
+- Verdict semantics per sample (a, b, S) over F_p: DEAD-AT-LEVEL w /
+  DEAD-final (dim -1) / ALIVE with dim + vdim. Exact for that sample.
+- Scan driver --tower-sing-scan: sequential random samples (ONE Singular at
+  a time per CPU courtesy), aggregate JSON checkpointed after every sample.
+
+(witness-sample run in flight)
+
+Sweep-planning notes (recorded for any future exhaustive attempt):
+- DEAD semantics per sample: 1 in GB means no completion over the ALGEBRAIC
+  CLOSURE of F_p for that numeric (a, b, S) — Nullstellensatz-strong.
+- Residual-torus (a,b)-cosets: exponent matrix [[-1,8],[-2,11]], det 5, so
+  the F_p-coset index is gcd(5, p-1). p = 31: 5 cosets, reps
+  (a,b) = (1,1),(1,3),(1,9),(1,27),(1,19) (computed). p = 65521: 5 | p-1
+  as well. An exhaustive p = 31 sweep would be 5 x 31^3 x 30 = 4.47M tower
+  runs — INFEASIBLE at Singular-run-per-sample cost; only viable if the
+  scan reveals a shallow closed-form death criterion (e.g. a resultant in
+  (a, b, s) whose nonvanishing is equivalent to death at a fixed level) —
+  then sweep the criterion, run full towers only on its zero locus.
 
 ## B1d. Verdicts
 
