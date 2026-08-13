@@ -1,3 +1,5 @@
 LEVEL 19 done: GBSIZE 0 mem-KB 2142 secs 0
 LEVEL 18 done: GBSIZE 13 mem-KB 2142 secs 0
 LEVEL 17 done: GBSIZE 58 mem-KB 149605 secs 79
+
+halt 1

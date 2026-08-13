@@ -385,7 +385,72 @@ Sweep-planning notes (recorded for any future exhaustive attempt):
 
 ## B1d. Verdicts
 
-(pending)
+### Session of 2026-08-13 (Opus 5, OPUS_PLAN P0) — T1 PASS, T2/T4 STALLED
+
+Verdict vocabulary per OPUS_PLAN rule 6. **No verdict on case (1).** It is
+neither EMPTY nor ALIVE on this evidence; it is STALLED, and the cost data
+below is the deliverable.
+
+**T1 — tower validation: PASS.** `--tower-check` had been dead since the pause
+commit: appending `tower_lift` overwrote `tower_check`'s `def` line, leaving
+its body as unreachable code after a `return`, so the entry point raised
+`NameError`. Header restored, no logic changed. The check now passes —
+raw-vs-assembled residual agreement on 5 random FULL (c,d) assignments at
+p = 65521, and level-20 equation count 19. The tower is confirmed to reproduce
+the raw hash-pinned system level by level.
+
+**T2 — random tower scan at p = 65521: STALLED (per-sample cost).** Sample 0
+(a = 8806, b = 37304, S = [1, 55537, 52577, 50054, 4136]) reproduces the
+report's structural profile exactly: ntau = 53, kernel dims 9,9,8,8,6,5,4,3,1
+then 0 from level 10 down. Measured per-level cost of the Singular tower with
+per-level GB compression:
+
+| level | secs | GB size | mem |
+|---|---|---|---|
+| 19 | 0 | 0 | 2 MB |
+| 18 | 0 | 13 | 2 MB |
+| 17 | 79 | 58 | 150 MB |
+| 16 | > 1400, did not finish | — | 1.8 GB |
+
+Nine levels remain below 16, and Structure Theorem 1 places any kill below all
+of them (weight <= 7). One sample therefore exceeds the 1500 s budget without
+reaching the levels that could kill it; ">= 10k samples" is off by roughly
+four orders of magnitude. Scan stopped after sample 0 rather than burn a core
+re-measuring the same wall. `trackB1_towerscan_p65521_s000.levels.log` is the
+record.
+
+**T3 — special loci (repeated-root h): NOT ATTEMPTED.** Blocked by the same
+per-sample cost; a repeated-root h enlarges Cent(S), so its kernels are at
+least as large and its samples at least as expensive as the generic one
+measured above.
+
+**T4 — exhaustive p = 31 sweep: INFEASIBLE as specified.** 5 x 31^3 x 30 =
+4,468,650 samples. At the measured per-sample cost this is a further three
+orders of magnitude beyond T2. The report's own precondition for T4 — "a
+shallow closed-form death criterion ... then sweep the criterion" — has not
+been met, and deriving one is Fable-grade.
+
+**T5 — engine lottery: both tickets lost.**
+- slimgb, same sample, same levels: level 17 took 172 s / 524 MB against std's
+  79 s / 150 MB. slimgb is worse here; `option(redSB)` was dropped for that
+  run, so the loss is not an artifact of reduction settings. Engine is now
+  switchable via `JCENGINE=std|slimgb`; std remains the default.
+- msolve (F4 over F_p, installed this session) on the full normalized
+  substituted system — 284 polys / 166 vars including the Rabinowitsch tie,
+  exported by `trackB1_msolve_export.py` from the hash-pinned
+  `trackB1_param_system.json` (094bcd93...) — died in monomial hash-table
+  growth ("Enlarging exponent vector for hash table failed", esz = 16777216)
+  under a 6.5 GB address-space cap.
+
+**Why the tower is expensive, structurally** (offered as input to the next
+design pass, not as a result). The level-w map is
+(A, B) |-> 3bS^2[A,S] + 2aS[S,B] = S*[S, 2aB - 3bSA], so its kernel is
+{(A,B) : 2aB - 3bSA in Cent(S)}: the new P-component A is unconstrained at its
+own level. That is exactly why ntau = 53 = the number of P-coefficients below
+the top, and why the obstruction ideal stays far from 1 through the entire
+upper tower — the GB is doing hard work on an ideal that cannot collapse until
+the bottom levels are reached. The cost driver is the 53 free A-directions
+carried as ring variables. Escalated to FABLE_REVIEW.md item 2.
 
 ## Artifacts
 

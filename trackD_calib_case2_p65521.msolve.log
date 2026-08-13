@@ -1,7 +1,7 @@
 
 --------------- INPUT DATA ---------------
-#variables                     166
-#equations                     284
+#variables                      73
+#equations                      93
 #invalid equations               0
 field characteristic         65521
 homogeneous input?               0
@@ -16,5 +16,3 @@ reduce gb                        1
 info level                       1
 generate pbm files               0
 ------------------------------------------
-Enlarging exponent vector for hash table failed
-for esz = 16777216, segmentation fault will follow.
