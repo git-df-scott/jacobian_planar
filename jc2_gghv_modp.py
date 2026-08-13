@@ -149,30 +149,53 @@ def reduce_modp(eqs, nz_idx, p, names, verbose=True, report_every=10):
         if changed:
             continue
 
-        # R2: linear-with-invertible-coefficient
+        # R2: linear-with-invertible-coefficient.
+        # ONE pass over each equation's monomials collects, for every variable
+        # at once, its max degree and the monomials carrying it to degree 1.
+        # The previous version rescanned every monomial once per variable,
+        # making a round O(eqs * vars * terms).  That -- not polynomial size --
+        # is what stalled the first run at round 18 with only 68MB resident.
         best = None
         for e in eqs:
-            vs = pvars(e)
-            for v in vs:
-                if pdeg_in(e, v) != 1:
+            maxdeg, carriers = {}, {}
+            for m, c in e.items():
+                for v, x in m:
+                    if x > maxdeg.get(v, 0):
+                        maxdeg[v] = x
+                    if x == 1:
+                        carriers.setdefault(v, []).append(m)
+            for v, dmax in maxdeg.items():
+                if dmax != 1:
                     continue
-                # split e = A*v + B with A free of v
-                A, B = {}, {}
-                for m, c in e.items():
-                    d = dict(m)
-                    if d.get(v, 0) == 1:
-                        del d[v]
-                        A[tuple(sorted(d.items()))] = c
-                    else:
-                        B[m] = c
-                if len(A) != 1:
-                    continue
-                (am, ac), = A.items()
+                cl = carriers.get(v, ())
+                if len(cl) != 1:
+                    continue              # coefficient of v must be a monomial
+                m0 = cl[0]
+                am = tuple((w, x) for w, x in m0 if w != v)
                 if any(w not in nz_idx for w, _x in am):
-                    continue          # coefficient not known invertible
-                score = len(B)
+                    continue              # coefficient not known invertible
+                B = {m: c for m, c in e.items() if m != m0}
+                # The pivot value is -B/(ac*am).  Only accept this candidate if
+                # am actually DIVIDES every monomial of B.  Selecting a pivot
+                # that fails this test and then "skipping" it later reselects
+                # the same minimal-score candidate on the next round, forever:
+                # that infinite loop, not expression swell, is what stalled the
+                # earlier runs at round 18.
+                if am:
+                    divisible = True
+                    for m in B:
+                        d = dict(m)
+                        for w, xx in am:
+                            if d.get(w, 0) < xx:
+                                divisible = False
+                                break
+                        if not divisible:
+                            break
+                    if not divisible:
+                        continue
+                score = len(e) - 1
                 if best is None or score < best[0]:
-                    best = (score, v, A, B, e, am, ac)
+                    best = (score, v, {am: e[m0]}, B, e, am, e[m0])
         if best is None:
             break
         _s, v, A, B, src, am, ac = best
@@ -192,17 +215,18 @@ def reduce_modp(eqs, nz_idx, p, names, verbose=True, report_every=10):
                     ok = False
                     break
                 newval[tuple(sorted((w, x) for w, x in d.items() if x))] = c
-            if not ok:
-                # cannot divide cleanly; skip this pivot by dropping it
-                eqs = [x for x in eqs if x is not src] + [src]
-                continue
+            assert ok, ("undividable pivot selected -- the selection filter "
+                        "is supposed to make this unreachable")
             val = newval
         solved[v] = val
         eqs = [pnorm(psubs(x, v, val, p), p) for x in eqs if x is not src]
         eqs = [x for x in eqs if x]
         if verbose and (rnd <= 20 or rnd % report_every == 0):
+            mx = max((len(x) for x in eqs), default=0)
+            tot = sum(len(x) for x in eqs)
             print(f"    r{rnd}: solve {names[v]}   (eqs {len(eqs)}, "
-                  f"{time.time()-t0:.0f}s)", flush=True)
+                  f"max terms {mx}, total {tot}, {time.time()-t0:.0f}s)",
+                  flush=True)
     return eqs, solved, zeroed, None
 
 
