@@ -47,9 +47,11 @@ def parse_poly(s):
                     num = num * pow(int(m.group(2)), P - 2, P) % P
                 coef = coef * num % P
                 continue
-            m = re.fullmatch(r"(d_\d+_\d+)(?:\^(\d+))?", pt)
+            m = re.fullmatch(r"([+-])?(d_\d+_\d+)(?:\^(\d+))?", pt)
             assert m, f"bad factor {pt!r} in {term[:80]!r}"
-            mono[m.group(1)] = mono.get(m.group(1), 0) + int(m.group(2) or 1)
+            if m.group(1) == "-":
+                coef = coef * (P - 1) % P
+            mono[m.group(2)] = mono.get(m.group(2), 0) + int(m.group(3) or 1)
         key = tuple(sorted(mono.items()))
         out[key] = (out.get(key, 0) + coef) % P
     return {k: v for k, v in out.items() if v}
