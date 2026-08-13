@@ -976,30 +976,64 @@ def s_powers(svec, p):
     return s2, s3
 
 
-def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
+def tower_run(pre, p, a, b, svec, max_tau_terms=200000, verbose=False,
+              ckpt=None, resume=False):
     """Run the tower for one (a, b, svec) sample mod p.
 
-    Returns dict with outcome in {"DEAD", "SURVIVOR"}, dead_level,
-    per-level stats, residual obstructions, component values (tau-polys),
-    and the tau substitution log."""
+    Lazy substitution: solved taus are recorded in `subs` (tau -> rep, with
+    reps kept fully reduced); component values are brought up to date only
+    when USED (with a per-entry version counter). Obstructions are always
+    kept fully reduced.
+
+    Returns dict with outcome in {"DEAD", "SURVIVOR", "OVERFLOW"}, dead_level,
+    per-level stats, residual obstructions, component values (tau-polys)."""
     s2, s3 = s_powers(svec, p)
     topc = {v: (a * s2[i]) % p for i, v in enumerate(pre["psl"][8])}
     topd = {v: (b * s3[k]) % p for k, v in enumerate(pre["qsl"][12])}
-    # value store: var name -> tau-poly (constants for top and d_2_1)
-    val = {v: ({(): c} if c else {}) for v, c in topc.items()}
+    # value store: var name -> [tau-poly, version]
+    val = {v: [{(): c} if c else {}, 0] for v, c in topc.items()}
     for v, c in topd.items():
-        val[v] = {(): c} if c else {}
-    val["d_2_1"] = {(): 1}
+        val[v] = [{(): c} if c else {}, 0]
+    val["d_2_1"] = [{(): 1}, 0]
     ntau = 0
-    obstructions = []        # list of (level, tau-poly)
-    subs_log = []            # (tau, level) substitutions applied
+    subs = []                # list of (tau, rep); reps reduced w.r.t. later? no:
+                             # reps are kept fully reduced at append time and
+                             # NEVER contain any tau that has a substitution.
+    subs_of = {}             # tau -> index
+    obstructions = []        # list of (level, tau-poly), fully reduced
     stats = []
     dead = None
+    start_w = 19
 
-    def substitute(tau, rep, level):
-        nonlocal obstructions
-        for k in list(val):
-            val[k] = tw_subst(val[k], tau, rep, p)
+    def reduce_poly(f, fromver=0):
+        """Apply substitutions subs[fromver:] to f. Because each rep is
+        tau-free w.r.t. ALL substituted taus (maintained invariant), one
+        forward pass suffices."""
+        for i in range(fromver, len(subs)):
+            t, rep = subs[i]
+            if any(v == t for m in f for v, _ in m):
+                f = tw_subst(f, t, rep, p)
+        return f
+
+    def getval(name):
+        ent = val[name]
+        if ent[1] < len(subs):
+            ent[0] = reduce_poly(ent[0], ent[1])
+            ent[1] = len(subs)
+        return ent[0]
+
+    def add_sub(tau, rep, level):
+        """Record tau := rep (rep already fully reduced, tau-free). Reduce
+        pending obstructions; return DEAD if one becomes nonzero const."""
+        nonlocal obstructions, dead
+        # maintain invariant: existing reps never contain a newly solved tau?
+        # They may! Old reps were created before tau was solved. Fix: reduce
+        # old reps that mention tau (rare; sizes small).
+        for i, (t0, r0) in enumerate(subs):
+            if any(v == tau for m in r0 for v, _ in m):
+                subs[i] = (t0, tw_subst(r0, tau, rep, p))
+        subs.append((tau, rep))
+        subs_of[tau] = len(subs) - 1
         newo = []
         for (lw, ob) in obstructions:
             ob2 = tw_subst(ob, tau, rep, p)
@@ -1007,12 +1041,39 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
             if c is None:
                 newo.append((lw, ob2))
             elif c != 0:
+                obstructions = []
                 return ("DEAD", lw)
         obstructions = newo
-        subs_log.append((tau, level))
         return None
 
-    for w in range(19, -3, -1):
+    # ------------------------------------------------ optional resume
+    if resume and ckpt and os.path.exists(ckpt):
+        try:
+            st = json.load(open(ckpt))
+            assert st["p"] == p and st["a"] == a and st["b"] == b \
+                and st["svec"] == list(svec)
+            def deser(sp):
+                return {tuple((v, e) for v, e in m): c for m, c in
+                        [(mm, cc) for mm, cc in sp]}
+            val = {k: [deser(v), 0] for k, v in st["val"].items()}
+            subs = [(t, deser(r)) for t, r in st["subs"]]
+            for k in val:
+                val[k][1] = len(subs)
+            subs_of = {t: i for i, (t, _) in enumerate(subs)}
+            obstructions = [(lw, deser(ob)) for lw, ob in st["obstructions"]]
+            ntau = st["ntau"]
+            stats = st["stats"]
+            start_w = st["next_w"]
+            if verbose:
+                print("tower: RESUMED at w=%d (ntau=%d, %d subs, %d obs)"
+                      % (start_w, ntau, len(subs), len(obstructions)),
+                      flush=True)
+        except Exception as ex:
+            print("tower: resume failed (%s); starting fresh" % ex, flush=True)
+            start_w = 19
+
+    for w in range(start_w, -3, -1):
+        t_lv = time.time()
         eqs = pre["levels"][w]
         newvars = []
         if -1 <= w - 12 <= 7:
@@ -1033,14 +1094,14 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
             for cn, dn, coeff in e["newc"]:
                 M[r][col[cn]] = (M[r][col[cn]] + coeff.numerator *
                                 pow(coeff.denominator, p - 2, p) *
-                                tw_const(val[dn])) % p
+                                tw_const(getval(dn))) % p
             for cn, dn, coeff in e["newd"]:
                 M[r][col[dn]] = (M[r][col[dn]] + coeff.numerator *
                                 pow(coeff.denominator, p - 2, p) *
-                                tw_const(val[cn])) % p
+                                tw_const(getval(cn))) % p
             for cn, dn, coeff in e["known"]:
                 cc = (coeff.numerator * pow(coeff.denominator, p - 2, p)) % p
-                prod = tw_mul(val[cn], val[dn], p)
+                prod = tw_mul(getval(cn), getval(dn), p)
                 rhs = tw_add(rhs, tw_scale(prod, (-cc) % p, p), p)
             R.append(rhs)
         # Gaussian elimination on M (numeric), applying row ops to R (tau-polys)
@@ -1075,7 +1136,7 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
         for c in freecols:
             tau_of[c] = "t%d" % ntau
             ntau += 1
-        # assign new component values
+        # assign new component values (fully reduced at this point)
         for c, v in enumerate(newvars):
             if c in piv:
                 expr = dict(R[piv[c]])
@@ -1083,9 +1144,9 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
                     coefffc = M[piv[c]][fc]
                     if coefffc:
                         _tw_madd(expr, ((tau_of[fc], 1),), (-coefffc) % p, p)
-                val[v] = expr
+                val[v] = [expr, len(subs)]
             else:
-                val[v] = {((tau_of[c], 1),): 1}
+                val[v] = [{((tau_of[c], 1),): 1}, len(subs)]
         # consistency rows: zero M-row but nonzero RHS -> obstruction
         level_obs = 0
         for r in range(rank, nrow):
@@ -1102,7 +1163,8 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
                       "kernel": len(freecols), "obstructions": level_obs})
         if dead:
             break
-        # try to resolve obstructions LINEAR in a tau (exact substitution)
+        # resolve obstructions LINEAR in a tau (exact substitution over F_p)
+        nsub_lv = 0
         progress = True
         while progress and not dead:
             progress = False
@@ -1111,10 +1173,8 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
                 for m, c in ob.items():
                     if len(m) == 1 and m[0][1] == 1:
                         t = m[0][0]
-                        others = any(t == mv for mm, _ in ob.items()
-                                     for mv, me in mm
-                                     if mm != m and (mv == t))
-                        if not others:
+                        if not any((mm != m and any(v == t for v, _ in mm))
+                                   for mm in ob):
                             lin = (t, c, m)
                             break
                 if lin:
@@ -1122,21 +1182,46 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
                     rest = {mm: cc for mm, cc in ob.items() if mm != m}
                     rep = tw_scale(rest, (-pow(c, p - 2, p)) % p, p)
                     del obstructions[idx]
-                    dd = substitute(t, rep, lw)
+                    dd = add_sub(t, rep, lw)
                     if dd:
                         dead = dd
+                    nsub_lv += 1
                     progress = True
                     break
+        stats[-1]["subs"] = nsub_lv
         if dead:
             break
-        # size guard
-        total_terms = sum(len(v) for v in val.values())
-        if total_terms > max_tau_terms:
+        # diagnostics + size guard (count only up-to-date sizes, cheap proxy)
+        total_terms = sum(len(v[0]) for v in val.values())
+        ob_terms = sum(len(ob) for _, ob in obstructions)
+        stats[-1]["val_terms"] = total_terms
+        stats[-1]["ob_terms"] = ob_terms
+        stats[-1]["secs"] = round(time.time() - t_lv, 1)
+        if verbose:
+            st = stats[-1]
+            print("tower: w=%3d eqs=%2d new=%2d rank=%2d ker=%2d obs=%2d "
+                  "subs=%2d ntau=%3d live_obs=%2d val_terms=%d ob_terms=%d "
+                  "(%.1fs)" % (w, st["eqs"], st["new"], st["rank"],
+                               st["kernel"], st["obstructions"], nsub_lv,
+                               ntau, len(obstructions), total_terms, ob_terms,
+                               st["secs"]), flush=True)
+        if ckpt:
+            def ser(f):
+                return [[[[v, e] for v, e in m], c] for m, c in f.items()]
+            with open(ckpt + ".tmp", "w") as fh:
+                json.dump({"p": p, "a": a, "b": b, "svec": list(svec),
+                           "next_w": w - 1, "ntau": ntau, "stats": stats,
+                           "val": {k: ser(getval(k)) for k in val},
+                           "subs": [[t, ser(r)] for t, r in subs],
+                           "obstructions": [[lw, ser(ob)] for lw, ob in
+                                            obstructions]}, fh)
+            os.replace(ckpt + ".tmp", ckpt)
+        if total_terms + ob_terms > max_tau_terms:
             return {"outcome": "OVERFLOW", "level": w, "stats": stats,
                     "ntau": ntau, "total_terms": total_terms}
     if dead:
         return {"outcome": "DEAD", "dead_level": dead[1], "stats": stats,
-                "ntau": ntau, "nsub": len(subs_log)}
+                "ntau": ntau, "nsub": len(subs)}
     # survivor: residual obstruction system in surviving taus
     live_taus = sorted({v for (_, ob) in obstructions for m in ob
                         for v, _ in m},
@@ -1144,11 +1229,12 @@ def tower_run(pre, p, a, b, svec, max_tau_terms=200000):
     # vertex nonzero conditions that are tau-polys
     nz = {}
     for v in ("c_8_14", "d_12_21", "c_1_0"):
-        nz[v] = val[v]
+        nz[v] = getval(v)
     return {"outcome": "SURVIVOR", "stats": stats, "ntau": ntau,
-            "nsub": len(subs_log),
+            "nsub": len(subs),
             "obstructions": [(lw, ob) for lw, ob in obstructions],
-            "live_taus": live_taus, "val": val, "nonzero_polys": nz}
+            "live_taus": live_taus,
+            "val": {k: getval(k) for k in val}, "nonzero_polys": nz}
 
 
 def tower_check(p=65521, seed=12345, n=5):
@@ -1303,8 +1389,9 @@ def main():
     ap.add_argument("--tower-scan", nargs="+", metavar="ARG",
                     help="P NSAMPLES [SEED [NAME]] — random (a,b,S) tower scan")
     ap.add_argument("--tower-one", nargs="+", metavar="ARG",
-                    help="P a b s1 s2 s3 s4 — run one tower sample verbosely "
-                         "(s0 = 1)")
+                    help="P a b s1 s2 s3 s4 [CAP [NAME]] — run one tower "
+                         "sample verbosely (s0 = 1); with NAME: checkpoint to "
+                         "NAME.ckpt.json + resume if it exists")
     args = ap.parse_args()
     if args.tower_check:
         ok = tower_check()
@@ -1315,12 +1402,34 @@ def main():
                    a[3] if len(a) > 3 else None)
         return
     if args.tower_one:
-        a = [int(x) for x in args.tower_one]
-        p = a[0]
+        aa = args.tower_one
+        p = int(aa[0])
+        cap = int(aa[7]) if len(aa) > 7 else 200000
+        name = aa[8] if len(aa) > 8 else None
+        ck = os.path.join(HERE, name + ".ckpt.json") if name else None
         pre = tower_precompute()
-        res = tower_run(pre, p, a[1], a[2], [1] + a[3:7])
+        res = tower_run(pre, p, int(aa[1]), int(aa[2]),
+                        [1] + [int(x) for x in aa[3:7]],
+                        max_tau_terms=cap, verbose=True, ckpt=ck,
+                        resume=bool(ck))
         print("outcome:", res["outcome"],
               "dead_level:", res.get("dead_level"))
+        if name:
+            def ser(f):
+                return [[[[v, e] for v, e in m], c] for m, c in f.items()]
+            outp = os.path.join(HERE, name + ".result.json")
+            slim = dict(res)
+            if "val" in slim:
+                slim["val"] = {k: ser(v) for k, v in slim["val"].items()}
+            if "nonzero_polys" in slim:
+                slim["nonzero_polys"] = {k: ser(v) for k, v in
+                                         slim["nonzero_polys"].items()}
+            if "obstructions" in slim:
+                slim["obstructions"] = [[lw, ser(ob)] for lw, ob in
+                                        slim["obstructions"]]
+            with open(outp, "w") as fh:
+                json.dump(slim, fh)
+            print("result written:", outp)
         for st in res["stats"]:
             print("  w=%3d eqs=%2d new=%2d rank=%2d ker=%2d obs=%2d"
                   % (st["w"], st["eqs"], st["new"], st["rank"], st["kernel"],

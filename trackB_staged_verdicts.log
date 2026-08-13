@@ -52,3 +52,6 @@
 21:04:44 BRANCH r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
 21:09:37 BRANCH r0a_f0_f0_f1_f0: stage2b vars=21 gens=50 -> BRANCH r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH r0a_f0_f0_f1_f0 EMPTY
 21:09:37 R0 CLOSER r0a: COMPLETE in 309s
+21:12:38 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+21:12:45 BRANCH p65539_rk0: stage2 vars=15 eqs=38 -> BRANCH p65539_rk0 RESIDUAL DIM: -1 | BRANCH p65539_rk0 EMPTY
+21:13:50 BRANCH p65539_rk1: stage2b vars=21 gens=50 -> BRANCH p65539_rk1 RESIDUAL DIM: -1 | BRANCH p65539_rk1 EMPTY
