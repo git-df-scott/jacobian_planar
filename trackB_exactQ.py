@@ -50,7 +50,7 @@ def q_eliminant_factors():
           f"degs {[max((len(x) // 40, 1)) for x in facs] if facs else []}")
     return facs
 
-def q_close(tag, pin, extras, timeout=7200):
+def q_close(tag, pin, extras, timeout=7200, extra_nz=None):
     """Full-system closure over Q for one branch: edge GB then residual GB."""
     mark = os.path.join(WD, f"trackB_Q_done_{tag}")
     if os.path.exists(mark):
@@ -67,7 +67,8 @@ def q_close(tag, pin, extras, timeout=7200):
                      | set(S.EDGE_VARS) | set(S.leaf.get("nonzero", [])),
                      key=lambda s: tuple(map(int, s.split("_")[1:])))
     prod = "*".join([f"({v})" for v in S.leaf.get("nonzero", [])] +
-                    [f"({e})" for e in S.leaf.get("nonzero_exprs", [])])
+                    [f"({e})" for e in S.leaf.get("nonzero_exprs", [])] +
+                    [f"({x})" for x in (extra_nz or [])])
     scr += [f"ring RR = 0, ({','.join(allvars)},w), dp;",
             "ideal J = imap(R, G);", "int k;",
             "ideal I2;"]
@@ -91,11 +92,12 @@ def q_close(tag, pin, extras, timeout=7200):
         S.log(f"Q {tag}: NO VERDICT (stalled or crashed — see trackB_Q_{tag}.sing.out)")
 
 def main():
+    # SOUND three-chart cover of leaf 2 over Q — no eliminant factorization:
+    # {d_3_3=1, d_9_15 != 0} u {d_3_3=1, d_9_15=0} u {d_3_3=0}. The old
+    # factor-parsing route silently yielded 0 factors over Q (line-wrapped
+    # output) and would have under-covered. Never parse when you can cover.
     t0 = time.time()
-    facs = q_eliminant_factors()
-    nz = [f for f in facs if f.strip() != "d_9_15"]
-    for k, f in enumerate(nz):
-        q_close(f"rk{k}", "d_3_3-1", [f])
+    q_close("rk_all", "d_3_3-1", [], timeout=14400, extra_nz=["d_9_15"])
     q_close("r0a", "d_3_3-1", ["d_9_15"], timeout=10800)
     q_close("r0b", "d_3_3", ["d_9_15"], timeout=10800)
     S.log(f"Q-SWEEP: pass finished in {time.time()-t0:.0f}s — check for STALLED/NO VERDICT lines before claiming closure")
