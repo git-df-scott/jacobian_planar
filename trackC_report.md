@@ -152,6 +152,78 @@ refined slices are geometrically realizable at (72,108), and whether the
 t != 0 branch at (1,2) is live — is exactly the C4 judgment call, untouched
 here.
 
+### C4 refined-frame sweep (user-directed, 2026-08-13)
+
+`python3 trackC_c4_refined_sweep.py` -> trackC_c4_refined_sweep.json. Runs the
+framework's own obstruction chain (the C2 routine, exact linear algebra) on
+every refined slice over m = 1..8, k = 1..14, t = 0.
+
+**Enumeration (confirmed).** rho(s-1) = 1 (mod 5) with rho, s <= 12 has exactly
+**23** solutions. Bookkeeping note, because two different "22"s are in
+circulation: the 23 contain the baseline **(3,3)** — the handoff frame is
+rho = s = 3 — and the degenerate **(1,2)**. `trackC_phase4.py c4` reports "22
+unexamined" = 23 minus the baseline (1,2 included). A list of 22 that keeps
+(3,3) and drops (1,2) is the complement pair, not the same set. **(3,1) is not
+a slice at all** — rho = 3 forces s = 3 (mod 5).
+
+**Result: the ODE layer does not discriminate.** 22 of the 23 slices carry at
+least one forced R inside the window. The single exception is (1,2), which is
+exactly the sigma = 0 slice: k*t + D*sigma = 0 at t = 0 gives c = 0, and a
+vanishing Keller constant is dead by definition. Every other slice survives,
+including all of the unexamined ones.
+
+| (rho,s) | sigma | live instances | | (rho,s) | sigma | live instances |
+|---|---|---|-|---|---|---|
+| (1,2) | 0 | **0 — DEAD** | | (7,4) | -4 | 10 |
+| (1,7) | -1 | 23 | | (7,9) | -11 | 16 |
+| (1,12) | -2 | 16 | | (8,3) | -3 | 16 |
+| (2,4) | -1 | 24 | | (8,8) | -11 | 19 |
+| (2,9) | -3 | 9 | | (9,5) | -7 | 20 |
+| (3,3) baseline | -1 | 25 | | (9,10) | -16 | 7 |
+| (3,8) | -4 | 11 | | (11,2) | -2 | 17 |
+| (4,5) | -3 | 13 | | (11,7) | -13 | 20 |
+| (4,10) | -7 | 19 | | (11,12) | -24 | 4 |
+| (6,2) | -1 | 22 | | (12,4) | -7 | 22 |
+| (6,7) | -7 | 19 | | (12,9) | -19 | 16 |
+| (6,12) | -13 | 14 | | | | |
+
+**Consequence for C4.** Since the forced-R machinery kills only the
+already-degenerate slice, C4 cannot be settled at the ODE layer. Whatever
+discriminates among these 22 has to come from the realization/boundary layer —
+which slices are geometrically realizable at (72,108) at all — and that
+remains the Fable-grade call. This sweep narrows nothing but it does establish
+that nothing is narrowable here, which is the useful negative.
+
+**Three proposed additional filters, assessed and NOT applied.** A protocol was
+suggested that would have (i) matched (72,108) against non-negative integer
+combinations a*D + b*sigma = 72, c*D + d*sigma = 108; (ii) imposed sigma <= 0
+and c/alpha^5 > 0 with a "no tachyonic/ghost modes" sign condition on S; and
+(iii) killed slices whose primitive S needs non-integral denominators. None of
+the three is a constraint this framework has, and applying them would have
+discarded live slices on invented criteria:
+
+- (i) has no derivation from the C1 relations. D is the chain degree and sigma
+  the v-exponent of g0; neither is a degree of P or Q, and (72,108) enters
+  through the GGHV shape, not through a Diophantine combination of these two.
+  It is also not well-posed as a *slice* property, because D = 5k + 1 - s
+  varies with k inside a slice (e.g. slice (1,7) runs over D = 14, 19, 29, 34,
+  39, 44). Measured anyway on the live instances: it would discard 58% of them
+  (55 of 130 pass) — a large cut on an unfounded criterion.
+- (ii) sigma <= 0 holds for **every** slice in the lattice already (sigma < 0
+  everywhere except the dead (1,2)), so it filters nothing. The sign of c is
+  convention-dependent — this very session logged our +455 against the
+  handoff's -455 for the same S — so "c > 0" is not well-posed; the real and
+  already-implemented condition is c != 0. Sign alternation in S (243, -81,
+  54, -42, 35) is generic across all ten C2 instances, not a pathology.
+- (iii) is vacuous as stated: S is determined only up to a scalar that
+  alpha^(a+b) absorbs, so it can always be normalized to a primitive integer
+  polynomial — which is exactly what the solver prints. The framework's real
+  arithmetic obstruction is already in the chain: deg S = (p - t) -
+  (D/k)(m + sigma) must be a non-negative integer (the divisibility sieve
+  k | D(m+sigma) at t = 0), together with the resonance test
+  k(j + t) + D*sigma != 0 for 1 <= j <= deg S. Those two are what produce
+  every DEAD verdict in the sweep above.
+
 ## Discrepancy log
 
 (every mismatch vs the handoff gets a line here)
