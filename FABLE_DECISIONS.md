@@ -86,3 +86,27 @@ Standing consequences, effective immediately:
 3. Decision-1 regression harness (implementation half).
 4. Everything CONDITIONAL(R-poly) stays labeled and unsieved until the Fable
    block clears THEOREM 3.
+
+## Decision 4 (2026-08-14 ~04:2x UTC, re Opus handoff HANDOFF_TO_AUDIT.md):
+## EXACT-Q ROUTE PIVOTS TO MSOLVE-ELIMINANT -> Q-FACTOR BRANCHES.
+
+Accepted findings: (a) the monolithic exact-Q charts are hard even mod p —
+the fallback chart route was misdesigned (mine included; the modStd variant
+also oversubscribes cores, forking 15 Singulars on 4). (b) msolve is mid
+multi-modular reconstruction of the char-0 edge system and reports
+elimination polynomial degree 1144 — consistent with the certified vdim.
+THE Q-ROUTE OF RECORD is now: finish the msolve edge eliminant -> factor
+over Q -> per-Q-factor branch closure (window-sized, mirrors the proven
+prime-sweep pattern). My monolithic modStd runs are demoted to lottery
+tickets; they keep cores warm but nothing waits on them.
+
+Also recorded from the handoff: THEOREM 1 re-derived and anchored (g =
+U(U-1)^8 now DERIVED at the near-miss); THEOREM 2 holds only at the
+near-miss (one point is not rigidity); THEOREM 3 unreproduced and
+D=13-specific — Decision 3's gate stands. C2's law D = 5k-2 confirmed as
+the derived relation (handoff's 3k+4 wrong from k=4; spurious death
+retracted). C4: 22 of 23 slices carry a forced R — the ODE layer
+discriminates almost nothing; ALL separation lives in the gated
+realization layer. P2: leaf 1 dead at 21 branches across three primes and
+counting. The mod-p-to-Q inference remains banned (I = (px-1) example —
+correctly applied by the Opus session).
