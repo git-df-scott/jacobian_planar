@@ -1,5 +1,64 @@
 # AUDIT REPORT
 
+## OVERNIGHT REPORT — 2026-08-14, 07:00 local (13:00 UTC)
+
+**Outcome classification (NIGHT_PLAN §8): PARTIAL.** No counterexample. No
+non-EMPTY verdict anywhere in the campaign, ever. No candidate has reached the
+gate. Nothing is certified over Q yet, so no closure claim either.
+
+### 1. Verdict tally
+- **46 EMPTY verdicts**, **0 non-EMPTY**, 0 SURVIVOR lines.
+- Case (2) leaf 2 (the never-before-searched d_2_2-free locus, Sol(case 2) =
+  Sol(leaf 2)): **fully dead at three primes** — 65521, 65539, 65599 — branch
+  decomposition re-derived independently at each prime, r0 fibers closed by
+  recursive univariate radicalization (338 -> 6 and 280 -> {1,2}).
+- Case (2) leaf 1 (the old campaign's slice): **dead at p=65521 and p=65539**
+  (the latter a full 5277s sweep, all 7 branches). p=65599 is stuck on ONE
+  terminal branch, `L1_p65599_r0b_f0_f0_f0_f0` — a vdim-6 endpoint that needs
+  more contiguous CPU than a container window provides; it is restarted and
+  killed each cycle. Not a mathematical obstruction; an environment tax.
+
+### 2. Exact-Q certificate status
+- **0 charts CLOSED. The route was rebuilt twice and the blocker is now gone.**
+- The char-0 edge eliminant — the single computation everything stalled on —
+  **completed via msolve**: `trackB_edgeQ.msolve.out`, 796KB, elimination
+  polynomial **degree 1144**, matching the independently certified vdim. That
+  is the unblock; the remaining Q work is factor-over-Q then per-factor branch
+  closure (Decision 4), which is window-sized and mirrors the proven mod-p
+  pattern.
+- Monolithic per-chart Q runs (mine, both direct and modStd) are **measured
+  dead ends** and are retired. The Opus session's Nullstellensatz-certificate
+  machinery (cofactors T with I*T = 1, verified by exact polynomial arithmetic,
+  replayable independently of how the basis was found) stands ready and is the
+  right acceptance bar for every Q verdict.
+- One log line at 02:11:02 reading STALLED is an operator kill during an engine
+  switch, annotated in-log as not a verdict.
+
+### 3. Overnight Opus-session integration
+Merged into the audit branch: the msolve edge eliminant, leaf-1 sweep
+progress, the C3 ladder certification (13 PASS), the C2 correction
+(D = 5k-2 derived; the old handoff's 3k+4 wrong from k=4 and manufacturing a
+spurious death), and the C4 refined sweep (22 of 23 slices carry a forced R —
+the ODE layer discriminates almost nothing, so all separation lives in the
+realization layer, which is gated by the THEOREM 3 gap).
+
+### 4. Pentagon case (1) — Decision 2 state
+**No verdict. The numeric tower prescribed by Decision 2 is not yet written.**
+The symbolic tower is retired (measured: level 17 costs 79s/150MB, level 16
+does not finish in 1400s, nine levels below it). The rewrite — (S,a,b)
+instantiated in F_p first, every level a small dense linear solve, no symbolic
+carry — is the single highest-value piece of work outstanding, because an
+exhaustive p=31 sweep is a genuine complete statement about the pentagons and
+they are the last open door below degree 125.
+
+### 5. Environment ledger (design constraints, measured)
+Container lifetime ~1-2.5h, frequently much less; processes die with it,
+filesystem survives. Any monolithic run budgeted past a window cannot land.
+Marker-resumable staged pipelines are the only design that makes progress here
+— which is why the mod-p sweeps completed and the monolithic Q charts did not.
+
+---
+
 ## Addendum — Opus 5 priority-queue session, 2026-08-13/14
 
 Status line per OPUS_PLAN P1: **stalled-with-data on P0 and P3; P1 and P2 in
