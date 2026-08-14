@@ -190,3 +190,13 @@
 03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
 03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
 03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+03:36:27 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+03:36:27 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+03:36:27 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+03:36:27 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+03:36:27 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+03:36:27 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+03:36:27 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
