@@ -224,3 +224,15 @@
 03:44:11 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
 03:44:11 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
 03:56:09 CERTSUP A_d33_1: 46 generators, probing support mod 65521
+05:12:08 BRANCH L1_p65539_r0b_f0_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0b_f0_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0b_f0_f0_f0_f0 EMPTY
+05:12:08 L1 SWEEP p=65539: COMPLETE in 5277s (5 eliminant branches + r0a + r0b)
+05:12:09 L1 SWEEP p=65599: resuming from cached eliminant (5 factors)
+05:12:09 BRANCH L1_p65599_r0b: edge fiber dim 0 vdim 338 (depth 0)
+05:12:09 BRANCH L1_p65599_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+05:12:09 BRANCH L1_p65599_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+05:12:09 BRANCH L1_p65599_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+05:12:09 BRANCH L1_p65599_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+05:12:09 BRANCH L1_p65599_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+05:12:09 BRANCH L1_p65599_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+05:12:09 BRANCH L1_p65599_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+05:12:09 BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
