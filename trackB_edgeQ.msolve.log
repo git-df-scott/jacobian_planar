@@ -1,0 +1,32 @@
+
+--------------- INPUT DATA ---------------
+#variables                       7
+#equations                       7
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         2
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 1144
+[1144, 392], Non trivial / Trivial = 34.27%
+Density of non-trivial part 95.74%
+Time spent to generate sequence (elapsed): 0.11 sec (9.02 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.01 sec
+Elimination polynomial has degree 1144.
+
+Starts multi-modular computations
+{3}{5}{9}{17}{33}{65}{129}{257}{513}{1025}
+<Step:2/2.47/1.19>
+<Step:4/2.49/2.25>
+<Step:8/2.41/4.57>
+<Step:16/4.85/9.39>
+<Step:32/4.77/19.41>

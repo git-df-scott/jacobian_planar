@@ -33,6 +33,16 @@ def eliminant_factors():
     list is expected to agree — that agreement is itself a cross-check and is
     logged, not assumed."""
     mark = os.path.join(S.WD, f"trackB_L1_elim_p{P}.json")
+    if os.path.exists(mark):
+        # Container restarts are routine and only disk survives, so the
+        # factor list is resumed rather than recomputed. Only a run that
+        # actually reached the factorization ever writes this file (see the
+        # guard below), so a present marker is always a complete factor list.
+        facs = eval(open(mark).read())
+        if facs:
+            S.log(f"L1 SWEEP p={P}: resuming from cached eliminant "
+                  f"({len(facs)} factors)")
+            return facs
     scr = [f"ring R = {P}, ({','.join(S.EDGE_VARS)}), lp;", "ideal I;"]
     n = 0
     for i in S.EDGE_IDX:

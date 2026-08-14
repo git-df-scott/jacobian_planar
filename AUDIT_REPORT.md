@@ -1,4 +1,81 @@
-# AUDIT REPORT — JC2 Counterexample Campaign, night of 2026-08-12/13
+# AUDIT REPORT
+
+## Addendum — Opus 5 priority-queue session, 2026-08-13/14
+
+Status line per OPUS_PLAN P1: **stalled-with-data on P0 and P3; P1 and P2 in
+flight with the exact-Q route rebuilt; P4 advanced with one certified result
+and one certified gap.** No counterexample. No non-EMPTY verdict anywhere. No
+candidate has reached the gate.
+
+**Environment.** The container came up without Singular — the campaign's
+engine — and it had to be reinstalled before anything could run. A later
+restart killed every process after ~2.5h of wall time with the filesystem
+intact. Both facts are now recorded in RESUME_STATE.md, and the second is a
+design constraint, not an annoyance: any monolithic Groebner run budgeted
+beyond ~2h cannot land here, whatever timeout it carries.
+
+**P0 pentagon endgame — STALLED, measured.** `--tower-check` had been dead
+since the pause commit (appending `tower_lift` overwrote `tower_check`'s def
+line, leaving the body unreachable after a `return`); restored, and T1 now
+PASSES. T2 is stalled on per-sample cost: level 17 costs 79s/150MB and level
+16 does not finish in 1400s at 1.8GB, with nine levels still below it and any
+kill living below all of them. T4's 4.47M-sample sweep is three further orders
+out. T5's engines both lost — slimgb is 2x slower and 3.5x heavier than std,
+and msolve dies in monomial hash-table growth. **No verdict on case (1).**
+
+**P3 above-125 — BLOCKED, escalated.** The Newton polygons for every
+above-125 pair are unpublished. 1708.07936 §6 gives chain data only; GGHV
+2204.14178 §4 gives polygons for (9,27), (9,24), (8,28), (7,21) alone, derived
+case-by-case by hand with no general recipe. P3b-P3d are built and
+pair-agnostic; they are blocked on an input only a Fable-grade derivation can
+produce. Engine calibration was done anyway and is itself informative: msolve
+on the RAW case-(2) system (73 vars) grew past 10GB in ~8 minutes and was
+killed without a verdict — the elimination-first pipeline is what makes this
+family finite, whatever the engine.
+
+**P1 exact-Q — route rebuilt, in flight.** The char-0 edge eliminant burned
+over an hour twice with no output, so the fallback (per-chart closure with no
+eliminant) now runs on `modStd` — modular GB over Q with rational
+reconstruction — and every EMPTY verdict is backed by an explicit
+Nullstellensatz certificate: cofactors T with I*T = 1, extracted by `lift`,
+verified by exact polynomial arithmetic in the same run, written to disk. A
+chart is logged CLOSED only when dim = -1 AND the certificate verifies;
+otherwise UNCERTIFIED. The certificate replays with polynomial multiplication
+alone, independent of how the basis was found.
+
+**P2 leaf 1 — in flight, 15 branches EMPTY so far.** The staged pipeline is
+now leaf-parametrized (`JCLEAF`) and derives the Newton-edge equation indices
+from the equations instead of hardcoding them, with leaf 2's indices pinned by
+assertion as a regression check. p=65521 complete; p=65539 through its final
+r0b branch; p=65599 and leaf-1 exact-Q queued unattended. Leaf 1's eliminant
+reproduces ELIMDEG 43 — the same degree as leaf 2's and as the handoff's
+deg-43 story, an independent cross-check of the shared edge subsystem.
+
+**P4 Track C — one certified result, one certified gap.**
+- C2 COMPLETE: the ten forced R's at k = 3..12, each unique up to a scalar,
+  each passing the exact block check. D(k) = 5k - 2 is DERIVED from C1's
+  order matching; **the handoff's D = 3k+4 is wrong** from k = 4 on, and under
+  it the k = 4 slice returns DEAD_resonance — the wrong relation manufactures
+  a death. Our k = 3 forced S matches the handoff's exactly; the sign of c
+  does not (+455 vs -455), logged as a convention discrepancy.
+- C4 enumerated and swept for INPUT ONLY (it is Fable-grade): 22 of the 23
+  refined slices carry a forced R, the sole death being the degenerate (1,2).
+  The ODE layer does not discriminate; whatever separates these slices lives
+  in the realization layer.
+- C3 layer 1 CERTIFIED (13 PASS): the formal (b/a)-th root, chain <=>
+  square-root agreement, the first deviation block 2g^6*delta entering
+  LINEARLY (the structural reason the endgame is an ODE), and a ladder
+  operator whose divisibility behaviour checks out.
+- **C3 layer 2 GAP, and it is load-bearing.** THEOREM 2 (total rigidity) and
+  THEOREM 3 (pole-fiber, hence R polynomial) are prose whose executable
+  engines died with the transcripts, and neither is reproduced. C1 forces the
+  pole ORDER; the fiber-counting step that makes R a POLYNOMIAL is not
+  recovered. **Every (72,108) statement assuming a polynomial R inherits this
+  gap — the C2 table included.** Flagged for Fable rather than papered over.
+
+---
+
+# (earlier) AUDIT REPORT — JC2 Counterexample Campaign, night of 2026-08-12/13
 
 **Outcome class (NIGHT_PLAN §8): PARTIAL → upgraded findings below.**
 No counterexample was found as of this writing. What WAS found is better than

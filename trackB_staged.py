@@ -21,6 +21,12 @@ def log(msg):
         f.write(f"{time.strftime('%H:%M:%S')} {msg}\n")
     print(msg, flush=True)
 
+# Stage timeouts are env-tunable: a branch that needs longer than the
+# default must not silently cost its verdict, and on a shared/oversubscribed
+# box the same branch can take several times its usual wall clock.
+ST1_TIMEOUT = int(os.environ.get("JC_ST1_TIMEOUT", "900"))
+ST2_TIMEOUT = int(os.environ.get("JC_ST2_TIMEOUT", "2400"))
+
 def sing(script, name, timeout=1500):
     fn = os.path.join(WD, name)
     open(fn, "w").write(script)
@@ -129,7 +135,7 @@ def stage1(tag, spec):
     scr += ["short=0;", "option(redSB);", "ideal G = groebner(I);",
             '"DIM: " + string(dim(G));', '"VDIM: " + string(vdim(G));',
             '"GB:"; G;', "quit;"]
-    out = sing("\n".join(scr), f"trackB_st1_{tag}.sing", timeout=900)
+    out = sing("\n".join(scr), f"trackB_st1_{tag}.sing", timeout=ST1_TIMEOUT)
     # parse lex GB of a vdim-1 ideal: expect generators var-const (triangular)
     vals = {}
     quad_var = None
@@ -186,7 +192,7 @@ def stage2(tag, vals, d33=1):
             f'if (d==0) {{ "BRANCH {tag} RESIDUAL VDIM: " + string(vdim(G)); }}',
             f'if (d==-1) {{ "BRANCH {tag} EMPTY"; }}',
             "quit;"]
-    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=2400)
+    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=ST2_TIMEOUT)
     verdict = [l for l in out.splitlines() if "BRANCH" in l or "// **" in l]
     log(f"BRANCH {tag}: stage2 vars={len(rvars)} eqs={len(res_eqs)} -> " + " | ".join(verdict[:3]))
     if verdict:
@@ -241,7 +247,7 @@ def stage2b(tag, vals, gb_lines, d33=1):
             f'if (d==0) {{ "BRANCH {tag} RESIDUAL VDIM: " + string(vdim(G)); }}',
             f'if (d==-1) {{ "BRANCH {tag} EMPTY"; }}',
             "quit;"]
-    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=2400)
+    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=ST2_TIMEOUT)
     verdict = [l for l in out.splitlines() if "BRANCH" in l]
     log(f"BRANCH {tag}: stage2b vars={len(rvars)} gens={len(gens)} -> " + " | ".join(verdict[:3]))
     if verdict:

@@ -142,82 +142,85 @@
 22:42:31 BRANCH L1_p65521_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
 22:42:31 BRANCH L1_p65521_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
 23:04:52 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
-02:11:21 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-02:11:33 BRANCH L1_p65539_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65539_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk0 EMPTY
-02:13:35 BRANCH L1_p65539_rk1: stage2b vars=19 gens=47 -> BRANCH L1_p65539_rk1 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk1 EMPTY
-02:15:37 BRANCH L1_p65539_rk2: stage2b vars=19 gens=47 -> BRANCH L1_p65539_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk2 EMPTY
-02:15:49 BRANCH L1_p65539_rk3: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk3 EMPTY
-02:16:02 BRANCH L1_p65539_rk4: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk4 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk4 EMPTY
-02:25:30 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-02:25:37 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-02:25:37 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-02:25:38 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-02:25:38 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-02:25:38 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-02:25:38 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-02:25:38 BRANCH L1_p65539_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
-02:25:39 BRANCH L1_p65539_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f0 EMPTY
-02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-02:40:05 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-02:40:05 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-02:40:05 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-02:40:05 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-02:40:05 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-02:40:05 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-02:40:05 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-02:40:05 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-02:40:05 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-02:40:05 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-02:53:36 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-02:53:36 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-02:53:36 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-02:53:36 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-02:53:36 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-02:53:36 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-02:53:36 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-02:53:36 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-02:53:36 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-02:53:36 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-03:11:54 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-03:11:54 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-03:11:54 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-03:11:54 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-03:11:54 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-03:11:54 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-03:11:54 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-03:11:54 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-03:36:27 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-03:36:27 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-03:36:27 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-03:36:27 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-03:36:27 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-03:36:27 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-03:36:27 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-03:36:27 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-03:54:51 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
-03:54:51 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
-03:54:51 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
-03:54:51 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
-03:54:51 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
-03:54:51 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
-03:54:51 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
-03:54:51 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
-03:54:51 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
-03:54:51 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
-04:03:23 Q rk_all: NO VERDICT (stalled or crashed — see trackB_Q_rk_all.sing.out)
-04:03:23 BRANCH L1_p65539_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> 
-04:03:23 BRANCH L1_p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
-04:03:23 BRANCH L1_p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
-04:03:23 BRANCH L1_p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
-04:03:23 BRANCH L1_p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
-04:03:23 BRANCH L1_p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
-04:03:23 BRANCH L1_p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
-04:03:23 BRANCH L1_p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
-04:03:23 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
-04:03:23 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+23:23:28 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+23:23:36 BRANCH L1_p65539_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65539_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk0 EMPTY
+23:24:59 BRANCH L1_p65539_rk1: stage2b vars=19 gens=47 -> BRANCH L1_p65539_rk1 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk1 EMPTY
+23:26:08 BRANCH L1_p65539_rk2: stage2b vars=19 gens=47 -> BRANCH L1_p65539_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk2 EMPTY
+23:26:16 BRANCH L1_p65539_rk3: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk3 EMPTY
+23:26:23 BRANCH L1_p65539_rk4: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk4 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk4 EMPTY
+23:26:28 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+23:26:28 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+23:26:28 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+23:26:29 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+23:26:29 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+23:26:29 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+23:26:29 BRANCH L1_p65539_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+23:26:29 BRANCH L1_p65539_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f0 EMPTY
+23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+02:07:38 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:08:26 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+02:08:26 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+02:08:26 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+02:08:26 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+02:08:26 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+02:10:18 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:11:02 BRANCH QF_A_d33_1: STATUS STALLED (no verdict) | ENGINE Singular std | TIME 43 sec
+02:11:02 QF A_d33_1: NO VERDICT after 43s (crashed or killed) — see trackB_QF_A_d33_1.sing.out
+02:11:02 QF-FALLBACK: pass finished in 43s — check for STALLED / NO VERDICT lines before claiming closure
+02:11:27 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:12:21 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:25:29 BRANCH L1_p65539_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f1_f0 EMPTY
+02:25:29 BRANCH L1_p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
+02:25:29 BRANCH L1_p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+02:25:29 BRANCH L1_p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+02:25:29 BRANCH L1_p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+03:00:56 NOTE (log hygiene): the 'BRANCH QF_A_d33_1: STATUS STALLED ... TIME 43 sec' line at 02:11:02 is NOT a verdict — that run was killed by the operator mid-flight while switching the chart engine from direct groebner to modStd. The live chart A run started 02:12:21 under modStd + lift certificate. No closure or stall should be read from the 02:11 line.
+03:06:16 L1 SWEEP p=65599: eliminant ['ELIMDEG: 43'], 5 irreducible factors
+03:06:23 BRANCH L1_p65599_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65599_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65599_rk0 EMPTY
+03:10:38 BRANCH L1_p65599_rk1: stage2b vars=19 gens=47 -> BRANCH L1_p65599_rk1 RESIDUAL DIM: -1 | BRANCH L1_p65599_rk1 EMPTY
+03:10:45 BRANCH L1_p65599_rk2: stage2b vars=18 gens=46 -> BRANCH L1_p65599_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65599_rk2 EMPTY
+03:10:52 BRANCH L1_p65599_rk3: stage2b vars=18 gens=46 -> BRANCH L1_p65599_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65599_rk3 EMPTY
+03:10:57 BRANCH L1_p65599_r0a: edge fiber dim 0 vdim 280 (depth 0)
+03:10:57 BRANCH L1_p65599_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+03:10:57 BRANCH L1_p65599_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+03:10:57 BRANCH L1_p65599_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+03:10:57 BRANCH L1_p65599_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+03:10:57 BRANCH L1_p65599_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+03:10:57 BRANCH L1_p65599_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+03:10:58 BRANCH L1_p65599_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65599_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65599_r0a_f0_f0_f0 EMPTY
+03:10:58 BRANCH L1_p65599_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+03:10:58 BRANCH L1_p65599_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+03:10:58 BRANCH L1_p65599_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+03:27:59 BRANCH L1_p65599_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65599_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65599_r0a_f0_f0_f1_f0 EMPTY
+03:27:59 BRANCH L1_p65599_r0b: edge fiber dim 0 vdim 338 (depth 0)
+03:27:59 BRANCH L1_p65599_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+03:27:59 BRANCH L1_p65599_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+03:27:59 BRANCH L1_p65599_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+03:27:59 BRANCH L1_p65599_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+03:27:59 BRANCH L1_p65599_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+03:27:59 BRANCH L1_p65599_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+03:27:59 BRANCH L1_p65599_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+03:27:59 BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+03:44:11 L1 SWEEP p=65539: resuming from cached eliminant (6 factors)
+03:44:11 BRANCH L1_p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
+03:44:11 BRANCH L1_p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+03:44:11 BRANCH L1_p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+03:44:11 BRANCH L1_p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+03:44:11 BRANCH L1_p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+03:44:11 BRANCH L1_p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+03:44:11 BRANCH L1_p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+03:44:11 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+03:44:11 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+03:56:09 CERTSUP A_d33_1: 46 generators, probing support mod 65521

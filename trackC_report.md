@@ -144,12 +144,41 @@ nothing below cites them as authority.
   polynomial and the pole only bites once T_2^2 brings g^(-4). The operator is
   therefore tracking real divisibility, not a bookkeeping artifact.
 
-**What this does NOT certify, and both are load-bearing.** THEOREM 2 (total
-rigidity, g = alpha U (U-1)^8) and THEOREM 3 (pole-fiber => R is a polynomial)
-remain prose with no surviving certificate. C1 forces the pole *order*; the
-fiber-counting step that makes R a *polynomial* is not reproduced. **Every
-(72,108) statement that assumes a polynomial R inherits this gap** — including
-the C2 table, which is conditional on it.
+### C3 anchor — the re-derivation checked against CERTIFIED data
+
+`python3 trackC_c3_anchor.py` — **5 PASS, 0 FAIL**, exact over Q(sqrt(-3)).
+
+The L1-L4 identities above are generic, which makes them internally consistent
+but ties them to nothing. This anchors them: it reruns the re-derived engine on
+the Session-7/10 near-miss Belyi data — which Track F reproduces with zero
+divergences — and asks whether it recovers what Sessions 12-14 assert.
+
+- **B~_-6 = U^2 (U-1)^16 exactly**, every factor to an even power, so
+  g := sqrt(B~_-6) = **U (U-1)^8** lives in the polynomial ring. Sessions
+  12-14's THEOREM 2 boundary form g = alpha U (U-1)^8 therefore comes out of
+  the certified data **derived, not assumed** — on the near-miss.
+- **A~_{-9+m} == g^3 * S_m for every m = 0..12.** All thirteen levels, no
+  exceptions. The S-side comes from this session's generic frac_root engine;
+  the A-side from Session 10's certified expansion of the Belyi p-tower. Two
+  independent code paths, written in different epochs, agreeing exactly. This
+  is a cross-epoch validation of the same kind as h0 = -13 n3.
+- **A~_-8 == (3/2) g B~_-5**, the condition-free first ladder level,
+  confirmed.
+
+So THEOREM 1 (sqrt-reduction) is now certified against certified data rather
+than merely re-derived, and the ladder engine is anchored.
+
+**What remains NOT certified, and both are load-bearing.**
+
+- **THEOREM 2 at general parameters.** The anchor confirms g = U(U-1)^8 *on
+  the near-miss*. The theorem claims more — that EVERY framework solution has
+  this boundary polynomial up to one scalar, via the Taylor-pin argument. That
+  rigidity step is not reproduced; one worked point is not a rigidity proof.
+- **THEOREM 3 (pole-fiber => R is a polynomial).** Not reproduced at all. C1
+  forces the pole *order*; the fiber-counting step that makes R a *polynomial*
+  is the missing link, and its argument is specific to D = 13's Belyi fiber
+  sizes (13/9/5/1), which (72,108) does not share. **Every (72,108) statement
+  assuming a polynomial R inherits this gap — the C2 table included.**
 
 ## C3 layer 2 — k=3, D=13 realization layer at (72,108)
 

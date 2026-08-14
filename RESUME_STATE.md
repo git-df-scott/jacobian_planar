@@ -5,7 +5,17 @@
 **Environment gotcha, read this first:** the container came up with **no
 Singular**. `apt-get install -y singular` (4.3.2) restores it; `apt-get install
 -y msolve` adds msolve. Every campaign script assumes Singular on PATH, so a
-fresh container silently has no engine until you do this.
+fresh container silently has no engine until you do this. (After a *restart*
+rather than a fresh container, both survive — the filesystem persists.)
+
+**Container lifetime is the binding constraint on exact-Q, measured.** This
+session lost every process to a restart after roughly 2.5 hours of wall time,
+with the root filesystem intact. Consequence: any single monolithic Groebner
+run budgeted longer than ~2h will never land, no matter how generous its
+timeout — the exact-Q fallback charts carry a 6h timeout they can never reach.
+Design accordingly: prefer marker-resumable per-branch pipelines (the staged
+route) over one big GB, because a restart costs a stage there and the whole
+run here.
 
 Queue status at checkpoint:
 

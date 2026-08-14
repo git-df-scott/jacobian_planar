@@ -68,7 +68,29 @@ def run_chart(name, pin):
         return
     vs = all_vars()
     prod = nonzero_product()
-    scr = [f"ring R = 0, ({','.join(vs)},w), dp;", "short=0;", "ideal I;"]
+    # ENGINE. Direct char-0 Buchberger on this shape does not finish inside a
+    # container lifetime (measured: ~2.5h, and the eliminant route burned >1h
+    # twice with no output). modStd computes the standard basis over Q by
+    # modular methods with rational reconstruction — same ring, same ideal,
+    # exact rational output, far cheaper.
+    #
+    # SOUNDNESS. modStd is probabilistic, so its verdict is not taken on
+    # faith. When it reports dim = -1 (i.e. 1 in I) we extract an explicit
+    # Nullstellensatz certificate with lift: cofactors T with I*T = 1, then
+    # check that identity by exact polynomial arithmetic in the same run and
+    # write T to disk. A verified certificate is independent of how the basis
+    # was found — anyone can replay it with polynomial multiplication alone,
+    # which is what OPUS_PLAN's "replayable certificate" standard asks for.
+    engine = os.environ.get("QF_ENGINE", "modStd")
+    assert engine in ("modStd", "groebner"), engine
+    certf = os.path.join(WD, f"trackB_{PFX}_{name}.cert")
+    # modStd parallelizes over its primes and will otherwise grab every core
+    # it can see (measured: 14 forked Singulars on a 4-core box), starving the
+    # leaf-1 chain sharing the machine. Cap it.
+    cpus = int(os.environ.get("QF_CPUS", "2"))
+    scr = (['LIB "modstd.lib";', 'system("--cpus", %d);' % cpus]
+           if engine == "modStd" else []) + [
+           f"ring R = 0, ({','.join(vs)},w), dp;", "short=0;", "ideal I;"]
     n = 0
     for e in S.leaf["equations"]:
         n += 1
@@ -77,13 +99,22 @@ def run_chart(name, pin):
     scr.append(f"I[{n}] = {pin};")
     n += 1
     scr.append(f"I[{n}] = w*({prod})-1;" if prod else f"I[{n}] = w-1;")
-    scr += ["option(redSB);",
-            "ideal G = groebner(I);",
+    scr += [("ideal G = modStd(I);" if engine == "modStd"
+             else "option(redSB); ideal G = groebner(I);"),
             "int d = dim(G);",
+            f'"QF-CHART {name} ENGINE: {engine}";',
             f'"QF-CHART {name} DIM: " + string(d);',
             f'if (d==0) {{ "QF-CHART {name} VDIM: " + string(vdim(G)); }}',
-            f'if (d==-1) {{ "QF-CHART {name} EMPTY"; }}',
+            'if (d==-1) {',
+            '  matrix T = lift(I, ideal(1));',
+            '  matrix C = matrix(I)*T;',
+            f'  "QF-CHART {name} CERT-VERIFIED: " + string(C[1,1] == 1);',
+            f'  link lo = ":w {certf}";',
+            '  fprintf(lo, "%s", T); close(lo);',
+            f'  "QF-CHART {name} EMPTY";',
+            '}',
             "quit;"]
+    scr = [l for l in scr if l != ""]
     t0 = time.time()
     try:
         out = S.sing("\n".join(scr), f"trackB_{PFX}_{name}.sing", timeout=TIMEOUT)
@@ -103,10 +134,20 @@ def run_chart(name, pin):
             m = re.search(r"DIM: (-?\d+)", l)
             if m:
                 dim = int(m.group(1))
-        status = ("CLOSED (dim = -1)" if dim == -1 else
-                  f"SURVIVOR (dim = {dim})" if dim is not None else "NO DIM")
-        S.log(f"BRANCH {PFX}_{name}: STATUS {status} | ENGINE Singular std "
-              f"| TIME {secs:.0f} sec")
+        cert_ok = any("CERT-VERIFIED: 1" in l for l in lines)
+        # CLOSED requires BOTH dim == -1 and a verified 1 = sum h_i f_i
+        # certificate. A dim == -1 whose certificate did not verify is
+        # reported as UNCERTIFIED, never as a closure.
+        if dim == -1:
+            status = ("CLOSED (dim = -1, certificate verified)" if cert_ok
+                      else "UNCERTIFIED (dim = -1 but certificate did NOT "
+                           "verify — treat as no verdict)")
+        elif dim is not None:
+            status = f"SURVIVOR (dim = {dim})"
+        else:
+            status = "NO DIM"
+        S.log(f"BRANCH {PFX}_{name}: STATUS {status} | ENGINE Singular "
+              f"{os.environ.get('QF_ENGINE', 'modStd')} | TIME {secs:.0f} sec")
         S.log(f"{PFX} {name}: ({secs:.0f}s) " + " | ".join(lines))
         open(mark, "w").write(out[-3000:])
         if dim is not None and dim >= 0:
