@@ -148,3 +148,15 @@
 02:15:37 BRANCH L1_p65539_rk2: stage2b vars=19 gens=47 -> BRANCH L1_p65539_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk2 EMPTY
 02:15:49 BRANCH L1_p65539_rk3: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk3 EMPTY
 02:16:02 BRANCH L1_p65539_rk4: stage2b vars=18 gens=46 -> BRANCH L1_p65539_rk4 RESIDUAL DIM: -1 | BRANCH L1_p65539_rk4 EMPTY
+02:25:30 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+02:25:37 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+02:25:37 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+02:25:38 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+02:25:38 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+02:25:38 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+02:25:38 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+02:25:38 BRANCH L1_p65539_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+02:25:39 BRANCH L1_p65539_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f0 EMPTY
+02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+02:25:39 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
