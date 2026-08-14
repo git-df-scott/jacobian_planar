@@ -192,3 +192,34 @@ the natural next build.
 
 **Verdict vocabulary.** Case (2) is closed **mod p at three primes** and
 **STALLED over Q**. It is not certified. The AUDIT_REPORT reflects this.
+
+### UPDATE — the gate computation COMPLETED (msolve, 21 minutes)
+
+`msolve -f trackB_edgeQ.ms` finished. Artifact: `trackB_edgeQ.msolve.out`,
+796,067 bytes.
+
+**What it says.** The output begins `[0, [1, ...` — by msolve's own convention
+that is a **rational parametrization**, i.e. neither `[-1]` (empty over the
+algebraic closure) nor `[1, nvars, -1, []]` (positive-dimensional). So the
+normalized edge ideal (d_3_3 = 1) is **zero-dimensional over Q**, with an
+explicit exact rational parametrization of degree **1144** — matching both the
+mod-p vdim and the handoff's own "vdim 1144" figure.
+
+**Why Singular could never finish it, quantified.** The answer itself is
+enormous: the longest integer literal in the output is **2594 digits**, and
+denominators run to **2^1684**. A direct char-0 Buchberger run was not slow
+because the geometry is subtle; it was slow because the exact object it is
+asked to write down has thousands of digits per coefficient. Multi-modular
+computation with rational reconstruction is not a convenience here, it is the
+only viable method, and it took 21 minutes where Singular had over an hour
+twice with no output.
+
+**What this does NOT establish.** Nothing about the emptiness of case (2). The
+edge subsystem *having* solutions is expected — the kill happens in the
+residual system, branch by branch. This clears the gate; it does not close the
+case. P1 remains STALLED until the residual closures run over Q.
+
+**Next step for whoever takes it.** The parametrization is the exact-Q
+replacement for the mod-p eliminant roots that `trackB_staged.py` branches on.
+Note this branch's own Decision 4 has already pivoted exact-Q to "msolve
+eliminant + Q-factor branches", so this artifact is the input that plan wants.
