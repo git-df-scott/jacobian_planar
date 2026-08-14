@@ -510,3 +510,117 @@ top-edge question in case (1).
 What remains open in case (1) is unchanged and is NOT this: the ladder spiral
 at levels >= 4 is measured on an explicit branch rather than proved, on both
 components.
+
+---
+
+# THE LADDER, RE-DERIVED CORRECTLY (2026-08-14) — the spiral is retracted
+
+## The bug: the level <-> variable pairing was off by one
+
+Every cascade solver so far solved level m for the slice P_{9-m}. That is wrong.
+In the level-m condition S^3 | N_m, the terms of (P^3)_{24-m} carrying the two
+newest slices are
+
+    3 P_8^2 P_{8-m}   = 3a^2 S^4 P_{8-m}        -> S^3 divides it, drops
+    6 P_8 P_7 P_{9-m} = 6a S^2 P_7 P_{9-m}      -> S | P_7, so S^3 divides it
+
+so **level m constrains P_{10-m}**, one slice higher. The measured kernel
+profile said so all along and was misread: `free == nun` at every level, i.e.
+the matrix built against P_{9-m} has RANK ZERO. The solvers were fixing each
+slice (to 0, or at random) one level BEFORE the level that constrains it, then
+reporting the next level as OBSTRUCTED.
+
+**Retracted:** the spiral table (OBSTRUCTED at 4, then 7, and the "forced"
+endgame P_7 = c S^2 failing N(Q)-support at weight 8), on both components.
+It measured an artifact. Level 3's condition S | P_7 stands — it is a condition
+on P_7, exactly what level 3 constrains under the corrected pairing.
+
+## What each level actually is
+
+| level | constrains | nature |
+|---|---|---|
+| 2 | P_7 | H(S) \| P_7, H = half-radical (quadratic; by parametrization) |
+| 3 | P_7 | S \| P_7 (proved; pure condition, no free slice) |
+| 4 | P_6 | QUADRATIC — see below; **never obstructs** |
+| 5..11 | P_{10-m} | linear in the newest slice, coupled to earlier free directions |
+| 12..22 | — | pure obstructions |
+
+## Level 4 is the perfect-square condition on P, and it always has solutions
+
+Extracting rem(N_4, S^3) by finite differences: the whole condition sits in
+S-adic digit 2 (so there is **no P_6-independent obstruction at level 4**), the
+quadratic part is exactly (3/4)(X^2 mod S), and the linear part is
+multiplication by a fixed beta in R = F_p[z]/(S). So with X := P_6 mod S,
+
+    (3/4) X^2 + beta X + gamma = 0     in    R = F_p[z]/(S),
+
+and completing the square, D := (4/9)beta^2 - (4/3)gamma is **identically zero
+in R**. Level 4 is therefore the perfect-square condition
+
+    ( X + (2/3) beta )^2 = 0   in R,
+
+always solvable. Moreover -(2/3)beta == M^2/(4a) mod S EXACTLY (verified on
+every sample), where P_7 = S M — i.e. level 4 says precisely
+
+> **P is a perfect square to order 6**: T_2 = (P_6 - T_3^2)/(2T_4) is
+> polynomial, where T = P^{1/2}, T_4 = sqrt(a) S, T_3 = M/(2 sqrt a),
+
+relaxed by the slack H(S) | Y. The solution set is
+
+    P_6 = M^2/(4a) + H(S)*y + S*z,     7 params (component I), 6 (component II)
+
+and a constructed P_6 satisfies rem(N_4, S^3) = 0 verified directly against
+build_N — **60/60 on component I, 60/60 on component II**.
+
+## The levels are COUPLED, so they must be solved jointly
+
+For generic level-4 free directions, level 5 is EMPTY (Singular: 1 in the
+ideal, 8/8 samples) — which is what the per-level solvers reported. But the
+JOINT variety in (level-4 params, P_5) is not empty:
+
+| | params | equations | cumulative dimension |
+|---|---|---|---|
+| component I, level 5 | 15 | 108 | **DIM 13** (codim 2) |
+| component II, level 5 | 14 | 108 | **DIM 13** (codim 1) |
+
+So level 5 is passable — it merely cuts the level-4 free directions down by
+codimension 1-2. Solving level by level with earlier directions frozen finds
+nothing even where solutions exist. **Case (1) is re-opened as a live search.**
+
+## The rational cascade — every condition globally defined
+
+The exact-division cascade is only DEFINED where all earlier levels already
+hold (pdiv_exact returns None otherwise), which is why interpolation past level
+5 was impossible and why the per-level solvers kept mis-reporting. Carrying F's
+slices as rational pairs (num, e) meaning num/S^e — the representation the
+formal-F proof uses anyway — removes this entirely: since P_8 = a S^2 makes
+F_12 = b S^3 polynomial, dividing by 2 b S^3 just increments e, so no exact
+division is ever required and every condition
+
+    w = 11..0    S^e | num          (F_w polynomial = Q_w, plus N(Q) support)
+    w = -1       supported at i = 2 only  (the vertex (2,1))
+    w = -2..-9   num = 0
+    w = -10      [P_8, F_-10] proportional to z^2, nonzero
+
+is a polynomial identity in the parameters, defined everywhere.
+`trackB1_rational_cascade.py`. **Witness anchor: P = Stilde^2, Q = Stilde^3
+satisfies every ladder and vanishing condition (violations: NONE) and fails
+only the bottom bracket, which is exactly zero** — the expected signature.
+
+## Reproduce
+
+    python3 trackB1_offbyone_check.py      # the pairing bug, level 4 quadratic
+    python3 trackB1_level4.py              # the ring quadratic; D == 0
+    python3 trackB1_level4_solve.py        # constructive P_6, checked vs build_N
+    python3 trackB1_rational_cascade.py    # globally-defined conditions + anchor
+    python3 trackB1_cumulative2.py I 1     # cumulative dimension, level by level
+
+## Honest status
+
+Case (1) is NOT closed and NOT known to contain a counterexample. What changed
+is that the two previously claimed obstructions are gone: the perfect-square
+theorem is replaced by a two-component classification (proved exactly), and the
+death spiral is retracted as an artifact. The live question is the dimension of
+the accumulated variety as levels 6..22 plus support, vanishing and (C4) are
+imposed — a well-posed, running computation on 41 (component I) / 40
+(component II) parameters, not a blind search.
