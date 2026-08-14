@@ -189,7 +189,10 @@ def stage2(tag, vals, d33=1):
     out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=2400)
     verdict = [l for l in out.splitlines() if "BRANCH" in l or "// **" in l]
     log(f"BRANCH {tag}: stage2 vars={len(rvars)} eqs={len(res_eqs)} -> " + " | ".join(verdict[:3]))
-    open(mark, "w").write(out[-2000:])
+    if verdict:
+        open(mark, "w").write(out[-2000:])
+    else:
+        log(f"BRANCH {tag}: NO VERDICT (killed mid-run) — marker NOT written, will retry")
 
 def normalize_sing(s):
     """Singular compact poly ('a2-3*b+4') -> parse_poly format ('a^2 + -3*b + 4')."""
@@ -241,7 +244,10 @@ def stage2b(tag, vals, gb_lines, d33=1):
     out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=2400)
     verdict = [l for l in out.splitlines() if "BRANCH" in l]
     log(f"BRANCH {tag}: stage2b vars={len(rvars)} gens={len(gens)} -> " + " | ".join(verdict[:3]))
-    open(mark, "w").write(out[-2000:])
+    if verdict:
+        open(mark, "w").write(out[-2000:])
+    else:
+        log(f"BRANCH {tag}: NO VERDICT (killed mid-run) — marker NOT written, will retry")
 
 def main():
     only = sys.argv[1:] or list(BRANCHES)
