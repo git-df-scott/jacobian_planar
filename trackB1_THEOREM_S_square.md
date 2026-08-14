@@ -211,3 +211,50 @@ levels (randomizing them moves the death to level 4, 150/150). Making the
 spiral a theorem requires carrying those directions symbolically — that is the
 remaining work, and it is now a small, well-posed problem on an explicitly
 pinned family (A: 2 params, c, and the level kernels), not a blind search.
+
+## A SECOND, PURELY POLYNOMIAL PROOF (same session) — supersedes Steps 1-2
+
+The formal-series route above needs Q = c P^{3/2} with rational slices and a
+gauge absorption over half-powers of P. That machinery can be dropped entirely.
+
+Set the CUSP DEVIATION
+
+        W := Q^2 - gamma P^3,     gamma = b^2/a^3          (a POLYNOMIAL).
+
+**Identity** (machine-verified, 50 random weight-graded trials):
+
+        [P, W] = 2Q[P,Q] - 3 gamma P^2 [P,P] = 2Q[P,Q],
+
+so a Keller pair ([P,Q] = x^2) gives  **[P, W] = 2 Q x^2**  exactly.
+
+Weights: Q^2 and gamma P^3 both lead with b^2 S^6 at weight 24 and cancel, so
+W has weight <= 23; and [P,W] = 2Qx^2 has top weight 12 + (-2) = 10 = 8 +
+wtop(W), so wtop(W) = 2 (modulo the [P_8,.]-kernel weights, which are the
+Q -> Q + lambda P + mu gauge). The top slice then obeys
+
+        [P_8, W_2] = 2 Q_12 z^2   <=>   2a (S'W - 2SW') = b S^2 z^2
+                                  <=>   (W / sqrt(S))' = -(b/4a) z^2 sqrt(S),
+
+so a POLYNOMIAL W_2 exists iff int z^2 sqrt(S) dz is rational * sqrt(S) — the
+identical elliptic criterion, now with no series, no denominators, no
+half-power gauge.
+
+**Machine verification** (linear algebra over F_65521, deg W up to 18, 40
+random S per class):
+
+| S | polynomial W_2 exists |
+|---|---|
+| squarefree deg 4 | **0 / 40** |
+| A^2 * B, deg B = 2 | **0 / 40** |
+| A^2 (perfect square) | **40 / 40** |
+| A^4 (perfect square) | **40 / 40** |
+
+Identical dichotomy to the series route, reached independently. The theorem
+S = A^2 therefore rests on elementary polynomial algebra plus the classical
+fact that y^2 = (squarefree quartic) is elliptic.
+
+Remaining caveat, unchanged and explicit: the [P_8,.]-kernel allows wtop(W) in
+{20,16,12,8,4} with W_top proportional to S^{wtop/4}; the gauge Q -> Q + lambda P
++ mu moves the weight-20 and weight-12 slices (via 2 lambda QP and 2 mu Q) and
+the weight-16 slice (via lambda^2 P^2). Pinning that gauge is the last step
+needed to make the theorem unconditional.
