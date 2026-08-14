@@ -37,7 +37,7 @@ import trackB1_case2_final as FN
 import _w0 as W
 from _w0np import rref_mod_p
 
-p = M.p
+p = M.p          # default; run() re-reads M.p for other primes
 
 BRANCHES = {
     # name: monic minimal polynomial coefficients [m_0, ..., m_{d-1}]
@@ -111,7 +111,7 @@ def interp(name, monos, resid, C, G, BF0, BFb, Kb, rng, extra=30, verify=8):
             e = v[w] if w < len(v) else M.kzero()
             for l in range(DEG):
                 B[i, w * DEG + l] = e[l] % p
-    sols, rank, cons = rref_mod_p(A, B)
+    sols, rank, cons = rref_mod_p(A, B, M.p)
     if rank < len(monos):
         raise RuntimeError(f"{name}: underdetermined (rank {rank})")
     if not all(cons):
@@ -167,9 +167,11 @@ def w1_resid(C, G, BF0, BFb, Kb, beta, alpha):
     return FN.evaluate(C, G, BF0, BFb, None, Kb, beta, alpha)
 
 
-def run(key, seed=17):
-    label, mod = BRANCHES[key]
+def run(key, seed=17, table=None):
+    global p
+    label, mod = (table or BRANCHES)[key]
     M.set_modulus(mod)
+    p = M.p          # rebind for interp()/sing_minpoly()/the ring header
     rng = random.Random(seed)
     t0 = time.time()
     print(f"\n=== branch {key}:  K = F_p[th]/({label}),  "
@@ -193,7 +195,7 @@ def run(key, seed=17):
          '  int i; for (i=1;i<=size(pd);i++) {',
          '    "  comp "+string(i)+": dim "+string(dim(std(pd[i]))); pd[i]; } }',
          "quit;"]
-    fn = f"_c2_branch_{key}.sing"
+    fn = f"_c2_branch_{M.p}_{key}.sing"
     open(fn, "w").write("\n".join(L))
     print(f"    [wrote {fn}]")
     return fn

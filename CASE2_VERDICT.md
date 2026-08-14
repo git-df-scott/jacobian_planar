@@ -1,10 +1,10 @@
 # Case (2) of GGHV Prop 4.3 — the decision
 
 **Verdict: case (2) admits no realization with its stated Newton polygons.**
-Over `F_p`, `p = 65521`, this is complete and certified: all four residue
-fields of the edge variety were run, and every one of them collapses the
-configuration. The reduction from "the computation says `B = 0`" to "the
-polygons are wrong" is an elementary characteristic-free lemma.
+Complete and certified at three independent primes — `65521`, `32003`, `65537`
+— covering *every* point of the edge variety at each. The reduction from "the
+computation says `B = 0`" to "the polygons are wrong" is an elementary
+characteristic-free lemma, so only the `B = 0` input is machine-checked.
 
 ## 0. Setup
 
@@ -125,25 +125,69 @@ Combined with the Lemma: `B ≡ 0` on all solutions ⟹ `a₈ = 0` always ⟹ th
 vertex `(8,16)` of `N(P)` is absent. **Case (2) is not realizable over
 `F̄_65521`.**
 
-## 3. Scope, honestly stated
+## 3. Leading coefficients: the cusp structure, by hand
 
-The Lemma of §1 is characteristic-free. The input to it — `B ≡ 0` — is a
-Gröbner computation over `F_65521`.
+Independently of the elimination, the `t¹⁹` coefficient of each equation
+(taking `deg A = deg B = deg C = 8`, `deg D = deg E = deg F = deg G = 12`) gives
 
-Emptiness mod a single prime does **not** by itself imply emptiness in
-characteristic 0 (`(px − 1)` is empty mod `p` and nonempty over `ℚ`). The
-honest statement today is:
+```
+(w=−3)   f₁₂ = (3/2) b₈ g₁₂
+(w=−2)   16 e₁₂ = 24 a₈ g₁₂ + 6 b₈² g₁₂
+(w=−1)   24 d₁₂ = 16 a₈ f₁₂ − 4 b₈ e₁₂
+(w= 0)   3 b₈ d₁₂ = 2 a₈ e₁₂
+```
 
-* **Closed over `F̄_p` for `p = 65521`** — complete, all 35 branch points.
-* **Characteristic 0 pending** — being run directly (`_c2_oneshot.py`, char 0),
-  which asks whether the full five-equation system together with the
-  Rabinowitsch equation `w·a₈ = 1` generates the unit ideal over `ℚ`.
+Eliminating `d₁₂, e₁₂, f₁₂` leaves `b₈⁴ − 8a₈b₈² + 16a₈² = 0`, that is
 
-If the char-0 run returns `EMPTY`, case (2) is closed unconditionally. If it
-does not terminate, a second and third prime give the usual good-reduction
-evidence but not a proof.
+> **`(b₈² − 4a₈)² = 0`.**
 
-## 4. What this does and does not settle
+With `c₈ = 1` this is `disc(a₈z² + b₈z + c₈) = 0`; writing `b₈ = 2s`,
+
+```
+(a₈, b₈, c₈)         = (s², 2s, 1)         = (s + z)²
+(d₁₂, e₁₂, f₁₂, g₁₂) = g₁₂(s³, 3s², 3s, 1) = g₁₂ (s + z)³
+```
+
+The rightmost column of `N(P)` is forced to be a perfect square and that of
+`N(Q)` the matching cube — cusp type `(2,3)`, recovered here independently of
+the case-(1) analysis where it first appeared. This is *consistent*, not
+contradictory: the leading data admits `b₈ ≠ 0`. The obstruction is therefore
+genuinely deeper than the leading edge, which is why `B ≡ 0` needed the full
+elimination. It also rules out the cheapest possible hand proof.
+
+## 4. Scope, honestly stated
+
+The Lemma of §1 is characteristic-free. Its input — `B ≡ 0` — is a Gröbner
+computation over a finite field, and emptiness mod a *single* prime does not
+imply emptiness in characteristic 0 (`(px − 1)` is empty mod `p` and nonempty
+over `ℚ`). So the computation was repeated at three primes, each time
+recomputing the edge RUR from scratch rather than reusing the `65521` table —
+`g₂ = 1` was a derived fact at `65521` and is read off the fresh RUR at the
+other primes:
+
+| prime | vdim | eliminant degree | factor degrees | branches run | verdict |
+|---|---|---|---|---|---|
+| 65521 | 35 | 35 | 7, 7, 7, 14 | 4/4 | `dim 2`, component `(b₂,b₃,α₂,α₃)` |
+| 32003 | 35 | 35 | 1,1,2,2,2,2,2,2,3,6,6,6 | 12/12 | same |
+| 65537 | 35 | 35 | 1, 4, 6, 12, 12 | 5/5 | same |
+
+The eliminant has degree 35 at every prime, and the factor *patterns* differ
+completely (65521 has the `μ₇` splitting because `7 ∣ p−1`; 32003 has genuine
+`F_q`-rational branch points), yet the verdict, the dimension, the number of
+components, and the component's *generators* are identical every time. That is
+the good-reduction signature: if the characteristic-0 variety had a point with
+`a₈ ≠ 0`, it would have to reduce badly at all three.
+
+This is strong evidence, not a proof. The honest statement:
+
+* **Closed over `F̄_q` for `q ∈ {65521, 32003, 65537}`** — every branch point.
+* **Characteristic 0: not yet proved.** `_c2_oneshot.py` puts the whole
+  five-equation system plus the Rabinowitsch equation `w·a₈ = 1` into one
+  ideal (68 unknowns) and asks whether it is the unit ideal over `ℚ`; that run
+  has not terminated. Until it does, "case (2) is closed" is a
+  three-prime statement.
+
+## 5. What this does and does not settle
 
 It settles case (2) of Prop 4.3 (mod the char-0 caveat). It does **not** settle
 case (1) — the full pentagons `N(P) = {(0,0),(1,0),(8,14),(8,16),(0,8)}`,
@@ -164,6 +208,8 @@ whether support/vanishing/(C4) force `P^{1/2}` to terminate.
 | `_c2_branch.py` | the whole chain on one branch of the eliminant |
 | `_c2_verify.py` | direct reconstruction and bracket, bypassing every interpolant |
 | `_c2_oneshot.py` | the single-system char-0 attempt |
+| `_c2_rur.py` | edge solve + shape-lemma RUR extraction at an arbitrary prime |
+| `_c2_multiprime.py` | the whole decision at a fresh prime, from a fresh RUR |
 
 ### A note on the interpolation
 

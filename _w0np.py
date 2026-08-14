@@ -36,13 +36,14 @@ def kconst(v):
     return e
 
 
-def rref_mod_p(A, B):
+def rref_mod_p(A, B, mod=None):
     """RREF of [A|B] over F_p.  Returns (solutions, rank, consistent-flags).
 
     A: (m,n) int64, B: (m,k) int64.  Solution j is the unique preimage when
     rank == n; a row that is zero across A but nonzero in column j marks that
     right-hand side inconsistent.
     """
+    p = mod if mod is not None else M.p
     m, n = A.shape
     k = B.shape[1]
     Aug = np.concatenate([A % p, B % p], axis=1).astype(np.int64)
