@@ -25,3 +25,5 @@ BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
 BRANCH L1_p65599_r0b_f0_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65599_r0b_f0_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65599_r0b_f0_f0_f0_f0 EMPTY
 L1 SWEEP p=65599: COMPLETE in 5420s (4 eliminant branches + r0a + r0b)
 06:42:30 driver: p65599 exit=0
+trackB_L1_Q_rk_all.sing: STALLED/ERROR (TimeoutExpired: Command '['Singular', '-q', '/home/user/jacobian_planar/trackB_L1_Q_rk_all.sing']' timed out after 14400 seconds)
+L1_Q rk_all: NO VERDICT (stalled or crashed — see trackB_L1_Q_rk_all.sing.out)
