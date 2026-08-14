@@ -14,8 +14,10 @@ while pgrep -f "trackB_exactQ_fallback.py A_d33_1" > /dev/null; do sleep 60; don
 echo "$(date +%H:%M:%S) QF chain: chart A finished, starting B" >> trackB_QF_chain.log
 
 python3 trackB_exactQ_fallback.py B_d33_0  >> trackB_QF_chain.log 2>&1
-echo "$(date +%H:%M:%S) QF chain: B exit=$?" >> trackB_QF_chain.log
+rc=$?
+echo "$(date +%H:%M:%S) QF chain: B exit=$rc" >> trackB_QF_chain.log
 
 python3 trackB_exactQ_fallback.py C_d915_0 >> trackB_QF_chain.log 2>&1
-echo "$(date +%H:%M:%S) QF chain: C exit=$?" >> trackB_QF_chain.log
+rc=$?
+echo "$(date +%H:%M:%S) QF chain: C exit=$rc" >> trackB_QF_chain.log
 echo "$(date +%H:%M:%S) QF chain: COMPLETE" >> trackB_QF_chain.log

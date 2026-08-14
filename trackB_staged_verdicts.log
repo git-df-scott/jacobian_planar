@@ -185,3 +185,5 @@
 02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
 02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
 03:00:56 NOTE (log hygiene): the 'BRANCH QF_A_d33_1: STATUS STALLED ... TIME 43 sec' line at 02:11:02 is NOT a verdict — that run was killed by the operator mid-flight while switching the chart engine from direct groebner to modStd. The live chart A run started 02:12:21 under modStd + lift certificate. No closure or stall should be read from the 02:11 line.
+03:06:16 L1 SWEEP p=65599: eliminant ['ELIMDEG: 43'], 5 irreducible factors
+03:06:23 BRANCH L1_p65599_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65599_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65599_rk0 EMPTY

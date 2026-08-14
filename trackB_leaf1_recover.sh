@@ -20,13 +20,16 @@ echo "$(date +%H:%M:%S) recover: chain done, re-running p65539 with a long budge
 
 JCP=65539 JC_ST2_TIMEOUT=9000 taskset -c 0,1 python3 trackB_leaf1_sweep.py \
     >> trackB_leaf1_recover.log 2>&1
-echo "$(date +%H:%M:%S) recover: p65539 rerun exit=$?" >> trackB_leaf1_recover.log
+rc=$?
+echo "$(date +%H:%M:%S) recover: p65539 rerun exit=$rc" >> trackB_leaf1_recover.log
 
 # p65599 may itself have hit the same wall; re-run it with the long budget too.
 JCP=65599 JC_ST2_TIMEOUT=9000 taskset -c 0,1 python3 trackB_leaf1_sweep.py \
     >> trackB_leaf1_recover.log 2>&1
-echo "$(date +%H:%M:%S) recover: p65599 rerun exit=$?" >> trackB_leaf1_recover.log
+rc=$?
+echo "$(date +%H:%M:%S) recover: p65599 rerun exit=$rc" >> trackB_leaf1_recover.log
 
 JCLEAF=1 taskset -c 0,1 python3 trackB_exactQ.py >> trackB_leaf1_recover.log 2>&1
-echo "$(date +%H:%M:%S) recover: leaf-1 exact-Q exit=$?" >> trackB_leaf1_recover.log
+rc=$?
+echo "$(date +%H:%M:%S) recover: leaf-1 exact-Q exit=$rc" >> trackB_leaf1_recover.log
 echo "$(date +%H:%M:%S) recover: COMPLETE" >> trackB_leaf1_recover.log
