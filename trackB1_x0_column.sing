@@ -1,0 +1,26 @@
+// x^0 column of GGHV Prop 4.3 case (1).
+// g := P^(0)(y) has degree 8 with g(0) != 0.  The cascade's x^0-column
+// conditions ([y^-1..y^-9] g^{3/2} = 0) are equivalent to:
+//     there is a polynomial R of degree 12 with  deg( g^3 - R^2 ) <= 2.
+// Perfect squares g = h^2 satisfy this with R = h^3.  Is anything else there?
+option(redSB);
+ring A = 65521, (g(0..7), r(0..11)), dp;
+int i; int j;
+list gc; list rc;
+for (i = 0; i <= 7; i++) { gc[i+1] = g(i); }
+gc[9] = 1;                        // g_8 = 1 (scaling)
+for (i = 0; i <= 11; i++) { rc[i+1] = r(i); }
+rc[13] = 1;                       // r_12 = 1 (matches leading term, sign fixed)
+list g2; list g3; list r2;
+for (i = 1; i <= 17; i++) { g2[i] = 0; }
+for (i = 1; i <= 25; i++) { g3[i] = 0; r2[i] = 0; }
+for (i = 1; i <= 9; i++) { for (j = 1; j <= 9; j++) { g2[i+j-1] = g2[i+j-1] + gc[i]*gc[j]; } }
+for (i = 1; i <= 17; i++) { for (j = 1; j <= 9; j++) { g3[i+j-1] = g3[i+j-1] + g2[i]*gc[j]; } }
+for (i = 1; i <= 13; i++) { for (j = 1; j <= 13; j++) { r2[i+j-1] = r2[i+j-1] + rc[i]*rc[j]; } }
+ideal I;
+for (i = 4; i <= 25; i++) { I = I + ideal(g3[i] - r2[i]); }   // degrees 3..24
+"conditions: " + string(size(I));
+ideal Gb = std(I);
+if (size(Gb) == 1 && Gb[1] == 1) { "VARIETY: EMPTY"; }
+else { "VARIETY: dim = " + string(dim(Gb)) + ",  degree = " + string(degree(Gb)); }
+quit;

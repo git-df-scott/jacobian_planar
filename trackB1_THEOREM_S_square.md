@@ -706,3 +706,94 @@ the dimension of the common variety at each stage (Singular, over F_65521):
 | level 5 (poly_7) | 15 params, 108 eqs, **DIM 13** | 14 params, 108 eqs, **DIM 13** |
 
 Later stages are in trackB1_cumulative2_{I,II}.log.
+
+---
+
+# THE x = 0 RESTRICTION: two unconditional theorems, and the second proof dies
+
+Restrict everything to x = 0 and write
+
+    u(y) := P(0,y),  v(y) := Q(0,y),  U(y) := P_x(0,y),  V(y) := Q_x(0,y).
+
+From the two polygons (all four facts are vertex conditions, i.e. part of the
+hypothesis that N(P), N(Q) are exactly those hulls):
+
+    deg u = 8, u(0) = p_00 != 0     [vertices (0,8), (0,0)]
+    deg v = 12, v(0) = q_00 != 0    [vertices (0,12), (0,0)]
+    U(0) = p_10 != 0                [vertex (1,0)]
+    V(0) = 0                        [(1,0) is NOT in N(Q): its lower edge runs
+                                     (0,0)-(2,1), so i = 1 forces j >= 1]
+
+**RELATION (*).** [P,Q] = x^2 at x = 0 reads P_x Q_y - P_y Q_x = 0, i.e.
+
+        U v' = u' V.
+
+At y = 0 this gives U(0) v'(0) = u'(0) V(0) = 0 with U(0) != 0, so **v'(0) = 0**:
+the y-linear coefficient of Q(0,y) vanishes. (The same bookkeeping one order up
+gives V'(0) = 0, and the x^2 coefficient reproduces p_10 q_21 = 1.)
+
+**IDENTITY** (machine-verified, 25/25 random trials), with E := W(0,y) =
+v^2 - gamma u^3:
+
+        u E' - 3 u' E  =  v ( 2 u v' - 3 u' v ).
+
+### THEOREM A.  E != 0.
+
+If E = 0 then v^2 = gamma u^3, so 2 v_pi(v) = 3 v_pi(u) for every irreducible
+pi, forcing v_pi(u) even: u = h^2 with deg h = 4, and v = ±sqrt(gamma) h^3.
+Then v' = ±3 sqrt(gamma) h^2 h' and u' = 2 h h', so (*) becomes
+h h' ( ±3 sqrt(gamma) U h - 2 V ) = 0, and h h' != 0 (deg h = 4), hence
+±3 sqrt(gamma) U h = 2 V. At y = 0 the left side is nonzero — U(0) = p_10 != 0
+and h(0)^2 = u(0) = p_00 != 0 — while V(0) = 0. **Contradiction.**
+
+### THEOREM B.  deg E >= 5, hence wtop(W) >= 5.
+
+deg(u E' - 3 u' E) <= 7 + deg E, while the right-hand side is v times something
+and deg v = 12. So if 2 u v' - 3 u' v != 0 then deg E >= 5. And if
+2 u v' - 3 u' v = 0 then (v^2/u^3)' = 0, so v^2 = c u^3 for a constant c and
+E = (c - gamma) u^3; since deg E <= 23 < 24 = deg u^3 (the weight-24 slices of
+Q^2 and gamma P^3 cancel — that is the cusp condition), c = gamma and E = 0,
+excluded by Theorem A. **So deg E >= 5.**
+
+## Consequence: the polynomial-W proof is REFUTED, not merely caveated
+
+The second proof asserted wtop(W) = 2 "modulo the [P_8,.]-kernel weights". The
+kernel is not a caveat: E's degree is at most wtop(W), so Theorem B gives
+
+        wtop(W) >= 5,
+
+i.e. **the descent on W can never reach weight 2** — the [P_8,.]-kernel is
+NECESSARILY nontrivial, and the top slice of W is always a kernel element
+W_wtop proportional to S^{wtop/4}. Since the kernel is nonzero exactly when
+S^{wtop/4} is a polynomial,
+
+    component I  (S = c A^2):    wtop(W) is EVEN and >= 6
+    component II (S = c A^2 B):  wtop(W) in {8, 12, 16, 20}
+
+The gauge cannot repair this: Q -> Q + lambda P is unavailable (it would create
+the monomial x, and (1,0) is not in N(Q)), and Q -> Q + mu, P -> P + nu give
+only two parameters against the many coefficients of E.
+
+**So `trackB1_sqrt.py`'s route (the formal-F proof) is the only sound one**: it
+never assumes wtop(W) = 2, it absorbs kernel terms into F, and its descent was
+verified airtight (FACT 1: 75/75; FACT 2: 88/88). The polynomial-W section
+above is retracted as a proof; it survives only as the correct computation of
+the criterion ON the perfect-square locus, where it agrees with the series
+route.
+
+## Where this leaves the closure attempt
+
+Theorem A is exactly the obstruction one wants — "u is a perfect square" is
+contradictory — but it applies to E = 0, and Theorem B says E != 0 with
+deg E >= 5. So the x = 0 column does NOT close case (1) by itself. What it does
+give, unconditionally and cheaply:
+
+- a proof that the kernel/descent stall is unavoidable, which retires the
+  polynomial-W route and pins wtop(W) to an explicit finite list;
+- two exact coefficient facts, v'(0) = 0 and V'(0) = 0, that any counterexample
+  must satisfy;
+- the exact shape of what a counterexample needs at x = 0: polynomials u
+  (deg 8), v (deg 12) with v^2 - gamma u^3 =: E of degree in [5, 23], and
+  2 u v' - 3 u' v of degree exactly deg E - 5.
+
+Reproduce: `python3 trackB1_x0_theorem.py`
