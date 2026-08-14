@@ -44,7 +44,7 @@ quit;
 
 def cond_w(S, M, wl, lay, w, params):
     P = make_P(S, M, wl, params, lay)
-    F = build_F(S, P)
+    F = build_F(S, P, wmin=w)          # only descend as far as this weight
     num, e = F[w]
     return list(ptrim(list(prem(num, spow(S, e, p), p))))
 

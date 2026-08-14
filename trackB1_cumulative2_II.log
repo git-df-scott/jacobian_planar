@@ -1,3 +1,6 @@
 
 === component II seed=2 S=[51076, 5048, 22733, 64001, 60817] M=[62116, 55643, 3706, 6002, 5562] ===
 poly_7 (level 5): 14 params, deg=2, +108 eqs (total 108), cumulative DIM 13   [103s]
+
+=== component II seed=2 S=[51076, 5048, 22733, 64001, 60817] M=[62116, 55643, 3706, 6002, 5562] ===
+poly_7 (level 5): 14 params, deg=2, +108 eqs (total 108), cumulative DIM 13   [17s]

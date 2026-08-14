@@ -624,3 +624,85 @@ death spiral is retracted as an artifact. The live question is the dimension of
 the accumulated variety as levels 6..22 plus support, vanishing and (C4) are
 imposed — a well-posed, running computation on 41 (component I) / 40
 (component II) parameters, not a blind search.
+
+---
+
+# WHAT THE LADDER ACTUALLY IS: "P is a perfect square", order by order
+
+The corrected levels have a single uniform meaning. With T := P^{1/2} (the
+formal weight-graded square root, T_4 = sqrt(a) S, which exists because
+P_8 = a S^2), and P_7 = S M:
+
+| level | equivalent to |
+|---|---|
+| 3 | S \| P_7, i.e. T_3 = M/(2 sqrt a) is a z-polynomial |
+| 4 | T_2 = (P_6 - T_3^2)/(2T_4) is a z-polynomial, **up to slack H(S)\|Y** |
+| 5 | the slack vanishes: Y = 0, so T_2 is a z-polynomial exactly |
+| 6 | T_1 is a z-polynomial |
+| m | T_{6-m} is a z-polynomial |
+
+**Evidence.** Level 4's particular solution is exactly P_6 = M^2/(4a) mod S
+(verified on every sample), which is precisely "T_2 polynomial". Level 5 then
+kills the slack, and the dimension count matches exactly:
+
+| | slack params | level-5 codimension |
+|---|---|---|
+| component I (H = A, deg 2) | 2 | **2** |
+| component II (H = A B, deg 3) | 1 | **1** |
+
+and directly: level 5 holds identically when Y = 0 for arbitrary z and
+arbitrary P_5 (**10/10 on both components**) and fails for random Y
+(**0/10**). Forward direction at the next levels: with P = T^2 an exact square
+(T's slices arbitrary z-polynomials), levels 6 and 7 hold **8/8 on both
+components**, and perturbing P_5 off the square structure breaks level 6
+**8/8**. The witness P = Stilde^2 satisfies every ladder and vanishing
+condition, violating none — the same statement.
+
+So: **the divisibility ladder is the condition that P is a perfect square**,
+imposed one weight at a time.
+
+## Why this nearly closes case (1) — and exactly where it stops
+
+If P were a perfect square OF A POLYNOMIAL, case (1) would die immediately, two
+independent ways:
+
+1. *Newton polygon parity.* P = T^2 gives N(P) = 2N(T), so every vertex of
+   N(P) has even coordinates. But (1,0) is a vertex of N(P) with nonzero
+   coefficient. Contradiction.
+2. *The y^0 coefficient.* Writing P = sum_j P^(j)(x) y^j, the j = 0 edge of
+   N(P) runs (0,0)-(1,0), so P^(0)(x) = p_00 + p_10 x with p_10 != 0 (vertex).
+   P = T^2 forces P^(0) = (T^(0))^2, and a degree-1 polynomial is not a square
+   in C[x]. Contradiction.
+
+Equivalently in slices: a square has EVEN lowest weight, while P's lowest
+weight is -1.
+
+**The gap, stated precisely.** T = P^{1/2} always exists in the weight-graded
+completion, and there it is an infinite series: its y^0 component is the power
+series sqrt(p_00 + p_10 x), which has infinitely many terms precisely because
+p_10 != 0. The ladder forces T's slices to be z-polynomials only down to a
+FINITE weight (about -16, since the cascade runs to level 22). z-polynomiality
+does not bound a slice's degree from above, so it does not force T to
+terminate, and without termination neither argument above applies.
+
+So case (1) closes iff the remaining conditions — N(Q)-support for w = 12..-1,
+the vanishing F_w = 0 for w = -2..-9, and (C4) — force T to terminate. That is
+now the whole question, and it is a concrete one: the accumulated variety must
+either force P_-1 = 0 (killing the vertex (1,0), hence case (1)) or produce a
+point with P_-1 != 0.
+
+**Status: case (1) is NOT closed.** No counterexample either. What is new is
+that the question is now a single sharp statement about one coefficient,
+on a 41-parameter (component I) / 40-parameter (component II) family whose
+ladder structure is completely understood, rather than a blind search.
+
+## Running computation
+
+`trackB1_cumulative2.py` accumulates the conditions in cascade order and reports
+the dimension of the common variety at each stage (Singular, over F_65521):
+
+| stage | component I | component II |
+|---|---|---|
+| level 5 (poly_7) | 15 params, 108 eqs, **DIM 13** | 14 params, 108 eqs, **DIM 13** |
+
+Later stages are in trackB1_cumulative2_{I,II}.log.

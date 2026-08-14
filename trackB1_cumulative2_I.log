@@ -1,3 +1,6 @@
 
 === component I seed=1 S=[1, 17610, 25769, 9894, 53418] M=[55537, 52577, 50054, 4135, 16716] ===
 poly_7 (level 5): 15 params, deg=2, +108 eqs (total 108), cumulative DIM 13   [119s]
+
+=== component I seed=1 S=[1, 17610, 25769, 9894, 53418] M=[55537, 52577, 50054, 4135, 16716] ===
+poly_7 (level 5): 15 params, deg=2, +108 eqs (total 108), cumulative DIM 13   [24s]
