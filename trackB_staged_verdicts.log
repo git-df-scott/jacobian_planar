@@ -174,3 +174,13 @@
 02:11:02 QF-FALLBACK: pass finished in 43s — check for STALLED / NO VERDICT lines before claiming closure
 02:11:27 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
 02:12:21 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:25:29 BRANCH L1_p65539_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f1_f0 EMPTY
+02:25:29 BRANCH L1_p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
+02:25:29 BRANCH L1_p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+02:25:29 BRANCH L1_p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+02:25:29 BRANCH L1_p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+02:25:29 BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)

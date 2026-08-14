@@ -27,3 +27,13 @@ BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+BRANCH L1_p65539_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65539_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65539_r0a_f0_f0_f1_f0 EMPTY
+BRANCH L1_p65539_r0b: edge fiber dim 0 vdim 338 (depth 0)
+BRANCH L1_p65539_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+BRANCH L1_p65539_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+BRANCH L1_p65539_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+BRANCH L1_p65539_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+BRANCH L1_p65539_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+BRANCH L1_p65539_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+BRANCH L1_p65539_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+BRANCH L1_p65539_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
