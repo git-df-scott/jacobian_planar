@@ -98,3 +98,49 @@ five candidates, and that the remaining question is whether any of them extends
 to `A, B, D, E, F` through the other four equations — which, with `C` and `G`
 numeric, is largely LINEAR algebra: `(w=-3)` is linear homogeneous in `(B,F)`,
 and `(w=-2)`, `(w=-1)`, `(w=0)` are then linear in `(A,E)` and `D`.
+
+---
+
+## Stage 3 attempted: do the edge solutions extend?
+
+Working in `K = F_p[th]/(th^7 + 7766) = F_{p^7}` (and likewise for the other two
+rational factors), the RUR gives `C` and `G` explicitly, and
+
+    EDGE EQUATION 2 C G' - 3 C' G = t^2 HOLDS OVER K,  deg C = 8, deg G = 12
+
+so the stage-1 output is confirmed by independent arithmetic.  The remaining
+four equations are then linear algebra over `K`:
+
+| equation | role | result |
+|---|---|---|
+| `(w=-3)` `B G' - 3B'G + 2C F' - 2C'F = 0` | linear homogeneous in `(B,F)`, 20 unknowns | **solution space dim 3** |
+| `(w=-2)` `-3A'G + BF' - 2B'F + 2CE' - C'E = 0` | linear in `(A,E)` given `(B,F)` | always consistent, **kernel dim 3** |
+| `(w=-1)` `-2A'F + BE' - B'E + 2CD' = 0` | linear in `D`; its image is `C * {deg <= 11}` | consistency is EXACTLY **`C | (-2A'F + BE' - B'E)`**, 8 conditions |
+| `(w=0)` `B D' = A' E` | no new unknowns | not reached |
+
+The `(w=-1)` condition is LINEAR in the three `(w=-2)` kernel coefficients, so it
+is SOLVED rather than sampled (sampling it first gave 0/60, which proves
+nothing -- the same freezing mistake as the retracted case-(1) spiral).  Solving:
+
+| branch | edge holds | `(B,F)` dim | `(w=-2)` | `(w=-1)` after solving for the kernel |
+|---|---|---|---|---|
+| `th^7 = 57755` | yes | 3 | consistent | **inconsistent 60/60** |
+| `th^7 = 30040` | yes | 3 | consistent | **inconsistent 25/25** |
+| `th^7 = 9260`  | yes | 3 | consistent | **inconsistent 25/25** |
+
+**Counting.** For fixed `(B,F)` the `(w=-1)` condition is 8 equations in the 3
+kernel coefficients, leaving 5 residual conditions on the 3 parameters of the
+`(B,F)` space -- overdetermined by 2.  So emptiness is the expected outcome and
+every sample agrees.
+
+**Honest status: NOT a proof.** The three `(B,F)` parameters are still SAMPLED
+(over `K`, so random sampling cannot see a positive-codimension locus), and the
+two branches conjugate over the quadratic factor have not been run at all.  To
+close case (2) this last step must be solved, not sampled: 8 polynomial
+equations of degree <= 4 in the 6 parameters (3 for `(B,F)`, 3 for the `(w=-2)`
+kernel) over `K` -- a small system, but one that needs Singular over the
+algebraic extension `F_p(a)`, `a^7 = -7766`, because the kernel BASIS depends on
+`(B,F)` and so the conditions cannot simply be interpolated in a fixed
+parametrization.
+
+**No counterexample, and case (2) is not closed.**
