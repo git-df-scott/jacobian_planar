@@ -150,3 +150,35 @@ BRANCH L1_p65599_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
 BRANCH L1_p65599_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
 BRANCH L1_p65599_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
 BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/trackB_leaf1_sweep.py", line 90, in <module>
+    main()
+  File "/home/user/jacobian_planar/trackB_leaf1_sweep.py", line 84, in main
+    R0.close(f"L1_p{P}_r0b", "d_3_3", [], 0, 0)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  [Previous line repeated 1 more time]
+  File "/home/user/jacobian_planar/trackB_r0.py", line 82, in close
+    S.stage2b(tag, {}, g["gb"], d33)
+  File "/home/user/jacobian_planar/trackB_staged.py", line 250, in stage2b
+    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=ST2_TIMEOUT)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/trackB_staged.py", line 33, in sing
+    r = subprocess.run(["Singular", "-q", fn], capture_output=True, text=True, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['Singular', '-q', '/home/user/jacobian_planar/trackB_st2_L1_p65599_r0b_f0_f0_f0_f0.sing']' timed out after 2400 seconds
+05:58:47 chain: p65599 exit=1
