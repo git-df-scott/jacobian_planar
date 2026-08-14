@@ -147,3 +147,27 @@ closure claim.
   identically. The leading-order version is exactly the elliptic-integral
   criterion proved above (sqrt(S) rational). The full version constrains the
   geometry of P's generic fiber and may close case (1) outright.
+
+## Cascade experiment on the surviving locus (same session)
+
+`trackB1_cascade_solve.py` solves the ladder level by level on S = A^2: at
+level m the divisibility condition is linear in the newest slice P_{9-m}, so
+P's slices 7..-1 are DETERMINED one per level (particular solution, free
+kernel directions set to 0). Results over F_65521:
+
+- ladder alone: **satisfiable, 60/60** — consistent with the witness, which
+  also satisfies it. The divisibility ladder is NOT the obstruction.
+- random P on the locus: fails the ladder at weight 10, 60/60 (sanity).
+- **ladder-solved P, then the full condition set: ladder OK, N(Q)-support OK,
+  vanishing (F_w = 0 for w = -2..-9) OK, and INHOM_FAIL 40/40** — every
+  sample dies on exactly the x^2 condition, the same signature as the witness.
+
+So on the perfect-square locus the whole structure is consistent right down to
+the last equation, and the entire question reduces to:
+
+> **Can the ladder's free parameters (the kernel directions of the per-level
+> linear solves, set to 0 above) steer F_{-10} to the value required by
+> [P_8, F_{-10}] = x^2 ?**
+
+That is a bounded, Groebner-sized question on an explicit affine family — the
+right next computation, and the one that would close case (1) either way.
