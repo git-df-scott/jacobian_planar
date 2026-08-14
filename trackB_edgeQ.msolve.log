@@ -24,4 +24,9 @@ Time spent to compute eliminating polynomial (elapsed): 0.01 sec
 Elimination polynomial has degree 1144.
 
 Starts multi-modular computations
-{3}{5}{9}{17}{33}{65}{129}{257}{513}
+{3}{5}{9}{17}{33}{65}{129}{257}{513}{1025}
+<Step:2/2.47/1.19>
+<Step:4/2.49/2.25>
+<Step:8/2.41/4.57>
+<Step:16/4.85/9.39>
+<Step:32/4.77/19.41>
