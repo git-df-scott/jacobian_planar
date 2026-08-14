@@ -90,7 +90,7 @@ def q_close(tag, pin, extras, timeout=7200, extra_nz=None):
     for x in [pin] + extras:
         m += 1; scr.append(f"I2[{m}] = {x};")
     scr.append(f"I2[{m+1}] = w*({prod})-1;")
-    scr += ["I2 = I2 + J;", "ideal G2 = groebner(I2);", "int d2 = dim(G2);",
+    scr += ["I2 = I2 + J;", 'LIB "modstd.lib";', "ideal G2 = modStd(I2);", "int d2 = dim(G2);",
             f'"Q-BRANCH {tag} RESIDUAL DIM: " + string(d2);',
             f'if (d2==0) {{ "Q-BRANCH {tag} RESIDUAL VDIM: " + string(vdim(G2)); }}',
             f'if (d2==-1) {{ "Q-BRANCH {tag} EMPTY"; }}',
