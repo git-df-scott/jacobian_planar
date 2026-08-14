@@ -171,3 +171,43 @@ the last equation, and the entire question reduces to:
 
 That is a bounded, Groebner-sized question on an explicit affine family — the
 right next computation, and the one that would close case (1) either way.
+
+## The ladder death-spiral on the perfect-square locus (same session)
+
+With level 2 handled exactly (its condition S | P_7^2 <=> A | P_7 is quadratic
+and is solved by the parametrization P_7 = A*M, NOT by an affine solve — an
+earlier affine treatment of that level was wrong and is retracted), the ladder
+bites immediately and repeatedly.
+
+**Level 3, PROVED by hand and machine-confirmed.** With P_7 = A M and P_6 the
+unknown, the P_6-linear part of N_3 is (3b^2/2a^2) S^2 P_6 P_7 = (3b^2/2a^2)
+A^5 M P_6, so the level-3 map is P_6 |-> A^5 * [(3b^2/2a^2) M P_6 mod A], while
+N_3(0) = -(b^2/8a^3) A^3 M^3. Consistency therefore needs A^5 | A^3 rem(M^3,A^3),
+i.e. A^2 | M^3, i.e. (A squarefree) **A | M**. Equivalently
+
+        level 3  =>  A^2 | P_7,  i.e.  S | P_7.
+
+Machine check: random (A, M) is obstructed at level 3 in **400/400** samples.
+
+**The spiral (measured, particular-solution branch).** Feeding P_7 = A^j * (cofactor)
+and running the solver with free kernel directions zeroed:
+
+| P_7 | outcome |
+|---|---|
+| A^1 * (deg 6) | OBSTRUCTED level 3, 120/120 |
+| A^2 * (deg 4) | OBSTRUCTED level 4, 120/120 |
+| A^3 * (deg 2) | OBSTRUCTED level 7, 120/120 |
+| A^4 * (deg 0) | SURVIVES the ladder, 120/120 |
+| A^5 | impossible: deg A^5 = 10 > 8 = deg P_7 |
+
+So the ladder drives P_7 to **P_7 = c A^4 = (c/a) P_8** — the top two slices
+proportional — and on that forced family the particular ladder solution then
+fails the N(Q)-SUPPORT condition at weight 8 (150/150).
+
+**Honest labels.** Level 3's condition is proved. The later spiral steps and
+the weight-8 support failure are measured on the zeroed-kernel branch: at
+levels >= 4 the outcome depends on the free kernel directions chosen at earlier
+levels (randomizing them moves the death to level 4, 150/150). Making the
+spiral a theorem requires carrying those directions symbolically — that is the
+remaining work, and it is now a small, well-posed problem on an explicitly
+pinned family (A: 2 params, c, and the level kernels), not a blind search.

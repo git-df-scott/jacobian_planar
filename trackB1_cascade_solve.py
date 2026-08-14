@@ -26,7 +26,11 @@ def prem(f, g, p):
                 f[k+i] = (f[k+i] - c*gi) % p
     return ptrim(f[:len(g)-1])
 
+KDIM = []
+RAND = False
 def run(A, M, p, a=1, b=1, verbose=False):
+    global KDIM
+    KDIM = []
     S = pmul(A, A, p)
     S3 = pmul(pmul(S,S,p), S, p)
     gamma = (b*b % p) * pow(pow(a,3,p), p-2, p) % p
@@ -66,7 +70,10 @@ def run(A, M, p, a=1, b=1, verbose=False):
                         out = padd(out, pmul(pmul(Pd[w1],Pd[w2],p),Pd[w3],p), p)
         return out
 
-    for m in range(2, 23):
+    # level m=2 is the ONLY quadratic level (N_2 contains P_7^2); its condition
+    # S | P_7^2 <=> A | P_7 is solved exactly by the parametrization P_7 = A*M,
+    # so it is imposed by construction and must NOT be re-solved affinely.
+    for m in range(3, 23):
         w_new = 9 - m
         rng = prange(w_new) if w_new >= -1 else None
         if rng is None:            # pure obstruction level
@@ -102,9 +109,18 @@ def run(A, M, p, a=1, b=1, verbose=False):
                 piv_of[col] = row; row += 1
             if any(all(Mx[r][c] == 0 for c in range(nun)) and Mx[r][nun] for r in range(n)):
                 return ("OBSTRUCTED", m, None)
+            free_cols = [c for c in range(nun) if c not in piv_of]
+            KDIM.append((m, w_new, nun, len(free_cols)))
+            fv = {c: (random.randrange(p) if RAND else 0) for c in free_cols}
             sol = [0]*(hi+1)
+            for c, val in fv.items(): sol[lo+c] = val
             for col in range(nun):
-                if col in piv_of: sol[lo+col] = Mx[piv_of[col]][nun]
+                if col in piv_of:
+                    r = piv_of[col]
+                    v = Mx[r][nun]
+                    for c2 in free_cols:
+                        v = (v - Mx[r][c2]*fv[c2]) % p
+                    sol[lo+col] = v
             P[w_new] = ptrim(sol)
         F.clear(); F[12] = pscal(pmul(pmul(S,S,p),S,p), b, p)
     return ("SURVIVED_LADDER", None, P)
