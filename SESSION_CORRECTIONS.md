@@ -157,3 +157,67 @@ seed; the defaults 150/60 run for many minutes. `trackB1_level4.py` reports
 the point of the section: `D` is not merely a non-unit, it is identically zero
 in `F_p[z]/(S)`, which is why level 4 always has a solution. The constructive
 consequence is what `trackB1_level4_solve.py` verifies against `build_N`.)
+
+---
+
+## 5. The y-adic verdict engine: N(Q)'s upper edge alone makes case (1) FINITE
+
+`trackB1_yadic_verdict.py` is a complete verdict engine that uses **none** of the
+weight grading, the square root `T = P^{1/2}`, the cusp parametrization
+`P_8 = a S^2`, the S-classification, or the cascade — only `[P,Q] = x^2` and the
+two polygons. Since `Q` is a function of `P`, the live conditions are
+
+    coefficient of x^i in Q_j must vanish for i < j - 12,   13 <= j <= 24,
+
+which is `1+2+...+12 = 78` conditions against P's 61 lattice-point
+coefficients (plus 2 more "above N(Q)" conditions at j = 23, 24, and the
+termination conditions `Q_j = 0` for `j > 24`, none of which are used below).
+
+**Sanity:** a random P dies at `j = 13`, the very first condition, 150/150.
+
+**A trap avoided.** The natural move — "solve the order-j condition for the
+newest slice `P_{j-1}`" — is wrong and reports spurious inconsistency 60/60: the
+`i = 0` condition at `j = 13` is *untouched* by `P_12`, because N(P) forces
+`P_12` to have `i >= 4`, so it can only contribute to `Q_13` at `i >= 5`. The
+low-i conditions are driven by the low-i COLUMNS of P. (Same class of mistake as
+the retracted off-by-one: guessing which unknown a condition constrains instead
+of measuring it.)
+
+**The measurement.** `trackB1_yadic_jac.py` runs the whole recursion over dual
+numbers `F_p[eps]/(eps^2)` to get the EXACT Jacobian — a finite difference over
+`F_p` is a secant, not a derivative, and its rank is meaningless for a nonlinear
+map. (The conditions reach degree 11 in a single parameter already at `j = 14`,
+which is why a 6-point interpolation cross-check fails spuriously; with 26
+points the dual-number derivative matches the interpolated linear term exactly.)
+
+| conditions imposed | # | Jacobian rank | dim bound |
+|---|---|---|---|
+| j = 13..16 | 10 | 10 | 51 |
+| j = 13..18 | 21 | 21 | 40 |
+| j = 13..21 | 45 | 45 | 16 |
+| j = 13..22 | 55 | 55 | 6 |
+| j = 13..23 | 66 | **60** | 1 |
+| j = 13..24 | 78 | **60** | 1 |
+
+The rank saturates at 60, and the deficiency is completely explained: the ONLY
+identically-zero Jacobian column is the parameter `(j,i) = (0,0)`, i.e. `p_00`.
+That is exact, not accidental — `Q` does not depend on P's constant term at all,
+because `P -> P + nu` leaves `[P,Q] = x^2` and hence `Q` unchanged. On the other
+**60 parameters the rank is full**.
+
+> **Consequence.** At any solution where the Jacobian has full rank, the solution
+> is ISOLATED modulo the trivial shift `P -> P + nu`. So N(Q)'s upper edge alone
+> cuts case (1) from a 61-parameter family down to at most a finite set of
+> points — before the termination conditions `Q_j = 0` (j > 24) are imposed at
+> all, and with 78 conditions against 60 essential parameters.
+
+Honest labels: the rank is measured at random points, so it bounds the dimension
+only where it is attained; the rank can drop on the solution locus itself, and
+"78 conditions vs 60 parameters" is strong evidence of emptiness but not a
+proof. Deciding emptiness needs elimination, which is out of reach directly
+(degree ~24 polynomials in 61 variables).
+
+Reproduce:
+
+    python3 trackB1_yadic_verdict.py scan 150 1    # random P dies at j = 13
+    python3 trackB1_yadic_jac.py 2 1               # exact Jacobian ranks
