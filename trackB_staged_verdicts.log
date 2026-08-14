@@ -157,3 +157,20 @@
 23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
 23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
 23:26:29 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+02:07:38 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:08:26 L1 SWEEP p=65539: eliminant ['ELIMDEG: 43'], 6 irreducible factors
+02:08:26 BRANCH L1_p65539_r0a: edge fiber dim 0 vdim 280 (depth 0)
+02:08:26 BRANCH L1_p65539_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+02:08:26 BRANCH L1_p65539_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+02:08:26 BRANCH L1_p65539_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+02:08:26 BRANCH L1_p65539_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+02:10:18 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:11:02 BRANCH QF_A_d33_1: STATUS STALLED (no verdict) | ENGINE Singular std | TIME 43 sec
+02:11:02 QF A_d33_1: NO VERDICT after 43s (crashed or killed) — see trackB_QF_A_d33_1.sing.out
+02:11:02 QF-FALLBACK: pass finished in 43s — check for STALLED / NO VERDICT lines before claiming closure
+02:11:27 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
+02:12:21 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
