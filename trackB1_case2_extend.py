@@ -33,16 +33,61 @@ DEG = 7          # theta^7 = -CONST
 CONST = 7766     # theta^7 + 7766 = 0  ->  theta^7 = -7766
 
 # ------------------------------------------------------------------ field K
-def kred(a):
-    """reduce a list of coefficients modulo theta^7 = -CONST."""
-    a = list(a)
-    while len(a) > DEG:
-        top = a.pop()
+MOD = None       # None => binomial theta^DEG = -CONST (the original path)
+REDTAB = None    # REDTAB[k] = theta^(DEG+k) in the theta-basis, k = 0..DEG-2
+
+
+def set_modulus(coeffs):
+    """Switch K to F_p[theta]/(m) for a general monic m.
+
+    coeffs = [m_0, ..., m_{d-1}] for  m = theta^d + m_{d-1} theta^{d-1}
+    + ... + m_0.  The edge eliminant factors into three degree-7 binomials
+    and one genuine degree-14 factor (theta^14 + 13055 theta^7 - 23589), and
+    that last branch cannot be expressed as theta^d = const, hence this.
+    """
+    global DEG, MOD, REDTAB, CONST
+    d = len(coeffs)
+    DEG = d
+    MOD = [c % p for c in coeffs]
+    CONST = MOD[0]
+    cur = [(-c) % p for c in MOD]          # theta^d
+    REDTAB = [cur[:]]
+    for _ in range(d - 2):                 # theta^(d+1) .. theta^(2d-2)
+        top = cur[d - 1]
+        nxt = [0] + cur[:d - 1]
         if top:
-            a[len(a) - DEG] = (a[len(a) - DEG] - top * CONST) % p
+            nxt = [(nxt[i] + top * REDTAB[0][i]) % p for i in range(d)]
+        cur = nxt
+        REDTAB.append(cur[:])
+
+
+def set_binomial(const):
+    """Restore the original theta^DEG = -const arithmetic."""
+    global DEG, MOD, REDTAB, CONST
+    DEG, MOD, REDTAB, CONST = 7, None, None, const % p
+
+
+def kred(a):
+    """reduce a list of coefficients modulo the minimal polynomial."""
+    a = list(a)
+    if MOD is None:
+        while len(a) > DEG:
+            top = a.pop()
+            if top:
+                a[len(a) - DEG] = (a[len(a) - DEG] - top * CONST) % p
+        while len(a) < DEG:
+            a.append(0)
+        return [x % p for x in a]
     while len(a) < DEG:
         a.append(0)
-    return [x % p for x in a]
+    out = [x % p for x in a[:DEG]]
+    for k in range(DEG, len(a)):
+        c = a[k] % p
+        if c:
+            row = REDTAB[k - DEG]
+            for i in range(DEG):
+                out[i] = (out[i] + c * row[i]) % p
+    return out
 
 def kadd(a, b):
     return [(a[i] + b[i]) % p for i in range(DEG)]
