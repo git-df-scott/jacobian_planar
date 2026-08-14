@@ -122,3 +122,28 @@ What is NOT yet done: case (1) is not closed — the perfect-square locus
 survives this obstruction and must be attacked with the ladder + vanishing
 conditions on the reduced 3-parameter family. No counterexample, and no
 closure claim.
+
+---
+
+## Follow-up state (same session)
+
+- The theorem was substituted into the pentagon system
+  (`trackB1_square_subst.py` -> `trackB1_square_system.json`, 163 vars / 283
+  eqs, hash a7172f20...). Running the sound eliminator on it, exact-Q and then
+  mod 65521, reproduces the known blowup (>4 GB, no verdict inside a container
+  window). The full system is still not the right object to attack directly.
+
+- The right next attack is the CASCADE, not the raw system: with S = A^2 the
+  ladder is triangular and every level is a small linear solve in the newest
+  component, so the natural object is the ~14-parameter reduced data
+  (A: 2 after normalization, plus P_7's 9 coefficients subject to A | P_7)
+  with the lower slices determined level by level. That is a Groebner-sized
+  problem, unlike the 163-variable system.
+
+- Deeper structural route, worth a Fable block: the obstruction proved here is
+  the LEADING term of a classical period obstruction. [P, Delta] = x^2 says
+  x^2 dx ^ dy = dP ^ dDelta, so solvability forces the Gelfand-Leray periods
+  of x^2 dx^dy / dP over the cycles of the level curves P = t to vanish
+  identically. The leading-order version is exactly the elliptic-integral
+  criterion proved above (sqrt(S) rational). The full version constrains the
+  geometry of P's generic fiber and may close case (1) outright.
