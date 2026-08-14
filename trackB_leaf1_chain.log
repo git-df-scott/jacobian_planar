@@ -196,3 +196,17 @@ BRANCH L1_p65599_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
 BRANCH L1_p65599_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
 BRANCH L1_p65599_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
 BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+08:35:31 chain: p65521 sweep done, starting p65539
+L1 SWEEP p=65539: resuming from cached eliminant (6 factors)
+L1 SWEEP p=65539: COMPLETE in 0s (5 eliminant branches + r0a + r0b)
+08:35:33 chain: p65539 exit=0
+L1 SWEEP p=65599: resuming from cached eliminant (5 factors)
+BRANCH L1_p65599_r0b: edge fiber dim 0 vdim 338 (depth 0)
+BRANCH L1_p65599_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+BRANCH L1_p65599_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+BRANCH L1_p65599_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+BRANCH L1_p65599_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+BRANCH L1_p65599_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+BRANCH L1_p65599_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+BRANCH L1_p65599_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+BRANCH L1_p65599_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
