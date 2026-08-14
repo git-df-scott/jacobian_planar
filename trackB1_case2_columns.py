@@ -54,7 +54,12 @@ def params():
 
 PAR = params()
 
-def build(colmax, jmax, sat=False, showgens=False):
+def build(colmax, jmax, sat=False, showgens=False, zeros=(), subs=None,
+          only_high=False):
+    """`zeros` = parameters (j,i) known to vanish; they are substituted OUT of
+    the polynomials, not merely added to the ideal.  Column 2 proves p_12 = 0
+    (Singular returns the single generator c(2)^2, radical (c(2))), so passing
+    zeros=((2,1),) is sound and shrinks the system by a variable."""
     PR = CASE2.PR
     n = len(PAR)
     L = [f"ring R = {PRIME}, (c(1..{n}), x), dp;"]
@@ -66,6 +71,13 @@ def build(colmax, jmax, sat=False, showgens=False):
                 terms.append("x")
             elif (j, i) == (0, 0):
                 continue
+            elif (j, i) in zeros:
+                continue
+            elif subs and (j, i) in subs:
+                v = subs[(j, i)]
+                if v == "0":
+                    continue
+                terms.append(f"{v}*x^{i}" if i else v)
             else:
                 k = PAR.index((j, i)) + 1
                 terms.append(f"c({k})*x^{i}" if i else f"c({k})")
@@ -94,7 +106,8 @@ def build(colmax, jmax, sat=False, showgens=False):
     QTOP = max(CASE2.QR)                      # = 12 columns in N(Q)
     QCOLMAX = max(hi for lo, hi in CASE2.QR.values())
     L.append("ideal I;")
-    for i in range(2, min(colmax, QCOLMAX) + 1):
+    lo_col = (QCOLMAX + 1) if only_high else 2
+    for i in range(lo_col, min(colmax, QCOLMAX) + 1):
         for j in range(2 * i + 1, jmax + 1):
             L.append(f"I = I + ideal(coeffs(coeffs(Q{j}, x)[{i}+1,1], x)[1,1]);")
     if colmax > QCOLMAX:
@@ -121,10 +134,13 @@ def build(colmax, jmax, sat=False, showgens=False):
     L.append("quit;")
     return "\n".join(L), n
 
-def run(colmax, jmax, timeout, sat=False, showgens=False):
-    src, n = build(colmax, jmax, sat, showgens)
+def run(colmax, jmax, timeout, sat=False, showgens=False, zeros=(), subs=None,
+        only_high=False):
+    src, n = build(colmax, jmax, sat, showgens, zeros, subs, only_high)
     os.makedirs(SCRATCH, exist_ok=True)
-    fn = os.path.join(SCRATCH, f"c2col_{colmax}_{jmax}{'_s' if sat else ''}.sing")
+    tagp = ('_p' + str(subs[(1, 1)])) if subs and (1, 1) in subs else ''
+    fn = os.path.join(SCRATCH, f"c2col_{colmax}_{jmax}{'_s' if sat else ''}"
+                      f"{'_z' if zeros else ''}{tagp}{'_hi' if only_high else ''}.sing")
     open(fn, "w").write(src)
     t0 = time.time()
     try:
@@ -142,10 +158,18 @@ if __name__ == "__main__":
     to = int(sys.argv[4]) if len(sys.argv) > 4 else 1800
     sat = "--sat" in sys.argv
     gens = "--gens" in sys.argv
+    zeros = ((2, 1),) if "--z12" in sys.argv else ()
+    subs = None
+    for a in sys.argv:
+        if a.startswith("--p11="):
+            subs = {(1, 1): a.split("=")[1]}
+    only_high = "--only-high" in sys.argv
     print(f"case (2): {len(PAR)} parameters (p_00 dropped, p_10 = 1); "
-          f"jmax = {jmax}, saturate = {sat}\n", flush=True)
+          f"jmax = {jmax}, sat={sat}, p12 subst={bool(zeros)}, "
+          f"p11 subst={subs.get((1,1)) if subs else None}, "
+          f"only-high-cols={only_high}\n", flush=True)
     for c in range(lo, hi + 1):
-        n, out, dt = run(c, jmax, to, sat, gens)
+        n, out, dt = run(c, jmax, to, sat, gens, zeros, subs, only_high)
         print(f"columns 2..{c}: {out.replace(chr(10),' | ')}   [{dt:.0f}s]",
               flush=True)
         if "EMPTY" in out:
