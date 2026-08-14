@@ -81,14 +81,24 @@ def poly_str(poly):
         terms.append("*".join(f))
     return " + ".join(terms)
 
-# ---------- load leaf 2 ----------
+# ---------- load the leaf (id from env JCLEAF; 2 = the new ground, 1 = the
+# old campaign's d_2_2 = 0 slice) ----------
+LEAF_ID = int(os.environ.get("JCLEAF", "2"))
 tree = json.load(open(os.path.join(WD, "trackA_reduced_system.json")))
-leaf = next(n for n in tree["nodes"] if n["id"] == 2)
+leaf = next(n for n in tree["nodes"] if n["id"] == LEAF_ID)
 EQS = [parse_poly(e) for e in leaf["equations"]]
 NZV = list(leaf.get("nonzero", []))
 NZE = [parse_poly(e) for e in leaf.get("nonzero_exprs", [])]
-EDGE_IDX = [38, 39, 40, 41, 42, 43]
 EDGE_VARS = ["d_3_3", "d_4_5", "d_5_7", "d_6_9", "d_7_11", "d_8_13", "d_9_15"]
+# Derived, never hardcoded: the Newton-edge subsystem is exactly the set of
+# equations all of whose variables are edge variables. For leaf 2 this
+# reproduces the previously hardcoded [38..43]; leaf 1 indexes them at
+# [34..39] (same six equations — the edge subsystem is shared).
+EDGE_IDX = [i for i, e in enumerate(leaf["equations"])
+            if set(re.findall(r"[cd]_\d+_\d+", e))
+            and set(re.findall(r"[cd]_\d+_\d+", e)) <= set(EDGE_VARS)]
+if LEAF_ID == 2:
+    assert EDGE_IDX == [38, 39, 40, 41, 42, 43], EDGE_IDX  # regression pin
 REST_IDX = [i for i in range(len(EQS)) if i not in EDGE_IDX]
 
 BRANCHES = {

@@ -1,4 +1,33 @@
-# RESUME STATE — updated 2026-08-13 ~05:5x UTC (main loop continuing on CPU)
+# RESUME STATE
+
+## OPUS 5 SESSION, 2026-08-13 ~22:0x-23:xx UTC (priority-queue execution)
+
+**Environment gotcha, read this first:** the container came up with **no
+Singular**. `apt-get install -y singular` (4.3.2) restores it; `apt-get install
+-y msolve` adds msolve. Every campaign script assumes Singular on PATH, so a
+fresh container silently has no engine until you do this.
+
+Queue status at checkpoint:
+
+| item | state |
+|---|---|
+| P0 pentagon endgame | T1 PASS (tower_check restored — it had been overwritten by tower_lift's append). T2/T4 **STALLED**, measured: one sample's level 16 does not finish in 1400s at 1.8GB with 9 levels still below it. T5 engines both lost (slimgb 2x slower than std; msolve dies in hash-table growth). Verdicts in trackB1_report.md §B1d; escalated in FABLE_REVIEW.md item 2. **No verdict on case (1).** |
+| P1 exact-Q leaf 2 | RUNNING. `trackB_exactQ.py`; the char-0 edge eliminant factorization is the long pole (QELIM_TIMEOUT env, default 10800s). Resume: `python3 trackB_exactQ.py` (markers resume). |
+| P2 leaf 1 | RUNNING. p=65521: eliminant ELIMDEG 43, 7 factors, rk0-rk5 + r0a sub-branches all EMPTY so far. `trackB_leaf1_chain.sh` queues p=65539, p=65599, then leaf-1 exact-Q, unattended. Resume: `JCP=<p> python3 trackB_leaf1_sweep.py`, then `JCLEAF=1 python3 trackB_exactQ.py`. |
+| P3 above-125 | **BLOCKED, escalated** (FABLE_REVIEW.md item 1): the above-125 Newton polygons are published nowhere. 1708.07936 §6 gives chain data only; GGHV 2204.14178 §4 gives polygons only for (9,27), (9,24), (8,28), (7,21), derived case-by-case by hand with no general recipe. P3b-P3d are ready and pair-agnostic the moment a polygon pair is ruled. |
+| P4 Track C | C2 **COMPLETE** (ten forced R's, k=3..12; D = 5k-2 derived, handoff's D = 3k+4 wrong from k=4 on and it manufactures a spurious death at k=4). C4 enumeration run for INPUT ONLY (Fable-grade). C3 **not started — `trackC_c3_ladder.py` was never written**; trackC_phase4.py's `c3` subcommand imports it and will fail until it exists. |
+
+Tooling added this session: `JCLEAF` selects the leaf in trackB_staged (edge
+equation indices now derived, not hardcoded); trackB_exactQ namespaces markers
+by leaf; `JCENGINE=std|slimgb` switches the tower's per-level GB engine;
+trackB1_msolve_export.py exports any structured system to msolve format with
+Rabinowitsch saturation.
+
+PR for this session's work: https://github.com/git-df-scott/jacobian_planar/pull/4
+
+---
+
+# (earlier) RESUME STATE — updated 2026-08-13 ~05:5x UTC (main loop continuing on CPU)
 
 ## CAMPAIGN-REDEFINING FINDINGS (Track A, complete — see trackA_report.md)
 

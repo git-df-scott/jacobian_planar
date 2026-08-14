@@ -14,6 +14,10 @@ import json, os, re, sys, time
 import trackB_staged as S
 
 WD = S.WD
+# Leaf-2 keeps the historical unprefixed names (its markers are already on
+# disk and its verdicts are the ones on record); leaf 1 gets its own
+# namespace so the two exact-Q passes cannot share a marker.
+PFX = "" if S.LEAF_ID == 2 else "L%d_" % S.LEAF_ID
 
 def qsing(script, name, timeout):
     try:
@@ -30,7 +34,7 @@ def edge_header():
     return scr, n
 
 def q_eliminant_factors():
-    mark = os.path.join(WD, "trackB_Q_elim.json")
+    mark = os.path.join(WD, f"trackB_{PFX}Q_elim.json")
     if os.path.exists(mark):
         return json.load(open(mark))
     scr, n = edge_header()
@@ -39,20 +43,28 @@ def q_eliminant_factors():
             "ideal E = eliminate(I, d_3_3*d_4_5*d_5_7*d_6_9*d_7_11*d_8_13);",
             '"ELIMDEG: " + string(deg(E[1]));',
             "list f = factorize(E[1]);", '"FACTORS:"; f[1];', "quit;"]
-    out = qsing("\n".join(scr), "trackB_Q_elim.sing", 3600)
+    out = qsing("\n".join(scr), f"trackB_{PFX}Q_elim.sing", int(os.environ.get("QELIM_TIMEOUT", "10800")))
     facs = []
     for ln in out.splitlines():
         m = re.match(r"_\[\d+\]=(.+)$", ln.strip())
         if m and m.group(1) != "1":
             facs.append(m.group(1))
+    # Soundness guard: only cache a factor list from a run that actually
+    # reached the factorization. A timeout/crash returns "" (or no FACTORS
+    # block); caching [] there would silently skip every rk-branch on rerun
+    # and read as a closure. Raise instead.
+    if "FACTORS:" not in out or not facs:
+        S.log("Q-SWEEP: eliminant factorization produced NO factors "
+              "(timeout/crash) — marker NOT written; use the P1 fallback route")
+        raise SystemExit("Q-eliminant factorization did not complete")
     json.dump(facs, open(mark, "w"))
-    S.log(f"Q-SWEEP: eliminant factors over Q: {len(facs)}  "
+    S.log(f"{PFX}Q-SWEEP: eliminant factors over Q: {len(facs)}  "
           f"degs {[max((len(x) // 40, 1)) for x in facs] if facs else []}")
     return facs
 
 def q_close(tag, pin, extras, timeout=7200, extra_nz=None):
     """Full-system closure over Q for one branch: edge GB then residual GB."""
-    mark = os.path.join(WD, f"trackB_Q_done_{tag}")
+    mark = os.path.join(WD, f"trackB_{PFX}Q_done_{tag}")
     if os.path.exists(mark):
         return
     scr, n = edge_header()
@@ -83,13 +95,13 @@ def q_close(tag, pin, extras, timeout=7200, extra_nz=None):
             f'if (d2==0) {{ "Q-BRANCH {tag} RESIDUAL VDIM: " + string(vdim(G2)); }}',
             f'if (d2==-1) {{ "Q-BRANCH {tag} EMPTY"; }}',
             "quit;"]
-    out = qsing("\n".join(scr), f"trackB_Q_{tag}.sing", timeout)
+    out = qsing("\n".join(scr), f"trackB_{PFX}Q_{tag}.sing", timeout)
     lines = [l for l in out.splitlines() if "Q-EDGE" in l or "Q-BRANCH" in l]
     if lines:
-        S.log(f"Q {tag}: " + " | ".join(lines))
+        S.log(f"{PFX}Q {tag}: " + " | ".join(lines))
         open(mark, "w").write(out[-3000:])
     else:
-        S.log(f"Q {tag}: NO VERDICT (stalled or crashed — see trackB_Q_{tag}.sing.out)")
+        S.log(f"{PFX}Q {tag}: NO VERDICT (stalled or crashed — see trackB_{PFX}Q_{tag}.sing.out)")
 
 def main():
     # SOUND three-chart cover of leaf 2 over Q — no eliminant factorization:
@@ -100,7 +112,7 @@ def main():
     q_close("rk_all", "d_3_3-1", [], timeout=14400, extra_nz=["d_9_15"])
     q_close("r0a", "d_3_3-1", ["d_9_15"], timeout=10800)
     q_close("r0b", "d_3_3", ["d_9_15"], timeout=10800)
-    S.log(f"Q-SWEEP: pass finished in {time.time()-t0:.0f}s — check for STALLED/NO VERDICT lines before claiming closure")
+    S.log(f"{PFX}Q-SWEEP: pass finished in {time.time()-t0:.0f}s — check for STALLED/NO VERDICT lines before claiming closure")
 
 if __name__ == "__main__":
     main()

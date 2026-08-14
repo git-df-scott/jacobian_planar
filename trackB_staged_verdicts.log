@@ -113,3 +113,32 @@
 21:52:28 SWEEP p=65599: COMPLETE in 1248s (4 eliminant branches + r0a + r0b)
 22:11:57 trackB_Q_elim.sing: STALLED/ERROR (TimeoutExpired: Command '['Singular', '-q', '/home/user/jacobian_planar/trackB_Q_elim.sing']' timed out after 3600 seconds)
 22:11:57 Q-SWEEP: eliminant factors over Q: 0  degs []
+22:23:45 L1 SWEEP p=65521: eliminant ['ELIMDEG: 43'], 7 irreducible factors
+22:23:53 BRANCH L1_p65521_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk0 EMPTY
+22:24:00 BRANCH L1_p65521_rk1: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk1 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk1 EMPTY
+22:24:08 BRANCH L1_p65521_rk2: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk2 EMPTY
+22:25:17 BRANCH L1_p65521_rk3: stage2b vars=19 gens=47 -> BRANCH L1_p65521_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk3 EMPTY
+22:25:25 BRANCH L1_p65521_rk4: stage2b vars=18 gens=46 -> BRANCH L1_p65521_rk4 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk4 EMPTY
+22:25:32 BRANCH L1_p65521_rk5: stage2b vars=18 gens=46 -> BRANCH L1_p65521_rk5 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk5 EMPTY
+22:25:37 BRANCH L1_p65521_r0a: edge fiber dim 0 vdim 280 (depth 0)
+22:25:37 BRANCH L1_p65521_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+22:25:37 BRANCH L1_p65521_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+22:25:37 BRANCH L1_p65521_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+22:25:37 BRANCH L1_p65521_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+22:25:37 BRANCH L1_p65521_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+22:25:37 BRANCH L1_p65521_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+22:25:38 BRANCH L1_p65521_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65521_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65521_r0a_f0_f0_f0 EMPTY
+22:25:38 BRANCH L1_p65521_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+22:25:38 BRANCH L1_p65521_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+22:25:38 BRANCH L1_p65521_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+22:42:31 BRANCH L1_p65521_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65521_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65521_r0a_f0_f0_f1_f0 EMPTY
+22:42:31 BRANCH L1_p65521_r0b: edge fiber dim 0 vdim 338 (depth 0)
+22:42:31 BRANCH L1_p65521_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+22:42:31 BRANCH L1_p65521_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+22:42:31 BRANCH L1_p65521_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+22:42:31 BRANCH L1_p65521_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+22:42:31 BRANCH L1_p65521_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+22:42:31 BRANCH L1_p65521_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+22:42:31 BRANCH L1_p65521_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+22:42:31 BRANCH L1_p65521_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+23:04:52 QF-FALLBACK: starting charts ['A_d33_1'] on leaf 2 (44 equations, timeout 21600s each)
