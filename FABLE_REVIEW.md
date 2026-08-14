@@ -138,3 +138,57 @@ because it is cheap to say and expensive to rediscover.
 **What was NOT concluded.** No verdict on case (1). The pentagon system is
 neither EMPTY nor ALIVE on this evidence; it is STALLED, with the
 instrumentation above.
+
+---
+
+## Item 3 (measured, P1) — exact-Q closure is blocked at one identified computation
+
+P1's own instruction was to run `trackB_exactQ.py`, and if the char-0 eliminant
+factorization exceeded ~3h, to fall back on per-chart closure without the
+eliminant. Both routes were run. Neither lands, and the reason is now precise
+enough to hand to whoever picks it up.
+
+**The measurement ladder** (leaf 2, case (2), 44 equations / ~24 variables):
+
+| what | engine | outcome |
+|---|---|---|
+| per-branch closure, mod p | Singular std, staged | **works** — seconds to minutes per branch; this is what closed case (2) at p = 65521, 65539, 65599 |
+| char-0 edge eliminant (the per-branch route's gate) | groebner + eliminate + factorize | no output in >1h, twice |
+| char-0 edge eliminant | modStd (modular + rational reconstruction) | no output in 10 min |
+| monolithic chart, char 0 | groebner | no output in ~55 min, killed by container restart |
+| monolithic chart, char 0 | modStd | no output |
+| **monolithic chart, mod p** | groebner | **no output in 10 min** |
+
+The last row is the diagnostic one. The monolithic chart is hard *even mod p*,
+so the fallback route was never going to work over Q — its difficulty is not
+coefficient growth, it is the undecomposed system. What makes case (2)
+tractable mod p is the staged decomposition: pin an edge point first, then
+close a small residual system. The exact-Q analogue needs the same
+decomposition, and its gate is a single computation:
+
+> **the char-0 edge eliminant: 7 variables, 6 equations plus the
+> normalization d_3_3 = 1, with coefficients like 1094125239/455785946.**
+
+Everything downstream of that is small and already written. That one
+elimination is the whole blockage.
+
+**A route that was considered and rejected as unsound.** Since every branch is
+EMPTY mod three primes, it is tempting to promote that to a Q-statement. It
+does not follow: I = (p*x - 1) is the standard counterexample — it is (1) mod
+p while V(I_Q) = {1/p} is nonempty. The campaign's rule that mod-p is scouting
+only is correct and was not bent.
+
+**A route that remains open and is probably the right one.** `trackB_certsupport.py`
+implements it: use mod p to find which handful of generators carry nonzero
+cofactors in the certificate 1 = sum h_i f_i (the *support*), then run the
+char-0 lift on that subset alone. A certificate that verifies over Q is a
+proof however it was found, and the mod-p step contributes only a hint about
+where to look. Note that the cofactors themselves cannot be CRT-reconstructed
+across primes — lift's output depends on the computation path and is not
+canonical — so only the index set is carried over. The script could not be
+evaluated here because its own first step is the monolithic mod-p GB in the
+table above; it needs the staged decomposition applied to it first, which is
+the natural next build.
+
+**Verdict vocabulary.** Case (2) is closed **mod p at three primes** and
+**STALLED over Q**. It is not certified. The AUDIT_REPORT reflects this.
