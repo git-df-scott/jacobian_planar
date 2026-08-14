@@ -43,7 +43,33 @@ chart is logged CLOSED only when dim = -1 AND the certificate verifies;
 otherwise UNCERTIFIED. The certificate replays with polynomial multiplication
 alone, independent of how the basis was found.
 
-**P2 leaf 1 — in flight, 15 branches EMPTY so far.** The staged pipeline is
+**P2 leaf 1 — CLOSED mod p at three primes, every node verified.** All three
+sweeps logged COMPLETE: p=65539 (5277s), p=65599 (5420s), p=65521 (5275s). A
+structural check over the whole recursion tree — a node is accounted for iff it
+either carries a verdict or was split into children — returns **48 nodes, 24
+verdicts, 24 split, UNRESOLVED: none**. Per prime: 65521 has 17 nodes (6
+eliminant branches + r0a + r0b), 65539 has 16 (5 + r0a + r0b), 65599 has 15
+(4 + r0a + r0b); the counts differ because the eliminant factors into 7, 6 and
+5 irreducibles respectively.
+
+This is **mod-p scouting evidence, not a closure**. Exact Q for leaf 1 is
+running under the three-chart cover. Nothing here is certified.
+
+Two process notes worth keeping, because both nearly cost a verdict:
+
+- The terminal `r0b_f0_f0_f0_f0` branch took **88-90 minutes at every prime**,
+  against a 10-minute precedent for leaf 2's structurally identical branch
+  (same edge fiber dim 0 / vdim 6, same stage-2b shape). Same six edge
+  equations, same prime size — the difference is leaf 1's residual system. The
+  default 2400s stage budget was never going to close it, and it silently
+  dropped that branch at all three primes before the budget was made tunable.
+- **A per-prime EMPTY count is not a completeness check.** p=65521 showed 8
+  EMPTY branches, matching p=65539 exactly, while missing its r0b leaf — its
+  eliminant has one extra factor, so the extra rk branch masked the hole. The
+  count looked right at every glance. Only walking the tree found it. Check the
+  tree, never the tally.
+
+**(superseded) P2 leaf 1 — in flight, 15 branches EMPTY so far.** The staged pipeline is
 now leaf-parametrized (`JCLEAF`) and derives the Newton-edge equation indices
 from the equations instead of hardcoding them, with leaf 2's indices pinned by
 assertion as a regression check. p=65521 complete; p=65539 through its final
