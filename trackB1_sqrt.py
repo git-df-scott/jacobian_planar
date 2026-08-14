@@ -178,12 +178,16 @@ def cascade(s, a, b, plow, p, wmin=-10, verbose=False):
     for w in range(-2, -10, -1):
         if F.get(w, []):
             return {"verdict": "VANISH_FAIL", "level": w, "F": F}
-    # (C4) [P_8, F_-10] = -x^2   (univariate: -z^2)
-    br = slice_bracket(P[8], 8, F.get(-10, []), -10, p)
-    target = [0, 0, (p - 1) % p]      # -z^2
-    if ptrim(list(br)) != ptrim(list(target)):
-        return {"verdict": "INHOM_FAIL", "bracket": br, "F": F}
-    return {"verdict": "SURVIVOR", "F": F}
+    # (C4) [P_8, F_-10] PROPORTIONAL to z^2 with a NONZERO constant.
+    # Scale-invariant on purpose: [P,Q] = kappa x^2 with kappa != 0 is an
+    # equally good Keller pair (replace Q by Q/kappa; N(Q) is unchanged), so
+    # testing equality with -z^2 would reject genuine solutions.  Audited in
+    # trackB1_bracket_audit.py: no campaign verdict changes, but this is the
+    # correct test.  The witness still fails here, with bracket exactly 0.
+    br = ptrim(list(slice_bracket(P[8], 8, F.get(-10, []), -10, p)))
+    if len(br) == 3 and br[0] == 0 and br[1] == 0 and br[2] != 0:
+        return {"verdict": "SURVIVOR", "F": F, "bracket": br, "kappa": br[2]}
+    return {"verdict": "INHOM_FAIL", "bracket": br, "F": F}
 
 # ---------------------------------------------------------------- validation
 def validate(p=65521):

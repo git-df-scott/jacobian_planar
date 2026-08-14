@@ -1,4 +1,24 @@
-# THEOREM (pentagon rigidity): in GGHV Prop 4.3 case (1), S must be a perfect square
+# THEOREM (pentagon rigidity): in GGHV Prop 4.3 case (1), S is NOT squarefree
+# — and lies on one of exactly TWO components
+
+> ## !! RETRACTION AND CORRECTION (2026-08-14, later same session) !!
+>
+> **The headline claim below — "S must be a perfect square" — is FALSE.**
+> It was inferred from 40-random-sample tables per stratum. The solvable locus
+> has a SECOND component of codimension 1 *inside* the `A^2*B` stratum, which
+> random sampling in that stratum cannot see. The corrected statement, proved
+> exactly (no sampling), is in the section **"THE EXACT TWO-COMPONENT
+> CLASSIFICATION"** at the bottom of this file; read that section, not the
+> headline. What survives unchanged:
+>
+> - **strengthened to an exact proof:** no squarefree S is admissible (this was
+>   the sampled `0/40` row; it is now a finite exact computation);
+> - **the consequence that actually mattered:** S's freedom still drops from 5
+>   parameters to 3, because *both* components are 3-dimensional;
+> - every algebraic identity, the cascade, and the ladder results.
+>
+> What changes: there is a second, never-searched 3-parameter family of S, and
+> it had to be searched. It has been (see "FIRST SEARCH OF COMPONENT II").
 
 Derived and verified 2026-08-14 (Opus-5 block, this session). Status:
 **proof written below, every step machine-verified; the elliptic-integral step
@@ -258,3 +278,235 @@ Remaining caveat, unchanged and explicit: the [P_8,.]-kernel allows wtop(W) in
 + mu moves the weight-20 and weight-12 slices (via 2 lambda QP and 2 mu Q) and
 the weight-16 slice (via lambda^2 P^2). Pinning that gauge is the last step
 needed to make the theorem unconditional.
+
+---
+
+# THE EXACT TWO-COMPONENT CLASSIFICATION (2026-08-14, supersedes the headline)
+
+Everything above reduces case (1) to ONE criterion on the weight-4 form S
+(deg S^ = 4, S^(0) != 0), reached independently by both proofs:
+
+    (C4)  exists RATIONAL G with [P_8, G] = z^2,   P_8^ = a S^2
+          <=>  exists POLYNOMIAL W_2 with 2a(S'W - 2SW') = b S^2 z^2
+          <=>  int z^2 sqrt(S) dz  in  C(z)*sqrt(S).
+
+Setting R := S^2 G, all three read
+
+    (STAR)      2 S R' + S' R = 2 z^2 S ,     R rational.
+
+(The two criteria are EQUIVALENT, not merely parallel: writing S = S1 S2^2 with
+S1 squarefree and U := R S2, one has R S = U S1 S2, and U is always a
+polynomial — see below. So R rational forces W = -(b/4a) R S polynomial.)
+
+## Why the published tables were wrong
+
+(STAR) is 7 linear equations in the 4 coefficients of R, so its solvable locus
+is cut out by at most 3 conditions on the 5 coefficients of S. Sampling 40
+random S per *stratum* cannot see a positive-codimension sublocus **of that
+stratum**. That is exactly what was missed: the `A^2*B` row read 0/40 because
+the solvable members of that stratum form a hypersurface inside it.
+
+## The reduction that makes it finite
+
+Write S = S1 * S2^2 with S1 SQUAREFREE (the squarefree part), and set
+U := R * S2. Then (STAR) becomes
+
+    (STAR')     2 S1 U' + S1' U = 2 z^2 S1 S2 .
+
+**U is always a polynomial.** A pole of U of order m at a root of S1 of
+multiplicity k = 1 forces (leading-order balance) k = 2m or k >= m+1, both
+impossible; and U has no poles off V(S1). Since deg S1 + 2 deg S2 = 4, only
+deg S2 in {0,1,2} occur, giving exactly three cases.
+
+### deg S2 = 0 — S squarefree: **NO SOLUTIONS** (exact, not sampled)
+
+U = R is a polynomial of degree 3 (leading coefficients force r3 = 1/5). Four
+of the seven equations solve triangularly,
+
+    r3 = 1/5,   r2 = s3/(40 s4),   r1 = (16 s2 s4 - 7 s3^2)/(240 s4^2),
+    r0 = (144 s1 s4^2 - 116 s2 s3 s4 + 35 s3^3)/(960 s4^3),
+
+and the remaining three are conditions on S:
+
+    -768 s0 s4^3 + 552 s1 s3 s4^2 + 256 s2^2 s4^2 - 460 s2 s3^2 s4 + 105 s3^4 = 0
+    48 s0 s3 s4^2 + 240 s1 s2 s4^2 - 42 s1 s3^2 s4 - 116 s2^2 s3 s4 + 35 s2 s3^3 = 0
+    128 s0 s2 s4^2 - 56 s0 s3^2 s4 + 144 s1^2 s4^2 - 116 s1 s2 s3 s4 + 35 s1 s3^3 = 0
+
+Symmetries: S -> u S (R fixed) and S(z) -> S(tz), R -> t^-3 R(tz). Normalize
+s4 = 1 and s3 in {1, 0}. The Groebner basis eliminates to a degree-5 factored
+form; solving gives **exactly five solutions**, and EVERY ONE has discriminant
+zero:
+
+| S (up to the two symmetries) | type |
+|---|---|
+| (4z+1)^4 / 256 | perfect 4th power |
+| (8z^2+4z+3)^2 / 64 | perfect square |
+| (8z+7)^2 (128z^2-96z+63) / 8192 | A^2 B — **not** a perfect square |
+| two conjugates over Q(sqrt(-3)), disc = 0 | non-squarefree |
+
+and the s3 = 0 stratum forces s0 = 0, excluded by the vertex condition.
+Hence: **no squarefree S satisfies (C4)** — the sampled 0/40 row is now a
+theorem. Row 3 is the first sign that the perfect-square claim is false.
+
+Consistency with the classical picture: for squarefree S the curve y^2 = S is
+ELLIPTIC, and z^2 S dz/y has poles only at the two points at infinity — one
+residue condition plus the 2-dimensional de Rham obstruction = **3 conditions**,
+matching the three equations above exactly.
+
+### deg S2 = 1 — S = c A^2 B, A linear, B = z^2 + u z + v squarefree
+
+Here U |-> 2 S1 U' + S1' U is injective on polynomials of degree <= 4 with
+5-dimensional image inside the 6-dimensional space of degree <= 5, so
+solvability is exactly ONE linear condition on A given B. Computing it:
+
+    (u^2 - 4v) * ( -10 a0 u^2 + 8 a0 v + 7 a1 u^3 - 12 a1 u v ) = 0
+
+for A = a1 z + a0. The first factor is disc(B) — that is the degeneration
+back to a perfect square. The second gives
+
+> ### COMPONENT II (new)
+>
+>     S = c * A^2 * B,   B = z^2 + u z + v,
+>     A = 2(5u^2 - 4v) z + u(7u^2 - 12v)
+>
+> with u != 0, v != 0, u^2 != 4v, 5u^2 != 4v, 7u^2 != 12v.
+> Three parameters (c, u, v); one modulo both symmetries.
+
+Consistency with the classical picture: y^2 = B is a RATIONAL curve, so the
+de Rham obstruction vanishes and only the residue-at-infinity condition
+survives — **1 condition**, matching. Row 3 of the squarefree table is exactly
+the member of component II on which A divides U (making R polynomial).
+
+### deg S2 = 2 — S = c A^2 perfect square: ALWAYS solvable
+
+S1 is a constant, so (STAR') is 2 S1 U' = 2 z^2 S1 A, i.e. U = int z^2 A dz.
+
+> ### COMPONENT I (old headline)
+>
+>     S = c * A^2,  deg A = 2.        Three parameters.
+
+## CORRECTED THEOREM
+
+In case (1) of GGHV Prop 4.3, the weight-4 form S satisfies
+
+    S = c A^2   (component I)      or     S = c A^2 B with A = 2(5u^2-4v)z
+                                          + u(7u^2-12v), B = z^2+uz+v
+                                          (component II),
+
+and in particular **S always has a repeated root**; no squarefree S occurs.
+Both components are 3-dimensional, so the operative consequence is unchanged:
+**S's freedom drops from 5 parameters to 3**, i.e. codimension 2 on the
+top-edge data before any other condition is imposed.
+
+## Verification (three independent checks, none reusing the derivation)
+
+`trackB1_component2_verify.py`:
+
+| check | result |
+|---|---|
+| CHECK 1: raw bracket `[P_8, G]` via `slice_bracket()` from trackB1_sqrt.py, exact Q | 15/15 give exactly `-8 z^2` |
+| CHECK 2: polynomial `W` with `2a(S'W-2SW') = b S^2 z^2` | 15/15, W polynomial, ratio `-2` |
+| CHECK 3: brute-force mod-65521 linear solve for `G = H/S^N` (no derivation used) | component II 25/25 solvable; random squarefree 0/25; random `A^2 B` off-component 0/25; random perfect squares 25/25 |
+
+Reproduce:
+
+    python3 trackB1_elliptic_locus.py       # the three squarefree conditions
+    python3 trackB1_elliptic_solve.py       # the five solutions, all disc = 0
+    python3 trackB1_star_full.py            # the A^2 B condition, component II
+    python3 trackB1_component2_verify.py    # the three independent checks
+
+## FIRST SEARCH OF COMPONENT II
+
+`trackB1_cascade_general.py` generalizes the cascade to any admissible S. The
+level-2 condition is S | P_7^2, i.e. **H(S) | P_7** with the HALF-RADICAL
+H(S) = prod pi^ceil(e/2) — that is A on component I (deg 2) and A B on
+component II (deg 3), and A^2 C on its A^3 C sub-stratum.
+
+`trackB1_divisor_grid.py` sweeps the full divisor lattice P_7 = A^alpha B^beta M
+with M random, 40 samples/cell, p = 65521:
+
+| P_7 | component I | component II |
+|---|---|---|
+| generic | LADDER_BREAK 3 | LADDER_BREAK 3 |
+| rad(S) * M | OBSTRUCTED 3 | OBSTRUCTED 3 |
+| S * M | OBSTRUCTED 4 | OBSTRUCTED 4 |
+| S^{3/2} * M | OBSTRUCTED 7 | OBSTRUCTED 7 |
+| **S^2 (deg 8, forced)** | **SUPPORT_FAIL 8** | **SUPPORT_FAIL 8** |
+
+Component I reproduces the previously published spiral table exactly
+(3, 4, 7, then N(Q)-support failure at weight 8) — the regression holds — and
+**component II behaves identically**: the ladder drives P_7 to c S^2 =
+(c/a) P_8 on both components, and the forced family then fails the
+N(Q)-support condition at weight 8. With the free kernel directions randomized
+instead of zeroed, every cell on both components dies at level 3 or 4.
+**No survivors: 0 in 1000 cells-samples across both components.**
+
+Honest labels, unchanged: level 3's condition is proved; the deeper spiral
+steps are measured on an explicit branch, not proved. Component II is now
+searched to the same depth as component I, and no counterexample was found on
+either.
+
+## Side audit: the C4 test was scale-strict
+
+`cascade()` declared INHOM_FAIL unless `[P_8, F_-10]` equals `-z^2` EXACTLY.
+But `[P,Q] = kappa x^2` with `kappa != 0` is an equally good Keller pair
+(replace Q by Q/kappa; N(Q) is unchanged), so the scale-invariant test is
+"proportional to z^2". `trackB1_bracket_audit.py` re-classifies the raw bracket
+as ZERO / PROPORTIONAL / OFF_SUPPORT. Result: **no verdict in the campaign
+changes** — no sample has ever landed in PROPORTIONAL — but the test is now the
+correct one, and the witness anchor still fails with bracket exactly 0.
+
+---
+
+# THE GAUGE CAVEAT IS RESOLVED — it never affected the formal-F proof
+
+The caveat recorded above ("the [P_8,.]-kernel allows wtop(W) in {20,16,12,8,4}
+... pinning that gauge is the last step needed to make the theorem
+unconditional") applies to the SECOND (polynomial-W) proof only, and it is
+worse there than stated: the gauge Q -> Q + lambda P is **not available at
+all**, because (1,0) is a vertex of N(P) with nonzero coefficient and
+(1,0) is NOT in N(Q) (N(Q)'s lower edge runs (0,0)-(2,1), so i = 1 needs
+j >= 1). So lambda = 0 is forced; only Q -> Q + mu and P -> P + nu survive,
+killing weights 12 and 16 but not 20.
+
+None of that touches the FIRST proof, which needs no gauge on Q at all. It
+absorbs kernel terms into F, and the only property F must have is [P, F] = 0.
+Two facts make the descent airtight; both are now machine-verified
+(`trackB1_gauge_resolve.py`):
+
+**FACT 1 (kernel).** Among RATIONAL functions, ker [P_8,.] at weight W is
+1-dimensional when (S^)^{W/4} is rational and 0 otherwise. Verified over
+F_65521 by brute-force linear algebra with denominators S^N, N = 0..6,
+deg H <= 20, for W = -12..12 on a component-I S, a component-II S and a
+squarefree S: **75/75 cells match the prediction, 0 mismatches.** (Component I
+has S = A^2 so the kernel is nonzero at every EVEN W; component II has
+S = A^2 B so only at multiples of 4 — the kernel is *larger* on component I,
+which is why the descent must be argued, not assumed.)
+
+**FACT 2 (absorber).** Whenever that kernel is nonzero the absorber exists:
+K = c a^{-W/8} P^{W/8} satisfies [P, K] = 0 and has top slice c (S^)^{W/4}.
+Its slices are rational precisely because P_8 = a S^2 makes
+P_8^{W/8} = a^{W/8} (S^)^{W/4} — exactly as rational as the kernel element
+being absorbed. Verified by building P^{3/2} with genuine rational-slice
+arithmetic (numerator + S-power exponent; the ladder's division by 2 S^3 just
+increments the exponent, so no exact division is ever required) and checking
+[P, P^{3/2}] = 0 slice by slice to depth 22 on both components:
+**88/88 slices vanish.**
+
+**Descent.** Delta := Q - F has Delta_12 = Q_12 - F_12 = b S^3 - b S^3 = 0, so
+wtop(Delta) <= 11. While wtop(Delta) > -10, the weight-(8 + wtop) part of
+[P,Delta] = x^2 is [P_8, Delta_wtop] alone and must vanish, so Delta_wtop lies
+in the kernel (FACT 1) and is absorbed into F (FACT 2), strictly lowering
+wtop. After at most 21 steps wtop(Delta) = -10 — it cannot go below, since
+then the weight -2 part of [P,Delta] would be 0, not x^2 — and the weight -2
+equation is [P_8, Delta_-10] = x^2 alone. That is (C4), with G = Delta_-10
+rational.
+
+**Status: the corrected theorem is UNCONDITIONAL.** No gauge is required, no
+polynomiality is demanded of Delta, and the descent cannot stall. The two
+components of the previous section are therefore the complete answer to the
+top-edge question in case (1).
+
+What remains open in case (1) is unchanged and is NOT this: the ladder spiral
+at levels >= 4 is measured on an explicit branch rather than proved, on both
+components.
