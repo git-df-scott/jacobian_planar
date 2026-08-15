@@ -47,6 +47,14 @@ for ch in chains:
         print(f"  QUEUED max={ch.maxdeg:4d} params={r['nparams']:4d} "
               f"conds={r['nconds']:4d} dim<={r['dim_bound']}  {add[-1]['tag'][:60]}",
               flush=True)
+        # write through after EVERY queued shape -- the previous version saved
+        # only at the end and lost the whole run when the container reset
+        _T = json.load(open("trackD_targets.json"))
+        for _t in _T:
+            _t.setdefault("tier", "sec6>=125")
+        _have = {_t["tag"] for _t in _T}
+        if add[-1]["tag"] not in _have:
+            json.dump(_T + [add[-1]], open("trackD_targets.json", "w"), indent=1)
 print(f"\ncandidates {stats['shapes']} -> eps {stats['eps']} -> vertex-live "
       f"{stats['vtx']} -> tight {stats['tight']}")
 T = json.load(open("trackD_targets.json"))
