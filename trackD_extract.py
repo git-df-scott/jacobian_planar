@@ -44,7 +44,7 @@ def orient(NP, NQ):
     return None
 
 
-def build_singular(NP, NQ, r, jextra=2, name="shape"):
+def build_singular(NP, NQ, r, jextra=2, name="shape", method="facstd"):
     o = orient(NP, NQ)
     if o is None:
         return None, "OUT OF SCOPE: neither j=0 row is {(0,0),(1,0)}"
@@ -89,16 +89,20 @@ def build_singular(NP, NQ, r, jextra=2, name="shape"):
         L.append(f"poly Q{k+1} = ({' + '.join(acc)}) * w * {inv_k1};")
     # support conditions
     L.append("ideal I;")
-    L.append("poly t; int e;")
+    # deg(t) is the TOTAL degree in Singular, not the x-degree; looping to it
+    # overruns coeffs(t,x), which has exactly deg_x(t)+1 rows.  Drive the loop
+    # off nrows() instead.  Row e holds the coefficient of x^(e-1).
+    L.append("poly t; int e; matrix cf;")
     for j in range(1, jmax + 1):
         lo, hi = OR_.get(j, (None, None))
         L.append(f"t = Q{j};")
-        L.append("for (e = 0; e <= deg(t); e++) {")
+        L.append("cf = coeffs(t, x);")
+        L.append("for (e = 1; e <= nrows(cf); e++) {")
         if lo is None:
-            L.append("  I = I + ideal(coeffs(t, x)[e+1, 1]);")
+            L.append("  I = I + ideal(cf[e, 1]);")
         else:
-            L.append(f"  if (e < {lo} || e > {hi})"
-                     f" {{ I = I + ideal(coeffs(t, x)[e+1, 1]); }}")
+            L.append(f"  if (e-1 < {lo} || e-1 > {hi})"
+                     f" {{ I = I + ideal(cf[e, 1]); }}")
         L.append("}")
     # Rabinowitsch: p_10 and every required vertex coefficient invertible
     nd = [p10]
@@ -112,19 +116,41 @@ def build_singular(NP, NQ, r, jextra=2, name="shape"):
     L.append('"params: " + string(' + str(len(params)) + ');')
     L.append('"conditions: " + string(size(simplify(I,2)));')
     L.append("int t0 = timer;")
-    L.append("ideal G = std(I);")
-    L.append('"time: " + string(timer - t0);')
-    L.append('if (size(G)==1 && G[1]==1) { "VERDICT: EMPTY -- no '
-             'non-degenerate realization"; }')
-    L.append('else { "VERDICT: dim = " + string(dim(G));'
-             ' if (dim(G)==0) { "vdim = " + string(vdim(G)); } }')
+    if method == "facstd":
+        # factorizing Groebner: splits the ideal into components as it goes,
+        # so a system that collapses to (1) on every branch never has to build
+        # one dense basis.  This is the cheap replacement for std() on the
+        # overdetermined y-adic systems.
+        L.append("list LL = facstd(I);")
+        L.append('"time: " + string(timer - t0);')
+        L.append('"components: " + string(size(LL));')
+        L.append("int ii; int alive = 0; int dmax = -1;")
+        L.append("for (ii = 1; ii <= size(LL); ii++) {")
+        L.append("  ideal Gi = std(LL[ii]);")
+        L.append("  if (size(Gi) != 1 || Gi[1] != 1) { alive = alive + 1;")
+        L.append("    if (dim(Gi) > dmax) { dmax = dim(Gi); }")
+        L.append('    "  live component " + string(ii) + ": dim " '
+                 '+ string(dim(Gi)) + (dim(Gi)==0 ? ", vdim " '
+                 '+ string(vdim(Gi)) : ""); }')
+        L.append("}")
+        L.append('if (alive == 0) { "VERDICT: EMPTY -- no non-degenerate '
+                 'realization"; }')
+        L.append('else { "VERDICT: " + string(alive) + " live component(s), '
+                 'max dim " + string(dmax); }')
+    else:
+        L.append("ideal G = std(I);")
+        L.append('"time: " + string(timer - t0);')
+        L.append('if (size(G)==1 && G[1]==1) { "VERDICT: EMPTY -- no '
+                 'non-degenerate realization"; }')
+        L.append('else { "VERDICT: dim = " + string(dim(G));'
+                 ' if (dim(G)==0) { "vdim = " + string(vdim(G)); } }')
     L.append("quit;")
     return "\n".join(L), dict(nparams=len(params), jmax=jmax,
                               driver_is_P=(sign == 1), ndegen=nd)
 
 
-def run(NP, NQ, r, name, timeout=1800, jextra=2):
-    src, info = build_singular(NP, NQ, r, jextra=jextra, name=name)
+def run(NP, NQ, r, name, timeout=1800, jextra=2, method="facstd"):
+    src, info = build_singular(NP, NQ, r, jextra=jextra, name=name, method=method)
     if src is None:
         return {"name": name, "status": "OUT OF SCOPE", "detail": info}
     fn = os.path.join(SCRATCH, f"extract_{name}.sing")
