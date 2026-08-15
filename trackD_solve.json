@@ -4,7 +4,7 @@
   "max": 132,
   "params": 20,
   "status": "RAN",
-  "secs": 0,
+  "secs": 2,
   "out": "params: 20 | conditions: 157 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
  },
  {
@@ -92,7 +92,7 @@
   "max": 132,
   "params": 32,
   "status": "RAN",
-  "secs": 49,
+  "secs": 56,
   "out": "params: 32 | conditions: 189 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
  },
  {
@@ -158,5 +158,45 @@
   "status": "RAN",
   "secs": 0,
   "out": "params: 38 | conditions: 165 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+ },
+ {
+  "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((1, 0),(2, 1))",
+  "max": 132,
+  "params": 38,
+  "status": "TIMEOUT",
+  "secs": 120,
+  "out": ""
+ },
+ {
+  "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))",
+  "max": 132,
+  "params": 38,
+  "status": "TIMEOUT",
+  "secs": 120,
+  "out": ""
+ },
+ {
+  "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=4 eps=((1, 0),(4, 1))",
+  "max": 132,
+  "params": 38,
+  "status": "TIMEOUT",
+  "secs": 120,
+  "out": ""
+ },
+ {
+  "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=5 eps=((1, 0),(5, 1))",
+  "max": 132,
+  "params": 38,
+  "status": "TIMEOUT",
+  "secs": 120,
+  "out": ""
+ },
+ {
+  "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=2 eps=((1, 0),(2, 1))",
+  "max": 132,
+  "params": 48,
+  "status": "TIMEOUT",
+  "secs": 120,
+  "out": ""
  }
 ]

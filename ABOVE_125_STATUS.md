@@ -111,3 +111,57 @@ shapes is then cheap.
 GGHV §4 and [C] Thm 2.20 and reproduces all six published reduced pairs
 exactly, plus the bracket exponent. All 34 shapes now have explicit
 coordinates and have been through the engine.
+
+
+---
+
+# Certification log — targets ruled out by exact elimination
+
+Each row below is a reduced polygon pair that survived *both* triage gates
+(vertex non-degeneracy, and not already closed in the literature) and whose
+sweep dim bound was ≤ 1, then had its **full y-adic system** handed to Singular
+with Rabinowitsch inverses forcing `p₁₀` and every required vertex coefficient
+of both polygons to be nonzero. `EMPTY` therefore means: *no non-degenerate
+realization exists over F_65521* — the Newton polygon pair cannot be realised
+with all its vertices present.
+
+| chain | max deg | shapes certified | params | verdict |
+|---|---|---|---|---|
+| `(7,42)/13/7,6 (m,n)=2,3` | 147 | 1 | 30–30 | EMPTY |
+| `(7,42)/13/7,6 (m,n)=3,2` | 147 | 1 | 30–30 | EMPTY |
+| `(8,40)/8,28/11/4,7 (m,n)=3,2` | 144 | 1 | 38–38 | EMPTY |
+| `F11(m,n)=2,5` | 140 | 1 | 21–21 | EMPTY |
+| `(11,33)/19/4,8 (m,n)=2,3` | 132 | 15 | 20–35 | EMPTY |
+| `(7,35)/19/7,5 (m,n)=2,3` | 126 | 1 | 23–23 | EMPTY |
+
+**Certified EMPTY: 20 shapes across 6 chains, max degree 126–147.**
+
+## Scope — read this before quoting the table
+
+* **20 of 167 targets decided, not 167.** The overnight run did not complete:
+  this container is ephemeral and was reclaimed, so the sweep stopped at 21
+  attempts. It has been restarted; the remaining ~147 targets are unrun.
+* **3 targets timed out**, at 420 s and then 120 s. A timeout is not a verdict —
+  those shapes are neither confirmed nor ruled out.
+* **F_p only.** Same caveat as case (2): emptiness mod one prime does not imply
+  emptiness in characteristic 0. Case (2) was re-run at three primes for that
+  reason; these 20 have not been.
+* Conditional on the compiler being complete for each chain — solid for
+  derived-mode chains (map validated 6/6 on the published pairs), weaker for
+  superset-mode ones, where the enumeration is wider but not proven exhaustive.
+
+Ruling out every shape of a chain rules out the chain. `(11,33)/19/4,8` at max
+132 has 15 of its shapes certified, but the chain carries 115 surviving shapes
+in total, so it is not yet closed.
+
+## Queue: extended family chains above 150
+
+`trackD_generate.py` continues the families past [C] §6's horizon (§6 claims
+completeness only to 150). The chains above 150 were pushed through the same
+four gates — compiler → ε filter → vertex probe → sweep — and the tight
+survivors appended to `trackD_targets.json` with `tier = "gen>150"`, so the
+extension stays distinguishable from the §6 catalogue.
+
+These are a **candidate source, not a closed catalogue**: exact as family
+instances, but §6's 21 non-family rows would need Algorithms 6/8/9
+reimplemented to continue past 150.
