@@ -111,4 +111,3 @@ shapes is then cheap.
 GGHV §4 and [C] Thm 2.20 and reproduces all six published reduced pairs
 exactly, plus the bracket exponent. All 34 shapes now have explicit
 coordinates and have been through the engine.
-tested, because no above-125 reduced polygon pair is known to me.
