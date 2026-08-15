@@ -107,5 +107,8 @@ computation to run longer. Once a pair is derived, the verdict machine returns
 its condition count and exact Jacobian rank in seconds, so triage across all 34
 shapes is then cheap.
 
-**Status: not started, and deliberately not faked.** No above-125 shape has been
+**Status: RESOLVED.** See `TRACKD_CHAIN_MAP.md` — the map is derived from
+GGHV §4 and [C] Thm 2.20 and reproduces all six published reduced pairs
+exactly, plus the bracket exponent. All 34 shapes now have explicit
+coordinates and have been through the engine.
 tested, because no above-125 reduced polygon pair is known to me.
