@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 trackA_reduced_system_case1.json
 *.large.json
+*.tmp

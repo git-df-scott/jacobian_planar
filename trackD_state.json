@@ -183,10 +183,10 @@
   "verdict": "TIMEOUT",
   "max": 132,
   "params": 38,
-  "tier": "sec6>=125",
-  "budget": 120,
-  "secs": 0,
-  "out": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((1, 0),(2, 1))"
+  "tier": "?",
+  "budget": 240,
+  "secs": 240,
+  "out": ""
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
