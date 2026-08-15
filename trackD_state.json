@@ -349,5 +349,41 @@
   "budget": 45,
   "secs": 45,
   "out": ""
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=2 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "max": 126,
+  "params": 53,
+  "tier": "sec6>=125",
+  "budget": 45,
+  "secs": 45,
+  "out": ""
+ },
+ "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "max": 147,
+  "params": 55,
+  "tier": "sec6>=125",
+  "budget": 45,
+  "secs": 3,
+  "out": "params: 55 | conditions: 90 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+ },
+ "(7,42)/13/7,6 (m,n)=2,3 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "max": 147,
+  "params": 55,
+  "tier": "sec6>=125",
+  "budget": 45,
+  "secs": 3,
+  "out": "params: 55 | conditions: 90 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "TIMEOUT",
+  "max": 132,
+  "params": 56,
+  "tier": "sec6>=125",
+  "budget": 45,
+  "secs": 45,
+  "out": ""
  }
 }
