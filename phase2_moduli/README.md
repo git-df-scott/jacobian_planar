@@ -666,6 +666,71 @@ open problem.
 And the direction matters: the Y-side geometry, once actually computed,
 **confirms the closure**.
 
+---
+
+# Session 28 — literature sweep: the conjecture fell above dimension 2
+
+A full literature sweep turned up a development this repo had not recorded past
+Session 1, and it changes the campaign's context.
+
+### The Jacobian conjecture is FALSE in every dimension > 2
+
+| | |
+|---|---|
+| Alpöge, 19 Jul 2026 | counterexample in dimension 3 |
+| Gallagher, 20 Jul 2026 | an infinite family |
+| Speyer, 23 Jul 2026 | the geometric explanation — a tangent sweep |
+| [arXiv:2608.00222](https://arxiv.org/abs/2608.00222) | self-contained account; counterexamples in every dimension > 2, arbitrarily large geometric degree; five explicit maps (3-D deg 4; 4-D deg 5, 10; 5-D deg 6, 12) |
+
+**The plane case remains open.** Stabilisation only moves upward in dimension; a
+three-variable counterexample cannot be squeezed into two. This campaign targets
+the plane case throughout, so everything in Sessions 19–27 stands — but Session 1
+had already reverse-engineered the Alpöge map, and nothing after it recorded that
+the general conjecture had fallen.
+
+### New result — the tangent sweep has no plane analogue
+
+The published accounts explain the mechanism and note it works only for `n > 2`,
+but do not explain *why* it stops at the plane. Session 1's own data supplies the
+signature: `F = v(x,y)z + w(x,y)` with `c₂ = det[v_x, v_y, v] = 0`, `c₁ = 0`,
+`c₀ = -2`, and `v = x³u(t)` sweeping a **twisted cubic** — the degeneracy is met
+by a *non-constant* direction field.
+
+In the plane, `F = v(x)z + w(x)` with `v, w : C → C²`:
+
+```
+det JF = z·(v1'v2 - v2'v1) + (w1'v2 - w2'v1)
+```
+
+1. The degeneracy `v1'v2 - v2'v1 = 0` is the **Wronskian**; for `v2 ≠ 0`,
+   `(v1/v2)' = 0`, so `v = a(x)·e` — a **constant direction**.
+2. Then `det[w',v] = a(x)·(w1'e2 - w2'e1) = c ≠ 0`: a product of two polynomials
+   equal to a nonzero constant, so both are constants.
+3. So `h := e2w1 - e1w2` has `h' = c/α ≠ 0`, hence degree exactly 1, and
+   `e2F1 - e1F2 = h(x)`. `x` is recovered linearly, then `z`. **`F` is an
+   automorphism.**
+
+> **The dimension count.** The mechanism needs a direction field that is
+> degenerate but *not* of constant direction. For `v : C → C²`, degeneracy
+> `det[v',v] = 0` ⟺ rank ≤ 1 ⟺ constant direction — the conditions **coincide**
+> and the map trivialises. For `v : C² → C³`, `det[v_x,v_y,v] = 0` still admits
+> non-constant solutions (the developables, e.g. the twisted cubic). They
+> **separate** from dimension 3 onward. That is why the tangent sweep starts at
+> `n = 3`.
+
+Consistency check: this is the linear-in-one-variable case, which Sessions 2–5
+covered independently (`min deg_y ≤ 2 ⟹ tame`). The two arguments agree.
+
+### Route closed by the same sweep
+
+The Mathieu–Zhao hierarchy (Special Image ⟹ Generalized Vanishing ⟹ Jacobian) is
+not a path to a plane counterexample: those conjectures **imply** the JC, so their
+falsity in dimension 5 ([arXiv:2608.07338](https://arxiv.org/html/2608.07338))
+removes them as *proof strategies* and says nothing about the plane.
+
+**A plane counterexample, if one exists, must work by something other than a
+tangent sweep.**
+
 ## Files
 
 | file | contents |
@@ -685,6 +750,7 @@ And the direction matters: the Y-side geometry, once actually computed,
 | `certify/session25_template_exponent.py` | exact sympy certification of Session 25 (13 checks): `E = a-b` (2,3-only), the quadratic degree law, the smallest near-miss |
 | `certify/session26_general_cusp_template.py` | exact sympy certification of Session 26 (12 checks): the general cusp template, the first non-`(2,3)` near-miss, and the failed `ν = μn` attempt |
 | `certify/session27_yside_nonstandard_cusp.py` | exact sympy certification of Session 27 (8 checks): the Y-side chart, calibration against Sessions 9–13, and `ν = μn` at the `(5,2)` cusp |
+| `certify/session28_tangent_sweep_no_plane_analogue.py` | exact sympy certification of Session 28 (13 checks): the literature update and the proof that the tangent sweep has no plane analogue |
 
 ## Running
 
