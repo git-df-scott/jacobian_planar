@@ -924,6 +924,65 @@ and bounds the degree; larger `h` and `k ≥ 5` are untouched. A bounded-degree
 Gröbner run is **evidence, not a theorem** — this campaign has already published
 one "verified at every point tested" that was a fit in disguise.
 
+---
+
+# Session 32 — the `h`-branch: census, root-drop, and where it actually sits
+
+Asked to close the `h`-branch at `k ≥ 4`. **It is not closed** — but this session
+identifies *why*, which is more useful than another partial.
+
+### Bounded-degree census — empty everywhere computed
+
+| case | conditions | unknowns | result |
+|---|---|---|---|
+| `k=4, h=t`, deg ≤ 1 | 17 | 16 | **empty** |
+| `k=4, h=t`, deg ≤ 2 | 26 | 23 | **empty** |
+| `k=4, h=t²` (non-squarefree) | 21 | 16 | **empty** |
+| `k=4, h=t(t-1)` (squarefree quadratic) | 34 | 16 | **empty** |
+| `k=5, h=t`, deg ≤ 1 | 24 | 20 | **empty** |
+| `k=5, h=t`, deg ≤ 2 | 39 | 29 | **empty** |
+| `k=6, h=t`, deg ≤ 1 | 31 | 24 | **empty** |
+
+Seven cases, three orders, three shapes of `h` including a non-squarefree one.
+
+### A root-drop of two
+
+At a root `r` of squarefree `h`: `a(r) = a'(r) = 0`, `p(r) = p'(r) = 0`, and
+`q_{k-1}(r) = 0` by the Session-31 ladder. So **both** components lose two
+`s`-degrees at once:
+
+```
+deg_s Φ₁(r,·) ≤ k-2 ,   deg_s Φ₂(r,·) ≤ k-2
+```
+
+Verified at `k = 4, 5` (both attain the bound). Every root of `h` is a point
+where the sweep degenerates by two orders — which is why the census keeps coming
+back empty.
+
+### Where it actually sits — the real obstruction
+
+Session 30's descent gives `min deg_s ≤ k-1`; Sessions 2–5 close `min deg_y ≤ 2`.
+So the first uncovered order is `k = 4`, sitting at `min deg_s = 3` **exactly**.
+
+Sessions 3 and 6 of this repo call the `deg_y = 3` slice *"the first slice the
+collapse machinery does not decide."* Therefore:
+
+> **closing the `h`-branch at `k = 4` ≡ deciding the `deg_y = 3` slice**
+
+That is not a gap in this session's reasoning — it is the campaign's own
+unresolved frontier, reached from the opposite direction. Sessions 3–6 walked
+into it from the y-degree side; the sweep cascade walks into the same wall from
+the sweep side. **Two independent routes terminating at the same slice says the
+slice is the genuine content**, not an artefact of either approach.
+
+### Status
+
+| | |
+|---|---|
+| **closed by proof** | the mechanism's defining feature, at every order `k` |
+| **closed by proof** | orders `k ≤ 3` entirely; first two cascade steps for all `k`; the divisibility ladder |
+| **not closed** | the `h`-branch at `k ≥ 4` = the `deg_y = 3` slice — empty everywhere computed, not proved empty |
+
 ## Files
 
 | file | contents |
@@ -947,6 +1006,7 @@ one "verified at every point tested" that was a fit in disguise.
 | `certify/session29_sweep_closed_all_orders.py` | exact sympy certification of Session 29 (9 checks): the sweep closed in the plane at every order |
 | `certify/session30_sweep_rigor_and_cascade.py` | exact sympy certification of Session 30 (10 checks): the rigor audit and the second cascade step |
 | `certify/session31_cascade_step3_and_k4.py` | exact sympy certification of Session 31 (5 checks): third cascade step, divisibility ladder, `k = 4` at bounded degree |
+| `certify/session32_hbranch_census_and_placement.py` | exact sympy certification of Session 32 (3 checks): the `h`-branch census, the root-drop, and the reduction to the `deg_y = 3` slice |
 
 ## Running
 
