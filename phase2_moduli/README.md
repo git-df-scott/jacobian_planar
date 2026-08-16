@@ -180,6 +180,85 @@ constructed and certified explicitly. Two caveats:
   conjecture is already proved. Checking that is the natural next step and is
   **not** done here.
 
+---
+
+# Session 21 — the D ≤ 3 window instantiated
+
+Session 20 left one window open and one question unanswered: does the pole-fiber
+theorem still close the endgame at `D ≤ 3`? **It does not.** This is the first
+point in the campaign where the Session-18 mechanism fails to close — and it is
+still not a counterexample.
+
+### The geometry, exact
+
+```
+cusp type (m,n) = (5,2),  delta = 2,  Belyi degree N = 5
+p = w + 1 ,   r = w² + (5/2)w + 15/8
+p^5 - w r² = (5/8)w² + (95/64)w + 1        (degree 2 = delta)
+profile 1x5 / 1 + 2x2 / 1x3 + 2x1 ,  Riemann-Hurwitz 4+2+2 = 2·5-2
+```
+
+`r` squarefree, `gcd(p, wr) = 1`, fiber over 1 generic. The chain degree `D = 3`
+is the multiplicity of `w = ∞` in the fiber over 1 — structurally the same slot
+that carried `D = 13` in Borisov's degree-16 map.
+
+### Why the lock relaxes
+
+The pole-fiber argument, in any degree: `R`'s finite poles sit in a set of at
+most two points and `R` realizes a degree-`D` Belyi map; the only fiber of a
+Belyi map with ≤ 2 points is the totally ramified one; so a finite pole of `R`
+is a single point of order **exactly `D`**. The endgame independently forces
+pole order **exactly `k`**. Compatible
+
+> **if and only if `D = k`.**
+
+At `D = 13` (`k = 4`) the two collide, the pole is forced out to `v = ∞`, `R`
+becomes a polynomial, and the framework dies — *that step, and only that step,
+is Session 18's proof*. At `D = 3` with `k = 3` they agree. Certified across
+`(s,D,k)` = (3,13,4), (3,23,4), (3,7,4), (3,19,4), (3,4,4), (2,3,3), (2,5,5),
+(4,3,3), (5,3,3), (2,7,7).
+
+### The Keller constant at D = 3
+
+```
+R = A(v)/(v+1)³ ,   A = -(16/3)v³ - 8v² - 2v + 1/3 ,   c = 1
+```
+
+Residual 0, pole order exactly 3 at `v = -1`, map-degree exactly 3, and a
+genuine degree-3 Belyi map with profile `3 / 2+1 / 2+1`. Both degree-3 Belyi
+profiles carry a totally ramified point, so the pole-fiber demand is satisfiable
+here in a way it is not at any `D ≥ 4`. **Within every layer this campaign can
+derive, the `D = 3` window is open.**
+
+### Why that is still not a counterexample
+
+Three independent reasons:
+
+1. **The endgame is the last gate, not the whole system.** Box caps, the
+   divisibility ladder, boundary rigidity and the Keller block were derived in
+   Sessions 8–15 for the `(2,3)` cusp only. None has been rebuilt for `(5,2)`.
+   Those gates are **untested, not passed**.
+2. **`k = 3` is an assumption, not a derivation.** For `(2,3)` the contact
+   exponent is `k = 4`. That `k = D = 3` for `(5,2)` is what the window *needs*;
+   deriving `k` for a new cusp type means redoing the Y-side geometry.
+3. **Degrees.** The `(2,3)` near-miss template gives `deg y1 = 3 + 12·deg p` and
+   `deg y2 = 6 + 12·deg r` (verified), returning exactly Borisov's `(99,66)` at
+   `(8,5)` — the pair sitting just past Moh's proven bound of 100. *That is why
+   the First Framework lives at `D = 13`.* Here `(deg p, deg r) = (1,2)`, an
+   order of magnitude smaller, landing far inside the range where the plane
+   Jacobian conjecture is already a theorem. **A counterexample cannot live at
+   `D = 3`.**
+
+So the correct inference from `c ≠ 0` is not "counterexample" but *"one of the
+gates in (1) must close `D = 3`"* — and identifying which is the open task.
+
+### Scope correction on the sweep
+
+The Belyi gate closes every `D ≥ 4` **with no upper bound** — the unlocking `R`
+has `D-1` simple critical points with `D-1` distinct critical values for every
+`D`. There is no ceiling such as `D = 225`, and none is needed. Verified for
+`D = 4..25` and uniform in `D` structurally.
+
 ## Files
 
 | file | contents |
@@ -190,6 +269,8 @@ constructed and certified explicitly. Two caveats:
 | `singular/skeleton_generator.sing` | generalised endgame `T_{k,s,D}`, skeleton generator over cusp type and cancellation depth, the Belyi gate |
 | `certify/session19_deformation_probe.py` | exact sympy certification of Session 19 (19 checks), house style |
 | `certify/session20_d4_reverse_engineering.py` | exact sympy certification of Session 20 (17 checks), including the explicit `D = 4` and `D = 3` skeletons |
+| `singular/d3_instantiation.sing` | the `(5,2)` geometry at `D = 3` written out completely, the pole-fiber test, the direct solver |
+| `certify/session21_d3_window.py` | exact sympy certification of Session 21 (18 checks) |
 
 ## Running
 
@@ -242,9 +323,11 @@ sessions computed with. All 19 certifications pass.
 
 ## Next
 
-0. The only remaining window is chain degree `D <= 3`. Check whether its degree
-   pairs are already covered by the proved low-degree cases of the plane
-   Jacobian conjecture — if so the window closes without further geometry.
+0. **The `D ≤ 3` window is open at the endgame layer (Session 21).** The next
+   piece of work is to rebuild one of the untested gates — box caps, the
+   divisibility ladder, boundary rigidity, or the Keller block — for the `(5,2)`
+   cusp and find which one closes it. Deriving the contact exponent `k` for a
+   non-`(2,3)` cusp is the same task and would settle it directly.
 1. Re-referee the pole-fiber theorem (Session 13/14, Theorem 3) — it is now
    the single load-bearing hypothesis, and finding 2 says exactly how much
    slack would be needed to break it (one unit of pole order at `U = 0`).
