@@ -945,6 +945,13 @@ identifies *why*, which is more useful than another partial.
 
 Seven cases, three orders, three shapes of `h` including a non-squarefree one.
 
+**Where the census stops, and why.** Coefficient degree 3 at `k = 4` was attempted
+twice and returned no verdict either time — over ℚ it exceeded a 3000 s budget,
+over `F_32003` it exceeded ~560 s. The boundary at degree 2 is **computational,
+not a choice**: sympy's Gröbner engine does not reach degree 3 on this system.
+Recorded so the attempt is not silently repeated. The mod-`p` run did reproduce
+degree ≤ 2 as empty in 37 s — independent corroboration in different arithmetic.
+
 ### A root-drop of two
 
 At a root `r` of squarefree `h`: `a(r) = a'(r) = 0`, `p(r) = p'(r) = 0`, and

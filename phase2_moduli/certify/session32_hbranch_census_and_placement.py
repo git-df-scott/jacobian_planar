@@ -25,6 +25,15 @@ a Groebner basis of {1} means NO SOLUTION:
 Seven cases, three orders, three shapes of h including a non-squarefree
 one.  All empty.  Evidence, not a theorem - see Result 3.
 
+WHERE THE CENSUS STOPS, AND WHY.  Coefficient degree 3 at k = 4 was
+attempted twice and returned no verdict either time: over Q it exceeded
+a 3000 s budget, and over F_32003 it exceeded ~560 s.  The boundary at
+degree 2 is therefore COMPUTATIONAL, not a choice - sympy's Groebner
+engine does not reach degree 3 on this system.  Recorded so the attempt
+is not silently repeated.  (The mod-p run did reproduce degree <= 2 as
+EMPTY in 37 s, an independent corroboration of the rational result in
+different arithmetic.)
+
 =====================================================================
 RESULT 2  a root-drop of two
 =====================================================================
