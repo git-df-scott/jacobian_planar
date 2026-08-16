@@ -185,9 +185,13 @@ constructed and certified explicitly. Two caveats:
 # Session 21 — the D ≤ 3 window instantiated
 
 Session 20 left one window open and one question unanswered: does the pole-fiber
-theorem still close the endgame at `D ≤ 3`? **It does not.** This is the first
-point in the campaign where the Session-18 mechanism fails to close — and it is
-still not a counterexample.
+theorem still close the endgame at `D ≤ 3`? **It does not** — the pole-fiber lock
+genuinely relaxes there.
+
+> **Superseded by Session 22 (below).** The `D = 3` instantiation assumed the
+> contact exponent `k = 3` for the `(5,2)` cusp. Session 22 derives `k = 6`, so
+> `D = 3` was never reachable and the window is empty. The pole-fiber analysis
+> in this section stands; the conclusion drawn from it does not.
 
 ### The geometry, exact
 
@@ -259,6 +263,93 @@ has `D-1` simple critical points with `D-1` distinct critical values for every
 `D`. There is no ceiling such as `D = 225`, and none is needed. Verified for
 `D = 4..25` and uniform in `D` structurally.
 
+---
+
+# Session 22 — the contact exponent derived, and the window closes
+
+Session 21 left `D ≤ 3` open **under the assumption** that a `(5,2)` cusp has
+contact exponent `k = 3`. This session derives `k` instead. The assumption was
+false, and the window is empty.
+
+### Two corrections to Session 21
+
+1. **`k = 3` for the `(5,2)` cusp is wrong** — the derived value is `k = 6`. The
+   "window is open" finding rested on `k = D = 3` and is **withdrawn**.
+2. **The Moh degree argument at `D = 3` is withdrawn too.** The template
+   `deg y1 = 3 + 12·deg p` is `(2,3)`-specific and extrapolating it to `(5,2)`
+   was not safe — a plausible alternative scaling puts those degrees *above*
+   100, not below. It is no longer needed: the closure is structural.
+
+### The derivation
+
+The cusp identity is exact for every `(m,n)`:
+
+```
+{y1, y2} = {W, y2} / ( m · (y2^n + W)^((m-1)/m) )
+```
+
+— the `y2^{n-1}` terms cancel identically, which is precisely why the cusp part
+is Jacobian-silent. With leading blocks `y2 ~ q^-β v^-γ g^μ` and
+`W ~ q^-λ v^-σ g^ν R`, the bracket has the exact closed form
+
+```
+{W,y2} = q^(-λ-β-1) v^(-σ-γ) [ (λγ-βσ) v^-1 g^(ν+μ) R
+                              + (βν-λμ) g^(ν+μ-1) g' R
+                              + β g^(ν+μ) R' ]
+```
+
+giving `s = β/m` and `G = ν + μ - μn(m-1)/m`, with the `g'` term carrying
+`g^(G-1)`.
+
+**Session 18's master identity falls out.** Feeding the First Framework's own
+block data `(β,γ,λ,σ,μ,ν) = (6,18,5,54,2,6)` and `g = α(v+1)v^8` returns
+`α^5 (v+1)^4 (3v(v+1)R' - 13R) = -c` exactly, collapse identity
+`13(9v+8) - 117(v+1) = -13` included. Sessions 16–18 *asserted* this; it is now
+*derived* — an independent end-to-end validation of the campaign's central
+computation.
+
+Two block exponents are forced: `ν = μn` (since `W = y1^m - y2^n` inherits
+`g^{μn}` from `y2^n`) and `μ = m` (`y2`'s leading block is an `m`-th power).
+Then `G = m+n`, and with `g = α U^ε ·(unit)`:
+
+> **`k = ε(m+n) - 1`**
+
+`(2,3)` at `ε = 1` gives 4 — the First Framework's value. `(5,2)` gives **6**.
+
+### The closure
+
+`m, n` coprime with `m, n ≥ 2` force `m + n ≥ 5`, and `ε ≥ 1`, so
+
+> **`k = ε(m+n) - 1 ≥ 4` for every cusp type and every `ε`**, with equality only
+> at `(m,n) = (2,3)`, `ε = 1` — Borisov's own cusp.
+
+Session 20's self-consistency forces `D = k`, so `D ≥ 4` always; and Session 20's
+Belyi gate closes every `D ≥ 4`. **The `D ≤ 3` window is empty** — not because
+`D ≤ 3` is combinatorially impossible, but because no cusp can produce a contact
+exponent that low. Every cusp type was re-run through the gate at *its own*
+derived degree; all 24 rows close.
+
+**Robustness.** The one extrapolated step is `μ = m`. It is not load-bearing:
+leaving `μ` free, the window needs `G = μ(m+n)/m ≤ 4`, i.e. `μ ≤ 4m/(m+n) ≤ 4m/5
+< m` — `y2`'s leading block would have to carry a `g`-power strictly below `m`,
+contradicting its being an `m`-th power at all.
+
+### Final state
+
+| range | status |
+|---|---|
+| `D ≥ 4` | closed by the Belyi gate, uniformly in the cusp exponent, no upper bound |
+| `D ≤ 3` | closed by the contact exponent — `k ≥ 4` always |
+
+Every gate is shut. The published constructive framework family supports no
+Keller map, for any cusp type, cancellation depth, boundary order or chain
+degree.
+
+**No counterexample was found, and this line of attack will not produce one** —
+every opening the probes found has closed under its own derivation. This closes
+the constructive candidates; the plane Jacobian conjecture itself is untouched
+and remains open.
+
 ## Files
 
 | file | contents |
@@ -270,7 +361,9 @@ has `D-1` simple critical points with `D-1` distinct critical values for every
 | `certify/session19_deformation_probe.py` | exact sympy certification of Session 19 (19 checks), house style |
 | `certify/session20_d4_reverse_engineering.py` | exact sympy certification of Session 20 (17 checks), including the explicit `D = 4` and `D = 3` skeletons |
 | `singular/d3_instantiation.sing` | the `(5,2)` geometry at `D = 3` written out completely, the pole-fiber test, the direct solver |
-| `certify/session21_d3_window.py` | exact sympy certification of Session 21 (18 checks) |
+| `certify/session21_d3_window.py` | exact sympy certification of Session 21 (18 checks) — findings 2 and 4c superseded by Session 22 |
+| `singular/contact_exponent.sing` | the derived contact exponent, every cusp type re-run at its own degree |
+| `certify/session22_contact_exponent.py` | exact sympy certification of Session 22 (19 checks), including the first-principles re-derivation of Session 18's master identity |
 
 ## Running
 
@@ -323,11 +416,8 @@ sessions computed with. All 19 certifications pass.
 
 ## Next
 
-0. **The `D ≤ 3` window is open at the endgame layer (Session 21).** The next
-   piece of work is to rebuild one of the untested gates — box caps, the
-   divisibility ladder, boundary rigidity, or the Keller block — for the `(5,2)`
-   cusp and find which one closes it. Deriving the contact exponent `k` for a
-   non-`(2,3)` cusp is the same task and would settle it directly.
+0. **Done (Session 22): the `D ≤ 3` window is closed.** The contact exponent was
+   derived rather than assumed and cannot fall below 4. No gate remains open.
 1. Re-referee the pole-fiber theorem (Session 13/14, Theorem 3) — it is now
    the single load-bearing hypothesis, and finding 2 says exactly how much
    slack would be needed to break it (one unit of pole order at `U = 0`).
