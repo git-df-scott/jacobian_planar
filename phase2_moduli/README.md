@@ -862,6 +862,68 @@ structure that tightens as `k` grows.
 constraint, not a contradiction. Stated as a dichotomy because that is what was
 proved.
 
+---
+
+# Session 31 — third cascade step, a divisibility ladder, and `k = 4`
+
+Pushing Session 30's live end: the `h`-branch at `k ≥ 4`.
+
+### Self-correction, caught before it propagated
+
+My first attempt reduced the cascade expression mod `h` via `subs(h, 0)`. That
+zeroes `h'` too — it is *not* reduction mod `h`, it returned 0 for every `k`, and
+I then **asserted** "the reduction is a nonzero multiple of `h'q`" rather than
+computing it. Redone as genuine polynomial arithmetic below. Logged because the
+same class of slip produced corrections 5–7.
+
+### Third cascade step — exact, general in `k`
+
+Only `(k,k-2)`, `(k-1,k-1)`, `(k-2,k)` reach `s^(2k-3)`, so with `C_k = (0,a)`,
+`C_{k-1} = (p,q)`, `C_{k-2} = (u,w)`:
+
+```
+coeff(s^(2k-3)) = k·a·u' - (k-2)·a'·u + (k-1)·W(C_{k-1})
+```
+
+Verified exactly for `k = 3..6`; the pair-enumeration checked to `k = 59`.
+
+### A divisibility ladder
+
+Feeding in `a = αh^k`, `p = βh^{k-1}` and dividing by `h^{k-2}`, every term
+carries an explicit `h` **except one**. With `h = t`, the surviving value at
+`t = 0` is **computed**, not guessed:
+
+| `k` | value at `t=0` | ⟹ |
+|---|---|---|
+| 4 | `9·β·q(0)` | `t \| q` |
+| 5 | `16·β·q(0)` | `t \| q` |
+| 6 | `25·β·q(0)` | `t \| q` |
+
+i.e. `(k-1)²·β·q(0)`. Substituting `q = t·q̃` and dividing again yields a further
+condition — **a divisibility ladder**, structurally the same shape the campaign
+met on the framework side in Sessions 11–12.
+
+### The `k = 4` branch, decided at bounded degree
+
+Session 30's dichotomy leaves one live branch at `k = 4`: `C_4 = (0, αh⁴)`,
+`C_3 = (βh³, q_3)`. With `h = t` and everything else free, inverting
+`(Jacobian constant)·α·β` so that `GB = {1}` means *no solution*:
+
+| free coefficient degree | conditions | unknowns | result |
+|---|---|---|---|
+| `≤ 1` | 17 | 16 | **GB = {1}, no solution** |
+| `≤ 2` | 26 | 23 | **GB = {1}, no solution** |
+
+### Scope — honestly labelled
+
+**Gained:** the third cascade step for all `k`; the divisibility ladder;
+emptiness of the order-4 sweep over `h = t` at coefficient degree `≤ 2`.
+
+**Not gained:** the `k ≥ 4` branch in general. The `k = 4` result fixes `h = t`
+and bounds the degree; larger `h` and `k ≥ 5` are untouched. A bounded-degree
+Gröbner run is **evidence, not a theorem** — this campaign has already published
+one "verified at every point tested" that was a fit in disguise.
+
 ## Files
 
 | file | contents |
@@ -884,6 +946,7 @@ proved.
 | `certify/session28_tangent_sweep_no_plane_analogue.py` | exact sympy certification of Session 28 (13 checks): the literature update and the proof that the tangent sweep has no plane analogue |
 | `certify/session29_sweep_closed_all_orders.py` | exact sympy certification of Session 29 (9 checks): the sweep closed in the plane at every order |
 | `certify/session30_sweep_rigor_and_cascade.py` | exact sympy certification of Session 30 (10 checks): the rigor audit and the second cascade step |
+| `certify/session31_cascade_step3_and_k4.py` | exact sympy certification of Session 31 (5 checks): third cascade step, divisibility ladder, `k = 4` at bounded degree |
 
 ## Running
 
