@@ -424,6 +424,56 @@ Prove or refute `ν = μn` for one non-`(2,3)` cusp. It either closes the campai
 completely or opens it precisely, and unlike the other two fronts it is bounded
 work.
 
+---
+
+# Session 24 — family survey: which one is least ruled out
+
+### The axis that actually separates families
+
+Magnus: for a non-automorphism Keller pair the leading forms are proportional
+powers of one common form `H`, `P_top = c·H^(d1/r)`, `Q_top = c'·H^(d2/r)`,
+`r = deg H | gcd(d1,d2)`. The number of **places at infinity** is the number of
+*distinct roots* of `H`.
+
+Abhyankar–Moh: one place at infinity ⟹ automorphism. Equivalently the plane JC
+*is* the statement that a constant Jacobian forces one place at infinity. So:
+
+| family | places `j` | status |
+|---|---|---|
+| `H = L^r` | 1 | **closed** by Abhyankar–Moh |
+| `H` with ≥2 distinct roots | ≥2 | **open** — every counterexample lives here |
+
+Degree is *not* an independent family parameter: across 11,872 Magnus-admissible
+pairs with `max ≤ 200`, every single one forces a cusp ratio `(d2,d1)/gcd` with
+both entries `≥ 2`. Choosing a different degree never escapes the cusp-chain
+structure — only the place count does.
+
+### Ranking
+
+1. **`(72,108)` with `j ≥ 2`** — the only pair with `max < 125` GGHV could not
+   discard. Cusp ratio `(2,3)`, *identical* to Borisov's `(99,66)`, so this
+   campaign's whole apparatus transfers with no re-derivation. The difference is
+   one congruence: the template reaches `g ≡ 1 (mod 4)` (Borisov's `g = 33`),
+   and `(72,108)` needs `g = 36 ≡ 0 (mod 4)`. 82 multi-place `H`-configurations
+   to work through.
+2. **Multi-place frameworks at `max ≥ 125`** — same structure, unbounded degree,
+   no literature coverage, but no distinguished instance to compute against.
+3. **Dixmier / Weyl route** (`[P,Q] = 1` in `A₁`) — genuinely different
+   obstruction theory; the Session-7 near-miss is a `[P,Q] = x^r` instance. Weaker
+   as a target: the equivalence with the plane JC is only stable.
+4. **One-place families, any degree** — closed by Abhyankar–Moh. Stated
+   explicitly because it is where naive searches go.
+
+### First thing to actually run
+
+Rebuild the skeleton generator with `g ≡ 0 (mod 4)` and see whether a `(2,3)`-cusp
+framework exists at `g = 36` at all. Bounded, the same shape as Sessions 19–22,
+and it either produces the first framework instance at the literature's one open
+pair or shows the congruence obstruction is structural.
+
+**Caveat:** "most promising" means *least ruled out*, not likely. If the
+conjecture holds, every family is empty, and nothing here is evidence otherwise.
+
 ## Files
 
 | file | contents |
@@ -439,6 +489,7 @@ work.
 | `singular/contact_exponent.sing` | the derived contact exponent, every cusp type re-run at its own degree |
 | `certify/session22_contact_exponent.py` | exact sympy certification of Session 22 (19 checks), including the first-principles re-derivation of Session 18's master identity |
 | `certify/session23_three_fronts.py` | exact sympy certification of Session 23 (8 checks): the audit, the bypass spec, the GGHV relocation |
+| `certify/session24_family_survey.py` | exact sympy certification of Session 24 (6 checks): the places-at-infinity taxonomy and the ranking |
 
 ## Running
 
