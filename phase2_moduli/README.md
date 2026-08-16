@@ -731,6 +731,71 @@ removes them as *proof strategies* and says nothing about the plane.
 **A plane counterexample, if one exists, must work by something other than a
 tangent sweep.**
 
+---
+
+# Session 29 — the sweep mechanism, closed in the plane at every order
+
+Session 28 killed the tangent sweep's linear form in the plane. This closes its
+natural generalisations. **No plane counterexample.**
+
+### The literal plane tangent sweep isn't even Keller
+
+In the plane, Speyer's construction is literally a map `C² → C²`:
+
+```
+Φ(t,s) = C(t) + s·C'(t)      det JΦ = s · det[C''(t), C'(t)]
+```
+
+The explicit factor of `s` makes it vanish on `{s = 0}` — the curve itself. A
+nonzero constant is impossible. **It fails before any degree, genus or duality
+argument is reached.**
+
+### At every order, the leading direction is forced constant
+
+Sweeping osculating curves instead of tangent lines, `Φ = Σ_{i=0}^{k} sⁱ·C_i(t)`:
+
+```
+det JΦ = Σ_{i,j} j·s^(i+j-1)·det[C_i', C_j]
+top coefficient, at s^(2k-1):  k · Wronskian(C_k)
+```
+
+Verified symbolically for `k = 1..5`. A constant Jacobian forces that Wronskian
+to vanish, so `C_k = a(t)·e` — a **constant direction**.
+
+> The mechanism's defining feature — a field that is degenerate but **not** of
+> constant direction — is unavailable in the plane **at every order**, not merely
+> at `k = 1`. That is what makes the `n ≥ 3` construction genuinely
+> higher-dimensional.
+
+### The descent, and closure for `k ≤ 3`
+
+With `e = (0,1)`, `C_k` hits only the second component, so
+`min(deg_s Φ₁, deg_s Φ₂) ≤ k-1`. Against Sessions 2–5 (`min deg_y ≤ 2 ⟹ tame`):
+
+| order | min `deg_s` | verdict |
+|---|---|---|
+| `k = 1` tangent/affine | 1 | **tame** |
+| `k = 2` osculating conic | 1 | **tame** |
+| `k = 3` osculating cubic | 2 | **tame** |
+| `k ≥ 4` | `k-1 ≥ 3` | not reached by that theorem |
+
+**Honest limit:** for `k ≥ 4` tameness is not proved by this argument. What *is*
+proved at every `k` is the constant-direction collapse — the mechanism is dead at
+all orders; the stronger tameness conclusion holds for `k ≤ 3`.
+
+### Every route the campaign opened is now closed
+
+| route | status |
+|---|---|
+| cusp-chain framework family | dead at every chain degree, cusp type, depth, boundary order (S19–22, 27) |
+| the tangent sweep | no plane analogue at any order (S28–29) |
+| Mathieu–Zhao hierarchy | implies the JC — its failure is not a route (S28) |
+| one place at infinity | automorphism, Abhyankar–Moh (S24) |
+| direct search above degree 108 | infeasible by four orders of magnitude (S23) |
+
+A plane counterexample, if one exists, works by a mechanism that is none of
+these, at a degree no search can reach, on a skeleton nobody has proposed.
+
 ## Files
 
 | file | contents |
@@ -751,6 +816,7 @@ tangent sweep.**
 | `certify/session26_general_cusp_template.py` | exact sympy certification of Session 26 (12 checks): the general cusp template, the first non-`(2,3)` near-miss, and the failed `ν = μn` attempt |
 | `certify/session27_yside_nonstandard_cusp.py` | exact sympy certification of Session 27 (8 checks): the Y-side chart, calibration against Sessions 9–13, and `ν = μn` at the `(5,2)` cusp |
 | `certify/session28_tangent_sweep_no_plane_analogue.py` | exact sympy certification of Session 28 (13 checks): the literature update and the proof that the tangent sweep has no plane analogue |
+| `certify/session29_sweep_closed_all_orders.py` | exact sympy certification of Session 29 (9 checks): the sweep closed in the plane at every order |
 
 ## Running
 
