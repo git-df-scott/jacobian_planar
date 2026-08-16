@@ -603,6 +603,69 @@ answer.
 Session 25's `E = a - b` law was established on `(2,3)` data only. The `(5,2)`
 near-miss sits at `E = 1` while `a - b = -1`. **That law is `(2,3)`-specific.**
 
+---
+
+# Session 27 — the Y-side geometry, derived for a non-(2,3) cusp
+
+The one piece of bounded work left after Session 26. **It is now done, and it
+closes the window rather than opening one. No counterexample.**
+
+### Why it was possible this time
+
+Sessions 22–26 could not do this because the block normal form had only ever
+been read off Borisov's instance, and no other instance existed. Session 26
+built the first non-`(2,3)` near-miss. With an explicit map in hand the Y-side
+data is not an abstraction to be modelled — it is read off directly:
+
+```
+v = x1·x2^E - 1 ,  U = v+1   ⟹   x1 = U / x2^E ,  v = U - 1
+```
+
+Substituting turns `y1`, `y2` into finite Laurent series in `x2` whose
+coefficients are polynomials in `U`. **Those coefficients are the blocks.**
+
+### Calibration — the method recovers Sessions 9–13
+
+Applied to Borisov's own instance with no input from the later sessions:
+
+| recovered | matches |
+|---|---|
+| `y2` leading block at `x2⁻⁶` → `β = 6` | Session 12's `y2 = q⁻⁶v⁻¹⁸g²(1+T)` |
+| that block `= U²(U-1)¹⁶ = [U(U-1)⁸]²` | Session 13's `g = αU(U-1)⁸`, `deg g = 9` |
+| `W` first surviving block at `x2⁻⁵`, `= const·U⁶(U-1)⁹` | Session 10's `W̃₋₅ = n₃U⁶(U-1)⁹` |
+
+Three independent campaign results from one substitution. Validated before use.
+
+### The result
+
+| instance | `μ` | `ν` | `μn` | `deg g` | `N/μ+ε` |
+|---|---|---|---|---|---|
+| `(2,3)` a=2,b=1,E=1 | 2 | 6 | 6 | 3 | 3 |
+| `(2,3)` a=5,b=3,E=2 | 2 | 6 | 6 | 6 | 6 |
+| `(2,3)` a=8,b=5,E=3 **[Borisov]** | 2 | 6 | 6 | 9 | 9 |
+| `(5,2)` a=1,b=2,E=1 **[new cusp]** | 5 | 10 | 10 | 2 | 2 |
+
+> **`ν = μn` at every point, including the `(5,2)` cusp.**
+
+Consequences:
+
+1. **Session 23's 870 conditional tuples are refuted at `(5,2)`** — every one
+   required `ν < μn`. The Session-22 closure is **unconditional** there.
+2. **`μ = m` is now measured** at a second cusp type, not merely shown removable
+   by Session 23's integrality argument.
+3. **`deg g = N/μ + ε`** confirmed at all four instances.
+
+### Scope
+
+This settles `ν = μn` at *one* non-`(2,3)` cusp with one skeleton — not for every
+`(m,n)`. Session 23's tuples ranged over many cusp types; only those at `(5,2)`
+are closed. What changed is that the question is **no longer untestable**: build
+the near-miss, substitute `x1 = U/x2^E`, read `ord_U`. A finite recipe, not an
+open problem.
+
+And the direction matters: the Y-side geometry, once actually computed,
+**confirms the closure**.
+
 ## Files
 
 | file | contents |
@@ -621,6 +684,7 @@ near-miss sits at `E = 1` while `a - b = -1`. **That law is `(2,3)`-specific.**
 | `certify/session24_family_survey.py` | exact sympy certification of Session 24 (6 checks) — its mod-4 ranking reason is void, see Session 25 |
 | `certify/session25_template_exponent.py` | exact sympy certification of Session 25 (13 checks): `E = a-b` (2,3-only), the quadratic degree law, the smallest near-miss |
 | `certify/session26_general_cusp_template.py` | exact sympy certification of Session 26 (12 checks): the general cusp template, the first non-`(2,3)` near-miss, and the failed `ν = μn` attempt |
+| `certify/session27_yside_nonstandard_cusp.py` | exact sympy certification of Session 27 (8 checks): the Y-side chart, calibration against Sessions 9–13, and `ν = μn` at the `(5,2)` cusp |
 
 ## Running
 
