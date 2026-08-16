@@ -796,6 +796,72 @@ all orders; the stronger tameness conclusion holds for `k ≤ 3`.
 A plane counterexample, if one exists, works by a mechanism that is none of
 these, at a degree no search can reach, on a skeleton nobody has proposed.
 
+---
+
+# Session 30 — rigor audit of Session 29, and the second cascade step
+
+Session 29's closure was challenged on two points — both about the *kind* of
+claim, not the logic. Fair challenge: this campaign has twice been bitten by
+fitting a relation to a few points. **Both claims are proved, not
+pattern-matched**, and the distinction from the earlier mistakes is concrete.
+
+### Audit 1 — the top coefficient is proved, not fitted
+
+By bilinearity, `det JΦ = Σ_{i,j} j·s^(i+j-1)·det[C_i', C_j]`. Maximise `i+j-1`
+subject to `i, j ≤ k`:
+
+> `i + j - 1 = 2k - 1` ⟺ `i + j = 2k` ⟺ **`i = j = k`, uniquely.**
+
+One pair reaches that exponent, so no cancellation is possible and
+`coeff(s^(2k-1)) = k·W(C_k)` **exactly, for all `k`**.
+
+**Difference from the earlier mistakes:** Session 25's degree law was a formula
+fitted to three points with no derivation — it agreed at `a = 8` by coincidence
+and failed elsewhere. Here the formula comes *first*, from bilinearity plus a
+one-line integer argument; the per-`k` runs only confirm the expansion identity.
+A fit can be wrong off its range; *"`i+j = 2k` with `i,j ≤ k` forces `i = j = k`"*
+cannot. Session 29 presented this as five checks — that was a presentation error.
+
+### Audit 2 — the dimension claim is derived, both directions
+
+For `v : C^(n-1) → C^n` the degeneracy is `det[v_{x1},…,v_{x(n-1)}, v] = 0`.
+
+**`n = 2`** — two ingredients, each specific to dimension 2:
+(a) the determinant involves exactly **two** vectors, so degeneracy *is*
+pointwise proportionality `v' ∥ v`; (b) the base is **one-dimensional**, so that
+proportionality is an ODE and integrates: `(p/q)' = W/q²`, giving
+`C = q(t)·(λ,1)`. Converse `W(a(t)e) = 0` holds identically.
+
+**`n ≥ 3`** — the determinant involves `n ≥ 3` vectors; "dependent" is rank
+`≤ n-1` out of `n`, strictly weaker. Non-vacuous **by witness**: Session 1's
+twisted-cubic field has `det[v_x,v_y,v] = 0` while `rank[v, v_x] = 2`.
+
+So they coincide in the plane and separate from dimension three on — both
+directions established, not observed.
+
+### New — the second cascade step, general in `k`
+
+With `C_k = a(t)·e`, `e = (0,1)`, only `(k,k-1)` and `(k-1,k)` reach `s^(2k-2)`,
+so with `C_{k-1} = (p,q)`:
+
+```
+coeff(s^(2k-2)) = k·a·p' - (k-1)·a'·p        ⟹   k·a·p' = (k-1)·a'·p
+```
+
+**Dichotomy at each level:**
+
+| branch | consequence |
+|---|---|
+| `p = 0` | `C_{k-1}` also points along `e` → `min deg_s ≤ k-2` — a **second descent** |
+| `p ≠ 0` | `p^k = c·a^(k-1)`; `gcd(k,k-1) = 1` forces `k \| m` at every root, so **`a = αh^k`, `p = βh^(k-1)`** for a common `h` |
+
+The top two sweep coefficients must be high powers of *one* polynomial — a rigid
+structure that tightens as `k` grows.
+
+**Still open:** this does *not* close `k ≥ 4`. The `h`-family is a strong
+constraint, not a contradiction. Stated as a dichotomy because that is what was
+proved.
+
 ## Files
 
 | file | contents |
@@ -817,6 +883,7 @@ these, at a degree no search can reach, on a skeleton nobody has proposed.
 | `certify/session27_yside_nonstandard_cusp.py` | exact sympy certification of Session 27 (8 checks): the Y-side chart, calibration against Sessions 9–13, and `ν = μn` at the `(5,2)` cusp |
 | `certify/session28_tangent_sweep_no_plane_analogue.py` | exact sympy certification of Session 28 (13 checks): the literature update and the proof that the tangent sweep has no plane analogue |
 | `certify/session29_sweep_closed_all_orders.py` | exact sympy certification of Session 29 (9 checks): the sweep closed in the plane at every order |
+| `certify/session30_sweep_rigor_and_cascade.py` | exact sympy certification of Session 30 (10 checks): the rigor audit and the second cascade step |
 
 ## Running
 
