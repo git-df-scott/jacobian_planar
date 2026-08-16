@@ -2,14 +2,14 @@
 
 **A consolidated handoff. Everything, in one document.**
 
-Written at the close of Session 35. Intended to be read cold by a successor
-(Fable 5, or anyone) with no access to the conversation that produced it.
+Written at the close of Session 35; updated through Session 37. Intended to be
+read cold by a successor with no access to the conversation that produced it.
 
 ---
 
 ## 0. Bottom line, stated first
 
-**No counterexample was found.** Not in 35 sessions, not on any of the three
+**No counterexample was found.** Not in 37 sessions, not on any of the three
 strategies executed in the final round, not anywhere. Every route this campaign
 opened has closed, and the closures are proofs, not exhaustion.
 
@@ -26,7 +26,9 @@ The single most useful sentence in this document:
 > cascade (Sessions 29–32) — walk into the same wall from opposite directions,
 > and that wall is the `deg_y = 3` slice.**
 
-If you do one thing, decide that slice.
+**Superseded as the top priority by Sessions 36–37.** The live target is now
+GGHV's `(8,28)` case — the single unexcluded degree pair below 125. Session 37
+extracted its governing relation; see §11.
 
 ---
 
@@ -79,7 +81,7 @@ jacobian_planar/
 ├── Sessions 1-18 status reports    <- the early campaign, one file
 └── phase2_moduli/
     ├── README.md                   <- per-session narrative, Sessions 19-35
-    ├── certify/  session19..35*.py <- exact sympy certifications
+    ├── certify/  session19..37*.py <- exact sympy certifications
     ├── singular/ *.sing            <- Singular routines
     └── runs/     *.log             <- recorded output of every routine
 ```
@@ -97,7 +99,7 @@ for f in phase2_moduli/singular/*.sing;     do Singular -q "$f" > /dev/null || e
 
 ## 3. The corrections ledger — read this before trusting anything
 
-**Nine errors, and nearly all of them are the same error.** Every one came from
+**Fifteen entries, and nearly all of them are the same error.** Every one came from
 trusting a relation past the range where it had been verified.
 
 | # | Session | Claim | Status |
@@ -111,6 +113,12 @@ trusting a relation past the range where it had been verified.
 | 7 | 25 | Session 24's mod-4 ranking of `(72,108)` | **void** — `g` alternates mod 4 |
 | 8 | 26 | `E = a − b` | **`(2,3)`-specific** — the `(5,2)` near-miss sits at `E = 1` while `a−b = −1` |
 | 9 | 29 | top-coefficient result presented as "verified for `k=1..5`" | **presentation error** — it is a one-line proof for all `k` |
+| 10 | 36 | T5–T8 asserted as a family | **partially resolved** — T6, T8 refuted; T7 **proved** (S37); T5 consistent |
+| 11 | — | `deg H = 36` for `(72,108)` | **overstatement** — `deg H = 36/k` for `k \| 36` |
+| 12 | 34 | tear model examples | **void** — they are non-Keller and tear in a way Keller forbids |
+| 13 | 36 | handoff's "role-swap trap" for `(8,28)` | **wrong** — Prop 4.3's polygons show `P` is the square, as in §5 |
+| 14 | 36 | "(8,28) is underdetermined; elimination gives the zero ideal" | **REFUTED (S37)** — the relation exists; one transplanted valuation constant caused it |
+| 15 | 36 | decision tree dropped WP-2 on "T5–T8 refuted" | **too wide** — F5 rests on T7 only, which survives |
 
 ### The anatomy of correction #6, because it is the instructive one
 
@@ -545,6 +553,74 @@ search is four orders of magnitude out of reach.
 
 ---
 
+## 11. Sessions 36–37 — the GGHV `(8,28)` case
+
+### The target
+
+[GGHV](https://arxiv.org/abs/2204.14178) (Compositio Math **160** (2024)
+2775–2827) discard every degree pair with `max < 125` **except (72,108)**, and
+say so in their own words:
+
+> *"For the other case with (deg(P), deg(Q)) = (72,108) we couldn't solve the
+> corresponding system of polynomial equations, **thus it is left open**."*
+> *"With enough computing power we would be able to raise it up from 108 to 125,
+> since **there is only one case left**."*
+
+Their Proposition 4.3 reduces it to two Newton polygons in `K[x,x⁻¹,y]` with
+`[P,Q] = x²`. **Verified from the paper**, not from a summary.
+
+### What Session 37 established
+
+| result | status |
+|---|---|
+| both GGHV calibrations — §6 `(7,21)` → (6.18), §5 `(9,27)` → (5.9) | reproduced **exactly**, twice, from independent code paths |
+| the `(8,28)` **relation** — degree 31, 102 terms, principal | **found** (Session 36 wrongly reported the zero ideal) |
+| quasi-homogeneity `w(d₂,d₁,d₀,dm₁,F·W) = (2,3,4,5,17)`, weight 125 | **proved**, uniquely (nullspace dim 1) |
+| upper bounds `deg dᵢ ≤ 15(4−i)` | derivation **reproduces GGHV's published (5.10)** |
+| lower bounds `ord dᵢ ≥ 40−10i` | derivation **reproduces GGHV's published Prop 5.6** (`v₋₁₃,₋₁ = −39`) |
+| the two Prop 4.3 sub-cases | **collapse to one** — same relation governs both |
+| residual symmetry | **finite** (`μ₁₇`), so `d₂` is **rigid** — the extra parameter is intrinsic |
+| `R₀ = dm₁²¹ · S`, `S` of weight 20, 28 terms | **factored** |
+| **parameter count** | **626 equations vs 74 unknowns — factor 8.5** |
+
+### The defect Session 37 found in Session 36
+
+Session 36 concluded `(8,28)` was *underdetermined*. It was not. The error was
+**one transplanted constant**. From the bracket,
+`v([P,Q]) = 2v(C) + v(F) − 1`. Calibrating on §5 (`v(C)=3`, `[P,Q]=x`) gives
+`v(F) = −4` — exactly GGHV's published Prop 5.2 value. But `(8,28)` has
+`v(C) = 4` and `[P,Q] = x²`, so **`v(F) = −5`**: the `F`-term lands at `j = 5`,
+not `j = 4`. Session 36 discarded everything from `j = 4` on as free, dropping
+the sole carrier of `C₄` — which is exactly why no `C₄` appeared anywhere in its
+output.
+
+### Where it stands
+
+`W | R₀` with `W = C₄³¹ = y²¹⁷(y+1)³¹`. The `y`-side is **automatic**
+(`ord_y(dm₁²¹) ≥ 1050 ≫ 217`), so all the content is
+**`(y+1)³¹ | dm₁²¹·S`** — a finite ladder `21a + b ≥ 31` on one integer.
+
+**Recommended order for the next session:** the `(y+1)`-adic ladder first (small,
+possibly decisive), the top-degree slice second, the full 626-equation expansion
+only third — that is where memory will bind. Equations reach degree 25, far
+outside the sparse-quadratic regime `slimgb` handled in Session 35.
+
+**Every signal points to EMPTY**, which would raise the bound **108 → 125**.
+That is a closure, not a counterexample.
+
+### The T5–T8 ledger, closed
+
+| lemma | status |
+|---|---|
+| T5 meridian support | **consistent** — a transposition moving 2 of 3 sheets fixes exactly `d−ν = 1` |
+| T6 transitivity budget | **REFUTED** — monodromy uses the *normal closure* of the meridians, not `r` generators |
+| T7 line-slice identity | **PROVED** — `χ(C_L) = d − Σδᵢνᵢ` by the covering count; verified on Alpöge |
+| T8 `r ≥ 2` | **REFUTED** — `r = 1` occurs on Alpöge (`d=3, ν=2`) |
+
+Since F5 (`d ≡ χ(C_L) mod 3`) rests on F2, F3 and **T7 only**, it survives.
+
+---
+
 ## 9. Session index
 
 | sessions | subject |
@@ -571,6 +647,8 @@ search is four orders of magnitude out of reach.
 | 33 | **Step 1** — Cremona/elimination; deck involution fixed-point-free; de Jonquières + linear branches empty |
 | 34 | **Step 2** — the tear is forced; monodromy; `χ ≡ 1 (mod d)`; pseudo-holomorphic curves unavailable |
 | 35 | **Step 3** — Singular over `F_p` breaks the sympy wall; the `(3,n)` slice reached |
+| 36 | GGHV calibrations reproduced; `(8,28)` built; T6/T8 refuted on Alpöge; **wrongly** concluded underdetermined |
+| 37 | **Session 36 refuted** — the `(8,28)` relation found; bounds calibrated against both published values; T7 proved; count says 8.5× overdetermined |
 
 ---
 
