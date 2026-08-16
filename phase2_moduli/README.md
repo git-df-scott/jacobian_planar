@@ -474,6 +474,66 @@ pair or shows the congruence obstruction is structural.
 **Caveat:** "most promising" means *least ruled out*, not likely. If the
 conjecture holds, every family is empty, and nothing here is evidence otherwise.
 
+---
+
+# Session 25 — the (72,108) attack, and two errors it exposed
+
+Ran at the `(72,108)` target. **No counterexample: it is not reachable by this
+family.** But the attack broke two things I had published.
+
+### Correction — the template exponent is a parameter
+
+Sessions 21–24 treated `v = x1·x2³ - 1` as fixed. Sweeping `v = x1·x2^E - 1`,
+the Jacobian collapses to a **monomial** — the near-miss condition — at exactly
+one `E` per Belyi datum, and it is not always 3:
+
+| `(deg p, deg r)` | monomial at |
+|---|---|
+| `(2,1)` | `E = 1` |
+| `(5,3)` | `E = 2` |
+| `(8,5)` | `E = 3` (Session 7) |
+
+Three independent points give **`E = a - b = (a+1)/3`**, forcing `a ≡ 2 (mod 3)`.
+
+### Correction — the degree law is quadratic, not linear
+
+> **`deg y1 = (a+1)(a+3)`,  `deg y2 = (2/3)(a+1)(a+3)`**
+
+| `a` | `b` | `E` | `D` | degrees | `g` | Session-23 said |
+|---|---|---|---|---|---|---|
+| 2 | 1 | 1 | 3 | (15,10) | 5 | (27,18) ✗ |
+| 5 | 3 | 2 | 8 | (48,32) | 16 | (63,42) ✗ |
+| 8 | 5 | 3 | 13 | (99,66) | 33 | (99,66) ✓ |
+| 11 | 7 | 4 | 18 | (168,112) | 56 | (135,90) ✗ |
+| 14 | 9 | 5 | 23 | (255,170) | 85 | (171,114) ✗ |
+
+The linear formula `3+12a` agrees **only** at `a = 8` — which is why it survived
+undetected. And `g = 5, 16, 33, 56, 85, 120` alternates mod 4, so **Session 24's
+ranking reason (a mod-4 obstruction) is void.**
+
+### `(72,108)` is still unreachable
+
+`(a+1)(a+3) = 108` ⟺ `a² + 4a - 105 = 0`, roots `-2 ± √109` — not integers. The
+Sessions 23–24 *answer* was right; the *reason* was wrong.
+
+### What survives
+
+The chain degrees `D = a+b = 3, 8, 13, 18, 23, 28` never depended on the broken
+formula, so **every gate conclusion of Sessions 20–22 stands**. The GGHV
+comparison survives with corrected numbers: `(15,10), (48,32), (99,66)` cleared
+by GGHV; `(168,112), (255,170), …` beyond it and killed by the Belyi gate.
+
+### New artifact — the smallest near-miss in the family
+
+```
+a = 2, b = 1, E = 1, N = 4, delta = 1, D = 3
+p = w² + (3/2)w + 3/8 ,  r = w + 1 ,  p² - w r³ = w/8 + 9/64
+v = x1·x2 - 1 ,  degrees (15,10) ,  Jacobian a single monomial
+```
+
+Never written down before, and the cheapest object on which to test any future
+claim about this family.
+
 ## Files
 
 | file | contents |
@@ -489,7 +549,8 @@ conjecture holds, every family is empty, and nothing here is evidence otherwise.
 | `singular/contact_exponent.sing` | the derived contact exponent, every cusp type re-run at its own degree |
 | `certify/session22_contact_exponent.py` | exact sympy certification of Session 22 (19 checks), including the first-principles re-derivation of Session 18's master identity |
 | `certify/session23_three_fronts.py` | exact sympy certification of Session 23 (8 checks): the audit, the bypass spec, the GGHV relocation |
-| `certify/session24_family_survey.py` | exact sympy certification of Session 24 (6 checks): the places-at-infinity taxonomy and the ranking |
+| `certify/session24_family_survey.py` | exact sympy certification of Session 24 (6 checks) — its mod-4 ranking reason is void, see Session 25 |
+| `certify/session25_template_exponent.py` | exact sympy certification of Session 25 (13 checks): `E = a-b`, the quadratic degree law, the smallest near-miss |
 
 ## Running
 
