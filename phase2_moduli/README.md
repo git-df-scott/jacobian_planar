@@ -350,6 +350,80 @@ every opening the probes found has closed under its own derivation. This closes
 the constructive candidates; the plane Jacobian conjecture itself is untouched
 and remains open.
 
+---
+
+# Session 23 — three fronts: audit, bypass spec, literature relocation
+
+Run at the request to attack on three fronts and find a counterexample.
+**No counterexample was found.** Three findings, one of which changes how the
+whole campaign should be described.
+
+### Front 3 — adversarial audit of the Session-22 closure
+
+The chain behind `k = ε(m+n) - 1`, step by step: `s = β/m`, `G = ν + μ - μn(m-1)/m`
+and `k = εG - 1` are **symbolically derived**, not extrapolated. Two steps were
+soft:
+
+- **`μ = m` is now removable, not merely "not load-bearing."** With `ν = μn`,
+  `G = μ(m+n)/m` must be a positive integer, so `m | μ(m+n)`; with `gcd(m,n)=1`
+  that forces `m | μ`, hence `μ ≥ m`. The window needs `μ ≤ 4m/(m+n) < m`.
+  Contradiction, without ever assuming `μ = m`. **The closure is tighter than
+  published.**
+- **`ν = μn` is the one real soft spot**, and it rests on the divisibility
+  ladder — proved in Sessions 11–12 for the `(2,3)` cusp only.
+
+Decoupling `ν` and `μ` completely and sweeping `(m,n,ε,μ,ν,s)`:
+
+| condition | surviving tuples |
+|---|---|
+| `ν = μn` (the ladder's value) | **0** |
+| `ν` decoupled | **870**, every one requiring `ν < μn` |
+
+**The margin is exactly one unit.** For `(2,3)` with `μ = 2`, `G = ν - 1`, so the
+window reopens iff `ν ≤ 5`. The actual value is `ν = 6`.
+
+### Front 1 — what a bypassing skeleton must carry
+
+The audit turns "propose a novel skeleton" into a falsifiable spec:
+
+- **to bypass the `D ≥ 4` Belyi gate:** a realization layer that does *not* force
+  `R` to realize a degree-`D` Belyi map;
+- **to bypass the `D ≤ 3` contact-exponent gate:** `ν ≤ μn - 1` (ladder failure)
+  *and* `β ≠ mn` (to dodge the resonance collision). For `(2,3)`: `ν = 5`, `β ≠ 6`.
+
+Assigning block exponents to satisfy this is arithmetic. **Realizing them by an
+actual curve configuration is not done, and a set of exponents is not a dual
+graph.** The target is now precisely specified and remains unbuilt.
+
+### Front 2 — relocated against GGHV
+
+Guccione, Guccione, Horruitiner and Valqui (*Compositio Math* 160 (2024)
+2775–2827; arXiv:2204.14178) list every degree pair with `max < 125` for a
+hypothetical plane counterexample and discard them all **except (72,108)**,
+confirming Moh's bound of 100 and raising it to 108.
+
+- **Borisov's `(99,66)` is inside GGHV's cleared range.** The campaign's
+  Session-18 conclusion for that pair is confirmed by published work along an
+  independent route, and **is not novel as of 2024**. Earlier sessions here did
+  not account for this.
+- **`(72,108)` — the one surviving pair — is not reachable by this campaign's
+  template**, whose degree pairs are `(3+12a, 6+12b)` with `2a - 3b = 1`:
+  `(27,18), (63,42), (99,66), (135,90), (171,114), …`. The campaign says nothing
+  about it.
+- **Where the campaign does add something:** the template's members at
+  `(135,90)`, `(171,114)`, `(207,138)`, … lie *beyond* GGHV's range and carry
+  chain degrees `D = 18, 23, 28, …`, all killed by the Belyi gate. That is the
+  real marginal contribution — not `(99,66)`.
+- **A direct search is infeasible**: degree 108 gives 11,990 unknowns against
+  ~23,000 dense bilinear equations; degree 200 gives 40,602. GGHV's route is
+  structural because a search is not available.
+
+### Next computation
+
+Prove or refute `ν = μn` for one non-`(2,3)` cusp. It either closes the campaign
+completely or opens it precisely, and unlike the other two fronts it is bounded
+work.
+
 ## Files
 
 | file | contents |
@@ -364,6 +438,7 @@ and remains open.
 | `certify/session21_d3_window.py` | exact sympy certification of Session 21 (18 checks) — findings 2 and 4c superseded by Session 22 |
 | `singular/contact_exponent.sing` | the derived contact exponent, every cusp type re-run at its own degree |
 | `certify/session22_contact_exponent.py` | exact sympy certification of Session 22 (19 checks), including the first-principles re-derivation of Session 18's master identity |
+| `certify/session23_three_fronts.py` | exact sympy certification of Session 23 (8 checks): the audit, the bypass spec, the GGHV relocation |
 
 ## Running
 
