@@ -534,6 +534,75 @@ v = x1·x2 - 1 ,  degrees (15,10) ,  Jacobian a single monomial
 Never written down before, and the cheapest object on which to test any future
 claim about this family.
 
+---
+
+# Session 26 — the general cusp template, and the first non-(2,3) near-miss
+
+Run against the three remaining areas. **No counterexample.** One area produced
+a genuine new object but did **not** settle the question it was aimed at; the
+other two are open research problems, not computations.
+
+### The template generalises to every cusp
+
+Session 7's shape is not special to `(2,3)`. For a cusp `y1^m = y2^n + W`:
+
+```
+m·A = n·B        (cusp relation on x1-degrees)
+c = n·d          (so that y1^m/y2^n = p^m/(w r^n),  w = v^c/x2)
+m·a - n·b = 1    (equivalently the Belyi degree N = m·a = n·b + 1)
+```
+
+`(2,3)` returns Session 7's `(A,B,c,d) = (3,2,3,1)`; `(5,2)` gives `(2,5,2,1)`.
+
+### The first non-(2,3) near-miss
+
+```
+cusp (5,2),  p = w+1,  r = w² + (5/2)w + 15/8,  N = 5, a = 1, b = 2
+v = x1·x2 - 1
+y1 = x1²(v² + x2)
+y2 = x1⁵ v (v⁴ + (5/2)v²x2 + (15/8)x2²)
+degrees (6,15),   5·6 = 2·15 = 30
+J = (15/8)·x1⁶·x2²          ← a single monomial
+```
+
+`E = 1` is the only value in 1..8 producing a monomial. **The campaign's first
+near-miss outside the `(2,3)` cusp.**
+
+### `W` carries the skeleton's own residue
+
+For both near-misses, `W = y1^m - y2^n` is a monomial times the skeleton's
+cancellation residue at `w = v^c/x2`, and the residue degree equals `δ`:
+
+| cusp | `W` | residue |
+|---|---|---|
+| `(2,3)` | `x1⁶x2³[(1/8)v³ + (9/64)x2]` | `p² - wr³ = w/8 + 9/64` |
+| `(5,2)` | `x1¹⁰x2³[(5/8)v⁴ + (95/64)v²x2 + x2²]` | `p⁵ - wr² = (5/8)w² + (95/64)w + 1` |
+
+### What was NOT settled
+
+`ν = μn` — the target. Two block models were built; **both fail on the one case
+where the answer is known**:
+
+| | `ν` at `(2,3)` |
+|---|---|
+| measured (Session 12) | **6** |
+| model A (generic `T`) | 3 |
+| model B (`T` coefficients `/g^μ`) | 4 |
+
+Neither is faithful, so neither can decide other cusps. **`ν = μn` remains open,
+and so do Session 23's 870 conditional tuples.** The block normal form needs the
+Y-side geometry, never re-derived for a non-`(2,3)` cusp — and the `(5,2)`
+near-miss does not supply it, because it lives in the `(x1,x2)` chart while the
+block data lives after the resolution.
+
+Recording a failed attempt rather than a third model tuned to give the wanted
+answer.
+
+### Caveat, stated before it becomes correction #8
+
+Session 25's `E = a - b` law was established on `(2,3)` data only. The `(5,2)`
+near-miss sits at `E = 1` while `a - b = -1`. **That law is `(2,3)`-specific.**
+
 ## Files
 
 | file | contents |
@@ -550,7 +619,8 @@ claim about this family.
 | `certify/session22_contact_exponent.py` | exact sympy certification of Session 22 (19 checks), including the first-principles re-derivation of Session 18's master identity |
 | `certify/session23_three_fronts.py` | exact sympy certification of Session 23 (8 checks): the audit, the bypass spec, the GGHV relocation |
 | `certify/session24_family_survey.py` | exact sympy certification of Session 24 (6 checks) — its mod-4 ranking reason is void, see Session 25 |
-| `certify/session25_template_exponent.py` | exact sympy certification of Session 25 (13 checks): `E = a-b`, the quadratic degree law, the smallest near-miss |
+| `certify/session25_template_exponent.py` | exact sympy certification of Session 25 (13 checks): `E = a-b` (2,3-only), the quadratic degree law, the smallest near-miss |
+| `certify/session26_general_cusp_template.py` | exact sympy certification of Session 26 (12 checks): the general cusp template, the first non-`(2,3)` near-miss, and the failed `ν = μn` attempt |
 
 ## Running
 
