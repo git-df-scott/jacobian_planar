@@ -1,4 +1,31 @@
 
+!!! RETRACTED IN PART BY SESSION 37 - READ THIS FIRST !!!
+
+The CALIBRATIONS in this file stand: sections 6 and 5 reproduce GGHV's (6.18)
+and (5.9) exactly, and that result is unaffected.
+
+The CONCLUSION about (8,28) is WITHDRAWN.  This file states that the (8,28)
+elimination returns the zero ideal and that the algebraic part is
+UNDERDETERMINED.  Both are wrong.  Session 37 (certify/session37_wpa_recount.py)
+found the defect and the relation:
+
+  * the system built here stops at (D~^3)_{-3} and discards j >= 4 as free,
+    on the assumption v_{1,0}(F) = -4 transplanted from section 5;
+  * but v([P,Q]) = 2 v(C) + v(F) - 1, which reproduces GGHV's published -4 when
+    v(C) = 3 and [P,Q] = x, gives v(F) = -5 here, because (8,28) has v(C) = 4
+    and [P,Q] = x^2;
+  * so the F-term sits alone at j = 5 and is NOT free.  It is the sole carrier
+    of C_4 - which is why no C_4 appears anywhere in this file's output.
+  * with j = 5 restored the elimination ideal is PRINCIPAL: degree 31, 102
+    terms.
+
+Corrections ledger #14: RESOLVED, this file's verdict refuted.  Kept unedited
+below as the record of what was concluded and why it was wrong.
+
+=====================================================================
+ORIGINAL SESSION 36 TEXT FOLLOWS, UNEDITED
+=====================================================================
+
 Plane Jacobian campaign - Session 36, WP-3
 GGHV CALIBRATION PASSES; AND WHY (8,28) IS OPEN IS NOT A COMPUTE-POWER PROBLEM.
 
