@@ -27,12 +27,15 @@ route currently in reach.
 ## Correction to this session's own step-1b claim
 
 Step 1b concluded "the pentagon system is **square** modulo gauge: 60 essential
-parameters, generic rank 60". That was **one gauge short**. With the scale gauge
-(finding 3) the count is **59 essential parameters against 60 independent
-conditions** — the system is **overdetermined by 1** modulo gauge, before the
-314 surplus conditions. The operative conclusion is unchanged and if anything
-strengthened: solutions, if any, are isolated modulo gauge, and dimension
-excludes nothing.
+parameters, generic rank 60". That was **two gauges short**. The full gauge group
+is 3-dimensional (translation, overall scale, coordinate scale), so the count is
+**58 essential parameters against 60 independent conditions** — the system is
+**overdetermined by 2** modulo gauge, before the 314 surplus conditions. The
+operative conclusion is unchanged and strengthened: solutions, if any, are
+isolated modulo gauge, and dimension excludes nothing.
+
+*(Recorded in two steps: step 3 v2 corrected 60 → 59 on finding the overall
+scale; step 3c corrected 59 → 58 on finding the coordinate scale.)*
 
 ## The false-positive episode (v1 of the hit-detector)
 
@@ -72,9 +75,41 @@ and replaces the objective with the **scale-invariant** ratio
     genuine candidates: 0
 
 **This is not evidence of emptiness** and is not recorded as such. Newton has a
-tiny basin on a degree-12..23 system in 59 variables; non-convergence from
-random starts is the expected default. One start reached 1.70e-09, an outlier
-worth re-examining with a tighter acceptance test before it is dismissed.
+tiny basin on a degree-12..23 system; non-convergence from random starts is the
+expected default.
+
+## The 1.70e-09 outlier — RESOLVED as an artefact
+
+One v2 start reached ratio 1.70e-09. It is **not** a near-solution.
+
+**The gauge group on P is 3-dimensional, not 2.** Beyond the translation
+(`p_00`) and the overall scale (`P → cP, Q → Q/c`), the bracket forces a
+**coordinate scale** `(x,y) → (λx, λ⁻³y)` — from `[P∘σ,Q∘σ] = λμ[P,Q]∘σ` and
+`[P,Q] = x²`, giving `λ³μ = 1`. It maps solutions to solutions, since every
+coefficient is multiplied by a nonzero power of λ.
+
+**Why it broke v2's objective.** Composing with the `g1` that restores
+`p_10 = 1`, the coefficient of `x^i` in `Q_j` scales by `λ^{i−3j+1}` — an
+exponent that **depends on i**. Forbidden coefficients are the low-i ones,
+allowed are high-i, so growing λ inflates the denominator of the ratio. Measured
+on a random point, nothing solved anywhere along the path:
+
+| λ | ratio | max\|allowed\| | max\|forbidden\| |
+|---|---|---|---|
+| 0.5 | 8.78e+10 | 1.55e+19 | 1.36e+30 |
+| 1.0 | 8.32e+07 | 1.01e+05 | 8.93e+09 |
+| 4.0 | 7.39e+02 | 5.66e-18 | 5.43e-19 |
+| 16.0 | 9.78e-01 | 8.43e-37 | 7.19e-42 |
+
+Eleven orders of magnitude, monotonically, with nothing solved. The outlier
+carries exactly that signature: `max|allowed| = 2.16e+09` against
+`max|forbidden| = 1.44`, with a **1.34e+09 dynamic range in P's own
+coefficients**. A genuine near-solution shows small forbidden coefficients
+against an **O(1)** configuration, not an inflated one.
+
+**Verdict: ARTEFACT.** Same disease as v1, one gauge deeper — v1 collapsed the
+numerator, v2's outlier inflated the denominator. Resolved, closed, not carried
+forward.
 
 ## Where H1b stands
 
@@ -85,3 +120,14 @@ evaluation. Next moves, in order: re-examine the 1.70e-09 outlier; replace
 random-start Newton with homotopy continuation on the 59-dimensional gauge
 slice; and port the Route-2-style independent reformulation the plan asks for,
 so that any future verdict has two provenance-disjoint derivations.
+
+
+## Standing requirement for any future pentagon detector
+
+1. Fix **all three** gauges: `p_00 = 0`, plus two coefficients of **different
+   weight `i − 3j`** (which pins `g1` and `g2` separately).
+2. Use an **absolute** normalisation, not a ratio. A ratio objective is
+   breakable from either end — v1 shrank the numerator, v2's outlier inflated
+   the denominator.
+3. Require the allowed coefficients to be **O(1)** as an *acceptance condition*,
+   not a post-hoc sanity check.
