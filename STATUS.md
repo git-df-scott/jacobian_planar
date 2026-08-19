@@ -116,6 +116,31 @@ The four H1f items:
 3. **Route-1/Route-2 provenance** — file-level disjoint (no shared source files; hashes recorded). Both still descend from the same GGHV polygon derivation, so this is *code* disjointness, not full independence. Stated, not overclaimed.
 4. **Gauge-quotient integrity on the dim-2 survivor** — the survivor is a *linear* component `β₂=β₃=α₂=α₃=0` with `β₁,α₁` free, and the gauge group is exactly 2-dimensional (`β₁` = weighted scaling, `α₁` = additive constant of A, which every equation sees only through `A′`). **Dimensions match: 2 = 2.** It is also excluded independently — on it `a₈ = 0`, killing the vertex (8,16) of N(P), so it is not case (2) at all. Disposed of twice over.
 
+### 4a. The eliminant is irreducible over ℚ — NEW RESULT
+`wave1/w1_h1f_eliminant.py`
+
+A planned shortcut **did not exist and is recorded as a plan error**: substituting
+the RUR eliminates only the 7 edge variables, leaving **13 free** (leaf 1) — so
+there is no univariate polynomial in θ and no gcd to take.
+
+Instead, Dedekind's criterion, at 8 good primes (all squarefree mod p, all
+degree-sums 1144). **No proper factor degree is a subset sum at every prime**, so:
+
+> **The degree-1144 edge eliminant is irreducible over ℚ.** `[PROVED-exact]`
+
+Controls confirm the sieve can *detect* reducibility (a planted 400+744 split is
+found; a totally-split prime leaves all 1143 degrees surviving).
+
+**Proves:** `K = ℚ[θ]/(f)` is a single degree-1144 number field; all 1144 edge
+points are **Galois-conjugate**, so either all extend or none do — the ℚ̄ question
+is one yes/no about the generic point; there are **no rational edge points**; the
+exact-ℚ branch structure is *simpler* than the mod-p one (which splits into 4–12).
+
+**Does not prove:** case (2) empty over ℚ̄ — that needs the residual system in 13
+variables over K, not done. Nothing about case (1). And it is **not** a
+confirmation of the recorded mod-p EMPTY — different object, different verdict
+class per §6.2. Chart `d_3_3 = 1` only.
+
 ---
 
 ## 5. Open
@@ -126,7 +151,7 @@ The four H1f items:
 | **H2** above-125 sweep | ~150 of 167 targets unrun; chain→polygon map needs hardening |
 | **H4** deg_y = 3 slice | FRAMEWORK.md's own OPEN-1; untouched |
 | **Pentagons (H1b)** | undecided; see §6 |
-| exact-ℚ closure of case (2) | now unblocked — the eliminant exists; factor-over-ℚ then per-factor branch closure is the next step |
+| exact-ℚ closure of case (2) | **still open.** The eliminant exists and is **irreducible over ℚ** (§4a), so there is a single branch — but the residual system (13 variables over a degree-1144 field) is not solved |
 
 ---
 
