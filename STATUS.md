@@ -66,12 +66,27 @@ its third Belyi map `x³(x−5)²/108` is certified exactly (degree 5, ramificat
 | L1 chart | **complete** — inversion, monomial rule, chart factor, Keller form, pole depths (−9,−6) |
 | L1 boxes | **complete** — not load-bearing; the layer-1 conditions are box-independent |
 | L2 contact | **complete** — contact −5, 13 vanishings, confirmed independently by L3's `eW = −5` |
-| L2 cascade | **UNCHECKED** — the one remaining gap |
+| L2 cascade | **complete** — identities are generic in (a,b), D, g; all three shared. D = 1..6 extrapolation closed by re-running at D = 1..14 |
 | L3 rigidity | **complete** — `g = αU(U−1)⁸` pins, `deg g = N/μ + ε = 9` |
 | L4 | **immaterial** (closed-form theorem) |
 
-**Verdict: the Three-dessin Framework at (108,72) dies, conditional on the L2
-cascade alone.** Down from three named gaps to one.
+**Verdict: every layer transfers. The Three-dessin Framework at (108,72) dies —
+as strongly as the First Framework's own death, and conditional on exactly the
+same two unreproduced theorems, no more.**
+
+The residue is **inherited, not new**: `THEOREM 2` (the Taylor-pin argument that
+*every* framework solution, not just the near-miss, has `g = αU(U−1)⁸`) and
+`THEOREM 3` (pole-fiber ⇒ R polynomial). Both are prose whose certificates were
+lost with the Session 11–14 transcripts; both are load-bearing for **any**
+(72,108) framework statement, including the First Framework's. The Three-dessin
+Framework introduces **no new conditionality of its own** — that was the whole
+question, and the answer is no.
+
+**Flagged discrepancy:** `d23_phase2_preview.py` labels the First Framework
+"[PROVEN dead, Sessions 16–18, **unconditional**]", while `trackC_c3_ladder.py`
+records THEOREM 2/3 as unreproduced prose that "every (72,108) statement that
+assumes a polynomial R inherits". Those two cannot both be right. Not resolved
+here; added to the ledger.
 
 ### The eliminator is controlled (A6)
 `MANIFEST.md` §G. Every campaign EMPTY comes from `groebner(I)` → `dim == -1`,
@@ -147,7 +162,7 @@ class per §6.2. Chart `d_3_3 = 1` only.
 
 | item | state |
 |---|---|
-| **L2 cascade** on the three-dessin chain | last framework gap; inputs identical, promotion not rebuilt |
+| **THEOREM 2 / THEOREM 3** | the only remaining framework conditionality — inherited from the First Framework, prose, certificates lost with the Session 11–14 transcripts |
 | **H2** above-125 sweep | ~150 of 167 targets unrun; chain→polygon map needs hardening |
 | **H4** deg_y = 3 slice | FRAMEWORK.md's own OPEN-1; untouched |
 | **Pentagons (H1b)** | undecided; see §6 |
