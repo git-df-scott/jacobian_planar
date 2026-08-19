@@ -1,0 +1,29 @@
+// The edge system is defined over Q, so its 5 solutions are algebraic numbers.
+// Their reduction mod p is F_p-rational for a positive density of plist.
+// Look for a prime where the g_12 eliminant has LINEAR factors: then the whole
+// branch lives in F_p and no field extension is needed anywhere downstream.
+LIB "primdec.lib";
+option(redSB);
+int P;
+list plist = 10007, 10009, 10037, 10039, 10061, 10067, 10069, 10079,
+               10091, 10093, 10099, 10103, 10111, 10133, 10139, 10141;
+int idx;
+for (idx = 1; idx <= size(plist); idx++) {
+  P = plist[idx];
+  ring Rdp = P, (c(2..7), g(2..12)), dp;
+  ideal I; int n; int i; int k;
+  for (n = 2; n <= 19; n++) { poly e = 0;
+    for (i = 2; i <= 12; i++) { k = n - i + 1;
+      if (k == 1 || k == 8) { e = e + g(i)*(5*i - 3*n - 3); }
+      else { if (k >= 2 && k <= 7) { e = e + g(i)*c(k)*(5*i - 3*n - 3); } } }
+    if (n == 2) { e = e - 1; }
+    I = I + ideal(e); }
+  ideal Gb = std(I);
+  if (dim(Gb) == 0) {
+    ideal U = finduni(Gb);
+    string f = string(factorize(U[size(U)], 2));
+    "p = " + string(P) + ": vdim " + string(vdim(Gb)) + "  g12-factors: " + f;
+  }
+  kill Rdp;
+}
+quit;

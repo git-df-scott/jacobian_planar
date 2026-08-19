@@ -1,0 +1,5 @@
+
+=== component I seed=1 S=[1, 17610, 25769, 9894, 53418] M=[55537, 52577, 50054, 4135, 16716] ===
+level 4: parametrized (P_6 = M^2/4a + H*y + S*z), 7 params, holds identically
+level 5: w=5, 15 params, deg=2, +12 eqs (total 12), cumulative DIM 13   [3s]
+level 6: degree None exceeds cap 3 — STOP

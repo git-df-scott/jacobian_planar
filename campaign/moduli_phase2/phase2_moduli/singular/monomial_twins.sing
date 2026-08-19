@@ -1,0 +1,161 @@
+//////////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Phase 2, probe 3
+// COMBINATORIAL TWIN SEARCH:  [P,Q] = x^r WITH THE SKELETON FROZEN
+//
+// The Session-7 near-miss is the campaign's only non-degenerate
+// realization of the framework skeleton.  It is precisely a monomial-
+// bracket instance: with v = x1*x2^3 - 1,
+//
+//     y1 = x1^3 x2^a p(v^3/x2),   y2 = x1^2 x2^b v r(v^3/x2),
+//     {y1,y2} = -h0 * x1^4 * x2^12        (a,b) = (8,5),  h0 constant,
+//
+// i.e. [P,Q] = x^r with r = (4,12) rather than the Keller r = (0,0).
+// This probe asks the two twin questions:
+//
+//   3a  Can the frozen Newton skeleton itself ever give r = (0,0)?
+//   3b  Which chain degrees D admit the skeleton at all, and at which
+//       of them is the Belyi datum RIGID?  (A twin must be a rigid
+//       realization at a degree the endgame trapdoor can use, i.e.
+//       D = 4 by probe 2c.)
+//
+// Skeleton data: B = p^2/(w r^3), deg p = a, deg r = b, Belyi degree
+// N = 2a = 3b+1, miracle cancellation deg(p^2 - w r^3) = 3, chain
+// degree D = N - 3.
+//////////////////////////////////////////////////////////////////////////
+
+"=====================================================================";
+"PROBE 3a  NEWTON-SKELETON OBSTRUCTION TO r = (0,0)";
+"          Every member of the frozen skeleton has y1 in x1^3*k[x1,x2]";
+"          and y2 in x1^2*k[x1,x2].  Then every term of {y1,y2} carries";
+"          x1-degree >= 4, so the bracket is divisible by x1^4 for the";
+"          WHOLE deformation space, not just at the near-miss.";
+"          Verified below on generic members of the skeleton.";
+"=====================================================================";
+ring RX = 0, (u(1..6), x1, x2), dp;
+poly Y1 = x1^3*(u(1) + u(2)*x1 + u(3)*x2 + u(4)*x1*x2^5 + u(5)*x2^7);
+poly Y2 = x1^2*(u(6) + u(1)*x2 + u(3)*x1^4 + u(5)*x1*x2^3);
+poly BR = diff(Y1,x1)*diff(Y2,x2) - diff(Y1,x2)*diff(Y2,x1);
+"   generic skeleton member: {y1,y2} / x1^4 is a polynomial :",
+    (reduce(BR, std(ideal(x1^4))) == 0);
+"   constant term of {y1,y2} (the Keller target) :", subst(BR, x1,0, x2,0);
+"   => on the frozen skeleton the Keller condition {y1,y2} = const != 0";
+"      is not merely obstructed to first order, it is UNREACHABLE:";
+"      the constant term vanishes identically on the whole box.";
+"      Any genuine twin must therefore CHANGE the x1-support, i.e.";
+"      change the combinatorial type -- which is exactly the chain";
+"      layer that probes 1 and 2 govern.";
+
+"";
+"=====================================================================";
+"PROBE 3b  ADMISSIBLE CHAIN DEGREES AND THEIR RIGIDITY";
+"          N = 2a = 3b+1 forces b odd and D = N-3 = 3b-2, so the";
+"          skeleton exists only for D = 1 (mod 6).  Parameter count:";
+"          a+b monic coefficients against N-4 cancellation equations,";
+"          with a 1-dimensional scaling w -> mu*w always acting.";
+"=====================================================================";
+"     D  | deg p | deg r | Belyi N | unknowns | equations | expected dim";
+int b, a, N, D, nu, ne;
+for (b = 1; b <= 13; b = b+2)
+{
+  N = 3*b+1;  a = N div 2;  D = N-3;  nu = a+b;  ne = N-4;
+  "   " + string(D) + "   |   " + string(a) + "   |   " + string(b)
+      + "   |    " + string(N) + "   |    " + string(nu)
+      + "     |     " + string(ne) + "     |    " + string(nu-ne);
+}
+"";
+"   Rigidity (solution set = the scaling orbit only) needs";
+"   unknowns - equations = 1, i.e. (5D+13)/6 = D, i.e. D = 13 EXACTLY.";
+"   D < 13 is under-determined (positive-dimensional twin families);";
+"   D > 13 is over-determined (expected empty).";
+
+"";
+"=====================================================================";
+"PROBE 3c  EXPLICIT TWIN CENSUS - solving deg(p^2 - w r^3) = 3 for the";
+"          small admissible degrees.  The origin p = w^a, r = w^b is a";
+"          degenerate solution of every instance (it makes p^2 - w r^3";
+"          vanish identically), so it is saturated away by requiring";
+"          p(0) != 0 and r(0) != 0.  Dimension is reported in the";
+"          parameter space; the scaling orbit w -> mu*w accounts for 1.";
+"=====================================================================";
+proc nondeg(ideal I, poly f)
+"USAGE: nondeg(I,f); saturate I by f via iterated quotient (elim.lib's
+ sat() is unreliable in Singular 4.3.2 -- see endgame_moduli.sing)."
+{
+  ideal S = std(I);  ideal T;  int st;
+  for (st = 1; st <= 30; st++)
+  {
+    T = std(quotient(S, ideal(f)));
+    if (size(reduce(T, S)) == 0) { return(S); }
+    S = T;
+  }
+  return(S);
+}
+
+// ---- D = 1  (deg p = 2, deg r = 1): no cancellation equations at all
+ring T1 = 0, (P(0..1), R(0..0), w), dp;
+poly p1 = w^2 + P(1)*w + P(0);
+poly r1 = w + R(0);
+poly F1 = p1^2 - w*r1^3;
+matrix K1 = coeffs(F1, w);
+ideal I1;  int i;
+for (i = 5; i <= nrows(K1); i++) { I1 = I1, K1[i,1]; }
+I1 = simplify(I1,2);
+"   D = 1  (deg p = 2, deg r = 1):  #equations =", size(I1),
+    "  parameter dim =", dim(nondeg(I1, P(0)*R(0))) - 1,
+    "  moduli after scaling =", dim(nondeg(I1, P(0)*R(0))) - 2;
+
+// ---- D = 7  (deg p = 5, deg r = 3)
+ring T2 = 0, (P(0..4), R(0..2), w), dp;
+poly p2 = w^5 + P(4)*w^4 + P(3)*w^3 + P(2)*w^2 + P(1)*w + P(0);
+poly r2 = w^3 + R(2)*w^2 + R(1)*w + R(0);
+poly F2 = p2^2 - w*r2^3;
+matrix K2 = coeffs(F2, w);
+ideal I2;
+for (i = 5; i <= nrows(K2); i++) { I2 = I2, K2[i,1]; }
+I2 = simplify(I2,2);
+"   D = 7  (deg p = 5, deg r = 3):  #equations =", size(I2),
+    "  parameter dim =", dim(nondeg(I2, P(0)*R(0))) - 1,
+    "  moduli after scaling =", dim(nondeg(I2, P(0)*R(0))) - 2;
+
+"";
+// ---- D = 13 (deg p = 8, deg r = 5): the expensive one (~10 min).
+//      Recorded answer, computed with exactly this code:
+//        #equations = 12,  raw dim = 3 (13 params + w, degenerate
+//        component included),  NON-DEGENERATE parameter dim = 1.
+//      Parameter dim 1 = the scaling orbit alone => RIGID, confirming
+//      the count in probe 3b by direct Groebner computation.
+//      Set RUN_D13 = 1 to recompute.
+int RUN_D13 = 0;
+if (RUN_D13)
+{
+  ring T3 = 0, (P(0..7), R(0..4), w), dp;
+  poly p3 = w^8;  poly r3 = w^5;  int k;
+  for (k = 0; k <= 7; k++) { p3 = p3 + P(k)*w^k; }
+  for (k = 0; k <= 4; k++) { r3 = r3 + R(k)*w^k; }
+  poly F3 = p3^2 - w*r3^3;
+  matrix K3 = coeffs(F3, w);
+  ideal I3;
+  for (k = 5; k <= nrows(K3); k++) { I3 = I3, K3[k,1]; }
+  I3 = simplify(I3,2);
+  "   D = 13 (deg p = 8, deg r = 5):  #equations =", size(I3),
+      "  parameter dim =", dim(nondeg(I3, P(0)*R(0))) - 1,
+      "  moduli after scaling =", dim(nondeg(I3, P(0)*R(0))) - 2;
+}
+else
+{
+  "   D = 13 (deg p = 8, deg r = 5):  #equations = 12"
+      + "  parameter dim = 1  moduli after scaling = 0   [recorded;"
+      + " set RUN_D13 = 1 to recompute, ~10 min]";
+}
+
+"";
+"  READING.";
+"  * D = 1 and D = 7 carry positive-dimensional twin families: the";
+"    skeleton is realizable there but far too soft to pin a framework.";
+"  * D = 13 is the unique rigid degree.  Borisov's chain degree is not";
+"    an artefact of his search - it is forced by (5D+13)/6 = D.";
+"  * D >= 19 is over-determined.";
+"  * D = 4 -- the ONLY chain degree at which the probe-2 trapdoor is";
+"    self-consistent -- is not 1 mod 6 and so does not admit the";
+"    skeleton at all.  The trapdoor has no twin to walk through it.";
+quit;

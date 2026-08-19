@@ -1,0 +1,249 @@
+//////////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Phase 2, probe 4
+// REVERSE-ENGINEERING A SKELETON THAT ACCEPTS THE TRAPDOOR
+//
+// Session 19 found the trapdoor: the endgame is unlocked (Keller constant
+// c != 0) exactly when the realization functional R is allowed a pole of
+// order 4 at U = v+1 = 0, and the unlocking R then has map-degree 4 in v,
+// so the framework's realization layer (which demands map-degree = chain
+// degree D) is satisfied only at D = 4.  Session 19 then reported D = 4
+// inadmissible because the (2,3)-cusp fork profile forces D = 1 (mod 6).
+//
+// CORRECTION, established here.  That congruence was an artefact of
+// pinning BOTH the cusp type to (2,3) AND the cancellation depth to
+// delta = 3.  Freeing them, D = 4 IS constructible: the cusp type (2,5)
+// with delta = 2 gives a rigid skeleton of chain degree exactly 4.
+// Steps 1 and 2 of the reverse-engineering programme therefore SUCCEED,
+// and Session 19's admissibility argument was too narrow.
+//
+// What kills the programme is one layer further on, and it is far more
+// robust.  This probe generalises the endgame to an arbitrary cusp
+// exponent s and contact exponent k,
+//
+//     T_{k,s,D}(R) = (v+1)^k ( s v(v+1) R' - D R )  =  -c
+//
+// ((k,s) = (4,3) is the First Framework endgame), and establishes:
+//
+//   A. the unlocking pole order is exactly k, and the unlocking R has
+//      map-degree exactly k, for every (k,s,D).  Self-consistency with
+//      the realization layer therefore forces D = k.  The correct
+//      reverse-engineering target is not "make D = 4" but "make the
+//      chain degree equal the contact exponent".
+//
+//   B. with k = D forced, the unlocking R has one pole of order D at
+//      v = -1 and D-1 simple critical points carrying D-1 DISTINCT
+//      critical values.  A Belyi map has exactly 3 critical values, and
+//      affine post-composition R -> lambda*R + nu cannot change how many
+//      there are, so R is affine-equivalent to a degree-D Belyi map only
+//      when D <= 3.
+//
+//   C. D = 4 therefore fails at EVERY cusp exponent s - by the Belyi
+//      gate when s does not divide 4, by resonance collision when it
+//      does.  Building a D = 4 skeleton does not rescue it: the step-3
+//      ansatz is not a Belyi realization at D = 4, whatever geometry is
+//      placed underneath it.
+//
+// The surviving window is chain degree D <= 3.
+//
+// TWO SINGULAR GOTCHAS recorded while writing this (both silently wrong
+// rather than loudly wrong, both cost a debug cycle):
+//   * `continue` inside a for-loop SKIPS THE INCREMENT and spins
+//     forever.  Not used below - if/else only.
+//   * `res` is a reserved identifier; naming a resultant `res` fails.
+//////////////////////////////////////////////////////////////////////////
+
+int NB = 6;                                  // spare numerator budget
+ring RV = 0, (a(0..24), c, v, t), dp;        // t carries critical VALUES
+
+proc unlock_ideal(int J, int k, int s, int D, int M)
+"USAGE: unlock_ideal(J,k,s,D,M); linear system for R = A(v)/(v+1)^J
+ against the target -c/(v+1)^k, cleared to a polynomial identity:
+     [ s*v*((v+1)A' - J A) - D A ] * (v+1)^(k-J)  +  c  =  0   (J <= k)
+     [ s*v*((v+1)A' - J A) - D A ]  +  c*(v+1)^(J-k)  =  0     (J >= k)."
+{
+  poly A;  int i;
+  for (i = 0; i <= M; i++) { A = A + a(i)*v^i; }
+  poly E = s*v*((v+1)*diff(A,v) - J*A) - D*A;
+  if (J <= k) { E = E*(v+1)^(k-J) + c; }
+  else        { E = E + c*(v+1)^(J-k); }
+  matrix K = coeffs(E, v);
+  ideal I;
+  for (i = 1; i <= nrows(K); i++) { I = I, K[i,1]; }
+  return(simplify(I,2));
+}
+
+proc unlock_num(int k, int s, int D, int M)
+"USAGE: unlock_num(k,s,D,M); numerator A(v) of the unlocking R at pole
+ order k, normalised to c = 1.  Returns 0 if the system forces c = 0."
+{
+  ideal SI = std(unlock_ideal(k,k,s,D,M));
+  poly A;  int i;
+  if (reduce(c, SI) == 0) { return(A); }
+  for (i = 0; i <= M; i++) { A = A + subst(reduce(a(i), SI), c, 1)*v^i; }
+  return(A);
+}
+
+proc ncrit(poly A, int k)
+"USAGE: ncrit(A,k); for R = A/(v+1)^k returns an intvec
+ (number of critical points, number of DISTINCT finite critical values)."
+{
+  poly den = (v+1)^k;
+  poly Nc = diff(A,v)*den - A*diff(den,v);           // numerator of R'
+  Nc = Nc / gcd(Nc, den);
+  poly rs = resultant(Nc, A - t*den, v);             // critical values in t
+  poly sq = rs / gcd(rs, diff(rs, t));               // squarefree part
+  intvec out = deg(Nc), deg(sq);
+  return(out);
+}
+
+int k, s, D, M, i, j, q, Jt, unlocked;
+poly A;
+ideal SL;
+
+//===================================================================== A
+"=====================================================================";
+"PROBE 4a  GENERALISED UNLOCKING SOLUTION";
+"          T_{k,s,D}(R) = (v+1)^k ( s v(v+1) R' - D R ) = -c";
+"          (k,s) = (4,3) is the First Framework endgame.";
+"          Checked per (k,s,D): every pole order below k still forces";
+"          c = 0, pole order k unlocks it, and deg A = k.";
+"=====================================================================";
+intvec KS = 2,3,4,5;
+intvec SS = 2,3,4,5;
+intvec DS = 1,2,5,7,11;
+int okA = 1;
+int ncase = 0;
+for (i = 1; i <= size(KS); i++)
+{
+  k = KS[i];
+  for (j = 1; j <= size(SS); j++)
+  {
+    s = SS[j];
+    for (q = 1; q <= size(DS); q++)
+    {
+      D = DS[q];
+      if (D % s != 0 || D div s > k)             // skip resonance collisions
+      {
+        M = k + NB;
+        unlocked = 0;
+        for (Jt = 0; Jt < k; Jt++)
+        {
+          SL = std(unlock_ideal(Jt, k, s, D, M));
+          if (reduce(c, SL) != 0) { unlocked = 1; }
+        }
+        A = unlock_num(k, s, D, M);
+        ncase = ncase + 1;
+        if (unlocked == 1 || A == 0 || deg(A) != k)
+        {
+          okA = 0;
+          "   EXCEPTION at (k,s,D) = (" + string(k) + "," + string(s)
+              + "," + string(D) + ")";
+        }
+      }
+    }
+  }
+}
+"   cases swept (k = 2..5, s = 2..5, D in {1,2,5,7,11}) :", ncase;
+"   pole order < k always forces c = 0, pole order k always unlocks it,";
+"   and deg A = k every time  ->", okA;
+"";
+"   CONSEQUENCE.  map-degree(R) = k always, while the realization layer";
+"   demands map-degree(R) = D.  Self-consistency  <=>  D = k.";
+
+//===================================================================== B
+"";
+"=====================================================================";
+"PROBE 4b  SKELETON GENERATOR - arbitrary cusp type, arbitrary depth";
+"          B = p^m / (w r^n),  deg p = Ap, deg r = Bp,";
+"          N = m*Ap = n*Bp + 1,  chain degree D = N - delta,";
+"          rigidity (solution set = the scaling orbit)  <=>  Ap+Bp = D,";
+"          which pins delta = N - Ap - Bp.";
+"          The (2,3) instance with delta = 3 reproduces N = 16, D = 13.";
+"=====================================================================";
+"     m   n    N   deg p  deg r  delta    D    note";
+int m, n, N, Ap, Bp, dl;
+int found4 = 0;
+string note;
+for (m = 2; m <= 6; m++)
+{
+  for (n = 2; n <= 7; n++)
+  {
+    if (gcd(m,n) == 1)
+    {
+      for (N = 2; N <= 30; N++)
+      {
+        if (N % m == 0 && (N-1) % n == 0)
+        {
+          Ap = N div m;  Bp = (N-1) div n;  dl = N - Ap - Bp;  D = Ap + Bp;
+          if (dl >= 1)
+          {
+            note = "";
+            if (m == 2 && n == 3 && dl == 3)
+            { note = "<- Borisov First Framework"; }
+            if (D == 4)
+            { note = "<- CHAIN DEGREE 4 IS CONSTRUCTIBLE";  found4 = 1; }
+            if (D <= 3) { note = note + "  [survivor window]"; }
+            "   " + string(m) + "   " + string(n) + "   " + string(N)
+                + "     " + string(Ap) + "      " + string(Bp) + "      "
+                + string(dl) + "     " + string(D) + "   " + note;
+          }
+        }
+      }
+    }
+  }
+}
+"";
+"   D = 4 constructible in this box :", found4;
+"   => Session 19's 'D = 1 mod 6' held only with the cusp type pinned to";
+"      (2,3) AND delta pinned to 3.  Steps 1 and 2 SUCCEED.";
+
+//===================================================================== C
+"";
+"=====================================================================";
+"PROBE 4c  THE BELYI GATE - where the programme actually dies";
+"          k = D is forced by 4a, so the unlocking R has a pole of";
+"          order D at v = -1 and D-1 finite critical points.  A Belyi";
+"          map has exactly 3 critical values; affine post-composition";
+"          cannot change how many there are.";
+"=====================================================================";
+"    s \\ D:   2   3   4   5   6";
+string row;
+intvec cnt;
+for (s = 2; s <= 7; s++)
+{
+  row = "";
+  for (D = 2; D <= 6; D++)
+  {
+    if (D % s == 0 && D div s <= D) { row = row + "   x"; }
+    else
+    {
+      A = unlock_num(D, s, D, D + NB);
+      if (A == 0) { row = row + "   -"; }
+      else
+      {
+        cnt = ncrit(A, D);
+        if (cnt[2] + 1 <= 3) { row = row + "   Y"; }
+        else { row = row + "   ."; }
+      }
+    }
+  }
+  "    " + string(s) + "     : " + row;
+}
+"";
+"    Y = clears the Belyi gate   . = fails it   x = resonance collision";
+"";
+"    READING.";
+"    * D = 4 is 'x' or '.' at EVERY cusp exponent s.  Whatever skeleton";
+"      is built underneath it, the D = 4 unlocking R carries 3 simple";
+"      critical points with 3 DISTINCT critical values plus a pole, so";
+"      4 critical values in all, and is affine-equivalent to no Belyi";
+"      map.  The step-3 ansatz fails the realization gate on its own,";
+"      independently of steps 1 and 2.";
+"    * the gate clears only for D <= 3, uniformly in s, where D-1 <= 2";
+"      and the critical-value count fits inside a Belyi map.";
+"    * surviving window: chain degree D <= 3, e.g. the rigid skeleton";
+"      (m,n) = (5,2), delta = 2, N = 5, deg p = 1, deg r = 2, D = 3.";
+"      That window still needs the pole-fiber theorem to fail for its";
+"      own geometry - the trapdoor is not avoided there, only made";
+"      degree-consistent.";
+quit;

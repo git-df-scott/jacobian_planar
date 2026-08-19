@@ -1,0 +1,27 @@
+// Normalize c_1 = 1 (mu*lambda = 1) and then c_2 = 1 using the remaining
+// lambda, which acts by c_i -> lambda^(i-1) c_i, g_i -> lambda^(i-2) g_i.
+// c_2 -> lambda c_2 is LINEAR in lambda, so this slice needs no root
+// extraction -- unlike c_8 = 1, which needs lambda^7 = 1/c_8 and manufactures
+// the spurious 7-fold structure.
+option(redSB);
+ring Rdp = 65521, (c(3..8), g(2..12)), dp;
+proc cc(int k) { if (k == 1) { return(poly(1)); } if (k == 2) { return(poly(1)); }
+                 if (k >= 3 && k <= 8) { return(c(k)); } return(poly(0)); }
+ideal I; int n; int i; int k;
+for (n = 2; n <= 19; n++) {
+  poly e = 0;
+  for (i = 2; i <= 12; i++) { k = n - i + 1;
+    if (k >= 1 && k <= 8) { e = e + g(i)*cc(k)*(5*i - 3*n - 3); } }
+  if (n == 2) { e = e - 1; }
+  I = I + ideal(e);
+}
+ideal Gdp = std(I);
+"dim = " + string(dim(Gdp)) + "  vdim = " + string(vdim(Gdp));
+if (dim(Gdp) == 0) {
+  ring Rlp = 65521, (c(3..8), g(2..12)), lp;
+  ideal Glp = fglm(Rdp, Gdp);
+  "lex GB size " + string(size(Glp));
+  "primitive-element minimal polynomial: " + string(Glp[1]);
+  "factors: " + string(factorize(Glp[1], 2));
+}
+quit;
