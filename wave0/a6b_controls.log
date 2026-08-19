@@ -1,0 +1,12 @@
+==============================================================================
+A6b  PLANTED CONTROL IN THE PINNED (ZERO-DIMENSIONAL) CHART
+==============================================================================
+  PASS  p=65521 plant is a genuine zero of the mutated system (engine-verified)   <CERTIFIED>   [residuals=0]
+  PASS  p=65521 PLANTED data-mutant -> eliminator says NON-EMPTY   <CERTIFIED>   [dim=0 vdim=1144 in 29s  (a -1 here would prove the eliminator broken)]
+  PASS  p=65539 plant is a genuine zero of the mutated system (engine-verified)   <CERTIFIED>   [residuals=0]
+  PASS  p=65539 PLANTED data-mutant -> eliminator says NON-EMPTY   <CERTIFIED>   [dim=0 vdim=1144 in 29s  (a -1 here would prove the eliminator broken)]
+  PASS  p=65599 plant is a genuine zero of the mutated system (engine-verified)   <CERTIFIED>   [residuals=0]
+  PASS  p=65599 PLANTED data-mutant -> eliminator says NON-EMPTY   <CERTIFIED>   [dim=0 vdim=1144 in 29s  (a -1 here would prove the eliminator broken)]
+==============================================================================
+A6b PASSES -- the EMPTY-emitting path returns NON-EMPTY on a planted
+same-support mutant of the real system at all three campaign primes.
