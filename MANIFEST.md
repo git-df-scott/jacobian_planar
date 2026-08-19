@@ -122,3 +122,113 @@ performed" of Plan 43's L8, and it is now the single decisive question for
 unreconciled uniform-closure vs D=23-conditional-DIES pair).
 
 **Status: `UNCHECKED`, and promoted to the top of Wave 1.**
+
+---
+
+## G. A6 — planted-solution controls: **COMPLETE**
+
+Plan 43 §5 A6 is the Wave-0 gate: *"For each engine × version × prime: a
+same-shape system with a planted non-gauge solution runs the identical code path
+and must return non-EMPTY. Nothing currently proves the eliminator can say
+anything but EMPTY."* That gap is now closed.
+
+### G.1 The eliminator (Singular 4.3.2, `groebner` → `dim`)
+
+All runs use the **real** GGHV (72,108) case-(2) system (`trackA_reduced_system.json`,
+leaf 1, edge equations 34–39 — byte-identical to leaf 2's 38–43, verified) and
+the **identical** `groebner(I)` / `dim(G)` calls that emit every campaign EMPTY.
+
+| control | system | expected | measured | standard |
+|---|---|---|---|---|
+| C1 POS-REAL | raw edge subsystem | non-EMPTY | `dim = 1` (47 s) | `CERTIFIED` |
+| C2 POS-REAL-PIN | + `d_3_3 = 1` chart | zero-dim, non-EMPTY | `dim = 0, vdim = 1144` (29 s) | `CERTIFIED` |
+| C3 NEG-REAL | + contradictory pin | EMPTY | `dim = −1` (0.01 s) | `CERTIFIED` |
+| A6b PLANT | **A4 data-mutant**: `e ↦ e − e(α)`, α random in `F_p^7` | non-EMPTY | `dim = 0, vdim = 1144` at **all three** primes | `CERTIFIED` |
+| A6b UNPLANTED | same chart, plant removed | back to the real verdict | `dim = 0, vdim = 1144` | `CERTIFIED` |
+
+The plant changes **only the constant term** of each equation — variables,
+monomial support, degrees and sparsity are identical to the real system — and α
+is verified to be a genuine zero *inside Singular* by a `subst` chain, so no
+external arithmetic can disagree with the engine under test. Primes: 65521,
+65539, 65599. 9/9 checks pass. Artifacts: `wave0/a6b_controls.log`,
+`wave0/a6b_plant_p*.sing`, `wave0/a6b_unplanted_p*.sing`.
+
+### G.2 Independent engine (msolve 0.10.1, built from source)
+
+| control | p = 65521 | p = 65539 | p = 65599 |
+|---|---|---|---|
+| real pinned system | **1144** solutions (22 s) | **1144** (22 s) | **1144** (23 s) |
+| planted data-mutant | **1144** solutions (3 s) | **1144** (4 s) | **1144** (4 s) |
+| contradictory system | `[-1]` | `[-1]` | `[-1]` |
+
+msolve's own documented controls (`tools/README.md`) reproduce: `⟨xy−1,x,y⟩ → [-1]`;
+a zero-dimensional system → solutions. **Two engines agree on 1144 at three
+primes**, which independently re-derives the campaign's degree-1144 case-(2)
+edge eliminant (`AUDIT_REPORT.md` §2) by a route sharing no code with it.
+Artifacts: `wave0/a6c.log`, `wave0/a6c_ms_*.{ms,out}`.
+
+### G.3 The gate (`jc2_bulletproof.py`) — and the seventh control
+
+Battery: **6/6 non-counterexamples rejected**, plus float and non-polynomial
+inputs defaulting to REJECT.
+
+Plan 43 asks for the descent map **G as a seventh control**, and it is the one
+the suite was missing: every other control is stopped by a blunt property, while
+G is a *genuinely non-injective* plane polynomial map (`PROVED-exact`, W0.4) of
+geometric degree 3 (`CERTIFIED`, W0.5) with non-dividing degrees (6,4). Result:
+
+| gate | G0 | **G1** | G2 | G3 | G4 | G5 | **G6** |
+|---|---|---|---|---|---|---|---|
+| | PASS | **FAIL** | PASS | PASS | PASS | PASS | **FAIL** |
+
+G walks past five gates — including the hard non-injectivity gate G3 — and is
+stopped by **exactly** G1 (Jacobian non-constancy) and its mod-p re-check G6.
+That is the correct reason and only the correct reason: the gate discriminates,
+it does not blanket-reject.
+
+**Free cross-validation.** G3 in GENERIC mode reports the generic fibre of G has
+**≥ 3** distinct coordinate values — an independent confirmation, by resultants
+over ℚ(p,q), of the `vdim = 3` geometric degree certified in Singular over
+ℚ(a,b) (W0.5). Two methods sharing no code agree that `d(G) = 3`.
+
+### G.4 A4 mutation testing of the eliminator (data-mutants)
+
+Three mutants, each with a **predicted** verdict change, all confirmed:
+
+1. constant-transplant mutant (the plant) — EMPTY-capable path → **NON-EMPTY**;
+2. contradiction-injection — real system → **EMPTY**;
+3. contradiction-removal — back to **NON-EMPTY** at the real `vdim`.
+
+Mutant class (1) is precisely the *transplanted-constant* error class that
+produced the campaign's worst historical bug (`SESSION_CORRECTIONS.md`).
+
+**Scope, stated honestly:** A4 is complete for the *eliminator* and the *gate*.
+A4 across every other certifier in the repository remains `UNCHECKED` (Wave 5).
+
+### G.5 One measured negative result
+
+The first planted design shifted the **raw dim-1 edge system** by a generic
+point. A generic constant shift destroys the sparsity that makes the real system
+tractable, and the Gröbner basis did not finish in **> 50 minutes** at a single
+prime. Stopped under Plan 43 §6.4's escalation ladder and superseded by A6b,
+which plants into the **pinned zero-dimensional chart** — the chart every
+campaign branch actually lives in — and finishes in **30 s**. Recorded because
+it is the plan's own doctrine confirmed once more: *reformulate before grind*.
+
+### G.6 Verdict
+
+> **The campaign's EMPTY verdicts are now CONTROLLED. They were not before.**
+> The code path that has emitted EMPTY 46 times and non-EMPTY zero times is
+> demonstrated to emit **non-EMPTY** on real campaign data and on same-support
+> planted data-mutants, at three primes, in two independent engines — while
+> still emitting EMPTY on provably empty input.
+
+This does not make any individual EMPTY correct. It removes the failure mode in
+which *all* of them were vacuous.
+
+### G.7 Operator note (silent-lie table, new entry earned this session)
+
+`tools/README.md` warns: *never `pgrep -f` / `pkill -f` on your own script name*.
+Wave 0 tripped exactly that trap — `pkill -f "a6_C4"` matched the invoking
+shell's own command line and killed it mid-commit, losing an uncommitted
+`MANIFEST.md` append. The warning is correct and now has a second witness.
