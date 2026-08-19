@@ -1,0 +1,51 @@
+$ Singular --version
+Singular for x86_64-Linux version 4.3.2 (43216, 64 bit) Aug 19 2026 23:48:54
+with
+	GMP(6.3.0),NTL(11.5.1),FLINT(3.0.1),
+	omalloc,static readline(8),Plural,vspace(2),DBM,
+	dynamic modules,OM_NDEBUG,SING_NDEBUG,
+	CC:OPTIMIZE,GenericAdd,TableMult,no invTable,
+	eigenvalues,Gauss-Manin system,random=1787183866
+built-in modules: {}
+AC_CONFIGURE_ARGS =  '--prefix=/usr/local' --enable-omalloc  OMALLOC_LIBS='/opt/src/singular/omalloc/libomalloc.la' OMALLOC_INCLUDES='-I/opt/src/singular' --htmldir=${prefix}/share/doc/singular --with-Singular RESOURCES_LIBS='/opt/src/singular/resources/libsingular_resources.la' RESOURCES_INCLUDES='-I/opt/src/singular ' FACTORY_LIBS='/opt/src/singular/factory/libfactory.la' FACTORY_INCLUDES='-I/opt/src/singular -I/opt/src/singular/factory -I/opt/src/singular/factory/include',
+CC = gcc,FLAGS :  -g  -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fconserve-space -funroll-loops -pthread -pthread,
+CXX = g++,FLAGS :  -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fno-threadsafe-statics -fno-enforce-eh-specs -fconserve-space -funroll-loops -fno-rtti -fno-delete-null-pointer-checks -pthread,
+DEFS : ,CPPFLAGS : ,
+LDFLAGS :  -pipe -fno-common -g0 -O3 -Wno-unused-function -Wno-trigraphs -Wno-unused-parameter -Wunknown-pragmas -Wno-unused-variable -fomit-frame-pointer -fwrapv -fvisibility=default -finline-functions -fno-exceptions -fconserve-space -funroll-loops  -rdynamic -Wl,-undefined,dynamic_lookup,LIBS : -lreadline -lncurses  -lgmp -lrt   (ver: 13.3.0)
+argv[0]   :	Singular
+SearchPath:	/usr/local/bin/../share/singular/LIB:/usr/local/bin/../share/factory:/usr/local/bin/../libexec/singular/MOD:/usr/local/libexec/singular/MOD:/usr/local/bin:/usr/local/bin/..
+Singular  :	/usr/local/bin/Singular
+BinDir    :	/usr/local/bin
+ProcDir   :	/usr/local/bin/..:/usr/local/bin/../libexec/singular/MOD:/usr/local/libexec/singular/MOD
+RootDir   :	/usr/local/bin/..
+DataDir   :	/usr/local/bin/../share
+DefaultDir:	/usr/local
+InfoFile  :	
+IdxFile   :	
+HtmlDir   :	
+ManualUrl :	https://www.singular.uni-kl.de/Manual/
+ExDir     :	
+Path      :	/usr/local/bin:/usr/local/bin/..:/usr/local/bin/../libexec/singular/MOD:/usr/local/libexec/singular/MOD:/opt/ruby-3.3.6/bin:/opt/rbenv/shims:/opt/rbenv/bin:/opt/node22/bin:/opt/maven/bin:/usr/lib/jvm/java-21-openjdk-amd64/bin:/opt/gradle/bin:/root/.bun/bin:/root/.local/bin:/root/.cargo/bin:/usr/local/go/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin
+emacs     :	
+xemacs    :	
+SingularEmacs:	/usr/local/bin/Singular
+EmacsLoad :	/usr/local/bin/../share/singular/emacs/.emacs-singular
+EmacsDir  :	/usr/local/bin/../share/singular/emacs
+SingularXterm:	/usr/local/bin/Singular
+xterm     :	
+EmacsDir  :	/usr/local/bin/../share/singular/emacs
+Available HelpBrowsers: dummy, emacs, 
+Current HelpBrowser: dummy 
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.3.2
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Feb 2023
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+Auf Wiedersehen.
+
+$ msolve -h | head -5
+
+msolve library for polynomial system solving, version 0.10.1
+implemented by J. Berthomieu, C. Eder, M. Safey El Din
+
+Basic call:
