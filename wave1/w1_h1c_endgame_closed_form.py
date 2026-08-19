@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# =============================================================================
+# SUPERSEDED IN PART -- READ wave1/w1_h1c_polefix.py FIRST.
+#
+# The theorem printed at the bottom of this file ("... rational solution of
+# degree >= 1 iff k = 0 AND 3 | D") is FALSE AS STATED.  Its k >= 1 branch was
+# asserted, not computed: the check() call below passes a literal True, and the
+# accompanying prose says "IF R is regular at v = -1".  Counterexample at the
+# campaign's own (D,k) = (13,4), c = 1:
+#     R = (243v^4 - 81v^3 + 54v^2 - 42v + 35) / (455 (v+1)^4)
+# The k = 0 analysis and the closed-form integration in this file remain valid.
+# See STATUS.md section 6.7 and wave1/RECOVERED_THEOREMS.md.
+# =============================================================================
 """PLAN 43 / WAVE 1 / H1c -- the endgame obstruction, in CLOSED FORM.
 
 WHAT THE CAMPAIGN HAS.  Sessions 16-20 and the D=23 session certify the endgame

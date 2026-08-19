@@ -100,9 +100,14 @@ theorems, no more.**
 
 **Residue, inherited not new:** `THEOREM 2` (Taylor-pin rigidity at *general*
 parameters, not just the near-miss) and `THEOREM 3` (pole-fiber ⇒ R polynomial).
-Both are prose whose certificates were lost with the Session 11–14 transcripts.
-Both are load-bearing for **any** (72,108) framework statement, the First
-Framework's included. **The Three-dessin Framework introduces no new
+**Both statements are RECOVERED** — see `wave1/RECOVERED_THEOREMS.md`. They were
+never lost: they are written out verbatim in the tracked file
+`Sessions 1-18 status reports` (lines 1051 and 1062), present on every branch.
+Only the executable transcript runs were lost. Further, **THEOREM 2's conclusion
+now has a certificate** (`wave1/w1_L3_step2_pinning.py` derives `g = αU(U−1)⁸`
+with no free moduli), and **THEOREM 3 is no longer needed at the endgame
+contradiction** (§6.7). What remains load-bearing is narrower than the campaign
+recorded. **The Three-dessin Framework introduces no new
 conditionality of its own** — which was the whole question.
 
 **Flagged discrepancy (unresolved):** `d23_phase2_preview.py` labels the First
@@ -215,7 +220,7 @@ plan. Chart `d_3_3 = 1` only.
 
 | item | state |
 |---|---|
-| **THEOREM 2 / THEOREM 3** | the only remaining framework conditionality; prose, certificates lost. Blocks *both* the First and Three-dessin verdicts |
+| **THEOREM 3, narrowed** | statements RECOVERED (`wave1/RECOVERED_THEOREMS.md`); THEOREM 2's conclusion certified; THEOREM 3 no longer needed at the endgame (§6.7). Residual gap, much smaller: *does the framework force map-degree(R) = 13 independently of THEOREM 3?* |
 | case (2) over ℚ̄ | eliminant exists and is irreducible (single branch); residual system — 13 variables over a degree-1144 field — unsolved |
 | case (1) pentagons | no verdict; both engine rungs exhausted |
 | **H2** above-125 sweep | ~150 of 167 targets unrun; chain→polygon map needs hardening |
@@ -250,6 +255,45 @@ use an **absolute** normalisation (a ratio is breakable from either end); make
 
 ---
 
+### 6.7 Our own H1c "closed form" was overstated — and correcting it removed THEOREM 3 from the endgame
+`wave1/w1_h1c_polefix.py`, `wave1/RECOVERED_THEOREMS.md`
+
+`w1_h1c_endgame_closed_form.py` printed: for every `D ≥ 1`, `k ≥ 0`,
+`(v+1)^k(3v(v+1)R′ − D·R) = −c` with `c ≠ 0` has a rational solution of degree
+≥ 1 **iff** `k = 0` and `3 | D`. **False as stated.** The `k ≥ 1` branch was
+never computed — its `check()` call passed a literal `True`, and its own prose
+reads *"IF R is regular at v = −1"*. Regularity at `v = −1` is exactly what
+THEOREM 3 supplies, so the file assumed the uncertified input it was meant to be
+independent of. Counterexample at the campaign's own `(D,k) = (13,4)`, `c = 1`:
+
+    R = (243v⁴ − 81v³ + 54v² − 42v + 35) / (455(v+1)⁴)
+
+— non-constant, exact, with a genuine order-4 pole at `v = −1`
+(`gcd(num,(v+1)⁴) = 1`); checked by substitution, Laurent expansion, and exact
+zero residual at 40 random rational points.
+
+**LEMMA (corrected).** For `D ≥ 1`, `k ≥ 1`, `c ≠ 0`, every rational solution has
+all poles at `v = −1`; `R` is never a polynomial; there is **no** rational
+solution iff `3 | D` and `k ≥ D/3`; otherwise the solutions are exactly
+`R = A/(v+1)^k` with `deg A = k`, each of **map-degree exactly `k`**. Certified
+for `D = 1..30`, `k = 1..6`.
+
+**COROLLARY.** The endgame contradiction never needs `R` polynomial — only
+`map-degree(R) ≠ k`. At `(13,4)` every rational solution has map-degree 4, so a
+demand that `R` realise a **degree-13** object dies on degree alone.
+
+**Scope.** This does *not* prove THEOREM 3; the C2 table keeps its
+`CONDITIONAL(R-poly)` label. It removes THEOREM 3 from the *endgame* step and
+relocates the gap to one smaller question (§4). Session 15's affine form must
+not be used to answer it — it is derived from THEOREM 3 and would be circular.
+
+**Net effect: this makes the campaign record more conditional, not less** — it
+retracts one of our own claimed unconditional results, and confirms that the
+prior sessions (`trackC_report.md`, `HANDOFF_TO_AUDIT.md`, `FABLE_DECISIONS.md`)
+were right to flag THEOREM 3 as load-bearing.
+
+---
+
 ## 7. Wave-1 gate score
 
 Plan 43's gate: *"(72,108) decided, or its exact stall points named."*
@@ -281,6 +325,24 @@ Silent-lie table entries earned this session:
 ---
 
 ## 9. Artifact index
+
+**Start here for the THEOREM 2/3 recovery:** `wave1/RECOVERED_THEOREMS.md`
+— what was recovered, where the transcripts actually are, the corrected H1c
+lemma, and the exact residual gap. Certifiers: `wave1/w1_h1c_polefix.py`
+(correction + classification), `wave1/w1_L3_step2_pinning.py` (THEOREM 2's
+conclusion).
+
+**Literature spot-check (2026-08-19):** `arXiv:2608.00222` (Gao,
+*Counterexamples to the Jacobian conjecture in dimensions greater than two*)
+was re-verified live through three independent paths — agentic fetch, raw
+`curl` of the abs page (`citation_arxiv_id` = 2608.00222, `citation_date` =
+2026/07/31), and the arXiv export API (1 entry, `published`
+2026-07-31T19:08:59Z, math.AG). **The identifier is real.** It is also **not
+load-bearing for the plane case**: the paper explicitly disclaims dimension 2
+(*"the two-dimensional case remains open and is untouched by the
+counterexamples discussed here"*), as `trackE_literature_verified.md` §E4
+already recorded.
+
 
 | document | contents |
 |---|---|
