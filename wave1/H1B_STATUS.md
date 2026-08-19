@@ -16,13 +16,21 @@ recorded in full because the mechanism is reusable.
 
 ## What finding 6 means, and why it explains the campaign's history
 
-A degree-12 form in 61 variables admits ~10¹⁴ monomials. **These conditions
-cannot be written down.** No exact elimination engine can be handed this system
-— which is precisely what the record shows: msolve dies in monomial hash-table
-growth on the 166-variable form (`Enlarging exponent vector for hash table
-failed for esz = 16777216`), and the symbolic tower stalls at level 16 at
-1.8 GB. Those are not tuning failures. Evaluation-based search is the only
-route currently in reach.
+~~A degree-12 form in 61 variables admits ~10¹⁴ monomials. **These conditions
+cannot be written down.**~~
+
+**RETRACTED — see `H1B_REFORMULATION.md` §2.** That used the *dense* monomial
+bound as if it were the actual count. Measured by symbolic expansion over
+`F_p[parameters]` with the gauges `p_00 = 0, p_10 = 1`, the true counts are
+**686 monomials at level 13**, 59,626 at level 23 — eleven orders of magnitude
+below the dense bound, growing ~1.5× per level. **The conditions CAN be written
+down**, and the near-square 66-condition subsystem exports to a 43 MB msolve
+file in 30 seconds.
+
+What the record does show is that the *166-variable* form defeats msolve
+(`Enlarging exponent vector for hash table failed for esz = 16777216`) and that
+the symbolic tower stalls at level 16 at 1.8 GB. Those remain true; they are not
+evidence that the y-adic form is inexpressible.
 
 ## Correction to this session's own step-1b claim
 
