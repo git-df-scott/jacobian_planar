@@ -298,7 +298,22 @@ Silent-lie table entries earned this session:
 
 `wave1/` — `w1_h1c_endgame_closed_form.py`, `w1_L3_chain_identity.py`, `w1_L3_step2_pinning.py`, `w1_L1_L2_threedessin.py`, `w1_L1_boxes_closed.py`, `w1_L2_cascade_threedessin.py`, `w1_h1e_d_crossfire.py`, `w1_h1d_casesplit.py`, `w1_h3_a1_square.py`, `w1_h3_a1_theorem.py`, `w1_h1f_eliminant.py`, `w1_h1b_yadic_independent.py`, `w1_h1b_kernel_analysis.py`, `w1_h1b_structure.py`, `w1_h1b_linearity.py`, `w1_h1b_degrees.py`, `w1_h1b_sparsity.py`, `w1_h1b_export.py`, `w1_h1b_reduction.py`, `w1_h1b_reduction2.py`, `w1_h1b_hitdetector_v2.py`, `w1_h1b_gauge_resolution.py`
 
-**Data:** `wave1/edgeQ_eliminant.txt` (degree-1144 eliminant), `wave1/edgeQ_param.out` (full RUR), `wave1/pent_L23.ms` (pentagon export).
+**Data and supporting artifacts:**
+
+| path | contents |
+|---|---|
+| `wave1/edgeQ_eliminant.txt` | the degree-1144 eliminant (5.7 MB) |
+| `wave1/edgeQ_param.out` | full msolve `-P 1` RUR (46 MB) |
+| `wave1/edgeQ_input.ms` | the ℚ edge system it was computed from |
+| `wave1/pent_L23.ms`, `pent_L18.ms` | pentagon exports (43 MB / 2.7 MB) |
+| `wave1/pari/` | the 13 PARI/GP scripts behind §2.5, plus the raw 8-prime degree table and a reproduce sequence |
+| `wave1/figures/` | Borisov Fig. 10 (p.9) and Fig. 31 (p.23) rendered at 200 dpi — **the evidence** for the chain identity, since `pdftotext` mangles them |
+| `wave1/rur_compliant/` | RURs at the hygiene-compliant primes 65539, 65599 |
+| `wave1/L23_VERDICT.txt`, `*.log` | machine-written verdicts and run logs |
+
+**Deliberately not committed:** the source PDFs (Borisov arXiv:1901.04073, GGHV
+arXiv:2204.14178) — third-party papers, freely available; the relevant READMEs
+carry the URLs and the exact commands to regenerate everything derived from them.
 
 **Inherited campaign** (5 PR branches consolidated in Wave 0):
 `campaign/d23_borisov/`, `campaign/mod3_828/`, `campaign/audit_tracks/`,
