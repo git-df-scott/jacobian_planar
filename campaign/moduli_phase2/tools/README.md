@@ -52,6 +52,24 @@ Never `pgrep -f` / `pkill -f` on your own script name — the pattern matches th
 watching shell's own command line. `until ! pgrep -f session35; do ...` never
 exits. Use PID files, or match the interpreter plus path.
 
+**This trap has now fired four times across the campaign (three of them in a
+single session, 2026-08-19, each time killing the invoking shell mid-command —
+once mid-commit, losing an uncommitted document).** A trap that survives being
+documented, and that recurs within one session after being corrected twice, is a
+**tooling problem, not a discipline problem**. Recommendation for future
+sessions: put `pkill`/`pgrep -f` out of reach rather than relying on remembering
+the rule —
+
+```bash
+# in the session's shell init
+pkill()  { echo "pkill is disabled in this repo: use 'pgrep -x <name>' + kill by PID" >&2; return 1; }
+```
+
+or strip the binaries from PATH for the session. The safe idiom is
+`for pid in $(pgrep -x msolve); do kill $pid; done` — `-x` matches the exact
+process *name*, which a shell running a command line that merely mentions that
+name cannot satisfy.
+
 ## Silent-lie table
 
 Each returns a plausible wrong answer rather than an error.
