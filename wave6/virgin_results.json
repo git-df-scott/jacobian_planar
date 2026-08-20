@@ -1,0 +1,16 @@
+[
+ {
+  "case": "(12,30)/16/3,10/11/6,3",
+  "max": 126,
+  "shape_tag": "a=6 b=4 r=1 i=0",
+  "verdict": "{'name': 'w6_289012_0', 'status': 'RAN', 'out': 'params: 38\\nconditions: 82\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.016792774200439453, 'info': {'nparams': 38, 'jmax': 14, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(31)', 'c(38)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(12,30)/16/3,10/11/6,3",
+  "max": 126,
+  "shape_tag": "a=6 b=4 r=1 i=1",
+  "verdict": "{'name': 'w6_289012_1', 'status': 'RAN', 'out': 'params: 20\\nconditions: 69\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.011884689331054688, 'info': {'nparams': 20, 'jmax': 14, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(17)', 'c(20)']}}",
+  "wall_s": 0.0
+ }
+]
