@@ -107,6 +107,21 @@ So `edgeQ_input.ms` is a differently, more rigidly normalised object and its 114
 counts points of that normalisation. **Neither number is wrong; they must not be
 quoted as if they measured the same variety.**
 
+## Item 2 — the 43 MB export is now cross-validated
+
+`wave1/pent_L23.ms` is the object every pentagon msolve run in this campaign is
+about, and it had never been checked against a second implementation.
+`pent/w5_pent_export_check.py` (4/4) does that: it evaluates all 66 exported
+generators at random points over a compliant prime and compares them, generator
+by generator, with the forbidden coefficients produced by the y-adic recursion
+in the v3 detector, which shares no code with the exporter.
+
+**All 66 match, up to a nonzero constant per generator, at 3 independent random
+points** — a constant per generator is a cleared denominator and does not change
+the variety. The variable sets agree exactly. Negative controls: perturbing one
+coordinate changes all 66 values, and comparing generator *k* against generator
+*k+1* does not match, so the agreement is not vacuous.
+
 ## Item 2 — a well-posedness finding about the pentagon detector
 
 STATUS §6's standing requirement is an **absolute** normalisation, and v3
