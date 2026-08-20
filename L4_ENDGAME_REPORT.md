@@ -249,6 +249,63 @@ needed, and the verdict follows by substitution.
 
 ---
 
+## 5b. Theorem F — the closure does not depend on THEOREM 2 either
+
+THEOREM 2 (boundary rigidity, `g = αU(U−1)⁸`) is the archive's other lost certificate,
+and the plan calls it "the highest single lever on the board". Redo E1's derivation with
+the `U`-multiplicity of `g` free — `g = α U^ε (U−1)^G` — and the collapse condition
+becomes `N = (2e+3β)(ε+G)/β = 13(ε+G)/3`, with the endgame equation
+
+```
+    3 v(v+1) R' − 13ε R  =  −κ (v+1)^{1−5ε} v^{(16 − 2G + 13(ε−1))/3} .
+```
+
+Sweeping every `(ε, G)` allowed by the *certified* box cap `deg g = ε + G ≤ 9`:
+
+| `ε` | `G` | `N` | `D = 13ε` | rational `R`? | map-degree |
+|---|---|---|---|---|---|
+| 1 | 2, 5, **8** | 13, 26, **39** | 13 | unique | **4** |
+| 2 | 1, 4, 7 | 13, 26, 39 | 26 | unique | 9 |
+| 3 | 0 | 13 | 39 | 1-parameter family | 14 |
+| 3 | 3, 6 | 26, 39 | 39 | none | — |
+| 4–9 | all | — | 52…117 | none | — |
+| 0 | 0 | 0 | 0 | none | — |
+
+**No admissible boundary polynomial yields map-degree 13.** The closure is therefore
+independent of THEOREM 2.
+
+As a by-product, THEOREM 2's own contested step — `U | g`, which the archive got from
+"propagation from the {1}-marked corner" — falls out of a congruence: with `G = 8`,
+integrality of `N = 13(ε+8)/3` needs `3 | ε+8`, and `deg g ≤ 9` gives `ε ≤ 1`, so `ε = 1`.
+
+*Certificate:* `EB_theorem2_robustness.py` — 8/8.
+
+---
+
+## 5c. (108,72) — the L4 target, instantiated
+
+At (99,66) the near-miss bidegrees are `y₁: (27,72) = 9·(3,8)` and `y₂: (18,48) = 6·(3,8)`,
+and Session 8's chart gives `ord_q(x₁^i x₂^j) = j − 3i`, so `γ = 9`, `β = 6`, and
+`deg P = 11γ`, `deg Q = 11β` with `11 = 3+8`. Reading (108,72) the same way with
+primitive edge vector `(a,b)`, `s := a+b`, gives `γ = 108/s`, `β = 72/s` — so `s | 36`,
+nine charts in all. Note `11 ∤ 108`: **(108,72) cannot reuse the (99,66) dessin's edge
+vector**, which is exactly why `L = 4` there and `3` at (72,108).
+
+| `s` | `γ` | `β` | `D = 15 − 12/β` | endgame |
+|---|---|---|---|---|
+| 1, 2, 3, 4, 9 | 108…12 | 72…8 | `89/6, 44/3, 29/2, 43/3, 27/2` | unique, map-degree 4 |
+| 6 | 18 | 12 | 14 | unique, map-degree 4 |
+| **12** | **9** | **6** | **13** | unique, map-degree 4 *(the First Framework's own endgame)* |
+| 18 | 6 | 4 | 12 | **no rational solution at all** |
+| 36 | 3 | 2 | 9 | **no rational solution at all** |
+
+Every admissible chart closes, since no Borisov chain has degree 4. Conditional only on
+the Keller chart exponent `p = 3`; the theorem is uniform in `p`.
+
+*Certificate:* `EC_10872_instantiation.py` — 19/19.
+
+---
+
 ## 6. What this means for the campaign
 
 **Step 3 of the plan asked whether the pole branch produces a candidate `(P,Q)`.
@@ -260,9 +317,11 @@ invalid step.
 **Net effect on the map:**
 
 * The `(99,66)` First Framework: **still empty**, now on a valid proof.
-* Framework routes generally, including at `(108,72)`: **empty as soon as the chart
-  valuations are supplied**, by Theorem E — the framework layer is no longer a
-  case-by-case fight, it is one substitution.
+* `(108,72)`: **empty for every one of its nine admissible charts** (§5c).
+* Framework routes generally — Second Framework, isotope series: **empty**, by Theorem E,
+  with no Belyi rederivation. The framework layer is no longer a case-by-case fight.
+* THEOREM 2 and THEOREM 3, the two lost theorems the plan called the highest lever:
+  **neither is load-bearing any more** (§5b, §4).
 * The archive's "one obstruction kills the whole published family" instinct was right;
   the obstruction it named was not the one doing the work.
 

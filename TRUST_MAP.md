@@ -155,11 +155,12 @@ either. The `N2_prompt.md` sub-campaign (Phase 0: rederive the degree-23 Belyi d
 
 ## 4. Reopened / still-open territory
 
-* **(108,72) framework route.** The endgame theorem is uniform in `(β, e)`, so it
-  instantiates the moment that framework's chart valuations are supplied. If they are
-  `(γ,β) = (9,6)` as at (99,66) — both degree pairs are integer multiples of `(9,6)` —
-  then `D = 13`, `m = 4`, and the same `R` closes it for any chain degree `≠ 4`.
-  **Status: closed conditionally on the chart valuations, which are `ABSENT` here.**
+* **(108,72) framework route. CLOSED (`EC`).** `11 ∤ 108`, so (108,72) cannot reuse the
+  (99,66) edge vector; its admissible charts are indexed by `s = a+b | gcd(108,72) = 36`,
+  nine in all. Seven give a unique endgame solution of map-degree 4; two (`s = 18, 36`,
+  i.e. `D = 12, 9`) give no rational solution at all. No chain degree is 4, so every
+  admissible chart closes. Conditional only on the Keller chart exponent `p = 3`, and
+  the theorem is uniform in `p`.
 * **(72,108) pentagons, case (2) over `Q̄`, the 167 above-125 targets, H1c, the
   irreducibility sieve, the eliminant, chart coverage.** `ABSENT` from this repository.
   No verdict is possible and none is claimed. These need their session 19–38 artefacts
@@ -176,8 +177,8 @@ either. The `N2_prompt.md` sub-campaign (Phase 0: rederive the degree-23 Belyi d
 ./run_all.sh          # every certifier, archive and new; nonzero exit on any failure
 ```
 
-Current status: **all 15 archive re-runs clean; all 10 new certifiers pass** —
-156 exact checks under sympy and 47 under PARI/GP, no shared code between them.
+Current status: **all 15 archive re-runs clean; all 12 new certifiers pass** —
+183 exact checks under sympy and 47 under PARI/GP, no shared code between them.
 
 | certifier | checks | subject |
 |---|---|---|
@@ -191,3 +192,5 @@ Current status: **all 15 archive re-runs clean; all 10 new certifiers pass** —
 | `E8_pari_alpoge.gp` | 12 | the same, in PARI/GP, independent code |
 | `E9_archive_certificate_audit.py` | 24 | reproduces the archive's own certificates; `h0 = −13 n₃` |
 | `EA_unconditional_refinements.py` | 9 | exactly where genericity enters Theorem C |
+| `EB_theorem2_robustness.py` | 8 | the closure holds for every admissible boundary polynomial `g` |
+| `EC_10872_instantiation.py` | 19 | the (108,72) instantiation: all 9 admissible charts close |

@@ -7,6 +7,8 @@
 * **`L4_ENDGAME_REPORT.md`** — the mathematics: the endgame residue equation
   `T_{D,m}(R) = −c` solved completely, what that does to the Sessions 16–18 emptiness
   theorem, and the corrected transfer theorem.
+* **`LIVE_MAP.md`** — what moved, what is still open, and the terminal state of this
+  iteration.
 
 ## Headline
 
@@ -38,16 +40,16 @@ with no Belyi rederivation required.
 ./run_all.sh
 ```
 
-Runs every certifier — the 15 re-runnable archive scripts and the 10 new ones — under
+Runs every certifier — the 15 re-runnable archive scripts and the 12 new ones — under
 exact arithmetic. Nonzero exit if anything fails. Requires `python3` + `sympy` and
-`gp` (PARI/GP). Current status: all pass (156 sympy checks, 47 PARI checks, no shared
+`gp` (PARI/GP). Current status: all pass (183 sympy checks, 47 PARI checks, no shared
 code between the toolchains).
 
 ## Layout
 
 ```
 certifiers/rerun/   the archive's own scripts, split out of the status-report file
-certifiers/new/     this session's certifiers (E1…E9, EA)
+certifiers/new/     this session's certifiers (E1…E9, EA, EB, EC)
 logs/               output of the last ./run_all.sh
 39, 40.md, 41.md, 42.md, "Sessions 1-18 status reports"   the archive, unmodified
 ```
