@@ -149,8 +149,11 @@ print("""    WAVE2 'OPEN'  vs  WAVE3 'DEAD': wave 3 is right in direction and it
     Second Framework status, stated exactly:
       DEAD, provided (i) its realization layer demands map-degree equal to its
       chain degree 23, and (ii) its ODE coefficient D_ode is not 69 = 3 x 23.
-      (i) is the framework's own demand and is safe; (ii) is unchecked by every
-      report on the record.  D_ode for that framework has never been computed.
+      (i) is the framework's own demand and is safe.  (ii) was unchecked when
+      this file was written; it is now COMPUTED in w3_second_framework_Dode.py:
+      D_ode = 69 eps / 5, so neither 23 nor 69 for any eps, and the framework
+      is dead outright.  The conditional label below is SUPERSEDED - kept as
+      the record of what was open before that number existed.
 
     az3geq's 'D = deg((-2)-curve Belyi map), structural' is UNVERIFIED: it is
     true of D_chain by definition and false of D_ode away from beta = 6.
@@ -161,7 +164,7 @@ print("""    WAVE2 'OPEN'  vs  WAVE3 'DEAD': wave 3 is right in direction and it
     What survives with no conditions at all: k = 5 eps - 1, so k in {0,4,9,...},
     and 13, 23 are both == 3 (mod 5).  The unique-solution branch can never meet
     the realization demand for either framework.  Only the 3|D family branch
-    could, and closing it needs one number - D_ode for the Second Framework.""")
+    could; w3_second_framework_Dode.py closes it.""")
 
 print()
 bad = [n for n, o in RES if not o]

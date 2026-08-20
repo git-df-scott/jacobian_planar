@@ -1,10 +1,12 @@
 # ADJUDICATION — the night's three reports, refereed
 
 Branch `claude/opus-5-counterexample-plan-sep6yk`. Everything below is produced by
-`wave3/run_all.sh` (4 python certifiers + 1 PARI/GP cross-check, 79 checks, all pass,
+`wave3/run_all.sh` (5 python certifiers + 1 PARI/GP cross-check, 110 checks, all pass,
 0 can't-fail checks in tree). Two toolchains, no shared code.
 
-**Headline: two of the three reports contain a refuted claim, and one of them is mine.**
+**Headline: two of the three reports contain a refuted claim, one of them is mine — and
+the one number that was missing has now been computed. `D_ode(Second Framework) = 69/5`.
+The Second Framework is DEAD outright.**
 
 ---
 
@@ -200,13 +202,96 @@ been computed by anyone.**
 
 * **R2 (`OPEN`) vs R3 (`DEAD`): R3 is right in direction**, and its supersession of R2 is
   legitimate — the same session correcting itself, recorded properly.
-* **R3's label is stronger than its evidence.** The honest status is
-  **DEAD-CONDITIONAL**: dead provided (i) the realization layer demands map-degree = 23
-  (safe — it is the framework's own demand) and (ii) `D_ode ≠ 69`. (ii) is unchecked.
 * **R1 erred** by transporting `D_chain` as if it were `D_ode`.
-* **R4 (mine) erred** by transporting `D_ode = 15 − 12/β` as cusp-intrinsic when it is
-  chart-conditional.
-* One number — `D_ode` for the Second Framework — closes it outright.
+* **R4 (mine) erred** by dropping an `ε` from `D_ode` and calling the result
+  cusp-intrinsic — see §4b, where the formula is repaired rather than restored.
+* The missing number is now computed. **§4b.**
+
+---
+
+## Task 4b — `D_ode` for the Second Framework, computed
+
+`wave3/w3_second_framework_Dode.py`, 31/31. **The data was on
+`claude/d23-borisov-transfer-test-vpr3m6` and in `campaign/d23_borisov/` the whole
+time** — the same NOT-FETCHED failure as everything else in Task 1.
+
+`campaign/d23_borisov/d23_phase1_chart.py` (re-run: 5/5 of its own checks pass, and
+re-derived by hand here) certifies for the Second Framework:
+
+```
+same chart   v = x1 x2^3 - 1,  q = x2/v^3
+pole depths  val_{(-2)mf}(y1, y2) = (-15, -10)        [FF: (-9, -6)]
+Keller form  J_{(q,v)} = -c q^-3 v^-6                  [identical to FF]
+```
+
+so `γ = 15`, `β = 10`, `p = 3`. Then `D_chain = 2γ − σ` (FF check: `2·9 − 5 = 13`)
+gives `σ = 7`, hence `e = γ − σ = 8` — which the independent chart relation
+`e = β + 1 − p = 10 + 1 − 3` reproduces exactly. Two routes, same answer.
+
+```
+D_ode = 3 ε (2e + 3β)/β          ε := ord_{U=0}(g)
+SF:   3ε(16 + 30)/10 = 69ε/5             FF:  3ε(8 + 18)/6 = 13ε
+```
+
+Built from scratch symbolically at `(ε,G,N) = (1,14,69)` — not substituted into my own
+formula — the SF Keller block is
+
+```
+(α⁵/2)(β/3) U⁴ v⁻⁶ [ 3v(v+1)R′ − (69/5) R ]
+```
+
+with the same construction at the FF numbers returning `13` as a control.
+
+**`D_ode(SF) = 69/5 = 13.8`. Not 23. Not 69.** Both escape routes are shut, for every `ε`:
+
+| `ε` | `D_ode` | `k = 5ε−1` | branch | survives realization `23`? |
+|---|---|---|---|---|
+| 1 | 69/5 | 4 | unique, map-degree 4 | no |
+| 2 | 138/5 | 9 | unique, map-degree 9 | no |
+| 3 | 207/5 | 14 | unique | no |
+| 4 | 276/5 | 19 | unique | no |
+| **5** | **69** | **24** | **none** — `D_ode/3 = 23 ≤ 24` | no |
+| … | | | `23m ≤ 25m−1` for all `m ≥ 1` | no |
+
+`ε` not a multiple of 5 → `D_ode` isn't an integer, so `3 ∤ D_ode`, so the solution is
+unique of map-degree `5ε−1 ≡ 4 (mod 5) ≠ 23`. `ε = 5m` → `D_ode/3 = 23m ≤ 25m−1 = k`,
+so **no rational solution at all**. Two disjoint mechanisms, no gap between them.
+
+> **SECOND FRAMEWORK: `DEAD-CONDITIONAL` → `DEAD`.**
+
+The First Framework and the Three-dessin (108,72) case have the identical structure at
+`D_ode = 13ε`, `D_chain = 13`: `ε = 3` gives no solution (`13 ≤ k = 14`), every other `ε`
+gives map-degree `5ε−1 ≠ 13`. **(108,72)'s residual gap `D_ode ≠ 39` is closed the same
+way** — at `ε = 3`, `D_ode` *is* 39, and that cell has no solution at all.
+
+### My withdrawn claim, repaired
+
+The correct formula carries an `ε` I had dropped:
+
+```
+D_ode = ε · (15 − 12/β)          at p = 3.
+```
+
+At `ε = 1` that is my `15 − 12/β`, and the bound `D_ode < 15` holds **only at `ε = 1`**.
+What is now certified rather than assumed is `p = 3` for **both** published frameworks
+(`d23_phase1_chart.py` L1c) — the input the bound always needed. So the claim is not
+restored as written; it is restored with the `ε` and with its hypothesis discharged.
+
+### And the transfer conjecture's premise, at its sharpest
+
+The Second Framework's chain degree is **23**; its endgame operator's coefficient is
+**69/5 — not even an integer**. *"For chain degree `D` the same mechanism yields
+`3v(v+1)R′ = D R`"* is false here as loudly as it can be.
+
+Two further claims in `campaign/d23_borisov/d23_phase1_endgame.py` fall with it:
+
+* **E3** — *"for every `k ≥ 1`: infeasible outright (evaluation at `v = −1` … an identity
+  argument covering ALL `k ≥ 1`)"* — refuted by the same witness as R1 §2.1
+  (`D = 1, k = 1`, verified exactly).
+* **E5** — the "rigidity collapse identity" `23(15v+14) − 345(v+1) = −23`. It is an
+  instance of `D((deg g)v + deg g − 1) − D·deg g·(v+1) = −D`, which holds for **every**
+  `D` and every `deg g`, so it cannot determine `D`. It assumes what it appears to show.
+  (Verified, with a negative control that breaks on a perturbed middle term.)
 
 ---
 
@@ -249,12 +334,15 @@ count: 0.**
 | 6 | THEOREM 3 CONFIRMED by the repair | R1 | **REFUTED** (circular; witness B) | same |
 | 7 | `g = αU(U−1)⁸` (THEOREM 2) | R1 | **VERIFIED-HERE** (computed, not assumed) | `w1_L3_step2_pinning.py`, re-read |
 | 8 | `D = deg((−2)-Belyi)` is structural | R1 §2.2 | **UNVERIFIED** (true of `D_chain`, false of `D_ode`) | `w3_second_framework_verdict.py` |
-| 9 | `D = 15 − 12/β < 15`, so `D=23` unreachable | R4 | **WITHDRAWN** (chart-conditional) | same |
+| 9 | `D = 15 − 12/β < 15`, so `D=23` unreachable | R4 | **REPAIRED** → `D_ode = ε(15 − 12/β)`; `p = 3` now certified for both frameworks | `w3_second_framework_Dode.py` |
 | 10 | Second Framework OPEN | R2 | superseded | — |
-| 11 | Second Framework DEAD | R3 | **DEAD-CONDITIONAL** (needs `D_ode ≠ 69`) | same |
+| 11 | Second Framework DEAD | R3 | **VERIFIED-HERE** — `D_ode = 69/5`; dead for every `ε` | `w3_second_framework_Dode.py` |
+| 11a | `D_ode(SF) = 69ε/5`, `γ=15, β=10, σ=7, e=8` | new here | **VERIFIED-HERE** (two independent routes to `e`) | same |
+| 11b | d23 `E3` (`v=−1` covers all `k≥1`) | `d23_phase1_endgame.py` | **REFUTED** | same |
+| 11c | d23 `E5` collapse identity determines `D` | `d23_phase1_endgame.py` | **REFUTED** — holds for every `D` | same |
 | 12 | `k = 5ε − 1`, so `k ≡ 4 (mod 5)` | new here | **VERIFIED-HERE** | same |
 | 13 | (99,66) empty | R1, R3, R4 | **VERIFIED-HERE** — via map-degree `4 ≠ 13`, needing neither THEOREM 3 nor `D_ode` | `w3_odequation_adjudication.py` |
-| 14 | (108,72) closes over nine exhaustive charts, two legs | R4 | **REFUTED as stated**; closes on `k ≡ 4 (mod 5)` instead | `w3_10872_and_legs_audit.py` |
+| 14 | (108,72) closes over nine exhaustive charts, two legs | R4 | **REFUTED as stated**; closes on `k ≡ 4 (mod 5)`, and its `D_ode ≠ 39` gap is closed at §4b | `w3_10872_and_legs_audit.py`, `w3_second_framework_Dode.py` |
 | 15 | sessions 19–38 etc. ABSENT | R4 | **REFUTED** — `NOT-FETCHED`; 65 paths + a 43 MB export exist on `az3geq` | Task 1 |
 
 ---
@@ -272,7 +360,9 @@ not acted on.
 run never produced output), `campaign/audit_tracks/CASE2_STATUS.md`,
 `ABOVE_125_STATUS.md`, and 65 session-19–38 paths.
 
-**One number closes two frameworks:** `D_ode` for the Second Framework. Everything else in
-the framework route is settled or shown not to matter.
+**The framework route is closed.** `D_ode(SF) = 69/5` was the last number, and it kills
+the Second Framework for every `ε`; the same computation closes (108,72)'s residual gap.
+First Framework, Second Framework, Three-dessin (108,72), and the isotope series all die,
+and none of it needs THEOREM 3, the Belyi coefficients, or the `v = −1` evaluation.
 
 Reproduce: `./wave3/run_all.sh`
