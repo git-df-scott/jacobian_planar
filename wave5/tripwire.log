@@ -31,3 +31,9 @@
 22:23:53 memcg_headroom=13663MB twin_rss=5401144kB
 22:24:13 enforcer v2 armed (memcg max=14327656448, kill non-twin heavies at headroom<1.5G)
 22:24:13 memcg_headroom=8045MB twin_rss=5405732kB
+22:25:13 memcg_headroom=8015MB twin_rss=5439252kB
+22:26:14 memcg_headroom=7882MB twin_rss=5574856kB
+22:27:14 memcg_headroom=7722MB twin_rss=5737796kB
+22:28:14 memcg_headroom=7607MB twin_rss=5854544kB
+22:29:14 memcg_headroom=7555MB twin_rss=5906916kB
+22:30:14 memcg_headroom=7484MB twin_rss=5968772kB
