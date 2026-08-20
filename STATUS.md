@@ -220,7 +220,7 @@ plan. Chart `d_3_3 = 1` only.
 
 | item | state |
 |---|---|
-| **THEOREM 3, narrowed** | statements RECOVERED (`wave1/RECOVERED_THEOREMS.md`); THEOREM 2's conclusion certified; THEOREM 3 no longer needed at the endgame (§6.7). Residual gap, much smaller: *does the framework force map-degree(R) = 13 independently of THEOREM 3?* |
+| **THEOREM 3 — endgame use CLOSED** | statements RECOVERED (`wave1/RECOVERED_THEOREMS.md`); THEOREM 2's conclusion certified; THEOREM 3 removed from the endgame twice over (§6.7 classification, then §6.8 pole-order). Residual, now a single named sub-question: **is `g³S₁₃` regular at `v = −1`** (THEOREM 1's ladder proved only for `m = 0..12`)? |
 | case (2) over ℚ̄ | eliminant exists and is irreducible (single branch); residual system — 13 variables over a degree-1144 field — unsolved |
 | case (1) pentagons | no verdict; both engine rungs exhausted |
 | **H2** above-125 sweep | ~150 of 167 targets unrun; chain→polygon map needs hardening |
@@ -291,6 +291,35 @@ not be used to answer it — it is derived from THEOREM 3 and would be circular.
 retracts one of our own claimed unconditional results, and confirms that the
 prior sessions (`trackC_report.md`, `HANDOFF_TO_AUDIT.md`, `FABLE_DECISIONS.md`)
 were right to flag THEOREM 3 as load-bearing.
+
+---
+
+### 6.8 The map-degree question resolved — by pole order, not map-degree
+`wave1/w1_mapdeg_question.py`
+
+§6.7 left one thread: the endgame equation at `(D,k) = (13,4)` *does* have
+non-constant rational solutions, so the framework kill needs an independent
+input to exclude them. THEOREM 3 was that input. There is a cheaper one.
+
+The framework **defines** `R = 2v³⁹(Ã₄ − g³S₁₃)/g³`, and THEOREM 2's
+`g = αU(U−1)⁸` — certified in this campaign by `w1_L3_step2_pinning.py` —
+vanishes at `v = −1` (i.e. `U = 0`) to order **exactly 1**. So `g³` vanishes to
+order exactly 3, and `R`'s pole order at `v = −1` is **at most 3** whenever the
+numerator is regular there (`v³⁹` is `−1` at `v = −1`, so it contributes
+nothing). Every pole-branch solution of the endgame equation has pole order
+**exactly 4**. `3 < 4`, so no framework `R` is one of them; the polynomial
+branch was already dead by evaluation at `v = −1`. Both branches closed.
+
+This uses **only THEOREM 2 (certified) plus arithmetic** — no Belyi fibers, no
+13/9/5/1, no polynomiality, and no map-degree. It is strictly cheaper than the
+map-degree route, which needed `deg R = 13` as a separate input.
+
+**Flagged, not resolved:** it needs `(Ã₄ − g³S₁₃)` regular at `v = −1`. `Ã₄` is
+a block polynomial in `U`, hence regular. `g³S₁₃` is the `m = 13` extension of
+THEOREM 1's ladder, proved there only for `m = 0..12`. On the near-miss
+`S₁₃ = −n₃v⁻³⁹/2`, whose only pole is at `v = 0` — evidence, not proof. If the
+ladder extends to `m = 13`, both the First and Three-dessin kills become
+unconditional on THEOREM 3.
 
 ---
 

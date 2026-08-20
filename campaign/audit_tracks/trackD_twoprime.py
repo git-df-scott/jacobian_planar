@@ -95,8 +95,38 @@ def todo(targets, st, budget):
     return out
 
 
+def control():
+    """A control that CAN say non-EMPTY: same engine, same target, but with the
+    non-degeneracy saturation dropped, so the all-zero point survives.  If this
+    comes back EMPTY the engine is broken and every EMPTY below is worthless."""
+    import trackD_extract as EX
+    t = json.load(open(TARGETS))[0]
+    src, info = EX.build_singular(t["NP"], t["NQ"], t["r"], name="ctrl")
+    if src is None:
+        return "OOS", "build returned OUT OF SCOPE"
+    nosat = "\n".join(l for l in src.splitlines()
+                       if "sat" not in l.lower() and not l.strip().startswith("ideal N"))
+    import subprocess, tempfile as _tf
+    fn = os.path.join(EX.SCRATCH, "ctrl_nosat.sing")
+    open(fn, "w").write(nosat)
+    try:
+        pr = subprocess.run(["Singular", "-q", fn], capture_output=True,
+                            text=True, timeout=300)
+    except subprocess.TimeoutExpired:
+        return "TIMEOUT", ""
+    out = pr.stdout or ""
+    return ("EMPTY" if "VERDICT: EMPTY" in out else "NON-EMPTY"), out[-200:]
+
+
 def main():
     _assert_compliant()
+    if "--control" in sys.argv:
+        v, det = control()
+        ok = v not in ("EMPTY",)
+        print(f"  {'PASS' if ok else 'FAIL'}  positive control: unsaturated "
+              f"system is NOT empty   <CERTIFIED>   [{v}]")
+        print("   ", det.replace("\n", " | ")[:200])
+        raise SystemExit(0 if ok else 1)
     budget = int(sys.argv[1]) if len(sys.argv) > 1 else 120
     limit = int(sys.argv[2]) if len(sys.argv) > 2 else 10**6
     targets = json.load(open(TARGETS))

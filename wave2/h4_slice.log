@@ -1,0 +1,23 @@
+==============================================================================
+H4 -- the deg_y = 3 slice at COMPLIANT primes, and extended
+==============================================================================
+primes [65521, 65539]  (mod 3: [1, 1])   budget 240s
+
+0.  PRIME HYGIENE, and a control that CAN say non-EMPTY
+
+  PASS  both working primes are == 1 (mod 3)   <PROVED-exact>   [[1, 1]]
+  PASS  Session 35's main prime 32003 is == 2 (mod 3) -- the gap this file fills   <PROVED-exact>   [32003 mod 3 = 2]
+  PASS  Session 35's second prime 1000003 IS compliant (so the h-branch was already covered; only the slice was not)   <PROVED-exact>   [1000003 mod 3 = 1]
+  PASS  POSITIVE CONTROL: same pipeline WITHOUT saturation is NOT empty (the engine can say non-EMPTY)   <CERTIFIED>   [verdict dim 11 [0.0s]]
+  PASS  NEGATIVE CONTROL: the SAME cell WITH saturation is EMPTY (so saturation, not the engine, is doing the work)   <CERTIFIED>   [verdict EMPTY [0.0s]]
+
+1.  THE (3,n) SLICE AT TWO COMPLIANT PRIMES
+
+  case                                      p   eqs    verdict    secs
+  --------------------------------------------------------------------
+  (3,4) h=x deg<=1                      65521    18      EMPTY     0.0
+  (3,4) h=x deg<=1                      65539    18      EMPTY     0.0
+  (3,4) h=x deg<=2                      65521    27      EMPTY     0.0
+  (3,4) h=x deg<=2                      65539    27      EMPTY     0.0
+  (3,4) h=x deg<=3                      65521    36      EMPTY    10.4
+  (3,4) h=x deg<=3                      65539    36      EMPTY    10.3

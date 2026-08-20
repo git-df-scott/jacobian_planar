@@ -1,0 +1,222 @@
+{
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 157 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 157 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 149 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 149 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 139 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 139 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 20,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=0 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 21 | conditions: 79 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 21 | conditions: 79 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 140,
+  "params": 21,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 1
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=0 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 23 | conditions: 33 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 23 | conditions: 33 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 126,
+  "params": 23,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 147,
+  "params": 30,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 2
+ },
+ "(7,42)/13/7,6 (m,n)=2,3 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 1,
+    "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 147,
+  "params": 30,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 2
+ }
+}
