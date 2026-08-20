@@ -22,3 +22,8 @@
 22:16:35 swapfree=17690720kB twin_rss=5783536kB
 22:17:35 swapfree=16710412kB twin_rss=5796056kB
 22:18:35 swapfree=16710416kB twin_rss=5809488kB
+22:19:35 swapfree=16633140kB twin_rss=5824156kB
+22:20:35 swapfree=16123228kB twin_rss=5408680kB
+22:21:35 swapfree=17469408kB twin_rss=5366732kB
+22:21:53 enforcer v2 armed (memcg max=14327656448, kill non-twin heavies at headroom<1.5G)
+22:21:53 memcg_headroom=13663MB twin_rss=5369220kB

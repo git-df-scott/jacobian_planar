@@ -1,29 +1,30 @@
 #!/bin/bash
-# Tripwire ENFORCER (was policy-only -- the original chart-N run died with no one acting).
-# Every 60s: if swap-free < 8 GiB, SIGSTOP every msolve that is NOT the twin
-# (b16r12seed_N_p1000033) and log. If margin recovers above 12 GiB, SIGCONT them.
-# Exits on its own when the twin's msolve is gone (verdict or death).
+# Tripwire ENFORCER v2 -- watches the BINDING constraint: the container memcg
+# (dmesg 22:20Z proved kills are CONSTRAINT_MEMCG, not host swap; the OOM
+# killer picks the largest RSS, i.e. the twin). SIGSTOP does not un-charge
+# memcg pages, so on pressure the enforcer KILLS non-twin heavies instead.
+# Exits when the twin's msolve is gone.
 LOG=/home/user/jacobian_planar/wave5/tripwire.log
-echo "$(date -u +%H:%M:%S) enforcer armed (stop<8G, resume>12G)" >> "$LOG"
+MC=/sys/fs/cgroup/process_api/01a02089-1187-7310-8c13-8ca8a73c259d/claude-code-bash
+MAX=$(cat $MC/memory.max 2>/dev/null); [ -z "$MAX" ] && MAX=14327656448
+echo "$(date -u +%H:%M:%S) enforcer v2 armed (memcg max=$MAX, kill non-twin heavies at headroom<1.5G)" >> "$LOG"
 while true; do
   TWIN=""
   for p in $(pgrep -x msolve); do
     grep -q b16r12seed_N_p1000033 /proc/$p/cmdline 2>/dev/null && TWIN=$p && break
   done
   [ -z "$TWIN" ] && { echo "$(date -u +%H:%M:%S) twin gone -> enforcer exit" >> "$LOG"; exit 0; }
-  FREE_KB=$(awk '/SwapFree/{print $2}' /proc/meminfo)
+  CUR=$(cat $MC/memory.current 2>/dev/null || echo 0)
+  HEAD=$(( (MAX - CUR) / 1048576 ))
   RSS=$(awk '/VmRSS/{print $2}' /proc/$TWIN/status 2>/dev/null)
-  echo "$(date -u +%H:%M:%S) swapfree=${FREE_KB}kB twin_rss=${RSS}kB" >> "$LOG"
-  OTHERS=$(pgrep -x msolve | grep -v "^$TWIN$")
-  if [ "$FREE_KB" -lt 8388608 ]; then
-    for p in $OTHERS; do
-      S=$(ps -o stat= -p "$p")
-      case "$S" in T*) ;; *) kill -STOP "$p" && echo "$(date -u +%H:%M:%S) TRIPWIRE: SIGSTOP msolve $p" >> "$LOG";; esac
-    done
-  elif [ "$FREE_KB" -gt 12582912 ]; then
-    for p in $OTHERS; do
-      S=$(ps -o stat= -p "$p")
-      case "$S" in T*) kill -CONT "$p" && echo "$(date -u +%H:%M:%S) recovered: SIGCONT msolve $p" >> "$LOG";; esac
+  echo "$(date -u +%H:%M:%S) memcg_headroom=${HEAD}MB twin_rss=${RSS}kB" >> "$LOG"
+  if [ "$HEAD" -lt 1536 ]; then
+    for p in $(pgrep -x msolve; pgrep -x Singular); do
+      [ "$p" = "$TWIN" ] && continue
+      R=$(awk '/VmRSS/{print $2}' /proc/$p/status 2>/dev/null); [ -z "$R" ] && continue
+      if [ "$R" -gt 1048576 ]; then
+        kill -KILL "$p" && echo "$(date -u +%H:%M:%S) TRIPWIRE v2: KILLED pid $p (rss ${R}kB) to protect twin" >> "$LOG"
+      fi
     done
   fi
   sleep 60
