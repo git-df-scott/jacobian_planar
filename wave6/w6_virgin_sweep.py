@@ -36,7 +36,9 @@ def npoints(NP):
 def main():
     cov = json.load(open(os.path.join(ROOT, "audit_queue/queue_coverage.json")))
     unc = cov.get("uncovered_cases") or cov.get("uncovered")
-    lo = sorted([u for u in unc if u.get("max", 999) <= 150],
+    import os as _os
+    cap = int(_os.environ.get("W6_MAXCAP", "150"))
+    lo = sorted([u for u in unc if u.get("max", 999) <= cap],
                 key=lambda u: u["max"])
     only = sys.argv[1] if len(sys.argv) > 1 else None
     chains = {getattr(c, "name", str(c)): c for c in CM.all_chains()}
