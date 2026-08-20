@@ -264,5 +264,12 @@
   "shape_tag": "a=3 b=9 r=1 i=3",
   "verdict": "{'name': 'w6_6587_3', 'status': 'TIMEOUT', 'secs': 240.22981476783752, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
   "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_6587_4', 'status': 'TIMEOUT', 'secs': 240.2171277999878, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.2
  }
 ]
