@@ -4,5 +4,10 @@
   "verdict": "NO-OUTPUT",
   "head": "",
   "wall": 43.6
+ },
+ {
+  "name": "w6_35657_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 600.5
  }
 ]

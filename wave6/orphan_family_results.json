@@ -26,5 +26,22 @@
   "tag": "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))",
   "verdict": "{'name': 'orph_837900', 'status': 'TIMEOUT', 'secs': 240.14323496818542, 'info': {'nparams': 51, 'jmax': 18, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(41)', 'c(51)']}}",
   "wall": 240.1
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=5 eps=((1, 0),(5, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=3 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'orph_50107', 'status': 'TIMEOUT', 'secs': 240.16227078437805, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall": 240.2
  }
 ]
