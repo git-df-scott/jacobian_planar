@@ -1,0 +1,10 @@
+d=5 chart A saturated: 20 generators, 13 eliminated, keep: ['mu0', 'mu3']
+singular status: rc=-15 timeout=True rss_kb=-1 wall=540.1s
+gens: None
+
+Recorded probe, chart A, d = 5, saturated (20 generators, 13 variables
+eliminated, surviving variables mu0 and mu3), GF(1000003):
+  msolve  -e 13 -g 2   : no eliminant within 900 s
+  Singular eliminate() : no eliminant within 540 s
+Both engines stall on this elimination.  The d >= 5 elimination deadline is set
+from this measurement and is recorded per block in each eliminant file.

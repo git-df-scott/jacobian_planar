@@ -277,7 +277,13 @@ def do(d, chart, timeout, cross):
                "gens": nm}
         blocks.append((label + " -- engine msolve", blk))
         results[(sat, "msolve")] = nm
-        if cross:
+        # At d = 3, 4 both engines always run: that is the cross-engine control.
+        # Beyond that Singular runs as a RECORDED FALLBACK whenever msolve
+        # produced no eliminant -- the campaign tooling contract records
+        # Singular beating msolve by orders of magnitude on sparse systems, so a
+        # cell msolve cannot eliminate is not yet known to be out of reach.
+        run_singular = cross or (nm is None)
+        if run_singular:
             rs = elim_singular(eqs, elim, keep, tag, timeout)
             ns = normalise(rs["gens"], keep, tag + "_s")
             blks = {"engine": "Singular eliminate()", "status": status(rs),
@@ -288,10 +294,19 @@ def do(d, chart, timeout, cross):
                     "gens": ns}
             blocks.append((label + " -- engine Singular", blks))
             results[(sat, "Singular")] = ns
-            check(f"CROSS-ENGINE d={d} chart {chart} ({'sat' if sat else 'unsat'}): "
-                  f"msolve and Singular eliminants are identical",
-                  nm is not None and ns is not None and nm == ns,
-                  f"msolve={nm} singular={ns}")
+            if cross:
+                check(f"CROSS-ENGINE d={d} chart {chart} "
+                      f"({'sat' if sat else 'unsat'}): msolve and Singular "
+                      f"eliminants are identical",
+                      nm is not None and ns is not None and nm == ns,
+                      f"msolve={nm} singular={ns}")
+            else:
+                LOG.append(f"FALLBACK d={d} chart {chart} "
+                           f"({'sat' if sat else 'unsat'}): msolve produced no "
+                           f"eliminant; Singular gave {ns}")
+            if nm is None and ns is not None:
+                results[(sat, "msolve")] = ns      # the surviving eliminant
+                nm = ns
 
     # NEGATIVE CONTROL.  Dropping ONE generator is not a usable control here:
     # these ideals are heavily overdetermined, so the eliminant is unchanged by

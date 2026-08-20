@@ -1,0 +1,12 @@
+GGV G5 -- reproduction of the printed d=3 family, GF(1000003)
+point (chart B gauge, mu3=1, mu2=0): {'a2': '0', 'a3': '-1/2', 'a4': '0', 'a5': '0', 'a6': '-1/4', 'b2': '0', 'mu0': '0'}
+unsaturated generators: 11   saturated: 12
+unsaturated mu-eliminant: ['mu0']
+msolve unsaturated: verdict=CANDIDATE-UNVERIFIED rss_kb=5968 bytes=213 artifact=ggv/g5/g5_d3_B_unsaturated_p1000003.out
+msolve saturated:   verdict=EMPTY rss_kb=5340 bytes=6 artifact=ggv/g5/g5_d3_B_saturated_p1000003.out
+PASS G5(1) GGV Sec 3.5 d=3 family satisfies EVERY generator of the UNSATURATED chart-B ideal   [11 generators, nonzero residuals: []]
+PASS G5(4) NEGATIVE CONTROL: perturbing a3 off the family breaks the ideal   [nonzero residuals: 2/11]
+PASS G5(2) msolve on the UNSATURATED chart-B d=3 input returns a NON-empty variety   [verdict=CANDIDATE-UNVERIFIED exit=0 rss_kb=5968 bytes=213 wall=0.01s]
+PASS G5(3) NEGATIVE CONTROL: the SAME system with t*mu0-1 restored is EMPTY   [verdict=EMPTY exit=0 rss_kb=5340 bytes=6 wall=0.01s]
+PASS G5(5) unsaturated chart-B d=3 mu-eliminant computed (recorded as data)   [eliminant in mu0: ['mu0']  peak_rss_kb=5480]
+ALL PASS

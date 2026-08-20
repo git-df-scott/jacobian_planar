@@ -13,7 +13,7 @@ engine: msolve -e 7 -g 2
 status: OK
 n_generators_in: 12
 n_eliminated: 7
-peak_rss_kb: 5824
+peak_rss_kb: 5920
 wall_s: 0.01
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
@@ -28,7 +28,7 @@ engine: Singular eliminate()
 status: OK
 n_generators_in: 12
 n_eliminated: 7
-peak_rss_kb: 12220
+peak_rss_kb: 12268
 wall_s: 0.01
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
@@ -43,7 +43,7 @@ engine: msolve -e 6 -g 2
 status: OK
 n_generators_in: 11
 n_eliminated: 6
-peak_rss_kb: 5840
+peak_rss_kb: 5776
 wall_s: 0.01
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
@@ -58,8 +58,8 @@ engine: Singular eliminate()
 status: OK
 n_generators_in: 11
 n_eliminated: 6
-peak_rss_kb: 12132
-wall_s: 0.01
+peak_rss_kb: 12128
+wall_s: 0.02
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
 input: ggv/elim_work/chartA_d3_unsat.sing
@@ -73,7 +73,7 @@ engine: msolve -e 7 -g 2
 status: OK
 n_generators_in: 1
 n_eliminated: 7
-peak_rss_kb: 5200
+peak_rss_kb: 5340
 wall_s: 0.01
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
@@ -87,7 +87,7 @@ engine: msolve -e 7 -g 2
 status: OK
 n_generators_in: 11
 n_eliminated: 7
-peak_rss_kb: 5980
+peak_rss_kb: 5996
 wall_s: 0.01
 exit: 0
 mem_policy: oom_score_adj=1000, no vm cap
