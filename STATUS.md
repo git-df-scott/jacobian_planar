@@ -270,7 +270,7 @@ plan. Chart `d_3_3 = 1` only.
 | ~~THEOREM 2 / THEOREM 3~~ | **CLOSED.** THEOREM 2 certified (`w1_L3_step2_pinning.py`); THEOREM 3 **CONFIRMED**, its recorded proof repaired (§2.6, `w1_theorem3_verdict.py`). No residual — the `g³S₁₃` flag dissolved. |
 | case (2) over ℚ̄ | eliminant exists and is irreducible (single branch); residual system — 13 variables over a degree-1144 field — unsolved |
 | case (1) pentagons | no verdict; both engine rungs exhausted |
-| **H2** above-125 sweep | chain→polygon map hardened and re-verified 6/6. **31 shapes EMPTY at two compliant primes** (all 20 of the old single-prime table reproduced, +11 new), zero DISAGREE, zero LIVE. Stall point named by size: decides ≤ ~82 params, stalls above; the 53 unrun carry 152–779 params and are out of engine reach, not merely unscheduled. `wave2/H2_COUNT_RECONCILIATION.md` |
+| **H2** above-125 sweep | **COMPLETE — all 180 targets carry a contract verdict.** 31 EMPTY at two compliant primes (all 20 of the old single-prime table reproduced, +11 new), 141 TIMEOUT, 8 OOM, **zero LIVE, zero DISAGREE**. Stall point is a size boundary: decides ≤ ~82 params; above that blocked on engine capacity (a 3.3× budget converted zero). Still mod-p only — §6.2 forbids promotion. `wave2/H2_COUNT_RECONCILIATION.md` |
 | **H4** deg_y = 3 slice | FRAMEWORK.md's own OPEN-1; untouched |
 
 ---

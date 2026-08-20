@@ -163,3 +163,68 @@ second is a stall point Plan 43 §6.4 can actually record.
 
 The re-label runs each of the 8 through the repaired engine fresh
 (`relabel_oom.py`); none is converted on the strength of the old run.
+
+---
+
+# FINAL — H2 above-125 sweep, complete
+
+All 180 targets carry a verdict from the engine contract. No target is left
+labelled `UNKNOWN`.
+
+| verdict | count | meaning |
+|---|---:|---|
+| **EMPTY** (both compliant primes) | **31** | no non-degenerate realization at 65521 **and** 65539 |
+| TIMEOUT | 141 | undecided; wall-clock |
+| **OOM** | **8** | undecided; Singular killed by the OS (`rc = -9`) |
+| **LIVE** | **0** | — |
+| **DISAGREE** | **0** | the two primes never disagreed, anywhere |
+| PARTIAL / CRASH / UNKNOWN | 0 | — |
+
+The 8 OOMs are one chain, `F11(m,n)=2,5` at `c'=2` (params 51) and `c'=3`
+(params 66), each killed after 204–308 s on a fresh run through the repaired
+engine. The timings reproduce the standalone diagnosis (281 s), so the OOM is a
+property of these systems at 15 GB rather than an artefact of two engines
+competing for memory.
+
+## What this sweep did and did not establish
+
+**Did.** All **20/20** shapes from the earlier single-prime (65521) table
+reproduce as EMPTY at both compliant primes, and **11 further shapes** are newly
+EMPTY. Nothing anywhere returned LIVE, and the two primes never disagreed on any
+target — so the single-prime table was not a characteristic artefact.
+
+**Did not.** `EMPTY` here is still emptiness **mod p**, at two primes. Plan 43
+§6.2 forbids promoting that to ℚ. 149 of 180 targets remain undecided.
+
+## The stall point, stated as a size boundary
+
+```
+EMPTY   : params  20 ..  82
+TIMEOUT : params  38 .. 779
+OOM     : params  51, 66      (one chain, memory-bound rather than time-bound)
+```
+
+The sweep decides shapes up to roughly 80 parameters and stalls above that.
+A retry at 300 s/prime — 3.3× the original budget — converted **zero** of the 46
+targets it reached before a worker restart ended it, which is what the boundary
+predicts. Its remaining 14 targets sit in the same `params ≥ 74` class and were
+deliberately not resumed.
+
+So the honest close-out is not *"149 targets unrun"* but:
+
+> The above-125 sweep decides shapes up to roughly 80 parameters, where it
+> returns 31 EMPTYs at two compliant primes and no LIVE. Above that it is
+> blocked on engine capacity — wall-clock for most, memory for one chain — and
+> more time does not move it.
+
+## Three defects found and fixed in the machinery
+
+1. **Dead scratch path.** `trackD_extract.py` wrote to a previous session's
+   absolute scratchpad; any new container ENOENTs on the first write.
+2. **Hardcoded characteristic.** The entire certified table rested on one prime.
+   Now `TRACKD_PRIME`, with a two-prime driver that reports one-EMPTY-one-LIVE
+   as `DISAGREE` rather than averaging.
+3. **OOM invisible.** `run()` ignored the subprocess returncode, so an
+   OOM-killed Singular looked like a successful run printing nothing and was
+   filed `UNKNOWN`. Singular's own *"no more memory"* message never appears —
+   the OS kills it first — so the returncode is the only signal.
