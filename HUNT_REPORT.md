@@ -125,6 +125,20 @@ So `edgeQ_input.ms` is a differently, more rigidly normalised object and its 114
 counts points of that normalisation. **Neither number is wrong; they must not be
 quoted as if they measured the same variety.**
 
+## Item 2 — the recursion itself is now checked against the bracket
+
+Every pentagon result in this campaign — the rank 60 of 61, the sparsity counts,
+the exports, the detectors — rests on a y-adic recursion that, given P, produces
+the Q with `[P,Q] = x²`. That recursion had never been checked against the
+bracket. `pent/w5_pent_recursion_check.py` (4/4) does it in exact arithmetic
+over a compliant prime:
+
+* for `P = x` the recursion returns exactly `Q = 1 + x²y`, and `[x, 1+x²y] = x²`;
+* for a random P in the pentagon support, `[P, Q]` computed symbolically from
+  the recursion's own output equals `x²` **through y-order 7**;
+* NEGATIVE: perturbing one coefficient of Q breaks the identity from order 2 on;
+* NEGATIVE: seeding the recursion for `x³` instead of `x²` does not give `x²`.
+
 ## Item 2 — the 43 MB export is now cross-validated
 
 `wave1/pent_L23.ms` is the object every pentagon msolve run in this campaign is
