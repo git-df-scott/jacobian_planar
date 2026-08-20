@@ -2,3 +2,5 @@
 case (2), chart d_3_3 = 0, decided over Q
 ==============================================================================
     9 generators in 11 variables, plus the chart, 2 gauge fixings and 1 Rabinowitsch generator
+    real system: TIMEOUT
+    [FAIL] the chart d_3_3 = 0 is decided over Q   [TIMEOUT]

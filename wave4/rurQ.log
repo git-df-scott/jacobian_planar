@@ -1,3 +1,7 @@
 ==============================================================================
 the case-(2) w=-4 parametrisation over Q, reconstructed and verified
 ==============================================================================
+    usable primes: 60 of 60, all = 1 (mod 3)
+    [PASS] R4 the eliminant used is the certified degree-5 polynomial   degree 5
+    reconstruction used 60 primes
+    [FAIL] every coordinate polynomial reconstructed to rationals

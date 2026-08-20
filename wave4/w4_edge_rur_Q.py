@@ -74,7 +74,25 @@ def ratrec(a, m):
     return Fraction(r1 if s1 > 0 else -r1, abs(s1))
 
 
+CACHE = {}
+
+
+def _cache_path(chart):
+    return os.path.join(HERE, "artifacts", f"rurQ_primes_{chart}.json")
+
+
 def rur_at(p, chart="one"):
+    """The mod-p parametrisation, cached on disk so diagnosis is cheap."""
+    key = str(p)
+    if key in CACHE:
+        return CACHE[key]
+    d = _rur_at(p, chart)
+    CACHE[key] = d
+    json.dump(CACHE, open(_cache_path(chart), "w"))
+    return d
+
+
+def _rur_at(p, chart="one"):
     ms = f"/tmp/rurQ_{chart}_{p}.ms"
     RS.export_w4(p, chart, ms)
     r = RUN.run_msolve(ms, ms[:-3] + ".out", timeout=900, threads=1)
@@ -105,6 +123,13 @@ def main(nbuild=60, chart="one"):
         n += 1
         if n % 3 == 1 and sp.isprime(n):
             primes.append(n)
+    global CACHE
+    import glob
+    for c in [_cache_path(chart)] + sorted(glob.glob(
+            os.path.join(HERE, "artifacts", f"rurQ_primes_{chart}_s*.json"))):
+        if os.path.exists(c):
+            CACHE.update({k: v for k, v in json.load(open(c)).items()
+                          if v is not None})
     data = {}
     for p in primes:
         d = rur_at(p, chart)
@@ -125,31 +150,54 @@ def main(nbuild=60, chart="one"):
                     else data[p][k[0]][j] for p in build], build)
         return ratrec(x, M)
 
-    coords = {}
-    ok_all = True
-    for used in range(8, len(good) + 1):
-        build = good[:used]
-        coords, ok_all = {}, True
-        for v in RED.G_VARS:
-            cs = []
-            deg = max(len(data[p]["coords"][v]) for p in build) - 1
-            for j in range(deg + 1):
-                x, M = crt([(data[p]["coords"][v][j]
-                             if j < len(data[p]["coords"][v]) else 0)
-                            for p in build], build)
-                r = ratrec(x, M)
-                if r is None:
-                    ok_all = False
-                    break
-                cs.append(r)
-            if not ok_all:
-                break
-            coords[v] = cs
-        if ok_all:
-            break
+    # Reconstruct EVERY coefficient independently against the full prime set,
+    # and report which ones fail, rather than stopping at the first.  A
+    # coefficient that reconstructs against the first half of the primes must
+    # reconstruct to the SAME rational against all of them -- that agreement is
+    # what makes a reconstruction more than a guess (R0).
+    half = good[:len(good) // 2]
+    coords, failed, unstable, bits = {}, [], [], 0
+    for v in RED.G_VARS:
+        deg = max(len(data[p]["coords"][v]) for p in good) - 1
+        cs = []
+        for j in range(deg + 1):
+            xs = [(data[p]["coords"][v][j] if j < len(data[p]["coords"][v])
+                   else 0) for p in good]
+            x, M = crt(xs, good)
+            r = ratrec(x, M)
+            xh, Mh = crt(xs[:len(half)], half)
+            rh = ratrec(xh, Mh)
+            if r is None:
+                failed.append((v, j))
+                cs.append(None)
+                continue
+            if rh is not None and rh != r:
+                unstable.append((v, j))
+            bits = max(bits, r.numerator.bit_length(),
+                       r.denominator.bit_length())
+            cs.append(r)
+        coords[v] = cs
+    ok_all = not failed
+    build = good
+    check("R0 POSITIVE: every coefficient that reconstructs at half the primes "
+          "reconstructs to the same rational at all of them", not unstable,
+          f"{len(unstable)} unstable of "
+          f"{sum(len(c) for c in coords.values()) - len(failed)} reconstructed")
     print(f"    reconstruction used {len(build)} primes")
-    check("every coordinate polynomial reconstructed to rationals", ok_all)
+    check("every coordinate polynomial reconstructed to rationals", ok_all,
+          f"{len(failed)} of {sum(len(c) for c in coords.values())} "
+          f"coefficients did not reconstruct at "
+          f"{len(good)} primes ({sum(p.bit_length() for p in good)} bits); "
+          f"largest reconstructed coefficient {bits} bits; first failures "
+          f"{failed[:5]}")
     if not ok_all:
+        json.dump({"chart": chart, "primes": good, "status": "NOT-RECONSTRUCTED",
+                   "failed_coefficients": [[v, j] for v, j in failed],
+                   "unstable": [[v, j] for v, j in unstable],
+                   "max_bits_reconstructed": bits,
+                   "checks": [[a, b, c] for a, b, c in RESULTS]},
+                  open(os.path.join(HERE, "artifacts",
+                                    f"edge_rur_Q_{chart}.json"), "w"), indent=1)
         return 1
 
     env = {v: sum(sp.Rational(c) * W ** i for i, c in enumerate(coords[v]))
@@ -197,4 +245,4 @@ def main(nbuild=60, chart="one"):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(int(sys.argv[1]) if len(sys.argv) > 1 else 60))
