@@ -136,3 +136,42 @@ N2b corrupting Proposition 3.2's Diophantine drops the count 34 → 0 ·
 N2c deleting (1,0) from PLLC destroys 12 of the 14 published families, 34 → 10 ·
 N3 dropping Definition 2.25 gives 721 chains / 117 cases instead of 260 / 34 ·
 N4 a mutated reference row is not matched.
+
+---
+
+## D7 — family F6's formula generates members that [5]'s own Definition 3.3 excludes
+
+[5] §5's table gives family **F6** as
+
+    A0 = (5,20),  A'0 = (1,0),  A1 = (9⁄5, 4),  k = 2,  m = 3j+4,  n = 8j+10.
+
+Definition 3.3 of the same paper defines
+
+    MN_k(A) = { (m,n) ∈ ℕ² : m, n > 1, **gcd(m,n) = 1** and (m+n)bk − n(bl−a) = k }.
+
+At **every even j**, F6's formula gives a non-coprime pair:
+
+| j | (m, n) | gcd |
+|---|---|---|
+| 0 | (4, 10) | 2 |
+| 2 | (10, 26) | 2 |
+| 4 | (16, 42) | 2 |
+| 6 | (22, 58) | 2 |
+
+Those pairs do satisfy the Diophantine — for A = (9⁄5,4) it reads 8m − 3n = 2,
+and 8·4 − 3·10 = 2 — so they are on the family's line; they are excluded only by
+the coprimality clause. **F6 is the only one of the 24 families with this
+property** (checked for j = 0..7 across F1–F24).
+
+Consequence for this campaign, and how it was found: the above-125 queue
+`campaign/audit_tracks/trackD_targets.json` carries
+`F6(j=0;m,n=4,10) | a=5 b=5 c'=0 r=3 …` as a target with `max = 250`.
+`h2/w5_h2_target_provenance.py` matches 179 of the 180 targets against the
+re-derived enumeration and reports exactly this one as unmatched, because the
+re-derivation applies Definition 3.3's coprimality filter.
+
+Class: **DISCREPANCY (published table vs the same paper's definition)**. It does
+not affect any max ≤ 150 case — the smallest F6 member with coprime (m,n) is
+j = 1, (7,18), giving max 18·25 = 450 — and it does not affect GGHV's Theorem 2.1.
+It does mean one entry of the campaign's own queue is not a possible
+counterexample shape.

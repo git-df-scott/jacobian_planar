@@ -50,15 +50,42 @@ TAG = re.compile(r"^(?:F(\d+)|\((\d+),(\d+)\)/(\d+)/(\d+),(\d+))\((m,n)\)?"
                  r"|\((\d+),(\d+)\)/(\d+)/(\d+),(\d+)")
 
 
+# The families F1..F24 of [5] section 5, transcribed in
+# gghv_audit/ggv_reference_tables.py, resolve the family-tagged targets to a
+# concrete (A0, final corner).
+sys.path.insert(0, os.path.join(ROOT, "gghv_audit"))
+import ggv_reference_tables as T
+
+FAMILY = {}
+for f in T.GGV_FAMILIES_L1:
+    FAMILY.setdefault(f[0], (f[1], f[3]))
+for f in T.GGV_FAMILIES_L2:
+    FAMILY.setdefault(f[0], (f[1], f[5]))
+
+
 def parse_tag(tag):
-    """Return (A0, final, (m,n)) when the tag carries them, else None."""
-    m = re.match(r"\((\d+),(\d+)\)/(\d+)/(\d+),(\d+)\s*\(m,n\)=(\d+),(\d+)", tag)
+    """Return (A0, final, (m,n)) for each of the three tag shapes in the file."""
+    t = tag.split("|")[0].strip()
+    # length-1 chain:  (a,b)/fa/fl,fb (m,n)=m,n
+    m = re.match(r"\((\d+),(\d+)\)/(\d+)/(\d+),(\d+)\s*\(m,n\)=(\d+),(\d+)", t)
     if m:
         a, b, fa, fl, fb, mm, nn = (int(z) for z in m.groups())
         return (a, 1, b), (fa, fl, fb), (mm, nn)
-    m = re.match(r"F(\d+)\(m,n\)=(\d+),(\d+)", tag.replace(" ", ""))
+    # length-2 chain:  (a,b)/a1,b1/fa/fl,fb (m,n)=m,n
+    m = re.match(r"\((\d+),(\d+)\)/(\d+),(\d+)/(\d+)/(\d+),(\d+)\s*"
+                 r"\(m,n\)=(\d+),(\d+)", t)
     if m:
-        return ("family", int(m.group(1))), None, (int(m.group(2)), int(m.group(3)))
+        a, b, a1, b1, fa, fl, fb, mm, nn = (int(z) for z in m.groups())
+        return (a, 1, b), (fa, fl, fb), (mm, nn)
+    # family, with or without a j parameter
+    u = t.replace(" ", "")
+    m = re.match(r"F(\d+)\(m,n\)=(\d+),(\d+)", u) or \
+        re.match(r"F(\d+)\(j=\d+;m,n=(\d+),(\d+)\)", u)
+    if m:
+        fam = "F" + m.group(1)
+        if fam in FAMILY:
+            A0, final = FAMILY[fam]
+            return A0, final, (int(m.group(2)), int(m.group(3)))
     return None
 
 
@@ -87,7 +114,7 @@ def main():
         if pt is None:
             unparsed += 1
             continue
-        if pt[0] == "family" or pt[1] is None:
+        if pt[1] is None:
             fam += 1
             continue
         A0, final, (mm, nn) = pt
@@ -108,6 +135,9 @@ def main():
           "enumeration", ok_n > 0, f"{ok_n} matched, {len(bad)} not")
     for b in bad[:6]:
         print(f"      UNMATCHED  {b}")
+
+    check("P1b every target is now parsed (no tag shape left unread)",
+          unparsed == 0, f"{unparsed} unparsed")
 
     fake = "(11,33)/99/4,8 (m,n)=2,3 | a=4 b=9"
     pt = parse_tag(fake)

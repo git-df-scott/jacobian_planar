@@ -2,10 +2,12 @@
 provenance of the above-125 queue's targets
 ==============================================================================
     index: 5706 distinct chains, 1679 (A0, final corner) shapes
-    targets: 180; chain-tagged 118; family-tagged 46; unparsed 16
-    [PASS] P1 POSITIVE: chain-tagged targets are matched against the independent enumeration   118 matched, 0 not
+    targets: 180; chain-tagged 180; family-tagged 0; unparsed 0
+    [PASS] P1 POSITIVE: chain-tagged targets are matched against the independent enumeration   179 matched, 1 not
+      UNMATCHED  {'tag': "F6(j=0;m,n=4,10) | a=5 b=5 c'=0 r=3 eps=((3, 1),(1, 0))", 'A0': (5, 1, 20), 'final': (9, 5, 4), 'mn': [4, 10], 'recorded_max': 250, 'computed_max': 250, 'MN_at_that_corner': [(7, 18), (9, 5), (13, 34), (16, 9), (19, 50), (23, 13)]}
+    [PASS] P1b every target is now parsed (no tag shape left unread)   0 unparsed
     [PASS] P2 NEGATIVE: a corrupted tag does not match   corrupted final corner (99, 4, 8)
     [PASS] P3 NEGATIVE: an (m,n) that is not in MN is rejected   (9, 14) not in [(2, 3), (7, 11), (12, 19), (17, 27), (22, 35)]
 ==============================================================================
-    3/3 checks passed
+    4/4 checks passed
 ==============================================================================
