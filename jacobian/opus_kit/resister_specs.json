@@ -1,0 +1,138 @@
+[
+ {
+  "name": "w6_289012_0",
+  "case": "(12,30)/16/3,10/11/6,3",
+  "md5": "9e5d7c30f667a6eba3025c9acb7660d8",
+  "statuses": [
+   "RAN"
+  ]
+ },
+ {
+  "name": "w6_35657_0",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "3894645befe80c3bd4de0035b6ddd11d",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_1",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "856766ac85e19578040c8bc9a485e694",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_2",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "939e52cc9d0448d315e9519503b20831",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_3",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "8b0c9f913cfbb59234c8f0c658206776",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_4",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "5a894f1210c4399b24b417d48fe0e2f7",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_5",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "83105420dd2f853a364b323a0421f16f",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_6",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "75cee5d6c50872448bda2e8fe4e4cc82",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_35657_7",
+  "case": "(9,36)/9,24/11/3,8",
+  "md5": "77339bf7593f5de5810a7739fe1bcb65",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_79970_0",
+  "case": "(8,28)/7/4,3",
+  "md5": "7409ce6f0a9e4d60e1d5932e01ed3ec0",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_79970_1",
+  "case": "(8,28)/7/4,3",
+  "md5": "1af4eec3ceccf483dacf54e0d8ee48ee",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_79970_2",
+  "case": "(8,28)/7/4,3",
+  "md5": "8453beb11157ea4ed8b28f7739c634d7",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "w6_79970_3",
+  "case": "(8,28)/7/4,3",
+  "md5": "53dba755d6edd140ea5257fa3b30f8f0",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "orph_345092",
+  "case": "F1(m,n)=5,7 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "md5": "a2d2aed81823fbc98599ff17a4d76959",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "p108_525122",
+  "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))",
+  "md5": "51d385ebf80747846e7282a8b5cadf09",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "p108_638901",
+  "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((2, 1),(1, 0))",
+  "md5": "738658c936e93e73d2ce329599fbb746",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ },
+ {
+  "name": "p108_671059",
+  "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))",
+  "md5": "d7058dbad49625ad1f7a95e456cafb91",
+  "statuses": [
+   "TIMEOUT"
+  ]
+ }
+]
