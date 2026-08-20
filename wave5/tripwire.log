@@ -93,3 +93,23 @@
 23:24:15 memcg_headroom=0MB twin_rss=13679092kB
 23:25:15 memcg_headroom=0MB twin_rss=13678744kB
 23:26:15 memcg_headroom=0MB twin_rss=13677020kB
+23:27:15 memcg_headroom=0MB twin_rss=13676376kB
+23:28:15 memcg_headroom=0MB twin_rss=13667000kB
+23:29:15 memcg_headroom=0MB twin_rss=13674096kB
+23:30:15 memcg_headroom=0MB twin_rss=13671984kB
+23:31:15 memcg_headroom=0MB twin_rss=13657724kB
+23:32:15 memcg_headroom=0MB twin_rss=13658172kB
+23:33:15 memcg_headroom=0MB twin_rss=13664056kB
+23:34:15 memcg_headroom=0MB twin_rss=13657980kB
+23:35:15 memcg_headroom=0MB twin_rss=13658284kB
+23:36:15 memcg_headroom=0MB twin_rss=13652412kB
+23:37:15 memcg_headroom=0MB twin_rss=13654212kB
+23:38:15 memcg_headroom=0MB twin_rss=13655876kB
+23:39:15 memcg_headroom=0MB twin_rss=13653972kB
+23:40:15 memcg_headroom=0MB twin_rss=13656116kB
+23:41:15 memcg_headroom=0MB twin_rss=13654536kB
+23:42:15 memcg_headroom=0MB twin_rss=13654764kB
+23:43:15 memcg_headroom=0MB twin_rss=13651576kB
+23:44:15 memcg_headroom=0MB twin_rss=13655716kB
+23:45:15 memcg_headroom=0MB twin_rss=13655868kB
+23:46:15 twin gone -> enforcer exit
