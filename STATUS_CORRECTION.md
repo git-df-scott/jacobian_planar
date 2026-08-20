@@ -1,4 +1,9 @@
-# STATUS — Correction Record (Wave 2)
+# STATUS — Correction Record (Waves 2–3)
+
+> **Wave 3 supersedes two wave-2 labels.** Item 11's First Framework label is no longer
+> conditional on the pole question, and item 13's Second Framework label moves from
+> OPEN to DEAD. Both changes are recorded in the wave-3 section at the bottom, which is
+> the current state; the wave-2 entries are left in place as the record of how it moved.
 
 This file supersedes the corresponding wave-1 STATUS entries. Each item states the
 **erroneous claim**, the **correction**, and the **evidence or standing obligation**.
@@ -235,5 +240,148 @@ member of the isotope series.
 python3 wave2/run_all.py
 ```
 
-Exit code 0 iff all six certifiers pass. Requires `sympy` and PARI/GP (`gp`) on `PATH`.
-Current state: **6/6 certifiers, 82/82 individual checks, 0 rigged checks in tree.**
+Exit code 0 iff every certifier passes. Requires `sympy` and PARI/GP (`gp`) on `PATH`.
+State after wave 2: 6/6 certifiers, 82/82 individual checks, 0 rigged checks in tree.
+**Current state (wave 3): 10/10 certifiers, 192/192 individual checks, 0 rigged checks,
+0 ledger lint findings.**
+
+
+---
+---
+
+# Wave 3 additions and supersessions
+
+## 11′. First Framework (99,66) — the conditionality is REMOVED
+
+**Wave-2 label:** *CONDITIONALLY dead* — conditional on the campaign's formalization of
+layers 1–3, the realization theory and the rigidity theorem, because the endgame step was
+sound only via Session 13's pole-fiber THEOREM 3.
+
+**Wave-3 correction.** THEOREM 3's decisive move — *"only the 1-point fiber fits a
+≤2-point pole set, so the pole fiber is the order-13 point at `v = ∞`"* — never excludes
+the other candidate that fits the same fiber count: `R` totally ramified over `∞` at
+`v = −1`, i.e. `R = N(v)/(v+1)^13`. The text closes `v = 0` explicitly and is silent on
+`v = −1`. That gap is real.
+
+**THEOREM W3-1** closes it without THEOREM 3. For `T_{D,k}(R) = −c`, `c ≠ 0`:
+
+- `3 ∤ D` → the rational solution is **unique**, of degree exactly `k` as a map `P¹→P¹`;
+- `3 | D`, `D ≤ 3k` → no rational solution;
+- `3 | D`, `D > 3k` → a one-parameter family of degrees `k` and `D/3`.
+
+**Corollary: the realization demand `deg R = D` is met iff `3 ∤ D` and `k = D`.**
+
+At `D = 13`, `k = 4` the solution is unique with pole order exactly **4** (numerator at
+`v = −1` is 455 ≠ 0), so the `N(v)/(v+1)^13` branch does not exist.
+
+**The label STATUS now carries:**
+
+> **First Framework (99,66): DEAD.** Established from the chain degree `D = 13`, the
+> endgame exponent `k = 4`, and the realization demand `deg R = 13`. It uses **no**
+> `v = −1` evaluation, **no** pole-fiber count, and **no** polynomiality hypothesis for
+> `R`. The remaining dependence is on the campaign's formalization of the framework's
+> layers producing `D = 13` and `k = 4` — narrower than before, and stated.
+
+**Evidence:** `wave3/w3_endgame_degree_obstruction.py` — 32/32.
+
+---
+
+## 13′. Second Framework (D = 23) — OPEN → DEAD
+
+**Wave-2 label:** OPEN. Wave 2 showed the transfer conjecture's mechanism is backwards
+for rational `R` and exhibited explicit solutions at `D = 23`, leaving the framework
+unclosable by that argument.
+
+**Wave-3 correction.** The transfer argument is still wrong, but the framework dies
+anyway — for a different and better reason. `23` is not a multiple of 3, so by W3-1 the
+endgame solution is unique of degree `k`; the realization demand needs degree 23. At
+`k = 4` the solution is
+
+```
+R = c(243v⁴ − 891v³ + 2079v² − 3927v + 6545) / (150535 (v+1)⁴),   deg R = 4 ≠ 23.
+```
+
+**The label STATUS now carries:**
+
+> **Second Framework (D = 23): DEAD for every endgame exponent `k ≠ 23`.** It survives
+> only if its rigidity layer produces exponent exactly 23. Nothing in this repository
+> suggests it does; the First Framework's analogous layer produces 4.
+
+**Evidence:** `wave3/w3_endgame_degree_obstruction.py` — 32/32.
+
+---
+
+## 14. **New** — Session 38's weighted-homogeneous collapse is FALSE as stated
+
+**Was:** *"plane: weighted-homogeneous forces diagonal linear"* — recorded in file `39`
+as "the shape of a separator", carrying the whole Path B argument.
+
+**Correction.** Session 38's sweep had `a > 0 > b` built into its grid (*"11 weight pairs
+`(a,b)` with `a > 0 > b`"*). The summary dropped that hypothesis. Counterexample, one
+line:
+
+```
+weights (1, m), m >= 2:   (P, Q) = (x, y + x^m)
+  weighted-homogeneous:  yes      det J = 1      linear: NO
+```
+
+This is the **same failure mechanism as H1c** (item 1): a theorem proved under an
+implicit hypothesis and recorded without it. Second occurrence in three sessions.
+
+**Replacement (proved, degree-uniform, no bound):**
+
+> **THEOREM W3-2.** A plane Keller map whose components are weighted-homogeneous for
+> integer weights `(a,b)` with `a·b < 0` is linear — `(c₁x, c₂y)` or `(c₁y, c₂x)`.
+
+This meets Path B's own stated success criterion (*"the weighted-homogeneous collapse is
+upgraded to a theorem, a separator, no more caveats"*) — while narrowing the separator
+to the mixed-sign case, which is where Alpöge's `(1,−1,−2)` actually lives.
+
+**Labels:** `[REFUTED]` for the unrestricted claim; `[PROVED-exact]` for W3-2.
+**Evidence:** `wave3/w3_weighted_homogeneous_theorem.py` — 66/66.
+
+---
+
+## 7′. The HIT protocol is now an executable gate
+
+Item 7 (two false-positive hits from gauge artifacts) is closed operationally. The gate
+runs six steps — exactness, Keller, non-injectivity, an *independent* generic-fiber
+count, **gauge independence under random affine changes on source and target**, and
+non-vacuity — and **refuses to certify anything** unless it has first rejected eight
+known negatives and accepted the Alpöge positive control.
+
+Run against this repository: **no hit.** The Path A descent is correctly rejected at H2
+(`det JG = −2h²`, not constant).
+
+**Evidence:** `wave3/w3_hit_protocol.py` — 12/12.
+
+---
+
+## 11″. The contradiction class is now mechanically closed
+
+Item 11 was one contradiction that survived because prose has no key to collide on.
+`wave3/w3_claim_ledger.py` stores every claim as a record with a stable key, an explicit
+**quantifier domain**, a label, an evidence pointer, dependencies, and — for anything
+`PROVED` — a **domain probe**: an input just outside the intended domain on which the
+claim is *required* to fail. Seven lint rules, self-tested (exactly seven violation codes
+on a synthetic ledger, zero on a clean one).
+
+It caught a live one immediately: `NGUYEN-104` was labeled `REFUTED` with no evidence
+pointer. A claim retracted on external authority is `WITHDRAWN`, not machine-refuted, and
+the linter now demands the distinction plus a recorded reason.
+
+**Current campaign ledger: 16 claims, 0 lint findings.**
+
+---
+
+## Reproduce (updated)
+
+```
+python3 wave2/run_all.py
+```
+
+Runs all ten certifiers across `wave2/` and `wave3/`. Exit code 0 iff every one passes.
+Requires `sympy` and PARI/GP (`gp`) on `PATH`.
+
+**10/10 certifiers, 192/192 individual checks, 0 rigged checks in tree, 0 ledger lint
+findings.**

@@ -6,8 +6,13 @@ certifier in `wave2/`, and every certifier contains at least one negative contro
 input on which it is *required* to fail. Run them all with:
 
 ```
-python3 wave2/run_all.py        # exit 0 iff all six pass
+python3 wave2/run_all.py        # runs every certifier; exit 0 iff all pass
 ```
+
+> **Superseded in part by wave 3.** Two verdicts below moved: the Second Framework
+> (`D = 23`) went from OPEN to DEAD, and the First Framework's conditionality on
+> Session 13's pole-fiber Theorem 3 was removed. See `WAVE3_FINDINGS.md`; this file is
+> left as the record of how it moved.
 
 | certifier | checks | verdict |
 | --- | --- | --- |

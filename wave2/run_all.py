@@ -1,4 +1,4 @@
-"""Run every wave-2 certifier and report a single pass/fail line.
+"""Run every wave-2 and wave-3 certifier and report a single pass/fail line.
 
 Usage:  python3 wave2/run_all.py
 Exit code 0 iff every certifier passes and the can't-fail audit is clean.
@@ -8,24 +8,31 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 SCRIPTS = [
-    "w2_h1c_refutation.py",
-    "w2_pole_admissibility.py",
-    "w2_money_cells.py",
-    "w2_irreducibility_sieve.py",
-    "w2_alpoge_detjf.py",
-    "w2_cantfail_audit.py",
+    "wave2/w2_h1c_refutation.py",
+    "wave2/w2_pole_admissibility.py",
+    "wave2/w2_money_cells.py",
+    "wave2/w2_irreducibility_sieve.py",
+    "wave2/w2_alpoge_detjf.py",
+    "wave2/w2_cantfail_audit.py",
+    "wave3/w3_endgame_degree_obstruction.py",
+    "wave3/w3_weighted_homogeneous_theorem.py",
+    "wave3/w3_hit_protocol.py",
+    "wave3/w3_claim_ledger.py",
 ]
 
 results = []
 for s in SCRIPTS:
-    path = os.path.join(HERE, s)
+    path = os.path.join(ROOT, s)
     print("=" * 78)
     print(f"RUNNING {s}")
     print("=" * 78)
     r = subprocess.run([sys.executable, path], capture_output=True, text=True)
-    tail = [ln for ln in r.stdout.splitlines() if "checks passed" in ln or "VERDICT" in ln
-            or "rigged checks in tree" in ln or "self-test" in ln]
+    tail = [ln for ln in r.stdout.splitlines()
+            if "checks passed" in ln or "VERDICT" in ln
+            or "rigged checks in tree" in ln or "self-test" in ln
+            or "ledger findings" in ln or "clean-ledger" in ln]
     for ln in tail:
         print(ln)
     if r.returncode != 0:

@@ -26,14 +26,25 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHECK_NAMES = {"check", "assert_check", "record", "certify", "verify", "claim"}
+# Names of check-style helpers: fn(label, condition, ...) or fn(condition, ...).
+# Deliberately EXCLUDES record-constructors such as claim(), whose second
+# positional argument is data, not a condition -- treating those as checks
+# produced 25 false positives on the wave-3 ledger.
+CHECK_NAMES = {"check", "assert_check", "certify", "verify"}
 
 
 def constant_truth(node):
-    """Is this AST node a compile-time constant that is always truthy?"""
+    """Is this AST node a compile-time BOOLEAN/NUMERIC constant that is truthy?
+
+    Restricted to bool/int/float on purpose.  The pattern being hunted is
+    `check("...", True, ...)`.  A string constant in the condition slot means the
+    call is not a check at all (wrong signature), and flagging it is noise.
+    """
     try:
         val = ast.literal_eval(node)
     except (ValueError, SyntaxError, TypeError):
+        return None
+    if not isinstance(val, (bool, int, float)):
         return None
     return bool(val)
 
@@ -101,9 +112,14 @@ SELFTEST = '''
 def check(name, cond, note=None):
     pass
 
+def claim(key, statement, domain, label):
+    pass
+
 check("rigged - can never fail", True, "note")
+check("rigged numeric", 1)
 check("honest", 2 + 2 == 4)
 check("honest too", some_value != 0)
+claim("k", "a statement", "a domain", "PROVED")
 '''
 with tempfile.NamedTemporaryFile("w", suffix=".py", delete=False) as tf:
     tf.write(SELFTEST)
@@ -114,9 +130,10 @@ os.unlink(tmp)
 print("=" * 74)
 print("SELF-TEST OF THE SCANNER")
 print("=" * 74)
-print(f"    synthetic file: 1 rigged check, 2 honest checks")
+print(f"    synthetic file: 2 rigged checks, 2 honest checks, 1 record-constructor")
 print(f"    scanner found {len(hits)} rigged: {[(h[0], h[2]) for h in hits]}")
-selftest_ok = len(hits) == 1 and "rigged" in hits[0][2]
+selftest_ok = (len(hits) == 2
+               and all("rigged" in h[2] for h in hits))
 print(f"    self-test {'PASS' if selftest_ok else 'FAIL'}")
 
 # ---------------------------------------------------------------------------
@@ -154,7 +171,7 @@ print("""
     Every check condition must be an expression computed from the objects
     under test.  Every certifier must contain at least one NEGATIVE CONTROL
     -- an input on which it is required to fail -- so that "all checks
-    passed" carries information.  All five wave-2 certifiers comply.
+    passed" carries information.  Every wave-2 and wave-3 certifier complies.
 """)
 
 ok = selftest_ok and not found
