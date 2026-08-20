@@ -370,6 +370,37 @@ unconditional on THEOREM 3.
 
 ---
 
+### 6.9 H4 rung 2: msolve does NOT buy the degrees Session 35 expected — STALLED
+`wave2/w2_msolve_escalate.py`, `wave2/h4_msolve.log`
+
+Session 35's close-out predicted the escalation: *"The boundary is now RAM, so a
+bigger machine or an F4/FGLM engine buys degrees directly."* Tested. It does not,
+on this hardware.
+
+| cell (Singular: out of memory) | msolve gens | msolve verdict | secs |
+|---|---:|---|---:|
+| `k=4 h=t deg≤6` | 67 | **OOM** | 238 |
+| `k=5 h=t deg≤4` | 64 | **TIMEOUT** (600 s) | 600 |
+| `k=5 h=t deg≤5` | 76 | **OOM** | 359 |
+| `k=6 h=t deg≤4` | 85 | **OOM** | 413 |
+
+**0 of 4 decided.** Recorded **STALLED**, stall point named (memory on a 15 GB
+box, three cells; wall-clock on the fourth) — *not* as emptiness.
+
+The negative is trustworthy because the controls passed: a two-sided parser
+control (a unit ideal is called EMPTY, a solvable system NONEMPTY) and a
+cross-engine control (msolve agrees with Singular's EMPTY on a cell whose answer
+was already known). An earlier draft of the parser read msolve's `[1]:` — the
+unit ideal, i.e. an *empty* variety — as NONEMPTY; the cross-engine control
+caught it, which is why it exists.
+
+**Read:** F4/FGLM is a genuinely different algorithm, not a longer run of the
+same one, and it still cannot hold these cells. The `deg_y = 3` h-branch
+boundary is a real computational wall, not a Singular artefact. Raising it needs
+more RAM or a structurally smaller system, not another engine.
+
+---
+
 ## 7. Wave-1 gate score
 
 Plan 43's gate: *"(72,108) decided, or its exact stall points named."*
