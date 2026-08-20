@@ -103,5 +103,12 @@
   "shape_tag": "a=3 b=9 r=1 i=4",
   "verdict": "{'name': 'w6_80206_4', 'status': 'TIMEOUT', 'secs': 240.16687774658203, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
   "wall_s": 240.2
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_80206_5', 'status': 'TIMEOUT', 'secs': 240.12845301628113, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
  }
 ]
