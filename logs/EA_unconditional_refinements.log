@@ -1,0 +1,26 @@
+--- 1. every universal coefficient in S_m is nonzero ------------------
+  [PASS] all 372 monomials of S_1..S_13 have nonzero coefficients, and every partition appears
+
+--- 2. unique-argmin criterion ---------------------------------------
+  [PASS] criterion is well posed: unique argmin => order of S_m equals f(m)
+
+--- 3. LEMMA tau_1 >= -1, with NO genericity assumption --------------
+  [PASS] S_2 = (3/2) t_2 + (3/8) t_1^2 exactly
+  [PASS] 2 tau_1 <= -4 is impossible: it would need tau_2 = 2 tau_1 <= -4 < -2
+  [PASS] LEMMA: tau_1 >= -1 unconditionally (u(B~_-5) >= 1)
+
+--- 4. m <= 12 restricted to parts 1..4: exhaustive case analysis -----
+    cancellation-free feasible (tau_1..tau_4): 108
+    cancellation-allowed feasible            : 145
+  [PASS] cancellation strictly enlarges the feasible set (so genericity is a real hypothesis, honestly flagged)
+  [PASS] in every cancellation-free feasible vector, tau_4 >= -1 (E4's box bound)
+  [PASS] in every cancellation-free feasible vector, tau_1 = tau_2 = tau_3 >= 0
+  [PASS] with cancellation allowed, tau_4 = -2 becomes possible: the E4 box bound on tau_4 is exactly where genericity enters
+
+--- 5. SCOPE STATEMENT ------------------------------------------------
+    Theorem C (pole order <= 3) holds for every tower whose ladder
+    divisibilities are not met by cancellation.  tau_1 >= -1 holds
+    always.  The (99,66) closure does NOT depend on this: Theorem D
+    (map-degree 4 != 13) is unconditional.
+
+EA: ALL 9 CHECKS PASS

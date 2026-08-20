@@ -1,0 +1,37 @@
+--- 1. R = W~_-5 / (alpha^6 U^6 v^9) --------------------------------
+  [PASS] g = alpha U (U-1)^8 gives g^6 = alpha^6 U^6 (U-1)^48
+  [PASS] R = v^39 W~/g^6 = W~/(alpha^6 U^6 v^9)
+    => ord_{v=-1}(R) = u(W~_-5) - 6,  u := ord_{U=0}
+    => a pole of order 4 at v=-1  <=>  u(W~_-5) = 2
+  [PASS] near-miss W~_-5 = n3 U^6 (U-1)^9 gives R = n3/alpha^6 (degree 0)
+
+--- 2. the formal sqrt tower  (sum S_m x^m)^2 = (1+T)^3 --------------
+  [PASS] (sum_{m<=13} S_m x^m)^2 == (1+T)^3 through x^13
+  [PASS] S_1 = (3/2) t_1
+  [PASS] S_2 = (3/2) t_2 + (3/8) t_1^2
+  [PASS] coeff of t_1^m in S_m equals binomial(3/2, m) and is nonzero for m<=13
+  [PASS] each S_m is isobaric of weight m in the t_j
+
+--- 3. W~_-5 = 2 g^3 (A~_4 - g^3 S_13) ------------------------------
+  [PASS] sum_{i+j=13, i,j>=1} S_i S_j == [x^13](1+T)^3 - 2 S_13
+    => W~_-5 = 2 g^3 A~_4 + g^6 (sum_{i,j>=1} S_iS_j - sum ttt) = 2 g^3 (A~_4 - g^3 S_13)   [identity verified]
+
+--- 4. the min-plus model and the ladder bound -----------------------
+    derived lower bounds tau_j >= [0, 0, 0, -1, -1, -1, -2, -2, -2, -2, -2, -2, -2]
+  [PASS] box bounds: tau_1,tau_2,tau_3 >= 0
+  [PASS] box bounds: tau_4,tau_5,tau_6 >= -1
+  [PASS] box bounds: tau_7..tau_13 >= -2
+  [PASS] bound derivation: f(j*floor(12/j)) <= floor(12/j)*tau_j  (partition j+...+j)
+    number of partitions of 13 = 101 ; min sum tau at the box bounds = -3
+    attained by e.g. [(9, 4), (8, 5), (8, 4, 1), (7, 6)]
+  [PASS] LEMMA: f(13) >= -3 for every tau meeting the box bounds
+  [PASS] consequently u(g^3 S_13) = 3 + f(13) >= 0
+  [PASS] consequently u(W~_-5) >= 3
+  [PASS] consequently ord_{v=-1}(R) >= -3  (pole order <= 3)
+  [PASS] the endgame's unique solution needs pole order EXACTLY 4 > 3 -> INADMISSIBLE
+  [PASS] near-miss profile tau == 0 is ladder-feasible with f(13) = 0
+
+--- 5. the min-plus model is exact for generic towers ----------------
+  [PASS] for 40 random ladder-feasible towers with generic units, ord_{U=0}(S_m) == f(m) for all m <= 13
+
+E4: ALL 20 CHECKS PASS

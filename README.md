@@ -25,3 +25,6 @@ eliminated in the literature, **(72,108)**, remains undecided.
 Every certifier is runnable and self-documenting: it prints `PASS`/`FAIL` per
 claim, each labelled with its proof standard (`PROVED-exact`, `CERTIFIED`,
 `LIT-READ`, `CONDITIONAL`, `UNCHECKED`).
+
+## Parallel adjudication
+A second (Opus) session independently adjudicated the three reports on this branch name; its ledger is preserved verbatim at wave3/ADJUDICATION_PARALLEL_OPUS.md. Its claims are NOT yet verified by the auditor; see the note at the end of ADJUDICATION.md.

@@ -1,0 +1,9 @@
+  [PASS] deg(p^2 - w r^3) == 3
+  [PASS] p squarefree
+  [PASS] r squarefree
+  [PASS] cubic squarefree
+  [PASS] gcd(p, w r) == 1
+  [PASS] h == h0 (constant)
+  [PASS] J = -h0 x1^4 x2^12 at (2/3, 1/2): True
+
+All exact certifications passed. degrees: y1: (27, 72)  y2: (18, 48)

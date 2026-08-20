@@ -110,3 +110,14 @@ runs a 2013-intractable cell in seconds — the remaining ladder is pure compute
 6. My own first sieve script had a vacuous-else bug (empty parse → "NONE");
    caught by re-inspection, rewritten with a planted control. Recorded because
    the campaign's rule is that the auditor's errors get logged too.
+
+## 5. Post-audit arrivals (UNAUDITED-BY-ME)
+
+While this audit ran, a parallel Opus session pushed its own adjudication to
+this branch name (preserved at `wave3/ADJUDICATION_PARALLEL_OPUS.md`), with
+two additional headline claims: (a) "(108,72) closed with THEOREM 2 dependence
+removed"; (b) "Second Framework: D_ode = 69/5, dies outright." Neither is
+verified here; both enter the next audit's queue. Note the same lineage
+earlier claimed "D = 15 − 12/β" as the Second-Framework kill — the successive
+kill mechanisms differ, which is precisely the kind of drift the ledger
+exists to catch.

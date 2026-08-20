@@ -1,0 +1,43 @@
+--- 1. the general-eps endgame equation ------------------------------
+  [PASS] general-eps block identity verified for eps = 0..9 with symbolic a, b, e, beta
+  [PASS] U-coefficient = (2e+3b)(eps+G) - b N
+    collapse:  N = (2e+3beta)(eps+G)/beta = (G + eps)*(3*beta + 2*e)/beta   -> at e=4,beta=6: 13*G/3 + 13*eps/3
+  [PASS] (99,66): N = 13(eps+G)/3
+  [PASS] at eps=1, G=8: N = 39
+
+--- 2. integrality forces eps = 1 once G = 8 -------------------------
+    eps with 3 | (eps+8) and deg g = eps+8 <= 9 : [1]
+  [PASS] G = 8 and deg g <= 9 force eps = 1, i.e. U | g (THEOREM 2's step, recovered from a congruence)
+
+--- 3. sweep over every admissible (eps, G) --------------------------
+    eps=0 G=0 deg g=0 N=0 D=0: NO rational R   map-degrees None
+    eps=1 G=2 deg g=3 N=13 D=13: unique   map-degrees [4]
+    eps=1 G=5 deg g=6 N=26 D=13: unique   map-degrees [4]
+    eps=1 G=8 deg g=9 N=39 D=13: unique   map-degrees [4]
+    eps=2 G=1 deg g=3 N=13 D=26: unique   map-degrees [9]
+    eps=2 G=4 deg g=6 N=26 D=26: unique   map-degrees [9]
+    eps=2 G=7 deg g=9 N=39 D=26: unique   map-degrees [9]
+    eps=3 G=0 deg g=3 N=13 D=39: 1-parameter family   map-degrees [14]
+    eps=3 G=3 deg g=6 N=26 D=39: NO rational R   map-degrees None
+    eps=3 G=6 deg g=9 N=39 D=39: NO rational R   map-degrees None
+    eps=4 G=2 deg g=6 N=26 D=52: NO rational R   map-degrees None
+    eps=4 G=5 deg g=9 N=39 D=52: NO rational R   map-degrees None
+    eps=5 G=1 deg g=6 N=26 D=65: NO rational R   map-degrees None
+    eps=5 G=4 deg g=9 N=39 D=65: NO rational R   map-degrees None
+    eps=6 G=0 deg g=6 N=26 D=78: NO rational R   map-degrees None
+    eps=6 G=3 deg g=9 N=39 D=78: NO rational R   map-degrees None
+    eps=7 G=2 deg g=9 N=39 D=91: NO rational R   map-degrees None
+    eps=8 G=1 deg g=9 N=39 D=104: NO rational R   map-degrees None
+    eps=9 G=0 deg g=9 N=39 D=117: NO rational R   map-degrees None
+  [PASS] every admissible (eps,G) gives either no rational R or map-degree != 13
+  [PASS] the sweep includes the certified case (eps,G) = (1,8)
+  [PASS] (1,8) reproduces (star): D = 13, A = -4, B = 0, unique solution of map-degree 4
+
+--- 4. VERDICT -------------------------------------------------------
+    The (99,66) emptiness verdict does NOT depend on THEOREM 2.
+    For every boundary polynomial g = alpha U^eps (U-1)^G admitted by
+    the certified box cap, the endgame either has no rational solution
+    or has one whose map-degree is not 13.  THEOREM 2's own conclusion
+    (eps = 1 when G = 8) additionally follows from integrality alone.
+
+EB: ALL 8 CHECKS PASS
