@@ -4,5 +4,10 @@
   "verdict": "EMPTY",
   "head": "[-1]:\n",
   "wall": 0.0
+ },
+ {
+  "name": "w6_35657_0",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4
  }
 ]
