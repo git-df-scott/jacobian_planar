@@ -56,6 +56,22 @@ v_zero, n_zero = classify(zero_out, 0, False, "")
 check("GATE-3 negative control: 0-byte artifact is NOT classified EMPTY",
       v_zero != "EMPTY", f"verdict={v_zero} bytes={n_zero}")
 
+# --- 4. runner control: a timed-out engine must not outlive its deadline ----
+# A run that overruns its deadline and is left alive would silently overlap the
+# NEXT job, breaking the one-msolve-at-a-time rule.  Take an input known to be
+# far beyond a short deadline, run it with a short one, and require both that
+# the verdict is TIMEOUT and that no msolve process survives.
+hard = os.path.join(REPO, "ggv", "ms_ladder", "b16r_d8_A_p1000003.ms")
+if os.path.exists(hard):
+    rec_to = run(hard, os.path.join(SCRATCH, "gate_timeout.out"), timeout=25)
+    survivors = subprocess.run(["pgrep", "-x", "msolve"],
+                               capture_output=True, text=True).stdout.split()
+    check("GATE-4 runner control: an over-deadline run is recorded TIMEOUT",
+          rec_to["verdict"] == "TIMEOUT",
+          f"verdict={rec_to['verdict']} wall={rec_to['wall_s']}s")
+    check("GATE-4 runner control: no msolve process survives its deadline",
+          not survivors, f"survivors={survivors}")
+
 # a positive control for the classifier so the two negatives carry information
 emp_out = os.path.join(SCRATCH, "pos_empty.out")
 open(emp_out, "w").write("[-1]:\n")

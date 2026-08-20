@@ -20,7 +20,7 @@ OUTDIR = os.path.join(REPO, "ggv", "out_ladder")
 TSV = os.path.join(REPO, "ggv", "ladder.tsv")
 PRIMES = [1000003, 1000033, 1000039]
 COLS = ["d", "chart", "prime", "verdict", "exit", "peak_rss_kb", "wall_s",
-        "vmcap_kb", "timeout_s", "in_bytes", "out_bytes", "input", "output",
+        "mem_policy", "timeout_s", "in_bytes", "out_bytes", "input", "output",
         "P1_output", "note"]
 
 def emit(row):
@@ -43,7 +43,7 @@ def main(ds, timeout):
                 row = {"d": d, "chart": chart, "prime": p,
                        "verdict": rec["verdict"], "exit": rec["exit"],
                        "peak_rss_kb": rec["peak_rss_kb"], "wall_s": rec["wall_s"],
-                       "vmcap_kb": rec["vmcap_kb"], "timeout_s": rec["timeout_s"],
+                       "mem_policy": rec["mem_policy"], "timeout_s": rec["timeout_s"],
                        "in_bytes": rec["in_bytes"], "out_bytes": rec["out_bytes"],
                        "input": os.path.relpath(src, REPO),
                        "output": os.path.relpath(out, REPO) if rec["out_bytes"] else "",

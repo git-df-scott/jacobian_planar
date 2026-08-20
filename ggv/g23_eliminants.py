@@ -25,7 +25,7 @@ Controls (all computed from the run, none asserted):
 An elimination that OOMs or times out is RECORDED with its peak RSS and the
 run moves to the next d.
 """
-import os, re, subprocess, sys, time
+import os, re, shlex, signal, subprocess, sys, time
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "wave5"))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from w5_b16_reduce import reduced_charts, to_ms
@@ -36,23 +36,43 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WORK = os.path.join(REPO, "ggv", "elim_work")
 OUTD = os.path.join(REPO, "ggv", "mu_eliminants")
 P = 1000003                       # p = 1 mod 3
-VMCAP_KB = 13_000_000
+MEM_POLICY = "oom_score_adj=1000, no vm cap"   # see ggv/g_runner.py
 t = Symbol('t')
 KEEP = {"A": [mu0, mu3], "B": [mu0]}
 
 
 def sh(cmd, timeout):
-    """Run one engine process under the recorded address-space cap.  Serialized."""
-    wrapped = "ulimit -v %d; exec %s" % (VMCAP_KB, cmd)
+    """Run one engine process, serialized, in its own process group.
+
+    Memory policy matches ggv/g_runner.py: no artificial address-space cap; the
+    engine carries oom_score_adj 1000 so the kernel reclaims it and nothing
+    else, which arrives as returncode -9/137 and is recorded as STALLED-OOM.
+    On timeout the whole process group is killed, so no engine outlives its
+    deadline and overlaps the next job."""
+    inner = "echo 1000 > /proc/self/oom_score_adj 2>/dev/null; exec " + cmd
+    script = "/usr/bin/time -v /bin/bash -c " + shlex.quote(inner)
     t0 = time.time()
+    p = subprocess.Popen(["/bin/bash", "-c", script], stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE, text=True, start_new_session=True)
+    to = False
     try:
-        p = subprocess.run(["/bin/bash", "-c", "/usr/bin/time -v /bin/bash -c " +
-                            "'" + wrapped.replace("'", "'\"'\"'") + "'"],
-                           capture_output=True, text=True, timeout=timeout)
-        rc, err, out = p.returncode, p.stderr, p.stdout
-        to = False
-    except subprocess.TimeoutExpired as e:
-        rc, err, out, to = None, "", "", True
+        out, err = p.communicate(timeout=timeout)
+        rc = p.returncode
+    except subprocess.TimeoutExpired:
+        to = True
+        for sig in (signal.SIGTERM, signal.SIGKILL):
+            try:
+                os.killpg(os.getpgid(p.pid), sig)
+            except (ProcessLookupError, PermissionError):
+                pass
+            try:
+                out, err = p.communicate(timeout=30)
+                break
+            except subprocess.TimeoutExpired:
+                out, err = "", ""
+        else:
+            out, err = "", ""
+        rc = p.returncode
     m = re.search(r"Maximum resident set size \(kbytes\): (\d+)", err or "")
     return {"rc": rc, "stderr": err, "stdout": out, "timeout": to,
             "rss_kb": int(m.group(1)) if m else -1, "wall_s": round(time.time()-t0, 2)}
@@ -180,9 +200,13 @@ def status(r):
         return "OK"
     if r.get("timeout"):
         return "TIMEOUT"
-    if r["rc"] in (-9, 137) or "Cannot allocate memory" in (r["stderr"] or "") \
-       or "no more memory" in ((r["stdout"] or "") + (r["stderr"] or "")):
+    rc = r["rc"]
+    txt = (r["stdout"] or "") + (r["stderr"] or "")
+    if rc in (-9, 137) or "Cannot allocate memory" in txt \
+       or "no more memory" in txt or "Out of memory" in txt:
         return "STALLED-OOM"
+    if isinstance(rc, int) and (rc < 0 or rc > 128):
+        return "CRASH"
     return "NO-OUTPUT"
 
 
@@ -228,7 +252,7 @@ def do(d, chart, timeout, cross):
                "n_generators_in": len(eqs), "n_eliminated": len(elim),
                "peak_rss_kb": rm["rss_kb"], "wall_s": rm["wall_s"],
                "exit": ("TIMEOUT" if rm["timeout"] else rm["rc"]),
-               "vmcap_kb": VMCAP_KB, "input": os.path.relpath(rm["input"], REPO),
+               "mem_policy": MEM_POLICY, "input": os.path.relpath(rm["input"], REPO),
                "gens": nm}
         blocks.append((label + " -- engine msolve", blk))
         results[(sat, "msolve")] = nm
@@ -239,7 +263,7 @@ def do(d, chart, timeout, cross):
                     "n_generators_in": len(eqs), "n_eliminated": len(elim),
                     "peak_rss_kb": rs["rss_kb"], "wall_s": rs["wall_s"],
                     "exit": ("TIMEOUT" if rs["timeout"] else rs["rc"]),
-                    "vmcap_kb": VMCAP_KB, "input": os.path.relpath(rs["input"], REPO),
+                    "mem_policy": MEM_POLICY, "input": os.path.relpath(rs["input"], REPO),
                     "gens": ns}
             blocks.append((label + " -- engine Singular", blks))
             results[(sat, "Singular")] = ns
@@ -262,7 +286,7 @@ def do(d, chart, timeout, cross):
                     "n_generators_in": len(dropped), "n_eliminated": len(elim),
                     "peak_rss_kb": rn["rss_kb"], "wall_s": rn["wall_s"],
                     "exit": ("TIMEOUT" if rn["timeout"] else rn["rc"]),
-                    "vmcap_kb": VMCAP_KB, "gens": nn}))
+                    "mem_policy": MEM_POLICY, "gens": nn}))
 
     path = write_eliminant(chart, d, blocks)
     print(f"  -> {os.path.relpath(path, REPO)}", flush=True)
@@ -289,7 +313,7 @@ def main(chart, ds, timeout):
               g is not None, f"eliminant={g}")
     logp = os.path.join(OUTD, "CONTROLS.log" if chart == "A" else "CONTROLS_chartB.log")
     with open(logp, "a") as f:
-        f.write(f"\n===== chart {chart}, d in {ds}, GF({P}), vmcap {VMCAP_KB} kB =====\n")
+        f.write(f"\n===== chart {chart}, d in {ds}, GF({P}), memory policy: {MEM_POLICY} =====\n")
         f.write("\n".join(LOG) + "\n")
         f.write("ALL PASS\n" if not FAIL else "FAILURES: " + str(FAIL) + "\n")
     print("ALL PASS" if not FAIL else "FAILURES: " + str(FAIL))

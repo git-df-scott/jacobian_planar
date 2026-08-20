@@ -48,7 +48,7 @@ def sec_ladder():
     for r in body:
         rows.append([r[ix["d"]], r[ix["chart"]], r[ix["prime"]], r[ix["verdict"]],
                      r[ix["exit"]], mb(r[ix["peak_rss_kb"]]), r[ix["wall_s"]],
-                     r[ix["timeout_s"]], mb(r[ix["vmcap_kb"]]),
+                     r[ix["timeout_s"]], r[ix["mem_policy"]],
                      r[ix["out_bytes"]],
                      "`%s`" % r[ix["output"]] if r[ix["output"]] else "-",
                      "`%s`" % r[ix["P1_output"]] if r[ix["P1_output"]] else "-"])
@@ -57,9 +57,9 @@ def sec_ladder():
         counts[r[ix["verdict"]]] = counts.get(r[ix["verdict"]], 0) + 1
     s = "## G1 -- ladder d = 8..12, reduced charts, mod p\n\n"
     s += "Serialized: one msolve process at a time, chart A before chart B.\n"
-    s += "`peak RSS` and `vm cap` in MiB; `[-1]` output = verdict EMPTY.\n\n"
+    s += "`peak RSS` in MiB; `[-1]` output = verdict EMPTY.\n\n"
     s += table(["d", "chart", "prime", "verdict-class", "exit", "peak RSS (MiB)",
-                "wall (s)", "timeout (s)", "vm cap (MiB)", "out bytes",
+                "wall (s)", "timeout (s)", "memory policy", "out bytes",
                 "artifact", "-P 1 artifact"], rows)
     s += "\n\nVerdict-class counts: " + \
          ", ".join(f"`{k}` {v}" for k, v in sorted(counts.items())) + "\n"
