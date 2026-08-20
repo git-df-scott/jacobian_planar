@@ -80,6 +80,26 @@ So `edgeQ_input.ms` is a differently, more rigidly normalised object and its 114
 counts points of that normalisation. **Neither number is wrong; they must not be
 quoted as if they measured the same variety.**
 
+## Item 2 — a well-posedness finding about the pentagon detector
+
+STATUS §6's standing requirement is an **absolute** normalisation, and v3
+implements it. Building it surfaced a constraint that has to be stated with any
+number the detector produces: the y-adic recursion amplifies, so at a random
+parameter point the levels-13..23 coefficients run past 1e10, and **float64
+cannot resolve an absolute 1e-9 there at all**. The acceptance band (allowed
+coefficients O(1)) is precisely the region where an absolute test is meaningful.
+So the search's residual numbers are only interpretable together with the
+allowed scale at the point that produced them, and v3b records both for every
+start. The planted positive control is drawn from inside the band for the same
+reason — outside it, the control would fail for a floating-point reason and say
+nothing about the detector.
+
+Second change in v3b: Newton's Jacobian is computed **exactly**, over
+C[eps]/(eps^2), instead of by a finite difference with h = 1e-7 (which caps a
+Newton step at about 1e-8 accuracy and could stall a search near 1e-5 without
+that being a fact about the system). On the planted control the exact version
+reaches 1.29e-11.
+
 ## Tooling findings recorded this session
 
 Two silent lies in msolve 0.10.1, each found by minimal reproduction, each
