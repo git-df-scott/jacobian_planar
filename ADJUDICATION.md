@@ -75,8 +75,8 @@ normalization); μ₀ ≠ 0 saturated; msolve:
 |---|---|---|---|
 | d=2,3,4 | ≤ (112,160) | solved, μ₀=0 only | EMPTY — **reproduced** |
 | **d=5** | (144,208) | **STALLED (1h, PC)** | **EMPTY over ℚ (char-0 Gröbner proof, 22 s)** + 3 primes |
-| d=6 | (176,256) | untouched | EMPTY at 3 primes (~70 s each); char-0 running |
-| d=7, d=8 | (208,304), (240,352) | untouched | running |
+| d=6 | (176,256) | untouched | **EMPTY over Q (char-0, 135 s)** + 3 primes (~70 s each) |
+| d=7, d=8 | (208,304), (240,352) | untouched | **STALLED-OOM** (0-byte outputs, ~13.9 GB peak = machine ceiling, ~950-1100 s; NOT a verdict) |
 
 Every cell is a place a constructive JC2 counterexample could have lived.
 None does. The B=16 corridor is now closed further than any published source,
@@ -90,7 +90,7 @@ runs a 2013-intractable cell in seconds — the remaining ladder is pure compute
 * **Case (2) over ℚ̄**: mod-p EMPTY everywhere + eliminant irreducible; the
   13-variable residual over the degree-1144 field remains the well-posed
   heavy target.
-* **B=16 ladder, d ≥ 9** and the GGV CONJECTURE (all solutions have
+* **B=16 ladder, d ≥ 7** (d=7/8 OOM at 14 GB — needs a bigger box or a block split, same wall as the pentagons) and the GGV CONJECTURE (all solutions have
   μ₁ = μ₂ = 0): each further cell is one msolve run; a proof of their
   conjecture would close B=16 outright — that is now the sharpest
   theorem-shaped target on the board.
