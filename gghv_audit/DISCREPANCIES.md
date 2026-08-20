@@ -25,6 +25,15 @@ The degree pairs the rerun produces with `105 ≤ max ≤ 124` are exactly
 | (80,112) | (4,12) | — | (7⁄4, 3) | (5,7) | "[4, §3.5]" | EXTERNAL-NOT-RE-DERIVED |
 | (120,80) | (8,32) | (8,28) | (11⁄4, 7) | (3,2) | GGHV §3 | RE-DERIVED-KEY-STEP |
 
+Counting ordered pairs, `gghv_audit/w5_pairs_105_124.py` (4/4 checks) decides all
+**4560** ordered (deg P, deg Q) with 105 ≤ max ≤ 124 — the data are forced, since
+g = gcd(deg P, deg Q) = v11(A₀), m = deg P/g, n = deg Q/g — and exactly **six**
+arise: the two orientations of each of (72,108), (80,112), (80,120). The rest are
+eliminated by the enumeration itself: 214 because the gcd forces m = 1 or n = 1,
+4316 because no admissible complete chain has that v11(A₀), and 24 because chains
+with that v11(A₀) exist but none carries that (m,n). **Zero pairs come back
+NOT-ELIMINATED-BY-MY-RERUN.**
+
 **No pair in 105 ≤ max ≤ 124 is produced by my rerun that GGHV does not list, and
 none that GGHV lists is missed.** In that sense there is no discrepancy in the
 enumeration. The discrepancies below are of two other kinds: places where my
