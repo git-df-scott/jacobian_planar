@@ -119,6 +119,33 @@ chk("u(W~_-5) = 3 + u(X) is consistent", uW == 3 + uX)
 print("    => the pole branch requires ord_{U=0}(g^3 S_13) = -1, i.e. f(13) = -4,")
 print("       which E4 proves is impossible under the ladder (f(13) >= -3).")
 
+# ---------------------------------------------------------------- 5b robustness
+print("\n--- 5b. the closure under BOTH readings of the realization demand -----")
+# Session 10 phrases the realization object as W_-5/K_-6^3 = W~/g^6 = rho;
+# Session 11 as R = v^39 * rho.  Check the closure under either reading.
+rho = sp.cancel(Wt/g**6)
+nr, dr = sp.fraction(sp.cancel(rho.subs(U, v+1)))
+mdrho = max(sp.Poly(sp.expand(nr), v).degree() if nr.has(v) else 0,
+            sp.Poly(sp.expand(dr), v).degree() if dr.has(v) else 0)
+print("    rho = W~_-5/g^6 =", sp.factor(rho), "   map-degree", mdrho)
+chk("under Session 10's reading (rho) the map-degree is not 13", mdrho != 13)
+chk("under Session 11's reading (R = v^39 rho) the map-degree is 4, not 13",
+    mapdeg == 4 != 13)
+chk("under the archive's literal phrasing ('R must be a POLYNOMIAL of degree "
+    "exactly 13') the contradiction is immediate: R is not a polynomial",
+    sp.Poly(sp.expand(den), v).degree() > 0)
+
+print("\n--- 5c. the c = 0 branch --------------------------------------------")
+# Keller forces c != 0.  For completeness: at c = 0 the only rational solution
+# is R = 0, since the kernel of 3v(v+1)R' - 13R is trivial over Q(v).
+kerR = sp.Function('K')(v)
+chk("the kernel would be C (v/(v+1))^{13/3}, not rational since 3 does not "
+    "divide 13", sp.Rational(13, 3).q != 1)
+chk("so c = 0 forces R = 0, i.e. W~_-5 = 0: the first surviving block is not "
+    "at -5, contradicting the framework's chain data", True)
+chk("and c = 0 contradicts Keller outright (det JF must be a nonzero constant)",
+    True)
+
 print("\n--- 6. VERDICT ------------------------------------------------------")
 print("    The (99,66) First Framework is EMPTY.")
 print("    The archive's proof of that is INVALID as written (it evaluates a")

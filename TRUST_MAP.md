@@ -178,15 +178,15 @@ either. The `N2_prompt.md` sub-campaign (Phase 0: rederive the degree-23 Belyi d
 ```
 
 Current status: **all 15 archive re-runs clean; all 12 new certifiers pass** —
-183 exact checks under sympy and 47 under PARI/GP, no shared code between them.
+193 exact checks under sympy and 47 under PARI/GP, no shared code between them.
 
 | certifier | checks | subject |
 |---|---|---|
-| `E1_master_identity.py` | 13 | re-derives the Sessions 16-18 master identity from symbolic framework data |
+| `E1_master_identity.py` | 17 | re-derives the Sessions 16-18 master identity from symbolic framework data |
 | `E2_endgame_classification.py` | 25 | complete rational solution set of `T_{D,m}(R) = κ` |
 | `E3_pari_crosscheck.gp` | 35 | the same, in PARI/GP, independent code |
 | `E4_pole_admissibility.py` | 20 | the ladder bound `u(W~₋₅) ≥ 3` |
-| `E5_propagate_tower.py` | 21 | propagation of the unique `R` up the tower; both closures |
+| `E5_propagate_tower.py` | 27 | propagation of the unique `R` up the tower; both closures |
 | `E6_transfer_general.py` | 21 | the corrected transfer theorem |
 | `E7_alpoge_audit.py` | 23 | Alpöge map + Session 39 descent, incl. its three unchecked claims |
 | `E8_pari_alpoge.gp` | 12 | the same, in PARI/GP, independent code |

@@ -42,7 +42,7 @@ with no Belyi rederivation required.
 
 Runs every certifier — the 15 re-runnable archive scripts and the 12 new ones — under
 exact arithmetic. Nonzero exit if anything fails. Requires `python3` + `sympy` and
-`gp` (PARI/GP). Current status: all pass (183 sympy checks, 47 PARI checks, no shared
+`gp` (PARI/GP). Current status: all pass (193 sympy checks, 47 PARI checks, no shared
 code between the toolchains).
 
 ## Layout

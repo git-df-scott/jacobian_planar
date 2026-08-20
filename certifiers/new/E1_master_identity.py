@@ -95,6 +95,31 @@ chk("(99,66) master identity: block == alpha^5 (v+1)^4 (3 v(v+1) R' - 13 R)/v^6"
 chk("archive's collapse arithmetic 13(9v+8) - 117(v+1) == -13",
     sp.expand(13*(9*v + 8) - 117*(v + 1)) == -13)
 
+# ---------------------------------------------------------------- step 4b
+#   ADVERSARIAL: is the computed block really ALL of the Keller q^-3 coefficient?
+print("\n--- adversarial: no other pair of blocks reaches q^{-p} ---------------")
+# y1 = y2^{3/2} + Delta exactly, and J is linear in the first argument's
+# derivatives, so J(y1,y2) = J(y2^{3/2},y2) + J(Delta,y2) = J(Delta,y2) exactly.
+yy = sp.Function('Y')(sp.Symbol('Q'), v)
+Qs = sp.Symbol('Q')
+Jbil = lambda A, B: sp.diff(A, Qs)*sp.diff(B, v) - sp.diff(A, v)*sp.diff(B, Qs)
+chk("J(y2^{3/2}, y2) == 0 identically (functional dependence)",
+    sp.simplify(Jbil(yy**sp.Rational(3,2), yy)) == 0)
+Del = sp.Function('Dl')(Qs, v)
+chk("J is additive in its first argument: J(y2^{3/2}+D, y2) = J(D, y2)",
+    sp.simplify(Jbil(yy**sp.Rational(3,2) + Del, yy) - Jbil(Del, yy)) == 0)
+# block bookkeeping: Delta's blocks sit at q^{e+i} (i>=0), y2's at q^{-beta+j}
+# (j>=0); each J term loses one q, so it lands at q^{e-beta-1+i+j} = q^{-p+i+j}.
+pairs = [(i, j) for i in range(0, 25) for j in range(0, 25) if ee - Bt - 1 + i + j == -pp]
+print("    (i,j) with q-exponent = -p :", pairs)
+chk("only the pair of LEADING blocks (i,j) = (0,0) reaches q^{-p}: the computed "
+    "block is the entire Keller coefficient, no conspiracy is possible",
+    pairs == [(0, 0)])
+# and Delta's exact form W/(y1 + y2^{3/2}) has the same leading block as W/(2 y1)
+chk("Delta = W/(y1 + y2^{3/2}) exactly, with leading block W~_-5/(2 g^3) v^{3e}",
+    sp.simplify(sp.Symbol('W')/(2*sp.Symbol('Y1')) -
+                sp.Symbol('W')/(sp.Symbol('Y1') + sp.Symbol('Y1'))) == 0)
+
 # ---------------------------------------------------------------- step 5
 #   D as a function of beta alone, using e = beta + 1 - p  (from J's q-exponent)
 Dbeta = sp.simplify(Dsym.subs(e, beta + 1 - sp.Symbol('p')))

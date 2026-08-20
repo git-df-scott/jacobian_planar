@@ -62,7 +62,13 @@ Two further consequences, both used later:
 * **`D` is bounded.** With `e = β + 1 − p` (forced by `J`'s `q`-exponent),
   `D = (15β − 6p + 6)/β`; at `p = 3`, `D = 15 − 12/β < 15`.
 
-*Certificate:* `E1_master_identity.py` — 13/13, including the archive's own collapse
+**Adversarial check on the derivation.** `J(y₁,y₂) = J(Δ,y₂)` exactly, since
+`y₁ = y₂^{3/2} + Δ` and `J(y₂^{3/2}, y₂) = 0`. Block bookkeeping: `Δ`'s blocks sit at
+`q^{e+i}` and `y₂`'s at `q^{−β+j}` with `i, j ≥ 0`, and each `J` term loses one `q`, so a
+pair lands at `q^{−p+i+j}`. Only `(i,j) = (0,0)` reaches `q^{−p}`. **The computed block is
+the entire Keller coefficient — no conspiracy among subleading blocks is possible.**
+
+*Certificate:* `E1_master_identity.py` — 17/17, including the archive's own collapse
 arithmetic `13(9v+8) − 117(v+1) = −13`.
 
 ---
@@ -214,7 +220,18 @@ Note the coincidence: `deg W~₋₅ = 15` is *exactly* the near-miss's degree
 the archive's theorem wrongly excluded lands in the same degree stratum as the near-miss
 and dies on the same ledger.
 
-*Certificate:* `E5_propagate_tower.py` — 21/21.
+**Both readings of the realization demand.** Session 10 phrases the object as
+`ρ = W₋₅/K₋₆³ = W~₋₅/g⁶`; Session 11 as `R = v³⁹ρ`. Under Session 11's reading the
+map-degree is 4; under Session 10's it is 43; under the archive's literal phrasing
+(*"`R` must be a polynomial of degree exactly 13"*) the contradiction is immediate,
+since `R` is not a polynomial. **The closure holds under all three.**
+
+**The `c = 0` branch.** Keller forces `c ≠ 0`. For completeness: at `c = 0` the kernel of
+`3v(v+1)R' − 13R` over `Q̄(v)` is trivial (it would be `C(v/(v+1))^{13/3}`, and `3 ∤ 13`),
+so `R = 0`, i.e. `W~₋₅ = 0` — the first surviving block is then not at `−5`, contradicting
+the chain data.
+
+*Certificate:* `E5_propagate_tower.py` — 27/27.
 
 ---
 

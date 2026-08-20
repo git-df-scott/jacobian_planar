@@ -13,10 +13,17 @@
   [PASS] (99,66) master identity: block == alpha^5 (v+1)^4 (3 v(v+1) R' - 13 R)/v^6
   [PASS] archive's collapse arithmetic 13(9v+8) - 117(v+1) == -13
 
+--- adversarial: no other pair of blocks reaches q^{-p} ---------------
+  [PASS] J(y2^{3/2}, y2) == 0 identically (functional dependence)
+  [PASS] J is additive in its first argument: J(y2^{3/2}+D, y2) = J(D, y2)
+    (i,j) with q-exponent = -p : [(0, 0)]
+  [PASS] only the pair of LEADING blocks (i,j) = (0,0) reaches q^{-p}: the computed block is the entire Keller coefficient, no conspiracy is possible
+  [PASS] Delta = W/(y1 + y2^{3/2}) exactly, with leading block W~_-5/(2 g^3) v^{3e}
+
     D(beta,p) = 3(2(beta+1-p)+3beta)/beta = 3*(5*beta - 2*p + 2)/beta
     at p = 3:  D = 15 - 12/beta  -> beta=6 gives 13
   [PASS] D = 15 - 12/beta when p = 3
     CONSEQUENCE: with p = 3 the endgame D is bounded: D = 15 - 12/beta < 15
                  for every beta > 0.  D is NOT the chain degree in general.
 
-E1: ALL 13 CHECKS PASS
+E1: ALL 17 CHECKS PASS

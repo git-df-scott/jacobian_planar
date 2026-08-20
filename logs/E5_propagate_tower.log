@@ -49,6 +49,17 @@
     => the pole branch requires ord_{U=0}(g^3 S_13) = -1, i.e. f(13) = -4,
        which E4 proves is impossible under the ladder (f(13) >= -3).
 
+--- 5b. the closure under BOTH readings of the realization demand -----
+    rho = W~_-5/g^6 = c*(243*U**4 - 1053*U**3 + 1755*U**2 - 1365*U + 455)/(455*U**4*alpha**5*(U - 1)**39)    map-degree 43
+  [PASS] under Session 10's reading (rho) the map-degree is not 13
+  [PASS] under Session 11's reading (R = v^39 rho) the map-degree is 4, not 13
+  [PASS] under the archive's literal phrasing ('R must be a POLYNOMIAL of degree exactly 13') the contradiction is immediate: R is not a polynomial
+
+--- 5c. the c = 0 branch --------------------------------------------
+  [PASS] the kernel would be C (v/(v+1))^{13/3}, not rational since 3 does not divide 13
+  [PASS] so c = 0 forces R = 0, i.e. W~_-5 = 0: the first surviving block is not at -5, contradicting the framework's chain data
+  [PASS] and c = 0 contradicts Keller outright (det JF must be a nonzero constant)
+
 --- 6. VERDICT ------------------------------------------------------
     The (99,66) First Framework is EMPTY.
     The archive's proof of that is INVALID as written (it evaluates a
@@ -60,4 +71,4 @@
     Closure 2 is unconditional given the framework's 13-realization
     demand; closure 1 additionally needs no realization layer at all.
 
-E5: ALL 21 CHECKS PASS
+E5: ALL 27 CHECKS PASS
