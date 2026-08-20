@@ -25,5 +25,9 @@
  {
   "name": "w6_35657_5",
   "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_5_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_6",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_6_dump.sing']' timed out after 120 seconds"
  }
 ]

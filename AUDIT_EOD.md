@@ -102,3 +102,15 @@ independent test of Cor 5.7:
   EMPTY     -> first independent confirmation of the (9,27)-branch kill.
   non-empty -> GGHV Sec 5 has an error inside the surviving pair's own case,
                and the (9,27) branch of (72,108) REOPENS with live shapes.
+
+## 10. Write-out catches, round 2
+
+- d=12 row0 factors RATIONALLY: a24 in {-1/12, 1/20} exactly, so the two
+  seeded runs together ARE chart N in full.  The 1/20-N run is REQUIRED to
+  close the cell (fast, non-resonant predicted), not optional.
+- Sliver verdict standards pre-registered: EMPTY mod 65521 = replication-grade
+  evidence for GGHV Cor 5.7 (not char-0 proof); non-empty = needs full-tower +
+  char-0 lift before the word refutation.  Truncation-EMPTY validly implies
+  full-EMPTY; truncation-non-empty does not imply realization.
+- Memory tripwire: swap-free < 8G -> SIGSTOP the sliver msolve until the twin
+  passes peak.  (Current: 22G free, safe.)
