@@ -1,0 +1,16 @@
+==============================================================================
+consistency of the queue's reduced polygons with its chain tags
+==============================================================================
+    [PASS] G1 POSITIVE: deg NP : deg NQ equals m : n up to orientation on every chain-tagged target   169 in tag order, 11 reversed, 0 neither
+      reversed (deg NP:NQ = n:m): (7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))  28:42
+      reversed (deg NP:NQ = n:m): (8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0)  24:36
+      reversed (deg NP:NQ = n:m): (7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))  28:42
+    [PASS] G1b POSITIVE: the stored polygon degrees are constant within each chain   19 chains, 0 with more than one degree pair; reversed-tag chains: ['(7,42)/13/7,6', '(8,40)/8,28/11/4,7', '(9,36)/17/9,4', 'F3(j=1;m,n=7,5)', 'F5(j=0;m,n=9,5)']
+    [PASS] G1c NEGATIVE: mutating one target's polygon makes its chain non-constant   chain (11,33)/19/4,8: 100 targets, degree pairs now [(26, 39), (99, 39)]
+    [PASS] G2 NEGATIVE: perturbing one polygon vertex breaks the ratio under both orientations   deg NP 26 -> 27, orientation 1 -> 0
+    [PASS] G3 POSITIVE: trackD_extract.orient accepts every target   180 of 180 accepted; 0 OUT OF SCOPE
+    [PASS] G3b POSITIVE: the driver side is decided by whether the tag's eps pair lists (1,0) first   NP drives 83, NQ drives 97; 0 tags disagree
+    [PASS] G4 NEGATIVE: mangling a j=0 row makes orient() reject the target   j=0 row [(0, 0), (1, 0)] -> [(0, 0), (3, 0)]
+==============================================================================
+    7/7 checks passed
+==============================================================================
