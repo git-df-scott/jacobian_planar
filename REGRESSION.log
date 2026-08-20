@@ -65,3 +65,31 @@ exit=0
     4/4 checks passed
   FAILS: 0
 === h2/w5_h2_controls.py
+Terminated
+exit=143
+    [PASS] C3 the Rabinowitsch (non-degeneracy) generators are found in the source   2 found: ['I = I + ideal(w*p10 - 1);', 'I = I + ideal(u*nd - 1);']
+    [PASS] C3b deleting them really changes the source (the shipped control's deletion changed nothing)   51 bytes removed
+    [PASS] C3c the SHIPPED deletion changes nothing, which is why it fails   byte-identical to the real source
+  FAILS: 0
+=== h2/w5_h2_target_provenance.py
+Terminated
+exit=143
+  FAILS: 0
+=== h2/w5_h2_polygon_consistency.py
+exit=0
+    [PASS] G3 POSITIVE: trackD_extract.orient accepts every target   180 of 180 accepted; 0 OUT OF SCOPE
+    [PASS] G3b POSITIVE: the driver side is decided by whether the tag's eps pair lists (1,0) first   NP drives 83, NQ drives 97; 0 tags disagree
+    [PASS] G4 NEGATIVE: mangling a j=0 row makes orient() reject the target   j=0 row [(0, 0), (1, 0)] -> [(0, 0), (3, 0)]
+    7/7 checks passed
+  FAILS: 0
+=== h2/w5_h2_changelog.py
+exit=0
+  FAILS: 0
+=== gghv_audit/w5_gghv_certifier.py
+exit=0
+    [PASS] N3  dropping Definition 2.25 admissibility changes the answer   chains 721 vs 260, cases 117 vs 34
+    [PASS] N4  a mutated reference table is NOT matched   the comparison is against real data, not against itself
+    [PASS] the rerun's 105<=max<=124 degree pairs are exactly {(72,108),(108,72),(80,112),(120,80)}   found [(72, 108), (80, 112), (108, 72), (120, 80)]
+    19/19 checks passed
+  FAILS: 0
+=== gghv_audit/w5_pairs_105_124.py
