@@ -239,6 +239,28 @@
   "w4_seconds": 26.61,
   "w4_verdict": "NONEMPTY-PARAMETRIZATION"
  },
+ "one_p1000273": {
+  "eliminant_degree": 5,
+  "factor_degrees": [
+   1,
+   4
+  ],
+  "residual": {
+   "factor0_deg1": {
+    "mutant": "POSITIVE-DIMENSIONAL",
+    "pin": "EMPTY",
+    "real": "EMPTY"
+   },
+   "factor1_deg4": {
+    "mutant": "POSITIVE-DIMENSIONAL",
+    "pin": "EMPTY",
+    "real": "EMPTY"
+   }
+  },
+  "sign": -1,
+  "w4_seconds": 28.37,
+  "w4_verdict": "NONEMPTY-PARAMETRIZATION"
+ },
  "zero_p1000081": {
   "residual": "not reached: the w=-4 block is already EMPTY",
   "w4_seconds": 0.62,
@@ -282,6 +304,11 @@
  "zero_p1000249": {
   "residual": "not reached: the w=-4 block is already EMPTY",
   "w4_seconds": 0.72,
+  "w4_verdict": "EMPTY"
+ },
+ "zero_p1000273": {
+  "residual": "not reached: the w=-4 block is already EMPTY",
+  "w4_seconds": 1.21,
   "w4_verdict": "EMPTY"
  }
 }

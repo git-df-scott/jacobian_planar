@@ -1,0 +1,6 @@
+==============================================================================
+weighted-homogeneous gradings of the pentagon system
+==============================================================================
+    [PASS] W1 POSITIVE: the solver finds a grading of a planted homogeneous system   2-dimensional space of weights
+    [PASS] W2 NEGATIVE: one inhomogeneous generator shrinks the space   2 -> 1
+    66 generators in 59 variables

@@ -22,3 +22,13 @@ H4 rung 2 -- msolve (F4/FGLM) on the cells Singular could not hold
   k=5 h=t deg<=4 p=65521        64        OOM    373.9
   k=5 h=t deg<=4 p=65539        64    UNKNOWN    672.8
     -> combined k=5 deg<=4: OOM   {65521: 'OOM', 65539: 'UNKNOWN'}
+  k=5 h=t deg<=5 p=65521        76        OOM    360.8
+  k=5 h=t deg<=5 p=65539        76        OOM   1192.1
+    -> combined k=5 deg<=5: OOM   {65521: 'OOM', 65539: 'OOM'}
+  k=6 h=t deg<=4 p=65521        85        OOM    452.9
+  k=6 h=t deg<=4 p=65539        85        OOM    299.4
+    -> combined k=6 deg<=4: OOM   {65521: 'OOM', 65539: 'OOM'}
+  k=4 h=t deg<=7 p=65521        78        OOM    551.8
+  k=4 h=t deg<=7 p=65539        78        OOM    599.1
+    -> combined k=4 deg<=7: OOM   {65521: 'OOM', 65539: 'OOM'}
+  k=5 h=t deg<=6 p=65521        91    TIMEOUT   1800.9

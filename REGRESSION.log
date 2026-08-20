@@ -1,0 +1,67 @@
+=== wave4/w4_case2_selftest.py
+exit=0
+    [PASS] S4  the triangular c-solve kills the first 8 equations of the w=-4 block exactly, at 5 random g-points
+    [PASS] S4b the remaining 9 equation values equal the module's residual values   0 mismatching trials
+    [PASS] S4n NEGATIVE: perturbing one solved c breaks the block   4 of 8 now nonzero
+    13/13 checks passed
+  FAILS: 0
+=== wave4/w4_gf.py
+exit=0
+    [PASS] designed kernel found: nullity 2 (expected 2)
+    [PASS] every kernel vector annihilates every row
+    [PASS] NEGATIVE: a one-entry perturbation drops the nullity to 1
+    [PASS] NEGATIVE: an inconsistent right-hand side is caught by 1 left-kernel functional(s)
+  FAILS: 0
+=== wave4/w4_gf_Q.py
+exit=0
+    [PASS] designed kernel: nullity 2 (expected 2)
+    [PASS] kernel vectors annihilate every row
+    [PASS] NEGATIVE: a one-entry perturbation drops the nullity to 1
+    [PASS] NEGATIVE: an inconsistent right-hand side is caught by 1 left-kernel functional(s)
+  FAILS: 0
+=== wave4/w4_msformat.py
+exit=0
+    [PASS] '3*x^2*y + 999999*x^2*y' -> {('x', 'x', 'y'): 1000002}
+    [PASS] NEGATIVE: unparsable input is rejected
+    [PASS] NEGATIVE: validate() finds a planted duplicate monomial and a double constant: [(0, "monomial ('a',) repeated 2 times (msolve silent lie L2)"), (1, 'constant term repeated 2 times (msolve silent lie L2)')]
+    [PASS] the sanitised version is clean: []
+  FAILS: 0
+=== wave4/w4_edge_reconciliation.py
+exit=0
+    [PASS] R3 NEGATIVE: moving along the residual gauge orbit (kappa = 2) keeps the DERIVED system satisfied but breaks the campaign generators   derived residual all zero: True; campaign nonzero at 6 of 6
+    [PASS] R4 NEGATIVE: a one-coordinate perturbation of the normalised point fails the campaign generators   6 of 6 nonzero
+    [PASS] the campaign generators are NOT invariant under the residual gauge orbit through that point (which is why their count is larger)   gcd over the orbit = k**3 + 1000002*k**2
+    7/7 checks passed
+  FAILS: 0
+=== wave4/w4_edge_eliminant_structure.py
+exit=0
+    [PASS] G4 the eliminant has NO rational root   {}
+    [PASS] G5 the Galois group is computed: S5   order 120, contained in A5: False
+    [PASS] G5n NEGATIVE: the same call gives a DIFFERENT group on a quintic of known group (w^5 - 5w + 12 is D5)   D5 (order 10) vs S5 (order 120)
+    6/6 checks passed
+  FAILS: 0
+=== wave4/w4_case2_json_audit.py
+exit=0
+    [PASS] J2 POSITIVE: every nonzero bracket coefficient has a JSON equation   missing [] of 92
+    [PASS] J3 NEGATIVE: perturbing one JSON equation breaks the match
+    [PASS] J4 NEGATIVE: the same comparison against [Q,P] - x^2 FAILS, so the orientation is pinned   92 of 92 equations disagree with the reversed bracket
+    7/7 checks passed
+  FAILS: 0
+=== wave4/w4_scan_ms_artifacts.py
+exit=0
+  FAILS: 0
+=== pent/w5_pent_recursion_check.py
+exit=0
+    [PASS] Y2 POSITIVE: on a random P, [P, Q] = x^2 through y-order 7   rows disagreeing: []
+    [PASS] Y3 NEGATIVE: perturbing one coefficient of Q breaks the identity   rows disagreeing: [2, 3, 4, 5, 6, 7]
+    [PASS] Y4 NEGATIVE: a wrong right-hand-side seed does NOT give [P,Q] = x^2   row 0 begins [0, 0, 0, 1]
+    4/4 checks passed
+  FAILS: 0
+=== pent/w5_pent_export_check.py
+exit=0
+    [PASS] X1 POSITIVE: every exported generator equals the independent recursion's condition up to a per-generator constant, at 3 points   66 of 66 with a nonzero constant ratio
+    [PASS] X2 NEGATIVE: perturbing one coordinate changes the exported values   66 of 66 changed
+    [PASS] X3 NEGATIVE: comparing generator k with generator k+1 does NOT match
+    4/4 checks passed
+  FAILS: 0
+=== h2/w5_h2_controls.py

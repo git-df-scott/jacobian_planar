@@ -5,3 +5,4 @@ ITEM 3 second engine -- msolve on the above-125 queue
     [PASS] M1b parser: a solvable system does NOT read EMPTY   NONEMPTY-PARAMETRIZATION
     targets: 180; Singular-EMPTY 24; Singular-TIMEOUT 14
     [PASS] M2 CROSS-ENGINE: msolve agrees with Singular's EMPTY on a decided target   EMPTY in 0.13s over 21 variables
+    [FAIL] M3 NEGATIVE: with the non-degeneracy generators removed msolve returns a genuine non-empty answer   FAIL-EMPTY-FILE  (a zero-byte output is a FAILURE, not a non-empty answer; this control is only informative when it returns a real parametrisation)

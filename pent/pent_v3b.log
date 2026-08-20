@@ -5,3 +5,4 @@ ITEM 2 -- pentagon hit detector v3b (exact Jacobians)
     [PASS] X-POS exact-Jacobian Newton recovers a planted root   final max |F - F(x0)| = 1.293e-11
     [PASS] X-CMP the exact Jacobian is not a regression on the same start   exact 1.293e-11 vs finite-difference 1.421e-11
     [PASS] X-NEG the acceptance test still refuses a blown-up point   forbidden max 7.949e+118 >= TOL
+    chart one: 20 exact-Jacobian starts, 0 accepted, best |forbidden| = 9.705e-07; of those, 12 ended INSIDE the acceptance band with best |forbidden| = 4.548e-04   (6043s)
