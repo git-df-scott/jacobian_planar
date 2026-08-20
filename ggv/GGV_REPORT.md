@@ -61,6 +61,11 @@ No `ggv/ladder.tsv` present.
 | 4 | UNSATURATED (saturation generator removed) -- engine Singular | OK | 15 | 9 | 20 | 1.7 | 1 | `1` |
 | 4 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 10 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
 | 4 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 15 | 10 | 7 | 0.03 | 1 | `1` |
+| 5 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | TIMEOUT | 20 | 13 | n/a | 300.29 | 0 | `no artifact` |
+| 5 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular | TIMEOUT | 20 | 13 | n/a | 300.07 | 0 | `no artifact` |
+| 5 | UNSATURATED (saturation generator removed) -- engine msolve | TIMEOUT | 19 | 12 | n/a | 300.28 | 0 | `no artifact` |
+| 5 | UNSATURATED (saturation generator removed) -- engine Singular | NO-OUTPUT | 19 | 12 | 388 | 291.69 | 0 | `no artifact` |
+| 5 | CONTROLS NOT RUN -- primary elimination produced no artifact | NOT-RUN | 0 | 13 | n/a | 0 | 0 | `no artifact` |
 
 ### Controls
 
