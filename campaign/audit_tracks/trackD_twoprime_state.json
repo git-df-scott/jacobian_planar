@@ -1239,15 +1239,15 @@
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "F2(m,n)=3,5 | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))": {
   "verdict": "TIMEOUT",
