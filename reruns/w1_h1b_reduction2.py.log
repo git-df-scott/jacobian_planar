@@ -1,0 +1,51 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 4b -- DEGREE IN THE LATE BLOCK, ALL 374 CONDITIONS
+==============================================================================
+  conditions probed : 374
+  degrees observed  : [0, 1, 2, 3]   (0 above the probe bound)
+  by level: j13:[0]  j14:[0]  j15:[0]  j16:[0, 1]  j17:[0, 1]  j18:[1]  j19:[1]  j20:[1]  j21:[1]  j22:[1]  j23:[1]  j24:[1]  j25:[1, 2]  j26:[1, 2]
+  FAIL  EVERY condition is at most AFFINE in the 13 late parameters   <CERTIFIED>   [max degree 3, 0 unresolved]
+  PASS  levels 13..15 are INDEPENDENT of the late block (degree 0), correcting step 2b's wording from 'affine' to 'does not appear'   <CERTIFIED>   [j13 [0], j14 [0], j15 [0]]
+
+--- and the degree in the EARLY parameters, for comparison ---
+  degrees in the 48 early parameters: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] ...   (45 above bound)
+
+  THE ELIMINATION THIS LICENSES.
+    The whole system is  M(P_early) . P_late = b(P_early),  M of size 374 x 13.
+    Solving 13 of those equations for P_late is EXACT LINEAR ALGEBRA over the
+    field of fractions in the early parameters -- no monomial expansion.
+    What remains is 374 - 13 = 361 compatibility conditions on the 48 early
+    parameters (45 essential after the three gauges).
+
+  BUT the remaining conditions inherit the early-parameter degree above, plus
+  the degree of Cramer determinants of M.  Whether THAT is exportable is the
+  next measurement -- and it is the whole question for approach (b).
+==============================================================================
+FAILED: ['EVERY condition is at most AFFINE in the 13 late parameters']

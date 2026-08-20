@@ -1,0 +1,21 @@
+==============================================================================
+A6  PLANTED-SOLUTION CONTROLS -- real (72,108) case-(2) system
+==============================================================================
+  PASS  leaf-1 and leaf-2 edge subsystems are literally the same 6 equations   <CERTIFIED>   [leaf1 idx [34, 35, 36, 37, 38, 39], leaf2 idx [38, 39, 40, 41, 42, 43]]
+
+--- p = 65521 ---
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave0/w0_a6_planted_controls.py", line 78, in <module>
+    o,t = sing("\n".join(L), f"a6_C1_p{P}.sing")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave0/w0_a6_planted_controls.py", line 42, in sing
+    r = subprocess.run(["Singular","-q",p], capture_output=True, text=True, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'Singular'

@@ -1,0 +1,40 @@
+==============================================================================
+H1c  THE ENDGAME OBSTRUCTION 3v(v+1)R' - D*R = -c, SOLVED IN CLOSED FORM
+==============================================================================
+  PASS  R = c/D + C*(v/(v+1))^(D/3) solves 3v(v+1)R' - D R = -c, for SYMBOLIC D   <PROVED-exact>   [verified by direct substitution]
+  PASS  the constant R = c/D is always a particular solution   <PROVED-exact>
+
+  RATIONALITY.  (v/(v+1))^{D/3} is a rational function of v iff D/3 is an
+  integer.  For D/3 = p/q in lowest terms with q > 1, the function has a
+  branch point of order q at v = 0 (and at v = -1), so it is not rational --
+  it is not even meromorphic on P^1.  Hence:
+
+      a NON-CONSTANT rational solution exists  <=>  3 | D.
+
+  PASS  for every D = 1..60: 3 | D  <=>  the homogeneous solution is rational   <PROVED-exact>   [exponent D/3 integral iff 3 | D]
+  PREFACTOR.  For k >= 1, T_{D,k}(R) = (v+1)^k (3v(v+1)R' - D R).  If R is
+  regular at v = -1 then the left side vanishes at v = -1, forcing -c = 0,
+  i.e. c = 0, contradicting c != 0.  So every k >= 1 is dead outright, and
+  only k = 0 is live -- where part 2 applies.
+  PASS  k >= 1 forces c = 0 by evaluation at v = -1 (contradiction with c != 0)   <PROVED-exact>   [(v+1)^k vanishes at v=-1 for k>=1]
+
+  REGRESSION against the campaign's per-degree certifications:
+  PASS  D=13: rank 14 on deg<=(13), kernel dim 0 (campaign claims rank 14, kernel trivial)   <CERTIFIED>   [independent matrix build; rank=14, kernel=0]
+  PASS  D=23: rank 24 on deg<=(23), kernel dim 0 (campaign claims rank 24, kernel trivial)   <CERTIFIED>   [independent matrix build; rank=24, kernel=0]
+
+  The closed form explains the ranks: the operator R -> 3v(v+1)R' - D R
+  is injective on polynomials exactly when 3 does not divide D, because
+  its only homogeneous solution (v/(v+1))^{D/3} is then non-rational.
+
+  CHECK: at 3 | D the kernel must become nontrivial on rational functions.
+  PASS  D=3 (3|D): R=(v/(v+1))^1 is rational and solves the homogeneous equation   <PROVED-exact>   [exponent 3//3 = 1]
+  PASS  D=6 (3|D): R=(v/(v+1))^2 is rational and solves the homogeneous equation   <PROVED-exact>   [exponent 6//3 = 2]
+  PASS  D=12 (3|D): R=(v/(v+1))^4 is rational and solves the homogeneous equation   <PROVED-exact>   [exponent 12//3 = 4]
+
+==============================================================================
+THEOREM (H1c, closed form).  For every integer D >= 1 and every k >= 0,
+  (v+1)^k (3v(v+1)R' - D R) = -c  with c != 0
+has a rational solution R of degree >= 1 if and only if k = 0 AND 3 | D.
+The campaign's D = 13 and D = 23 rank ledgers are corollaries, and the
+family-wide claim needs no extrapolation: it is uniform in D, no ceiling.
+==============================================================================

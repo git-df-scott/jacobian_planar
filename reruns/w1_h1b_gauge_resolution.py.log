@@ -1,0 +1,25 @@
+==============================================================================
+H1b step 3c -- OUTLIER RESOLUTION (executable checks)
+==============================================================================
+  PASS  g2 scales every coefficient by a NONZERO factor, so it maps the solution set to itself   <PROVED-exact>   [weights range 3.72e-12 .. 1.00e+00]
+  PASS  v2's ratio objective FALLS MONOTONICALLY along the g2 gauge orbit, with nothing solved   <CERTIFIED>   [8.776e+10 -> 9.778e-01 over lam 0.5..16]
+  PASS  so the objective is invariant under g1 but NOT under g2 -- it is breakable by inflating its denominator   <PROVED-exact>   [coefficient of x^i in Q_j scales by lam^(i-3j+1); exponent depends on i]
+
+  THE OUTLIER (v2 seed 2026, start 20, ratio 1.6978e-09), measured:
+      max |allowed|   = 2.1571e+09
+      max |forbidden| = 1.4352e+00
+      P dynamic range = 1.3440e+09
+  A nine-order separation with a billion-fold spread in P's own coefficients is
+  the g2 signature, not a near-solution: a genuine near-solution would show the
+  forbidden coefficients small against an O(1) configuration, not against an
+  inflated one.
+  PASS  outlier classified ARTEFACT (unfixed g2 gauge), not a near-solution   <CERTIFIED>   [resolved and closed; not carried forward]
+
+==============================================================================
+CONSEQUENCES
+  * essential parameters = 61 - 3 gauges = 58  (was recorded as 60, then 59)
+  * against 60 independent conditions => OVERDETERMINED BY 2 modulo gauge,
+    before the 314 surplus conditions
+  * any future detector must fix all three gauges and use an ABSOLUTE
+    normalisation; a ratio objective is breakable from either end
+==============================================================================

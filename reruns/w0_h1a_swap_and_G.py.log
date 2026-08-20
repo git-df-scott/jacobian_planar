@@ -1,0 +1,33 @@
+==========================================================================
+H1a  SWAP-EQUIVALENCE LEMMA
+==========================================================================
+  PASS  J(Q,P) = -J(P,Q) for arbitrary P,Q  (generic symbolic)   <PROVED-exact>   [row swap of a 2x2 determinant]
+  PASS  J(Q,P) = -J(P,Q) on a random dense pair (independent dict arithmetic)   <PROVED-exact>   [35 monomials compared]
+  PASS  Keller property transfers: J(P,Q)=c!=0  <=>  J(Q,P)=-c!=0   <PROVED-exact>   [immediate from the identity above]
+  PASS  Injectivity transfers: (Q,P) = sigma o (P,Q), sigma bijective   <PROVED-exact>   [sigma(a,b)=(b,a) is a linear automorphism of A^2]
+  PASS  Bidegree transfers: deg(Q,P) = (deg Q, deg P)   <PROVED-exact>   [components are permuted, not altered]
+
+  LEMMA H1a  [PROVED-exact].  A Keller non-injective pair of bidegree (72,108)
+  exists over a field k  <=>  one of bidegree (108,72) exists over k.
+  The bijection is (P,Q) <-> (Q,P); it negates the Jacobian constant, preserves
+  the image, all fibres, the geometric degree, the tear locus (up to the linear
+  swap of the target), nu, chi(C_L) and the monodromy group.
+  CONSEQUENCE FOR THE LIVE MAP:  rows L1 and L2 are ONE territory, not two.
+  Any verdict at either orientation transfers verbatim.
+
+==========================================================================
+WAVE-0 FREEBIES: THE DESCENT MAP G
+==========================================================================
+  PASS  det JG = -2*(3u+v-2)^2  exactly   <PROVED-exact>   [det JG = -2*(3*u + v - 2)**2]
+  PASS  deg G = (6,4)   <PROVED-exact>   [(6,4)]
+  PASS  degree ratio 3:2 -- the same ratio as (108,72)   <PROVED-exact>   [6:4 = 108:72 = 3:2]
+  PASS  upstairs: 3 distinct points share one image under Alpoge's F   <PROVED-exact>   [common image (-1/4, 0, 0)]
+  PASS  pi=(xy,x^2 z) collapses the two C*-conjugate points, keeps 2 distinct   <PROVED-exact>   [[(0, 0), (-3/2, 13/2), (-3/2, 13/2)]]
+  PASS  G is NON-INJECTIVE: the 2 distinct quotient points share an image   <PROVED-exact>   [[(-3/2, 13/2), (0, 0)] -> (0, 0)]
+  PASS  exactly one of the colliding points lies on the degeneracy line h=0   <PROVED-exact>   [h at the two points = [0, -2]]
+  PASS  G is NOT etale: det JG vanishes on the line h=0   <PROVED-exact>   [so every theorem assuming etale (T7 included) is NOT-APPLICABLE to G as stated]
+
+  G1 = (u + 1)*(3*u + v - 2)**2*(3*u**3 + u**2*v + 4*u**2 + 2*u*v + v)
+  G2 = -(3*u + v - 2)*(9*u**3 + 3*u**2*v + 12*u**2 + 6*u*v + u + 3*v)
+
+ALL 0 FAILURES -- H1a and the G freebies certify.

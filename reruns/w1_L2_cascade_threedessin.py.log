@@ -1,0 +1,57 @@
+==============================================================================
+L2 CASCADE ON THE THREE-DESSIN CHAIN
+==============================================================================
+  PASS  cusp (a,b) = (2,3) for BOTH (108,72) and (99,66)   <PROVED-exact>   [(108,72): gcd 36 -> (2, 3); (99,66): gcd 33 -> (2, 3)]
+  PASS  D = 13 for the Three-dessin Framework (it reuses the First Framework's degree-13 (-2)-curve Belyi map)   <LIT-READ(1901.04073v2 sec.5)>   [source-verified verbatim earlier in this wave]
+  PASS  g = alpha U (U-1)^8, deg g = N/mu + eps = 16/2 + 1 = 9   <CERTIFIED>   [L3 step 2, chart reimplemented independently]
+
+  CLOSING THE EXTRAPOLATION.  trackC_report.md records L2 as checked for
+  D = 1..6.  The chain length in play is D = 13.  Re-running the same generic
+  engine at D = 1..14 with fully symbolic T_m:
+
+    D =  1:  blocks 0.. 0 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  2:  blocks 0.. 1 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  3:  blocks 0.. 2 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  4:  blocks 0.. 3 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  5:  blocks 0.. 4 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  6:  blocks 0.. 5 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  7:  blocks 0.. 6 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  8:  blocks 0.. 7 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D =  9:  blocks 0.. 8 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D = 10:  blocks 0.. 9 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D = 11:  blocks 0..10 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D = 12:  blocks 0..11 vanish identically: True;  first block linear with coefficient 2g^6: True
+    D = 13:  blocks 0..12 vanish identically: True;  first block linear with coefficient 2g^6: True  <== the chain length in play
+    D = 14:  blocks 0..13 vanish identically: True;  first block linear with coefficient 2g^6: True
+  PASS  chain <=> sqrt-agreement holds at EVERY D = 1..14, including D = 13   <PROVED-exact>   [generic symbolic T_m, exact over Q; extends the recorded D = 1..6]
+  PASS  the deviation enters LINEARLY at D = 13 (coefficient exactly 2g^6), so the endgame is an ODE in R and not a quadratic   <PROVED-exact>   [D = 13 row above]
+
+  WHAT THAT DELIVERS.  The L1-L4 cascade is generic in (a,b) and D; the
+  extrapolation to D = 13 is now a computation rather than an assumption; and
+  the anchor (trackC_c3_anchor.py, 5 PASS) derives g = U(U-1)^8 and
+  A~_{-9+m} == g^3 S_m for m = 0..12 from the Session-7/10 near-miss Belyi
+  data -- which is the First Framework's (-5)/(-2) data, i.e. the Three-dessin
+  Framework's.  Every input the cascade consumes is shared.
+
+==============================================================================
+L2 CASCADE: TRANSFERS.
+
+  The cascade's content is universal identities instantiated at (a,b) = (2,3),
+  D = 13 and g = alpha U (U-1)^8 -- all three shared with the First Framework
+  and each established independently this wave.  The anchor's Belyi input is
+  shared verbatim.  Nothing in the cascade reads the branch inventory, so the
+  type-4 curve / degree-5 Belyi map trade does not touch it.
+
+  RESIDUE, and it is IMPORTANT that it is not new: the cascade still rests on
+  THEOREM 2 at general parameters (the Taylor-pin argument that every framework
+  solution -- not just the near-miss -- has g = alpha U (U-1)^8) and THEOREM 3
+  (pole-fiber => R polynomial).  Both remain prose, both are load-bearing, and
+  both are inherited from the FIRST Framework unchanged.  The Three-dessin
+  Framework introduces NO NEW conditionality of its own.
+
+  CONSEQUENCE FOR (108,72): all four layers now transfer -- L1 core, L1 boxes
+  (immaterial), L2 contact, L2 cascade, L3 rigidity -- with L4 immaterial by the
+  closed-form endgame theorem.  The framework-side kill is therefore as strong
+  as the First Framework's own, and conditional on exactly the same two
+  unreproduced theorems, no more.
+==============================================================================

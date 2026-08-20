@@ -1,0 +1,67 @@
+==============================================================================
+L1 -- THE CHART LAYER ON THE THREE-DESSIN CHAIN
+==============================================================================
+  PASS  L1a chart inversion: x1 = (v+1)q^-3 v^-9, x2 = q v^3 inverts (q,v) = (x2/(x1 x2^3 - 1)^3, x1 x2^3 - 1)   <PROVED-exact>
+  PASS  L1b monomial rule: x1^i x2^j = (v+1)^i q^(j-3i) v^(3j-9i), so the (-2)-pole cut is the same support rule j - 3i >= -bound   <PROVED-exact>
+  PASS  L1c chart factor: det d(q,v)/d(x1,x2) = -x2^3/v^3   <PROVED-exact>   [det = -x2**3/(x1*x2**3 - 1)**3]
+  PASS  L1c so the Keller condition J_(x1,x2) = c reads J_(q,v) = -c q^-3 v^-6, exactly as in the First Framework   <PROVED-exact>
+
+  L1d POLE DEPTHS at the (-2)-multifork.  These are the only chart data that
+  moved between the First and Second Frameworks: (-9,-6) for FF, (-15,-10) for
+  SF.  They are divisorial valuations along the CHAIN, and the Three-dessin
+  chain is identical to the First's, so they are the First's: (-9,-6).
+
+  Consistency check -- the total degrees must be an integer multiple of the
+  depths, with the multiplier supplied by the branch inventory:
+    First Framework    degrees (99, 66)    depths (-9, -6)  -> multiplier 11  ok
+    Second Framework   degrees (435, 290)  depths (-15, -10) -> multiplier 29  ok
+    Three-dessin       degrees (108, 72)   depths (-9, -6)  -> multiplier 12  ok
+  PASS  L1d every framework's degrees are depth x integer, with a consistent multiplier; Three-dessin gives 12 against FF's 11 and SF's 29   <CERTIFIED>   [the multiplier is exactly where the branch inventory enters]
+  PASS  L1d depths are proportional to the cusp (3,2) in every case   <PROVED-exact>   [(9,6), (15,10), (9,6) all = (3,2) up to scale]
+
+  L1 REMAINING GAP -- the support boxes.  FF's are [0,27]x[0,72] for y1 and
+  [0,18]x[0,48] for y2 (sums 99, 66); these are the x1/x2 degree SPLITS.  For
+  the Three-dessin Framework the splits are (9a, 9b) and (6a, 6b) with
+  a + b = 12, and a is NOT determined by anything transferred: Borisov's isotope
+  formula gives (a,b) = (k+1, 3k+2) with a+b = 4k+3, and 4k+3 = 12 has no
+  integer solution -- confirming again that (108,72) sits outside the isotope
+  family.  Fixing a needs the pole-order reconstruction along Fig. 31's branches,
+  the same walk Borisov performs for SF ("Reconstructing the curves numbered 2,
+  10, and 1 ... (165,110), (270,180), and, finally, (435,290)").  NOT DONE.
+
+==============================================================================
+L2 -- BLOCK-LEVEL CHAIN UNIFICATION
+==============================================================================
+  L2 promotes the valuation-level equivalence to the block cascade.  Its input
+  is the contact demand val(y1^2 - y2^3) >= -contact, which equals exactly D
+  block vanishings.  Recorded: FF contact -5 with D = 13; SF contact -7 with
+  D = 23.
+    D = 13  contact = -5   (D+12)/5 = 5  ok
+    D = 23  contact = -7   (D+12)/5 = 7  ok
+  PASS  L2 contact demand for the Three-dessin Framework is -5   <CERTIFIED>   [D = 13 (same (-2)-curve Belyi map as FF, source-verified)]
+  PASS  L2 INDEPENDENTLY CONFIRMED by L3 step 2: the Y-side chart returned eW = -5, i.e. W = y1^2 - y2^3 first survives at x2^-5   <CERTIFIED>   [computed from the shared chart data in w1_L3_step2_pinning.py, a route that shares no code with the contact bookkeeping]
+
+  L2 REMAINING GAP.  The contact demand transfers, and with it the count of
+  block vanishings (13).  What is NOT rebuilt is the cascade itself -- the
+  promotion of those vanishings through the block normal form and the
+  sqrt-reduction, FF Sessions 10-12.  Its inputs are the chain (identical) and
+  the Belyi data (identical), so it is expected to transfer, but expectation is
+  not a certificate and it is recorded as UNCHECKED.
+
+==============================================================================
+RESULT.
+
+  L1 CORE  TRANSFERS  [PROVED-exact] -- chart inversion, monomial rule, chart
+           factor, Keller form, all recomputed here, plus the pole depths
+           (-9,-6) inherited from the identical chain and consistent with
+           (108,72) = 12 x (9,6).
+  L1 BOXES UNCHECKED -- needs the Fig. 31 pole-order reconstruction; a + b = 12
+           is pinned but a is not.
+  L2 CONTACT TRANSFERS [CERTIFIED] -- contact -5, 13 block vanishings,
+           independently confirmed by L3 step 2's eW = -5.
+  L2 CASCADE UNCHECKED -- inputs identical, promotion not rebuilt.
+
+  So the Three-dessin kill at (108,72) now stands on: L3 complete, L1 core
+  complete, L2 contact complete; L1 boxes and the L2 cascade outstanding.
+  Two gaps, both narrower than when this session started, and both named.
+==============================================================================

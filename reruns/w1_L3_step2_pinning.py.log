@@ -1,0 +1,56 @@
+==============================================================================
+L3 step 2 -- DOES g PIN ON THE THREE-DESSIN BOUNDARY?
+==============================================================================
+
+  VERIFICATION 1 -- reproduce the First Framework calibration
+  PASS  y2's leading block sits at x2^-6 (beta = 6)   <CERTIFIED>   [e2 = -6]
+  PASS  that block is exactly [U(U-1)^8]^2, i.e. g = alpha*U*(U-1)^8 with NO free moduli   <PROVED-exact>   [the block is a perfect square of U(U-1)^8; alpha is the only freedom]
+  PASS  W = y1^2 - y2^3 first survives at x2^-5   <CERTIFIED>   [eW = -5]
+  PASS  and equals const * U^6 (U-1)^9   <PROVED-exact>
+  PASS  mu = 2 = m and nu = 6 = mu*n   <CERTIFIED>   [mu=2, nu=6]
+
+  VERIFICATION 2 -- the governing law, on all four campaign instances
+     deg g = N/mu + eps,  N = degree of the (-5)-curve Belyi map, eps = 1
+     (2,3) a=2                        N= 4 mu=2  ->  4/2+1 =  3   deg g =  3   ok
+     (2,3) a=5                        N=10 mu=2  ->  10/2+1 =  6   deg g =  6   ok
+     (2,3) a=8 [First Framework]      N=16 mu=2  ->  16/2+1 =  9   deg g =  9   ok
+     (5,2) a=1                        N= 5 mu=5  ->  5/5+1 =  2   deg g =  2   ok
+  PASS  deg g = N/mu + eps holds at every instance the campaign has   <CERTIFIED>   [4/4]
+
+  VERIFICATION 3 -- the chart cannot see the branch inventory
+  PASS  the chart's entire input is (m, n, A, B, c, E, pc, rc) -- cusp, chain exponents, and the two Belyi polynomials   <PROVED-exact>   [(m, n, A, B, c, E, pc, rc)]
+  PASS  no type-4 curve, no (-1)-branches, no third dessin appear anywhere in the chart's inputs   <PROVED-exact>   [those live on branches OFF the (-5)...(-2) chain, which is all the chart sees]
+
+  APPLICATION -- the Three-dessin Framework at (108,72)
+     cusp        : gcd(108,72) = 36, (d2/n, d1/n) = (72/36, 108/36) = (2,3)
+                   -- the SAME cusp as the First Framework (99,66), whose
+                   gcd is 33 and (66/33, 99/33) = (2,3)
+     N           : 16   -- it reuses the First Framework's (-5)-curve Belyi
+                   map, degree 16, verified verbatim from arXiv:1901.04073v2
+     mu          : 2    -- = m, the cusp's first exponent
+     eps         : 1
+  PASS  (108,72) sits at cusp (2,3), identical to (99,66)   <PROVED-exact>   [(72/36, 108/36) = (2, 3)]
+  PASS  deg g = N/mu + eps = 16/2 + 1 = 9, identical to the First Framework   <PROVED-exact>   [deg g = 9 = deg U(U-1)^8]
+
+==============================================================================
+L3 step 2 VERDICT: g PINS.  g = alpha*U*(U-1)^8, no free moduli.
+
+  Every input the Y-side chart consumes -- cusp (2,3), chain exponents
+  (A,B,c,E) = (3,2,3,3), and the Belyi polynomials pc8, rc5 -- is shared with
+  the First Framework, and each is source-verified rather than assumed.  The
+  governing law deg g = N/mu + eps returns 9 for both frameworks because both
+  carry the SAME degree-16 (-5)-curve Belyi map at the SAME cusp.
+
+  The type-4 curve and the new degree-5 Belyi map sit on branches OFF the
+  (-5)...(-2) chain.  The chart never reads them.  Replacing one with the other
+  changes the total degree of the hypothetical map -- (99,66) becomes (108,72)
+  -- WITHOUT touching the boundary rigidity.
+
+  CONSEQUENCE: the L3 layer TRANSFERS, and the conditional kill of the
+  Three-dessin Framework at (108,72) STANDS on this layer.
+
+  STILL CONDITIONAL, and not weakened by this result: L1 (chart + support
+  boxes) and L2 (block-level chain unification) have NOT been rebuilt on the
+  three-dessin chain.  L3 was the narrowest of the three and the one that failed
+  to transfer in the D=23 case; it transfers here.  That is one layer of three.
+==============================================================================

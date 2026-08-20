@@ -1,0 +1,27 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================

@@ -1,0 +1,87 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 2a -- MEASURED STRUCTURE OF THE PENTAGON SYSTEM
+==============================================================================
+  61 parameters (N(P) lattice points), 374 conditions
+
+  condition (j,i)   #params touched   max param slice j   min param col i
+    (13, 0)         33               9                0
+    (14, 0)         36              10                0
+    (14, 1)         39              10                0
+    (15, 0)         39              10                0
+    (15, 1)         42              11                0
+    (15, 2)         44              11                0
+    (16, 0)         42              11                0
+    (16, 1)         44              11                0
+    (16, 2)         47              12                0
+    (16, 3)         49              12                0
+    (17, 0)         44              11                0
+    (17, 1)         47              12                0
+    (17, 2)         49              12                0
+    (17, 3)         51              13                0
+    ... (374 live conditions, 0 identically-zero rows)
+
+  COLUMN STRUCTURE.  For the low-i conditions (13<=j<=24, i<j-12):
+    condition (j=13, i= 0) touches P-columns i = [0, 1, 2, 3, 4]
+    condition (j=14, i= 0) touches P-columns i = [0, 1, 2, 3, 4]
+    condition (j=14, i= 1) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=15, i= 0) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=15, i= 1) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=15, i= 2) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=16, i= 0) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=16, i= 1) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=16, i= 2) touches P-columns i = [0, 1, 2, 3, 4, 5, 6]
+    condition (j=16, i= 3) touches P-columns i = [0, 1, 2, 3, 4, 5, 6]
+    condition (j=17, i= 0) touches P-columns i = [0, 1, 2, 3, 4, 5]
+    condition (j=17, i= 1) touches P-columns i = [0, 1, 2, 3, 4, 5, 6]
+
+  CUMULATIVE RANK by condition level (does it saturate before j=24?):
+    conditions with j <= 13:    1 rows,  rank  1
+    conditions with j <= 14:    3 rows,  rank  3
+    conditions with j <= 15:    6 rows,  rank  6
+    conditions with j <= 16:   10 rows,  rank 10
+    conditions with j <= 17:   15 rows,  rank 15
+    conditions with j <= 18:   21 rows,  rank 21
+    conditions with j <= 19:   28 rows,  rank 28
+    conditions with j <= 20:   36 rows,  rank 36
+    conditions with j <= 21:   45 rows,  rank 45
+    conditions with j <= 22:   55 rows,  rank 55
+    conditions with j <= 23:   66 rows,  rank 60  <-- SATURATES
+    conditions with j <= 24:   78 rows,  rank 60
+    conditions with j <= 30:  174 rows,  rank 60
+    conditions with j <= 40:  374 rows,  rank 60
+
+  READING.  The rank reaches its ceiling well before the last conditions are
+  used, so the system is heavily overdetermined: the surplus conditions are
+  consequences of the earlier ones ON THE SOLUTION SET, but each is still an
+  independent polynomial equation that any candidate must satisfy.  That is why
+  a naive level-by-level elimination finds nothing where solutions exist -- the
+  same trap that produced the campaign's retracted ladder.
+
+==============================================================================

@@ -1,0 +1,38 @@
+==============================================================================
+H1f -- IRREDUCIBILITY OF THE DEGREE-1144 EDGE ELIMINANT
+==============================================================================
+  PASS  every prime's factor degrees sum to 1144   <CERTIFIED>   [8 primes]
+  PASS  no proper factor degree survives the subset-sum sieve at all 8 primes   <PROVED-exact>   [survivors: []]
+
+  CONTROL.  A sieve that always returns "irreducible" proves nothing.  Feed it
+  degree data from polynomials that genuinely DO factor and confirm it says so.
+  PASS  CONTROL 1: degree data consistent with a 400 + 744 split IS detected (400 and 744 survive)   <CERTIFIED>   [survivors include [400, 744]]
+  PASS  CONTROL 2: adding one prime whose degrees are [572,572] to the real data leaves 572 surviving iff it is a subset sum everywhere else   <CERTIFIED>   [survivors: []]
+  PASS  CONTROL 3: a totally split prime ([1]*1144) leaves EVERY degree surviving -- the sieve is not vacuously empty   <CERTIFIED>   [1143 survivors, as it must be]
+
+==============================================================================
+RESULT [PROVED-exact]: the degree-1144 edge eliminant is IRREDUCIBLE over Q.
+
+WHAT THIS PROVES
+  * K = Q[theta]/(f) is a SINGLE number field of degree 1144.
+  * All 1144 edge points are GALOIS-CONJUGATE -- one orbit, not several.
+    Hence either every one of them extends to a full case-(2) solution, or
+    none does: the Qbar question is a single yes/no about the generic point.
+  * There are NO rational edge points (already visible at p=100019, whose
+    smallest factor has degree 2, and settled outright by irreducibility).
+  * The exact-Q branch structure is simpler than the mod-p one: mod p the
+    eliminant splits into 4-12 factors, over Q it does not split at all.
+
+WHAT THIS DOES NOT PROVE
+  * NOT that case (2) is empty over Qbar.  That needs the residual system --
+    13 remaining variables (leaf 1), 15 (leaf 2) -- solved over K.  Not done.
+  * NOT anything about case (1), the pentagons, which have no verdict at all.
+  * It does NOT re-derive or confirm the mod-p EMPTY already on record.  It is
+    a DIFFERENT statement about a DIFFERENT object, at a different verdict
+    class per Plan 43 section 6.2.  Recorded as a new result, not a
+    corroboration.
+
+SCOPE CAVEAT.  The eliminant was computed on the chart d_3_3 = 1.  Everything
+above concerns that chart only; the d_3_3 = 0 branch is separate and is handled
+by the campaign's r0b subtree.
+==============================================================================

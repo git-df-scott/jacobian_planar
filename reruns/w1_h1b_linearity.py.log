@@ -1,0 +1,58 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 2b -- LINEARITY OF THE CASCADE IN THE NEWEST SLICE
+==============================================================================
+  P slices: P_0:2, P_1:2, P_2:3, P_3:3, P_4:4, P_5:4, P_6:5, P_7:5, P_8:6, P_9:5, P_10:5, P_11:4, P_12:4, P_13:3, P_14:3, P_15:2, P_16:1
+  total 61 params; P_12..P_16 carry 13 of them
+
+  PASS  level j=13: conditions are AFFINE in the newest slice P_12 (4 params, 1 conditions)   <CERTIFIED>   [exact second-difference test over F_p]
+  PASS  level j=14: conditions are AFFINE in the newest slice P_13 (3 params, 2 conditions)   <CERTIFIED>   [exact second-difference test over F_p]
+  PASS  level j=15: conditions are AFFINE in the newest slice P_14 (3 params, 3 conditions)   <CERTIFIED>   [exact second-difference test over F_p]
+  PASS  level j=16: conditions are AFFINE in the newest slice P_15 (2 params, 4 conditions)   <CERTIFIED>   [exact second-difference test over F_p]
+  PASS  level j=17: conditions are AFFINE in the newest slice P_16 (1 params, 5 conditions)   <CERTIFIED>   [exact second-difference test over F_p]
+  PASS  level j=17 is genuinely NONLINEAR in earlier slices (structure is real, not vacuous)   <CERTIFIED>   [nonlinear in slices [1, 2, 3, 4, 5, 6]...]
+
+  THE ELIMINATION THIS LICENSES.
+    early slices P_0..P_11 : 48 params (47 modulo the p_00 gauge)
+    late  slices P_12..P_16: 13 params
+    conditions at j = 13..17: 15, LINEAR in the late slices
+
+  So 15 linear equations in 13 unknowns.  Solving them determines the late
+  slices and leaves 2 compatibility conditions on the early slices alone.
+  Everything from j = 18 up (359 further conditions) then constrains the
+  47 essential early parameters.
+
+  This is the elimination order the system actually has -- measured, not guessed.
+
+==============================================================================
+H1b step 2b RESULT: the cascade IS affine in the newest slice at every
+level 13..17, and genuinely nonlinear in earlier slices.  The pentagon system
+therefore reduces to 47 essential early parameters carrying a heavily
+overdetermined polynomial system -- 2 compatibility conditions plus 359 more.
+==============================================================================

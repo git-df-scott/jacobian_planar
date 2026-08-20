@@ -1,0 +1,92 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 1b -- THE KERNEL, AND WHAT RANK 60 LICENSES
+==============================================================================
+  parameters 61, conditions 374
+  PASS  exactly ONE column of the Jacobian is identically zero   <CERTIFIED>   [zero columns: [(0, 0)]]
+  PASS  that column is p_00 -- the constant term of P   <CERTIFIED>   [index 0 = lattice point (j,i) = (0,0)]
+
+  WHY p_00 IS GAUGE, structurally: the bracket [P,Q] = P_x Q_y - P_y Q_x sees P
+  only through P_x and P_y, so P and P + const have identical brackets.  Adding
+  a constant to P is a symmetry of the entire system.  The kernel is therefore
+  a GAUGE direction, not a modulus.
+  PASS  with p_00 removed, the Jacobian has FULL rank 60 on the 60 essential parameters   <CERTIFIED>   [rank 60 of 60 columns]
+
+  CONSEQUENCE (i).  Modulo the single gauge direction, the pentagon condition
+  map is generically FINITE: 60 essential parameters, generic rank 60.  So a
+  solution, if one exists, is an ISOLATED POINT modulo gauge -- which is
+  exactly what a counterexample looks like.  The pentagons are NOT excluded by
+  dimension.
+
+==============================================================================
+  (ii) WHAT A RANDOM-POINT RANK DOES AND DOES NOT PROVE
+==============================================================================
+
+  The campaign computes rank(J) at RANDOM points and records
+  "dim <= 61 - rank locally".  That inference does not follow, and it runs the
+  wrong way:
+
+    * At a point v OF the variety V, dim_v V <= dim T_v V = 61 - rank J(v).
+      That is correct -- but it needs the rank AT v, not at a random point.
+    * rank J is lower semicontinuous: it can only DROP on the special locus.
+      So for v in V, rank J(v) <= 60, hence 61 - rank J(v) >= 1, and the bound
+      obtained at v is WEAKER than the one obtained generically, never stronger.
+    * What the random-point rank really computes is the GENERIC rank of the
+      condition map Phi : A^61 -> A^374, i.e. dim(image Phi) = 60.  By the
+      fibre-dimension theorem, every NONEMPTY fibre of Phi then has dimension
+      >= 61 - 60 = 1.  V = Phi^{-1}(0) is one such fibre.
+
+  So the correct statement is the reverse of the recorded one:
+
+      IF the pentagon system has a solution at all, that solution set has
+      dimension >= 1 -- and the gauge direction p_00 accounts for exactly 1.
+
+  The two readings agree on the arithmetic and disagree on the logic.  Nothing
+  here says the variety is small; it says the system is SQUARE modulo gauge.
+
+  PASS  Plan 43 L1's inference 'rank 60/61 => dim <= 1' is NOT supported by a random-point rank   <PROVED-exact>   [semicontinuity runs the other way; the fibre-dimension theorem gives dim >= 1]
+  PASS  the rank NUMBER (60) is nonetheless correct and independently confirmed   <CERTIFIED>   [step 1, two primes, three points each]
+
+==============================================================================
+H1b step 1b RESULT.
+
+  RETAINED: rank(J) = 60 of 61, confirmed independently.  A2.9's number is right.
+  CORRECTED: the reading of it.  The deficiency is the p_00 gauge direction and
+  nothing else; with p_00 removed the rank is FULL (60 of 60).
+
+  So the pentagon system is SQUARE modulo gauge, and Plan 43's Live Map entry
+  for L1 -- "y-adic rank 60/61 => dim <= 1 (evidence)" -- should read:
+
+      the condition map is generically finite modulo gauge; any solution is an
+      isolated point modulo the p_00 translation.  This EXCLUDES NOTHING and is
+      not evidence of emptiness.
+
+  That makes the pentagons a live hit-target rather than a nearly-closed one,
+  and it is why step 2 must compute the SCHEME.
+==============================================================================

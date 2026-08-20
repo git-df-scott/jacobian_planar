@@ -1,0 +1,39 @@
+==============================================================================
+L1 BOX GAP -- IS IT LOAD-BEARING FOR THE KILL?
+==============================================================================
+  PASS  FF y1 box = (1+deg p)*(3,8) = 9*(3,8) = [0,27]x[0,72]   <PROVED-exact>   [deg p = 8 -> (27, 72)]
+  PASS  FF y2 box = (1+deg r)*(3,8) = 6*(3,8) = [0,18]x[0,48]   <PROVED-exact>   [deg r = 5 -> (18, 48)]
+  PASS  deg p = 8 and deg r = 5 are the SAME Belyi data the Three-dessin Framework reuses (degree-16 (-5)-map: 2*8 = 16 = 1 + 3*5)   <PROVED-exact>   [source-verified: the (-5)-curve map has degree 16 in both frameworks]
+
+  boxes vs final degrees -- they coincide only for the First Framework:
+    First Framework    boxes sum (99,66)   final degrees (99, 66)   coincide
+    Second Framework   boxes sum (165,110)   final degrees (435, 290)   DIFFER
+  PASS  the Second Framework's boxes do NOT sum to its final degrees, so the coincidence at FF is not a law -- my earlier 'a+b = 12' framing conflated the two and is RETRACTED   <PROVED-exact>   [165 != 435 and 110 != 290]
+  PASS  the reconstruction ladder is Fibonacci (each rung the sum of the previous two), as d23_n3_layer1.py records and Borisov's SF walk shows   <CERTIFIED>   [[4, 7, 11, 18, 29]: 4+7=11, 7+11=18, 11+18=29]
+  PASS  and Borisov's SF pole pairs are exactly depth x ladder rung   <PROVED-exact>   [15,10 x {4,7,11,18,29} = (60,40),(105,70),(165,110),(270,180),(435,290)]
+
+  THE DECIDING POINT.  The layer-1 decision system's conditions are:
+      (-2)-pole support cuts   j - 3i >= -depth      depths (-9,-6) for FF
+      (-5)-pole conditions     ord_s y1 >= -3, ord_s y2 >= -2
+  Both are chain data.  d23_n3_layer1.py states of them, verbatim:
+      "The CONDITIONS below (pole cuts and (-5)-pole equations) are
+       BOX-INDEPENDENT and stand."
+
+  PASS  the Three-dessin Framework inherits the (-2)-pole depths (-9,-6): they are divisorial valuations along the chain, and the chain is identical   <CERTIFIED>   [established in the L1 core certification]
+  PASS  it inherits the (-5)-pole bounds (-3,-2): they come from the (-5)-curve Belyi map, which is the First Framework's verbatim   <CERTIFIED>   [source-verified from arXiv:1901.04073v2 sec.5]
+  PASS  therefore every layer-1 CONDITION transfers, and the unknown box values do not enter any of them   <PROVED-exact>   [box-independence is stated of the conditions themselves]
+
+==============================================================================
+L1 VERDICT: the box gap is NOT LOAD-BEARING, and L1 is COMPLETE for the
+purpose of the kill.
+
+  * the layer-1 conditions are box-independent, and both of their inputs -- the
+    (-2)-pole depths (-9,-6) and the (-5)-pole bounds (-3,-2) -- are chain and
+    Belyi data the Three-dessin Framework shares verbatim;
+  * the box VALUES for (108,72) remain unknown (they need the Fibonacci ladder
+    walked along Fig. 31's branches), but nothing in the decision system reads
+    them.  Recorded as an open number, not an open gap.
+
+  This is the same shape of result as L4: a layer whose specifics looked
+  necessary and turn out to be immaterial to the verdict.
+==============================================================================

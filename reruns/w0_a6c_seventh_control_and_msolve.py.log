@@ -1,0 +1,39 @@
+==============================================================================
+A6(i)  THE SEVENTH CONTROL: the descent map G through the gate
+==============================================================================
+  G = (G1,G2), deg = (6,4), det JG = -2*(3*u + v - 2)**2
+
+    G0: PASS
+    G1: FAIL
+    G2: PASS
+    G3: PASS
+    G4: PASS
+    G5: PASS
+    G6: FAIL
+  PASS  G is REJECTED by the gate (it is non-injective but NOT Keller)   <CERTIFIED>   [verdict=REJECT]
+  PASS  G is rejected by G1 (Jacobian non-constancy) -- the CORRECT reason   <CERTIFIED>   [rejected-by: ['G1', 'G6']]
+  PASS  G is NOT rejected by G2 (its degrees (6,4) genuinely do not divide), so the gate is discriminating, not blanket-rejecting   <CERTIFIED>   [G2 passed -- 6 does not divide 4, 4 does not divide 6]
+
+==============================================================================
+A6(ii)  CROSS-ENGINE LEG: msolve 0.10.1
+==============================================================================
+  PASS  msolve sanity: <xy-1, x, y> -> no solutions   <CERTIFIED>   [msolve: [-1]:]
+  PASS  msolve sanity: a zero-dimensional system -> solutions reported   <CERTIFIED>   [msolve: [0, [65521, 
+7, 
+2, 
+['d_9_15', 'd_4_5',]
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave0/w0_a6c_seventh_control_and_msolve.py", line 97, in <module>
+    red = sing("\n".join(L), f"a6c_reduce_p{P}.sing")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave0/w0_a6c_seventh_control_and_msolve.py", line 67, in sing
+    try: r=subprocess.run(["Singular","-q",p],capture_output=True,text=True,timeout=to)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'Singular'

@@ -1,0 +1,30 @@
+==============================================================================
+L3 step 1 -- THE (-5)...(-2) CHAIN, FIRST vs THREE-DESSIN FRAMEWORK
+==============================================================================
+  PASS  First Framework: chain is a valid iterated blowup (C1 reduces to the bare edge)   <CERTIFIED>   [18 labels -> [-5, -2]; contracted 16 curves]
+  PASS  Three-dessin Framework: chain is a valid iterated blowup (C1 reduces to the bare edge)   <CERTIFIED>   [18 labels -> [-5, -2]; contracted 16 curves]
+  PASS  the two transcriptions are IDENTICAL, label for label   <CERTIFIED>   [18 labels, exact match]
+  PASS  the Y-side (target) chains are identical too   <CERTIFIED>   [[-5, -4, -3, -2, -1, -2]]
+
+  Forward check -- rebuild the chain from the bare edge by blowups:
+  PASS  the transcribed chain is reproduced exactly by an explicit blowup sequence from the edge (-5,-2)   <CERTIFIED>   [rebuilt 18 labels; match = True]
+
+  READING.  18 curves, endpoints (-5) and (-2), 16 interior.  The
+  arithmetic run -7,-12,-17,-22,-27,-32,-37,-42,-47,-52 is repeated blowup
+  against the (-5)-curve; -9,-11,-13 against the (-2)-curve; -39, -19, -26 are
+  the three interior corner blowups.  Both frameworks carry it verbatim.
+
+==============================================================================
+L3 step 1 RESULT.  The (-5)...(-2) chain -- the chain that carries the
+degree-13 map and fixes the chain degree D -- is IDENTICAL in the First and
+Three-dessin Frameworks, source and target, and both transcriptions are
+validated by the campaign's own C1 blowup test.
+
+Together with Borisov's statement (source-verified) that the (-5)- and
+(-2)-curve Belyi maps are the SAME as the First Framework's, ALL THREE inputs
+to the Session-27 Y-side chart are unchanged.
+
+This is evidence, NOT a certificate, that L3 transfers: the inputs match, but
+the rigidity DERIVATION has not been re-run on the three-dessin boundary, where
+the (-1)/type-3 region genuinely differs.  Status stays CONDITIONAL.
+==============================================================================

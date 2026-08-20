@@ -1,0 +1,24 @@
+==========================================================================
+H1c.1  BORISOV THREE-DESSIN FRAMEWORK -- THIRD BELYI MAP, CERTIFIED
+==========================================================================
+  f(x) = x**3*(x - 5)**2/108
+
+  PASS  f is defined over Q (no field extension needed)   <PROVED-exact>   [contrast: the First Framework's D=13 map needs Q(sqrt(-3))]
+  PASS  deg f = 5   <PROVED-exact>
+  PASS  above {inf}: ONE point, ramification 5   <PROVED-exact>   [f polynomial => the only pole is x=inf with multiplicity deg f = 5]
+  PASS  above {0}: ramification profile (3,2)  [1 point e=3, 1 point e=2]   <PROVED-exact>   [roots x=0 (e=3), x=5 (e=2); profile [3, 2]]
+  PASS  above {1}: ramification profile (2,1,1,1)  [1 point e=2, 3 points e=1]   <PROVED-exact>   [factorisation of x^3(x-5)^2-108 = (x - 3)**2*(x**3 - 4*x**2 - 8*x - 12)]
+  PASS  Riemann-Hurwitz / degree check: each fibre sums to 5   <PROVED-exact>   [fibre 0 sums 5, fibre 1 sums 5, fibre inf sums 5]
+
+  f'(x) = 5*x**2*(x - 5)*(x - 3)/108
+  PASS  critical values of f are exactly {0, 1} (plus inf) => f IS a Belyi map   <PROVED-exact>   [critical points x=0,3,5 -> values [0, 1]]
+  PASS  the non-trivial critical point x=3 has f(3) = 1 exactly   <PROVED-exact>   [f(3) = 1]
+
+==========================================================================
+VERDICT [PROVED-exact].  Borisov's stated third Belyi map is CORRECT:
+  degree 5, ramification (5) / (3,2) / (2,1,1,1) over inf / 0 / 1,
+  defined over Q, dessin = a single Galois orbit of size 1 (rational).
+  Therefore the Three-dessin Framework's NEW data is RATIONAL and RIGID;
+  its other two Belyi maps are the First Framework's, which this
+  campaign already derived and certified at D=13.
+==========================================================================

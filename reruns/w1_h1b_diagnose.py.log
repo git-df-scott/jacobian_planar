@@ -1,0 +1,129 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 3 -- PENTAGON HIT-DETECTOR (Newton over C)
+==============================================================================
+  essential parameters : 60  (61 minus the p_00 gauge)
+  square subsystem     : 66 conditions, levels 13..23
+  surplus to test      : all conditions at j = 24 and every j > 24
+  discipline           : HIT-FINDER ONLY -- non-discovery proves nothing
+
+  start   0: best |F| = 6.411e-07  (17s)
+  start   6: ROOT of the square subsystem, |F| = 2.476e-09
+             surplus conditions max |.| = 3.975e-08  -> *** CANDIDATE HIT ***
+  start   8: ROOT of the square subsystem, |F| = 4.809e-09
+             surplus conditions max |.| = 8.078e-08  -> *** CANDIDATE HIT ***
+  start  10: best |F| = 1.073e+00  (168s)
+  start  11: ROOT of the square subsystem, |F| = 1.332e-09
+             surplus conditions max |.| = 9.929e-09  -> *** CANDIDATE HIT ***
+  start  20: best |F| = 1.171e-05  (340s)
+  start  24: ROOT of the square subsystem, |F| = 3.518e-09
+             surplus conditions max |.| = 4.112e-08  -> *** CANDIDATE HIT ***
+  start  25: ROOT of the square subsystem, |F| = 5.438e-09
+             surplus conditions max |.| = 1.912e-07  -> *** CANDIDATE HIT ***
+  start  30: best |F| = 1.050e+02  (499s)
+
+  40 starts completed in 634s
+  best residuals: 1.33e-09, 2.48e-09, 3.52e-09, 4.81e-09, 5.44e-09, 1.06e-08, 1.07e-08, 1.35e-08
+  roots of the square subsystem found: 5
+
+  VERDICT DISCIPLINE.  Whatever this run shows, it is a HIT-FINDER result.
+  Finding no root is NOT emptiness -- Newton has a small basin on a degree-23
+  system in 60 variables and non-convergence is the expected default.  Only a
+  root that also kills all 314 surplus conditions means anything, and that would
+  go to Hensel lift + LLL + the full Sec.6.1 gate before the word counterexample
+  is used anywhere.
+==============================================================================
+==============================================================================
+H1b step 3b -- ADVERSARIAL DIAGNOSIS OF THE NEWTON ROOTS
+==============================================================================
+
+  --- root from start 6:  |F| = 2.476e-09 ---
+      ||x||_2 = 6.5695e+09   ||x||_inf = 2.8826e+09
+      p_10 = 1.5041e+08+7.3713e+08j   |p_10| = 7.5232e+08
+      |P| coefficients: min 7.547e+05  max 2.883e+09
+      level   max|Q_j| FORBIDDEN      max|Q_j| ALLOWED      ratio
+      j=13    2.2344e-14              3.2995e-09          6.77e-06
+      j=14    1.0294e-12              2.5890e-09          3.98e-04
+      j=15    5.0130e-12              6.9868e-09          7.18e-04
+      j=16    1.2886e-11              7.5701e-09          1.70e-03
+      j=17    4.0006e-11              8.9555e-09          4.47e-03
+      j=18    5.8073e-11              4.3340e-09          1.34e-02
+      j=19    9.3704e-11              2.7830e-09          3.37e-02
+      j=20    3.4818e-10              3.0179e-09          1.15e-01
+      j=21    8.3197e-10              3.1842e-09          2.61e-01
+      j=22    1.1724e-09              4.3190e-09          2.71e-01
+      j=23    1.4274e-09              3.2911e-09          4.34e-01
+      j=24    1.8658e-09              2.4905e-09          7.49e-01
+      ==> DEGENERATE: the allowed coefficients vanish too -- Q is (near) ZERO, so this is the trivial solution, NOT a counterexample
+
+  --- root from start 8:  |F| = 4.809e-09 ---
+      ||x||_2 = 1.0342e+10   ||x||_inf = 7.8132e+09
+      p_10 = 9.1870e+08-2.2773e+08j   |p_10| = 9.4650e+08
+      |P| coefficients: min 3.505e+06  max 7.813e+09
+      level   max|Q_j| FORBIDDEN      max|Q_j| ALLOWED      ratio
+      j=13    3.5970e-13              4.9680e-09          7.24e-05
+      j=14    4.0925e-12              3.2985e-09          1.24e-03
+      j=15    2.0030e-11              3.3550e-09          5.97e-03
+      j=16    1.7505e-11              3.4982e-09          5.00e-03
+      j=17    1.4802e-10              1.2331e-08          1.20e-02
+      j=18    2.0361e-10              2.0122e-09          1.01e-01
+      j=19    1.4324e-10              1.7587e-09          8.15e-02
+      j=20    1.3848e-09              4.6508e-09          2.98e-01
+      j=21    1.2060e-09              2.3708e-09          5.09e-01
+      j=22    2.7091e-09              3.2093e-09          8.44e-01
+      j=23    2.0654e-09              5.5893e-09          3.70e-01
+      j=24    6.7221e-09              4.9482e-09          1.36e+00
+      ==> DEGENERATE: the allowed coefficients vanish too -- Q is (near) ZERO, so this is the trivial solution, NOT a counterexample
+
+  --- root from start 11:  |F| = 1.332e-09 ---
+      ||x||_2 = 7.1845e+09   ||x||_inf = 3.7326e+09
+      p_10 = -7.9523e+08+8.8901e+08j   |p_10| = 1.1928e+09
+      |P| coefficients: min 2.373e+06  max 3.733e+09
+      level   max|Q_j| FORBIDDEN      max|Q_j| ALLOWED      ratio
+      j=13    1.3123e-13              1.6749e-09          7.84e-05
+      j=14    5.6959e-13              8.3123e-10          6.85e-04
+      j=15    2.6689e-12              2.5050e-09          1.07e-03
+      j=16    6.2191e-12              4.1650e-09          1.49e-03
+      j=17    5.0329e-12              2.9077e-09          1.73e-03
+      j=18    5.7668e-11              8.3500e-10          6.91e-02
+      j=19    8.2467e-11              7.7186e-10          1.07e-01
+      j=20    1.1352e-10              1.1939e-09          9.51e-02
+      j=21    4.2273e-10              4.2920e-10          9.85e-01
+      j=22    7.6641e-10              1.0171e-09          7.54e-01
+      j=23    7.2734e-10              2.0958e-09          3.47e-01
+      j=24    1.8529e-09              1.7698e-09          1.05e+00
+      ==> DEGENERATE: the allowed coefficients vanish too -- Q is (near) ZERO, so this is the trivial solution, NOT a counterexample
+
+==============================================================================
+READING.  If the ALLOWED coefficients are also ~0, the root is the trivial
+point Q == 0 (equivalently P degenerating so the recursion produces nothing),
+which satisfies every support condition vacuously and is NOT a Keller pair.
+That is the degenerate-solution failure mode Plan 43 Sec.6.1 step 5 exists to
+catch, and it is why 'numerical root' and 'hit' are different words.
+==============================================================================

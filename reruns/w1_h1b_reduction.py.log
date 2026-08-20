@@ -1,0 +1,58 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 4 -- IS THE LATE BLOCK JOINTLY AFFINE?
+==============================================================================
+  early parameters P_0..P_11 : 48
+  late  parameters P_12..P_16: 13
+
+  degree along a random line in the FULL 13-dimensional late block:
+    level j = 13:  degrees [0]
+    level j = 14:  degrees [0]
+    level j = 15:  degrees [0]
+    level j = 16:  degrees [0, 1]
+    level j = 17:  degrees [0, 1]
+    level j = 18:  degrees [1]
+    level j = 19:  degrees [1]
+    level j = 20:  degrees [1]
+  PASS  levels 13..17 are JOINTLY AFFINE in the 13 late parameters (degree 1 along a random line in that whole subspace)   <CERTIFIED>   [degrees seen: [0, 1]]
+  FAIL  levels >= 18 are NOT affine in the late block (so the reduction cannot be extended past level 17)   <CERTIFIED>   [degrees seen at j=18..20: [1]]
+
+  WHAT THIS DECIDES.
+  If levels 13..17 are jointly affine in the late block, the 15 conditions there
+  form a LINEAR system  M(P_early) * P_late = b(P_early)  whose 15x13 matrix and
+  right-hand side are polynomial in the early parameters.  Eliminating P_late is
+  then exact linear algebra -- no monomial expansion at any point -- and what
+  remains is:
+      * 2 compatibility conditions (15 equations, 13 unknowns), and
+      * levels 18..24 plus termination, with P_late substituted.
+  The question for an EXPORT path is the degree of those残 conditions in the
+  early parameters, which step 5 measures.
+
+==============================================================================
+FAILED: ['levels >= 18 are NOT affine in the late block (so the reduction cannot be extended past level 17)']

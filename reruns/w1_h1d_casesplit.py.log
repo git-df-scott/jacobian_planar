@@ -1,0 +1,44 @@
+==============================================================================
+H1d -- IS GGHV PROP 4.3 EXHAUSTIVE?
+==============================================================================
+
+  THE BOUND.  Earlier in the same proof GGHV establish
+
+      l_{rho,sigma}(P) = lambda * R^{qm} = lambda * R^{4m},   e_{rho,sigma}(R) = (7,2)
+
+  so the factorisation of l_{1,-3}(P) is governed entirely by R.  A
+  (1,-3)-homogeneous element is a polynomial in z = x^3 y times a power of x,
+  and the lattice point (7,2) says which:
+
+  PASS  the point (7,2) written in z = x^3 y is x^1 * z^2, so deg_z R = 2   <PROVED-exact>   [x^7 y^2 = x^1 * (x^3 y)^2]
+      x^7 y^2  =  x^1 * z^2 ,  hence R = x * f(z) with deg f = 2.
+  PASS  a degree-2 polynomial in z has AT MOST TWO distinct linear factors   <PROVED-exact>   [deg f = 2 bounds the number of distinct roots by 2]
+  PASS  therefore 'one or two different linear factors' is a BOUND, not an assumption -- three or more is impossible   <PROVED-exact>   [no case (d) can exist at this branch]
+
+  CONSISTENCY.  GGHV write the two-factor case as
+      l_{1,-3}(P) = lambda x^{4m} (x^3 y - a1)^{4m} (x^3 y - a2)^{4m}
+  which is lambda * [ x * (z-a1) * (z-a2) ]^{4m} -- exactly R^{4m} with
+  R = x f(z), deg f = 2, f having two distinct roots.  The one-factor case is
+  the same with f a square.  Both are R^{4m}; nothing else is.
+  PASS  the two-factor form is exactly (x (z-a1)(z-a2))^{4m} = R^{4m}, matching e(R) = (7,2)   <PROVED-exact>   [x^{4m} (z-a1)^{4m} (z-a2)^{4m} = [x(z-a1)(z-a2)]^{4m}]
+
+  THE REMAINING BRANCH.  Pred_P(1,0) in {(1,-2),(1,-3)} is cited to
+  [6, Proposition 2.5] and is NOT re-derived here -- it is an external result,
+  and this check does not close it.  Within the proof as written, given that
+  dichotomy, the enumeration a)/b)/c) is complete.
+
+==============================================================================
+H1d VERDICT: the case split is EXHAUSTIVE.  There is no case (3).
+
+  The "one or two linear factors" step -- the only place an unenumerated
+  polygon could have hidden -- is a BOUND forced by deg_z R = 2, which follows
+  from the lattice point e(R) = (7,2) that GGHV compute earlier in the proof.
+  Three or more factors is impossible, so no fourth polygon shape exists.
+
+  CONDITIONAL on one external citation: [6, Prop 2.5] giving
+  Pred_P(1,0) in {(1,-2),(1,-3)}.  That is where a case could still hide, and
+  it is now the single named residue of this audit rather than a general worry.
+
+  This closes a Wave-0 item that had been skipped.  It is CLOSURE, not a hit:
+  it removes a hiding place rather than finding something in one.
+==============================================================================

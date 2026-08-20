@@ -1,0 +1,57 @@
+==============================================================================
+H1e  GEOMETRIC-DEGREE CROSSFIRE ON (72,108)
+==============================================================================
+  PASS  gcd(72,108) = 36; leading forms are Pbar = a*H^2, Qbar = b*H^3 with deg H = 36   <PROVED-exact>   [G4 of the campaign gate: Pbar^d2 = c*Qbar^d1 forces both to be powers of one form]
+  PASS  cusp type (a,b) = (d2/n, d1/n) = (3,2) -- Borisov's own cusp   <PROVED-exact>   [so (72,108) sits at the (3,2) cusp]
+  PASS  Bezout: d <= deg P * deg Q - (intersection at infinity) <= 7776 - 216 = 7560   <PROVED-exact>   [7776 - 216; far above 5 -- USELESS as a crossfire bound]
+
+  JELONEK.  deg S_F <= (deg P * deg Q - d)/min(deg P, deg Q) = (7776 - d)/72.
+  This bounds deg S_F ABOVE, in terms of d.  It gives no upper bound on d --
+  the inequality is satisfied more easily as d grows.  Wrong direction.
+
+  T7 (campaign, PROVED).  sum_i delta_i nu_i = d - chi(C_L), with delta_i =
+  deg A_i and nu_i >= 1, so   deg S_F <= d - chi(C_L),  i.e.  d >= deg S_F +
+  chi(C_L).  That is a LOWER bound on d.  Also wrong direction, and chi(C_L)
+  is itself defined through d (T7 is the relation between them), so the pair
+  is circular: T7 constrains (d, deg S_F, chi) jointly, it does not pin d.
+
+  PASS  neither Jelonek nor T7 yields an UPPER bound on d   <PROVED-exact>   [Jelonek bounds deg S_F above; T7 bounds d below]
+  THE DECISIVE DATUM.  Borisov states the generic degree of his framework
+  maps outright (arXiv:1901.04073v2, source-verified):
+
+    First Framework        degrees (99, 66)    (-5)-map deg  16   generic degree d = 16
+    Second Framework       degrees (435, 290)  (-5)-map deg  28   generic degree d = 28
+    Three-dessin           degrees (108, 72)   (-5)-map deg  16   generic degree d = 16
+
+    source notes: line 369-370: 'The generic degree of phi is 16, so phi^* o phi_* = 16 Id'
+  PASS  generic degree = degree of the (-5)-curve Belyi map -- STRUCTURAL, not a two-point fit   <PROVED-exact>   [the (-5)-curve is type 1 with e=1 (it maps to the (-5)-curve, same K-bar label), and e*f = the degree of phi near a generic point of the curve, so f = d]
+  PASS  Three-dessin Framework at (108,72) has geometric degree d = 16   <DERIVED>   [reuses FF's (-5)-curve map, deg 16, with e = 1]
+
+  CROSSFIRE.  The literature closes d <= 5, so a plane counterexample needs
+  d >= 6.  The only concrete geometric degree available at (72,108) is the
+  framework value d = 16.
+
+  PASS  d = 16 is NOT excluded by the literature floor (16 >= 6)   <PROVED-exact>   [the crossfire does not fire]
+  PASS  no available constraint forces d <= 5 at (72,108)   <PROVED-exact>   [Bezout gives d <= 7560; Jelonek bounds deg S_F not d; T7 bounds d below]
+
+==============================================================================
+H1e VERDICT: NEGATIVE -- the d-crossfire does NOT kill (72,108).
+
+  * The degree pair forces the (3,2) cusp and leading forms a*H^2, b*H^3 with
+    deg H = 36.  It forces nothing about d.
+  * Every available bound runs the wrong way: Bezout gives d <= 7560, Jelonek
+    bounds deg S_F above in terms of d, and T7 bounds d below.  None caps d.
+  * The one actual value on record at this degree pair is d = 16 (Borisov's
+    Three-dessin Framework, inheriting the First Framework's degree-16
+    (-5)-curve Belyi map), which clears the d >= 6 floor with room.
+
+  So (72,108) is NOT excluded by geometric degree, and no cheap kill exists
+  here.  H1e closes as a dead end -- which is itself worth having: Plan 43
+  budgeted a day on the chance of a free closure, and the chance is now
+  measured at zero rather than left open.
+
+  WHAT WOULD REVIVE IT.  Only a NEW theorem closing d = 6..16 for the (3,2)
+  cusp, or an argument forcing d <= 5 from the Newton polytope at (72,108).
+  Makar-Limanov's polytope estimates sharpen deg S_F and the polygon's lower
+  side; they do not cap d.  Nothing in reach.
+==============================================================================
