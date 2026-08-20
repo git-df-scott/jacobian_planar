@@ -1,0 +1,20 @@
+[
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=0 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=0 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "{'name': 'orph_503471', 'status': 'RAN', 'out': 'params: 32\\nconditions: 48\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.04695320129394531, 'info': {'nparams': ",
+  "wall": 0.0
+ },
+ {
+  "tag": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((1, 0),(3, 1))",
+  "verdict": "{'name': 'orph_646396', 'status': 'RAN', 'out': 'params: 18\\nconditions: 28\\ntime: 25\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 31.73323893547058, 'info': {'nparams': 1",
+  "wall": 31.7
+ }
+]
