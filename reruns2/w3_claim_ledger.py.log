@@ -1,0 +1,107 @@
+==============================================================================
+SELF-TEST OF THE LINTER
+==============================================================================
+    L1  dup: incompatible labels ['PROVED', 'REFUTED'] on one key
+    L6  dup: evidence script missing: wave3/w3_claim_ledger.py
+    L6  dup: evidence script missing: wave3/w3_claim_ledger.py
+    L2  noev: PROVED with no evidence pointer
+    L3  nodom: PROVED with unrestricted/empty domain and no domain probe
+    L6  nodom: evidence script missing: wave3/w3_claim_ledger.py
+    L6  dep: evidence script missing: wave3/w3_claim_ledger.py
+    L5  cond: CONDITIONAL without naming the condition
+    L6  cond: evidence script missing: wave3/w3_claim_ledger.py
+    L6  miss: evidence script missing: wave3/does_not_exist.py
+    L7  wd: WITHDRAWN without recording why
+    L4  dep: depends on REFUTED claim dup
+    codes found: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7']   expected: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7']   self-test PASS
+    clean ledger produces 1 findings   (must be 0): FAIL
+
+==============================================================================
+CAMPAIGN LEDGER
+==============================================================================
+    A1-K0-CLASS                  PROVED       evidence: wave3/w3_descent_jacobian_formula.py
+        domain: C*-actions on C^3 with a free rank-2 invariant ring
+        depends: W3-4
+        domain probe: Alpoge's k = 2 class, where the same identity fails
+    A1-SQUARE-FORCED             REFUTED      evidence: wave3/w3_descent_jacobian_formula.py
+        domain: all such weight systems
+    A2-SQUARE-REMOVABLE          PROVED       evidence: wave3/w3_descent_jacobian_formula.py
+        domain: source weights (1,-1,-2), target weights (-2,-1,1)
+        depends: W3-4
+        domain probe: the k = 0 class, where the same closed form does not apply and D = 1
+    ALPOGE-DETJF                 PROVED       evidence: wave2/w2_alpoge_detjf.py
+        domain: the map as recorded in Session 1 and file `39`
+        domain probe: the same map with f3 perturbed by +x, whose Jacobian is not constant
+    DESCENT-D3-S3                DERIVED      evidence: wave2/w2_irreducibility_sieve.py
+        domain: the descent G of file `39`, at four rational targets
+    FIRST-FRAMEWORK              PROVED       evidence: wave3/w3_endgame_degree_obstruction.py
+        domain: the First Framework as formalized by this campaign, D = 13, endgame exponent k = 4
+        depends: W3-1
+        domain probe: k = D = 13, where the realization demand IS satisfiable
+    FIRST-FRAMEWORK-WAVE1-ROUTE  CONDITIONAL  evidence: wave2/w2_pole_admissibility.py
+        domain: the First Framework as formalized by this campaign
+        conditional on: the campaign's own THEOREM 2/3 (rigidity, pole-fiber), not independently reproduced
+    H1C-K>=1                     REFUTED      evidence: wave2/w2_h1c_refutation.py
+        domain: all rational R, all D, all k >= 1
+    H1C-POLY                     PROVED       evidence: wave2/w2_h1c_refutation.py
+        domain: polynomial R only
+        domain probe: rational R with a pole at v = -1, on which the claim fails
+    HIT-NONE                     PROVED       evidence: wave3/w3_hit_protocol.py
+        domain: every candidate recorded in this repository
+        domain probe: the Alpoge positive control, which the gate's H2/H3 logic accepts
+    JC-PLANE                     ASSERTED     evidence: -
+        domain: Keller maps of C^2
+    NGUYEN-104                   WITHDRAWN    evidence: -
+        domain: the literature
+        withdrawn because: asserted from three failed web searches; the result is real and refereed.  Absence of search hits is evidence about the search, not about the literature.  No in-repository artifact bears on it, so the honest label is WITHDRAWN, not REFUTED.
+    S38-COLLAPSE                 REFUTED      evidence: wave3/w3_weighted_homogeneous_theorem.py
+        domain: unrestricted
+    SEC-2.5-SIEVE                UNVERIFIED   evidence: wave2/w2_irreducibility_sieve.py
+        domain: the wave-1 section 2.5 eliminant
+    SECOND-FRAMEWORK             PROVED       evidence: wave3/w3_endgame_degree_obstruction.py
+        domain: D = 23 with endgame exponent k != 23
+        depends: W3-1
+        domain probe: k = D = 23, where the realization demand IS satisfiable
+    TRANSFER                     REFUTED      evidence: wave2/w2_money_cells.py
+        domain: all frameworks with chain degree D
+    W2-1                         PROVED       evidence: wave2/w2_h1c_refutation.py
+        domain: integer D >= 1, integer k >= 0, c != 0, rational R
+        domain probe: the bogus rule 'solvable iff k==0', which the same grid rejects
+    W3-1                         PROVED       evidence: wave3/w3_endgame_degree_obstruction.py
+        domain: integer D >= 1, integer k >= 0, c != 0, rational R, realization demand deg R = D
+        depends: W2-1
+        domain probe: the bogus rules 'deg R = D always' and 'deg R = k always', both rejected
+    W3-2                         PROVED       evidence: wave3/w3_weighted_homogeneous_theorem.py
+        domain: integer weights (a,b) with a*b < 0, every degree
+        domain probe: same-sign weights (1,m), where (x, y + x^m) breaks it
+    W3-4                         PROVED       evidence: wave3/w3_descent_jacobian_formula.py
+        domain: C*-actions on C^3 with a free rank-2 invariant ring, equivariant F with descent G
+        domain probe: the same identity with the content factor D dropped, which fails
+
+==============================================================================
+LINT
+==============================================================================
+    L6  H1C-K>=1: evidence script missing: wave2/w2_h1c_refutation.py
+    L6  H1C-POLY: evidence script missing: wave2/w2_h1c_refutation.py
+    L6  W2-1: evidence script missing: wave2/w2_h1c_refutation.py
+    L6  W3-1: evidence script missing: wave3/w3_endgame_degree_obstruction.py
+    L6  FIRST-FRAMEWORK: evidence script missing: wave3/w3_endgame_degree_obstruction.py
+    L6  FIRST-FRAMEWORK-WAVE1-ROUTE: evidence script missing: wave2/w2_pole_admissibility.py
+    L6  TRANSFER: evidence script missing: wave2/w2_money_cells.py
+    L6  SECOND-FRAMEWORK: evidence script missing: wave3/w3_endgame_degree_obstruction.py
+    L6  S38-COLLAPSE: evidence script missing: wave3/w3_weighted_homogeneous_theorem.py
+    L6  W3-2: evidence script missing: wave3/w3_weighted_homogeneous_theorem.py
+    L6  W3-4: evidence script missing: wave3/w3_descent_jacobian_formula.py
+    L6  A1-SQUARE-FORCED: evidence script missing: wave3/w3_descent_jacobian_formula.py
+    L6  A1-K0-CLASS: evidence script missing: wave3/w3_descent_jacobian_formula.py
+    L6  A2-SQUARE-REMOVABLE: evidence script missing: wave3/w3_descent_jacobian_formula.py
+    L6  ALPOGE-DETJF: evidence script missing: wave2/w2_alpoge_detjf.py
+    L6  DESCENT-D3-S3: evidence script missing: wave2/w2_irreducibility_sieve.py
+    L6  SEC-2.5-SIEVE: evidence script missing: wave2/w2_irreducibility_sieve.py
+    L6  HIT-NONE: evidence script missing: wave3/w3_hit_protocol.py
+
+==============================================================================
+    linter self-test        : PASS
+    clean-ledger control    : FAIL
+    campaign ledger findings: 18
+==============================================================================
