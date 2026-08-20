@@ -1,0 +1,298 @@
+{
+  "reduction": "wave5/w5_b16_reduce.py step 1 linear eliminations",
+  "rows": {
+    "10": {
+      "d": 10,
+      "n_13_rows": 41,
+      "row0_coeffs_desc_in_a2d": [
+        "-74",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "120",
+      "row0_polynomial_in_a2d": "-74*a20**2 - 3*a20 + 3/8",
+      "row0_roots": {
+        "-3/148 + sqrt(30)/74": 1,
+        "-sqrt(30)/74 - 3/148": 1
+      },
+      "row0_y_degree": 40,
+      "row1_full_linear_part": {
+        "a19": "-144*a20 - 3",
+        "a20": "-144*a19 - 6*b9",
+        "b9": "3/2 - 6*a20"
+      },
+      "row1_linear_coeff_of_next_unknown": "-144*a20 - 3",
+      "row1_next_unknown": "a19",
+      "row1_polynomial": "-144*a19*a20 - 3*a19 - 6*a20*b9 + 3*b9/2",
+      "row1_y_degree": 39,
+      "row2_full_linear_part": {
+        "a18": "-140*a20 - 3",
+        "a20": "-140*a18 - 6*b8 - 3*b9**2",
+        "b8": "3/2 - 6*a20"
+      },
+      "row2_linear_coeff_of_next_unknown": "-140*a20 - 3",
+      "row2_next_unknown": "a18",
+      "row2_polynomial": "-140*a18*a20 - 3*a18 - 70*a19**2 - 6*a19*b9 - 6*a20*b8 - 3*a20*b9**2 + 3*b8/2 + 9*b9**2/4",
+      "row2_y_degree": 38,
+      "top_variable": "a20"
+    },
+    "3": {
+      "d": 3,
+      "n_13_rows": 13,
+      "row0_coeffs_desc_in_a2d": [
+        "-18",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "36",
+      "row0_polynomial_in_a2d": "-18*a6**2 - 3*a6 + 3/8",
+      "row0_roots": {
+        "-1/4": 1,
+        "1/12": 1
+      },
+      "row0_y_degree": 12,
+      "row1_full_linear_part": {
+        "a5": "-32*a6 - 3",
+        "a6": "-32*a5 - 6*b2",
+        "b2": "3/2 - 6*a6"
+      },
+      "row1_linear_coeff_of_next_unknown": "-32*a6 - 3",
+      "row1_next_unknown": "a5",
+      "row1_polynomial": "-32*a5*a6 - 3*a5 - 6*a6*b2 + 3*b2/2",
+      "row1_y_degree": 11,
+      "row2_full_linear_part": {
+        "a4": "-28*a6 - 3",
+        "a6": "-28*a4 - 3*b2**2"
+      },
+      "row2_linear_coeff_of_next_unknown": "-28*a6 - 3",
+      "row2_next_unknown": "a4",
+      "row2_polynomial": "-28*a4*a6 - 3*a4 - 14*a5**2 - 6*a5*b2 - 3*a6*b2**2 + 9*b2**2/4",
+      "row2_y_degree": 10,
+      "top_variable": "a6"
+    },
+    "4": {
+      "d": 4,
+      "n_13_rows": 17,
+      "row0_coeffs_desc_in_a2d": [
+        "-26",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "48",
+      "row0_polynomial_in_a2d": "-26*a8**2 - 3*a8 + 3/8",
+      "row0_roots": {
+        "-3/52 + sqrt(3)/13": 1,
+        "-sqrt(3)/13 - 3/52": 1
+      },
+      "row0_y_degree": 16,
+      "row1_full_linear_part": {
+        "a7": "-48*a8 - 3",
+        "a8": "-48*a7 - 6*b3",
+        "b3": "3/2 - 6*a8"
+      },
+      "row1_linear_coeff_of_next_unknown": "-48*a8 - 3",
+      "row1_next_unknown": "a7",
+      "row1_polynomial": "-48*a7*a8 - 3*a7 - 6*a8*b3 + 3*b3/2",
+      "row1_y_degree": 15,
+      "row2_full_linear_part": {
+        "a6": "-44*a8 - 3",
+        "a8": "-44*a6 - 6*b2 - 3*b3**2",
+        "b2": "3/2 - 6*a8"
+      },
+      "row2_linear_coeff_of_next_unknown": "-44*a8 - 3",
+      "row2_next_unknown": "a6",
+      "row2_polynomial": "-44*a6*a8 - 3*a6 - 22*a7**2 - 6*a7*b3 - 6*a8*b2 - 3*a8*b3**2 + 3*b2/2 + 9*b3**2/4",
+      "row2_y_degree": 14,
+      "top_variable": "a8"
+    },
+    "5": {
+      "d": 5,
+      "d5_control_roots_listed": {
+        "-3/68 + sqrt(15)/34": 1,
+        "-sqrt(15)/34 - 3/68": 1
+      },
+      "n_13_rows": 21,
+      "row0_coeffs_desc_in_a2d": [
+        "-34",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "60",
+      "row0_polynomial_in_a2d": "-34*a10**2 - 3*a10 + 3/8",
+      "row0_roots": {
+        "-3/68 + sqrt(15)/34": 1,
+        "-sqrt(15)/34 - 3/68": 1
+      },
+      "row0_y_degree": 20,
+      "row1_full_linear_part": {
+        "a10": "-64*a9 - 6*b4",
+        "a9": "-64*a10 - 3",
+        "b4": "3/2 - 6*a10"
+      },
+      "row1_linear_coeff_of_next_unknown": "-64*a10 - 3",
+      "row1_next_unknown": "a9",
+      "row1_polynomial": "-64*a10*a9 - 6*a10*b4 - 3*a9 + 3*b4/2",
+      "row1_y_degree": 19,
+      "row2_full_linear_part": {
+        "a10": "-60*a8 - 6*b3 - 3*b4**2",
+        "a8": "-60*a10 - 3",
+        "b3": "3/2 - 6*a10"
+      },
+      "row2_linear_coeff_of_next_unknown": "-60*a10 - 3",
+      "row2_next_unknown": "a8",
+      "row2_polynomial": "-60*a10*a8 - 6*a10*b3 - 3*a10*b4**2 - 3*a8 - 30*a9**2 - 6*a9*b4 + 3*b3/2 + 9*b4**2/4",
+      "row2_y_degree": 18,
+      "top_variable": "a10"
+    },
+    "6": {
+      "d": 6,
+      "n_13_rows": 25,
+      "row0_coeffs_desc_in_a2d": [
+        "-42",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "72",
+      "row0_polynomial_in_a2d": "-42*a12**2 - 3*a12 + 3/8",
+      "row0_roots": {
+        "-1/28 + sqrt(2)/14": 1,
+        "-sqrt(2)/14 - 1/28": 1
+      },
+      "row0_y_degree": 24,
+      "row1_full_linear_part": {
+        "a11": "-80*a12 - 3",
+        "a12": "-80*a11 - 6*b5",
+        "b5": "3/2 - 6*a12"
+      },
+      "row1_linear_coeff_of_next_unknown": "-80*a12 - 3",
+      "row1_next_unknown": "a11",
+      "row1_polynomial": "-80*a11*a12 - 3*a11 - 6*a12*b5 + 3*b5/2",
+      "row1_y_degree": 23,
+      "row2_full_linear_part": {
+        "a10": "-76*a12 - 3",
+        "a12": "-76*a10 - 6*b4 - 3*b5**2",
+        "b4": "3/2 - 6*a12"
+      },
+      "row2_linear_coeff_of_next_unknown": "-76*a12 - 3",
+      "row2_next_unknown": "a10",
+      "row2_polynomial": "-76*a10*a12 - 3*a10 - 38*a11**2 - 6*a11*b5 - 6*a12*b4 - 3*a12*b5**2 + 3*b4/2 + 9*b5**2/4",
+      "row2_y_degree": 22,
+      "top_variable": "a12"
+    },
+    "7": {
+      "d": 7,
+      "n_13_rows": 29,
+      "row0_coeffs_desc_in_a2d": [
+        "-50",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "84",
+      "row0_polynomial_in_a2d": "-50*a14**2 - 3*a14 + 3/8",
+      "row0_roots": {
+        "-3/100 + sqrt(21)/50": 1,
+        "-sqrt(21)/50 - 3/100": 1
+      },
+      "row0_y_degree": 28,
+      "row1_full_linear_part": {
+        "a13": "-96*a14 - 3",
+        "a14": "-96*a13 - 6*b6",
+        "b6": "3/2 - 6*a14"
+      },
+      "row1_linear_coeff_of_next_unknown": "-96*a14 - 3",
+      "row1_next_unknown": "a13",
+      "row1_polynomial": "-96*a13*a14 - 3*a13 - 6*a14*b6 + 3*b6/2",
+      "row1_y_degree": 27,
+      "row2_full_linear_part": {
+        "a12": "-92*a14 - 3",
+        "a14": "-92*a12 - 6*b5 - 3*b6**2",
+        "b5": "3/2 - 6*a14"
+      },
+      "row2_linear_coeff_of_next_unknown": "-92*a14 - 3",
+      "row2_next_unknown": "a12",
+      "row2_polynomial": "-92*a12*a14 - 3*a12 - 46*a13**2 - 6*a13*b6 - 6*a14*b5 - 3*a14*b6**2 + 3*b5/2 + 9*b6**2/4",
+      "row2_y_degree": 26,
+      "top_variable": "a14"
+    },
+    "8": {
+      "d": 8,
+      "n_13_rows": 33,
+      "row0_coeffs_desc_in_a2d": [
+        "-58",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "96",
+      "row0_polynomial_in_a2d": "-58*a16**2 - 3*a16 + 3/8",
+      "row0_roots": {
+        "-3/116 + sqrt(6)/29": 1,
+        "-sqrt(6)/29 - 3/116": 1
+      },
+      "row0_y_degree": 32,
+      "row1_full_linear_part": {
+        "a15": "-112*a16 - 3",
+        "a16": "-112*a15 - 6*b7",
+        "b7": "3/2 - 6*a16"
+      },
+      "row1_linear_coeff_of_next_unknown": "-112*a16 - 3",
+      "row1_next_unknown": "a15",
+      "row1_polynomial": "-112*a15*a16 - 3*a15 - 6*a16*b7 + 3*b7/2",
+      "row1_y_degree": 31,
+      "row2_full_linear_part": {
+        "a14": "-108*a16 - 3",
+        "a16": "-108*a14 - 6*b6 - 3*b7**2",
+        "b6": "3/2 - 6*a16"
+      },
+      "row2_linear_coeff_of_next_unknown": "-108*a16 - 3",
+      "row2_next_unknown": "a14",
+      "row2_polynomial": "-108*a14*a16 - 3*a14 - 54*a15**2 - 6*a15*b7 - 6*a16*b6 - 3*a16*b7**2 + 3*b6/2 + 9*b7**2/4",
+      "row2_y_degree": 30,
+      "top_variable": "a16"
+    },
+    "9": {
+      "d": 9,
+      "n_13_rows": 37,
+      "row0_coeffs_desc_in_a2d": [
+        "-66",
+        "-3",
+        "3/8"
+      ],
+      "row0_degree_in_a2d": 2,
+      "row0_discriminant": "108",
+      "row0_polynomial_in_a2d": "-66*a18**2 - 3*a18 + 3/8",
+      "row0_roots": {
+        "-1/44 + sqrt(3)/22": 1,
+        "-sqrt(3)/22 - 1/44": 1
+      },
+      "row0_y_degree": 36,
+      "row1_full_linear_part": {
+        "a17": "-128*a18 - 3",
+        "a18": "-128*a17 - 6*b8",
+        "b8": "3/2 - 6*a18"
+      },
+      "row1_linear_coeff_of_next_unknown": "-128*a18 - 3",
+      "row1_next_unknown": "a17",
+      "row1_polynomial": "-128*a17*a18 - 3*a17 - 6*a18*b8 + 3*b8/2",
+      "row1_y_degree": 35,
+      "row2_full_linear_part": {
+        "a16": "-124*a18 - 3",
+        "a18": "-124*a16 - 6*b7 - 3*b8**2",
+        "b7": "3/2 - 6*a18"
+      },
+      "row2_linear_coeff_of_next_unknown": "-124*a18 - 3",
+      "row2_next_unknown": "a16",
+      "row2_polynomial": "-124*a16*a18 - 3*a16 - 62*a17**2 - 6*a17*b8 - 6*a18*b7 - 3*a18*b8**2 + 3*b7/2 + 9*b8**2/4",
+      "row2_y_degree": 34,
+      "top_variable": "a18"
+    }
+  },
+  "solving_performed": false,
+  "source_builder": "wave5/w5_b16_abel.py::build_system"
+}
