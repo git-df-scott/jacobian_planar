@@ -90,3 +90,15 @@ shapes are the direct computational test of that unverified branch.
 ACTIONS: (a) read + re-derive/refute GGHV Sec 5's (9,27) kill  [TOP]
          (b) keep the two shapes grinding (running)
          (c) verify w0_h1a swap-lemma scope is territory-level only.
+
+## 9. Sliver fully identified (the write-out yield)
+
+The two TIMEOUT shapes ARE GGHV Prop 4.1's reduced (9,27) polygons, and their
+emptiness is exactly GGHV Corollary 5.7 (proved there via the Sec 5 / Thm 5.1
+degree apparatus that was never re-derived by anyone).  Bracket convention
+verified identical (system encodes [P,Q] = -x on Cor 5.7's polygons; sign is
+gauge).  The running p108 long-budget msolve jobs are therefore the FIRST
+independent test of Cor 5.7:
+  EMPTY     -> first independent confirmation of the (9,27)-branch kill.
+  non-empty -> GGHV Sec 5 has an error inside the surviving pair's own case,
+               and the (9,27) branch of (72,108) REOPENS with live shapes.
