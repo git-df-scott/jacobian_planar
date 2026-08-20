@@ -1,0 +1,17 @@
+[
+ {
+  "tag": "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'p108_192622', 'status': 'TIMEOUT', 'secs': 240.20610809326172, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall": 240.2
+ },
+ {
+  "tag": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "verdict": "{'name': 'p108_821326', 'status': 'RAN', 'out': 'params: 38\\nconditions: 165\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.425915002822876, 'info': {'nparams': 3",
+  "wall": 0.4
+ },
+ {
+  "tag": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "verdict": "{'name': 'p108_843700', 'status': 'RAN', 'out': 'params: 38\\nconditions: 165\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.44191503524780273, 'info': {'nparams':",
+  "wall": 0.4
+ }
+]
