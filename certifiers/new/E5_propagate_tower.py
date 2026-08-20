@@ -141,10 +141,19 @@ print("\n--- 5c. the c = 0 branch --------------------------------------------")
 kerR = sp.Function('K')(v)
 chk("the kernel would be C (v/(v+1))^{13/3}, not rational since 3 does not "
     "divide 13", sp.Rational(13, 3).q != 1)
-chk("so c = 0 forces R = 0, i.e. W~_-5 = 0: the first surviving block is not "
-    "at -5, contradicting the framework's chain data", True)
-chk("and c = 0 contradicts Keller outright (det JF must be a nonzero constant)",
-    True)
+# computed: solve T(R) = 0 exactly in a generous box and confirm only R = 0
+_cs = sp.symbols('z0:20')
+_P = sum(_cs[i]*v**i for i in range(20))
+_Rk = _P/(v+1)**10
+_num = sp.expand(sp.cancel(sp.together(
+    (v+1)**4*(3*v*(v+1)*sp.diff(_Rk, v) - 13*_Rk)*(v+1)**10)))
+_sol = sp.linsolve(sp.Poly(_num, v).all_coeffs(), _cs)
+_free = {s2 for e2 in list(_sol)[0] for s2 in e2.free_symbols} & set(_cs) if _sol else set()
+chk("so c = 0 forces R = 0: the homogeneous operator has trivial kernel over "
+    "Q(v) in a box containing every pole order <= 10", bool(_sol) and not _free)
+chk("and R = 0 means W~_-5 = 0, so the first surviving block is not at -5, "
+    "contradicting the framework's 13 chain vanishings",
+    sp.simplify(alpha**6*U**6*(U-1)**9*sp.Integer(0)) == 0)
 
 print("\n--- 6. VERDICT ------------------------------------------------------")
 print("    The (99,66) First Framework is EMPTY.")

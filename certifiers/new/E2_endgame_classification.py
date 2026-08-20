@@ -96,8 +96,20 @@ mu, Dq, kq, mq = sp.symbols('mu D k m')
 chk("(a) no pole at v=0: leading coefficient (3 mu - D) != 0 for mu<0<D",
     all((3*mm - DD) != 0 for mm in range(-12, 0) for DD in range(1, 40)))
 # (a) pole at t not in {0,-1}: ord drops by exactly 1 through R'
-tt = sp.Symbol('t', nonzero=True)
-chk("(a) no pole at t not in {0,-1}: ord_t(3v(v+1)R') = ord_t(R)-1 < ord_t(D R)", True)
+# computed: a pole at t not in {0,-1} makes the operator blow up there
+_noptail = []
+for _t in (2, -3, sp.Rational(5, 7)):
+    for _n in (1, 2, 5):
+        _R = 1/(v - _t)**_n
+        _E = sp.cancel(sp.together((v+1)**4*(3*v*(v+1)*sp.diff(_R, v) - 13*_R)))
+        _num, _den = sp.fraction(_E)
+        _ord = 0
+        _p = sp.Poly(sp.expand(_den), v)
+        while sp.div(_p, sp.Poly(v - _t, v))[1].as_expr() == 0:
+            _p = sp.div(_p, sp.Poly(v - _t, v))[0]; _ord += 1
+        _noptail.append(_ord == _n + 1)
+chk("(a) no pole at t not in {0,-1}: the operator's order at t is ord_t(R)-1, "
+    "so it cannot equal a nonzero constant", all(_noptail) and len(_noptail) == 9)
 # (b),(c): Phi(-1) = (3k-D) S(-1)
 Sf = sp.Function('S')(v)
 Phi = sp.expand(3*v*(v+1)*sp.diff(Sf, v) - (3*kq*v + Dq)*Sf)
