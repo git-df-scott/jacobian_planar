@@ -356,13 +356,13 @@
    "old_verdict": "TIMEOUT",
    "new_verdict": "TIMEOUT",
    "old_budget": 90,
-   "new_budget": 90,
+   "new_budget": 900,
    "max": 132,
    "params": 38,
    "per_prime": {
     "65521": {
      "verdict": "TIMEOUT",
-     "secs": 90,
+     "secs": 900,
      "out": ""
     }
    }

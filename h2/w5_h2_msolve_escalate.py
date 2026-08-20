@@ -121,9 +121,17 @@ def main():
         src2 = "\n".join(l for l in src.splitlines() if not RAB.match(l))
         g2 = dump_generators(src2)
         r2, nv2 = solve(g2, PRIMES[0], "ctl_nosat")
+        # A "not EMPTY" that is really a failed run carries no information, so
+        # M3 demands a GENUINE non-empty answer, not merely a non-EMPTY string.
         check("M3 NEGATIVE: with the non-degeneracy generators removed msolve "
-              "does NOT say EMPTY", r2["verdict"] != "EMPTY",
-              f"{r2['verdict']}")
+              "returns a genuine non-empty answer",
+              r2["verdict"] in ("NONEMPTY-PARAMETRIZATION",
+                                "POSITIVE-DIMENSIONAL"),
+              f"{r2['verdict']}"
+              + ("  (a zero-byte output is a FAILURE, not a non-empty answer; "
+                 "this control is only informative when it returns a real "
+                 "parametrisation)"
+                 if r2["verdict"].startswith("FAIL") else ""))
     out = {}
     for t in tod:
         per = {}

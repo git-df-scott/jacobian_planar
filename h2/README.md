@@ -25,3 +25,13 @@ generators for real (51 bytes), asserts that the deletion changed the source,
 asserts that the shipped deletion does not, and then requires the unsaturated
 system to be non-EMPTY and a contradictory pin to be EMPTY. 5/5 in
 `h2_controls.log`.
+
+## Caveat on the first run of `w5_h2_msolve_escalate.py`
+
+In the run recorded in `h2_msolve.log`, control **M3** was scored as passing on
+a verdict of `FAIL-EMPTY-FILE` — msolve produced a zero-byte output on the
+unsaturated variant. That is a failed run, not a genuine non-empty answer, so
+that instance of M3 carries no information. The criterion has since been
+tightened to require an actual parametrisation or a positive-dimensional
+answer; re-run the script to get an informative M3. M1a, M1b and M2 were
+unaffected and are informative as recorded.
