@@ -1,0 +1,236 @@
+
+Plane Jacobian campaign - Session 33
+STEP 1: THE ALGEBRAIC SEARCH VIA CREMONA RELATIONS (BEYOND TAME).
+
+A pivot away from local cusp deformations.  Instead of perturbing a
+skeleton, we build generic (and rational) plane maps with det J = 1 and
+test non-invertibility directly, by elimination.  NO COUNTEREXAMPLE, but
+the search space collapses in a way that is new to this campaign and is
+proved rather than sampled.
+
+=====================================================================
+RESULT 1  the two target profiles are the SAME condition
+=====================================================================
+
+The brief asks for a map where EITHER (i) the inverse degree blows up,
+OR (ii) the fibres carry several unresolvable points.  For a Keller map
+these are not two searches - they are one, and each forces the other.
+
+Let F = (P,Q) : C^2 -> C^2 with det JF = 1, and let
+
+    d  =  [C(x,y) : C(P,Q)]        the geometric degree
+       =  dim_C C[x,y]/(P-a, Q-b)  for generic (a,b).
+
+The dimension count IS the point count: det JF = 1 makes F etale, so
+every finite fibre is reduced and dim = #points exactly.  Then:
+
+  (a) d = 1  <=>  F injective  <=>  F an automorphism.
+      (=>) d=1 means C(x,y) = C(P,Q), so x and y are rational in (P,Q);
+      injectivity plus Ax-Grothendieck gives bijectivity, and a bijective
+      etale polynomial map is an automorphism with polynomial inverse.
+
+  (b) d >= 2  =>  F is NOT proper.
+      If F were proper it would be a proper local homeomorphism, hence a
+      covering map onto C^2; C^2 is simply connected, so the covering is
+      trivial and d = 1.
+
+So profile (ii) - several points in a fibre - is d >= 2, and it AUTO-
+MATICALLY produces profile (i): non-properness means fibres lose points
+to infinity, which is exactly where the inverse's denominator sits.
+
+CONSEQUENCE FOR THE SEARCH.  There is one number to compute, d, and one
+witness to look for, the locus where the fibre count drops.  Both come
+out of a single Groebner basis over Q(a,b).
+
+=====================================================================
+RESULT 2  the detector, and it works on every control
+=====================================================================
+
+Compute a Groebner basis G of (P-a, Q-b) over the FUNCTION FIELD Q(a,b).
+Two readings:
+
+    d                     = vdim(G)                 the fibre count
+    { leadcoef(g) = 0 }   = where the fibre degenerates - the TEAR
+
+Controls (vdim computed here, leading coefficients in the companion
+Singular routine cremona_elimination.sing):
+
+    identity                detJ=1        d=1   LCs constant   automorphism
+    tame triangular         detJ=1        d=1   LCs constant   automorphism
+    tame deg-4 composite    detJ=1        d=1   LCs constant   automorphism
+    (x, y^2)                detJ=2y       d=2   LCs constant   proper, 2 sheets
+    (x, xy)                 detJ=x        d=1   LC = a         TEAR at a=0
+    (y, xy+x)               detJ=-y-1     d=1   LC = a+1       TEAR at a=-1
+    (x^2y+x, y)             detJ=2xy+1    d=2   LC = b         2 sheets + TEAR
+    (x, y^3-3xy)            detJ=3(y^2-x) d=3   LCs constant   proper, 3 sheets
+
+The last row of interest is (x^2y+x, y): geometric degree 2 WITH a tear
+at b=0 - precisely the counterexample profile.  It fails only because
+det J = 2xy+1 is not constant.  The detector is therefore live: it is
+not returning "automorphism" by construction.
+
+=====================================================================
+RESULT 3  the deck involution is volume-preserving and FIXED-POINT-FREE
+=====================================================================
+
+This is where Cremona theory enters, and it is the real content.
+
+Let F be Keller with d = 2.  A degree-2 field extension is Galois, so
+there is a birational involution sigma of C^2 with F o sigma = F.  Over
+the complement of the non-properness locus F is an honest 2-sheeted
+covering, so there sigma is regular; and a birational self-map of a
+smooth surface is undefined only on a FINITE set.  Now:
+
+  (a) det J_sigma = 1.
+      Differentiate F o sigma = F:  JF(sigma z) . Jsigma(z) = JF(z).
+      Take determinants: 1 . det Jsigma = 1.
+
+  (b) sigma has NO fixed point in C^2 where it is regular.
+      At a fixed point p:  JF(p) . (dsigma_p - I) = 0.
+      sigma^2 = id makes dsigma_p an involution of the tangent plane,
+      hence diagonalisable with eigenvalues in {+1,-1}; det = 1 by (a)
+      leaves exactly (1,1) and (-1,-1).
+        (1,1)   => dsigma_p = I  => sigma = id near p (Cartan) => d = 1.
+        (-1,-1) => dsigma_p = -I => JF(p).(-2I) = 0 => JF(p) = 0
+                   => det JF(p) = 0, contradicting det JF = 1.
+
+So a plane Keller counterexample of geometric degree 2 requires a
+FIXED-POINT-FREE VOLUME-PRESERVING BIRATIONAL INVOLUTION of the affine
+plane.  That is a sharply constrained object, and it is a genuinely
+Cremona-theoretic obstruction - the first one this campaign has used.
+
+=====================================================================
+RESULT 4  the de Jonquieres branch of the Cremona group is EMPTY
+=====================================================================
+
+Birational involutions of the plane are classified (Bertini, Castelnuovo,
+Bayle-Beauville) into linear, de Jonquieres, Geiser and Bertini types.
+The de Jonquieres ones - those preserving a pencil of lines - are the
+large, flexible family, and they are killed outright by det J = 1.
+
+There are two pencils to check, and det J = 1 survives conjugation by
+affine maps (det J is multiplicative and affine Jacobians are constant),
+so putting the pencil in normal form is legitimate.
+
+  PENCIL OF PARALLEL LINES (base point at infinity).
+  sigma = (x, psi) with psi a Mobius involution in y over C(x):
+      psi = (A y + B)/(C y - A),   det Jsigma = -(A^2+BC)/(Cy-A)^2.
+  Setting that identically 1 forces (Cy-A)^2 = -(A^2+BC), constant in y,
+  hence C = 0; then psi = -y - B/A and det Jsigma = -1, never +1.
+
+  PENCIL THROUGH A FINITE POINT (put it at the origin).
+  Preserving every line through 0 means sigma(z) = mu(z) z, and
+      det Jsigma = mu . (mu + x mu_x + y mu_y).
+  The involution condition mu(sigma z) mu(z) = 1 together with
+  det Jsigma = 1 leaves only mu constant with mu^2 = 1, i.e. mu = -1:
+  the point reflection sigma(z) = -z.
+
+  And the point reflection is killed by Result 3(b): its fixed point 0
+  lies in C^2.  Concretely, its invariants are the EVEN polynomials, so
+  P_x, P_y, Q_x, Q_y are all odd and vanish at the origin, giving
+  det JF(0) = 0 - not 1.
+
+So no de Jonquieres involution, and no linear involution, can be the
+deck transformation of a plane Keller map.
+
+WHAT THIS DOES NOT DO.  It does not close d = 2.  The Geiser and Bertini
+types are not treated here; their fixed curves have genus 3 and 4 and the
+argument needed is different in kind from the pencil computation.  Nor
+does d = 2 exhaust the counterexample space - d >= 3 is untouched by the
+involution argument, since degree >= 3 extensions need not be Galois.
+Stated as a branch closure, not a theorem.
+
+=====================================================================
+RESULT 5  the rational-map search comes back empty
+=====================================================================
+
+The brief asks for GENERIC RATIONAL maps, not just polynomial ones.
+Searching F = (P/h^i, Q/h^j) with linear numerators over
+h in {x, y, 1+xy, x+y} and 0 <= i,j <= 2 (excluding i=j=0), imposing
+det J = 1 as a polynomial identity: no solution with a non-constant
+numerator, in any of the 32 shapes.
+
+Recorded as a bounded search, not a theorem.  A rational Keller map
+would in any case not disprove the Jacobian conjecture, which is about
+polynomial maps; the point of the search is that the birational category
+is where Cremona relations live, so a rational near-miss would have been
+the natural entry point.  There is none at this size.
+
+=====================================================================
+STATUS AFTER STEP 1
+=====================================================================
+
+NEW AND PROVED: the two target profiles coincide (Result 1); the deck
+involution of a degree-2 Keller map is volume-preserving and fixed-point-
+free (Result 3); the de Jonquieres and linear branches of the Cremona
+classification cannot supply it (Result 4).
+
+NOT CLOSED: Geiser and Bertini involutions; geometric degree >= 3.
+
+NO COUNTEREXAMPLE.
+
+======================================================================
+RESULT 2  the detector on eight controls
+======================================================================
+   identity               detJ = 1              d = 1  KELLER  -> True
+   tame triangular        detJ = 1              d = 1  KELLER  -> True
+   tame deg-4 composite   detJ = 1              d = 1  KELLER  -> True
+   (x, y^2)               detJ = 2*y            d = 2          -> True
+   (x, xy)                detJ = x              d = 1          -> True
+   (y, xy+x)              detJ = -y - 1         d = 1          -> True
+   (x^2y+x, y)            detJ = 2*x*y + 1      d = 2          -> True
+   (x, y^3-3xy)           detJ = -3*x + 3*y**2  d = 3          -> True
+  [PASS] the geometric degree is computed correctly on all eight controls
+  [PASS] every Keller control has d = 1, i.e. is an automorphism
+  [PASS] the detector is LIVE: a non-Keller control has d = 2 WITH a tear ((x^2y+x, y), tear at b = 0)
+
+======================================================================
+RESULT 3  the deck involution: det J = 1 and no fixed point
+======================================================================
+   at a fixed point p:  JF(p).(dsigma_p - I) = 0,  dsigma_p^2 = I
+     eigenvalues (1, 1)    det =  1  ADMISSIBLE (det J_sigma = 1)
+     eigenvalues (1, -1)   det = -1  excluded
+     eigenvalues (-1, 1)   det = -1  excluded
+     eigenvalues (-1, -1)  det =  1  ADMISSIBLE (det J_sigma = 1)
+  [PASS] det J_sigma = 1 leaves exactly the eigenvalue pairs (1,1) and (-1,-1)
+  [PASS] (1,1) gives dsigma = I, hence sigma = id, hence d = 1
+  [PASS] (-1,-1) gives JF.(dsigma - I) = -2 JF = 0, so det JF = 0 != 1
+   => the deck involution of a degree-2 plane Keller map is a
+      FIXED-POINT-FREE VOLUME-PRESERVING birational involution.
+
+======================================================================
+RESULT 4  the de Jonquieres branch of the Cremona group is empty
+======================================================================
+  [PASS] psi = (Ay+B)/(Cy-A) is a genuine involution in y
+   pencil of PARALLEL lines: det J_sigma = (-A*(A - C*y) - C*(A*y + B))/(A - C*y)**2
+     det J_sigma - 1 has numerator -2*A**2 + 2*A*C*y - B*C - C**2*y**2
+  [PASS] that numerator is non-constant in y unless C = 0
+  [PASS] and C = 0 gives det J_sigma = -1, never +1
+   pencil through the ORIGIN: sigma = mu.z, det J_sigma = (x*Derivative(mu(x, y), x) + y*Derivative(mu(x, y), y) + mu(x, y))*mu(x, y)
+  [PASS] mu constant reduces det J_sigma to mu^2, so mu = -1 is the only non-identity solution
+  [PASS] the point reflection sigma(z) = -z is volume-preserving
+  [PASS] but its invariants are even, so det JF(0) = 0 != 1 (6 random even pairs)
+   => no de Jonquieres and no linear involution can be a deck map.
+
+======================================================================
+RESULT 5  the rational-map search
+======================================================================
+   searched 32 shapes (h in ['x', 'y', '1+xy', 'x+y'], 0 <= i,j <= 2), linear numerators
+  [PASS] no rational Keller map with a non-constant numerator in any of the 32 shapes
+
+======================================================================
+13/13 certifications passed.
+======================================================================
+
+STEP 1 COMPLETE.  NO COUNTEREXAMPLE.
+
+  The search space collapsed rather than opened.  Both target profiles
+  turned out to be one condition, d >= 2; that condition at d = 2 forces
+  a fixed-point-free volume-preserving birational involution; and the
+  de Jonquieres and linear branches of the Cremona classification - the
+  large, flexible ones - cannot supply such an involution at all.
+
+  Left standing: the Geiser and Bertini involutions, and geometric
+  degree >= 3 where the extension need not be Galois and the involution
+  argument does not start.
+

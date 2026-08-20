@@ -1,0 +1,3 @@
+building conditions to level 23 (59 variables after gauges)...
+  66 conditions, 1,080,147 monomials total, max 59,626   (30s)
+  wrote /home/user/jacobian_planar/wave1/pent_L23.ms  (43.2 MB)

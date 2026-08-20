@@ -1,0 +1,69 @@
+
+--------------- INPUT DATA ---------------
+#variables                       7
+#equations                       7
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         2
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 1144
+[1144, 392], Non trivial / Trivial = 34.27%
+Density of non-trivial part 95.74%
+Time spent to generate sequence (elapsed): 0.11 sec (9.02 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.01 sec
+Elimination polynomial has degree 1144.
+
+Starts multi-modular computations
+{3}{5}{9}{17}{33}{65}{129}{257}{513}{1025}
+<Step:2/2.47/1.19>
+<Step:4/2.49/2.25>
+<Step:8/2.41/4.57>
+<Step:16/4.85/9.39>
+<Step:32/4.77/19.41>
+<Step:64/8.35/38.65>[0][1][2][3][4][5][6]
+1865 primes used
+Time for CRT + rational reconstruction = 131.21
+Time for rational param:       1181.38 (elapsed) sec / 2057.39 sec (cpu)
+
+Real root isolation starts at precision 1251
+Number of real roots: 28
+Starts real root extraction.
+Elapsed time (real root extraction) = 33.93
+------------------------------------------------------------------------------------
+msolve overall time        1260.29 sec (elapsed) / 2137.35 sec (cpu)
+------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        2.18 sec
+overall(cpu)            3.72 sec
+select                  0.13 sec   6.1%
+symbolic prep.          0.63 sec  28.8%
+update                  0.14 sec   6.2%
+convert                 0.04 sec   1.7%
+linear algebra          1.23 sec  56.6%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   612
+#terms in basis              622610
+#pairs reduced                 4567
+#GM criterion                567348
+#redundant elements             458
+#rows reduced                  9774
+#zero reductions               3518
+max. matrix data               5335 x 6471 (13.428%)
+max. symbolic hash table size  2^14
+max. basis hash table size     2^16
+-----------------------------------------
+

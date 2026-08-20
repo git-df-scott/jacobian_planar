@@ -1,0 +1,62 @@
+=====================================================================
+PROBE 6a  THE DERIVED CONTACT EXPONENT  k = eps*(m+n) - 1
+          and the gate it has to face:  self-consistency forces D = k,
+          so every cusp type is tested at its OWN derived degree.
+=====================================================================
+    cusp (m,n) | eps | k = D | s = n | resonance? | Belyi gate | verdict
+      (2,3)    |  1  |  4   |   3   |    no      |   fails   | CLOSED
+      (2,3)    |  2  |  9   |   3   |    YES     |     -    | CLOSED
+      (2,5)    |  1  |  6   |   5   |    no      |   fails   | CLOSED
+      (2,7)    |  1  |  8   |   7   |    no      |   fails   | CLOSED
+      (3,2)    |  1  |  4   |   2   |    YES     |     -    | CLOSED
+      (3,2)    |  2  |  9   |   2   |    no      |   fails   | CLOSED
+      (3,4)    |  1  |  6   |   4   |    no      |   fails   | CLOSED
+      (3,5)    |  1  |  7   |   5   |    no      |   fails   | CLOSED
+      (3,7)    |  1  |  9   |   7   |    no      |   fails   | CLOSED
+      (4,3)    |  1  |  6   |   3   |    YES     |     -    | CLOSED
+      (4,5)    |  1  |  8   |   5   |    no      |   fails   | CLOSED
+      (4,7)    |  1  |  10   |   7   |    no      |   fails   | CLOSED
+      (5,2)    |  1  |  6   |   2   |    YES     |     -    | CLOSED
+      (5,3)    |  1  |  7   |   3   |    no      |   fails   | CLOSED
+      (5,4)    |  1  |  8   |   4   |    YES     |     -    | CLOSED
+      (5,6)    |  1  |  10   |   6   |    no      |   fails   | CLOSED
+      (5,7)    |  1  |  11   |   7   |    no      |   fails   | CLOSED
+      (6,5)    |  1  |  10   |   5   |    YES     |     -    | CLOSED
+      (6,7)    |  1  |  12   |   7   |    no      |   fails   | CLOSED
+      (7,2)    |  1  |  8   |   2   |    YES     |     -    | CLOSED
+      (7,3)    |  1  |  9   |   3   |    YES     |     -    | CLOSED
+      (7,4)    |  1  |  10   |   4   |    no      |   fails   | CLOSED
+      (7,5)    |  1  |  11   |   5   |    no      |   fails   | CLOSED
+      (7,6)    |  1  |  12   |   6   |    YES     |     -    | CLOSED
+
+   Every row is CLOSED: at its own derived contact exponent each cusp
+   type lands at D = k >= 4, where the Belyi gate fails (or, when the
+   cusp exponent divides D, dies earlier by resonance collision).
+
+=====================================================================
+PROBE 6b  WHY k CAN NEVER REACH 3
+=====================================================================
+    m, n coprime cusp exponents with m, n >= 2  =>  m + n >= 5
+    eps >= 1                                    =>  k >= 4
+    minimum of k over m,n <= 40 coprime and eps <= 12 : 4
+    attained only at (m,n) = (2,3), eps = 1 - Borisov's own cusp.
+
+    ROBUSTNESS.  Dropping the step mu = m, the window would need
+    G = mu(m+n)/m <= 4, i.e. mu <= 4m/(m+n) <= 4m/5 < m: y2's leading
+    block would have to carry a g-power strictly below m, contradicting
+    its being an m-th power at all.  The closure does not depend on it.
+
+=====================================================================
+FINAL STATE
+=====================================================================
+   D >= 4 : closed by the Belyi gate (probe 4c), uniformly in the cusp
+            exponent, with no upper bound on D.
+   D <= 3 : closed here - no cusp type can produce a contact exponent
+            that low, and self-consistency forces D = k.
+
+   Every gate is shut.  The published constructive framework family
+   supports no Keller map, for any cusp type, cancellation depth,
+   boundary order or chain degree.
+
+   No counterexample was found.  This closes the constructive
+   candidates; the plane Jacobian conjecture itself is untouched.

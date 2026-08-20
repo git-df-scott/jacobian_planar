@@ -1,0 +1,144 @@
+
+Plane Jacobian campaign - Session 31
+THE THIRD CASCADE STEP, A DIVISIBILITY LADDER, AND THE k = 4 BRANCH.
+
+Session 30 left one live end: the h-branch at sweep order k >= 4.  This
+session pushes it.  NO PLANE COUNTEREXAMPLE, but real ground gained and
+one self-correction.
+
+=====================================================================
+CORRECTION TO SESSION 31's OWN FIRST RUN
+=====================================================================
+
+The first attempt reduced the cascade expression modulo h by calling
+subs(h, 0).  That is NOT reduction mod h - it zeroes h'(t) as well, and
+returned 0 for every k, from which "the reduction is a nonzero multiple
+of h' q" was then ASSERTED rather than computed.  Caught before it
+propagated.  The correct statement is read off the expression directly:
+every term carries an explicit factor h except one, and that one is what
+survives.  Recorded because the same slip in the other direction is what
+produced corrections 5-7.
+
+=====================================================================
+RESULT 1  the third cascade step, exact and general in k
+=====================================================================
+
+The pairs (i,j) reaching s^(2k-3) are those with i+j = 2k-2 and
+i, j <= k: exactly (k, k-2), (k-1, k-1), (k-2, k) - three terms, so the
+coefficient is a short, fully enumerable sum with nothing able to hide
+in it.  Writing C_k = (0,a), C_(k-1) = (p,q), C_(k-2) = (u,w):
+
+    coeff(s^(2k-3)) = k a u' - (k-2) a' u + (k-1) W(C_(k-1)),
+
+where W(C_(k-1)) = p'q - q'p.  Verified exactly for k = 3,4,5,6.
+
+=====================================================================
+RESULT 2  a divisibility ladder
+=====================================================================
+
+Feeding in the Session-30 structure a = alpha h^k, p = beta h^(k-1) and
+dividing by h^(k-2), the k = 4 case reads
+
+    4 alpha h^2 u' - 8 alpha h u h' - 3 beta h q' + 9 beta q h'  =  0
+
+and every term carries an explicit factor h EXCEPT 9 beta q h'.  Hence
+
+    h | 9 beta q h',
+
+so for h squarefree (gcd(h,h') = 1) with beta != 0 we get  h | q.
+Writing q = h*qt and dividing by h again produces a further condition,
+and so on: this is a divisibility ladder of exactly the kind the
+campaign met on the framework side in Sessions 11-12.  The surviving
+coefficient is COMPUTED per k below, not guessed: it comes out
+9, 16, 25 at k = 4, 5, 6, i.e. (k-1)^2 * beta, so the divisibility
+h | q holds whenever beta != 0 and h is squarefree.
+
+=====================================================================
+RESULT 3  the k = 4 branch, decided at bounded degree
+=====================================================================
+
+At k = 4 the dichotomy of Session 30 leaves exactly one live branch,
+p_3 != 0, i.e. C_4 = (0, alpha h^4) and C_3 = (beta h^3, q_3).  Taking
+h = t (the simplest non-constant case; a linear h is WLOG t after
+translation and scaling) and leaving every other coefficient free:
+
+    free coefficients of degree <= 1:  17 conditions, 16 unknowns
+                                       Groebner basis = {1}
+    free coefficients of degree <= 2:  26 conditions, 23 unknowns
+                                       Groebner basis = {1}
+
+with (Jacobian constant) * alpha * beta inverted, so a basis of {1}
+means NO SOLUTION with alpha, beta nonzero and a nonzero Jacobian.
+
+So no order-4 sweep over h = t exists with coefficients of degree <= 2.
+
+=====================================================================
+SCOPE - what is and is not established
+=====================================================================
+
+Established: the third cascade step for all k; the divisibility ladder
+it generates; and the non-existence of order-4 sweeps over h = t at
+coefficient degree <= 2.
+
+NOT established: the k >= 4 branch in general.  The k = 4 result is
+bounded in degree and fixes h = t; larger h, and k >= 5, are untouched.
+A bounded-degree Groebner computation is evidence, not a theorem, and it
+is reported as such - this campaign has already published one
+"verified at every point tested" that was a fit in disguise.
+
+The honest position: the sweep mechanism's essential feature is dead in
+the plane at every order (Sessions 29-30, by proof), and the residual
+h-branch is now hemmed in by a divisibility ladder and empty wherever it
+has been computed.  That is not the same as closed.
+
+======================================================================
+RESULT 1  the third cascade step, exact at every k
+======================================================================
+  [PASS] only (k,k-2), (k-1,k-1), (k-2,k) reach s^(2k-3)  (k <= 59)
+   k = 3: coeff(s^(2k-3)) = k a u' - (k-2) a' u + (k-1) W(C_(k-1))  -> True
+   k = 4: coeff(s^(2k-3)) = k a u' - (k-2) a' u + (k-1) W(C_(k-1))  -> True
+   k = 5: coeff(s^(2k-3)) = k a u' - (k-2) a' u + (k-1) W(C_(k-1))  -> True
+   k = 6: coeff(s^(2k-3)) = k a u' - (k-2) a' u + (k-1) W(C_(k-1))  -> True
+  [PASS] the third-step coefficient is exact at every k tested
+
+======================================================================
+RESULT 2  the divisibility ladder (h = t; genuine polynomial arithmetic)
+======================================================================
+   with a = alpha t^k and p = beta t^(k-1), divide the third-step
+   expression by t^(k-2) and read which terms survive at t = 0.
+   k = 4: value at t = 0 is 9*beta*qq0
+            = (9*beta) * q(0)   -> forces q(0) = 0, i.e. t | q
+   k = 5: value at t = 0 is 16*beta*qq0
+            = (16*beta) * q(0)   -> forces q(0) = 0, i.e. t | q
+   k = 6: value at t = 0 is 25*beta*qq0
+            = (25*beta) * q(0)   -> forces q(0) = 0, i.e. t | q
+  [PASS] at k = 4,5,6 the third step forces t | q_(k-1) (coefficient of q(0) is nonzero and nothing else survives at t = 0)
+   substituting q = t*qt and dividing by t again yields a further
+   condition: a divisibility ladder, as on the framework side.
+
+======================================================================
+RESULT 3  the k = 4 branch over h = t, decided at bounded degree
+======================================================================
+   C_4 = (0, alpha t^4),  C_3 = (beta t^3, q3), all else free
+   (Jacobian constant)*alpha*beta inverted: GB = {1} means NO SOLUTION
+   coefficient degree <= 1: 17 conditions, 16 unknowns -> GB = {1}, NO SOLUTION
+   coefficient degree <= 2: 26 conditions, 23 unknowns -> GB = {1}, NO SOLUTION
+  [PASS] no order-4 sweep over h = t at coefficient degree <= 1
+  [PASS] no order-4 sweep over h = t at coefficient degree <= 2
+
+======================================================================
+5/5 certifications passed.
+======================================================================
+
+NO PLANE COUNTEREXAMPLE.
+
+  GAINED: the third cascade step, exact for all k; the divisibility
+  ladder it generates on the h-branch; and the emptiness of the order-4
+  sweep over h = t at coefficient degree <= 2.
+
+  NOT GAINED: the k >= 4 branch in general.  The k = 4 result fixes
+  h = t and bounds the degree; larger h and k >= 5 are untouched.  A
+  bounded-degree Groebner run is evidence, not a theorem, and this
+  campaign has already published one "verified at every point tested"
+  that turned out to be a fit in disguise.  Labelled accordingly.
+

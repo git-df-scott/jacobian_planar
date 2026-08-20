@@ -1,0 +1,7 @@
+NVARS: 27 (incl 1 rabinowitsch)
+NEQS: 21
+
+Singular error: no more memory
+System 866261k:866332k Appl 846013k/20247k Malloc 2553k/0k Valloc 863708k/20247k Pages 215927/0 Regions 796:796 Internal: 72888
+
+halt 14

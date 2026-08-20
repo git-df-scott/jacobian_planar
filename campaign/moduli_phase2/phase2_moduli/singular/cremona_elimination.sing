@@ -1,0 +1,83 @@
+//////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Session 33
+// STEP 1 companion: elimination over the function field Q(a,b).
+//
+// For F = (P,Q) the ideal (P-a, Q-b) is taken over Q(a,b), so that a
+// single Groebner basis yields BOTH invariants the search needs:
+//
+//     vdim(G)                  = the geometric degree d
+//     { leadcoef(G[i]) = 0 }   = the locus where the fibre degenerates,
+//                                i.e. the non-properness set - THE TEAR
+//
+// A Keller map is an automorphism  <=>  d = 1  <=>  every leading
+// coefficient is constant.  A counterexample must show d >= 2 AND a
+// non-constant leading coefficient; Session 33 Result 1 proves the
+// second follows from the first.
+//
+// GOTCHAS (recorded, all silently wrong rather than loudly wrong):
+//  * Singular has no ternary ?: operator.
+//  * eliminate(I, y) returns the elimination ideal in x ALONE, whose
+//    x-degree is NOT the geometric degree - (x, y^2) gives the generator
+//    x-a, degree 1, while the fibre has 2 points.  Use vdim.
+//  * deg() applied to a NUMBER in a parameter ring returns 0 whatever
+//    the parameter degree, so deg(numerator(leadcoef(g))) silently
+//    reports every leading coefficient as constant and no tear is ever
+//    detected.  The correct predicate is pardeg().
+//////////////////////////////////////////////////////////////////////
+
+ring s = (0,a,b),(x,y),dp;
+
+proc report(poly P, poly Q, string nm)
+{
+  ideal I  = P - a, Q - b;
+  ideal G  = std(I);
+  poly  J  = diff(P,x)*diff(Q,y) - diff(P,y)*diff(Q,x);
+  int   d  = vdim(G);
+  int   i;
+  int   tear = 0;
+  "-------------------------------------------------------------";
+  nm;
+  "   det J                    = ", J;
+  "   geometric degree  vdim   = ", d;
+  "   Groebner basis / Q(a,b)  = ", G;
+  "   leading coefficients:";
+  for (i = 1; i <= size(G); i++)
+  {
+    "        ", leadcoef(G[i]);
+    if (pardeg(leadcoef(G[i])) > 0) { tear = 1; }
+  }
+  if (tear == 1) { "   ==> NON-CONSTANT leading coefficient: THE FIBRE TEARS"; }
+  else           { "   ==> all leading coefficients constant: PROPER"; }
+  if (d == 1 && tear == 0) { "   ==> d = 1 and proper: AUTOMORPHISM"; }
+  if (d >= 2 && tear == 1) { "   ==> d >= 2 with a tear: COUNTEREXAMPLE PROFILE"; }
+  return();
+}
+
+poly P; poly Q;
+
+"=============================================================";
+"CONTROLS: Keller maps (det J = 1).  All must come out d = 1.";
+"=============================================================";
+P = x;                Q = y;                 report(P,Q,"identity");
+P = x + y^2;          Q = y;                 report(P,Q,"tame triangular");
+P = x + y^2;          Q = y + (x+y^2)^2;     report(P,Q,"tame deg-4 composite");
+P = x + (y+x^2)^3;    Q = y + x^2;           report(P,Q,"tame deg-6 composite");
+
+"";
+"=============================================================";
+"CONTROLS: non-Keller.  The detector must SEE degree and tears.";
+"=============================================================";
+P = x;                Q = y^2;               report(P,Q,"(x, y^2)     proper, 2 sheets");
+P = x;                Q = y^3 - 3*x*y;       report(P,Q,"(x, y^3-3xy) proper, 3 sheets");
+P = x;                Q = x*y;               report(P,Q,"(x, xy)      TEAR");
+P = y;                Q = x*y + x;           report(P,Q,"(y, xy+x)    TEAR");
+P = x^2*y + x;        Q = y;                 report(P,Q,"(x^2y+x, y)  2 SHEETS + TEAR");
+
+"";
+"=============================================================";
+"The last control carries the full counterexample profile -";
+"geometric degree 2 together with a tear at b = 0 - and fails";
+"only because det J = 2xy+1 is not constant.  The detector is";
+"therefore live: it does not return 'automorphism' by fiat.";
+"=============================================================";
+quit;

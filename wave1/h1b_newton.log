@@ -1,0 +1,61 @@
+==============================================================================
+H1b step 1 -- INDEPENDENT y-adic Jacobian rank, (72,108) pentagons
+==============================================================================
+  PASS  N(P) has 61 lattice points (independent polygon rebuild)   <PROVED-exact>   [61 points, j = 0..16]
+  PASS  N(Q)'s j=0 row is the single point (0,0), so Q_0 is a constant   <PROVED-exact>   [this is what makes the recursion solvable]
+
+--- p = 65521  (campaign prime; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=65521: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+--- p = 1000003  (FRESH prime, never used here; p = 1 mod 3: True) ---
+    conditions: 374   parameters: 61   ranks at 3 random points: [60, 60, 60]
+  PASS  p=1000003: exact Jacobian rank is 60 (campaign's recorded value)   <CERTIFIED>   [ranks [60, 60, 60]; dim <= 61 - 60 = 1]
+
+==============================================================================
+H1b step 1 RESULT.  rank = 60 of 61 CONFIRMED by a fully independent
+rebuild -- own polygons, own bracket expansion, own recursion, own dual-number
+differentiation, own rank -- at the campaign's prime AND at a fresh prime.
+
+So  dim <= 1  stands as evidence.  Audit item A2.9 closes: the number the whole
+pentagon story rests on is right.
+
+IMPORTANT: this is a LOCAL bound (dim <= 61 - rank at the sampled point) and it
+is NOT a verdict.  dim <= 1 permits a 1-parameter family OR isolated points --
+and isolated points are exactly what a counterexample would look like.  The
+rank does not distinguish them.  That is step 2: the SCHEME, not the rank.
+==============================================================================
+==============================================================================
+H1b step 3 -- PENTAGON HIT-DETECTOR (Newton over C)
+==============================================================================
+  essential parameters : 60  (61 minus the p_00 gauge)
+  square subsystem     : 66 conditions, levels 13..23
+  surplus to test      : all conditions at j = 24 and every j > 24
+  discipline           : HIT-FINDER ONLY -- non-discovery proves nothing
+
+  start   0: best |F| = 6.411e-07  (17s)
+  start   6: ROOT of the square subsystem, |F| = 2.476e-09
+             surplus conditions max |.| = 3.975e-08  -> *** CANDIDATE HIT ***
+  start   8: ROOT of the square subsystem, |F| = 4.809e-09
+             surplus conditions max |.| = 8.078e-08  -> *** CANDIDATE HIT ***
+  start  10: best |F| = 1.073e+00  (186s)
+  start  11: ROOT of the square subsystem, |F| = 1.332e-09
+             surplus conditions max |.| = 9.929e-09  -> *** CANDIDATE HIT ***
+  start  20: best |F| = 1.171e-05  (387s)
+  start  24: ROOT of the square subsystem, |F| = 3.518e-09
+             surplus conditions max |.| = 4.112e-08  -> *** CANDIDATE HIT ***
+  start  25: ROOT of the square subsystem, |F| = 5.438e-09
+             surplus conditions max |.| = 1.912e-07  -> *** CANDIDATE HIT ***
+  start  30: best |F| = 1.050e+02  (578s)
+
+  40 starts completed in 742s
+  best residuals: 1.33e-09, 2.48e-09, 3.52e-09, 4.81e-09, 5.44e-09, 1.06e-08, 1.07e-08, 1.35e-08
+  roots of the square subsystem found: 5
+
+  VERDICT DISCIPLINE.  Whatever this run shows, it is a HIT-FINDER result.
+  Finding no root is NOT emptiness -- Newton has a small basin on a degree-23
+  system in 60 variables and non-convergence is the expected default.  Only a
+  root that also kills all 314 surplus conditions means anything, and that would
+  go to Hensel lift + LLL + the full Sec.6.1 gate before the word counterexample
+  is used anywhere.
+==============================================================================

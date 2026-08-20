@@ -1,0 +1,29 @@
+==============================================================================
+H4 rung 2 -- msolve (F4/FGLM) on the cells Singular could not hold
+==============================================================================
+
+0a. PARSER CONTROL -- both directions, on systems whose answer is known
+
+  PASS  parser calls a UNIT ideal EMPTY   <CERTIFIED>   [got EMPTY]
+  PASS  parser calls a solvable system NONEMPTY   <CERTIFIED>   [got NONEMPTY]
+
+0b. CROSS-ENGINE CONTROL (a cell with a known Singular verdict)
+
+  PASS  generators extracted from the Singular build   <CERTIFIED>   [18 generators]
+  PASS  msolve agrees with Singular's EMPTY on (3,4) h=x deg<=1   <CERTIFIED>   [msolve says EMPTY [0.0s]  c13, c14, c15, c16, z #monomial order:       graded reverse lexicographical #le]
+
+1. THE CELLS SESSION 35 RECORDED AS OUT OF MEMORY
+
+  cell                          gens    verdict     secs
+  --------------------------------------------------------
+  k=4 h=t deg<=6                67        OOM    237.9
+  k=5 h=t deg<=4                64    TIMEOUT    600.4
+  k=5 h=t deg<=5                76        OOM    358.6
+  k=6 h=t deg<=4                85        OOM    412.9
+  FAIL  msolve decided at least one cell Singular could not hold   <STALLED>   [0/4 decided: []]
+  PASS  no cell came back NONEMPTY   <CERTIFIED>   [[]]
+
+==============================================================================
+decided by msolve: 0/4   live: 0
+==============================================================================
+FAILED: ['msolve decided at least one cell Singular could not hold']

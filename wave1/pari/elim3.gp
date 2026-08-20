@@ -1,0 +1,13 @@
+default(parisize, 6000000000);
+s = concat(readstr("/tmp/elim_clean.txt"));
+V = eval(s);
+p = V[2][2][1][1];
+f = sum(i=1, #p, p[i]*x^(i-1));
+f = f/content(f);
+print("ELIMINANT degree : ", poldegree(f));
+print("squarefree       : ", issquarefree(f));
+print("--- rational roots = candidate Q-solutions ---");
+r = polrootsQ(f);
+print("rational roots   : ", #r);
+if(#r>0, print(r));
+quit;
