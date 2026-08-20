@@ -1443,5 +1443,20 @@
   "tier": "sec6>=125",
   "budget": 90,
   "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 92,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
  }
 }
