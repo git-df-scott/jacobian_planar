@@ -76,6 +76,16 @@ finding: the ϑ-filter of Algorithm 1 is load-bearing for the (6,3)/(8,4)
 exclusions but not for the 34-case count, while the `v_{ρ,σ}(a,b) ≥ ρ` filter is
 redundant at xmax = 60.
 
+**A seventh discrepancy, found by cross-checking the campaign's own queue.**
+Matching all 180 targets of `campaign/audit_tracks/trackD_targets.json` against
+the re-derived enumeration (`h2/w5_h2_target_provenance.py`, 4/4) gives **179
+matches and exactly one miss**: `F6(j=0; m,n=4,10)`. The reason is in [5]
+itself — family F6's formula `m = 3j+4, n = 8j+10` gives `gcd(m,n) = 2` at every
+even j, and Definition 3.3 of the same paper requires `gcd(m,n) = 1`. F6 is the
+only one of the 24 families with that property. It affects no case with
+max ≤ 150 and does not touch Theorem 2.1, but one entry of the campaign's queue
+is not a possible counterexample shape. Full statement in `DISCREPANCIES.md` §D7.
+
 **One kill in the window rests on a source this audit cannot open:** (80,112) is
 discarded by GGHV citing only "[4, §3.5]" (Pro Mathematica 27, 2013, not on
 arXiv). GGHV gives no argument of its own for that row.
