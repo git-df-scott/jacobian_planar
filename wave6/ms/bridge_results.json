@@ -9,5 +9,9 @@
   "name": "w6_35657_1",
   "verdict": "MS-TIMEOUT",
   "wall": 600.5
+ },
+ {
+  "name": "w6_35657_2",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_2_dump.sing']' timed out after 120 seconds"
  }
 ]
