@@ -18,11 +18,13 @@ below is a defect that was actually present and is now fixed:
       it were a result, and its row's output column is blank.
   T6  restarting the ladder RESUMES: recorded cells are not re-run and rows
       are not duplicated.
+  T8  the stub record carries exactly the keys the driver reads, so this test
+      cannot drift out of step with the runner's record shape without failing.
   T7  NEGATIVE CONTROL on this very test file: a stub that returns EMPTY for a
       cell the table says is CANDIDATE-UNVERIFIED must make T3 fail.  Without
       it, T3 would pass against a driver that fired -P 1 unconditionally.
 """
-import os, shutil, sys, tempfile
+import os, re, shutil, sys, tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -36,7 +38,8 @@ def check(label, cond, note=""):
 
 def make_rec(verdict, out_bytes, out_path):
     return {"input": "in", "output": out_path, "args": "-", "exit": "0",
-            "wall_s": 0.0, "peak_rss_kb": 123, "mem_policy": "stub",
+            "wall_s": 0.0, "peak_rss_kb": 123, "rss_source": "stub",
+            "mem_policy": "stub",
             "timeout_s": 1, "in_bytes": 10, "out_bytes": out_bytes,
             "verdict": verdict, "stderr_tail": ""}
 
@@ -116,6 +119,15 @@ def main():
         hdr2, rows2, calls2, _, _ = drive(plan, tmp, reuse_tsv=tsv)
         check("T6 restart re-runs nothing", not calls2, f"calls={calls2}")
         check("T6 restart duplicates no row", len(rows2) == 6, f"rows={len(rows2)}")
+
+        # T8: the stub must expose every key the real runner does, or these
+        # tests would keep passing against a driver the real runner breaks.
+        import g_runner, inspect
+        real_keys = set(re.findall(r'"(\w+)":', inspect.getsource(g_runner.run)
+                                   .split("return {")[-1]))
+        stub_keys = set(make_rec("EMPTY", 6, "x"))
+        check("T8 stub record carries every key the real runner returns",
+              real_keys <= stub_keys, f"missing from stub: {sorted(real_keys - stub_keys)}")
 
         # T7 NEGATIVE CONTROL on the test itself
         tmp2 = tempfile.mkdtemp(prefix="ggvself2")
