@@ -30,6 +30,24 @@ No CANDIDATE-UNVERIFIED was produced by any item. Nothing looked live.
 
 ---
 
+## Item 1 — the input artifact is certified, not assumed
+
+Everything in Item 1 rests on `campaign/audit_tracks/trackA_system_case2.json`.
+That file carries a content hash, but a hash only says the bytes have not
+changed. `wave4/w4_case2_json_audit.py` (7/7) checks the thing that matters:
+taking its 25 c-variables and 47 d-variables at face value as the supports of P
+and Q, expanding `[P,Q] − x²` symbolically over ℚ, and comparing coefficient by
+coefficient.
+
+* **all 92 equations are exactly the corresponding coefficients**, and
+* **every one of the 92 nonzero bracket monomials has an equation** — nothing
+  is missing;
+* the polygon vertices in the meta are genuine extreme points of the supports,
+  and the support sizes match `SP_size`/`SQ_size`;
+* NEGATIVE: perturbing one equation breaks the match, and comparing against
+  `[Q,P] − x²` instead disagrees on **all 92**, so the orientation is pinned
+  rather than accidental.
+
 ## Item 1 — what was actually established
 
 The case-(2) system is 72 coefficient variables and 92 equations, and in the
