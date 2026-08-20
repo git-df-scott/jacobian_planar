@@ -8,3 +8,11 @@ eliminated, surviving variables mu0 and mu3), GF(1000003):
   Singular eliminate() : no eliminant within 540 s
 Both engines stall on this elimination.  The d >= 5 elimination deadline is set
 from this measurement and is recorded per block in each eliminant file.
+
+Deadline for the d >= 5 chart-A eliminations set to 300 s on this evidence.
+Both engines had already been given far longer on the smallest of them
+(d = 5, saturated) and produced nothing: msolve 900 s, Singular 540 s.
+Re-running each larger d at 600 s would re-establish the same measurement at
+four times the cost while delaying G1.  Every block in every eliminant file
+records the wall time and the peak RSS actually reached, so the deadline that
+produced each status is in the artifact rather than implied.
