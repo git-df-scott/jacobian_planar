@@ -1,8 +1,7 @@
 [
  {
-  "name": "w6_289012_0",
-  "verdict": "EMPTY",
-  "head": "[-1]:\n",
-  "wall": 0.0
+  "name": "w6_35657_0",
+  "verdict": "MS-TIMEOUT",
+  "wall": 300.1
  }
 ]
