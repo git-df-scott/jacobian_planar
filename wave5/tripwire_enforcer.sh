@@ -5,8 +5,8 @@
 # memcg pages, so on pressure the enforcer KILLS non-twin heavies instead.
 # Exits when the twin's msolve is gone.
 LOG=/home/user/jacobian_planar/wave5/tripwire.log
-MC=/sys/fs/cgroup/process_api/01a02089-1187-7310-8c13-8ca8a73c259d/claude-code-bash
-MAX=$(cat $MC/memory.max 2>/dev/null); [ -z "$MAX" ] && MAX=14327656448
+MC=/sys/fs/cgroup/memory/process_api/01a02089-1187-7310-8c13-8ca8a73c259d/claude-code-bash
+MAX=$(cat $MC/memory.limit_in_bytes 2>/dev/null); [ -z "$MAX" ] && MAX=14327656448
 echo "$(date -u +%H:%M:%S) enforcer v2 armed (memcg max=$MAX, kill non-twin heavies at headroom<1.5G)" >> "$LOG"
 while true; do
   TWIN=""
@@ -14,7 +14,11 @@ while true; do
     grep -q b16r12seed_N_p1000033 /proc/$p/cmdline 2>/dev/null && TWIN=$p && break
   done
   [ -z "$TWIN" ] && { echo "$(date -u +%H:%M:%S) twin gone -> enforcer exit" >> "$LOG"; exit 0; }
-  CUR=$(cat $MC/memory.current 2>/dev/null || echo 0)
+  CUR=$(cat $MC/memory.usage_in_bytes 2>/dev/null)
+  if [ -z "$CUR" ] || [ "$CUR" = 0 ]; then
+    echo "$(date -u +%H:%M:%S) WARN memcg read failed -- metric blind, not silently green" >> "$LOG"
+    CUR=$MAX
+  fi
   HEAD=$(( (MAX - CUR) / 1048576 ))
   RSS=$(awk '/VmRSS/{print $2}' /proc/$TWIN/status 2>/dev/null)
   echo "$(date -u +%H:%M:%S) memcg_headroom=${HEAD}MB twin_rss=${RSS}kB" >> "$LOG"
