@@ -1,0 +1,7 @@
+PASS GATE-1 w5_b16_abel.py prints ALL PASS   [exit=0]
+PASS GATE-2 d=5 chart A p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=31568 wall=0.8s out_bytes=6]
+PASS GATE-2 d=5 chart B p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=5584 wall=0.01s out_bytes=6]
+PASS GATE-3 negative control: zero-dimensional ideal is NOT classified EMPTY   [verdict=CANDIDATE-UNVERIFIED out_bytes=106]
+PASS GATE-3 negative control: 0-byte artifact is NOT classified EMPTY   [verdict=NO-OUTPUT bytes=0]
+PASS GATE-3 positive control: a literal [-1]: artifact IS classified EMPTY   [verdict=EMPTY]
+ALL PASS
