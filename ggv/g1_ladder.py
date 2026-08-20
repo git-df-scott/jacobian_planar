@@ -32,7 +32,7 @@ OUTDIR = os.environ.get("GGV_OUTDIR", os.path.join(REPO, "ggv", "out_ladder"))
 TSV = os.environ.get("GGV_TSV", os.path.join(REPO, "ggv", "ladder.tsv"))
 PRIMES = [1000003, 1000033, 1000039]
 COLS = ["d", "chart", "prime", "verdict", "exit", "peak_rss_kb", "wall_s",
-        "mem_policy", "timeout_s", "in_bytes", "out_bytes", "input", "output",
+        "rss_source", "mem_policy", "timeout_s", "in_bytes", "out_bytes", "input", "output",
         "P1_output", "note"]
 
 
@@ -96,7 +96,7 @@ def main(ds, timeout):
                     # Letting the exception escape would silently drop this cell
                     # and every cell after it from the ladder.
                     row.update({"verdict": "RUN-ERROR", "exit": "exception",
-                                "peak_rss_kb": -1,
+                                "peak_rss_kb": -1, "rss_source": "-",
                                 "wall_s": round(time.time() - t0, 2),
                                 "mem_policy": "-", "in_bytes":
                                     os.path.getsize(src) if os.path.exists(src) else 0,
@@ -109,6 +109,7 @@ def main(ds, timeout):
                 drop_if_empty(out)
                 row.update({"verdict": rec["verdict"], "exit": rec["exit"],
                             "peak_rss_kb": rec["peak_rss_kb"],
+                            "rss_source": rec["rss_source"],
                             "wall_s": rec["wall_s"],
                             "mem_policy": rec["mem_policy"],
                             "timeout_s": rec["timeout_s"],

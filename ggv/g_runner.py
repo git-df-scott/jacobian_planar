@@ -8,7 +8,12 @@ Contract enforced here (campaign standing rules):
   * Verdicts are parsed from the OUTPUT ARTIFACT's bytes, never from the
     filename and never from the exit code alone.  A 0-byte or missing output
     file is a FAILED RUN, never a verdict.
-  * Peak RSS is recorded for every run from /usr/bin/time -v.
+  * Peak RSS is recorded for EVERY run, including runs that are killed.
+    /usr/bin/time -v cannot report it for a killed run -- it never gets to
+    print -- so a sampler thread also tracks the engine's own VmHWM (the
+    kernel's high-water mark) from /proc while the run is alive, and that
+    value is used whenever time -v produced none.  Without this, exactly the
+    runs that exhaust the machine are the ones with no memory figure.
   * Memory policy: NO artificial address-space cap.  An address-space ceiling
     was tried first and rejected -- msolve's virtual reservations exceed its
     resident set, so the cap turned survivable runs into SIGSEGV on an
@@ -25,7 +30,7 @@ Verdict classes:
   CRASH                  died on a signal that is not the OOM kill (e.g. SIGSEGV)
   NO-OUTPUT              ended without producing output bytes for any other reason
 """
-import os, re, signal, subprocess, sys, time
+import os, re, signal, subprocess, sys, threading, time
 
 DEFAULT_TIMEOUT = 3600
 OOM_MARKERS = ("std::bad_alloc", "Cannot allocate memory", "out of memory",
@@ -74,6 +79,34 @@ def run(ms_in, out_path, extra_args=(), timeout=DEFAULT_TIMEOUT):
     timed_out = False
     p = subprocess.Popen(["/bin/bash", "-c", script], stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE, text=True, start_new_session=True)
+    # Sample the engine's high-water RSS so a killed run still reports memory.
+    sampled = {"hwm_kb": -1}
+    stop = threading.Event()
+
+    def sampler():
+        pgid = None
+        try:
+            pgid = os.getpgid(p.pid)
+        except (ProcessLookupError, PermissionError):
+            return
+        while not stop.is_set():
+            try:
+                out = subprocess.run(["pgrep", "-x", "-g", str(pgid), "msolve"],
+                                     capture_output=True, text=True).stdout.split()
+            except Exception:
+                out = []
+            for pid in out:
+                try:
+                    with open(f"/proc/{pid}/status") as fh:
+                        m2 = re.search(r"VmHWM:\s+(\d+) kB", fh.read())
+                    if m2:
+                        sampled["hwm_kb"] = max(sampled["hwm_kb"], int(m2.group(1)))
+                except (OSError, ValueError):
+                    pass
+            stop.wait(2)
+
+    th = threading.Thread(target=sampler, daemon=True)
+    th.start()
     try:
         _, err = p.communicate(timeout=timeout)
         rc = p.returncode
@@ -106,9 +139,17 @@ def run(ms_in, out_path, extra_args=(), timeout=DEFAULT_TIMEOUT):
                 except (ProcessLookupError, ValueError, PermissionError):
                     pass
             time.sleep(1)
+    stop.set()
+    th.join(timeout=5)
     wall = time.time() - t0
     m = re.search(r"Maximum resident set size \(kbytes\): (\d+)", err or "")
     rss_kb = int(m.group(1)) if m else -1
+    rss_source = "time -v"
+    if rss_kb < 0:
+        rss_kb = sampled["hwm_kb"]
+        rss_source = "/proc VmHWM sampler"
+    else:
+        rss_kb = max(rss_kb, sampled["hwm_kb"])
     verdict, out_bytes = classify(out_path, rc, timed_out, err or "")
     tail = ""
     if err:
@@ -117,7 +158,7 @@ def run(ms_in, out_path, extra_args=(), timeout=DEFAULT_TIMEOUT):
             tail = lines[-1].strip()[:200]
     return {"input": ms_in, "output": out_path, "args": " ".join(extra_args) or "-",
             "exit": ("TIMEOUT" if timed_out else str(rc)), "wall_s": round(wall, 2),
-            "peak_rss_kb": rss_kb, "mem_policy": "oom_score_adj=1000, no vm cap",
+            "peak_rss_kb": rss_kb, "rss_source": rss_source, "mem_policy": "oom_score_adj=1000, no vm cap",
             "timeout_s": timeout, "in_bytes": in_bytes, "out_bytes": out_bytes,
             "verdict": verdict, "stderr_tail": tail}
 

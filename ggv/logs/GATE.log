@@ -1,9 +1,10 @@
 PASS GATE-1 w5_b16_abel.py prints ALL PASS   [exit=0]
-PASS GATE-2 d=5 chart A p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=31496 wall=0.71s out_bytes=6]
-PASS GATE-2 d=5 chart B p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=5740 wall=0.01s out_bytes=6]
+PASS GATE-2 d=5 chart A p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=31464 wall=0.75s out_bytes=6]
+PASS GATE-2 d=5 chart B p=1000003 re-solves to EMPTY   [verdict=EMPTY exit=0 rss_kb=5680 wall=0.01s out_bytes=6]
 PASS GATE-3 negative control: zero-dimensional ideal is NOT classified EMPTY   [verdict=CANDIDATE-UNVERIFIED out_bytes=106]
 PASS GATE-3 negative control: 0-byte artifact is NOT classified EMPTY   [verdict=NO-OUTPUT bytes=0]
-PASS GATE-4 runner control: an over-deadline run is recorded TIMEOUT   [verdict=TIMEOUT wall=27.08s]
+PASS GATE-4 runner control: an over-deadline run is recorded TIMEOUT   [verdict=TIMEOUT wall=26.06s]
 PASS GATE-4 runner control: no msolve process survives its deadline   [survivors=[]]
+PASS GATE-4 runner control: a killed run still reports a peak RSS   [peak_rss_kb=673612 source=/proc VmHWM sampler]
 PASS GATE-3 positive control: a literal [-1]: artifact IS classified EMPTY   [verdict=EMPTY]
 ALL PASS

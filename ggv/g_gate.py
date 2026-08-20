@@ -71,6 +71,13 @@ if os.path.exists(hard):
           f"verdict={rec_to['verdict']} wall={rec_to['wall_s']}s")
     check("GATE-4 runner control: no msolve process survives its deadline",
           not survivors, f"survivors={survivors}")
+    # Peak RSS must be recorded even for a killed run: /usr/bin/time -v never
+    # gets to print for one, so the /proc VmHWM sampler has to supply it.
+    # Without this the runs that exhaust the machine are exactly the runs with
+    # no memory figure.
+    check("GATE-4 runner control: a killed run still reports a peak RSS",
+          rec_to["peak_rss_kb"] > 0,
+          f"peak_rss_kb={rec_to['peak_rss_kb']} source={rec_to['rss_source']}")
 
 # a positive control for the classifier so the two negatives carry information
 emp_out = os.path.join(SCRATCH, "pos_empty.out")
