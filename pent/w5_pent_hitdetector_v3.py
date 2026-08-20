@@ -446,3 +446,138 @@ def fp_newton(x0, chart, p, iters=30, target=None):
             return None, None
         x = [(x[i] + dx[i]) % p for i in range(n)]
     return None, None
+
+
+# ---------------------------------------------------------------------------
+# EXACT complex Jacobians by dual numbers over C[eps]/(eps^2).
+#
+# The float search above builds its Jacobian by finite differences with
+# h = 1e-7, which caps the usable accuracy of a Newton step at about 1e-8 and
+# is a plausible reason a search stalls at |forbidden| ~ 1e-5 without that being
+# a fact about the system.  The recursion is a rational function of the
+# parameters, so its derivative can be taken EXACTLY by running it over
+# C[eps]/(eps^2) -- the same device used for the mod-p leg.  This costs one
+# recursion per column, exactly what the finite difference cost, and removes
+# the step-size floor entirely.
+# ---------------------------------------------------------------------------
+def _cd_mul(a, b):
+    return (a[0] * b[0], a[0] * b[1] + a[1] * b[0])
+
+
+def _cd_inv(a):
+    if a[0] == 0:
+        return None
+    i0 = 1.0 / a[0]
+    return (i0, -a[1] * i0 * i0)
+
+
+def cdual_run(Pvals):
+    """The y-adic recursion over C[eps]/(eps^2); Pvals are (value, deriv) pairs."""
+    Pd = {}
+    for k, (j, i) in enumerate(PARAMS):
+        row = Pd.setdefault(j, [])
+        while len(row) <= i:
+            row.append((0j, 0j))
+        row[i] = Pvals[k]
+    P = [list(Pd.get(j, [(0j, 0j)])) for j in range(JMAX + 2)]
+    p10 = P[0][1] if len(P[0]) > 1 else (0j, 0j)
+    if abs(p10[0]) < 1e-14:
+        return None
+    inv10 = _cd_inv(p10)
+    Q = [[(0j, 0j)] for _ in range(JMAX + 2)]
+    Q[0] = [(1 + 0j, 0j)]
+    Q[1] = [(0j, 0j), (0j, 0j), inv10]
+
+    def dv(a):
+        return [(a[t][0] * t, a[t][1] * t) for t in range(1, len(a))] or [(0j, 0j)]
+
+    def conv(a, b):
+        out = [(0j, 0j)] * (len(a) + len(b) - 1)
+        for s, ca in enumerate(a):
+            if ca[0] != 0 or ca[1] != 0:
+                for t, cb in enumerate(b):
+                    m = _cd_mul(ca, cb)
+                    out[s + t] = (out[s + t][0] + m[0], out[s + t][1] + m[1])
+        return out
+
+    for k in range(1, JMAX):
+        acc = [(0j, 0j)]
+        for a in range(1, k + 1):
+            b = k + 1 - a
+            if b < 0 or a >= len(P):
+                continue
+            for t in ([_cd_mul(z, (a + 0j, 0j)) for z in conv(P[a], dv(Q[b]))],
+                      [_cd_mul(z, (-(k + 1 - a) + 0j, 0j))
+                       for z in conv(dv(P[a]), Q[b])]):
+                if len(t) > len(acc):
+                    acc = acc + [(0j, 0j)] * (len(t) - len(acc))
+                for s in range(len(t)):
+                    acc[s] = (acc[s][0] + t[s][0], acc[s][1] + t[s][1])
+        inv = _cd_inv(_cd_mul(((k + 1) + 0j, 0j), p10))
+        if inv is None:
+            return None
+        Q[k + 1] = [_cd_mul(z, inv) for z in acc]
+    return Q
+
+
+def cdual_F(x, chart, dcol=None, jmax=23):
+    fr = free_indices(chart)
+    Pv = [(0j, 0j)] * NP
+    for n, k in enumerate(fr):
+        Pv[k] = (complex(x[n]), 1 + 0j if (dcol is not None and n == dcol) else 0j)
+    Pv[IDX[(0, 0)]] = (0j, 0j)
+    Pv[IDX[(0, 1)]] = (1 + 0j, 0j)
+    Pv[IDX[(1, 0)]] = ((1 + 0j) if chart == "one" else 0j, 0j)
+    Q = cdual_run(Pv)
+    if Q is None:
+        return None, None
+    out = []
+    for j in range(13, jmax + 1):
+        q = Q[j]
+        for i in range(j - 12):
+            out.append(q[i] if i < len(q) else (0j, 0j))
+    return out, Q
+
+
+def newton_exact(x0, chart, target=None, iters=80):
+    """Newton with EXACT Jacobians.  Same acceptance test, no step-size floor."""
+    x = np.array(x0, dtype=complex)
+    best = (np.inf, x.copy())
+    for _ in range(iters):
+        f0, Q = cdual_F(x, chart)
+        if f0 is None:
+            return best
+        fv = np.array([a for a, _ in f0], dtype=complex)
+        if target is not None:
+            fv = fv - target
+        nrm = float(np.max(np.abs(fv)))
+        if nrm < best[0]:
+            best = (nrm, x.copy())
+        if nrm < TOL:
+            return (nrm, x.copy())
+        J = np.zeros((len(fv), len(x)), dtype=complex)
+        for c in range(len(x)):
+            fc, _ = cdual_F(x, chart, dcol=c)
+            if fc is None:
+                return best
+            J[:, c] = np.array([b for _, b in fc], dtype=complex)
+        try:
+            dx = np.linalg.lstsq(J, -fv, rcond=None)[0]
+        except np.linalg.LinAlgError:
+            return best
+        step, improved = 1.0, False
+        for _ in range(40):
+            xn = x + step * dx
+            fn, _ = cdual_F(xn, chart)
+            if fn is not None:
+                fvn = np.array([a for a, _ in fn], dtype=complex)
+                if target is not None:
+                    fvn = fvn - target
+                if float(np.max(np.abs(fvn))) < nrm:
+                    x = xn
+                    improved = True
+                    break
+            step *= 0.5
+        if not improved:
+            return best
+    return best

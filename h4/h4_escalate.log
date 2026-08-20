@@ -16,3 +16,6 @@ H4 rung 2 -- msolve (F4/FGLM) on the cells Singular could not hold
 
   cell                          gens    verdict     secs
   --------------------------------------------------------
+  k=4 h=t deg<=6 p=65521        67        OOM    585.7
+  k=4 h=t deg<=6 p=65539        67        OOM    531.9
+    -> combined k=4 deg<=6: OOM   {65521: 'OOM', 65539: 'OOM'}

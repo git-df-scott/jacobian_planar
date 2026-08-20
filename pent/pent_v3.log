@@ -18,3 +18,4 @@ ITEM 2 -- PENTAGON HIT DETECTOR v3 (all three gauges fixed)
 
   SEARCH
     chart one: 8 float starts, 0 accepted, best |forbidden| = 7.479e-05   (284s)
+    chart one p=1000003 slice r=50: 8 slices, 0 non-empty, 8 empty, 0 other

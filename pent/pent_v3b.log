@@ -1,0 +1,4 @@
+==============================================================================
+ITEM 2 -- pentagon hit detector v3b (exact Jacobians)
+==============================================================================
+    [FAIL] X-POS exact-Jacobian Newton recovers a planted root   final max |F - F(x0)| = 1.199e-02

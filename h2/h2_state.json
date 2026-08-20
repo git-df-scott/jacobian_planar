@@ -404,15 +404,15 @@
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 900,
     "out": ""
    }
   },
   "max": 132,
   "params": 38,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 900,
+  "secs": 900
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
