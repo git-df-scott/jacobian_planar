@@ -1,2 +1,3 @@
   source /home/user/jacobian_planar/wave1/pent_L23.ms: 66 generators, 43158481 bytes
     pent_L18_g3: OOM  exit -9  1798.9s  peak 6238548 kB  out 0 B
+    pent_L18_g2: TIMEOUT  exit None  3600.1s  peak -1 kB  out 0 B
