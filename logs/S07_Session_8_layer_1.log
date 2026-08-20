@@ -1,0 +1,8 @@
+support sizes after (-2)-pole cut: |S1| = 1144, |S2| = 523   (full boxes: 2044, 931)
+(-5)-pole linear conditions: y1: 108 equations, y2: 51
+exact ranks over Q: 108, 51
+dim L1 = 1036,  dim L2 = 472,  total = 1508  (from 2975 raw unknowns)
+
+near-miss support inside S1/S2: True;  (-2)-pole saturation: 9 of 9, 6 of 6
+near-miss violates 0 + 0 of the (-5)-pole conditions (must be 0 + 0)
+G1 == p(w)/w^2 exactly: True  | G2 == r(w)/w exactly: True

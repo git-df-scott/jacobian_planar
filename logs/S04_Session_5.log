@@ -1,0 +1,24 @@
+Universal-obstruction certification across admissible (n, k):
+  (n,k)=(3,5): pi=2, a1=x^4; c = -3/16 (const, checks); y^0 odd-chain pole order 3, leading coeff -1/16; even-chain reach 2  ->  OBSTRUCTED (template dies)
+  (n,k)=(3,9): pi=4, a1=x^7; c = -3/8 (const, checks); y^0 odd-chain pole order 6, leading coeff -1/16; even-chain reach 4  ->  OBSTRUCTED (template dies)
+  (n,k)=(3,13): pi=6, a1=x^10; c = -9/16 (const, checks); y^0 odd-chain pole order 9, leading coeff -1/16; even-chain reach 6  ->  OBSTRUCTED (template dies)
+  (n,k)=(5,7): pi=2, a1=x^6; c = 15/256 (const, checks); y^0 odd-chain pole order 5, leading coeff 3/256; even-chain reach 4  ->  OBSTRUCTED (template dies)
+  (n,k)=(5,13): pi=4, a1=x^11; c = 15/128 (const, checks); y^0 odd-chain pole order 10, leading coeff 3/256; even-chain reach 8  ->  OBSTRUCTED (template dies)
+  (n,k)=(5,19): pi=6, a1=x^16; c = 45/256 (const, checks); y^0 odd-chain pole order 15, leading coeff 3/256; even-chain reach 12  ->  OBSTRUCTED (template dies)
+  (n,k)=(7,9): pi=2, a1=x^8; c = -35/2048 (const, checks); y^0 odd-chain pole order 7, leading coeff -5/2048; even-chain reach 6  ->  OBSTRUCTED (template dies)
+  (n,k)=(7,17): pi=4, a1=x^15; c = -35/1024 (const, checks); y^0 odd-chain pole order 14, leading coeff -5/2048; even-chain reach 12  ->  OBSTRUCTED (template dies)
+  (n,k)=(7,25): pi=6, a1=x^22; c = -105/2048 (const, checks); y^0 odd-chain pole order 21, leading coeff -5/2048; even-chain reach 18  ->  OBSTRUCTED (template dies)
+  (n,k)=(9,11): pi=2, a1=x^10; c = 315/65536 (const, checks); y^0 odd-chain pole order 9, leading coeff 35/65536; even-chain reach 8  ->  OBSTRUCTED (template dies)
+  (n,k)=(9,21): pi=4, a1=x^19; c = 315/32768 (const, checks); y^0 odd-chain pole order 18, leading coeff 35/65536; even-chain reach 16  ->  OBSTRUCTED (template dies)
+  (n,k)=(9,31): pi=6, a1=x^28; c = 945/65536 (const, checks); y^0 odd-chain pole order 27, leading coeff 35/65536; even-chain reach 24  ->  OBSTRUCTED (template dies)
+  (n,k)=(11,13): pi=2, a1=x^12; c = -693/524288 (const, checks); y^0 odd-chain pole order 11, leading coeff -63/524288; even-chain reach 10  ->  OBSTRUCTED (template dies)
+  (n,k)=(11,25): pi=4, a1=x^23; c = -693/262144 (const, checks); y^0 odd-chain pole order 22, leading coeff -63/524288; even-chain reach 20  ->  OBSTRUCTED (template dies)
+  (n,k)=(11,37): pi=6, a1=x^34; c = -2079/524288 (const, checks); y^0 odd-chain pole order 33, leading coeff -63/524288; even-chain reach 30  ->  OBSTRUCTED (template dies)
+
+all admissible templates obstructed: True
+normalized universal constants  2^n*4^((n-1)/2)*lead  by n:
+   n=3: [Fraction(-2, 1)]   (k-independent: True)
+   n=5: [Fraction(6, 1)]   (k-independent: True)
+   n=7: [Fraction(-20, 1)]   (k-independent: True)
+   n=9: [Fraction(70, 1)]   (k-independent: True)
+   n=11: [Fraction(-252, 1)]   (k-independent: True)

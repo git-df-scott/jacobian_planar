@@ -1,0 +1,21 @@
+PART A  (2,4) leading nullspace (expect span{A^2}, A^2 = x**4 + 2*x**3 + 5*x**2 + 4*x + 4 ):
+         {(4*B_4, 4*B_4, 5*B_4, 2*B_4, B_4, 0, 0, 0, 0)}
+PART A  J(y^2+x, tau*P^2+y) = 1  | reduction Q - tau*P^2 = y
+PART B  [y^6] (expect 0): 0
+PART B  [y^5] with general b4-formula (expect 0): 0
+PART B  [y^4] with general b3-formula (expect 0): 0
+PART B  (C3 residue - target) as a multiple of s: divisible
+
+PART C  (2,5) pinned-lead sweeps (s=x squarefree, s=x^2, s=1):
+   s=x, P=s^2*y^2+(x**2)*y+(x): infeasible
+   s=x, P=s^2*y^2+(x**3 + x**2)*y+(x**2 + x): infeasible
+   s=x, P=s^2*y^2+(x**3)*y+(x): infeasible
+   s=x**2, P=s^2*y^2+(x**2)*y+(x): infeasible
+   s=x**2, P=s^2*y^2+(x**3)*y+(x**2 + x): infeasible
+   s=1, P=s^2*y^2+(0)*y+(x): infeasible
+   s=1, P=s^2*y^2+(x)*y+(x): infeasible
+   s=1, P=s^2*y^2+(3)*y+(x + 5): infeasible
+PART C  (2,7) pinned-lead spot checks:
+   s=x, P=s^2*y^2+(x**2)*y+(x): infeasible
+   s=1, P=s^2*y^2+(0)*y+(x): infeasible
+   s=x**2, P=s^2*y^2+(x**3)*y+(x): infeasible

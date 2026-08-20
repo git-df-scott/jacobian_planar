@@ -1,0 +1,63 @@
+--- 0. the unique endgame solution ----------------------------------
+    kappa = -c/alpha^5
+    S(v)  = c*(243*v**4 - 81*v**3 + 54*v**2 - 42*v + 35)/(455*alpha**5)
+    R(v)  = S(v)/(v+1)^4
+  [PASS] alpha^5 (v+1)^4 (3v(v+1)R' - 13R) == -c
+
+--- 1. propagate:  W~_-5 = alpha^6 U^6 v^9 R --------------------------
+    W~_-5(U) = U**2*alpha*c*(U - 1)**9*(243*U**4 - 1053*U**3 + 1755*U**2 - 1365*U + 455)/455
+  [PASS] W~_-5 is a polynomial in U (no denominator)
+  [PASS] W~_-5 == alpha^6 U^2 (U-1)^9 S(U-1)
+    deg_U W~_-5 = 15
+  [PASS] deg W~_-5 = 15
+    u(W~_-5) = ord_{U=0} W~_-5 = 2
+  [PASS] u(W~_-5) = 2 (exactly the order the 4th-order pole demands)
+  [PASS] R recovered from W~_-5: v^39 W~/g^6 == R
+
+--- 2. CLOSURE 1 - the ladder bound (E4) ----------------------------
+  [PASS] E4 ladder bound is u(W~_-5) >= 3; the pole branch needs u = 2
+    => for any tower without accidental cancellation in the divisibility
+       ladder, the pole branch is INADMISSIBLE.  (E4 proves f(13) >= -3.)
+
+--- 3. CLOSURE 2 - the degree ledger / 13-realization ---------------
+  [PASS] deg g = 9
+  [PASS] Session-11 ledger: a degree-13 polynomial R needs deg W~_-5 = 6*deg g - 26 = 28
+  [PASS] the pole branch has deg W~_-5 = 15 != 28
+    map-degree of R (as P^1 -> P^1) = 4
+  [PASS] map-degree of R = 4, the framework demands 13
+  [PASS] R is not a polynomial, so it is not a degree-13 polynomial either
+    => R cannot realize the certified degree-13 Belyi map.
+    => CLOSURE 2 needs no genericity, no Theorem 3, no Belyi coefficients:
+       only  deg R = 4 != 13.
+  [PASS] near-miss deg W~_-5 = 15 too: the pole branch lands in the same stratum
+  [PASS] but the near-miss has u(W~) = 6 (R regular) while the pole branch has u = 2
+
+--- 4. what the pole branch does satisfy (so the closure is honest) --
+  [PASS] (U-1)^9 | W~_-5 : the v = 0 pole of R closes exactly, as Theorem 3 wanted
+  [PASS] R has NO pole at v = 0
+  [PASS] R's only pole is v = -1
+  [PASS] W~_-5 respects the Session-15 degree caps (deg <= 27 + 22 = 49)
+  [PASS] the Keller constant enters only as an overall scalar: W~_-5 is linear in c
+    => rescaling c or alpha cannot change deg W~_-5 or the map-degree;
+       both closures are scale-invariant.
+
+--- 5. the tower datum X = A~_4 - g^3 S_13 --------------------------
+    X = W~_-5/(2 g^3) = c*(243*U**4 - 1053*U**3 + 1755*U**2 - 1365*U + 455)/(910*U*alpha**2*(U - 1)**15)
+    ord_{U=0}(X) = -1    ord_{U=0}(W~_-5) = 2    ord_{U=0}(g^3) = 3
+  [PASS] X has a pole at U = 0 of order exactly 1
+  [PASS] u(W~_-5) = 3 + u(X) is consistent
+    => the pole branch requires ord_{U=0}(g^3 S_13) = -1, i.e. f(13) = -4,
+       which E4 proves is impossible under the ladder (f(13) >= -3).
+
+--- 6. VERDICT ------------------------------------------------------
+    The (99,66) First Framework is EMPTY.
+    The archive's proof of that is INVALID as written (it evaluates a
+    polynomial identity at v = -1 on an R that need not be a polynomial,
+    and its supporting certificate searched only polynomials).
+    Two repaired closures, both established here:
+      closure 1  ladder bound        u(W~_-5) >= 3  vs  required 2
+      closure 2  degree ledger       deg R = 4      vs  required 13
+    Closure 2 is unconditional given the framework's 13-realization
+    demand; closure 1 additionally needs no realization layer at all.
+
+E5: ALL 21 CHECKS PASS

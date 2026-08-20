@@ -1,0 +1,22 @@
+  [PASS] general block == (alpha^5/2) U^4 v^{a+b-1} [ b U v R' + (2e+3b) v R + (ea+bb) U R ]
+  [PASS] U-coefficient of the R-part = (2e+3b)(1+G) - b*N
+    => collapse condition:  N = (G + 1)*(3*beta + 2*e)/beta
+    => D = 3(2e+3beta)/beta = 3*(3*beta + 2*e)/beta  and with N = N*:  D = 3N/(1+G) = 9 + 6*e/beta
+  [PASS] D = 3N/(1+G) at the collapse
+  [PASS] (99,66): e = gam - sig = 4
+  [PASS] (99,66): q-exponent of J is e-beta-1 = -p = -3
+  [PASS] (99,66): a = 2G-3beta = -2
+  [PASS] (99,66): b = 3G+3e-N = -3
+  [PASS] (99,66): a+b-1 = -tau = -6
+  [PASS] (99,66): collapse condition N = (2e+3beta)(1+G)/beta holds at N=39
+  [PASS] (99,66): D = 13
+  [PASS] (99,66) master identity: block == alpha^5 (v+1)^4 (3 v(v+1) R' - 13 R)/v^6
+  [PASS] archive's collapse arithmetic 13(9v+8) - 117(v+1) == -13
+
+    D(beta,p) = 3(2(beta+1-p)+3beta)/beta = 3*(5*beta - 2*p + 2)/beta
+    at p = 3:  D = 15 - 12/beta  -> beta=6 gives 13
+  [PASS] D = 15 - 12/beta when p = 3
+    CONSEQUENCE: with p = 3 the endgame D is bounded: D = 15 - 12/beta < 15
+                 for every beta > 0.  D is NOT the chain degree in general.
+
+E1: ALL 13 CHECKS PASS
