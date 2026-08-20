@@ -26,5 +26,33 @@
   "shape_tag": "a=3 b=9 r=1 i=1",
   "verdict": "{'name': 'w6_35657_1', 'status': 'TIMEOUT', 'secs': 240.15296816825867, 'info': {'nparams': 20, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(18)', 'c(20)']}}",
   "wall_s": 240.2
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=2",
+  "verdict": "{'name': 'w6_35657_2', 'status': 'TIMEOUT', 'secs': 240.1655969619751, 'info': {'nparams': 172, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(142)', 'c(163)', 'c(172)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=3",
+  "verdict": "{'name': 'w6_35657_3', 'status': 'TIMEOUT', 'secs': 240.05922555923462, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_35657_4', 'status': 'TIMEOUT', 'secs': 240.13321208953857, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_35657_5', 'status': 'TIMEOUT', 'secs': 240.05819749832153, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
  }
 ]

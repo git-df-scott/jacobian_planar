@@ -21,15 +21,22 @@ d=3 with the saturation dropped must recover GGV's degenerate family.
 """
 import os, sys, json
 from sympy import (symbols, Symbol, expand, Poly, Rational, sqrt, simplify,
-                   solve, linsolve, S, together, radsimp, nsimplify, Add)
+                   solve, linsolve, S, together, radsimp, nsimplify, Add, fraction)
 sys.path.insert(0, os.path.dirname(__file__))
 from w5_b16_abel import build_system, mu0, mu1, mu2, mu3
+from sympy import simplify as _simp
 
-def cascade(d, chart, verbose=True):
-    """chart in {'A','B'}: A = {mu2: 1}, B = {mu2: 0, mu3: 1}."""
+def cascade(d, chart, verbose=True, seed=None):
+    """chart: 'A'/'B' legacy slices, or None = NO chart (full space; sound).
+    seed: optional dict of initial exact substitutions (e.g. the resonant
+    top root), applied before the descent."""
     eqs, unk, A, q1 = build_system(d)
     a = symbols(f'a0:{2*d+1}'); b = symbols(f'b0:{d}')
-    fix = {mu2: S(1)} if chart == 'A' else {mu2: S(0), mu3: S(1)}
+    fix = ({mu2: S(1)} if chart == 'A' else
+           {mu2: S(0), mu3: S(1)} if chart == 'B' else {})
+    if seed:
+        fix = dict(fix); fix.update({a[i] if isinstance(i, int) else i: S(v)
+                                     for i, v in seed.items()})
     # linear eliminations from (1.2)+normalizations (as in w5_b16_reduce)
     pre = {a[0]: -mu3**2/4, a[1]: mu2, b[0]: mu3, b[1]: 0,
            mu1: -mu3*(a[2] + 2*b[2])/3}
@@ -76,7 +83,13 @@ def cascade(d, chart, verbose=True):
             continue
         for s0 in sols:
             nsub = dict(sub); nsub[best] = simplify(s0)
-            neqs = [e.subs({best: s0}) for e in eqs_cur[1:]]
+            neqs = []
+            for e in eqs_cur[1:]:
+                enew = e.subs({best: s0})
+                num, den = fraction(together(enew))
+                neqs.append(expand(num))   # denominators come from prior
+                # solved-variable expressions; their zero loci are separate
+                # branches (search mode: recorded, acceptable)
             branches.append((nsub, neqs))
     return solved_branches, dead
 
@@ -91,14 +104,20 @@ def survivors_with_mu0(branches):
 def main():
     d = int(sys.argv[1]) if len(sys.argv) > 1 else 5
     chart = sys.argv[2] if len(sys.argv) > 2 else 'A'
-    br, dead = cascade(d, chart)
+    if chart == 'none': chart = None
+    seed = None
+    if len(sys.argv) > 3:      # e.g. "24=-1/12" fixes a24 = -1/12
+        idx, val = sys.argv[3].split('=')
+        seed = {int(idx): val}
+    br, dead = cascade(d, chart, seed=seed)
     surv = survivors_with_mu0(br)
     print(f"d={d} chart {chart}: {dead} dead branches, "
           f"{len(br)} solved branches, {len(surv)} with mu0 != 0 possible")
     os.makedirs("wave5/cascade", exist_ok=True)
+    allbr = [{str(k): str(simplify(v)) for k, v in sub.items()} for sub in br]
     json.dump({"d": d, "chart": chart, "dead": dead,
-               "branches": len(br), "survivors": surv},
-              open(f"wave5/cascade/d{d}_{chart}.json", "w"), indent=1)
+               "branches": len(br), "all_branches": allbr, "survivors": surv},
+              open(f"wave5/cascade/d{d}_{chart}_seeded.json", "w"), indent=1)
     if surv:
         print("CANDIDATE-UNVERIFIED branches written -- raw, for the HIT pipeline")
         for s in surv[:3]:
