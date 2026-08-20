@@ -157,15 +157,16 @@ for kind, K, hs, D in OOM_CELLS:
     code = hbranch_code(K, hs, D, p=P0)
     gg = dump_generators(code, budget=900)
     if not gg:
-        print(f"  k={K} h={hs} deg<={D:<15s} {'-':>5s} {'BUILD-FAIL':>10s}")
+        cell = f"k={K} h={hs} deg<={D}"
+        print(f"  {cell:26s} {'-':>5s} {'BUILD-FAIL':>10s}")
         res[f"k={K},{hs},{D}"] = "BUILD-FAIL"; continue
     nfree = 2 * (K - 1) * (D + 1) + (D + 1)
     N = nfree + 2
     ms = to_msolve(gg, N, P0, os.path.join(SCRATCH, f"h_{K}_{D}.ms"))
     v, secs, det = run_msolve(ms, budget=int(os.environ.get("W2_MSTMO", 900)))
     res[f"k={K},{hs},{D}"] = v
-    print(f"  k={K} h={hs} deg<={D:<15s} {len(gg):>5d} {v:>10s} {secs:>8.1f}",
-          flush=True)
+    cell = f"k={K} h={hs} deg<={D}"
+    print(f"  {cell:26s} {len(gg):>5d} {v:>10s} {secs:>8.1f}", flush=True)
 
 decided = [k for k, v in res.items() if v in ("EMPTY", "NONEMPTY")]
 live = [k for k, v in res.items() if v == "NONEMPTY"]

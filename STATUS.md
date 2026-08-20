@@ -16,8 +16,11 @@ Last updated: 2026-08-19, Plan 43 Waves 0–1. 19 commits, branch
 > session; both were gauge artefacts, both were caught before reaching a
 > committed claim, and both are documented in §6.
 
-**Wave-1 gate ("(72,108) decided, or its exact stall points named"): NOT MET.**
-(72,108) is undecided; none of its three sub-territories is closed. §7 scores it.
+**Wave-1 gate ("(72,108) decided, or its exact stall points named"): NOT MET**,
+but **one of the three sub-territories is now closed** — the framework side dies
+unconditionally, THEOREM 2 certified and THEOREM 3 confirmed (§2.6). The two
+remaining stall points (pentagons; case (2) over ℚ̄) are computational, not
+conceptual. §7 scores it.
 
 ---
 
@@ -98,23 +101,67 @@ Two supporting facts, each verified two ways:
 Framework's own death, and conditional on exactly the same two unreproduced
 theorems, no more.**
 
-**Residue, inherited not new:** `THEOREM 2` (Taylor-pin rigidity at *general*
-parameters, not just the near-miss) and `THEOREM 3` (pole-fiber ⇒ R polynomial).
-**Both statements are RECOVERED** — see `wave1/RECOVERED_THEOREMS.md`. They were
-never lost: they are written out verbatim in the tracked file
-`Sessions 1-18 status reports` (lines 1051 and 1062), present on every branch.
-Only the executable transcript runs were lost. Further, **THEOREM 2's conclusion
-now has a certificate** (`wave1/w1_L3_step2_pinning.py` derives `g = αU(U−1)⁸`
-with no free moduli), and **THEOREM 3 is no longer needed at the endgame
-contradiction** (§6.7). What remains load-bearing is narrower than the campaign
-recorded. **The Three-dessin Framework introduces no new
+**Residue — DISCHARGED, not inherited.** `THEOREM 2` (Taylor-pin rigidity at
+*general* parameters) and `THEOREM 3` (pole-fiber ⇒ R polynomial) were the
+campaign's only remaining framework conditionality. Both are now closed. Their
+statements were never lost — they are written out verbatim in the tracked file
+`Sessions 1-18 status reports` (lines 1051, 1062), present on every branch; only
+the executable transcript runs were lost. `THEOREM 2`'s conclusion is
+**certified** (`wave1/w1_L3_step2_pinning.py` derives `g = αU(U−1)⁸` with no
+free moduli). `THEOREM 3` is **CONFIRMED** — and a genuine gap in its recorded
+proof was found and repaired (§2.6). See `wave1/RECOVERED_THEOREMS.md`. **The Three-dessin Framework introduces no new
 conditionality of its own** — which was the whole question.
 
-**Flagged discrepancy (unresolved):** `d23_phase2_preview.py` labels the First
+**Flagged discrepancy — RESOLVED (§2.6).** Both sides were right about their own
+moment and both are now superseded: `trackC_c3_ladder.py` was correct that
+THEOREM 2/3 were unreproduced and load-bearing, and `d23_phase2_preview.py`'s
+*"unconditional"* label is correct **now** that both are discharged — it was not
+correct when written. Original texts: `d23_phase2_preview.py` labels the First
 Framework *"[PROVEN dead, Sessions 16–18, unconditional]"*, while
 `trackC_c3_ladder.py` records THEOREM 2/3 as unreproduced prose that *"every
 (72,108) statement that assumes a polynomial R inherits."* These cannot both be
 right.
+
+### 2.6 THEOREM 3 — CONFIRMED, recorded proof repaired `[PROVED-exact]`
+`wave1/w1_theorem3_verdict.py`
+
+**Conclusion true; recorded proof insufficient.** THEOREM 3 asserts
+`R = 2v³⁹(Ã₄ − g³S₁₃)/g³` is a degree-13 polynomial, arguing from the Belyi-13
+fiber sizes 13/9/5/1 that the pole fiber is the 1-point one.
+
+*The gap.* That step fixes the pole divisor's **multiplicity** (13), not its
+**location**. The following sentence closes `v = 0`; nothing in the recorded
+text closes `v = −1`. Witness — built and tested, not asserted:
+**`R = 1/(v+1)¹³`** satisfies every premise the recorded argument states (finite
+poles inside `{0,−1}`; a single pole point of multiplicity 13; `v = 0` not a
+pole) and is **not a polynomial**. The premises do not entail the conclusion.
+
+*The repair — shorter, and uses strictly less.* Session 11 defines
+`R = v³⁹·W̃₋₅(U)/g(U)⁶` with `W̃₋₅` a **block, hence a polynomial**, of degree
+`6·deg g − 26 = 28`; THEOREM 2 gives `g = αU(U−1)⁸`. With `v³⁹ = (U−1)³⁹` and
+`g⁶ = α⁶U⁶(U−1)⁴⁸`:
+
+    R = W̃₋₅(U) / ( α⁶ · U⁶ · (U−1)⁹ )
+
+Write `gcd(W̃₋₅, U⁶(U−1)⁹) = U^a(U−1)^b`, so `a ≤ 6`, `b ≤ 9`. After cancelling,
+`map-degree(R) = 28 − a − b`. The framework's own **13-realization** demands
+`map-degree(R) = 13`, so `a + b = 15` — which inside the box `a ≤ 6, b ≤ 9` has
+**exactly one solution**, `(a,b) = (6,9)`. The denominator cancels completely.
+**R is a polynomial of degree 13.** ∎
+
+The Belyi passport is reproduced and shown Riemann–Hurwitz consistent
+(`(13−9)+(13−5)+(13−1) = 24 = 2·13−2`) but is **not load-bearing**; neither is
+the `v = 0` divisibility argument. Dependencies: `g = αU(U−1)⁸` (certified),
+`deg W̃₋₅ = 28` (arithmetic from `deg g = 9`), `W̃₋₅` polynomial (by
+construction), `deg R = 13` (the framework's demand, **not** THEOREM 3).
+
+**The `g³S₁₃`-regularity sub-question flagged in §6.8 dissolves** — the `W̃₋₅`
+form never constructs `g³S₁₃`.
+
+**Consequence.** Both uncertified legs of the Sessions 16–18 First Framework
+emptiness theorem are discharged. Every (72,108) statement carrying
+`CONDITIONAL(R-poly)` can be re-labelled, and the Three-dessin (108,72)
+framework kill loses its last conditionality.
 
 ### 2.3 The eliminator is controlled — A6 `[CERTIFIED]`
 `MANIFEST.md` §G, `wave0/w0_a6*.py`
@@ -220,7 +267,7 @@ plan. Chart `d_3_3 = 1` only.
 
 | item | state |
 |---|---|
-| **THEOREM 3 — endgame use CLOSED** | statements RECOVERED (`wave1/RECOVERED_THEOREMS.md`); THEOREM 2's conclusion certified; THEOREM 3 removed from the endgame twice over (§6.7 classification, then §6.8 pole-order). Residual, now a single named sub-question: **is `g³S₁₃` regular at `v = −1`** (THEOREM 1's ladder proved only for `m = 0..12`)? |
+| ~~THEOREM 2 / THEOREM 3~~ | **CLOSED.** THEOREM 2 certified (`w1_L3_step2_pinning.py`); THEOREM 3 **CONFIRMED**, its recorded proof repaired (§2.6, `w1_theorem3_verdict.py`). No residual — the `g³S₁₃` flag dissolved. |
 | case (2) over ℚ̄ | eliminant exists and is irreducible (single branch); residual system — 13 variables over a degree-1144 field — unsolved |
 | case (1) pentagons | no verdict; both engine rungs exhausted |
 | **H2** above-125 sweep | ~150 of 167 targets unrun; chain→polygon map needs hardening |
@@ -331,12 +378,18 @@ Plan 43's gate: *"(72,108) decided, or its exact stall points named."*
 |---|---|---|
 | case (1) pentagons | **no verdict at all** | **No** |
 | case (2) quadrilaterals | EMPTY mod p, 3 compliant primes, 2 code-disjoint routes | **No** — mod-p only; §6.2 forbids promotion |
-| framework (Three-dessin) | dies, conditional on THEOREM 2/3 | **No** — conditional |
+| framework (Three-dessin) | **dies, unconditionally** — THEOREM 2 certified, THEOREM 3 confirmed (§2.6) | **Yes** |
 
-**NOT MET.** (72,108) is undecided and nothing is certified closed. The stall
-points are now genuine rather than provisional: THEOREM 2/3 needs a real
-derivation; the pentagons have exhausted both available engines; case (2)'s ℚ̄
-residual is well-posed but heavy.
+**STILL NOT MET, but one of the three territories is now closed.** The framework
+side is no longer conditional on anything: THEOREM 2's conclusion is certified
+and THEOREM 3 is confirmed with its recorded proof repaired (§2.6). That was the
+campaign's single highest-value open item and the only thing blocking *both* the
+First and Three-dessin verdicts.
+
+(72,108) is still undecided, because two territories remain: the pentagons have
+exhausted both available engines, and case (2)'s ℚ̄ residual is well-posed but
+heavy. Those are the only stall points left, and both are computational rather
+than conceptual.
 
 Per Plan 43, the gate's next step is a **user check-in on the outreach decision**
 (Valqui/GGHV, Borisov) — the user's call, not to be drafted before the gate is met.

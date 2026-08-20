@@ -63,8 +63,22 @@ Riemann–Hurwitz is consistent with the quoted passport: for a degree-13 map of
 `(13-9) + (13-5) + (13-1) = 4 + 8 + 12 = 24 = 2·13 - 2`, with 13 the generic
 (unramified) count.
 
-**THEOREM 3 is still not reproduced.** But see the correction below: it is no
-longer needed *at the endgame contradiction*.
+**THEOREM 3 is CONFIRMED** — see `wave1/w1_theorem3_verdict.py` and STATUS.md
+§2.6. Its *conclusion* is true; its *recorded proof* has a real gap, found and
+repaired here.
+
+*The gap.* The fiber step fixes the pole divisor's **multiplicity** (13) but not
+its **location**. The following sentence closes `v = 0`; nothing closes
+`v = −1`. Witness, built and tested: `R = 1/(v+1)¹³` satisfies every premise the
+recorded argument states and is not a polynomial.
+
+*The repair.* Session 11's form `R = v³⁹·W̃₋₅(U)/g(U)⁶`, with `W̃₋₅` a block
+(hence a polynomial) of degree 28 and `g = αU(U−1)⁸`, gives
+`R = W̃₋₅(U)/(α⁶U⁶(U−1)⁹)`. With `gcd(W̃₋₅, U⁶(U−1)⁹) = U^a(U−1)^b`, `a ≤ 6`,
+`b ≤ 9`, the map-degree is `28 − a − b`; the 13-realization forces `a + b = 15`,
+whose only solution in the box is `(6,9)`. The denominator cancels completely,
+so **R is a polynomial of degree 13**. The passport 13/9/5/1 is reproduced and
+shown Riemann–Hurwitz consistent but is not load-bearing.
 
 ## Correction to our own H1c, and what replaces THEOREM 3 there
 

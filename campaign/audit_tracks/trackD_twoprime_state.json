@@ -488,5 +488,190 @@
   "tier": "sec6>=125",
   "budget": 90,
   "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 62 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 62 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 4
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 74 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 74 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 4
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 86 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 86 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 4
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 98 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 98 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 4
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
  }
 }
