@@ -1,0 +1,12 @@
+
+===== chart B, d in [3, 4], GF(1000003), memory policy: oom_score_adj=1000, no vm cap =====
+PASS CROSS-ENGINE d=3 chart B (sat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS CROSS-ENGINE d=3 chart B (unsat): msolve and Singular eliminants are identical   [msolve=['mu0'] singular=['mu0']]
+PASS NEGATIVE CONTROL d=3 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+DATA d=3 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+PASS CROSS-ENGINE d=4 chart B (sat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS CROSS-ENGINE d=4 chart B (unsat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS NEGATIVE CONTROL d=4 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+DATA d=4 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+PASS POSITIVE CONTROL d=3 chart B: saturated eliminant recorded   [eliminant=['1']]
+ALL PASS
