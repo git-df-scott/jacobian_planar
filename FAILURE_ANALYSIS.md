@@ -84,7 +84,7 @@ error of *bookkeeping about what had been established*, not of algebra.
 | mech. | guard | where | can it fail? |
 | --- | --- | --- | --- |
 | M1 | **No check condition may be a compile-time constant.** AST scan of the whole tree; exits nonzero on a hit. | `wave2/w2_cantfail_audit.py` | self-tested on a synthetic file with 1 rigged + 2 honest checks; must find exactly the rigged one |
-| M1 | **Every certifier carries a negative control** — an input on which it is *required* to fail. | all of `wave2/`, `wave3/` | each control is itself a check that fails if the control passes |
+| M1 | **Every certifier carries a negative control** — an input on which it is *required* to fail. | all of `wave2/`, `wave3/` (11 certifiers, 219 checks) | each control is itself a check that fails if the control passes |
 | M1 | **The HIT gate must reject 8 known negatives and accept a positive control before it may certify anything.** | `wave3/w3_hit_protocol.py` | refuses to certify if H6 validation did not fire |
 | M2 | **Anchor-by-exact-quotation.** Every load-bearing sentence is located by exact substring match against the file on disk; a missing anchor fails the run. | `wave2/w2_pole_admissibility.py` | two anchors were wrong on first run and the certifier failed — see the run log |
 | M2 | **Absent artifacts are labeled `UNVERIFIED-HERE`,** never confirmed. §2.5 is on record as neither confirmed nor refuted. | `wave2/w2_irreducibility_sieve.py` | checks that the artifact really is absent |
@@ -98,8 +98,20 @@ error of *bookkeeping about what had been established*, not of algebra.
 
 Every guard above is itself tested — the linter has a self-test that must produce
 exactly seven violation codes on a synthetic ledger and **zero** on a clean one; the
-AST scanner has a self-test that must find exactly the one rigged check. A guard
-with no failing test is M1 all over again.
+AST scanner has a self-test that must find exactly the rigged checks and *not* the
+record-constructors. A guard with no failing test is M1 all over again, and the
+scanner proved that in this very session: its first version flagged 25 `claim(...)`
+calls in the ledger as rigged. Those were false positives from a name collision, the
+scanner was narrowed, and its self-test was extended to cover the case. A guard that
+has never been wrong has never been used.
+
+**What the campaign got right, for contrast.** Path A's item A1 (*"is the square
+forced?"*) was written as an open question with both branches spelled out — *"either an
+accident of this example or a theorem about descent — and which one it is, is the
+question."* No hypothesis was dropped, nothing was claimed, and the answer
+(`wave3/w3_descent_jacobian_formula.py`: not forced, with the content in closed form)
+fits into the slot the question left for it. The failures are not a property of the
+campaign's mathematics; they are a property of how its conclusions were recorded.
 
 ---
 

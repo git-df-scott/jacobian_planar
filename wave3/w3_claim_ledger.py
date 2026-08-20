@@ -213,6 +213,32 @@ LEDGER = [
           ("wave3/w3_weighted_homogeneous_theorem.py", "STEP 1: the identity holds symbolically for generic A, B"),
           probe="same-sign weights (1,m), where (x, y + x^m) breaks it"),
 
+    claim("W3-4",
+          "(det JG) o pi * D = (det JF) * (D' o F), where D, D' are the contents of the "
+          "maximal-minor vectors of the source and target quotient maps",
+          "C*-actions on C^3 with a free rank-2 invariant ring, equivariant F with descent G",
+          "PROVED",
+          ("wave3/w3_descent_jacobian_formula.py", "THEOREM W3-4 holds exactly on Alpoge's map"),
+          probe="the same identity with the content factor D dropped, which fails"),
+
+    claim("A1-SQUARE-FORCED",
+          "For every C*-equivariant Keller map on C^(n+1) with polynomial invariant rings, "
+          "the descent has det JG = c*h^k with k >= 2 (the square is forced)",
+          "all such weight systems",
+          "REFUTED",
+          ("wave3/w3_descent_jacobian_formula.py", "D = 1 occurs -- the square is NOT forced")),
+
+    claim("A1-K0-CLASS",
+          "The k = 0 weight systems are exactly (+-1, -+1, 0) up to permutation, and there "
+          "the descent is Jacobian-preserving, so a C^3 counterexample in that class IS a "
+          "plane counterexample with a factored first coordinate",
+          "C*-actions on C^3 with a free rank-2 invariant ring",
+          "PROVED",
+          ("wave3/w3_descent_jacobian_formula.py",
+           "k = 0 class: the descent is Jacobian-PRESERVING, det JG o pi = det JF"),
+          depends=("W3-4",),
+          probe="Alpoge's k = 2 class, where the same identity fails"),
+
     claim("ALPOGE-DETJF",
           "det JF = -2 on Alpoge's degree-7 map of C^3",
           "the map as recorded in Session 1 and file `39`",

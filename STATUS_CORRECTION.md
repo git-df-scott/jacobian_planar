@@ -242,7 +242,7 @@ python3 wave2/run_all.py
 
 Exit code 0 iff every certifier passes. Requires `sympy` and PARI/GP (`gp`) on `PATH`.
 State after wave 2: 6/6 certifiers, 82/82 individual checks, 0 rigged checks in tree.
-**Current state (wave 3): 10/10 certifiers, 192/192 individual checks, 0 rigged checks,
+**Current state (wave 3): 11/11 certifiers, 219/219 individual checks, 0 rigged checks,
 0 ledger lint findings.**
 
 
@@ -342,6 +342,48 @@ to the mixed-sign case, which is where Alpöge's `(1,−1,−2)` actually lives.
 
 ---
 
+## 15. **New** — Path A's item A1 is ANSWERED: the square is NOT forced
+
+**Was:** open. File `39` calls A1 *"the central question"* and rates a `k = 0` weight
+system *"the single highest-value outcome available anywhere in the campaign."*
+
+**THEOREM W3-4.** The maximal-minor vector of a quotient map `π` is `m(π) = D·ξ` (Euler
+relation: `ξ` spans `ker Jπ`), and for an equivariant `F` with descent `G`:
+
+```
+(det JG)∘π · D  =  (det JF) · (D'∘F).
+```
+
+Verified in three weight classes with three different contents (`D = x²`, `x`, `1`), each
+with a negative control. On Alpöge it reproduces `det JG = −2h²`, `h = f₃/x`, exactly.
+
+**LEMMA W3-4a (closed form).** With `e₁, e₂` the exponent vectors of the two invariant
+generators, `e₁ × e₂ = λ·w` (`λ = ±1`), so `D` is the **monomial**
+`x^{a₁+a₂−1} y^{b₁+b₂−1} z^{c₁+c₂−1}` and `k = deg D = deg p₁ + deg p₂ − 3`. Hence `D = 1`
+iff `e₁ + e₂ = (1,1,1)`, which has exactly three splittings — a proof for **all** weights,
+not a box observation.
+
+**Enumeration** over all 144 `C*`-weight systems on `C³` with a free rank-2 invariant ring:
+`D = 1` (so `k = 0`) occurs, **exactly** for weights `(±1, ∓1, 0)` up to permutation;
+`deg D = 1` (`k = 1`) also occurs; Alpöge's `(1,−1,−2)` gives `D = x²`.
+
+**So the square is not forced.** But the `k = 0` class is degenerate: there
+`F = (xA(u,v), yB(u,v), C(u,v))`, `G = (u·A·B, C)`, and `det JG = det JF` **identically**.
+A `C³` counterexample with those weights *is* a plane counterexample with a factored first
+coordinate.
+
+**The label STATUS now carries:**
+
+> **A1: ANSWERED — not forced, and not a recipe.** The exponent `k` measures how far a
+> weight class is from being the plane problem; `k = 0` is where the distance is zero,
+> which is precisely why nothing lives there. Alpöge sits at `k = 2` because the gap must
+> be positive for the `C³` problem to be strictly weaker than the plane one. This is a
+> sharper separator statement than "the square is forced", and unlike that one it is true.
+
+**Evidence:** `wave3/w3_descent_jacobian_formula.py` — 27/27.
+
+---
+
 ## 7′. The HIT protocol is now an executable gate
 
 Item 7 (two false-positive hits from gauge artifacts) is closed operationally. The gate
@@ -380,8 +422,8 @@ the linter now demands the distinction plus a recorded reason.
 python3 wave2/run_all.py
 ```
 
-Runs all ten certifiers across `wave2/` and `wave3/`. Exit code 0 iff every one passes.
+Runs all eleven certifiers across `wave2/` and `wave3/`. Exit code 0 iff every one passes.
 Requires `sympy` and PARI/GP (`gp`) on `PATH`.
 
-**10/10 certifiers, 192/192 individual checks, 0 rigged checks in tree, 0 ledger lint
+**11/11 certifiers, 219/219 individual checks, 0 rigged checks in tree, 0 ledger lint
 findings.**

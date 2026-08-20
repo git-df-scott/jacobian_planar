@@ -11,7 +11,7 @@ claim the campaign has been leaning on since Session 38.
 python3 wave2/run_all.py        # runs all ten certifiers, exit 0 iff all pass
 ```
 
-**10/10 certifiers, 192/192 individual checks, 0 rigged checks in tree, 0 ledger lint
+**11/11 certifiers, 219/219 individual checks, 0 rigged checks in tree, 0 ledger lint
 findings.**
 
 | certifier | checks | verdict |
@@ -19,6 +19,7 @@ findings.**
 | `wave3/w3_endgame_degree_obstruction.py` | 32/32 | **THEOREM W3-1** — repairs the First Framework proof outright |
 | `wave3/w3_weighted_homogeneous_theorem.py` | 66/66 | **THEOREM W3-2 / W3-3** — Session 38's collapse, made a theorem *and* refuted as stated |
 | `wave3/w3_hit_protocol.py` | 12/12 | HIT gate implemented and validated; no hit in this repository |
+| `wave3/w3_descent_jacobian_formula.py` | 27/27 | **THEOREM W3-4** — Path A's item A1 answered: the square is **not** forced |
 | `wave3/w3_claim_ledger.py` | linter self-test PASS, 0 findings | contradictions and dropped hypotheses now mechanically impossible to leave standing |
 
 ---
@@ -170,7 +171,111 @@ computed too (not assumed): it collapses to affine-linear.
 
 ---
 
-## 3. The HIT gate
+## 3. THEOREM W3-4 — Path A's item A1, answered
+
+File `39` calls A1 *"the central question"* and says that if the square is **not** forced,
+*"there exist equivariant counterexamples whose descent is Keller. That is the construction
+recipe … the single highest-value outcome available anywhere in the campaign."* It asks for
+*"the general computation with symbolic weights."* Here it is.
+
+### The formula
+
+Every invariant `p` satisfies the Euler relation `Σ wᵢ xᵢ ∂p/∂xᵢ = 0`, so the generating
+vector field `ξ = (w₀x₀, …, w_n x_n)` spans `ker(Jπ)` generically. Hence the maximal-minor
+vector of `Jπ` is `ξ` times a polynomial **content**:
+
+```
+m(π) = D · ξ ,        m(π') = D' · ξ' .
+```
+
+> **THEOREM W3-4.** For an equivariant `F` with descent `G` (`G∘π = π'∘F`):
+>
+> ```
+> (det JG)∘π · D  =  (det JF) · (D'∘F).
+> ```
+
+Verified in **three weight classes with three different contents** — `D = x²` (Alpöge),
+`D = x`, `D = 1` — each with a negative control in which the wrong content breaks the
+identity. On Alpöge it reproduces `det JG = −2h²` with `h = f₃/x` exactly.
+
+So the exponent `k` in `det JG = c·h^k` is **not an accident of Alpöge's map**: it is read
+off `D` and `D'`, which depend only on the weights.
+
+### The content in closed form — a proof, not a search box
+
+Row `i` of `Jπ` is `(aᵢpᵢ/x, bᵢpᵢ/y, cᵢpᵢ/z)`, so with `e₁, e₂` the exponent vectors of
+the two invariant generators,
+
+```
+m(π) = (p₁p₂ / xyz) · (Δ₁x, Δ₂y, Δ₃z),      (Δ₁,Δ₂,Δ₃) = e₁ × e₂ .
+```
+
+Both generators are invariant, so `e₁·w = e₂·w = 0` and therefore `e₁ × e₂ = λ·w`
+(verified: `λ = ±1` on every system). Hence
+
+> **LEMMA W3-4a.** `D = x^{a₁+a₂−1} y^{b₁+b₂−1} z^{c₁+c₂−1}` — a **monomial** determined by
+> the weights alone — and
+> ```
+> k := deg D = deg p₁ + deg p₂ − 3 .
+> ```
+
+> **Corollary.** `D = 1` ⟺ `e₁ + e₂ = (1,1,1)` ⟺ the generators are `{x, yz}`, `{y, xz}` or
+> `{z, xy}` ⟺ the weight system is `(0,1,−1)`, `(1,0,−1)` or `(1,−1,0)` up to sign.
+> `(1,1,1)` has exactly three splittings into two nonzero parts, so this is a **proof for
+> all weights**, not an observation inside a search box.
+
+Checked against the computed content on all 144 systems, with a negative control (the same
+formula without the `−1` shift, which is rejected).
+
+### The enumeration — the square is NOT forced
+
+All 144 `C*`-weight systems on `C³` with `gcd = 1`, mixed signs or a zero weight, and
+invariant ring free on two generators (the generator routine is validated against three
+known answers and a negative control):
+
+| `deg D` | `k` | weight systems |
+| --- | --- | --- |
+| 0 | **0** | exactly `(±1, ∓1, 0)` up to permutation |
+| 1 | **1** | e.g. `(1,−1,−1)`, `(1,−2,0)`, `(−1,0,2)` |
+| 2 | **2** | includes Alpöge's `(1,−1,−2)`, `D = x²` |
+
+Alpöge: `p₁ = xy`, `p₂ = x²z`, so `k = 2 + 3 − 3 = 2`. `(1,−1,−1)`: `p₁ = xy`, `p₂ = xz`,
+`k = 2 + 2 − 3 = 1`. `(1,−1,0)`: `p₁ = xy`, `p₂ = z`, `k = 2 + 1 − 3 = 0`.
+
+**`k = 0` and `k = 1` both occur. A1's "not forced" branch is the live one.**
+
+### But it is not a construction recipe — and that is the interesting part
+
+In the `k = 0` class the equivariant maps can be written down completely. With weights
+`(1,−1,0)` and invariants `u = xy`, `v = z`:
+
+```
+F = ( x·A(u,v),  y·B(u,v),  C(u,v) )        ⟹        G = ( u·A·B,  C )
+```
+
+and — proved symbolically for generic `A,B,C`, plus 8 randomized explicit instances —
+
+```
+det JG  =  det JF        identically.
+```
+
+So a `C³` Keller counterexample with these weights **is** a plane Keller counterexample
+whose first coordinate factors as `u·A·B`. The `k = 0` class opens no new search space; it
+is the plane problem wearing a third variable.
+
+**Read as a separator, this is sharper than "the square is forced" — and unlike that, it
+is true.** The exponent `k` measures how far a weight class is from being the plane
+problem. `k = 0` is the degenerate case where the distance is zero, which is exactly why no
+counterexample lives there. Alpöge sits at `k = 2` because the gap has to be positive for
+the higher-dimensional problem to be strictly weaker.
+
+A1's stated success condition — *"characterise the weight systems where `k = 0`, then search
+for a `C³` counterexample with those weights"* — is answered and closed: the weight systems
+are characterised, and searching them is searching the plane.
+
+---
+
+## 4. The HIT gate
 
 Wave 1 produced two false-positive hits, both gauge artifacts of broken normalization.
 `wave3/w3_hit_protocol.py` is the fix: a single executable gate with six steps —
@@ -188,7 +293,7 @@ claimed.**
 
 ---
 
-## 4. The claim ledger
+## 5. The claim ledger
 
 `wave3/w3_claim_ledger.py` stores every campaign claim as a record with a stable key,
 an **explicit quantifier domain**, a label, an evidence pointer into a certifier, its
@@ -212,7 +317,7 @@ Current campaign ledger: **16 claims, 0 lint findings.**
 
 ---
 
-## 5. On finding a counterexample
+## 6. On finding a counterexample
 
 Straight answer, unchanged: no counterexample to the plane Jacobian Conjecture was
 found, and the reachable search space cannot contain one. Moh closes `deg ≤ 100`; the
@@ -241,9 +346,13 @@ to commit and cheap to catch.
 3. **Session 38's collapse: bounded-degree evidence → a theorem, with the missing
    hypothesis exhibited.** Path B's success criterion met; a false unrestricted
    version of the claim retired.
-4. **Detector discipline: closed.** The HIT gate cannot certify without first rejecting
+4. **Path A's A1: open → answered.** The square is not forced; the `k = 0` weight systems
+   are characterised; and the reason they yield nothing is that they *are* the plane
+   problem. The campaign's "single highest-value outcome" is resolved in the negative,
+   with a formula that explains why.
+5. **Detector discipline: closed.** The HIT gate cannot certify without first rejecting
    known negatives.
-5. **Record discipline: closed.** Contradictions and dropped hypotheses are now lint
+6. **Record discipline: closed.** Contradictions and dropped hypotheses are now lint
    errors, not prose.
 
 ## Still open, honestly

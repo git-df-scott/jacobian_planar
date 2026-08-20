@@ -18,6 +18,7 @@ SCRIPTS = [
     "wave2/w2_cantfail_audit.py",
     "wave3/w3_endgame_degree_obstruction.py",
     "wave3/w3_weighted_homogeneous_theorem.py",
+    "wave3/w3_descent_jacobian_formula.py",
     "wave3/w3_hit_protocol.py",
     "wave3/w3_claim_ledger.py",
 ]
