@@ -1,0 +1,239 @@
+# STATUS — Correction Record (Wave 2)
+
+This file supersedes the corresponding wave-1 STATUS entries. Each item states the
+**erroneous claim**, the **correction**, and the **evidence or standing obligation**.
+Items 1–3 and 5–12 come from the wave-1 record; items 1–3 were confirmed
+independently this session by the certifiers in `wave2/`.
+
+Standing rule adopted for this and every later wave:
+
+> **No check condition may be a compile-time constant. Every certifier must contain at
+> least one negative control — an input on which it is required to fail — so that
+> "all checks passed" carries information.**
+> Enforced mechanically by `wave2/w2_cantfail_audit.py` (AST scan, exits nonzero on a hit,
+> self-tested against a synthetic rigged/honest pair).
+
+---
+
+## 1. H1c §2.1 — the headline `[PROVED-exact]` result is **FALSE as stated**
+
+**Was:** for `T_{D,k}(R) = (v+1)^k (3v(v+1)R' − D R) = −c`, `c ≠ 0`, no rational `R`
+exists when `k ≥ 1`; proved by evaluating at `v = −1`.
+
+**Correction:** the `v = −1` evaluation silently assumes `R` is regular there, but the
+statement quantifies over rational `R`, which may have a pole. Explicit counterexample,
+certified exactly with `c` symbolic:
+
+```
+D = 6, k = 1, R = c/(6(v+1)^2)   ⟹   T_{6,1}(R) = −c
+```
+
+**Replacement (proved, machine-checked on 150 cells by two independent code paths):**
+
+> **THEOREM W2-1.** `T_{D,k}(R) = −c` has a rational solution **iff** `D ∉ {3, 6, …, 3k}`.
+
+The original statement is true only under the added hypothesis **"`R` polynomial"**, which
+must now be written into the theorem and discharged explicitly at every use.
+
+**Evidence:** `wave2/w2_h1c_refutation.py` — 11/11, includes negative controls.
+**Label:** `[REFUTED-exact]` for the old statement; `[PROVED-exact]` for THEOREM W2-1.
+
+---
+
+## 2. `w1_h1c_endgame_closed_form.py:89` — rigged certifier
+
+**Was:** `check("k >= 1 forces c = 0...", True, ...)` — the condition is a literal `True`.
+
+**Correction:** the check could never fail, and it "certified" precisely the statement
+refuted in item 1. It certified nothing. Removed from the evidence base; the claim it
+carried is withdrawn.
+
+**Evidence:** `wave2/w2_cantfail_audit.py`.
+
+---
+
+## 3. `w1_h1e_d_crossfire.py:58` and `:88` — two more hardcoded `True` checks
+
+**Was:** same pattern, wrapping prose claims.
+
+**Correction:** lower stakes, same disease. Both withdrawn as evidence. The prose claims
+they wrapped are downgraded to `[ASSERTED]` until a real check exists.
+
+**Evidence:** `wave2/w2_cantfail_audit.py`.
+
+---
+
+## 4. The char-0 eliminant claim — trusted a filename over the artifact
+
+**Was:** believed a five-day-old claim that the characteristic-0 eliminant existed; the
+cited file was msolve real-solution boxes, not an eliminant.
+
+**Correction:** the claim was false and is withdrawn. **Rule adopted:** a file is evidence
+only after its *contents* have been read and matched to the claim. `wave2/w2_pole_admissibility.py`
+implements this literally — every load-bearing quotation is located by exact substring
+match against the file on disk, and the certifier fails if an anchor is missing.
+
+**Standing consequence:** the wave-1 §2.5 eliminant is **not present in this repository**
+(`w1_h1c_endgame_closed_form.py`, `eliminant.txt`, `eliminant_char0.txt`, `certifiers/`,
+`wave1/`, `artifacts/` — all absent). §2.5 is therefore recorded as **`UNVERIFIED-HERE`**:
+neither confirmed nor refuted. See item 13.
+
+---
+
+## 5. "Nguyen 104 is unverified" — false
+
+**Was:** claimed unverified on the strength of three failed web searches.
+
+**Correction:** the result is real and refereed. The claim is withdrawn.
+**Rule adopted:** failed searches are evidence about the search, not about the literature.
+A negative literature claim requires a positive source (a retraction, an erratum, or a
+specific refereed contradiction), never an absence of hits.
+
+---
+
+## 6. Prime hygiene violated — two of three primes broke the `p ≡ 1 (mod 3)` rule
+
+**Was:** the campaign's own hygiene rule was violated in a modular run.
+
+**Correction:** all modular work in wave 2 uses eight primes `≡ 1 (mod 3)`:
+`7, 13, 31, 43, 61, 73, 97, 103`. The rule is enforced *in code*, not by discipline:
+primes failing `p ≡ 1 (mod 3)` are discarded with a printed reason, and control primes
+`5, 11, 17` are deliberately fed in and must all be rejected. Good reduction is additionally
+required (`p ∤ lc(E)`, `E mod p` squarefree), with discards reported rather than silent.
+
+**Evidence:** `wave2/w2_irreducibility_sieve.py` — 20/20.
+
+---
+
+## 7. Two false-positive "hits" — gauge artifacts from broken normalization
+
+**Was:** two claimed hits, both artifacts of broken normalization in the detectors.
+
+**Correction:** both withdrawn. **Rule adopted:** no candidate is reported as a hit until
+it has been through the §7 HIT protocol with no step skipped, and no detector is trusted
+until it is shown to *reject* a known-negative input. Every wave-2 certifier now carries
+such a negative control.
+
+---
+
+## 8. Fabricated citation — "Compositio Math 160 (2024)" for an unrefereed preprint
+
+**Was:** a journal, volume and year attached to a preprint that has none.
+
+**Correction:** the citation is withdrawn. The work is an unrefereed preprint and must be
+cited as such (arXiv identifier only). **Rule adopted:** no venue, volume, or year is ever
+written unless it has been read off the published record; "arXiv:NNNN.NNNNN, unrefereed"
+is the correct default and is never an embarrassment.
+
+---
+
+## 9. Essential-parameter count wrong twice (60 → 59 → 58) — missed gauges
+
+**Was:** the count was corrected twice, each time because a gauge freedom had been missed.
+
+**Correction:** both earlier numbers are withdrawn; the count stands at the last value only
+as `[ASSERTED]`, not `[PROVED]`. **Rule adopted:** a parameter count is reported only
+together with an *explicit enumeration of the gauge group* and a rank computation of the
+group action on the parameter space. A count without that enumeration is not evidence.
+
+**Obligation:** re-derive the count with the gauge enumeration written down before the
+number is used in any argument.
+
+---
+
+## 10. "Pentagon conditions cannot be written down" — bound off by eleven orders of magnitude
+
+**Was:** an infeasibility claim resting on a dense bound that was wrong by ~10¹¹.
+
+**Correction:** the claim is withdrawn. A dense bound proves nothing about a sparse,
+structured system. **Rule adopted:** an infeasibility claim requires either (a) an actual
+attempted construction that failed with the failure diagnosed, or (b) a bound whose
+sparsity model has been validated against a measured instance. Neither existed here.
+
+---
+
+## 11. The standing contradiction — resolved
+
+**Was:** two mutually exclusive labels left standing in the same STATUS:
+
+- (i) First Framework **"PROVEN dead, unconditional"**
+- (ii) First Framework **"conditional on unreproduced THEOREM 2/3"**
+
+**Correction: (ii) is correct; (i) is false.** Settled from the primary artifact, not from
+memory. `Sessions 1-18 status reports`, under *SCOPE AND HONEST LABELS*, records its own
+**Dependence** clause on the campaign's formalization of layers 1–3, the realization theory
+and the rigidity theorem — and states that *"A referee-grade writeup of the Y-side geometry
+is owed before public claims."* Both sentences are located by exact match by the certifier.
+
+**The single label that STATUS now carries:**
+
+> **First Framework (99,66): CONDITIONALLY dead.** Conditional on the campaign's own
+> formalization of layers 1–3, the realization theory (Sessions 13–14) and the rigidity
+> theorem (Session 13), none of which has been independently reproduced.
+> The endgame step is sound **only** because Theorem 3 (pole-fiber) pins `R` polynomial —
+> **not** because of the `v = −1` evaluation, which is invalid for rational `R` (item 1).
+
+**Evidence:** `wave2/w2_pole_admissibility.py` — 10/10.
+
+---
+
+## 12. Shell killed four times by `pkill -f`, once losing an uncommitted document
+
+**Correction / rule adopted:** `pkill -f` is banned. Long-running jobs are launched as
+tracked background tasks and stopped individually by their own handles. Documents are
+committed before any long-running command is started, so a lost shell can never cost work.
+This session ran every long job under an explicit timeout and committed the deliverables in
+one push at the end, with no process-wide kills.
+
+---
+
+## 13. **New this wave** — the transfer conjecture is blocked
+
+Not a wave-1 error, but a direct consequence of item 1, recorded here because it changes a
+STATUS verdict.
+
+**Was:** *"TRANSFER CONJECTURE. For chain degree `D` the same mechanism yields
+`3v(v+1)R' = D R`, fatal whenever `D/3` is not an integer. Second Framework: `D = 23`."*
+
+**Correction:** for rational `R` the stated mechanism is **exactly backwards**. By
+THEOREM W2-1, `D/3` not an integer is precisely the condition under which a rational
+solution **exists**. Explicit solutions at both live `D`, verified through the operator:
+
+```
+D = 13, k = 1:   R = c (10 − 3v) / (130 (v+1))
+D = 23, k = 1:   R = c (20 − 3v) / (460 (v+1))
+D = 13, k = 4:   R = c (243v⁴ − 81v³ + 54v² − 42v + 35) / (455 (v+1)⁴)
+D = 23, k = 4:   R = c (243v⁴ − 891v³ + 2079v² − 3927v + 6545) / (150535 (v+1)⁴)
+```
+
+**Label:** **Second Framework (`D = 23`): OPEN.** It cannot be closed by the transfer
+argument as written. Closing it requires first re-deriving the analogue of Theorem 3
+(pole-fiber / polynomiality of `R`) at `D = 23`. The same obligation applies to every
+member of the isotope series.
+
+**Evidence:** `wave2/w2_money_cells.py` — 31/31, with negative controls at
+`D ∈ {3, 6, 9, 12}`.
+
+---
+
+## Verifications that came back clean
+
+| claim | status | evidence |
+| --- | --- | --- |
+| `det JF ≡ −2` on the Alpöge map | **CONFIRMED** (symbolic, 25 exact rational points, 5 primes) | `wave2/w2_alpoge_detjf.py` |
+| `C*`-equivariance, weights `(1,−1,−2)` → `(−2,−1,1)` | **CONFIRMED** | `wave2/w2_alpoge_detjf.py` |
+| Path A descent: `det JG = −2(3u+v−2)²`, `deg G = (6,4)` | **CONFIRMED** (rebuilt from scratch) | `wave2/w2_irreducibility_sieve.py` |
+| Alpöge geometric degree `d = 3` | **CONFIRMED** (degree-3 core eliminant at 4 targets) | `wave2/w2_irreducibility_sieve.py` |
+| Census monodromy `S₃` | **CONFIRMED** (non-square discriminant at 4 targets) | `wave2/w2_irreducibility_sieve.py` |
+| §2.5 irreducibility sieve | **`UNVERIFIED-HERE`** — eliminant artifact absent | `wave2/w2_irreducibility_sieve.py` |
+
+---
+
+## Reproduce
+
+```
+python3 wave2/run_all.py
+```
+
+Exit code 0 iff all six certifiers pass. Requires `sympy` and PARI/GP (`gp`) on `PATH`.
+Current state: **6/6 certifiers, 82/82 individual checks, 0 rigged checks in tree.**
