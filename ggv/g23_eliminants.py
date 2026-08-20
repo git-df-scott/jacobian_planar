@@ -108,6 +108,11 @@ def elim_msolve(eqs, elim, keep, tag, timeout):
     open(path, "w").write(to_ms(eqs, gens, P))
     outp = os.path.join(WORK, f"{tag}.msolve.gb")
     r = sh(f"msolve -e {len(elim)} -g 2 -f '{path}' -o '{outp}'", timeout)
+    # A 0-byte engine output is a FAILED RUN, never a result.  Delete it rather
+    # than leave it on disk, where it could be committed and later read as an
+    # eliminant.  The .ms input is kept: that is a real input, not an outcome.
+    if os.path.exists(outp) and os.path.getsize(outp) == 0:
+        os.remove(outp)
     body = open(outp).read() if os.path.exists(outp) else ""
     r["raw"] = body
     r["input"] = path

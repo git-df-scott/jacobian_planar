@@ -93,6 +93,35 @@ negative control on itself: ALL PASS.  `./ggv/g_selfscan.sh` reports 0
 compile-time-constant check conditions under `ggv/`.
 
 
+## Two faults found while verifying the stop, both fixed
+
+1. **A leftover engine survived the stop for 22 minutes.**  The stop killed the
+   engines before the drivers, so a driver outlived its engine, launched the
+   next one, and only then died -- leaving a Singular process on
+   `chartA_d6_sat` running at 1 GiB.  This is the same class of fault as defect
+   1 below, which was fixed *inside* the runner but not in the manual stop
+   procedure.  `ggv/g_stop.sh` now kills drivers first, then engines, then
+   VERIFIES nothing survived and exits non-zero if anything did.
+
+2. **Three 0-byte engine outputs had been committed** --
+   `chartA_d5_sat.msolve.gb`, `chartA_d5_unsat.msolve.gb`,
+   `chartA_d6_sat.msolve.gb`.  Each was a timed-out elimination that wrote no
+   bytes.  Under the campaign rule that a 0-byte output is a failed run and
+   never a verdict, committing them is a hazard: a reader can mistake an empty
+   file for an empty variety.  They are removed; `g23_eliminants.py` now deletes
+   a 0-byte engine output at the point it is produced, exactly as the ladder
+   driver already did; and `ggv/g_selfscan.sh` refuses any commit while a
+   0-byte artifact exists anywhere under `ggv/`.  That guard is negative-
+   controlled: planting a 0-byte file makes it exit 1, removing it exits 0.
+
+   The corresponding `.ms` and `.sing` INPUTS are kept -- those are real inputs,
+   not outcomes -- and each eliminant file already records the run as
+   `status: TIMEOUT` with `generators: <none: run did not produce an artifact>`.
+
+Note on d=6 chart A: the elimination was interrupted mid-run by the stop, so
+`ggv/mu_eliminants/chartA_d6.txt` does not exist and d=6 is NOT RUN, not
+timed out.
+
 ## Engine provenance and acceptance controls
 
 `ggv/engine_build/` records how msolve and Singular were built and installed on
