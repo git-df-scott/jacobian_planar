@@ -1,0 +1,15 @@
+[chart B] d=3: already computed, skipping (ggv/mu_eliminants/chartB_d3.txt)
+[chart B] d=4: already computed, skipping (ggv/mu_eliminants/chartB_d4.txt)
+[chart B] d=5
+PASS NEGATIVE CONTROL d=5 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartB_d5.txt
+[chart B] d=6
+PASS NEGATIVE CONTROL d=6 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartB_d6.txt
+[chart B] d=7
+PASS NEGATIVE CONTROL d=7 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartB_d7.txt
+[chart B] d=8
+PASS NEGATIVE CONTROL d=8 chart B: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartB_d8.txt
+ALL PASS
