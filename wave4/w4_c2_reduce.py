@@ -110,6 +110,35 @@ def reduced_edge_system_modp(p, gvals=None):
     return c, res
 
 
+def reduced_polys_Q():
+    """The 9 residual w=-4 polynomials in the 11 G-coefficients, over Q.
+
+    Same triangular elimination as export_reduced_ms, but nothing is reduced
+    mod anything, so the result is the exact rational system that the lift
+    pipeline (T4) verifies a reconstructed point against.
+    """
+    import sympy as sp
+    rows, consts = w4_coefficients()
+    gs = {v: sp.Symbol(v) for v in G_VARS}
+    c, ks = {}, sorted(rows)
+    for k in ks[:8]:
+        pivot, pexpr, acc = None, None, sp.Integer(0)
+        for coef, cv, gv in rows[k]:
+            if C_IDX[cv] == k:
+                pivot, pexpr = cv, sp.Rational(coef) * gs[gv]
+            else:
+                acc += sp.Rational(coef) * c[cv] * gs[gv]
+        c[pivot] = sp.cancel((-sp.Rational(consts[k]) - acc) / pexpr)
+    out = []
+    for k in ks[8:]:
+        e = sp.Rational(consts[k])
+        for coef, cv, gv in rows[k]:
+            e += sp.Rational(coef) * c[cv] * gs[gv]
+        num, _ = sp.fraction(sp.cancel(sp.together(e)))
+        out.append(sp.expand(num))
+    return out, [gs[v] for v in G_VARS]
+
+
 def export_reduced_ms(p, chart, path, planted=None, contradictory=False,
                       gauge2=False, mutant_seed=None):
     """Write the g-only reduced system to an msolve file, over F_p.
