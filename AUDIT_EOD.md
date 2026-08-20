@@ -79,3 +79,14 @@ T4. Morning: sliver-run classification writeup + compiler extension start.
   different reduction of the already-known case-(1)/(2) territory of (72,108)
   (37/25 params vs the campaign's 58/72) rather than new ground.  Verdicts
   still required either way; polygon-level comparison queued (T5).
+
+## 8. Sliver re-analysis (writing-it-out find)
+
+The (9,27)/9,24 chain IS (72,108)'s own A0 node.  The campaign's entire
+(72,108) program (pentagons, case (2)) is built on the OTHER orientation's
+A0=(8,28) polygons.  The (9,27) branch is dead only via GGHV Sec 5 -- which
+the T1 audit explicitly marked NOT-RE-DERIVED-HERE.  The two TIMEOUT sliver
+shapes are the direct computational test of that unverified branch.
+ACTIONS: (a) read + re-derive/refute GGHV Sec 5's (9,27) kill  [TOP]
+         (b) keep the two shapes grinding (running)
+         (c) verify w0_h1a swap-lemma scope is territory-level only.

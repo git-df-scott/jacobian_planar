@@ -18,5 +18,10 @@
   "tag": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))",
   "verdict": "{'name': 'p108_525122', 'status': 'TIMEOUT', 'secs': 240.20120000839233, 'info': {'nparams': 25, 'jmax': 26, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(23)', 'c(25)']}}",
   "wall": 240.2
+ },
+ {
+  "tag": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))",
+  "verdict": "{'name': 'p108_867707', 'status': 'TIMEOUT', 'secs': 240.17479610443115, 'info': {'nparams': 25, 'jmax': 26, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(23)', 'c(25)']}}",
+  "wall": 240.2
  }
 ]
