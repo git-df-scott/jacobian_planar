@@ -1,5 +1,31 @@
 # LIVE MAP — territory after the audit
 
+
+> ## ⚠ CORRECTED BY PR #9 — read this first
+>
+> An adjudication pass (branch `claude/opus-5-counterexample-plan-sep6yk`, PR #9,
+> `ADJUDICATION.md`, 110 exact checks) refuted several claims in this document. They are
+> corrected in place below and listed here so nothing is taken on trust:
+>
+> 1. **`ABSENT` is wrong — the correct label is `NOT-FETCHED`.** This session ran
+>    `git rev-list --objects --all` against a local object set containing only `main`
+>    plus its own commits. The artefacts exist on `claude/plane-counterexample-endgame-az3geq`:
+>    **65** session-19–38 paths, `wave1/edgeQ_eliminant.txt` (5,759,664 bytes),
+>    `wave1/pent_L23.ms` (43,158,481 bytes), `CASE2_STATUS.md`, `ABOVE_125_STATUS.md`,
+>    and the H1c files. Every "blocked here" below inherits this error.
+> 2. **`D = 15 − 12/β` dropped an `ε`.** The correct formula is
+>    `D_ode = ε·(15 − 12/β)` with `ε = ord_{U=0}(g)`; the bound `< 15` holds only at `ε = 1`.
+> 3. **`m = 4` is not universal.** The exponent is `k = 5ε − 1`, so `k = 0` or `k ≡ 4 (mod 5)`.
+> 4. **The "two independent closures" are one closure.** `deg W̃₋₅ = 28 ⟺ map-degree 13`
+>    identically, so the degree-ledger leg and the map-degree leg are the same statement.
+>    The genuinely independent second leg is E4's ladder bound, which is genericity-conditional.
+> 5. **The nine (108,72) charts are not proved exhaustive** — they assume both bidegrees are
+>    multiples of one primitive edge vector. Witness outside the enumeration: `(40,68)`, `(30,42)`.
+>
+> **The conclusions survive.** (99,66), (108,72), the Second Framework and the isotope
+> series are all still empty — on `k ≡ 4 (mod 5)` plus `D_ode`, computed in PR #9
+> (`D_ode(Second Framework) = 69/5`, so neither 23 nor 69: dead for every `ε`).
+
 **Step 2 of the plan: reopen and rank. Step 6: terminal state for this iteration.**
 
 Every claim that fails fact-check reopens a region; every claim that is repaired
@@ -11,7 +37,7 @@ re-closes one. Here is the board after `TRUST_MAP.md` and `L4_ENDGAME_REPORT.md`
 
 | region | before this session | after |
 |---|---|---|
-| (99,66) First Framework | closed, by a proof whose decisive step was invalid and whose supporting certificates were lost | **closed, at proof standard** — two independent repaired closures, neither using THEOREM 2 or THEOREM 3 |
+| (99,66) First Framework | closed, by a proof whose decisive step was invalid and whose supporting certificates were lost | **closed, at proof standard** — neither closure using THEOREM 2 or THEOREM 3; PR #9 shows the two legs are one statement, and closes it on `k ≡ 4 (mod 5)` instead |
 | Second Framework (435,290), `D_chain = 23` | "dies if the transfer conjecture holds"; the conjecture was unproved and its Phase-0 Belyi rederivation not started | **closed** — the corrected transfer theorem kills it without touching any Belyi data |
 | isotope series | "to be checked" | **closed** by the same theorem, uniformly |
 | (108,72) framework route | dead only conditionally on THEOREM 2/3, "possibly not dead at all" | **closed for every admissible chart** — 9 admissible edge vectors enumerated, 7 give a unique endgame solution of map-degree 4, 2 give none at all; no chain degree is 4 |

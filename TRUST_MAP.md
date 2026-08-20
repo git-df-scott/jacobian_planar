@@ -1,5 +1,31 @@
 # TRUST MAP — plane Jacobian campaign
 
+
+> ## ⚠ CORRECTED BY PR #9 — read this first
+>
+> An adjudication pass (branch `claude/opus-5-counterexample-plan-sep6yk`, PR #9,
+> `ADJUDICATION.md`, 110 exact checks) refuted several claims in this document. They are
+> corrected in place below and listed here so nothing is taken on trust:
+>
+> 1. **`ABSENT` is wrong — the correct label is `NOT-FETCHED`.** This session ran
+>    `git rev-list --objects --all` against a local object set containing only `main`
+>    plus its own commits. The artefacts exist on `claude/plane-counterexample-endgame-az3geq`:
+>    **65** session-19–38 paths, `wave1/edgeQ_eliminant.txt` (5,759,664 bytes),
+>    `wave1/pent_L23.ms` (43,158,481 bytes), `CASE2_STATUS.md`, `ABOVE_125_STATUS.md`,
+>    and the H1c files. Every "blocked here" below inherits this error.
+> 2. **`D = 15 − 12/β` dropped an `ε`.** The correct formula is
+>    `D_ode = ε·(15 − 12/β)` with `ε = ord_{U=0}(g)`; the bound `< 15` holds only at `ε = 1`.
+> 3. **`m = 4` is not universal.** The exponent is `k = 5ε − 1`, so `k = 0` or `k ≡ 4 (mod 5)`.
+> 4. **The "two independent closures" are one closure.** `deg W̃₋₅ = 28 ⟺ map-degree 13`
+>    identically, so the degree-ledger leg and the map-degree leg are the same statement.
+>    The genuinely independent second leg is E4's ladder bound, which is genericity-conditional.
+> 5. **The nine (108,72) charts are not proved exhaustive** — they assume both bidegrees are
+>    multiples of one primitive edge vector. Witness outside the enumeration: `(40,68)`, `(30,42)`.
+>
+> **The conclusions survive.** (99,66), (108,72), the Second Framework and the isotope
+> series are all still empty — on `k ≡ 4 (mod 5)` plus `D_ode`, computed in PR #9
+> (`D_ode(Second Framework) = 69/5`, so neither 23 nor 69: dead for every `ε`).
+
 **Step 1 of the plan: which doors are actually locked, and which were only claimed locked.**
 
 Produced by re-running every executable artefact in this repository from scratch and
@@ -7,7 +33,7 @@ re-deriving every load-bearing identity independently. Everything below is eithe
 `CERTIFIED HERE` (an exact machine check in `certifiers/`, reproducible with
 `./run_all.sh`), `TRUE BUT SCOPE-LIMITED`, `REFUTED`, `UNCERTIFIED` (a claim whose
 statement is in the repo but which has no executable certificate anywhere), or
-`ABSENT` (a claim named in the plan whose *statement* is not in the repository at all).
+`NOT-FETCHED` (a claim whose artefacts exist on a branch this session never fetched — originally and wrongly labelled `ABSENT`; see the banner).
 
 Toolchains: **sympy 1.14 / Python 3.11** and **PARI/GP**, no shared code between them.
 All arithmetic exact — rationals, `Q(sqrt(-3))`, or symbolic. No floating point is
@@ -46,12 +72,12 @@ nor as deleted blobs. That fact alone determines a large part of the trust map.
 | THEOREM 3 (pole-fiber ⇒ `R` polynomial) | **UNCERTIFIED, AND NO LONGER NEEDED.** Both repaired closures avoid it entirely | `E5` |
 | Session 11 degree ledger `deg W~₋₅ = 6·deg g − 26 = 28` | **CERTIFIED HERE** (arithmetic and the `R`-degree bookkeeping both re-derived) | `E5` |
 | Session 14/15 box caps, branch valuations, cusp discovery | **UNCERTIFIED** — `print(__doc__)` only | — |
-| **H1c** | **ABSENT** — the statement is not in this repository | — |
-| **the irreducibility sieve** | **ABSENT** | — |
-| **the eliminant** | **ABSENT** | — |
-| **chart coverage** (beyond the (99,66) charts, which are certified) | **ABSENT** | — |
-| §2.1 theorem and its certifier | **ABSENT** | — |
-| pentagon system (58 params / 60 conditions); case (2) over `Q̄` (degree-1144 field); the 167 above-125 targets; the 804 admissible pairs | **ABSENT** — named in the plan and in `41.md`, but no system, no data, no code | — |
+| **H1c** | **NOT-FETCHED** — `wave0/w0_h1c_borisov_belyi.py`, `wave1/H1C_VERDICT.md`, `w1_h1c_endgame_closed_form.py` exist on `az3geq`. Its §2.1 theorem is **REFUTED** by PR #9 (159/210 cells) | `w3_odequation_adjudication.py` |
+| **the irreducibility sieve** | **NOT-FETCHED** (no path matched on `az3geq` either; still unlocated) | — |
+| **the eliminant** | **NOT-FETCHED** — `wave1/edgeQ_eliminant.txt`, 5,759,664 bytes | — |
+| **chart coverage** | **NOT-FETCHED** — and the Second Framework's chart is certified by `campaign/d23_borisov/d23_phase1_chart.py`: `γ=15, β=10, p=3` | — |
+| §2.1 theorem and its certifier | **NOT-FETCHED, then REFUTED** — `w1_h1c_endgame_closed_form.py:89` is `check(..., True, ...)` | `w3_odequation_adjudication.py` |
+| pentagon system; case (2) over `Q̄`; the 167 above-125 targets | **NOT-FETCHED** — `wave1/pent_L15..L23.ms` (`pent_L23.ms` is 43,158,481 bytes; every `.out` is 0 bytes, so those runs never produced output), `CASE2_STATUS.md`, `ABOVE_125_STATUS.md` | — |
 
 ### Which archive scripts actually certify anything
 
@@ -96,7 +122,7 @@ So the archive's decisive step is refuted, and its certificate's scope limitatio
 exactly one Laurent shift wide (`E9` finds the solution by changing `P(v)` to
 `P(v)/(v+1)^4` in the archive's own code).
 
-**The conclusion nevertheless survives**, by two independent repaired closures:
+**The conclusion nevertheless survives.** Two closures are recorded below; PR #9 shows closure 2 is the *same statement* as the degree ledger rather than independent of it, so the independent pair is closure 1 (genericity-conditional) and closure 2:
 
 * **Closure 1 — pole admissibility (`E4`).** The framework's own divisibility ladder
   forces `ord_{U=0}(W~₋₅) ≥ 3`, i.e. `ord_{v=−1}(R) ≥ −3`: **the pole order can be at
@@ -124,7 +150,7 @@ The archive's closing conjecture is wrong in both halves (`E6`):
 
 1. **`D` is not the chain degree.** From the framework data alone,
    `D = 3(2e+3β)/β = 9 + 6e/β = 3N/(1+G)`, and with the Keller chart exponent `p = 3`,
-   `D = 15 − 12/β`. Hence **`D < 15` for every framework of this cusp type**: the
+   `D_ode = ε·(15 − 12/β)`. Hence **`D_ode < 15` at `ε = 1`** (the `ε` was dropped here originally): the
    Second Framework cannot have `D = 23`. `D = 13` at (99,66) only because `β = 6`.
 2. **The fatality criterion is exactly backwards.** `3 ∤ D` is precisely the case where
    the equation **is** solvable (uniquely). The fatal case is `3 | D` with `D/3 ≤ m`.
@@ -136,7 +162,7 @@ type (2,3)** — it is `U³` from the deviation block times `U¹` from `η'`, eq
 framework whose realization layer demands a degree-`D_chain` map with `D_chain ≠ 4` is
 **empty**. At `p = 3`, integral `D` forces `β | 12`:
 
-| `β` | `D = 15 − 12/β` | endgame verdict |
+| `β` | `D_ode = 15 − 12/β` (at `ε = 1`) | endgame verdict |
 |---|---|---|
 | 1 | 3 | **no rational solution at all** — framework dies outright |
 | 2 | 9 | **no rational solution at all** |
@@ -162,7 +188,7 @@ either. The `N2_prompt.md` sub-campaign (Phase 0: rederive the degree-23 Belyi d
   admissible chart closes. Conditional only on the Keller chart exponent `p = 3`, and
   the theorem is uniform in `p`.
 * **(72,108) pentagons, case (2) over `Q̄`, the 167 above-125 targets, H1c, the
-  irreducibility sieve, the eliminant, chart coverage.** `ABSENT` from this repository.
+  irreducibility sieve, the eliminant, chart coverage.** `NOT-FETCHED` — see the banner; they exist on `az3geq`.
   No verdict is possible and none is claimed. These need their session 19–38 artefacts
   restored before Step 4 of the plan can run at all.
 * **Paths A–E (sessions 39–42).** Only Path A's descent computation exists as code; it

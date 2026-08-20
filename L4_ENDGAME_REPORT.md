@@ -1,5 +1,31 @@
 # The endgame residue equation, solved
 
+
+> ## ⚠ CORRECTED BY PR #9 — read this first
+>
+> An adjudication pass (branch `claude/opus-5-counterexample-plan-sep6yk`, PR #9,
+> `ADJUDICATION.md`, 110 exact checks) refuted several claims in this document. They are
+> corrected in place below and listed here so nothing is taken on trust:
+>
+> 1. **`ABSENT` is wrong — the correct label is `NOT-FETCHED`.** This session ran
+>    `git rev-list --objects --all` against a local object set containing only `main`
+>    plus its own commits. The artefacts exist on `claude/plane-counterexample-endgame-az3geq`:
+>    **65** session-19–38 paths, `wave1/edgeQ_eliminant.txt` (5,759,664 bytes),
+>    `wave1/pent_L23.ms` (43,158,481 bytes), `CASE2_STATUS.md`, `ABOVE_125_STATUS.md`,
+>    and the H1c files. Every "blocked here" below inherits this error.
+> 2. **`D = 15 − 12/β` dropped an `ε`.** The correct formula is
+>    `D_ode = ε·(15 − 12/β)` with `ε = ord_{U=0}(g)`; the bound `< 15` holds only at `ε = 1`.
+> 3. **`m = 4` is not universal.** The exponent is `k = 5ε − 1`, so `k = 0` or `k ≡ 4 (mod 5)`.
+> 4. **The "two independent closures" are one closure.** `deg W̃₋₅ = 28 ⟺ map-degree 13`
+>    identically, so the degree-ledger leg and the map-degree leg are the same statement.
+>    The genuinely independent second leg is E4's ladder bound, which is genericity-conditional.
+> 5. **The nine (108,72) charts are not proved exhaustive** — they assume both bidegrees are
+>    multiples of one primitive edge vector. Witness outside the enumeration: `(40,68)`, `(30,42)`.
+>
+> **The conclusions survive.** (99,66), (108,72), the Second Framework and the isotope
+> series are all still empty — on `k ≡ 4 (mod 5)` plus `D_ode`, computed in PR #9
+> (`D_ode(Second Framework) = 69/5`, so neither 23 nor 69: dead for every `ε`).
+
 **Plane Jacobian campaign — the `T_{D,m}(R) = −c` object, its complete rational
 solution set, and what that does to Borisov's framework family.**
 
@@ -56,11 +82,12 @@ so the Keller condition `J = −c q^{−3} v^{−6}` reads
 
 Two further consequences, both used later:
 
-* **`m = 4` is universal.** The exponent on `(v+1)` is `4` for *every* framework of cusp
+* **`m = 4` at `ε = 1` only** (originally written as universal; corrected by PR #9 to
+  `k = 5ε − 1`). The exponent on `(v+1)` is `4` when `ε = 1`, for a framework of cusp
   type `(2,3)`: `U³` (from `δ`) times `U¹` (from `η'`), equivalently `U²·U²` (from
   `δ'·η`). It does not depend on `β, e, G, N, p`.
 * **`D` is bounded.** With `e = β + 1 − p` (forced by `J`'s `q`-exponent),
-  `D = (15β − 6p + 6)/β`; at `p = 3`, `D = 15 − 12/β < 15`.
+  `D_ode = ε(15β − 6p + 6)/β`; at `p = 3`, `D_ode = ε(15 − 12/β)`, which is `< 15` only at `ε = 1`.
 
 **Adversarial check on the derivation.** `J(y₁,y₂) = J(Δ,y₂)` exactly, since
 `y₁ = y₂^{3/2} + Δ` and `J(y₂^{3/2}, y₂) = 0`. Block bookkeeping: `Δ`'s blocks sit at
@@ -240,13 +267,13 @@ the chain data.
 The archive conjectured: *"for chain degree `D` the same mechanism yields
 `3v(v+1)R' = D R`, fatal whenever `D/3` is not an integer. Second Framework: `D = 23`."*
 
-Both halves are false. By Theorem A, `D = 15 − 12/β < 15`, so no framework of this cusp
+Both halves are false. By Theorem A, `D_ode = ε(15 − 12/β)`, which at `ε = 1` is `< 15`, so no framework of this cusp
 type has `D = 23`; and by Theorem B, `3 ∤ D` is precisely the **solvable** case.
 
 **Replacement.** For every framework of cusp type `(2,3)` with `p = 3`:
 
 ```
-    m = 4 always ;    D = 15 − 12/β ;    integral D ⟺ β | 12 .
+    k = 5ε − 1 ;    D_ode = ε(15 − 12/β) ;    integral D_ode at ε=1 ⟺ β | 12 .
 
     β = 1, 2, 4   (D = 3, 9, 12)   →  no rational solution at all — dies outright
     β = 3, 6, 12  (D = 11, 13, 14) →  a unique solution, of map-degree 4
@@ -308,7 +335,7 @@ primitive edge vector `(a,b)`, `s := a+b`, gives `γ = 108/s`, `β = 72/s` — s
 nine charts in all. Note `11 ∤ 108`: **(108,72) cannot reuse the (99,66) dessin's edge
 vector**, which is exactly why `L = 4` there and `3` at (72,108).
 
-| `s` | `γ` | `β` | `D = 15 − 12/β` | endgame |
+| `s` | `γ` | `β` | `D_ode = 15 − 12/β` (at `ε = 1`) | endgame |
 |---|---|---|---|---|
 | 1, 2, 3, 4, 9 | 108…12 | 72…8 | `89/6, 44/3, 29/2, 43/3, 27/2` | unique, map-degree 4 |
 | 6 | 18 | 12 | 14 | unique, map-degree 4 |
@@ -334,7 +361,8 @@ invalid step.
 **Net effect on the map:**
 
 * The `(99,66)` First Framework: **still empty**, now on a valid proof.
-* `(108,72)`: **empty for every one of its nine admissible charts** (§5c).
+* `(108,72)`: **empty** — the nine-chart enumeration below is not proved exhaustive
+  (PR #9), but the case closes on `k ≡ 4 (mod 5)` alone, which needs no enumeration.
 * Framework routes generally — Second Framework, isotope series: **empty**, by Theorem E,
   with no Belyi rederivation. The framework layer is no longer a case-by-case fight.
 * THEOREM 2 and THEOREM 3, the two lost theorems the plan called the highest lever:
@@ -343,7 +371,7 @@ invalid step.
   the obstruction it named was not the one doing the work.
 
 **What is not closed, and is not claimed to be:** everything the plan's Steps 2 and 4
-name that is `ABSENT` from this repository — H1c, the irreducibility sieve, the
+name that is `NOT-FETCHED` (see the banner) — H1c, the irreducibility sieve, the
 eliminant, chart coverage, the `(72,108)` pentagon system, case (2) over `Q̄`, and the
 167 above-125 targets. See `TRUST_MAP.md` §4. No candidate pair reached Step 5, so the
 HIT protocol was not invoked.
