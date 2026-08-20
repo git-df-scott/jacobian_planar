@@ -21,7 +21,7 @@ peak RSS.
 
 | task | scope | state |
 |---|---|---|
-| G1 | ladder d=8..12, reduced charts, 3 primes, chart A then B | INPUTS COMPLETE, RUNS INCOMPLETE -- stopped on request |
+| G1 | ladder d=8..12, reduced charts, 3 primes, chart A then B | INPUTS COMPLETE; **ZERO RUNS RECORDED** -- `ggv/ladder.tsv` absent, stopped on request |
 | G2 | chart-A mu-eliminants, d=3..8 | d=3,4 COMPLETE with all controls; d=5 recorded TIMEOUT (both engines); d=6,7,8 NOT RUN -- stopped on request |
 | G3 | chart-B mu-eliminants, d=3..8 | COMPLETE, ALL PASS |
 | G4 | descent-recursion table, d=3..10 | COMPLETE, ALL PASS |
@@ -35,7 +35,12 @@ generation log `ggv/logs/G1_gen.log` (ALL PASS: every prime 1 mod 3, quasi-
 homogeneity confirmed per d, header/characteristic/row-count verified against
 the builder for every file written, no constant generator).
 
-Runs: `ggv/ladder.tsv` holds only the cells that actually completed.  The cell
+Runs: **`ggv/ladder.tsv` does not exist.**  No ladder cell completed under the
+final runner, so no row was ever written and the file was never created.  Its
+absence means "no cell recorded", not "no cell found a solution".  The one row
+collected before the peak-RSS fix was discarded deliberately rather than kept
+with a missing memory figure (see defect 6 below), and G1 was still queued
+behind G2 when the campaign was stopped.  The cell
 `d=8, chart A, p=1000003` was measured four times and produced no output
 artifact every time -- 900 s under the final runner, and three separate 2700 s
 attempts before that, at ~100% of one core throughout.  See
@@ -47,9 +52,9 @@ cell already recorded, without repeating or double-writing anything.
 
 ## Deliberate deadlines, all recorded rather than silent
 
-Every row of `ggv/ladder.tsv` carries `timeout_s`, `mem_policy`, `peak_rss_kb`
-and `rss_source`; every block of every eliminant file carries `status`,
-`wall_s` and `peak_rss_kb`.  The d >= 5 elimination deadline of 300 s is set
+Every row `ggv/ladder.tsv` will carry once G1 runs has `timeout_s`,
+`mem_policy`, `peak_rss_kb` and `rss_source` columns; every block of every
+eliminant file already carries `status`, `wall_s` and `peak_rss_kb`.  The d >= 5 elimination deadline of 300 s is set
 from measurement, not guessed: at d=5 chart A saturated, msolve produced no
 eliminant in 900 s and Singular none in 540 s
 (`ggv/logs/G2_d5_engine_probe.log`).  No input was truncated and no cell was
@@ -86,3 +91,13 @@ A 0-byte or missing output file is a failed run and never a verdict.
 `ggv/g_selftest.py` (stub engine, no msolve) covers 3,4,5 plus resume and a
 negative control on itself: ALL PASS.  `./ggv/g_selfscan.sh` reports 0
 compile-time-constant check conditions under `ggv/`.
+
+
+## Engine provenance and acceptance controls
+
+`ggv/engine_build/` records how msolve and Singular were built and installed on
+this machine, with full transcripts, since the repository has no `BUILD.md`.
+`ggv/engine_controls/` holds the small inputs and exact outputs used to accept
+the engines before any campaign run, including the msolve empty/zero-dimensional
+pair and the Singular printing-format checks that the cross-engine comparison
+depends on.
