@@ -77,6 +77,29 @@ def to_msolve(gens, nvars, p, path):
     return path
 
 
+def parse_msolve(txt):
+    """Classify a `msolve -g 2` (reduced Groebner basis) dump.
+
+    The dump is comment lines starting '#', then the basis as `[p1,\np2]:`.
+    The ideal is the UNIT ideal -- i.e. the variety is EMPTY -- exactly when the
+    basis is the single constant polynomial 1, printed as `[1]:`.
+
+    An earlier version of this function read any non-comment output as
+    "NONEMPTY" and so called the unit ideal non-empty.  The cross-engine control
+    below caught it.  The control stays.
+    """
+    body = "\n".join(l for l in txt.splitlines() if not l.startswith("#")).strip()
+    if not body:
+        return "UNKNOWN"
+    i, j = body.find("["), body.rfind("]")
+    if i < 0 or j < 0:
+        return "UNKNOWN"
+    gens = [g.strip() for g in body[i + 1:j].split(",") if g.strip()]
+    if len(gens) == 1 and gens[0] == "1":
+        return "EMPTY"
+    return "NONEMPTY" if gens else "UNKNOWN"
+
+
 def run_msolve(path, budget=900):
     out = path + ".out"
     t0 = time.time()
@@ -85,16 +108,12 @@ def run_msolve(path, budget=900):
                             capture_output=True, text=True, timeout=budget)
     except subprocess.TimeoutExpired:
         return "TIMEOUT", time.time() - t0, ""
-    txt = open(out).read().strip() if os.path.exists(out) else ""
     blob = (pr.stdout or "") + (pr.stderr or "")
     if pr.returncode in (-9, 137) or "no more memory" in blob.lower():
-        return "OOM", time.time() - t0, blob[:300]
-    # msolve prints "[-1, ...]" / "[]" for an empty variety
-    if txt.startswith("[-1") or txt in ("[]", "[0]:"):
-        return "EMPTY", time.time() - t0, txt[:200]
-    if txt:
-        return "NONEMPTY", time.time() - t0, txt[:200]
-    return "UNKNOWN", time.time() - t0, blob[:200]
+        return "OOM", time.time() - t0, blob[:200]
+    txt = open(out).read() if os.path.exists(out) else ""
+    v = parse_msolve(txt)
+    return v, time.time() - t0, txt.replace("\n", " ")[-120:]
 
 
 print("=" * 78)
@@ -102,7 +121,19 @@ print("H4 rung 2 -- msolve (F4/FGLM) on the cells Singular could not hold")
 print("=" * 78)
 
 # ---- control first: a cell Singular already decided EMPTY must agree -------
-print("\n0. CROSS-ENGINE CONTROL (a cell with a known Singular verdict)\n")
+print("\n0a. PARSER CONTROL -- both directions, on systems whose answer is known\n")
+_emp = os.path.join(SCRATCH, "p_empty.ms")
+open(_emp, "w").write("x,y\n65521\nx,\ny,\nx+y+1\n")        # 1 in the ideal
+_non = os.path.join(SCRATCH, "p_nonempty.ms")
+open(_non, "w").write("x,y\n65521\nx*y-1,\nx-y\n")           # y^2 = 1, solvable
+_ve, _, _ = run_msolve(_emp, budget=120)
+_vn, _, _ = run_msolve(_non, budget=120)
+check("parser calls a UNIT ideal EMPTY", _ve == "EMPTY", "CERTIFIED",
+      f"got {_ve}")
+check("parser calls a solvable system NONEMPTY", _vn == "NONEMPTY", "CERTIFIED",
+      f"got {_vn}")
+
+print("\n0b. CROSS-ENGINE CONTROL (a cell with a known Singular verdict)\n")
 P0 = 65521
 g = dump_generators(slice3n_code(4, "x", 1, p=P0))
 check("generators extracted from the Singular build", g is not None and len(g) > 0,

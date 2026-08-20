@@ -21,3 +21,45 @@ primes [65521, 65539]  (mod 3: [1, 1])   budget 240s
   (3,4) h=x deg<=2                      65539    27      EMPTY     0.0
   (3,4) h=x deg<=3                      65521    36      EMPTY    10.4
   (3,4) h=x deg<=3                      65539    36      EMPTY    10.3
+  (3,4) h=x deg<=4                      65521    45      EMPTY   102.7
+  (3,4) h=x deg<=4                      65539    45      EMPTY   103.4
+  (3,5) h=x deg<=1                      65521    24      EMPTY     0.0
+  (3,5) h=x deg<=1                      65539    24      EMPTY     0.0
+  (3,5) h=x deg<=2                      65521    34      EMPTY     0.1
+  (3,5) h=x deg<=2                      65539    34      EMPTY     0.1
+  (3,5) h=x deg<=3                      65521    45      EMPTY    47.5
+  (3,5) h=x deg<=3                      65539    45      EMPTY    48.4
+  (3,7) h=x deg<=1                      65521    32      EMPTY     0.0
+  (3,7) h=x deg<=1                      65539    32      EMPTY     0.0
+  (3,7) h=x deg<=2                      65521    46      EMPTY     0.4
+  (3,7) h=x deg<=2                      65539    46      EMPTY     0.4
+  (3,7) h=x deg<=3                      65521    61      EMPTY     3.4
+  (3,7) h=x deg<=3                      65539    61      EMPTY     3.4
+  (3,8) h=x deg<=1                      65521    36      EMPTY     0.0
+  (3,8) h=x deg<=1                      65539    36      EMPTY     0.0
+  (3,8) h=x deg<=2                      65521    51      EMPTY     0.9
+  (3,8) h=x deg<=2                      65539    51      EMPTY     0.9
+  (3,10) h=x deg<=1                     65521    44      EMPTY     0.1
+  (3,10) h=x deg<=1                     65539    44      EMPTY     0.1
+  (3,10) h=x deg<=2                     65521    61      EMPTY     4.4
+  (3,10) h=x deg<=2                     65539    61      EMPTY     4.5
+  (3,4) h=x2 deg<=2                     65521    35      EMPTY     0.0
+  (3,4) h=x2 deg<=2                     65539    35      EMPTY     0.0
+  (3,4) h=x2 deg<=3                     65521    47      EMPTY     0.1
+  (3,4) h=x2 deg<=3                     65539    47      EMPTY     0.1
+  (3,4) h=x*(x-1) deg<=2                65521    43      EMPTY     0.0
+  (3,4) h=x*(x-1) deg<=2                65539    43      EMPTY     0.0
+  (3,4) h=x*(x-1) deg<=3                65521    52      EMPTY     0.2
+  (3,4) h=x*(x-1) deg<=3                65539    52      EMPTY     0.2
+  (3,5) h=x*(x-1) deg<=2                65521    56      EMPTY     0.1
+  (3,5) h=x*(x-1) deg<=2                65539    56      EMPTY     0.1
+
+  PASS  every cell that completed at both compliant primes AGREES   <CERTIFIED>   [19 cells agree]
+  PASS  no cell went LIVE at a compliant prime   <CERTIFIED>   [0 live]
+  PASS  Session 35's slice result SURVIVES the compliant-prime re-run   <CERTIFIED>   [19 cells EMPTY at both [65521, 65539]]
+
+==============================================================================
+cells run: 19   EMPTY at both compliant primes: 19   live: 0
+Emptiness mod p is still evidence, not a theorem -- but it is now
+evidence at primes where mu_3 exists, which it was not before.
+==============================================================================

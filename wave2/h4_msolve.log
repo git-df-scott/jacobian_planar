@@ -1,0 +1,16 @@
+==============================================================================
+H4 rung 2 -- msolve (F4/FGLM) on the cells Singular could not hold
+==============================================================================
+
+0. CROSS-ENGINE CONTROL (a cell with a known Singular verdict)
+
+  PASS  generators extracted from the Singular build   <CERTIFIED>   [18 generators]
+  FAIL  msolve agrees with Singular's EMPTY on (3,4) h=x deg<=1   <CERTIFIED>   [msolve says NONEMPTY [0.0s] #Reduced Groebner basis data
+#---
+#field characteristic: 65521
+#variable order: ]
+
+1. THE CELLS SESSION 35 RECORDED AS OUT OF MEMORY
+
+  cell                          gens    verdict     secs
+  --------------------------------------------------------

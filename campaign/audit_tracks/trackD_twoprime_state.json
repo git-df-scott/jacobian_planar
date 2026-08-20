@@ -218,5 +218,275 @@
   "tier": "sec6>=125",
   "budget": 90,
   "secs": 2
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=1 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 61,
+    "out": "params: 32 | conditions: 189 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 58,
+    "out": "params: 32 | conditions: 189 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 32,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 118
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 181 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 181 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 180 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 180 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 132,
+  "params": 35,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 0
+ },
+ "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 38 | conditions: 165 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 0,
+    "out": "params: 38 | conditions: 165 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 144,
+  "params": 38,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 1
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 38,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 38,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 38,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 38,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 48,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
  }
 }
