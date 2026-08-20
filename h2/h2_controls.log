@@ -1,0 +1,13 @@
+==============================================================================
+ITEM 3 -- H2 engine controls
+==============================================================================
+  target: (11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=2 eps=((1, 0),(2, 1))   params 20
+    [PASS] C3 the Rabinowitsch (non-degeneracy) generators are found in the source   2 found: ['I = I + ideal(w*p10 - 1);', 'I = I + ideal(u*nd - 1);']
+    [PASS] C3b deleting them really changes the source (the shipped control's deletion changed nothing)   51 bytes removed
+    [PASS] C3c the SHIPPED deletion changes nothing, which is why it fails   byte-identical to the real source
+    real system verdict: EMPTY;  unsaturated verdict: TIMEOUT
+    [PASS] C1 POSITIVE: with the non-degeneracy generators removed the engine does NOT say EMPTY   [TIMEOUT]
+    [PASS] C2 NEGATIVE: a contradictory pin makes the engine say EMPTY   [EMPTY]
+==============================================================================
+    5/5 checks passed
+==============================================================================

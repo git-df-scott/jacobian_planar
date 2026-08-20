@@ -1,0 +1,67 @@
+{
+ "ratio_tag_order": 169,
+ "ratio_reversed": 11,
+ "ratio_broken": [],
+ "reversed_tags": [
+  "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))",
+  "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))",
+  "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))",
+  "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((2, 1),(1, 0))",
+  "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=2 r=3 eps=((3, 1),(1, 0))",
+  "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=3 r=3 eps=((3, 1),(1, 0))",
+  "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=4 r=3 eps=((3, 1),(1, 0))",
+  "F3(j=1;m,n=7,5) | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))",
+  "F3(j=1;m,n=7,5) | a=5 b=4 c'=0 r=3 eps=((1, 0),(3, 1))",
+  "F5(j=0;m,n=9,5) | a=5 b=5 c'=0 r=3 eps=((3, 1),(1, 0))"
+ ],
+ "reversed_chains": [
+  "(7,42)/13/7,6",
+  "(8,40)/8,28/11/4,7",
+  "(9,36)/17/9,4",
+  "F3(j=1;m,n=7,5)",
+  "F5(j=0;m,n=9,5)"
+ ],
+ "chains_with_multiple_degree_pairs": {},
+ "orient_rejected": [],
+ "NP_drives": 83,
+ "NQ_drives": 97,
+ "eps_mismatch": [],
+ "checks": [
+  [
+   "G1 POSITIVE: deg NP : deg NQ equals m : n up to orientation on every chain-tagged target",
+   true,
+   "169 in tag order, 11 reversed, 0 neither"
+  ],
+  [
+   "G1b POSITIVE: the stored polygon degrees are constant within each chain",
+   true,
+   "19 chains, 0 with more than one degree pair; reversed-tag chains: ['(7,42)/13/7,6', '(8,40)/8,28/11/4,7', '(9,36)/17/9,4', 'F3(j=1;m,n=7,5)', 'F5(j=0;m,n=9,5)']"
+  ],
+  [
+   "G1c NEGATIVE: mutating one target's polygon makes its chain non-constant",
+   true,
+   "chain (11,33)/19/4,8: 100 targets, degree pairs now [(26, 39), (99, 39)]"
+  ],
+  [
+   "G2 NEGATIVE: perturbing one polygon vertex breaks the ratio under both orientations",
+   true,
+   "deg NP 26 -> 27, orientation 1 -> 0"
+  ],
+  [
+   "G3 POSITIVE: trackD_extract.orient accepts every target",
+   true,
+   "180 of 180 accepted; 0 OUT OF SCOPE"
+  ],
+  [
+   "G3b POSITIVE: the driver side is decided by whether the tag's eps pair lists (1,0) first",
+   true,
+   "NP drives 83, NQ drives 97; 0 tags disagree"
+  ],
+  [
+   "G4 NEGATIVE: mangling a j=0 row makes orient() reject the target",
+   true,
+   "j=0 row [(0, 0), (1, 0)] -> [(0, 0), (3, 0)]"
+  ]
+ ]
+}

@@ -1,0 +1,988 @@
+{
+ "cascade_one_p1000003": {
+  "factor0_deg1": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 945878,
+     "s2": 800740,
+     "u1": 566607,
+     "u2": 508501,
+     "u3": 647933,
+     "w": 833845,
+     "z1": 245634
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f0.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  },
+  "factor1_deg2": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 448871,
+     "s2": 962422,
+     "u1": 459806,
+     "u2": 236665,
+     "u3": 157576,
+     "w": 379583,
+     "z1": 775226
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f1.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  },
+  "factor2_deg2": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000003_f2.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 941060,
+     "s2": 981768,
+     "u1": 354611,
+     "u2": 854929,
+     "u3": 314520,
+     "w": 819697,
+     "z1": 365106
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000003_f2.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000003_f2.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  }
+ },
+ "cascade_one_p1000033": {
+  "factor0_deg2": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000033_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000033_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 451484,
+     "s2": 604893,
+     "u1": 146803,
+     "u2": 799619,
+     "u3": 763665,
+     "w": 77764,
+     "z1": 474515
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000033_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000033_f0.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.0,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000033_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000033_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  },
+  "factor1_deg3": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000033_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000033_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 924637,
+     "s2": 186790,
+     "u1": 751477,
+     "u2": 138363,
+     "u3": 633288,
+     "w": 346902,
+     "z1": 682240
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000033_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000033_f1.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000033_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000033_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  }
+ },
+ "cascade_one_p1000039": {
+  "factor0_deg1": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 983751,
+     "s2": 118605,
+     "u1": 824849,
+     "u2": 762501,
+     "u3": 333120,
+     "w": 794772,
+     "z1": 359602
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f0.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.0,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f0.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f0.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  },
+  "factor1_deg2": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 261939,
+     "s2": 258063,
+     "u1": 588370,
+     "u2": 646510,
+     "u3": 448495,
+     "w": 779824,
+     "z1": 915345
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f1.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f1.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f1.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  },
+  "factor2_deg2": {
+   "mutant": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_mutant_one_p1000039_f2.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 16,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "planted_point": {
+     "s1": 71960,
+     "s2": 851995,
+     "u1": 691790,
+     "u2": 712924,
+     "u3": 339676,
+     "w": 32526,
+     "z1": 140328
+    },
+    "raw_head": "[1, 8, -1, []]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "POSITIVE-DIMENSIONAL"
+   },
+   "pin": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_pin_one_p1000039_f2.out -t 2",
+    "npolys": 30,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   },
+   "real": {
+    "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f2.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_res_real_one_p1000039_f2.out -t 2",
+    "npolys": 28,
+    "nvars": 8,
+    "out_bytes": 6,
+    "params": [
+     "s1",
+     "s2",
+     "u1",
+     "u2",
+     "u3",
+     "z1"
+    ],
+    "peak_rss_kb_children": 0,
+    "raw_head": "[-1]:\n",
+    "raw_tail": null,
+    "returncode": 0,
+    "seconds": 0.01,
+    "stderr": "",
+    "stdout": "",
+    "timed_out": false,
+    "verdict": "EMPTY"
+   }
+  }
+ },
+ "cascade_zero_p1000003": {
+  "skipped": "EMPTY"
+ },
+ "cascade_zero_p1000033": {
+  "skipped": "EMPTY"
+ },
+ "cascade_zero_p1000039": {
+  "skipped": "EMPTY"
+ },
+ "factors_one_p1000003": [
+  [
+   "w + 166158",
+   1,
+   1
+  ],
+  [
+   "w**2 + 380999*w + 259709",
+   1,
+   2
+  ],
+  [
+   "w**2 + 448016*w + 602718",
+   1,
+   2
+  ]
+ ],
+ "factors_one_p1000033": [
+  [
+   "w**2 + 114291*w + 153320",
+   1,
+   2
+  ],
+  [
+   "w**3 + 359021*w**2 + 973807*w + 871908",
+   1,
+   3
+  ]
+ ],
+ "factors_one_p1000039": [
+  [
+   "w + 205267",
+   1,
+   1
+  ],
+  [
+   "w**2 + 384281*w + 491855",
+   1,
+   2
+  ],
+  [
+   "w**2 + 688864*w + 613612",
+   1,
+   2
+  ]
+ ],
+ "rur_one_p1000003": {
+  "deg": 5,
+  "elim": [
+   420093,
+   195284,
+   55478,
+   59458,
+   995173,
+   1
+  ],
+  "note": "all 9 residual rows vanish identically mod f(w); chart and gauge equations [('d_2_1', 1), ('d_3_3', 1)] hold identically",
+  "sign": -1
+ },
+ "rur_one_p1000033": {
+  "deg": 5,
+  "elim": [
+   523252,
+   111217,
+   858344,
+   642182,
+   473312,
+   1
+  ],
+  "note": "all 9 residual rows vanish identically mod f(w); chart and gauge equations [('d_2_1', 1), ('d_3_3', 1)] hold identically",
+  "sign": -1
+ },
+ "rur_one_p1000039": {
+  "deg": 5,
+  "elim": [
+   574129,
+   838910,
+   538227,
+   792746,
+   278373,
+   1
+  ],
+  "note": "all 9 residual rows vanish identically mod f(w); chart and gauge equations [('d_2_1', 1), ('d_3_3', 1)] hold identically",
+  "sign": -1
+ },
+ "w4_one_p1000003": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000003.out -t 2",
+   "out_bytes": 90588,
+   "peak_rss_kb_children": 27388,
+   "raw_head": "[0, [1000003, \n12, \n1144, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1144,\n[291055, 340543, 442736, 935034, 251729, 479317, 866792, 553970, 829939, 560318, 883015, 574565, 153715, 859098, 301283, 520299, 888493, 600966, 53853, 422146, 641217, 340080, 961353, 759654, 617236, 380574",
+   "raw_tail": "219613, 300184, 130134, 706123, 497528, 521126, 369584, 295742, 985194, 565182, 977177, 499047, 915906, 171501, 321523, 999873, 732597, 827598, 584361, 474071, 135634, 773215, 682659, 777143, 374829, 507644, 260781, 814123, 829394, 902481, 310931, 468528, 812156, 875270, 407146, 559428, 981682, 495487, 481326, 778026, 494194, 420342, 474227, 451377, 14203, 140067, 605772, 907931, 540305]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 15.93,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000003.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000003.out -t 2",
+   "out_bytes": 722,
+   "peak_rss_kb_children": 70392,
+   "raw_head": "[0, [1000003, \n12, \n5, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[5,\n[420093, 195284, 55478, 59458, 995173, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000002]]],\n[[0,\n[1000002]]],\n[[4,\n[945313, 632882, 77539, 497492, 172266]]],\n[[4,\n[893354, 680178, 352160, 780518, 787936]]],\n[[4,\n[121673, 270216, 9",
+   "raw_tail": "6]]],\n[[4,\n[893354, 680178, 352160, 780518, 787936]]],\n[[4,\n[121673, 270216, 912338, 748499, 68138]]],\n[[4,\n[637749, 622188, 444943, 335595, 924309]]],\n[[4,\n[282195, 919041, 604100, 658418, 565419]]],\n[[4,\n[624870, 654087, 449955, 741429, 939767]]],\n[[4,\n[188569, 233516, 743098, 51133, 994889]]],\n[[4,\n[29888, 383761, 338672, 387332, 68586]]],\n[[4,\n[173265, 386261, 835401, 449916, 648356]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 5.43,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  }
+ },
+ "w4_one_p1000033": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000033.out -t 2",
+   "out_bytes": 90590,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000033, \n12, \n1144, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1144,\n[336921, 437323, 498161, 476859, 142524, 165268, 241283, 832249, 427461, 218272, 928678, 499278, 290117, 365884, 226310, 569354, 691899, 692948, 86288, 361434, 248791, 999571, 28988, 152259, 296164, 196129,",
+   "raw_tail": "560653, 301150, 302624, 535647, 718776, 841390, 936330, 170646, 568361, 709940, 601571, 888511, 646891, 159185, 981515, 740732, 572623, 251474, 366798, 776000, 172889, 957147, 661860, 525828, 316395, 356886, 801532, 229736, 225631, 842700, 952542, 129597, 355699, 104935, 628862, 854332, 509553, 705695, 687563, 939779, 88987, 838833, 326720, 926343, 267227, 944268, 539331, 857865, 600113]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 14.93,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000033.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000033.out -t 2",
+   "out_bytes": 723,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000033, \n12, \n5, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[5,\n[523252, 111217, 858344, 642182, 473312, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000032]]],\n[[0,\n[1000032]]],\n[[4,\n[69425, 319434, 529007, 972454, 588520]]],\n[[4,\n[326513, 706065, 148596, 935958, 275018]]],\n[[4,\n[143830, 360432,",
+   "raw_tail": "20]]],\n[[4,\n[326513, 706065, 148596, 935958, 275018]]],\n[[4,\n[143830, 360432, 590980, 57739, 343946]]],\n[[4,\n[772741, 53287, 947299, 921115, 485561]]],\n[[4,\n[246114, 98648, 211151, 382571, 838195]]],\n[[4,\n[594262, 446927, 494915, 528490, 629079]]],\n[[4,\n[63968, 807234, 681811, 398591, 756299]]],\n[[4,\n[411002, 993554, 976417, 27147, 275764]]],\n[[4,\n[781292, 144067, 743419, 143577, 446788]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 5.28,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  }
+ },
+ "w4_one_p1000039": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_one_p1000039.out -t 2",
+   "out_bytes": 90630,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000039, \n12, \n1144, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1144,\n[674629, 271742, 970663, 359705, 589798, 361654, 723982, 222590, 582820, 391387, 924321, 652667, 312490, 780315, 335104, 940730, 687010, 742996, 34591, 516473, 889337, 601878, 975092, 683177, 679460, 355967",
+   "raw_tail": " 644140, 487333, 502932, 829999, 535692, 392396, 368260, 938186, 580370, 405435, 768593, 635762, 648977, 758467, 350283, 953932, 295949, 117705, 810608, 901996, 815199, 433227, 625278, 627130, 164107, 503690, 350114, 655749, 602915, 287012, 372039, 756632, 218309, 310117, 97014, 897373, 494203, 73350, 525976, 845019, 674787, 385392, 901036, 567940, 220683, 310695, 429745, 896407, 213121]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 15.06,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_one_p1000039.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_one_p1000039.out -t 2",
+   "out_bytes": 727,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000039, \n12, \n5, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[5,\n[574129, 838910, 538227, 792746, 278373, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000038]]],\n[[0,\n[1000038]]],\n[[4,\n[690558, 881595, 521453, 820994, 404007]]],\n[[4,\n[489871, 900509, 800342, 697668, 717865]]],\n[[4,\n[730246, 193057",
+   "raw_tail": "]],\n[[4,\n[489871, 900509, 800342, 697668, 717865]]],\n[[4,\n[730246, 193057, 349887, 114345, 439961]]],\n[[4,\n[264291, 133038, 901301, 655381, 309627]]],\n[[4,\n[433860, 856919, 235241, 47971, 44342]]],\n[[4,\n[695882, 777532, 434959, 439436, 709123]]],\n[[4,\n[194835, 606086, 574087, 385736, 636159]]],\n[[4,\n[995802, 743600, 763069, 120408, 564575]]],\n[[4,\n[590404, 663693, 460921, 990381, 529332]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 5.53,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  }
+ },
+ "w4_zero_p1000003": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000003.out -t 2",
+   "out_bytes": 404,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000003, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000002, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000002]]],\n[[-1,\n[0]]],\n[[0,\n[886619]]],\n[[0,\n[152648]]],\n[[0,\n[20835]]],\n[[0,\n[242324]]],\n[[0,\n[14630]]],\n[[0,\n[897836]]],\n[[0,\n[898182]]],\n[[0,\n[235381]]],\n[[0,\n[1000002]]]\n]]]",
+   "raw_tail": "[1000003, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000002, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000002]]],\n[[-1,\n[0]]],\n[[0,\n[886619]]],\n[[0,\n[152648]]],\n[[0,\n[20835]]],\n[[0,\n[242324]]],\n[[0,\n[14630]]],\n[[0,\n[897836]]],\n[[0,\n[898182]]],\n[[0,\n[235381]]],\n[[0,\n[1000002]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 0.68,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000003.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000003.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000003.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.26,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  }
+ },
+ "w4_zero_p1000033": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000033.out -t 2",
+   "out_bytes": 405,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000033, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000032, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000032]]],\n[[-1,\n[0]]],\n[[0,\n[47970]]],\n[[0,\n[203069]]],\n[[0,\n[606465]]],\n[[0,\n[671669]]],\n[[0,\n[322411]]],\n[[0,\n[514079]]],\n[[0,\n[735615]]],\n[[0,\n[221765]]],\n[[0,\n[1000032]]]\n]]",
+   "raw_tail": "1000033, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000032, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000032]]],\n[[-1,\n[0]]],\n[[0,\n[47970]]],\n[[0,\n[203069]]],\n[[0,\n[606465]]],\n[[0,\n[671669]]],\n[[0,\n[322411]]],\n[[0,\n[514079]]],\n[[0,\n[735615]]],\n[[0,\n[221765]]],\n[[0,\n[1000032]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 0.78,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000033.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000033.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000033.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.29,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  }
+ },
+ "w4_zero_p1000039": {
+  "mutant": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_mutant_zero_p1000039.out -t 2",
+   "out_bytes": 401,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[0, [1000039, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000038, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000038]]],\n[[-1,\n[0]]],\n[[0,\n[124507]]],\n[[0,\n[104524]]],\n[[0,\n[771564]]],\n[[0,\n[219843]]],\n[[0,\n[8]]],\n[[0,\n[875990]]],\n[[0,\n[150363]]],\n[[0,\n[877158]]],\n[[0,\n[1000038]]]\n]]]]]:",
+   "raw_tail": "0, [1000039, \n12, \n1, \n['d_2_1', 'd_3_3', 'd_4_5', 'd_5_7', 'd_6_9', 'd_7_11', 'd_8_13', 'd_9_15', 'd_10_17', 'd_11_19', 'd_12_21', 'sat'],\n[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],\n[1,\n[[1,\n[1000038, 1]],\n[0,\n[1]],\n[\n[[0,\n[1000038]]],\n[[-1,\n[0]]],\n[[0,\n[124507]]],\n[[0,\n[104524]]],\n[[0,\n[771564]]],\n[[0,\n[219843]]],\n[[0,\n[8]]],\n[[0,\n[875990]]],\n[[0,\n[150363]]],\n[[0,\n[877158]]],\n[[0,\n[1000038]]]\n]]]]]:\n",
+   "returncode": 0,
+   "seconds": 0.73,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "NONEMPTY-PARAMETRIZATION"
+  },
+  "pin": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_pin_zero_p1000039.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.01,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  },
+  "real": {
+   "cmd": "msolve -f /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000039.ms -o /home/user/jacobian_planar/wave4/artifacts/casc_w4_real_zero_p1000039.out -t 2",
+   "out_bytes": 6,
+   "peak_rss_kb_children": 0,
+   "raw_head": "[-1]:\n",
+   "raw_tail": null,
+   "returncode": 0,
+   "seconds": 0.37,
+   "stderr": "",
+   "stdout": "",
+   "timed_out": false,
+   "verdict": "EMPTY"
+  }
+ }
+}
