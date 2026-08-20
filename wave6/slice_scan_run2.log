@@ -1,0 +1,1 @@
+{"d": 5, "verdict": "SLICE-EMPTY", "head": "[-1]:\n", "build_secs": 0.9, "solve_secs": 0.2, "eqs": 19, "vars": 15, "control": true}
