@@ -37,10 +37,17 @@ def reduced_charts(d):
     core = [e for e in core if e != 0]
     rest = [a[i] for i in range(2, 2*d+1)] + [b[i] for i in range(2, d)]
     charts = {}
-    for name, fix in (("A", {mu2: 1}), ("B", {mu2: 0, mu3: 1})):
-        ce = [expand(e.subs(fix)) for e in core] + [expand((t*mu0 - 1).subs(fix))]
+    # SOUND split (correction 2026-08-20): the system's only scaling symmetry
+    # is the finite group mu_d -- the term 2*mu3*q1''(0) in (1.2) row 3 breaks
+    # every continuous torus (both published controls had b2 = 0 and never
+    # exercised that term, which is how the unsound gauge passed regression).
+    # So NO gauge-fixing: case-split on mu2 with saturation instead.
+    # Charts: Z = {mu2 = 0};  N = {mu2 != 0 via u*mu2 = 1}.
+    u = Symbol('u')
+    for name, fix, extra in (("Z", {mu2: 0}, []), ("N", {}, [u*mu2 - 1])):
+        ce = [expand(e.subs(fix)) for e in core] +              [expand((t*mu0 - 1).subs(fix))] + extra
         ce = [e for e in ce if e != 0]
-        vars_ = [v for v in rest + [mu0, mu2, mu3] if v not in fix] + [t]
+        vars_ = [v for v in rest + [mu0, mu2, mu3] if v not in fix] + [t] +                 ([u] if extra else [])
         charts[name] = (ce, vars_)
     return charts
 

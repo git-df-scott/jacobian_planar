@@ -121,3 +121,19 @@ verified here; both enter the next audit's queue. Note the same lineage
 earlier claimed "D = 15 − 12/β" as the Second-Framework kill — the successive
 kill mechanisms differ, which is precisely the kind of drift the ledger
 exists to catch.
+
+
+## 6. Correction (auditor's own): the chart gauge-fixing was unsound
+
+The reduced-chart verdicts previously reported for d=7 (both charts) and
+d=12 chart B used gauge charts {mu2=1} u {mu2=0, mu3=1} justified by a
+claimed scaling symmetry.  **That symmetry does not exist**: the term
+2*mu3*q1''(0) in (1.2) row 3 is inhomogeneous under every continuous scaling
+(only the finite group mu_d survives), and both published GGV controls have
+b2 = 0, so no control exercised the offending term.  Those verdicts are
+DEMOTED to slice results.  Unreduced d <= 6 char-0 proofs are unaffected;
+the Opus GGV-branch chart eliminants inherit the same slice scope.
+Corrected split (sound by construction, no symmetry claim):
+Z = {mu2 = 0} u N = {mu2 != 0 saturated}; regression-clean at d=5,6;
+corrected d=7 running.  Recorded per the standing rule that the auditor's
+errors are logged like everyone else's.
