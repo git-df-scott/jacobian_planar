@@ -18,4 +18,5 @@ Ladder verdicts so far (mod p at 1000003/1000033/1000039):
   d=4 EMPTY (reproduces GGV)   d=5 EMPTY at 3 primes, ~3.3s each  <- NEW, past the 2013 stall
   d=6 EMPTY over Q (char-0, 135s) + 3 primes.  d=5 EMPTY over Q (char-0, 22s).
   d=7 (3 primes) and d=8 (p=1000003): OOM at the 13.9 GB machine ceiling,
-  0-byte outputs -- STALLED, not verdicts. Next rung needs more RAM.
+  0-byte outputs -- STALLED, not verdicts. Single-threaded retry OOMed identically (13.96 GB):
+  the F4 matrix itself exceeds this machine. Next rung needs more RAM, full stop.

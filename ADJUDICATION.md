@@ -76,7 +76,7 @@ normalization); μ₀ ≠ 0 saturated; msolve:
 | d=2,3,4 | ≤ (112,160) | solved, μ₀=0 only | EMPTY — **reproduced** |
 | **d=5** | (144,208) | **STALLED (1h, PC)** | **EMPTY over ℚ (char-0 Gröbner proof, 22 s)** + 3 primes |
 | d=6 | (176,256) | untouched | **EMPTY over Q (char-0, 135 s)** + 3 primes (~70 s each) |
-| d=7, d=8 | (208,304), (240,352) | untouched | **STALLED-OOM** (0-byte outputs, ~13.9 GB peak = machine ceiling, ~950-1100 s; NOT a verdict) |
+| d=7, d=8 | (208,304), (240,352) | untouched | **STALLED-OOM** (0-byte outputs, ~13.9 GB peak = machine ceiling, ~950-1100 s; NOT a verdict). Single-threaded retry at d=7 OOMed identically (13.96 GB) — the F4 matrix itself exceeds this machine; d ≥ 7 needs more RAM, full stop |
 
 Every cell is a place a constructive JC2 counterexample could have lived.
 None does. The B=16 corridor is now closed further than any published source,
