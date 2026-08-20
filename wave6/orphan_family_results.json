@@ -43,5 +43,42 @@
   "tag": "F17(m,n)=2,3 | a=3 b=9 c'=3 r=1 eps=((1, 1),(1, 0))",
   "verdict": "{'name': 'orph_50107', 'status': 'TIMEOUT', 'secs': 240.16227078437805, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
   "wall": 240.2
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=4 eps=((4, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=5 eps=((5, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=5 eps=((1, 0),(5, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=6 eps=((1, 0),(6, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=7 eps=((1, 0),(7, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=8 eps=((1, 0),(8, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'orph_332344', 'status': 'TIMEOUT', 'secs': 240.30924439430237, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall": 240.3
  }
 ]

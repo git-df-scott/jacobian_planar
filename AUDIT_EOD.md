@@ -68,3 +68,14 @@ T2. Solo re-run d12-unsaturated (the anomaly question).
 T3. Overnight serial queue: d=7A confirms, d>=9 charts N, d=27-Z+seeds,
     33 TIMEOUT shapes at 1800s, (8,28) four, F22-j build+run.
 T4. Morning: sliver-run classification writeup + compiler extension start.
+
+## 7. Self-audit catches (post-audit)
+
+- p108_821326 / p108_843700 are md5-identical systems: the (8,28)/11/4,7 and
+  (8,32)/8,28/11/4,7 orphans reduce to ONE system; their EMPTYs are one
+  verdict, not two.  ACTION: dedup-by-system-hash across all sweep registers
+  (morning consolidation).
+- The (9,27) sliver TIMEOUTs are re-labelled IDENTITY-UNRESOLVED: possibly a
+  different reduction of the already-known case-(1)/(2) territory of (72,108)
+  (37/25 params vs the campaign's 58/72) rather than new ground.  Verdicts
+  still required either way; polygon-level comparison queued (T5).
