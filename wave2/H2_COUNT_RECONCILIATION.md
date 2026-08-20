@@ -120,3 +120,46 @@ that just needed more hours. The accurate statement is:
 
 A retry pass at 300 s/prime is chained behind pass 1 (`chain_retry.sh`), taking
 the cheapest 60 timeouts first; it can only move the boundary, not remove it.
+
+---
+
+# A third defect: the engine could not report OOM
+
+Pass 1 finished all 180 targets and returned **31 EMPTY, 141 TIMEOUT, 8
+UNKNOWN**. `UNKNOWN` is not in the campaign's engine contract — that contract is
+`EMPTY | NONEMPTY | TIMEOUT | OOM` — so the 8 needed explaining rather than
+tallying.
+
+All eight are the same chain (`F11(m,n)=2,5` at `c'=2` and `c'=3`), each running
+350–500 s and then returning with **empty stdout and no timeout**. Diagnosed
+directly on `F11(m,n)=2,5 | a=7 b=4 c'=2 r=5`:
+
+```
+returncode : -9          elapsed : 281s
+stdout len : 0           stderr len : 0
+'no more memory' present : False
+=> OOM
+```
+
+**Cause.** `trackD_extract.run()` ignored the subprocess returncode entirely and
+reported every non-timeout run as `"RAN"`. An OOM-killed Singular therefore
+looked like a successful run that happened to print nothing, and the caller
+filed it as `UNKNOWN`. Note that Singular's own *"no more memory"* message is
+**absent** here — the process is killed by the OS before it can print anything —
+so the returncode check is the only thing that catches this case.
+
+**Fixed.** `run()` now returns `OOM` on a kill signal (`-9`/`137`/`14`) or the
+memory message, and `CRASH` on any other nonzero exit with empty output, and
+carries the returncode through. `trackD_twoprime.py` propagates both as
+first-class verdicts, treats them as **terminal** — a bigger *time* budget does
+not buy *memory*, so they are never re-queued — and skips the second prime once
+the first has OOM'd. `combine()` was re-tested against an explicit 12-case truth
+table.
+
+**No EMPTY verdict changes.** What changes is how 8 undecided targets are
+*labelled*: from an uninformative `UNKNOWN` to a named stall reason. That is the
+difference between "we don't know why" and "the box ran out of memory" — and the
+second is a stall point Plan 43 §6.4 can actually record.
+
+The re-label runs each of the 8 through the repaired engine fresh
+(`relabel_oom.py`); none is converted on the strength of the old run.

@@ -404,165 +404,165 @@
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 38,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 38,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 38,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 38,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=2 eps=((1, 0),(2, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=6 eps=((1, 0),(6, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=7 eps=((1, 0),(7, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=8 eps=((1, 0),(8, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 48,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "F24(m,n)=3,4 | a=8 b=4 c'=0 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "EMPTY",
@@ -645,79 +645,99 @@
   "secs": 4
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=2 r=5 eps=((1, 0),(5, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 173,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 179,
     "out": ""
    }
   },
   "max": 140,
   "params": 51,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 352
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=2 r=6 eps=((1, 0),(6, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 182,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 184,
     "out": ""
    }
   },
   "max": 140,
   "params": 51,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 366
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=2 r=7 eps=((1, 0),(7, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 186,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 185,
     "out": ""
    }
   },
   "max": 140,
   "params": 51,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 372
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=2 r=8 eps=((1, 0),(8, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 184,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 184,
     "out": ""
    }
   },
   "max": 140,
   "params": 51,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 368
  },
  "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=2 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 126,
   "params": 53,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))": {
   "verdict": "EMPTY",
@@ -764,435 +784,455 @@
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=6 eps=((1, 0),(6, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=7 eps=((1, 0),(7, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=8 eps=((1, 0),(8, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 56,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 144,
   "params": 61,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "F16(j=0;m,n=3,5) | a=3 b=8 c'=0 r=1 eps=((1, 1),(1, 0))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 165,
   "params": 65,
   "tier": "gen>150",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=3 r=5 eps=((1, 0),(5, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 176,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 187,
     "out": ""
    }
   },
   "max": 140,
   "params": 66,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 363
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=3 r=6 eps=((1, 0),(6, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 197,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 192,
     "out": ""
    }
   },
   "max": 140,
   "params": 66,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 389
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=3 r=7 eps=((1, 0),(7, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 253,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 248,
     "out": ""
    }
   },
   "max": 140,
   "params": 66,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 501
  },
  "F11(m,n)=2,5 | a=7 b=4 c'=3 r=8 eps=((1, 0),(8, 1))": {
-  "verdict": "TIMEOUT",
+  "verdict": "UNKNOWN",
   "per_prime": {
    "65521": {
-    "verdict": "TIMEOUT",
-    "secs": 90,
+    "verdict": "UNKNOWN",
+    "secs": 250,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 255,
     "out": ""
    }
   },
   "max": 140,
   "params": 66,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 505
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=2 eps=((1, 0),(2, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=3 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 126,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=6 eps=((1, 0),(6, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=7 eps=((1, 0),(7, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=8 eps=((1, 0),(8, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 68,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((2, 1),(1, 0))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((3, 1),(1, 0))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=2 eps=((1, 0),(2, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=3 eps=((1, 0),(3, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=4 eps=((1, 0),(4, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=5 eps=((1, 0),(5, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=6 eps=((1, 0),(6, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=7 eps=((1, 0),(7, 1))": {
   "verdict": "TIMEOUT",
   "per_prime": {
    "65521": {
     "verdict": "TIMEOUT",
-    "secs": 90,
+    "secs": 300,
     "out": ""
    }
   },
   "max": 132,
   "params": 74,
   "tier": "sec6>=125",
-  "budget": 90,
-  "secs": 90
+  "budget": 300,
+  "secs": 300
  },
  "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=8 eps=((1, 0),(8, 1))": {
   "verdict": "TIMEOUT",
@@ -2071,6 +2111,786 @@
   "max": 132,
   "params": 152,
   "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 158,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 158,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 158,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 158,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 158,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=7 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 173,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=3 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 178,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=2,3 | a=9 b=5 c'=3 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 178,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=4 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 178,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F16(j=0;m,n=3,5) | a=3 b=8 c'=3 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 165,
+  "params": 185,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 191,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 191,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 191,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 191,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 191,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 210,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 210,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=5 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 211,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 215,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 215,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 215,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 215,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F7(j=1;m,n=3,11) | a=3 b=5 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 231,
+  "params": 218,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=4 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 220,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=2,3 | a=9 b=5 c'=4 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 220,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F2(j=3;m,n=5,9) | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 225,
+  "params": 223,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "F5(j=0;m,n=9,5) | a=5 b=5 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 225,
+  "params": 251,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "F14(j=0;m,n=2,7) | a=3 b=5 c'=2 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 231,
+  "params": 259,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 274,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 274,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 274,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 274,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=3 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 274,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 282,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F6(j=0;m,n=4,10) | a=5 b=5 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 250,
+  "params": 302,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "F7(m,n)=2,7 | a=3 b=5 c'=3 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 147,
+  "params": 329,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F8(m,n)=3,7 | a=3 b=6 c'=3 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 147,
+  "params": 340,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F15(j=0;m,n=3,7) | a=3 b=6 c'=3 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 231,
+  "params": 340,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 372,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 372,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 372,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=4 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 477,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=4 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 477,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=4 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 477,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F7(j=1;m,n=3,11) | a=3 b=5 c'=3 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 231,
+  "params": 779,
+  "tier": "gen>150",
   "budget": 90,
   "secs": 90
  }
