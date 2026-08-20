@@ -12,10 +12,13 @@ Engines: msolve 0.10.1 (built from source per the campaign tooling contract), Si
 | result | check | recorded detail |
 |---|---|---|
 | PASS | GATE-1 w5_b16_abel.py prints ALL PASS | exit=0 |
-| PASS | GATE-2 d=5 chart A p=1000003 re-solves to EMPTY | verdict=EMPTY exit=0 rss_kb=31568 wall=0.8s out_bytes=6 |
-| PASS | GATE-2 d=5 chart B p=1000003 re-solves to EMPTY | verdict=EMPTY exit=0 rss_kb=5584 wall=0.01s out_bytes=6 |
+| PASS | GATE-2 d=5 chart A p=1000003 re-solves to EMPTY | verdict=EMPTY exit=0 rss_kb=31464 wall=0.75s out_bytes=6 |
+| PASS | GATE-2 d=5 chart B p=1000003 re-solves to EMPTY | verdict=EMPTY exit=0 rss_kb=5680 wall=0.01s out_bytes=6 |
 | PASS | GATE-3 negative control: zero-dimensional ideal is NOT classified EMPTY | verdict=CANDIDATE-UNVERIFIED out_bytes=106 |
 | PASS | GATE-3 negative control: 0-byte artifact is NOT classified EMPTY | verdict=NO-OUTPUT bytes=0 |
+| PASS | GATE-4 runner control: an over-deadline run is recorded TIMEOUT | verdict=TIMEOUT wall=26.06s |
+| PASS | GATE-4 runner control: no msolve process survives its deadline | survivors=[] |
+| PASS | GATE-4 runner control: a killed run still reports a peak RSS | peak_rss_kb=673612 source=/proc VmHWM sampler |
 | PASS | GATE-3 positive control: a literal [-1]: artifact IS classified EMPTY | verdict=EMPTY |
 
 Artifact: `ggv/logs/GATE.log`
@@ -44,12 +47,102 @@ No `ggv/ladder.tsv` present.
 
 ## G2 -- mu-eliminants, chart A (mu2 = 1): constraints on (mu0, mu3)
 
-No eliminant artifacts present.
+| d | block (gauge / engine / control) | status | #gens in | #eliminated | peak RSS (MiB) | wall (s) | #gens out | eliminant |
+|---|---|---|---|---|---|---|---|---|
+| 3 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 12 | 7 | 6 | 0.01 | 1 | `1` |
+| 3 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular | OK | 12 | 7 | 12 | 0.01 | 1 | `1` |
+| 3 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 11 | 6 | 6 | 0.01 | 1 | `1` |
+| 3 | UNSATURATED (saturation generator removed) -- engine Singular | OK | 11 | 6 | 12 | 0.02 | 1 | `1` |
+| 3 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 7 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 3 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 11 | 7 | 6 | 0.01 | 1 | `1` |
+| 4 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 16 | 10 | 10 | 0.1 | 1 | `1` |
+| 4 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular | OK | 16 | 10 | 21 | 2.18 | 1 | `1` |
+| 4 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 15 | 9 | 10 | 0.07 | 1 | `1` |
+| 4 | UNSATURATED (saturation generator removed) -- engine Singular | OK | 15 | 9 | 20 | 1.7 | 1 | `1` |
+| 4 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 10 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 4 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 15 | 10 | 7 | 0.03 | 1 | `1` |
+
+### Controls
+
+| result | control | recorded detail |
+|---|---|---|
+| PASS | CROSS-ENGINE d=3 chart A (sat): msolve and Singular eliminants are identical | msolve=['1'] singular=['1'] |
+| PASS | CROSS-ENGINE d=3 chart A (unsat): msolve and Singular eliminants are identical | msolve=['1'] singular=['1'] |
+| PASS | NEGATIVE CONTROL d=3 chart A: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | POSITIVE CONTROL d=3 chart A: saturated eliminant is the unit ideal <1> (no admissible root), matching the known empty chart | eliminant=['1'] |
+
+### Recorded, not a control
+
+```
+DATA d=3 chart A: drop-one-generator eliminant = ['1'] (full = ['1'])
+```
+
+
+Full exact polynomials and per-block run records: `ggv/mu_eliminants/chartA_d*.txt`
 
 
 ## G3 -- mu-eliminants, chart B (mu2 = 0, mu3 = 1): constraints on mu0
 
-No eliminant artifacts present.
+| d | block (gauge / engine / control) | status | #gens in | #eliminated | peak RSS (MiB) | wall (s) | #gens out | eliminant |
+|---|---|---|---|---|---|---|---|---|
+| 3 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 12 | 7 | 5 | 0.01 | 1 | `1` |
+| 3 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular | OK | 12 | 7 | 12 | 0.01 | 1 | `1` |
+| 3 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 11 | 6 | 5 | 0.01 | 1 | `mu0` |
+| 3 | UNSATURATED (saturation generator removed) -- engine Singular | OK | 11 | 6 | 12 | 0.01 | 1 | `mu0` |
+| 3 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 7 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 3 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 11 | 7 | 5 | 0.01 | 1 | `1` |
+| 4 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 16 | 10 | 5 | 0.01 | 1 | `1` |
+| 4 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular | OK | 16 | 10 | 12 | 0.01 | 1 | `1` |
+| 4 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 15 | 9 | 6 | 0.01 | 1 | `1` |
+| 4 | UNSATURATED (saturation generator removed) -- engine Singular | OK | 15 | 9 | 12 | 0.01 | 1 | `1` |
+| 4 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 10 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 4 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 15 | 10 | 5 | 0.01 | 1 | `1` |
+| 5 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 20 | 13 | 6 | 0.01 | 1 | `1` |
+| 5 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 19 | 12 | 7 | 0.02 | 1 | `1` |
+| 5 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 13 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 5 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 19 | 13 | 6 | 0.01 | 1 | `1` |
+| 6 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 24 | 16 | 6 | 0.01 | 1 | `1` |
+| 6 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 23 | 15 | 19 | 0.23 | 1 | `1` |
+| 6 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 16 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 6 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 23 | 16 | 6 | 0.01 | 1 | `1` |
+| 7 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 28 | 19 | 6 | 0.01 | 1 | `1` |
+| 7 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 27 | 18 | 293 | 11.92 | 1 | `1` |
+| 7 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 19 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 7 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 27 | 19 | 6 | 0.01 | 1 | `1` |
+| 8 | SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve | OK | 32 | 22 | 6 | 0.01 | 1 | `1` |
+| 8 | UNSATURATED (saturation generator removed) -- engine msolve | OK | 31 | 21 | 6552 | 424.18 | 1 | `1` |
+| 8 | NEGATIVE CONTROL -- first generator only (engine msolve) | OK | 1 | 22 | 5 | 0.01 | 0 | `the ZERO ideal <0>` |
+| 8 | RECORDED PROBE -- one generator dropped (engine msolve; data, not a control) | OK | 31 | 22 | 6 | 0.01 | 1 | `1` |
+
+### Controls
+
+| result | control | recorded detail |
+|---|---|---|
+| PASS | CROSS-ENGINE d=3 chart B (sat): msolve and Singular eliminants are identical | msolve=['1'] singular=['1'] |
+| PASS | CROSS-ENGINE d=3 chart B (unsat): msolve and Singular eliminants are identical | msolve=['mu0'] singular=['mu0'] |
+| PASS | NEGATIVE CONTROL d=3 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | CROSS-ENGINE d=4 chart B (sat): msolve and Singular eliminants are identical | msolve=['1'] singular=['1'] |
+| PASS | CROSS-ENGINE d=4 chart B (unsat): msolve and Singular eliminants are identical | msolve=['1'] singular=['1'] |
+| PASS | NEGATIVE CONTROL d=4 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | POSITIVE CONTROL d=3 chart B: saturated eliminant recorded | eliminant=['1'] |
+| PASS | NEGATIVE CONTROL d=5 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | NEGATIVE CONTROL d=6 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | NEGATIVE CONTROL d=7 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+| PASS | NEGATIVE CONTROL d=8 chart B: the ideal of its FIRST generator alone has a different eliminant | full=['1'] first-generator-only=[] |
+
+### Recorded, not a control
+
+```
+DATA d=3 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+DATA d=4 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+DATA d=5 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+DATA d=6 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+DATA d=7 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+DATA d=8 chart B: drop-one-generator eliminant = ['1'] (full = ['1'])
+```
+
+
+Full exact polynomials and per-block run records: `ggv/mu_eliminants/chartB_d*.txt`
 
 
 ## G4 -- descent-recursion data table, d = 3..10 (no solving)
@@ -130,7 +223,25 @@ No eliminant artifacts present.
 Full rows (each row's complete polynomial and full linear part): `ggv/recursion_table.json`
 
 
-## G5
+## G5 -- reproduction of GGV's printed d=3 family through the G2/G3 pipeline
 
-No G5 artifacts present.
+| result | check | recorded detail |
+|---|---|---|
+| PASS | G5(1) GGV Sec 3.5 d=3 family satisfies EVERY generator of the UNSATURATED chart-B ideal | 11 generators, nonzero residuals: [] |
+| PASS | G5(4) NEGATIVE CONTROL: perturbing a3 off the family breaks the ideal | nonzero residuals: 2/11 |
+| PASS | G5(2) msolve on the UNSATURATED chart-B d=3 input returns a NON-empty variety | verdict=CANDIDATE-UNVERIFIED exit=0 rss_kb=5968 bytes=213 wall=0.01s |
+| PASS | G5(3) NEGATIVE CONTROL: the SAME system with t*mu0-1 restored is EMPTY | verdict=EMPTY exit=0 rss_kb=5340 bytes=6 wall=0.01s |
+| PASS | G5(5) unsaturated chart-B d=3 mu-eliminant computed (recorded as data) | eliminant in mu0: ['mu0']  peak_rss_kb=5480 |
+
+### Recorded run facts
+
+```
+point (chart B gauge, mu3=1, mu2=0): {'a2': '0', 'a3': '-1/2', 'a4': '0', 'a5': '0', 'a6': '-1/4', 'b2': '0', 'mu0': '0'}
+unsaturated generators: 11   saturated: 12
+unsaturated mu-eliminant: ['mu0']
+msolve unsaturated: verdict=CANDIDATE-UNVERIFIED rss_kb=5968 bytes=213 artifact=ggv/g5/g5_d3_B_unsaturated_p1000003.out
+msolve saturated:   verdict=EMPTY rss_kb=5340 bytes=6 artifact=ggv/g5/g5_d3_B_saturated_p1000003.out
+```
+
+Inputs and full raw outputs: `ggv/g5/`
 

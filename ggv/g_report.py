@@ -84,40 +84,70 @@ def sec_inputs():
          "gen (s)"], rows) + "\n"
 
 def sec_elim(chart, title):
+    """Tabulate the per-d eliminant files.
+
+    Each file is a sequence of blocks written as
+
+        ======================================================================
+        <block name>
+        ======================================================================
+        key: value
+        ...
+        generators:
+          <one per line>
+
+    so the block NAME lives between the two rules and must be read from there,
+    not from the first line after a naive split on the rule.
+    """
     rows = []
+    blockre = re.compile(r"={70}\n(.*?)\n={70}\n(.*?)(?=\n={70}|\Z)", re.S)
     for p in sorted(glob.glob(os.path.join(G, "mu_eliminants", f"chart{chart}_d*.txt")),
                     key=lambda x: int(re.search(r"_d(\d+)", x).group(1))):
         d = int(re.search(r"_d(\d+)", p).group(1))
         txt = rd(p)
-        for blk in txt.split("=" * 70):
-            if "engine:" not in blk:
-                continue
-            name = blk.strip().splitlines()[0].strip()
+        for name, blk in blockre.findall(txt):
             f = dict(re.findall(r"^(\w+): (.*)$", blk, re.M))
-            gens = re.findall(r"^  (.*)$", blk, re.M)
-            gens = [g for g in gens if not g.startswith("<")] or \
-                   [g for g in re.findall(r"^  (<.*)$", blk, re.M)]
-            rows.append([d, name, f.get("engine", ""), f.get("status", ""),
+            gens, ingens = [], False
+            for line in blk.splitlines():
+                if line.startswith("generators:"):
+                    ingens = True
+                    continue
+                if ingens and line.startswith("  "):
+                    gens.append(line.strip())
+            if gens == ["<empty list: the ZERO ideal>"]:
+                shown, n = "the ZERO ideal <0>", 0
+            elif gens == ["<none: run did not produce an artifact>"]:
+                shown, n = "no artifact", 0
+            else:
+                shown, n = "; ".join(gens), len(gens)
+            rows.append([d, name.strip(), f.get("status", ""),
                          f.get("n_generators_in", ""), f.get("n_eliminated", ""),
-                         mb(f.get("peak_rss_kb")), f.get("wall_s", ""),
-                         len(gens), "`" + "; ".join(gens)[:120] + "`"])
+                         mb(f.get("peak_rss_kb")), f.get("wall_s", ""), n,
+                         "`" + shown[:110] + "`" if shown else "`<empty>`"])
     if not rows:
         return f"## {title}\n\nNo eliminant artifacts present.\n"
     s = f"## {title}\n\n" + table(
-        ["d", "block", "engine", "status", "#gens in", "#eliminated",
-         "peak RSS (MiB)", "wall (s)", "#gens out", "eliminant (truncated)"], rows)
+        ["d", "block (gauge / engine / control)", "status", "#gens in",
+         "#eliminated", "peak RSS (MiB)", "wall (s)", "#gens out",
+         "eliminant"], rows)
     ctl = rd(os.path.join(G, "mu_eliminants",
                           "CONTROLS.log" if chart == "A" else "CONTROLS_chartB.log"))
-    crows = []
+    crows, notes = [], []
     for line in ctl.splitlines():
         m = re.match(r"(PASS|FAIL) (.*?)(   \[(.*)\])?$", line.strip())
         if m:
             crows.append([m.group(1), m.group(2).strip()[:150],
                           (m.group(4) or "").strip()[:150]])
+        elif line.startswith(("DATA ", "NOT RUN ", "FALLBACK ")):
+            notes.append(line.strip())
     if crows:
         s += "\n\n### Controls\n\n" + table(["result", "control", "recorded detail"], crows)
-    s += "\n\nFull exact polynomials: `ggv/mu_eliminants/chart%s_d*.txt`\n" % chart
+    if notes:
+        s += "\n\n### Recorded, not a control\n\n```\n" + "\n".join(notes) + "\n```\n"
+    s += "\n\nFull exact polynomials and per-block run records: " \
+         "`ggv/mu_eliminants/chart%s_d*.txt`\n" % chart
     return s
+
 
 def sec_recursion():
     p = os.path.join(G, "recursion_table.json")
