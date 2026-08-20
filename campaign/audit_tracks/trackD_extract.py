@@ -29,9 +29,15 @@ sweep's dim bound is the triage that decides which ones are small enough.
 import os, sys, subprocess, time
 from trackB1_polygon import hull_rows
 
-SCRATCH = ("/tmp/claude-0/-home-user-jacobian-planar/"
-           "19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad")
-P = 65521
+# Scratch dir: the old hardcoded path pointed at a dead session's scratchpad and
+# would ENOENT on any new container.  Resolve it at import time instead.
+SCRATCH = os.environ.get("TRACKD_SCRATCH") or os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "_scratch")
+os.makedirs(SCRATCH, exist_ok=True)
+
+# Characteristic.  Overridable so the sweep can be repeated at a second prime;
+# both defaults are == 1 mod 3, which the cusp-(2,3) structure needs.
+P = int(os.environ.get("TRACKD_PRIME", 65521))
 
 
 def orient(NP, NQ):
