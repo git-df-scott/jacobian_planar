@@ -137,3 +137,25 @@ Corrected split (sound by construction, no symmetry claim):
 Z = {mu2 = 0} u N = {mu2 != 0 saturated}; regression-clean at d=5,6;
 corrected d=7 running.  Recorded per the standing rule that the auditor's
 errors are logged like everyone else's.
+
+
+## 7. Parallel-session wave3: audited (agent + auditor spot-verified)
+
+Full report: audit_parallel/PARALLEL_AUDIT.md.  Verdicts:
+- "(108,72) closed, THEOREM 2 removed": SOUND-BUT-OVERSTATED -- removal real
+  on one leg only; the residual-gap leg rests on an underived beta=6 input and
+  two can't-fail checks (w3_10872_and_legs_audit.py:110, :125).
+- "Second Framework dies": conclusion PLAUSIBLE-AND-STRENGTHENED (the kill
+  survives dropping the framework-specific inputs entirely, via
+  D_chain = 5*beta/2 - 2 == 3 mod 5) BUT carries two unsound steps
+  (circular NV=69 at w3_second_framework_Dode.py:112; two inequivalent
+  D_ode definitions across the commit pair) and its structural inputs
+  (k = 5*eps - 1, realization demand) are uncertified.  "Proves too much"
+  flag: the same congruence kills every framework in the class.
+- "0 can't-fail checks": FALSE -- 22 more parse-time-constant conditions
+  found by a stricter scanner (their scanner only catches literal True).
+- Their trichotomy was applied outside its verified grid; the out-of-grid
+  cells were re-checked here and hold.
+Status: the parallel session's negative results stand; its positive closure
+claims remain CONDITIONAL pending the beta=6 derivation and certification of
+the two structural inputs.
