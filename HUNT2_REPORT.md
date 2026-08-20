@@ -96,6 +96,12 @@ brief's `p + q ≡ 1 + b` (which is the condition for a constant bracket). Both
 are enumerated and labelled in `symslice_results.json` rather than one being
 assumed away.
 
+**Scope.** These are the reduced coordinates of the case-(8,28) polygon pair —
+the object `trackA_system_case2.json` encodes after GGHV §4's size reduction —
+not (72,108) directly, so a symmetry invisible after that reduction is outside
+what this territory tests. The count 1140 is every faithful (a,b) with
+gcd(a,b,n) = 1 times every (p,q): 12 + 72 + 192 + 864 for n = 2, 3, 4, 6.
+
 Every faithful cell is killed by a mechanically detected degeneracy — a polygon
 vertex coefficient that the ansatz sets to zero, or the x² equation reducing to
 "−1 = 0". The n = 1 control keeps all 72 variables and all 92 equations, so the
