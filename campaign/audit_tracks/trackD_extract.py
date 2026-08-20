@@ -169,7 +169,21 @@ def run(NP, NQ, r, name, timeout=1800, jextra=2, method="facstd"):
     except subprocess.TimeoutExpired:
         return {"name": name, "status": "TIMEOUT", "secs": time.time() - t0,
                 "info": info}
-    return {"name": name, "status": "RAN", "out": out,
+    # The engine contract is EMPTY | NONEMPTY | TIMEOUT | OOM, and OOM arrives
+    # two ways: a kill signal (exit -9 / 137 / 14) or Singular's own
+    # "no more memory" message.  This function previously ignored returncode
+    # entirely and reported every non-timeout run as "RAN", so an OOM-killed
+    # process came back as a successful run with empty output -- which the
+    # callers then filed as UNKNOWN.  Eight targets in the two-prime sweep were
+    # misfiled that way before this was caught.
+    blob = ((pr.stdout or "") + (pr.stderr or "")).lower()
+    if pr.returncode in (-9, 137, 14) or "no more memory" in blob:
+        return {"name": name, "status": "OOM", "out": out, "rc": pr.returncode,
+                "secs": time.time() - t0, "info": info}
+    if pr.returncode != 0 and not out:
+        return {"name": name, "status": "CRASH", "out": out, "rc": pr.returncode,
+                "secs": time.time() - t0, "info": info}
+    return {"name": name, "status": "RAN", "out": out, "rc": pr.returncode,
             "secs": time.time() - t0, "info": info}
 
 

@@ -51,12 +51,16 @@ def classify(out):
     return "UNKNOWN"
 
 
+STALLED = ("TIMEOUT", "OOM", "CRASH")
+
+
 def combine(a, b):
     if a == "LIVE" or b == "LIVE":
         return "DISAGREE" if "EMPTY" in (a, b) else "LIVE"
     if a == "EMPTY" and b == "EMPTY": return "EMPTY"
     if "EMPTY" in (a, b):             return "PARTIAL"
-    if a == b == "TIMEOUT":           return "TIMEOUT"
+    if a == b and a in STALLED:       return a
+    if a in STALLED and b in STALLED: return "OOM" if "OOM" in (a, b) else "TIMEOUT"
     return "UNKNOWN"
 
 
@@ -70,16 +74,17 @@ def run_one(t, budget):
         import trackD_extract as EX          # re-import so P is re-read
         t0 = time.time()
         r = EX.run(t["NP"], t["NQ"], t["r"], f"tp{p}", timeout=budget)
-        vd = "TIMEOUT" if r["status"] == "TIMEOUT" else (
-             "OOS" if r["status"] == "OUT OF SCOPE" else classify(r.get("out") or ""))
+        st = r["status"]
+        vd = ({"TIMEOUT": "TIMEOUT", "OOM": "OOM", "CRASH": "CRASH",
+               "OUT OF SCOPE": "OOS"}).get(st) or classify(r.get("out") or "")
         per[str(p)] = {"verdict": vd, "secs": round(time.time() - t0),
                        "out": (r.get("out") or "").replace("\n", " | ")[:300]}
         if vd == "OOS":
             return "OOS", per
         # a LIVE at the first prime is worth the second prime's confirmation,
         # but a TIMEOUT at the first is not worth paying twice for
-        if vd == "TIMEOUT":
-            break
+        if vd in ("TIMEOUT", "OOM", "CRASH"):
+            break            # not worth paying for the second prime
     vs = [per[str(p)]["verdict"] for p in PRIMES if str(p) in per]
     return combine(vs[0], vs[1] if len(vs) > 1 else "TIMEOUT"), per
 
@@ -89,7 +94,7 @@ def todo(targets, st, budget):
     for t in targets:
         rec = st.get(t["tag"])
         if rec is None: out.append(t)
-        elif rec["verdict"] in ("EMPTY", "LIVE", "DISAGREE", "OOS"): continue
+        elif rec["verdict"] in ("EMPTY", "LIVE", "DISAGREE", "OOS", "OOM"): continue
         elif budget > rec.get("budget", 0): out.append(t)
     out.sort(key=lambda t: (t.get("params", 10**6), t.get("size", 0)))
     return out
