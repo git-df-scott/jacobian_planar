@@ -178,17 +178,41 @@ reaches 1.29e-11.
 
 `campaign/audit_tracks/trackD_targets.json` lists 180 targets whose tags name a
 chain and a cusp pair; nothing in the campaign checked those against an
-independent enumeration. `h2/w5_h2_target_provenance.py` (3/3) rebuilds the
+independent enumeration. `h2/w5_h2_target_provenance.py` (4/4) rebuilds the
 admissible complete chains from arXiv:1708.07936's pseudocode — the same
 implementation already certified 19/19 against that paper's own tables — and
-asks, per target, whether a chain with that A₀ and that final corner exists,
+asks, per target, whether a chain with that A0 and that final corner exists,
 whether (m,n) is in MN of that corner in either orientation, and whether
-max(m,n)·v11(A₀) equals the recorded max.
+max(m,n)·v11(A0) equals the recorded max. The tag parser was extended to all
+three tag shapes present in the file, so every target is decided.
 
-**118 of 118 chain-tagged targets match; 0 do not.** (46 are family-tagged and
-16 carry a tag shape this parser does not read; both are reported as such rather
-than counted as matches.) Negative controls: a corrupted final corner does not
-match, and an (m,n) outside MN is rejected.
+**179 of 180 match; 1 does not** — `F6(j=0;m,n=4,10)`, whose (m,n) is not
+coprime. That is discrepancy **D7**, recorded in `gghv_audit/DISCREPANCIES.md`
+and in HUNT2_REPORT.md; no result here is built on it. Negative controls: a
+corrupted final corner does not match, and an (m,n) outside MN is rejected.
+
+### The queue's polygons agree with its tags, in the queue's own orientation
+
+`h2/w5_h2_polygon_consistency.py` (7/7) checks the chain -> polygon map that the
+campaign's `ABOVE_125_STATUS.md` once recorded as the blocker. Two invariants
+must hold whatever that map does; both do, once the orientation the queue
+actually uses is taken into account.
+
+* **Degrees.** `deg NP : deg NQ` equals `m : n` on 169 targets and `n : m` on
+  11. The reversal is not an inconsistency: the queue enumerates each chain
+  under *both* orderings of the cusp pair while the stored polygons stay fixed,
+  so the tag's `(m,n)` is an unordered label. The stored polygon degrees are
+  constant within every one of the 19 chains (G1b); mutating one target's
+  polygon breaks that constancy (G1c).
+* **Applicability.** 97 targets have NP's and NQ's `j = 0` rows the other way
+  round from `{(0,0),(1,0)}` / `{(0,0)}`. `trackD_extract.orient()` is exactly
+  the gate for this: it picks the driver by that row and returns a sign, and it
+  **accepts all 180** — nothing in the queue is silently unverdictable at the
+  polygon level. Which side drives is decided, **180/180 with no exceptions**,
+  by whether the tag's `eps` pair lists `(1,0)` first (83 NP-driven, 97
+  NQ-driven). Mangling a `j = 0` row makes `orient()` reject the target (G4).
+
+Artifact: `h2/h2_polygon_consistency.json`, log `h2/polygon_consistency.log`.
 
 ## Tooling findings recorded this session
 
