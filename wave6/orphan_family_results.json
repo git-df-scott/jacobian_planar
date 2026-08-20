@@ -80,5 +80,10 @@
   "tag": "F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))",
   "verdict": "{'name': 'orph_332344', 'status': 'TIMEOUT', 'secs': 240.30924439430237, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
   "wall": 240.3
+ },
+ {
+  "tag": "F1(m,n)=5,7 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "verdict": "{'name': 'orph_345092', 'status': 'TIMEOUT', 'secs': 240.20377707481384, 'info': {'nparams': 129, 'jmax': 30, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(101)', 'c(129)']}}",
+  "wall": 240.2
  }
 ]
