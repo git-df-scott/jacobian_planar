@@ -1,0 +1,23 @@
+{
+ "matched": 118,
+ "unmatched": [],
+ "family_tagged": 46,
+ "unparsed": 16,
+ "checks": [
+  [
+   "P1 POSITIVE: chain-tagged targets are matched against the independent enumeration",
+   true,
+   "118 matched, 0 not"
+  ],
+  [
+   "P2 NEGATIVE: a corrupted tag does not match",
+   true,
+   "corrupted final corner (99, 4, 8)"
+  ],
+  [
+   "P3 NEGATIVE: an (m,n) that is not in MN is rejected",
+   true,
+   "(9, 14) not in [(2, 3), (7, 11), (12, 19), (17, 27), (22, 35)]"
+  ]
+ ]
+}

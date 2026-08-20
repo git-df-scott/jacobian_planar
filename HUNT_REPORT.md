@@ -160,6 +160,22 @@ Newton step at about 1e-8 accuracy and could stall a search near 1e-5 without
 that being a fact about the system). On the planted control the exact version
 reaches 1.29e-11.
 
+## Item 3 — the queue's targets have independent provenance
+
+`campaign/audit_tracks/trackD_targets.json` lists 180 targets whose tags name a
+chain and a cusp pair; nothing in the campaign checked those against an
+independent enumeration. `h2/w5_h2_target_provenance.py` (3/3) rebuilds the
+admissible complete chains from arXiv:1708.07936's pseudocode — the same
+implementation already certified 19/19 against that paper's own tables — and
+asks, per target, whether a chain with that A₀ and that final corner exists,
+whether (m,n) is in MN of that corner in either orientation, and whether
+max(m,n)·v11(A₀) equals the recorded max.
+
+**118 of 118 chain-tagged targets match; 0 do not.** (46 are family-tagged and
+16 carry a tag shape this parser does not read; both are reported as such rather
+than counted as matches.) Negative controls: a corrupted final corner does not
+match, and an (m,n) outside MN is rejected.
+
 ## Tooling findings recorded this session
 
 Two silent lies in msolve 0.10.1, each found by minimal reproduction, each

@@ -1,0 +1,11 @@
+==============================================================================
+provenance of the above-125 queue's targets
+==============================================================================
+    index: 5706 distinct chains, 1679 (A0, final corner) shapes
+    targets: 180; chain-tagged 118; family-tagged 46; unparsed 16
+    [PASS] P1 POSITIVE: chain-tagged targets are matched against the independent enumeration   118 matched, 0 not
+    [PASS] P2 NEGATIVE: a corrupted tag does not match   corrupted final corner (99, 4, 8)
+    [PASS] P3 NEGATIVE: an (m,n) that is not in MN is rejected   (9, 14) not in [(2, 3), (7, 11), (12, 19), (17, 27), (22, 35)]
+==============================================================================
+    3/3 checks passed
+==============================================================================
