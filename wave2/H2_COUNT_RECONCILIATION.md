@@ -73,3 +73,50 @@ reason rather than silently — five because `c_t = (a+b_t)/a_t` is not an integ
 (the monomial twist does not close), one because `A'_t` is not printed in §6,
 one because no shape passes the ε filter. That is a named out-of-scope set, not
 a gap.
+
+---
+
+# Two-prime sweep — results as of 127/180
+
+Both primes `≡ 1 (mod 3)`: **65521** and **65539**. `EMPTY` requires *both*;
+one-EMPTY-one-LIVE would be reported as `DISAGREE`, never averaged.
+
+| outcome | count |
+|---|---:|
+| **EMPTY at both compliant primes** | **31** |
+| TIMEOUT (90 s / prime budget) | 96 |
+| **DISAGREE** | **0** |
+| **LIVE** | **0** |
+| not yet run | 53 |
+
+**The old table is fully reproduced.** All **20/20** shapes certified EMPTY in
+the previous single-prime (65521) run come back EMPTY at both compliant primes —
+no disagreement anywhere — and the sweep adds **11 EMPTYs the old table did not
+have**.
+
+## The real stall point, named by parameter count
+
+The sweep does not fail uniformly; it fails by size, and the boundary is sharp
+enough to state:
+
+```
+EMPTY   verdicts:  params 20 .. 82
+TIMEOUT verdicts:  params 38 .. 152
+never run        :  params 152 .. 779
+```
+
+Parameter count is not a clean threshold — 50, 55 and 82 decide while 48, 51,
+53 and 56 time out — so shape matters too. But the direction is unambiguous, and
+the **53 unrun targets carry 152–779 parameters**, an order of magnitude beyond
+anything this engine has decided. They are not "unrun for want of time"; they
+are out of reach of the y-adic + Singular route at any plausible budget.
+
+That replaces the old framing. *"~150 of 167 targets unrun"* suggested a queue
+that just needed more hours. The accurate statement is:
+
+> The above-125 sweep decides shapes up to roughly 80 parameters and stalls
+> above that. 31 shapes are EMPTY at two compliant primes. The remainder is
+> blocked on engine capacity, not on schedule.
+
+A retry pass at 300 s/prime is chained behind pass 1 (`chain_retry.sh`), taking
+the cheapest 60 timeouts first; it can only move the boundary, not remove it.

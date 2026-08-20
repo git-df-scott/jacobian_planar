@@ -1458,5 +1458,620 @@
   "tier": "sec6>=125",
   "budget": 90,
   "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 92,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 92,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 92,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 95,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 95,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 95,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 95,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F7(m,n)=2,7 | a=3 b=5 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 147,
+  "params": 98,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=5 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 98,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 104,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 104,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F8(m,n)=3,7 | a=3 b=6 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 147,
+  "params": 109,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F15(j=0;m,n=3,7) | a=3 b=6 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 231,
+  "params": 109,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=4 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 113,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 144,
+  "params": 116,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 122,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 122,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 122,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=2 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 128,
+  "params": 122,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=5 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 137,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F2(j=2;m,n=4,7) | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 175,
+  "params": 139,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=2 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 139,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(9,36)/17/9,4 (m,n)=2,3 | a=9 b=5 c'=2 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 135,
+  "params": 139,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "F3(j=1;m,n=7,5) | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 175,
+  "params": 142,
+  "tier": "gen>150",
+  "budget": 90,
+  "secs": 90
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=3 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 145,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
+ },
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=6 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 90,
+    "out": ""
+   }
+  },
+  "max": 132,
+  "params": 152,
+  "tier": "sec6>=125",
+  "budget": 90,
+  "secs": 90
  }
 }
