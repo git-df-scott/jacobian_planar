@@ -1,0 +1,95 @@
+# GGV B=16 mu-eliminant -- chart A, d = deg(q1) = 4
+# builder: wave5/w5_b16_reduce.py::reduced_charts(4)['A']
+# field: GF(1000003)  (p = 1 mod 3)
+# surviving variables: mu0, mu3
+# every a_i, every b_i and the saturation variable t are eliminated
+# exact polynomials below; an empty generator list means the ZERO ideal,
+# a lone '1' means the UNIT ideal <1> (no admissible root)
+
+======================================================================
+SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve
+======================================================================
+engine: msolve -e 10 -g 2
+status: OK
+n_generators_in: 16
+n_eliminated: 10
+peak_rss_kb: 10464
+wall_s: 0.1
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d4_sat.msolve.ms
+generators:
+  1
+
+======================================================================
+SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular
+======================================================================
+engine: Singular eliminate()
+status: OK
+n_generators_in: 16
+n_eliminated: 10
+peak_rss_kb: 21820
+wall_s: 2.18
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d4_sat.sing
+generators:
+  1
+
+======================================================================
+UNSATURATED (saturation generator removed) -- engine msolve
+======================================================================
+engine: msolve -e 9 -g 2
+status: OK
+n_generators_in: 15
+n_eliminated: 9
+peak_rss_kb: 10340
+wall_s: 0.07
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d4_unsat.msolve.ms
+generators:
+  1
+
+======================================================================
+UNSATURATED (saturation generator removed) -- engine Singular
+======================================================================
+engine: Singular eliminate()
+status: OK
+n_generators_in: 15
+n_eliminated: 9
+peak_rss_kb: 20408
+wall_s: 1.7
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d4_unsat.sing
+generators:
+  1
+
+======================================================================
+NEGATIVE CONTROL -- first generator only (engine msolve)
+======================================================================
+engine: msolve -e 10 -g 2
+status: OK
+n_generators_in: 1
+n_eliminated: 10
+peak_rss_kb: 5136
+wall_s: 0.01
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+generators:
+  <empty list: the ZERO ideal>
+
+======================================================================
+RECORDED PROBE -- one generator dropped (engine msolve; data, not a control)
+======================================================================
+engine: msolve -e 10 -g 2
+status: OK
+n_generators_in: 15
+n_eliminated: 10
+peak_rss_kb: 7504
+wall_s: 0.03
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+generators:
+  1

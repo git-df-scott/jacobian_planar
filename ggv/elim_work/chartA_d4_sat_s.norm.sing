@@ -1,0 +1,7 @@
+option(redSB);
+ring R = 1000003,(mu0,mu3),dp;
+ideal J = 1;
+J = std(J);
+int i; for (i=1;i<=size(J);i++) { print(J[i]); }
+print("SINGULAR_DONE");
+quit;

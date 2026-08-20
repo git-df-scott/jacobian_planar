@@ -1,0 +1,11 @@
+[chart A] d=3
+PASS CROSS-ENGINE d=3 chart A (sat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS CROSS-ENGINE d=3 chart A (unsat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS NEGATIVE CONTROL d=3 chart A: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartA_d3.txt
+[chart A] d=4
+PASS CROSS-ENGINE d=4 chart A (sat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS CROSS-ENGINE d=4 chart A (unsat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS NEGATIVE CONTROL d=4 chart A: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+  -> ggv/mu_eliminants/chartA_d4.txt
+[chart A] d=5

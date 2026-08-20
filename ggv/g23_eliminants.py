@@ -116,15 +116,26 @@ def elim_msolve(eqs, elim, keep, tag, timeout):
         r["gens"] = None                    # failed run: no artifact, never a verdict
         return r
     ename = {str(v) for v in elim}
+    # msolve -g 2 prints a '#'-commented header (characteristic, variable order,
+    # monomial order, basis length) and then the reduced basis as a bracketed,
+    # comma-separated list, one element per line.  The header must be stripped:
+    # feeding it downstream was silently turning "#monomial order: ..." into a
+    # fake generator.
+    payload = "\n".join(l for l in body.splitlines() if not l.lstrip().startswith("#"))
+    payload = payload.strip().rstrip(":").strip()
+    if payload.startswith("["):
+        payload = payload[1:]
+    if payload.endswith("]"):
+        payload = payload[:-1]
     gens_out = []
-    for chunk in re.split(r",\s*\n|\n", body.strip().strip("[]")):
-        s = chunk.strip().rstrip(",").strip()
-        if not s or s == "[-1]":
+    for chunk in payload.split(","):
+        g = chunk.strip()
+        if not g:
             continue
-        toks = set(re.findall(r"[A-Za-z_]\w*", s))
-        if toks & ename:
+        toks = set(re.findall(r"[A-Za-z_]\w*", g))
+        if toks & ename:            # still mentions an eliminated variable
             continue
-        gens_out.append(s)
+        gens_out.append(g)
     r["gens"] = gens_out
     return r
 
@@ -155,6 +166,9 @@ quit;
         return r
     lines = [l.strip() for l in out.splitlines() if l.strip()
              and l.strip() != "SINGULAR_DONE"]
+    if any(l.startswith("?") for l in lines):
+        r["gens"] = None            # Singular error text is not an eliminant
+        return r
     r["gens"] = lines
     return r
 
@@ -177,10 +191,17 @@ print("SINGULAR_DONE");
 quit;
 """)
     r = sh(f"Singular -q --no-warn '{src}'", timeout)
-    if "SINGULAR_DONE" not in (r["stdout"] or ""):
+    out = r["stdout"] or ""
+    if "SINGULAR_DONE" not in out:
         return None
-    return [l.strip() for l in r["stdout"].splitlines()
-            if l.strip() and l.strip() != "SINGULAR_DONE"]
+    lines = [l.strip() for l in out.splitlines()
+             if l.strip() and l.strip() != "SINGULAR_DONE"]
+    # Singular reports errors on stdout beginning with '?'.  Returning those as
+    # if they were generators is exactly the kind of silent lie the campaign
+    # tooling contract warns about -- refuse the result instead.
+    if any(l.startswith("?") for l in lines):
+        return None
+    return lines
 
 
 # --------------------------------------------------------------- driver -----
@@ -272,16 +293,54 @@ def do(d, chart, timeout, cross):
                   nm is not None and ns is not None and nm == ns,
                   f"msolve={nm} singular={ns}")
 
-    # NEGATIVE CONTROL: drop one generator -> the eliminant must change
+    # NEGATIVE CONTROL.  Dropping ONE generator is not a usable control here:
+    # these ideals are heavily overdetermined, so the eliminant is unchanged by
+    # almost any single omission and the probe cannot fail -- it certifies
+    # nothing.  The control that IS required to fail keeps only the FIRST
+    # generator: a proper sub-ideal of a unit ideal cannot itself be the unit
+    # ideal unless that one generator is a unit, so the eliminant is required
+    # to differ.  The drop-one probe is still run and RECORDED, as data.
     eqs, elim, keep = chart_ideal(d, chart, saturated=True)
+    base = results[(True, "msolve")]
+
+    if base is None:
+        # The primary elimination produced no artifact (OOM / timeout), so there
+        # is nothing for a control to be compared against.  Running the controls
+        # anyway would burn a full deadline each for no information and delay
+        # every later d.  This is RECORDED, not skipped silently.
+        LOG.append(f"NOT RUN d={d} chart {chart}: controls skipped -- the primary "
+                   f"elimination produced no artifact, so there is no eliminant "
+                   f"to compare a control against")
+        print(f"  controls not run at d={d} chart {chart}: no primary eliminant",
+              flush=True)
+        blocks.append(("CONTROLS NOT RUN -- primary elimination produced no artifact",
+                       {"engine": "-", "status": "NOT-RUN", "n_generators_in": 0,
+                        "n_eliminated": len(elim), "peak_rss_kb": -1, "wall_s": 0,
+                        "exit": "-", "mem_policy": MEM_POLICY, "gens": None}))
+        path = write_eliminant(chart, d, blocks)
+        print(f"  -> {os.path.relpath(path, REPO)}", flush=True)
+        return results
+
+    r1g = elim_msolve(eqs[:1], elim, keep, tagbase + "_first1", timeout)
+    n1g = normalise(r1g["gens"], keep, tagbase + "_first1_m")
+    check(f"NEGATIVE CONTROL d={d} chart {chart}: the ideal of its FIRST "
+          f"generator alone has a different eliminant",
+          base is not None and n1g is not None and n1g != base,
+          f"full={base} first-generator-only={n1g}")
+    blocks.append(("NEGATIVE CONTROL -- first generator only (engine msolve)",
+                   {"engine": "msolve -e %d -g 2" % len(elim), "status": status(r1g),
+                    "n_generators_in": 1, "n_eliminated": len(elim),
+                    "peak_rss_kb": r1g["rss_kb"], "wall_s": r1g["wall_s"],
+                    "exit": ("TIMEOUT" if r1g["timeout"] else r1g["rc"]),
+                    "mem_policy": MEM_POLICY, "gens": n1g}))
+
     dropped = [e for e in eqs if not e.has(t)][:-1] + [e for e in eqs if e.has(t)]
     rn = elim_msolve(dropped, elim, keep, tagbase + "_drop1", timeout)
     nn = normalise(rn["gens"], keep, tagbase + "_drop1_m")
-    base = results[(True, "msolve")]
-    check(f"NEGATIVE CONTROL d={d} chart {chart}: dropping one generator changes "
-          f"the eliminant", base is not None and nn is not None and nn != base,
-          f"full={base} dropped-one={nn}")
-    blocks.append(("NEGATIVE CONTROL -- one generator dropped (engine msolve)",
+    LOG.append(f"DATA d={d} chart {chart}: drop-one-generator eliminant = {nn} "
+               f"(full = {base})")
+    blocks.append(("RECORDED PROBE -- one generator dropped (engine msolve; data, "
+                   "not a control)",
                    {"engine": "msolve -e %d -g 2" % len(elim), "status": status(rn),
                     "n_generators_in": len(dropped), "n_eliminated": len(elim),
                     "peak_rss_kb": rn["rss_kb"], "wall_s": rn["wall_s"],
@@ -298,16 +357,21 @@ def main(chart, ds, timeout):
     os.makedirs(OUTD, exist_ok=True)
     res = {}
     for d in ds:
+        done = os.path.join(OUTD, f"chart{chart}_d{d}.txt")
+        if os.path.exists(done) and os.environ.get("GGV_FORCE") != "1":
+            print(f"[chart {chart}] d={d}: already computed, skipping "
+                  f"({os.path.relpath(done, REPO)})", flush=True)
+            continue
         print(f"[chart {chart}] d={d}", flush=True)
         res[d] = do(d, chart, timeout, cross=(d in (3, 4)))
     # POSITIVE CONTROL at d=3, chart A: the chart is empty there, so the
     # saturated eliminant must be the unit ideal.
-    if 3 in res and chart == "A":
+    if 3 in res and chart == "A" and res.get(3):
         g = res[3][(True, "msolve")]
         check("POSITIVE CONTROL d=3 chart A: saturated eliminant is the unit "
               "ideal <1> (no admissible root), matching the known empty chart",
               g == ["1"], f"eliminant={g}")
-    if 3 in res and chart == "B":
+    if 3 in res and chart == "B" and res.get(3):
         g = res[3][(True, "msolve")]
         check("POSITIVE CONTROL d=3 chart B: saturated eliminant recorded",
               g is not None, f"eliminant={g}")
