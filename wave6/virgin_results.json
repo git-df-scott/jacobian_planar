@@ -236,5 +236,12 @@
   "shape_tag": "a=6 b=4 r=1 i=1",
   "verdict": "{'name': 'w6_384804_1', 'status': 'RAN', 'out': 'params: 20\\nconditions: 69\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.014365434646606445, 'info': {'nparams': 20, 'jmax': 14, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(17)', 'c(20)']}}",
   "wall_s": 0.0
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_6587_0', 'status': 'TIMEOUT', 'secs': 240.18493223190308, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.2
  }
 ]
