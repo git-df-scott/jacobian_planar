@@ -1,7 +1,8 @@
 [
  {
   "name": "w6_35657_0",
-  "verdict": "MS-TIMEOUT",
-  "wall": 300.1
+  "verdict": "NO-OUTPUT",
+  "head": "",
+  "wall": 43.6
  }
 ]
