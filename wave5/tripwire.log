@@ -1,0 +1,8 @@
+21:58:01 enforcer armed (stop<8G, resume>12G)
+21:58:01 swapfree=18172352kB twin_rss=3092kB
+21:58:34 enforcer armed (stop<8G, resume>12G)
+21:58:34 swapfree=18165100kB twin_rss=5997924kB
+21:59:34 swapfree=17946660kB twin_rss=5782016kB
+22:00:34 swapfree=18503264kB twin_rss=5717480kB
+22:01:34 swapfree=18503264kB twin_rss=5827960kB
+22:02:34 swapfree=18503264kB twin_rss=5895576kB
