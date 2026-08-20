@@ -43,7 +43,21 @@ definitions of [5] and from nothing else.
   length-2, 1 length-3 — **exactly 34, row for row**;
 * GGHV's own ten-row §2 table equals the max ≤ 124 part of the reproduction.
 
-**The 105 ≤ max ≤ 124 rerun.** Exactly four nodes exist, and no others:
+**The 105 ≤ max ≤ 124 rerun, in the literal form asked for.** For an ordered
+pair (d₁, d₂) the data are forced — `g = gcd(d₁,d₂) = v11(A₀)`, `m = d₁/g`,
+`n = d₂/g` — so every pair in the window can be decided outright, and
+`gghv_audit/w5_pairs_105_124.py` (4/4 checks) decides **all 4560 of them**:
+
+| outcome | pairs | reason |
+|---|---:|---|
+| ARISES | **6** | the six orientations of (72,108), (80,112), (80,120) |
+| ELIMINATED-BY-ENUMERATION | 214 | gcd forces m = 1 or n = 1 |
+| ELIMINATED-BY-ENUMERATION | 4316 | no admissible complete chain has that v11(A₀) |
+| ELIMINATED-BY-ENUMERATION | 24 | chains with that v11(A₀) exist but none has that (m,n) |
+| NOT-ELIMINATED-BY-MY-RERUN | **0** | — |
+
+No pair is left undecided, and no pair arises that GGHV does not list. The four
+distinct nodes behind those six orientations:
 
 | deg pair | A0 | chain | final corner | (m,n) | GGHV node | class |
 |---|---|---|---|---|---|---|
