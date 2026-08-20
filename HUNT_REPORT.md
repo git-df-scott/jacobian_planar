@@ -22,9 +22,9 @@ the campaign record.
 | **1c. Direct 71-variable route** | all 92 equations, all variables, one msolve call, chart d_3_3=1 | `wave4/artifacts/c2_full_*`, kernel log | **STALLED — OOM at 10 GB RSS** (recorded, not a verdict) |
 | **1d. Edge-count reconciliation** | 5 (here) vs 1144 (`wave1/edgeQ_input.ms`) | `wave4/w4_edge_reconciliation.py` (7/7) | **consistent, different normalisations** — see below |
 | **2a. Pentagon hit detector v3** | all three gauges fixed, absolute normalisation, O(1)-allowed as an acceptance condition; float Newton from random starts; exact mod-p slice search at 3 compliant primes | `pent/w5_pent_hitdetector_v3.py`, `pent/pent_slice.py`, `pent/pent_v3_results.json`, `pent/pent_v3.log` | **see log** — controls 9/9 |
-| **2b. msolve on the pentagon exports** | graded prefix ladder L18…L23 from `pent_L23.ms`, each run twice (2 gauges as exported, and with the third gauge `p_1_0 − 1` added), `-t` threads, peak RSS and exit code recorded | `pent/RUNLOG.tsv`, `pent/pent_msolve.log` | **see RUNLOG** |
-| **3. H2 above-125 sweep** | the shipped positive control was found **vacuous** and replaced; the queue re-run at a 900 s cap per prime, two compliant primes | `h2/w5_h2_controls.py` (5/5), `h2/h2_state.json`, `h2/h2_sweep_900.log` | **see log** |
-| **4. H4 deg_y = 3 slice** | the staged msolve escalation continued, ladder extended past the four recorded OOM cells, each cell at **two** compliant primes with disagreement reported not averaged | `h4/w5_h4_escalate.py`, `h4/h4_escalate.log` | **see log** |
+| **2b. msolve on the pentagon exports** | graded prefix ladder L18…L23 from `pent_L23.ms`, each run twice (2 gauges as exported, and with the third gauge `p_1_0 − 1` added), peak RSS and exit code recorded | `pent/RUNLOG.tsv`, `pent/RUNLOG_NOTES.md`, `pent/pent_msolve.log` | **STALLED, stall points named**: `L18` with 3 gauges → **OOM**, exit −9, peak RSS 6,238,548 kB after 1798.9 s; `L18` with 2 gauges → **TIMEOUT** at 3600 s. Higher rungs continue |
+| **3. H2 above-125 sweep** | the shipped positive control was found **vacuous** and replaced (5/5); the queue re-run at a 900 s cap per prime, two compliant primes; then a **second engine** (msolve F4/FGLM) put on the targets Singular cannot decide | `h2/w5_h2_controls.py`, `h2/h2_state.json`, `h2/h2_sweep_900.log`, `h2/h2_changelog.json`, `h2/w5_h2_msolve_escalate.py`, `h2/h2_msolve.log` | **NO VERDICT CHANGE at the 900 s cap**: the two targets re-run stayed TIMEOUT; 0 LIVE, 0 DISAGREE anywhere. Second engine: parser and cross-engine controls pass (msolve reproduces Singular's EMPTY on a decided target in 0.07 s), targets in progress |
+| **4. H4 deg_y = 3 slice** | the staged msolve escalation continued, ladder extended past the four recorded OOM cells, each cell at **two** compliant primes with disagreement reported not averaged | `h4/w5_h4_escalate.py`, `h4/h4_escalate.log`, `h4/INTERVENTION_NOTE.md` | **STALLED — OOM, at both primes, on every cell reached**: k=4 deg≤6, k=5 deg≤4, k=5 deg≤5, k=6 deg≤4, k=4 deg≤7. msolve's parser and cross-engine controls pass, so the OOMs are the engine's limit, not a misread. One cell's second prime was hand-terminated to free memory and is marked UNKNOWN, not OOM |
 
 No CANDIDATE-UNVERIFIED was produced by any item. Nothing looked live.
 
@@ -60,6 +60,33 @@ the elimination route collapses the residual to 27 conditions in 6 parameters an
 is decided in hundredths of a second. Working in `F_p[w]/(g)` for each
 irreducible factor `g` of the eliminant covers **every root, including those in
 extensions of F_p** — not only the F_p-rational ones.
+
+## Item 1 — the edge variety over ℚ, exactly
+
+Beyond what the queue asked for (mod p), the eliminant of the w=−4 block in the
+chart d_3_3 = 1, with all gauges fixed and the vertex conditions saturated, was
+reconstructed **over ℚ**:
+
+* at **96** primes ≡ 1 (mod 3) msolve returns a rational parametrisation whose
+  eliminant has degree **5**, at every one of them
+  (`wave4/w4_edge_eliminant_Q.py`, 5/5);
+* CRT + rational reconstruction over 41 of them gives an explicit degree-5
+  polynomial with coefficients of up to 122 digits, and that polynomial
+  **reproduces msolve's eliminant at 6 primes that were not used to build it**;
+  a single corrupted coefficient fails the same check;
+* the reconstructed polynomial is **squarefree, irreducible over ℚ, has no
+  rational root, and its Galois group is S5**
+  (`wave4/w4_edge_eliminant_structure.py`, 6/6, with a D5 quintic as the
+  negative control on the Galois call).
+
+So the five edge points of the fully rigidified case-(2) w=−4 block form a
+single Galois orbit with full symmetric group, and none of them is rational.
+**Standing: reconstructed and verified at held-out primes, not a char-0 Gröbner
+proof** — the exact char-0 solve (`msolve -P 1` on the same system over ℚ) was
+launched alongside and is reported separately with its own outcome.
+
+Artifacts: `wave4/artifacts/edge_eliminant_Q_one.json`,
+`wave4/artifacts/edge_eliminant_structure.json`, `wave4/elimQ.log`.
 
 ## Item 1d — the 5-versus-1144 reconciliation
 
