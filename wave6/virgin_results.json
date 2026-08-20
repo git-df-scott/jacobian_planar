@@ -152,5 +152,26 @@
   "shape_tag": "a=4 b=4 r=2 i=1",
   "verdict": "{'name': 'w6_79970_1', 'status': 'TIMEOUT', 'secs': 240.17647099494934, 'info': {'nparams': 32, 'jmax': 18, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(26)', 'c(32)']}}",
   "wall_s": 240.2
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=2",
+  "verdict": "{'name': 'w6_79970_2', 'status': 'TIMEOUT', 'secs': 240.1694438457489, 'info': {'nparams': 187, 'jmax': 18, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(119)', 'c(171)', 'c(187)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=3",
+  "verdict": "{'name': 'w6_79970_3', 'status': 'TIMEOUT', 'secs': 240.18480277061462, 'info': {'nparams': 110, 'jmax': 18, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(71)', 'c(98)', 'c(110)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_356508_0', 'status': 'TIMEOUT', 'secs': 240.16918921470642, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.2
  }
 ]
