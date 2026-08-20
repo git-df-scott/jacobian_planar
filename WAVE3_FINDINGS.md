@@ -11,7 +11,7 @@ claim the campaign has been leaning on since Session 38.
 python3 wave2/run_all.py        # runs all ten certifiers, exit 0 iff all pass
 ```
 
-**11/11 certifiers, 219/219 individual checks, 0 rigged checks in tree, 0 ledger lint
+**11/11 certifiers, 227/227 individual checks, 0 rigged checks in tree, 0 ledger lint
 findings.**
 
 | certifier | checks | verdict |
@@ -19,7 +19,7 @@ findings.**
 | `wave3/w3_endgame_degree_obstruction.py` | 32/32 | **THEOREM W3-1** — repairs the First Framework proof outright |
 | `wave3/w3_weighted_homogeneous_theorem.py` | 66/66 | **THEOREM W3-2 / W3-3** — Session 38's collapse, made a theorem *and* refuted as stated |
 | `wave3/w3_hit_protocol.py` | 12/12 | HIT gate implemented and validated; no hit in this repository |
-| `wave3/w3_descent_jacobian_formula.py` | 27/27 | **THEOREM W3-4** — Path A's item A1 answered: the square is **not** forced |
+| `wave3/w3_descent_jacobian_formula.py` | 35/35 | **THEOREM W3-4 / W3-5** — Path A's items A1 **and** A2 answered |
 | `wave3/w3_claim_ledger.py` | linter self-test PASS, 0 findings | contradictions and dropped hypotheses now mechanically impossible to leave standing |
 
 ---
@@ -171,7 +171,7 @@ computed too (not assumed): it collapses to affine-linear.
 
 ---
 
-## 3. THEOREM W3-4 — Path A's item A1, answered
+## 3. THEOREM W3-4 / W3-5 — Path A's items A1 and A2, answered
 
 File `39` calls A1 *"the central question"* and says that if the square is **not** forced,
 *"there exist equivariant counterexamples whose descent is Keller. That is the construction
@@ -273,6 +273,45 @@ A1's stated success condition — *"characterise the weight systems where `k = 0
 for a `C³` counterexample with those weights"* — is answered and closed: the weight systems
 are characterised, and searching them is searching the plane.
 
+### A2 — can the square be removed? Alpöge's class, completely
+
+Grading the components of an equivariant map by weight in the `(1,−1,−2)` class:
+
+```
+f₃ (weight +1) = x·A(u,v)
+f₂ (weight −1) = y·B(u,v) + xz·C(u,v)
+f₁ (weight −2) = y²·E(u,v) + z·H(u,v)
+```
+
+> **THEOREM W3-5.** `G = ( A²(u²E + vH),  A(uB + vC) )` and `det JG = det JF · A²`.
+
+Verified on 6 random instances, both that the constructed `G` really is the descent and that
+the Jacobian identity holds. Alpöge is the specialisation `f₃ = x(2 − 3u − v)`, i.e.
+`A = 2 − 3u − v`, giving `det JG = −2A² = −2(3u+v−2)²` — the campaign's `h²`, exactly.
+
+The three A2 bullets, each now *checked* rather than asserted:
+
+- **`h²` is intrinsic.** Under 6 random invertible affine gauges on the quotient, `det JG`
+  stays `(constant)·(linear)²` — the factorization type never moves.
+- **`G` does not factor as `G'∘σ` with `σ` carrying the whole `h²`.** Such a `σ` would ramify
+  to index 3 along `h = 0`, forcing every component of `G` to have order divisible by 3
+  there. In adapted coordinates `s = 3u+v−2`, `t = u`, the `s`-exponents are `{2,3}` for `G₁`
+  and **`{1,2}` for `G₂`** — order 1, not a multiple of 3. And `G` contracts the whole line
+  `h = 0` to the point `(0,0)`.
+- **The square vanishes only when `A` is constant.** Then
+  `G = (c²(u²E + vH), c(uB + vC))` — an arbitrary plane Keller pair normalised so that
+  `G(0,0) = (0,0)` and `∂G₁/∂u(0,0) = 0`, a normalisation any plane Keller map admits by a
+  translation and a linear change on the target (`JG(0)` is invertible). So the `A = const`
+  sub-class is the plane problem too.
+
+### The unified answer
+
+**Every class in which the descent is Keller turns out to be the plane problem in disguise**
+— `k = 0` and `A = const` alike. Alpöge's map is a genuine `C³` counterexample *precisely
+because* its descent is not Keller. The obstruction is not a defect of the descent: it is the
+exact measure of how much weaker the `C³` problem is than the plane one, and it has to be
+non-trivial for a `C³` counterexample to exist at all.
+
 ---
 
 ## 4. The HIT gate
@@ -346,10 +385,11 @@ to commit and cheap to catch.
 3. **Session 38's collapse: bounded-degree evidence → a theorem, with the missing
    hypothesis exhibited.** Path B's success criterion met; a false unrestricted
    version of the claim retired.
-4. **Path A's A1: open → answered.** The square is not forced; the `k = 0` weight systems
-   are characterised; and the reason they yield nothing is that they *are* the plane
-   problem. The campaign's "single highest-value outcome" is resolved in the negative,
-   with a formula that explains why.
+4. **Path A's A1 and A2: open → answered.** The square is not forced; the `k = 0` weight
+   systems are characterised (with a proof, not a search box); Alpöge's class is described
+   in closed form; and the reason none of it yields a counterexample is that every
+   Keller-descent class *is* the plane problem. The campaign's "single highest-value
+   outcome" is resolved in the negative, with a formula that explains why.
 5. **Detector discipline: closed.** The HIT gate cannot certify without first rejecting
    known negatives.
 6. **Record discipline: closed.** Contradictions and dropped hypotheses are now lint

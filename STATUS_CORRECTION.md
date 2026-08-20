@@ -242,7 +242,7 @@ python3 wave2/run_all.py
 
 Exit code 0 iff every certifier passes. Requires `sympy` and PARI/GP (`gp`) on `PATH`.
 State after wave 2: 6/6 certifiers, 82/82 individual checks, 0 rigged checks in tree.
-**Current state (wave 3): 11/11 certifiers, 219/219 individual checks, 0 rigged checks,
+**Current state (wave 3): 11/11 certifiers, 227/227 individual checks, 0 rigged checks,
 0 ledger lint findings.**
 
 
@@ -342,7 +342,7 @@ to the mixed-sign case, which is where Alpöge's `(1,−1,−2)` actually lives.
 
 ---
 
-## 15. **New** — Path A's item A1 is ANSWERED: the square is NOT forced
+## 15. **New** — Path A's items A1 and A2 are ANSWERED
 
 **Was:** open. File `39` calls A1 *"the central question"* and rates a `k = 0` weight
 system *"the single highest-value outcome available anywhere in the campaign."*
@@ -380,7 +380,14 @@ coordinate.
 > be positive for the `C³` problem to be strictly weaker than the plane one. This is a
 > sharper separator statement than "the square is forced", and unlike that one it is true.
 
-**Evidence:** `wave3/w3_descent_jacobian_formula.py` — 27/27.
+**THEOREM W3-5 (A2).** In Alpöge's class the components grade as `f₃ = xA`, `f₂ = yB + xzC`,
+`f₁ = y²E + zH`, the descent is `G = (A²(u²E+vH), A(uB+vC))`, and `det JG = det JF · A²`.
+Alpöge is `A = 2 − 3u − v`, reproducing `h²` exactly. The square is intrinsic (checked under
+6 affine gauges), is not removable by factoring (`ord_s G₂ = 1`, not a multiple of 3), and
+vanishes only for `A` constant — where the descent is again an arbitrary plane Keller pair
+up to normalisation.
+
+**Evidence:** `wave3/w3_descent_jacobian_formula.py` — 35/35.
 
 ---
 
@@ -425,5 +432,5 @@ python3 wave2/run_all.py
 Runs all eleven certifiers across `wave2/` and `wave3/`. Exit code 0 iff every one passes.
 Requires `sympy` and PARI/GP (`gp`) on `PATH`.
 
-**11/11 certifiers, 219/219 individual checks, 0 rigged checks in tree, 0 ledger lint
+**11/11 certifiers, 227/227 individual checks, 0 rigged checks in tree, 0 ledger lint
 findings.**

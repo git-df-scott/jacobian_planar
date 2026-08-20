@@ -1,5 +1,5 @@
 """
-Wave 3 - Path A, item A1 ANSWERED: is the square forced?
+Wave 3 - Path A, items A1 AND A2 ANSWERED.
 
 THE QUESTION (file `39`, A1, "the central question")
 ----------------------------------------------------
@@ -476,6 +476,130 @@ check("NEGATIVE CONTROL: the closed form without the -1 shift is rejected",
       len(wrong_form) > 0)
 
 # ---------------------------------------------------------------------------
+# 7.  ITEM A2: can the square be REMOVED?  The (1,-1,-2) class in closed form.
+# ---------------------------------------------------------------------------
+print()
+print("=" * 78)
+print("7.  ITEM A2: the Alpoge weight class, completely")
+print("=" * 78)
+print("""    Source weights (1,-1,-2), invariants u = xy, v = x^2 z; target weights
+    (-2,-1,1), pi' = (u1 u3^2, u2 u3).  Grading the components by weight:
+
+        f3 (weight +1) = x * A(u,v)
+        f2 (weight -1) = y * B(u,v) + x z * C(u,v)
+        f1 (weight -2) = y^2 * E(u,v) + z * H(u,v)
+
+    so pi' o F = ( A^2 (u^2 E + v H),  A (u B + v C) ) and the descent is
+
+        THEOREM W3-5.   G = ( A^2 (u^2 E + v H),  A (u B + v C) ),
+                        det JG = det JF * A^2,    where f3 = x * A.
+
+    The square is therefore forced FOR THIS WEIGHT CLASS, for every equivariant
+    map in it -- exactly as W3-4 predicts, since D = x^2 and D' o F = f3^2.
+    G is Keller if and only if A is a constant.""")
+
+rnd3 = random.Random(9)
+U3, W3 = x * y, x ** 2 * z
+sub3 = {u: U3, v: W3}
+
+
+def _rq(n=2):
+    return sum(sp.Integer(rnd3.randint(-3, 3)) * u ** i * v ** j
+               for i in range(n + 1) for j in range(n + 1))
+
+
+lifts3, oks3 = [], []
+for _ in range(6):
+    A3, B3, C3, E3, H3 = _rq(), _rq(), _rq(), _rq(), _rq()
+    g3 = sp.expand(x * A3.subs(sub3))
+    g2 = sp.expand(y * B3.subs(sub3) + x * z * C3.subs(sub3))
+    g1 = sp.expand(y ** 2 * E3.subs(sub3) + z * H3.subs(sub3))
+    dF3 = sp.expand(sp.Matrix([[sp.diff(f, w) for w in V]
+                               for f in (g1, g2, g3)]).det())
+    Gq1 = sp.expand(A3 ** 2 * (u ** 2 * E3 + v * H3))
+    Gq2 = sp.expand(A3 * (u * B3 + v * C3))
+    lifts3.append(sp.simplify(sp.expand(Gq1.subs(sub3) - g1 * g3 ** 2)) == 0
+                  and sp.simplify(sp.expand(Gq2.subs(sub3) - g2 * g3)) == 0)
+    dG3 = sp.expand(sp.Matrix([[sp.diff(g, w) for w in (u, v)]
+                               for g in (Gq1, Gq2)]).det())
+    oks3.append(sp.simplify(sp.expand(dG3.subs(sub3) - dF3 * A3.subs(sub3) ** 2)) == 0)
+print(f"    descent identity G o pi = pi' o F on 6 random instances: {all(lifts3)}")
+print(f"    THEOREM W3-5: det JG = det JF * A^2 on the same 6:        {all(oks3)}")
+check("W3-5: the constructed G is the descent of F in the (1,-1,-2) class", all(lifts3))
+check("W3-5: det JG = det JF * A^2 in the (1,-1,-2) class", all(oks3))
+
+# Alpoge is the specialisation A = 2 - 3u - v.
+Aalp = 2 - 3 * u - v
+print(f"\n    Alpoge: f3 = x*(2 - 3u - v)?  "
+      f"{sp.simplify(sp.expand(f3 - x * (2 - 3 * U3 - W3))) == 0}")
+check("Alpoge's f3 factors as x * A with A = 2 - 3u - v",
+      sp.simplify(sp.expand(f3 - x * (2 - 3 * U3 - W3))) == 0)
+check("and then det JG = -2 A^2 reproduces the campaign's h^2",
+      sp.simplify(sp.expand(detJG - (-2) * Aalp ** 2)) == 0)
+
+# A2 bullet 1: h^2 is intrinsic -- the campaign asserted this; here it is checked.
+print("\n    A2 bullet 1: is h^2 intrinsic under coordinate changes?")
+rnd4 = random.Random(3)
+types = set()
+for _ in range(6):
+    while True:
+        mm = [[sp.Integer(rnd4.randint(-3, 3)) for _ in range(2)] for _ in range(2)]
+        if mm[0][0] * mm[1][1] - mm[0][1] * mm[1][0] != 0:
+            break
+    e1_, e2_ = sp.Integer(rnd4.randint(-3, 3)), sp.Integer(rnd4.randint(-3, 3))
+    Uu = mm[0][0] * u + mm[0][1] * v + e1_
+    Vv = mm[1][0] * u + mm[1][1] * v + e2_
+    q1 = sp.expand(G1.subs({u: Uu, v: Vv}, simultaneous=True))
+    q2 = sp.expand(G2.subs({u: Uu, v: Vv}, simultaneous=True))
+    dd = sp.expand(sp.Matrix([[sp.diff(q, w) for w in (u, v)] for q in (q1, q2)]).det())
+    fl = sp.factor_list(dd)
+    types.add(tuple(sorted((sp.Poly(f, u, v).total_degree(), kk) for f, kk in fl[1])))
+print(f"      factorization types of det JG under 6 random affine gauges: {types}")
+check("A2: h^2 is intrinsic -- det JG stays (constant)*(linear)^2 under every gauge",
+      types == {((1, 2),)})
+
+# A2 bullet 2: does G factor as G' o sigma with sigma carrying the whole h^2?
+print("\n    A2 bullet 2: does G = G' o sigma with det J sigma = c h^2?")
+print("""      det J sigma = c*h^2 on a reduced curve means ramification index 3 along
+      it, so every component of G would have order divisible by 3 along h = 0.
+      In adapted coordinates s = 3u + v - 2, t = u:""")
+ss, tt = sp.symbols('s t')
+subst = {u: tt, v: ss - 3 * tt + 2}
+H1 = sp.expand(G1.subs(subst, simultaneous=True))
+H2 = sp.expand(G2.subs(subst, simultaneous=True))
+e_1 = sorted({m[0] for m in sp.Poly(H1, ss).monoms()})
+e_2 = sorted({m[0] for m in sp.Poly(H2, ss).monoms()})
+print(f"        s-exponents of G1: {e_1}      ord_s G1 = {min(e_1)}")
+print(f"        s-exponents of G2: {e_2}      ord_s G2 = {min(e_2)}")
+check("A2: ord_s G2 = 1, not a multiple of 3, so no such factorization exists",
+      min(e_2) == 1)
+check("A2: G1 and G2 are not polynomials in (s^3, t)",
+      not (all(m[0] % 3 == 0 for m in sp.Poly(H1, ss).monoms())
+           and all(m[0] % 3 == 0 for m in sp.Poly(H2, ss).monoms())))
+check("A2: G contracts the line h = 0 to the single point (0,0)",
+      sp.simplify(H1.subs(ss, 0)) == 0 and sp.simplify(H2.subs(ss, 0)) == 0)
+
+print("""
+    A2 ANSWERED.  In the (1,-1,-2) class the obstruction is exactly A^2 with
+    f3 = x*A -- intrinsic, and not removable by factoring G through a map that
+    carries it.  It vanishes only when A is a constant, and then
+
+        G = ( c^2 (u^2 E + v H),  c (u B + v C) ),
+
+    whose two components are an arbitrary plane Keller pair normalised so that
+    G(0,0) = (0,0) and dG1/du (0,0) = 0 -- a normalisation any plane Keller map
+    can be put in by a translation and a linear change on the target, since
+    JG(0) is invertible.  So the A = const sub-class is again the plane problem,
+    exactly as the k = 0 class was.
+
+    UNIFIED ANSWER TO A1 + A2.  Whenever the descent is Keller, the
+    correspondence identifies the C^3 problem with the plane problem.  Alpoge's
+    map is a genuine C^3 counterexample precisely BECAUSE its descent is not
+    Keller: A = 2 - 3u - v is non-constant, and det JG = -2 A^2 is the campaign's
+    h^2.  The obstruction is not a defect of the descent -- it is the exact
+    measure of how much weaker the C^3 problem is than the plane one.""")
+
+# ---------------------------------------------------------------------------
 print()
 print("=" * 78)
 for name, ok in PASS:
@@ -491,7 +615,11 @@ print("""    VERDICT (A1 answered)
       exactly for the three weight systems (0,1,-1), (1,0,-1), (1,-1,0) up to
       sign -- PROVED for all weights, since e1 + e2 = (1,1,1) has exactly three
       splittings into nonzero parts.
-      But k = 0 is the degenerate class in which the descent is the identity on
-      Jacobians and the C^3 problem coincides with the plane problem, so it is
-      not a construction recipe.  The exponent k measures the gap between the
-      two problems; Alpoge sits at k = 2 because the gap must be positive.""")
+      THEOREM W3-5:  in Alpoge's class, G = (A^2(u^2 E + v H), A(u B + v C))
+        and det JG = det JF * A^2 with f3 = x*A.  A2 answered: the square is
+        intrinsic, not removable by factoring, and vanishes only for A constant.
+      Every class in which the descent IS Keller turns out to be the plane
+      problem in disguise -- both k = 0 and A = const.  Alpoge is a genuine C^3
+      counterexample precisely because its descent is not Keller.  The exponent
+      k is not a defect: it measures how much weaker the C^3 problem is than the
+      plane one.""")

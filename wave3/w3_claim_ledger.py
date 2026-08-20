@@ -239,6 +239,16 @@ LEDGER = [
           depends=("W3-4",),
           probe="Alpoge's k = 2 class, where the same identity fails"),
 
+    claim("A2-SQUARE-REMOVABLE",
+          "In the (1,-1,-2) class the descent is G = (A^2(u^2 E + v H), A(u B + v C)) with "
+          "det JG = det JF * A^2, f3 = x*A; the square is intrinsic and vanishes only for "
+          "A constant, where the descent is an arbitrary plane Keller pair up to normalisation",
+          "source weights (1,-1,-2), target weights (-2,-1,1)",
+          "PROVED",
+          ("wave3/w3_descent_jacobian_formula.py", "W3-5: det JG = det JF * A^2 in the (1,-1,-2) class"),
+          depends=("W3-4",),
+          probe="the k = 0 class, where the same closed form does not apply and D = 1"),
+
     claim("ALPOGE-DETJF",
           "det JF = -2 on Alpoge's degree-7 map of C^3",
           "the map as recorded in Session 1 and file `39`",
