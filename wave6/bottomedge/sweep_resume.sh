@@ -26,7 +26,7 @@ body=",\n".join(str(sp.Poly(e,*unk).as_expr()).replace('**','^').replace(' ','')
 open(f"wave6/bottomedge/be_c2is1_p{p}.ms","w").write(head+str(p)+"\n"+body+"\n")
 PY
   echo "$(date +%T) solving p=$p" >> wave6/bottomedge/sweep.log
-  timeout 600 msolve -f "$f" -o wave6/bottomedge/be_p${p}.out 2>/dev/null
+  timeout 600 msolve -t 3 -f "$f" -o wave6/bottomedge/be_p${p}.out 2>/dev/null
   python3 wave6/bottomedge/analyse.py $p >> wave6/bottomedge/orbit_data.txt 2>&1
   git add -A >/dev/null 2>&1
   git commit -q -m "prime sweep: p=$p bottom-edge seed census (restart-resilient, one prime per commit)" >/dev/null 2>&1
