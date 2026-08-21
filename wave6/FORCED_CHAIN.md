@@ -72,3 +72,77 @@ variables, recompute the eliminated variables from their pivot expressions in
 reverse order, then evaluate **all 283 original equations**. Every spent
 equation vanishes identically and every live equation matches the reduced
 system pointwise, on 4 independent trials.
+
+---
+
+# v2: exploit EVERY hypothesis (`w6_forced_chain2.py`)
+
+Two things v1 left on the table, both from being too conservative:
+
+**(a) `eq41` is `−1 + c_1_0 = 0`, i.e. `c_1_0 = 1` exactly** — a gauge
+normalisation in plain sight. v1's pivot rule *skipped* any variable listed as
+nondegenerate, so it refused to solve for it. Correct rule: eliminate it and
+carry the condition forward in discharged form. Here the value is `1`, so
+`c_1_0 ≠ 0` is discharged outright.
+
+**(b) Common monomial factors.** `eq282 = 12·c_8_15·s_4_8³ − 8·d_12_23·s_4_8²`
+has every term divisible by `s_4_8²`, and `s_4_8 ≠ 0` is required — so it
+divides out, giving `d_12_23 = (3/2)·c_8_15·s_4_8`. v1 never looked for common
+factors at all.
+
+| | original | v1 | **v2** |
+|---|---|---|---|
+| equations | 283 | 229 | **212** |
+| variables | 165 | 111 | **95** |
+| pivots | – | 52 | **67** |
+
+## A redundant equation, predicted then observed
+
+`eq278 = 57·c_8_15·s_3_7·s_4_8² − 38·d_12_23·s_3_7·s_4_8`. Dividing by
+`s_3_7·s_4_8` gives `d_12_23 = (57/38)·c_8_15·s_4_8`, and **57/38 = 3/2
+exactly** — the same relation `eq282` gives. So `eq278` carries no independent
+information.
+
+This shows up in the bookkeeping: 70 variables were removed (3 zeros + 67
+pivots), which should leave 213 equations, but **212** remain. One equation went
+trivial beyond the accounting. So the system's true overdetermination is
+**117, not 118** — a one-unit correction to a number the campaign has quoted
+from two independent routes.
+
+## Honest limits of v2
+
+- When a nondegenerate variable is eliminated with a *polynomial* right-hand
+  side (`c_8_14`, `d_12_21`), the condition "that polynomial ≠ 0" should be
+  carried forward. v2 drops it. This **weakens** the hypotheses, so it can never
+  manufacture a false contradiction — any contradiction found under weaker
+  hypotheses is still valid — but it does lose forcing power.
+- One **unused case-split** remains: `s_3_7` appears as a common factor but is
+  not known nonzero, so `s_3_7 = 0` OR the reduced equation holds. Branching on
+  it is the obvious next cheap move.
+- Densification again stops the run (4.3M terms), not a fixed point.
+
+# The certificate ladder: rung 0 established rigorously
+
+**Degree 0: NO CERTIFICATE**, proved by exact Gaussian elimination over ℚ on the
+full 283-equation system (8,727 distinct monomials, 283 multiplier unknowns).
+The campaign had only the weaker statement "no equation collapses to a nonzero
+constant" from its linear loop; this is the real degree-0 Nullstellensatz test.
+
+**Degree 1 is precisely scoped but out of reach this session**: 283 × 166 =
+**46,978** multiplier unknowns against ~10⁶ sparse monomial equations
+(≈1.6M nonzeros). Dense elimination on 47k columns is ~10¹⁴ operations. It needs
+either a sparse/iterative method over F_p or a smarter support restriction.
+
+# Why the Challenger move does not apply here
+
+Searching for a **small overdetermined closed subsystem** — a set of variables
+`S` such that the equations entirely inside `S` already outnumber `S` — found
+**none**. Every small variable set carries fewer equations than variables.
+
+That is a real structural fact and it is worth stating plainly: **the pentagon's
+overdetermination by 117 is global, not localised.** There is no small piece
+whose behaviour decides the question, so the O-ring strategy — isolate the
+smallest decisive component — provably cannot be applied by subsystem
+extraction here. Any proof of emptiness must be global, which is exactly what a
+Nullstellensatz certificate is. This explains why 42 sessions never found a
+cheap kill: there isn't one to find.
