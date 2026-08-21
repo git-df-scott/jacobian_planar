@@ -46,9 +46,18 @@ declared. So this one was not accepted until:
 3. **Independent row-space check.** The constant is not in the row space of the
    reduced system, so the emptiness is *not* linear — it is a genuine Gröbner
    consequence, not an arithmetic accident.
-4. The result is what theory predicts: the system is overdetermined by ~117, so
-   emptiness is the overwhelmingly expected outcome. A solution would have been
-   the surprise.
+4. ~~The result is what theory predicts: overdetermined by ~117, so emptiness is
+   expected.~~ **RETRACTED as evidence (Feynman-appendix check).** The number is
+   forced by the degrees of the ansatz, not by the solution set: the PLANTED
+   control has the identical shape — 283 equations, 165 variables, overdetermined
+   by 118, differing only in its constant terms — and it **has** a solution, which
+   msolve found at both 112 and 97 variables. So overdetermination by 118 is
+   *compatible with a solution existing* and discriminates nothing. Citing it was
+   a tautology of the setup dressed as evidence.
+5. **Independent engine (Air France 447).** Singular `slimgb` on the identical
+   input returns **UNIT IDEAL -> VARIETY EMPTY**, agreeing with msolve. Two
+   engines, one input, same verdict. This replaces item 4 as the fourth support,
+   and it is real evidence rather than a restatement of the construction.
 
 ## What is NOT established
 

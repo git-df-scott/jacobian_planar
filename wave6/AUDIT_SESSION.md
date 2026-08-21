@@ -158,3 +158,40 @@ Unchanged in substance and better supported: **at p = 1000003 the seed-pinned
 system has no solution with `s_4_8 ≠ 0`** — and that condition is the campaign's
 own, imposed by its own `zz0`, not something I added. Still one prime; a second
 prime and a char-0 lift remain required.
+
+---
+
+# Methodology transplants applied (second pass)
+
+**Feynman's Challenger appendix — the real number vs. the comfortable one.**
+I cited "overdetermined by ~117, so emptiness is expected" as support for the
+EMPTY verdict, four separate times. **It is a tautology and is retracted.** The
+count is fixed by the degrees of the ansatz; the *planted control* has the
+identical shape (283 equations, 165 variables, overdetermined by 118, differing
+only in constant terms) and **has a solution**, found by msolve at 112 and 97
+variables. A statistic that is identical for a system with a solution and one
+without discriminates nothing. My own control refuted my own argument.
+
+**Air France 447 — don't trust one instrument.** Every `[-1]` so far came from
+msolve alone. Singular 4.3.2 was not installed; per **Feynman's ice-water demo**
+I checked rather than assumed it was unavailable, installed it, and ran
+`slimgb` on the identical input:
+
+>  `SINGULAR_VERDICT: UNIT IDEAL -> VARIETY IS EMPTY`  (under 45 s)
+
+Two independent engines, same input, same verdict. This is a real second source,
+and it replaces the retracted overdetermination argument.
+
+It also opens the characteristic-zero route concretely: "unit ideal" means
+**1 is in the ideal**, which *is* a Nullstellensatz certificate. Singular is now
+running the same test in **characteristic 0** on `char0_118v.ms` (119 variables,
+236 equations, coefficients to 10^14).
+
+**Apollo 13 — exact resource accounting.** Budget is now stated before each
+launch (free memory, concurrent jobs, cap), never after a crash. The prime-2
+SIGSEGV came from three msolve processes racing for a 15 GB machine.
+
+**Challenger — DERIVED vs FITTED.** Stated plainly: the EMPTY verdict is
+**FITTED**, not DERIVED. It holds at one prime, on one reduction path, now
+confirmed by two engines. The untested range is: every other prime, and
+characteristic zero. Repeated confirmation at p = 1000003 is not derivation.
