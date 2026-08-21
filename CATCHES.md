@@ -1738,3 +1738,31 @@ STANDARD FOR READING WHATEVER LANDS, fixed in advance so it cannot drift:
   * "[-1]" closes ONE seed at ONE prime.  It does not close pentagon case (1),
     which still has the 4 seeds invisible at this prime, and it says nothing
     about the other orientation of (72,108).
+
+--------------------------------------------------------------------------------
+SWEEP, 18:47.  Disk was the real risk, not memory.
+--------------------------------------------------------------------------------
+A routine sweep found the container at 98% disk with 1.1 GB free -- the exact
+condition that killed the W=10 eliminator earlier today (its log still ends in
+"OSError: [Errno 28] No space left on device" mid json.dump).  Neither job
+monitor would have caught this: both Groebner runs were healthy on memory and
+CPU.
+
+Freed 641 MB of superseded intermediates, all from the WITHDRAWN pentagon
+truncation work (the W >= 12 truncations are certifiably non-empty, so those
+trees decide nothing): /tmp/redm1*.json, /tmp/red1*.json.ckpt, /tmp/red1*.ms,
+/tmp/db.sing, plus the pip HTTP cache.  Disk 1.1 GB -> 1.9 GB.
+
+Before deleting, the four eliminator VERDICTS were copied into the repo at
+wave6/elim_verdicts/ so nothing decided is lost with the data:
+    W=10  crashed on ENOSPC (no verdict)
+    W=11  1 node, 0 closed, 1 open leaf: 126 eqs / 108 vars
+    W=12  1 node, 0 closed, 1 open leaf: 111 eqs / 101 vars
+    W=13  1 node, 0 closed, 1 open leaf:  95 eqs /  92 vars
+i.e. contra = 0 everywhere -- no contradiction was ever found by the eliminator,
+consistent with the retraction of the four false CONTRA signals this morning.
+
+STANDING RULE ADDED: sweep DISK as well as memory before and during any long
+run.  Memory pressure announces itself (OOM kill, RSS growth); disk exhaustion
+does not -- it corrupts a write at an arbitrary moment and can destroy hours of
+work in the middle of a json.dump.

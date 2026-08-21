@@ -1,0 +1,5 @@
+eliminator: 136 equations, 133 variables, nonzero=['c_8_14', 'd_12_21', 's_4_8'], normalize={}, mode=mod 65521 (SCOUTING ONLY)
+done in 187.5s; stats: {'r1_det': 0, 'r2': 41, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 1, 'capped': 0}
+tree: 1 nodes, 0 closed, 1 open leaves, 0 merged, 0 capped
+  open leaf 0 (depth 0): 95 eqs, 92 vars
+written: /tmp/redm13.json
