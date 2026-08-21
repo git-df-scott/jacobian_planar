@@ -1,0 +1,18 @@
+{
+ "1000003": {
+  "roots": 5,
+  "admissible": 1
+ },
+ "1000039": {
+  "roots": 5,
+  "admissible": 1
+ },
+ "1000033": {
+  "roots": 4,
+  "admissible": 0
+ },
+ "999983": {
+  "roots": 4,
+  "admissible": 2
+ }
+}

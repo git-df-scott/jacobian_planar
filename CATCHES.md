@@ -1974,3 +1974,56 @@ and #2 may too.  If both do, pushing more seeds through the same route buys more
 timeouts, not answers.  That is the point at which the level cascade stops being
 an optimisation and becomes the only path -- and it is the tool that failed
 three self-tests today, so it needs designing on paper before a fourth attempt.
+
+================================================================================
+THE NINE BOTTOM EDGES RESOLVED: 4 DEGENERATE OVER Q + 5 CONJUGATE ADMISSIBLE.
+Testing ONE admissible seed decides all five.
+================================================================================
+
+Ran the bottom-edge system at four primes and extracted every F_p-rational seed
+from each parametrization, verifying each against all 17 equations:
+
+  prime      rational roots (of 9)   verify 17/17   admissible (c8, d12 != 0)
+  1000003            5                  all             1
+  1000039            5                  all             1
+  1000033            4                  all             0
+  999983             4                  all             2
+
+TWO FACTS FALL OUT.
+
+(1) FOUR SEEDS ARE DEGENERATE AT EVERY PRIME, with c_8_14 = d_12_21 = 0 exactly.
+    Four roots rational at all four primes = four LINEAR FACTORS of the
+    eliminant over Q, all killed by the side conditions.  They are not
+    counterexample candidates and never were.
+
+(2) THE REMAINING FIVE ARE ONE GALOIS ORBIT.  Their F_p-rational count is
+    1, 1, 0, 2 across the four primes -- average exactly 1.0.  By Frobenius the
+    average number of F_p-rational roots equals the number of irreducible
+    factors over Q, so the degree-5 part is IRREDUCIBLE: a single orbit over a
+    degree-5 number field.  The prime with ZERO rational admissible seeds
+    (1000033) is decisive against the alternative that they are individually
+    rational.
+
+    This also reconciles the "vdim = 5" figure reported to me earlier, which I
+    could not match against my degree-9 eliminant: 9 = 4 degenerate + 5
+    admissible, and the 5 were the admissible ones.
+
+THE CONSEQUENCE, which removes a whole branch of planned work.  The pentagon
+system is defined over Q, so its solution set is stable under Gal(Q-bar/Q), and
+"this bottom edge extends to a solution of the full system" is therefore a
+GALOIS-INVARIANT property.  The five admissible seeds are conjugate, so
+
+        EITHER ALL FIVE EXTEND, OR NONE DO.
+
+Testing the single admissible seed at p = 1000003 -- which is exactly what job
+#2 is doing -- decides the entire admissible family.  The "four seeds invisible
+at this prime" gap recorded an hour ago is CLOSED: they are conjugates of the
+one under test, not independent cases.
+
+WHAT IS STILL OWED.  The irreducibility of the degree-5 factor rests on four
+primes, which is strong Chebotarev evidence but not a proof; it should be
+confirmed by factoring the eliminant over Q (the char-0 run produced it, and
+reconstruction by CRT from the modular runs is the cheap alternative).  And the
+Galois argument transfers "extends or not" between the five seeds over Q-bar --
+a mod-p verdict on one of them still needs the usual lifting before it says
+anything in characteristic zero.
