@@ -52,13 +52,28 @@ exceeded a 520s budget here). Then d = 75. Any BIFURCATION_POSSIBLE=true is a
 candidate point: re-run at a second prime, verify exactly, and stop everything
 else.
 
-## P3 — The one unverified literature step
+## P3 — RESOLVED, AND IT BROKE: GGHV Cor 5.7 is UNPROVEN
 
-GGHV Cor 5.7 is the ONLY thing killing the (9,27) branch of (72,108) anywhere
-in the literature, and it has never been independently re-derived. Either
-re-derive its Sec 5 argument on paper, or decide the two p108 systems
-computationally (both have resisted 1800s repeatedly). This is the highest-
-value reading task and needs no compute.
+DONE (Aug 21). Cor 5.7 was the ONLY thing killing the (9,27) branch of
+(72,108) anywhere in the literature. Re-derived by hand against the local
+extractions: the proof of (5.12) applies [1, Cor 7.2], whose standing
+hypothesis is [P,Q] in K^x (as is [1, Def 4.3]'s), to the pair
+(psi phi P, psi phi Q) — whose bracket, by the paper's own chain rule
+[1, Prop 3.10], is 1/2 + (lambda/2)x^{-1/2}, NOT in K^x, with lambda != 0
+forced by (0,18) in N(P). The first half of the proof is valid precisely
+because [psi P, psi Q] = 1/2. (5.12) is load-bearing: Thm 5.1's hypothesis (2)
+demands st_{-1,1}(P) = (6,18), but on Prop 4.1's polygon v_{-1,1} = b-a is
+maximal at (0,18). Of the 66 coefficient conditions (5.12) asserts, the proven
+claim delivers 15. Everything else in the chain re-checked and stands. Full
+write-up in CATCHES.md.
+
+CONSEQUENCE — this changes the plan: the live region below max 125 is now
+BOTH orientations of (72,108). The p108_* systems (the (9,27) branch, the
+smallest of which is p108_525122: 25 params, 140 conditions) are promoted to
+first-class compute targets alongside P1's ladder cells. Two lanes are open on
+them: (a) decide them exactly with the time-boxed elimination machinery, or
+(b) attempt to REPAIR Cor 5.7 — and if no repair exists, hunt for a solution
+of the (9,27) polygon system directly, since nothing in print excludes it.
 
 ## P4 — The frontier (where a CE must live if B=16 closes)
 

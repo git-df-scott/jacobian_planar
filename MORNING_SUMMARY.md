@@ -38,8 +38,9 @@ catches that protect every future verdict.
   with clean stderr. Exact elimination cannot decide these on this hardware
   inside the container's uptime, and no numerical substitute is admissible.
 * (72,108): the resister systems still resist (worker's p108_525122 timed out
-  at 1800s); GGHV Cor 5.7 remains the only thing killing the (9,27) branch
-  anywhere, still never independently verified.
+  at 1800s).  GGHV Cor 5.7, the only thing killing the (9,27) branch anywhere,
+  has now been verified BY HAND -- and it is BROKEN (see below).  BOTH
+  orientations of (72,108) are live.
 * Pentagon case (1): still no verdict by any method.
 
 ## The two RETRACTIONS (both caught by controls I ran on my own work)
@@ -90,7 +91,17 @@ Long computations (>~20 min) cannot survive and should not be scheduled here.
 1. Run the undecided ladder cells (d=8..12 chart N, seeded, unsplit) on
    hardware that stays up for hours -- they are small systems that simply need
    uninterrupted time.
-2. Independently verify GGHV Cor 5.7; it is the single load-bearing
-   unverified step in the (72,108) elimination.
+2. DONE, and it failed: GGHV Cor 5.7 is UNPROVEN.  Its proof of (5.12)
+   applies [1, Cor 7.2] -- standing hypothesis [P,Q] in K^x -- to the pair
+   (psi phi P, psi phi Q), whose bracket is 1/2 + (lambda/2)x^{-1/2}, not in
+   K^x, with lambda != 0 forced.  (5.12) is load-bearing: Thm 5.1's hypothesis
+   (2) fails outright on Prop 4.1's polygons (st_{-1,1}(P) = (0,18), not
+   (6,18)).  Of the 66 coefficient conditions (5.12) asserts, the proven claim
+   delivers 15.  The rest of the chain -- Thm 5.1 itself, the unshown CAS
+   elimination (5.9), Prop 4.1's table -- I re-checked and it stands; the
+   failure is one sentence, gghv.txt:1430-1433.  Full write-up in CATCHES.md.
+   CONSEQUENCE: the (9,27) branch is NOT closed by the literature, so the live
+   region below max 125 is both orientations of (72,108), and the (9,27)
+   systems (p108_*) go back on the compute queue as first-class targets.
 3. Build the tail-closure test on the frontier (does the tail set saturate?),
    since that is what makes the above-125 territory finite.
