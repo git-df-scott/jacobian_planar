@@ -1154,3 +1154,67 @@ It now rests on four independent legs, not one:
 
 Legs (i) and (iii) together are decisive and are independent of everything else
 found today.  The single-point-of-failure is closed.
+
+================================================================================
+THE B=16 OBSTRUCTION IS NOT ABOUT mu0 AT ALL.  IT IS THAT mu2 != 0 IS
+IMPOSSIBLE -- and that is a much better target for a uniform theorem.
+================================================================================
+
+THE OBSERVATION.  Take the gauged export (mu2 = 1, a2 = 3*mu0, mu1 = -mu0*mu3,
+y^3 row dropped) and REMOVE the mu0 saturation, so mu0 = 0 is allowed.  Then:
+
+    d = 3   EMPTY   char 0   0.00 s        d = 5   EMPTY   char 0   0.74 s
+    d = 4   EMPTY   char 0   0.02 s        d = 6   EMPTY   char 0  36.25 s
+
+Empty even with mu0 free.  So the cells contain NO SOLUTION WITH mu2 != 0 at
+all, at d = 3,4,5,6 -- nothing to do with mu0.
+
+This is consistent with GGV's published d = 3 family, which has
+mu0 = mu1 = mu2 = 0 and is therefore excluded by the mu2 = 1 gauge, not by the
+saturation.  Soundness of the reading: any solution with mu2 != 0 can be scaled
+to mu2 = 1 by the C^* action (F4), and then satisfies (F2) a2 = 3*mu0 and (F3)
+mu1 = -mu0*mu3, so it is a point of the exported variety.  Empty ==> no such
+solution.
+
+WHY THIS IS THE BETTER TARGET.  By (F2), a counterexample requires mu2 != 0.  So
+
+        "mu2 = 0 on every solution of (1.2)+(1.3), for every d"
+                        ==>  B = 16 IS CLOSED, for all d at once.
+
+That is one clean statement to prove or refute, replacing an infinite ladder of
+emptiness computations.  It is also strictly stronger than what GGV proved for
+d <= 4 (they showed every solution has mu0 = 0; this says every solution has
+mu2 = 0), and it is verified here for d = 3..6 in characteristic zero.
+
+A ROUTE THAT IS NOW CLOSED, WITH THE REASON.  The natural attempt is to prove it
+from the LOW rows alone, because those are d-INDEPENDENT: the y^k coefficient of
+(1.3) involves only a_0..a_k and b_0..b_k, so for k < d the row does not depend
+on d (verified: rows y^0..y^8 are identical at d = 14 and d = 11).  A
+contradiction among them would hold for all large d simultaneously.  It cannot
+happen.  Counting new unknowns per row, after the normalizations:
+
+    y^2 : +1 eq, new {a2, mu1, mu3}      deficit +2
+    y^3 : +1 eq, new {mu0, mu2}          deficit +3
+    y^4 : +1 eq, new {a3, a4, b2}        deficit +5
+    y^5 : +1 eq, new {a5, b3}            deficit +6
+    y^6 : +1 eq, new {a6, b4}            deficit +7      ... and so on
+
+From y^4 onward every row brings TWO new unknowns (a_k and b_{k-2}) for ONE
+equation, so the deficit grows monotonically and the low system is
+underdetermined at every truncation.  It can never be inconsistent.  No uniform
+theorem comes from the bottom end alone.
+
+WHAT THE SYSTEM ACTUALLY IS: A TWO-ENDED RECURSION (a shooting problem).
+  * From the TOP, the cascade (row y^{4d} quadratic in a_{2d}; row y^{4d-k}
+    linear in a_{2d-k}) determines a_{2d}, a_{2d-1}, ... downward in terms of
+    the b's.
+  * From the BOTTOM, row y^k has a_k with the nonzero coefficient -a_k*mu3^2
+    (on mu3 != 0), so it determines a_k upward in terms of a_2..a_{k-1} and
+    b_2..b_{k-2}.
+  * BOTH ends determine the same a's.  The entire content of the cell is the
+    MATCHING CONDITION in the middle.
+That is exactly the structure of a two-point boundary value problem for the
+Abel equation GGV say (1.3) is, and it is the right frame for the remaining
+work: solving from both ends and matching halves the length of each
+back-substitution chain, so it should also halve the degree growth that makes
+the one-ended cascade expensive at large d.
