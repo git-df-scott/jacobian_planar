@@ -1350,3 +1350,70 @@ realizes every degree >= 3, and the tangent sweep of a degree-d curve has
 mu = d+1 >= 3.  Every known counterexample-producing mechanism sits at mu >= 3,
 and we now know the plane must too.  Degree 2 -- the first thing anyone would
 try -- is provably empty, which is worth knowing before spending compute on it.
+
+================================================================================
+THE SWEEP MECHANISM IS DEAD IN THE PLANE -- COMPLETELY, WITH A SHARP REASON.
+And the torus rank confirms the (1.2) correction a fourth time.
+================================================================================
+
+TORUS RANK (computed, not argued).  Taking every pair of monomials in every
+equation and computing the nullspace of their exponent differences -- the exact
+space of gradings under which the whole system is weighted-homogeneous:
+
+    d      corrected system      printed system
+    4      TORUS RANK 1          TORUS RANK 0
+    5      TORUS RANK 1          TORUS RANK 0
+    6      TORUS RANK 1          TORUS RANK 0
+
+and the rank-1 grading recovered is exactly the one derived by hand:
+wt(a_i) = 2d-i, wt(b_j) = d-j, wt(mu3) = d, wt(mu2) = 2d-1, wt(mu1) = 3d-2,
+wt(mu0) = 4d-3.  So the misprint DESTROYS the symmetry outright.  ADJUDICATION
+section 6 observed exactly this and drew the wrong conclusion -- that no
+continuous torus exists -- when the right conclusion was that the equation was
+wrong.  This is a fourth independent confirmation of the correction.
+
+It also CORRECTS a claim passed to me earlier today, that the corrected system
+carries a TWO-parameter torus.  It does not: the rank is 1, and the gauge
+freedom is therefore already fully spent by mu2 = 1.  No further reduction is
+available from symmetry.  (The raw system before GGV's normalizations b0 = mu3,
+b1 = 0 and q1 monic may well have rank 2; those normalizations consume the
+second parameter, which is presumably what that claim was seeing.)
+
+THE SWEEP DICHOTOMY.  For a general plane sweep S(gamma,w) = X(w) + gamma*Delta(w)
+with X, Delta in C[w]^2, direct differentiation gives (verified symbolically)
+
+        det J(S)  =  det(Delta, X')  +  gamma * det(Delta, Delta').
+
+Two cases, and BOTH are closed:
+
+ (a) det(Delta, Delta') != 0.  Then det J(S) has positive degree in gamma, so it
+     vanishes on a curve and S is not Keller.  The divisional twist cannot
+     repair this in the plane: with w = gamma*u the twisted Jacobian is
+     u^2 * Psi(gamma,u) * {gamma,u}, and a product of polynomials equal to a
+     nonzero constant forces u to be constant, whence {gamma,u} = 0.
+
+ (b) det(Delta, Delta') = 0.  Then Delta is parallel to a CONSTANT vector,
+     Delta(w) = h(w)*v.  Normalising v = (0,1),
+         S(gamma,w) = ( X1(w), X2(w) + gamma*h(w) ),   det J(S) = -h * X1'.
+     Constant and nonzero forces X1' constant, so X1 is LINEAR and h is
+     constant -- and then S is a TRIANGULAR automorphism, hence INJECTIVE.
+
+    ==>  NO PLANE SWEEP IS A COUNTEREXAMPLE.
+
+THE REASON, IN ONE SENTENCE: non-injectivity of a sweep requires the direction
+field to TURN, and turning is precisely what puts the factor gamma into the
+Jacobian.  Dimension 3 has a spare coordinate to absorb that factor (C = gamma*x,
+divide by C and C^2); the plane does not.  That is the actual content of
+"dimension >= 3", which arXiv:2608.00222 asserts but never explains.
+
+WHAT THIS COSTS US, STATED PLAINLY.  Combined with today's deck-group result
+(no Galois covering; mu >= 3), the position is:
+  * the only mechanism that has ever produced a counterexample to the Jacobian
+    conjecture in ANY dimension -- the tangent sweep -- provably cannot work in
+    the plane;
+  * a plane counterexample must be a NON-GALOIS covering of degree mu >= 3;
+  * so it must use a mechanism that is not known in dimension 3 either.
+That is a sobering finding rather than an encouraging one, and it should be
+recorded as such.  It also means effort is better spent on the systems where the
+Newton polygons are already pinned down -- (72,108) in both orientations -- than
+on constructing sweeps.
