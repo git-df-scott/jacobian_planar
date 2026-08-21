@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave6/w6_b16_stack.py", line 126, in <module>
+    rec = build(d, ri)
+          ^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_b16_stack.py", line 77, in build
+    assert len(s_) == 1, f"row for a{j} not uniquely solvable"
+           ^^^^^^^^^^^^
+AssertionError: row for a2 not uniquely solvable

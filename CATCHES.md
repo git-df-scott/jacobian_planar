@@ -1068,3 +1068,89 @@ WHAT TO DO INSTEAD.  The right local question at that point is second-order, or
 better, the global one this file already sets up: solve the cell with mu0
 eliminated, mu2 gauged to 1, and a2 saturated.  That is exactly the export in
 wave6/w6_b16_mu0_export.py.
+
+================================================================================
+TWO BLINDSPOTS IN TODAY'S OWN RESULTS, BOTH RAISED AS CHALLENGES AND BOTH REAL.
+One is a correction to how I presented the evidence; the other is now closed by
+an independent test.
+================================================================================
+
+BLINDSPOT 1 -- "VERIFIED FOR MANY d" WAS RE-CHECKING ONE OBJECT.
+I reported (F2) mu0 = a2*mu2/3 and (F3) mu0*mu3 + mu1*mu2 = 0 as "verified for
+d = 3,4,5,6,7,8,10,12".  That reads as eight independent confirmations.  It is
+not.  Printing the RAW y^3 row before any collapse:
+
+    d :  len(rows)   len(a)=2d+1   mu0-row index   #terms(H)
+    3        13           7           9 (y^3)          20
+    5        21          11          17 (y^3)          20
+    7        29          15          25 (y^3)          20
+    9        37          19          33 (y^3)          20
+
+and then comparing them AS POLYNOMIALS:
+
+    H(d=5) == H(d=7) == H(d=9)   -- identical expressions, not merely equivalent
+    H(d=3) - H(d=5) = 3*(b3 - 1)*(8*a0*b0 - 4*a0*mu3 - 2*b0^3 + 3*b0^2*mu3)/4
+
+The reason is structural and should have been stated up front: the y^3
+coefficient of (1.3) can only involve a_0..a_3, b_0..b_3 and the mu's -- every
+index is capped at 3 -- so for d >= 4 the row is literally d-INDEPENDENT.  The
+d = 3 case differs only because b3 does not exist there (q1 = y^3 + ... has
+leading coefficient 1 in the y^3 slot), and the difference is exactly the
+substitution b3 -> 1.
+
+CONSEQUENCE.  (F2) and (F3) are each ONE identity, not a pattern across d.  That
+does not weaken them -- a single identity valid for all d >= 4 by construction is
+cleaner than a coincidence repeated -- but it does mean the multi-d runs carried
+no extra evidential weight, and I should not have presented them as if they did.
+The ledger is corrected accordingly.  The same caution applies to (F1), which is
+likewise structural (mu0 enters (1.3) only through -6*mu0*y^3).
+GENERAL RULE ADDED: before reporting "verified for d = ...", check whether the
+object being verified actually depends on d.  If it does not, say so and report
+it as one check.
+
+BLINDSPOT 2 -- THE WHOLE SESSION RESTED ON ONE UNCORROBORATED TEXTUAL
+CORRECTION.  Fair, and it is now closed.
+
+THE MISPRINT IN ONE LINE: GGV print  mu3*A''(0) = -6*mu1 - 2*mu3*q1''(0);
+the truth is  mu3*A''(0) = -6*mu1.  The spurious term is -2*mu3*q1''(0).
+
+It now rests on four independent legs, not one:
+
+ (i)   THE SOURCE, TWICE, IN TWO DIFFERENT DOCUMENTS.  I read the misprint off
+       the 150dpi page renders of the printed offprint myself (p.85 Theorem 1.2
+       and p.93 equation (3.6)).  Separately, the final arXiv version
+       1310.8249v3 -- whose own journal-ref line identifies it as the published
+       version -- prints the same thing as its equation (3.9).  No erratum or
+       corrigendum exists anywhere.  So the misprint is in the literature, in
+       both versions, and is not an artifact of our transcription.
+ (ii)  A RE-DERIVATION FROM THEIR OWN PRIOR EQUATIONS.  wave6/w6_ggv12_
+       rederivation.py starts from the Poisson bracket, checks all five bracket
+       coefficients against the four ODEs printed on p.91, and obtains
+       mu3*A''(0) = -6*mu1 from the polynomiality of their (3.2) and (3.3).
+ (iii) AN EXPLICIT NUMERICAL INSTANCE, INDEPENDENT OF (ii).  Using ONLY the
+       definitions P = x^3 y + x^2 p2 + x p1 + p0, Q = x^2 y + x q1 + q0 and
+       A := y p1 - q1 p2 + (3/4) q1^2 -- all read off the page renders -- and a
+       DIRECT Poisson bracket, with q0', p0' obtained by solving the bracket's
+       own x^2 and x^1 coefficient equations and demanding polynomiality:
+
+           q1 = 3y^2 + 5          p2 = 15y^2/2 + 5      p1 = y^2 + 6y + 7
+           q0 = -5y^3 + y^2/2 + 7y
+           p0 = -225y^4/8 + 5y^3/2 - 27y^2/4 + 21y
+
+       gives  [P,Q] = x^4*y + 5x^3 + 7x^2 + 40x + (non-constant),  so
+       mu3 = 5, mu2 = 7, mu1 = 40 are genuine constants and this is a real
+       instance of the Theorem 1.1 setup.  Crucially q1''(0) = 6 != 0 and
+       mu3 = 5 != 0 -- the case BOTH of GGV's own worked examples fail to
+       exercise.  Then A = -63y^4/4 + y^3 - 24y^2 + 7y - 25/4, so
+           A(0)  = -25/4 = -mu3^2/4          (their row 1 holds)
+           A'(0) = 7     = mu2               (their row 2 holds)
+           mu3*A''(0) = -240 = -6*mu1        (CORRECTED FORM HOLDS)
+           printed form demands -300         (FAILS, by exactly 2*mu3*q1''(0)=60)
+       This uses none of (ii)'s algebra: it is arithmetic on explicit
+       polynomials.
+ (iv)  INTERNAL CONSISTENCY (the weakest leg, listed last): the corrected row is
+       implied by (1.3) on mu3 != 0, whereas the printed row additionally forces
+       4*mu3^2*b2 into the ideal.
+
+Legs (i) and (iii) together are decisive and are independent of everything else
+found today.  The single-point-of-failure is closed.
