@@ -114,7 +114,7 @@ linearisation at some family point (Lyapunov-Schmidt).
 Hunt consequence: the target is no longer "solve cell d" but "find a family
 point where the mu0 obstruction degenerates".
 
-## Result 6 — the rank pattern is EXACT and unbroken (d = 3..9 so far)
+## Result 6 — the rank pattern is EXACT and unbroken (d = 3..15, verified)
 
 At the quasi-homogeneous point of cell d the exact rank criterion gives,
 with no exception and for BOTH roots of the row-0 quadratic:
@@ -123,7 +123,11 @@ with no exception and for BOTH roots of the row-0 quadratic:
         rank J     = 2d + 1      rank[J|G]  = 2d + 2   ->  ALWAYS obstructed
 
 so no counterexample bifurcates off the quasi-homogeneous stratum at any d
-tested (sweep continuing to d = 30, including the resonant cell d = 27).
+tested.  Re-verified after a container restart wiped the earlier logs:
+  d=14  roots -3/212 +- sqrt(42)/106 : rank 29 -> 30, on_locus, obstructed
+  d=15  roots -1/76  +- sqrt(5)/38   : rank 31 -> 32, on_locus, obstructed
+The roots are irrational (sqrt(12d)), which is why the mod-p seeded runs need
+primes where 12d is a square -- the same fact that shaped tonight's exports.
 The kernel has dimension (3d-1) - (2d+1) = d - 2: the degenerate locus grows
 with d (dim 1 at d=3, dim 10 at d=12), which is why bigger cells feel
 "roomier" -- but see the count below.
