@@ -1,0 +1,144 @@
+########## Route-2 chain at q=65539  (q mod 3 = 1, COMPLIANT) ##########
+=== q = 65539: 8 factors, degrees [1, 2, 2, 6, 6, 6, 6, 6] (sum 35), 16 RUR variables ===
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 0 (deg 1): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_0.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 1 (deg 2): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_1.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 2 (deg 2): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_2.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 3 (deg 6): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_3.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 4 (deg 6): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_4.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 5 (deg 6): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_5.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 6 (deg 6): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_6.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 7 (deg 6): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65539_7.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+########## Route-2 chain at q=65599  (q mod 3 = 1, COMPLIANT) ##########
+=== q = 65599: 6 factors, degrees [1, 3, 3, 4, 12, 12] (sum 35), 16 RUR variables ===
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 0 (deg 1): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_0.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 1 (deg 3): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_1.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 2 (deg 3): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_2.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 3 (deg 4): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_3.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 4 (deg 12): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_4.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)
+    (w=-1): 8 conditions, 80 monomials, K-verify 8/8
+    (w= 0): 28 conditions, 350 monomials, K-verify 8/8
+  branch 5 (deg 12): edge OK, (w=-3) dim 3, (w=-2) ker 3, gens 6+25 -> /tmp/claude-0/-home-user-jacobian-planar/19771ba8-5fc7-5781-9122-dda56745e5ec/scratchpad/c2mp_65599_5.sing
+      VERDICT: dim = 2
+      components: 1
+        comp 1: dim 2
+      _[1]=al(3)
+      _[2]=al(2)
+      _[3]=b(3)
+      _[4]=b(2)

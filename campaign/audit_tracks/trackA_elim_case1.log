@@ -1,0 +1,12 @@
+eliminator: 302 equations, 183 variables, nonzero=['c_1_0', 'c_8_14', 'c_8_16', 'c_0_8', 'd_12_21', 'd_12_24', 'd_0_12'], normalize={'d_2_1': '1'}, mode=exact-Q
+  [t=1s] node 0: 10 rule apps, 294 eqs, largest eq 57 terms, total terms 6956
+  [t=1s] node 0: 20 rule apps, 284 eqs, largest eq 62 terms, total terms 7378
+  [t=3s] node 0: 30 rule apps, 274 eqs, largest eq 187 terms, total terms 12873
+  [t=5s] node 0: 40 rule apps, 264 eqs, largest eq 641 terms, total terms 30794
+  [t=11s] node 0: 50 rule apps, 254 eqs, largest eq 1740 terms, total terms 81420
+  [t=30s] node 0: 60 rule apps, 244 eqs, largest eq 5307 terms, total terms 213572
+  [t=92s] node 0: 70 rule apps, 234 eqs, largest eq 13929 terms, total terms 586652
+  [t=307s] node 0: 80 rule apps, 224 eqs, largest eq 46723 terms, total terms 1524243
+done in 557.9s; stats: {'r1_det': 3, 'r2': 80, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 0, 'capped': 1}
+tree: 1 nodes, 0 closed, 0 open leaves, 0 merged, 1 capped
+written: trackA_reduced_system_case1.json

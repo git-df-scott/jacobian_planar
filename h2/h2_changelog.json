@@ -1,0 +1,773 @@
+{
+ "counts": {
+  "UNCHANGED": 38
+ },
+ "rows": [
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=2 eps=((1, 0),(2, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 157 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 157 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=2 eps=((2, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 181 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 181 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=3 eps=((1, 0),(3, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 149 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 149 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=3 eps=((3, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=4 eps=((1, 0),(4, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=4 eps=((4, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=5 eps=((5, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 176 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=6 eps=((1, 0),(6, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 139 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 139 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=6 eps=((6, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 180 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 180 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=7 eps=((1, 0),(7, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 140 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=7 eps=((7, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=8 eps=((1, 0),(8, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 20,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 20 | conditions: 143 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=0 r=8 eps=((8, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 35,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 35 | conditions: 185 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=1 r=2 eps=((1, 0),(2, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 32,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 61,
+     "out": "params: 32 | conditions: 189 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 58,
+     "out": "params: 32 | conditions: 189 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((1, 0),(2, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 900,
+   "max": 132,
+   "params": 38,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 900,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=3 eps=((1, 0),(3, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 900,
+   "max": 132,
+   "params": 38,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 900,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=4 eps=((1, 0),(4, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 38,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 38,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=2 eps=((1, 0),(2, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=3 eps=((1, 0),(3, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=4 eps=((1, 0),(4, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=6 eps=((1, 0),(6, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=7 eps=((1, 0),(7, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=3 r=8 eps=((1, 0),(8, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 132,
+   "params": 48,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=0 r=4 eps=((1, 0),(4, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 126,
+   "params": 23,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 23 | conditions: 33 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 23 | conditions: 33 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(7,42)/13/7,6 (m,n)=2,3 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 147,
+   "params": 30,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 147,
+   "params": 30,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 30 | conditions: 49 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 144,
+   "params": 38,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 38 | conditions: 165 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 0,
+     "out": "params: 38 | conditions: 165 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "F11(m,n)=2,5 | a=7 b=4 c'=0 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 140,
+   "params": 21,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 21 | conditions: 79 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 1,
+     "out": "params: 21 | conditions: 79 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "F11(m,n)=2,5 | a=7 b=4 c'=2 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 140,
+   "params": 51,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "F11(m,n)=2,5 | a=7 b=4 c'=2 r=6 eps=((1, 0),(6, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 140,
+   "params": 51,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "F11(m,n)=2,5 | a=7 b=4 c'=2 r=7 eps=((1, 0),(7, 1))",
+   "kind": "UNCHANGED TIMEOUT",
+   "old_verdict": "TIMEOUT",
+   "new_verdict": "TIMEOUT",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 140,
+   "params": 51,
+   "per_prime": {
+    "65521": {
+     "verdict": "TIMEOUT",
+     "secs": 90,
+     "out": ""
+    }
+   }
+  },
+  {
+   "tag": "F24(m,n)=3,4 | a=8 b=4 c'=0 r=5 eps=((1, 0),(5, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 128,
+   "params": 50,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 62 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 62 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "F24(m,n)=3,4 | a=8 b=4 c'=0 r=6 eps=((1, 0),(6, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 128,
+   "params": 50,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 74 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 74 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "F24(m,n)=3,4 | a=8 b=4 c'=0 r=7 eps=((1, 0),(7, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 128,
+   "params": 50,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 86 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 86 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  },
+  {
+   "tag": "F24(m,n)=3,4 | a=8 b=4 c'=0 r=8 eps=((1, 0),(8, 1))",
+   "kind": "UNCHANGED EMPTY",
+   "old_verdict": "EMPTY",
+   "new_verdict": "EMPTY",
+   "old_budget": 90,
+   "new_budget": 90,
+   "max": 128,
+   "params": 50,
+   "per_prime": {
+    "65521": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 98 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    },
+    "65539": {
+     "verdict": "EMPTY",
+     "secs": 2,
+     "out": "params: 50 | conditions: 98 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+[r1] Rabinowitsch: forces all four vertex coefficients nonzero
+  unsaturated: size
+21
+dim
+1
+  saturated:   size
+1
+  SANITY - original ideal contained in saturated (0 = yes):
+0
+  IS <1>  =>  branch r1 has NO valid (8,28) configuration:
+1

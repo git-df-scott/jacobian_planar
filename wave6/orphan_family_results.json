@@ -1,0 +1,89 @@
+[
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=0 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=0 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "{'name': 'orph_503471', 'status': 'RAN', 'out': 'params: 32\\nconditions: 48\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.04695320129394531, 'info': {'nparams': ",
+  "wall": 0.0
+ },
+ {
+  "tag": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((1, 0),(3, 1))",
+  "verdict": "{'name': 'orph_646396', 'status': 'RAN', 'out': 'params: 18\\nconditions: 28\\ntime: 25\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 31.73323893547058, 'info': {'nparams': 1",
+  "wall": 31.7
+ },
+ {
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'orph_98503', 'status': 'TIMEOUT', 'secs': 240.19669365882874, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall": 240.2
+ },
+ {
+  "tag": "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "verdict": "{'name': 'orph_837900', 'status': 'TIMEOUT', 'secs': 240.14323496818542, 'info': {'nparams': 51, 'jmax': 18, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(41)', 'c(51)']}}",
+  "wall": 240.1
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=2 r=5 eps=((1, 0),(5, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=3 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'orph_50107', 'status': 'TIMEOUT', 'secs': 240.16227078437805, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall": 240.2
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=3 eps=((3, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=4 eps=((4, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=4 eps=((1, 0),(4, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=5 eps=((5, 1),(1, 0))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=5 eps=((1, 0),(5, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=6 eps=((1, 0),(6, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=7 eps=((1, 0),(7, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F22(m,n)=2,3 | a=4 b=3 c'=3 r=8 eps=((1, 0),(8, 1))",
+  "verdict": "SHAPE-NOT-MATCHED(0 cands)"
+ },
+ {
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))",
+  "verdict": "{'name': 'orph_332344', 'status': 'TIMEOUT', 'secs': 240.30924439430237, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall": 240.3
+ },
+ {
+  "tag": "F1(m,n)=5,7 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))",
+  "verdict": "{'name': 'orph_345092', 'status': 'TIMEOUT', 'secs': 240.20377707481384, 'info': {'nparams': 129, 'jmax': 30, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(101)', 'c(129)']}}",
+  "wall": 240.2
+ }
+]

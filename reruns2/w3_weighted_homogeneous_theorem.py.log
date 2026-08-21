@@ -1,0 +1,116 @@
+==============================================================================
+STEP 1  the A'B' terms cancel:  Phi = K*A*B + s[M*A*B' + N*A'*B]
+==============================================================================
+    residual  x*y*J - x^(a+g) y^(b+d) Phi  =  0
+    24 randomized explicit-polynomial instances, mismatches: []
+
+==============================================================================
+STEP 2  a constant Jacobian forces alpha+gamma = 1 and beta+delta = 1
+==============================================================================
+    exponent solutions with t >= 1 that are NOT the degenerate case: []
+
+==============================================================================
+STEP 3/4  the four cases, and the top-coefficient kill
+==============================================================================
+    all four cases behave as the proof requires
+
+==============================================================================
+STEP 5  independent brute force: mixed-sign weights, total degree <= 5
+==============================================================================
+    weights ( 1,-1):  2 Keller branches, nonlinear: 0
+    weights ( 2,-1):  2 Keller branches, nonlinear: 0
+    weights ( 1,-2):  2 Keller branches, nonlinear: 0
+    weights ( 3,-2):  2 Keller branches, nonlinear: 0
+    weights ( 2,-3):  2 Keller branches, nonlinear: 0
+    weights ( 3,-1):  2 Keller branches, nonlinear: 0
+    weights ( 1,-3):  2 Keller branches, nonlinear: 0
+
+==============================================================================
+THEOREM W3-3  same-sign weights: the collapse FAILS
+==============================================================================
+    m = 2:  (x, y + x^2),  weights (1,2),  det J = 1,  wh: True,  nonlinear: True
+    m = 3:  (x, y + x^3),  weights (1,3),  det J = 1,  wh: True,  nonlinear: True
+    m = 4:  (x, y + x^4),  weights (1,4),  det J = 1,  wh: True,  nonlinear: True
+    m = 7:  (x, y + x^7),  weights (1,7),  det J = 1,  wh: True,  nonlinear: True
+
+    boundary case a > 0, b = 0 (y has weight zero):
+      weights (1,0): 2 branches, nonlinear: 0
+        p=0 q=1   P = A0 - y/B0   Q = B0*x
+        p=1 q=0   P = x/B1   Q = B0 + B1*y
+
+==============================================================================
+    PASS  STEP 1: the identity holds symbolically for generic A, B
+    PASS  STEP 1: identity confirmed on 24 randomized explicit instances
+    PASS  STEP 2: every t >= 1 solution is the degenerate u=w=1, all exponents 0
+    PASS  STEP 2: the degenerate case has K = M = N = 0, so Phi == 0 and c = 0
+    PASS  STEP 3: exactly four exponent cases with alpha+gamma=1, beta+delta=1
+    PASS  case (0, 0, 1, 1) u,w=1,1: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (0, 0, 1, 1) u,w=1,2: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (0, 0, 1, 1) u,w=2,1: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (0, 0, 1, 1) u,w=3,2: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (0, 0, 1, 1) u,w=2,3: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (0, 0, 1, 1) u,w=1,4: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=1,1: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=1,2: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=2,1: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=3,2: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=2,3: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 1, 0, 0) u,w=1,4: Phi has NO constant term (so c = 0, excluded)
+    PASS  case (1, 0, 0, 1) u,w=1,1: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=1,1: top factor 1+u*degA+w*degB = 11 > 0
+    PASS  case (1, 0, 0, 1) u,w=1,2: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=1,2: top factor 1+u*degA+w*degB = 16 > 0
+    PASS  case (1, 0, 0, 1) u,w=2,1: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=2,1: top factor 1+u*degA+w*degB = 16 > 0
+    PASS  case (1, 0, 0, 1) u,w=3,2: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=3,2: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  case (1, 0, 0, 1) u,w=2,3: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=2,3: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  case (1, 0, 0, 1) u,w=1,4: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (1, 0, 0, 1) u,w=1,4: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  case (0, 1, 1, 0) u,w=1,1: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=1,1: top factor 1+u*degA+w*degB = 11 > 0
+    PASS  case (0, 1, 1, 0) u,w=1,2: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=1,2: top factor 1+u*degA+w*degB = 16 > 0
+    PASS  case (0, 1, 1, 0) u,w=2,1: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=2,1: top factor 1+u*degA+w*degB = 16 > 0
+    PASS  case (0, 1, 1, 0) u,w=3,2: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=3,2: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  case (0, 1, 1, 0) u,w=2,3: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=2,3: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  case (0, 1, 1, 0) u,w=1,4: Phi matches the (1 + u i + w j) coefficient model
+    PASS  case (0, 1, 1, 0) u,w=1,4: top factor 1+u*degA+w*degB = 26 > 0
+    PASS  brute force (1,-1): no nonlinear mixed-sign branch
+    PASS  brute force (2,-1): no nonlinear mixed-sign branch
+    PASS  brute force (1,-2): no nonlinear mixed-sign branch
+    PASS  brute force (3,-2): no nonlinear mixed-sign branch
+    PASS  brute force (2,-3): no nonlinear mixed-sign branch
+    PASS  brute force (3,-1): no nonlinear mixed-sign branch
+    PASS  brute force (1,-3): no nonlinear mixed-sign branch
+    PASS  brute force found Keller branches at all (the sweep is not vacuous)
+    PASS  m=2: det J = 1
+    PASS  m=2: both components weighted-homogeneous for weights (1,2)
+    PASS  m=2: the map is NOT linear
+    PASS  m=2: the weights have the SAME sign (a*b = 2 > 0)
+    PASS  m=3: det J = 1
+    PASS  m=3: both components weighted-homogeneous for weights (1,3)
+    PASS  m=3: the map is NOT linear
+    PASS  m=3: the weights have the SAME sign (a*b = 3 > 0)
+    PASS  m=4: det J = 1
+    PASS  m=4: both components weighted-homogeneous for weights (1,4)
+    PASS  m=4: the map is NOT linear
+    PASS  m=4: the weights have the SAME sign (a*b = 4 > 0)
+    PASS  m=7: det J = 1
+    PASS  m=7: both components weighted-homogeneous for weights (1,7)
+    PASS  m=7: the map is NOT linear
+    PASS  m=7: the weights have the SAME sign (a*b = 7 > 0)
+    PASS  boundary a*b = 0 collapses to affine-linear as well (computed, not assumed)
+==============================================================================
+    66/66 checks passed
+    VERDICT
+      THEOREM W3-2 (a*b < 0): plane weighted-homogeneous Keller => linear,
+        at EVERY degree.  Session 38's bounded-degree evidence is now a
+        theorem, and Path B's stated success criterion is met.
+      THEOREM W3-3 (a*b > 0): the collapse fails; (x, y + x^m) is an explicit
+        nonlinear weighted-homogeneous Keller map.  The separator must carry
+        the mixed-sign hypothesis explicitly.

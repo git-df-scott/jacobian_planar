@@ -1,0 +1,94 @@
+=====================================================================
+PROBE 4a  GENERALISED UNLOCKING SOLUTION
+          T_{k,s,D}(R) = (v+1)^k ( s v(v+1) R' - D R ) = -c
+          (k,s) = (4,3) is the First Framework endgame.
+          Checked per (k,s,D): every pole order below k still forces
+          c = 0, pole order k unlocks it, and deg A = k.
+=====================================================================
+   cases swept (k = 2..5, s = 2..5, D in {1,2,5,7,11}) : 72
+   pole order < k always forces c = 0, pole order k always unlocks it,
+   and deg A = k every time  -> 1
+
+   CONSEQUENCE.  map-degree(R) = k always, while the realization layer
+   demands map-degree(R) = D.  Self-consistency  <=>  D = k.
+
+=====================================================================
+PROBE 4b  SKELETON GENERATOR - arbitrary cusp type, arbitrary depth
+          B = p^m / (w r^n),  deg p = Ap, deg r = Bp,
+          N = m*Ap = n*Bp + 1,  chain degree D = N - delta,
+          rigidity (solution set = the scaling orbit)  <=>  Ap+Bp = D,
+          which pins delta = N - Ap - Bp.
+          The (2,3) instance with delta = 3 reproduces N = 16, D = 13.
+=====================================================================
+     m   n    N   deg p  deg r  delta    D    note
+   2   3   4     2      1      1     3     [survivor window]
+   2   3   10     5      3      2     8   
+   2   3   16     8      5      3     13   <- Borisov First Framework
+   2   3   22     11      7      4     18   
+   2   3   28     14      9      5     23   
+   2   5   6     3      1      2     4   <- CHAIN DEGREE 4 IS CONSTRUCTIBLE
+   2   5   16     8      3      5     11   
+   2   5   26     13      5      8     18   
+   2   7   8     4      1      3     5   
+   2   7   22     11      3      8     14   
+   3   2   3     1      1      1     2     [survivor window]
+   3   2   9     3      4      2     7   
+   3   2   15     5      7      3     12   
+   3   2   21     7      10      4     17   
+   3   2   27     9      13      5     22   
+   3   4   9     3      2      4     5   
+   3   4   21     7      5      9     12   
+   3   5   6     2      1      3     3     [survivor window]
+   3   5   21     7      4      10     11   
+   3   7   15     5      2      8     7   
+   4   3   4     1      1      2     2     [survivor window]
+   4   3   16     4      5      7     9   
+   4   3   28     7      9      12     16   
+   4   5   16     4      3      9     7   
+   4   7   8     2      1      5     3     [survivor window]
+   5   2   5     1      2      2     3     [survivor window]
+   5   2   15     3      7      5     10   
+   5   2   25     5      12      8     17   
+   5   3   10     2      3      5     5   
+   5   3   25     5      8      12     13   
+   5   4   5     1      1      3     2     [survivor window]
+   5   4   25     5      6      14     11   
+   5   6   25     5      4      16     9   
+   5   7   15     3      2      10     5   
+   6   5   6     1      1      4     2     [survivor window]
+
+   D = 4 constructible in this box : 1
+   => Session 19's 'D = 1 mod 6' held only with the cusp type pinned to
+      (2,3) AND delta pinned to 3.  Steps 1 and 2 SUCCEED.
+
+=====================================================================
+PROBE 4c  THE BELYI GATE - where the programme actually dies
+          k = D is forced by 4a, so the unlocking R has a pole of
+          order D at v = -1 and D-1 finite critical points.  A Belyi
+          map has exactly 3 critical values; affine post-composition
+          cannot change how many there are.
+=====================================================================
+    s \ D:   2   3   4   5   6
+    2     :    x   Y   x   .   x
+    3     :    Y   x   .   .   x
+    4     :    Y   Y   x   .   .
+    5     :    Y   Y   .   x   .
+    6     :    Y   Y   .   .   x
+    7     :    Y   Y   .   .   .
+
+    Y = clears the Belyi gate   . = fails it   x = resonance collision
+
+    READING.
+    * D = 4 is 'x' or '.' at EVERY cusp exponent s.  Whatever skeleton
+      is built underneath it, the D = 4 unlocking R carries 3 simple
+      critical points with 3 DISTINCT critical values plus a pole, so
+      4 critical values in all, and is affine-equivalent to no Belyi
+      map.  The step-3 ansatz fails the realization gate on its own,
+      independently of steps 1 and 2.
+    * the gate clears only for D <= 3, uniformly in s, where D-1 <= 2
+      and the critical-value count fits inside a Belyi map.
+    * surviving window: chain degree D <= 3, e.g. the rigid skeleton
+      (m,n) = (5,2), delta = 2, N = 5, deg p = 1, deg r = 2, D = 3.
+      That window still needs the pole-fiber theorem to fail for its
+      own geometry - the trapdoor is not avoided there, only made
+      degree-consistent.

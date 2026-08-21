@@ -1,0 +1,4 @@
+NVARS: 24 (incl 4 rabinowitsch)
+NEQS: 45
+
+halt 1

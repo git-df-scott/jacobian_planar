@@ -1,0 +1,10 @@
+==============================================================================
+A6  PLANTED-SOLUTION CONTROLS -- real (72,108) case-(2) system
+==============================================================================
+  PASS  leaf-1 and leaf-2 edge subsystems are literally the same 6 equations   <CERTIFIED>   [leaf1 idx [34, 35, 36, 37, 38, 39], leaf2 idx [38, 39, 40, 41, 42, 43]]
+
+--- p = 65521 ---
+  PASS  C1 p=65521 POS-REAL: real edge subsystem -> NON-EMPTY   <CERTIFIED>   [dim=1 in 47s]
+  PASS  C2 p=65521 POS-REAL-PIN: d_3_3=1 chart -> zero-dimensional, NON-EMPTY   <CERTIFIED>   [dim=0 vdim=1144 in 29s]
+  PASS  C2 p=65521 INDEPENDENT RE-DERIVATION of the campaign's degree-1144 eliminant   <CERTIFIED>   [vdim = 1144 (campaign: elimination polynomial degree 1144)]
+  PASS  C3 p=65521 NEG-REAL: contradictory pin -> EMPTY   <CERTIFIED>   [dim=-1 in 0.01s]

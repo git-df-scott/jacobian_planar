@@ -1,0 +1,21 @@
+option(redSB);
+ring R = 65521, (g(2..12), c(2..7), t), dp;
+poly C = t^1 + t^8;  int i;
+for (i = 2; i <= 7; i++) { C = C + c(i)*t^i; }
+poly G = 0;
+for (i = 2; i <= 12; i++) { G = G + g(i)*t^i; }
+poly Eq = 2*C*diff(G,t) - 3*diff(C,t)*G - t^2;
+ideal I; matrix M = coeffs(Eq, t);
+for (i = 1; i <= nrows(M); i++) { I = I + ideal(M[i,1]); }
+ring R2 = 65521, (g(2..12), c(2..7)), dp;
+ideal J = simplify(imap(R, I), 2);
+// the equation is LINEAR in G given C, so eliminate the g's first
+ideal E = eliminate(J, g(2)*g(3)*g(4)*g(5)*g(6)*g(7)*g(8)*g(9)*g(10)*g(11)*g(12));
+"eliminated ideal in c(2..7): ngens = " + string(size(E));
+ring R3 = 65521, c(2..7), lp;
+ideal Ec = std(imap(R2, E));
+"dim = " + string(dim(Ec)) + "   vdim = " + string(vdim(Ec));
+"lex GB size " + string(size(Ec));
+"last (univariate) generator: " + string(Ec[size(Ec)]);
+"factors: " + string(factorize(Ec[size(Ec)], 2));
+quit;

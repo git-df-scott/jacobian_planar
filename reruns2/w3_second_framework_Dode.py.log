@@ -1,0 +1,47 @@
+--- 1. the Second Framework chart data, re-derived by hand -----------
+
+--- 2. sigma and e, two independent routes --------------------------
+
+--- 3. D_ode ---------------------------------------------------------
+    D_ode(SF) = 69*eps/5    D_ode(FF) = 13*eps
+
+--- 3b. the SF operator, built from scratch rather than substituted --
+
+--- 4. the trichotomy, applied for every eps -------------------------
+    eps= 1  D_ode=69/5      k=  4  unique  map-degrees [4]  survives: False
+    eps= 2  D_ode=138/5     k=  9  unique  map-degrees [9]  survives: False
+    eps= 3  D_ode=207/5     k= 14  unique  map-degrees [14]  survives: False
+    eps= 4  D_ode=276/5     k= 19  unique  map-degrees [19]  survives: False
+    eps= 5  D_ode=69        k= 24  none    map-degrees []  survives: False
+    eps= 6  D_ode=414/5     k= 29  unique  map-degrees [29]  survives: False
+    eps= 7  D_ode=483/5     k= 34  unique  map-degrees [34]  survives: False
+    eps= 8  D_ode=552/5     k= 39  unique  map-degrees [39]  survives: False
+    eps= 9  D_ode=621/5     k= 44  unique  map-degrees [44]  survives: False
+    eps=10  D_ode=138       k= 49  none    map-degrees []  survives: False
+    eps=11  D_ode=759/5     k= 54  unique  map-degrees [54]  survives: False
+    eps=12  D_ode=828/5     k= 59  unique  map-degrees [59]  survives: False
+
+    same structure for the First Framework:
+    eps=1  D_ode= 13  k=  4  unique  map-degrees [4]  survives: False
+    eps=2  D_ode= 26  k=  9  unique  map-degrees [9]  survives: False
+    eps=3  D_ode= 39  k= 14  none    map-degrees []  survives: False
+    eps=4  D_ode= 52  k= 19  unique  map-degrees [19]  survives: False
+    eps=5  D_ode= 65  k= 24  unique  map-degrees [24]  survives: False
+
+--- 5. what this settles in the record -------------------------------
+
+    VERDICT
+      D_ode(Second Framework) = 69 eps / 5,  i.e. 13.8 at eps = 1.
+      It is neither 23 (which would have let the unique branch meet the
+      realization demand) nor 69 (which would have let the family branch meet
+      it).  For every eps the framework is dead, by two disjoint mechanisms:
+      eps not a multiple of 5 -> unique solution of map-degree 4 (mod 5) != 23;
+      eps a multiple of 5     -> no rational solution at all.
+
+      SECOND FRAMEWORK: DEAD-CONDITIONAL  ->  DEAD.
+
+      The transfer conjecture's premise "D = the chain degree" is false here in
+      the sharpest possible way: the chain degree is 23 and the operator's
+      coefficient is 69/5, not even an integer.
+
+w3_second_framework_Dode: 31/31 checks pass

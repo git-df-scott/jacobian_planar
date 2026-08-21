@@ -1,0 +1,59 @@
+L1 SWEEP p=65521: eliminant ['ELIMDEG: 43'], 7 irreducible factors
+BRANCH L1_p65521_rk0: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk0 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk0 EMPTY
+BRANCH L1_p65521_rk1: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk1 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk1 EMPTY
+BRANCH L1_p65521_rk2: stage2 vars=13 eqs=35 -> BRANCH L1_p65521_rk2 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk2 EMPTY
+BRANCH L1_p65521_rk3: stage2b vars=19 gens=47 -> BRANCH L1_p65521_rk3 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk3 EMPTY
+BRANCH L1_p65521_rk4: stage2b vars=18 gens=46 -> BRANCH L1_p65521_rk4 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk4 EMPTY
+BRANCH L1_p65521_rk5: stage2b vars=18 gens=46 -> BRANCH L1_p65521_rk5 RESIDUAL DIM: -1 | BRANCH L1_p65521_rk5 EMPTY
+BRANCH L1_p65521_r0a: edge fiber dim 0 vdim 280 (depth 0)
+BRANCH L1_p65521_r0a: splitting on d_8_13 (deg 9) -> 1 factors
+BRANCH L1_p65521_r0a_f0: edge fiber dim 0 vdim 89 (depth 1)
+BRANCH L1_p65521_r0a_f0: splitting on d_7_11 (deg 7) -> 1 factors
+BRANCH L1_p65521_r0a_f0_f0: edge fiber dim 0 vdim 31 (depth 2)
+BRANCH L1_p65521_r0a_f0_f0: splitting on d_6_9 (deg 7) -> 2 factors
+BRANCH L1_p65521_r0a_f0_f0_f0: edge fiber dim 0 vdim 1 (depth 3)
+BRANCH L1_p65521_r0a_f0_f0_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65521_r0a_f0_f0_f0 RESIDUAL DIM: -1 | BRANCH L1_p65521_r0a_f0_f0_f0 EMPTY
+BRANCH L1_p65521_r0a_f0_f0_f1: edge fiber dim 0 vdim 10 (depth 3)
+BRANCH L1_p65521_r0a_f0_f0_f1: splitting on d_5_7 (deg 5) -> 1 factors
+BRANCH L1_p65521_r0a_f0_f0_f1_f0: edge fiber dim 0 vdim 2 (depth 4)
+BRANCH L1_p65521_r0a_f0_f0_f1_f0: stage2b vars=19 gens=47 -> BRANCH L1_p65521_r0a_f0_f0_f1_f0 RESIDUAL DIM: -1 | BRANCH L1_p65521_r0a_f0_f0_f1_f0 EMPTY
+BRANCH L1_p65521_r0b: edge fiber dim 0 vdim 338 (depth 0)
+BRANCH L1_p65521_r0b: splitting on d_8_13 (deg 6) -> 1 factors
+BRANCH L1_p65521_r0b_f0: edge fiber dim 0 vdim 124 (depth 1)
+BRANCH L1_p65521_r0b_f0: splitting on d_7_11 (deg 5) -> 1 factors
+BRANCH L1_p65521_r0b_f0_f0: edge fiber dim 0 vdim 48 (depth 2)
+BRANCH L1_p65521_r0b_f0_f0: splitting on d_6_9 (deg 5) -> 1 factors
+BRANCH L1_p65521_r0b_f0_f0_f0: edge fiber dim 0 vdim 17 (depth 3)
+BRANCH L1_p65521_r0b_f0_f0_f0: splitting on d_5_7 (deg 5) -> 1 factors
+BRANCH L1_p65521_r0b_f0_f0_f0_f0: edge fiber dim 0 vdim 6 (depth 4)
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/trackB_leaf1_sweep.py", line 80, in <module>
+    main()
+  File "/home/user/jacobian_planar/trackB_leaf1_sweep.py", line 74, in main
+    R0.close(f"L1_p{P}_r0b", "d_3_3", [], 0, 0)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  File "/home/user/jacobian_planar/trackB_r0.py", line 95, in close
+    close(f"{tag}_f{k}", pin, extras + [f], d33, depth + 1)
+  [Previous line repeated 1 more time]
+  File "/home/user/jacobian_planar/trackB_r0.py", line 82, in close
+    S.stage2b(tag, {}, g["gb"], d33)
+  File "/home/user/jacobian_planar/trackB_staged.py", line 241, in stage2b
+    out = sing("\n".join(scr), f"trackB_st2_{tag}.sing", timeout=2400)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/trackB_staged.py", line 27, in sing
+    r = subprocess.run(["Singular", "-q", fn], capture_output=True, text=True, timeout=timeout)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['Singular', '-q', '/home/user/jacobian_planar/trackB_st2_L1_p65521_r0b_f0_f0_f0_f0.sing']' timed out after 2400 seconds

@@ -1,0 +1,16 @@
+==============================================================================
+audit of trackA_system_case2.json against the bracket [P,Q] - x^2
+==============================================================================
+    25 c-variables, 47 d-variables, 92 equations
+    meta: SP_size 25, SQ_size 47, bracket_rhs 'x^2'
+    [PASS] J5a the c-support size matches the meta's SP_size   25 vs 25
+    [PASS] J5b the d-support size matches the meta's SQ_size   47 vs 47
+    [PASS] J5c every polygon vertex recorded in the meta is an extreme point of the corresponding support   P [[0, 0], [1, 0], [8, 14], [8, 16]]  Q [[0, 0], [2, 1], [12, 21], [12, 24]]
+    the bracket has 92 nonzero monomials
+    [PASS] J1 POSITIVE: every JSON equation equals the corresponding coefficient of [P,Q] - x^2, exactly   mismatched []
+    [PASS] J2 POSITIVE: every nonzero bracket coefficient has a JSON equation   missing [] of 92
+    [PASS] J3 NEGATIVE: perturbing one JSON equation breaks the match
+    [PASS] J4 NEGATIVE: the same comparison against [Q,P] - x^2 FAILS, so the orientation is pinned   92 of 92 equations disagree with the reversed bracket
+==============================================================================
+    7/7 checks passed
+==============================================================================

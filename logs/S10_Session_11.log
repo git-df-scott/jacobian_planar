@@ -1,0 +1,42 @@
+
+Plane Jacobian campaign - Session 11
+THE CASCADE ENGINE for the First Framework decision (degrees (99,66)).
+
+Results (all exact over Q(sqrt(-3)), certified on the near-miss):
+
+1. STRATEGIC THEOREM (degree ledger): the 13-realization forces
+       deg W~_-5 = 6*deg(g) - 26 = 28,
+   while the near-miss sits at degree 15 with 13-block the CONSTANT
+   n3 = (-128 + 64 sqrt(-3))/3.  Any true framework solution differs
+   from the near-miss at LEADING order in the 13-block: the near-miss
+   is a degenerate boundary point of the framework variety, and
+   linearization around it is the wrong frame.  The exact cascade is
+   the engine.
+
+2. THE CASCADE: for n = -17..-6 the chain condition W_n = 0 solves
+   triangularly,
+       A~_{n+9} = [ B-cubic_n  -  A-quadratic'_n ] / (2 g^3),
+   so the entire y1-interior A~_{-8..3} is DETERMINED by g and the
+   twelve y2-blocks B~_{-5..6}.  Exactness of each division is the
+   DIVISIBILITY LADDER - a dense, active condition system on the
+   B-tower (verified: a generic perturbation of B~_-5 obstructs every
+   level from A~_-7 downward; only the first level, pure
+   multiplication A~_-8 = (3/2) g B~_-5, is condition-free).
+
+3. THE ENDGAME FUNCTIONAL: with W~_-5 computed from the cascade,
+       R(v) = v^39 * W~_-5(U) / g(U)^6        (U = v+1)
+   must be a polynomial of degree exactly 13 realizing the certified
+   degree-13 Belyi map (marked corners respected).  Near-miss: R = n3,
+   degree 0 - the located failure.
+
+The First Framework existence question is now equivalent to:
+   does the system  {ladder divisibilities on (g, B~-tower)}
+                 /\ {R = Belyi-13 realization}
+                 /\ {(-5)-side cross-chart pins (Session 9)}
+                 /\ {Keller condition}
+   admit a solution?
+Executable engine: see the Session 11 inline run in the transcript
+(general cascade solver, ~120 lines, exact U-polynomial arithmetic);
+Session 12 imposes the ladder structurally and begins the parameter
+countdown from ~240 toward Borisov's dozen.
+

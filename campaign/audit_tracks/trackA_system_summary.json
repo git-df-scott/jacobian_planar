@@ -1,0 +1,20 @@
+{
+ "case2": {
+  "unknowns": 72,
+  "equations": 92,
+  "inert": [
+   "c_0_0",
+   "d_0_0"
+  ],
+  "hash": "f27a28a21a9bc6e615109a81ef93b578d6ffa6e09f373cbe7dc8b819ee98ab30"
+ },
+ "case1": {
+  "unknowns": 186,
+  "equations": 302,
+  "inert": [
+   "c_0_0",
+   "d_0_0"
+  ],
+  "hash": "49d28a2fd7ca72eb4064564d02084b2fab1612222d0c2c86b22ee1fe4702be9a"
+ }
+}

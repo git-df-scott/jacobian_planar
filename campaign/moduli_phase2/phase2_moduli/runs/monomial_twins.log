@@ -1,0 +1,60 @@
+=====================================================================
+PROBE 3a  NEWTON-SKELETON OBSTRUCTION TO r = (0,0)
+          Every member of the frozen skeleton has y1 in x1^3*k[x1,x2]
+          and y2 in x1^2*k[x1,x2].  Then every term of {y1,y2} carries
+          x1-degree >= 4, so the bracket is divisible by x1^4 for the
+          WHOLE deformation space, not just at the near-miss.
+          Verified below on generic members of the skeleton.
+=====================================================================
+   generic skeleton member: {y1,y2} / x1^4 is a polynomial : 1
+   constant term of {y1,y2} (the Keller target) : 0
+   => on the frozen skeleton the Keller condition {y1,y2} = const != 0
+      is not merely obstructed to first order, it is UNREACHABLE:
+      the constant term vanishes identically on the whole box.
+      Any genuine twin must therefore CHANGE the x1-support, i.e.
+      change the combinatorial type -- which is exactly the chain
+      layer that probes 1 and 2 govern.
+
+=====================================================================
+PROBE 3b  ADMISSIBLE CHAIN DEGREES AND THEIR RIGIDITY
+          N = 2a = 3b+1 forces b odd and D = N-3 = 3b-2, so the
+          skeleton exists only for D = 1 (mod 6).  Parameter count:
+          a+b monic coefficients against N-4 cancellation equations,
+          with a 1-dimensional scaling w -> mu*w always acting.
+=====================================================================
+     D  | deg p | deg r | Belyi N | unknowns | equations | expected dim
+   1   |   2   |   1   |    4   |    3     |     0     |    3
+   7   |   5   |   3   |    10   |    8     |     6     |    2
+   13   |   8   |   5   |    16   |    13     |     12     |    1
+   19   |   11   |   7   |    22   |    18     |     18     |    0
+   25   |   14   |   9   |    28   |    23     |     24     |    -1
+   31   |   17   |   11   |    34   |    28     |     30     |    -2
+   37   |   20   |   13   |    40   |    33     |     36     |    -3
+
+   Rigidity (solution set = the scaling orbit only) needs
+   unknowns - equations = 1, i.e. (5D+13)/6 = D, i.e. D = 13 EXACTLY.
+   D < 13 is under-determined (positive-dimensional twin families);
+   D > 13 is over-determined (expected empty).
+
+=====================================================================
+PROBE 3c  EXPLICIT TWIN CENSUS - solving deg(p^2 - w r^3) = 3 for the
+          small admissible degrees.  The origin p = w^a, r = w^b is a
+          degenerate solution of every instance (it makes p^2 - w r^3
+          vanish identically), so it is saturated away by requiring
+          p(0) != 0 and r(0) != 0.  Dimension is reported in the
+          parameter space; the scaling orbit w -> mu*w accounts for 1.
+=====================================================================
+   D = 1  (deg p = 2, deg r = 1):  #equations = 0   parameter dim = 3   moduli after scaling = 2
+   D = 7  (deg p = 5, deg r = 3):  #equations = 6   parameter dim = 2   moduli after scaling = 1
+
+   D = 13 (deg p = 8, deg r = 5):  #equations = 12  parameter dim = 1  moduli after scaling = 0   [recorded; set RUN_D13 = 1 to recompute, ~10 min]
+
+  READING.
+  * D = 1 and D = 7 carry positive-dimensional twin families: the
+    skeleton is realizable there but far too soft to pin a framework.
+  * D = 13 is the unique rigid degree.  Borisov's chain degree is not
+    an artefact of his search - it is forced by (5D+13)/6 = D.
+  * D >= 19 is over-determined.
+  * D = 4 -- the ONLY chain degree at which the probe-2 trapdoor is
+    self-consistent -- is not 1 mod 6 and so does not admit the
+    skeleton at all.  The trapdoor has no twin to walk through it.
