@@ -238,5 +238,29 @@
     "verdict": "obstructed"
    }
   ]
+ },
+ {
+  "d": 15,
+  "eqs": 66,
+  "vars": 44,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-1/76 + sqrt(5)/38",
+    "on_locus": true,
+    "rank_J": 31,
+    "rank_aug": 32,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(5)/38 - 1/76",
+    "on_locus": true,
+    "rank_J": 31,
+    "rank_aug": 32,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
  }
 ]
