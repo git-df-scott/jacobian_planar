@@ -1,0 +1,15 @@
+
+=== sweep start, 160 candidates, timeout 60s each ===
+*** NONEMPTY LEAD campaign/d23_borisov/ff_h_system.ms  (13v 13eq char 0) dim=0
+EMPTY     wave5/ms/m16_d3_p1000003.ms  (8v 10eq char 1000003)
+EMPTY     wave5/ms/m16_d3_p1000033.ms  (8v 10eq char 1000033)
+NOVERDICT wave6/bottomedge/be_free_q.ms  (18v 17eq char 0)
+
+=== sweep start, 160 candidates, timeout 90s each ===
+*** NONEMPTY LEAD campaign/d23_borisov/ff_h_system.ms  (13v 13eq char 0) dim=0
+EMPTY     wave5/ms/m16_d3_p1000003.ms  (8v 10eq char 1000003)
+EMPTY     wave5/ms/m16_d3_p1000033.ms  (8v 10eq char 1000033)
+NOVERDICT wave6/bottomedge/be_free_q.ms  (18v 17eq char 0)
+NOVERDICT wave6/bottomedge/be_c2is1_p999961.ms  (18v 18eq char 999961)
+NOVERDICT wave6/bottomedge/be_c2is1_p999979.ms  (18v 18eq char 999979)
+NOVERDICT wave6/bottomedge/be_c2is1_p999983.ms  (18v 18eq char 999983)
