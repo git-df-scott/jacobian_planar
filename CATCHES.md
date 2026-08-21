@@ -907,3 +907,106 @@ map on the target.  Here it is not: gamma is not in general recoverable from
 (P~, Q~), so F is not literally (map) o S o phi.  ANY SOLUTION OF (*) MUST HAVE
 ITS NON-INJECTIVITY CHECKED DIRECTLY before the word counterexample is used --
 a solution of (*) with F injective is just an automorphism and proves nothing.
+
+================================================================================
+THE B=16 LADDER, RE-READ.  Four structural facts that were invisible until
+today's correction, and that shrink every cell by seven unknowns.  ALL VERIFIED
+FOR MANY d, none assumed.  This is where a hit is a counterexample.
+================================================================================
+
+WHY THIS CELL AND NOT ANOTHER.  Of everything the campaign has open, the B=16
+ladder is the only place where a single point converts into a counterexample by
+a PUBLISHED THEOREM plus an explicit recipe: GGV Theorem 1.2 says B = 16 iff
+(1.2)+(1.3) has a solution, and a solution with mu0 != 0 "would yield a
+counterexample to the JC" (their p.85), constructed in their Section 2.  Two
+supporting checks: cell d realizes degrees (16(3d-2), 16(2d-1)), and
+gcd(3d-2, 2d-1) = 1 always (since 2(3d-2) - 3(2d-1) = -1), so every cell has
+B = 16 EXACTLY -- admissible under GGV's own "B = 16 or B > 20".  Moh needs
+max > 100, i.e. d >= 3; GGHV's elimination reaches only max < 125, i.e. d <= 3.
+So every cell with d >= 4 is virgin territory no published work touches.
+
+(F1) mu0 OCCURS IN EXACTLY ONE EQUATION OF THE WHOLE SYSTEM.  It appears in
+(1.3) only through the term -6*mu0*y^3, hence only in the y^3 coefficient row,
+linearly, with the constant coefficient 6 (checked d = 3..12).  That row
+therefore constrains nothing -- it DEFINES mu0.  The campaign knew mu0 entered
+linearly in one term (BIFURCATION.md, "G is a constant vector") but used it only
+for a first-order rank test at a single point; it never used it to remove mu0
+and its row from the system.
+
+(F2) ON THE NORMALIZED LOCUS THAT ROW COLLAPSES TO ONE MONOMIAL.  Substituting
+GGV's own b0 = mu3, b1 = 0 and (1.2)'s a0 = -mu3^2/4, a1 = mu2, and mu1 from
+(1.2) row 3, the y^3 row goes from 20 terms to
+
+                        6*mu0  -  2*a2*mu2  =  0,     i.e.   mu0 = a2*mu2/3
+
+for EVERY d (checked 3,4,5,6,7,8,10,12), in BOTH the corrected and the printed
+variant -- so this one is robust to the typo.  Therefore
+
+        a counterexample (mu0 != 0)   <=>   a2 != 0   AND   mu2 != 0.
+
+COROLLARY, and it retires a whole lane: the chart mu2 = 0 CANNOT CONTAIN A
+COUNTEREXAMPLE at any d.  The campaign's Z/N chart split ran mu2 = 0 as a
+first-class case at every level; half that compute was spent on a region proved
+here to be empty of counterexamples in one line.
+
+(F3) A NEW NECESSARY CONDITION ON THE BRACKET CONSTANTS.  Combining (F2) with
+the CORRECTED (1.2) row 3, mu1 = -mu3*a2/3, and eliminating a2:
+
+                        mu0*mu3 + mu1*mu2 = 0
+
+for every d (checked 3..12).  Since [P,Q] = x^4 y + mu3 x^3 + mu2 x^2 + mu1 x
++ mu0, this is a condition on the bracket of ANY B=16 counterexample.  It FAILS
+on the printed variant, which gives mu0*mu3 + mu1*mu2 = -(2/3)*mu3*b2*mu2 -- so
+it is a consequence of today's correction and could not have been seen before.
+
+(F4) THE SYSTEM IS WEIGHTED-HOMOGENEOUS, so the torus gauge is exact.  Under
+
+    wt(a_i) = 2d-i,  wt(b_j) = d-j,  wt(mu3) = d,  wt(mu2) = 2d-1,
+    wt(mu1) = 3d-2,  wt(mu0) = 4d-3
+
+EVERY equation carries a single weight (verified row by row for d = 3..8).  All
+weights are positive except wt(a_{2d}) = 0.  So on mu2 != 0 the C^* action
+scales mu2 to 1, over an algebraically closed field, and
+
+    solutions with mu2 != 0 exist  <=>  solutions with mu2 = 1 exist.
+
+This is the torus the campaign DISCARDED, on the explicit grounds that "the term
+2*mu3*q1''(0) in (1.2) row 3 breaks every continuous torus" (ADJUDICATION
+section 6).  That term is the misprint.  The gauge is exact and is now restored.
+
+THE RESULTING SYSTEM (wave6/w6_b16_mu0_export.py, which re-verifies F1-F2 at
+every d before exporting).  Substituting a0, a1, a2, b0, b1, mu1, mu2 and
+dropping the y^3 row:
+
+    d    this export        campaign's version     max total degree
+    5    18 eqs / 14 unk    27 / 21                4   (unchanged)
+    6    22 / 17            31 / 24                4
+    7    26 / 20            35 / 27                4
+    8    30 / 23            39 / 30                4
+
+Seven fewer unknowns at every level, with NO degree blow-up -- unlike the
+cascade reduction below, which trades unknowns for degree ~4d.
+
+CONTROLS RUN AND PASSED: d = 5 EMPTY in char 0 in 0.99 s (direct system: 4.42 s)
+and d = 6 EMPTY in 39.7 s (direct: 64.66 s), both agreeing with the direct
+corrected runs.  d = 7 launched.
+
+ALSO RECORDED -- THE LADDER IS A CASCADE (wave6/w6_b16_cascade.py).  Ordering
+the (1.3) rows by descending power of y: row y^{4d} is quadratic in a_{2d}
+alone (GGV's row-0 quadratic), and row y^{4d-k} is LINEAR in the single new
+unknown a_{2d-k} for k = 1..2d, with coefficient
+
+        -( (4(2d-k) + 8d - 12) * a_{2d} + 3 )
+
+depending on a_{2d} ONLY (verified per d).  That coefficient never vanishes at a
+root of the row-0 quadratic (substituting a_{2d} = -3/(4j+8d-12) into it gives
+-144 - 3(8d-4)^2 != 0), so all 2d+1 of the a's back-substitute away with no
+Groebner basis at all, leaving rows y^{2d-1}..y^0 as pure constraints:
+
+    d = 5:  26 eqs / 20 unk  ->  14 / 7      d = 6:  30 / 23  ->  17 / 10
+
+round-trip verified by resubstitution into the original system.  The cost is
+max total degree ~4d+1 instead of 4.  The two reductions are complementary and
+can be stacked; which wins is an empirical question per d, not a theory question.
+This cascade structure IS the weight filtration of (F4): row y^j carries weight
+4d-j, and the variable of weight w is exactly the one that row introduces.
