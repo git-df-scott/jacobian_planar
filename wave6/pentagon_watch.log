@@ -1,1 +1,9 @@
 15:35 watcher armed (W=10,11,12,13 modular elimination)
+15:37 *** W=13 CONTRA SIGNAL *** done in 187.5s; stats: {'r1_det': 0, 'r2': 41, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:37 W=13 DONE stats={"r1_det": 0, "r2": 41, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(3, 95, 92)
+15:38 *** W=11 CONTRA SIGNAL *** done in 268.6s; stats: {'r1_det': 0, 'r2': 43, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:38 *** W=12 CONTRA SIGNAL *** done in 229.7s; stats: {'r1_det': 0, 'r2': 42, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:38 W=12 DONE stats={"r1_det": 0, "r2": 42, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(10, 111, 101)
+15:39 *** W=10 CONTRA SIGNAL *** done in 296.4s; stats: {'r1_det': 0, 'r2': 43, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:39 W=11 DONE stats={"r1_det": 0, "r2": 43, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(18, 126, 108)
+15:39 all eliminators finished

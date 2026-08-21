@@ -4,3 +4,4 @@ __pycache__/
 # engine scratch dirs (regenerated on demand)
 **/_scratch/
 wave5/ms2/watchdog.log
+pent/slice_p1000003_*.ms
