@@ -2,3 +2,4 @@
 p = 1000039: 1 admissible F_p-rational bottom-edge seed(s)
   seed 0: pinned 18 variables, 17 equations vanish identically
   checkpoint: 208 eq, 109 vars, 152433 terms, 5.3 MB -> reduced_sp1000039_0_108v.ms
+  checkpoint: 188 eq, 89 vars, 711790 terms, 26.8 MB -> reduced_sp1000039_0_88v.ms

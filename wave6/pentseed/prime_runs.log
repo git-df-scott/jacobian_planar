@@ -5,3 +5,6 @@ reduced_p1000033_106v exit=139 bytes=0 verdict=
 reduced_p1000033_120v exit=139 bytes=0 verdict=
 p1000033 DONE
 reduced_p1000033ctl_121v exit=139 bytes=0 verdict=
+reduced_p1000033ctl_135v exit=143 bytes=0 verdict=
+p1000033ctl DONE
+P2-msolve p=1000039 89vars exit=0 bytes=6 verdict=[-1]:
