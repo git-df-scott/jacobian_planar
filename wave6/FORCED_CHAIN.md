@@ -146,3 +146,17 @@ smallest decisive component — provably cannot be applied by subsystem
 extraction here. Any proof of emptiness must be global, which is exactly what a
 Nullstellensatz certificate is. This explains why 42 sessions never found a
 cheap kill: there isn't one to find.
+
+## The `s_3_7` case split: both branches survive
+
+| branch | equations | variables | overdetermined by | verdict |
+|---|---|---|---|---|
+| `s_3_7 = 0` | 211 | 93 | 118 | alive |
+| `s_3_7 ≠ 0` | 214 | 97 | 117 | alive |
+
+Neither branch reaches a contradiction; both stop on densification rather than
+at a fixed point. So the split narrows nothing yet — but it is now set up, and
+`w6_forced_chain2.py` takes `zero:VAR` / `nonzero:VAR` to branch on any variable.
+
+**Net position on case (1): still alive, from every direction tried.** No
+counterexample, and no proof of emptiness.

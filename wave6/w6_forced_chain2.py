@@ -68,6 +68,13 @@ def main():
     V, eqs, nonzero0 = load()
     nonzero = set(nonzero0)
     zeros, solved = set(), {}
+    # branch control:  argv1 = "zero:VAR"  or  "nonzero:VAR"
+    if len(sys.argv) > 1 and ':' in sys.argv[1]:
+        kind, var = sys.argv[1].split(':', 1)
+        if kind == 'zero':
+            zeros.add(var); print(f"BRANCH: assuming {var} = 0")
+        else:
+            nonzero.add(var); print(f"BRANCH: assuming {var} != 0")
     discharged, branches = [], []
     print(f"start: {len(eqs)} equations, {len(V)} variables")
     print(f"nondegeneracy hypotheses: {sorted(nonzero)}\n")
@@ -164,7 +171,7 @@ def main():
         if rnd <= 8 or rnd % 25 == 0:
             print(f"round {rnd}: pivot {v} from eq{i} ({len(rhs)} terms), "
                   f"terms {before} -> {after}")
-        if after > 3000000:
+        if after > 1500000:
             print(f"round {rnd}: STOPPING -- term count {after} blowing up")
             break
 
