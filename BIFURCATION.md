@@ -154,3 +154,52 @@ Two consequences, both acted on:
      solution) remains possible at any of them -- which is exactly what the
      global multi-start numerical hunt searches for, and why that lane is
      resumed and broadened rather than retired.
+
+## Result 8 — the factored form, and why the ladder is rigid (derived 02:00Z)
+
+Write D := A - q1^2/4 (the "defect") and C := (mu3/4)q1 - (mu2/6)y.  Then
+(1.3) factors:
+
+        6 D (D + 2C)  =  y * (4 A A' - mu2 q1^2 + 3 mu1 y q1 - 6 mu0 y^2)
+
+At y = 0 the second factor vanishes identically under GGV's normalisations
+(D(0) = -mu3^2/2, C(0) = mu3^2/4), so D + 2C = y E and the whole system
+reduces one degree to
+
+        6 D E  =  4 A A' - mu2 q1^2 + 3 mu1 y q1 - 6 mu0 y^2 .
+
+CHECKS (both exact, both pass):
+ * leading coefficients: 6(a_2d - 1/4)^2 = 8d a_2d^2  <=>  (8d-6)a^2 + 3a - 3/8 = 0
+   -- the row-0 quadratic and hence the entire resonance law fall straight
+   out of this balance, confirming the framework end to end.
+ * at the d=3 family (D = -q1^2/2, E = -q1 y^2/2) both sides give
+   (3/2) q1^3 y^2 identically, leaving exactly  0 = -6 mu0 y^2  -- the
+   obstruction R = 6*mu0 re-derived in one line.
+ * the branch D == 0 (A = q1^2/4) is impossible for d >= 1 by degree count
+   (LHS degree 4d-1 vs RHS degree <= 2d), so it needs no computation.
+
+RIGIDITY.  A counterexample requires the polynomial
+        P := 6DE - 4AA' + mu2 q1^2 - 3 mu1 y q1
+to collapse to the single monomial -6*mu0*y^2 with mu0 != 0: 4d-1 vanishing
+conditions on 3d-1 unknowns, an excess of ~d that GROWS with d.  This is the
+same verdict the rank sweep and the numerical floors give, now from pure
+structure: the B=16 ladder is rigid, and rigid in a way that gets worse, not
+better, as d increases.
+
+## STRATEGIC SYNTHESIS — where a counterexample must be, if the ladder closes
+
+GGV prove: B = 16 **or B > 20**.  Every independent line of evidence tonight
+(exact rank pattern d=3..13, the excess count, the numerical empty-floors at
+d=8 and d=12, this rigidity argument) points to B = 16 being EMPTY.  If that
+is right then B > 20, and a counterexample's degrees are multiples of some
+B >= 21 -- necessarily in the ABOVE-125 territory, where GGHV's elimination
+does not reach and where no reduction machinery exists at all.
+
+Consequence for the campaign: the above-125 frontier is not a side-quest, it
+is the ONLY remaining home for a counterexample, and the tail-closure
+predictor (last-2-segments + shape index -> system hash, zero violations on
+every system ever generated here) is the tool that makes that frontier
+finite.  The (72,108) resisters now running on the worker are the nearest
+live instance of it, and GGHV Cor 5.7 -- the only thing killing the (9,27)
+branch anywhere in the literature -- has still never been independently
+checked by anyone.
