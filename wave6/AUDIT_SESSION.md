@@ -100,3 +100,61 @@ with `s_4_8 ≠ 0`. After this audit it rests on:
 **Still one prime.** Modular emptiness was proved unsound for contradictions
 this morning, so a second prime and a characteristic-zero lift remain required
 before case (1) may be called closed.
+
+---
+
+# Manual check: one more error found, and the verdict's discrimination confirmed
+
+## ERROR: my "desaturated" test never desaturated anything
+
+Reading the raw source by hand rather than through my own tooling: line 269 of
+`seed0_p1000003.ms` is
+
+    s_4_8*zz0-1
+
+**The campaign's own export already saturates `s_4_8`**, via its own variable
+`zz0`. So the `zz9*s_4_8-1` row I added was redundant (harmless, but redundant),
+and — the actual error — when I built a "desaturated" copy by stripping `zz9`,
+**`zz0` remained and the system was still saturated.** The observation "both the
+saturated and desaturated systems return `[-1]`" was therefore void: both were
+saturated. Withdrawn.
+
+## The real desaturation test, and what it shows
+
+Removing **both** `zz0` and `zz9` (90 variables, 207 equations):
+
+| system | s_4_8 ≠ 0 enforced? | msolve |
+|---|---|---|
+| `reduced_91v` | yes (zz0 and zz9) | **`[-1]` EMPTY, seconds** |
+| genuinely desaturated | no | **NO VERDICT — timed out at 110 s** |
+
+This is the discrimination the earlier void test was supposed to provide, and it
+is the right way round. With the nondegeneracy imposed the system collapses
+immediately; without it, the solver cannot finish — the behaviour of a system
+that *has* solutions and must compute them. Emptiness is specifically a
+statement about `s_4_8 ≠ 0`, not an artifact of the reduction.
+
+It also explains the timing that made me suspicious: a contradiction can be
+found early and terminate, whereas a non-empty variety must be computed out.
+
+## Planted-solution controls: depth now brackets the real run
+
+Same chain code, same export, on the **actual** seed-pinned system with a
+solution planted by construction:
+
+| control | variables | msolve |
+|---|---|---|
+| `reduced_ctl111v` | 112 | **`[0, …]` found it** |
+| `reduced_ctl96v` | 97 | **`[0, …]` found it** |
+| `reduced_ctl85v` | 86 | running (deeper than the real run) |
+| the real run | **92** | `[-1]` |
+
+97 and 86 bracket 92, so the validation reaches — and passes through — the depth
+actually used. The chain does not destroy solutions at this depth.
+
+## Net effect on the verdict
+
+Unchanged in substance and better supported: **at p = 1000003 the seed-pinned
+system has no solution with `s_4_8 ≠ 0`** — and that condition is the campaign's
+own, imposed by its own `zz0`, not something I added. Still one prime; a second
+prime and a char-0 lift remain required.
