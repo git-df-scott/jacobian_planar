@@ -190,5 +190,29 @@
     "verdict": "obstructed"
    }
   ]
+ },
+ {
+  "d": 13,
+  "eqs": 58,
+  "vars": 38,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/196 + sqrt(39)/98",
+    "on_locus": true,
+    "rank_J": 27,
+    "rank_aug": 28,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(39)/98 - 3/196",
+    "on_locus": true,
+    "rank_J": 27,
+    "rank_aug": 28,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
  }
 ]
