@@ -79,3 +79,30 @@ a miss is a miss.** But the floor value is itself a datum the campaign has never
 had: it measures how close the Keller condition comes to the non-injectivity
 locus. The campaign has only ever asked whether the two varieties intersect,
 never how near they pass.
+
+---
+
+## CONTROL VERDICTS — both numerical hunts are UNVALIDATED. Do not quote a floor.
+
+- **ALS P-POS: FAIL.** 12 random starts on a system with a *planted root that
+  provably exists*: best res² = 4.21e+06, median 1.37e+07. It never found the
+  root. From the planted point itself ALS returns res² = 2.19e-21, so the
+  assembly and both linear solves are correct — the method simply has no
+  power from random starts on this landscape. **Any "floor" ALS reports on the
+  real system is therefore meaningless and must not be cited as evidence of
+  emptiness.**
+- **VARPRO/Newton P-POS: NO VERDICT.** Killed by its 900s timeout (exit 143)
+  before completing 4 starts. By the campaign's standing rule a timeout is not
+  a verdict — it is neither a pass nor a fail.
+
+So the bilinear *structure* stands (it is a monomial census, independently
+checkable, and the VARPRO dimension reduction 165 → 55 is real), but **neither
+solver has demonstrated the power to find a root that exists**, and no negative
+numerical result from either may be used. This is exactly the can't-fail-
+certifier trap that has caught this campaign five times; the controls caught it
+before a floor was published, which is what they are for.
+
+Next for the numerical route, in order: an analytic VARPRO Jacobian
+(Golub–Pereyra / Kaufman) instead of the 110-point finite difference that made
+Newton too slow to finish a single control; then re-run P-POS. Until P-POS
+passes, the numerical hunt produces no admissible evidence in either direction.
