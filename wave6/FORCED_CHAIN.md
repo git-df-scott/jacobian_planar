@@ -105,9 +105,23 @@ information.
 
 This shows up in the bookkeeping: 70 variables were removed (3 zeros + 67
 pivots), which should leave 213 equations, but **212** remain. One equation went
-trivial beyond the accounting. So the system's true overdetermination is
-**117, not 118** — a one-unit correction to a number the campaign has quoted
-from two independent routes.
+trivial beyond the accounting.
+
+**CORRECTION (self-caught).** I first wrote that this makes the true
+overdetermination "117, not 118". That is imprecise and the 118 stands. An
+exact rank computation of the 283 x 8727 coefficient matrix mod (2^61-1) gives
+**rank exactly 283, with ZERO linearly dependent equations**. `eq278` is *not*
+a linear combination of the others — it becomes redundant only after dividing
+by `s_3_7 . s_4_8`, which is a non-linear step licensed by the nondegeneracy
+hypotheses. So there are two different, both-correct counts:
+
+  * **un-localized**: 283 linearly independent equations, overdetermination
+    **118** — the campaign's number, confirmed;
+  * **localized at the nondegeneracy conditions** (i.e. inverting the required-
+    nonzero variables): one equation becomes redundant, giving **117**.
+
+The seed-pinned system independently lands on the same 117 after the same
+localization (194 equations in 77 variables), which is why the two agree.
 
 ## Honest limits of v2
 
@@ -160,3 +174,45 @@ at a fixed point. So the split narrows nothing yet — but it is now set up, and
 
 **Net position on case (1): still alive, from every direction tried.** No
 counterexample, and no proof of emptiness.
+
+---
+
+# The Euler measurement: the load is uniformly distributed
+
+An exact rank computation of the constraint system (283 x 8727 monomial
+coefficient matrix, mod 2^61-1):
+
+| quantity | value |
+|---|---|
+| nominal equations | 283 |
+| **true rank** | **283** |
+| linearly dependent equations | **0** |
+| constant monomial in the row space | **NO** |
+
+**Not one equation is slack.** Every constraint carries independent load — the
+overdetermination by 118 is distributed uniformly across all 283, exactly like
+compression across every cross-section of an Euler column. This is the precise
+sense in which there is no weak notch to find, and it is the same fact the
+closed-subsystem search reported from the other side: no small piece decides
+anything, because the load is everywhere.
+
+It also re-derives the degree-0 Nullstellensatz result by a second independent
+route (rank over F_p, versus exact Gaussian elimination over Q): the constant
+is not in the row space, so no constant-coefficient certificate exists.
+
+## What Euler actually tells us to compute
+
+Euler's column does not fail from a crack; it fails when a **global threshold**
+is crossed and the structure's mathematics changes character. The analogue for
+a polynomial system is exact and classical: the **degree of regularity** -- the
+degree D at which the Macaulay matrix `M_D` (rows `x^alpha . F_k`, columns
+monomials of degree <= D) first has the constant in its row space. Below that
+degree nothing is decided; at it, infeasibility appears all at once.
+
+That is the same ladder as the Nullstellensatz certificate, but the reframing
+says what to measure: not "can I find lambda", but **the rank of `M_D` as D
+increases, and the codimension of the constant**. D = 0 is done (rank 283, not
+reached). D = 1 is 46,978 rows against ~10^6 monomial columns with ~1.6M
+nonzeros; a row-subset restriction is sound for a NEGATIVE answer (inconsistency
+on a subset implies inconsistency overall), which is the tractable direction and
+the recommended next computation.
