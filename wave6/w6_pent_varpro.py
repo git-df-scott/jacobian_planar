@@ -128,6 +128,101 @@ class PentVarPro:
         sol, *_ = np.linalg.lstsq(Ad, -a0, rcond=None)
         return Ad @ sol + a0, sol
 
+    def dF_ds(self, c, d, s):
+        """dF/ds at a full point -- (rows x ns).  s-monomial derivatives only."""
+        S = np.asarray(s, dtype=complex)
+        base = self.coef * np.append(d, 1.0)[self.col]
+        base = np.where(self.has_c, base * c[self.cidx_safe], base)
+        rows = self.neq + len(self.extra)
+        out = np.zeros((rows, self.ns), dtype=complex)
+        for m in range(self.ns):
+            e = self.sexps[:, m].astype(float)
+            with np.errstate(divide='ignore', invalid='ignore'):
+                powm = np.where(e > 0, np.power(S[m], np.maximum(e - 1, 0)), 0.0)
+            oth = np.ones(len(self.sexps), dtype=complex)
+            for j in range(self.ns):
+                if j != m:
+                    oth = oth * np.power(S[j], self.sexps[:, j])
+            dsv = e * powm * oth                      # d(s-monomial)/ds_m
+            tv = base * dsv[self.smon]
+            out[:self.neq, m] = (np.bincount(self.eq, weights=tv.real, minlength=self.neq)
+                                 + 1j * np.bincount(self.eq, weights=tv.imag,
+                                                    minlength=self.neq))
+        return out                                    # extra rows have no s-dependence
+
+    def varpro_parts(self, c, s):
+        """QR-based projection: returns (r, d*, Q) with r = P_perp . a0."""
+        A = self.matrix(c, s)
+        Ad, a0 = A[:, :self.nd], A[:, self.nd]
+        Q, R = np.linalg.qr(Ad)
+        dstar = np.linalg.lstsq(R, -(Q.conj().T @ a0), rcond=None)[0]
+        return Ad @ dstar + a0, dstar, Q, R
+
+    def _dG_adj(self, c, s, r):
+        """W[:, j] = (dG/dtheta_j)^H . r, for theta = (c, s).  G = Ad(c,s).
+
+        Only terms whose d-part is a genuine d-variable (col < nd) belong to G;
+        the constant column is h, not G.  Extra (P-NEG) rows carry no
+        G-dependence, so they contribute nothing."""
+        S = np.asarray(s, dtype=complex)
+        sv = np.prod(np.power(S[None, :], self.sexps), axis=1)
+        m_in_G = self.col < self.nd
+        rr = r[:self.neq]
+        W = np.zeros((self.nd, self.nc + self.ns), dtype=complex)
+
+        # --- c-block: dG/dc_i has entries coeff * s^e on terms with cidx = i
+        sel = m_in_G & self.has_c
+        wt = np.conj(self.coef[sel] * sv[self.smon[sel]]) * rr[self.eq[sel]]
+        flat = self.cidx[sel] * self.nd + self.col[sel]
+        n = self.nc * self.nd
+        blk = (np.bincount(flat, weights=wt.real, minlength=n)
+               + 1j * np.bincount(flat, weights=wt.imag, minlength=n))
+        W[:, :self.nc] = blk.reshape(self.nc, self.nd).T
+
+        # --- s-block: dG/ds_m carries the s-monomial derivative
+        cpart = np.where(self.has_c, c[self.cidx_safe], 1.0)
+        for m in range(self.ns):
+            e = self.sexps[:, m].astype(float)
+            powm = np.where(e > 0, np.power(S[m], np.maximum(e - 1, 0)), 0.0)
+            oth = np.ones(len(self.sexps), dtype=complex)
+            for j in range(self.ns):
+                if j != m:
+                    oth = oth * np.power(S[j], self.sexps[:, j])
+            dsv = e * powm * oth
+            wt = np.conj(self.coef[m_in_G] * dsv[self.smon[m_in_G]]
+                         * cpart[m_in_G]) * rr[self.eq[m_in_G]]
+            col = (np.bincount(self.col[m_in_G], weights=wt.real, minlength=self.nd)
+                   + 1j * np.bincount(self.col[m_in_G], weights=wt.imag, minlength=self.nd))
+            W[:, self.nc + m] = col
+        return W
+
+    def fun_jac(self, th):
+        """Residual AND the FULL analytic Golub-Pereyra Jacobian.
+
+        r(theta) = P_perp . h is NOT holomorphic in theta: the least-squares
+        projection uses the Hermitian inner product, so P_perp depends on both
+        G and G^H.  Wirtinger calculus gives
+
+            A = dr/dtheta      = P_perp . [ dh/dtheta + (dG/dtheta) d* ]
+            B = dr/dtheta_bar  = -(G^+)^H (dG/dtheta)^H r
+
+        A alone is the Kaufman approximation; it fails a finite-difference
+        check by ~50% because B is NOT small away from a solution (it carries
+        a factor of r).  With theta = u + iv,
+            dr = A dtheta + B dtheta_bar = (A+B) du + i(A-B) dv
+        so the real Jacobian of [Re r; Im r] is
+            [[Re(A+B), -Im(A-B)], [Im(A+B), Re(A-B)]]"""
+        c, s = self.unpack(th)
+        r, dstar, Q, R = self.varpro_parts(c, s)
+        A = np.concatenate([self.matrix_c(dstar, s)[:, :self.nc],
+                            self.dF_ds(c, dstar, s)], axis=1)
+        A = A - Q @ (Q.conj().T @ A)                      # P_perp . (dF/dtheta)
+        W = self._dG_adj(c, s, r)                         # (dG/dtheta)^H r
+        B = -(Q @ np.linalg.solve(R.conj().T, W))         # (G^+)^H = Q R^-H
+        P_, M_ = A + B, A - B
+        Jr = np.block([[P_.real, -M_.imag], [P_.imag, M_.real]])
+        return np.concatenate([r.real, r.imag]), Jr
+
     def matrix_c(self, d, s):
         """Build [Ac | b0] for the given (d, s) -- the system is linear in c too."""
         sv = np.prod(np.power(s[None, :], self.sexps), axis=1)
@@ -183,15 +278,39 @@ class PentVarPro:
                 + 1j * np.bincount(self.eq, weights=tv.imag, minlength=self.neq))
 
     # ---- driver ---------------------------------------------------------
-    def run(self, nstarts, rng, label):
+    def _cached(self):
+        """One evaluation serves both fun and jac (scipy calls them in step)."""
+        store = {}
+
+        def f(th):
+            key = th.tobytes()
+            if key not in store:
+                store.clear()
+                store[key] = self.fun_jac(th)
+            return store[key][0]
+
+        def j(th):
+            key = th.tobytes()
+            if key not in store:
+                store.clear()
+                store[key] = self.fun_jac(th)
+            return store[key][1]
+        return f, j
+
+    def run(self, nstarts, rng, label, analytic=True):
         dim = 2 * (self.nc + self.ns)
         best = np.inf; best_pt = None; hits = []
         t0 = time.time()
+        fcb, jcb = self._cached()
         for k in range(nstarts):
             th0 = rng.normal(scale=1.0, size=dim)
             try:
-                out = least_squares(self.fun, th0, method='lm', xtol=1e-14,
-                                    ftol=1e-14, gtol=1e-14, max_nfev=20000)
+                if analytic:
+                    out = least_squares(fcb, th0, jac=jcb, method='lm', xtol=1e-14,
+                                        ftol=1e-14, gtol=1e-14, max_nfev=20000)
+                else:
+                    out = least_squares(self.fun, th0, method='lm', xtol=1e-14,
+                                        ftol=1e-14, gtol=1e-14, max_nfev=20000)
             except Exception as ex:
                 print(f"  start {k}: solver error {ex}"); continue
             r2 = float(np.sum(out.fun ** 2))
