@@ -610,3 +610,111 @@ LEDGER CHANGE, EFFECTIVE NOW.
   the form "only (108,72) survives" must be corrected.  This is failure class
   (i) inherited-assumption: we imported a published kill without checking it,
   and it does not hold.
+
+================================================================================
+GGV (1.2) ROW 3 IS MIS-PRINTED IN THE PAPER, AND THE CAMPAIGN COPIED IT.  EVERY
+B=16 EMPTINESS VERDICT EVER PRODUCED HERE WAS A VERDICT ABOUT THE WRONG VARIETY.
+================================================================================
+
+This is the worst error the campaign has made.  It is not a bug in our code; it
+is a typo in the source, transcribed faithfully, that silently shrank the search
+space by a codimension-1 condition for two months.
+
+WHAT THE PAPER PRINTS.  GGV, Pro Mathematica 27 (2013) 83-98, Theorem 1.2 (p.85)
+and again as (3.6) (p.93):
+
+    A(0) = -mu3^2/4,   A'(0) = mu2,   mu3*A''(0) = -6*mu1 - 2*mu3*q1''(0)
+
+I read this off the page renders myself (ggv_p3-03.png p.85, ggv_p-11.png p.93).
+The transcription in wave5/w5_b16_abel.py was CORRECT: the paper really does
+print the -2*mu3*q1''(0) term.  The paper is wrong.
+
+WHAT IT SHOULD BE.  GGV justify the last two conditions in one sentence: they
+"follow from the requirement that q0'(y) and p0'(y) defined by (3.2) and (3.3)
+are polynomials".  I carried out exactly that derivation, from their own setup
+(p.91-93), and it gives
+
+    mu3*A''(0) = -6*mu1        -- NO q1''(0) term.
+
+The derivation is committed and self-checking: wave6/w6_ggv12_rederivation.py.
+It starts from the Poisson bracket, not from any transcription:
+  * P = x^3 y + x^2 p2 + x p1 + p0,  Q = x^2 y + x q1 + q0, and the five
+    coefficients of [P,Q] in x are computed directly and checked AGAINST the
+    four ODEs printed on p.91 -- all five match, so the setup is theirs;
+  * q1 = mu3 + y^2 F', p2 = mu3 + yF + (3/2)y^2 F' (their general solution of
+    the first ODE, p.92) is confirmed to satisfy that ODE identically;
+  * (3.2)'s numerator vanishing at y=0 gives p1(0) = mu2, i.e. A'(0) = mu2;
+  * (3.3)'s numerator vanishing at y=0 gives mu1 = -mu3*(p1'(0) - 2mu3 F'(0))/3;
+  * A := y p1 - q1 p2 + (3/4) q1^2 (their p.93) has A(0) = -mu3^2/4 (matches),
+    A'(0) = mu2 (matches), and
+        mu3*A''(0) = 2*mu3*(p1'(0) - 2*mu3*F'(0)) = -6*mu1  exactly.
+  * printed minus truth = -4*F'(0)*mu3 = -2*mu3*q1''(0), the spurious term.
+
+THE DAMAGE, EXACTLY.  q1''(0) = 2*b2 (b2 = the y^2 coefficient of q1).  Combine
+the printed row 3 with the y^2 coefficient row of (1.3), after the paper's own
+normalizations (b0 = mu3, b1 = 0, a0 = -mu3^2/4, a1 = mu2):
+
+    y^2 row of (1.3)  =  -mu3*(a2*mu3 + 3*mu1)
+    printed row 3     =  2*(a2*mu3 + 2*b2*mu3 + 3*mu1)
+    mu3*(row 3) + 2*(y^2 row)  =  4*mu3^2*b2
+
+verified identical for d = 3, 4, 5, 6, 7.  So 4*mu3^2*b2 lies in the campaign's
+ideal for EVERY d, i.e.
+
+    V_campaign  =  V_true  n  ( {mu3 = 0}  u  {q1''(0) = 0} ).
+
+That is a proper closed subvariety.  EMPTINESS OF IT IMPLIES NOTHING ABOUT B=16.
+Under the corrected row 3 the same combination is 0 -- the corrected row is
+implied by (1.3) on the chart mu3 != 0, which is what a correctly derived
+condition should be.  That is the discriminator, and it can fail: it is printed
+by w6_ggv12_rederivation.py for both variants side by side.
+
+WHY NO CONTROL CAUGHT IT.  w5_b16_abel.py has 6 controls and all 6 pass on the
+WRONG system -- because both of GGV's own worked examples (Sec 3.1 and Sec 3.5)
+have q1''(0) = 0.  The file even says so in a comment ("both published controls
+had b2 = 0 and never exercised that term") and the campaign read that as a note
+rather than as an alarm.  This is failure class (v), can't-fail certifier: a
+control suite that is structurally incapable of detecting the error it is
+supposed to guard, plus failure class (i), inherited assumption.
+
+SECOND-ORDER DAMAGE.  The campaign killed its own torus gauge charts on the
+grounds that "the term 2*mu3*q1''(0) in (1.2) row 3 breaks every continuous
+torus" (ADJUDICATION section 6, w5_b16_reduce.py:40-44).  That reason is void.
+Any gauge decision resting on it must be redone.
+
+WHAT IS VOID.  Every B=16 EMPTY row in STATE_FULL.md section A and the
+ADJUDICATION section 2 headline ("the B=16 corridor is now closed further than
+any published source") -- all d, both charts, both seeds, all primes.  Not
+"unconfirmed": VOID, as statements about B=16.  They remain true statements
+about V_campaign, which is not an object anyone cares about.
+
+WHAT I RE-RAN TODAY ON THE CORRECTED SYSTEM (msolve, mu0 saturated, stderr read
+and empty, zero constant generators audited, positive control passing):
+
+    d = 2   EMPTY   char 0   0.00 s      d = 4   EMPTY   char 0   0.10 s
+    d = 3   EMPTY   char 0   0.01 s      d = 5   EMPTY   char 0   4.42 s
+    (mod p = 1000003 agrees at every d; d = 6,7,8 launched.)
+
+POSITIVE CONTROL (mandatory, because these are all [-1] verdicts): the SAME
+corrected system with the mu0 saturation REMOVED returns [1, 14, -1, []] at
+d = 3 (positive-dimensional -- GGV's published mu0 = 0 family) and an explicit
+solution list at d = 4.  So the pipeline can say "non-empty"; the [-1]s are real.
+
+NET EFFECT ON THE CAMPAIGN.  d = 2..5 are re-decided EMPTY in characteristic 0
+on the correct system, so GGV's published d = 2,3,4 conclusions survive the typo
+and d = 5 -- which GGV explicitly could not solve ("after an hour the PC hadn't
+solved it") -- is decided here for the first time, correctly, in 4.4 seconds.
+Everything above d = 5 reverts to UNDECIDED and must be re-run from scratch.
+
+CODE FIXED: wave5/w5_b16_abel.py (build_system now takes variant='corrected'
+(default) or 'printed' to reproduce the old wrong system); the substitution
+mu1 = -mu3*(a2 + 2*b2)/3, which is the erroneous row solved for mu1, corrected
+to mu1 = -mu3*a2/3 in w6_seed_d8.py, w6_rankcrit_modp.py, w6_numhunt.py,
+w6_plantctl.py, w6_bifsystem.py, w6_mu0walk.py, w6_cascade_fp.py.
+
+STANDING RULE ADDED.  A transcribed equation is not verified by reproducing the
+source's own examples.  It is verified by re-deriving it from the source's own
+prior equations, or by an example that exercises every term.  Before trusting
+any transcription, list its terms and name, for each one, the control that would
+die if that term were deleted.  If a term has no such control, it is unverified
+no matter how many controls pass.

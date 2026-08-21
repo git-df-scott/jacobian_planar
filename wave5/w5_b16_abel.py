@@ -8,7 +8,16 @@ renders ggv_p3-03.png and ggv_p-11.png, not from pdftotext; (1.3) on p.85 and
   THEOREM 1.2 (GGV 2013).  B = 16 if and only if there exist A, q1 in K[y]
   and mu0..mu3 in K with mu0 != 0 such that
 
-    (1.2)  A(0) = -mu3^2/4,   A'(0) = mu2,   mu3*A''(0) = -6*mu1 - 2*mu3*q1''(0)
+    (1.2)  A(0) = -mu3^2/4,   A'(0) = mu2,   mu3*A''(0) = -6*mu1
+
+  *** CORRECTED 2026-08-21.  The paper PRINTS the third condition as
+      mu3*A''(0) = -6*mu1 - 2*mu3*q1''(0)  ((3.6), p.93), and this file
+      transcribed it faithfully.  That printed form is WRONG: re-deriving it
+      from GGV's own (3.2)/(3.3) polynomiality requirements gives no
+      q1''(0) term.  The spurious term made the system a PROPER SUBVARIETY
+      ({mu3=0} u {q1''(0)=0}) of the real one -- see the CATCHES.md entry
+      "GGV (1.2) ROW 3 IS MIS-PRINTED".  build_system(d, variant='printed')
+      reproduces the old, wrong system for comparison. ***
 
     (1.3)  6*( A - q1^2/4 + (mu3/4)*q1 - (mu2/6)*y )^2
              = 4*y*A*A' + 6*( (mu3/4)*q1 - (mu2/6)*y )^2
@@ -53,9 +62,16 @@ def check(label, cond, note=""):
     if not cond:
         FAIL.append(label)
 
-def build_system(d):
+def build_system(d, variant='corrected'):
     """Coefficient system of (1.3)+(1.2) for q1 monic of degree d, deg A = 2d.
-    Returns (equations, unknowns, A, q1); the last 3 equations are (1.2)."""
+    Returns (equations, unknowns, A, q1); the last 3 equations are (1.2).
+
+    variant='corrected' (default) uses the RE-DERIVED (1.2) row 3,
+        mu3*A''(0) + 6*mu1 = 0.
+    variant='printed' uses GGV's printed (3.6), which carries a spurious
+        +2*mu3*q1''(0); kept only to reproduce the campaign's pre-2026-08-21
+        results.  Do not use it for verdicts."""
+    assert variant in ('corrected', 'printed')
     a = symbols(f'a0:{2*d+1}')          # A = sum a_i y^i
     b = symbols(f'b0:{d}')              # q1 = y^d + sum_{i<d} b_i y^i
     A  = sum(a[i]*y**i for i in range(2*d+1))
@@ -68,7 +84,8 @@ def build_system(d):
     Ap  = diff(A, y); App = diff(Ap, y); q1pp = diff(q1, y, 2)
     eqs += [expand(A.subs(y, 0) + mu3**2/4),
             expand(Ap.subs(y, 0) - mu2),
-            expand(mu3*App.subs(y, 0) + 6*mu1 + 2*mu3*q1pp.subs(y, 0))]
+            expand(mu3*App.subs(y, 0) + 6*mu1
+                   + (2*mu3*q1pp.subs(y, 0) if variant == 'printed' else 0))]
     # GGV p.92 WLOG normalizations, used by their own Sec 3.5 computations
     # ("we can and will assume q1(0) = mu3, q1'(0) = 0"): without these the
     # system carries gauge freedom (observed: d=2 mod-p points that are pure

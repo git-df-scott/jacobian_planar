@@ -34,7 +34,7 @@ def chart_system(d, seed=None, mu0_zero=False, saturate=True):
     eqs, unk, A, q1 = build_system(d)
     a = symbols(f'a0:{2*d+1}'); b = symbols(f'b0:{d}')
     subs = {a[0]: -mu3**2/4, a[1]: mu2, b[0]: mu3, b[1]: 0,
-            mu1: -mu3*(a[2] + 2*b[2])/3}
+            mu1: -mu3*a[2]/3}
     if mu0_zero:
         subs[mu0] = 0
     if seed is not None:

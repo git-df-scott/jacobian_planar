@@ -48,7 +48,7 @@ t_ = Symbol('t'); u_ = Symbol('u')
 
 for k, r in enumerate(roots):
     pre = {a[0]: -mu3**2/4, a[1]: mu2, b[0]: mu3, b[1]: 0,
-           mu1: -mu3*(a[2] + 2*b[2])/3, a[2*d]: sp.Integer(r)}
+           mu1: -mu3*a[2]/3, a[2*d]: sp.Integer(r)}
     core = [expand(e.subs(pre)) for e in eqs]
     core = [e for e in core if e != 0]
     core.append(expand(t_*mu0 - 1))

@@ -36,7 +36,7 @@ def build_modp(d, p):
     eqs, unk, A, q1 = build_system(d)
     a = symbols(f'a0:{2*d+1}'); b = symbols(f'b0:{d}')
     pre = {a[0]: -mu3**2/4, a[1]: mu2, b[0]: mu3, b[1]: 0,
-           mu1: -mu3*(a[2] + 2*b[2])/3}
+           mu1: -mu3*a[2]/3}
     core = [expand(e.subs(pre)) for e in eqs]
     core = [e for e in core if e != 0]
     unknowns = [a[i] for i in range(2, 2*d+1)] + [b[i] for i in range(2, d)] + [mu2, mu3, mu0]
