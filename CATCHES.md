@@ -1806,3 +1806,40 @@ rather than near completion.  If both return without a verdict the answer is not
 a bigger machine -- it is the rational-function cascade that would take 123
 unknowns down to about 4, which remains the one piece that must be built
 properly rather than faked (see the two retracted cascades above).
+
+--------------------------------------------------------------------------------
+THE TWO SEED RUNS SEQUENCED RATHER THAN RACED, 19:06.
+--------------------------------------------------------------------------------
+Both jobs test the SAME question -- does the single admissible bottom-edge seed
+of (72,108) pentagon case (1) extend past the 17 top-level equations -- from two
+angles:
+    #1  267 equations / 148 unknowns   (seed pinned, nothing else done)
+    #2  241 equations / 123 unknowns   (same, with the linear block solved out)
+
+#2 FAILED TWICE ON ADDRESS-SPACE CAPS, needing more each time:
+    cap 3.5 GiB -> died at  8:25, RSS 3.42 GB, segfault on failed alloc
+    cap 5.0 GiB -> died at  8:55, RSS 4.24 GB, same
+Both left an EMPTY output file, so by the standing rule: NO VERDICT either time.
+The watcher logged both correctly as "ENDED -> NO-VERDICT(empty file)".
+
+Third attempt was launched uncapped, but at 19:04 it was growing ~0.63 GB/min
+against only 3.7 GB of headroom, i.e. certain to exhaust memory around 19:10.
+I STOPPED IT DELIBERATELY at 2:37 in rather than let the kernel decide.  Reason:
+the OOM killer is probabilistic and, although #2 carried oom_score_adj = 1000,
+the kernel had REFUSED to let me lower #1's score, so an OOM event could still
+have taken the 62-minute job.  #2 restarts from scratch each time and had 2.6
+minutes in it -- nothing to lose, and the outcome becomes deterministic.
+
+QUEUED INSTEAD (wave6/pentseed/queue_reduced.sh, running detached): it polls for
+#1's exit, records #1's verdict and the memory state, then launches the reduced
+system UNCAPPED on the whole machine -- its first fair run.  So the sequence is
+now automatic and uncontested:
+    #1 resolves by 19:33 (verdict or hard timeout)
+    #2 starts immediately after with ~13 GB available, resolves by ~20:23
+
+WHY #2 IS THE BETTER BET: same question, 25 fewer unknowns, linear relations
+already eliminated.  Its repeated appetite for memory is itself weak evidence
+that this system is genuinely hard rather than near completion -- worth
+remembering when reading whatever lands, and a reason to keep building the
+rational-function cascade (which would take these 123 unknowns to about 4)
+rather than escalating hardware.
