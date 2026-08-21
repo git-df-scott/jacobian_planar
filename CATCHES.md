@@ -123,3 +123,49 @@ factorization; 444/464 coverage hole; pentagon 2-torus.
 5. Tail-hash the 429-case frontier before building the compiler extension.
 6. Cheap reads: GGV p.92 WLOG argument; GGHV Sec 5 skeleton.
 7. Morning: bridge timeout one-liner; register annotation with unique-map.
+
+## PENTAGON TRUNCATION — the real mistake, found Saturday
+
+The truncation ladder (trackB1_trunc10..19.json) is a CLOSED subsystem: every
+full solution restricts to a truncation solution, so an EMPTY truncation kills
+pentagon case (1) of (72,108) outright.  It was built, run once at W=19, died
+"no more memory", and was abandoned.  Today's diagnosis of why that was never
+going to work:
+
+    W    eqs  vars  excess
+    10   184  157   +27
+    11   169  151   +18
+    12   153  143   +10
+    13   136  133    +3
+    14   118  120    -2
+    ...
+    19    20   26    -6      <== the level everyone kept running
+
+**W=19 is UNDERDETERMINED by 6.**  Its variety is positive-dimensional, so it
+is almost certainly NON-empty, and every attempt to prove it empty -- the
+original Singular run, and three of mine today -- was aimed at a level that
+cannot deliver the result by construction.  Worse, msolve's default mode
+computes a rational parametrisation, which needs dimension 0; that is why it
+OOM'd rather than merely running long.
+
+CORRECT TARGET: W <= 13, where the system is overdetermined and CAN be empty.
+An overdetermined ideal that is empty collapses to {1} at low degree, so GB-only
+(msolve -g 2) is the right mode and the size is not the binding constraint.
+
+Two sound reductions established today:
+ * TORUS GAUGE.  The truncated system carries a torus of rank 2 (exact
+   nullspace of the exponent-difference matrix).  s_4_8 carries weight -1 and
+   is FORCED NONZERO by the system's own Rabinowitsch equation w1*s_4_8 = 1,
+   so every orbit meets {s_4_8 = 1}: gauge-fixing it loses NO branch, and it
+   collapses w1 as well.  (This is the gauge done right -- contrast the unsound
+   scaling gauge caught earlier in the campaign.)
+ * SUB-IDEAL PRINCIPLE.  Any sub-ideal that is empty proves the whole ideal
+   empty.  Searched for a small overdetermined closed block (a variable set
+   whose fully-contained equations outnumber it): NONE exists below the whole
+   system -- the coupling is global.  Worth knowing; it closes off that shortcut.
+
+STATUS: W=13 gauged (137 eqs, 132 vars, +5) and W=12 gauged (154 eqs, 142
+vars, +12) built and clean (no constant generators).  Neither finishes GB-only
+inside this container's ~8 min usable window.  This is now a well-posed,
+sound, correctly-levelled target that needs uninterrupted compute -- not a
+research question.
