@@ -1218,3 +1218,61 @@ Abel equation GGV say (1.3) is, and it is the right frame for the remaining
 work: solving from both ends and matching halves the length of each
 back-substitution chain, so it should also halve the degree growth that makes
 the one-ended cascade expensive at large d.
+
+================================================================================
+WE AUDITED (1.2) AND NEVER AUDITED (1.3).  Now done: (1.3) IS CORRECT, and the
+verification hands us a much more concrete form of the whole problem.
+================================================================================
+
+THE GAP.  This morning we found that GGV's (1.2) is misprinted, re-derived it,
+and rebuilt the campaign on the corrected form.  But every one of today's
+results also rests on (1.3), which IS the system -- and (1.3) had only ever been
+checked against GGV's own two worked examples, i.e. against exactly the examples
+that provably cannot detect the (1.2) error either (both have q1''(0) = 0).
+That is the same blindspot, one equation over.
+
+THE AUDIT.  GGV obtain (1.3) by inserting their parametrization into the FOURTH
+bracket ODE, mu0 = p1*q0' - p0'*q1.  So (1.3) should be equivalent to that ODE.
+Starting from the p.91 ODEs and the p.92 general solution (q1 = mu3 + y^2 F',
+p2 = mu3 + yF + (3/2)y^2 F', F in y K[y]), solving ODE2 for q0' and ODE3 for p0'
+with the polynomiality conditions, and writing Omega := p1*q0' - p0'*q1, the
+residual of (1.3) divides EXACTLY:
+
+        E(1.3)  =  -6*y^3 * ( Omega - mu0 ),     remainder 0
+
+(symbolic, with F of degree 4 and p1 of degree 5, all coefficients free).  So
+
+        (1.3)   <==>   p1*q0' - p0'*q1 = mu0.
+
+(1.3) IS CORRECT.  The factor -6*y^3 is exactly the coefficient of the -6*mu0*y^3
+term, as it must be.  The foundation now rests on four independently checked
+legs: the Theorem 1.1 normal form (read off the page renders), the four bracket
+ODEs (re-derived from the Poisson bracket and matched to p.91 term by term),
+(1.2) (re-derived, misprint found, confirmed by an explicit numerical instance),
+and (1.3) (this check).
+
+A STRUCTURAL COROLLARY THAT EXPLAINS AN EARLIER OBSERVATION.  Because the
+residual is divisible by y^3, the y^0 and y^1 coefficient rows of (1.3) VANISH
+IDENTICALLY and the y^2 row is not an independent condition at all -- it is
+exactly (1.2) row 3, up to the factor -mu3/2:
+
+        y^2 row  =  -mu3*(a2*mu3 + 3*mu1)  =  -(mu3/2) * [corrected (1.2) row 3]
+
+which is why the corrected row 3 turned out to be redundant on mu3 != 0 while the
+misprinted one added the spurious 4*mu3^2*b2 to the ideal.  The redundancy was
+observed this morning; it is now explained.
+
+THE PROBLEM, RESTATED CONCRETELY.  (1.3) is not really a differential equation to
+be matched coefficient by coefficient.  It says:
+
+    choose F in y K[y] and p1 in K[y] with p1(0) = mu2;
+    q1 := mu3 + y^2 F',  p2 := mu3 + yF + (3/2) y^2 F';
+    let q0' and p0' be the (forced, polynomial) solutions of ODE2 and ODE3;
+    then  B = 16  <==>  p1*q0' - p0'*q1  is a NONZERO CONSTANT.
+
+That is a Wronskian-type condition, det [[p1, q1], [p0', q0']] = mu0 != 0, on two
+freely chosen polynomials.  Degree count: deg q0' = 2d-2, deg p0' = 3d-3, so
+Omega has degree up to 4d-3 and requiring it constant is 4d-3 cancellations
+against roughly 3d free coefficients -- the same excess d-3 seen from the
+coefficient side, now visible as massive cancellation in a single determinant
+rather than as an opaque overdetermined system.
