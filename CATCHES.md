@@ -1932,3 +1932,45 @@ linear block already eliminated, would say the direct Groebner route does not
 reach it.  The route that would is the level cascade -- which is precisely the
 tool that failed three self-tests today and which needs designing on paper
 before a fourth attempt.
+
+--------------------------------------------------------------------------------
+THE SEED WORK IS THREE JOBS, NOT ONE.  Only one was ever covered.
+--------------------------------------------------------------------------------
+"Exactly one admissible bottom-edge seed" is a statement about ONE PRIME, and it
+was being carried as though it were a statement about the problem.  Setting the
+record straight:
+
+  The eliminant of the c_2 = 1 chart has DEGREE 9, so there are NINE bottom
+  edges over the algebraic closure.  At p = 1000003 only FIVE are F_p-rational.
+  The side-condition filter (c_1_0, c_8_14, d_12_21 != 0) that killed four of
+  those five was therefore applied to five of nine seeds.  THE OTHER FOUR HAVE
+  NEVER BEEN EXAMINED AT ALL.
+
+JOB 1 -- the admissible seed at p = 1000003.  Running (#2, reduced system,
+241 eq / 123 unk, uncapped, ~14 GB available), resolves by ~20:23.
+
+JOB 2 -- the four seeds invisible at that prime.  LAUNCHED: the bottom edge at
+p = 1000033, 1000039, 999983, 1000081.  Different primes split the degree-9
+eliminant differently; at a prime where more roots are rational they can be
+extracted from the parametrization, filtered by the side conditions, and run.
+The factorisation pattern across primes also gives the Galois structure by
+Chebotarev, i.e. how many admissible seeds exist over Q-bar rather than an
+inference from a single prime.
+
+JOB 3 -- a second prime for the admissible seed itself, guarding against bad
+reduction.  This is not pedantry: we proved this morning that modular emptiness
+is unsound for contradictions.
+
+A PROVISIONAL READING NOT TO BE RELIED ON.  Parsing the characteristic-0 msolve
+output (real-root isolation boxes) suggested only 2 of the 9 seeds are REAL,
+with one admissible (c8 ~ 3.1e-06, d12 ~ 3.2e-09) and one killed (c8 ~ -4e-65,
+d12 ~ -6e-68, i.e. boxes straddling zero).  The parse found 37 box endpoints,
+which does NOT divide by the 18 coordinates -- remainder 1 -- so the grouping
+may be misaligned.  RECORDED AS PROVISIONAL AND NOT USED.  The multi-prime runs
+settle the same question robustly.
+
+THE HONEST LIMIT.  Job #1 already timed out on this pipeline after 90 minutes
+and #2 may too.  If both do, pushing more seeds through the same route buys more
+timeouts, not answers.  That is the point at which the level cascade stops being
+an optimisation and becomes the only path -- and it is the tool that failed
+three self-tests today, so it needs designing on paper before a fourth attempt.
