@@ -299,3 +299,35 @@ THE IMPORTANT SHIFT: peak memory is UNDER 1 GB everywhere.  The pentagon
 computation is no longer memory-bound -- it is time-bound.  That means it no
 longer OOMs, it parallelises (4 cores, ~1 GB each), and it survives inside this
 container's limits.  A two-week memory wall became a schedulable time cost.
+
+## FOUND IN PLAIN SIGHT — the eliminator was aimed at the wrong levels too
+
+campaign/audit_tracks/trackA_eliminator.py is a branch-and-reduce engine with
+a documented soundness contract ("R1 or-branching over every variable of the
+monomial; R2 pivots only unit*nonzero-monomial with divisibility checked at
+selection; every closed branch certified") and SEVEN selftests, all of which
+pass today.  It shrinks these systems hard and fast:
+
+    W=17: 60 eqs / 69 vars  ->  44 / 54   (15 pivots, seconds)
+    W=18: 40 / 48           ->  27 / 36   (12 pivots)
+    W=19: 20 / 26           ->  11 / 18   ( 8 pivots)
+
+It had been run on W=17, 18, 19 ONLY -- exactly the underdetermined levels
+that cannot be empty.  The same targeting error as the truncation itself, one
+layer down: a working tool pointed where its output could never decide
+anything.  Its reduced leaves are all still underdetermined, which is why they
+sat unused with "contra: 0, open_leaves: 1" and were never followed up.
+
+FIRST RUN ON THE OVERDETERMINED LEVELS (W=10..13) is now under way.  Over Q it
+swells badly (27 MB and 60 MB of partial output before the budget cut it), so
+it is running with --mod 65521, which is what that flag exists for.
+
+Also measured today: peak memory for the degree-bounded Singular runs is under
+1 GB at every level, so this whole branch is time-bound rather than memory-
+bound and can be parallelised -- four cores, roughly 1 GB each.  Job mix is
+managed by hand for now (eliminators preferred over degBound runs when memory
+tightens), and wave6/pentagon_watch.log records contradictions and completions.
+
+WHY IT MATTERS: a CONTRADICTION at any W <= 13 means that truncation is empty,
+and by the closed-subsystem property that KILLS pentagon case (1) of (72,108)
+-- the branch no method has ever decided.
