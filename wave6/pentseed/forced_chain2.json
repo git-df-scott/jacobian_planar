@@ -4,7 +4,7 @@
   "d_0_2",
   "d_1_1"
  ],
- "n_pivots": 65,
+ "n_pivots": 81,
  "discharged": [
   [
    "c_1_0",
@@ -19,5 +19,5 @@
    "polynomial"
   ]
  ],
- "n_live": 214
+ "n_live": 198
 }

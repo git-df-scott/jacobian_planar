@@ -74,9 +74,23 @@ def write_ms(path, eqs, varlist, p, nonzero_present):
     return len(live) + (1 if nonzero_present else 0), len(vs)
 
 
-def main():
-    src = os.path.join(ROOT, 'wave6/pentseed/seed0_p1000003.ms')
+def main(src=None, shift_point=None, tag=''):
+    src = src or os.path.join(ROOT, 'wave6/pentseed/seed0_p1000003.ms')
     V, eqs, p = parse_ms(src)
+    if shift_point is not None:
+        # PLANTED-SOLUTION CONTROL: subtract each equation's value at the
+        # planted point, so that point becomes an exact solution.  The chain
+        # MUST NOT destroy it.
+        for t_ in eqs:
+            val = 0
+            for m, c in t_.items():
+                term = c
+                for v, e in m:
+                    term = term * pow(shift_point.get(v, 0), e, p) % p
+                val = (val + term) % p
+            if val:
+                t_[()] = (t_.get((), 0) - val) % p
+        eqs = [{m: c for m, c in t_.items() if c} for t_ in eqs]
     nonzero = {v for v in NONZERO if v in V}
     zeros, solved = set(), {}
     print(f"source: {len(eqs)} eq, {len(V)} vars, p={p}, nondeg present {sorted(nonzero)}")
@@ -168,7 +182,7 @@ def main():
         tot = sum(len(t) for t in eqs)
         if nxt < len(CHECKPOINTS) and tot >= CHECKPOINTS[nxt]:
             rem = sorted(set(V) - zeros - set(solved))
-            path = os.path.join(ROOT, f'wave6/pentseed/reduced_{len(rem)}v.ms')
+            path = os.path.join(ROOT, f'wave6/pentseed/reduced_{tag}{len(rem)}v.ms')
             ne, nv = write_ms(path, eqs, rem, p, nonzero)
             sz = os.path.getsize(path) / 1e6
             print(f"  checkpoint: {ne} eq, {nv} vars, {tot} terms, {sz:.1f} MB -> {path}")
@@ -178,7 +192,7 @@ def main():
             break
 
     rem = sorted(set(V) - zeros - set(solved))
-    path = os.path.join(ROOT, f'wave6/pentseed/reduced_{len(rem)}v.ms')
+    path = os.path.join(ROOT, f'wave6/pentseed/reduced_{tag}{len(rem)}v.ms')
     ne, nv = write_ms(path, eqs, rem, p, nonzero)
     print(f"  final: {ne} eq, {nv} vars, "
           f"{os.path.getsize(path)/1e6:.1f} MB -> {path}")

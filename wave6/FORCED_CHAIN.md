@@ -92,9 +92,13 @@ factors at all.
 
 | | original | v1 | **v2** |
 |---|---|---|---|
-| equations | 283 | 229 | **212** |
-| variables | 165 | 111 | **95** |
-| pivots | – | 52 | **67** |
+| equations | 283 | 229 | 212 |
+| variables | 165 | 111 | 95 |
+| pivots | – | 52 | 67 |
+
+**These v2 numbers are SUPERSEDED** — they were produced before the
+elimination bug was found (see `AUDIT_SESSION.md` §1). Corrected figures from
+the fixed chain: **198 equations, 81 variables, 81 pivots.**
 
 ## A redundant equation, predicted then observed
 
