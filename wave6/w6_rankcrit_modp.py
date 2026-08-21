@@ -53,17 +53,31 @@ def analyze(d, p):
     allv = vars_ + [mu0]
     top = a[2*d]; itop = vars_.index(top)
     # rational roots of (8d-6)x^2+3x-3/8 exist iff 12d is a perfect square
-    r_ = sp.Symbol('r_')
-    roots = sp.solve(sp.Eq((8*d-6)*r_**2 + 3*r_ - Rational(3,8), 0), r_)
+    # roots of (8d-6)x^2+3x-3/8 = 0 taken MOD P: they exist in F_p iff 12d is
+    # a square mod p (disc = 12d).  This covers every d, not just the resonant
+    # d = 3k^2 where the roots happen to be rational over Q.
+    disc = (12*d) % p
+    roots = []
+    if pow(disc, (p-1)//2, p) == 1:
+        q_ = p-1; s_ = 0
+        while q_ % 2 == 0: q_ //= 2; s_ += 1
+        z_ = 2
+        while pow(z_, (p-1)//2, p) != p-1: z_ += 1
+        M_, c_, t_, R_ = s_, pow(z_, q_, p), pow(disc, q_, p), pow(disc, (q_+1)//2, p)
+        while t_ != 1:
+            i_, t2_ = 0, t_
+            while t2_ != 1: t2_ = t2_*t2_ % p; i_ += 1
+            b__ = pow(c_, 1 << (M_-i_-1), p); M_ = i_; c_ = b__*b__ % p
+            t_ = t_*c_ % p; R_ = R_*b__ % p
+        inv2 = pow(2*(8*d-6) % p, p-2, p)
+        roots = [(-3 + R_)*inv2 % p, (-3 - R_)*inv2 % p]
     out = []
     polys = [Poly(e, *allv) for e in core]
     n = len(vars_); m = len(polys)
-    for r in roots:
-        rr = sp.nsimplify(r)
-        if not rr.is_rational:
-            out.append({'root': str(rr), 'skipped': 'irrational root (use the exact solver)'})
-            continue
-        rp = int(sp.Rational(rr).p) * pow(int(sp.Rational(rr).q), p-2, p) % p
+    if not roots:
+        return {'d': d, 'p': p, 'results': [{'skipped': '12d is not a square mod p -- choose another prime'}]}
+    for rp in roots:
+        rr = f'root mod p = {rp}'
         J = [[0]*n for _ in range(m)]
         G = [0]*m
         Fval = [0]*m

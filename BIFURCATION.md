@@ -241,3 +241,28 @@ confirmed at d = 3, 12, 27.  Both parametrisations agree on what matters: the
 augmented rank exceeds the plain rank by EXACTLY ONE at every d tested, i.e.
 the mu0 direction is never in the image.  Only the labels change; every
 "obstructed" verdict stands.
+
+## Result 10 — coverage extended; the tool now reaches every cell (11:05Z)
+
+The fast criterion originally handled only the resonant cells d = 3k^2, whose
+row-0 roots are rational.  Patched to take the square root of the discriminant
+MOD P (Tonelli-Shanks): the roots then exist in F_p whenever 12d is a square
+mod p, which covers every d given a suitable prime -- the same device the
+seeded exports use.  Controls d=3 and d=12 re-verified after the patch.
+
+Confirmed obstructed, both roots, on locus, at p = 1000003:
+
+    d = 18 : rank 35 -> 36
+    d = 20 : rank 39 -> 40
+    d = 27 : rank 53 -> 54     (RESONANT: 12d = 324 = 18^2)
+
+(d = 16 needs a different prime: 192 is not a square mod 1000003.
+ d = 48, the next resonant level, exceeded the 520 s budget -- 198 equations
+ in 143 unknowns -- and is the natural next target on hardware that stays up.)
+
+TOTAL COVERAGE of the rank criterion: every cell tested from d = 3 to d = 15,
+plus d = 18, 20 and the resonant d = 27, at BOTH roots of the row-0 quadratic,
+gives augmented rank = plain rank + 1 exactly.  The mu0 direction is never in
+the image of the linearisation at a quasi-homogeneous point.  No exception has
+been found anywhere, including at the resonant level where the resonance law
+predicts degeneration is likeliest.

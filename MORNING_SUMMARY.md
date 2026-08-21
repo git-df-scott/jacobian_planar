@@ -9,13 +9,15 @@ catches that protect every future verdict.
 
 ## What is now DECIDED (exact, control-backed)
 
-* Rank criterion at the quasi-homogeneous points, **d = 3..15 and d = 27**,
+* Rank criterion at the quasi-homogeneous points, **d = 3..15, 18, 20 and 27**,
   both roots of the row-0 quadratic, every case: the augmented rank exceeds
   the plain rank by EXACTLY ONE -> ALWAYS OBSTRUCTED. No counterexample
   bifurcates off that stratum at any d tested. **d = 27 is the decisive one**:
   it is the next resonant level (12d = 324 = 18^2, both roots rational), the
   place the resonance law says degeneration is most likely -- and it is
   obstructed at both roots (ranks 53 -> 54, 107 eqs, 80 unknowns).
+  d = 18 (35 -> 36) and d = 20 (39 -> 40) likewise. d = 48, the next
+  resonant level, needs hardware that stays up (198 eqs, 143 unknowns).
   (Rank VALUES were corrected to 2d-1 -> 2d once the (1.2) constraints are
   eliminated before differentiating; the verdicts are unchanged.)
 * The factored form of GGV (1.3):  6 D (D+2C) = y (4AA' - mu2 q1^2 + 3mu1 y q1
