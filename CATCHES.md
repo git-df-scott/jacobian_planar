@@ -718,3 +718,55 @@ prior equations, or by an example that exercises every term.  Before trusting
 any transcription, list its terms and name, for each one, the control that would
 die if that term were deleted.  If a term has no such control, it is unverified
 no matter how many controls pass.
+
+================================================================================
+THE (9,27) SYSTEM IS A CASCADE, NOT A GROEBNER PROBLEM.  A branch-and-factor
+walk descends five blocks in two minutes on a system exact elimination could not
+touch in 1800 seconds.
+================================================================================
+
+Motivated by the Cor 5.7 finding above -- the (9,27) orientation of (72,108) is
+live again -- I looked at the smallest system on that branch,
+wave6/p108_525122_q.gens (140 conditions, c2..c25 plus w = 1/c2 and u), which
+had timed out repeatedly.  It is not a generic system.  Its conditions partition
+by variable support into blocks
+
+  {c3,c4}:22   {c3..c7}:20   {c3..c10}:18   {c3..c13}:16   {c3..c16}:14
+  {c3..c19}:12  {c3..c22}:10  {c3..c25}:22  + 2 sparse rows + 2 saturations
+
+and the block structure is severe.  VERIFIED, not assumed: every one of the 22
+generators of the first block is divisible by c4*L with
+L = 6439534922*c3^2*w + 131043*c4, and gen[0] = 52417*c4*w^3*L exactly.  Since
+V(f) = V(G) u V(f/G) and one generator IS the gcd,
+
+    V(block 1)  =  V(c4)  u  V(L)
+
+exactly -- 22 equations collapse to ONE binary branch.  The same happens at
+every block: the gcd is attained by some generator, and the block reduces to a
+single equation whose irreducible factors are the branches.  On the branch
+c4 = 0, block 2's 20 generators all become const*c3^k*w^m*(3434414257*c3*c6*w -
+124490*c7); on the branch L = 0 they all become const*c3^k*w^m*(a quadratic in
+c5,c6,c7).  Each block is one equation wearing twenty disguises.
+
+That is why msolve and Singular choke: the coefficients are 20-40 digits and
+there are 26 variables, but the solution set is a shallow tree, and a Groebner
+engine has no way to see that before it has already blown up.
+
+wave6/w6_p108_cascade.py walks the tree exactly over Q.  It is falsifiable at
+every node: it CHECKS that some generator equals the gcd, and when that fails it
+records the residual piece V(h_1..h_n) as an explicit OPEN leaf rather than
+dropping it.  Forced-nonzero variables (c2, c23, c25 from the two saturation
+rows, and w) are never used as branches.
+
+FIRST RUN: 8 leaves in 122 s, reaching block 5 of 8 with explicit rational
+substitutions for c4, c7, c9, c8 in terms of c3, c5, c6, c10.... One leaf is
+already a clean nonlinear condition in two unknowns,
+
+    1516347*c10^2 - 16559562258*c10*c6^2*w + 6509724012810760*c6^4*w^2 = 0
+    (on the branch c4 = c3 = c7 = 0),
+
+which is a quadratic in c10 -- solvable in closed form.  NO VERDICT YET: the
+walk has not reached the last three blocks, and the residual pieces are open.
+Recorded now because the structural fact -- these systems are cascades, and the
+campaign spent weeks handing them to the wrong kind of solver -- applies to
+every p108 system and probably to the frontier shapes that share this shape.
