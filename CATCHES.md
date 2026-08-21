@@ -1697,3 +1697,44 @@ BOTH GROEBNER RUNS NOW IN FLIGHT CONCURRENTLY, with the second one made safe:
       kernel sacrifices #2 rather than the long-running #1.  (Lowering #1's
       oom_score_adj was refused by the kernel; raising #2's achieves the same
       protection.)
+
+--------------------------------------------------------------------------------
+WATCHER FOR THE TWO PENTAGON RUNS, BUILT AGAINST THIS MORNING'S FAILURE.
+--------------------------------------------------------------------------------
+wave6/pentseed/watch.sh polls both Groebner runs every 30 s and logs only
+transitions.  It is written specifically against the failure recorded above
+("WATCHER WAS A FALSE-ALARM MACHINE": a loose regex fired on the apostrophe in
+"'contra': 0" and produced four fake kill signals).  Its rules:
+
+  * a VERDICT is read ONLY from a NON-EMPTY output file;
+  * an empty output file with a dead process is a TIMEOUT / CRASH / PARSE ERROR,
+    never a verdict -- msolve exits 0 in all of those cases, so exit codes are
+    ignored entirely;
+  * the classification matches msolve's documented outputs EXACTLY:
+        "[-1]:"            -> EMPTY
+        "[1, n, -1,[]]"    -> POSITIVE-DIMENSIONAL
+        "[0, ..."          -> ZERO-DIMENSIONAL, solutions exist  (the hit case)
+        anything else      -> reported verbatim as UNRECOGNISED, not interpreted.
+
+CAN-FAIL SELF-TEST, run before trusting it, on synthetic files:
+    [-1]:              -> EMPTY                     PASS
+    [1, 18, -1,[]]:    -> POSITIVE-DIMENSIONAL      PASS
+    [0, [1000003, 19   -> ZERO-DIM *** HIT ***      PASS
+    (empty file)       -> NO-VERDICT(empty file)    PASS
+All four distinguished.  A watcher that cannot be shown to fire correctly on a
+synthetic hit AND stay silent on a synthetic non-verdict must not be trusted;
+that check is what was missing this morning.
+
+A scheduled check-in is set for 19:39, just after job #1's 19:33 hard timeout,
+carrying the same interpretation rules and the fallback (relaunch the reduced
+system alone, uncapped, plus a second prime).
+
+STANDARD FOR READING WHATEVER LANDS, fixed in advance so it cannot drift:
+  * "[0,..." means the single admissible bottom-edge seed EXTENDS past the 17
+    top-level equations at this one prime.  That is a CANDIDATE, not a
+    counterexample.  Before the word is used it needs: lifting to
+    characteristic 0, exact verification of [P,Q] = const, a second prime, and
+    the four seeds that are not F_p-rational at p = 1000003.
+  * "[-1]" closes ONE seed at ONE prime.  It does not close pentagon case (1),
+    which still has the 4 seeds invisible at this prime, and it says nothing
+    about the other orientation of (72,108).
