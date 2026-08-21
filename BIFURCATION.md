@@ -113,3 +113,44 @@ linearisation at some family point (Lyapunov-Schmidt).
     hopeless.
 Hunt consequence: the target is no longer "solve cell d" but "find a family
 point where the mu0 obstruction degenerates".
+
+## Result 6 — the rank pattern is EXACT and unbroken (d = 3..9 so far)
+
+At the quasi-homogeneous point of cell d the exact rank criterion gives,
+with no exception and for BOTH roots of the row-0 quadratic:
+
+        #equations = 4d + 6      #unknowns  = 3d - 1
+        rank J     = 2d + 1      rank[J|G]  = 2d + 2   ->  ALWAYS obstructed
+
+so no counterexample bifurcates off the quasi-homogeneous stratum at any d
+tested (sweep continuing to d = 30, including the resonant cell d = 27).
+The kernel has dimension (3d-1) - (2d+1) = d - 2: the degenerate locus grows
+with d (dim 1 at d=3, dim 10 at d=12), which is why bigger cells feel
+"roomier" -- but see the count below.
+
+## Result 7 — the dimension count, and where a counterexample can still live
+
+For a fixed vector G to enter the column span of J as the point moves, the
+generic codimension of that condition is (#equations - rank) = 2d + 5, while
+the degenerate locus offers only d - 2 directions to move in.  Since
+d - 2 < 2d + 5 for every d >= 0, a bifurcation off the mu0 = 0 locus is
+NON-GENERIC at every d -- it can only happen through an exact coincidence,
+which is precisely what the resonance law hunts for but never guarantees.
+
+Two consequences, both acted on:
+
+ (a) The GGV system is heavily OVERDETERMINED, with excess
+     (4d + 6) - (3d - 1) = d + 7 growing linearly in d.  The usual intuition
+     "higher d gives more room" is therefore BACKWARDS for this system: the
+     larger the cell, the more overdetermined it is, and the less likely a
+     solution.  The best remaining odds are at the SMALLEST undecided cells.
+
+ (b) Smallest undecided cells (the ladder's true frontier) are therefore the
+     priority target, not d = 20+:
+        d = 8  chart N   -- exported but NEVER RUN (MISS-2)   <== smallest
+        d = 9, 10, 11 chart N -- never run
+        d = 12 chart N   -- undecided (twin OOM-killed twice)
+     and a counterexample not connected to the degenerate locus (an isolated
+     solution) remains possible at any of them -- which is exactly what the
+     global multi-start numerical hunt searches for, and why that lane is
+     resumed and broadened rather than retired.

@@ -46,5 +46,101 @@
     "verdict": "obstructed"
    }
   ]
+ },
+ {
+  "d": 7,
+  "eqs": 34,
+  "vars": 20,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/100 + sqrt(21)/50",
+    "on_locus": true,
+    "rank_J": 15,
+    "rank_aug": 16,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(21)/50 - 3/100",
+    "on_locus": true,
+    "rank_J": 15,
+    "rank_aug": 16,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
+ },
+ {
+  "d": 8,
+  "eqs": 38,
+  "vars": 23,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/116 + sqrt(6)/29",
+    "on_locus": true,
+    "rank_J": 17,
+    "rank_aug": 18,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(6)/29 - 3/116",
+    "on_locus": true,
+    "rank_J": 17,
+    "rank_aug": 18,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
+ },
+ {
+  "d": 9,
+  "eqs": 42,
+  "vars": 26,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-1/44 + sqrt(3)/22",
+    "on_locus": true,
+    "rank_J": 19,
+    "rank_aug": 20,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(3)/22 - 1/44",
+    "on_locus": true,
+    "rank_J": 19,
+    "rank_aug": 20,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
+ },
+ {
+  "d": 10,
+  "eqs": 46,
+  "vars": 29,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/148 + sqrt(30)/74",
+    "on_locus": true,
+    "rank_J": 21,
+    "rank_aug": 22,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(30)/74 - 3/148",
+    "on_locus": true,
+    "rank_J": 21,
+    "rank_aug": 22,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
  }
 ]
