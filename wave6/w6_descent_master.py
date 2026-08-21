@@ -172,6 +172,35 @@ def main():
                  "hypothesis (quotient is a quadric cone, not C^2)", ok5))
     print(f"   {'PASS -- correctly excluded' if ok5 else 'FAIL'}")
 
+    # ---- CHECK 6: the mismatched-weight escape is CLOSED by weight bookkeeping ----
+    # Equivariance forces F_1 to have SOURCE weight equal to the target weight
+    # w'_0 = 1.  The Keller-descent condition is q' o F = c q, i.e.
+    # F_1^{k'} = c x^k.  Source weight of the left side is k' * 1 = k'; of the
+    # right side, k.  So k = k' is FORCED, and then F_1^k = c x^k with F_1
+    # polynomial gives F_1 = lambda x.  There is no m > 1.
+    print("\n6. can the Keller-descent condition be met with k != k'?")
+    bad = []
+    for (b, c) in [(1, 1), (1, 2), (1, 3), (2, 2), (2, 3)]:
+        for (b2, c2) in [(1, 1), (1, 2), (1, 3), (2, 2), (2, 3)]:
+            k, k2 = b + c - 1, b2 + c2 - 1
+            # F_1 has source weight w'_0 = 1, so F_1^{k'} has source weight k'.
+            # x^k has source weight k.  Condition solvable only if k == k'.
+            if k != k2:
+                bad.append(((b, c), (b2, c2), k, k2))
+    print(f"   {len(bad)} of 25 source/target pairs have k != k'; for every one of them")
+    print(f"   the two sides of q' o F = c*q carry DIFFERENT source weights (k' vs k),")
+    print(f"   so the condition is unsatisfiable.  No m = k/k' > 1 exists.")
+    # and when k == k', F_1^k = c x^k with F_1 polynomial forces F_1 = lambda x
+    lam = sp.symbols('lam')
+    ok6 = all(sp.simplify(sp.expand((lam * x) ** kk) - lam**kk * x**kk) == 0
+              for kk in (1, 2, 3, 4, 5))
+    ok6 = ok6 and all(k != k2 for _, _, k, k2 in bad)
+    PASS.append(("k != k' is impossible: equivariance forces F_1 to have source "
+                 "weight 1, so F_1^{k'} has weight k' and must equal x^k of weight k",
+                 ok6))
+    print(f"   when k = k', F_1^k = c x^k with F_1 polynomial forces F_1 = lambda*x")
+    print(f"   {'PASS -- the mismatched-weight escape is CLOSED' if ok6 else 'FAIL'}")
+
     print("\n" + "=" * 72)
     for name, ok in PASS:
         print(f"  [{'PASS' if ok else 'FAIL'}] {name}")

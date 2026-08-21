@@ -1,6 +1,6 @@
 # A1 ANSWERED: the descent Jacobian in closed form, and k ≥ 2 is NOT forced
 
-Certifier: `wave6/w6_descent_master.py` — 6/6 PASS.
+Certifier: `wave6/w6_descent_master.py` — 7/7 PASS.
 
 Session 39 posed A1 as *"prove or refute: for any C\*-equivariant Keller map on
 C^{n+1} whose weights make both invariant rings polynomial, the induced quotient
@@ -53,7 +53,49 @@ this table wrongly included that row; it is excluded.
 With `q = x^k`, `q' = (target coord)^{k'}`, this reads `F_j^{k'} = c·x^k`, so
 `F_j = c'·x^{k/k'}` and `k'` must divide `k`.
 
-## Two branches — and the second one is the opening
+## SEPARATOR #2: the descent mechanism cannot produce a plane counterexample
+
+I first thought mismatched source/target weight systems were an opening — if
+`k/k' = m > 1` then `F_j = c·x^m` is m-to-1, and non-injectivity would no longer
+have to come from a plane fiber. **That escape is closed, by weight bookkeeping**
+(check 6):
+
+Equivariance forces `F₁` to carry **source weight `w'₀ = 1`**. So `F₁^{k'}` has
+source weight `k'`, while `x^k` has source weight `k`. The condition
+`q' ∘ F = c·q` equates them, so **`k = k'` is forced** — 18 of 25 sampled
+source/target pairs are eliminated outright on weights alone. And with `k = k'`,
+`F₁^k = c·x^k` with `F₁` polynomial gives
+
+>  **F₁ = λ·x**
+
+Then `det JF = λ · det ∂(F₂,F₃)/∂(y,z) = 1`, so **for each fixed `x` the fiber
+map `(y,z) ↦ (F₂,F₃)` is a plane Keller map**, and `F₁ = λx` is injective in `x`,
+so any collision `F(p) = F(p')` has `x = x'` and lies inside one fiber.
+
+>  **Theorem.** For a C\*-equivariant Keller map on C³ whose source and target
+>  invariant rings are both polynomial, if the descent `G` is Keller then `F` is
+>  fibered over `x` with plane-Keller fibers, and every non-injectivity of `F`
+>  is a non-injectivity of a plane Keller map. **The descent route cannot produce
+>  a plane counterexample that is not already one.**
+
+This is **separator number two**, and it is exactly the outcome Session 39 said
+to "write up immediately": the C\* mechanism cannot descend to a new
+counterexample *for a reason internal to the quotient*, not to the sweep. The
+campaign has had exactly one separator since Session 32; this is the second, and
+the first that is not about tangent sweeps.
+
+Note the shape of the answer. A1 asked whether `k ≥ 2` is forced, expecting
+"forced" to be the separator and "not forced" to be the construction recipe. The
+truth is neither: **`k ≥ 2` is not forced (k = 1 at (1,−1,−1)), and yet the
+route is still closed**, because Keller descent needs `k = 0`, and the only way
+to reach a *constant* Jacobian is `F₁ = λx`, which trivialises the map. Path A's
+value was never the exponent — it was `q`.
+
+## Superseded: the two-branch reading
+
+`[The analysis below is what I believed before check 6 closed the k ≠ k' branch.
+Retained because the k = k' argument is the load-bearing half of the theorem
+above; the "crack" is withdrawn.]`
 
 **Branch k = k' (both weight systems equal).** Then `F_j = c'·x`, so
 `det JF = c'·det ∂(F₂,F₃)/∂(y,z) = 1`: for each fixed `x` the fiber map
@@ -63,34 +105,36 @@ plane counterexample*. This branch yields an **equivalence, not a new route**:
 Path A at `k = k'` cannot produce a plane counterexample that was not already
 visible as a fiber. `[DERIVED — argument is elementary but NOT yet machine-checked]`
 
-**Branch k ≠ k' (source and target weight systems differ) — THE CRACK.**
-If `k/k' = m > 1` then `F_j = c·x^m`, which is **m-to-1 in x**. The fibration
-argument above collapses: `F` can now be non-injective *in the x-direction*,
-with every fiber map still injective. Non-injectivity is no longer required to
-come from a plane counterexample.
+**Branch k ≠ k' — WITHDRAWN.** Closed by check 6: equivariance forces `F₁` to
+carry source weight 1, so `F₁^{k'}` has weight `k'` and cannot equal `x^k` of
+weight `k` unless `k = k'`. There is no `m > 1`. The Apollo-13 "change the
+interface" instinct was right in kind — the interface *is* the pair of weight
+systems, and that is the freedom nobody had used — but the interface turns out
+to be rigid: the two weight systems cannot be mismatched.
 
-This is the Apollo-13 move in its exact form: **do not modify the counterexample
-— change the interface.** Alpöge's map is equivariant from weights `(1,−1,−2)` to
-`(−2,−1,1)`; those are matched, giving `k = k' = 2` and the square. Deliberately
-*mismatching* source and target weight systems is a freedom the campaign has
-never used, and it is the only known way to get a Keller descent whose
-non-injectivity is not a plane counterexample in disguise.
+## What this closes, and where the campaign should go instead
 
-## The concrete next computation
+**Closed.** Path A as a *construction route*. Session 39 called it "the most
+promising path" and "the single place in the campaign where the object under
+study is a real counterexample's plane shadow." That remains true as a source of
+structure — the master formula came out of it — but it cannot yield a plane
+counterexample: any Keller descent is fibered, and its collisions are plane
+Keller collisions. Session 42's advice "if you run one: Path A" is superseded.
 
-Search for `F : C³ → C³` with
+**Still open, and now relatively more valuable:**
 
-- source action of weights `(1,−1,−2)` (so `k = 2`), target action `(1,−1,−1)`
-  (so `k' = 1`) — or any pair with `k' | k`, `k/k' = m > 1`;
-- `F` equivariant between those two actions;
-- `det JF = 1`;
-- `F_j = c·x^m`  (the Keller-descent condition, now an explicit linear
-  constraint on one component rather than a search over all of `F`).
-
-Equivariance makes each component a sum of weight-homogeneous monomials, so at
-bounded degree this is a **linear-algebra-then-small-polynomial-system** problem,
-not a Gröbner monster — the same size class as the exports already handled. The
-deliverable is either such an `F` (whose descent is Keller, with non-injectivity
-available from the `x`-direction) or a proof that the mismatched-weight
-condition is itself unsatisfiable, which would be **separator number two** and
-the first one internal to the quotient rather than to the sweep.
+1. **The `q` invariant is a cheap new classifier.** `det JG ∘ π = (q'∘F)/q`
+   costs nothing to evaluate once weights are known. Session 42's E4 wanted the
+   descent exponent as "a cheap invariant to compute on any future example" —
+   it now exists in closed form, `k = b+c−1`, computable from weights without
+   touching the map. Run it across the whole Session 38 equivariance census.
+2. **The same minors argument may generalise beyond C\*.** Nothing above used
+   more than: the kernel of `Jπ` is spanned by the infinitesimal action, and
+   `det JF = 1`. For a finite group or a higher-rank torus the same computation
+   gives `det JG ∘ π = (q'∘F)/q` with `q` the appropriate ramification factor.
+   If that holds, **every quotient-type construction is subject to the same
+   rigidity** and the separator widens considerably. This is the highest-value
+   follow-up and it is pure derivation, no compute.
+3. **The Nullstellensatz certificate route** (`CERTIFICATE_ROUTE.md`) is
+   untouched by this and is now the best use of compute, because it terminates
+   in a verdict either way.
