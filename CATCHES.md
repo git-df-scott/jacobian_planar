@@ -1484,3 +1484,76 @@ L-grading are far more constrained than the raw system.  The next step is to
 extend each seed upward level by level and see which, if any, survive; a seed
 that survives every level IS a counterexample and would then need exact
 verification of [P,Q] = const and a bijectivity check.
+
+================================================================================
+THE (72,108) PENTAGON BOTTOM EDGE IS COMPLETELY CLASSIFIED, AND IT ADMITS
+EXACTLY ONE ADMISSIBLE SEED MOD p.  The pentagon case now has a single, fully
+explicit entry point instead of a 283-equation wall.
+================================================================================
+
+THE GRADING (verified against the data, not assumed).  Grade every variable and
+every bracket point by L = 2*alpha - beta.  Then:
+  * every monomial of the 283 equations is BILINEAR -- exactly one c and one d --
+    up to powers of the four s-variables (counts: 5376 (c,d), 1069 (d,s,s),
+    990 (c,s,s,s), 496 (c,s,s), 431 (d,s), 200 (c,s), 99 (d), 95 (c), 2 constants);
+  * max L on P's support is 2, max L on Q's support is 3;
+  * so the equations at level Lambda pair L(c) + L(d) = Lambda + 1, and the
+    FRESH unknowns at level Lambda are exactly c at L = Lambda-2 (paired with the
+    top d) and d at L = Lambda-1 (paired with the top c) -- each appearing
+    LINEARLY, multiplied by an already-determined top-level coefficient.
+The equation/fresh-variable census, running cumulative deficit:
+
+   Lambda   4    3    2    1    0   -1   -2   -3  ...  -19
+   eqs     17   18   19   19   20   19   18   17  ...    1
+   fresh   18   19   20   19   18   16   13   11  ...    0
+   defic   +1   +2   +3   +3   +1   -2   -7  -13  ... -118
+
+So levels 4..0 are (barely) underdetermined and the system first becomes
+OVERDETERMINED AT LEVEL -1.  That is where any obstruction must first appear.
+
+THE TOP LEVEL IS ONE EQUATION IN ONE VARIABLE.  With w = x*y^2,
+f = sum_{i=1..8} c_{i,2i-2} w^i, g = w^2 + sum_{j=3..12} d_{j,2j-3} w^j (d_2_1 is
+gauged to 1), the 17 equations at L = 4 are EXACTLY the coefficients of
+
+                        2 f g' - 3 f' g  =  w^2
+
+-- all 17 matching at scale 1, verified term by term against the JSON.  The
+bottom-vertex datum c_1_0 * d_2_1 = 1 is its w^2 coefficient, and in the gauge
+the equation at bracket point (2,0) is literally c_1_0 - 1 = 0.
+
+COMPLETE CHART ANALYSIS of that subsystem (17 equations, 18 unknowns, residual
+torus c_i -> t^{i-1} c_i, d_j -> t^{j-2} d_j, on which c_1_0 has weight 0):
+
+    ungauged           dim 1                    = exactly the torus orbits
+    chart c_2 = 1      dim 0, eliminant deg 9   char 0 AND mod p (316 s / 156 s)
+    chart c_2 = 0      EMPTY                    (1.67 s)
+
+The c_2 = 0 chart being empty makes the c_2 = 1 chart EXHAUSTIVE up to the
+torus, so this is a complete classification, not a sample.
+
+THE SEEDS.  The degree-9 eliminant has 5 roots in F_p (p = 1000003); the other
+4 solutions live in extensions and are not seen at this prime.  Extracting each
+from the rational parametrization and substituting back:
+
+    all 5 satisfy all 17 bottom-edge equations exactly (residuals 0/17),
+    and d_3_3 = 2/3 on every one of them (it is a constant of the parametrization).
+
+But the pentagon system carries nonzero = [c_1_0, c_8_14, d_12_21, s_4_8], and
+
+    seed 0:  c_8_14 = 183720,  d_12_21 = 720777    ADMISSIBLE
+    seeds 1-4: c_8_14 = 0 and d_12_21 = 0          KILLED by the side conditions
+
+so exactly ONE of the five F_p-rational bottom edges is admissible.
+
+SUBSTITUTING IT INTO THE FULL SYSTEM.  Pinning those 18 variables in the
+283-equation system:
+  * exactly 17 equations are satisfied (2 identically, 15 evaluating to 0 mod p)
+    -- precisely the L = 4 level, which is the correct self-check;
+  * NO nonzero constant row appears, so the seed does not die immediately;
+  * 22 of the remaining equations are now LINEAR;
+  * what is left is 266 equations in 147 unknowns (267/148 with the s_4_8
+    saturation), degree profile {1:22, 2:72, 3:57, 4:115}.
+That system is now running.  Standing caveat: this is mod p and one seed; a
+non-empty answer is a candidate to be lifted and verified exactly, never a
+counterexample by itself, and the 4 non-F_p-rational seeds still need a prime
+where they are visible.
