@@ -1843,3 +1843,52 @@ that this system is genuinely hard rather than near completion -- worth
 remembering when reading whatever lands, and a reason to keep building the
 rational-function cascade (which would take these 123 unknowns to about 4)
 rather than escalating hardware.
+
+--------------------------------------------------------------------------------
+CASCADE ATTEMPT #3 ALSO FAILS -- caught by its own self-test, before it ran on
+any real data.  Committed as a FAILING tool, not deleted.
+--------------------------------------------------------------------------------
+wave6/w6_ratcascade.py was written to make the previous two failures impossible:
+division-free (substituting into E of degree d in x by forming A^d * E|_{x=-B/A},
+so nothing becomes a rational function and no denominator can be silently
+assumed nonzero), with EXPLICIT branching on a vanishing pivot, and with the
+elimination returning the new system so that "it never propagated" cannot recur.
+
+It was given a TWO-SIDED can-fail test before any use.  It failed:
+
+    test1 consistent system (a=3, b=4, c=2)   leaves=61 dead=57  FAIL
+    test2 planted contradiction               PASS
+    test3 symbolic pivot, branch kept         PASS
+    ==> self-test FAILED -- do not use
+
+Test 1 is a system with an obvious solution and the tool reported 57 dead
+branches on it: MANUFACTURED CONTRADICTIONS, the same failure class as attempt
+#1, reached by a different route.
+
+DIAGNOSIS: on the "A = 0" branch the pivot equation e is retained AND the
+equation A is added, but A = 0 is never propagated into e.  The next round picks
+the same variable, finds the same equation with the same symbolic leading
+coefficient, and branches again -- recursing without progress until the depth
+cap, with the degenerate leaves miscounted as dead.  The fix requires tracking
+used pivots per branch and reducing e modulo A, which is a design change, not a
+patch.
+
+THE RECORD: three cascade attempts today, three failures, ALL caught by testing
+rather than by producing a wrong answer downstream.  Had this one been run on
+the pentagon without the self-test, it would have "proved" the admissible seed
+dies -- a false kill on the campaign's most promising lead.
+
+DECISION: stop iterating on this in code.  The level cascade needs to be
+designed on paper first -- specifically, how to handle a vanishing symbolic
+pivot without re-branching on the same equation -- before any fourth attempt.
+The file is committed WITH its failing self-test so that the next session runs
+the test first and sees the failure, rather than trusting the module by its
+docstring.
+
+WHAT DOES NOT DEPEND ON ANY OF THIS (today's verified results stand alone):
+the (1.2) correction with four independent confirmations; (1.3) verified against
+the bracket; mu0 = a2*mu2/3 and mu0*mu3 + mu1*mu2 = 0; the B = 16 ladder EMPTY
+in characteristic zero for d = 3..7; GGHV Cor 5.7 shown unproven; the plane
+sweep closed in both branches; mu >= 3 and non-Galois for any plane
+counterexample; and the complete bottom-edge classification of (72,108)
+pentagon case (1) with its single admissible seed.
