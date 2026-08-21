@@ -60,6 +60,15 @@ def write_ms(path, eqs, varlist, p, nonzero_present):
         vs = vs + ['zz9']
         sat = "*".join(['zz9'] + sorted(nonzero_present)) + "-1"
         body.append(sat)
+    # GUARD: never emit a file whose equations use an undeclared variable.
+    # This exact failure produced a spurious msolve [-1] (see RETRACTION_msolve.md):
+    # a pivot leaves deg>=2 monomials untouched, so the variable survives in the
+    # equations while being dropped from the header, and msolve reads garbage.
+    import re as _re
+    used = {tok for tok in _re.findall(r'[A-Za-z_]\w*', "\n".join(body))}
+    leak = sorted(used - set(vs))
+    assert not leak, (f"REFUSING to write {path}: {len(leak)} variables appear in "
+                      f"the equations but not the header: {leak[:8]}")
     with open(path, 'w') as f:
         f.write(",".join(vs) + "\n" + str(p) + "\n" + ",\n".join(body) + "\n")
     return len(live) + (1 if nonzero_present else 0), len(vs)
