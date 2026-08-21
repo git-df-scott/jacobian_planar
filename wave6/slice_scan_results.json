@@ -18,5 +18,13 @@
   "eqs": 27,
   "vars": 21,
   "control": true
+ },
+ {
+  "d": 14,
+  "verdict": "TIMEOUT",
+  "build_secs": 20.8,
+  "eqs": 55,
+  "vars": 42,
+  "control": false
  }
 ]
