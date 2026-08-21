@@ -1,1 +1,5 @@
 START reduced 241eq/123unk 18:39:51 oom_adj=1000 vcap=3.5GiB
+segmentation fault will follow.
+Command terminated by signal 11
+TIME 505.42 s RSS 3586764 KB
+DONE reduced -> []

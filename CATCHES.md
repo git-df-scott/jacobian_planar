@@ -1766,3 +1766,43 @@ STANDING RULE ADDED: sweep DISK as well as memory before and during any long
 run.  Memory pressure announces itself (OOM kill, RSS growth); disk exhaustion
 does not -- it corrupts a write at an arbitrary moment and can destroy hours of
 work in the middle of a json.dump.
+
+--------------------------------------------------------------------------------
+JOB #2 DIED ON ITS MEMORY CAP -- and the watcher passed its first live test.
+--------------------------------------------------------------------------------
+The reduced pentagon run (241 equations / 123 unknowns) hit the 3.5 GiB
+address-space cap after 8 min 25 s:
+
+    segmentation fault will follow.
+    Command terminated by signal 11
+    TIME 505.42 s   RSS 3586764 KB  (= 3.42 GB, i.e. at the cap)
+
+msolve detected the failed allocation, warned, and then segfaulted.  Output file
+EMPTY, so by the standing rule this is NO VERDICT -- not an EMPTY, not a hit.
+The cap did exactly what it was for: #2 died instead of triggering the OOM
+killer on job #1, which was untouched at 8.43 GB with 45 minutes invested.
+
+THE WATCHER PASSED A LIVE TEST, not just its synthetic one:
+    18:48:34 job2(241eq/123unk): ENDED -> NO-VERDICT(empty file)
+    18:48:34 job2 FINAL: NO-VERDICT(empty file)
+It correctly refused to read a verdict from an empty file produced by a process
+that exited abnormally.  This is the same situation that, with the morning's
+watcher, would have been reported as a kill signal.
+
+INFORMATION GAINED, which is not nothing: the reduced system REQUIRES MORE THAN
+3.5 GB.  Restarted at 18:49 with the cap raised to 5.0 GiB (budget: #1 projects
+to ~9.8 GB by its 19:33 timeout, leaving ~5 GB), still with oom_score_adj = 1000.
+
+RESOLUTION BOUNDS (upper bounds from timeouts and caps, NOT predictions -- there
+is no reliable progress estimate for a Groebner basis):
+    #2  resolves by ~19:01  -- completes, or hits the 5.0 GiB cap (it reached
+        3.42 GB in 8:25, about 0.41 GB/min, so 5 GB is ~12 min out)
+    #1  resolves by  19:33  -- completes, or hard timeout; memory reaches only
+        ~9.8 GB so it will not OOM first
+
+SOBER READ: that the 123-unknown system needed more than 3.5 GB after 8 minutes,
+when it has 22 FEWER unknowns than #1, suggests both runs are genuinely hard
+rather than near completion.  If both return without a verdict the answer is not
+a bigger machine -- it is the rational-function cascade that would take 123
+unknowns down to about 4, which remains the one piece that must be built
+properly rather than faked (see the two retracted cascades above).
