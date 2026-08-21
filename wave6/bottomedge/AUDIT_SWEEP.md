@@ -56,3 +56,51 @@ Admissible: sum 8 over 7 primes, mean 1.14. Degenerate: mean 3.71.
   sibling walking forward and this worker meet in the middle. The resume
   script refetches the campaign branch's orbit_data.txt before each prime and
   skips primes censused on either branch.
+
+---
+
+# SWEEP COMPLETE — 13 primes, zero anomalies
+
+The 8-prime sweep finished. This worker ran it in reverse order on
+`claude/jacobian-planar-sweep-iajyma` while a sibling walked forward on the
+campaign branch; the refetch-and-skip guard stopped both from duplicating and
+they met in the middle (this worker: 1000171; sibling: 1000117, 1000121,
+1000133, 1000151, 1000159). Combined with the 5 re-censused archived primes:
+
+|       p | rational/9 | admissible | degenerate | rat = adm+deg | deg ∈ {2,4} |
+|---------|-----------|------------|------------|---------------|-------------|
+|  999961 | 4 | 0 | 4 | yes | yes |
+|  999979 | 5 | 1 | 4 | yes | yes |
+|  999983 | 4 | 2 | 2 | yes | yes |
+| 1000003 | 5 | 1 | 4 | yes | yes |
+| 1000033 | 4 | 0 | 4 | yes | yes |
+| 1000039 | 5 | 1 | 4 | yes | yes |
+| 1000081 | 7 | 3 | 4 | yes | yes |
+| 1000117 | 5 | 1 | 4 | yes | yes |
+| 1000121 | 3 | 1 | 2 | yes | yes |
+| 1000133 | 3 | 1 | 2 | yes | yes |
+| 1000151 | 2 | 0 | 2 | yes | yes |
+| 1000159 | 5 | 1 | 4 | yes | yes |
+| 1000171 | 6 | 2 | 4 | yes | yes |
+
+**Every prime is consistent with the exact char-0 factorization 1+1+2+5**
+(`ORBIT_VERDICT.md`), with `verify_fail = 0` and `elim_deg = 9` throughout:
+
+- `rational = admissible + degenerate` at all 13 primes.
+- `degenerate ∈ {2,4}` at all 13 — exactly 2 rational seeds, plus 2 more iff the
+  quadratic splits. Splits at 9/13 = 0.69 (predicts 0.50; P(X≥9) ≈ 0.13 under
+  the binomial, not significant).
+- admissible mean **1.077** over 13 primes. An irreducible quintic predicts
+  1.000; two orbits predict 2.000.
+- admissible never equals 4 at any prime. A 4 would be an outright refutation
+  of quintic irreducibility (a degree-5 polynomial with 4 roots in F_p has 5).
+  None seen.
+
+The modular census and the exact factorization now corroborate each other on
+every sample. The orbit question is closed from both directions.
+
+**Method note.** The single-orbit claim was asserted on 4 primes, retracted on
+the 5th, and is now proved exactly — and the retraction was still correct. The
+lesson stands unchanged: 4 primes was not evidence, and the fact that the
+conclusion survived does not retroactively make the reasoning sound. What
+closed it was a char-0 computation, not more primes.
