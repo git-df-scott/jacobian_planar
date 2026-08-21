@@ -846,3 +846,64 @@ a != 0) are committed and running.  NO VERDICT YET.  Standing semantics: a
 solution with kappa != 0 and the divisibilities holding is a plane Keller map of
 sweep type and must then be checked for NON-INJECTIVITY before any claim; no
 solution bounds the shape family only and is not a proof that none exists.
+
+================================================================================
+TWO CATCHES ON MY OWN PLANE-SWEEP SEARCH, BOTH FOUND BEFORE IT FINISHED, AND THE
+CORRECTED FORMULATION THAT ACTUALLY HAS CONTENT.
+================================================================================
+
+CATCH 1 -- THE SEARCH WAS VACUOUS BY MOH'S THEOREM.  The shape family I launched
+(gamma = c0 + a x^al y^be with al,be <= 2; u = 1 + b x^mu y^nu with mu,nu <= 2;
+w = gamma*u; deg p <= 3) produces maps of total degree at most about 32.  Moh
+proved JC2 for all maps of degree <= 100.  So every shape in that family is a
+theorem of Moh's, and the search was GUARANTEED to return nothing.  A negative
+result from it would have carried exactly zero information, and I would have had
+a 1728-shape "EMPTY" table to be misled by.  Killed mid-run.
+  STANDING RULE ADDED: before launching any counterexample search, compute the
+  MAXIMUM TOTAL DEGREE the ansatz can produce.  If it is <= 100, the search is a
+  restatement of Moh and must not be run.  Degree > 100 is a necessary condition
+  for a plane counterexample and is therefore a free pre-flight gate.
+  (Second free gate, from GGV: gcd(deg P, deg Q) must be 16 or > 20.  Third,
+  from GGHV as amended today: below max 125 the only surviving pair is
+  (72,108), now in BOTH orientations.)
+
+CATCH 2 -- THE TWIST ANSATZ WAS CIRCULAR IN TWO VARIABLES.  I had derived
+    det J(P/C^i, Q/C^j) = C^{-i-j-1} [ C{P,Q} - j Q{P,C} + i P{Q,C} ]
+and called the numerator "the plane side condition".  It is an identity, and the
+identity control passed -- but it has no content.  Once the divisibilities hold,
+write P = C^i A and Q = C^j B; then
+    C{P,Q} - j Q{P,C} + i P{Q,C}  ==  C^{i+j+1} {A,B}
+identically (verified symbolically for (i,j) = (1,2),(2,1),(1,1),(2,3),(3,1)).
+So the "side condition" says {A,B} = kappa, i.e. "F = (A,B) is a Keller map" --
+which is what we were trying to solve.  The twist is bookkeeping, not a
+constraint.  In dimension 3 the content is NOT in this algebra either; it is in
+the fact that C = gamma*x is a COMPONENT OF THE TARGET, so dividing by it is a
+genuine map on the target and the sweep's non-injectivity is inherited.  The
+plane has no spare component, which is the real content of "dimension >= 3".
+
+THE CORRECTED FORMULATION (this one is not circular).  Take gamma, u in C[x,y],
+set w = gamma*u, and keep Alpoge's normalization p(0) = 0.  Then q = int (s/2)p'
+starts at w^2, so
+    P = p(w) + 2*gamma       is divisible by gamma
+    Q = q(w) + gamma*w       is divisible by gamma^2
+AUTOMATICALLY (verified by exact polynomial division, remainder 0).  Put
+P~ = P/gamma, Q~ = Q/gamma^2.  Then the exact identity
+
+    gamma * {P~, Q~}  =  2{gamma,u} - P~{gamma,Q~} + 2 Q~{gamma,P~}
+
+holds (verified symbolically), so F = (P~, Q~) is a Keller map with
+det J(F) = kappa precisely when
+
+    kappa * gamma  =  2{gamma,u}  -  P~{gamma,Q~}  +  2 Q~{gamma,P~}      (*)
+
+This IS a constraint: two unknown polynomials gamma(x,y), u(x,y) and the
+coefficients k_1..k_d of p, with (*) an identity in x,y.  It is the plane
+analogue of Gao section 3.3 with the padding variable removed and the
+divisibility supplied by w = gamma*u instead of by C = gamma*x.
+
+WHAT (*) DOES NOT GIVE, AND MUST BE CHECKED SEPARATELY.  In dimension 3 the
+non-injectivity of the sweep is inherited automatically because the twist is a
+map on the target.  Here it is not: gamma is not in general recoverable from
+(P~, Q~), so F is not literally (map) o S o phi.  ANY SOLUTION OF (*) MUST HAVE
+ITS NON-INJECTIVITY CHECKED DIRECTLY before the word counterexample is used --
+a solution of (*) with F injective is just an automorphism and proves nothing.
