@@ -124,6 +124,8 @@ if __name__ == '__main__':
     if mode == 'd12r': d, seed = 12, Rational(-1, 12)
     if mode == 'd12s': d, seed = 12, Rational(1, 20)
     if mode == 'd13':  d, seed = 13, None
+    if mode.startswith('d') and mode[1:].isdigit():
+        d, seed = int(mode[1:]), None
 
     core, vars_ = cell_system(d, seed)
     res, n = make_res(core, vars_)
