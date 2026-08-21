@@ -97,6 +97,10 @@ class PentVarPro:
         self.sexps = np.array(sorted(stab, key=stab.get))     # (nsmono, ns)
         self.has_c = self.cidx >= 0
         self.cidx_safe = np.where(self.has_c, self.cidx, 0)
+        # mirror indexing for the c-side linear form (the system is linear in c too)
+        self.ccol = np.where(self.has_c, self.cidx, self.nc)
+        self.ncolc = self.nc + 1
+        self.cflat = self.eq * self.ncolc + self.ccol
         self.shift = np.zeros(self.neq, dtype=complex)        # P-POS constant shift
         self.extra = []                                       # P-NEG rows
 
@@ -123,6 +127,40 @@ class PentVarPro:
         Ad, a0 = A[:, :self.nd], A[:, self.nd]
         sol, *_ = np.linalg.lstsq(Ad, -a0, rcond=None)
         return Ad @ sol + a0, sol
+
+    def matrix_c(self, d, s):
+        """Build [Ac | b0] for the given (d, s) -- the system is linear in c too."""
+        sv = np.prod(np.power(s[None, :], self.sexps), axis=1)
+        tv = self.coef * sv[self.smon] * np.append(d, 1.0)[self.col]
+        n = self.neq * self.ncolc
+        A = (np.bincount(self.cflat, weights=tv.real, minlength=n)
+             + 1j * np.bincount(self.cflat, weights=tv.imag, minlength=n)).reshape(self.neq, self.ncolc)
+        A[:, self.nc] -= self.shift
+        if self.extra:
+            rows = np.zeros((len(self.extra), self.ncolc), dtype=complex)
+            for k, (cj, rhs) in enumerate(self.extra):
+                rows[k, cj] = 1.0
+                rows[k, self.nc] = -rhs
+            A = np.vstack([A, rows])
+        return A
+
+    def als(self, c, s, iters=200, tol=1e-18):
+        """Alternating exact linear solves.  Both blocks are linear, so each
+        half-step is a least-squares solve and the residual is NON-INCREASING.
+        Converges to a stationary point; multi-start covers the basins."""
+        prev = np.inf
+        d = np.zeros(self.nd, dtype=complex)
+        for _ in range(iters):
+            A = self.matrix(c, s)                     # solve d | (c,s)
+            d, *_ = np.linalg.lstsq(A[:, :self.nd], -A[:, self.nd], rcond=None)
+            B = self.matrix_c(d, s)                   # solve c | (d,s)
+            c, *_ = np.linalg.lstsq(B[:, :self.nc], -B[:, self.nc], rcond=None)
+            r = B[:, :self.nc] @ c + B[:, self.nc]
+            r2 = float(np.sum(np.abs(r) ** 2))
+            if prev - r2 < tol * max(1.0, prev):
+                break
+            prev = r2
+        return r2, c, d
 
     # ---- real packing for scipy ----------------------------------------
     def unpack(self, th):
@@ -169,6 +207,25 @@ class PentVarPro:
         return best, best_pt, hits
 
 
+def run_als(P, nstarts, rng, label, scale=1.0):
+    """Multi-start alternating exact linear solves."""
+    best = np.inf; bestpt = None; t0 = time.time(); floors = []
+    for k in range(nstarts):
+        c = rng.normal(scale=scale, size=P.nc) + 1j * rng.normal(scale=scale, size=P.nc)
+        s = rng.normal(scale=scale, size=P.ns) + 1j * rng.normal(scale=scale, size=P.ns)
+        r2, c, d = P.als(c, s)
+        floors.append(r2)
+        if r2 < best:
+            best = r2; bestpt = (c, d, s)
+        if r2 < TOL_HIT or k % 25 == 0:
+            print(f"  [{label}] start {k:4d}  res^2 = {r2:.6e}"
+                  f"{'   <-- HIT' if r2 < TOL_HIT else ''}", flush=True)
+    fl = np.array(floors)
+    print(f"  [{label}] {nstarts} starts in {time.time()-t0:.1f}s  best={best:.6e}  "
+          f"median={np.median(fl):.6e}  min-decile={np.quantile(fl,0.1):.6e}")
+    return best, bestpt, fl
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else 'hunt'
     nst = int(sys.argv[2]) if len(sys.argv) > 2 else 8
@@ -179,6 +236,47 @@ def main():
           f"{P.nc+P.nd+P.ns} unknowns")
     print(f"VARPRO search dimension: {P.nc + P.ns} complex "
           f"({2*(P.nc+P.ns)} real); {P.nd} d-unknowns eliminated exactly\n")
+
+    if mode in ('alspos', 'alsneg', 'als'):
+        if mode == 'alspos':
+            c0 = rng.normal(size=P.nc) + 1j * rng.normal(size=P.nc)
+            d0 = rng.normal(size=P.nd) + 1j * rng.normal(size=P.nd)
+            s0 = rng.normal(size=P.ns) + 1j * rng.normal(size=P.ns)
+            P.shift = P.evaluate_exact(c0, d0, s0)
+            r2, cc, dd = P.als(c0.copy(), s0.copy())
+            print(f"P-POS(als): from the planted point itself res^2 = {r2:.3e} (must be ~0)")
+            best, _, _ = run_als(P, nst, rng, 'alspos')
+            ok = best < 1e-14
+            print(f"\nP-POS(als) {'PASS' if ok else 'FAIL'}: "
+                  f"{'found' if ok else 'DID NOT find'} a root of a system that has one.")
+            sys.exit(0 if ok else 1)
+        if mode == 'alsneg':
+            P.extra = [(P.ci['c_1_0'], 1.0), (P.ci['c_1_0'], 2.0)]
+            best, _, _ = run_als(P, nst, rng, 'alsneg')
+            ok = best > 1e-10
+            print(f"\nP-NEG(als) {'PASS' if ok else 'FAIL'}: "
+                  f"{'correctly refused' if ok else 'FALSELY SOLVED'} a contradictory system."
+                  f"  floor = {best:.6e}")
+            sys.exit(0 if ok else 1)
+        best, bestpt, fl = run_als(P, nst, rng, 'als-hunt')
+        print(f"\nALS HUNT: best residual^2 over {nst} starts = {best:.6e}")
+        if best >= TOL_HIT:
+            print("NO CANDIDATE.  Evidence of emptiness, NOT proof -- a miss is a miss.")
+            print(f"Measured floor (new datum): best {best:.6e}, median {np.median(fl):.6e}")
+            sys.exit(0)
+        c, d, s = bestpt
+        vals = {'c_1_0': c[P.ci['c_1_0']], 'c_8_14': c[P.ci['c_8_14']],
+                'd_12_21': d[P.di['d_12_21']], 's_4_8': s[P.si['s_4_8']]}
+        good = all(abs(v) > 1e-6 for v in vals.values())
+        print(f"CANDIDATE res^2={best:.3e} nondegeneracy "
+              f"{ {k: f'{abs(v):.3e}' for k, v in vals.items()} } "
+              f"-> {'ADMISSIBLE' if good else 'degenerate, discard'}")
+        if good:
+            np.save(os.path.join(ROOT, 'wave6/pentseed/als_candidate.npy'),
+                    np.concatenate([c, d, s]))
+            print("saved wave6/pentseed/als_candidate.npy -- REQUIRES EXACT LIFT AND "
+                  "VERIFICATION BEFORE IT IS ANY KIND OF RESULT")
+        sys.exit(0)
 
     if mode == 'pos':
         c0 = rng.normal(size=P.nc) + 1j * rng.normal(size=P.nc)
