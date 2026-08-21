@@ -124,48 +124,97 @@ factorization; 444/464 coverage hole; pentagon 2-torus.
 6. Cheap reads: GGV p.92 WLOG argument; GGHV Sec 5 skeleton.
 7. Morning: bridge timeout one-liner; register annotation with unique-map.
 
-## PENTAGON TRUNCATION — the real mistake, found Saturday
+## RETRACTION (05:45Z) — the numerical "empty floor" evidence is VOID
 
-The truncation ladder (trackB1_trunc10..19.json) is a CLOSED subsystem: every
-full solution restricts to a truncation solution, so an EMPTY truncation kills
-pentagon case (1) of (72,108) outright.  It was built, run once at W=19, died
-"no more memory", and was abandoned.  Today's diagnosis of why that was never
-going to work:
+Two planted-root controls, run tonight, kill it:
 
-    W    eqs  vars  excess
-    10   184  157   +27
-    11   169  151   +18
-    12   153  143   +10
-    13   136  133    +3
-    14   118  120    -2
-    ...
-    19    20   26    -6      <== the level everyone kept running
+ * PENTAGON (165 unknowns): a root planted BY CONSTRUCTION (residual exactly
+   0.0) was NOT found by random multi-start; best of 3 starts was 1.9e5.
+ * LADDER d=8 (25 unknowns): same test, planted root at residual 0.0, 25
+   starts, best 1.7e3, never found.  wave6/w6_plantctl.py, reproducible.
 
-**W=19 is UNDERDETERMINED by 6.**  Its variety is positive-dimensional, so it
-is almost certainly NON-empty, and every attempt to prove it empty -- the
-original Singular run, and three of mine today -- was aimed at a level that
-cannot deliver the result by construction.  Worse, msolve's default mode
-computes a rational parametrisation, which needs dimension 0; that is why it
-OOM'd rather than merely running long.
+Therefore multi-start Newton cannot be relied on to locate an isolated root
+at d >= 8, and the readings quoted earlier tonight --
+   d=8  best 1.2e-10,  d=9  best 1.4e-10,  d=12 best 1.6e-10
+-- measure the SOLVER, not emptiness.  They are hereby RETRACTED as evidence
+of emptiness and must not be cited that way.  (The d=3 controls C1/C2 passed
+honestly at 8 unknowns; the mistake was extrapolating that power to 25-40.)
 
-CORRECT TARGET: W <= 13, where the system is overdetermined and CAN be empty.
-An overdetermined ideal that is empty collapses to {1} at low degree, so GB-only
-(msolve -g 2) is the right mode and the size is not the binding constraint.
+Same reasoning voids the bifurcation-system residual (1.6e-3 at d=12) as
+evidence: it is a numerical miss at 136 real unknowns, i.e. no information.
 
-Two sound reductions established today:
- * TORUS GAUGE.  The truncated system carries a torus of rank 2 (exact
-   nullspace of the exponent-difference matrix).  s_4_8 carries weight -1 and
-   is FORCED NONZERO by the system's own Rabinowitsch equation w1*s_4_8 = 1,
-   so every orbit meets {s_4_8 = 1}: gauge-fixing it loses NO branch, and it
-   collapses w1 as well.  (This is the gauge done right -- contrast the unsound
-   scaling gauge caught earlier in the campaign.)
- * SUB-IDEAL PRINCIPLE.  Any sub-ideal that is empty proves the whole ideal
-   empty.  Searched for a small overdetermined closed block (a variable set
-   whose fully-contained equations outnumber it): NONE exists below the whole
-   system -- the coupling is global.  Worth knowing; it closes off that shortcut.
+STATUS CHANGE: the numerical lanes are demoted from "evidence producers" to
+"opportunistic finders" -- a HIT would still be real (and gets the full
+verification protocol), a MISS says nothing at all.
 
-STATUS: W=13 gauged (137 eqs, 132 vars, +5) and W=12 gauged (154 eqs, 142
-vars, +12) built and clean (no constant generators).  Neither finishes GB-only
-inside this container's ~8 min usable window.  This is now a well-posed,
-sound, correctly-levelled target that needs uninterrupted compute -- not a
-research question.
+WHAT SURVIVES intact (all exact, none numerical):
+ * the exact rank criterion at quasi-homogeneous points, d=3..13, both roots
+ * the factored form 6DE = 4AA' - mu2 q1^2 + 3mu1 y q1 - 6mu0 y^2 and its
+   three exact checks (row-0 quadratic recovered, d=3 obstruction 6*mu0
+   re-derived, D==0 branch killed by degree)
+ * the excess count (4d+6 equations vs 3d-1 unknowns) and the rigidity argument
+ * every exact msolve EMPTY verdict from the mod-p runs
+The structural case that B=16 is closed rests entirely on these, and is
+unaffected by the retraction.
+
+## NEW msolve SILENT-LIE MODE (06:00Z) — parse error written as EMPTY
+
+Discovered while hardening the seeded d=8 export.  If an input contains a
+CONSTANT generator whose integer value is a nonzero multiple of the
+characteristic, msolve refuses it:
+
+    Error when parsing term 1000003 (coefficient cannot be 0 modulo 1000003).
+    Error when reading file (exit but things need to be free-ed)
+
+and then **exits 0 having written "[-1]:" to the -o file** -- i.e. a PARSE
+FAILURE is indistinguishable from a genuine EMPTY verdict unless stderr is
+read.  Minimal reproduction: /tmp/ctl_zero.ms (generators "x-1" and the
+integer p).
+
+Consequence caught in the act: my first seeded d=8 chart-N run "returned
+EMPTY at both roots in 20 seconds" on a cell that had defeated 90 minutes
+unseeded.  That was this artifact -- the seeded row-0 row becomes exactly
+such a constant (the quadratic evaluated at its own root, an integer = 0
+mod p).  RETRACTED; the export now reduces every coefficient mod p, drops
+rows that vanish, and raises on a genuinely nonzero constant.  The honest
+hardened run is grinding (minutes, not seconds), as a real computation
+should.
+
+CONTAMINATION AUDIT: all 131 .ms files ever produced by this campaign were
+scanned for constant generators -- ZERO found.  Only tonight's two files
+(since regenerated) were ever affected, so no previously recorded verdict is
+touched.
+
+STANDING RULE ADDED: every msolve invocation must capture stderr, and any
+"[-1]" accompanied by a parse/read error is a FAILURE, never a verdict.
+
+## d=8 chart N — resistance measured, not a verdict (08:00Z)
+
+The smallest undecided ladder cell was attacked in every cheap formulation
+available tonight.  ALL timed out with CLEAN stderr (genuine timeouts, not
+the parse artefact):
+
+  formulation                                   vars  budget  result
+  seeded chart-N split (u*mu2-1), p=1000003      25    200s   TIMEOUT
+  seeded chart-N split, GB-only (msolve -g 2)    25    420s   TIMEOUT
+  seeded, NO chart split (mu0-saturation only)   24    200s   TIMEOUT
+  seeded chart-N split, 16-bit prime p=65521     25    220s   TIMEOUT
+
+Two structural improvements were found along the way and are kept:
+ * seeding the row-0 root covers the WHOLE cell (the relation is mu-free), so
+   the Z/N chart split is unnecessary work -- dropping it removes the u
+   saturation variable (25 -> 24 unknowns);
+ * a 16-bit prime buys nothing here, so the cost is Groebner structure, not
+   coefficient arithmetic.
+
+CONCLUSION (honest): exact elimination cannot decide d >= 8 chart N on this
+hardware inside the container's uptime windows.  d=8..12 chart N therefore
+remain UNDECIDED, and no numerical substitute is admissible (multi-start is
+blind at these sizes -- see the retraction above).  The ladder's closure case
+rests on the EXACT STRUCTURAL results (rank criterion d=3..13, the factored
+form, the excess count), not on cell-by-cell elimination.
+
+INFRASTRUCTURE NOTE: the container restarted 4x tonight, twice rolling the
+working tree back to an older commit.  Recovery = git fetch + merge --ff-only
+from origin (stale logs moved aside first).  Every result must be pushed
+immediately; generated .ms files are regenerable from wave6/w6_seed_d8.py.

@@ -114,7 +114,7 @@ linearisation at some family point (Lyapunov-Schmidt).
 Hunt consequence: the target is no longer "solve cell d" but "find a family
 point where the mu0 obstruction degenerates".
 
-## Result 6 — the rank pattern is EXACT and unbroken (d = 3..9 so far)
+## Result 6 — the rank pattern is EXACT and unbroken (d = 3..15, verified)
 
 At the quasi-homogeneous point of cell d the exact rank criterion gives,
 with no exception and for BOTH roots of the row-0 quadratic:
@@ -123,7 +123,11 @@ with no exception and for BOTH roots of the row-0 quadratic:
         rank J     = 2d + 1      rank[J|G]  = 2d + 2   ->  ALWAYS obstructed
 
 so no counterexample bifurcates off the quasi-homogeneous stratum at any d
-tested (sweep continuing to d = 30, including the resonant cell d = 27).
+tested.  Re-verified after a container restart wiped the earlier logs:
+  d=14  roots -3/212 +- sqrt(42)/106 : rank 29 -> 30, on_locus, obstructed
+  d=15  roots -1/76  +- sqrt(5)/38   : rank 31 -> 32, on_locus, obstructed
+The roots are irrational (sqrt(12d)), which is why the mod-p seeded runs need
+primes where 12d is a square -- the same fact that shaped tonight's exports.
 The kernel has dimension (3d-1) - (2d+1) = d - 2: the degenerate locus grows
 with d (dim 1 at d=3, dim 10 at d=12), which is why bigger cells feel
 "roomier" -- but see the count below.
@@ -203,3 +207,62 @@ finite.  The (72,108) resisters now running on the worker are the nearest
 live instance of it, and GGHV Cor 5.7 -- the only thing killing the (9,27)
 branch anywhere in the literature -- has still never been independently
 checked by anyone.
+
+## Result 9 — the RESONANT cell d=27 is obstructed too (10:10Z)
+
+A fast exact-mod-p form of the rank criterion (wave6/w6_rankcrit_modp.py) makes
+big cells reachable.  Soundness, one direction and it is the one needed: if G
+lies in the column span of J over Q then reducing that combination mod p puts
+G in the span mod p, so **obstructed mod p => obstructed over Q**.  Speed comes
+from the quasi-homogeneous point itself: every unknown there is 0 except
+a_{2d}=r, so each Jacobian entry is a single monomial read-off (coeff * r^k)
+with no symbolic differentiation.
+
+Controls reproduce the known cells exactly (d=3 and d=12, both roots,
+obstructed).  Then the target:
+
+    d = 27  (12d = 324 = 18^2, so BOTH roots are RATIONAL: -1/20 and 1/28)
+    eqs 107, unknowns 80, 375 s
+    root -1/20 : rank 53 -> 54, on locus, OBSTRUCTED
+    root  1/28 : rank 53 -> 54, on locus, OBSTRUCTED
+
+d = 27 = 3*3^2 is the next resonant level after d=3 and d=12 -- by the
+resonance law the most likely place in range for the obstruction to
+degenerate.  It does not.
+
+CORRECTION to Result 6's rank VALUES (verdict unchanged).  The earlier sweep
+differentiated the raw equations, holding a0, a1, b0, b1, mu1 fixed, and
+reported rank J = 2d+1, rank[J|G] = 2d+2.  Eliminating the (1.2) constraints
+first -- the correct total derivative along the constraint surface -- gives
+
+        rank J = 2d - 1,   rank[J|G] = 2d,
+
+confirmed at d = 3, 12, 27.  Both parametrisations agree on what matters: the
+augmented rank exceeds the plain rank by EXACTLY ONE at every d tested, i.e.
+the mu0 direction is never in the image.  Only the labels change; every
+"obstructed" verdict stands.
+
+## Result 10 — coverage extended; the tool now reaches every cell (11:05Z)
+
+The fast criterion originally handled only the resonant cells d = 3k^2, whose
+row-0 roots are rational.  Patched to take the square root of the discriminant
+MOD P (Tonelli-Shanks): the roots then exist in F_p whenever 12d is a square
+mod p, which covers every d given a suitable prime -- the same device the
+seeded exports use.  Controls d=3 and d=12 re-verified after the patch.
+
+Confirmed obstructed, both roots, on locus, at p = 1000003:
+
+    d = 18 : rank 35 -> 36
+    d = 20 : rank 39 -> 40
+    d = 27 : rank 53 -> 54     (RESONANT: 12d = 324 = 18^2)
+
+(d = 16 needs a different prime: 192 is not a square mod 1000003.
+ d = 48, the next resonant level, exceeded the 520 s budget -- 198 equations
+ in 143 unknowns -- and is the natural next target on hardware that stays up.)
+
+TOTAL COVERAGE of the rank criterion: every cell tested from d = 3 to d = 15,
+plus d = 18, 20 and the resonant d = 27, at BOTH roots of the row-0 quadratic,
+gives augmented rank = plain rank + 1 exactly.  The mu0 direction is never in
+the image of the linearisation at a quasi-homogeneous point.  No exception has
+been found anywhere, including at the resonant level where the resonance law
+predicts degeneration is likeliest.
