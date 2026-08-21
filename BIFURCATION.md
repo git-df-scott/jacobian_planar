@@ -207,3 +207,37 @@ finite.  The (72,108) resisters now running on the worker are the nearest
 live instance of it, and GGHV Cor 5.7 -- the only thing killing the (9,27)
 branch anywhere in the literature -- has still never been independently
 checked by anyone.
+
+## Result 9 — the RESONANT cell d=27 is obstructed too (10:10Z)
+
+A fast exact-mod-p form of the rank criterion (wave6/w6_rankcrit_modp.py) makes
+big cells reachable.  Soundness, one direction and it is the one needed: if G
+lies in the column span of J over Q then reducing that combination mod p puts
+G in the span mod p, so **obstructed mod p => obstructed over Q**.  Speed comes
+from the quasi-homogeneous point itself: every unknown there is 0 except
+a_{2d}=r, so each Jacobian entry is a single monomial read-off (coeff * r^k)
+with no symbolic differentiation.
+
+Controls reproduce the known cells exactly (d=3 and d=12, both roots,
+obstructed).  Then the target:
+
+    d = 27  (12d = 324 = 18^2, so BOTH roots are RATIONAL: -1/20 and 1/28)
+    eqs 107, unknowns 80, 375 s
+    root -1/20 : rank 53 -> 54, on locus, OBSTRUCTED
+    root  1/28 : rank 53 -> 54, on locus, OBSTRUCTED
+
+d = 27 = 3*3^2 is the next resonant level after d=3 and d=12 -- by the
+resonance law the most likely place in range for the obstruction to
+degenerate.  It does not.
+
+CORRECTION to Result 6's rank VALUES (verdict unchanged).  The earlier sweep
+differentiated the raw equations, holding a0, a1, b0, b1, mu1 fixed, and
+reported rank J = 2d+1, rank[J|G] = 2d+2.  Eliminating the (1.2) constraints
+first -- the correct total derivative along the constraint surface -- gives
+
+        rank J = 2d - 1,   rank[J|G] = 2d,
+
+confirmed at d = 3, 12, 27.  Both parametrisations agree on what matters: the
+augmented rank exceeds the plain rank by EXACTLY ONE at every d tested, i.e.
+the mu0 direction is never in the image.  Only the labels change; every
+"obstructed" verdict stands.
