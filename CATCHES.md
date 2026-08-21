@@ -1615,3 +1615,40 @@ polynomials in the two free parameters, i.e. rational-function arithmetic over
 F_p.  That has to be implemented properly.  Until it is, the pentagon verdict
 rests entirely on the direct msolve run on the pinned system, which is untouched
 by these bugs.
+
+================================================================================
+SOUND LINEAR REDUCTION OF THE SEED-PINNED PENTAGON SYSTEM.  The admissible seed
+survives every purely linear consequence.
+================================================================================
+
+wave6/w6_pent_lineloop.py uses ONLY equations of total degree 1 -- affine-linear
+with CONSTANT coefficients in F_p, no free parameters, no symbolic division -- so
+unlike the two retracted cascades every step is exact.  Iterated to a fixed
+point on the seed-pinned system:
+
+    start                267 equations / 148 unknowns
+    round 1   solved 21, free 4   -> 245 / 127   vanished 0   nonzero-const 0
+    round 2   solved  1, free 0   -> 244 / 126   vanished 0   nonzero-const 0
+    round 3   no degree-1 equations remain -- fixed point
+
+    final: 244 equations / 126 unknowns, degrees {2:75, 3:54, 4:115}
+
+NO inconsistent linear block at any round, and NO equation collapsed to a
+nonzero constant.  So the single admissible bottom-edge seed survives every
+consequence obtainable by linear algebra alone.
+
+WHAT THAT IS WORTH.  It is a genuine positive signal but a weak one, and the
+module says so in its own docstring: this procedure CANNOT prove the seed
+survives, only that no linear obstruction kills it.  The nonlinear part (244
+equations of degree 2-4) is untouched and is where the question actually lives.
+The reduced system is written to wave6/pentseed/seed0_p1000003_lin.ms and is
+strictly better than the original for the Groebner run -- 22 fewer unknowns,
+with the linear relations already solved.
+
+MEASUREMENT NOTE, recorded because I nearly reported a false alarm from it: at
+18:31 I read `ps -o rss` as 8.37 GB and concluded memory growth was
+ACCELERATING and an OOM was imminent.  That was a unit slip -- ps reports RSS in
+KiB, so 8371388 is 7.98 GB, not 8.37.  Re-sampling gave 8.000 -> 8.040 GB over
+80 s, i.e. ~0.03-0.06 GB/min, and with ~6.9 GB of headroom against 61 minutes to
+the hard timeout the run will NOT exhaust memory first.  Always divide by
+1048576, and re-sample before revising a trend.
