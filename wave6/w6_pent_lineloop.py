@@ -20,6 +20,31 @@ nothing about the nonlinear part.
 import sys, collections, sympy as sp
 P = 1000003
 
+def redp(e):
+    """Reduce every coefficient mod P and DROP terms that vanish.
+
+    Without this, sympy multiplies residues together without reducing, so
+    coefficients grow without bound and some land on multiples of P.  msolve
+    then refuses the file with 'coefficient cannot be 0 modulo P' -- the same
+    failure mode recorded in CATCHES.md this morning.  Measured on the
+    unreduced output: 3921 of 8264 coefficients had |c| >= P and 8 were exactly
+    0 mod P."""
+    e = sp.expand(e)
+    gens = sorted(e.free_symbols, key=str)
+    if not gens:
+        return sp.Integer(int(e) % P)
+    po = sp.Poly(e, *gens)
+    out = 0
+    for mon, co in zip(po.monoms(), po.coeffs()):
+        c = int(co) % P
+        if not c:
+            continue
+        t = c
+        for g, ex in zip(gens, mon):
+            if ex: t *= g**ex
+        out += t
+    return sp.expand(out)
+
 def rref_mod(rows, ncol):
     rank = 0; piv = {}
     for j in range(ncol):
@@ -79,7 +104,7 @@ def main(path):
                 if int(v) % P: bad += 1
                 else: zero += 1
                 continue
-            new.append(v)
+            new.append(redp(v))
         unk = sorted({v for e in new for v in e.free_symbols}, key=str)
         print(f"round {rnd}: solved {rank}, free {len(cols)-rank} | "
               f"{len(new)} eqs / {len(unk)} unknowns | vanished {zero} | nonzero-const {bad} | "

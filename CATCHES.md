@@ -1652,3 +1652,48 @@ KiB, so 8371388 is 7.98 GB, not 8.37.  Re-sampling gave 8.000 -> 8.040 GB over
 80 s, i.e. ~0.03-0.06 GB/min, and with ~6.9 GB of headroom against 61 minutes to
 the hard timeout the run will NOT exhaust memory first.  Always divide by
 1048576, and re-sample before revising a trend.
+
+--------------------------------------------------------------------------------
+ADDENDUM: my own linear reducer reproduced the morning's msolve coefficient trap.
+--------------------------------------------------------------------------------
+The first reduced export would not parse: msolve rejected the term
+-1577793733367*d_1_2*d_8_14 with "coefficient cannot be 0 modulo 1000003", and
+indeed 1577793733367 = 1000003 * 1577789 exactly.
+
+CAUSE: the Gaussian elimination was done correctly mod P, but the SUBSTITUTION
+step used plain sympy, which multiplies residues without reducing.  Coefficients
+therefore grew without bound -- measured on the bad file: 3921 of 8264
+coefficients had |c| >= P, 8 were exactly 0 mod P, and the largest was
+16998978357267.  This is the same failure mode recorded this morning under
+"NEW msolve SILENT-LIE MODE", arrived at from the other direction: there a
+generator was a nonzero multiple of the characteristic, here a coefficient was.
+
+THE GUARDRAIL HELD, THIS TIME: msolve exited 0 (as it does) but wrote an EMPTY
+output file rather than [-1], so no false EMPTY could be read off.  The error
+text went to stdout and was caught only because the launcher tees it.  Standing
+rule reaffirmed: read msolve's text output, never the exit code, and never trust
+a verdict without checking the file is non-empty AND the stderr/stdout is clean.
+
+FIX: redp() now reduces every coefficient mod P and DROPS vanishing terms before
+anything is written or carried forward.
+
+CONSEQUENCE WORTH NOTING -- the bug was also hiding mathematics.  With proper
+reduction the elimination goes FURTHER, because inflated coefficients were
+masking equations that are actually linear:
+
+    unreduced :  267/148 -> 245/127 -> 244/126   (round 1 exposed 1 linear eq)
+    reduced   :  267/148 -> 245/127 -> 241/123   (round 1 exposed 4 linear eqs)
+
+Final reduced system: 241 equations / 123 unknowns, degrees {2:72, 3:54, 4:115},
+0 coefficients >= P, 0 coefficients divisible by P, parses cleanly.  Still no
+inconsistent linear block and still no equation collapsing to a nonzero
+constant, so the conclusion is unchanged: the single admissible seed survives
+every purely linear consequence.
+
+BOTH GROEBNER RUNS NOW IN FLIGHT CONCURRENTLY, with the second one made safe:
+  #1  267 eq / 148 unk   (unreduced)  -- 37 min in, 8.24 GB
+  #2  241 eq / 123 unk   (reduced)    -- capped at 3.5 GiB address space and
+      given oom_score_adj = 1000 so that, if memory is ever exhausted, the
+      kernel sacrifices #2 rather than the long-running #1.  (Lowering #1's
+      oom_score_adj was refused by the kernel; raising #2's achieves the same
+      protection.)
