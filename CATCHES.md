@@ -420,3 +420,51 @@ kept equations, so a full solution's restriction satisfies them for ANY subset
 of equations.  The weight bookkeeping (beta-alpha additive; c-lines >= w-12,
 d-lines >= w-8, s-weight 4) was verified exactly against the data with zero
 violations, and dropping side conditions errs in the safe direction.
+
+## MODULAR ELIMINATION IS UNSOUND FOR CONTRADICTIONS (verified Saturday)
+
+trackA_eliminator.py --mod p can CLOSE a branch that has a genuine rational
+solution.  Minimal counterexample, constructed and run today:
+
+    nonzero = [y, z]
+    x - 3y = 0 ,  x + 4y - z = 0        solution over Q: x=3, y=1, z=7
+
+    exact Q : 1 open leaf                      (correct -- a solution exists)
+    --mod 7 : "1 closed, 0 open leaves"        FALSE CONTRADICTION
+    --verify: "1/1 closed-branch certificates replayed OK", exit 0
+
+Mechanism: z = 7y is nonzero over Q but vanishes mod 7, so a declared-nonzero
+coordinate dies under reduction and a satisfiable branch is closed.  Generally
+a mod-p contradiction only excludes solutions that are p-integral AND whose
+declared-nonzero coordinates survive reduction -- neither is implied by the
+rational problem.  (p*x - 1 = 0 is the minimal illustration.)
+
+The generating run does print "(SCOUTING ONLY)", so the author knew.  But that
+warning is NOT in the output JSON, NOT in --verify, and NOT in the exit code,
+so it does not survive into the artifact anyone would later read.
+
+DIRECT RELEVANCE: I ran all four W=10..13 eliminators with --mod 65521 this
+afternoon.  They returned contra = 0, so no false result entered the record --
+but the guardrail would not have caught one.  Any contradiction claim from this
+tool must come from an EXACT run (meta.mod == null) and be cross-checked with
+an independent engine.
+
+Related weaknesses in the same tool, worth knowing before relying on it:
+ * A CAPPED run (max_nodes / max_seconds hit) reports "0 open leaves" and exits
+   0, indistinguishable from a completed proof except for the `capped` counter;
+   the checkpoint file writes done: True unconditionally.
+ * --verify skips branched/merged/capped nodes entirely, does not check that a
+   branch's children cover all cases, and reads the nonzero hypotheses from the
+   TREE's own meta rather than the system file -- so the artifact asserts its
+   own hypotheses.  It is a replay sharing the engine's arithmetic, not an
+   independent check.
+ * load_system stores zero coefficients and silently overwrites repeated
+   monomials; either can manufacture a false contradiction.  Current inputs are
+   clean (checked: 0 zero-coeff terms, 0 duplicate monomials), so this is
+   latent rather than live.
+ * The 7 selftests never test a negative control (a system WITH a solution must
+   stay open), never touch --mod, the caps, --normalize, or the loader.
+
+The exact-Q reduction logic itself was reviewed closure-site by closure-site
+and fuzzed on ~1900 systems with planted solutions: ZERO false closures.  The
+engine is sound over Q; it is the reporting and verification layer that is not.
