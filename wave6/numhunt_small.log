@@ -2,3 +2,10 @@
 {"tag": "d8", "start": 3, "best_residual2": 1.667595364574151e-10, "elapsed": 125.6}
 {"tag": "d8", "start": 6, "best_residual2": 1.656144740071973e-10, "elapsed": 221.2}
 {"tag": "d8", "start": 14, "best_residual2": 1.1965284526553222e-10, "elapsed": 475.4}
+{"mode": "d8", "best": 1.1965284526553222e-10, "nhits": 0}
+{"tag": "d9", "start": 0, "best_residual2": 1.723909181072283e-10, "elapsed": 49.2}
+{"tag": "d9", "start": 4, "best_residual2": 1.6657077616816306e-10, "elapsed": 244.9}
+{"tag": "d9", "start": 9, "best_residual2": 1.5969191353077663e-10, "elapsed": 485.9}
+{"tag": "d9", "start": 18, "best_residual2": 1.5627548843945493e-10, "elapsed": 925.4}
+{"tag": "d9", "start": 81, "best_residual2": 1.4212601111976485e-10, "elapsed": 3991.8}
+{"tag": "d9", "start": 96, "best_residual2": 1.3950337372594062e-10, "elapsed": 4711.7}

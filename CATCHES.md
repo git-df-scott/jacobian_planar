@@ -123,3 +123,36 @@ factorization; 444/464 coverage hole; pentagon 2-torus.
 5. Tail-hash the 429-case frontier before building the compiler extension.
 6. Cheap reads: GGV p.92 WLOG argument; GGHV Sec 5 skeleton.
 7. Morning: bridge timeout one-liner; register annotation with unique-map.
+
+## RETRACTION (05:45Z) — the numerical "empty floor" evidence is VOID
+
+Two planted-root controls, run tonight, kill it:
+
+ * PENTAGON (165 unknowns): a root planted BY CONSTRUCTION (residual exactly
+   0.0) was NOT found by random multi-start; best of 3 starts was 1.9e5.
+ * LADDER d=8 (25 unknowns): same test, planted root at residual 0.0, 25
+   starts, best 1.7e3, never found.  wave6/w6_plantctl.py, reproducible.
+
+Therefore multi-start Newton cannot be relied on to locate an isolated root
+at d >= 8, and the readings quoted earlier tonight --
+   d=8  best 1.2e-10,  d=9  best 1.4e-10,  d=12 best 1.6e-10
+-- measure the SOLVER, not emptiness.  They are hereby RETRACTED as evidence
+of emptiness and must not be cited that way.  (The d=3 controls C1/C2 passed
+honestly at 8 unknowns; the mistake was extrapolating that power to 25-40.)
+
+Same reasoning voids the bifurcation-system residual (1.6e-3 at d=12) as
+evidence: it is a numerical miss at 136 real unknowns, i.e. no information.
+
+STATUS CHANGE: the numerical lanes are demoted from "evidence producers" to
+"opportunistic finders" -- a HIT would still be real (and gets the full
+verification protocol), a MISS says nothing at all.
+
+WHAT SURVIVES intact (all exact, none numerical):
+ * the exact rank criterion at quasi-homogeneous points, d=3..13, both roots
+ * the factored form 6DE = 4AA' - mu2 q1^2 + 3mu1 y q1 - 6mu0 y^2 and its
+   three exact checks (row-0 quadratic recovered, d=3 obstruction 6*mu0
+   re-derived, D==0 branch killed by degree)
+ * the excess count (4d+6 equations vs 3d-1 unknowns) and the rigidity argument
+ * every exact msolve EMPTY verdict from the mod-p runs
+The structural case that B=16 is closed rests entirely on these, and is
+unaffected by the retraction.
