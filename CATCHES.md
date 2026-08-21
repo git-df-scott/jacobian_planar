@@ -263,3 +263,39 @@ vars, +12) built and clean (no constant generators).  Neither finishes GB-only
 inside this container's ~8 min usable window.  This is now a well-posed,
 sound, correctly-levelled target that needs uninterrupted compute -- not a
 research question.
+
+## THE DEGREE-BOUNDED TEST — the method that finally fits the hardware
+
+Every previous attempt asked the solver for a whole Groebner basis: unbounded
+work, which is why the pentagon systems OOM'd or timed out for two weeks.  But
+emptiness only needs ONE question: is the constant 1 in the ideal?  Fixing a
+degree bound D makes that a BOUNDED computation whose cost I choose.
+
+  SOUND one way (the way we want): 1 found at degree <= D  =>  ideal is the
+  whole ring  =>  truncation EMPTY  =>  pentagon case (1) DEAD.
+  Not found  =>  inconclusive, raise D.  Never a false kill.
+
+Implemented with Singular's `degBound` (/tmp/degbound.sh).  THREE controls:
+ * an inconsistent system reports ONE-IN-IDEAL;
+ * a consistent one does not;
+ * the bound must actually BITE -- the 132-variable W=13 system, which eats
+   8 minutes unbounded, returns in 0.23 s at D=2.
+The first version silently failed this third control: `option(degBound,D)` is
+not Singular syntax and errored, so the runs were unbounded and only "passed"
+because the first two controls are trivial.  Correct form is the reserved
+variable `degBound = D;`.
+
+MEASURED COST LADDER (gauged truncations, p=65521):
+
+  level   excess   D=4              D=5
+  W=10    +29      36 s / 306 MB    > 260 s / 868 MB
+  W=11    +20      12 s / 148 MB    > 260 s
+  W=12    +12      -                running
+  W=13     +5      1.7 s / 44 MB    231 s / 648 MB  (COMPLETED, no constant)
+
+No constant through D=5 at W=13, or D=4 at W=10/11.
+
+THE IMPORTANT SHIFT: peak memory is UNDER 1 GB everywhere.  The pentagon
+computation is no longer memory-bound -- it is time-bound.  That means it no
+longer OOMs, it parallelises (4 cores, ~1 GB each), and it survives inside this
+container's limits.  A two-week memory wall became a schedulable time cost.
