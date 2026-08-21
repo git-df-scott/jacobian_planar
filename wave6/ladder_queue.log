@@ -1,0 +1,17 @@
+06:43 === ladder queue start (regenerate + run) ===
+roots mod p: [63337, 298733]
+root 0=63337: eqs=33 vars=25 row0_ok=True -> b16seedN_d8_r0_p1000003.ms
+root 1=298733: eqs=33 vars=25 row0_ok=True -> b16seedN_d8_r1_p1000003.ms
+roots mod p: [865493, 117298]
+root 0=865493: eqs=33 vars=25 row0_ok=True -> b16seedN_d8_r0_p1000033.ms
+root 1=117298: eqs=33 vars=25 row0_ok=True -> b16seedN_d8_r1_p1000033.ms
+roots mod p: [255572, 789917]
+root 0=255572: eqs=37 vars=28 row0_ok=True -> b16seedN_d9_r0_p1000033.ms
+root 1=789917: eqs=37 vars=28 row0_ok=True -> b16seedN_d9_r1_p1000033.ms
+roots mod p: [924063, 143591]
+root 0=924063: eqs=41 vars=31 row0_ok=True -> b16seedN_d10_r0_p1000081.ms
+root 1=143591: eqs=41 vars=31 row0_ok=True -> b16seedN_d10_r1_p1000081.ms
+roots mod p: [93551, 601573]
+root 0=93551: eqs=45 vars=34 row0_ok=True -> b16seedN_d11_r0_p1000003.ms
+root 1=601573: eqs=45 vars=34 row0_ok=True -> b16seedN_d11_r1_p1000003.ms
+06:44 START b16seedN_d8_r0_p1000003 vars=25
