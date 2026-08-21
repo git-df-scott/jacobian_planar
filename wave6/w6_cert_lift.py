@@ -49,8 +49,14 @@ def cert_at_prime(vs, body, p):
 
 
 def parse_cert(txt, p):
-    if 'UNIT' not in txt or 'NOTUNIT' in txt:
-        return None
+    # DO NOT conflate these: NOTUNIT means the system HAS solutions, while an
+    # absent marker means the run gave NO VERDICT (timeout/crash). Reporting
+    # them with one message hid a 1200s timeout behind wording that read like a
+    # mathematical result.
+    if 'NOTUNIT' in txt:
+        return 'NOTUNIT'
+    if 'UNIT' not in txt:
+        return None                      # NO VERDICT
     lam = {}
     for line in txt.split('\n'):
         m = re.match(r'^LAM\s+(\d+)\s*:\s*(.+)$', line.strip())
@@ -89,8 +95,13 @@ def main():
     for p in primes:
         txt = cert_at_prime(vs, body, p)
         c = parse_cert(txt, p)
+        if c == 'NOTUNIT':
+            print(f"  p={p}: NOT the unit ideal -- the system HAS solutions mod p. "
+                  f"That is a LEAD, not a failure.", flush=True)
+            continue
         if c is None:
-            print(f"  p={p}: NOT unit / no verdict -> unusable", flush=True)
+            print(f"  p={p}: NO VERDICT (timeout/crash) -- not EMPTY, not a hit",
+                  flush=True)
             continue
         certs[p] = c
         print(f"  p={p}: UNIT, {len(c)} multipliers, "
