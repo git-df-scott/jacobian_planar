@@ -3,3 +3,4 @@ p=999961 elim_deg=9 rational=4/9 admissible=0 degenerate=4 verify_fail=0
 p=1000117 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0
 p=1000121 elim_deg=9 rational=3/9 admissible=1 degenerate=2 verify_fail=0
 p=1000133 elim_deg=9 rational=3/9 admissible=1 degenerate=2 verify_fail=0
+p=1000151 elim_deg=9 rational=2/9 admissible=0 degenerate=2 verify_fail=0
