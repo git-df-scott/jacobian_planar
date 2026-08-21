@@ -1892,3 +1892,43 @@ in characteristic zero for d = 3..7; GGHV Cor 5.7 shown unproven; the plane
 sweep closed in both branches; mu >= 3 and non-Galois for any plane
 counterexample; and the complete bottom-edge classification of (72,108)
 pentagon case (1) with its single admissible seed.
+
+--------------------------------------------------------------------------------
+JOB #1 TIMED OUT: NO VERDICT.  90 minutes, nothing decided.
+--------------------------------------------------------------------------------
+The seed-pinned unreduced pentagon system (267 equations / 148 unknowns) hit its
+hard timeout:
+
+    Command exited with non-zero status 124      (124 = timeout)
+    TIME 5400.63 s   RSS 9992824 KB  (9.53 GB)
+    output file: 0 bytes
+
+By the standing rule an empty output file from a timed-out process is NOT a
+verdict -- not EMPTY, not a hit.  The watcher classified it correctly and
+without prompting:
+
+    19:33:37 job1(267eq/148unk): ENDED -> NO-VERDICT(empty file)
+    19:33:37 job1 FINAL: NO-VERDICT(empty file)
+
+That is 90 minutes of compute that settled nothing about whether the single
+admissible bottom-edge seed extends.  Recorded as such: a timeout is a failure
+to decide, and the temptation to read it as evidence of emptiness is exactly
+the error this ledger exists to prevent.
+
+THE QUEUED HANDOFF WORKED.  queue_reduced.sh fired at 19:33:28, recorded #1's
+(non-)verdict, observed the machine drop to 920 MB used / 15.1 GB available, and
+launched the reduced system uncapped:
+
+    19:33:28 job #1 has ended -- #1 verdict: [] (0 bytes)
+    19:33:28 launching reduced 241eq/123unk, no cap, full machine
+
+#2 is now running with ~14 GB available -- its first fair run after three deaths
+on artificial address-space caps (3.5 GiB, 5.0 GiB, then stopped deliberately at
+2:37 to avoid an OOM event).  Timeout 3000 s, resolving by ~20:23.
+
+IF #2 ALSO TIMES OUT, the conclusion is not "buy a bigger machine".  Two runs of
+this system at 90 and 50 minutes, one of them with 25 fewer unknowns and its
+linear block already eliminated, would say the direct Groebner route does not
+reach it.  The route that would is the level cascade -- which is precisely the
+tool that failed three self-tests today and which needs designing on paper
+before a fourth attempt.
