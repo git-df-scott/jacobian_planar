@@ -187,3 +187,34 @@ touched.
 
 STANDING RULE ADDED: every msolve invocation must capture stderr, and any
 "[-1]" accompanied by a parse/read error is a FAILURE, never a verdict.
+
+## d=8 chart N — resistance measured, not a verdict (08:00Z)
+
+The smallest undecided ladder cell was attacked in every cheap formulation
+available tonight.  ALL timed out with CLEAN stderr (genuine timeouts, not
+the parse artefact):
+
+  formulation                                   vars  budget  result
+  seeded chart-N split (u*mu2-1), p=1000003      25    200s   TIMEOUT
+  seeded chart-N split, GB-only (msolve -g 2)    25    420s   TIMEOUT
+  seeded, NO chart split (mu0-saturation only)   24    200s   TIMEOUT
+  seeded chart-N split, 16-bit prime p=65521     25    220s   TIMEOUT
+
+Two structural improvements were found along the way and are kept:
+ * seeding the row-0 root covers the WHOLE cell (the relation is mu-free), so
+   the Z/N chart split is unnecessary work -- dropping it removes the u
+   saturation variable (25 -> 24 unknowns);
+ * a 16-bit prime buys nothing here, so the cost is Groebner structure, not
+   coefficient arithmetic.
+
+CONCLUSION (honest): exact elimination cannot decide d >= 8 chart N on this
+hardware inside the container's uptime windows.  d=8..12 chart N therefore
+remain UNDECIDED, and no numerical substitute is admissible (multi-start is
+blind at these sizes -- see the retraction above).  The ladder's closure case
+rests on the EXACT STRUCTURAL results (rank criterion d=3..13, the factored
+form, the excess count), not on cell-by-cell elimination.
+
+INFRASTRUCTURE NOTE: the container restarted 4x tonight, twice rolling the
+working tree back to an older commit.  Recovery = git fetch + merge --ff-only
+from origin (stale logs moved aside first).  Every result must be pushed
+immediately; generated .ms files are regenerable from wave6/w6_seed_d8.py.
