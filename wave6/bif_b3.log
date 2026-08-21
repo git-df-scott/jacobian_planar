@@ -1,1 +1,3 @@
 {"mode": "b3", "d": 3, "eqs": 11, "vars": 8, "unknowns_real": 32, "residuals_real": 44, "build_secs": 0.6}
+{"mode": "b3", "start": 0, "best_residual2": 0.0004031099572273221, "elapsed": 12.2}
+{"mode": "b3", "start": 2, "best_residual2": 8.45523182076754e-05, "elapsed": 34.4}

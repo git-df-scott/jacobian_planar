@@ -1,0 +1,50 @@
+[
+ {
+  "d": 5,
+  "eqs": 26,
+  "vars": 14,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/68 + sqrt(15)/34",
+    "on_locus": true,
+    "rank_J": 11,
+    "rank_aug": 12,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(15)/34 - 3/68",
+    "on_locus": true,
+    "rank_J": 11,
+    "rank_aug": 12,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
+ },
+ {
+  "d": 6,
+  "eqs": 30,
+  "vars": 17,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-1/28 + sqrt(2)/14",
+    "on_locus": true,
+    "rank_J": 13,
+    "rank_aug": 14,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(2)/14 - 1/28",
+    "on_locus": true,
+    "rank_J": 13,
+    "rank_aug": 14,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
+ }
+]
