@@ -74,6 +74,101 @@ def write_ms(path, eqs, varlist, p, nonzero_present):
     return len(live) + (1 if nonzero_present else 0), len(vs)
 
 
+def chain_core(V, eqs, p, nonzero, checkpoints, tag, log=print):
+    """THE shared reduction loop.  Both the real runs and every control call
+    this same function, so a control genuinely exercises the shipped code."""
+    zeros, solved, done, nxt = set(), {}, [], 0
+    for rnd in range(1, 6000):
+        eqs = [{m: c for m, c in t_.items() if not any(v in zeros for v, _ in m)}
+               for t_ in eqs]
+        div = 0
+        for i2, t_ in enumerate(eqs):
+            if not t_ or len(t_) == 1:
+                continue
+            g = gcd_mono(t_)
+            ok = {v: e for v, e in g.items() if v in nonzero}
+            if ok:
+                nt = {}
+                for m, c in t_.items():
+                    dm = defaultdict(int, dict(m))
+                    for v, e in ok.items():
+                        dm[v] -= e
+                    nt[tuple(sorted((a, b) for a, b in dm.items() if b > 0))] = c
+                eqs[i2] = nt; div += 1
+        if div:
+            continue
+        nz, contra = set(), None
+        for i2, t_ in enumerate(eqs):
+            if len(t_) != 1:
+                continue
+            (mono, coef), = t_.items()
+            if not mono:
+                contra = f"eq{i2}: nonzero constant {coef} = 0"; break
+            free = [v for v, _ in mono if v not in nonzero]
+            if not free:
+                contra = f"eq{i2}: {mono}=0 with every factor required nonzero"; break
+            if len(free) == 1 and free[0] not in zeros:
+                nz.add(free[0])
+        if contra or (nz & nonzero):
+            log(f"*** CONTRADICTION mod p *** {contra or sorted(nz & nonzero)}")
+            return None, zeros, solved, done
+        if nz:
+            zeros |= nz; continue
+        cand = []
+        for i2, t_ in enumerate(eqs):
+            if not t_:
+                continue
+            for m, c in t_.items():
+                if len(m) != 1 or m[0][1] != 1:
+                    continue
+                v = m[0][0]
+                if v in zeros or v in solved:
+                    continue
+                if any(v in dict(m2) for m2 in t_ if m2 != m):
+                    continue
+                if any(dict(m3).get(v, 0) > 1 for t3 in eqs for m3 in t3):
+                    continue
+                cand.append((len(t_), i2, v, c))
+        if not cand:
+            log("fixed point"); break
+        cand.sort()
+        _, i2, v, c = cand[0]
+        inv = pow(c, p - 2, p)
+        rhs = {m2: (-c2 * inv) % p for m2, c2 in eqs[i2].items()
+               if not (len(m2) == 1 and m2[0] == (v, 1))}
+        out = []
+        for t_ in eqs:
+            nt = defaultdict(int)
+            for m, cc in t_.items():
+                if dict(m).get(v, 0) != 1:
+                    nt[m] = (nt[m] + cc) % p; continue
+                rest = tuple(sorted((a, b) for a, b in m if a != v))
+                for m2, c2 in rhs.items():
+                    mg = defaultdict(int)
+                    for a, b in rest:
+                        mg[a] += b
+                    for a, b in m2:
+                        mg[a] += b
+                    key = tuple(sorted((a, b) for a, b in mg.items() if b > 0))
+                    nt[key] = (nt[key] + cc * c2) % p
+            out.append({m: cc for m, cc in nt.items() if cc})
+        eqs = out; eqs[i2] = {}
+        if v in nonzero:
+            nonzero = set(nonzero); nonzero.discard(v)
+        solved[v] = rhs
+        tot = sum(len(t_) for t_ in eqs)
+        if nxt < len(checkpoints) and tot >= checkpoints[nxt]:
+            rem = sorted(set(V) - zeros - set(solved))
+            path = os.path.join(ROOT, f'wave6/pentseed/reduced_{tag}{len(rem)}v.ms')
+            ne, nv = write_ms(path, eqs, rem, p, nonzero)
+            log(f"  checkpoint: {ne} eq, {nv} vars, {tot} terms, "
+                f"{os.path.getsize(path)/1e6:.1f} MB -> {os.path.basename(path)}")
+            done.append((path, ne, nv)); nxt += 1
+        if nxt >= len(checkpoints):
+            break
+    return eqs, zeros, solved, done
+
+
 def main(src=None, shift_point=None, tag=''):
     src = src or os.path.join(ROOT, 'wave6/pentseed/seed0_p1000003.ms')
     V, eqs, p = parse_ms(src)
