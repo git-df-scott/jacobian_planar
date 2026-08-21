@@ -1557,3 +1557,61 @@ That system is now running.  Standing caveat: this is mod p and one seed; a
 non-empty answer is a candidate to be lifted and verified exactly, never a
 counterexample by itself, and the 4 non-F_p-rational seeds still need a prime
 where they are visible.
+
+================================================================================
+TWO BUGS IN MY OWN PENTAGON CASCADE, BOTH FOUND BY ME, BOTH RETRACTED.  The
+files are committed WITH their defects documented, because a cascade that can
+only ever answer "consistent" is the can't-fail certifier pattern again.
+================================================================================
+
+BUG 1 (wave6/w6_pent_levelcascade.py) -- MANUFACTURED A CONTRADICTION.
+It reported "LEVEL 2 IS INCONSISTENT (1 contradictory row) -> THIS SEED DIES".
+That is an ARTIFACT.  Level 3 solves to rank 17 with TWO FREE PARAMETERS, so the
+level-3 variables are NOT determined.  The row-builder classifies a monomial as
+"linear" whenever it has degree <= 1 in the FRESH unknowns -- but a monomial with
+degree 0 in the fresh unknowns and containing an UNDETERMINED non-fresh variable
+also passes that test, and is then added to the constant column, i.e. the
+undetermined variable is silently set to 1.  The contradiction was produced by
+that substitution, not found in the data.
+
+  The general lesson, which was flagged in advance and which I did not heed:
+  when a level leaves free parameters, consistency at lower levels is a
+  POLYNOMIAL CONDITION ON THOSE PARAMETERS, not a plain rank test.  A rank test
+  run after specialising the parameters (even implicitly, even to 1) answers a
+  different question.
+
+BUG 2 (wave6/w6_pent_cascade2.py) -- VACUOUS.  Written to fix Bug 1 by carrying
+the parameters symbolically with fraction-free elimination over F_p.  It does
+carry them correctly, but it NEVER WRITES THE SOLVED VALUES BACK into `known`.
+So nothing propagates: from level 2 downward every monomial contains two still-
+undetermined variables, every equation is classified nonlinear, and the run
+reports "0 conditions, 0 contradictions" at every level.  It cannot fail.  That
+is the third can't-fail certifier of the day and the second I wrote myself.
+
+  Tell for this class of bug, worth adding to the pre-flight list: if a cascade
+  reports NO constraints at EVERY level while the equation count exceeds the
+  unknown count by 118, it is not finding a big solution set -- it is not
+  computing anything.  Check that the "solved" values are actually used
+  downstream before reading any verdict.
+
+WHAT SURVIVES, AND WHAT DOES NOT.
+  VOID: "the admissible seed dies at level 2"; and "no conditions arise at any
+  level".  Neither statement has any content.
+  INTACT (independently verified earlier, and untouched by these bugs):
+    * the L = 2*alpha - beta grading and the bilinearity of every monomial;
+    * the level census (deficits +1,+2,+3,+3,+1 then negative from Lambda = -1);
+    * the identity 2 f g' - 3 f' g = w^2 for the 17 top-level equations, 17/17
+      at scale 1, with c_1_0 - 1 = 0 as the bracket-point-(2,0) row;
+    * the complete chart analysis of the bottom edge (ungauged dim 1; c_2 = 1
+      dim 0 with a degree-9 eliminant in char 0 and mod p; c_2 = 0 EMPTY);
+    * the five F_p-rational seeds, all satisfying the 17 equations exactly, of
+      which exactly ONE is admissible under nonzero = [c_1_0, c_8_14, d_12_21];
+    * pinning that seed into the 283-equation system satisfies exactly the 17
+      L = 4 equations, produces NO nonzero constant row, and leaves 266
+      equations in 147 unknowns with 22 of them linear.
+
+THE REAL BLOCKER.  Propagating past level 3 requires dividing by pivots that are
+polynomials in the two free parameters, i.e. rational-function arithmetic over
+F_p.  That has to be implemented properly.  Until it is, the pentagon verdict
+rests entirely on the direct msolve run on the pinned system, which is untouched
+by these bugs.
