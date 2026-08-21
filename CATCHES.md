@@ -512,3 +512,101 @@ witness restricted to ker J(w) (dim 2 in the domain, cokernel 120); ask whether
 the (1,8) critical point is isolated or sits in a positive-dimensional critical
 locus; and run the same rank test at OTHER exact points of the top variety if
 more can be constructed (the witness has a parameter t).
+
+================================================================================
+GGHV COROLLARY 5.7 IS UNPROVEN -- THE (9,27) BRANCH OF (72,108) IS NOT CLOSED BY
+THE LITERATURE.  (Verified by me, line by line, against the local extractions of
+arXiv:2204.14178 (GGHV) and arXiv:1401.1784 (= their reference [1], GGV, J.
+Algebra 471 (2017) 13-74).  arXiv has only v1 of 2204.14178, no journal ref, so
+there is no corrected version.)
+================================================================================
+
+WHY THIS MATTERS.  (72,108) is the last surviving degree pair below max 125.  It
+has two orientations.  The (9,27) orientation is killed in the literature by
+exactly ONE result: GGHV Corollary 5.7.  Our ledger has flagged it for weeks as
+the single load-bearing unverified step.  It is now verified to be BROKEN at a
+specific, quotable step.  Everything downstream of it -- and every triage
+decision that treated (9,27) as dead -- must be reopened.
+
+THE STATEMENT (gghv.txt:1412-1416, p. 20):
+  "Corollary 5.7.  There exist no P, Q in K[x,y] with [P,Q] = x and
+     N(P) = {(0,0),(1,1),(6,16),(6,18),(0,18)}
+     N(Q) = {(0,0),(1,0),(9,24),(9,27),(0,27)}"
+These are exactly the polygons Prop 4.1 (gghv.txt:329) produces from a (9,27)
+counterexample, so Cor 5.7 is the whole kill.
+
+THE PROOF'S SKELETON.
+  (a) CLAIM: l_{0,1}(P) = lambda_p * y^18 * (x - lambda)^6, lambda in K^x.
+  (b) Take phi in Aut(K[x,y]) with phi(y)=y, phi(x)=x+lambda.
+  (c) (5.12): Succ_{phi(P)}(1,0) >= (-1,1) and Succ_{phi(Q)}(1,0) >= (-1,1).
+  (d) [phi(P),phi(Q)] = x+lambda, so (phi P, phi Q) satisfies Theorem 5.1 -->
+      contradiction.
+Step (c) is proved by ONE sentence: "By the same argument, for (rho,sigma) =
+Succ_{psi(phi(P))}(0,1) we also have that l_{rho,sigma}(psi(phi(P))) is a sixth
+power ...", where psi(x) = x^{1/2}, psi(y) = y.
+
+(5.12) IS LOAD-BEARING, NOT DECORATIVE -- I checked this first, because if
+Theorem 5.1 applied directly to Prop 4.1's polygons the gap would be harmless.
+It does not.  Theorem 5.1 hypothesis (2) demands st_{-1,1}(P) = (6,18).  On
+N(P) the form v_{-1,1} = b-a takes the values 0, 0, 10, 12, 18, MAXIMAL AT
+(0,18); so st_{-1,1}(P) = (0,18) != (6,18) and hypothesis (2) FAILS.  Same for
+Q: values -1, 0, 15, 18, 27, maximal at (0,27), not (9,27).  Theorem 5.1 is
+reachable ONLY through (5.12).  (Recomputed; see the arithmetic below.)
+
+THE DEFECT.  "The same argument" is [1, Corollary 7.2] (1401.1784.txt:3382),
+whose standing hypothesis, printed on its own line, is
+
+        [P, Q] in K^x
+
+-- and equally [1, Definition 4.3] (1401.1784.txt:1225), which defines an
+(m,n)-pair, opens with the same requirement.  Both routes need it.  Now apply
+the paper's own chain rule, [1, Proposition 3.10] (1401.1784.txt:1152):
+[phi(P),phi(Q)] = phi([P,Q])[phi(x),phi(y)].  With [psi(x),psi(y)] =
+(1/2) x^{-1/2}:
+
+  FIRST application, to (psi P, psi Q):
+      [psi P, psi Q] = psi(x) * (1/2) x^{-1/2} = 1/2         in K^x.   VALID.
+  SECOND application, to (psi phi P, psi phi Q):
+      [psi phi P, psi phi Q] = psi(x + lambda) * (1/2) x^{-1/2}
+                             = 1/2 + (lambda/2) x^{-1/2}     NOT in K^x.
+(Both brackets recomputed symbolically; the second is exactly the first plus a
+term of v_{-1,1}-degree +1/2, i.e. nonzero in precisely the directions Cor 7.2
+is being invoked for.)
+
+lambda != 0 IS FORCED, so the failure is never vacuous.  The paper itself
+writes lambda in K^x in the claim; independently, l_{0,1}(P) = y^18 u(x) with
+deg u = 6 and u(0) != 0 because (0,18) is a vertex of N(P), and u =
+lambda_p (x-lambda)^6 gives u(0) = lambda_p lambda^6 != 0.
+
+THE OBSTRUCTION IS STRUCTURAL, NOT A TYPO.  The x^{1/2} trick works only because
+[P,Q] is the VARIABLE x itself.  A morphism xi with xi(y)=y, xi(x)=h(x) keeps
+the bracket constant iff h h' = c, i.e. h = (alpha x + beta)^{1/2}, which lies
+in L^(2) only for beta = 0; and the substitution that would fix the translated
+pair, x -> x^{1/2} - lambda, composes with phi back to psi -- it undoes the
+translation and returns the ORIGINAL polygon.  No repair by the same device.
+
+HOW BIG IS THE HOLE, QUANTITATIVELY.  (5.12) asserts v_{-1,1}(phi P) = 12 and
+v_{-1,1}(phi Q) = 18, i.e. the vanishing of every coefficient of x^a y^b with
+b - a > 12 (resp. > 18) inside the support rectangles [0,6]x[0,18] and
+[0,9]x[0,27]: 21 conditions on P and 45 on Q, 66 in all.  The proven part --
+the claim, plus its Q-analogue -- delivers only the TOP ROWS: b=18, a=0..5 (6
+conditions) and b=27, a=0..8 (9 conditions).  So 51 of the 66 conditions rest
+on the invalid step.  (This corrects the "one condition" figure an assisting
+agent reported; the correct count is 15 delivered, 51 unsupported.  The
+conclusion is unchanged.)
+
+WHAT IS *NOT* WRONG.  I checked the rest of the chain and it stands: Theorem
+5.1's own proof (Props 5.2-5.6, the 9 explicit equations, the unshown CAS
+elimination (5.9) = 8T^3 + 18 e1 m1^6 T + 27 e0 m1^9, the y-exponent 507 in
+(5.11), and both endgame branches k>=8 and k<=7); Prop 4.1's divisibility
+table; and the FIRST half of Cor 5.7 (the claim), which is genuinely valid
+because there the bracket really is 1/2 in K^x.  The failure is localised to
+one sentence: gghv.txt:1430-1433.
+
+LEDGER CHANGE, EFFECTIVE NOW.
+  (9,27) is NOT killed.  Its sole citation has an INVALID STEP, not merely an
+  unverified one.  The live region below max 125 is therefore BOTH orientations
+  of (72,108), not one.  Any p108 run, any triage table, and any statement of
+  the form "only (108,72) survives" must be corrected.  This is failure class
+  (i) inherited-assumption: we imported a published kill without checking it,
+  and it does not hold.
