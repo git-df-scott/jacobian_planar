@@ -1276,3 +1276,77 @@ Omega has degree up to 4d-3 and requiring it constant is 4d-3 cancellations
 against roughly 3d free coefficients -- the same excess d-3 seen from the
 coefficient side, now visible as massive cancellation in a single determinant
 rather than as an opaque overdetermined system.
+
+================================================================================
+A COMPLETELY DIFFERENT HUNT: CLASSIFY BY THE DECK GROUP, NOT BY THE DEGREE PAIR.
+Result: a plane Keller counterexample CANNOT have geometric degree 2, and more
+generally cannot be a Galois covering.  So hunt at mu >= 3 -- which is exactly
+where the dimension-3 counterexamples live.
+================================================================================
+
+THE SHIFT.  Every hunt in this campaign has had the same shape: pick a cell of
+the GGV/GGHV Newton-polygon framework, write down its coefficient system, and
+try to solve it.  That is elimination.  The dimension-3 refutation was NOT found
+that way -- Alpoge/Gallagher/Speyer found it by asking what KIND of map can be
+etale and non-injective, and then constructing one.  So: classify the possible
+maps, not the possible degree pairs.
+
+THE HANDLE.  A counterexample F = (P,Q) : C^2 -> C^2 has generic fibre size
+mu >= 2, so C(x,y) / C(P,Q) is a field extension of degree mu.  Let
+G := Aut(C(x,y)/C(P,Q)) -- the deck group.  Every element of G is a BIRATIONAL
+SELF-MAP of C^2 fixing P and Q.  Finite-order birational self-maps of the plane
+are CLASSIFIED (Bayle-Beauville for involutions; Dolgachev-Iskovskikh, Blanc for
+higher order).  That is a finite classification to search, in place of an
+infinite ladder of degree pairs.
+
+THE LEMMA (short, and it is the whole engine).
+    Let sigma in G, let p in C^2 with sigma regular at p and sigma(p) = p.
+    F is etale at p, hence a local biholomorphism, hence INJECTIVE near p.
+    From F o sigma = F and injectivity, sigma = id near p, so sigma = id.
+So EVERY non-identity element of G is FIXED-POINT-FREE on the open set of C^2
+where it is regular.
+
+APPLYING IT AT mu = 2.  Degree 2 is automatically Galois, so G = Z/2 and its
+generator sigma is a nontrivial birational involution of C^2 that must be
+fixed-point-free.  By Bayle-Beauville every nontrivial birational involution of
+P^2 is conjugate to one of:
+
+  * de JONQUIERES -- preserves a pencil of lines.  Computed here explicitly:
+        sigma(x,y) = ( x , (a(x) y + b(x)) / (c(x) y - a(x)) )
+    verified to be an involution, with fixed locus the conic
+        c(x) y^2 - 2 a(x) y - b(x) = 0,
+    a nonempty affine curve.  Its resultant with the pole locus c(x)y - a(x) is
+    (a^2 + b c)*c, which is NONZERO exactly when sigma is a genuine involution --
+    so sigma is REGULAR along its own fixed curve, and the lemma applies.
+    (Sub-case c = 0: sigma(y) = -y - b/a, fixed locus y = -b/(2a), same
+    conclusion.)  CONTRADICTION.
+  * GEISER (fixed curve a smooth quartic, genus 3) and BERTINI (genus 4).  A
+    curve of genus >= 1 is not rational, and every boundary component of a smooth
+    compactification of C^2 is rational, so the fixed curve cannot lie in the
+    boundary and must meet C^2.  CONTRADICTION.
+  * LINEAR (fixed locus = a line plus an isolated point).  If the fixed line is
+    taken to be the line at infinity, the isolated fixed point lies in C^2.
+    CONTRADICTION.
+
+    ==>  A PLANE KELLER COUNTEREXAMPLE CANNOT HAVE GEOMETRIC DEGREE 2:  mu >= 3.
+
+INPUTS I AM RELYING ON, STATED HONESTLY: Bayle-Beauville's classification of
+birational involutions of P^2, and the fact (Ramanujam / Morrow) that every
+boundary component of a smooth compactification of C^2 is rational.  Neither is
+re-derived here.  The de Jonquieres computation IS done here and is the case
+that carries the most weight, since it is the flexible family.
+
+GENERALISATION, AND WHERE IT STOPS.  The lemma applies to any nontrivial deck
+transformation, so the same argument attacks every case where G != 1, i.e. every
+GALOIS covering.  It says nothing when G = 1: for mu = 3 with Galois closure S_3
+the deck group is trivial (the point stabiliser S_2 is not normal), and the
+argument gives no information.  So the honest statement is:
+
+    a plane Keller counterexample is a NON-GALOIS covering of degree mu >= 3.
+
+WHERE TO HUNT NOW.  mu >= 3, non-Galois.  This is a real convergence: Alpoge's
+dimension-3 counterexample has geometric degree exactly 3, Gallagher's family
+realizes every degree >= 3, and the tangent sweep of a degree-d curve has
+mu = d+1 >= 3.  Every known counterexample-producing mechanism sits at mu >= 3,
+and we now know the plane must too.  Degree 2 -- the first thing anyone would
+try -- is provably empty, which is worth knowing before spending compute on it.

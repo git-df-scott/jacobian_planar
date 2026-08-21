@@ -72,10 +72,17 @@ def facts(d, variant='corrected'):
 
 def export(d, verbose=True):
     k, rows, eqs, a, b, mu1s, norm = facts(d)
-    sub = dict(norm)
-    sub[mu2] = 1                                   # F4: torus gauge
-    sub[a[2]] = 3*mu0                              # F2 with mu2 = 1
-    sub[mu1] = -mu0*mu3                            # F3 with mu2 = 1
+    # NOTE: sympy's Expr.subs(dict) is SEQUENTIAL (sorted by default_sort_key),
+    # not simultaneous, so a chained entry like {a1: mu2, mu2: 1} is order-
+    # dependent.  Every value below is therefore written in FINAL form -- no
+    # entry's value mentions another entry's key -- so the result cannot depend
+    # on substitution order.  (Verified: the exported files are byte-identical
+    # to the pre-hardening ones.)
+    sub = {b[0]: mu3, b[1]: 0, a[0]: -mu3**2/4,
+           a[1]: sp.Integer(1),                    # a1 = mu2 = 1
+           mu2: sp.Integer(1),                     # F4: torus gauge
+           a[2]: 3*mu0,                            # F2 with mu2 = 1
+           mu1: -mu0*mu3}                          # F3 with mu2 = 1
     keep = [e for i, e in enumerate(eqs) if i != k]     # drop the y^3 row (F1)
     out = []
     for e in keep:
