@@ -15,5 +15,9 @@
   "verdict": "NO-OUTPUT-FAILURE",
   "head": "",
   "wall": 1204.5
+ },
+ {
+  "name": "w6_35657_2",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_2_dump.sing']' timed out after 900 seconds"
  }
 ]
