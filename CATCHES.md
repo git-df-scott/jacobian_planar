@@ -368,3 +368,55 @@ gbsize == number-of-inputs as a no-op sentinel.
 CORRECT TARGET remains the GAUGED, PRE-ELIMINATION truncations at W <= 13
 (degree 4, ~130 vars), where the measured ladder is D=4 cheap (1.7-36 s),
 D=5 a few minutes, D=6 the frontier -- all under 1 GB.
+
+## P0 IS FUTILE — the repo already contained the disproof (verified Saturday)
+
+trackB1_pentagon.py:432 `witness()` constructs an exact rational point
+(P = S~^2, Q = S~^3 with S~ = y^4(1+(xy)^4) + x^4y^7).  I evaluated it myself,
+from the raw JSON, against every truncation on disk:
+
+    file                    eqs   failures   side conditions hold?
+    trunc10                 184      0       NO  (c_1_0 = 0 required nonzero)
+    trunc11                 169      0       NO  (same)
+    trunc12 ... trunc19  153..20     0       YES
+    full param system       283      7       NO
+
+**Every truncation from W=12 to W=19 is CERTIFIABLY NON-EMPTY.**  They each
+have an explicit solution over Q satisfying all their equations and all their
+declared side conditions.  No emptiness search at W >= 12 can ever succeed,
+because those systems are not empty.  W=10/11 fail only the side condition
+c_1_0 != 0, so they are not certified alive -- but nor are they killed.
+
+CONSEQUENCE: the entire P0 plan (run the truncation ladder to find an empty
+level and thereby kill pentagon case (1)) is FUTILE and is hereby WITHDRAWN.
+Today's work -- the gauge, the degree-bounded test, the eliminator runs, the
+excess table -- was all aimed at proving empty something that has a solution.
+
+WHY IT SURVIVED SO LONG: the docstring of witness() states this outright, and
+the truncation's own meta says "converse false (truncation only necessary)".
+Nobody read either -- including me, four hours after calling P0 "the decisive
+shot".  The failure class is (viii) literature/artifact assumed unread, and it
+is the third instance today of the same pattern: a correct, tested artifact
+sitting unexamined while effort went to the thing it had already settled.
+
+WHAT IT LEAVES STANDING (this is the real content):
+Any death of case (1) MUST engage the equations of weight <= 7 -- the
+bottom-vertex datum c_1_0 * d_2_1 = 1 -- which every truncation discards.  The
+witness satisfies the whole top of the tower and fails exactly there.  So the
+target is not "find an empty truncation" but "show the bottom-vertex datum is
+incompatible with the top structure".  That is a sharply posed question and it
+is where case (1) effort belongs.
+
+ONE OVERSTATEMENT CORRECTED: witness()'s docstring claims every normalized
+truncation W >= 8 is alive "side conditions incl."  At W = 10, 11 the
+truncation still declares c_1_0 != 0 while the witness has c_1_0 = 0, so
+certified aliveness begins at W >= 12, not W >= 8.  The same wording is
+inherited by trackB1_witness.json's "consequence" field.
+
+SOUNDNESS NOTE (audited separately, and it holds): empty truncation => case (1)
+empty is valid, and for a more basic reason than the weight argument -- the
+declared variable list is defined as the union of variables occurring in the
+kept equations, so a full solution's restriction satisfies them for ANY subset
+of equations.  The weight bookkeeping (beta-alpha additive; c-lines >= w-12,
+d-lines >= w-8, s-weight 4) was verified exactly against the data with zero
+violations, and dropping side conditions errs in the safe direction.
