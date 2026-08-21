@@ -770,3 +770,79 @@ walk has not reached the last three blocks, and the residual pieces are open.
 Recorded now because the structural fact -- these systems are cascades, and the
 campaign spent weeks handing them to the wrong kind of solver -- applies to
 every p108 system and probably to the frontier shapes that share this shape.
+
+================================================================================
+A NEW DOOR: THE PLANE TANGENT SWEEP.  The July 2026 refutation of JC in
+dimension 3 hands us a mechanism for non-injective etale maps, and nobody has
+asked why it fails in the plane -- including the papers that announce it.
+================================================================================
+
+THE NEWS (verified from papers/2608.00222.pdf, which was in this repo unread).
+JC was refuted in dimension 3 by Alpoge on 2026-07-19; Gallagher gave an
+infinite family (07-20) of every geometric degree d >= 3; Speyer named the
+mechanism the TANGENT SWEEP (07-23); Gao generalized it to every n > 2
+(arXiv:2608.00222, 07-31).  A polynomial map C^n -> C^n, etale everywhere,
+non-injective, det J constant.  The plane case n = 2 explicitly REMAINS OPEN and
+is stated to be untouched by these constructions.  Two corollaries for us:
+  * "JC2 might just be true" is now a weaker prior than it was in June;
+  * degree-bound approaches to JC are dead in n >= 3 (Gallagher's family
+    realizes every degree), which is worth knowing before we invest more in the
+    max-125 frontier as a route to a THEOREM.
+
+THE MECHANISM, AND WHY IT IS OUR BUSINESS.  The tangent sweep is a PLANE map:
+
+    S(gamma, w) = ( p(w) + 2*gamma ,  q(w) + gamma*w ),    q'(w) = (w/2) p'(w)
+    det J(S) = 2*gamma                                     (Gao, section 3.1)
+
+It is generically (deg p + 1)-to-one -- the count is the class of the swept
+curve, by projective duality -- and unramified away from gamma = 0.  Its ONLY
+defect as a counterexample is that its Jacobian is the COORDINATE 2*gamma rather
+than a constant.  Everything dimension 3 buys is spent cancelling that gamma:
+pad with a variable x, set C = gamma*x, divide the components by C and C^2, and
+arrange the divisibilities by "side conditions".  Reproduced here: our
+implementation returns q = -w^3 + w^2 from p = -3w^2 + 4w, which is exactly
+Alpoge's counterexample as printed in Gao section 3.4, and det J(S) = 2*gamma for
+every p tested.
+
+GAO GIVES NO REASON THE PLANE FAILS.  The only justification offered anywhere
+for "dimension >= 3" is Wang's degree-2 theorem plus "the known constructions
+produce degree >= 3" (2608.00222, p.2, lines 125-127).  The architecture of his
+section 4.1 does degenerate at n = 2 -- the swept hypersurface would have
+dimension n-2 = 0 -- but that is a statement about ONE construction, not about
+the plane.
+
+WHAT I PROVED TODAY (short, and it sharpens the question).  No POLYNOMIAL
+conjugation can repair the plane sweep.  If phi, psi : C^2 -> C^2 are polynomial
+and F = psi . S . phi, then
+
+    det J(F) = detJpsi(S(phi)) * 2*gamma(phi) * det J(phi),
+
+a product of three polynomials.  In the domain C[x,y] a product is a nonzero
+constant only if every factor is; so gamma . phi is constant, phi maps into a
+line, F is not dominant, and Keller maps are dominant.  Hence ANY plane
+counterexample of tangent-sweep type must use a DIVISION twist with divisibility
+side conditions -- precisely the dimension-3 device, one variable short.
+
+THE PLANE SIDE CONDITION (the object nobody has written down).  For
+F = (P/C^i, Q/C^j) direct differentiation gives the exact identity
+
+    det J(F) = C^{-i-j-1} * [ C*{P,Q} - j*Q*{P,C} + i*P*{Q,C} ]
+
+({A,B} = A_x B_y - A_y B_x), verified against random data as a can-fail control
+(w6_plane_sweep.verify_identity).  With (P,Q) = S . phi the chain rule gives
+{P,Q} = 2*gamma(phi)*det J(phi), so F is Keller with det J(F) = kappa exactly when
+
+    C*2*gamma*detJphi  -  j*Q*{P,C}  +  i*P*{Q,C}  =  kappa*C^(i+j+1)
+
+holds identically, together with C^i | P and C^j | Q.  That is the two-variable
+analogue of Gao section 3.3 / Speyer's side conditions.  Its coefficients in
+(x,y) are a polynomial system in the shape parameters, solvable exactly.
+
+STATUS: wave6/w6_plane_sweep.py (derivation + controls) and
+wave6/w6_plane_sweep_search.py (exact Groebner sweep over shapes
+gamma = c0 + a x^al y^be, w = gamma(1 + b x^mu y^nu), C = gamma x^s, twists
+(i,j) in {(1,2),(1,1),(0,1),(2,3)}, deg p <= 3, saturated by kappa != 0 and
+a != 0) are committed and running.  NO VERDICT YET.  Standing semantics: a
+solution with kappa != 0 and the divisibilities holding is a plane Keller map of
+sweep type and must then be checked for NON-INJECTIVITY before any claim; no
+solution bounds the shape family only and is not a proof that none exists.
