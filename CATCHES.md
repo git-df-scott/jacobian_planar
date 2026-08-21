@@ -1010,3 +1010,61 @@ max total degree ~4d+1 instead of 4.  The two reductions are complementary and
 can be stacked; which wins is an empirical question per d, not a theory question.
 This cascade structure IS the weight filtration of (F4): row y^j carries weight
 4d-j, and the variable of weight w is exactly the one that row introduces.
+
+================================================================================
+THE RANK / BIFURCATION CRITERION IS A CAN'T-FAIL CERTIFIER.  Its uniform
+"obstructed at every d" answer is forced by the shape of the system and carries
+NO information about whether counterexamples exist.
+================================================================================
+
+WHAT IT CLAIMED.  BIFURCATION.md and MORNING_SUMMARY.md report, as a headline
+"DECIDED" result, that the rank test rank[J|G] = rank J + 1 holds at the
+quasi-homogeneous point for d = 3..15, 18, 20 and the resonant d = 27, and gloss
+it as "no counterexample bifurcates off that stratum at any d tested".  The test
+asks whether G = dF/dmu0 lies in the image of J, i.e. whether there is a
+first-order deformation in which mu0 moves.
+
+WHY IT CANNOT ANSWER ANYTHING ELSE.  By (F2) above, the system contains the
+equation  6*mu0 - 2*a2*mu2 = 0.  Differentiate it at any point where a2 = 0 and
+mu2 = 0:
+
+    d(6*mu0 - 2*a2*mu2) = 6*dmu0 - 2*(a2*dmu2 + mu2*da2) = 6*dmu0.
+
+So the LINEARIZED system contains the row 6*dmu0 = 0, forcing dmu0 = 0 in every
+first-order deformation.  The quasi-homogeneous point has all variables zero
+except a_{2d}, so a2 = mu2 = 0 there for every d >= 2.  Verified directly: at
+that point the gradient of the mu0-row has exactly ONE nonzero entry, the
+coefficient 6 of mu0 itself (checked d = 3, 5, 8, 12).
+
+Hence G is never in the image of J at that point, FOR EVERY d, whether or not
+counterexamples exist anywhere in the cell.  The criterion is incapable of
+returning any other verdict there.
+
+THE UNDERLYING REASON, stated positively.  mu0 = a2*mu2/3 is a PRODUCT of two
+quantities that both vanish at the quasi-homogeneous point.  Along any curve of
+solutions through it, mu0 = O(s^2).  A first-order test looks for O(s) and will
+never see an O(s^2) quantity.  Turning mu0 on is intrinsically a SECOND-order,
+codimension-two move: BOTH a2 and mu2 must be deformed away from zero.  The
+unbroken "obstructed" pattern across d = 3..27 was measuring that fact, not
+rigidity of the cell.
+
+STATUS CHANGE.  Every rank-criterion row is downgraded from evidence to
+bookkeeping.  It does not support "the B=16 corridor is closed", it does not
+support the resonant-cell conclusions at d = 12 and d = 27, and it must not be
+cited as evidence that a counterexample does not bifurcate.  What survives is
+the exact arithmetic (the ranks are correctly computed) and the observation that
+the obstruction at d=3 equals exactly 6*mu0 -- which is now explained: it IS the
+mu0-row.
+
+FAILURE CLASS: (v) can't-fail certifier.  This is the third instance today
+(after the watcher regex and the numerical floors), and the most expensive,
+because it was the load-bearing evidence for a headline claim.  The general
+lesson, now a standing rule: BEFORE running any first-order test, ask what the
+test would report if the quantity being tested for were a product of two
+functions vanishing at the base point.  If the answer is the same as the answer
+you expect to get, the test is vacuous.
+
+WHAT TO DO INSTEAD.  The right local question at that point is second-order, or
+better, the global one this file already sets up: solve the cell with mu0
+eliminated, mu2 gauged to 1, and a2 saturated.  That is exactly the export in
+wave6/w6_b16_mu0_export.py.
