@@ -156,6 +156,11 @@ def run(path):
                     continue
                 if any(v in dict(m2) for m2 in t if m2 != m):
                     continue
+                # FIX: v must appear with degree <= 1 EVERYWHERE, else the
+                # deg>=2 monomials survive substitution and v is not really
+                # eliminated (it then leaks out of the exported header).
+                if any(dict(m3).get(v, 0) > 1 for t3 in eqs for m3 in t3):
+                    continue
                 cand.append((len(t), i, v, c))
         if not cand:
             print(f"round {rnd}: FIXED POINT")

@@ -135,6 +135,10 @@ def main():
                     continue
                 if any(v in dict(m2) for m2 in t if m2 != m):
                     continue                      # v must occur in ONE term only
+                if any(dict(m3).get(v, 0) > 1 for t3 in eqs for m3 in t3):
+                    continue   # FIX: subs_linear skips deg>=2 monomials, so a
+                               # variable with degree >1 anywhere is NOT really
+                               # eliminated even though it is counted as such
                 cand.append((len(t), i, v, c))
         cand.sort()                               # smallest equation first: least blow-up
 

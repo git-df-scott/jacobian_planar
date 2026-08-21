@@ -143,6 +143,10 @@ def main():
                     continue
                 if any(v in dict(m2) for m2 in t if m2 != m):
                     continue
+                if any(dict(m3).get(v, 0) > 1 for t3 in eqs for m3 in t3):
+                    continue   # FIX: subs_linear skips deg>=2 monomials, so a
+                               # variable with degree >1 anywhere is NOT really
+                               # eliminated even though it is counted as such
                 # prefer constant-valued pivots, then small equations
                 isconst = len(t) == 2 and any(not m2 for m2 in t)
                 cand.append((0 if isconst else 1, len(t), i, v, c))
