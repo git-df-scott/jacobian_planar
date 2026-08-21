@@ -1,0 +1,28 @@
+15:35 watcher armed (W=10,11,12,13 modular elimination)
+15:37 *** W=13 CONTRA SIGNAL *** done in 187.5s; stats: {'r1_det': 0, 'r2': 41, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:37 W=13 DONE stats={"r1_det": 0, "r2": 41, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(3, 95, 92)
+15:38 *** W=11 CONTRA SIGNAL *** done in 268.6s; stats: {'r1_det': 0, 'r2': 43, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:38 *** W=12 CONTRA SIGNAL *** done in 229.7s; stats: {'r1_det': 0, 'r2': 42, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:38 W=12 DONE stats={"r1_det": 0, "r2": 42, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(10, 111, 101)
+15:39 *** W=10 CONTRA SIGNAL *** done in 296.4s; stats: {'r1_det': 0, 'r2': 43, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 
+15:39 W=11 DONE stats={"r1_det": 0, "r2": 43, "enrich": 0, "branch_nodes": 0, "contra": 0, "merged": 0, "open_leaves": 1, "capped": 0} leaves=1 best_excess=(18, 126, 108)
+15:39 all eliminators finished
+
+=== RETRACTION (appended after audit) ===
+The four "*** W=N CONTRA SIGNAL ***" lines above are FALSE ALARMS produced by a
+bug in the watcher that wrote them.  The alarm regex was  contra[^0]  , and the
+character following "contra" in the eliminator's stats line is an apostrophe,
+not a digit -- so it matched  'contra': 0  and fired on EVERY run regardless of
+the data.  The underlying stats for all four levels read  'contra': 0,
+'open_leaves': 1  : NO contradiction was found at any level, and every level
+finished with one unresolved open leaf.
+Regex corrected to  'contra': [1-9]  .  Recorded results (trustworthy):
+  W=13  187.5s  r2=41  contra 0  leaf 95 eqs / 92 vars  (excess +3)
+  W=12  229.7s  r2=42  contra 0  leaf 111 / 101         (excess +10)
+  W=11  268.6s  r2=43  contra 0  leaf 126 / 108         (excess +18)
+  W=10  296.4s  r2=43  contra 0  -- output JSON LOST to a disk-full crash
+                                    (ENOSPC in json.dump); stats survive here only.
+SEPARATELY AND MORE IMPORTANTLY: these runs were futile in any case.  The
+truncations at W >= 12 are certifiably NON-EMPTY (an explicit rational witness
+in the repo satisfies all their equations and side conditions), so no
+contradiction could ever have been found.  See CATCHES.md "P0 IS FUTILE".

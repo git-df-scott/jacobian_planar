@@ -1,0 +1,84 @@
+=====================================================================
+PROBE 1a  THE ENDGAME MODULI SCHEME
+          components, reducedness, and the Zariski tangent space at
+          the near-miss point (R = 0, c = 0, alpha = 1).
+=====================================================================
+          coordinates: a(0..12) (numerator of R), c (Keller constant),
+          alpha (rigidity scalar) -- 15 in all.
+
+  D = 1  J = 0 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 1  reduced = 1  |  tangent dim at near-miss = 1
+  D = 1  J = 4 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 2  reduced = 1  |  tangent dim at near-miss = 2
+  D = 4  J = 0 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 1  reduced = 1  |  tangent dim at near-miss = 1
+  D = 4  J = 4 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 2  reduced = 1  |  tangent dim at near-miss = 2
+  D = 12  J = 0 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 1  reduced = 1  |  tangent dim at near-miss = 1
+  D = 12  J = 4 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 2  reduced = 1  |  tangent dim at near-miss = 2
+  D = 13  J = 0 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 1  reduced = 1  |  tangent dim at near-miss = 1
+  D = 13  J = 4 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 2  reduced = 1  |  tangent dim at near-miss = 2
+  D = 23  J = 0 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 1  reduced = 1  |  tangent dim at near-miss = 1
+  D = 23  J = 4 :  raw dim = 13  reduced = 0  |  {alpha != 0}: dim = 2  reduced = 1  |  tangent dim at near-miss = 2
+
+  READING.
+  * The raw scheme is NON-REDUCED, but its only embedded structure is
+    the multiplicity-5 component {alpha = 0} coming from the alpha^5 of
+    the rigidity normalisation.  That component is geometrically
+    vacuous (alpha = 0 forces g == 0, contradicting deg g = 9).
+  * After saturating it away the scheme is REDUCED at every D tested,
+    of dimension 1 on the polynomial locus J = 0 -- the bare scaling
+    line {R = 0, c = 0} x {alpha}, i.e. only the Jacobian-free
+    solution.  Tangent dimension equals scheme dimension: the
+    near-miss is a SMOOTH point.  There is no non-reduced component
+    and no branching to hide a counterexample in.
+  * At J = 4 the dimension goes up by one: that extra direction is the
+    trapdoor, and it carries c != 0 (probe 1b).
+
+=====================================================================
+PROBE 1b  THE OBSTRUCTION MAP
+          For which (chain degree D, pole order J) is the Keller
+          constant c FORCED to vanish?  c forced 0  <=>  c lies in the
+          ideal of the linear system  <=>  every infinitesimal
+          deformation is Jacobian-silent and fails to integrate to a
+          Keller structure.
+=====================================================================
+   D  |  J= 0   1   2   3   4   5   6      ('.' = c forced to 0,
+      |                                     'Y' = c can be nonzero)
+   1  |    .   .   .   .   Y   Y   Y
+   2  |    .   .   .   .   Y   Y   Y
+   3  |    .   .   .   .   .   .   .
+   4  |    .   .   .   .   Y   Y   Y
+   5  |    .   .   .   .   Y   Y   Y
+   6  |    .   .   .   .   .   .   .
+   7  |    .   .   .   .   Y   Y   Y
+   8  |    .   .   .   .   Y   Y   Y
+   9  |    .   .   .   .   .   .   .
+  10  |    .   .   .   .   Y   Y   Y
+  11  |    .   .   .   .   Y   Y   Y
+  12  |    .   .   .   .   .   .   .
+  13  |    .   .   .   .   Y   Y   Y
+  14  |    .   .   .   .   Y   Y   Y
+  15  |    .   .   .   .   Y   Y   Y
+  16  |    .   .   .   .   Y   Y   Y
+  17  |    .   .   .   .   Y   Y   Y
+  18  |    .   .   .   .   Y   Y   Y
+  19  |    .   .   .   .   Y   Y   Y
+  20  |    .   .   .   .   Y   Y   Y
+  21  |    .   .   .   .   Y   Y   Y
+  22  |    .   .   .   .   Y   Y   Y
+  23  |    .   .   .   .   Y   Y   Y
+  24  |    .   .   .   .   Y   Y   Y
+  25  |    .   .   .   .   Y   Y   Y
+  26  |    .   .   .   .   Y   Y   Y
+  27  |    .   .   .   .   Y   Y   Y
+  28  |    .   .   .   .   Y   Y   Y
+  29  |    .   .   .   .   Y   Y   Y
+  30  |    .   .   .   .   Y   Y   Y
+
+  READING.
+  * J = 0,1,2,3 is '.' for EVERY D: the polynomial locus and every
+    weaker pole are obstructed at every chain degree, not only at
+    D = 13.  Session 18's transfer conjecture holds on the whole
+    polynomial locus (Second Framework D = 23 included).
+  * The obstruction switches off at J = 4 EXACTLY -- one single unit
+    of pole order at U = v+1 = 0.  That is the trapdoor.
+  * D = 3,6,9,12 stay obstructed at every J: there the homogeneous
+    resonance (probe 2) collides with and swallows the unlocking
+    direction.

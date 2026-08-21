@@ -1,0 +1,9 @@
+start: 267 equations / 148 unknowns
+round 1: solved 21, free 4 | 245 eqs / 127 unknowns | vanished 0 | nonzero-const 0 | degs {1: 1, 2: 74, 3: 55, 4: 115}
+round 2: solved 1, free 0 | 244 eqs / 126 unknowns | vanished 0 | nonzero-const 0 | degs {2: 75, 3: 54, 4: 115}
+round 3: no degree-1 equations left -- fixed point
+
+reduced system: 244 equations / 126 unknowns
+degree profile: {2: 75, 3: 54, 4: 115}
+written: wave6/pentseed/seed0_p1000003_lin.ms
+REDUCED

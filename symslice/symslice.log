@@ -1,0 +1,69 @@
+==============================================================================
+T3  mu_n-EQUIVARIANT SLICES OF THE CASE-(2) SYSTEM
+==============================================================================
+    [PASS] n=1 control: the ansatz keeps every variable   72 of 72
+    [PASS] n=1 control: the ansatz keeps every equation   92 of 92
+    [PASS] n=1 control: no degeneracy is reported   []
+
+  swept 1140 faithful (n,a,b,p,q) cells; 0 survive the degeneracy screen
+    [PASS] every swept cell got a mechanically computed variable count
+    [PASS] the degeneracy screen actually fires on some cells   1140 cells killed by degeneracy
+    [PASS] the degeneracy screen does NOT fire on every cell only because it is vacuous: the n=1 cell survives it
+    n2_a0_b1_p0_q0_one_real_sat_P1000003: EMPTY 0.02s
+    n2_a0_b1_p0_q0_one_mutant_nosat_P1000003: EMPTY 0.04s
+    n2_a0_b1_p0_q0_one_pin_nosat_P1000003: EMPTY 0.05s
+    n2_a0_b1_p0_q0_one_real_sat_P1000033: EMPTY 0.01s
+    n2_a0_b1_p0_q0_one_mutant_nosat_P1000033: EMPTY 0.06s
+    n2_a0_b1_p0_q0_one_pin_nosat_P1000033: EMPTY 0.01s
+    n2_a0_b1_p0_q0_one_real_sat_P1000039: EMPTY 0.02s
+    n2_a0_b1_p0_q0_one_mutant_nosat_P1000039: EMPTY 0.01s
+    n2_a0_b1_p0_q0_one_pin_nosat_P1000039: EMPTY 0.02s
+    [PASS] n=2 sample cell: every real_sat run is EMPTY   {'n2_a0_b1_p0_q0_one_real_sat_P1000003': 'EMPTY', 'n2_a0_b1_p0_q0_one_real_sat_P1000033': 'EMPTY', 'n2_a0_b1_p0_q0_one_real_sat_P1000039': 'EMPTY'}
+    [FAIL] n=2 sample cell CONTROL: every planted mutant_nosat run is NOT EMPTY   {'n2_a0_b1_p0_q0_one_mutant_nosat_P1000003': 'EMPTY', 'n2_a0_b1_p0_q0_one_mutant_nosat_P1000033': 'EMPTY', 'n2_a0_b1_p0_q0_one_mutant_nosat_P1000039': 'EMPTY'}
+    [PASS] n=2 sample cell CONTROL: every pin_nosat run is EMPTY   {'n2_a0_b1_p0_q0_one_pin_nosat_P1000003': 'EMPTY', 'n2_a0_b1_p0_q0_one_pin_nosat_P1000033': 'EMPTY', 'n2_a0_b1_p0_q0_one_pin_nosat_P1000039': 'EMPTY'}
+    n3_a1_b1_p0_q0_one_real_sat_P1000003: EMPTY 0.04s
+    n3_a1_b1_p0_q0_one_mutant_nosat_P1000003: EMPTY 0.01s
+    n3_a1_b1_p0_q0_one_pin_nosat_P1000003: EMPTY 0.02s
+    n3_a1_b1_p0_q0_one_real_sat_P1000033: EMPTY 0.01s
+    n3_a1_b1_p0_q0_one_mutant_nosat_P1000033: EMPTY 0.02s
+    n3_a1_b1_p0_q0_one_pin_nosat_P1000033: EMPTY 0.02s
+    n3_a1_b1_p0_q0_one_real_sat_P1000039: EMPTY 0.01s
+    n3_a1_b1_p0_q0_one_mutant_nosat_P1000039: EMPTY 0.01s
+    n3_a1_b1_p0_q0_one_pin_nosat_P1000039: EMPTY 0.03s
+    [PASS] n=3 sample cell: every real_sat run is EMPTY   {'n3_a1_b1_p0_q0_one_real_sat_P1000003': 'EMPTY', 'n3_a1_b1_p0_q0_one_real_sat_P1000033': 'EMPTY', 'n3_a1_b1_p0_q0_one_real_sat_P1000039': 'EMPTY'}
+    [FAIL] n=3 sample cell CONTROL: every planted mutant_nosat run is NOT EMPTY   {'n3_a1_b1_p0_q0_one_mutant_nosat_P1000003': 'EMPTY', 'n3_a1_b1_p0_q0_one_mutant_nosat_P1000033': 'EMPTY', 'n3_a1_b1_p0_q0_one_mutant_nosat_P1000039': 'EMPTY'}
+    [PASS] n=3 sample cell CONTROL: every pin_nosat run is EMPTY   {'n3_a1_b1_p0_q0_one_pin_nosat_P1000003': 'EMPTY', 'n3_a1_b1_p0_q0_one_pin_nosat_P1000033': 'EMPTY', 'n3_a1_b1_p0_q0_one_pin_nosat_P1000039': 'EMPTY'}
+    n4_a2_b1_p0_q0_one_real_sat_P1000003: EMPTY 0.03s
+    n4_a2_b1_p0_q0_one_mutant_nosat_P1000003: EMPTY 0.01s
+    n4_a2_b1_p0_q0_one_pin_nosat_P1000003: EMPTY 0.03s
+    n4_a2_b1_p0_q0_one_real_sat_P1000033: EMPTY 0.01s
+    n4_a2_b1_p0_q0_one_mutant_nosat_P1000033: EMPTY 0.01s
+    n4_a2_b1_p0_q0_one_pin_nosat_P1000033: EMPTY 0.0s
+    n4_a2_b1_p0_q0_one_real_sat_P1000039: EMPTY 0.01s
+    n4_a2_b1_p0_q0_one_mutant_nosat_P1000039: EMPTY 0.04s
+    n4_a2_b1_p0_q0_one_pin_nosat_P1000039: EMPTY 0.01s
+    [PASS] n=4 sample cell: every real_sat run is EMPTY   {'n4_a2_b1_p0_q0_one_real_sat_P1000003': 'EMPTY', 'n4_a2_b1_p0_q0_one_real_sat_P1000033': 'EMPTY', 'n4_a2_b1_p0_q0_one_real_sat_P1000039': 'EMPTY'}
+    [FAIL] n=4 sample cell CONTROL: every planted mutant_nosat run is NOT EMPTY   {'n4_a2_b1_p0_q0_one_mutant_nosat_P1000003': 'EMPTY', 'n4_a2_b1_p0_q0_one_mutant_nosat_P1000033': 'EMPTY', 'n4_a2_b1_p0_q0_one_mutant_nosat_P1000039': 'EMPTY'}
+    [PASS] n=4 sample cell CONTROL: every pin_nosat run is EMPTY   {'n4_a2_b1_p0_q0_one_pin_nosat_P1000003': 'EMPTY', 'n4_a2_b1_p0_q0_one_pin_nosat_P1000033': 'EMPTY', 'n4_a2_b1_p0_q0_one_pin_nosat_P1000039': 'EMPTY'}
+    n6_a2_b5_p0_q0_one_real_sat_P1000003: EMPTY 0.01s
+    n6_a2_b5_p0_q0_one_mutant_nosat_P1000003: EMPTY 0.0s
+    n6_a2_b5_p0_q0_one_pin_nosat_P1000003: EMPTY 0.02s
+    n6_a2_b5_p0_q0_one_real_sat_P1000033: EMPTY 0.01s
+    n6_a2_b5_p0_q0_one_mutant_nosat_P1000033: EMPTY 0.0s
+    n6_a2_b5_p0_q0_one_pin_nosat_P1000033: EMPTY 0.01s
+    n6_a2_b5_p0_q0_one_real_sat_P1000039: EMPTY 0.01s
+    n6_a2_b5_p0_q0_one_mutant_nosat_P1000039: EMPTY 0.01s
+    n6_a2_b5_p0_q0_one_pin_nosat_P1000039: EMPTY 0.07s
+    [PASS] n=6 sample cell: every real_sat run is EMPTY   {'n6_a2_b5_p0_q0_one_real_sat_P1000003': 'EMPTY', 'n6_a2_b5_p0_q0_one_real_sat_P1000033': 'EMPTY', 'n6_a2_b5_p0_q0_one_real_sat_P1000039': 'EMPTY'}
+    [FAIL] n=6 sample cell CONTROL: every planted mutant_nosat run is NOT EMPTY   {'n6_a2_b5_p0_q0_one_mutant_nosat_P1000003': 'EMPTY', 'n6_a2_b5_p0_q0_one_mutant_nosat_P1000033': 'EMPTY', 'n6_a2_b5_p0_q0_one_mutant_nosat_P1000039': 'EMPTY'}
+    [PASS] n=6 sample cell CONTROL: every pin_nosat run is EMPTY   {'n6_a2_b5_p0_q0_one_pin_nosat_P1000003': 'EMPTY', 'n6_a2_b5_p0_q0_one_pin_nosat_P1000033': 'EMPTY', 'n6_a2_b5_p0_q0_one_pin_nosat_P1000039': 'EMPTY'}
+
+  summary by n:
+    n=2: 12 cells, 0 non-degenerate, max surviving variables 41
+    n=3: 72 cells, 0 non-degenerate, max surviving variables 33
+    n=4: 192 cells, 0 non-degenerate, max surviving variables 22
+    n=6: 864 cells, 0 non-degenerate, max surviving variables 22
+
+==============================================================================
+    14/18 checks passed
+==============================================================================

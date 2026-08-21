@@ -1,0 +1,24 @@
+[
+ {
+  "d": 3,
+  "p": 1000003,
+  "survivors_total": 0,
+  "survivors_mu0_nonzero": 0,
+  "dead_branches": 0,
+  "steps": 3,
+  "INCOMPLETE": true,
+  "samples": [],
+  "secs": 0.6
+ },
+ {
+  "d": 4,
+  "p": 1000003,
+  "survivors_total": 0,
+  "survivors_mu0_nonzero": 0,
+  "dead_branches": 1,
+  "steps": 1,
+  "INCOMPLETE": false,
+  "samples": [],
+  "secs": 0.8
+ }
+]

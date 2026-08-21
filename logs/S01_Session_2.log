@@ -1,0 +1,13 @@
+PART1  J(P,Q) for generic degree-6 b(x): c
+PART1  P(X,Y)-p == 0 : True
+PART1  Q(X,Y)-q == 0 : True
+PART2  L1 solution space (expect multiples of a^2): {(e_6, -4*e_6, 4*e_6, -2*e_6, 4*e_6, 0, e_6)}
+PART2  L2 solution space (expect 2ab + kappa*a): {(4 - f_3, 2*f_3 - 6, -6, f_3, -2, 2, 0)}
+PART2  L2 reference 2ab = 2*x**5 - 2*x**4 + 10*x**3 - 6*x**2 + 14*x - 6    a = x**3 + 2*x - 1
+PART2  L3 (b'f - c) mod a  = -c_s   (so a | c => a constant)
+PART3  200 random instances, inverse(F(pt)) == pt : True
+PART4  leading-condition solutions with A=x^2 (expect span{x^3}): {(0, 0, 0, B_3, 0, 0, 0)}
+PART4  Keller partner (J=1) exists for P = x**2*y**2 + y : False
+PART4  Keller partner (J=1) exists for P = x**2*y**2 + x*y + 1 : False
+PART4  Keller partner (J=1) exists for P = x**2*y**2 + x + y : False
+PART4  Keller partner (J=1) exists for P = x**3*y + x**2*y**2 + 1 : False

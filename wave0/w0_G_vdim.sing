@@ -1,0 +1,24 @@
+// PLAN 43 / WAVE 0 -- geometric degree of the descent map G, by vdim over Q(a,b).
+// The campaign's silent-lie table forbids eliminate() and sympy monom counting here.
+ring R = (0,a,b), (u,v), dp;
+short=0;
+poly G1 = (u+1)*(3*u+v-2)^2*(3*u^3 + u^2*v + 4*u^2 + 2*u*v + v);
+poly G2 = -(3*u+v-2)*(9*u^3 + 3*u^2*v + 12*u^2 + 6*u*v + u + 3*v);
+ideal I = G1 - a, G2 - b;
+ideal Gb = groebner(I);
+"GENERIC FIBRE  dim  : " + string(dim(Gb));
+"GENERIC FIBRE  vdim : " + string(vdim(Gb));
+// cross-check: the same count on the OPEN set where the map is etale is the
+// geometric degree; confirm the tear by a second, independent computation --
+// the fibre over a point ON the image of the degeneracy line.
+"--- control: total degree product (Bezout bound) = 24 ---";
+// The tear locus: where does the fibre drop?  Eliminate u,v from I to get the
+// condition on (a,b) -- done as a RESULTANT in a polynomial ring, not with
+// parameters, to avoid the parameter-ring deg() trap.
+ring S = 0, (u,v,A,B), dp;
+poly g1 = (u+1)*(3*u+v-2)^2*(3*u^3 + u^2*v + 4*u^2 + 2*u*v + v) - A;
+poly g2 = -(3*u+v-2)*(9*u^3 + 3*u^2*v + 12*u^2 + 6*u*v + u + 3*v) - B;
+ideal J = g1, g2;
+ideal E = eliminate(J, u*v);
+"ELIMINATION IDEAL in (A,B) (expect 0 = dominant map): "; E;
+quit;

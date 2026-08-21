@@ -1,0 +1,460 @@
+# Track B1 report — case (1) pentagons of GGHV Prop 4.3 (the second virgin territory)
+
+STATUS: IN PROGRESS (2026-08-13). Skeleton created at start per checkpoint discipline;
+sections fill in as steps complete. If this file looks truncated, the container died —
+resume from the last completed section.
+
+Input (hash-pinned): trackA_system_case1.json, 186 unknowns / 302 equations,
+sha256 49d28a2fd7ca72eb4064564d02084b2fab1612222d0c2c86b22ee1fe4702be9a.
+Nobody — paper, lost sessions, tonight's Track B — has ever attacked this system.
+
+## Plan of record
+
+- B1a: derive (not assume) the top-edge structure: equations on the bracket line
+  beta - alpha = 20 are exactly the coefficients of [L_P, L_Q] = 0; prove
+  L_P = a*S^2, L_Q = b*S^3 for a single slope-1 form S (5 coeffs), machine-checking
+  every identity that can be machine-checked and writing out the one UFD step.
+- B1b: substitute the parametrization into the 186/302 system (exact Fractions),
+  quotient the 4-dim gauge (A2 torus + S-rescaling mu), run the sound eliminator.
+- B1c: mod-p scout (65521 first) of the reduced core via Singular, Rabinowitsch
+  ties for every nonzero side condition (incl. transferred ones).
+- B1d: per-branch verdicts DEAD / alive-with-structure, with certificates.
+
+## B1a. Derivation of the pentagon top-edge parametrization — DONE, ALL CHECKS PASS
+
+Setup. Grade monomials by the weight v(x^i y^j) = j - i (direction (-1,1)).
+On N(P) = conv{(0,0),(1,0),(8,14),(8,16),(0,8)} the maximum weight is 8, attained
+exactly on the top edge (0,8)-(8,16) (lattice points (i, i+8), i = 0..8); on
+N(Q) the maximum is 12, attained exactly on the top edge (0,12)-(12,24)
+((k, k+12), k = 0..12). Since [x^i y^j, x^k y^l] lands at (i+k-1, j+l-1), the
+bracket is additive in this weight, so the weight-20 component of [P,Q] is
+exactly [L_P, L_Q] where L_P, L_Q are the top-edge leading forms. [P,Q] = x^2
+has weight -2, hence
+
+    [L_P, L_Q] = 0.        (*)
+
+Machine checks (trackB1_pentagon.py --derive, exact Q, all PASS —
+trackB1_derivation.json):
+
+- C1: the system contains exactly 19 equations at bracket points on the line
+  beta - alpha = 20, namely (n, n+20), n = 0..18.
+- C2: each of them is  sum_{i+k=n+1} 4(3i-2k) c_{i,i+8} d_{k,k+12} = 0 — i.e.
+  writing L_P = y^8 f(xy), L_Q = y^12 g(xy) with f_i = c_{i,i+8} (deg f = 8),
+  g_k = d_{k,k+12} (deg g = 12), the 19 equations are precisely the coefficients
+  of 4*(3f'g - 2fg') = 0. So (*) as read off the actual system is
+  3f'g - 2fg' = 0. [Derived from the equations, not assumed.]
+- C3: edge*edge products occur in NO other equation (structural: weight 20 needs
+  top edge x top edge). Hence substituting the edge parametrization below leaves
+  every other equation with terms at most LINEAR in substituted quantities.
+- C5: independent code path (derivatives, not the builder's convolution)
+  confirms [y^8 f(xy), y^12 g(xy)] = 4 y^20 (3f'g - 2fg')(xy).
+
+Structure theorem for (*). Suppose f, g in K[u], K a field of char 0, f, g != 0,
+and 3f'g - 2fg' = 0. Then (f^3/g^2)' = f^2 g (3f'g - 2fg') / g^4 = 0 (numerator
+identity machine-checked as C6), so the rational function f^3/g^2 has zero
+derivative, hence f^3 = c g^2 for some c in K^x (char 0). K[u] is a UFD: for
+every irreducible pi, 3 v_pi(f) = 2 v_pi(g), so v_pi(f) = 2 t_pi and
+v_pi(g) = 3 t_pi with t_pi := v_pi(f)/2 = v_pi(g)/3 a nonnegative integer.
+Put h = prod pi^{t_pi}. Then f = alpha h^2, g = beta h^3 with alpha, beta in
+K^x (and alpha^3 = c beta^2). Degrees: deg f = 8 forces deg h = 4; the vertex
+conditions give f(0) = c_0_8 != 0 => h(0) != 0, and lc(f) = c_8_16 != 0 is
+automatic for deg h = 4. NOTE this argument needs NO algebraic closure — it
+works verbatim over any char-0 field.
+
+Consequence (the parametrization, both directions):
+- Every solution of the case-(1) system with its vertex conditions has
+  L_P = a S^2, L_Q = b S^3 for some slope-1 form S = sum_{p=0..4} s_p x^p y^{p+4}
+  (5 coefficients, s_0 = h-const, s_4 = lc(h)), a, b, s_0, s_4 != 0
+  [surjectivity: UFD argument above, with S := y^4 h(xy)].
+- Conversely c_{i,i+8} := a [S^2]_i, d_{k,k+12} := b [S^3]_k satisfies all 19
+  top-line equations identically (machine check C4, symbolic, exact Q).
+
+So Sol(case 1) is EXACTLY the image of the substituted system's solution set:
+the parametrization loses nothing and adds nothing. Gauge redundancy of the
+parametrization: (a, b, S) -> (a mu^-2, b mu^-3, mu S) gives the same (L_P, L_Q)
+— quotiented soundly in B1b.
+
+Variable naming in code: s_p_{p+4} for the S-coefficients (lattice points
+(0,4)..(4,8)); a, b exist only transiently inside --build.
+
+## B1b. Substituted system + gauge quotient + elimination
+
+### The substituted, gauge-fixed system (trackB1_param_system.json)
+
+Substitution (exact Fractions, machinery of trackA_eliminator):
+c_{i,i+8} := a*[S^2]_i (i = 0..8), d_{k,k+12} := b*[S^3]_k (k = 0..12),
+S = sum_{p=0..4} s_p_{p+4} x^p y^{p+4}. Then four normalizations, each backed by
+a gauge argument:
+
+1. d_2_1 = 1 — the A2 torus normalization, PROVED sound for case (1) by
+   trackA_gghv_system.py --check-normalization (loses nothing; d_2_1 != 0 is a
+   polygon side condition).
+2. s_0_4 = 1 — the parametrization gauge mu: (a,b,S) -> (a mu^-2, b mu^-3, mu S)
+   changes NO c/d coordinate (every substituted equation is a polynomial in the
+   mu-invariants a[S^2]_i, b[S^3]_k and non-edge vars), and s_0_4 != 0 is forced
+   by c_0_8 != 0. Take mu = 1/s_0_4.
+3. + 4. a = 1, b = 1 — the residual A2 2-torus (a',b',s,t) = (1/s, 1/(s^2 t), s, t)
+   fixes d_2_1 (weight identity s^{2-2} t^{1-1} = 1) and fixes s_0_4 (the mu-
+   corrected action multiplies s_p_{p+4} by (st)^p; p = 0 is invariant), and acts
+   on (a,b) by (a,b) -> (a s^-1 t^8, b s^-2 t^11). Exponent matrix
+   [[-1,8],[-2,11]] has det 5 != 0, so the action on (a,b) in (Qbar^x)^2 is
+   surjective (degree-5 torus isogeny): any solution moves to one with
+   a = b = 1. a != 0, b != 0 are forced by the vertex conditions
+   (c_0_8 = a s_0^2, d_0_12 = b s_0^3).
+
+All four are emptiness-sound over Qbar (the proof standard for closure): the
+gauge orbits of solutions meet the normalized slice. Directions of use:
+Sol(case 1) = empty over Qbar  <=>  the normalized substituted system (with its
+side conditions) has no Qbar-point. Any live point lifts back explicitly.
+
+Result of --build (all self-checks PASS):
+- dropped-as-identically-zero equations = EXACTLY the 19 top-line equations;
+- the (2,0) bracket equation becomes c_1_0 - 1 = 0 (forces c_1_0 = 1);
+- **283 equations / 165 variables**, degree profile {1: 1, 2: 100, 3: 50, 4: 132},
+  largest equation 76 terms;
+- side conditions: c_1_0, c_8_14, d_12_21, s_4_8 nonzero (c_0_8, c_8_16, d_0_12,
+  d_12_24, d_2_1 transferred: first pair became "1 != 0" and "s_4_8 != 0" etc.,
+  see meta.vertex_conditions_transferred);
+- content hash 094bcd939f0ac42620212cd091ce046a61ee0902c1f55ed8b42704a106b390bb.
+
+Comparison: raw case (1) is 302 eqs / 186 vars (bilinear); the parametrized
+system is 283/165 of degree <= 4. The 22-variable top-edge pair is replaced by
+4 s-variables; 19 equations are consumed exactly.
+
+### Sound elimination (trackA_eliminator.py, exact Q)
+
+Tight-pivot run (--max-repl-terms 25): TERMINATED in 16.6 s, 46 R2 + 3 R1-det
+eliminations, no or-branch, single open leaf **233 equations / 116 variables**
+(trackB1_reduced_tight.json); certificate replay `--verify`: 1/1 leaf OK.
+Remaining nonzero facts at the leaf: d_12_21, s_4_8, one 13-term transferred
+nonzero_expr. 116 variables is beyond direct Grobner range, which motivates the
+weight-graded attack below.
+
+### The weight tower (new structure, exploited for the first time)
+
+The system is graded by the (-1,1)-weight (bracket point (alpha,beta) has
+weight beta - alpha; the bracket adds weights). For a threshold W, the
+equations of weight >= W involve ONLY the variables on the top lattice lines
+(c-lines j - i >= W - 12, d-lines l - k >= W - 8, s-vars): a CLOSED subsystem.
+Any full solution restricts to a truncation solution (with the side conditions
+on the variables present), so **if any truncation is empty over Qbar, case (1)
+is dead**. Sizes (equations of weight >= W / variables in the tower):
+
+| W | eqs | vars | | W | eqs | vars |
+|---|-----|------|-|---|-----|------|
+| 19 | 20 | 26 | | 13 | 136 | 133 |
+| 18 | 40 | 48 | | 12 | 153 | 143 |
+| 17 | 60 | 69 | | 11 | 169 | 151 |
+| 16 | 80 | 88 | | 10 | 184 | 157 |
+| 15 | 99 | 105 | | 8 | 211 | 165 |
+| 14 | 118 | 120 | | -2 | 283 | 165 (full) |
+
+Crossover to formally overdetermined at W = 13. Full census of levels
+(#equations of weight exactly w): w = 19..16: 20 each; 15,14: 19; 13: 18;
+12: 17; 11: 16; 10: 15; 9: 14; 8: 13; 7: 12; 6: 11; 5: 10; 4: 9; 3: 8; 2: 7;
+1: 6; 0: 5; -1: 3; -2: 1 (the x^2 equation) — cumulative 211 at W = 8,
+283 at W = -2. The top level (W = 19) is the
+relation S*(2[S, Q_11] - 3*S*[S, P_7]) = 0 for the first sub-top lines; the
+inhomogeneous x^2 equation sits at weight -2 (bottom of the tower only).
+Eliminator on the near-top truncations (exact Q, verified terminating): W=19:
+20/26 -> leaf 11 eqs/18 vars; W=18: 40/48 -> 27/36; W=17: 60/69 -> 44/54 — all
+still underdetermined, consistent with the witness family below. NOTE the
+normalization d_2_1 = 1 injects weight-(-1) data into the truncations: a
+weight-w equation may contain c-variables of weight w+1 through its
+(former) d_2_1 terms; the truncations remain closed subsystems and the
+soundness direction (empty truncation => case (1) dead) is unaffected.
+
+### STRUCTURE THEOREM 1 (exact witness): where a kill can and cannot live
+
+trackB1_pentagon.py --witness, exact Q, PASS (trackB1_witness.json):
+the point corresponding to  P = Stilde^2, Q = Stilde^3,
+Stilde = y^4*(1 + (xy)^4) + t*x^4*y^7  (t = 1) — supports verified inside the
+pentagons, [P,Q] = 0 identically — satisfies EVERY equation of the normalized
+substituted system EXCEPT exactly seven: the inhomogeneous (2,0) equation
+(weight -2) and the six equations where the baked-in d_2_1 = 1 multiplies a
+nonzero family coefficient ((1,8), (5,11), (5,12), (9,14), (9,15), (9,16) —
+weights 5, 6, 7). Its side-condition values c_8_14 = 1, d_12_21 = 1,
+s_4_8 = 1 are nonzero. Consequences, all certified:
+
+- **Truncations W >= 8 of the normalized tower are ALIVE** — no compute needed
+  there, and the formal overdetermination at W <= 13 is misleading: the
+  equations are highly non-generic (the commuting family P = Stilde^2,
+  Q = Stilde^3 sweeps through them).
+- **Any death of case (1) must use equations of weight <= 7**, i.e. must
+  engage the bottom-vertex data c_1_0 * d_2_1 = 1 (the x^2 equation and its
+  weight-(-1)/(-2) neighborhood) against the top structure. On the commuting
+  family c_1_0 = d_2_1 = 0 is FORCED (a nonzero (1,0)- resp. (2,1)-coefficient
+  of a square resp. cube supported in N(P)/N(Q) would need x^2- resp.
+  x^4y^2-support outside the polygons). This is the precise algebraic form of
+  "functional dependence at the top vs [P,Q] = x^2 at the bottom" for the
+  pentagon shape — localized to 7 named equations.
+
+### STRUCTURE THEOREM 2 (tower-compare): case (1) and case (2) share their
+### slope-2 tower down to level 2
+
+trackB1_pentagon.py --tower-compare, exact term-for-term comparison of the RAW
+case-(1) and case-(2) systems (both hash-pinned), PASS:
+
+- For every (2,-1)-weight w >= 2 (w = 2alpha - beta of the bracket point), the
+  equation sets are IDENTICAL — same bracket points, same terms, same
+  coefficients. This includes the 18-equation inhomogeneous slope-2 edge ODE
+  (f g + z(2fg' - 3f'g) = 1) at w = 4, x^2 included.
+- Divergence starts exactly at w = 1 (same bracket points, different terms)
+  and w <= 0 (case (1) has extra bracket points; below w = -1 only case (1)
+  continues — 13..19 equations per level down to w = -8).
+
+Consequences: (i) any closure argument that uses only slope-2-tower levels
+w >= 2 would kill BOTH cases at once; (ii) conversely, everything
+case-(1)-specific — the pentagon columns and the S-parametrization — lives at
+(2,-1)-weight <= 1; (iii) the case-2 branch analysis (Track B leaf 2) and the
+case-1 attack share their upper tower exactly, so any structure Track B proves
+about the edge-ODE levels transfers verbatim.
+
+### Shape of the reduced core (tight run)
+
+In the normalized system every c-variable acquires a LINEAR occurrence (its
+former pairing with d_2_1 becomes a c_ij-linear term), and every d_kl with
+l != 0 likewise via c_1_0 = 1; the cascade therefore solves the entire c-side
+in terms of the d-side. Tight-run leaf inventory: remaining variables are the
+d-side almost intact (100 d-vars on lines l-k = 0..11), the 4 s-vars, and 12
+straggler c-vars on lines 5..7; eliminated: 39 c-vars, 10 d-vars. The core is
+"the coefficients of Q + the top form S, modulo compatibility" — favorable
+shape for a GB engine (massively linear-solvable), which motivates a direct
+Singular mod-p scout of the substituted system after the deeper elimination
+pass completes.
+
+### Deep elimination beyond the tight leaf: ABANDONED (measured blowup)
+
+Both the exact cap-120 run and a mod-65521 eliminator run were killed by a
+container restart while exhibiting super-exponential fill-in: largest equation
+2018 -> 16534 terms between rule apps 50 and 60, total terms 75k -> 494k
+(trackB1_elim_cap120.log, trackB1_elim_modp.log — identical growth mod p, so
+this is structural fill-in, not coefficient swell). The eliminator's role ends
+at the tight leaf (233/116); the core goes to a GB engine instead.
+
+## B1c. mod-p scout
+
+RESUME NOTE (2026-08-13 ~14:30 UTC, post-restart). First scout attempt before
+the restart targeted the RAW W=19 truncation (26 vars + 1 Rabinowitsch var,
+21 eqs) and ran out of memory at ~866MB under a 1.8GB address-space cap
+(trackB1_trunc19_p65521.out) — an expensive way to learn what the witness
+already certifies: truncations W >= 8 are ALIVE (high-dimensional), and GB of
+a high-dimensional alive truncation is both hard and pointless. Scouting
+truncations W >= 8 is hereby dropped; per Structure Theorem 1 any kill engages
+weight <= 7, so the scout target is the FULL normalized substituted system
+(283 eqs / 165 vars + 4 Rabinowitsch ties for c_1_0, c_8_14, d_12_21, s_4_8;
+input total ~8.6k terms, far sparser than the eliminator leaf whose
+substitutions inflated it to ~67k terms).
+
+Plan of record (superseded — see POST-MORTEM below):
+1. Full system, p = 65521, dp, Rabinowitsch, option(prot), 6.2GB vmem cap,
+   output streamed to trackB1_sysfull_p65521.out (survives restarts).
+2. If it finishes: repeat at p = 65497, 65479 (one Singular at a time — CPU
+   courtesy to the Track B/C jobs sharing this box).
+Fallback ladder if 1. blows up (machinery already in trackB1_pentagon.py):
+F1. the tight eliminator leaf (233 eqs / 116 vars, c-cascade already solved
+    soundly) via --singular on trackB1_reduced_tight.json;
+F2. full system with block order (dp(c-block), dp(rest)) — GB eliminates the
+    51 linearly-solvable c-vars first (--singular-system ... blockc);
+F3. --peel: incremental GB down the weight tower, per-stage ASCII checkpoints
+    trackB1_peel_p*_W*.gbtxt + resume + early DIED-AT-STAGE detection.
+    Caveat: the top stage repeats the trunc19 GB, which needed > 866MB —
+    peeling is not obviously cheaper, but it localizes any death level.
+
+POST-MORTEM of run 1 (read from trackB1_sysfull_p65521.out, 2026-08-13 ~20:5x UTC):
+the std run was killed by the container restart at 15:40 UTC after ~70 min.
+Protocol tail shows the critical-pair queue at ~365,000 AND STILL GROWING
+(341k -> 365k across the last output block), basis still absorbing new
+elements. No basis, no dim, no verdict. VERDICT ON THE METHOD: plain
+std/dp on the full 287-gen system mod p is not going to terminate in
+container-lifetime; the queue growth is super-linear. Next Singular attempt
+(one process at a time per CPU courtesy): slimgb (fill-in-resistant) on the
+same input. But the PRIMARY attack is re-planned around the weight-tower
+triangularity (below) — linear algebra, not GB.
+
+### Re-plan (2026-08-13 20:5x UTC): the tower is TRIANGULAR — solve it by
+### level-by-level linear algebra, not GB
+
+Structural observation (derivable from B1a machinery, to be machine-verified):
+grade everything by v(x^i y^j) = j - i. P = sum_{w=-1}^{8} P_w,
+Q = sum_{w=-1}^{12} Q_w (support slices of the pentagons), and [P,Q] = x^2
+splits into weight levels w = 20 .. -2:
+  sum_{p+q=w} [P_p, Q_q] = (w == -2 ? x^2 : 0).
+Level 20 is [P_8, Q_12] = 0 = the S-parametrization (B1a: P_8 = a S^2,
+Q_12 = b S^3). For w < 20 the ONLY terms containing the newest components
+P_{w-12}, Q_{w-8} are [P_{w-12}, Q_12] + [P_8, Q_{w-8}]
+  = 3 b S^2 [P_{w-12}, S] + 2 a S [S, Q_{w-8}]   (Leibniz),
+everything else involving components already introduced at HIGHER levels.
+So for FIXED (S, a, b) the system is a triangular tower of LINEAR solves
+(new components) with obstruction residuals (cokernel conditions), levels
+19 down to 11 introduce (P_{w-12}, Q_{w-8}), levels 10..7 only Q_{w-8},
+levels 6..-2 introduce NOTHING — pure obstruction equations. Kernel of the
+level map = free parameters (carried forward); centralizer theory says for
+squarefree h the kernels should be tiny (Cent(S) at weight v nonzero iff
+w^4 = c h^v solvable, i.e. v = 0 mod 4 for h not a perfect power).
+
+Consequences for compute: per fixed (S, a, b) in F_p the whole tower is a
+few dozen small (<= ~30-dim) F_p linear solves — microseconds-to-
+milliseconds, no GB, no fill-in. Verification anchor: any surviving
+(S, a, b, components) point is assembled into full (c, d) coefficient
+vectors and checked against the hash-pinned RAW case-1 system (302
+equations) + vertex nonzero conditions — the tower is a search
+reorganization, the raw system is the judge.
+
+New plan of record:
+T1. Implement --tower (build slices/operators) + --tower-scan (random
+    (S,a,b) samples mod p, kernel-dim profile + obstruction outcomes +
+    survivor extraction) in trackB1_pentagon.py. Cross-validate the tower
+    on the exact witness family (must reproduce its 7 known violations).
+T2. Random scan at p = 65521 (>= 10k samples): if survivors, verify vs raw
+    system, save trackB1_tower_survivors.json, characterize. If none:
+    kernel-profile census tells us where life could hide (factorization
+    types of the quartic h).
+T3. Special loci: h with repeated roots (types 211/22/31/4), small
+    parametric families — exhaustive scan per type mod p.
+T4. If per-sample cost allows: EXHAUSTIVE sweep at p = 31 (31 = 1 mod 3,
+    and 31 > 24 = deg f^3 keeps the B1a UFD derivation valid mod p, so an
+    empty sweep = genuine "case (1) has no F_31-point with d_2_1
+    normalized" statement — modulo (a,b)-coset care for the degree-5
+    isogeny, enumerate coker representatives).
+T5. One concurrent slimgb lottery ticket on the full system, p = 65521.
+
+(in flight)
+
+FIRST TOWER MEASUREMENTS (--tower-check PASS; --tower-one on the witness S,
+p = 65521): the level maps have LARGE kernels — per level (w: eqs/new/rank/
+kernel/obstructions): 19: 20/22/13/9/0, 18: 20/22/13/9/6, 17: 20/21/13/8/7,
+16: 20/19/11/8/9, 15: 19/17/11/6/8, 14: 19/15/10/5/9, 13: 18/13/9/4/9,
+12: 17/10/7/3/10. Kernel structure explained: (T, (3b/2a) S T) is in the
+level kernel for EVERY T in the c-slice (P += T, Q += (3/2)ST preserves the
+current level), so the moduli at level w contain the whole c-slice(w-12) —
+these are the commuting-family deformation directions, confirming Structure
+Theorem 1 quantitatively. tau-count grows to 52 by w = 12 and the dense
+symbolic carry OVERFLOWS a 200k-term cap there (sizes x3 per level, 383k
+terms at w = 12, 23 s/level and climbing; obstructions are NEVER tau-linear,
+so eager substitution never fires). Pure-python symbolic carry to the bottom:
+INFEASIBLE — measured, not guessed.
+
+### The working architecture: python skeleton + Singular tower with
+### per-level Groebner compression (--tower-sing)
+
+Key structural facts (all machine-verified):
+- kernel dims per level (witness sample): 9,9,8,8,6,5,4,3,1 (levels 19..11),
+  0 from level 10 down — total ntau = 53;
+- levels <= 7 introduce NO new components: everything below w = 8 is a pure
+  obstruction pile on the taus already present;
+- per level, the linear solve depends on tau only through the RHS: the level
+  matrix M is NUMERIC (entries = bracket coefficients x top values a[S^2],
+  b[S^3]). So python precomputes, per level, M, its RREF Mr, the transform
+  Tm with Tm*M = Mr (asserted exactly), pivot/free columns; the heavy
+  polynomial arithmetic (products in the RHS R_j, linear combos, normal
+  forms) is EMITTED as a generated Singular script:
+  * new components v_x := (Tm-combo of R_j's) - (free-col coeffs)*taus,
+    then immediately NF-reduced modulo the current constraint GB G;
+  * obstruction rows (zero rows of Mr) joined to G, G = std(G, OB_w) per
+    level, DEAD-AT-LEVEL printed if 1 in G (per-sample death localized);
+  * ALL stored components re-reduced mod G each level (compression — sound
+    on the variety: components only matter modulo the constraint ideal);
+  * optional per-level end-to-end assertion: every original level equation's
+    residual M*z - R must NF to 0 mod G (catches any export bug);
+  * early Rabinowitsch ties w1*c_8_14 - 1, w2*d_12_21 - 1 joined as soon as
+    those components exist (w = 18 resp. 17) — a case-(1) point needs them
+    nonzero, and they can only accelerate collapse;
+  * finale: dim/vdim of G, GB + all component polys written to disk; any
+    ALIVE sample's point(s) get verified in python against the RAW
+    hash-pinned 302-equation system (the tower is a search reorganization;
+    the raw system is the judge).
+- Verdict semantics per sample (a, b, S) over F_p: DEAD-AT-LEVEL w /
+  DEAD-final (dim -1) / ALIVE with dim + vdim. Exact for that sample.
+- Scan driver --tower-sing-scan: sequential random samples (ONE Singular at
+  a time per CPU courtesy), aggregate JSON checkpointed after every sample.
+
+(witness-sample run in flight)
+
+Sweep-planning notes (recorded for any future exhaustive attempt):
+- DEAD semantics per sample: 1 in GB means no completion over the ALGEBRAIC
+  CLOSURE of F_p for that numeric (a, b, S) — Nullstellensatz-strong.
+- Residual-torus (a,b)-cosets: exponent matrix [[-1,8],[-2,11]], det 5, so
+  the F_p-coset index is gcd(5, p-1). p = 31: 5 cosets, reps
+  (a,b) = (1,1),(1,3),(1,9),(1,27),(1,19) (computed). p = 65521: 5 | p-1
+  as well. An exhaustive p = 31 sweep would be 5 x 31^3 x 30 = 4.47M tower
+  runs — INFEASIBLE at Singular-run-per-sample cost; only viable if the
+  scan reveals a shallow closed-form death criterion (e.g. a resultant in
+  (a, b, s) whose nonvanishing is equivalent to death at a fixed level) —
+  then sweep the criterion, run full towers only on its zero locus.
+
+## B1d. Verdicts
+
+### Session of 2026-08-13 (Opus 5, OPUS_PLAN P0) — T1 PASS, T2/T4 STALLED
+
+Verdict vocabulary per OPUS_PLAN rule 6. **No verdict on case (1).** It is
+neither EMPTY nor ALIVE on this evidence; it is STALLED, and the cost data
+below is the deliverable.
+
+**T1 — tower validation: PASS.** `--tower-check` had been dead since the pause
+commit: appending `tower_lift` overwrote `tower_check`'s `def` line, leaving
+its body as unreachable code after a `return`, so the entry point raised
+`NameError`. Header restored, no logic changed. The check now passes —
+raw-vs-assembled residual agreement on 5 random FULL (c,d) assignments at
+p = 65521, and level-20 equation count 19. The tower is confirmed to reproduce
+the raw hash-pinned system level by level.
+
+**T2 — random tower scan at p = 65521: STALLED (per-sample cost).** Sample 0
+(a = 8806, b = 37304, S = [1, 55537, 52577, 50054, 4136]) reproduces the
+report's structural profile exactly: ntau = 53, kernel dims 9,9,8,8,6,5,4,3,1
+then 0 from level 10 down. Measured per-level cost of the Singular tower with
+per-level GB compression:
+
+| level | secs | GB size | mem |
+|---|---|---|---|
+| 19 | 0 | 0 | 2 MB |
+| 18 | 0 | 13 | 2 MB |
+| 17 | 79 | 58 | 150 MB |
+| 16 | > 1400, did not finish | — | 1.8 GB |
+
+Nine levels remain below 16, and Structure Theorem 1 places any kill below all
+of them (weight <= 7). One sample therefore exceeds the 1500 s budget without
+reaching the levels that could kill it; ">= 10k samples" is off by roughly
+four orders of magnitude. Scan stopped after sample 0 rather than burn a core
+re-measuring the same wall. `trackB1_towerscan_p65521_s000.levels.log` is the
+record.
+
+**T3 — special loci (repeated-root h): NOT ATTEMPTED.** Blocked by the same
+per-sample cost; a repeated-root h enlarges Cent(S), so its kernels are at
+least as large and its samples at least as expensive as the generic one
+measured above.
+
+**T4 — exhaustive p = 31 sweep: INFEASIBLE as specified.** 5 x 31^3 x 30 =
+4,468,650 samples. At the measured per-sample cost this is a further three
+orders of magnitude beyond T2. The report's own precondition for T4 — "a
+shallow closed-form death criterion ... then sweep the criterion" — has not
+been met, and deriving one is Fable-grade.
+
+**T5 — engine lottery: both tickets lost.**
+- slimgb, same sample, same levels: level 17 took 172 s / 524 MB against std's
+  79 s / 150 MB. slimgb is worse here; `option(redSB)` was dropped for that
+  run, so the loss is not an artifact of reduction settings. Engine is now
+  switchable via `JCENGINE=std|slimgb`; std remains the default.
+- msolve (F4 over F_p, installed this session) on the full normalized
+  substituted system — 284 polys / 166 vars including the Rabinowitsch tie,
+  exported by `trackB1_msolve_export.py` from the hash-pinned
+  `trackB1_param_system.json` (094bcd93...) — died in monomial hash-table
+  growth ("Enlarging exponent vector for hash table failed", esz = 16777216)
+  under a 6.5 GB address-space cap.
+
+**Why the tower is expensive, structurally** (offered as input to the next
+design pass, not as a result). The level-w map is
+(A, B) |-> 3bS^2[A,S] + 2aS[S,B] = S*[S, 2aB - 3bSA], so its kernel is
+{(A,B) : 2aB - 3bSA in Cent(S)}: the new P-component A is unconstrained at its
+own level. That is exactly why ntau = 53 = the number of P-coefficients below
+the top, and why the obstruction ideal stays far from 1 through the entire
+upper tower — the GB is doing hard work on an ideal that cannot collapse until
+the bottom levels are reached. The cost driver is the 53 free A-directions
+carried as ring variables. Escalated to FABLE_REVIEW.md item 2.
+
+## Artifacts
+
+- trackB1_pentagon.py — all derivation/build/scout code (subcommands)
+- trackB1_param_system.json — substituted, normalized system (built in B1b)
+- trackB1_reduced.json — eliminator output tree (B1b)
+- trackB1_*.sing / *.out — Singular scout scripts and outputs (B1c)

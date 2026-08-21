@@ -1,0 +1,178 @@
+//////////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Phase 2, probe 1
+// ZARISKI TANGENT SPACE AND OBSTRUCTION MAP OF THE ENDGAME MODULI SCHEME
+//
+// BASE GEOMETRY.  The critical boundary instance of Sessions 16-18: the
+// First Framework endgame, where every layer of the (99,66) decision
+// system collapses to the single operator equation
+//
+//     alpha^5 * T_D(R) = -c,      T_D(R) = (v+1)^4 (3v(v+1)R' - D R),
+//
+// with R the Belyi-realization functional along E_{-2}, D the cusp-chain
+// degree (D = 13 for Borisov's First Framework, 23 for the Second),
+// c the Keller constant, and alpha the boundary-rigidity scalar of
+// Session 13 (g = alpha*U*(U-1)^8, so alpha != 0 is forced: deg g = 9).
+//
+// Session 18 proved emptiness at D = 13 by evaluating at v = -1.  This
+// probe does not re-run that evaluation.  It builds the endgame moduli
+// space as an affine scheme over Q and asks deformation questions:
+//
+//   (i)   its dimension, its components, and whether it is REDUCED;
+//   (ii)  the Zariski tangent space at the near-miss point
+//         (R = 0, c = 0, alpha = 1) - which infinitesimal deformations
+//         exist at all;
+//   (iii) whether the obstruction map kills every direction that would
+//         switch the Keller constant c on, and whether it does so for
+//         EVERY chain degree D (the Session-18 transfer conjecture)
+//         rather than only for D = 13.
+//
+// DEFORMATION PARAMETER.  R is allowed a pole of order J at U = v+1 = 0.
+// J = 0 is the polynomial locus that Session 18's Theorem 3 (pole-fiber)
+// forces; J > 0 relaxes exactly that one hypothesis and nothing else.
+// Writing R = A(v)/(v+1)^J, the equation clears denominators to
+//
+//     alpha^5 * [3v((v+1)A' - J A) - D A] * (v+1)^max(0,4-J)
+//         + c * (v+1)^max(0,J-4)  =  0.
+//////////////////////////////////////////////////////////////////////////
+LIB "primdec.lib";
+
+int M = 12;                      // numerator degree budget (>= any deg R)
+
+ring RV = 0, (a(0..12), c, al, v), dp;    // working ring (carries v)
+ring RS = 0, (a(0..12), c, al), dp;       // scheme ring (v eliminated)
+
+//---------------------------------------------------------------- builders
+proc endgame_eqs(int D, int J, int M, int with_alpha)
+"USAGE: endgame_eqs(D,J,M,with_alpha); ideal of v-coefficients of the
+ endgame equation.  Must be called in the ring carrying v."
+{
+  poly A;  int i;
+  for (i = 0; i <= M; i++) { A = A + a(i)*v^i; }
+  poly E = 3*v*((v+1)*diff(A,v) - J*A) - D*A;
+  if (with_alpha) { E = al^5*E; }
+  if (J <= 4) { E = E*(v+1)^(4-J) + c; }
+  else        { E = E + c*(v+1)^(J-4); }
+  matrix K = coeffs(E, v);
+  ideal I;
+  for (i = 1; i <= nrows(K); i++) { I = I, K[i,1]; }
+  return(simplify(I,2));
+}
+
+//---------------------------------------------------------- saturation
+// NOTE: elim.lib's sat() returns an incorrect saturation for these
+// ideals in Singular 4.3.2 (checked against iterated quotient on
+// I = <x z^5, x + y z^5>, where sat returns <y> instead of <x,y>).
+// We therefore saturate by iterated ideal quotient until it stabilises.
+proc sat_by(ideal I, poly f)
+{
+  ideal J = std(I);
+  ideal K;
+  int step;
+  for (step = 1; step <= 40; step++)
+  {
+    K = std(quotient(J, ideal(f)));
+    if (size(reduce(K, J)) == 0) { return(J); }
+    J = K;
+  }
+  return(J);
+}
+
+proc lin_span(ideal I)   // rank of a set of linear forms
+{ return(size(std(I))); }
+
+//===================================================================== 1a
+"=====================================================================";
+"PROBE 1a  THE ENDGAME MODULI SCHEME";
+"          components, reducedness, and the Zariski tangent space at";
+"          the near-miss point (R = 0, c = 0, alpha = 1).";
+"=====================================================================";
+"          coordinates: a(0..12) (numerator of R), c (Keller constant),";
+"          alpha (rigidity scalar) -- 15 in all.";
+"";
+int D, J, i, j, k, m;
+poly t;
+intvec DL = 1,4,12,13,23;
+for (i = 1; i <= size(DL); i++)
+{
+  D = DL[i];
+  for (j = 1; j <= 2; j++)
+  {
+    J = (j-1)*4;                       // J = 0 (Theorem-3 locus) and J = 4
+    setring RV;
+    ideal IV = endgame_eqs(D,J,M,1);
+    setring RS;
+    ideal I = imap(RV,IV);             // the coefficients are v-free
+    ideal SI = std(I);
+    ideal G  = sat_by(I, al);          // alpha != 0 is forced (deg g = 9)
+    ideal T;
+    for (k = 1; k <= size(G); k++)
+    {
+      t = 0;
+      for (m = 1; m <= nvars(RS); m++)
+      { t = t + subst(diff(G[k], var(m)), al, 1, c, 0) * var(m); }
+      T = T, t;
+    }
+    T = simplify(T,2);
+    "  D =", D, " J =", J, ":  raw dim =", dim(SI),
+        " reduced =", (size(reduce(radical(SI), SI)) == 0),
+        " |  {alpha != 0}: dim =", dim(G),
+        " reduced =", (size(reduce(radical(G), G)) == 0),
+        " |  tangent dim at near-miss =", nvars(RS) - lin_span(T);
+    kill I, SI, G, T;
+    setring RV;  kill IV;  setring RS;
+  }
+}
+"";
+"  READING.";
+"  * The raw scheme is NON-REDUCED, but its only embedded structure is";
+"    the multiplicity-5 component {alpha = 0} coming from the alpha^5 of";
+"    the rigidity normalisation.  That component is geometrically";
+"    vacuous (alpha = 0 forces g == 0, contradicting deg g = 9).";
+"  * After saturating it away the scheme is REDUCED at every D tested,";
+"    of dimension 1 on the polynomial locus J = 0 -- the bare scaling";
+"    line {R = 0, c = 0} x {alpha}, i.e. only the Jacobian-free";
+"    solution.  Tangent dimension equals scheme dimension: the";
+"    near-miss is a SMOOTH point.  There is no non-reduced component";
+"    and no branching to hide a counterexample in.";
+"  * At J = 4 the dimension goes up by one: that extra direction is the";
+"    trapdoor, and it carries c != 0 (probe 1b).";
+
+//===================================================================== 1b
+"";
+"=====================================================================";
+"PROBE 1b  THE OBSTRUCTION MAP";
+"          For which (chain degree D, pole order J) is the Keller";
+"          constant c FORCED to vanish?  c forced 0  <=>  c lies in the";
+"          ideal of the linear system  <=>  every infinitesimal";
+"          deformation is Jacobian-silent and fails to integrate to a";
+"          Keller structure.";
+"=====================================================================";
+"   D  |  J= 0   1   2   3   4   5   6      ('.' = c forced to 0,";
+"      |                                     'Y' = c can be nonzero)";
+string row;
+setring RV;
+for (D = 1; D <= 30; D++)
+{
+  row = "";
+  for (J = 0; J <= 6; J++)
+  {
+    ideal I = endgame_eqs(D,J,M,0);
+    if (reduce(c, std(I)) == 0) { row = row + "   ."; }
+    else { row = row + "   Y"; }
+    kill I;
+  }
+  if (D < 10) { "   " + string(D) + "  | " + row; }
+  else { "  " + string(D) + "  | " + row; }
+}
+"";
+"  READING.";
+"  * J = 0,1,2,3 is '.' for EVERY D: the polynomial locus and every";
+"    weaker pole are obstructed at every chain degree, not only at";
+"    D = 13.  Session 18's transfer conjecture holds on the whole";
+"    polynomial locus (Second Framework D = 23 included).";
+"  * The obstruction switches off at J = 4 EXACTLY -- one single unit";
+"    of pole order at U = v+1 = 0.  That is the trapdoor.";
+"  * D = 3,6,9,12 stay obstructed at every J: there the homogeneous";
+"    resonance (probe 2) collides with and swallows the unlocking";
+"    direction.";
+quit;

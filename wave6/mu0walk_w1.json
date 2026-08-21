@@ -1,0 +1,98 @@
+[
+ {
+  "mode": "w1",
+  "point": 0,
+  "seed_residual2": 4.552053155043811e-38,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 1,
+  "seed_residual2": 1.8808000205293396e-37,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 2,
+  "seed_residual2": 7.708751047503008e-36,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 3,
+  "seed_residual2": 1.6128005515315424e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 4,
+  "seed_residual2": 1.7274779720924383e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 5,
+  "seed_residual2": 2.2400112837541767e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 6,
+  "seed_residual2": 4.814824860968091e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 7,
+  "seed_residual2": 6.074282009653173e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 8,
+  "seed_residual2": 7.548537837425902e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 9,
+  "seed_residual2": 8.409760687090861e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 10,
+  "seed_residual2": 9.542768799178944e-35,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ },
+ {
+  "mode": "w1",
+  "point": 11,
+  "seed_residual2": 1.1574550898803554e-34,
+  "smax": 0.001,
+  "reached_mu0": 0.0,
+  "end_residual2": 2.2500000000000003e-08
+ }
+]

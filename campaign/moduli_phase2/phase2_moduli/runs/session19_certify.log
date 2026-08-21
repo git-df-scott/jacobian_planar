@@ -1,0 +1,220 @@
+
+Plane Jacobian campaign - Session 19
+DEFORMATION / MODULI PROBE OF THE SESSION-18 EMPTINESS THEOREM.
+
+Sessions 16-18 closed the First Framework by reducing every layer of the
+(99,66) decision system to one operator equation on the Belyi-realization
+functional R along E_{-2},
+
+    alpha^5 * T_D(R) = -c,    T_D(R) = (v+1)^4 (3v(v+1)R' - D R),
+
+with D the cusp-chain degree (13 = First Framework, 23 = Second), c the
+Keller constant, alpha the Session-13 rigidity scalar, and then evaluating
+at v = -1.  This session does not re-run that evaluation.  It deforms the
+system and asks where, if anywhere, the moduli space has a trapdoor.
+
+RESULT 1 (universal obstruction; upgrades the transfer conjecture).
+On the polynomial locus the endgame is obstructed for EVERY chain degree
+D >= 1, not only for D with D/3 not an integer:
+
+    ev_{v=-1} annihilates the image of T_D identically,
+
+so no chain degree admits a polynomial R with c != 0.  Session 18's
+transfer conjecture ("fatal whenever D/3 is not an integer") is therefore
+a theorem on the polynomial locus, and it is fatal for all D.  The Second
+Framework (D = 23) and every isotope-series degree die with the First.
+Certified below for D = 1..60 by exact rank computation, and symbolically
+for generic D and generic R.
+
+RESULT 2 (the trapdoor, and it is sharp).
+The whole proof rests on exactly one hypothesis - Session 13/14's
+pole-fiber theorem, which forces R to be a POLYNOMIAL at U = v+1 = 0 -
+and that hypothesis is load-bearing by precisely one unit of pole order:
+
+    ord_{U=0} R >= -3  =>  c = 0   (still obstructed)
+    ord_{U=0} R  = -4  =>  c != 0 is attained, by a unique-up-to-scale R,
+                           in closed form, for every D outside {3,6,9,12}.
+
+So the Session-18 argument is "QED modulo Theorem 3", and Theorem 3 is the
+single point of failure worth re-refereeing.
+
+RESULT 3 (the twin test, and it closes).
+The unlocking R has map-degree exactly 4 in v for EVERY D - the numerator
+is always a quartic and never vanishes at v = -1.  The framework's
+realization layer demands that R realize the chain's degree-D Belyi map,
+i.e. map-degree D.  The trapdoor is therefore self-consistent only at
+
+    D = 4,
+
+and the frozen skeleton forbids D = 4: the fork/cusp combinatorics
+(Belyi degree N = 2*deg p = 3*deg r + 1, chain degree D = N - 3) admits
+only D = 1 (mod 6).  No combinatorial twin can walk through the trapdoor.
+
+RESULT 4 (why 13; a by-product).
+Rigidity of the skeleton's Belyi datum needs #unknowns - #equations = 1,
+i.e. (5D+13)/6 = D, i.e. D = 13 EXACTLY.  Borisov's chain degree is not
+an accident of his search: it is the unique degree at which the First
+Framework's Belyi data is rigid.  D = 1, 7 carry positive-dimensional
+twin families (too soft to pin a framework); D >= 19 is over-determined.
+
+RESULT 5 (the resonance, and it is Jacobian-silent).
+The Session-18 "M == 0 branch" R ~ (v/(v+1))^{D/3} becomes an honest
+rational function exactly when 3 | D.  It is a genuine rank jump of the
+moduli space - dim goes 1 -> 2 at pole order J = D/3 - but it always
+carries c = 0, so it never integrates to a Keller structure.  At
+D = 3,6,9,12 that resonance sits at J <= 4 and absorbs the unlocking
+direction, which is why those four degrees stay rigid at every pole order.
+
+NET.  The emptiness theorem survives the deformation probe.  No
+counterexample and no candidate counterexample was found; what was found
+is the exact hypothesis the theorem hangs on, an explicit formula for what
+would have to exist to break it, and a combinatorial proof that nothing in
+the framework family can supply it.
+
+All arithmetic below is exact.  Companion Singular routines:
+    ../singular/endgame_moduli.sing    (scheme, tangent space, obstruction)
+    ../singular/rank_jumps.sing        (rank-jump census, closed forms)
+    ../singular/monomial_twins.sing    ([P,Q] = x^r twins, admissibility)
+
+======================================================================
+RESULT 1  universal obstruction on the polynomial locus
+======================================================================
+  [PASS] ev_{v=-1} o T_D == 0 for generic R and symbolic D
+  [PASS] no polynomial solution with c != 0 for any D in 1..60  (live degrees: [])
+  [PASS] ker T_D = 0 on polynomials for every D in 1..60
+
+  => Session 18's transfer conjecture is a theorem on the
+     polynomial locus, for every chain degree.  D = 23 (Second
+     Framework) and the whole isotope series are covered.
+
+======================================================================
+RESULT 2  the trapdoor: pole order 4 at U = v+1 = 0, and sharpness
+======================================================================
+    D | J=0  1  2  3  4  5  6   (dim of solution space)   | c != 0 first at J =
+    1 |  0  0  0  0  1  1  1    | 4
+    2 |  0  0  0  0  1  1  1    | 4
+    4 |  0  0  0  0  1  1  1    | 4
+    5 |  0  0  0  0  1  1  1    | 4
+    7 |  0  0  0  0  1  1  1    | 4
+   13 |  0  0  0  0  1  1  1    | 4
+   19 |  0  0  0  0  1  1  1    | 4
+   23 |  0  0  0  0  1  1  1    | 4
+   25 |  0  0  0  0  1  1  1    | 4
+   31 |  0  0  0  0  1  1  1    | 4
+   41 |  0  0  0  0  1  1  1    | 4
+   53 |  0  0  0  0  1  1  1    | 4
+  [PASS] pole order <= 3 forces c = 0, pole order 4 unlocks it (all D tested outside {3,6,9,12})
+  [PASS] the only chain degrees still blocked at J = 4 are [3, 6, 9, 12]
+
+  closed form (normalised c = 1), R = A(v)/(v+1)^4 :
+   D =   1:  A = 243*v**4 + 891*v**3 + 1188*v**2 + 660*v + 110
+            deg A = 4, A(-1) = -10, residual = 0
+   D =   2:  A = 243*v**4 + 810*v**3 + 945*v**2 + 420*v + 35
+            deg A = 4, A(-1) = -7, residual = 0
+   D =   4:  A = -243*v**4 - 648*v**3 - 540*v**2 - 120*v + 10
+            deg A = 4, A(-1) = -5, residual = 0
+   D =   5:  A = -243*v**4 - 567*v**3 - 378*v**2 - 42*v + 7
+            deg A = 4, A(-1) = -5, residual = 0
+   D =   7:  A = 243*v**4 + 405*v**3 + 135*v**2 - 15*v + 5
+            deg A = 4, A(-1) = -7, residual = 0
+   D =  13:  A = 243*v**4 - 81*v**3 + 54*v**2 - 42*v + 35
+            deg A = 4, A(-1) = 455, residual = 0
+   D =  19:  A = 243*v**4 - 567*v**3 + 945*v**2 - 1365*v + 1820
+            deg A = 4, A(-1) = 4940, residual = 0
+   D =  23:  A = 243*v**4 - 891*v**3 + 2079*v**2 - 3927*v + 6545
+            deg A = 4, A(-1) = 13685, residual = 0
+   D =  25:  A = 243*v**4 - 1053*v**3 + 2808*v**2 - 5928*v + 10868
+            deg A = 4, A(-1) = 20900, residual = 0
+   D =  31:  A = 243*v**4 - 1539*v**3 + 5643*v**2 - 15675*v + 36575
+            deg A = 4, A(-1) = 59675, residual = 0
+   D =  41:  A = 243*v**4 - 2349*v**3 + 12528*v**2 - 48720*v + 154280
+            deg A = 4, A(-1) = 218120, residual = 0
+   D =  53:  A = 243*v**4 - 3321*v**3 + 24354*v**2 - 127182*v + 529925
+            deg A = 4, A(-1) = 685025, residual = 0
+  [PASS] the unlocking R solves the endgame exactly
+  [PASS] its numerator is a quartic for EVERY D (map-degree 4)
+  [PASS] its pole at U = 0 has order exactly 4 (numerator(-1) != 0)
+
+======================================================================
+RESULT 3  the twin test: which chain degree could use the trapdoor?
+======================================================================
+  realization layer demands map-degree(R) = D;  trapdoor supplies 4.
+  => the trapdoor is self-consistent only at D = 4.
+
+   deg p | deg r | Belyi N | chain degree D
+       2 |     1 |       4 |     1
+       5 |     3 |      10 |     7
+       8 |     5 |      16 |    13
+      11 |     7 |      22 |    19
+      14 |     9 |      28 |    25
+      17 |    11 |      34 |    31
+      20 |    13 |      40 |    37
+      23 |    15 |      46 |    43
+  [PASS] every admissible chain degree is 1 mod 6
+  [PASS] D = 4 is NOT an admissible chain degree => the trapdoor has no twin to walk through it
+
+======================================================================
+RESULT 4  why 13: rigidity of the skeleton's Belyi datum
+======================================================================
+   unknowns  = deg p + deg r          (monic coefficients)
+   equations = N - 4                  (cancellation to degree 3)
+   rigid <=> unknowns - equations = 1 (only the scaling orbit)
+
+      D | unknowns | equations | difference | verdict
+      1 |        3 |         0 |          3 | under-determined
+      7 |        8 |         6 |          2 | under-determined
+     13 |       13 |        12 |          1 | RIGID
+     19 |       18 |        18 |          0 | over-determined
+     25 |       23 |        24 |         -1 | over-determined
+     31 |       28 |        30 |         -2 | over-determined
+     37 |       33 |        36 |         -3 | over-determined
+     43 |       38 |        42 |         -4 | over-determined
+  [PASS] the unique rigid chain degree is D = 13  (found [13])
+  [PASS] algebraically: (5D+13)/6 = D  <=>  D = 13
+
+======================================================================
+RESULT 5  the resonance is real but Jacobian-silent
+======================================================================
+  [PASS] R = (v/(v+1))^{D/3} is an exact kernel element whenever 3 | D
+   pole order of that direction at U = 0 is D/3, so it enters the
+   census exactly at J = D/3 - matching the observed 1 -> 2 jumps
+   at D = 15,18,21,24,27,30 and the absorption at D = 3,6,9,12.
+   D = 15:  dim at J = 4 is 1,  dim at J = 5 is 2
+   D = 18:  dim at J = 5 is 1,  dim at J = 6 is 2
+   D = 21:  dim at J = 6 is 1,  dim at J = 7 is 2
+   D = 24:  dim at J = 7 is 1,  dim at J = 8 is 2
+   D = 27:  dim at J = 8 is 1,  dim at J = 9 is 2
+   D = 30:  dim at J = 9 is 1,  dim at J = 10 is 2
+  [PASS] the resonance jump lands exactly at J = D/3
+
+======================================================================
+RESULT 6  Newton-skeleton obstruction to [P,Q] = x^r  ->  [P,Q] = 1
+======================================================================
+  [PASS] on the frozen skeleton, x1^4 divides {y1,y2} identically
+  [PASS] hence the constant term of {y1,y2} vanishes on the WHOLE box => [P,Q] = const is unreachable without changing the x1-support
+
+======================================================================
+RESULT 7  cross-epoch consistency with the certified Session-7 data
+======================================================================
+  [PASS] deg(p^2 - w r^3) == 3 (the 13-fold miracle cancellation)
+  [PASS] Wronskian constant h == h0
+  [PASS] cross-epoch identity h0 = -D * n3 with D = 13 (the chain degree this probe sweeps)
+   n3 = -128/3 + 64*sqrt(3)*I/3,  h0 = 1664/3 - 832*sqrt(3)*I/3,  h0 / n3 = -13
+
+======================================================================
+19/19 certifications passed.
+======================================================================
+
+CONCLUSION.  The deformation probe found no counterexample and no
+candidate counterexample.  It found:
+  * the Session-18 obstruction is universal in the chain degree, which
+    upgrades the transfer conjecture to a theorem on the polynomial
+    locus and kills the Second Framework (D = 23) with the First;
+  * exactly one trapdoor - pole order 4 at U = 0 - with an explicit
+    closed-form solution, so the emptiness theorem is now precisely
+    "QED modulo the pole-fiber theorem", and that is the one hypothesis
+    a referee should attack;
+  * that the trapdoor needs chain degree 4, which the frozen skeleton
+    cannot supply (D = 1 mod 6);
+  * a structural explanation of D = 13 as the unique rigid degree.
+

@@ -1,0 +1,26 @@
+==============================================================================
+H1b step 3 v2 -- PENTAGON HIT-DETECTOR (scale-gauge fixed)
+==============================================================================
+  essential parameters : 59  (61 minus p_00 translation minus p_10 scale)
+  objective            : SCALE-INVARIANT max_j (forbidden/allowed)
+  acceptance           : ratio < 1e-10 AND allowed coefficients O(1)
+  discipline           : HIT-FINDER ONLY
+
+  start   0: best scale-invariant ratio 8.787e-01   (3s)
+  start   5: best scale-invariant ratio 1.210e-04   (59s)
+  start  10: best scale-invariant ratio 2.347e-01   (111s)
+  start  15: best scale-invariant ratio 1.530e-05   (196s)
+  start  20: best scale-invariant ratio 1.698e-09   (276s)
+  start  25: best scale-invariant ratio 1.511e-05   (360s)
+
+  30 starts in 376s
+  best scale-invariant ratios: 1.70e-09, 1.50e-05, 1.51e-05, 1.53e-05, 3.17e-05, 9.32e-05, 1.21e-04, 1.31e-03
+  genuine candidates (scale-invariant): 0
+
+  READING.  Under the corrected, scale-invariant objective the trivial
+  direction is closed: no amount of rescaling P moves this number.  A ratio
+  that stays O(1) means the forbidden coefficients are the same size as the
+  allowed ones -- i.e. Newton is not approaching any solution, which for a
+  degree-12..23 system in 59 variables from random starts is the expected
+  default and is NOT evidence of emptiness.
+==============================================================================

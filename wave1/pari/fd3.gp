@@ -1,0 +1,10 @@
+default(parisize, 8000000000);
+f = read("/home/user/jacobian_planar/wave1/edgeQ_eliminant.txt");
+lc = polcoef(f, poldegree(f));
+show(p) = my(F, ds); F = factormod(f, p); ds = vector(matsize(F)[1], i, poldegree(F[i,1])); print(p, ": squarefree_modp=", if(vecmax(vector(matsize(F)[1], i, F[i,2]))==1, 1, 0), "  degrees=", vecsort(ds)); ds;
+d1 = show(100003);
+d2 = show(100019);
+d3 = show(100043);
+d4 = show(100057);
+write("/tmp/degs.txt", d1); write("/tmp/degs.txt", d2); write("/tmp/degs.txt", d3); write("/tmp/degs.txt", d4);
+quit;

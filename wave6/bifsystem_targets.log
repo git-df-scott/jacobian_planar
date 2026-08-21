@@ -1,0 +1,5 @@
+{"mode": "b12r", "d": 12, "eqs": 46, "vars": 34, "unknowns_real": 136, "residuals_real": 184, "build_secs": 23.8}
+{"mode": "b12r", "start": 0, "best_residual2": 0.005974774474637791, "elapsed": 1408.5}
+{"mode": "b12r", "start": 1, "best_residual2": 0.005807111026259238, "elapsed": 2812.4}
+{"mode": "b12r", "start": 2, "best_residual2": 0.004582259321554626, "elapsed": 4284.0}
+{"mode": "b12r", "start": 3, "best_residual2": 0.0016110732047346105, "elapsed": 5770.7}

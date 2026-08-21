@@ -1,0 +1,458 @@
+{
+ "9e5d7c30f667a6eba3025c9acb7660d8": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "w6_289012_0",
+    "src": "virgin_results.json",
+    "case": "(12,30)/16/3,10/11/6,3"
+   },
+   {
+    "name": "w6_384804_0",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,30/16/3,10/11/6,3"
+   }
+  ]
+ },
+ "661bb797b315ab8332d2db09e48aa52f": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "w6_289012_1",
+    "src": "virgin_results.json",
+    "case": "(12,30)/16/3,10/11/6,3"
+   },
+   {
+    "name": "w6_384804_1",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,30/16/3,10/11/6,3"
+   }
+  ]
+ },
+ "3894645befe80c3bd4de0035b6ddd11d": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_0",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_0",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_0",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_0",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   },
+   {
+    "name": "orph_98503",
+    "src": "orphan_family_results.json",
+    "case": "F17(m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))"
+   },
+   {
+    "name": "p108_192622",
+    "src": "pair108_results.json",
+    "case": "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))"
+   }
+  ]
+ },
+ "856766ac85e19578040c8bc9a485e694": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_1",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_1",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_1",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_1",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   }
+  ]
+ },
+ "939e52cc9d0448d315e9519503b20831": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_2",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_2",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_2",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_2",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   }
+  ]
+ },
+ "8b0c9f913cfbb59234c8f0c658206776": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_3",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_3",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_3",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_3",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   }
+  ]
+ },
+ "5a894f1210c4399b24b417d48fe0e2f7": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_4",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_4",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_4",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_4",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   },
+   {
+    "name": "orph_332344",
+    "src": "orphan_family_results.json",
+    "case": "F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))"
+   }
+  ]
+ },
+ "83105420dd2f853a364b323a0421f16f": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_5",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_5",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_5",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_5",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   }
+  ]
+ },
+ "75cee5d6c50872448bda2e8fe4e4cc82": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_6",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_6",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_6",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_6",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   },
+   {
+    "name": "orph_50107",
+    "src": "orphan_family_results.json",
+    "case": "F17(m,n)=2,3 | a=3 b=9 c'=3 r=1 eps=((1, 1),(1, 0))"
+   },
+   {
+    "name": "p108_584120",
+    "src": "pair108_results.json",
+    "case": "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=3 r=1 eps=((1, 1),(1, 0))"
+   }
+  ]
+ },
+ "77339bf7593f5de5810a7739fe1bcb65": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_35657_7",
+    "src": "virgin_results.json",
+    "case": "(9,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_80206_7",
+    "src": "virgin_results.json",
+    "case": "(12,33)/11/3,8"
+   },
+   {
+    "name": "w6_356508_7",
+    "src": "virgin_results.json",
+    "case": "(12,36)/9,24/11/3,8"
+   },
+   {
+    "name": "w6_6587_7",
+    "src": "virgin_results.json",
+    "case": "(12,36)/12,33/11/3,8"
+   }
+  ]
+ },
+ "292e82189ab18de271a8bfdcd029058f": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "w6_582584_0",
+    "src": "virgin_results.json",
+    "case": "(7,21)/11/7,2"
+   }
+  ]
+ },
+ "672f3dd0431907a5ac993445244e8f8e": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "w6_582584_1",
+    "src": "virgin_results.json",
+    "case": "(7,21)/11/7,2"
+   }
+  ]
+ },
+ "7409ce6f0a9e4d60e1d5932e01ed3ec0": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_79970_0",
+    "src": "virgin_results.json",
+    "case": "(8,28)/7/4,3"
+   },
+   {
+    "name": "orph_837900",
+    "src": "orphan_family_results.json",
+    "case": "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))"
+   }
+  ]
+ },
+ "1af4eec3ceccf483dacf54e0d8ee48ee": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_79970_1",
+    "src": "virgin_results.json",
+    "case": "(8,28)/7/4,3"
+   }
+  ]
+ },
+ "8453beb11157ea4ed8b28f7739c634d7": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_79970_2",
+    "src": "virgin_results.json",
+    "case": "(8,28)/7/4,3"
+   }
+  ]
+ },
+ "53dba755d6edd140ea5257fa3b30f8f0": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "w6_79970_3",
+    "src": "virgin_results.json",
+    "case": "(8,28)/7/4,3"
+   }
+  ]
+ },
+ "4d001d4d3d1c490f87c2a802d87f7cdb": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "orph_503471",
+    "src": "orphan_family_results.json",
+    "case": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))"
+   }
+  ]
+ },
+ "4f16a6c8963ff5cf793d5ce25f2834e8": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "orph_646396",
+    "src": "orphan_family_results.json",
+    "case": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((1, 0),(3, 1))"
+   }
+  ]
+ },
+ "a2d2aed81823fbc98599ff17a4d76959": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "orph_345092",
+    "src": "orphan_family_results.json",
+    "case": "F1(m,n)=5,7 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))"
+   }
+  ]
+ },
+ "a24cb269ece93c0fdbf3ac870d3e0e5c": {
+  "statuses": [
+   "RAN"
+  ],
+  "records": [
+   {
+    "name": "p108_821326",
+    "src": "pair108_results.json",
+    "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))"
+   },
+   {
+    "name": "p108_843700",
+    "src": "pair108_results.json",
+    "case": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((2, 1),(1, 0))"
+   }
+  ]
+ },
+ "51d385ebf80747846e7282a8b5cadf09": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "p108_525122",
+    "src": "pair108_results.json",
+    "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))"
+   },
+   {
+    "name": "p108_867707",
+    "src": "pair108_results.json",
+    "case": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))"
+   }
+  ]
+ },
+ "738658c936e93e73d2ce329599fbb746": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "p108_638901",
+    "src": "pair108_results.json",
+    "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((2, 1),(1, 0))"
+   },
+   {
+    "name": "p108_286301",
+    "src": "pair108_results.json",
+    "case": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((2, 1),(1, 0))"
+   }
+  ]
+ },
+ "d7058dbad49625ad1f7a95e456cafb91": {
+  "statuses": [
+   "TIMEOUT"
+  ],
+  "records": [
+   {
+    "name": "p108_671059",
+    "src": "pair108_results.json",
+    "case": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))"
+   },
+   {
+    "name": "p108_621292",
+    "src": "pair108_results.json",
+    "case": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))"
+   }
+  ]
+ }
+}

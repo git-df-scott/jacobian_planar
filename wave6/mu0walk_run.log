@@ -1,0 +1,2 @@
+{"control": "W0-tracker", "PASS": true, "reached_s": 1.0, "residual2": 1.784439423120381e-48}
+{"mode": "d12r", "d": 12, "eqs": 46, "vars": 34}

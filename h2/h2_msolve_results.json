@@ -1,0 +1,10 @@
+{
+ "(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=2 r=2 eps=((1, 0),(2, 1))": {
+  "per_prime": {
+   "65521": "BUILD-FAIL",
+   "65539": "BUILD-FAIL"
+  },
+  "combined": "BUILD-FAIL",
+  "max": 132
+ }
+}

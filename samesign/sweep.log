@@ -1,0 +1,252 @@
+==============================================================================
+T2  SAME-SIGN WEIGHTED-HOMOGENEOUS SECTOR -- exact sweep
+==============================================================================
+    [PASS] degree identity: [P,Q] can only have a nonzero constant term when dP + dQ = a + b (checked on every off-shell cell, not assumed)   violations []
+  (a,b)=(1,1) dP=1 dQ=1  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,2) dP=1 dQ=2  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,2) dP=2 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,3) dP=1 dQ=3  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,3) dP=2 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,3) dP=3 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,4) dP=1 dQ=4  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,4) dP=2 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,4) dP=3 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,4) dP=4 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,5) dP=1 dQ=5  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,5) dP=2 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,5) dP=3 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,5) dP=4 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,5) dP=5 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,6) dP=1 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,6) dP=2 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,6) dP=3 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,6) dP=4 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,6) dP=5 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,6) dP=6 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,7) dP=1 dQ=7  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,7) dP=2 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,7) dP=3 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,7) dP=4 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,7) dP=5 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,7) dP=6 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,7) dP=7 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,8) dP=1 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,8) dP=2 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=3 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=4 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=5 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=6 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=7 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,8) dP=8 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,9) dP=1 dQ=9  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,9) dP=2 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=3 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=4 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=5 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=6 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=7 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=8 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,9) dP=9 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,10) dP=1 dQ=10  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,10) dP=2 dQ=9  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=3 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=4 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=5 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=6 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=7 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=8 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=9 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,10) dP=10 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,11) dP=1 dQ=11  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(1,11) dP=2 dQ=10  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=3 dQ=9  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=4 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=5 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=7 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=8 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=9 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=10 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(1,11) dP=11 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,1) dP=1 dQ=2  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,1) dP=2 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,2) dP=2 dQ=2  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,3) dP=2 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,3) dP=3 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,4) dP=2 dQ=4  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,4) dP=4 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,5) dP=2 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,5) dP=5 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,6) dP=2 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,6) dP=4 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,6) dP=6 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,7) dP=2 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,7) dP=7 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,8) dP=2 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,8) dP=4 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,8) dP=6 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,8) dP=8 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,9) dP=2 dQ=9  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,9) dP=9 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,10) dP=2 dQ=10  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(2,10) dP=4 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,10) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,10) dP=8 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(2,10) dP=10 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,1) dP=1 dQ=3  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,1) dP=2 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(3,1) dP=3 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,2) dP=2 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,2) dP=3 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,3) dP=3 dQ=3  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,4) dP=3 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,4) dP=4 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,5) dP=3 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,5) dP=5 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,6) dP=3 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,6) dP=6 dQ=3  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,7) dP=3 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,7) dP=7 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,8) dP=3 dQ=8  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,8) dP=8 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,9) dP=3 dQ=9  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(3,9) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(3,9) dP=9 dQ=3  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,1) dP=1 dQ=4  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,1) dP=2 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(4,1) dP=3 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(4,1) dP=4 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,2) dP=2 dQ=4  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,2) dP=4 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,3) dP=3 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,3) dP=4 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,4) dP=4 dQ=4  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,5) dP=4 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,5) dP=5 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,6) dP=4 dQ=6  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,6) dP=6 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,7) dP=4 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,7) dP=7 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,8) dP=4 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(4,8) dP=8 dQ=4  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,1) dP=1 dQ=5  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,1) dP=2 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(5,1) dP=3 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(5,1) dP=4 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(5,1) dP=5 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,2) dP=2 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,2) dP=5 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,3) dP=3 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,3) dP=5 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,4) dP=4 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,4) dP=5 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,5) dP=5 dQ=5  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,6) dP=5 dQ=6  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,6) dP=6 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,7) dP=5 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(5,7) dP=7 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,1) dP=1 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,1) dP=2 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(6,1) dP=3 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(6,1) dP=4 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(6,1) dP=5 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(6,1) dP=6 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,2) dP=2 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,2) dP=4 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(6,2) dP=6 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,3) dP=3 dQ=6  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,3) dP=6 dQ=3  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,4) dP=4 dQ=6  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,4) dP=6 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,5) dP=5 dQ=6  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,5) dP=6 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(6,6) dP=6 dQ=6  |MP|=2 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,1) dP=1 dQ=7  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,1) dP=2 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(7,1) dP=3 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(7,1) dP=4 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(7,1) dP=5 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(7,1) dP=6 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(7,1) dP=7 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,2) dP=2 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,2) dP=7 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,3) dP=3 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,3) dP=7 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,4) dP=4 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,4) dP=7 dQ=4  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,5) dP=5 dQ=7  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(7,5) dP=7 dQ=5  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,1) dP=1 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,1) dP=2 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=3 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=4 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=5 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=6 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=7 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,1) dP=8 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,2) dP=2 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,2) dP=4 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,2) dP=6 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(8,2) dP=8 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,3) dP=3 dQ=8  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,3) dP=8 dQ=3  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,4) dP=4 dQ=8  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(8,4) dP=8 dQ=4  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,1) dP=1 dQ=9  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,1) dP=2 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=3 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=4 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=5 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=6 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=7 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=8 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,1) dP=9 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,2) dP=2 dQ=9  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,2) dP=9 dQ=2  |MP|=1 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,3) dP=3 dQ=9  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(9,3) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(9,3) dP=9 dQ=3  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(10,1) dP=1 dQ=10  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(10,1) dP=2 dQ=9  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=3 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=4 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=5 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=6 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=7 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=8 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=9 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,1) dP=10 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(10,2) dP=2 dQ=10  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(10,2) dP=4 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,2) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,2) dP=8 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(10,2) dP=10 dQ=2  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+  (a,b)=(11,1) dP=1 dQ=11  |MP|=1 |MQ|=2  -> KELLER-PAIRS  branches=3
+  (a,b)=(11,1) dP=2 dQ=10  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=3 dQ=9  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=4 dQ=8  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=5 dQ=7  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=6 dQ=6  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=7 dQ=5  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=8 dQ=4  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=9 dQ=3  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=10 dQ=2  |MP|=1 |MQ|=1  -> NO-KELLER-PAIR
+  (a,b)=(11,1) dP=11 dQ=1  |MP|=2 |MQ|=1  -> KELLER-PAIRS  branches=3
+
+  cells swept: 230
+  Keller branches found: 378
+  branches that are NOT automorphisms: 0
+
+  CONTROLS
+    [PASS] POSITIVE: the weight cell containing (x, y + x^m) is swept for m=2..5   [(2, True), (3, True), (4, True), (5, True)]
+    [PASS] POSITIVE: the sweep's Keller test ACCEPTS (x, y + x^3)   detJ = 1
+    [PASS] POSITIVE: the sweep's automorphism test ACCEPTS (x, y + x^3)   {'inverse': ['s', '-s**3 + t'], 'generic_fibre': 1}
+    [PASS] POSITIVE: the sweep's automorphism test ACCEPTS (x + 2y, y)   {'inverse': ['s - 2*t', 't'], 'generic_fibre': 1}
+    [PASS] NEGATIVE: the Keller test REJECTS (x, x*y)   detJ = x
+    [PASS] NEGATIVE: the Keller test REJECTS ((3x+y)^2, 3x+y)   detJ = 0
+    [PASS] NEGATIVE: the generic-fibre leg REJECTS the non-injective (x^2-y^2, x*y)   generic fibre size = 4
+    [PASS] NEGATIVE: the automorphism test REJECTS (x^2-y^2, x*y)   {'inverse': None, 'generic_fibre': 4}
+
+==============================================================================
+    9/9 checks passed
+==============================================================================

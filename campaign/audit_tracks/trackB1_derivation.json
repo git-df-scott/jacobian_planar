@@ -1,0 +1,13 @@
+{
+ "checks": {
+  "C1": true,
+  "C2": true,
+  "C3": true,
+  "C4": true,
+  "C5": true,
+  "C6": true
+ },
+ "all_pass": true,
+ "top_line_equations": 19,
+ "note": "converse (surjectivity of the parametrization) is the UFD lemma, prose proof in trackB1_report.md section B1a"
+}

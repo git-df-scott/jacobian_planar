@@ -1,0 +1,9 @@
+w3_weighted_homogeneous_theorem.py: exit=0 passes=66
+w3_descent_jacobian_formula.py: exit=0 passes=35
+w3_hit_protocol.py: exit=0 passes=12
+w3_claim_ledger.py: exit=0 passes=2
+w3_second_framework_Dode.py: exit=0 passes=0
+w3_second_framework_verdict.py: exit=0 passes=0
+w3_10872_and_legs_audit.py: exit=0 passes=0
+w3_theorem3_repair_audit.py: exit=0 passes=0
+lift_pipeline.py: exit=0 passes=3

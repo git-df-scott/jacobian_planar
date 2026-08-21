@@ -1,0 +1,9 @@
+MODULAR SEARCH over GF(p), p in [32003, 65521, 1000003]
+Frobenius guard: min prime 32003 > max degree 17. OK
+
+37 non-dividing degree pairs with d1+d2 <= 17, gcd <= 3
+
+  ( 3, 2) n=1 cusp=(2,3) h=y           eqs=   6 unk=   9  EMPTY(all p)      0.0s
+  ( 4, 3) n=1 cusp=(3,4) h=y           eqs=  14 unk=  16  EMPTY(all p)      5.1s
+  ( 5, 2) n=1 cusp=(2,5) h=y           eqs=  15 unk=  18  EMPTY(all p)      1.0s
+  ( 5, 3) n=1 cusp=(3,5) h=y           eqs=  20 unk=  21  EMPTY(all p)     59.4s

@@ -1,0 +1,14 @@
+shapes to test: 1728
+# 0/1728 live=0 0.2s
+# 50/1728 live=0 21.6s
+# 100/1728 live=0 84.8s
+# 150/1728 live=0 140.9s
+# 200/1728 live=0 184.7s
+# 250/1728 live=0 211.2s
+# 300/1728 live=0 240.6s
+# 350/1728 live=0 292.9s
+# 400/1728 live=0 330.0s
+# 450/1728 live=0 354.3s
+{"shape": [1, 0, 0, 1, 1, 0, 1, 2], "neqs": 36, "status": "LIVE", "gb_head": ["a**2*b - kappa/2", "a*kappa*t_sat - 1", "-2*a*b + kappa**2*t_sat", "c0"]}
+{"shape": [1, 0, 0, 1, 1, 0, 1, 3], "neqs": 64, "status": "LIVE", "gb_head": ["a**2*b - kappa/2", "a*kappa*t_sat - 1", "-2*a*b + kappa**2*t_sat", "c0"]}
+# 500/1728 live=2 401.7s

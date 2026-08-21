@@ -1,0 +1,53 @@
+{
+ "degree": 5,
+ "squarefree": true,
+ "irreducible_over_Q": true,
+ "rational_roots": [],
+ "galois_group": "S5",
+ "galois_group_order": 120,
+ "inside_A5": false,
+ "reconstruction": {
+  "build_primes_used": 41,
+  "held_out_primes": [
+   1002361,
+   1002403,
+   1002427,
+   1002433,
+   1002451,
+   1002457
+  ]
+ },
+ "standing": "reconstructed multi-modularly and verified at held-out primes; NOT a char-0 Groebner proof",
+ "checks": [
+  [
+   "G1 the eliminant is squarefree (so it really counts distinct points)",
+   true,
+   "deg gcd(f, f') = 0"
+  ],
+  [
+   "G2 NEGATIVE: the same irreducibility call reports a planted reducible quintic as reducible",
+   true,
+   "(w^2+1)(w^3-2)"
+  ],
+  [
+   "G3 the eliminant is IRREDUCIBLE over Q",
+   true,
+   ""
+  ],
+  [
+   "G4 the eliminant has NO rational root",
+   true,
+   "{}"
+  ],
+  [
+   "G5 the Galois group is computed: S5",
+   true,
+   "order 120, contained in A5: False"
+  ],
+  [
+   "G5n NEGATIVE: the same call gives a DIFFERENT group on a quintic of known group (w^5 - 5w + 12 is D5)",
+   true,
+   "D5 (order 10) vs S5 (order 120)"
+  ]
+ ]
+}

@@ -1,0 +1,3 @@
+{"d": 5, "verdict": "SLICE-EMPTY", "head": "[-1]:\n", "build_secs": 0.9, "solve_secs": 0.3, "eqs": 19, "vars": 15, "control": true}
+{"d": 7, "verdict": "TIMEOUT", "build_secs": 2.0, "eqs": 27, "vars": 21, "control": true}
+CONTROL-FAILURE at d=7: expected [-1]. STOP and report.

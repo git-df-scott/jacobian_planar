@@ -1,0 +1,111 @@
+{
+ "assignment": {
+  "s_1_5": [
+   0,
+   1
+  ],
+  "s_2_6": [
+   0,
+   1
+  ],
+  "s_3_7": [
+   0,
+   1
+  ],
+  "s_4_8": [
+   1,
+   1
+  ],
+  "c_4_11": [
+   2,
+   1
+  ],
+  "c_8_15": [
+   2,
+   1
+  ],
+  "c_8_14": [
+   1,
+   1
+  ],
+  "d_4_15": [
+   3,
+   1
+  ],
+  "d_8_19": [
+   6,
+   1
+  ],
+  "d_12_23": [
+   3,
+   1
+  ],
+  "d_8_18": [
+   3,
+   1
+  ],
+  "d_12_22": [
+   3,
+   1
+  ],
+  "d_12_21": [
+   1,
+   1
+  ]
+ },
+ "all_other_vars": 0,
+ "family": "P = Stilde^2, Q = Stilde^3, Stilde = y^4*(1+(xy)^4) + t*x^4*y^7, t = 1",
+ "failing_equations": [
+  [
+   [
+    1,
+    8
+   ],
+   "-16"
+  ],
+  [
+   [
+    2,
+    0
+   ],
+   "-1"
+  ],
+  [
+   [
+    5,
+    11
+   ],
+   "-36"
+  ],
+  [
+   [
+    5,
+    12
+   ],
+   "-40"
+  ],
+  [
+   [
+    9,
+    14
+   ],
+   "-20"
+  ],
+  [
+   [
+    9,
+    15
+   ],
+   "-44"
+  ],
+  [
+   [
+    9,
+    16
+   ],
+   "-24"
+  ]
+ ],
+ "as_expected": true,
+ "consequence": "normalized truncations W >= 8 ALIVE (witness passes all weight >= 8 equations + side conditions); any kill of case (1) must use weight <= 7 equations, i.e. the bottom-vertex data c_1_0*d_2_1 = 1"
+}

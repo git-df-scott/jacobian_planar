@@ -1,0 +1,22 @@
+G_1(u,v) = (u + 1)*(3*u + v - 2)**2*(3*u**3 + u**2*v + 4*u**2 + 2*u*v + v)
+
+G_2(u,v) = -(3*u + v - 2)*(9*u**3 + 3*u**2*v + 12*u**2 + 6*u*v + u + 3*v)
+
+deg G_1 = 6   deg G_2 = 4
+
+det JG = -2*(3*u + v - 2)**2
+
+det JG is constant?  False
+
+upstairs collision maps to quotient points: [(0, 0), (-3/2, 13/2), (-3/2, 13/2)]
+images under G: [(0, 0), (0, 0), (0, 0)]
+
+det JG factors: (-2, [(3*u + v - 2, 2)])
+PASS det JF is the constant -2
+PASS component weight -2
+PASS component weight -1
+PASS component weight 1
+PASS W1 is x-free (descends)
+PASS W2 is x-free (descends)
+PASS quotient points collapse 3 -> 2
+PASS G is non-injective on those

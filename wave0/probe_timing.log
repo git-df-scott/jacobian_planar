@@ -1,0 +1,4 @@
+PROBE real edge dp: 47.33117175102234 s -> ['DIM: 1']
+PROBE real edge + d_3_3=1: 29.220508098602295 s -> ['DIM: 0', 'VDIM: 1144']
+PROBE negative control: 0.008261680603027344 s -> ['DIM: -1']
+PROBE_DONE

@@ -1,0 +1,12 @@
+eliminator: 184 equations, 157 variables, nonzero=['c_1_0', 'c_8_14', 'd_12_21', 's_4_8'], normalize={}, mode=mod 65521 (SCOUTING ONLY)
+done in 296.4s; stats: {'r1_det': 0, 'r2': 43, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 1, 'capped': 0}
+tree: 1 nodes, 0 closed, 1 open leaves, 0 merged, 0 capped
+  open leaf 0 (depth 0): 141 eqs, 114 vars
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/campaign/audit_tracks/trackA_eliminator.py", line 983, in <module>
+    main()
+  File "/home/user/jacobian_planar/campaign/audit_tracks/trackA_eliminator.py", line 977, in main
+    json.dump({"meta": meta,
+  File "/usr/lib/python3.11/json/__init__.py", line 180, in dump
+    fp.write(chunk)
+OSError: [Errno 28] No space left on device

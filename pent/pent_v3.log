@@ -1,0 +1,21 @@
+==============================================================================
+ITEM 2 -- PENTAGON HIT DETECTOR v3 (all three gauges fixed)
+==============================================================================
+  parameters: 61 total, 58 essential after 3 gauges (p_00 translation, p_10 scale, p_1_0 coordinate scale)
+  objective: ABSOLUTE max |forbidden coefficient| over levels 13..23 (66 conditions)
+  acceptance: |forbidden| < 1e-09, allowed scale in [1e-03,1e+03], |x| <= 1e+04
+
+  CONTROLS
+    [PASS] POS-1 float: Newton recovers a planted root of F(x) = F(x0)   final max |F - F(x0)| = 5.886e-10
+    [PASS] NEG-1 the acceptance test REJECTS a blown-up point (the v1 artefact)   forbidden max 6.042e+123 >= TOL
+    [PASS] NEG-2 the acceptance test REJECTS a random point   forbidden max 3.800e+05 >= TOL
+    [PASS] POS-2 the same test ACCEPTS the planted root (so it is not vacuous)   forbidden 5.886e-10, allowed 5.814e+02, |x| 3.445e+00
+    [PASS] POS-3 the exact mod-p evaluator agrees with the dual-number evaluator on the same random point (two independent code paths)   66 coefficients compared
+    [PASS] NEG-3 mod-p: a random point is NOT an exact root   as expected
+    [PASS] NEG-3b the exact (dual-number) Jacobian column is not identically zero, so the derivative machinery is not vacuous   66 of 66 entries nonzero
+    [PASS] S-NEG a contradictory pin makes the sliced system EMPTY   [EMPTY]
+    [PASS] S-POS a single-condition slice is NOT empty (the engine can say non-empty on this family)   [POSITIVE-DIMENSIONAL]
+
+  SEARCH
+    chart one: 8 float starts, 0 accepted, best |forbidden| = 7.479e-05   (284s)
+    chart one p=1000003 slice r=50: 8 slices, 0 non-empty, 8 empty, 0 other
