@@ -331,3 +331,40 @@ tightens), and wave6/pentagon_watch.log records contradictions and completions.
 WHY IT MATTERS: a CONTRADICTION at any W <= 13 means that truncation is empty,
 and by the closed-subsystem property that KILLS pentagon case (1) of (72,108)
 -- the branch no method has ever decided.
+
+## THE ELIMINATOR'S REDUCTION IS A TRAP (measured, Saturday)
+
+Running trackA_eliminator.py on the overdetermined truncations DOES shrink
+them, and all three that completed stayed overdetermined:
+
+    W=13: 136 eq /133 var  ->  95 / 92   (excess +3)
+    W=12: 153 /143         -> 111 /101   (excess +10)
+    W=11: 169 /151         -> 126 /108   (excess +18)
+    W=10: crashed mid-write when the disk allowance ran out
+
+No contradiction was found (0 closed branches).  But the reduction is NOT a
+win for emptiness testing, because it trades variables for DEGREE:
+
+    W=13 gauged, pre-elimination : 137 eqs, 132 vars, MAX DEGREE  4
+    W=13 after elimination       :  97 eqs,  94 vars, MAX DEGREE 23
+
+Its pivots substitute variables, and the substituted expressions compound.
+Degree is the dominant cost for Groebner and for the degree-bounded test, so
+a 30% cut in variables at the price of degree 4 -> 23 is a large net loss.  It
+also explains the 90-150 MB output trees (degree-23 polynomials in 94
+variables) and hence the exhausted disk allowance.
+
+CONSEQUENCE, and a near-miss worth recording: the degree-bounded runs on the
+reduced systems reported "no constant at degBound 4/5" -- which is VACUOUS,
+because the bound sat far below the inputs' own degrees, so no reduction ever
+happened.  The tell was gbsize being exactly equal to the number of input
+equations (97 in, 97 out; 113 in, 113 out).  Read carelessly, that line looks
+like evidence of non-emptiness.  It is evidence of nothing.
+
+STANDING RULE ADDED: a degree-bounded result is only meaningful when D exceeds
+the maximum degree of the input generators; always report both, and treat
+gbsize == number-of-inputs as a no-op sentinel.
+
+CORRECT TARGET remains the GAUGED, PRE-ELIMINATION truncations at W <= 13
+(degree 4, ~130 vars), where the measured ladder is D=4 cheap (1.7-36 s),
+D=5 a few minutes, D=6 the frontier -- all under 1 GB.
