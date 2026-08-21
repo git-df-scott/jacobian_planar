@@ -101,6 +101,8 @@ if __name__ == '__main__':
         print(json.dumps({'control': 'C2', 'PASS': ok, 'best': out['best_residual2']}))
     else:
         d = 13 if mode == 'd13N' else 12
+        if mode.startswith('d') and mode[1:].isdigit():
+            d = int(mode[1:])
         seed = None
         if mode == 'd12N_r': seed = Rational(-1, 12)
         if mode == 'd12N_s': seed = Rational(1, 20)

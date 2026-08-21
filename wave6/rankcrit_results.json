@@ -142,5 +142,29 @@
     "verdict": "obstructed"
    }
   ]
+ },
+ {
+  "d": 11,
+  "eqs": 50,
+  "vars": 32,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/164 + sqrt(33)/82",
+    "on_locus": true,
+    "rank_J": 23,
+    "rank_aug": 24,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(33)/82 - 3/164",
+    "on_locus": true,
+    "rank_J": 23,
+    "rank_aug": 24,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
  }
 ]
