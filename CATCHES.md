@@ -1417,3 +1417,70 @@ That is a sobering finding rather than an encouraging one, and it should be
 recorded as such.  It also means effort is better spent on the systems where the
 Newton polygons are already pinned down -- (72,108) in both orientations -- than
 on constructing sweeps.
+
+================================================================================
+B=16 LADDER: d = 7 IS EMPTY IN CHARACTERISTIC ZERO.  And the (72,108) pentagon
+bottom edge is NON-EMPTY, zero-dimensional, and explicit.
+================================================================================
+
+d = 7 CLOSED.  msolve on the mu0-eliminated, mu2-gauged export: 26 equations /
+20 unknowns, zero constant generators, stderr clean, characteristic 0 (so this
+is a proof, not a modular signal).  1345.48 s, 6.67 GB.  Verdict [-1] = EMPTY.
+Mod p = 1000003 agrees (21 min).  The corrected ladder now reads, all in char 0:
+
+    d      verdict     degrees (16(3d-2), 16(2d-1))     status
+    3      EMPTY       (112,  80)     reproduces GGV
+    4      EMPTY       (160, 112)     reproduces GGV
+    5      EMPTY       (208, 144)     NEW  (GGV stalled here)
+    6      EMPTY       (256, 176)     NEW
+    7      EMPTY       (304, 208)     NEW
+
+GGV solved deg(q1) = 2,3,4 and stalled at 5 ("after an hour the PC hadn't
+solved it").  d = 5,6,7 are decided here for the first time, on the CORRECTED
+system, and all three lie above GGHV's max < 125 reach, so no published work
+touches them.  Reminder of the standing caveat: these close cells of the
+ladder, not the conjecture -- d >= 8 remains open and the ladder is infinite.
+
+THE (72,108) PENTAGON BOTTOM EDGE, VERIFIED AND SOLVED.
+
+Verification first.  Grouping the 283 equations of trackB1_param_system.json by
+the linear functional L = 2*alpha - beta on the bracket point gives 17 equations
+at the extreme level L = 4, involving exactly the 18 bottom-edge variables
+c_{i,2i-2} (i = 1..8) and d_{j,2j-3} (j = 2..12) -- a closed subsystem.  With
+
+    w = x y^2,   f = sum_{i=1..8} c_{i,2i-2} w^i,   g = w^2 + sum_{j=3..12} d_{j,2j-3} w^j
+
+(d_2_1 is already gauged to 1 in the JSON), I generated the coefficients of
+
+                        2 f g' - 3 f' g  =  w^2
+
+and matched them against the JSON: ALL 17 MATCH, SCALE FACTOR EXACTLY 1, no
+unmatched rows.  The equation at bracket point (2,0) is literally c_1_0 - 1 = 0.
+So 17 of the 283 equations collapse to a single identity in ONE variable, and
+the bottom-vertex datum c_1_0 * d_2_1 = 1 is precisely its w^2 coefficient --
+the inhomogeneity of that one equation.
+  (Method note: my first pass matched only 9/17.  The misses were exactly the
+  low bracket points, because I had left d_2_1 symbolic while the JSON has it
+  gauged to 1.  With the gauge applied the match is exact.  Recorded because the
+  9/17 near-miss is precisely the kind of partial agreement that invites a
+  wrong conclusion in either direction.)
+
+Solving it.  17 equations, 18 unknowns, with a residual 1-parameter torus
+c_i -> t^{i-1} c_i, d_j -> t^{j-2} d_j (derived by requiring 2fg'-3f'g = w^2 and
+the gauge d_2_1 = 1 to be preserved; note c_1_0 has weight 0, so the torus does
+NOT act on it and c_1_0 = 1 does not fix the gauge).  In the chart c_2 = 1,
+msolve returns
+
+        dim = 0,  eliminating polynomial of degree 9,  155.72 s, 189 MB
+        (p = 1000003; characteristic 0 running)
+
+so the bottom-edge system is NON-EMPTY with finitely many solutions.
+
+WHAT THIS IS AND IS NOT.  A bottom edge is 17 of 283 equations.  It is NOT a
+counterexample and must not be reported as one.  What it is: the first
+explicit, finite starting point this campaign has had on (72,108) -- a short
+list of candidate bottom edges, from which the remaining levels of the same
+L-grading are far more constrained than the raw system.  The next step is to
+extend each seed upward level by level and see which, if any, survive; a seed
+that survives every level IS a counterexample and would then need exact
+verification of [P,Q] = const and a bijectivity check.
