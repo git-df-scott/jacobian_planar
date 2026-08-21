@@ -156,3 +156,34 @@ WHAT SURVIVES intact (all exact, none numerical):
  * every exact msolve EMPTY verdict from the mod-p runs
 The structural case that B=16 is closed rests entirely on these, and is
 unaffected by the retraction.
+
+## NEW msolve SILENT-LIE MODE (06:00Z) — parse error written as EMPTY
+
+Discovered while hardening the seeded d=8 export.  If an input contains a
+CONSTANT generator whose integer value is a nonzero multiple of the
+characteristic, msolve refuses it:
+
+    Error when parsing term 1000003 (coefficient cannot be 0 modulo 1000003).
+    Error when reading file (exit but things need to be free-ed)
+
+and then **exits 0 having written "[-1]:" to the -o file** -- i.e. a PARSE
+FAILURE is indistinguishable from a genuine EMPTY verdict unless stderr is
+read.  Minimal reproduction: /tmp/ctl_zero.ms (generators "x-1" and the
+integer p).
+
+Consequence caught in the act: my first seeded d=8 chart-N run "returned
+EMPTY at both roots in 20 seconds" on a cell that had defeated 90 minutes
+unseeded.  That was this artifact -- the seeded row-0 row becomes exactly
+such a constant (the quadratic evaluated at its own root, an integer = 0
+mod p).  RETRACTED; the export now reduces every coefficient mod p, drops
+rows that vanish, and raises on a genuinely nonzero constant.  The honest
+hardened run is grinding (minutes, not seconds), as a real computation
+should.
+
+CONTAMINATION AUDIT: all 131 .ms files ever produced by this campaign were
+scanned for constant generators -- ZERO found.  Only tonight's two files
+(since regenerated) were ever affected, so no previously recorded verdict is
+touched.
+
+STANDING RULE ADDED: every msolve invocation must capture stderr, and any
+"[-1]" accompanied by a parse/read error is a FAILURE, never a verdict.
