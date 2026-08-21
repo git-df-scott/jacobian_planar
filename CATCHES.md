@@ -2027,3 +2027,47 @@ reconstruction by CRT from the modular runs is the cheap alternative).  And the
 Galois argument transfers "extends or not" between the five seeds over Q-bar --
 a mod-p verdict on one of them still needs the usual lifting before it says
 anything in characteristic zero.
+
+--------------------------------------------------------------------------------
+RETRACTION, 15 MINUTES OLD: the fifth prime falsified two claims I had just made.
+--------------------------------------------------------------------------------
+I reported, on four primes, that the nine bottom edges split as "4 degenerate
+over Q + 5 admissible forming ONE Galois orbit", and concluded that testing the
+single admissible seed decides all five, declaring the "four seeds invisible at
+p = 1000003" gap CLOSED.  A fifth prime, p = 1000081, kills both claims.
+
+    prime      rational (of 9)   admissible   degenerate
+    1000003          5               1            4
+    1000039          5               1            4
+    1000033          4               0            4
+    999983           4               2            2      <-- not 4
+    1000081          7               3            4
+
+RETRACTED (1): "four seeds are degenerate at EVERY prime, hence four linear
+factors over Q".  FALSE -- at p = 999983 only TWO of the rational roots are
+degenerate.  The degenerate count varies (4,4,4,2,4), so the degenerate part is
+not four rational seeds.
+
+RETRACTED (2): "the five admissible seeds form a single Galois orbit, therefore
+either all extend or none, therefore job #2 decides the whole family".  NOT
+ESTABLISHED.  The admissible counts are 1,1,0,2,3, averaging 1.40.  By Frobenius
+one orbit of size 5 averages 1.0 and two orbits average 2.0; 1.40 on five
+samples distinguishes neither.
+
+CONSEQUENCE, and it is the damaging one: the "four seeds invisible at
+p = 1000003" gap is NOT closed.  If the admissible seeds form two orbits, job #2
+decides only the orbit containing its own seed and the rest still require
+testing.  My earlier statement that the gap was closed is withdrawn.
+
+WHAT SURVIVES: the eliminant is definitely NOT irreducible.  Total rational-root
+counts average 5.0 across the five primes, so there are roughly five irreducible
+factors over Q.  And every seed extracted at every prime verifies against all 17
+bottom-edge equations, at every prime tested -- the extraction itself is sound.
+
+METHOD NOTE.  Four primes looked like a clean pattern (4,4,4,2 reads as "4 with
+one anomaly" if you want it to).  It was not a pattern; it was five samples of a
+statistic with real variance, and I announced a structure theorem off it.  The
+rule this earns: a Chebotarev-style average needs enough primes for its own
+error bar before it is quoted as structure -- and if the conclusion would close
+a gap or retire planned work, that is exactly when to want more samples, not
+fewer.  Six further primes launched.
