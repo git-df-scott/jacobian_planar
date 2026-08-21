@@ -9,5 +9,11 @@
   "name": "w6_35657_0",
   "verdict": "MS-TIMEOUT",
   "wall": 1800.4
+ },
+ {
+  "name": "w6_35657_1",
+  "verdict": "NO-OUTPUT-FAILURE",
+  "head": "",
+  "wall": 1204.5
  }
 ]

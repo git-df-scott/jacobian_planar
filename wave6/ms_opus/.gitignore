@@ -1,0 +1,3 @@
+# msolve/Singular intermediates: not part of the committed result set
+*.gens
+*_dump.sing
