@@ -67,3 +67,49 @@ std, hard-capped at 2.5GB / 900s so it cannot threaten the twin.
   surface in C^4 with pi_1 iso, pi_2 quasi-finite non-injective.
 - mod-p^k lifting of degenerate families: same L-S obstruction in p-adic
   form (Hensel), usable as a fast pre-filter at higher resonant levels.
+
+## Result 4 — the obstruction is EXACT and rank-one at d=3 (new, 01:40Z)
+
+Substituting the d=3 degenerate family (q1 = y^3 + mu3, A = -q1^2/4, with
+mu1 = mu2 = 0, a3 = -mu3/2, a6 = -1/4, rest zero) into the FULL GGV system
+with mu0 left symbolic: every equation vanishes identically EXCEPT one row,
+which equals exactly
+
+        R  =  6*mu0
+
+-- a nonzero constant multiple of mu0, with NO dependence on mu3 or any
+family parameter.  So the family solves the system iff mu0 = 0, and the
+obstruction never degenerates anywhere along the family.  That is precisely
+why GGV's d=3 cell is empty, and it is the exact mechanism behind the
+numerical walk's behaviour (below).
+
+## Result 5 — the numerical mu0-walk works, both controls pass
+
+wave6/w6_mu0walk.py implements homotopy continuation: find a mu0=0 point,
+then track it while mu0 is increased.  Newton correction per step; fixed
+memory; no Groebner basis anywhere.
+  W0 (tracker, synthetic path that must be tracked): PASS.  It also caught a
+     real bug first -- scipy LM needs #residuals >= #unknowns, so the
+     original underdetermined control failed; fixed by squaring the system.
+  W1 (mathematical negative control, d=3): 12 family points located at
+     residual ~1e-35, and EVERY walk breaks at the FIRST step with end
+     residual exactly 2.25e-8 = (6*s)^2 for step s = 2.5e-5 -- i.e. the
+     numerics reproduce R = 6*mu0 to full precision.  d=3 is proven empty,
+     so this is the required failure.
+
+## THE BIFURCATION CRITERION (what the hunt is now actually testing)
+
+For cell d let F_d be the mu0 = 0 degenerate family and let R_d(params, mu0)
+be the residual left by substituting F_d into the full system.  A
+counterexample bifurcates off F_d iff R_d can be driven to zero with
+mu0 != 0 -- i.e. iff the mu0-direction lies in the image of the
+linearisation at some family point (Lyapunov-Schmidt).
+  * d=3: R_3 = 6*mu0, a nonzero constant  ->  NO bifurcation, cell empty.
+  * general d: the -6*mu0*y^3 term of (1.3) lands in ONE coefficient row,
+    but at larger d that row also carries many family-dependent terms which
+    could cancel it.  Where such a cancellation is possible, a counterexample
+    exists -- and that is a LOCAL, linear-algebra question, not a Groebner
+    one, so it is computable at d = 12, 27, 48, ... where elimination is
+    hopeless.
+Hunt consequence: the target is no longer "solve cell d" but "find a family
+point where the mu0 obstruction degenerates".
