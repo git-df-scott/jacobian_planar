@@ -214,5 +214,29 @@
     "verdict": "obstructed"
    }
   ]
+ },
+ {
+  "d": 14,
+  "eqs": 62,
+  "vars": 41,
+  "G_constant": true,
+  "results": [
+   {
+    "root": "-3/212 + sqrt(42)/106",
+    "on_locus": true,
+    "rank_J": 29,
+    "rank_aug": 30,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   },
+   {
+    "root": "-sqrt(42)/106 - 3/212",
+    "on_locus": true,
+    "rank_J": 29,
+    "rank_aug": 30,
+    "BIFURCATION_POSSIBLE": false,
+    "verdict": "obstructed"
+   }
+  ]
  }
 ]
