@@ -1,0 +1,1 @@
+p=999979 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0
