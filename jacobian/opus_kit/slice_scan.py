@@ -69,7 +69,10 @@ def run_d(d):
     return {'d': d, 'verdict': v, 'head': data[:60], 'build_secs': build_secs,
             'solve_secs': round(time.time() - t1, 1), 'eqs': len(core), 'vars': len(vlist)}
 
+SKIP = set(int(x) for x in os.environ.get('SLICE_SKIP', '').split(',') if x)
 for d in [5, 7] + list(range(13, DMAX + 1)):
+    if d in SKIP:
+        continue
     r = run_d(d)
     r['control'] = d in (5, 7)
     print(json.dumps(r), flush=True)
