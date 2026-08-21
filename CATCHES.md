@@ -468,3 +468,47 @@ Related weaknesses in the same tool, worth knowing before relying on it:
 The exact-Q reduction logic itself was reviewed closure-site by closure-site
 and fuzzed on ~1900 systems with planted solutions: ZERO false closures.  The
 engine is sound over Q; it is the reporting and verification layer that is not.
+
+## FIRST DIRECT ATTACK ON THE BOTTOM-VERTEX PROBLEM (Saturday, exact over Q)
+
+Method (deliberately NOT elimination -- elimination clogs; this is pure rank):
+we possess one EXACT point, the witness, which satisfies the whole top of the
+tower and fails only the 7 low-weight equations with c_1_0 = 0.  So instead of
+solving the system, ask a LINEAR question at that point: can the witness be
+deformed to kill those 7 residuals and switch c_1_0 on?
+
+Computation, exactly over Q, no Groebner basis anywhere:
+    system            283 equations, 165 variables
+    residual F(w)     7 nonzero, at weights -2, 5, 6, 7
+    rank J(w)         163  (of 165)
+    J v = -F(w)       INFEASIBLE -- 2 inconsistent rows
+
+RESULT: **the witness admits NO first-order correction at all.**  It is not an
+infinitesimal limit of solutions.
+
+Two obstruction certificates extracted and INDEPENDENTLY VERIFIED (each is a
+vector lambda with lambda^T J(w) = 0 but <lambda, F(w)> != 0):
+
+  1. lambda supported on the SINGLE equation at bracket point (1,8), weight 7:
+       value at witness    F = -16   (nonzero)
+       gradient at witness ALL 165 partials ZERO
+     i.e. the witness is a CRITICAL POINT of that equation with nonzero value.
+     A rank-one, fully explicit obstruction: no perturbation moves F toward 0
+     at first order because the differential is identically zero there.
+
+  2. lambda supported on 4 equations, bracket points (1,9), (1,10), (5,12),
+     (9,16), with <lambda, F(w)> = 24.
+
+WHAT THIS DOES AND DOES NOT ESTABLISH.  It does NOT prove case (1) is empty: a
+solution could exist far from the witness, and this is a local statement at one
+point.  What it does establish is that the obvious bridge -- deform the known
+top-of-tower solution until the bottom vertex switches on -- is CLOSED, and
+closed for a concrete reason that can be written down and checked by hand.
+It also gives the first quantitative handle on the bottom-vertex problem, and
+the (1,8) equation is now a named, specific object to attack.
+
+NEXT (each cheap and grounded by this): second-order / Lyapunov-Schmidt at the
+witness restricted to ker J(w) (dim 2 in the domain, cokernel 120); ask whether
+the (1,8) critical point is isolated or sits in a positive-dimensional critical
+locus; and run the same rank test at OTHER exact points of the top variety if
+more can be constructed (the witness has a parameter t).
