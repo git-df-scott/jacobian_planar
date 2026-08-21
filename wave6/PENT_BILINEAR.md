@@ -106,3 +106,31 @@ Next for the numerical route, in order: an analytic VARPRO Jacobian
 (Golub–Pereyra / Kaufman) instead of the 110-point finite difference that made
 Newton too slow to finish a single control; then re-run P-POS. Until P-POS
 passes, the numerical hunt produces no admissible evidence in either direction.
+
+---
+
+## FINAL NUMERICAL VERDICT: multi-start is structurally powerless here
+
+The Kaufman Jacobian was found WRONG by finite-difference check (~50% relative
+error): it drops the anti-holomorphic Wirtinger term `-(G⁺)^H (dG/dθ)^H r`,
+which carries a factor of `r` and is therefore large away from a solution. The
+full Golub–Pereyra Jacobian was implemented and **verified against finite
+differences at 9.5e-08**, giving a ~200x speedup (10 starts in 46s, against 4
+starts unfinished in 900s).
+
+**P-POS still FAILS.** With a correct analytic Jacobian and a 200x faster
+solver, 10 random starts on a system with a *planted root that provably exists*
+reach only res² ≈ 3.7e+05. Combined with the ALS failure, the conclusion is
+structural rather than an implementation defect:
+
+> For a system overdetermined by 118, a root's basin of attraction in 110 real
+> dimensions is vanishingly small. **No random-multi-start local method can find
+> it — not ALS, not VARPRO-Newton, and not the 165-dimensional multi-start in
+> `w6_pentnum.py` either.** That planned hunt could never have produced
+> admissible evidence in either direction, and its absence of hits would have
+> meant nothing.
+
+This is worth more than a floor would have been: it retires a whole class of
+attack on this cell, and it says any future numerical route must start from a
+*known nearby solution* (continuation/homotopy from a deformed system), never
+from random points.
