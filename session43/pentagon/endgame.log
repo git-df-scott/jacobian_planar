@@ -18,3 +18,8 @@ L=  8: 2 gate(s) -> imposed ['g6_5', 'g6_8']
 L=  8: OK (3 eqs, 4 new, rank 3, kernel 1), residual 0
 
 === ENDGAME: levels 7 .. -2 (no new unknowns) ===
+L=  7: 5 nontrivial condition(s)
+L=  6: 8 nontrivial condition(s)
+L=  5: 8 nontrivial condition(s)
+L=  4: 8 nontrivial condition(s)
+L=  3: 8 nontrivial condition(s)
