@@ -103,7 +103,7 @@ In the full bilinear `(P,Q)` variables, the same point has rank 135 and tangent
 dimension 44.  The first-order movable vertices are `p_8_0`, `p_14_8`, and
 `q_12_0`; `p_16_8`, `q_21_12`, and `q_24_12` must appear at higher order.
 
-`formal_arc_probe.py` tests 20 simple leading-order schedules with
+`formal_arc_probe.py` tests 25 simple leading-order schedules with
 `P_top=t(1+t*u^4)^2` and `Q_top=t(1+t*u^4)^3`.  A planted constant arc lifts
 through order five and a forbidden first-order `p_16_8` is rejected.  None of
 the 20 **greedy particular lifts** passes order two.  This excludes no formal

@@ -63,8 +63,11 @@ def required_coefficients(order, p14_order, q21_order, top_edge=True):
 
 def lift(prime, max_order, p14_order, q21_order, jacobian, variables,
          equations, base, top_edge=True):
+    if max_order < 1:
+        raise ValueError("max_order must be positive")
     series = {variable: [base.get(variable, 0)] + [0] * max_order
               for variable in variables}
+    ranks = (0, 0)
     for order in range(1, max_order + 1):
         residual = [coefficient_at(poly, series, order, prime)
                     for _, poly in equations]
@@ -81,14 +84,15 @@ def lift(prime, max_order, p14_order, q21_order, jacobian, variables,
         # solve_affine solves M*x=-v, so pass v=-rhs.
         rank_m, rank_aug, consistent, solution = solve_affine(
             matrix, [(-value) % prime for value in rhs], prime)
+        ranks = (rank_m, rank_aug)
         if not consistent:
-            return series, order - 1, (rank_m, rank_aug)
+            return series, order - 1, ranks
         for variable, value in zip(variables, solution):
             series[variable][order] = value
         check = [coefficient_at(poly, series, order, prime)
                  for _, poly in equations]
         assert not any(check)
-    return series, max_order, (rank_m, rank_aug)
+    return series, max_order, ranks
 
 
 def main(prime=43, max_order=5):
@@ -136,8 +140,8 @@ def main(prime=43, max_order=5):
     print("PASS negative control rejects first-order p_16_8")
 
     successes = []
-    for p14_order in range(1, 5):
-        for q21_order in range(1, 6):
+    for p14_order in range(1, max_order + 1):
+        for q21_order in range(1, max_order + 1):
             series, reached, ranks = lift(
                 prime, max_order, p14_order, q21_order,
                 jacobian, variables, equations, base)
