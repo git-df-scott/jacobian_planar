@@ -1,0 +1,6 @@
+ring R = 65521, (d_3_3,d_4_5,d_5_7,d_6_9,d_7_11,d_8_13,d_9_15), lp;
+short=0;
+poly f = d_6_9^5;
+list L = factorize(f);
+"FACTORS:"; L[1];
+quit;

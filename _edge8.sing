@@ -1,0 +1,26 @@
+option(redSB);
+ring Rdp = 65521, (c(2..7), g(2..12)), dp;
+poly Ct; poly Gt;
+// rebuild the ideal directly in this ring using the explicit matrix formula:
+// coeff of t^n in L_C(t^i) is c_{n-i+1} * (5i - 3n - 3), with c_1 = c_8 = 1.
+proc cc(int k) { if (k == 1) { return(poly(1)); } if (k == 8) { return(poly(1)); }
+                 if (k >= 2 && k <= 7) { return(c(k)); } return(poly(0)); }
+ideal I;
+int n; int i;
+for (n = 2; n <= 19; n++) {
+  poly e = 0;
+  for (i = 2; i <= 12; i++) {
+    int k = n - i + 1;
+    if (k >= 1 && k <= 8) { e = e + g(i)*cc(k)*(5*i - 3*n - 3); }
+  }
+  if (n == 2) { e = e - 1; }
+  I = I + ideal(e);
+}
+ideal Gdp = std(I);
+"dp GB: dim = " + string(dim(Gdp)) + "  vdim = " + string(vdim(Gdp));
+ring Rlp = 65521, (c(2..7), g(2..12)), lp;
+ideal Glp = fglm(Rdp, Gdp);
+"lex GB size: " + string(size(Glp));
+int j;
+for (j = size(Glp); j >= size(Glp)-3; j--) { "  gen " + string(j) + ": " + string(Glp[j]); }
+quit;

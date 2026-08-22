@@ -1,0 +1,10 @@
+eliminator: 283 equations, 165 variables, nonzero=['c_1_0', 'c_8_14', 'd_12_21', 's_4_8'], normalize={}, mode=exact-Q
+  [t=1s] node 0: 10 rule apps, 275 eqs, largest eq 76 terms, total terms 8568
+  [t=2s] node 0: 20 rule apps, 265 eqs, largest eq 82 terms, total terms 9062
+  [t=4s] node 0: 30 rule apps, 255 eqs, largest eq 173 terms, total terms 14249
+  [t=7s] node 0: 40 rule apps, 245 eqs, largest eq 386 terms, total terms 28130
+  [t=14s] node 0: 50 rule apps, 235 eqs, largest eq 1426 terms, total terms 67008
+done in 16.6s; stats: {'r1_det': 3, 'r2': 46, 'enrich': 0, 'branch_nodes': 0, 'contra': 0, 'merged': 0, 'open_leaves': 1, 'capped': 0}
+tree: 1 nodes, 0 closed, 1 open leaves, 0 merged, 0 capped
+  open leaf 0 (depth 0): 233 eqs, 116 vars
+written: trackB1_reduced_tight.json

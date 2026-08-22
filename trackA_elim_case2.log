@@ -1,0 +1,6 @@
+eliminator: 92 equations, 69 variables, nonzero=['c_1_0', 'c_8_14', 'c_8_16', 'd_12_21', 'd_12_24'], normalize={'d_2_1': '1'}, mode=exact-Q
+done in 19.5s; stats: {'r1_det': 5, 'r2': 43, 'enrich': 0, 'branch_nodes': 1, 'contra': 0, 'merged': 0, 'open_leaves': 2, 'capped': 0}
+tree: 3 nodes, 0 closed, 2 open leaves, 0 merged, 0 capped
+  open leaf 1 (depth 1): 41 eqs, 20 vars
+  open leaf 2 (depth 1): 44 eqs, 22 vars
+written: trackA_reduced_system.json
