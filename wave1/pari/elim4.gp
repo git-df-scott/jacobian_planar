@@ -1,0 +1,11 @@
+default(parisize, 6000000000);
+s = concat(readstr("/tmp/elim_clean.txt"));
+V = eval(s);
+print("V type/len: ", type(V), " ", #V);
+print("V[2] len  : ", #V[2]);
+print("V[2][2] len: ", #V[2][2]);
+A = V[2][2];
+for(i=1, #A, print("  A[",i,"] type ", type(A[i]), " len ", if(type(A[i])=="t_VEC", #A[i], 0)));
+B = A[1];
+for(i=1, #B, print("    B[",i,"] type ", type(B[i]), " len ", if(type(B[i])=="t_VEC", #B[i], 0)));
+quit;

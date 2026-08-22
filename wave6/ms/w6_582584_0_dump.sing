@@ -1,0 +1,106 @@
+ring R = 65521, (c(1..40), w, u, x), dp;
+poly Pd0 = c(1)*x^0 + c(2)*x^1;
+poly Pd1 = c(3)*x^3 + c(4)*x^4;
+poly Pd2 = c(5)*x^5 + c(6)*x^6 + c(7)*x^7;
+poly Pd3 = c(8)*x^7 + c(9)*x^8 + c(10)*x^9 + c(11)*x^10 + c(12)*x^11;
+poly Pd4 = c(13)*x^10 + c(14)*x^11 + c(15)*x^12 + c(16)*x^13 + c(17)*x^14;
+poly Pd5 = c(18)*x^12 + c(19)*x^13 + c(20)*x^14 + c(21)*x^15 + c(22)*x^16 + c(23)*x^17;
+poly Pd6 = c(24)*x^14 + c(25)*x^15 + c(26)*x^16 + c(27)*x^17 + c(28)*x^18 + c(29)*x^19 + c(30)*x^20 + c(31)*x^21;
+poly Pd7 = c(32)*x^17 + c(33)*x^18 + c(34)*x^19 + c(35)*x^20 + c(36)*x^21;
+poly Pd8 = c(37)*x^19 + c(38)*x^20 + c(39)*x^21;
+poly Pd9 = c(40)*x^21;
+poly Pd10 = 0;
+poly Pd11 = 0;
+poly Pd12 = 0;
+poly Rr0 = 65520*x^2;
+poly Rr1 = 0;
+poly Rr2 = 0;
+poly Rr3 = 0;
+poly Rr4 = 0;
+poly Rr5 = 0;
+poly Rr6 = 0;
+poly Rr7 = 0;
+poly Rr8 = 0;
+poly Rr9 = 0;
+poly Rr10 = 0;
+poly Rr11 = 0;
+poly Rr12 = 0;
+poly p10 = c(2);
+poly Q0 = 0;
+poly Q1 = Rr0 * w;
+poly Q2 = (Rr1 + (1)*Pd1*diff(Q1, x) + (2)*Pd2*diff(Q0, x) + -(1)*diff(Pd1, x)*Q1) * w * 32761;
+poly Q3 = (Rr2 + (1)*Pd1*diff(Q2, x) + (2)*Pd2*diff(Q1, x) + -(2)*diff(Pd1, x)*Q2 + (3)*Pd3*diff(Q0, x) + -(1)*diff(Pd2, x)*Q1) * w * 43681;
+poly Q4 = (Rr3 + (1)*Pd1*diff(Q3, x) + (2)*Pd2*diff(Q2, x) + -(3)*diff(Pd1, x)*Q3 + (3)*Pd3*diff(Q1, x) + -(2)*diff(Pd2, x)*Q2 + (4)*Pd4*diff(Q0, x) + -(1)*diff(Pd3, x)*Q1) * w * 49141;
+poly Q5 = (Rr4 + (1)*Pd1*diff(Q4, x) + (2)*Pd2*diff(Q3, x) + -(4)*diff(Pd1, x)*Q4 + (3)*Pd3*diff(Q2, x) + -(3)*diff(Pd2, x)*Q3 + (4)*Pd4*diff(Q1, x) + -(2)*diff(Pd3, x)*Q2 + (5)*Pd5*diff(Q0, x) + -(1)*diff(Pd4, x)*Q1) * w * 52417;
+poly Q6 = (Rr5 + (1)*Pd1*diff(Q5, x) + (2)*Pd2*diff(Q4, x) + -(5)*diff(Pd1, x)*Q5 + (3)*Pd3*diff(Q3, x) + -(4)*diff(Pd2, x)*Q4 + (4)*Pd4*diff(Q2, x) + -(3)*diff(Pd3, x)*Q3 + (5)*Pd5*diff(Q1, x) + -(2)*diff(Pd4, x)*Q2 + (6)*Pd6*diff(Q0, x) + -(1)*diff(Pd5, x)*Q1) * w * 54601;
+poly Q7 = (Rr6 + (1)*Pd1*diff(Q6, x) + (2)*Pd2*diff(Q5, x) + -(6)*diff(Pd1, x)*Q6 + (3)*Pd3*diff(Q4, x) + -(5)*diff(Pd2, x)*Q5 + (4)*Pd4*diff(Q3, x) + -(4)*diff(Pd3, x)*Q4 + (5)*Pd5*diff(Q2, x) + -(3)*diff(Pd4, x)*Q3 + (6)*Pd6*diff(Q1, x) + -(2)*diff(Pd5, x)*Q2 + (7)*Pd7*diff(Q0, x) + -(1)*diff(Pd6, x)*Q1) * w * 56161;
+poly Q8 = (Rr7 + (1)*Pd1*diff(Q7, x) + (2)*Pd2*diff(Q6, x) + -(7)*diff(Pd1, x)*Q7 + (3)*Pd3*diff(Q5, x) + -(6)*diff(Pd2, x)*Q6 + (4)*Pd4*diff(Q4, x) + -(5)*diff(Pd3, x)*Q5 + (5)*Pd5*diff(Q3, x) + -(4)*diff(Pd4, x)*Q4 + (6)*Pd6*diff(Q2, x) + -(3)*diff(Pd5, x)*Q3 + (7)*Pd7*diff(Q1, x) + -(2)*diff(Pd6, x)*Q2 + (8)*Pd8*diff(Q0, x) + -(1)*diff(Pd7, x)*Q1) * w * 57331;
+poly Q9 = (Rr8 + (1)*Pd1*diff(Q8, x) + (2)*Pd2*diff(Q7, x) + -(8)*diff(Pd1, x)*Q8 + (3)*Pd3*diff(Q6, x) + -(7)*diff(Pd2, x)*Q7 + (4)*Pd4*diff(Q5, x) + -(6)*diff(Pd3, x)*Q6 + (5)*Pd5*diff(Q4, x) + -(5)*diff(Pd4, x)*Q5 + (6)*Pd6*diff(Q3, x) + -(4)*diff(Pd5, x)*Q4 + (7)*Pd7*diff(Q2, x) + -(3)*diff(Pd6, x)*Q3 + (8)*Pd8*diff(Q1, x) + -(2)*diff(Pd7, x)*Q2 + (9)*Pd9*diff(Q0, x) + -(1)*diff(Pd8, x)*Q1) * w * 58241;
+poly Q10 = (Rr9 + (1)*Pd1*diff(Q9, x) + (2)*Pd2*diff(Q8, x) + -(9)*diff(Pd1, x)*Q9 + (3)*Pd3*diff(Q7, x) + -(8)*diff(Pd2, x)*Q8 + (4)*Pd4*diff(Q6, x) + -(7)*diff(Pd3, x)*Q7 + (5)*Pd5*diff(Q5, x) + -(6)*diff(Pd4, x)*Q6 + (6)*Pd6*diff(Q4, x) + -(5)*diff(Pd5, x)*Q5 + (7)*Pd7*diff(Q3, x) + -(4)*diff(Pd6, x)*Q4 + (8)*Pd8*diff(Q2, x) + -(3)*diff(Pd7, x)*Q3 + (9)*Pd9*diff(Q1, x) + -(2)*diff(Pd8, x)*Q2 + (10)*Pd10*diff(Q0, x) + -(1)*diff(Pd9, x)*Q1) * w * 58969;
+poly Q11 = (Rr10 + (1)*Pd1*diff(Q10, x) + (2)*Pd2*diff(Q9, x) + -(10)*diff(Pd1, x)*Q10 + (3)*Pd3*diff(Q8, x) + -(9)*diff(Pd2, x)*Q9 + (4)*Pd4*diff(Q7, x) + -(8)*diff(Pd3, x)*Q8 + (5)*Pd5*diff(Q6, x) + -(7)*diff(Pd4, x)*Q7 + (6)*Pd6*diff(Q5, x) + -(6)*diff(Pd5, x)*Q6 + (7)*Pd7*diff(Q4, x) + -(5)*diff(Pd6, x)*Q5 + (8)*Pd8*diff(Q3, x) + -(4)*diff(Pd7, x)*Q4 + (9)*Pd9*diff(Q2, x) + -(3)*diff(Pd8, x)*Q3 + (10)*Pd10*diff(Q1, x) + -(2)*diff(Pd9, x)*Q2 + (11)*Pd11*diff(Q0, x) + -(1)*diff(Pd10, x)*Q1) * w * 11913;
+poly Q12 = (Rr11 + (1)*Pd1*diff(Q11, x) + (2)*Pd2*diff(Q10, x) + -(11)*diff(Pd1, x)*Q11 + (3)*Pd3*diff(Q9, x) + -(10)*diff(Pd2, x)*Q10 + (4)*Pd4*diff(Q8, x) + -(9)*diff(Pd3, x)*Q9 + (5)*Pd5*diff(Q7, x) + -(8)*diff(Pd4, x)*Q8 + (6)*Pd6*diff(Q6, x) + -(7)*diff(Pd5, x)*Q7 + (7)*Pd7*diff(Q5, x) + -(6)*diff(Pd6, x)*Q6 + (8)*Pd8*diff(Q4, x) + -(5)*diff(Pd7, x)*Q5 + (9)*Pd9*diff(Q3, x) + -(4)*diff(Pd8, x)*Q4 + (10)*Pd10*diff(Q2, x) + -(3)*diff(Pd9, x)*Q3 + (11)*Pd11*diff(Q1, x) + -(2)*diff(Pd10, x)*Q2 + (12)*Pd12*diff(Q0, x) + -(1)*diff(Pd11, x)*Q1) * w * 60061;
+ideal I;
+poly t; int e; matrix cf;
+t = Q1;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 2 || e-1 > 3) { I = I + ideal(cf[e, 1]); }
+}
+t = Q2;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 5 || e-1 > 7) { I = I + ideal(cf[e, 1]); }
+}
+t = Q3;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 7 || e-1 > 10) { I = I + ideal(cf[e, 1]); }
+}
+t = Q4;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 10 || e-1 > 14) { I = I + ideal(cf[e, 1]); }
+}
+t = Q5;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 12 || e-1 > 14) { I = I + ideal(cf[e, 1]); }
+}
+t = Q6;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  if (e-1 < 14 || e-1 > 14) { I = I + ideal(cf[e, 1]); }
+}
+t = Q7;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  I = I + ideal(cf[e, 1]);
+}
+t = Q8;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  I = I + ideal(cf[e, 1]);
+}
+t = Q9;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  I = I + ideal(cf[e, 1]);
+}
+t = Q10;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  I = I + ideal(cf[e, 1]);
+}
+t = Q11;
+cf = coeffs(t, x);
+for (e = 1; e <= nrows(cf); e++) {
+  I = I + ideal(cf[e, 1]);
+}
+poly nd = c(2) * c(31) * c(40);
+I = I + ideal(w*p10 - 1);
+I = I + ideal(u*nd - 1);
+"params: " + string(40);
+"conditions: " + string(size(simplify(I,2)));
+
+write(":w /home/user/jacobian_planar/wave6/ms/w6_582584_0.gens", string(simplify(I,2)));
+quit;

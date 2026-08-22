@@ -1,0 +1,14 @@
+{
+ "certified": [
+  "L1 formal (b/a)-root existence/uniqueness",
+  "L2 chain <=> sqrt agreement (2,3)",
+  "L3 first deviation block linear, coeff 2g^6",
+  "L4 ladder operator (per-tower decision)"
+ ],
+ "not_certified": [
+  "THEOREM 2 total rigidity",
+  "THEOREM 3 pole-fiber polynomiality"
+ ],
+ "pass": 13,
+ "fail": 0
+}

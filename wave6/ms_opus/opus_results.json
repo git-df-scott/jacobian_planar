@@ -1,0 +1,34 @@
+[
+ {
+  "name": "w6_35657_0",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4
+ },
+ {
+  "name": "w6_35657_2",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_2_dump.sing']' timed out after 900 seconds"
+ },
+ {
+  "name": "w6_35657_3",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_3_dump.sing']' timed out after 900 seconds"
+ },
+ {
+  "name": "w6_289012_0",
+  "verdict": "EMPTY",
+  "head": "[-1]:\n",
+  "wall": 0.1,
+  "nvars": 41
+ },
+ {
+  "name": "w6_35657_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1801.1,
+  "nvars": 23
+ },
+ {
+  "name": "p108_525122",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.3,
+  "nvars": 28
+ }
+]

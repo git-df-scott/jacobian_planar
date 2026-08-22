@@ -1,0 +1,16 @@
+option(redSB);
+ring Rdp = 65521, (c(2..7), g(2..12)), dp;
+proc cc(int k) { if (k == 1) { return(poly(1)); } if (k == 8) { return(poly(1)); }
+                 if (k >= 2 && k <= 7) { return(c(k)); } return(poly(0)); }
+ideal I; int n; int i; int k;
+for (n = 2; n <= 19; n++) { poly e = 0;
+  for (i = 2; i <= 12; i++) { k = n - i + 1;
+    if (k >= 1 && k <= 8) { e = e + g(i)*cc(k)*(5*i - 3*n - 3); } }
+  if (n == 2) { e = e - 1; }
+  I = I + ideal(e); }
+ideal Gdp = std(I);
+ring Rlp = 65521, (c(2..7), g(2..12)), lp;
+ideal Glp = fglm(Rdp, Gdp);
+int j;
+for (j = 1; j <= size(Glp); j++) { "GEN: " + string(Glp[j]); }
+quit;

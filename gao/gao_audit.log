@@ -1,0 +1,36 @@
+==============================================================================
+T5  GAO FAMILY MECHANISM AUDIT  (arXiv:2608.00222v1)
+==============================================================================
+    [PASS] section 3.5: the printed components of G equal the recipe of section 3.3 run with deg p = 3   exact match, all 3 components
+    [PASS] section 3.4: the printed components of F equal the recipe run with deg p = 2, after the stated component reversal
+
+  --- F_sec3.4_Alpoge  [2608.00222 section 3.4, p.6, Theorem 3.3] ---
+    [PASS] F_sec3.4_Alpoge: det J is a nonzero constant   det J = -2
+    [PASS] F_sec3.4_Alpoge: det J equals the printed value -2   computed -2
+    [PASS] F_sec3.4_Alpoge: component degrees equal the printed (7, 6, 4)   computed (7, 6, 4)
+    [PASS] F_sec3.4_Alpoge: a C*-weight structure exists and is found   [((-1, 1, 2), (2, 1, -1)), ((1, -1, -2), (-2, -1, 1))]
+      weights (-1, 1, 2): pi = (x*y, x**2*z), descent det J = 2*(3*u + v - 2)**2
+    [PASS] F_sec3.4_Alpoge: k from LEMMA W3-4a equals k from det J(descent) (weights (-1, 1, 2))   formula 2 vs direct 2
+
+  --- G_sec3.5  [2608.00222 section 3.5, p.7, Theorem 3.5] ---
+    [PASS] G_sec3.5: det J is a nonzero constant   det J = 2
+    [PASS] G_sec3.5: det J equals the printed value 2   computed 2
+    [PASS] G_sec3.5: component degrees equal the printed (4, 11, 12)   computed (4, 11, 12)
+    [PASS] G_sec3.5: a C*-weight structure exists and is found   [((-1, 1, 2), (-1, 1, 2)), ((1, -1, -2), (1, -1, -2))]
+      weights (-1, 1, 2): pi = (x*y, x**2*z), descent det J = 2*(4*u + v - 2)**2
+    [PASS] G_sec3.5: k from LEMMA W3-4a equals k from det J(descent) (weights (-1, 1, 2))   formula 2 vs direct 2
+
+  NON-INJECTIVITY WITNESSES
+    [PASS] section 3.4's printed witness: three distinct points with one image   images [(-1/4, 0, 0), (-1/4, 0, 0), (-1/4, 0, 0)]
+    [PASS] section 3.5's G: an exact non-injectivity witness was FOUND and verified by substitution   (Fraction(-3, 2), Fraction(2, 3), Fraction(8, 3)) and (Fraction(0, 1), Fraction(-2, 3), Fraction(-4, 1)) -> (Fraction(0, 1), Fraction(-4, 3), Fraction(0, 1))
+
+  NEGATIVE CONTROLS
+    [PASS] NEGATIVE: one corrupted coefficient makes det J non-constant   det J = 6*x**7*y**5*z + 18*x**6*y**6 + 27*x**6*y**4*z + 69*x**5*y**5 + 48*x**5*y**3*z + 94*x**4*y**4 + 42*x**4*y**2*z + 51*x**3*y**3 + 18*x**3*y*z + 6*x**2*y**2 + 3*x**2*z - 2*x*y - 2
+    [PASS] NEGATIVE: in the k=0 weight class (1,-1,0) BOTH routes give k = 0, i.e. the exponent is not hard-wired to 2   weights found True, det J upstairs = 1, formula k = 0, direct k = 0
+    [PASS] NEGATIVE: the witness verifier REJECTS a non-witness   (0,0,0) and (1,1,1) do not share an image
+
+  PORT-CANDIDATE flags: none
+
+==============================================================================
+    17/17 checks passed
+==============================================================================

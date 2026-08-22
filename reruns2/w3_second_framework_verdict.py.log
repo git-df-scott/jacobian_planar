@@ -1,0 +1,46 @@
+--- 1. D_ode and D_chain are different functions --------------------
+    D_ode   = 18 - 6*sigma/beta
+    D_chain = 3*beta - sigma
+    D_ode - D_chain = -(beta - 6)*(3*beta - sigma)/beta
+    => the coincidence at 13 is a property of beta = 6, not of the cusp.
+
+--- 2. my D < 15 claim, re-examined ---------------------------------
+    D(p=0, beta=6) = 16  -> the bound rests on p >= 1, which the record does not prove.
+    VERDICT: 'D < 15 hence D = 23 unreachable' is WITHDRAWN as stated.
+
+--- 3. k = 5 eps - 1, and 13, 23 are both unreachable ---------------
+    admissible k = [0, 4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54]
+    => realization needs map-degree D_chain = k; 13 and 23 are
+       unreachable for EVERY eps.  Both frameworks die on this alone.
+
+--- 4. the escape nobody closed: the 3|D family branch --------------
+    First (99,66)                D_ode= 13 k=4 D_chain= 13 -> unique degree 4  survives realization: False
+    First, hypothetical D=39     D_ode= 39 k=4 D_chain= 13 -> line   degree 13  survives realization: True
+    Second, D_ode = 23           D_ode= 23 k=4 D_chain= 23 -> unique degree 4  survives realization: False
+    Second, hypothetical D=69    D_ode= 69 k=4 D_chain= 23 -> line   degree 23  survives realization: True
+
+--- 5. VERDICT -------------------------------------------------------
+    WAVE2 'OPEN'  vs  WAVE3 'DEAD': wave 3 is right in direction and its
+    supersession is legitimate - but its label is stronger than its evidence.
+
+    Second Framework status, stated exactly:
+      DEAD, provided (i) its realization layer demands map-degree equal to its
+      chain degree 23, and (ii) its ODE coefficient D_ode is not 69 = 3 x 23.
+      (i) is the framework's own demand and is safe.  (ii) was unchecked when
+      this file was written; it is now COMPUTED in w3_second_framework_Dode.py:
+      D_ode = 69 eps / 5, so neither 23 nor 69 for any eps, and the framework
+      is dead outright.  The conditional label below is SUPERSEDED - kept as
+      the record of what was open before that number existed.
+
+    az3geq's 'D = deg((-2)-curve Belyi map), structural' is UNVERIFIED: it is
+    true of D_chain by definition and false of D_ode away from beta = 6.
+
+    my 'D < 15, so 23 is unreachable' is WITHDRAWN: correct at p = 3, but p = 3
+    is chart-specific and the record does not prove p >= 1 in general.
+
+    What survives with no conditions at all: k = 5 eps - 1, so k in {0,4,9,...},
+    and 13, 23 are both == 3 (mod 5).  The unique-solution branch can never meet
+    the realization demand for either framework.  Only the 3|D family branch
+    could; w3_second_framework_Dode.py closes it.
+
+w3_second_framework_verdict: 17/17 checks pass

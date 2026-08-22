@@ -1,0 +1,43 @@
+{
+ "hash": "f27a28a21a9bc6e615109a81ef93b578d6ffa6e09f373cbe7dc8b819ee98ab30",
+ "nvars": 72,
+ "neqs": 92,
+ "bracket_monomials": 92,
+ "checks": [
+  [
+   "J5a the c-support size matches the meta's SP_size",
+   true,
+   "25 vs 25"
+  ],
+  [
+   "J5b the d-support size matches the meta's SQ_size",
+   true,
+   "47 vs 47"
+  ],
+  [
+   "J5c every polygon vertex recorded in the meta is an extreme point of the corresponding support",
+   true,
+   "P [[0, 0], [1, 0], [8, 14], [8, 16]]  Q [[0, 0], [2, 1], [12, 21], [12, 24]]"
+  ],
+  [
+   "J1 POSITIVE: every JSON equation equals the corresponding coefficient of [P,Q] - x^2, exactly",
+   true,
+   "mismatched []"
+  ],
+  [
+   "J2 POSITIVE: every nonzero bracket coefficient has a JSON equation",
+   true,
+   "missing [] of 92"
+  ],
+  [
+   "J3 NEGATIVE: perturbing one JSON equation breaks the match",
+   true,
+   ""
+  ],
+  [
+   "J4 NEGATIVE: the same comparison against [Q,P] - x^2 FAILS, so the orientation is pinned",
+   true,
+   "92 of 92 equations disagree with the reversed bracket"
+  ]
+ ]
+}

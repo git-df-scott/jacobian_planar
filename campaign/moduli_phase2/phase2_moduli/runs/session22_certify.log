@@ -1,0 +1,202 @@
+
+Plane Jacobian campaign - Session 22
+THE CONTACT EXPONENT, DERIVED - AND THE D <= 3 WINDOW CLOSES.
+
+Session 21 instantiated the (5,2) skeleton at chain degree 3, found the
+pole-fiber lock relaxing, and produced c != 0 - but only under the
+ASSUMPTION that the contact exponent for a (5,2) cusp is k = 3.  This
+session derives k instead of assuming it, and the assumption turns out
+to be false: for a (5,2) cusp k = 6.  The window was never reachable.
+
+TWO CORRECTIONS TO SESSION 21, both material:
+
+  (i)  k = 3 for the (5,2) cusp is WRONG.  The derivation below gives
+       k = eps*(m+n) - 1, so a (5,2) cusp has k = 6 at eps = 1.  The
+       Session-21 "window is open" finding rested on k = D = 3 and does
+       not survive.  It is withdrawn.
+
+  (ii) Session 21's degree argument - that D = 3 lands inside Moh's
+       proven range via deg y1 = 3 + 12 deg p - is WITHDRAWN as well.
+       That template is (2,3)-specific and extrapolating it to (5,2)
+       was not safe (a plausible alternative scaling puts the degrees
+       ABOVE 100, not below).  It is no longer needed: the closure
+       below is structural and does not appeal to degree bounds.
+
+WHAT IS DERIVED HERE.
+
+RESULT 1 (the cusp identity, exact).  For a cusp y1^m = y2^n + W,
+    {y1, y2} = {W, y2} / ( m * (y2^n + W)^((m-1)/m) ),
+identically - the y2^{n-1} terms cancel, which is the precise sense in
+which the cusp part is Jacobian-silent.
+
+RESULT 2 (the endgame operator, derived not asserted).  With leading
+blocks y2 ~ q^-beta v^-gamma g^mu and W ~ q^-lambda v^-sigma g^nu R in
+the (q,v) chart, the bracket has the exact closed form
+
+  {W,y2} = q^(-lambda-beta-1) v^(-sigma-gamma) *
+           [ (lambda*gamma - beta*sigma) v^-1 g^(nu+mu) R
+             + (beta*nu - lambda*mu) g^(nu+mu-1) g' R
+             + beta g^(nu+mu) R' ]
+
+verified symbolically below.  Dividing by m*y2^(n(m-1)/m) gives
+    s = beta/m                     (coefficient of v R')
+    G = nu + mu - mu*n(m-1)/m      (g-power of the R terms)
+and the g' term carries g^(G-1).
+
+RESULT 3 (Session 18's master identity, re-derived).  Feeding the First
+Framework's own block data (beta,gamma,lambda,sigma,mu,nu) =
+(6,18,5,54,2,6) and the Session-13 rigidity g = alpha*(v+1)*v^8 into
+that closed form returns
+
+    alpha^5 (v+1)^4 ( 3 v(v+1) R' - 13 R ) = -c
+
+exactly, including the collapse identity 13(9v+8) - 117(v+1) = -13.
+Sessions 16-18 asserted this; it is now derived from the block data.
+That is an independent end-to-end validation of the campaign's central
+computation.
+
+RESULT 4 (the contact exponent).  Two of the block exponents are forced
+rather than free:
+    nu = mu*n     because W = y1^m - y2^n inherits g^(mu*n) from y2^n;
+    mu = m        because y2's leading block is an m-th power (the
+                  m-th-root structure that makes the cusp part silent).
+Then G = mu(m+n)/m = m+n, and with g = alpha*U^eps*(unit),
+    ord_U(g^G) = eps*G,   ord_U(g^(G-1) g') = eps*G - 1,
+so the contact exponent - the power of (v+1) that factors out - is
+
+    k = eps*(m+n) - 1.
+
+For (2,3) at eps = 1 this is 4, the First Framework's value.  For (5,2)
+it is 6, not the 3 Session 21 assumed.
+
+RESULT 5 (THE CLOSURE).  m and n are coprime cusp exponents with
+m, n >= 2, so m + n >= 5, and eps >= 1.  Hence
+
+    k = eps*(m+n) - 1 >= 4      for EVERY cusp type and every eps,
+
+with equality only at (m,n) = (2,3), eps = 1.  Session 20 showed
+self-consistency with the realization layer forces D = k, so D >= 4
+always; and Session 20's Belyi gate closes every D >= 4 uniformly.
+The D <= 3 window is therefore EMPTY - not because D <= 3 is
+combinatorially impossible, but because no cusp can produce a contact
+exponent that low.
+
+ROBUSTNESS.  The one extrapolated step is mu = m.  It is not load
+bearing: leaving mu free, the window needs G = mu(m+n)/m <= 4, i.e.
+mu <= 4m/(m+n) <= 4m/5 < m.  So the window requires y2's leading block
+to carry a g-power STRICTLY BELOW m, which contradicts its being an
+m-th power at all.  The closure survives without mu = m.
+
+NET.  Every gate is now closed: D >= 4 by the Belyi gate, D <= 3 by the
+contact exponent.  No cusp type, no cancellation depth, no eps, no
+chain degree.  The published constructive framework family supports no
+Keller map.
+
+AND, PLAINLY: no counterexample was found, here or in Sessions 19-21,
+and none is going to come out of this line of attack.  Every route the
+probes opened has closed under its own derivation.  This closes the
+family; it says nothing about the plane Jacobian conjecture itself,
+which remains open.
+
+Companion Singular routine: ../singular/contact_exponent.sing
+
+======================================================================
+RESULT 1  the cusp identity is exact, for every m and n
+======================================================================
+  [PASS] m=2, n=3:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+  [PASS] m=3, n=2:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+  [PASS] m=5, n=2:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+  [PASS] m=2, n=5:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+  [PASS] m=3, n=4:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+  [PASS] m=5, n=3:  {y1,y2} == {W,y2} / (m (y2^n+W)^((m-1)/m))
+   the y2^(n-1) terms cancel identically: the cusp part is
+   Jacobian-silent, for every cusp type, not just (2,3).
+
+======================================================================
+RESULT 2  closed form of the bracket on the leading blocks
+======================================================================
+  [PASS] the closed form is exact for symbolic block exponents
+   => s = beta/m,   G = nu + mu - mu*n(m-1)/m,   g' term carries g^(G-1)
+
+======================================================================
+RESULT 3  Session 18's master identity, re-derived from block data
+======================================================================
+   J * q^3 = (v*(13*R(v)*Derivative(g(v), v) + 3*g(v)*Derivative(R(v), v)) - 117*R(v)*g(v))*(g(v)**2)**(3/2)*g(v)/v**46
+  [PASS] J = alpha^5 v^-6 (v+1)^4 ( 3 v(v+1) R' - 13 R ),  q-exponent -3
+  [PASS] the collapse identity 13(9v+8) - 117(v+1) == -13
+   asserted in Sessions 16-18; derived here from the block data.
+  [PASS] (lambda*gamma - beta*sigma)/m == -117
+  [PASS] (beta*nu - lambda*mu)/m == 13
+  [PASS] beta/m == 3 == n  (so s = n, given beta = m n)
+  [PASS] G = nu + mu - mu*n(m-1)/m == 5
+
+======================================================================
+RESULT 4  the contact exponent  k = eps*(m+n) - 1
+======================================================================
+   nu = mu*n  (forced by W = y1^m - y2^n)  =>  G = mu*(m + n)/m
+   mu = m     (y2's leading block is an m-th power)  =>  G = m + n
+  [PASS] G = m + n
+  [PASS] on (2,3): G = 5 and k = eps*G - 1 = 4 at eps = 1
+   g = alpha*U^eps*(unit) => ord_U(g^G) = eps*G,
+                             ord_U(g^(G-1) g') = eps*G - 1
+   so the (v+1) power that factors out is  k = eps*(m+n) - 1.
+
+   cusp (m,n) | m+n | k at eps=1 | Session-21 assumed k | verdict
+      (2,3)    |   5 |          4 | 4 (correct)          | D = k >= 4
+      (2,5)    |   7 |          6 | -                    | D = k >= 4
+      (3,2)    |   5 |          4 | -                    | D = k >= 4
+      (3,4)    |   7 |          6 | -                    | D = k >= 4
+      (3,5)    |   8 |          7 | -                    | D = k >= 4
+      (4,3)    |   7 |          6 | -                    | D = k >= 4
+      (5,2)    |   7 |          6 | 3 (WRONG)            | D = k >= 4
+      (5,3)    |   8 |          7 | -                    | D = k >= 4
+      (5,4)    |   9 |          8 | -                    | D = k >= 4
+      (6,5)    |  11 |         10 | -                    | D = k >= 4
+      (7,2)    |   9 |          8 | -                    | D = k >= 4
+  [PASS] the (5,2) cusp has k = 6, refuting Session 21's k = 3
+
+======================================================================
+RESULT 5  THE CLOSURE - the D <= 3 window is empty
+======================================================================
+   m, n coprime cusp exponents with m, n >= 2  =>  m + n >= 5
+   eps >= 1  =>  k = eps*(m+n) - 1 >= 4
+   Session 20: self-consistency forces D = k  =>  D >= 4 always
+   Session 20: the Belyi gate closes every D >= 4
+  [PASS] the minimum contact exponent over all cusp types and eps is 4
+  [PASS] no (cusp type, eps) yields k <= 3
+
+   ROBUSTNESS (dropping mu = m):  the window needs
+   G = mu(m+n)/m <= 4, i.e. mu <= 4m/(m+n) <= 4m/5 < m -- y2's
+   leading block would have to carry a g-power strictly below m,
+   contradicting its being an m-th power at all.
+  [PASS] mu <= 4m/(m+n) forces mu < m for every cusp type
+
+======================================================================
+19/19 certifications passed.
+======================================================================
+
+FINAL STATE OF THE PROBE.
+
+  D >= 4 : closed by the Belyi gate (Session 20), uniformly in the cusp
+           exponent and with no upper bound on D.
+  D <= 3 : closed here - no cusp type can produce a contact exponent
+           k <= 3, and self-consistency forces D = k.
+
+  Every gate is shut.  The published constructive framework family -
+  First Framework, Second Framework, isotope series, and every cusp
+  type, cancellation depth and boundary order the generator can build -
+  supports no Keller map.
+
+  NO COUNTEREXAMPLE WAS FOUND, and this line of attack will not produce
+  one: each opening the probes found has closed under its own
+  derivation.  What Sessions 19-22 deliver is the death of the
+  constructive candidates and a derivation of the machinery that kills
+  them.  The plane Jacobian conjecture itself is untouched and remains
+  open.
+
+  Corrections issued along the way, all now folded in:
+    Session 19  D = 1 mod 6 admissibility        -> too narrow, withdrawn
+    Session 19  D = 13 uniquely rigid            -> scoped to delta = 3
+    Session 21  contact exponent k = 3 for (5,2) -> wrong, k = 6
+    Session 21  Moh degree argument at D = 3     -> unsafe, withdrawn
+

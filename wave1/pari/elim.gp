@@ -1,0 +1,12 @@
+default(parisize, 2000000000);
+s = readstr("/tmp/elim_coeffs.txt");
+v = eval(concat(concat("[", s[1]), "]"));
+f = sum(i=1, #v, v[i]*x^(i-1));
+print("degree            : ", poldegree(f));
+g = f/content(f);
+print("squarefree        : ", issquarefree(g));
+print("--- rational roots: any is a candidate Q-solution ---");
+r = polrootsQ(g);
+print("rational roots    : ", #r);
+if(#r>0, print(r));
+quit;

@@ -1,0 +1,20 @@
+--- 1. the degree input is the conclusion restated ------------------
+
+--- 2. witness A: v = 0 pole left open (script's own premise set) ---
+    W~ = U^2 (U^8 + 3U^5 - 7U + 5),  deg 10
+    R  = (U**8 + 3*U**5 - 7*U + 5)/(U**4*(U - 1)**9)
+
+--- 3. witness B: v = 0 pole CLOSED too (the stronger premise set) --
+    W~ = (U-1)^9 (U^13 + 5U^7 - 3U + 11),  deg 22
+    R  = (U**13 + 5*U**7 - 3*U + 11)/U**6
+
+--- 4. the repair is sound ONLY with its degree input ---------------
+    e.g. [(0, 0, 2), (0, 1, 1), (0, 2, 0), (1, 0, 2), (1, 1, 1), (1, 2, 0)]
+
+--- 5. NEG controls: the audit must not fire on sound reasoning -----
+
+--- 6. does any of this move the (99,66) verdict? -------------------
+    => THEOREM 3: downgrade CONFIRMED -> UNVERIFIED.
+    => (99,66): unaffected.  The endgame degree does the work.
+
+w3_theorem3_repair_audit: 24/24 checks pass

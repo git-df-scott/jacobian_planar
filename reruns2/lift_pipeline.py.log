@@ -1,0 +1,7 @@
+==============================================================================
+T4 -- lift pipeline controls
+==============================================================================
+    [PASS] L-POS a planted rational solution is lifted, reconstructed and verified exactly   VERIFIED-RATIONAL-POINT ['2/3', '-7/5', '11/13']
+    [PASS] L-NEG an irrational-only system (x^2 - 2, at q = 1000033 where 2 IS a square so the lift really runs) is NOT reported as a rational point   NOT-RECONSTRUCTIBLE: coordinate 968264063189492791750237030769013747 is not recon
+    [PASS] L-NEG2 a mod-p root with a singular Jacobian that does not lift makes the pipeline stall loudly instead of returning a point   LIFT-STALLED: the linearised system is INCONSISTENT mod 1000003 at step 0: the mod-p
+==============================================================================

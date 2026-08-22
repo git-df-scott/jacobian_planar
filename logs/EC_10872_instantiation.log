@@ -1,0 +1,39 @@
+--- 1. the read-off, validated at (99,66) ---------------------------
+  [PASS] y1 bidegree (27,72) = 9*(3,8) and 27+72 = 99
+  [PASS] y2 bidegree (18,48) = 6*(3,8) and 18+48 = 66
+  [PASS] q-pole orders from ord_q(x1^i x2^j) = j - 3i at the corners: gamma=9, beta=6
+  [PASS] deg P = (a+b) gamma and deg Q = (a+b) beta with a+b = 11
+  [PASS] gamma : beta = 3 : 2
+
+--- 2. the admissible (108,72) charts --------------------------------
+  [PASS] 11 does not divide 108: (108,72) cannot reuse the (99,66) edge vector
+    s = a+b must divide gcd(108,72) = 36; s in [1, 2, 3, 4, 6, 9, 12, 18, 36]
+  [PASS] the admissible s are exactly the divisors of 36
+    s= 1  gamma=108  beta=72  e=70  D=89/6   unique solution, map-degree 4
+    s= 2  gamma=54  beta=36  e=34  D=44/3   unique solution, map-degree 4
+    s= 3  gamma=36  beta=24  e=22  D=29/2   unique solution, map-degree 4
+    s= 4  gamma=27  beta=18  e=16  D=43/3   unique solution, map-degree 4
+    s= 6  gamma=18  beta=12  e=10  D=14   unique solution, map-degree 4
+    s= 9  gamma=12  beta=8  e=6  D=27/2   unique solution, map-degree 4
+    s=12  gamma=9  beta=6  e=4  D=13   unique solution, map-degree 4
+    s=18  gamma=6  beta=4  e=2  D=12   NO rational solution
+    s=36  gamma=3  beta=2  e=0  D=9   NO rational solution
+  [PASS] no admissible (108,72) chart gives an endgame solution of map-degree 13
+  [PASS] no admissible chart gives map-degree equal to any chain degree >= 5
+  [PASS] s = 12 reproduces beta = 6, D = 13, the First Framework's own endgame
+
+--- 3. the possible map-degrees at (108,72) --------------------------
+    s -> map-degrees: {1: (4,), 2: (4,), 3: (4,), 4: (4,), 6: (4,), 9: (4,), 12: (4,), 18: None, 36: None}
+  [PASS] wherever a solution exists, 4 is a map-degree that occurs
+  [PASS] a chain degree of 4 is impossible for a Borisov framework (First: 13, Second: 23), so every admissible chart closes
+
+--- 4. the explicit endgame solution at each admissible chart --------
+  [PASS] s=1 (beta=72, D=89/6): explicit degree-4 solution verified
+  [PASS] s=2 (beta=36, D=44/3): explicit degree-4 solution verified
+  [PASS] s=3 (beta=24, D=29/2): explicit degree-4 solution verified
+  [PASS] s=4 (beta=18, D=43/3): explicit degree-4 solution verified
+  [PASS] s=6 (beta=12, D=14): explicit degree-4 solution verified
+  [PASS] s=9 (beta=8, D=27/2): explicit degree-4 solution verified
+  [PASS] s=12 (beta=6, D=13): explicit degree-4 solution verified
+
+EC: ALL 19 CHECKS PASS

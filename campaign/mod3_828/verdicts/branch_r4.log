@@ -1,0 +1,11 @@
+[r4] edge basis (7 gens) + residual + Rabinowitsch
+  unsaturated: size
+30
+dim
+1
+  saturated: size
+1
+  SANITY I0 in saturated (0 = yes):
+0
+  IS <1> => branch r4 DEAD:
+1

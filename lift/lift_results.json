@@ -1,0 +1,75 @@
+{
+ "controls": [
+  [
+   "L-POS a planted rational solution is lifted, reconstructed and verified exactly",
+   true,
+   "VERIFIED-RATIONAL-POINT ['2/3', '-7/5', '11/13']"
+  ],
+  [
+   "L-NEG an irrational-only system (x^2 - 2, at q = 1000033 where 2 IS a square so the lift really runs) is NOT reported as a rational point",
+   true,
+   "NOT-RECONSTRUCTIBLE: coordinate 968264063189492791750237030769013747 is not recon"
+  ],
+  [
+   "L-NEG2 a mod-p root with a singular Jacobian that does not lift makes the pipeline stall loudly instead of returning a point",
+   true,
+   "LIFT-STALLED: the linearised system is INCONSISTENT mod 1000003 at step 0: the mod-p"
+  ]
+ ],
+ "targets": [
+  {
+   "prime": 1000003,
+   "K": 8,
+   "lift_note": "lifted to modulus p^8",
+   "modulus": 1000024000252001512005670013608020412017496006561,
+   "lifted_point": [
+    1,
+    1,
+    891129454299407479613771734568172226883834933551,
+    695984631027539732664045612141046755597654435242,
+    662834745277387837222827670783190020713572817283,
+    221469665599673684408553554757867660176957336648,
+    154473708734375385999870281719516272296640633886,
+    739077196416382156130201437710081461063230831909,
+    137542398889878297702181889621983366967057792340,
+    672557046095566000651903040744310690017121566700,
+    451916829680375521892134733287528090832090039162
+   ],
+   "reconstruction_note": "coordinate 154473708734375385999870281719516272296640633886 is not reconstructible at modulus 1000024000252001512005670013608020412017496006561",
+   "status": "NOT-RECONSTRUCTIBLE",
+   "target": "case2_w4_chart_one",
+   "root": 833845
+  },
+  {
+   "prime": 1000039,
+   "K": 8,
+   "lift_note": "lifted to modulus p^8",
+   "modulus": 1000312042591322025945922653669923161405441260481,
+   "lifted_point": [
+    1,
+    1,
+    711477253461766787417517713660413584900757430239,
+    433838569113206210215677581858404978763622783717,
+    20124455137901780887059516762637082471899117262,
+    338707023395914741941869640743047730746412667070,
+    75055412933981669054925265223680406066836534500,
+    58244645597131859779555604183295541791322971162,
+    953557965923896359482764094482436268757086813655,
+    757138591822812890078864836153882095092219635799,
+    377895691476007034956213427128805528969061868028
+   ],
+   "reconstruction_note": "coordinate 757138591822812890078864836153882095092219635799 is not reconstructible at modulus 1000312042591322025945922653669923161405441260481",
+   "status": "NOT-RECONSTRUCTIBLE",
+   "target": "case2_w4_chart_one",
+   "root": 794772
+  }
+ ],
+ "h2_queue": {
+  "verdicts": {
+   "EMPTY": 24,
+   "TIMEOUT": 14
+  },
+  "live": [],
+  "note": "the lift stage needs a mod-p SOLUTION; EMPTY and TIMEOUT targets produce none, so there is nothing to lift yet"
+ }
+}

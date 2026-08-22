@@ -1,0 +1,183 @@
+
+Plane Jacobian campaign - Session 35
+STEP 3: BREAKING THE COMPUTATIONAL WALL WITH A REAL GROEBNER ENGINE.
+
+Sessions 31-32 stopped at coefficient degree 2 on the h-branch because
+sympy's Groebner engine did not reach degree 3 - over Q it exceeded a
+3000 s budget and over F_32003 about 560 s.  That was recorded as a
+tooling limit.  This session removes the tool.
+
+ROUTE B of the brief: modular arithmetic over a large finite field,
+driven by Singular's engine (degrevlex, F_32003) instead of sympy's.
+Singular 4.3.2 was already installed and already used by seven routines
+in this repo; it had simply never been pointed at this system.  That was
+an oversight and it is corrected here.
+
+=====================================================================
+THE ENGINE MATTERS MORE THAN THE FIELD - MEASURED, NOT ASSUMED
+=====================================================================
+
+On the exact system that stopped Sessions 31-32 (k = 4, h = t,
+coefficient degree 3, 30 unknowns, quadratic equations):
+
+    sympy groebner over Q            > 3000 s     NO VERDICT
+    sympy groebner over F_32003      ~ 560 s      NO VERDICT
+    Singular std over F_32003        > 800 s      NO VERDICT
+    Singular slimgb over F_32003        11.3 s    EMPTY
+
+Three orders of magnitude, and it is not the arithmetic - std and slimgb
+run in the same field.  slimgb ("slim Groebner base") uses a different
+pair-selection and reduction strategy that suits sparse quadratic systems
+like this one.  Every case below therefore uses slimgb.
+
+RECORD THIS: "the computation is infeasible" was, twice over, a statement
+about the tool and not about the mathematics.
+
+NO COUNTEREXAMPLE.  What is gained is the degree boundary: the census
+that stopped at 2 now runs, and the point where it stops for real is
+identified.
+
+=====================================================================
+WHAT IS COMPUTED
+=====================================================================
+
+Two systems, both previously out of reach.
+
+(A) THE h-BRANCH CENSUS at sweep order k, coefficient degree D.
+    Phi = sum_{i<=k} s^i C_i(t) with C_k = (0, alpha h^k),
+    C_(k-1) = (beta h^(k-1), R), all other C_i free of degree <= D.
+    Impose det JPhi = const, invert (const . alpha . beta), and ask
+    whether the ideal is the unit ideal.  GB = {1} means NO SOLUTION.
+
+(B) THE (3,n) SLICE - the campaign's actual frontier.
+    Sessions 2-5 prove min(deg_y P, deg_y Q) <= 2 => tame; Sessions 3
+    and 6 call deg_y = 3 "the first slice the collapse machinery does
+    not decide", and Session 32 showed the h-branch at k = 4 IS that
+    slice.  With P = A y^3 + a2 y^2 + a1 y + a0 and Q of y-degree n, the
+    leading condition is
+
+        n A' B - 3 A B' = 0     =>     A = alpha h^3,  B = beta h^n
+
+    - the SAME "powers of a common h" structure the sweep cascade
+    produced in Session 30, which is why the two routes met.  That
+    structure is imposed and the rest is decided by Groebner.
+
+=====================================================================
+RESULT - see the run log for the live table
+=====================================================================
+
+Every case that completes is reported with its timing.  Cases that do not
+complete are reported with the REASON they did not - never as "empty".
+That distinction is what corrections 5-7 of this campaign exist to
+enforce, and it matters here: every unresolved case below is a MEMORY
+failure inside the time budget, not a slow computation.  Singular signals
+memory exhaustion two different ways - the Linux OOM killer (SIGKILL) and
+its own "no more memory" guard (halt 14) - and both are caught.
+
+=====================================================================
+HONEST FRAMING
+=====================================================================
+
+A modular Groebner run proves emptiness over F_p, not over Q.  Emptiness
+over F_p for a system with integer coefficients does imply emptiness over
+Q for THAT system (a rational solution with denominators prime to p
+reduces to an F_p solution); the converse fails, so "empty mod p" is a
+one-way certificate in the direction we want, provided p does not divide
+a denominator.  p = 32003 is fixed and the systems have small integer
+coefficients, so this is safe; but a second prime is run as a check.
+
+Non-emptiness mod p, by contrast, would prove nothing about Q - it would
+be a lead to chase, not a counterexample.
+
+==============================================================================
+(A)  THE h-BRANCH CENSUS - Singular slimgb, degrevlex, F_32003
+==============================================================================
+case                                 eqs   dim          verdict     secs
+k=4, h=t, deg<=1                      18    -1            EMPTY      0.0
+k=4, h=t, deg<=2                      27    -1            EMPTY      0.2
+k=4, h=t, deg<=3                      36    -1            EMPTY      9.1
+k=4, h=t, deg<=4                      45    -1            EMPTY     58.9
+k=4, h=t, deg<=5                      56    -1            EMPTY    204.5
+k=4, h=t, deg<=6                       -     -    OUT OF MEMORY    261.4
+k=4, h=t2, deg<=3                     47    -1            EMPTY      2.6
+k=4, h=t2, deg<=4                     55    -1            EMPTY     33.0
+k=4, h=t*(t-1), deg<=3                52    -1            EMPTY      2.5
+k=4, h=t*(t-1), deg<=4                59    -1            EMPTY     37.7
+k=4, h=t2+t+1, deg<=3                 54    -1            EMPTY      2.4
+k=5, h=t, deg<=2                      40    -1            EMPTY      1.5
+k=5, h=t, deg<=3                      52    -1            EMPTY     37.8
+k=5, h=t, deg<=4                       -     -    OUT OF MEMORY    162.1
+k=5, h=t, deg<=5                       -     -    OUT OF MEMORY    420.0
+k=5, h=t2, deg<=3                     67    -1            EMPTY     14.0
+k=5, h=t*(t-1), deg<=3                78    -1            EMPTY     10.0
+k=6, h=t, deg<=2                      55    -1            EMPTY      5.6
+k=6, h=t, deg<=3                      70    -1            EMPTY      7.1
+k=6, h=t, deg<=4                       -     -    OUT OF MEMORY    217.6
+k=7, h=t, deg<=3                      90    -1            EMPTY     10.1
+  [PASS] the h-branch census now reaches coefficient degree 3 or more (13 such cases completed; sympy reached none)
+  [PASS] every completed h-branch case is EMPTY
+
+==============================================================================
+(B)  THE (3,n) SLICE - deg_y P = 3, the campaign's frontier
+==============================================================================
+   leading condition n A' B - 3 A B' = 0  =>  A = alpha h^3, B = beta h^n
+   (the same 'powers of a common h' structure as the Session-30 cascade)
+case                                 eqs   dim          verdict     secs
+(3,4) slice, h=x, deg<=1              18    -1            EMPTY      0.0
+(3,4) slice, h=x, deg<=2              27    -1            EMPTY      0.5
+(3,4) slice, h=x, deg<=3              36    -1            EMPTY     15.8
+(3,4) slice, h=x, deg<=4              45    -1            EMPTY     92.5
+(3,5) slice, h=x, deg<=1              24    -1            EMPTY      0.0
+(3,5) slice, h=x, deg<=2              34    -1            EMPTY      1.4
+(3,5) slice, h=x, deg<=3              45    -1            EMPTY     37.4
+(3,5) slice, h=x, deg<=4              56    -1            EMPTY    635.8
+(3,7) slice, h=x, deg<=1              32    -1            EMPTY      0.1
+(3,7) slice, h=x, deg<=2              46    -1            EMPTY      4.9
+(3,7) slice, h=x, deg<=3              61    -1            EMPTY      8.7
+(3,8) slice, h=x, deg<=2              51    -1            EMPTY      4.7
+(3,10) slice, h=x, deg<=2             61    -1            EMPTY      6.6
+(3,4) slice, h=x2, deg<=2             35    -1            EMPTY      0.3
+(3,4) slice, h=x2, deg<=3             47    -1            EMPTY      3.9
+(3,4) slice, h=x*(x-1), deg<=2        43    -1            EMPTY      0.2
+(3,4) slice, h=x*(x-1), deg<=3        52    -1            EMPTY      4.0
+(3,5) slice, h=x*(x-1), deg<=2        56    -1            EMPTY      1.0
+  [PASS] the (3,n) slice is now decidable at all (18 cases completed; this slice had never been run)
+
+==============================================================================
+SECOND PRIME - guarding against an unlucky characteristic
+==============================================================================
+   k=4, h=t, deg<=2 @ p=1000003             EMPTY - agrees with p=32003: True  (0.0s)
+   k=4, h=t, deg<=3 @ p=1000003             EMPTY - agrees with p=32003: True  (4.7s)
+   k=5, h=t, deg<=2 @ p=1000003             EMPTY - agrees with p=32003: True  (0.1s)
+  [PASS] the two primes agree wherever both completed
+
+==============================================================================
+4/4 certifications passed.
+==============================================================================
+UNRESOLVED - reported as such, NOT as empty.  Note the reason:
+    k=4, h=t, deg<=6  (out of memory, 261s)
+    k=5, h=t, deg<=4  (out of memory, 162s)
+    k=5, h=t, deg<=5  (out of memory, 420s)
+    k=6, h=t, deg<=4  (out of memory, 218s)
+
+STEP 3 COMPLETE.  NO COUNTEREXAMPLE.
+
+  The wall was the TOOL, not the mathematics - twice over.  sympy could
+  not reach coefficient degree 3; Singular's default std could not either;
+  slimgb does it in 11 seconds.  With that engine the h-branch census
+  reaches degree 5, and the (3,n) slice - which no session had ever run -
+  is decided across four values of n and three shapes of h.
+
+  Every completed case is EMPTY.  Every case that did not complete ran out
+  of MEMORY inside its time budget, and is labelled that way rather than
+  as a timeout and certainly not as empty.  The boundary is now RAM, so a
+  bigger machine or an F4/FGLM engine buys degrees directly.
+
+  Emptiness mod p is a one-way certificate in the direction wanted: a
+  rational solution with denominators prime to p would reduce to a
+  solution mod p.  Two primes agree wherever both finished.
+
+  This is evidence, not a theorem.  The deg_y = 3 slice is not proved
+  empty - it is empty everywhere anyone has been able to look, which is
+  now a good deal further than before.
+

@@ -1,0 +1,10 @@
+default(parisize, 10000000000);
+s = concat(readstr("/tmp/param_clean.txt"));
+V = eval(s);
+A = V[2][6][2];
+print("A len: ", #A);
+for(i=1,#A, print("  A[",i,"] type ",type(A[i])," len ",if(type(A[i])=="t_VEC",#A[i],0)));
+E = A[1];
+print("A[1] len: ", #E, " types: ", type(E[1]), " ", if(#E>1, type(E[2]), ""));
+if(type(E[1])=="t_VEC", print("  A[1][1] len = ", #E[1]));
+quit;

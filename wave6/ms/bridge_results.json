@@ -1,0 +1,37 @@
+[
+ {
+  "name": "w6_35657_0",
+  "verdict": "NO-OUTPUT",
+  "head": "",
+  "wall": 43.6
+ },
+ {
+  "name": "w6_35657_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 600.5
+ },
+ {
+  "name": "w6_35657_2",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_2_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_3",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_3_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_4",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_4_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_5",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_5_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_6",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_6_dump.sing']' timed out after 120 seconds"
+ },
+ {
+  "name": "w6_35657_7",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms/w6_35657_7_dump.sing']' timed out after 120 seconds"
+ }
+]
