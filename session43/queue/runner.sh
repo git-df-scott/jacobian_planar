@@ -28,6 +28,20 @@ verdict_of() {  # $1 = outfile, $2 = exit code
   echo "NONEMPTY_OR_POSDIM (raw: $(head -c 60 "$1" | tr '\n' ' '))"
 }
 
+# ERRATA A16: msolve silently mis-parses parentheses and reports basis [1] --
+# a false EMPTY with exit 0 and no warning.  Refuse such input outright.
+guard_msolve() {
+  for f in "$@"; do
+    case "$f" in
+      *.ms) if grep -q '(' "$f"; then
+              echo "REFUSED: $f contains parentheses; msolve would report a false EMPTY (A16)"
+              return 1
+            fi ;;
+    esac
+  done
+  return 0
+}
+
 run_job() {   # name, memcap_kb, timeout_s, command...
   name=$1; cap=$2; tmo=$3; shift 3
   [ -f "$Q/done/$name" ] && return 0
@@ -52,16 +66,18 @@ run_job() {   # name, memcap_kb, timeout_s, command...
 }
 
 # ---- the queue -------------------------------------------------------------
-# Upper-edge theorem SUBSTITUTED into Codex's degree-2 polynomial-Q export,
-# eliminating 22 variables: 170 vars, inside msolve's exponent-hash ceiling
-# (~180) where the 214-var additive form is not.  -g 2 decides emptiness at any
-# dimension.  Substitution controls (value-preserving + negative) PASS.
-# Timeout 2400s: the container restarts about hourly, so a longer job can never
-# finish -- a 7200s Singular run was killed mid-flight at 16:43 for exactly this.
-run_job upper_subst_g2 none 2400 \
-  msolve -t 2 -g 2 -f /tmp/red/subst.ms -o "$Q/upper_subst_g2.out"
+# Upper-edge theorem SUBSTITUTED into Codex's degree-2 polynomial-Q export and
+# FULLY EXPANDED (no parentheses -- A16).  170 vars, 306 eqs, 8513 terms, inside
+# msolve's exponent-hash ceiling where the 214-var additive form is not.
+# -g 2 decides emptiness at any dimension.  Controls: substitution is
+# value-preserving on all 306 equations (PASS), negative control (PASS), and the
+# untouched original runs >120s under msolve rather than collapsing instantly.
+guard_msolve /tmp/red/subst_exp.ms && \
+run_job upper_subst_exp_g2 none 2400 \
+  msolve -t 2 -g 2 -f /tmp/red/subst_exp.ms -o "$Q/upper_subst_exp_g2.out"
 
-# Same theorem in ADDITIVE form (214 vars, all degree 2) -- Singular's lane.
+# Same theorem in ADDITIVE form (214 vars, all degree 2) -- Singular's lane,
+# which parses parentheses correctly.
 run_job reduced_sing none 2400 Singular -q /tmp/red/reduced.sing
 
 log "QUEUE COMPLETE"
