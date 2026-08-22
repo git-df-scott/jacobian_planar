@@ -90,7 +90,29 @@ def main():
         assert coefficient(rhs8, 8) == 0
         invert_diagonal(8, rhs8, sp.Symbol("theta"))
 
-    print("PASS: level 16 iff F0=F1=a0^3*lambda=0; no sigma^6 ladder")
+    # Concrete characteristic-zero witness for the disputed a0=0 branch.
+    # All displayed rows retain their exact allowed degree.
+    witness = {
+        c0: 1, c1: 1, lam: 1, kappa: 0, eta: 0,
+        **{value: 0 for value in a + b + d},
+        a[4]: 1, b[8]: 1, d[7]: 1,
+    }
+    h8 = c0 * z**8
+    numeric_rhs8 = sp.cancel(-carried16.subs(witness) / (8 * z**7))
+    numeric_W8 = invert_diagonal(8, numeric_rhs8, sp.Integer(0))
+    numeric_g8 = numeric_W8  # choose h4=0 in W8=g8-(3c1/2c0)z^4h4
+    complete_levels = (
+        pairing(8, h8, 11, g11) + pairing(7, h7, 12, g12),
+        pairing(8, h8, 10, g10) + carried18,
+        pairing(8, h8, 9, g9) + carried17 + pairing(5, h5, 12, g12),
+        pairing(8, h8, 8, numeric_g8) + carried16,
+    )
+    assert all(sp.expand(level.subs(witness)) == 0 for level in complete_levels)
+    assert sp.degree(h7.subs(witness), z) == 8
+    assert sp.degree(h6.subs(witness), z) == 8
+    assert sp.degree(h5.subs(witness), z) == 7
+
+    print("PASS: exact level-16 branches and explicit a0=0 witness")
 
 
 if __name__ == "__main__":

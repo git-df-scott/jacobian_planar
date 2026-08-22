@@ -81,3 +81,12 @@ wall by the exact branching condition (1).
 `pentagon_level16.py` verifies every formula symbolically, retains all three
 kernel constants, checks both branches, checks the `D_8` resonance, and
 reconstructs a complete level-16 solution.
+
+It also supplies a concrete characteristic-zero witness for the potentially
+rank-dropping first branch: `c_0=c_1=lambda=1`, `a_4=b_8=d_7=1`, with every
+other `a_i,b_i,d_i` and both earlier kernel constants zero.  Thus
+`h_7=z^8,h_6=z^8,h_5=z^7`; coefficientwise reconstruction gives `g_10,g_9,g_8`
+and direct substitution makes the complete levels 19, 18, 17, and 16 vanish.
+All three displayed rows retain exact degree.  This witness is independent of
+generic `solve()[0]` case choices and proves that the first branch is genuinely
+alive at level 16.
