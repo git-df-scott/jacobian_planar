@@ -28,21 +28,31 @@ print(f"start: {len(conds)} conditions, {len(free(conds))} parameters", flush=Tr
 
 assumptions, branches, elim = [], [], {}
 
+def prim(c):
+    """primitive part, monic in the sorted-variable order -- a cheap canonical
+    signature for 'equal up to a nonzero scalar'.  Uses Poly content, NOT
+    factor_list, which is catastrophically slow on big multivariate input."""
+    vs = sorted(c.free_symbols, key=str)
+    P = sp.Poly(c, *vs)
+    P = P.primitive()[1]
+    lc = P.LC()
+    if lc != 0: P = P.quo_ground(lc) if lc.is_Integer else P
+    return P.as_expr()
+
 def reduce_all(C):
-    out = []
+    out, seen = [], set()
     for c in C:
-        c = sp.expand(sp.numer(sp.together(sp.cancel(c))))
-        if c == 0: continue
-        if c.is_number:
-            print(f"\n*** condition reduced to the nonzero constant {c} ***")
+        c = sp.cancel(c)
+        n, _d = sp.fraction(c)
+        n = sp.expand(n)
+        if n == 0: continue
+        if n.is_number:
+            print(f"\n*** condition reduced to the nonzero constant {n} ***")
             print("*** THIS COMPONENT IS EMPTY ***", flush=True); sys.exit(0)
-        out.append(c)
-    # dedupe up to a scalar factor
-    seen, uniq = [], []
-    for c in out:
-        p = sp.factor_list(c); core = sp.prod([b**e for b, e in p[1]])
-        if core not in seen: seen.append(core); uniq.append(c)
-    return uniq
+        sig = sp.srepr(prim(n))
+        if sig in seen: continue
+        seen.add(sig); out.append(n)
+    return out
 
 conds = reduce_all(conds)
 for step in range(200):

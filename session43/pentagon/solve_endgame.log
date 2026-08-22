@@ -1,2 +1,3 @@
 start: 59 conditions, 19 parameters
 step   0 [R1] g1_1 = -(12*g4_4*g9_8 + 24*g5_4*g8_8 - 48*g5_4*g9_8 - 18*g5_4*h4_4 - 48*g5_4 - 4*g7_8*g9_8**2 - 1   -> 55 conditions, 18 parameters
+step   1 [R1] g2_2 = -(768*g4_6*g7_8 - 1536*g4_6*g8_8 + 2304*g4_6*g9_8 - 48*g5_4*g9_10 - 768*g5_6*g7_8 + 1536*g   -> 54 conditions, 17 parameters
