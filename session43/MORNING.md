@@ -161,6 +161,27 @@ times).  Evidence, not proof — and the first version of that sweep reported al
 84 cases as hits because I had not excluded the trivial root `t = 0`, which is
 the base point itself.  Recorded.
 
+## Local structure, and a retraction
+
+At points of both families the Jacobian is far from full rank — tangent space
+**8** where family A has dimension 4, and **28** where family B has dimension 1.
+So both families sit at deeply singular points.  Of the 28 tangent directions at
+family B, **32 coordinates with x-degree `i >= 2` are touched**, so first-order
+deformations out of the affine-in-x locus do exist — a real gap in the earlier
+one-coefficient sweep, which could only move one coordinate at a time.  But
+`p_16_8` does **not** appear in the tangent space at all, so no first-order
+deformation reaches the saturation vertex.
+
+**Retracted:** I then built an order-by-order lift and it reported 0 of 28
+directions surviving to order 8 — a strong local-rigidity claim.  Its control
+refutes it: family B's own tangent direction is tangent to a curve that
+demonstrably lies in the variety (66/66 at `lambda = 2, 3, 6`), and the code
+calls it obstructed at order 4.  The correction at each order is determined only
+modulo a 28-dimensional kernel, and my greedy choice manufactures obstructions.
+What survives is the order-2 test, which is choice-independent: **23 of 28
+directions are genuinely obstructed at order 2**, so at most 5 can be tangent to
+curves, and at least 1 is.  Details in `pentagon/LOCAL.md`.
+
 ## What I would do next
 
 1. **Fix the export.**  Saturate the corner (`z * p_16_8 - 1`) and re-ask.  Until
