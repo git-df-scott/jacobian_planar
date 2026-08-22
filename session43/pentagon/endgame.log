@@ -1,0 +1,9 @@
+L= 19: OK (12 eqs, 12 new, rank 12, kernel 0), residual 0
+L= 18: OK (12 eqs, 12 new, rank 12, kernel 0), residual 0
+L= 17: OK (12 eqs, 15 new, rank 12, kernel 3), residual 0
+L= 16: OK (11 eqs, 14 new, rank 11, kernel 3), residual 0
+L= 15: OK (10 eqs, 13 new, rank 10, kernel 3), residual 0
+L= 14: OK (9 eqs, 15 new, rank 9, kernel 6), residual 0
+L= 13: OK (8 eqs, 13 new, rank 8, kernel 5), residual 0
+L= 12: OK (7 eqs, 11 new, rank 7, kernel 4), residual 0
+L= 11: OK (6 eqs, 8 new, rank 6, kernel 2), residual 0
