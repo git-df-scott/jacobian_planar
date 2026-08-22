@@ -1,0 +1,3 @@
+### p108_525122
+p108_525122.ms: 140 equations, 28 variables, p=65521
+    leaf [c_4=0;c_3=0;c_7=0;] -> NOVERDICT  (29 eq / 23 vars (timeout/crash))

@@ -68,11 +68,29 @@ def solve_leaf(eqs, allvars, p, tag):
                        capture_output=True, text=True)
     o = r.stdout
     if 'LEAF EMPTY' in o:
-        return 'EMPTY', f'{len(live)} eq / {len(vs)} vars'
+        return 'EMPTY', f'{len(live)} eq / {len(vs)} vars [slimgb]'
     if 'LEAF NONEMPTY' in o:
         d = re.search(r'dim:\s*\n?\s*(-?\d+)', o)
-        return 'NONEMPTY', f'{len(live)} eq / {len(vs)} vars, dim={d.group(1) if d else "?"}'
-    return 'NOVERDICT', f'{len(live)} eq / {len(vs)} vars (timeout/crash)'
+        return 'NONEMPTY', (f'{len(live)} eq / {len(vs)} vars, '
+                            f'dim={d.group(1) if d else "?"} [slimgb]')
+    # SECOND ENGINE (Air France 447): slimgb stalled, so try msolve on this leaf
+    # before declaring no verdict.  The two engines have beaten each other on
+    # different systems tonight, so neither gets to be the sole authority.
+    ms = f'{SCR}/leaf_{tag}.ms'
+    open(ms, 'w').write(",".join(vs) + f"\n{p}\n" + ",\n".join(body) + "\n")
+    r2 = subprocess.run(['bash', '-c',
+                         f'ulimit -v {MEM_KB}; timeout {LEAF_TIMEOUT} '
+                         f'msolve -f {ms} -o {ms}.out 2>/dev/null'],
+                        capture_output=True, text=True)
+    try:
+        v = open(f'{ms}.out').read().strip()
+    except OSError:
+        v = ''
+    if v.startswith('[-1]'):
+        return 'EMPTY', f'{len(live)} eq / {len(vs)} vars [msolve]'
+    if v.startswith('[0'):
+        return 'NONEMPTY', f'{len(live)} eq / {len(vs)} vars [msolve]'
+    return 'NOVERDICT', f'{len(live)} eq / {len(vs)} vars (both engines: no verdict)'
 
 
 def branch(eqs, zeros, nonzeros, allvars, p, depth, path, out, cap=40):
