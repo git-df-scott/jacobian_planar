@@ -42,8 +42,21 @@ These did not.  Recorded plainly: the rank-5 diagnosis explains why the original
 runs could not terminate, but removing five dimensions does not by itself make
 these two decidable.  They are simply bigger objects (1.6 MB and 1.4 MB).
 
-Next: Singular on the sliced systems (different engine; msolve OOM'd on one of
-them), and the `v = 0` strata, which a single chart does not cover.
+Singular on the sliced shape 2 (28 vars, the smaller one, and the one msolve
+OOM'd on):
+
+| system | engine | budget | outcome |
+|---|---|---|---|
+| `p108_525122_sliced` | Singular `slimgb` | 2400 s | exit 124, "halt 1", 0 bytes — **NO VERDICT** |
+
+So **both engines, on the sliced system, at 25–40 minute budgets**: undecided.
+Peak memory stayed at ~320 MB, so this is a time wall, matching every other
+degree-2 system today.
+
+Still untried: `msolve -g 2` (Groebner-only), which decides emptiness at *any*
+dimension and is cheaper than solve mode — the right tool given that Cor 5.7's
+claim IS emptiness.  Also untried: the `v = 0` strata, which a single chart does
+not cover.
 
 ## Status
 
