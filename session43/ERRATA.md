@@ -252,3 +252,36 @@ again: **run the controls before reading the output**, and **check the arithmeti
 of the search space before spending the search** (`pent_slice.py` died of exactly
 this, catalogued as C3: codim-45 random slices cannot meet a low-dimensional
 variety).  This is the same error as C3 with different numbers.
+
+## A16 — msolve silently mis-parses parentheses and reports a FALSE EMPTY
+
+`build_subst.py` substituted the upper-edge theorem into Codex's export, writing
+the replacements parenthesised: `p_16_8 -> (c0*(g0*g0+...))`.  msolve returned in
+**0 seconds** with `#length of basis: 1 element` and `[1]:` — the whole ring,
+i.e. **no solutions**.
+
+That is not a result.  Demonstration, two files differing only by parentheses:
+
+    x,y / 1000003 / x*y-1, x+y        ->  basis of 2 elements   (CORRECT)
+    x,y / 1000003 / (x)*(y)-1, x+y    ->  basis [1]             (FALSE)
+    x,y / 1000003 / x-1, x-2          ->  basis [1]             (genuinely empty)
+
+msolve's `.ms` reader wants **fully expanded** polynomials.  Given parentheses it
+does not error, does not warn, and exits 0 — it reports the ideal as `(1)`, which
+is indistinguishable from a real emptiness proof.
+
+**Any parenthesised `.ms` file fed to msolve yields a spurious EMPTY.**  The
+0-second wall time is the only tell, and only if you look.  I looked because a
+170-variable system finishing instantly is impossible, not because the verdict
+looked wrong — the verdict looked like exactly the result I was hoping for.
+
+Two consequences recorded:
+1. `session43/queue/runner.sh` now refuses to run msolve on any input containing
+   `(`, and treats a 0-second msolve completion as NO VERDICT.
+2. `/tmp/red/reduced.ms` (the 214-variable additive form) also contains
+   parentheses.  It is **Singular-only**; Singular parses them correctly.
+
+This is the campaign's fourth instance of a tool's silence being read as a
+verdict (C6, A3, A14, A16), and the first where the false reading was EMPTY
+rather than "no solution" — i.e. the first that would have been reported as a
+mathematical claim about the Jacobian conjecture.

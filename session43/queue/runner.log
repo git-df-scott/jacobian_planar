@@ -11,3 +11,4 @@
 2026-08-22T16:29:28Z START reduced_sing cap=nonekb timeout=7200s
 2026-08-22T16:45:02Z START upper_subst_g2 cap=nonekb timeout=2400s
 2026-08-22T16:45:02Z END upper_subst_g2 exit=0 wall=0s verdict=NONEMPTY_OR_POSDIM (raw: #Reduced Groebner basis data #--- #field characteristic: 100)
+2026-08-22T16:45:03Z START reduced_sing cap=nonekb timeout=2400s
