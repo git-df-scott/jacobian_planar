@@ -71,3 +71,10 @@ leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
 VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
 ### wave4/artifacts/probe_w4m4_real_p1000003.ms
 probe_w4m4_real_p1000003.ms: 19 equations, 20 variables, p=1000003
+    leaf [] -> NOVERDICT  (14 eq / 15 vars (both engines: no verdict))
+
+leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
+  unresolved leaf:   14 eq / 15 vars (both engines: no verdict)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+RANKED DONE

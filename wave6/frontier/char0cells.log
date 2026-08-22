@@ -1,2 +1,11 @@
 ### wave5/ms2/b16r_d5_A_q.ms
 b16r_d5_A_q.ms: 20 equations, 15 variables, p=0
+    leaf [b2=0;] -> EMPTY  (19 eq / 14 vars [slimgb])
+    leaf [b2!=0;] -> EMPTY  (19 eq / 14 vars [slimgb])
+
+leaves: 2  EMPTY=2  NONEMPTY=0  NOVERDICT=0
+
+VERDICT: EMPTY -- every branch of an exhaustive split is empty
+### wave5/ms2/b16r_d6_A_q.ms
+b16r_d6_A_q.ms: 24 equations, 18 variables, p=0
+    leaf [b2=0;] -> NOVERDICT  (23 eq / 17 vars (char 0, slimgb only))
