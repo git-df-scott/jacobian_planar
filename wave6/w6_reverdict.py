@@ -95,9 +95,25 @@ def run(rel, nv, ne):
 def main():
     os.makedirs(SCR, exist_ok=True)
     todo = cells()
+    # RESUME: the container restarted mid-run once and killed every process
+    # abruptly. Completed cells are already in reverdict.json, so skip them
+    # rather than paying for them again on each restart.
+    done = {}
+    jp = os.path.join(ROOT, 'wave6/reverdict.json')
+    if os.path.exists(jp):
+        try:
+            for r in json.load(open(jp)):
+                if r['status'] in ('EMPTY', 'NONEMPTY', 'MALFORMED'):
+                    done[r['file']] = r
+        except Exception:
+            done = {}
+    if done:
+        print(f"resuming: {len(done)} cells already decided, skipping them",
+              flush=True)
+    todo = [t for t in todo if t[2] not in done]
     print(f"NOVERDICT cells to re-run: {len(todo)}  "
           f"(budget {T}s / {int(MEM)//1000}MB each, was 150s/3000MB)", flush=True)
-    res = []
+    res = list(done.values())
     t0 = time.time()
     for i, (nv, ne, rel) in enumerate(todo):
         st, info = run(rel, nv, ne)
