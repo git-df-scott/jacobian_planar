@@ -1,2 +1,9 @@
 ### wave5/ms/m16_d6_p1000003.ms
 m16_d6_p1000003.ms: 22 equations, 17 variables, p=1000003
+    leaf [] -> EMPTY  (22 eq / 17 vars [msolve])
+
+leaves: 1  EMPTY=1  NONEMPTY=0  NOVERDICT=0
+
+VERDICT: EMPTY -- every branch of an exhaustive split is empty
+### wave5/ms/m16_d7_p1000033.ms
+m16_d7_p1000033.ms: 26 equations, 20 variables, p=1000033
