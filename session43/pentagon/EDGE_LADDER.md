@@ -89,19 +89,116 @@ So **`(y - r)` divides `A_7` as well**.
 
 ### Rung 16 — no new condition.
 
-## Why this matters
+### Rung 15 — `A_7'(r)^2 = 4 alpha A_6(r)`
 
-`(y-r)` divides `A_8` (twice), `B_12` (three times), `B_11`, and `A_7`.  If the
-cascade continues down the edge it forces `A_i(r) = 0` for every `i >= 1`, i.e.
-`P(x, r)` constant in `x` — the whole top edge degenerating on a single line.
-That would be a solver-free structural obstruction on the pentagon, obtained
-where four Groebner attempts across two representations returned NO VERDICT.
+10 equations, 8 unknowns, `rank(Mat) = 7`.  The rank drop is the ODE's **free
+constant of integration**; it is carried as a symbol from here down, never chosen
+(lesson A3).  Only the `(i,k) = (8, d-7)` term carries the new unknown, so `Mat`
+depends on `A_8` alone and the residual conditions are exactly
+`{ n . vec = 0 : n in leftnull(Mat) }` — one nullspace instead of 405 dense
+symbolic minors.  Left-null dimension 3, and all three collapse to the single
+
+    **A_7'(r)^2 = 4 alpha A_6(r)** .
+
+This is why the hypothesis `A_6(r) = 0` failed under test: the condition is a
+**coupling** between `A_6` and `A_7`, not a vanishing.  Five hypotheses of the
+form "`A_i(r) = 0` for various i" were each refuted at three independent random
+points before the nullspace computation gave the true condition.
+
+### Rung 14 — no new condition.
+
+### Rung 13 — one cubic relation
+
+12 equations, 11 unknowns, rank 10.  One new condition, a cubic coupling
+`A_5(r)`, the `A_6` coefficients, `A_7'(r)` and `alpha`:
+
+    4 alpha^2 sum_j a5_j  -  2 alpha (sum_j j*a6_j)(sum_j c7_j)  +  (cubic in c7) = 0
+
+(written out in full in `rung14.log`; `sum_j a5_j = A_5(r)` at the gauge `r = 1`).
+
+### Rung 12 — no new condition.  **The descent terminates.**
+
+With all four conditions imposed, rungs 17, 16, 15, 14, 13 and 12 are each
+consistent with no further condition.  Below `d = 12` the edge ladder no longer
+closes (the `i = 0` and `k <= 1` rows join in), so this is the whole of it.
+
+## The interpretation: the edge polynomial of P must have a regular square root
+
+The top rung gave `B_12^2 = zeta A_8^3`, i.e. `Q ~ P^{3/2}` along the edge.  So
+write the reversed edge polynomial `Psi(z) = sum_i A_{8-i} z^i` and expand
+
+    sqrt(Psi)  =  s (y - r) * sqrt(1 + u),   u = (Psi - A_8)/A_8,   alpha = s^2,
+               =  c_0 + c_1 z + c_2 z^2 + c_3 z^3 + ...
+
+Each `c_i` may acquire a pole at `y = r`.  **Requiring no pole reproduces the
+descent exactly, condition for condition:**
+
+| rung | descent condition | square-root statement |
+| --- | --- | --- |
+| 19 | `disc(A_8) = 0` | `c_0 = s(y-r)` exists at all |
+| 17 | `A_7(r) = 0` | `c_1` regular |
+| 15 | `A_7'(r)^2 = 4 alpha A_6(r)` | `c_2` regular |
+| 13 | the cubic above | `c_3` regular |
+| 18, 16, 14, 12 | none | (no `c_i` at even rungs) |
+
+The `c_2` match is exact.  For `c_3` the *leading* Laurent coefficient factors as
+`A_7'(r) x (rung-15 condition)` and so dies automatically once rung 15 holds; the
+genuine condition is the **subleading** coefficient, and with rung 15 imposed it
+equals the rung-13 condition **on the nose, ratio exactly 2**.
+
+So the entire edge ladder is one statement:
+
+> **The pentagon's edge polynomial for `P` must admit a square root regular at
+> `y = r`, through order `z^3`.**
+
+This is GGV's shape analysis at `(72,108)`, obtained mechanically from the
+bracket rather than by case analysis — which is precisely what Path D's D1 asks
+for ("implement the shape analysis as a program rather than a case analysis").
+
+## Controls
+
+* **Reduction.** `raw rung == y^(2d-4) * edge rung`, symbolically, all `A_i, B_k`
+  free functions of `y`, every `d = 12..19`: **PASS**.
+* **Rung formula.** Re-checked against the direct bracket expansion at `m=8,
+  n=12`: **PASS**.
+* **Rung 19, negative.** `A_8 = (y-1)(y-3)` (disc != 0) forces `B_12 = 0`, killing
+  the vertex `q_21_12`: **PASS**.
+* **Rung 19, positive.** `A_8 = (y-1)^2` gives `B_12 = b3 (y-1)^3`, a genuine
+  1-parameter family with `B_12^2/A_8^3` constant: **PASS**.
+* **Sufficiency (positive, end-to-end within the edge).**  With the four
+  conditions imposed and all remaining `A_i` left free and symbolic, the descent
+  runs 17 -> 12 with **zero** further conditions.  So the four are sufficient for
+  the edge ladder, not merely necessary.
+* **Necessity (negative).**  Each condition arose as a nonzero left-null pairing,
+  and the "impose nothing" control is inconsistent at rung 15 at three
+  independent random points.
+* **Independent cross-check.**  The square-root criterion was derived without
+  reference to the descent and reproduces conditions 3 and 4 exactly.
+* **Not available:** an end-to-end positive control on a genuine map with this
+  Newton polygon, because no such map is known — that is the open question
+  itself.  Every step is controlled; the composite is not, and cannot be.
+
+## What this buys the search
+
+Each of the four conditions is **rationally solvable**, so they reduce the
+pentagon's parameter space with no algebraic extension:
+
+    disc(A_8) = 0        ->  p_16_8 = alpha, p_15_8 = -2 alpha r, p_14_8 = alpha r^2
+                             (3 coefficients -> 2 parameters)
+    A_7(r) = 0           ->  solves linearly for one A_7 coefficient
+    rung 15              ->  solves linearly for one A_6 coefficient
+    rung 13              ->  solves linearly for one A_5 coefficient
+
+That is **four dimensions removed** from every downstream solver target, plus
+closed forms for `B_12, B_11, B_10, B_9, B_8, B_7`, obtained with no Groebner
+basis at all — in a search where four Groebner attempts across two
+representations have returned NO VERDICT, two of them on genuine memory ceilings.
 
 ## Status
 
-Rungs 19, 18, 17, 16: **done and controlled.**  Rungs 15..12: running
-(`cascade.py`, log in `cascade.log`).  No verdict is claimed on the pentagon
-until the cascade terminates.
+**The edge descent is complete.**  It yields four necessary conditions and no
+more.  It does **not** decide the pentagon: these constrain the leading edge
+only, and the pentagon remains **NO VERDICT**.
 
-Scope caveat carried from `GENERAL_LADDER.md`: polynomial `Q` is assumed, which
-a genuine counterexample satisfies and the truncated 66-condition export does not.
+Scope caveat carried from `GENERAL_LADDER.md`: polynomial `Q` is assumed, which a
+genuine counterexample satisfies and the truncated 66-condition export does not.
