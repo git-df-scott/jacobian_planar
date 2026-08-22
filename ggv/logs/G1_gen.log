@@ -1,0 +1,52 @@
+PASS all primes are 1 mod 3   [[1000003, 1000033, 1000039]]
+PASS d=8 quasi-homogeneous core (weight_check)
+PASS d=8 chart A: no constant generator   [[]]
+PASS d=8 A p=1000003: header+char+row-count intact   [rows=32 expected=32 bytes=12068]
+PASS d=8 A p=1000033: header+char+row-count intact   [rows=32 expected=32 bytes=12068]
+PASS d=8 A p=1000039: header+char+row-count intact   [rows=32 expected=32 bytes=12068]
+PASS d=8 chart B: no constant generator   [[]]
+PASS d=8 B p=1000003: header+char+row-count intact   [rows=32 expected=32 bytes=10657]
+PASS d=8 B p=1000033: header+char+row-count intact   [rows=32 expected=32 bytes=10657]
+PASS d=8 B p=1000039: header+char+row-count intact   [rows=32 expected=32 bytes=10657]
+  d=8: generated in 4.26s  A:32eq/24var  B:32eq/23var
+PASS d=9 quasi-homogeneous core (weight_check)
+PASS d=9 chart A: no constant generator   [[]]
+PASS d=9 A p=1000003: header+char+row-count intact   [rows=36 expected=36 bytes=17455]
+PASS d=9 A p=1000033: header+char+row-count intact   [rows=36 expected=36 bytes=17455]
+PASS d=9 A p=1000039: header+char+row-count intact   [rows=36 expected=36 bytes=17455]
+PASS d=9 chart B: no constant generator   [[]]
+PASS d=9 B p=1000003: header+char+row-count intact   [rows=36 expected=36 bytes=15622]
+PASS d=9 B p=1000033: header+char+row-count intact   [rows=36 expected=36 bytes=15622]
+PASS d=9 B p=1000039: header+char+row-count intact   [rows=36 expected=36 bytes=15622]
+  d=9: generated in 5.99s  A:36eq/27var  B:36eq/26var
+PASS d=10 quasi-homogeneous core (weight_check)
+PASS d=10 chart A: no constant generator   [[]]
+PASS d=10 A p=1000003: header+char+row-count intact   [rows=40 expected=40 bytes=24353]
+PASS d=10 A p=1000033: header+char+row-count intact   [rows=40 expected=40 bytes=24353]
+PASS d=10 A p=1000039: header+char+row-count intact   [rows=40 expected=40 bytes=24353]
+PASS d=10 chart B: no constant generator   [[]]
+PASS d=10 B p=1000003: header+char+row-count intact   [rows=40 expected=40 bytes=22029]
+PASS d=10 B p=1000033: header+char+row-count intact   [rows=40 expected=40 bytes=22029]
+PASS d=10 B p=1000039: header+char+row-count intact   [rows=40 expected=40 bytes=22029]
+  d=10: generated in 8.78s  A:40eq/30var  B:40eq/29var
+PASS d=11 quasi-homogeneous core (weight_check)
+PASS d=11 chart A: no constant generator   [[]]
+PASS d=11 A p=1000003: header+char+row-count intact   [rows=44 expected=44 bytes=33544]
+PASS d=11 A p=1000033: header+char+row-count intact   [rows=44 expected=44 bytes=33544]
+PASS d=11 A p=1000039: header+char+row-count intact   [rows=44 expected=44 bytes=33544]
+PASS d=11 chart B: no constant generator   [[]]
+PASS d=11 B p=1000003: header+char+row-count intact   [rows=44 expected=44 bytes=30649]
+PASS d=11 B p=1000033: header+char+row-count intact   [rows=44 expected=44 bytes=30649]
+PASS d=11 B p=1000039: header+char+row-count intact   [rows=44 expected=44 bytes=30649]
+  d=11: generated in 11.06s  A:44eq/33var  B:44eq/32var
+PASS d=12 quasi-homogeneous core (weight_check)
+PASS d=12 chart A: no constant generator   [[]]
+PASS d=12 A p=1000003: header+char+row-count intact   [rows=48 expected=48 bytes=44974]
+PASS d=12 A p=1000033: header+char+row-count intact   [rows=48 expected=48 bytes=44974]
+PASS d=12 A p=1000039: header+char+row-count intact   [rows=48 expected=48 bytes=44974]
+PASS d=12 chart B: no constant generator   [[]]
+PASS d=12 B p=1000003: header+char+row-count intact   [rows=48 expected=48 bytes=41431]
+PASS d=12 B p=1000033: header+char+row-count intact   [rows=48 expected=48 bytes=41431]
+PASS d=12 B p=1000039: header+char+row-count intact   [rows=48 expected=48 bytes=41431]
+  d=12: generated in 13.99s  A:48eq/36var  B:48eq/35var
+ALL PASS

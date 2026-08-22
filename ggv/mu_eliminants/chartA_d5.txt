@@ -1,0 +1,81 @@
+# GGV B=16 mu-eliminant -- chart A, d = deg(q1) = 5
+# builder: wave5/w5_b16_reduce.py::reduced_charts(5)['A']
+# field: GF(1000003)  (p = 1 mod 3)
+# surviving variables: mu0, mu3
+# every a_i, every b_i and the saturation variable t are eliminated
+# exact polynomials below; an empty generator list means the ZERO ideal,
+# a lone '1' means the UNIT ideal <1> (no admissible root)
+
+======================================================================
+SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve
+======================================================================
+engine: msolve -e 13 -g 2
+status: TIMEOUT
+n_generators_in: 20
+n_eliminated: 13
+peak_rss_kb: -1
+wall_s: 300.29
+exit: TIMEOUT
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d5_sat.msolve.ms
+generators:
+  <none: run did not produce an artifact>
+
+======================================================================
+SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine Singular
+======================================================================
+engine: Singular eliminate()
+status: TIMEOUT
+n_generators_in: 20
+n_eliminated: 13
+peak_rss_kb: -1
+wall_s: 300.07
+exit: TIMEOUT
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d5_sat.sing
+generators:
+  <none: run did not produce an artifact>
+
+======================================================================
+UNSATURATED (saturation generator removed) -- engine msolve
+======================================================================
+engine: msolve -e 12 -g 2
+status: TIMEOUT
+n_generators_in: 19
+n_eliminated: 12
+peak_rss_kb: -1
+wall_s: 300.28
+exit: TIMEOUT
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d5_unsat.msolve.ms
+generators:
+  <none: run did not produce an artifact>
+
+======================================================================
+UNSATURATED (saturation generator removed) -- engine Singular
+======================================================================
+engine: Singular eliminate()
+status: NO-OUTPUT
+n_generators_in: 19
+n_eliminated: 12
+peak_rss_kb: 397528
+wall_s: 291.69
+exit: 1
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartA_d5_unsat.sing
+generators:
+  <none: run did not produce an artifact>
+
+======================================================================
+CONTROLS NOT RUN -- primary elimination produced no artifact
+======================================================================
+engine: -
+status: NOT-RUN
+n_generators_in: 0
+n_eliminated: 13
+peak_rss_kb: -1
+wall_s: 0
+exit: -
+mem_policy: oom_score_adj=1000, no vm cap
+generators:
+  <none: run did not produce an artifact>

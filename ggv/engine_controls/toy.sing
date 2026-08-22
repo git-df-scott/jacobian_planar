@@ -1,0 +1,8 @@
+option(redSB);
+ring R = 1000003,(u,v,x,y),dp;
+ideal I = u-x-y, v-x*y, x^2+y^2-1;
+ideal E = eliminate(I,x*y);
+E = std(E);
+int i; for (i=1;i<=size(E);i++) { print(E[i]); }
+print("SINGULAR_DONE");
+quit;
