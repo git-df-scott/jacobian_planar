@@ -197,3 +197,49 @@ That is also exactly where the memory wall sits. Every ladder clears 4 and 5
 cheaply and dies at 6. The Macaulay matrices at degree 6 are large for these
 blocks, and 3.5 GB and 4.5 GB were both insufficient — those deaths are
 `halt 14`, a cap I set, not a property of the problem.
+
+## The decisive block has only TWO nonlinear variables
+
+Measured on `tb1_sq_sat.sing` (61 vars, 61 eqs, 535 terms, p=1000003):
+
+| | root | 61-block |
+|---|---|---|
+| c-block | 51 | **23** |
+| d-block | 110 | **35** |
+| s-block (all the nonlinearity) | 4 | **2** |
+| affine-linear in c | 283/284 | 60/61 |
+| affine-linear in d | 284/284 | 61/61 |
+| terms | 8,774 | **535** |
+| max degree | 5 | 5 |
+
+The block inherits the root's structure but far more sharply. Degree histogram:
+one linear row, 44 quadrics, 10 cubics, 5 quartics, one quintic.
+
+**Why this matters and has not yet been exploited.** With only *two* variables
+carrying nonlinearity, the elimination that was hopeless on the root becomes
+plausible here. On the root, eliminating the 51-variable c-block by Cramer meant
+51×51 determinants of polynomials in 114 remaining variables — degree ~50 in 114
+variables, dead on arrival. On the block it means a 23×23 determinant of
+polynomials in **2 remaining variables**. A degree-~46 polynomial in two
+variables is a completely ordinary object: factorable, solvable, and decidable
+by resultants.
+
+**Route not yet run:** eliminate c (23, linear) and d (35, linear) from the
+block symbolically, leaving a system in the 2 s-variables plus the saturation
+variable. Solve that outright. If it is empty, the block is empty, and by
+monotonicity **trackB1 is empty** — a verdict without any Gröbner basis at all.
+
+This is the most promising untried lead in the campaign and it should be the
+next session's first move if the degree-6 rung does not land.
+
+## Process error, repeated: `pkill -f` matching its own shell
+
+Twice tonight `pkill -f '<pattern>'` killed the shell running it, because that
+shell's command line contained the pattern. The first time it suspended a
+status command harmlessly. The second time it killed the running degree-6 job
+*and* died before reaching the relaunch line, leaving **nothing running for four
+minutes** while the logs looked like a normal shutdown.
+
+Fix: kill by PID, or keep the pattern out of the command that greps for it. The
+failure is silent and looks exactly like a clean process exit, which is what
+makes it worth writing down rather than just not repeating.
