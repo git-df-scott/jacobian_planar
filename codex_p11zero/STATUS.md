@@ -99,6 +99,31 @@ middle required `P` vertices, but not `p_16_8`; the top vertex therefore appears
 only at higher order.  This is consistent with the square-top-edge geometry
 and explains why coordinate-sparse probes miss the live directions.
 
+## Full sparse bilinear target
+
+`bilinear_full.py` keeps every supported Q coefficient and imposes the complete
+polynomial identity `{P,Q}=x^2`, rather than only the 66 truncated L23
+conditions.  It substitutes `p_1_1=0` and uses separate Rabinowitsch variables
+for the chart condition and all six mutable Newton vertices, preserving maximum
+degree two.
+
+The independent generator was symbolically compared with the hash-pinned
+302-equation exact-Q source `trackA_system_case1.json`.  After the stated
+gauges and `p_1_1=0`, all source equations reduce exactly to the generator's
+299 bracket equations.  With seven saturation rows the exported target has:
+
+```text
+186 variables
+306 equations
+degree <= 2
+6,924 terms
+125,784 bytes
+```
+
+The generated modular file is `p11zero_full_sat_p1000003.ms`.  No compatible
+solver is installed in this environment, so generation and validation do not
+constitute a solve.
+
 ## Reproduction
 
 Run with Python 3:
@@ -107,6 +132,7 @@ Run with Python 3:
 python3 codex_p11zero/audit_p11zero.py
 python3 codex_p11zero/raw_export_control.py
 python3 codex_p11zero/vertex_audit.py
+python3 codex_p11zero/bilinear_full.py
 python3 codex_p11zero/search_sparse.py
 python3 codex_p11zero/tangent_probe.py
 python3 codex_p11zero/search_top_edge.py
