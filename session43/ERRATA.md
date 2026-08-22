@@ -173,3 +173,33 @@ The two that would have done real damage — A3 (a false rigidity theorem) and B
 quotable results**.  Neither looked wrong.  That is the argument for running the
 positive control even when the answer looks right, and for stating scope
 precisely in messages and not only in artifacts.
+
+---
+
+## A13. Re-introduced a known failure mode — my memory cap segfaulted both Cor 5.7 runs
+
+At 05:45 I ran the planted bilinear instance under `ulimit -v 3000000` and it
+segfaulted with
+
+    Enlarging exponent vector for hash table failed
+    for esz = 2097152, segmentation fault will follow.
+
+I diagnosed it correctly at the time (msolve reserves address space for its
+exponent hash table, so a virtual-memory cap kills it rather than bounding it),
+wrote it down, and then at 15:21 **built the same cap into the restart-resilient
+runner** — which promptly segfaulted both Cor 5.7 jobs at 192 s and 264 s:
+
+    job=cor57_g2    exit=139  wall=192s  verdict=NO VERDICT (empty output)
+    job=cor57_s1_g2 exit=139  wall=264s  verdict=NO VERDICT (empty output)
+
+Both are NO VERDICT **caused by my own containment**, not by the mathematics.
+Roughly 8 minutes of compute wasted and, worse, two verdicts that looked like
+data and were not.
+
+Fixed: the runner now takes `cap=none` for msolve jobs and relies on timeout plus
+one-job-at-a-time; a genuine memcg OOM is still recorded as NO VERDICT.
+
+**The lesson is not the bug, it is the repetition.**  Every other error tonight
+was caught by a control; this one was caught by *reading my own notes ten hours
+later*.  Writing a failure down is not the same as building the guard, and a
+ledger only helps if the fix goes into the tool rather than the prose.

@@ -6,8 +6,12 @@
 # full container replacement.  So: every job checkpoints its verdict to disk AND
 # to the remote before the next job starts.  A restart loses at most one job.
 #
-# Memory discipline: each job runs under a hard ulimit so it dies alone instead of
-# taking the box (there is NO swap; the memcg wall is ~14 GB).
+# Memory discipline: msolve CANNOT run under `ulimit -v` -- it reserves address
+# space for its exponent hash table and segfaults ("Enlarging exponent vector for
+# hash table failed") rather than failing cleanly.  I hit this at 05:45 with the
+# planted instance, documented it, and then re-introduced it here at 15:21,
+# sabotaging both Cor 5.7 runs.  So: NO ulimit for msolve.  Containment is by
+# timeout plus one-job-at-a-time; a genuine memcg OOM is recorded as NO VERDICT.
 #
 # Usage:  runner.sh            # runs the queue, skipping anything already done
 # Re-run it after any restart; it resumes.
@@ -29,7 +33,11 @@ run_job() {   # name, memcap_kb, timeout_s, command...
   [ -f "$Q/done/$name" ] && return 0
   log "START $name cap=${cap}kb timeout=${tmo}s"
   t0=$(date +%s)
-  ( ulimit -v "$cap"; timeout "$tmo" "$@" ) > "$Q/$name.raw" 2>&1
+  if [ "$cap" = "none" ]; then
+    timeout "$tmo" "$@" > "$Q/$name.raw" 2>&1
+  else
+    ( ulimit -v "$cap"; timeout "$tmo" "$@" ) > "$Q/$name.raw" 2>&1
+  fi
   ec=$?
   el=$(( $(date +%s) - t0 ))
   v=$(verdict_of "$Q/$name.out" "$ec")
@@ -47,11 +55,11 @@ run_job() {   # name, memcap_kb, timeout_s, command...
 # Cor 5.7 shape 2, Groebner-only.  Emptiness is exactly what Cor 5.7 claims, and
 # -g 2 decides it at ANY dimension, unlike solve mode.  6 GB cap so a blow-up
 # kills the job and not the box.
-run_job cor57_g2 6000000 5400 \
-  msolve -t 2 -g 2 -f /tmp/hunt/p108_525122_sliced.ms -o "$Q/cor57_g2.out"
+run_job cor57_g2b none 5400 \
+  msolve -t 2 -g 2 -f /tmp/hunt/p108_525122_sliced.ms -o "$Q/cor57_g2b.out"
 
 # Cor 5.7 shape 1 (40 vars), same treatment, never yet given Groebner-only.
-run_job cor57_s1_g2 6000000 5400 \
-  msolve -t 2 -g 2 -f /tmp/hunt/p108_192622_sliced.ms -o "$Q/cor57_s1_g2.out"
+run_job cor57_s1_g2b none 5400 \
+  msolve -t 2 -g 2 -f /tmp/hunt/p108_192622_sliced.ms -o "$Q/cor57_s1_g2b.out"
 
 log "QUEUE COMPLETE"
