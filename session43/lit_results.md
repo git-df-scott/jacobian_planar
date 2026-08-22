@@ -39,6 +39,37 @@ det J = -2 identically. **VERIFIED SYMBOLICALLY (sympy, this session): det J(f) 
 
 Paper also states (per fetch): "In dimension two, Moh verified the conjecture for maps of degree at most 100; the two-dimensional case remains open."
 
+### TASK 1 VERDICT
+(a) YES — arXiv:2608.00222 is explicitly the tangent-sweep mechanism (Alpöge/Speyer), generalized from plane curves to direction fields on hypersurfaces; not a different mechanism. (b) Arbitrarily large geometric degree via higher-degree base curves (tangency polynomial of degree d+1 for a degree-d curve); geometric degree 2 excluded — smallest members have geometric degree 3 (Alpöge) and 4 (Gao's 3D example). (c) Alpöge's map IS C*-equivariant — per arXiv:2607.20210 (Shaska), "equivariant for the grading wt(x,y,z)=(1,-1,-2)" (mixed-sign weights). Gao's family carries explicit weighted discrete data (weights/twist exponents); full C*-equivariance of every member NOT verbatim-verified. One explicit small member extracted and SYMBOLICALLY VERIFIED above (Gao 3D degree-4 map, det J = 2) — ready for quotient-descent.
+
+---
+
+## TASK 2: Is the plane weighted-homogeneous / quasi-homogeneous Keller case a theorem?
+
+**VERDICT: YES for fully graded (C*-equivariant) plane Keller maps — brand new (July 2026); NO theorem found covering the graded-lifting case (top weighted-homogeneous part + free lower terms).**
+
+Decisive citation: **arXiv:2607.20210, T. Shaska, "Graded Keller maps and the Jacobian Conjecture" (July 2026).** Per fetch of the abstract/paper:
+- Any dimension, all-positive weights: "an equivariant Keller map is always an automorphism, so no counterexample can be graded that way."
+- Dimension two: "In dimension two the same holds for every sign pattern" — i.e., EVERY nontrivially C*-equivariant plane Keller map is an automorphism, for all weight sign patterns. This is exactly the fully quasi-homogeneous plane case: **Path B1's fully-graded case is already a theorem.**
+- The paper explicitly notes Alpöge's dim-3 counterexample is equivariant for wt = (1,-1,-2) (mixed signs, dim 3 — consistent with both theorems).
+- **NOT covered (per fetch): the graded-lifting case** — top part weighted-homogeneous with unconstrained lower-order terms. No discussion found there, and no theorem found elsewhere in this session covering it. That case remains the open target.
+
+Classical landmarks (context, all about ordinary degrees / Newton polygons, none giving the graded-lifting theorem):
+- Magnus (1955): plane JC holds when gcd(deg f, deg g) = 1.
+- Nakai–Baba: gcd a prime (and small cases). Applegate–Onishi (1985): gcd = 2p. Combined known set per Moskowicz arXiv:1810.08202 ("A variation on Magnus' theorem and its generalizations"): gcd in {1, 8} ∪ P ∪ 2P implies automorphism (under mild conditions in her generalization). Nagata, "Some remarks on the two-dimensional Jacobian conjecture," Chinese J. Math. 17 (1989) 1–7 (leading-form/Newton-polygon analysis).
+- Moh (1983): plane JC for deg ≤ 100. Wang (1980): Keller maps of degree ≤ 2 invertible (any dimension).
+- Makar-Limanov, "On the shape of a counterexample to the two-dimensional Jacobian conjecture" (Serdica): further Newton-polygon shape constraints on any counterexample (exact constraints not extracted this session).
+- Standard Newton-polygon fact (implicit in the above literature): the top (weighted-)homogeneous parts of a plane counterexample must be algebraically dependent (J(f+, g+) = 0), so "independent weighted-homogeneous tops" cannot occur in a counterexample — but that is a constraint on counterexamples, not an invertibility theorem for graded-lift maps.
+
+CAVEAT / UNVERIFIED: All 2607.20210 statements are from a WebFetch summary of the arXiv page; I could not read the full proofs. Before relying on Path B1 closure, pull the PDF and check the dimension-two every-sign-pattern theorem's exact hypotheses (e.g., whether "equivariant" requires the whole map graded, which weights are allowed to be zero, and whether the base field/constants matter).
+
+---
+
+## TASK 3: Orevkov, "Counterexamples to the 'Jacobian Conjecture at Infinity'", Trudy Mat. Inst. Steklova 235 (2001) 181–210; Proc. Steklov Inst. Math. 235 (2001) 173–201.
+
+From the Math-Net.Ru abstract page: Orevkov constructs "an open complex surface U, a smooth compact rational curve L ⊂ U with self-intersection index +1, and a holomorphic immersion f: U \ L → C^2" which is "meromorphic on U but is not an embedding." Interpretation for Path C: the "Jacobian conjecture at infinity" is the local-analytic strengthening that no such non-injective immersed at-infinity germ configuration (a (+1)-rational curve playing the role of the line at infinity, with a locally-unramified meromorphic extension) can exist; Orevkov shows it CAN — the at-infinity data that a plane JC counterexample would have to realize (resolution/divisor configuration at the line at infinity with an unramified map germ) IS realizable in the holomorphic category. BOUND ON PATH C: purely local/at-infinity obstruction arguments cannot prove the plane JC — any proof (or counterexample-exclusion) must use global polynomiality/algebraicity, not just the structure at infinity. (Exact list of which splice/resolution data he realizes was NOT extractable this session — abstract-level only; the full paper would be needed for the precise realized dual graphs.)
+
+
 ### Dimension-two remark
 The paper (per fetch) does not give a 2D obstruction theorem; the mechanism needs the extra "padding" dimension (sweep of a curve family lives naturally in >=3 variables); no analogous construction is claimed in the plane.
 
