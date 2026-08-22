@@ -1,0 +1,10 @@
+CONTROL 1 (top-y coefficient == 4*(3i-2k) anti-diagonal sum, all d): PASS
+CONTROL 2 (generating function identity): PASS
+
+System: 3 A' Qh = 2 A Qh'  for deg A = 8, deg Qh = 12  (2*12 = 3*8, consistent)
+=> (Qh^2/A^3)' = 0 => Qh^2 = c A^3 => every root of A has even multiplicity
+=> A(t) = c0 * G(t)^2 with deg G = 4, and Qh = c1 * G^3.
+
+POSITIVE control (A = G^2, Qh = G^3, G a free quartic): PASS
+NEGATIVE control (A has simple roots -> Qh forced to 0): PASS
+POSITIVE control (A a perfect square -> nonzero Qh exists): PASS   Qh = z12*(t - 7)**3*(t - 5)**3*(t - 3)**3*(t - 2)**3

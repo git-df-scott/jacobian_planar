@@ -1,0 +1,13 @@
+
+rung 18: 7 eqs, 5 unknowns, rank 5
+  residual conditions: 0
+
+rung 17: 8 eqs, 6 unknowns, rank 6
+  residual conditions: 1
+    COND: a7_0 + a7_1*r + a7_2*r**2 + a7_3*r**3
+  imposing a7_0 + a7_1*r + a7_2*r**2 + a7_3*r**3 = 0  ->  a7_0 = -r*(a7_1 + a7_2*r + a7_3*r**2)
+  => (y-r) divides A_7
+
+rung 16: 9 eqs, 7 unknowns, rank 7
+  residual conditions: 0
+  => (y-r) divides A_7
