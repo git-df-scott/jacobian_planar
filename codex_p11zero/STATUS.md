@@ -106,8 +106,10 @@ dimension 44.  The first-order movable vertices are `p_8_0`, `p_14_8`, and
 `formal_arc_probe.py` tests 20 simple leading-order schedules with
 `P_top=t(1+t*u^4)^2` and `Q_top=t(1+t*u^4)^3`.  A planted constant arc lifts
 through order five and a forbidden first-order `p_16_8` is rejected.  None of
-the 20 target schedules passes order two.  This excludes only those prescribed
-formal slices and is not an emptiness result.
+the 20 **greedy particular lifts** passes order two.  This excludes no formal
+slice: each correction is defined only modulo a 34-dimensional kernel, which
+the greedy probe discards.  The earlier slice-exclusion interpretation is
+retracted.  A valid higher-order search must retain that kernel freedom.
 
 ## Full sparse bilinear target
 
@@ -133,6 +135,10 @@ degree <= 2
 The generated modular file is `p11zero_full_sat_p1000003.ms`.  No compatible
 solver is installed in this environment, so generation and validation do not
 constitute a solve.
+
+Independent adversarial regeneration is byte-identical, with SHA-256
+`f8fe18172fd6f901680a2c2e26c6f79b292afc04ec9623a7a74f381662d6195d`.
+The campaign msolve-format hazard validator reports no problems.
 
 ## Reproduction
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Order-by-order formal-arc reconnaissance from the degenerate solution.
 
-This is not a point finder and cannot produce NONEMPTY.  It asks whether a
-simple prescribed square/cube top edge and the remaining right-hand vertices
-can be lifted through several powers of a formal parameter t.  Success is only
-a structural lead; failure of this deterministic lift is NO VERDICT.
+This is not a point finder and cannot produce NONEMPTY.  It follows one greedy
+particular correction for a prescribed square/cube top edge.  Because each
+correction is defined modulo a large Jacobian kernel, failure of this greedy
+path excludes no formal arc and is NO VERDICT.
 """
 
 from bilinear_full import P_VARIABLES, Q_VARIABLES, build_bracket_equations
@@ -103,14 +103,31 @@ def main(prime=43, max_order=5):
     jacobian = [[derivative(poly, variable, base, prime)
                  for variable in variables] for _, poly in equations]
 
-    # Positive control: the constant degenerate solution must lift with every
-    # higher coefficient zero. Negative control: p_16_8 cannot be forced at
-    # first order, as independently predicted by the tangent calculation.
+    # Positive control 1: the constant degenerate solution must lift with every
+    # higher coefficient zero.
     _, control_reached, _ = lift(
         prime, max_order, max_order + 1, max_order + 1,
         jacobian, variables, equations, base, top_edge=False)
     assert control_reached == max_order
     print(f"PASS planted constant arc lifts through t^{max_order}")
+
+    # Positive control 2 exercises the quadratic convolution.  It is the exact
+    # family P=x+y+t*y^2 and
+    # Q=1+x^2*y+x*y^2+y^3/3+(4t/3)*x*y^3+(5t/6)*y^4
+    #   +(8t^2/15)*y^5.
+    known = {variable: [base.get(variable, 0)] + [0] * max_order
+             for variable in variables}
+    known["p_2_0"][1] = 1
+    known["q_3_1"][1] = 4 * pow(3, prime - 2, prime) % prime
+    known["q_4_0"][1] = 5 * pow(6, prime - 2, prime) % prime
+    known["q_5_0"][2] = 8 * pow(15, prime - 2, prime) % prime
+    for order in range(max_order + 1):
+        assert not any(coefficient_at(poly, known, order, prime)
+                       for _, poly in equations)
+    print(f"PASS known nonconstant family arc through t^{max_order}")
+
+    # Negative control: p_16_8 cannot be forced at first order, as independently
+    # predicted by the tangent calculation.
     row = [0] * len(variables)
     row[variables.index("p_16_8")] = 1
     rank_m, rank_aug, consistent, _ = solve_affine(
@@ -125,11 +142,12 @@ def main(prime=43, max_order=5):
                 prime, max_order, p14_order, q21_order,
                 jacobian, variables, equations, base)
             print(f"p14@t^{p14_order} q21@t^{q21_order}: "
-                  f"reached={reached}/{max_order} ranks={ranks[0]}/{ranks[1]}")
+                  f"greedy_reached={reached}/{max_order} "
+                  f"ranks={ranks[0]}/{ranks[1]}")
             if reached == max_order:
                 successes.append((p14_order, q21_order, series))
 
-    print(f"formal schedules reaching order {max_order}: {len(successes)}")
+    print(f"greedy paths reaching order {max_order}: {len(successes)}")
     if successes:
         p14_order, q21_order, series = successes[0]
         print(f"FIRST LEAD p14@t^{p14_order} q21@t^{q21_order}")
