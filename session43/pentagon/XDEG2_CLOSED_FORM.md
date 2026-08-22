@@ -60,13 +60,23 @@ so `q_k` is polynomial only if that integral is.  **Each rung is one explicit
 condition**, exactly as `sigma R' - 2 sigma' R = 1` was the single condition at
 x-degree 1.  The ladder terminates because `Q` has bounded `w`-degree.
 
-## Status and next step
+## Status: CONTROLLED
 
-**Derived, not yet verified.**  The x-degree-1 case taught me to distrust this
-until a control passes, so the next step is not to use it but to test it: take
-the known `deg_x P <= 1` families as a degenerate limit (`a -> 0`) and check the
-ladder reproduces them, then plant a solution with genuine `a != 0` and require
-the ladder to recover it.
+Two planted solutions, both with `{P,Q} = x^2` verified symbolically first:
+
+| planted point | why | result |
+|---|---|---|
+| `P = x^2`, `Q = xy/2` | simplest genuine x-degree 2 | all rungs OK |
+| **`P = x^2 + xy`, `Q = xy/2`** | **`b = y` nonconstant, `e = -y^2/4` nonzero** | **all rungs OK** |
+
+The second is the one that counts.  With `b` nonconstant and `e != 0`, no rung is
+trivially absent — the `w^-1` rung reads `q_1 e' = -y^2/4` against
+`-b^2/(4a^2) = -y^2/4`, the `w^0` rung `-y/2` against `-b/(2a^2) = -y/2`, and the
+`w^1` rung `1/2` against `1/(2a) = 1/2`.  A weak control (the first row) would
+have passed with most terms zero and proved nothing; that is the failure mode that
+caught me on the bilinear export last night, so it was worth building the second.
+
+**LADDER CONTROL: PASS.**  The reduction is now safe to build on.
 
 Scope caveat, carried from `STRUCTURE.md`: this assumes **Q polynomial**, which
 a genuine counterexample satisfies but the truncated 66-condition export does
