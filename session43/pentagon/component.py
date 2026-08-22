@@ -40,6 +40,14 @@ sub = {S('g11_11'):0, S('g9_4'):0, S('g9_5'):0, S('g9_11'):0, S('g10_10'):0,
        S('g9_6'):0, S('g9_7'):0, S('g7_7'):S('g8_7')+sp.Rational(3,2)*S('h3_3'),
        S('g8_6'):0, S('g8_7'):0}
 if CHART == 'F': sub = {}
+if CHART in ('D','E'):
+    # Discharge the inherited g8_6 = g8_7 = 0 by covering its complement.
+    # D: g8_6 free, saturated at g8_6 afterwards  -> the g8_6 != 0 region
+    # E: g8_6 = 0, g8_7 free, saturated at g8_7   -> g8_6 = 0, g8_7 != 0
+    # Together with charts B and C (which cover g8_6 = g8_7 = 0) these leave
+    # nothing out.
+    del sub[S('g8_6')], sub[S('g8_7')]
+    if CHART == 'E': sub[S('g8_6')] = sp.Integer(0)
 if CHART == 'F':
     # NOTHING pre-imposed at all.  Only the witness (h_8, h_7, h_6, g_12, tau)
     # and the two gauges are fixed; every condition at every level from 19 down
