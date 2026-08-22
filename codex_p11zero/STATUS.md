@@ -171,6 +171,19 @@ Independent adversarial regeneration is byte-identical, with SHA-256
 `f8fe18172fd6f901680a2c2e26c6f79b292afc04ec9623a7a74f381662d6195d`.
 The campaign msolve-format hazard validator reports no problems.
 
+## Coupled-edge structured family
+
+`EDGE_STRUCTURE.md` combines the necessary square/cube slope edge and the
+square/cube vertical-right edge through one polynomial
+`T=y^4 S(xy)+lambda*x^4*y^7`.
+
+The minimal ansatz `P=(x+y)+T^2`, `Q=B+T^3` is rigorously EMPTY because its
+bracket has unavoidable coefficient `-8*s_0^2` at `x^0*y^9`.  The more general
+pure-high-block first-order subsystem is also EMPTY.  Its exact linearized
+equations identify the necessary escape: a same-order subtop Q line with
+`G_10'=12`, hence normalized coefficient `q_11_1=12`.  The kernel-aware search
+retains this coefficient.
+
 ## Reproduction
 
 Run with Python 3:
