@@ -315,3 +315,31 @@ decide the pentagon as a monolithic system, at any of the formulations tried.**
 That is a real finding and it redirects the work: the w-cascade is
 block-triangular with a largest block of 20 equations, so the right move is 22
 small solver calls, not one large one.
+
+## A18 — the v43 OOM, with three of my own jobs running alongside it
+
+`msolve -g 2` on v-cascade levels 4+3 (38 vars, 36 equations) was OOM-killed,
+exit 137, after reaching ~12 GB.  **Three of my own sympy jobs were running at the
+time** — `descend2.py` (1.0 GB, 37 minutes), `l16_h6.py` (249 MB) and
+`verify_sol_l16.py` (173 MB), about 1.4 GB together.  As in A17 I cannot call
+this a clean memory ceiling: the verdict is `NO VERDICT` and the cause is mixed.
+
+That is the **fourth** violation of one-heavy-job-at-a-time (A7, A13, A17, A18),
+and worse, two of those jobs were **superseded work** — Codex's exact level-16
+branching condition had already made both obsolete and I left them burning memory
+for half an hour.
+
+Informative anyway: a 38-variable, 36-equation system blowing past 12 GB says
+v-cascade levels 4+3 is a genuinely hard Groebner problem, not an artefact.
+
+## A19 — `pkill -f` / `pgrep -f` keeps matching my own shell
+
+Three times today a `pkill -f <pattern>` or a `pgrep -f` loop has killed the
+command issuing it, because the pattern appears in the caller's own command line:
+once on `queue/runner.sh` (killing two background watchers), once on `msolve`
+(killing a command mid-heredoc, losing an unwritten file), and once on
+`l16_h6.py`.  Exit 144 each time.
+
+Fix, now used: resolve PIDs first with `ps -eo pid,args | grep <pat> | grep -v
+grep | awk '{print $1}'` and kill those, never `pkill -f` on a pattern that
+appears in the current command.
