@@ -60,3 +60,39 @@ So the two representations fail in different directions, and neither is decided.
 A longer budget on the degree-2 form is the more promising of the two, since it
 is nowhere near the memory ceiling; that is a cheap thing for whoever has the
 box next.
+
+## The 3-hour run: still NO VERDICT
+
+Re-ran `p11zero_full_sat_p1000003.ms` in Singular with a **3-hour** budget on
+the free box, on the reasoning that its 40-minute failure was a time wall with
+11 GB of memory unused.
+
+    exit 124 — timeout at 10800 s ; output "halt 1" ; no VERDICT line
+
+**VERDICT: NO VERDICT.**
+
+This is the informative negative.  The hypothesis that the degree-2 formulation
+just needed more budget is **refuted at the 3-hour scale**: it is not a
+budget problem, and a bigger box will not help either, since memory was never
+the constraint.
+
+## Where that leaves the corrected target
+
+Every Groebner attack on the saturated question has now returned NO VERDICT:
+
+| formulation | vars | degree | budget | outcome |
+|---|---|---|---|---|
+| eliminated, `p_16_8`-saturated | 60 | 22 | 18 min | OOM at 13.9 GB |
+| all-vertex-saturated (Codex) | 186 | 2 | 40 min | timeout, 2.3 GB |
+| all-vertex-saturated (Codex) | 186 | 2 | **3 h** | **timeout** |
+| x-degree<=2, `p_10_2`-saturated | 148 | 2 | 50 min | timeout, 1.5 GB |
+
+Against that, the **analytic** route settled two whole strata in minutes:
+`CLASSIFICATION.md` (the x-independent stratum, exactly, by a cascade of perfect
+squares) and `FAMILY_C.md` (the x-degree <= 1 stratum, at least 3-dimensional,
+via an ODE plus two relations one of which again factors as a perfect square).
+
+The recommendation that follows is not "more compute".  It is to push the
+closed-form reduction up to x-degree 2 and beyond, and to use Groebner only on
+the small blocks that reduction produces — which is how every result tonight was
+actually obtained.
