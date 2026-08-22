@@ -53,8 +53,9 @@ run_job() {   # name, memcap_kb, timeout_s, command...
 
 # ---- the queue -------------------------------------------------------------
 # Cor 5.7 shape 2, Groebner-only.  Emptiness is exactly what Cor 5.7 claims, and
-# -g 2 decides it at ANY dimension, unlike solve mode.  6 GB cap so a blow-up
-# kills the job and not the box.
+# -g 2 decides it at ANY dimension, unlike solve mode.
+# NO ulimit cap: msolve reserves address space for its exponent hash table, so
+# ulimit -v segfaults it rather than bounding it (ERRATA A13).
 run_job cor57_g2b none 5400 \
   msolve -t 2 -g 2 -f /tmp/hunt/p108_525122_sliced.ms -o "$Q/cor57_g2b.out"
 
