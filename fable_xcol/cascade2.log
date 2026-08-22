@@ -1,0 +1,11 @@
+d=18: imposed 0 forced gate(s)
+d=18: solved 5, free 4, residual 0
+d=17: imposed 1 forced gate(s)
+      FORCED: b11_20 + 2*b11_21*r + 3*b11_22*r**2 + 4*b11_23*r**3
+d=17: solved 6, free 5, residual 0
+d=16: imposed 0 forced gate(s)
+d=16: solved 7, free 6, residual 0
+d=15: imposed 1 forced gate(s)
+      FORCED: 3*b10_18*beta + 6*b10_19*beta*r + 9*b10_20*beta*r**2 + 12*b10_21*beta*r**3 + 15*b10_22*beta*r**4 - b11_21**2 - 6*b11_21*b11_22*r - 12*b11_21*b11_23*r**2 - 9*b11_22**2*r**2 - 36*b11_22*b11_23*r**3 - 36*b11_23**2*r**4
+d=15: solved 7, free 8, residual 0
+d=14: imposed 0 forced gate(s)
