@@ -70,9 +70,13 @@ and verified numerically at all 12 computed orders:
 - Its **leading-coefficient relation is the campaign's bottom edge**: cancelling
   the top x-degree forces `b_n^m = c a_m^n`, whose `(m,n) = (2,3)` case is
   exactly `2 f g' - 3 f' g`.  The bottom edge is not a separate object.
-- **x-degree-1 solutions are forced degenerate**: the equation reduces to
-  `Q_y|_u = (u-f)^2/(1+g)^3`, and an antiderivative of a rational function is
-  polynomial only if the function already is, so `g` must be constant.
+- **x-degree-1 solutions are forced degenerate — in the idealised problem.**
+  The equation reduces to `Q_y|_u = (u-f)^2/(1+g)^3`, and an antiderivative of a
+  rational function is polynomial only if the function already is, so `g` must be
+  constant.  **Caveat, self-caught and recorded:** this needs Q polynomial in y,
+  which the truncated export does not give — there Q is a power series and the
+  step fails.  For the export I have evidence only (a nonzero `p_{j,1}` leaves
+  21–26 of 66 conditions nonzero at a random point), which is NO VERDICT.
 
 ## Instruments built (all controls passing, in `session43/pentagon/`)
 
@@ -124,9 +128,9 @@ and verified numerically at all 12 computed orders:
 2. **Use the leading relation as a filter before any solver.**  With `p_16_8 != 0`
    forced, `m = 8`, and `a_8 = y^14 (p_14_8 + p_15_8 y + p_16_8 y^2)` must be
    `lambda h^{8/g}` with `g = gcd(8,n)`.  Valuation 14 forces `8/g` to divide 14,
-   so `g in {4,8}` and `n in {4,8,12}` — a finite case split, derived and not yet
-   checked.  This is the lockpick: search the locus the constraints allow, not
-   the ambient space.
+   so `g in {4,8}` and `n in {4,8,12}` — a finite case split, **derived, not
+   verified, and resting on the idealised-problem hypothesis above**.  This is
+   the lockpick: search the locus the constraints allow, not the ambient space.
 3. **Audit the other exports for the same defect.**  trackB1 and p108 are exports
    of the same kind of Newton-polygon data.  If either lacks explicit
    non-degeneracy rows, a degenerate witness may satisfy it too, and a NONEMPTY
