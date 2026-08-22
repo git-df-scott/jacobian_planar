@@ -16,3 +16,4 @@
 2026-08-22T17:25:05Z QUEUE COMPLETE
 2026-08-22T17:25:45Z START eighth_g2 cap=nonekb timeout=2400s
 2026-08-22T17:30:15Z END eighth_g2 exit=137 wall=270s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T17:30:16Z START upper_subst_exp_g2 cap=nonekb timeout=2400s
