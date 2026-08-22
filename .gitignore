@@ -5,3 +5,7 @@ __pycache__/
 **/_scratch/
 wave5/ms2/watchdog.log
 pent/slice_p1000003_*.ms
+
+# exports too large for GitHub (100MB limit); regenerate with wave6/w6_chain_export.py
+wave6/frontier/trackB1_chained_60v_p1000003.ms
+wave6/pentseed/reduced_tb1deep_60v.ms
