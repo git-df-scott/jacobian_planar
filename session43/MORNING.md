@@ -137,6 +137,30 @@ corrected target.
 | original 43 MB export, Groebner-only | **NO VERDICT** (13 GB, killed at 13 min) |
 
 
+## The x-degree-1 stratum, almost completely understood
+
+For P affine in x (`P = x sigma(y) + f(y)`) the whole system decouples, because
+Q has only three x-coefficients:
+
+    i=2 :  R = sigma^2 int sigma^{-3}          -- involves sigma ALONE
+    i=1 :  2 sigma int (f(y)-f(t)) sigma^{-3}  -- LINEAR in f
+    i=0 :  int (f(y)-f(t))^2 sigma^{-3}        -- quadratic in f
+
+- The `i=2` block is the ODE `sigma R' - 2 sigma' R = 1`.  Solving it for
+  `deg sigma = 1, 2, 3` forces `sigma = 1 + lambda y` **every time** — the higher
+  coefficients are driven to zero.  So sigma must be affine.
+- The `i=1` block is then a single linear relation on f, with binomial
+  coefficients: `c_2 = 3c_3 - 6c_4 + 10c_5 - 15c_6 + 21c_7 - 28c_8`.
+- The `i=0` block is quadratic; its Groebner basis is **not** `<1>`, and its
+  first element factors as `(3c_3 - 8c_4 + 15c_5 - 1)^2`, giving explicit
+  solutions.
+
+A one-at-a-time sweep of all 42 coefficients with `i >= 2`, along family B at two
+lambda values, found **no** deformation into genuine x-degree (0 of 42, both
+times).  Evidence, not proof — and the first version of that sweep reported all
+84 cases as hits because I had not excluded the trivial root `t = 0`, which is
+the base point itself.  Recorded.
+
 ## What I would do next
 
 1. **Fix the export.**  Saturate the corner (`z * p_16_8 - 1`) and re-ask.  Until
