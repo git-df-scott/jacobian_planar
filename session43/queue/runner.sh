@@ -52,20 +52,16 @@ run_job() {   # name, memcap_kb, timeout_s, command...
 }
 
 # ---- the queue -------------------------------------------------------------
-# Cor 5.7 shape 2, Groebner-only.  Emptiness is exactly what Cor 5.7 claims, and
-# -g 2 decides it at ANY dimension, unlike solve mode.
-# NO ulimit cap: msolve reserves address space for its exponent hash table, so
-# ulimit -v segfaults it rather than bounding it (ERRATA A13).
-run_job cor57_g2b none 5400 \
-  msolve -t 2 -g 2 -f /tmp/hunt/p108_525122_sliced.ms -o "$Q/cor57_g2b.out"
+# Upper-edge theorem SUBSTITUTED into Codex's degree-2 polynomial-Q export,
+# eliminating 22 variables: 170 vars, inside msolve's exponent-hash ceiling
+# (~180) where the 214-var additive form is not.  -g 2 decides emptiness at any
+# dimension.  Substitution controls (value-preserving + negative) PASS.
+# Timeout 2400s: the container restarts about hourly, so a longer job can never
+# finish -- a 7200s Singular run was killed mid-flight at 16:43 for exactly this.
+run_job upper_subst_g2 none 2400 \
+  msolve -t 2 -g 2 -f /tmp/red/subst.ms -o "$Q/upper_subst_g2.out"
 
-# Cor 5.7 shape 1 (40 vars), same treatment, never yet given Groebner-only.
-run_job cor57_s1_g2b none 5400 \
-  msolve -t 2 -g 2 -f /tmp/hunt/p108_192622_sliced.ms -o "$Q/cor57_s1_g2b.out"
-
-# Reduced target: Codex's degree-2 polynomial-Q system PLUS the upper-edge
-# theorem (A = c0 G^2, Qh = c1 G^3), encoded at degree 2 (encoding controls PASS).
-# 214 vars is past msolve's exponent-hash ceiling (~180), so this is Singular's lane.
-run_job reduced_sing none 7200 Singular -q /tmp/red/reduced.sing
+# Same theorem in ADDITIVE form (214 vars, all degree 2) -- Singular's lane.
+run_job reduced_sing none 2400 Singular -q /tmp/red/reduced.sing
 
 log "QUEUE COMPLETE"
