@@ -167,3 +167,33 @@ not wasted; but it was undertaken on a false premise and should be recorded that
 way.
 
 **Everything from here is Singular.**
+
+## A real, if modest, quantitative result: no certificate below degree 6
+
+Degree-bounded ladders (`degBound = d; std(I)`) on the saturated blocks, at both
+primes:
+
+| block | prime | D=4 | D=5 | D=6 |
+|---|---|---|---|---|
+| 61×61 saturated | 1000003 | no unit | no unit | OOM at 3.5 GB, retried at 5 GB |
+| 97×97 saturated | 1000003 | no unit | no unit | OOM at 3.5 GB, then at 4.5 GB, retried at 6.5 GB |
+| 97×97 saturated | **65521** | no unit | no unit | pending |
+
+Three ladders, two block sizes, two independent primes, all agreeing. So:
+
+> **If these blocks are empty, any Nullstellensatz certificate has degree ≥ 6.**
+
+The cross-prime agreement matters: it makes this a statement about the integer
+system rather than a mod-p artifact. Both primes would have to conspire for a
+low-degree certificate to be hidden.
+
+Stated carefully, because the direction is easy to get backwards: this is **not**
+evidence that the blocks are nonempty. A degree ladder is one-sided — a unit
+proves EMPTY, its absence proves only that the bound was too low. What the
+result does is *bound the search*: degrees 4 and 5 are now closed off, and the
+question lives at degree ≥ 6.
+
+That is also exactly where the memory wall sits. Every ladder clears 4 and 5
+cheaply and dies at 6. The Macaulay matrices at degree 6 are large for these
+blocks, and 3.5 GB and 4.5 GB were both insufficient — those deaths are
+`halt 14`, a cap I set, not a property of the problem.
