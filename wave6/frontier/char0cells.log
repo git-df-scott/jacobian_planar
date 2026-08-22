@@ -18,3 +18,4 @@ leaves: 2  EMPTY=0  NONEMPTY=0  NOVERDICT=2
 VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
 ### wave5/ms2/b16r_d7_A_q.ms
 b16r_d7_A_q.ms: 28 equations, 21 variables, p=0
+    leaf [b2=0;] -> NOVERDICT  (27 eq / 20 vars (char 0, slimgb only))
