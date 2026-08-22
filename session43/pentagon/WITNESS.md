@@ -88,3 +88,22 @@ therefore sound as an *EMPTY-pruning* target — EMPTY there implies no genuine
 configuration — but **any point it returns must be rejected unless all six are
 nonzero**, and in the eliminated P-only formulation the three Q vertices have to
 be evaluated from the recursion rather than assumed.
+
+## Verdict on the p_16_8-saturated run
+
+`msolve -g 2 -t 3` on the `z*p_16_8 - 1` saturated 43 MB export, **solo on the
+box** (13 GB free, nothing else running): OOM-killed at **13.9 GB after 18
+minutes**, 0-byte output.
+
+**VERDICT: NO VERDICT.**  Because it was solo, this is a genuine memory ceiling
+for the *degree-22 eliminated formulation* rather than a concurrency artefact —
+unlike three earlier OOMs tonight, which were mine.  It is a real data point:
+that formulation does not fit in 14 GB, and further budget on it is not
+warranted.
+
+The better-posed object is Codex's `codex_p11zero/p11zero_full_sat_p1000003.ms`
+(branch `codex/pentagon-p11-zero-search`): **186 variables, 306 equations,
+degree 2, 6,924 terms, 126 KB** — the full polynomial-Q target with all seven
+Rabinowitsch rows, rather than the 66 truncated conditions.  He has no solver on
+his machine; this box has msolve 0.6.5 and Singular.  Running it here in
+Singular (msolve hits its exponent/hash-table ceiling near 180 variables).
