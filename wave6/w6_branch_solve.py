@@ -98,6 +98,10 @@ def solve_leaf(eqs, allvars, p, tag):
     # SECOND ENGINE (Air France 447): slimgb stalled, so try msolve on this leaf
     # before declaring no verdict.  The two engines have beaten each other on
     # different systems tonight, so neither gets to be the sole authority.
+    if p == 0:
+        # msolve has no char-0 emptiness mode we rely on here; slimgb already
+        # answered or stalled, so do not fabricate a second opinion.
+        return 'NOVERDICT', f'{len(live)} eq / {len(vs)} vars (char 0, slimgb only)'
     ms = f'{SCR}/leaf_{tag}.ms'
     open(ms, 'w').write(",".join(vs) + f"\n{p}\n" + ",\n".join(body) + "\n")
     r2 = subprocess.run(['bash', '-c',

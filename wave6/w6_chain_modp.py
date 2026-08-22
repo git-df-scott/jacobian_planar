@@ -61,7 +61,8 @@ def parse_ms(path):
                 if not f:
                     continue
                 if re.fullmatch(r'\d+', f):
-                    coef = coef * int(f) % p
+                    # char 0: exact integers, no reduction (p == 0 would raise)
+                    coef = coef * int(f) if p == 0 else coef * int(f) % p
                 else:
                     mm = re.fullmatch(r'([A-Za-z_]\w*)(?:\^(\d+))?', f)
                     if not mm:
@@ -69,9 +70,9 @@ def parse_ms(path):
                     else:
                         mono[mm.group(1)] += int(mm.group(2) or 1)
             if sign == '-':
-                coef = (-coef) % p
+                coef = -coef if p == 0 else (-coef) % p
             key = tuple(sorted(mono.items()))
-            t[key] = (t[key] + coef) % p
+            t[key] = (t[key] + coef) if p == 0 else (t[key] + coef) % p
         eqs.append({k: v for k, v in t.items() if v})
     return V, eqs, p
 
