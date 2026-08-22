@@ -31,10 +31,21 @@ def cells():
         if rel in seen:
             continue
         seen.add(rel)
-        if os.path.exists(os.path.join(ROOT, rel)):
-            out.append((nv, ne, rel))
+        p = os.path.join(ROOT, rel)
+        if not os.path.exists(p):
+            continue
+        try:
+            ch = open(p).read().split('\n')[1].strip()
+        except Exception:
+            ch = '0'
+        # Characteristic ZERO last, regardless of size. Sorting purely by
+        # variable count put two 7-variable char-0 cells at the head of the
+        # queue, and char-0 Groebner is far harder than mod p at any size --
+        # so the two hardest cells would have consumed the budget before the
+        # 60-odd tractable ones were reached. Size is not difficulty here.
+        out.append((1 if ch == '0' else 0, nv, ne, rel))
     out.sort()
-    return out
+    return [(nv, ne, rel) for _, nv, ne, rel in out]
 
 
 def run(rel, nv, ne):
