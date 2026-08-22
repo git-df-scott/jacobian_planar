@@ -26,9 +26,11 @@ Form the primitive residual
 
     R = Q^a - lambda P^b,
 
-choosing `lambda` to cancel its leading edge.  The Poisson identity is exact:
+choosing `lambda` to cancel its leading edge.  The Poisson identity is exact
+(the final equality below is the pentagon normalization, not generic):
 
-    {P,R} = a Q^(a-1) {P,Q} = a x^2 Q^(a-1).           (2)
+    {P,R} = a Q^(a-1) {P,Q};
+    if {P,Q}=x^2, this is a x^2 Q^(a-1).                (2)
 
 Assume, as in the pentagon residual ladder, that cancellation exposes a
 nonzero residual edge polynomial `H(t)` of exact degree `m-1`, and that the
@@ -88,3 +90,8 @@ control requested by Opus: it constructs each complete tame map, grades every
 term independently, reconstructs every bracket level, and reaches the known
 constant Jacobian.  Those three control targets are therefore **NONEMPTY**,
 while the pentagon itself remains **NO VERDICT**.
+
+For the assumption-by-assumption audit, excluded-strata ledger, and
+conservative JSON sweep interface, see `GENERIC_RESIDUAL_FILTER_STATUS.md` and
+`generic_residual_filter.py`.  Ordinary degree data never automatically
+certify the required Newton faces.
