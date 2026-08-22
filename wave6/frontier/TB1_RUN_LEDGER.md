@@ -215,22 +215,36 @@ Measured on `tb1_sq_sat.sing` (61 vars, 61 eqs, 535 terms, p=1000003):
 The block inherits the root's structure but far more sharply. Degree histogram:
 one linear row, 44 quadrics, 10 cubics, 5 quartics, one quintic.
 
-**Why this matters and has not yet been exploited.** With only *two* variables
-carrying nonlinearity, the elimination that was hopeless on the root becomes
-plausible here. On the root, eliminating the 51-variable c-block by Cramer meant
-51×51 determinants of polynomials in 114 remaining variables — degree ~50 in 114
-variables, dead on arrival. On the block it means a 23×23 determinant of
-polynomials in **2 remaining variables**. A degree-~46 polynomial in two
-variables is a completely ordinary object: factorable, solvable, and decidable
-by resultants.
+**CORRECTION — I overstated this within minutes of measuring it.** I wrote that
+eliminating c and d would leave "a system in 2 remaining variables", making a
+23×23 Cramer determinant an ordinary two-variable object. **That is false.**
 
-**Route not yet run:** eliminate c (23, linear) and d (35, linear) from the
-block symbolically, leaving a system in the 2 s-variables plus the saturation
-variable. Solve that outright. If it is empty, the block is empty, and by
-monotonicity **trackB1 is empty** — a verdict without any Gröbner basis at all.
+The block is affine-linear in c *and* affine-linear in d, but it is not
+*jointly* linear in (c,d) — it is **bilinear**. The two eliminations cannot be
+composed:
 
-This is the most promising untried lead in the campaign and it should be the
-next session's first move if the degree-6 rung does not land.
+- eliminate c (23 vars) → the result is rational in d, so clearing denominators
+  leaves **38 variables** (35 d + 2 s + 1 sat), and it is **no longer linear in
+  d**, so the d-elimination that was available before is gone;
+- eliminate d (35 vars) first → leaves **26 variables** (23 c + 2 s + 1 sat),
+  same problem in the other direction.
+
+Neither order reaches 2 variables. The "2 nonlinear variables" figure describes
+which variables carry nonlinearity, **not** how many survive elimination, and I
+conflated the two. This is the same class of error as the earlier
+`rank[A|b] = rank A + 1` reading: taking a structural quantity to mean something
+it does not.
+
+**What is actually true and still useful.** The block is far smaller than the
+root in every dimension (23/35/2 against 51/110/4, 535 terms against 8,774), and
+for *fixed* s it is a bilinear system in 58 unknowns. Since s-space here is only
+**2-dimensional**, sweeping it is a far more realistic proposition than sweeping
+the root's 4-dimensional s-space — but each sample still requires solving a
+58-unknown bilinear system, so it is not free, and an EMPTY at fixed s carries
+the same weak-direction caveat recorded for the root's slices.
+
+Honest status: a smaller and better-understood target, not a shortcut to a
+verdict.
 
 ## Process error, repeated: `pkill -f` matching its own shell
 
