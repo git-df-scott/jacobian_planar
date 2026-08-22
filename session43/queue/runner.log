@@ -15,3 +15,4 @@
 2026-08-22T17:25:03Z END reduced_sing exit=124 wall=2400s verdict=NO VERDICT (exit=124, empty output)
 2026-08-22T17:25:05Z QUEUE COMPLETE
 2026-08-22T17:25:45Z START eighth_g2 cap=nonekb timeout=2400s
+2026-08-22T17:30:15Z END eighth_g2 exit=137 wall=270s verdict=NO VERDICT (exit=137, empty output)
