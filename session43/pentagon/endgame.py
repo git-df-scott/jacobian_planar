@@ -74,15 +74,18 @@ def analyse(L):
     return 'gate', eqs, cs, [len(eqs), len(new), r]
 def close(L):
     st, eqs, cs, info = analyse(L)
-    if st == 'gate':
+    for _round in range(8):
+        if st != 'gate': break
         cv = sorted(set().union(*[c_.free_symbols for c_ in cs]), key=str)
         lin = [x for x in cv if all(sp.degree(sp.Poly(c_, x), x) <= 1 for c_ in cs)]
         sol = sp.solve(cs, lin or cv, dict=True)
-        assert sol, f"L={L} gates unsolvable"
+        assert sol, f"L={L} gates unsolvable: {[str(sp.factor(c)) for c in cs]}"
+        if len(sol) > 1:
+            print(f"L={L:3d}: {len(sol)} components -> taking first (BRANCH CHOICE)", flush=True)
         sub.update({k: sp.cancel(sp.expand(v)) for k, v in sol[0].items()}); norm()
         print(f"L={L:3d}: {len(cs)} gate(s) -> imposed {sorted(map(str,sol[0]))}", flush=True)
         st, eqs, cs, info = analyse(L)
-    assert st == 'ok', (L, st)
+    assert st == 'ok', (L, st, [str(sp.factor(c)) for c in cs])
     new = [u for u in newsyms(L) if u not in sub]
     sol = sp.solve(eqs, new, dict=True)[0]
     sub.update({k: sp.cancel(sp.expand(vv)) for k, vv in sol.items()}); norm()

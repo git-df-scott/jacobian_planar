@@ -7,3 +7,7 @@ L= 14: OK (9 eqs, 15 new, rank 9, kernel 6), residual 0
 L= 13: OK (8 eqs, 13 new, rank 8, kernel 5), residual 0
 L= 12: OK (7 eqs, 11 new, rank 7, kernel 4), residual 0
 L= 11: OK (6 eqs, 8 new, rank 6, kernel 2), residual 0
+L= 10: 1 gate(s) -> imposed ['g6_6']
+L= 10: OK (5 eqs, 6 new, rank 5, kernel 1), residual 0
+L=  9: 2 components -> taking first (BRANCH CHOICE)
+L=  9: 3 gate(s) -> imposed ['g5_5', 'g6_4']
