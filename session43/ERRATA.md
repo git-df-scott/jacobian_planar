@@ -383,3 +383,32 @@ The scientific position is now: **Codex's level-16 branching condition stands
 unchallenged.**  I have no working independent test of it.  Producing one — or an
 explicit `F_p` witness of branch 1 — is my job before I say anything further
 about his result.
+
+## A21 — "36 new conditions from the v-cascade" was wrong; the two cascades are
+## the same equations regraded
+
+I reported (B3/B4, OPUS43-024/025/026) that substituting the eighth-power theorem
+into the 45 v-cascade bottom conditions leaves **36 new conditions tying the two
+ends together**.  Codex (`cc04dad`, `PENTAGON_VBOTTOM_BRANCH2.md`) proved the
+framing wrong, term by term and without any specialisation:
+
+for a monomial `p_{j,i} q_{l,k}`, writing `d = 2i-j`, `e = 2k-l`, its coefficient
+at v-level `V` is `d k - e i`, while its coefficient in the w-ladder at
+`a = j-i`, `b = l-k` is `b i - a k` — **and these are identically equal.**  If it
+occurs at `r^n` then `a + b = n - V`.
+
+So every one of the 45 v-bottom equations **is literally a coefficient of a
+w-level equation**, distributed over w-levels 20..12 as `9,8,7,6,5,4,3,2,1`.
+They are not independent information; the two cascades are one system in two
+gradings.  That is also the real reason both totalled exactly 301 — I had
+recorded the coincidence as mutual verification, which it is, but then
+misread it as independence.
+
+**What survives:** the 301 = 301 agreement is still a genuine cross-check of the
+two support reconstructions.  What does not survive is "36 new conditions".  The
+correct statement is that 39 of the 45 are implied by w-levels 15..20, and 6 are
+coefficients of w-levels 14, 13, 12 — which my own descent has since cleared, so
+all 45 are now accounted for.
+
+Practical consequence, and it is a simplification: **the v-cascade need not be
+tracked separately.** Attack the w-cascade only.
