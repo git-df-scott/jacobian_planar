@@ -14,7 +14,7 @@ def bracket(f, h):
 
 
 def edge_control(m, n):
-    """Check the claimed edge ODEs on their complete nonzero solution family."""
+    """Check the claimed edge ODEs on the predicted nonzero solution family."""
     alpha, beta, delta = sp.symbols("alpha beta delta", nonzero=True)
     A = alpha * (t - rho) ** m
     B = beta * (t - rho) ** n

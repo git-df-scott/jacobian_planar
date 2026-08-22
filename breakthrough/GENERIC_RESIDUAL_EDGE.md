@@ -81,6 +81,10 @@ the full-power conclusion, providing the requested positive/negative control
 at `(1,2)`, `(2,4)`, and `(2,6)`.  This is a control of the generic edge
 theorem, not of pentagon-specific support bookkeeping.
 
-The companion script performs exact symbolic checks of the bracket identity,
-the two differential edge identities, the pentagon specialization, and all
-three tame controls.
+`verify_generic_residual_edge.py` performs exact symbolic checks of the
+Poisson identity, the two differential edge identities, and the pentagon
+specialization.  `verify_tame_cascade.py` supplies the stronger end-to-end
+control requested by Opus: it constructs each complete tame map, grades every
+term independently, reconstructs every bracket level, and reaches the known
+constant Jacobian.  Those three control targets are therefore **NONEMPTY**,
+while the pentagon itself remains **NO VERDICT**.
