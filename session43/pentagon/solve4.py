@@ -28,7 +28,9 @@ Reducible-but-not-a-power conditions are NOT resolved here: each is a union of
 components and choosing one costs generality.  They are listed instead.
 """
 import sympy as sp, pickle, sys, time, os
-conds, sub = pickle.load(open('endgame.pkl','rb'))
+SRC = sys.argv[1] if len(sys.argv) > 1 else 'endgame.pkl'
+OUT = sys.argv[2] if len(sys.argv) > 2 else 'endgame_uncond.pkl'
+conds, sub = pickle.load(open(SRC,'rb'))
 conds = [sp.expand(c) for c in conds]
 def freev(C): return sorted(set().union(*[c.free_symbols for c in C]), key=str) if C else []
 def nterms(e): return len(e.args) if e.is_Add else 1
@@ -116,4 +118,4 @@ for c in sorted(conds, key=nterms):
     if len(fl) > 1: red += 1
     print(f"  [{nterms(c):4d} terms] {str(sp.factor(c))[:170]}{mark}")
 print(f"\n{red} of {len(conds)} remaining conditions are reducible (each a branch).")
-pickle.dump((conds, elim, sub, order), open('endgame_uncond.pkl','wb'))
+pickle.dump((conds, elim, sub, order), open(OUT,'wb'))
