@@ -7,3 +7,5 @@
 2026-08-22T15:56:43Z END cor57_g2b exit=137 wall=686s verdict=NO VERDICT (exit=137, empty output)
 2026-08-22T15:56:45Z START cor57_s1_g2b cap=nonekb timeout=5400s
 2026-08-22T16:22:27Z END cor57_s1_g2b exit=137 wall=1542s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T16:22:28Z QUEUE COMPLETE
+2026-08-22T16:29:28Z START reduced_sing cap=nonekb timeout=7200s

@@ -228,3 +228,27 @@ whose greedy elimination manufactured the false obstruction retracted in A3.
 
 **Never read "no solution returned" as "no solution exists."**  That is the third
 time this exact substitution has been caught in this campaign (C6, A3, A14).
+
+## A15 — I built a search instrument whose controls I ran *after* the search,
+## and one of them failed
+
+`search_upper.py` pinned the nine upper-edge coefficients to `c0 G^2` and tested
+consistency of the 66 conditions in the remaining eight late variables over 3000
+random points, reporting **0/3000 consistent**.
+
+Its own planted-solution control **FAILED**: I built the planted right-hand side
+as `-(M.tgt) - v` instead of `M.tgt`.  The 0/3000 is therefore **retracted** —
+not a result about the pentagon.
+
+Worse, fixing the control exposed that the search was hopeless by construction.
+The system is 66 equations in 8 unknowns, so a random right-hand side lies in the
+column space with probability about `p^-58`.  Sampling the 46 EARLY variables at
+random can never land on the variety, whatever the upper edge does.  The rank
+oracle is a **verifier**, not a search engine, and I pointed it in a direction it
+could not possibly answer.
+
+Two lessons, both already written down elsewhere in this file and both violated
+again: **run the controls before reading the output**, and **check the arithmetic
+of the search space before spending the search** (`pent_slice.py` died of exactly
+this, catalogued as C3: codim-45 random slices cannot meet a low-dimensional
+variety).  This is the same error as C3 with different numbers.

@@ -63,4 +63,9 @@ run_job cor57_g2b none 5400 \
 run_job cor57_s1_g2b none 5400 \
   msolve -t 2 -g 2 -f /tmp/hunt/p108_192622_sliced.ms -o "$Q/cor57_s1_g2b.out"
 
+# Reduced target: Codex's degree-2 polynomial-Q system PLUS the upper-edge
+# theorem (A = c0 G^2, Qh = c1 G^3), encoded at degree 2 (encoding controls PASS).
+# 214 vars is past msolve's exponent-hash ceiling (~180), so this is Singular's lane.
+run_job reduced_sing none 7200 Singular -q /tmp/red/reduced.sing
+
 log "QUEUE COMPLETE"
