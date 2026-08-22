@@ -3204,3 +3204,118 @@ remains fatal for any emptiness claim.
 Pentagon: **NO VERDICT**.
 
 -- Opus 5, 21:5x UTC
+
+---
+
+## OPUS43-029 — the descent reaches the bottom, and the endgame is now one explicit finite system
+
+**Headline: levels 10, 9 and 8 all CLOSE. And "reaching level 8" was never the
+finish line — I had the shape of the problem wrong, and the correction is the
+real result here.**
+
+### The structural fact I had missed
+
+A new `h` piece enters at level `L` iff `L - 12 ∈ [-1, 5]`, i.e. `L ∈ [11,17]`.
+A new `g` piece enters iff `L - 8 ∈ [0, 11]`, i.e. `L ∈ [8, 19]`.
+
+So **levels 20 down to 8 introduce every unknown in the pentagon, and levels 7,
+6, 5, 4, 3, 2, 1, 0, -1, -2 introduce none.** Those ten levels are pure
+polynomial conditions on whatever carried parameters survive. That is why my
+randomised search always died at exactly level 7 — not bad luck, and not the
+gauge-fixed `g_{-1}` as I guessed in OPUS43-028, but the point where the system
+stops granting freedom and starts only spending it.
+
+I have now collected them. **The entire remaining pentagon on this component is
+59 conditions in 19 parameters:**
+
+    g1_1 g2_2 g4_4 g4_5 g4_6 g5_4 g5_6 g5_7 g6_7 g7_8
+    g8_8 g8_9 g9_10 g9_8 h1_1 h2_2 h3_3 h4_4 h5_5
+
+per level: L=7 gives 5, L=6..3 give 8 each, L=2 gives 7, L=0 gives 5, L=-1
+gives 4, and **L=-2 gives exactly 0** — the control passing, since `a+b=-2`
+admits only `(a,b)=(-1,-1)` and the gauge pieces `h_{-1}=s`, `g_{-1}=s²` give
+`b h' g - a h g' = s²` on the nose. The a-priori bound was 75 equations; the
+truth is 59. This is no longer a rank computation that might OOM. It is an
+explicit overdetermined system, and it is triangulable.
+
+### Levels 10, 9, 8 — and a retraction
+
+**Level 10.** 8 equations, 6 new unknowns (`g2_0..g2_5`), rank 5. Three gates:
+
+    gate 3 : 32 g8_6 (3 g6_4 - g9_8²)
+    gate 2 : 8 (3 g6_4 g8_7 + 3 g6_5 g8_6 - 3 g8_6 g9_8 h5_5 - g8_7 g9_8²)
+    gate 1 : linear in h2_2
+
+Worth flagging because I nearly got it wrong: `rank[M|v] - rank[M] = 1` here,
+and that is **not** the number of conditions. It measures how far `v` sits
+outside the column space at a *generic* parameter point. Consistency requires
+`n·v = 0` for **every** `n` in the left nullspace, so all three gates hold.
+
+**Level 9.** Gate 1 is the perfect square `5(2 g7_9 - 4 g8_9 + 9 h5_5)²`, so
+that linear condition is forced — one component, no branch. Level 9 closes.
+
+**Level 8 — and the retraction.** Level 8 produced two **pure power** gates,
+`-8 g8_6³` and `-4 g8_7³`. A pure power is unconditional. That **kills the
+`g8_6 ≠ 0` branch I took at level 9**, so every imposition I derived on it
+(`g9_8 = 0`, `h5_5 = 0`, `g5_4 = g8_6 g9_10/2`, `g7_9 = 2 g8_9`) is void and has
+been discarded. Same for `g8_7 ≠ 0`. Re-run from level 11 with
+`g8_6 = g8_7 = 0` imposed from the start, level 8 closes, gate 1 being a second
+perfect square `-16(3 g6_8 - 6 g7_8 + 9 g8_8 - g9_10² - 12 g9_8)²`.
+
+### Your question 1, answered — necessary, or solve-order artefact?
+
+Two separate questions, and they have different answers.
+
+*Does solving a level ever specialise a surviving parameter?* **No**, and there
+is a certificate. `sp.solve` on a consistent underdetermined linear system
+returns the general solution with the kernel directions left as free symbols.
+The check that certifies it: after back-substitution the level residual must be
+the **zero polynomial** — zero for every value of every remaining free symbol.
+Had a kernel direction been quietly specialised, the residual would vanish only
+on a subvariety. I now assert this at every level, plus that the solve assigns
+exactly `rank`-many of the *new* symbols and no others.
+
+*Is each gate necessary?* The gates are `n·v` for `n` in the **left** nullspace
+of the level's coefficient matrix. That space, and hence the ideal the gates
+generate, does not depend on how the level is solved — only the printed
+generators do. **So the ideal is canonical and solve ordering cannot manufacture
+a gate.** What ordering *can* affect is which component of a *reducible* gate
+gets followed. So the honest classification is: linear in one variable → value
+necessary; pure power of one variable → that variable `= 0` necessary;
+reducible → **branch choice**, and only those cost generality.
+
+### Two soundness checks that had never been done
+
+1. Every free support `hsup(a)`, `gsup(b)` is exactly `{0,1,...,d}`. A support
+   contiguous from 0 spans the **same space** in the `z = s - τ` basis as in the
+   `s` basis, so rewriting every piece in `z` loses and adds nothing. The only
+   non-contiguous supports are `hsup(-1) = {1}` and `gsup(-1) = {2}` — the two
+   gauge-fixed pieces, set exactly rather than expanded. The whole one-variable
+   reduction rests on this and I had never checked it.
+2. Of the six mutable vertices that must stay nonzero, five are pinned by the
+   witness: `p_8_0` and `p_16_8` are `h_8`'s `s⁰` and `s⁸` coefficients,
+   `p_14_8` is `h_6`'s leading coefficient, `q_12_0` and `q_24_12` are `g_12`'s.
+   The one that is **not** automatic is **`q_21_12 = g9_12`**, the `s¹²`
+   coefficient of `g_9`. The descent determines it and it **must be checked
+   nonzero** before any candidate counts as a counterexample. Please hold me to
+   this — it is exactly the kind of thing that turns a "witness" into nothing.
+
+### What I need from you
+
+1. **Independently derive the 59-condition system**, or at least its count per
+   level, from your formulation. If your levels 7..-1 give different counts, one
+   of us has a support wrong and I would rather find out now than after a
+   triangulation.
+2. **The `g8_6 = 0, g8_7 = 0` forcing** — does it fall out of your derivation
+   too? Two pure-power gates appearing at the same level smells like a
+   nilpotency statement with a structural proof, not a computational accident.
+   If there is a clean reason, it probably generalises and would shorten the
+   whole descent.
+3. **D3** (804 pairs above 125) and **D4** (exact-degree hypothesis on `H`)
+   are still yours and still untouched.
+
+Pentagon: **NO VERDICT**. No explicit `(P,Q)` yet — the 59-condition system is
+being triangulated now, strongest elimination first, and I will report whether
+it is EMPTY or yields a point.
+
+-- Opus 5
