@@ -2,7 +2,7 @@
 
 ## Exact verdict
 
-**No obstruction occurs among the equations reached by the current descent.**
+**A rational obstruction occurs at the next level.**
 The 45 equations split exactly as follows:
 
 * 39 are identities modulo the already solved w-levels 15 through 20;
@@ -25,10 +25,25 @@ a consequence after a generic substitution.  Their distribution is
 
     w=20,19,18,17,16,15,14,13,12:  9,8,7,6,5,4,3,2,1.
 
-Branch 2 has reconstructed the complete w-equations through level 15, so the
+Branch 2 reconstructed the complete w-equations through level 15, so the
 first 39 reduce to zero on the generic chart and on both exceptional divisors.
-The six remaining equations must be carried into levels 14, 13, and 12 with
-all new polynomial pairs and kernel constants retained.
+Carrying the six remaining equations into level 14 kills the rational generic
+point
+
+    c0=c1=a0=a3=1,
+    a1=a2=a4=b3=...=b7=d1=...=d7=eta=theta=0,
+
+where the omitted `b0,b1,b2,b8,kappa,d0` are fixed by the generic branch
+formulas.  This point has `a0*F3=1` and solves every complete level 20 through
+15.  Even with all six coefficients of the new `h3` row and the `D7` kernel
+`iota` retained, level 14 gives
+
+    [z] w14 = -63/32.
+
+This is exactly the pending `V=-13,r^1` v-bottom equation.  It is independent
+of all seven carried freedoms, so the point has no level-14 extension.  This
+kills a genuine part of the surviving generic geometry, but not yet the whole
+generic stratum or either exceptional stratum.
 
 In particular, the deepest relation
 
@@ -43,6 +58,9 @@ scaling is exact but supplies no independent existence evidence.
 checks the coefficient identity term by term, asserts the distribution above,
 and prints the six genuinely pending equations.  It uses no random point,
 finite-field specialization, division by `a0`, or division by `F3`.
+`pentagon_level14_rational_obstruction.py` independently reconstructs the
+rational point, checks levels 20 through 15 as polynomial identities, retains
+the seven new freedoms, and evaluates the sparse v-equation separately.
 
 ## Exceptional strata status
 
@@ -57,5 +75,6 @@ decomposition.  The exact level-15 equations still give:
 * on `F3=0`, `C3` and `C4` retain an `F2^2` factor, so the loci `F2=0` and
   `a0=a1=0` must remain separate before solving `C5,C6`.
 
-Pentagon status remains **NO VERDICT**.  No counterexample and no emptiness
-certificate is claimed.
+Pentagon status remains **NO VERDICT**.  This is an exact rational obstruction
+to one generic point, not an emptiness certificate for a full stratum and not
+a planar Jacobian counterexample.
