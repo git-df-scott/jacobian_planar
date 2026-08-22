@@ -10,8 +10,12 @@ or errors corrected. Read §1 and §7 first if you read nothing else.
 
 ## 1. THE MOST IMPORTANT THING AT HAND
 
-**`wave6/frontier/trackB1_sat_p1000003.ms` — the UNREDUCED root. 166 variables,
+**The target is pentagon case (1), carried by
+`wave6/frontier/trackB1_sat_p1000003.ms` — the unreduced root, 166 variables,
 284 equations, max degree 5, 170 KB.**
+
+**Attack it through its SUBSYSTEM BLOCKS, not directly** — the root itself has
+now failed seven budgeted attempts. See "What to run" below.
 
 This is the **only target in the repo where a NONEMPTY verdict would be a
 counterexample candidate.** It is the exact char-0 case (1) system mod
@@ -39,21 +43,33 @@ the one before, and the whole trackB1 NO-VERDICT chain is the consequence.
 **The root is the easiest form of this question and it is the one that never
 got resources.** `w6_branch_solve.py` defaults are `LEAF_MEM=4000000` (4 GB)
 and `LEAF_T=120` (2 minutes) — that is all the root ever received, while the
-degree-19 blowup got 9 GB and hours. Do not re-derive a reduction; run the root.
+degree-19 blowup got 9 GB and hours. Do not re-derive a reduction.
+
+**But the root has since been given real budgets, seven times, and none
+resolved it** — see "What to run" below. The reductions remain the wrong object;
+the root is merely the *least* wrong one, and it is still out of reach. The live
+route is subsystem blocks.
 
 ### Engine choice is not free — the two engines fail on different axes
 
-- **msolve dies on VARIABLE COUNT.** On the root it aborts in ~3 min with
-  `Enlarging exponent vector for hash table failed, esz = 33554432`. Its
-  monomial hash table is *dense in nvars*: 2²⁵ monomials × 166 exponent slots
-  ≈ 22 GB, above the machine whatever the flags. There is no tunable for this
-  (`msolve -h` has none) and `-t` only multiplies it. **msolve cannot take the
-  root. Do not spend time on it.**
-- **Singular `slimgb` dies on TERM COUNT**, and uses sparse exponent vectors,
-  so 166 variables cost it nothing. It ingests the root at ~343 MB.
+- **msolve dies on a hard 2²⁵ MONOMIAL ceiling.** It aborts with
+  `Enlarging exponent vector for hash table failed, esz = 33554432`.
+  ~~Its monomial hash table is dense in nvars, so 2²⁵ × 166 slots ≈ 22 GB.~~
+  **That was my diagnosis and it is refuted.** The identical constant appears at
+  166, 148 **and 61** variables, and at 6 GB, 9 GB and 13 GB. A quantity that
+  does not move when variables drop threefold and memory rises twofold is
+  neither. It is a hard internal cap of 2²⁵ hash-table entries. msolve is
+  correct on small systems (`[-1]` for empty, a parametrization otherwise); it
+  simply cannot take anything whose F4 exceeds that. **Do not spend time on it,
+  and do not try to buy past it with RAM.**
+- **Singular `slimgb` dies on TIME here**, not memory — every root run was still
+  computing when the clock killed it, none crashed. It uses sparse exponent
+  vectors, so 166 variables cost it nothing; it ingests the root at ~343 MB.
 
-We had these pointed exactly backwards all night: the few-terms/many-vars root
-went to msolve and the few-vars/many-terms reductions went to Singular.
+The earlier claim that "we had the engines pointed backwards, few-terms/many-vars
+to msolve and few-vars/many-terms to Singular" was built on the refuted
+variable-count story. The true asymmetry is simpler: **msolve has a monomial
+ceiling it cannot pass; Singular has no ceiling but needs time.**
 
 ### What to run — UPDATED after seven failed root attacks
 
