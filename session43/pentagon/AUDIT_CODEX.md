@@ -39,3 +39,24 @@ arithmetic quietly mishandled at the boundary between symbolic and modular code.
 It nearly produced a false accusation against a collaborator's artifact, which
 is a good argument for tracing every discrepancy to a named cause before
 reporting it.
+
+## Verdict on running his system here
+
+`Singular -q` (`slimgb`, `dp`) on `p11zero_full_sat_p1000003.ms`, solo on the
+box with 12 GB free:
+
+    exit 124 (timeout at 2400 s), output "halt 1", no VERDICT line
+
+**VERDICT: NO VERDICT.**  Peak memory stayed modest (~2.3 GB), so this is a time
+wall rather than a memory wall — the opposite failure mode from my degree-22
+saturated run, which died on memory at 13.9 GB.  Worth recording as a pair:
+
+| formulation | vars | degree | failure mode |
+|---|---|---|---|
+| eliminated, `p_16_8`-saturated | 60 | 22 | **OOM at 13.9 GB**, 18 min |
+| Codex bilinear, all-vertex-saturated | 186 | 2 | **timeout at 40 min**, 2.3 GB |
+
+So the two representations fail in different directions, and neither is decided.
+A longer budget on the degree-2 form is the more promising of the two, since it
+is nowhere near the memory ceiling; that is a cheap thing for whoever has the
+box next.
