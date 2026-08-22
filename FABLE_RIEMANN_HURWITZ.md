@@ -70,6 +70,28 @@ against `2g + s = 87` in the nondegenerate case. The generic fibre of `P` must
 be *enormously* more degenerate than a curve with that Newton polygon generically
 is — its geometric genus plus punctures must drop by 70.
 
+### The sharpest form: **D <= 17**
+
+Run the identity the other way. `F_c` is a connected affine curve, so
+`chi(F_c) <= 1` (with equality iff `F_c ≅ C`; `chi = 0` iff `F_c ≅ C*`).
+Since `chi(F_c) = D - 16`,
+
+    **D <= 17** — the topological degree of the pentagon map is at most 17.
+
+and the two classically expected fibre types pin it exactly:
+
+    F_c ≅ C   (chi = 1)  =>  **D = 17**
+    F_c ≅ C*  (chi = 0)  =>  **D = 16**
+
+Worth flagging: GGV's admissible-`B` list is `{16} ∪ {20+}`, and 16 falls out
+here from pure topology. That may be a coincidence; it may not, and it is
+cheap to find out. For comparison the BKK bound is `MV(N(P), N(Q)) = 141`, so
+topology is roughly **eight times sharper than Bezout/BKK** on this map.
+
+Any independent computation of `D` that returns a value above 17 — from the
+polygon, from the fibration, or from a resultant — is an immediate **EMPTY**
+for the pentagon.
+
 That gives a concrete, cheap, solver-free kill criterion:
 
 > Compute the maximum `chi(F_c)` achievable subject to the *forced* edge
