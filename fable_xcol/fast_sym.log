@@ -1,0 +1,10 @@
+d=18: imposed 0, solved 5, free 4, residual 0, t=0s
+d=17: imposed 1, solved 6, free 5, residual 0, t=1s
+      FORCED: b11_20 + 2*b11_21 + 3*b11_22 + 4*b11_23
+d=16: imposed 0, solved 7, free 6, residual 0, t=2s
+d=15: imposed 1, solved 7, free 8, residual 0, t=8s
+      FORCED: 12*b10_18*beta + 24*b10_19*beta + 36*b10_20*beta + 48*b10_21*beta + 60*b10_22*beta - b11_20**2 + 6*b11_20*b11_22 + 16*b11_20*b11_23 - 9*b11_22**2 - 48*b11_22*b11_23 - 64*b11_23**2
+d=14: imposed 0, solved 9, free 8, residual 0, t=21s
+d=13: imposed 1, solved 10, free 9, residual 0, t=117s
+      FORCED: 12*b10_18*b11_20*beta - 36*b10_18*b11_22*beta - 96*b10_18*b11_23*beta - 36*b10_20*b11_20*beta + 108*b10_20*b11_22*beta + 288*b10_20*b11_23*beta - 96*b10_21*b11_20*beta + 288*b10_21*b11_22*beta + 768*b10_21*b11_23*beta - 180*b10_22*b11_20*beta + 540*b10_22*b11_22*beta + 1440*b10_22*b11_23*beta - b11_20**3 + 3*b11_20**2*b11_22 + 9*b11_20*b11_22**2 + 96*b11_20*b11_22*b11_23 + 192*b11_20*b11_23**2 - 27*b11_22**3 - 288*b11_22**2*b11_23 - 960*b11_22*b11_23**2 - 1024*b11_23**3 - 72*b9_16*beta**2 - 144*b9_17*beta**2 - 216*b9_18*beta**2 - 288*b9_19*beta**2 - 360*b9_20*beta**2 - 432*b9_21*beta**2
+d=12: imposed 0, solved 11, free 10, residual 0, t=387s
