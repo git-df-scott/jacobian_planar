@@ -11,8 +11,11 @@ mis-specified, and that is now proved rather than suspected.
 
 ## The headline
 
-**`pent_L23.ms` is NONEMPTY, and its solution set contains a verified
-4-parameter family of degenerate solutions.**
+**`pent_L23.ms` is NONEMPTY in every chart, with two structurally different
+families of degenerate solutions — so there is no chart in which it is empty,
+and every Groebner attack on it was doomed regardless of engine or budget.**
+
+**Family A** (`p_1_1 = 0`), classified *exactly* and completely:
 
 For any `f(y)` with `deg f <= 5`:
 
@@ -112,14 +115,27 @@ and verified numerically at all 12 computed orders:
 
 ## Verdicts, in campaign language
 
+**Family B** (`p_1_1 != 0`, so inside the *rigid* chart): for every `lambda`,
+`P = x(1+lambda y) + f` with `f' = (1+lambda y)^2`, i.e.
+`f = y + lambda y^2 + lambda^2 y^3/3`.  `{P,Q} = x^2` symbolically for general
+`lambda`; 66/66 conditions vanish at `lambda = 1,2,3,5,1000`; and 66/66 against
+the original export.  The mechanism is an integration by parts that terminates
+exactly when `f' = sigma^2`.  Details in `pentagon/FAMILY_B.md`.
+
+Both families have `p_{j,i} = 0` for `i >= 2`, hence `p_16_8 = 0`, so saturating
+at the pentagon vertex removes both and the saturated question stands as the
+corrected target.
+
 | target | verdict |
 |---|---|
 | `pent_L23.ms` as exported (+ campaign gauge) | **NONEMPTY** — exact rational witness, verified against the original file |
+| chart `p_1_1 = 0` | **NONEMPTY** — family A, classified exactly |
+| chart `p_1_1 != 0` (rigid) | **NONEMPTY** — family B |
 | saturated pentagon (`p_16_8 != 0`) | **NO VERDICT** — `msolve -g 2` running |
 | bilinear form, Groebner-only, 900 s | **NO VERDICT** (exit 124, 0 bytes) |
 | bilinear form, Singular `slimgb` | running |
 | original 43 MB export, Groebner-only | **NO VERDICT** (13 GB, killed at 13 min) |
-| rigid chart `{p_1_0 != 0, p_1_1 != 0}` | **NO VERDICT** — the witness lies outside it |
+
 
 ## What I would do next
 
