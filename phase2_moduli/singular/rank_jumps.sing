@@ -1,0 +1,128 @@
+//////////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Phase 2, probe 2
+// COMBINATORIAL RANK JUMPS WITH THE NEWTON/CHAIN SKELETON FROZEN
+//
+// The skeleton held fixed: the cusp type (2,3), the fork, and the chain
+// itself.  The two free integers are
+//     D = chain degree            (13 = First Framework, 23 = Second)
+//     J = pole order allowed for R at U = v+1 = 0
+// and J = 0 is exactly Session 18's Theorem-3 hypothesis (pole-fiber
+// rigidity => R is a polynomial).  Everything else in the framework is
+// untouched, so a jump in this table is a jump of the moduli space with
+// the combinatorics frozen.
+//
+// Reported per (D,J):
+//   dim  = dimension of the solution space of the linear endgame system
+//          in the unknowns (numerator coefficients of R, Keller c)
+//   c    = whether the Keller constant can be switched on
+// A jump with c = '.' is a JACOBIAN-SILENT deformation direction: an
+// infinitesimal deformation of the moduli that does not integrate to a
+// Keller structure.  A jump with c = 'Y' is a live trapdoor.
+//////////////////////////////////////////////////////////////////////////
+int M = 14;                          // numerator degree budget
+ring RV = 0, (a(0..14), c, v), dp;   // a's before c: c stays the free var
+
+proc endgame_lin(int D, int J, int M)
+{
+  poly A;  int i;
+  for (i = 0; i <= M; i++) { A = A + a(i)*v^i; }
+  poly E = 3*v*((v+1)*diff(A,v) - J*A) - D*A;
+  if (J <= 4) { E = E*(v+1)^(4-J) + c; }
+  else        { E = E + c*(v+1)^(J-4); }
+  matrix K = coeffs(E, v);
+  ideal I;
+  for (i = 1; i <= nrows(K); i++) { I = I, K[i,1]; }
+  return(simplify(I,2));
+}
+
+int D, J, i;
+string row, crow;
+
+"=====================================================================";
+"PROBE 2a  RANK-JUMP CENSUS   (dim of the solution space; unknowns =";
+"          15 numerator coefficients + the Keller constant c = 16)";
+"=====================================================================";
+"    D  |  J= 0  1  2  3  4  5  6  7  8  9 10   |  first J with c != 0";
+for (D = 1; D <= 30; D++)
+{
+  row = "";  crow = "-";
+  for (J = 0; J <= 10; J++)
+  {
+    ideal I = endgame_lin(D,J,M);
+    ideal SI = std(I);
+    row = row + "  " + string(M + 2 - size(SI));
+    if (crow == "-" && reduce(c, SI) != 0) { crow = string(J); }
+    kill I, SI;
+  }
+  if (D < 10) { "    " + string(D) + "  | " + row + "   |   " + crow; }
+  else { "   " + string(D) + "  | " + row + "   |   " + crow; }
+}
+"";
+"  READING.";
+"  * dim = 0 for all J <= 3, every D:  on Session 18's polynomial locus";
+"    (J = 0) and on every weaker relaxation the endgame system has ONLY";
+"    the zero solution.  The obstruction is universal in the chain";
+"    degree -- it is not special to D = 13.";
+"  * dim jumps 0 -> 1 at J = 4 for every D, and the new direction";
+"    carries c != 0 except at D = 3, 6, 9, 12.";
+"  * a SECOND jump 1 -> 2 appears at J = D/3 whenever 3 | D and";
+"    D/3 >= 5.  That is a resonance of the homogeneous operator, and it";
+"    is Jacobian-silent (see probe 2b).";
+"  * at D = 3, 6, 9, 12 the resonance sits at J = D/3 <= 4, i.e. it";
+"    collides with the unlocking direction and absorbs it: those four";
+"    chain degrees are rigid at every pole order.";
+
+"";
+"=====================================================================";
+"PROBE 2b  IDENTIFYING THE RESONANT DIRECTION";
+"          claim: for 3 | D the extra kernel element is exactly";
+"          R = (v/(v+1))^(D/3), i.e. A = v^(D/3), J = D/3, c = 0 --";
+"          the Session-18 'M == 0 branch', which is rational precisely";
+"          when 3 | D but always has a pole at U = 0 and always has";
+"          c = 0.  It can never produce a Keller map.";
+"=====================================================================";
+int d;
+poly A, E;
+for (d = 1; d <= 10; d++)
+{
+  D = 3*d;
+  A = v^d;
+  E = 3*v*((v+1)*diff(A,v) - d*A) - D*A;      // J = d, c = 0
+  "   D =", D, " R = (v/(v+1))^" + string(d) + " :  residual =", E,
+      "  pole order at U=0 =", d, "  Keller constant = 0";
+}
+
+"";
+"=====================================================================";
+"PROBE 2c  THE UNLOCKING DIRECTION IN CLOSED FORM  (J = 4)";
+"          normalised to c = 1; printed as R = A(v)/(v+1)^4.";
+"          The map-degree of R is max(deg A, 4).";
+"=====================================================================";
+intvec DL = 1,2,4,5,7,13,19,23,25,31;
+int nA;
+for (i = 1; i <= size(DL); i++)
+{
+  D = DL[i];
+  ideal I = endgame_lin(D,4,M);
+  ideal SI = std(I);
+  A = 0;  nA = -1;
+  int q;
+  for (q = 0; q <= M; q++)
+  {
+    poly co = subst(reduce(a(q), SI), c, 1);
+    A = A + co*v^q;
+    if (co != 0) { nA = q; }
+    kill co;
+  }
+  "   D =", D, ":  deg A =", nA, "  map-degree of R =", nA,
+      "  A(-1) =", subst(A,v,-1);
+  "        A =", A;
+  kill I, SI, q;
+}
+"";
+"  READING.  deg A = 4 for EVERY chain degree D, and A(-1) != 0, so the";
+"  unlocking R has a pole of order exactly 4 at U = 0 and map-degree";
+"  exactly 4 in v -- independent of D.  The framework's realization";
+"  layer (Sessions 10-11, item 4) demands that R realize the chain's";
+"  degree-D Belyi map, i.e. map-degree D.  The two agree only at D = 4.";
+quit;

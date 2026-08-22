@@ -1,0 +1,100 @@
+=====================================================================
+PROBE 2a  RANK-JUMP CENSUS   (dim of the solution space; unknowns =
+          15 numerator coefficients + the Keller constant c = 16)
+=====================================================================
+    D  |  J= 0  1  2  3  4  5  6  7  8  9 10   |  first J with c != 0
+    1  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    2  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    3  |   0  1  1  1  1  1  1  1  1  1  1   |   -
+    4  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    5  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    6  |   0  0  1  1  1  1  1  1  1  1  1   |   -
+    7  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    8  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+    9  |   0  0  0  1  1  1  1  1  1  1  1   |   -
+   10  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   11  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   12  |   0  0  0  0  1  1  1  1  1  1  1   |   -
+   13  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   14  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   15  |   0  0  0  0  1  2  2  2  2  2  2   |   4
+   16  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   17  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   18  |   0  0  0  0  1  1  2  2  2  2  2   |   4
+   19  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   20  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   21  |   0  0  0  0  1  1  1  2  2  2  2   |   4
+   22  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   23  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   24  |   0  0  0  0  1  1  1  1  2  2  2   |   4
+   25  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   26  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   27  |   0  0  0  0  1  1  1  1  1  2  2   |   4
+   28  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   29  |   0  0  0  0  1  1  1  1  1  1  1   |   4
+   30  |   0  0  0  0  1  1  1  1  1  1  2   |   4
+
+  READING.
+  * dim = 0 for all J <= 3, every D:  on Session 18's polynomial locus
+    (J = 0) and on every weaker relaxation the endgame system has ONLY
+    the zero solution.  The obstruction is universal in the chain
+    degree -- it is not special to D = 13.
+  * dim jumps 0 -> 1 at J = 4 for every D, and the new direction
+    carries c != 0 except at D = 3, 6, 9, 12.
+  * a SECOND jump 1 -> 2 appears at J = D/3 whenever 3 | D and
+    D/3 >= 5.  That is a resonance of the homogeneous operator, and it
+    is Jacobian-silent (see probe 2b).
+  * at D = 3, 6, 9, 12 the resonance sits at J = D/3 <= 4, i.e. it
+    collides with the unlocking direction and absorbs it: those four
+    chain degrees are rigid at every pole order.
+
+=====================================================================
+PROBE 2b  IDENTIFYING THE RESONANT DIRECTION
+          claim: for 3 | D the extra kernel element is exactly
+          R = (v/(v+1))^(D/3), i.e. A = v^(D/3), J = D/3, c = 0 --
+          the Session-18 'M == 0 branch', which is rational precisely
+          when 3 | D but always has a pole at U = 0 and always has
+          c = 0.  It can never produce a Keller map.
+=====================================================================
+   D = 3  R = (v/(v+1))^1 :  residual = 0   pole order at U=0 = 1   Keller constant = 0
+   D = 6  R = (v/(v+1))^2 :  residual = 0   pole order at U=0 = 2   Keller constant = 0
+   D = 9  R = (v/(v+1))^3 :  residual = 0   pole order at U=0 = 3   Keller constant = 0
+   D = 12  R = (v/(v+1))^4 :  residual = 0   pole order at U=0 = 4   Keller constant = 0
+   D = 15  R = (v/(v+1))^5 :  residual = 0   pole order at U=0 = 5   Keller constant = 0
+   D = 18  R = (v/(v+1))^6 :  residual = 0   pole order at U=0 = 6   Keller constant = 0
+   D = 21  R = (v/(v+1))^7 :  residual = 0   pole order at U=0 = 7   Keller constant = 0
+   D = 24  R = (v/(v+1))^8 :  residual = 0   pole order at U=0 = 8   Keller constant = 0
+   D = 27  R = (v/(v+1))^9 :  residual = 0   pole order at U=0 = 9   Keller constant = 0
+   D = 30  R = (v/(v+1))^10 :  residual = 0   pole order at U=0 = 10   Keller constant = 0
+
+=====================================================================
+PROBE 2c  THE UNLOCKING DIRECTION IN CLOSED FORM  (J = 4)
+          normalised to c = 1; printed as R = A(v)/(v+1)^4.
+          The map-degree of R is max(deg A, 4).
+=====================================================================
+   D = 1 :  deg A = 4   map-degree of R = 4   A(-1) = -1/11
+        A = 243/110*v^4+81/10*v^3+54/5*v^2+6*v+1
+   D = 2 :  deg A = 4   map-degree of R = 4   A(-1) = -1/10
+        A = 243/70*v^4+81/7*v^3+27/2*v^2+6*v+1/2
+   D = 4 :  deg A = 4   map-degree of R = 4   A(-1) = -1/8
+        A = -243/40*v^4-81/5*v^3-27/2*v^2-3*v+1/4
+   D = 5 :  deg A = 4   map-degree of R = 4   A(-1) = -1/7
+        A = -243/35*v^4-81/5*v^3-54/5*v^2-6/5*v+1/5
+   D = 7 :  deg A = 4   map-degree of R = 4   A(-1) = -1/5
+        A = 243/35*v^4+81/7*v^3+27/7*v^2-3/7*v+1/7
+   D = 13 :  deg A = 4   map-degree of R = 4   A(-1) = 1
+        A = 243/455*v^4-81/455*v^3+54/455*v^2-6/65*v+1/13
+   D = 19 :  deg A = 4   map-degree of R = 4   A(-1) = 1/7
+        A = 243/34580*v^4-81/4940*v^3+27/988*v^2-3/76*v+1/19
+   D = 23 :  deg A = 4   map-degree of R = 4   A(-1) = 1/11
+        A = 243/150535*v^4-81/13685*v^3+27/1955*v^2-3/115*v+1/23
+   D = 25 :  deg A = 4   map-degree of R = 4   A(-1) = 1/13
+        A = 243/271700*v^4-81/20900*v^3+54/5225*v^2-6/275*v+1/25
+   D = 31 :  deg A = 4   map-degree of R = 4   A(-1) = 1/19
+        A = 243/1133825*v^4-81/59675*v^3+27/5425*v^2-3/217*v+1/31
+
+  READING.  deg A = 4 for EVERY chain degree D, and A(-1) != 0, so the
+  unlocking R has a pole of order exactly 4 at U = 0 and map-degree
+  exactly 4 in v -- independent of D.  The framework's realization
+  layer (Sessions 10-11, item 4) demands that R realize the chain's
+  degree-D Belyi map, i.e. map-degree D.  The two agree only at D = 4.

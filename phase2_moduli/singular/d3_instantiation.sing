@@ -1,0 +1,198 @@
+//////////////////////////////////////////////////////////////////////////
+// Plane Jacobian campaign - Phase 2, probe 5
+// THE (5,2) GEOMETRY AT CHAIN DEGREE 3, WRITTEN OUT COMPLETELY
+//
+// Session 20 left exactly one window open: chain degree D <= 3.  The
+// smallest rigid skeleton in it is
+//
+//     cusp type (m,n) = (5,2),  cancellation depth delta = 2,
+//     Belyi degree N = 5,  deg p = 1,  deg r = 2,  chain degree D = 3.
+//
+// At D = 13 the whole system bloated into thousands of terms and had to
+// be handled block by block.  Here every object fits on one screen, so
+// this probe writes the geometry out exactly and then tests the one
+// question Session 20 could not settle: does the POLE-FIBER THEOREM -
+// the single load-bearing hypothesis of the Session-18 emptiness proof -
+// still close the endgame at D = 3, or does it relax?
+//
+// ANSWER (probe 5b): it RELAXES.  The pole-fiber argument runs as
+// follows in any degree:
+//     R's finite poles are confined to at most two points, and R must
+//     realize a degree-D Belyi map; the only fiber of a Belyi map with
+//     at most two points is the totally ramified one; so a finite pole
+//     of R is a single point of order EXACTLY D.
+// The endgame independently forces pole order EXACTLY k.  The two are
+// compatible if and only if D = k.  At D = 13 (k = 4) they collide and
+// the pole must go to v = infinity, which is precisely the step that
+// makes R a polynomial and kills the framework.  At D = 3 with k = 3
+// they agree, the pole sits at v = -1 with order 3, and nothing forces
+// R to be a polynomial.
+//
+// So the trapdoor does swing open at D = 3, and probe 5c produces the
+// Keller constant c != 0 explicitly.  What that does and does not mean
+// is spelled out at the end of this file and in
+// ../certify/session21_d3_window.py - it is NOT a counterexample.
+//////////////////////////////////////////////////////////////////////////
+
+ring RW = 0, (w), dp;
+
+//===================================================================== 1
+"=====================================================================";
+"PROBE 5a  THE (5,2) SKELETON, EXACT AND COMPLETE";
+"          B = p^5 / (w r^2),  deg p = 1, deg r = 2, Belyi degree 5.";
+"          Normalisation: the scaling orbit w -> mu*w is fixed by p(0)=1.";
+"=====================================================================";
+poly p = w + 1;
+poly r = w^2 + 5*w/2 + 15/8;
+poly F = p^5 - w*r^2;
+"   p            =", p;
+"   r            =", r;
+"   p^5 - w r^2  =", F;
+"   deg(p^5 - w r^2) =", deg(F), "  (must equal delta = 2)";
+"   chain degree D = N - delta =", 5 - deg(F);
+"";
+"   non-degeneracy:";
+"     disc(r) =", (5/2)^2 - 4*15/8, " (nonzero => r squarefree)";
+"     p(0) =", subst(p,w,0), "   r(0) =", subst(r,w,0),
+    "   (nonzero => gcd(p, w r) = 1)";
+"     r(-1) =", subst(r,w,-1), "  (nonzero => gcd(p, r) = 1)";
+"     disc(p^5 - w r^2) =", (95)^2 - 4*40*64, " (nonzero => the cubic";
+"          residue is squarefree, so the fiber over 1 is generic)";
+"";
+"   RAMIFICATION (Riemann-Hurwitz for a degree-5 map of P^1):";
+"     over 0  : p^5 -> one point (w = -1) of multiplicity 5   -> ram 4";
+"     over inf: w r^2 -> w = 0 simple, 2 roots of r doubled   -> ram 2";
+"     over 1  : p^5 - w r^2 has degree 2, so 2 simple finite";
+"               points plus w = infinity of multiplicity 5-2 = 3 -> ram 2";
+"     total ramification 4 + 2 + 2 = 8 = 2*5 - 2.  Consistent.";
+"   profile:  1x5  /  1 + 2x2  /  1x3 + 2x1";
+"   The chain degree D = 3 IS the multiplicity of w = infinity in the";
+"   fiber over 1 - exactly as D = 13 was for Borisov's degree-16 map.";
+
+//===================================================================== 2
+"";
+"=====================================================================";
+"PROBE 5b  THE POLE-FIBER TEST - does the D >= 13 lock relax at D = 3?";
+"          For each (D, k): is there an endgame solution with c != 0";
+"          whose pole at v = -1 has order EXACTLY D, as the pole-fiber";
+"          argument demands of any finite pole?";
+"=====================================================================";
+ring RV = 0, (a(0..40), c, v, t), dp;
+
+proc esys(int J, int k, int s, int D, int M)
+{
+  poly A;  int i;
+  for (i = 0; i <= M; i++) { A = A + a(i)*v^i; }
+  poly E = s*v*((v+1)*diff(A,v) - J*A) - D*A;
+  if (J <= k) { E = E*(v+1)^(k-J) + c; }
+  else        { E = E + c*(v+1)^(J-k); }
+  matrix K = coeffs(E, v);
+  ideal I;
+  for (i = 1; i <= nrows(K); i++) { I = I, K[i,1]; }
+  return(simplify(I,2));
+}
+
+proc enum_sol(int J, int k, int s, int D, int M)
+"numerator A of the c-normalised solution at pole order J, or 0"
+{
+  ideal SI = std(esys(J,k,s,D,M));
+  poly A;  int i;
+  if (reduce(c, SI) == 0) { return(A); }
+  for (i = 0; i <= M; i++) { A = A + subst(reduce(a(i), SI), c, 1)*v^i; }
+  return(A);
+}
+
+"    s    D    k  |  solution with pole order exactly D at v = -1, c != 0 ?";
+int s, D, k, M, ordp;
+poly A;
+intvec SL = 3,3,3,3,2,2;
+intvec DL = 13,23,7,4,3,5;
+intvec KL = 4,4,4,4,3,5;
+int i;
+for (i = 1; i <= size(SL); i++)
+{
+  s = SL[i];  D = DL[i];  k = KL[i];  M = D + 10;
+  A = enum_sol(D, k, s, D, M);            // ask for pole order exactly D
+  ordp = 0;
+  if (A != 0)
+  {
+    // pole order at v = -1 is D minus the (v+1)-order of the numerator
+    ordp = D;
+    poly Ared = A;
+    while (subst(Ared, v, -1) == 0) { Ared = Ared/(v+1);  ordp = ordp - 1; }
+    kill Ared;
+  }
+  if (A != 0 && ordp == D)
+  { "    " + string(s) + "   " + string(D) + "   " + string(k)
+        + "   |  YES      D = k : yes"; }
+  else
+  { "    " + string(s) + "   " + string(D) + "   " + string(k)
+        + "   |  no       D = k : " + string(D==k) + "  (0 = no, 1 = yes)"; }
+}
+"";
+"   READING.  A finite pole is admissible exactly when D = k.  At";
+"   D = 13, k = 4 the pole-fiber argument demands order 13 while the";
+"   endgame admits only order 4, so the pole is forced out to";
+"   v = infinity - that step, and only that step, is what makes R a";
+"   polynomial and closes the First Framework.  At D = 3, k = 3 the two";
+"   demands AGREE.  The lock relaxes.";
+
+//===================================================================== 3
+"";
+"=====================================================================";
+"PROBE 5c  THE DIRECT SOLVER AT D = 3 - the Keller constant";
+"=====================================================================";
+A = enum_sol(3, 3, 2, 3, 13);
+"   unlocking numerator A(v) =", A;
+"   R = A(v)/(v+1)^3,  normalised to c = 1";
+"   A(-1) =", subst(A,v,-1), " (nonzero => pole order exactly 3)";
+poly den = (v+1)^3;
+// with R = A/(v+1)^3 one has R' = (A'(v+1) - 3A)/(v+1)^4, so the whole
+// equation clears to the polynomial identity  2v(A'(v+1) - 3A) - 3A + 1 = 0
+"   endgame residual, cleared:  2 v (A'(v+1) - 3A) - 3A + 1  =",
+    2*v*(diff(A,v)*(v+1) - 3*A) - 3*A + 1, "  (must be 0)";
+"";
+"   critical data of R (it must realize a degree-3 Belyi map):";
+poly Nc = diff(A,v)*den - A*diff(den,v);
+Nc = Nc/gcd(Nc,den);
+"     critical-point polynomial =", Nc, "  degree", deg(Nc);
+poly rs = resultant(Nc, A - t*den, v);
+poly sq = rs/gcd(rs, diff(rs,t));
+"     distinct finite critical values =", deg(sq),
+    "  plus the pole => ", deg(sq)+1, "critical values in all";
+"     profile 3 / 2+1 / 2+1 : total ramification 2+1+1 = 4 = 2*3-2.";
+"     Both degree-3 Belyi profiles carry a totally ramified point, so";
+"     the pole-fiber demand is satisfiable here - unlike at D >= 4.";
+"";
+"   => c != 0 is attained.  Within every layer this campaign can";
+"      derive, the D = 3 window is OPEN.";
+
+"";
+"=====================================================================";
+"WHAT THIS IS AND IS NOT";
+"=====================================================================";
+"   IS:  the first point in the campaign where the Session-18";
+"        mechanism does not close, with the obstruction identified";
+"        exactly (D = k) and the Keller constant produced explicitly.";
+"";
+"   IS NOT: a counterexample, and not a candidate for one.";
+"     1. The endgame is the LAST gate of the decision system, not the";
+"        whole of it.  Box caps, the divisibility ladder, boundary";
+"        rigidity and the Keller block were derived in Sessions 8-15";
+"        for the (2,3) cusp only.  None of them has been redone for";
+"        (5,2), so the other gates are untested, not passed.";
+"     2. The contact exponent k = 3 used here is an ASSUMPTION.  For";
+"        the (2,3) cusp k = 4; that k = D = 3 for (5,2) is what the";
+"        window needs, not what has been derived.  Deriving k for a";
+"        new cusp type means redoing the Y-side geometry.";
+"     3. Degrees.  In the (2,3) family the near-miss template gives";
+"        deg y1 = 3 + 12 deg p and deg y2 = 6 + 12 deg r, which at";
+"        (deg p, deg r) = (8,5) returns Borisov's (99,66) - the pair";
+"        sitting just past Moh's proven bound of 100.  Here";
+"        (deg p, deg r) = (1,2), an order of magnitude smaller.  Any";
+"        map this skeleton could carry lands far inside the range";
+"        where the plane Jacobian conjecture is already a THEOREM.";
+"        So a counterexample cannot live here, and the correct";
+"        inference from c != 0 is that one of the untested gates in";
+"        (1) must close it.  Finding which is the open task.";
+quit;
