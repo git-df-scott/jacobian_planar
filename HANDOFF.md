@@ -10,26 +10,96 @@ or errors corrected. Read §1 and §7 first if you read nothing else.
 
 ## 1. THE MOST IMPORTANT THING AT HAND
 
-**`wave6/pentseed/reduced_tb1deep_82v.ms` — pentagon case (1), unpinned,
-saturated, reduced to 83 variables / 200 equations.**
+**`wave6/frontier/trackB1_sat_p1000003.ms` — the UNREDUCED root. 166 variables,
+284 equations, max degree 5, 170 KB.**
 
 This is the **only target in the repo where a NONEMPTY verdict would be a
-counterexample candidate.** It is trackB1 (the exact char-0 case (1) system)
-reduced mod p = 1000003 by the exact forced chain, still carrying the saturation
+counterexample candidate.** It is the exact char-0 case (1) system mod
+p = 1000003, carrying the saturation
 `zsat·c_1_0·c_8_14·d_12_21·s_4_8 − 1` that enforces all four nondegeneracy
 conditions. A solution of this system is an admissible point of case (1).
 
-- **166 → 83 variables** by exact implication only. Symbol-guard verified
-  (83 declared, 83 used, 0 undeclared).
-- 83 variables is inside the range where Singular `slimgb` has been returning
-  verdicts in **seconds** all night (92-var and 89-var systems both did).
-- Run it: `Singular -q` on the output of
-  `python3 wave6/ms2singular.py wave6/pentseed/reduced_tb1deep_82v.ms OUT.sing`
-- Was in flight at handoff. **Get this verdict first.**
+### Read this before running anything: the reductions were de-optimizations
+
+An earlier version of this section named `reduced_tb1deep_82v.ms` (83 vars).
+**That was wrong, and so was every other reduced export.** Measuring them:
+
+| export | vars | max degree | total terms | outcome |
+|---|---|---|---|---|
+| `trackB1_sat_p1000003.ms` (**root**) | 166 | **5** | **8,774** | never given a real budget |
+| `reduced_tb1deep_99v.ms` | 100 | 19 | 414,175 | Singular OOM, `halt 14` |
+| `reduced_tb1deep_82v.ms` | 83 | — | ~1.5 M | `halt 1`, no verdict |
+| `reduced_tb1deep_60v.ms` | 61 | — | ~5.3 M | 240 MB, cannot even load |
+
+The forced chain trades variables for degree, and Gröbner cost is **doubly
+exponential in degree**. Dropping 66 variables raised the degree from 5 to 19
+and the term count 47-fold. Every "deeper" reduction was strictly harder than
+the one before, and the whole trackB1 NO-VERDICT chain is the consequence.
+
+**The root is the easiest form of this question and it is the one that never
+got resources.** `w6_branch_solve.py` defaults are `LEAF_MEM=4000000` (4 GB)
+and `LEAF_T=120` (2 minutes) — that is all the root ever received, while the
+degree-19 blowup got 9 GB and hours. Do not re-derive a reduction; run the root.
+
+### Engine choice is not free — the two engines fail on different axes
+
+- **msolve dies on VARIABLE COUNT.** On the root it aborts in ~3 min with
+  `Enlarging exponent vector for hash table failed, esz = 33554432`. Its
+  monomial hash table is *dense in nvars*: 2²⁵ monomials × 166 exponent slots
+  ≈ 22 GB, above the machine whatever the flags. There is no tunable for this
+  (`msolve -h` has none) and `-t` only multiplies it. **msolve cannot take the
+  root. Do not spend time on it.**
+- **Singular `slimgb` dies on TERM COUNT**, and uses sparse exponent vectors,
+  so 166 variables cost it nothing. It ingests the root at ~343 MB.
+
+We had these pointed exactly backwards all night: the few-terms/many-vars root
+went to msolve and the few-vars/many-terms reductions went to Singular.
+
+### What to run
+
+Both were in flight at handoff, at 13 GB (the box has 16 GB; the earlier 9 GB
+ceiling was a self-imposed `ulimit -v`, not the machine):
+
+1. `slimgb` on the root, plain `dp` — script at `scratchpad/tb1root.sing`.
+2. `slimgb` on the root, **block order `(dp(51), dp(115))`** eliminating the
+   c-block first — `scratchpad/tb1root_elim.sing`. Principled, because the
+   system is affine-linear in c (see §1b), so eliminating c *is* the
+   consistency locus.
 
 If EMPTY → case (1) is empty at that prime by a *stronger* route than the seed
 argument (it presupposes no seed decomposition). If NONEMPTY → **stop
 everything and lift the point exactly**; that is the counterexample candidate.
+
+## 1b. The structural fact that reframes trackB1
+
+`wave6/w6_tb1_rank.py`. **283 of the 284 equations are affine-linear in the
+entire 51-variable c-block** — only the saturation row is quadratic in c. So
+
+    A(d,s) · c = b(d,s),    A of shape 283 × 51,
+
+and the c-block eliminates by **Gaussian elimination** (Golub–Pereyra variable
+projection) at *zero* degree cost — exactly what the chain failed to do.
+
+Measured at p = 1000003 over 12 random `(d,s)`: `rank A = 51/51` and
+`rank[A|b] = 52` every time, i.e. **inconsistent at every probe**. So the
+projection of the trackB1 variety to `(d,s)`-space is **not dominant**: a
+generic parameter point admits no c, and any solution lies in the proper
+determinantal locus `rank[A|b] = rank A` in the **114 d/s variables alone**.
+
+This is **NO VERDICT on emptiness, not evidence for it** — consistency is a
+proper closed condition and random points miss a proper closed subvariety by
+construction. Do not record it as EMPTY.
+
+Two cautions carried forward, both mine:
+- The script first asserted the system was *homogeneous* in c. **That assertion
+  fired and was false** (eq 8 has a c-free term). The guard caught a wrong
+  claim before it reached a report — keep the guards.
+- `rank[A|b] = rank A + 1` is **structurally forced** (one extra column raises
+  rank by at most one). It carries no information. I nearly wrote it up as
+  "minimal obstruction"; that would have been error #5 again.
+
+Note the untried lever: only **4 variables (the s-block) carry any
+nonlinearity**. Fixing s makes the whole system bilinear in (c,d).
 
 ---
 
