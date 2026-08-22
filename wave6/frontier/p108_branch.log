@@ -1,0 +1,35 @@
+### p108_525122
+p108_525122.ms: 140 equations, 28 variables, p=65521
+    leaf [c_4=0;c_3=0;c_7=0;] -> NOVERDICT  (29 eq / 23 vars (timeout/crash))
+    leaf [c_4=0;c_3!=0;c_7=0;] -> NOVERDICT  (98 eq / 24 vars (timeout/crash))
+
+leaves: 5  EMPTY=3  NONEMPTY=0  NOVERDICT=2
+  unresolved leaf: c_4=0;c_3=0;c_7=0;  29 eq / 23 vars (timeout/crash)
+  unresolved leaf: c_4=0;c_3!=0;c_7=0;  98 eq / 24 vars (timeout/crash)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+### p108_525122 exit=0
+### p108_843700
+p108_843700.ms: 165 equations, 41 variables, p=65521
+
+leaves: 2  EMPTY=2  NONEMPTY=0  NOVERDICT=0
+
+VERDICT: EMPTY -- every branch of an exhaustive split is empty
+### p108_843700 exit=0
+### p108_821326
+p108_821326.ms: 165 equations, 41 variables, p=65521
+
+leaves: 2  EMPTY=2  NONEMPTY=0  NOVERDICT=0
+
+VERDICT: EMPTY -- every branch of an exhaustive split is empty
+### p108_821326 exit=0
+### p108_192622
+p108_192622.ms: 139 equations, 40 variables, p=65521
+    leaf [] -> NOVERDICT  (139 eq / 38 vars (both engines: no verdict))
+
+leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
+  unresolved leaf:   139 eq / 38 vars (both engines: no verdict)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+### p108_192622 exit=0
+P108 ALL DONE

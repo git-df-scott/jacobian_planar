@@ -1,0 +1,15 @@
+p = 1000033: 283 equations, 165 variables, nondegeneracy ['c_1_0', 'c_8_14', 'd_12_21', 's_4_8']
+  [check 1] no denominator divisible by 1000033: PASS
+  [check 2] mod-p reduction agrees with the exact system at random points: PASS
+  checkpoint: 238 eq, 121 vars, 42139 terms, 1.2 MB -> reduced_p1000033_120v.ms
+  checkpoint: 224 eq, 107 vars, 168682 terms, 6.0 MB -> reduced_p1000033_106v.ms
+  checkpoint: 211 eq, 94 vars, 700683 terms, 28.9 MB -> reduced_p1000033_93v.ms
+  final: 211 eq, 94 vars, 28.9 MB -> reduced_p1000033_93v.ms
+  [check 4] symbol guard passed on every export (write_ms asserts no undeclared variable)
+
+exports for p=1000033:
+   121 vars   238 eq      1.20 MB  reduced_p1000033_120v.ms
+   107 vars   224 eq      5.97 MB  reduced_p1000033_106v.ms
+    94 vars   211 eq     28.85 MB  reduced_p1000033_93v.ms
+    94 vars   211 eq     28.85 MB  reduced_p1000033_93v.ms
+chain exit=0

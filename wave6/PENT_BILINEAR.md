@@ -1,0 +1,136 @@
+# Pentagon case (1) is a BILINEAR system — structure never exploited
+
+## The observation
+
+Monomial census of the exact char-0 system
+`campaign/audit_tracks/trackB1_param_system.json`
+(283 equations, 165 unknowns: 51 `c`, 110 `d`, 4 `s`):
+
+| shape (c-deg, d-deg, s-deg) | count |
+|---|---|
+| (1,1,0) | 5376 |
+| (0,1,2) | 1069 |
+| (1,0,3) | 990 |
+| (1,0,2) | 496 |
+| (0,1,1) | 431 |
+| (1,0,1) | 200 |
+| (0,1,0) | 99 |
+| (1,0,0) | 95 |
+| (0,0,2) | 10 |
+| (0,0,1) | 4 |
+| (0,0,0) | 2 |
+
+**Max c-degree per monomial = 1. Max d-degree per monomial = 1.**
+(s reaches degree 3, but s is only 4 variables.)
+
+So the system is *exactly bilinear* in the c-block and the d-block:
+
+    F(c, d, s) = Ad(c,s) · d + a0(c,s)          (linear in d for fixed c,s)
+               = Ac(d,s) · c + b0(d,s)          (linear in c for fixed d,s)
+
+This was recorded qualitatively in session 41 ("every monomial is bilinear, one
+c and one d, up to s-powers") for the *bottom edge subsystem*. What is new here
+is that it holds for the **entire 283-equation case (1) system**, and that it
+has never been used computationally.
+
+## Consequence 1 — the search dimension is 55, not 165
+
+`w6_pentnum.py` runs multi-start Newton over all 165 unknowns. But for any
+fixed (c,s) the 110 d-unknowns are the solution of a *linear least-squares
+problem* — they never need to be searched at all. This is Golub–Pereyra
+variable projection (VARPRO).
+
+    search dimension 165  ->  55   (51 c + 4 s)
+    110 unknowns eliminated EXACTLY at every function evaluation
+
+Beyond the 3× dimension drop, VARPRO removes the curved valleys that trap
+Gauss–Newton on separable problems: the residual becomes the distance from
+`a0(c,s)` to the column space of `Ad(c,s)`, which is the quantity the geometry
+actually cares about. Implemented in `w6_pent_varpro.py`, with the campaign's
+mandatory P-POS / P-NEG controls.
+
+## Consequence 2 — an exact reformulation of case (1)
+
+Write `C = (c,1) ∈ C^52` and `D = (d,1) ∈ C^111`. Each equation is a bilinear
+form `Cᵀ N_k(s) D = 0`. So for each fixed `s ∈ C⁴`, the fiber of case (1) is
+
+  **the intersection of the Segre variety P⁵¹ × P¹¹⁰ ⊂ P⁵⁷⁷¹ (dimension 161)
+  with a linear subspace of codimension 283**, restricted to the locus where
+  both last coordinates are nonzero.
+
+Expected fiber dimension: 161 − 283 = −122. Adding the 4 s-parameters gives an
+expected dimension of **−118** for case (1) overall — which agrees exactly with
+the independently measured overdetermination of the linearly reduced system
+(241 equations, 123 unknowns → 118). Two different routes to the same 118 is a
+consistency check on the whole export chain.
+
+**Read honestly:** expected dimension −118 says a solution would be a
+coincidence of codimension 118. It is NOT a proof of emptiness — `N_k(s)` is a
+highly structured family, not a generic linear space, and the entire campaign
+exists because this system is not generic. But it does say what any positive
+result would have to be, and it explains why direct Gröbner runs exhaust memory:
+they are computing a wildly overdetermined ideal by a method that cannot see
+the bilinear splitting.
+
+## Consequence 3 — what a VARPRO floor would mean
+
+A persistent positive residual floor is **evidence of emptiness, never proof —
+a miss is a miss.** But the floor value is itself a datum the campaign has never
+had: it measures how close the Keller condition comes to the non-injectivity
+locus. The campaign has only ever asked whether the two varieties intersect,
+never how near they pass.
+
+---
+
+## CONTROL VERDICTS — both numerical hunts are UNVALIDATED. Do not quote a floor.
+
+- **ALS P-POS: FAIL.** 12 random starts on a system with a *planted root that
+  provably exists*: best res² = 4.21e+06, median 1.37e+07. It never found the
+  root. From the planted point itself ALS returns res² = 2.19e-21, so the
+  assembly and both linear solves are correct — the method simply has no
+  power from random starts on this landscape. **Any "floor" ALS reports on the
+  real system is therefore meaningless and must not be cited as evidence of
+  emptiness.**
+- **VARPRO/Newton P-POS: NO VERDICT.** Killed by its 900s timeout (exit 143)
+  before completing 4 starts. By the campaign's standing rule a timeout is not
+  a verdict — it is neither a pass nor a fail.
+
+So the bilinear *structure* stands (it is a monomial census, independently
+checkable, and the VARPRO dimension reduction 165 → 55 is real), but **neither
+solver has demonstrated the power to find a root that exists**, and no negative
+numerical result from either may be used. This is exactly the can't-fail-
+certifier trap that has caught this campaign five times; the controls caught it
+before a floor was published, which is what they are for.
+
+Next for the numerical route, in order: an analytic VARPRO Jacobian
+(Golub–Pereyra / Kaufman) instead of the 110-point finite difference that made
+Newton too slow to finish a single control; then re-run P-POS. Until P-POS
+passes, the numerical hunt produces no admissible evidence in either direction.
+
+---
+
+## FINAL NUMERICAL VERDICT: multi-start is structurally powerless here
+
+The Kaufman Jacobian was found WRONG by finite-difference check (~50% relative
+error): it drops the anti-holomorphic Wirtinger term `-(G⁺)^H (dG/dθ)^H r`,
+which carries a factor of `r` and is therefore large away from a solution. The
+full Golub–Pereyra Jacobian was implemented and **verified against finite
+differences at 9.5e-08**, giving a ~200x speedup (10 starts in 46s, against 4
+starts unfinished in 900s).
+
+**P-POS still FAILS.** With a correct analytic Jacobian and a 200x faster
+solver, 10 random starts on a system with a *planted root that provably exists*
+reach only res² ≈ 3.7e+05. Combined with the ALS failure, the conclusion is
+structural rather than an implementation defect:
+
+> For a system overdetermined by 118, a root's basin of attraction in 110 real
+> dimensions is vanishingly small. **No random-multi-start local method can find
+> it — not ALS, not VARPRO-Newton, and not the 165-dimensional multi-start in
+> `w6_pentnum.py` either.** That planned hunt could never have produced
+> admissible evidence in either direction, and its absence of hits would have
+> meant nothing.
+
+This is worth more than a floor would have been: it retires a whole class of
+attack on this cell, and it says any future numerical route must start from a
+*known nearby solution* (continuation/homotopy from a deformed system), never
+from random points.

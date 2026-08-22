@@ -1,0 +1,16 @@
+p = 1000033: 283 equations, 165 variables, nondegeneracy ['c_1_0', 'c_8_14', 'd_12_21', 's_4_8']
+  [check 1] no denominator divisible by 1000033: PASS
+  [check 2] mod-p reduction agrees with the exact system at random points: PASS
+  [check 3] planted point (all coordinates nonzero) is an exact root of the shifted system: PASS
+  checkpoint: 254 eq, 136 vars, 42801 terms, 1.0 MB -> reduced_p1000033ctl_135v.ms
+  checkpoint: 240 eq, 122 vars, 150762 terms, 4.0 MB -> reduced_p1000033ctl_121v.ms
+  checkpoint: 227 eq, 109 vars, 709439 terms, 22.6 MB -> reduced_p1000033ctl_108v.ms
+  final: 227 eq, 109 vars, 22.6 MB -> reduced_p1000033ctl_108v.ms
+  [check 4] symbol guard passed on every export (write_ms asserts no undeclared variable)
+
+exports for p=1000033 CONTROL:
+   136 vars   254 eq      0.98 MB  reduced_p1000033ctl_135v.ms
+   122 vars   240 eq      4.01 MB  reduced_p1000033ctl_121v.ms
+   109 vars   227 eq     22.55 MB  reduced_p1000033ctl_108v.ms
+   109 vars   227 eq     22.55 MB  reduced_p1000033ctl_108v.ms
+chain exit=0
