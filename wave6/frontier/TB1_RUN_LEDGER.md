@@ -36,14 +36,52 @@ to `LEAF_MEM=4000000` (4 GB) and `LEAF_T=120` (2 min).
 |---|---|---|---|---|---|
 | 1 | msolve `-t 4` | 1000003 | root 166v | 13 GB / 3600 s | **NO VERDICT** — hash table abort at 3 min, `esz = 33554432`. 2²⁵ monomials × 166 dense exponent slots ≈ 22 GB. Structural: msolve cannot ingest 166 vars on this box, no tunable exists. |
 | 2 | Singular `slimgb` dp | 1000003 | root 166v | 13 GB / 3600 s | **NO VERDICT** — ran the full 3600 s to 2060 MB, killed by `timeout` (`halt 1`). Not a crash; it was still computing. |
-| 3 | Singular `slimgb` block `(dp51,dp115)` | 1000003 | root, c eliminated | 5 GB / 3600 s | running |
+| 3 | Singular `slimgb` block `(dp51,dp115)` | 1000003 | root, c eliminated | 5 GB / 3600 s | **NO VERDICT** — `exit=124`, clean timeout |
 | 4 | Singular `slimgb` 3-block `c>d>s` | 1000003 | root | 4 GB / 3300 s | **retired at 20 min**, flat at 1165 MB; elimination orders on 166 vars least likely to terminate |
-| 5 | Singular `slimgb` dp | 65521 | root 166v | 6 GB / 3600 s | running |
-| 6 | Singular `std` degBound 6→16 | 65521 | root | 5 GB / 3300 s | running — **one-sided**: a unit at any rung proves EMPTY, no unit proves nothing |
-| 7 | Singular `stdhilb` | 65521 | root | 5 GB / 3000 s | running |
+| 5 | Singular `slimgb` dp | 65521 | root 166v | 6 GB / 3600 s | **NO VERDICT** — `exit=124` |
+| 6 | Singular `std` degBound 6→16 | 65521 | root | 5 GB / 3300 s | **NO VERDICT** — `exit=124`, and **not one rung completed**: even `degBound=6` on 166 vars did not finish. The cheap one-sided proof is not cheap at this size. |
+| 7 | Singular `stdhilb` | 65521 | root | 5 GB / 3000 s | **NO VERDICT** — `exit=124` |
 | 8 | Singular `slimgb` dp | 65521 | s-fixed slice, 162v deg ≤2 + quartic sat row | 5 GB / 3000 s | running |
 | 9 | Singular `slimgb` dp | 65521 | s-fixed + linear reduction, **148v deg 3** | 4 GB / 2700 s | running |
 | 10 | Singular `slimgb` dp | 65521 | second s (seed 777), 148v deg 3 | 4 GB / 2700 s | running |
+
+## Every full-root attack has now failed
+
+Seven attempts, two engines, two primes, four monomial orders (dp, block
+`(51,115)`, 3-block `c>d>s`, Hilbert-driven), degree-bounded and unbounded,
+4–13 GB, 50–60 minutes each. **All NO VERDICT.**
+
+msolve fails *structurally* — its exponent hash table is dense in the variable
+count, so 2²⁵ monomials × 166 slots ≈ 22 GB regardless of flags; it also
+segfaulted on the 148-variable reduced slice (`exit=139`), so it is ruled out
+for this target at any reduction reachable here. Singular fails on *time*: every
+run was still computing when killed, none crashed and none exhausted memory.
+
+The conclusion to draw is not "try harder on the root". It is that **the
+unreduced 166-variable root is out of reach of the available tooling**, and the
+route forward is decomposition into pieces that terminate.
+
+## The subsystem route
+
+`w6_tb1_subsystem.py` / `w6_tb1_square.py`. Emptiness is monotone: any subset of
+the equations that is empty proves the whole system empty.
+
+- **No overdetermined block exists** (max surplus 0 over greedy walks from all
+  283 seeds). Heuristic only — 283 greedy paths do not survey 2¹⁶⁵ subsets, and
+  that exact overclaim was made and retracted earlier in this campaign.
+- A **square block** does exist: 60 equations over 60 variables, max degree 4,
+  **533 terms** against the root's 8,774.
+- Decisively, **all four saturation variables** `c_1_0, c_8_14, d_12_21, s_4_8`
+  lie inside it, so the block can carry the full nondegeneracy condition as a
+  **61×61 saturated system**.
+
+| outcome | meaning |
+|---|---|
+| saturated block **EMPTY** | every trackB1 solution restricts to a solution of this block with those four variables nonzero. None exists ⟹ **trackB1 EMPTY. A real verdict.** |
+| saturated block **NONEMPTY** | inconclusive for trackB1 — a subset having solutions says nothing about the superset — but gives a small solution set to test against the remaining 224 equations, which is a complete decision procedure. |
+
+Both branches terminate. Expectation recorded before the result: the block is
+probably NONEMPTY, since 60 equations in 60 variables is not overdetermined.
 
 ## Non-Gröbner results (these DID complete)
 
