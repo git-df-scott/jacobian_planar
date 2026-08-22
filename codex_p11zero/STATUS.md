@@ -99,6 +99,16 @@ middle required `P` vertices, but not `p_16_8`; the top vertex therefore appears
 only at higher order.  This is consistent with the square-top-edge geometry
 and explains why coordinate-sparse probes miss the live directions.
 
+In the full bilinear `(P,Q)` variables, the same point has rank 135 and tangent
+dimension 44.  The first-order movable vertices are `p_8_0`, `p_14_8`, and
+`q_12_0`; `p_16_8`, `q_21_12`, and `q_24_12` must appear at higher order.
+
+`formal_arc_probe.py` tests 20 simple leading-order schedules with
+`P_top=t(1+t*u^4)^2` and `Q_top=t(1+t*u^4)^3`.  A planted constant arc lifts
+through order five and a forbidden first-order `p_16_8` is rejected.  None of
+the 20 target schedules passes order two.  This excludes only those prescribed
+formal slices and is not an emptiness result.
+
 ## Full sparse bilinear target
 
 `bilinear_full.py` keeps every supported Q coefficient and imposes the complete
@@ -133,6 +143,8 @@ python3 codex_p11zero/audit_p11zero.py
 python3 codex_p11zero/raw_export_control.py
 python3 codex_p11zero/vertex_audit.py
 python3 codex_p11zero/bilinear_full.py
+python3 codex_p11zero/bilinear_tangent.py
+python3 codex_p11zero/formal_arc_probe.py
 python3 codex_p11zero/search_sparse.py
 python3 codex_p11zero/tangent_probe.py
 python3 codex_p11zero/search_top_edge.py
