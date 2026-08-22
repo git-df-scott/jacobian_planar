@@ -95,3 +95,36 @@ switched on.  That is **evidence, not a proof**: it tests one-parameter
 deformations along two lines, and a solution with several `i >= 2` coefficients
 simultaneously nonzero would not be seen.  `NO VERDICT` on the saturated
 question stands.
+
+## Why sigma must be affine: the i=2 block is an ODE
+
+The `i = 2` slot of Q is `R = sigma^2 * int_0^y sigma^{-3}`.  Differentiating,
+`R' = 2(sigma'/sigma) R + 1/sigma`, i.e.
+
+    **sigma R' - 2 sigma' R = 1** ,     sigma(0) = 1,  R(0) = 0 .
+
+So the `i = 2` conditions say precisely that this linear ODE has a solution R
+which is a polynomial (for the idealised problem; the export only needs its
+coefficients `y^15..y^23` to vanish).
+
+Degree count: if `deg sigma = d` then `deg R = 2d` (the top terms of `sigma R'`
+and `2 sigma' R` cancel unless `d + deg R - 1 = 0`), giving `3d + 1` unknowns
+against `3d` conditions — a 1-parameter family expected at every d.  Solving it:
+
+| `deg sigma` | polynomial solutions |
+|---|---|
+| 1 | `sigma = 1 + lambda y`, `R = y + lambda y^2/2` |
+| 2 | **same** — the quadratic coefficient is forced to 0 |
+| 3 | **same** — both higher coefficients forced to 0 |
+
+(`d = 4` exceeded the solve budget; `d <= 3` is what is checked.)
+
+So the expected 1-parameter family at each degree collapses onto the affine one:
+**`sigma` must be `1 + lambda y`.**  There is no `deg sigma = 2` or `3` analogue,
+which is why family B has a single parameter and why the sweep above found no
+deformation into higher x-degree.  It also confirms, from a second direction,
+that the `i >= 2` coefficients of P cannot be reached from these strata.
+
+Scope: this classifies the **idealised** problem (Q polynomial).  For the
+truncated export the conditions are weaker, so it is a strong indication rather
+than a proof there.
