@@ -223,10 +223,15 @@ def main():
             # ---- CHECK (3): substitute back into the ORIGINAL strings ----
             kv = [v for v in sol if v[ncol] % p][0] if sol else None
             assert kv is not None, "consistent but no affine solution recovered"
+            # kernel v of [A | -const] obeys A.v[0:n] - const*v[n] = 0, and the
+            # equation is A.c + const = 0, so c = -v[0:n]/v[n]. The minus was
+            # missing here; w6_tb1_control.py's recovery leg caught it. This
+            # path only runs on a HIT, so the bug would have corrupted exactly
+            # the one result that matters and nothing else.
             inv = pow(kv[ncol], p - 2, p)
             full = dict(pt)
             for j, v in enumerate(C):
-                full[v] = kv[j] * inv % p
+                full[v] = (-kv[j]) * inv % p
             bad = []
             for i in lin:
                 val = sum(co * evalmono(m, full, p)
