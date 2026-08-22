@@ -53,6 +53,28 @@ def solve_leaf(eqs, allvars, p, tag):
     vs = sorted({v for t in live for m in t for v, _ in m})
     if not vs:
         return 'EMPTY', 'a nonzero constant equation remains'
+    # COMPOSE: run the exact forced chain on the leaf before handing it to a
+    # solver.  Branch shrinks the case space, the chain shrinks the system, and
+    # only what survives both reaches Groebner.  Each step is an exact
+    # implication, so an EMPTY verdict downstream still proves the leaf empty.
+    if os.environ.get('LEAF_CHAIN', '1') == '1':
+        try:
+            from w6_chain_export import chain_core
+            red, z2, s2, _ = chain_core(sorted(vs), [dict(x) for x in live], p,
+                                        set(), [10**9], f'lf{tag}_',
+                                        log=lambda *a, **k: None)
+            if red is None:
+                return 'EMPTY', 'chain reached a contradiction on this leaf'
+            r2 = [x for x in red if x]
+            v2 = sorted({v for x in r2 for m in x for v, _ in m})
+            if len(v2) < len(vs):
+                live, vs = r2, v2
+        except Exception:
+            pass
+        if not live:
+            return 'NONEMPTY', 'chain removed every equation'
+        if not vs:
+            return 'EMPTY', 'chain left a nonzero constant'
     body = []
     for t in live:
         body.append("+".join("*".join([str(c)] + [f"{v}^{e}" if e > 1 else v
