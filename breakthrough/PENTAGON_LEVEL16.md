@@ -16,13 +16,16 @@ In the vertex chart `c_0 c_1 != 0`, complete level 16 is solvable if and only if
 
     F_0 := a_0^2-4c_0b_0 = 0,
     F_1 := a_0a_1-2c_0b_1 = 0,
-    a_0^3 lambda = 0.                                  (1)
+    a_0^3 lambda = 0,
+    a_4^2-4c_0b_8 = 0.                                 (1)
 
 Equivalently, it is the union of two branches:
 
 * `a_0=0`, `b_0=b_1=0` (so `z^5|h_7` and `z^2|h_6`); or
 * `lambda=0`, with the constant and linear coefficients of `h_6` equal to
   those of `(h_7/z^4)^2/(4c_0)`.
+
+Both branches also require `b_8=a_4^2/(4c_0)`, matching the top coefficient.
 
 This is a joint condition on `h_7`, `h_6`, and the level-19 kernel constant.
 It neither forces `z^6|h_7` nor creates an emptiness result.
@@ -64,6 +67,15 @@ After division by `8c_0z^7`, the `z^8` resonant coefficient of its `D_8`
 equation vanishes on both branches of (1), and coefficientwise inversion
 reconstructs `W_8` with its kernel constant retained.
 
+There is, however, a support-end obstruction distinct from the `D_8` resonance.
+The allowed degree of `W_8` is at most 11, so the formal inverse's `z^12` term
+must vanish.  Its numerator is
+
+    [z^19]K_16 = 3c_1(a_4^2-4c_0b_8)^2/(4c_0^3),
+
+which gives the fourth equation in (1).  Omitting this bounded-support check
+produces a spurious solution with an illegal `z^12` term in `g_8`.
+
 ## Sharpness and scope
 
 The displayed triangular coefficients show sharpness: violating `F_0` already
@@ -83,9 +95,9 @@ kernel constants, checks both branches, checks the `D_8` resonance, and
 reconstructs a complete level-16 solution.
 
 It also supplies a concrete characteristic-zero witness for the potentially
-rank-dropping first branch: `c_0=c_1=lambda=1`, `a_4=b_8=d_7=1`, with every
+rank-dropping first branch: `c_0=c_1=lambda=1`, `a_4=2`, `b_8=d_7=1`, with every
 other `a_i,b_i,d_i` and both earlier kernel constants zero.  Thus
-`h_7=z^8,h_6=z^8,h_5=z^7`; coefficientwise reconstruction gives `g_10,g_9,g_8`
+`h_7=2z^8,h_6=z^8,h_5=z^7`; coefficientwise reconstruction gives `g_10,g_9,g_8`
 and direct substitution makes the complete levels 19, 18, 17, and 16 vanish.
 All three displayed rows retain exact degree.  This witness is independent of
 generic `solve()[0]` case choices and proves that the first branch is genuinely

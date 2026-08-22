@@ -74,11 +74,18 @@ def main():
     assert sp.factor(low[5].subs(matched) + 15 * c1 * F1.subs(matched) ** 2 / (2 * c0**3)) == 0
     assert sp.factor(low[6].subs(matched) + 693 * a[0] ** 3 * lam / (1024 * c0**3)) == 0
 
-    # Thus divisibility by z^7 is equivalent (set-theoretically, in the
-    # c0*c1 != 0 chart) to F0=F1=a0^3*lambda=0.
-    conditions = {**matched, lam: 0}
+    # The bounded support of W8 is also essential: g8 has degree at most 11
+    # and z^4*h4 has degree at most 10.  Therefore the z^12 term of the formal
+    # D8 inverse must vanish, equivalently [z^19]carried16=0.
+    F8 = a[4] ** 2 - 4 * c0 * b[8]
+    assert sp.factor(coefficient(carried16, 19) - 3 * c1 * F8**2 / (4 * c0**3)) == 0
+
+    # Thus complete solvability is equivalent (set-theoretically, in the
+    # c0*c1 != 0 chart) to F0=F1=a0^3*lambda=F8=0.
+    top_matched = {b[8]: a[4] ** 2 / (4 * c0)}
+    conditions = {**matched, **top_matched, lam: 0}
     assert all(sp.simplify(value.subs(conditions)) == 0 for value in low)
-    alternative = {b[0]: 0, b[1]: 0, a[0]: 0}
+    alternative = {b[0]: 0, b[1]: 0, a[0]: 0, **top_matched}
     assert all(sp.simplify(value.subs(alternative)) == 0 for value in low)
 
     # There is no hidden D8 image obstruction.  The new h4 and g8 occur only
@@ -95,7 +102,7 @@ def main():
     witness = {
         c0: 1, c1: 1, lam: 1, kappa: 0, eta: 0,
         **{value: 0 for value in a + b + d},
-        a[4]: 1, b[8]: 1, d[7]: 1,
+        a[4]: 2, b[8]: 1, d[7]: 1,
     }
     h8 = c0 * z**8
     numeric_rhs8 = sp.cancel(-carried16.subs(witness) / (8 * z**7))

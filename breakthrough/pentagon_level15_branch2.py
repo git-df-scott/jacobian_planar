@@ -74,11 +74,12 @@ def main():
     assert sp.factor(low[5].subs(matched) + 15 * c1 * F1.subs(matched) ** 2 / (2 * c0**3)) == 0
     assert sp.factor(low[6].subs(matched) + 693 * a[0] ** 3 * lam / (1024 * c0**3)) == 0
 
-    # Thus divisibility by z^7 is equivalent (set-theoretically, in the
-    # c0*c1 != 0 chart) to F0=F1=a0^3*lambda=0.
-    conditions = {**matched, lam: 0}
+    F8 = a[4] ** 2 - 4 * c0 * b[8]
+    assert sp.factor(coefficient(carried16, 19) - 3 * c1 * F8**2 / (4 * c0**3)) == 0
+    top_matched = {b[8]: a[4] ** 2 / (4 * c0)}
+    conditions = {**matched, **top_matched, lam: 0}
     assert all(sp.simplify(value.subs(conditions)) == 0 for value in low)
-    alternative = {b[0]: 0, b[1]: 0, a[0]: 0}
+    alternative = {b[0]: 0, b[1]: 0, a[0]: 0, **top_matched}
     assert all(sp.simplify(value.subs(alternative)) == 0 for value in low)
 
     # There is no hidden D8 image obstruction.  The new h4 and g8 occur only
@@ -101,10 +102,13 @@ def main():
     carried15=sp.expand(pairing(7,h7,8,g8)+pairing(6,h6.subs(conditions),9,g9.subs(conditions))+pairing(5,h5,10,g10.subs(conditions))+pairing(4,h4,11,g11.subs(conditions)))
     low15=[sp.factor(coefficient(carried15,i)) for i in range(7)]
     # The new h3,g7 pair occurs through W7 and contributes 8*c0*z^7*D7(W7).
-    # Hence low coefficients are the full obstruction; D7 has no extra resonance.
+    # Hence low coefficients, bounded-support end coefficients, and resonance
+    # are the full obstruction.
     assert coefficient(carried15, 14) == 0
     C = tuple(sp.factor(coefficient(carried15, i)) for i in range(3, 7))
     assert all(coefficient(carried15, i) == 0 for i in range(3))
+    assert coefficient(carried15, 18) == 0
+    assert coefficient(carried15, 19) == 0
 
     F2 = 2*a[0]*a[2] + a[1]**2 - 4*c0*b[2]
     F3 = a[0]*a[3] + a[1]*a[2] - 2*c0*b[3]

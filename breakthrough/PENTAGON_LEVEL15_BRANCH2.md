@@ -4,7 +4,7 @@
 
 **NO VERDICT.**  On the level-16 branch `lambda=0` with
 
-    b0=a0^2/(4c0),   b1=a0*a1/(2c0),
+    b0=a0^2/(4c0),   b1=a0*a1/(2c0),   b8=a4^2/(4c0),
 
 level 15 is solvable exactly when four explicitly generated carried
 coefficients `C3,C4,C5,C6` vanish.  There is no additional `D_7` resonance.
@@ -16,6 +16,10 @@ The first two equations factor as
     F2 = 2a0 a2+a1^2-4c0 b2.
 
 Thus level 15 branches again; it does not kill branch 2.
+
+The `b8` equation is the bounded-support end condition inherited from level 16.
+It is essential: without it the formal `D_8` inverse may contain an illegal
+degree-12 term even though all low divisibility and resonance tests pass.
 
 ## Generic open chart
 
