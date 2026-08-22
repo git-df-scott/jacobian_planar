@@ -1,0 +1,70 @@
+  ***   Warning: new stack size = 800000000 (762.939 Mbytes).
+  PARI  S(v) = -243/455*v^4 + 81/455*v^3 - 54/455*v^2 + 6/65*v - 1/13
+  PARI  R(v) = (-243*v^4 + 81*v^3 - 54*v^2 + 42*v - 35)/(455*v^4 + 1820*v^3 + 2730*v^2 + 1820*v + 455)
+  [PASS] T_{13,4}(R) == 1 exactly (PARI)
+  [PASS] S(-1) == -1  (pole order exactly 4)
+  [PASS] deg S == 4
+  [PASS] map-degree of R == 4
+  [PASS] R is not a polynomial
+  [PASS] R has no pole at v=0
+  [PASS] PARI S13 == -(243v^4 - 81v^3 + 54v^2 - 42v + 35)/455
+
+  --- PARI brute force vs THEOREM (E2) ---
+    D=13 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=13, m=4
+    D=23 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=23, m=4
+    D=11 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=11, m=4
+    D=14 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=14, m=4
+    D=7 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=7, m=4
+    D=1 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=1, m=4
+    D=2 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=2, m=4
+    D=5 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=5, m=4
+    D=4 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=4, m=4
+    D=8 m=4  predicted ["unique", 4]   PARI ["unique", 4]
+  [PASS] PARI brute force agrees at D=8, m=4
+    D=12 m=4  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=12, m=4
+    D=15 m=4  predicted ["line", 5]   PARI ["line", 5]
+  [PASS] PARI brute force agrees at D=15, m=4
+    D=18 m=4  predicted ["line", 6]   PARI ["line", 6]
+  [PASS] PARI brute force agrees at D=18, m=4
+    D=21 m=4  predicted ["line", 7]   PARI ["line", 7]
+  [PASS] PARI brute force agrees at D=21, m=4
+    D=3 m=4  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=3, m=4
+    D=6 m=4  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=6, m=4
+    D=9 m=4  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=9, m=4
+    D=13 m=1  predicted ["unique", 1]   PARI ["unique", 1]
+  [PASS] PARI brute force agrees at D=13, m=1
+    D=13 m=2  predicted ["unique", 2]   PARI ["unique", 2]
+  [PASS] PARI brute force agrees at D=13, m=2
+    D=13 m=3  predicted ["unique", 3]   PARI ["unique", 3]
+  [PASS] PARI brute force agrees at D=13, m=3
+    D=13 m=5  predicted ["unique", 5]   PARI ["unique", 5]
+  [PASS] PARI brute force agrees at D=13, m=5
+    D=13 m=6  predicted ["unique", 6]   PARI ["unique", 6]
+  [PASS] PARI brute force agrees at D=13, m=6
+    D=23 m=6  predicted ["unique", 6]   PARI ["unique", 6]
+  [PASS] PARI brute force agrees at D=23, m=6
+    D=5 m=2  predicted ["unique", 2]   PARI ["unique", 2]
+  [PASS] PARI brute force agrees at D=5, m=2
+    D=6 m=2  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=6, m=2
+    D=9 m=2  predicted ["line", 3]   PARI ["line", 3]
+  [PASS] PARI brute force agrees at D=9, m=2
+    D=3 m=1  predicted ["none", -1]   PARI ["none", -1]
+  [PASS] PARI brute force agrees at D=3, m=1
+    D=6 m=1  predicted ["line", 2]   PARI ["line", 2]
+  [PASS] PARI brute force agrees at D=6, m=1
+
+E3: PASS = 35   FAIL = 0

@@ -1,0 +1,66 @@
+--- 1. the (D,m) = (13,4) First Framework solution ------------------
+    S(v) = -(243*v**4 - 81*v**3 + 54*v**2 - 42*v + 35)/455 * kappa
+    R(v) = -kappa*(243*v**4 - 81*v**3 + 54*v**2 - 42*v + 35)/(455*(v + 1)**4)
+  [PASS] T_{13,4}(R) == kappa  identically (exact)
+  [PASS] R has a pole at v=-1 of order exactly 4
+  [PASS] deg S = 4 exactly
+  [PASS] map-degree of R = max(deg num, deg den) = 4
+  [PASS] S(-1) = -kappa
+  [PASS] gcd(S, (v+1)) = 1 (pole order is exactly 4, not less)
+  [PASS] R is NOT a polynomial
+  [PASS] R does not have degree 13
+
+--- 2. the archive's decisive step, re-examined ---------------------
+  [PASS] for POLYNOMIAL R the archive is right: T(R)|_{v=-1} = 0 identically
+  [PASS] for the pole solution the archive's step does not apply: (v+1)^4 R is a nonzero polynomial at v=-1
+
+--- 3. structural lemmas (a),(b),(c) --------------------------------
+  [PASS] (a) no pole at v=0: leading coefficient (3 mu - D) != 0 for mu<0<D
+  [PASS] (a) no pole at t not in {0,-1}: ord_t(3v(v+1)R') = ord_t(R)-1 < ord_t(D R)
+  [PASS] (b/c) Phi(-1) = (3k-D) S(-1)
+
+--- 4. independent brute force: exact linear algebra over Q ---------
+    D= 13 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D= 23 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D= 11 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D= 14 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  7 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  1 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  2 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  5 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  4 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D=  8 m=4: predicted ('unique', 4)    brute force ('unique', 4)    OK
+    D= 12 m=4: predicted ('none',)        brute force ('none',)        OK
+    D= 15 m=4: predicted ('line', 5)      brute force ('line', 5)      OK
+    D= 18 m=4: predicted ('line', 6)      brute force ('line', 6)      OK
+    D= 21 m=4: predicted ('line', 7)      brute force ('line', 7)      OK
+    D=  3 m=4: predicted ('none',)        brute force ('none',)        OK
+    D=  6 m=4: predicted ('none',)        brute force ('none',)        OK
+    D=  9 m=4: predicted ('none',)        brute force ('none',)        OK
+    D= 13 m=1: predicted ('unique', 1)    brute force ('unique', 1)    OK
+    D= 13 m=2: predicted ('unique', 2)    brute force ('unique', 2)    OK
+    D= 13 m=3: predicted ('unique', 3)    brute force ('unique', 3)    OK
+    D= 13 m=5: predicted ('unique', 5)    brute force ('unique', 5)    OK
+    D= 13 m=6: predicted ('unique', 6)    brute force ('unique', 6)    OK
+    D= 23 m=6: predicted ('unique', 6)    brute force ('unique', 6)    OK
+    D=  5 m=2: predicted ('unique', 2)    brute force ('unique', 2)    OK
+    D=  6 m=2: predicted ('none',)        brute force ('none',)        OK
+    D=  9 m=2: predicted ('line', 3)      brute force ('line', 3)      OK
+    D=  3 m=1: predicted ('none',)        brute force ('none',)        OK
+    D=  6 m=1: predicted ('line', 2)      brute force ('line', 2)      OK
+  [PASS] brute-force linear algebra reproduces THEOREM (E2) on all 28 grid points
+  [PASS] (13,4): brute force finds solutions at all
+  [PASS] (13,4): brute force finds a UNIQUE solution
+  [PASS] (13,4): brute-force solution == closed form S/(v+1)^4 with kappa=1
+
+--- 5. the 3|D branches, explicitly --------------------------------
+  [PASS] D=15: (v/(v+1))^5 is in the kernel of 3v(v+1)R'-15R
+  [PASS] D=18: (v/(v+1))^6 is in the kernel of 3v(v+1)R'-18R
+  [PASS] D=21: (v/(v+1))^7 is in the kernel of 3v(v+1)R'-21R
+  [PASS] D=24: (v/(v+1))^8 is in the kernel of 3v(v+1)R'-24R
+  [PASS] D=12, m=4: (3|D, j<=m) NO rational solution
+  [PASS] D=9, m=4: (3|D, j<=m) NO rational solution
+  [PASS] D=6, m=4: (3|D, j<=m) NO rational solution
+  [PASS] D=3, m=4: (3|D, j<=m) NO rational solution
+
+E2: ALL 25 CHECKS PASS
