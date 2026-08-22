@@ -60,6 +60,8 @@ from collections import defaultdict
 
 ROOT = '/home/user/jacobian_planar'
 SRC = os.path.join(ROOT, 'wave6/frontier/trackB1_sat_p1000003.ms')
+# allow a second prime / char-0 form to be probed: TB1_SRC overrides.
+SRC = os.environ.get('TB1_SRC', SRC)
 
 
 def load(path):
@@ -150,7 +152,14 @@ def main():
     for v in vs:
         blocks['zsat' if v.startswith('zsat') else v.split('_')[0]].append(v)
     C = sorted(blocks['c'])
-    OTHER = sorted(blocks['d'] + blocks['s'] + blocks['zsat'])
+    OTHER = sorted(v for v in vs if v not in set(blocks['c']))
+    # The block map keys off name prefixes, and the two primes name the
+    # saturation variable differently (zsat vs w_sat), so an explicit
+    # prefix list silently DROPS one of them from the parameter set. Take
+    # the complement of the c-block instead, and assert the cover, so no
+    # variable can ever go unassigned without this failing loudly.
+    assert set(C) | set(OTHER) == set(vs) and not (set(C) & set(OTHER)), \
+        "c-block and parameter block must partition the variables"
     print(f"{os.path.basename(SRC)}: {len(vs)} vars, {len(body)} eq, p={p}")
     print(f"  c-block {len(C)}, d-block {len(blocks['d'])}, "
           f"s-block {len(blocks['s'])}, zsat {len(blocks['zsat'])}")
