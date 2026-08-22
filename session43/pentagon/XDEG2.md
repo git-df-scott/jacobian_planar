@@ -30,3 +30,32 @@ satisfy the core equations and must fail the saturation row:
 Queued to run when the box frees (Codex's all-vertex-saturated system has it).
 `NO VERDICT` until then.  A NONEMPTY here would still have to pass the full
 six-vertex non-degeneracy test of `WITNESS.md` before being called a candidate.
+
+## Verdict
+
+`Singular -q` (`slimgb`, `dp`), solo, 13 GB free, 50-minute budget:
+
+    exit 124 (timeout at 3000 s), output "halt 1", no VERDICT line
+    peak ~1.5 GB
+
+**VERDICT: NO VERDICT.**  Like Codex's system and unlike my degree-22 saturated
+run, this died on **time** with the memory ceiling nowhere in sight.
+
+## The pattern across every saturated attempt tonight
+
+| target | vars | degree | peak | failed on |
+|---|---|---|---|---|
+| eliminated, `p_16_8`-saturated | 60 | 22 | 13.9 GB | **memory**, 18 min |
+| Codex all-vertex-saturated | 186 | 2 | 2.3 GB | **time**, 40 min |
+| this x-degree<=2, `p_10_2`-saturated | 148 | 2 | 1.5 GB | **time**, 50 min |
+
+Every degree-2 formulation is time-bound with 85–90% of memory unused.  So the
+binding constraint on the corrected target is **Groebner time on a
+150–190-variable degree-2 system**, not memory, and the useful lever is a longer
+budget or a structural reduction — not a bigger box.  A 3-hour run of the
+all-vertex-saturated system is under way on that reasoning.
+
+It also means the analytic route is worth more than the solver route here: the
+x-degree <= 1 stratum was settled *exactly* in minutes by reducing the 66
+conditions to five explicit equations (`CLASSIFICATION.md`), while every
+Groebner attack on its neighbours has returned NO VERDICT.
