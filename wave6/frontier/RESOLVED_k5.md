@@ -1,4 +1,4 @@
-# OPEN-1 frontier: k = 5, h = t, D = 4 is EMPTY
+# OPEN-1 frontier: k = 5 AND k = 6 (h = t, D = 4) are EMPTY
 
 The campaign closed this case **by infeasibility**, not by proof:
 
@@ -51,9 +51,23 @@ that has caught this campaign repeatedly:
 
 It can say NONEMPTY, and does.
 
+## k = 6 as well
+
+The campaign's other unresolved case — `k=6, h=t, D=4`, which died on Singular's
+own memory guard ("no more memory", halt 14) at 3m40s — was run by the same
+route: **85 equations, 56 variables -> 22 leaves, every one EMPTY.**
+
+So **both** unresolved cases of the h-branch frontier are now decided, and
+neither needed more memory than a 3.5 GB-per-leaf budget.
+
+| case | campaign | branching |
+|---|---|---|
+| `k=5, h=t, D=4` | OOM-killed, 2m46s | **EMPTY** — 15 leaves |
+| `k=6, h=t, D=4` | "no more memory", halt 14, 3m40s | **EMPTY** — 22 leaves |
+
 ## Scope
 
-This is `p = 1000003`, one prime. Per the campaign's own note, emptiness mod p
+This is `p = 1000003`, one prime, for both cases. Per the campaign's own note, emptiness mod p
 for an integer system does imply emptiness over ℚ *provided p divides no
 denominator* — these coefficients are small integers — but a second prime is the
 standing requirement and is not yet run here. **Announced, not closed.**
