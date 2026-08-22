@@ -55,16 +55,52 @@ degree-19 blowup got 9 GB and hours. Do not re-derive a reduction; run the root.
 We had these pointed exactly backwards all night: the few-terms/many-vars root
 went to msolve and the few-vars/many-terms reductions went to Singular.
 
-### What to run
+### What to run — UPDATED after seven failed root attacks
 
-Both were in flight at handoff, at 13 GB (the box has 16 GB; the earlier 9 GB
-ceiling was a self-imposed `ulimit -v`, not the machine):
+**Do not attack the root directly.** Seven attempts closed, all NO VERDICT:
+msolve at 13 GB (hash-table abort), Singular dp at both primes, block order
+`(dp51,dp115)`, 3-block `c>d>s`, `stdhilb`, and a degree ladder — the ladder
+completing **zero rungs** at 166 variables. Singular never crashed and never ran
+out of memory on these; every one was still computing when the clock killed it.
+See `wave6/frontier/TB1_RUN_LEDGER.md` for the full table.
 
-1. `slimgb` on the root, plain `dp` — script at `scratchpad/tb1root.sing`.
-2. `slimgb` on the root, **block order `(dp(51), dp(115))`** eliminating the
-   c-block first — `scratchpad/tb1root_elim.sing`. Principled, because the
-   system is affine-linear in c (see §1b), so eliminating c *is* the
-   consistency locus.
+**msolve is out entirely, for a reason worth knowing.** It aborts at
+`esz = 33554432` = 2²⁵ hash-table entries on *every* hard target here — at 166,
+148, and 61 variables alike, and at 6 GB, 9 GB, and 13 GB alike. It is a hard
+internal ceiling, not a variable-count or memory problem. (I diagnosed it wrong
+twice before checking that the constant never moved.) msolve works fine on small
+systems; it simply cannot take anything whose F4 exceeds 2²⁵ monomials.
+
+**Run the SUBSYSTEM BLOCKS instead.** `wave6/w6_tb1_subsystem.py` and
+`wave6/w6_tb1_square.py`. Emptiness is monotone, so any subset of the 284
+equations that is empty proves trackB1 empty. There is no overdetermined block
+(max surplus 0), but there are square ones, and critically **all four saturation
+variables `c_1_0, c_8_14, d_12_21, s_4_8` lie inside them**, so each block
+carries the full nondegeneracy condition:
+
+| block | size | degree | terms |
+|---|---|---|---|
+| smallest nontrivial | 60 eq / 60 var (61×61 saturated) | 4 | **533** |
+| larger | 96 eq / 96 var (97×97 saturated) | 4 | 1,357 |
+
+against the root's 8,774 terms at degree 5.
+
+  * **block EMPTY ⇒ trackB1 EMPTY. A real verdict.**
+  * block NONEMPTY ⇒ inconclusive for trackB1, but yields a small solution set
+    to test against the remaining equations — itself a decision procedure.
+
+Note the plain (unsaturated) block is *also* verdict-capable in the EMPTY
+direction; saturation is only needed to make a NONEMPTY result meaningful.
+
+**Pair blocks with degree-bounded ladders** (`degBound = d; std(I)`). One-sided:
+a unit at any rung proves EMPTY, no unit proves nothing. This is the only method
+tonight that produced *incremental* output rather than a binary timeout — the
+61-block ladder cleared degrees 4 and 5, the 97-block ladder likewise. Both then
+needed more memory at rung 6 (`halt 14`), which is a fixable cap, unlike
+msolve's ceiling.
+
+**`wave6/w6_tb1_grow.py`** walks blocks upward automatically, re-saturating at
+each step, and stops at the first EMPTY. Built but not yet run to completion.
 
 If EMPTY → case (1) is empty at that prime by a *stronger* route than the seed
 argument (it presupposes no seed decomposition). If NONEMPTY → **stop
