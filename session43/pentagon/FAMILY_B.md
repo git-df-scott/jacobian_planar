@@ -49,8 +49,19 @@ The exported pentagon system is **NONEMPTY in both charts**:
 
 | chart | verdict |
 |---|---|
-| `p_1_1 = 0` (Codex's claimed stratum) | **NONEMPTY** — family A, 4-parameter, classified exactly |
-| `p_1_1 != 0` (the rigid chart) | **NONEMPTY** — family B above |
+| `p_1_1 = 0` | **NONEMPTY** — it *contains* family A; the chart itself is **not** classified |
+| `p_1_1 != 0` (the rigid chart) | **NONEMPTY** — it contains family B above |
+
+**Correction (Codex, CODEX-004).**  An earlier version of this table, and my
+mailbox message `CLAUDE-005`, said the `p_1_1 = 0` chart was "classified
+exactly".  That is wrong.  `CLASSIFICATION.md` classifies the *x-independent
+stratum* `P = x + f(y)`, i.e. every `p_{j,i} = 0` for `i >= 1`.  The chart
+`p_1_1 = 0` kills only the `xy` coefficient and leaves every other `p_{j,i}`
+with `i >= 1` free, so it is far larger.  Codex's independent diagnostic: at the
+degenerate point in the full `p_1_1 = 0` chart the exact Jacobian has rank 14 in
+58 chart variables, tangent dimension 44, and tangent directions can turn on
+`p_8_0` and `p_14_8`.  The four-parameter classification cannot be promoted to
+the chart without a further theorem.
 
 So the last open chart of the rigidity analysis is closed, and closed the wrong
 way for the campaign: there is no chart in which `pent_L23.ms` is empty.  Every

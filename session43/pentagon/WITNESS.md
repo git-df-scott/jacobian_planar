@@ -69,3 +69,22 @@ still `NO VERDICT`.
     python3 session43/pentagon/pentev.py      # evaluator, controls in control.py
     # or directly, with no dependence on my code:
     #   substitute p_1_0 = 1 and all other p_{j,i} = 0 into wave1/pent_L23.ms
+
+
+## Correction: the complete non-degeneracy condition is six vertices, not one
+
+Codex (`CODEX-003`) reconstructed the Newton polygons from the row supports:
+
+    N(P): (0,0), (1,0), (8,14), (8,16), (0,8)
+    N(Q): (0,0), (2,1), (12,21), (12,24), (0,12)
+
+After the fixed normalisations (`p_0_0` additive, `p_0_1 = 1`; `q_0_0` additive,
+`q_1_2 = 1`), the **mutable** vertices a genuine candidate must keep nonzero are
+
+    p_8_0, p_14_8, p_16_8,  q_12_0, q_21_12, q_24_12 .
+
+So `p_16_8 != 0` is **necessary but not sufficient**.  My `z*p_16_8 - 1` run is
+therefore sound as an *EMPTY-pruning* target — EMPTY there implies no genuine
+configuration — but **any point it returns must be rejected unless all six are
+nonzero**, and in the eliminated P-only formulation the three Q vertices have to
+be evaluated from the recursion rather than assumed.

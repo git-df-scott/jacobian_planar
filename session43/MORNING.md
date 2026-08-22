@@ -15,7 +15,9 @@ mis-specified, and that is now proved rather than suspected.
 families of degenerate solutions — so there is no chart in which it is empty,
 and every Groebner attack on it was doomed regardless of engine or budget.**
 
-**Family A** (`p_1_1 = 0`), classified *exactly* and completely:
+**Family A** — the *x-independent stratum* `P = x + f(y)` (every `p_{j,i} = 0`
+for `i >= 1`), classified *exactly* and completely.  Note this is a sub-stratum
+of the chart `p_1_1 = 0`, not the whole chart:
 
 For any `f(y)` with `deg f <= 5`:
 
@@ -129,8 +131,8 @@ corrected target.
 | target | verdict |
 |---|---|
 | `pent_L23.ms` as exported (+ campaign gauge) | **NONEMPTY** — exact rational witness, verified against the original file |
-| chart `p_1_1 = 0` | **NONEMPTY** — family A, classified exactly |
-| chart `p_1_1 != 0` (rigid) | **NONEMPTY** — family B |
+| chart `p_1_1 = 0` | **NONEMPTY** — contains family A; chart itself NOT classified |
+| chart `p_1_1 != 0` (rigid) | **NONEMPTY** — contains family B |
 | saturated pentagon (`p_16_8 != 0`) | **NO VERDICT** — `msolve -g 2` running |
 | bilinear form, Groebner-only, 900 s | **NO VERDICT** (exit 124, 0 bytes) |
 | bilinear form, Singular `slimgb` | running |
