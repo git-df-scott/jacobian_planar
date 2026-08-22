@@ -60,25 +60,51 @@ def reduce_all(C):
         seen.add(sig); out.append(p)
     return out
 
-print(f"start: {len(conds)} conditions, {len(freev(conds))} parameters", flush=True)
-conds = reduce_all(conds)
-assumptions, elim, order = [], {}, []
+# ---- CHECKPOINTING ----------------------------------------------------
+# The VM this runs on is SUSPENDED between tool calls: CPU time tracks elapsed
+# time exactly, so a backgrounded job makes NO progress while the session is
+# idle.  Long runs therefore have to proceed in foreground slices, and each
+# slice must resume exactly where the last one stopped.
+import os
+CKPT = 'solve3.ckpt'
+if os.path.exists(CKPT):
+    conds, elim, order, assumptions = pickle.load(open(CKPT, 'rb'))
+    print(f"RESUMED: {len(conds)} conditions, {len(freev(conds))} parameters, "
+          f"{len(elim)} already eliminated", flush=True)
+else:
+    print(f"start: {len(conds)} conditions, {len(freev(conds))} parameters", flush=True)
+    conds = reduce_all(conds)
+    assumptions, elim, order = [], {}, []
+    pickle.dump((conds, elim, order, assumptions), open(CKPT, 'wb'))
+DEADLINE = time.time() + float(os.environ.get('SLICE', '540'))
 
 for step in range(300):
     if not conds:
         print("\n*** ALL CONDITIONS SATISFIED ***", flush=True); break
     V = freev(conds)
-    maxdeg = {v: max(sp.Poly(c, v).degree() for c in conds if v in c.free_symbols) for v in V}
+    # One Poly per condition over ALL variables, not one per (condition,
+    # variable) pair.  The naive version cost 77 SECONDS per step -- 19 steps
+    # of pure overhead -- because sp.Poly(c, v) reparses the whole expression
+    # for each v.  Built this way the per-variable degrees are free.
+    P_of = {}
+    for c in conds:
+        vs = sorted(c.free_symbols, key=str)
+        P_of[c] = (sp.Poly(c, *vs), vs)
+    maxdeg = {v: 0 for v in V}
+    for c, (P, vs) in P_of.items():
+        for j, v in enumerate(vs):
+            d = max(m[j] for m in P.monoms())
+            if d > maxdeg[v]: maxdeg[v] = d
     cands = []
     for c in conds:
-        fs = sorted(c.free_symbols, key=str)
+        P, vs = P_of[c]
+        fs = vs
         if len(fs) == 1:
             cands.append((3, nterms(c), str(fs[0]), c, fs[0], None))
             continue
-        for x in fs:
-            P = sp.Poly(c, x)
-            if P.degree() != 1: continue
-            c1 = P.coeff_monomial(x)
+        for j, x in enumerate(fs):
+            if max(m[j] for m in P.monoms()) != 1: continue
+            c1 = sp.Poly(c, x).coeff_monomial(x)
             if c1 == 0: continue
             if c1.is_number and maxdeg[x] == 1: tier = 1
             elif c1.is_number:                  tier = 2
@@ -117,7 +143,13 @@ for step in range(300):
         print(f"step {step:3d} [P{tier}] {x}  ({time.time()-t0:.1f}s) -> {len(conds)} conditions, "
               f"{len(freev(conds))} parameters, biggest {max([nterms(e) for e in conds] or [0])} terms",
               flush=True)
-        done = True; break
+        pickle.dump((conds, elim, order, assumptions), open(CKPT, 'wb'))
+        done = True
+        if time.time() > DEADLINE:
+            print(f"\n--- slice deadline reached, checkpointed after {len(elim)} "
+                  f"eliminations; rerun to continue ---", flush=True)
+            sys.exit(3)
+        break
     if not done:
         print("\nevery pivot blew the term cap; stopping", flush=True); break
 

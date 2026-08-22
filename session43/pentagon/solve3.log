@@ -1,1 +1,5 @@
 start: 59 conditions, 19 parameters
+step   0 [P1] g1_1  (6.2s) -> 55 conditions, 18 parameters, biggest 506 terms
+step   1 [P1] g2_2  (10.2s) -> 54 conditions, 17 parameters, biggest 666 terms
+step   2 [P4] g5_4  (13.3s) -> 51 conditions, 16 parameters, biggest 543 terms
+step   3 [P4] g8_9  (32.2s) -> 50 conditions, 15 parameters, biggest 2733 terms
