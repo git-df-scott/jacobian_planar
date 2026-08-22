@@ -54,8 +54,10 @@ def main(path):
         chart = {name: rng.randrange(prime) for name in VARS}
         chart["p_1_1"] = 0
         chart["p_1_0"] = 1
-        points = [generic, chart]
-        raw = [[], []]
+        degenerate = {name: 0 for name in VARS}
+        degenerate["p_1_0"] = 1
+        points = [generic, chart, degenerate]
+        raw = [[] for _ in points]
         for line in handle:
             poly = line.strip().rstrip(",")
             if not poly:
@@ -71,10 +73,13 @@ def main(path):
 
     if any(len(row) != 66 for row in raw):
         raise AssertionError(f"expected 66 exported polynomials, got {[len(x) for x in raw]}")
-    matches = [sum(a == b for a, b in zip(raw[k], core[k])) for k in range(2)]
+    matches = [sum(a == b for a, b in zip(raw[k], core[k]))
+               for k in range(len(points))]
     print(f"POS generic point: {matches[0]}/66 exact matches")
     print(f"POS p_1_1=0 chart point: {matches[1]}/66 exact matches")
-    if matches != [66, 66]:
+    print(f"POS degenerate rational witness: {matches[2]}/66 exact matches, "
+          f"raw_zero={not any(raw[2])}")
+    if matches != [66, 66, 66] or any(raw[2]):
         return 1
 
     # Negative control: compare the raw generic evaluation to a deliberately
@@ -88,6 +93,7 @@ def main(path):
     if mismatch == 0:
         return 1
     print("CONTROL: PASS")
+    print("VERDICT: NO VERDICT")
     return 0
 
 

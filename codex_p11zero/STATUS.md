@@ -35,7 +35,33 @@ The following controls pass:
 - a planted consistent affine system is recovered and verified;
 - an inconsistent perturbation is rejected;
 - the degenerate solution `P=x+y` is accepted by the bracket/support equations
-  but rejected by the required Newton-vertex checks.
+  and by all 66 untouched raw polynomials, but rejected by the required
+  Newton-vertex checks.
+
+The unsaturated exported system in this chart is therefore `NONEMPTY`.  That
+result is degenerate and is not a counterexample candidate.  The CE-bearing
+target in this branch always includes the Newton-vertex nonzero conditions.
+
+## Non-degeneracy audit
+
+The convex hulls reconstructed from the row supports have vertices
+
+```text
+N(P): (0,0), (1,0), (8,14), (8,16), (0,8)
+N(Q): (0,0), (2,1), (12,21), (12,24), (0,12)
+```
+
+After the additive/fixed normalizations, a candidate must check the mutable
+nonzeros
+
+```text
+p_8_0, p_14_8, p_16_8
+q_12_0, q_21_12, q_24_12.
+```
+
+Thus `p_16_8 != 0` is a sound necessary saturation for an EMPTY-pruning run,
+but it is not a complete non-degeneracy test for a returned point.  Every
+candidate must pass all six mutable vertex checks above.
 
 ## Completed searches
 
@@ -80,6 +106,7 @@ Run with Python 3:
 ```text
 python3 codex_p11zero/audit_p11zero.py
 python3 codex_p11zero/raw_export_control.py
+python3 codex_p11zero/vertex_audit.py
 python3 codex_p11zero/search_sparse.py
 python3 codex_p11zero/tangent_probe.py
 python3 codex_p11zero/search_top_edge.py
