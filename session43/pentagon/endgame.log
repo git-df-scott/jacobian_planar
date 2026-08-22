@@ -11,3 +11,10 @@ L= 10: 1 gate(s) -> imposed ['g6_6']
 L= 10: OK (5 eqs, 6 new, rank 5, kernel 1), residual 0
 L=  9: 2 components -> taking first (BRANCH CHOICE)
 L=  9: 3 gate(s) -> imposed ['g5_5', 'g6_4']
+L=  9: 1 gate(s) -> imposed ['g7_9']
+L=  9: OK (4 eqs, 5 new, rank 4, kernel 1), residual 0
+L=  8: 3 gate(s) -> imposed ['g3_3']
+L=  8: 2 gate(s) -> imposed ['g6_5', 'g6_8']
+L=  8: OK (3 eqs, 4 new, rank 3, kernel 1), residual 0
+
+=== ENDGAME: levels 7 .. -2 (no new unknowns) ===
