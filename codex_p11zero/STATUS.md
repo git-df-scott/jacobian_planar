@@ -111,6 +111,37 @@ slice: each correction is defined only modulo a 34-dimensional kernel, which
 the greedy probe discards.  The earlier slice-exclusion interpretation is
 retracted.  A valid higher-order search must retain that kernel freedom.
 
+### Kernel-aware order-two gate
+
+`kernel_order2.py` replaces the greedy lift with an exact parameterization of
+every first jet compatible with the normalized square/cube slope edge.  It also
+keeps the five vertical-right-edge coefficients explicitly zero through order
+two, as required when their shared square/cube edge begins at orders three and
+four.
+
+At both tested primes the full bracket Jacobian has rank 135, while the
+first-jet gate has rank 145 and a 34-dimensional affine kernel.  Projecting the
+quadratic order-two residue to the 182-dimensional cokernel gives an obstruction
+space of dimension 74.  Six exact linear obstructions are consistent and reduce
+the search to 28 coordinates.
+
+Completed exact reconnaissance:
+
+```text
+F_43: 667,969 exhaustive Hamming-weight <=2 compatible coordinates
+      +250,000 seeded full-support coordinates = 917,969 total
+F_31: 341,041 exhaustive Hamming-weight <=2 compatible coordinates
+      +250,000 seeded full-support coordinates = 591,041 total
+```
+
+No obstruction-zero jet was found.  The exhaustive sets depend on the chosen
+kernel basis and the remaining samples are finite random reconnaissance, so
+this does not exclude the formal gate or the root.
+
+Controls pass for the exact nonconstant family arc, a forbidden first-order
+`p_16_8`, a planted cokernel-image vector, and eight independent direct versus
+expanded obstruction projections.
+
 ## Full sparse bilinear target
 
 `bilinear_full.py` keeps every supported Q coefficient and imposes the complete
@@ -151,6 +182,9 @@ python3 codex_p11zero/vertex_audit.py
 python3 codex_p11zero/bilinear_full.py
 python3 codex_p11zero/bilinear_tangent.py
 python3 codex_p11zero/formal_arc_probe.py
+python3 codex_p11zero/kernel_order2.py --random-samples 250000
+python3 codex_p11zero/kernel_order2.py --prime 31 --random-samples 250000 \
+  --seed 2026082231
 python3 codex_p11zero/search_sparse.py
 python3 codex_p11zero/tangent_probe.py
 python3 codex_p11zero/search_top_edge.py
