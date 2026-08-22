@@ -203,3 +203,28 @@ one-job-at-a-time; a genuine memcg OOM is still recorded as NO VERDICT.
 was caught by a control; this one was caught by *reading my own notes ten hours
 later*.  Writing a failure down is not the same as building the guard, and a
 ledger only helps if the fix goes into the tool rather than the prose.
+
+## A14 — my minor enumerator silently reported "inconsistent" when the
+## coefficient matrix was column-rank-deficient
+
+`cascade_fast.py` extracted the residual conditions at each rung as the
+`(rM+1)`-minors of the augmented matrix `[Mat|vec]`, but guarded the enumeration
+with `if Aug.shape[1] == rM+1`.  That holds only while `Mat` has **full column
+rank**.  At rung 15 the rank dropped (`rank(Mat) = 7`, 8 unknowns), so
+`Aug.shape[1] = 9 != 8`, the loop broke immediately, the condition list came back
+empty, and the script printed **"still inconsistent"**.
+
+That line was a **bug in the extractor, not a mathematical result**, and it is
+retracted.  The correct enumeration ranges over row *and* column subsets of size
+`rM+1`, which is what `rung17.py` already did correctly one rung earlier — the
+same lesson as A13: I had the right code in hand and did not reuse it.
+
+The rank drop is not an anomaly either.  It is exactly what the ODE picture
+predicts: rung `d` is a first-order linear ODE for `B_{d-7}`, so its solution
+carries a **free constant of integration**, and that constant is the kernel
+vector making `Mat` column-rank-deficient.  A one-dimensional kernel here is a
+signature of correctness, not of failure — and it is the same kernel freedom
+whose greedy elimination manufactured the false obstruction retracted in A3.
+
+**Never read "no solution returned" as "no solution exists."**  That is the third
+time this exact substitution has been caught in this campaign (C6, A3, A14).

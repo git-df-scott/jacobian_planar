@@ -1,0 +1,3 @@
+rung 18 re-check: PASS
+rung 15: 10 eqs, 8 unknowns, rank(Mat)=7, rank(Aug)=8
+  -> Mat is column-rank-deficient by 1: B_8 carries a free constant of integration
