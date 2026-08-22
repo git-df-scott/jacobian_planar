@@ -133,3 +133,37 @@ establishes is that the projection is not dominant in either direction.
 
 The pattern that keeps repeating: **the saturation variable is the one that gets
 forgotten, and it is the one carrying the nondegeneracy conditions.**
+
+## msolve: a hard 2²⁵ ceiling — and I misdiagnosed it twice
+
+msolve aborts with `Enlarging exponent vector for hash table failed for
+esz = 33554432` on every hard target here. The constant never moves:
+
+| target | vars | memory cap | result |
+|---|---|---|---|
+| root | 166 | 13 GB | `esz = 33554432` |
+| linred slice | 148 | 6 GB | `esz = 33554432`, `exit=139` |
+| saturated block | 61 | 6 GB | `esz = 33554432`, `exit=139` |
+| saturated block | 61 | **9 GB** | `esz = 33554432`, `exit=139` |
+
+**My first diagnosis** — "fails structurally on variable count, the hash table
+is dense in nvars" — is refuted by rows 3 and 4: the same ceiling at 61
+variables as at 166.
+
+**My second diagnosis** — "it is monomial count, so the fix is more memory" —
+is refuted by row 4: 9 GB dies exactly like 6 GB.
+
+**What is actually true.** msolve is working correctly here; on tiny systems it
+returns a parametrization, `[-1]` for an empty one, and `[1, n, -1, []]` for a
+positive-dimensional one. It has a **hard internal ceiling of 2²⁵ hash-table
+entries**. Any system whose F4 needs more monomials than that is out of reach
+for this build, *independent of variable count and independent of available
+memory*. Nothing but a system generating fewer monomials will help.
+
+So the original conclusion — msolve is ruled out for these targets — stands, but
+it stood for the wrong reason, and the wrong reason is what drove the hunt for
+ever-smaller subsystems. That hunt produced the 61×61 decisive block, so it was
+not wasted; but it was undertaken on a false premise and should be recorded that
+way.
+
+**Everything from here is Singular.**
