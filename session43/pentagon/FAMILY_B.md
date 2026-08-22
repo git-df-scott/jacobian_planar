@@ -70,3 +70,28 @@ structured points can be swept directly.  The lesson for the remaining targets
 is that a cheap exact evaluator plus a sparse sweep should precede any Groebner
 budget, and that any export lacking explicit non-degeneracy rows should be
 assumed to admit families like these until checked.
+
+## Deformation sweep into x-degree >= 2 (evidence, not proof)
+
+Both known families have `p_{j,i} = 0` for all `i >= 2`, i.e. P is affine in x.
+The natural question is whether either deforms into genuine x-degree.
+
+Swept all 42 coefficients with `i >= 2`, one at a time, along family B at
+`lambda = 1` and `lambda = 7`: for each, the 66 conditions were interpolated
+exactly as univariate polynomials in the new coefficient `t` (degree <= 11), and
+their GCD taken.  A common nonzero root would be a deformation.
+
+**Result: 0 of 42, at both lambda values.**
+
+**Control error, recorded.**  The first version of this sweep reported all 84
+cases as candidates with a degree-1 GCD.  Those were spurious: the GCD was `X`
+itself, whose root is `t = 0` — the base point of the family, which is a
+solution by construction.  Stripping the trivial root leaves nothing.  A sweep
+whose "hits" are all the point you started from is finding its own input, and it
+would have been easy to report the first run as 84 leads.
+
+So on these families the answer is that no single `i >= 2` coefficient can be
+switched on.  That is **evidence, not a proof**: it tests one-parameter
+deformations along two lines, and a solution with several `i >= 2` coefficients
+simultaneously nonzero would not be seen.  `NO VERDICT` on the saturated
+question stands.
