@@ -61,3 +61,46 @@ solve.** This is the next thing to run on this slice.
 
 An EMPTY here is a result about one point of s-space, and must never be
 recorded as a verdict on trackB1.
+
+---
+
+## LIMITATION — why an EMPTY slice is weak evidence, stated before the results
+
+Recording this **before** any slice verdict lands, so it cannot be written as a
+rationalisation afterwards.
+
+Fixing `s` makes the computation tractable, but it **strictly reduces the chance
+that a solution exists in the object being computed**. The slice is empty
+whenever the chosen `s` is not in the image of the projection
+
+    V(trackB1)  --->  s-space  (4-dimensional)
+
+and we already have direct evidence that trackB1's projections are **not
+dominant**: at both primes, every random `(d,s)` admits no `c`, and every random
+`(c,s)` admits no `d`. A variety whose projection to the `(d,s)`-block misses a
+generic point has no reason to hit a generic point of the smaller `s`-block
+either.
+
+So the inference to be careful about is:
+
+> generic s-slice EMPTY  ⟹  trackB1 EMPTY      **✗ INVALID**
+
+If V(trackB1) is nonempty but its projection to `s`-space is not dominant — which
+is exactly what the probes suggest — then **every** generic `s`-slice is empty
+while trackB1 itself is nonempty. Emptiness of the slices would be precisely
+what we should expect in that case, and would carry almost no information about
+the question we care about.
+
+What the slices CAN do, honestly:
+
+- **NONEMPTY at any seed → a genuine point.** This direction is sound and is the
+  whole reason to run them. A hit is a hit.
+- **EMPTY at several seeds →** only that those `s` are outside the image. It
+  confines any solution over a proper closed subset of the 4-dimensional
+  `s`-space. That is worth having *only* because 4 dimensions is small enough to
+  then attack directly — not because it is evidence of emptiness.
+
+This is the same trap as the random `(d,s)` probes, one level up: a search that
+provably cannot reach the solution locus tells you little when it fails. The
+slices are being run for their **positive** direction and as a route to
+characterising the exceptional `s`-locus, not as an emptiness argument.
