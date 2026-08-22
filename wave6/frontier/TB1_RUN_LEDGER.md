@@ -175,13 +175,14 @@ primes:
 
 | block | prime | D=4 | D=5 | D=6 |
 |---|---|---|---|---|
-| 61×61 saturated | 1000003 | no unit | no unit | OOM at 3.5 GB, retried at 5 GB |
-| 97×97 saturated | 1000003 | no unit | no unit | OOM at 3.5 GB, then at 4.5 GB, retried at 6.5 GB |
-| 97×97 saturated | **65521** | no unit | no unit | pending |
+| 61×61 saturated | 1000003 | no unit | no unit | **no unit — COMPLETED at 13 GB, `exit=0`** |
+| 97×97 saturated | 1000003 | no unit | no unit | OOM at 3.5, 4.5 and 6.5 GB |
+| 97×97 saturated | **65521** | no unit | no unit | OOM at 3.5 GB |
 
 Three ladders, two block sizes, two independent primes, all agreeing. So:
 
-> **If these blocks are empty, any Nullstellensatz certificate has degree ≥ 6.**
+> **If these blocks are empty, any Nullstellensatz certificate has degree ≥ 7.**
+> (Raised from ≥6 once the degree-6 rung completed cleanly — see below.)
 
 The cross-prime agreement matters: it makes this a statement about the integer
 system rather than a mod-p artifact. Both primes would have to conspire for a
@@ -257,3 +258,28 @@ minutes** while the logs looked like a normal shutdown.
 Fix: kill by PID, or keep the pattern out of the command that greps for it. The
 failure is silent and looks exactly like a clean process exit, which is what
 makes it worth writing down rather than just not repeating.
+
+
+## The degree-6 rung COMPLETED — first terminating run of the night
+
+`blk3 degree 6: no unit`, `BLK4_exit=0`. A clean exit, not a timeout and not an
+OOM: 61×61 saturated block, p = 1000003, 13 GB, sole occupancy, ~14 minutes,
+peaking around 5.1 GB.
+
+**This settles the memory question.** Degree 6 on this block had died three
+times — at 3.5 GB and 5 GB on the 61-block, and at 3.5, 4.5 and 6.5 GB on the
+97-block. Every one of those was **my cap**, not the computation diverging. Given
+enough memory the rung terminates, and it does so in minutes.
+
+**What the result is.** No Nullstellensatz certificate of degree ≤ 6 exists for
+the 61-block. The bound moves from ≥6 to **≥7**.
+
+**What the result is not.** It is *not* evidence that the block is nonempty, and
+it is *not* a verdict on trackB1. The ladder is one-sided by construction: a
+unit proves EMPTY, its absence proves only that the bound was too low. Fourteen
+NO VERDICTs precede this and it does not overturn any of them.
+
+The value is that the method is now *known to work* rather than hoped to. Every
+previous technique either crashed structurally (msolve's 2²⁵ ceiling) or ran out
+of clock with nothing to show. This one terminates, produces a definite answer
+per rung, and can be walked upward. Degree 7 launched immediately at 13 GB.
