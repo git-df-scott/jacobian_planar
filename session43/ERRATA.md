@@ -285,3 +285,33 @@ This is the campaign's fourth instance of a tool's silence being read as a
 verdict (C6, A3, A14, A16), and the first where the false reading was EMPTY
 rather than "no solution" — i.e. the first that would have been reported as a
 mathematical claim about the Jacobian conjecture.
+
+## A17 — I ran a verification job concurrently with a heavy solver, and it
+## triggered the OOM
+
+`eighth_g2` (msolve `-g 2`, 179 vars) was killed at 270 s, exit 137.  `dmesg`:
+
+    claude invoked oom-killer: ... oom_memcg=.../claude-code-bash, task=msolve
+    Killed process 23036 (msolve) total-vm:21976024kB, anon-rss:13961020kB
+
+msolve had reached **13.96 GB** of a ~15 GB shared cgroup, so it was within
+seconds of dying on its own.  But the allocation that *tripped* the killer came
+from a claude-side process — my `verify_all.py` sweep, which I started while the
+solver was running.
+
+So unlike the two Cor 5.7 OOMs (where the only other process was 101 MB and I
+checked before attributing), **this one I cannot cleanly call a genuine ceiling**.
+The verdict is `NO VERDICT` either way, but the *cause* is mixed, and recording
+it as a clean memory ceiling would be an overclaim.
+
+This is A7 recurring: **one heavy job at a time**.  Writing that rule down three
+times has not made me follow it; the fix is the same as A13's — the guard, not
+the note.  `runner.sh` should refuse to start a solver while another is running,
+and I should not start sympy sweeps against a live solver.
+
+**Wider consequence.**  Three targets have now hit ~14 GB: the degree-22 export,
+both Cor 5.7 shapes, and the 179-variable eighth-power target.  **This box cannot
+decide the pentagon as a monolithic system, at any of the formulations tried.**
+That is a real finding and it redirects the work: the w-cascade is
+block-triangular with a largest block of 20 equations, so the right move is 22
+small solver calls, not one large one.
