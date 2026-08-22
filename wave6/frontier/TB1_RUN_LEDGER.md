@@ -51,11 +51,21 @@ Seven attempts, two engines, two primes, four monomial orders (dp, block
 `(51,115)`, 3-block `c>d>s`, Hilbert-driven), degree-bounded and unbounded,
 4–13 GB, 50–60 minutes each. **All NO VERDICT.**
 
-msolve fails *structurally* — its exponent hash table is dense in the variable
-count, so 2²⁵ monomials × 166 slots ≈ 22 GB regardless of flags; it also
-segfaulted on the 148-variable reduced slice (`exit=139`), so it is ruled out
-for this target at any reduction reachable here. Singular fails on *time*: every
-run was still computing when killed, none crashed and none exhausted memory.
+**Correction — my first diagnosis of msolve was wrong.** I wrote that msolve
+"fails structurally on variable count", its hash table being dense in nvars.
+That is not what the data says. msolve aborts with the *same* ceiling,
+`esz = 33554432` = 2²⁵, at **166, 148 and 61 variables alike**. The variable
+count is not what saturates it — the **monomial count generated during F4** is,
+and 2²⁵ is where its hash table gives up.
+
+What that changes: the remedy is **more memory, not fewer variables**, which is
+the opposite of what I concluded and the opposite of what I acted on. At 61
+variables the table needs 2²⁵ × 61 × 4 B ≈ 8.2 GB, and it was capped at 6 GB —
+so the cap was the binding constraint, and shrinking the system from 166 to 61
+variables never addressed it. Retried at 9 GB.
+
+Singular fails on *time*: every run was still computing when killed, none
+crashed and none exhausted memory.
 
 The conclusion to draw is not "try harder on the root". It is that **the
 unreduced 166-variable root is out of reach of the available tooling**, and the
