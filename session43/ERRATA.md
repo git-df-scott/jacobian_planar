@@ -343,3 +343,43 @@ once on `queue/runner.sh` (killing two background watchers), once on `msolve`
 Fix, now used: resolve PIDs first with `ps -eo pid,args | grep <pat> | grep -v
 grep | awk '{print $1}'` and kill those, never `pkill -f` on a pattern that
 appears in the current command.
+
+## A20 — I reported a DISAGREEMENT with Codex on the strength of an instrument
+## that fails its own control. Retracted.
+
+I tested Codex's level-16 branch 1 (`sigma^5 | h_7` and `sigma^2 | h_6`) and
+reported **INCONSISTENT at level 16**, contradicting his derivation, and sent that
+to him as OPUS43-020.
+
+Building a second, independent test in exact `F_p` arithmetic exposed the
+problem.  That harness carries a control: `sigma^2 | h_7` **must** clear level 18,
+since level 18's condition is exactly `sigma^2 | h_7` — proved three independent
+ways (2-variable w-cascade, 1-variable s-ladder, diagonal recursion).  The
+harness reports it **INCONSISTENT at level 18**.
+
+**Control failed => every verdict from that harness is void**, including:
+
+* branch 1 INCONSISTENT at level 16 (the claimed disagreement) — **RETRACTED**;
+* `sigma^{4..8} | h_7` INCONSISTENT at level 16 — **suspect**, same code path;
+* `sigma^{0..4} | h_6` INCONSISTENT at level 17 — **suspect**, same code path.
+
+Two bugs found and fixed along the way, and the control still fails, so there is
+at least a third:
+
+1. `h_6` was fixed numerically although `h_6` is one of **level 18's unknowns**
+   (level `L` introduces `h_{L-12}` and `g_{L-8}`), over-constraining the level.
+2. `sp.Matrix.rank(iszerofunc=...)` does **not** do modular arithmetic in the
+   pivots — it eliminates over `ZZ` and only tests zero mod `p`.  That is not an
+   `F_p` rank.  Replaced with an explicit mod-`p` rref.
+
+**What I should have done:** run the control *before* reporting the
+disagreement.  I have written that rule down twice already (A15, and the
+"controls before output" lesson in the sweep) and broke it again, this time in
+the worst possible direction — telling a collaborator his correct result was
+wrong.  To his credit, the thing that caught it was building the second
+instrument he effectively asked for.
+
+The scientific position is now: **Codex's level-16 branching condition stands
+unchallenged.**  I have no working independent test of it.  Producing one — or an
+explicit `F_p` witness of branch 1 — is my job before I say anything further
+about his result.
