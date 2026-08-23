@@ -65,7 +65,16 @@ def res(e):
         if e2 == e: return e2
         e = e2
     raise RuntimeError("no fixed point")
-for L in range(19, -3, -1):
+import os
+CK = 'nodivide2.ckpt'
+START = 19
+if os.path.exists(CK):
+    START, sub, USES, conds = pickle.load(open(CK, 'rb'))
+    START -= 1
+    print(f"RESUMED at level {START}: {len(sub)} substitutions, "
+          f"{len(conds)} conditions so far", flush=True)
+DEADLINE = __import__('time').time() + float(os.environ.get('SLICE', '440'))
+for L in range(START, -3, -1):
     e = res(lev(L))
     eqs = [c for c in (sp.Poly(e, z).all_coeffs() if e != 0 else []) if sp.expand(c) != 0]
     if not eqs:
@@ -124,6 +133,11 @@ for L in range(19, -3, -1):
     conds += left
     print(f"L={L:3d}: {solved} solved on rational pivots, {len(left)} condition(s) carried out, "
           f"{len(new)} new unknown(s) left free", flush=True)
+    pickle.dump((L, sub, USES, conds), open(CK, 'wb'))
+    if __import__('time').time() > DEADLINE:
+        print(f"--- slice deadline; checkpointed after level {L}, rerun to continue ---",
+              flush=True)
+        sys.exit(3)
 V = sorted(set().union(*[c.free_symbols for c in conds]), key=str) if conds else []
 print(f"\nTOTAL {len(conds)} conditions in {len(V)} variables")
 pickle.dump((conds, sub), open('nodivide.pkl','wb'))
