@@ -1,0 +1,8 @@
+minpoly check (must be 0): 0
+E1 residual (must be 0): 0
+conditions: 45
+E2 (linear in A) conditions: 7
+dim of E2-variety (A-space, 8 vars +B free): 12
+dim = -1
+GBsize = 1
+GB[1] = 1

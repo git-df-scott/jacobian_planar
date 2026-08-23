@@ -317,7 +317,20 @@ is forced, not assumed, by the argument above.
 | 2 | 6 | free | **EMPTY** |
 | 4 | 12 | 3 solutions | **EMPTY** |
 | 6 | 18 | 10 solutions (2 orbits) | **EMPTY** |
-| 8 | 24 = `(72,108)` | 35 solutions (5 orbits) | running per orbit |
+| 8 | 24 = `(72,108)` | 35 solutions (5 orbits) | **EMPTY**, all five orbits |
 
-So the `(18,27)` rung is empty not merely against the campaign's prescribed
-`Q`-windows but against **every** strip-type `Q` of `T`-degree up to `2m+2`.
+Per-orbit runs for `m = 8`: `widestage_0.log`, `widestage_1.log` (the two
+`F_p`-rational orbits) and `widestage_ext3.log` (the three living in
+`F_p[a]/(a³−10400a²+1641a−3068)`) — every one `dim = −1`, GB `= 1`.
+
+So each even rung up to and including `(72,108)` is empty not merely against
+the campaign's prescribed `Q`-windows but against **every** strip-type `Q` of
+`T`-degree up to `2m+2`. Combined with §"Odd m is free", the whole 2:3 ray is
+decided through `m = 8`:
+
+> For `m ≤ 8`, there is no `P` with the minimal-width `μ=2` strip polygon of
+> parameter `m` and any strip-type `Q` at all satisfying `{P,Q} = x²` with the
+> polygon's three vertex coefficients nonzero.
+
+`m = 10` (deg P = 30) is the first undecided rung, and its leading level is the
+first real test of the Catalan count.
