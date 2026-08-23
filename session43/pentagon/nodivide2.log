@@ -1,0 +1,31 @@
+L= 19: 12 solved on rational pivots, 0 condition(s) carried out, 1 new unknown(s) left free
+L= 18: 12 solved on rational pivots, 0 condition(s) carried out, 1 new unknown(s) left free
+L= 17: 12 solved on rational pivots, 0 condition(s) carried out, 9 new unknown(s) left free
+L= 16: 11 solved on rational pivots, 0 condition(s) carried out, 8 new unknown(s) left free
+        unconditional gate: g11_11
+L= 15: 10 solved on rational pivots, 0 condition(s) carried out, 7 new unknown(s) left free
+        unconditional gate: g10_10
+        unconditional gate: g9_4
+        unconditional gate: g9_5
+L= 14: 9 solved on rational pivots, 0 condition(s) carried out, 6 new unknown(s) left free
+        unconditional gate: g9_11
+        unconditional gate: g9_9
+L= 13: 8 solved on rational pivots, 2 condition(s) carried out, 5 new unknown(s) left free
+        unconditional gate: g8_10
+        unconditional gate: g8_4
+L= 12: 7 solved on rational pivots, 2 condition(s) carried out, 4 new unknown(s) left free
+        unconditional gate: g7_7
+        unconditional gate: g9_6
+L= 11: 6 solved on rational pivots, 3 condition(s) carried out, 1 new unknown(s) left free
+        unconditional gate: g6_6
+L= 10: 5 solved on rational pivots, 5 condition(s) carried out, 1 new unknown(s) left free
+        unconditional gate: g7_9
+        unconditional gate: g5_5
+L=  9: 4 solved on rational pivots, 7 condition(s) carried out, 1 new unknown(s) left free
+        unconditional gate: g6_8
+L=  8: 3 solved on rational pivots, 7 condition(s) carried out, 1 new unknown(s) left free
+        unconditional gate: g3_3
+        unconditional gate: g2_2
+        unconditional gate: g1_1
+L=  7: 0 solved on rational pivots, 8 condition(s) carried out, 0 new unknown(s) left free
+L=  6: 0 solved on rational pivots, 10 condition(s) carried out, 0 new unknown(s) left free
