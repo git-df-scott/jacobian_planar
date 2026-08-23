@@ -1,0 +1,7 @@
+261 equations, h-block 33, g-block 111
+--- CONTROL FIRST (erratum A15): planted consistent RHS on the same M ---
+planted: rank(M)=110  rank[M|v]=110  defect=0  CONSISTENT
+--- control passed; now the real right-hand side ---
+random h #0: rank(M)=110  rank[M|v]=111  defect=1  inconsistent
+random h #1: rank(M)=110  rank[M|v]=111  defect=1  inconsistent
+random h #2: rank(M)=110  rank[M|v]=111  defect=1  inconsistent

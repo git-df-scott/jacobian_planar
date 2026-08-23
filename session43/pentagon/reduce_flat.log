@@ -1,0 +1,5 @@
+start: 261 equations, 142 unknowns
+round 0: no quadratic-free variable left
+
+REDUCED: 261 equations, 142 unknowns, maxdeg 2, 0 eliminated unconditionally
+saved reduced_flat.pkl

@@ -1,0 +1,5 @@
+ring R = 1073741827, (x,y), dp;
+ideal I = x*y-1, x+y;
+ideal G = std(I);
+printf("BASIS SIZE %s", size(G));
+quit;
