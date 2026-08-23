@@ -1,3 +1,5 @@
 // ** int division with `/`: use `div` instead in line >>int dg = 3*m/2;                 // T-degree of every g_sigma<<
 // ** int division with `/`: use `div` instead in line >>"m = " + string(m) + "  degP = " + string(3*m) + "  degQ = " + string(9*m/2)<<
 m = 10  degP = 30  degQ = 45  unknowns = 30  E1conds = 8  lower = 50
+
+halt 1

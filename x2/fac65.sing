@@ -1,0 +1,6 @@
+ring R = 65521, F6, dp;
+poly h = F6^35-4287*F6^28+7808*F6^21+1500*F6^14-18438*F6^7-17879;
+list L = factorize(h);
+int i;
+for (i=1; i<=size(L[1]); i++) { if (deg(L[1][i])>0) { string(deg(L[1][i])) + " : " + string(L[1][i]); } }
+quit;

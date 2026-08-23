@@ -165,3 +165,49 @@ easiest strip cannot host a counterexample, and it is a proof, not a search.
 | `stage_*.sing` | per-`E1`-orbit lower-level runs |
 | `certify.py` | exact certifier: bracket, support, hull, vertex nonvanishing |
 | `witnesses.py` | the `μ=1` family, built and certified |
+
+## 7. The general engine, and a ranking of remaining targets
+
+The reduction is not special to one polygon. Let `μ ≥ 1`, put `T = x y^μ`, and
+grade by `ρ = μ·(x-exp) − (y-exp)`; then for **any** `μ`
+
+```
+{ y^{-ρ} f(T),  y^{-σ} g(T) }  =  y^{μ−1−ρ−σ} · ( ρ f g' − σ f' g ).
+```
+
+`x^k = T^k y^{−kμ}` therefore sits at level `ρ+σ = (k+1)μ − 1`. If `supp(P)`
+occupies `ρ ∈ [0, ρ_max]` and `supp(Q)` occupies `σ ∈ [0, σ_max]` with
+`ρ_max + σ_max = (k+1)μ − 1`, the two-variable system splits into
+`ρ_max + σ_max + 1` one-variable levels, the top one being
+
+```
+ρ_max · f g' − σ_max · f' g = T^k ,
+```
+
+which is exactness of `T^k dT / y^{2σ_max−ρ_max+…}` on the cyclic cover
+`y^{ρ_max} = f(T)` — a vanishing-period condition whose genus, and hence
+condition count, is read off the polygon. Everything below the top is linear
+in one unknown `g_σ` at a time.
+
+Ranking the remaining bracket-`x^2` territory by how expensive this makes it:
+
+| target | grading | top-level equation | status |
+|---|---|---|---|
+| `μ=1` strips (smallest possible support) | `T = xy`, `(ρ_max,σ_max) = (1,1)` | `W(φ,ψ) = 1` | **CLOSED by proof**: forces `deg φ ≤ 1`, hence `deg Q ≤ deg P`, hence the 2:3 ray is unreachable |
+| minimal `μ=2` strips, `m` even (the 2:3 ray; `m=8` is `(72,108)`) | `T = xy²`, `(2,3)` | `2 f g' − 3 f' g = T²` (genus `m/2 − 1`) | `m = 2,4,6,8` **EMPTY**; `m ≥ 10` running |
+| `p108_821326` / `843700` | `T = xy²`, `(3,2)` — the strip widens to width 3 at the top corner; polygon `(0,0),(1,0),(12,21),(12,24)` | `3 f g' − 2 f' g = T²` | campaign says EMPTY; a free replication control for this engine |
+| `w6_582584_0` — **the pentagon** | direction `(7,3)`, `T = x⁷y³`, polygon `(0,0),(1,0),(21,6),(21,9)` | 22 graded levels | **not attempted here.** The reduction applies but the strip is wide; this is the natural next target |
+| bracket-`x` targets (`p108_192622`, `w6_35657_*`) | `T = xy³`, `(3,2)` | `3 f g' − 2 f' g = T` — a **trigonal** cover `y³ = f(T)`, not hyperelliptic | not attempted here |
+
+## 8. What was *not* found, stated plainly
+
+No counterexample. No pair `(P,Q)` with `{P,Q} = x²` matching a surviving GGHV
+target was produced, and the four rungs of the 2:3 ray that were decided came
+back empty. The witnesses in §5 satisfy the bracket equation exactly but not
+the polygon conditions, and §5 proves they cannot be pushed to.
+
+What did change: the `(72,108)` resister `p108_525122` went from *undecided
+after 1800 s / 6 GB of `msolve`* to *decided in about two minutes per orbit*,
+and the reason it dies is now visible rather than opaque — the leading
+period-level admits exactly five solutions, and each is destroyed by the
+`f_0' ≠ 0` that the polygon's own top-left vertex forces.

@@ -1,0 +1,39 @@
+int nF = 7; int nA = 8; int nB = 9; int dg = 12;
+ring R0 = (1000003, a), (A(0..nA-1), B(0..nB-1), T), dp;
+minpoly = a-422048;
+number v7 = -(-1);
+number v5 = -(-273258*a^30-342005*a^23-203864*a^16+388333*a^9+281247*a^2);
+number v4 = -(+316992*a^31-385289*a^24-383555*a^17+46548*a^10-406590*a^3);
+number v3 = -(+481613*a^32-442653*a^25+416962*a^18-33793*a^11-300413*a^4);
+number v2 = -(+41559*a^33+186584*a^26-43751*a^19+41222*a^12-249191*a^5);
+number v1 = -(+416212*a^34+454733*a^27-135787*a^20-282409*a^13+42988*a^6);
+number v7 = 1;
+list FVl = number(v1),number(v2),number(v3),number(v4),number(v5),number(v6),number(v7);
+proc cf(poly p, int k) { matrix M = coeffs(p, T); if (k+1 > nrows(M)) { return(poly(0)); } return(M[k+1,1]); }
+proc addall(poly p) { matrix M = coeffs(p,T); int k; ideal J; for (k=1; k<=nrows(M); k++) { J = J + ideal(M[k,1]); } return(J); }
+int i; int n; poly cur; poly d;
+poly f2 = T; for (i=1; i<=nF; i++) { f2 = f2 + FVl[i]*T^(i+1); }
+poly f1 = 0; for (i=0; i<=nA-1; i++) { f1 = f1 + A(i)*T^(i+1); }
+poly f0 = 0; for (i=0; i<=nB-1; i++) { f0 = f0 + B(i)*T^i; }
+poly g3 = 0;
+for (n=0; n<=dg-2; n++) { cur = 2*f2*diff(g3,T) - 3*diff(f2,T)*g3 - T^2; d = -cf(cur,n+2)/(1+2*n); g3 = g3 + d*T^(n+2); }
+"E1residualcount " + string(size(simplify(addall(2*f2*diff(g3,T) - 3*diff(f2,T)*g3 - T^2),2)));
+poly src4 = f1*diff(g3,T) - 3*diff(f1,T)*g3;
+poly g2 = 0;
+for (n=0; n<=dg-2; n++) { cur = 2*f2*diff(g2,T) - 2*diff(f2,T)*g2 + src4; d = -cf(cur,n+2)/(2+2*n); g2 = g2 + d*T^(n+2); }
+poly R4 = 2*f2*diff(g2,T) - 2*diff(f2,T)*g2 + src4;
+poly src3 = f1*diff(g2,T) - 2*diff(f1,T)*g2 - 3*diff(f0,T)*g3;
+poly g1 = 0;
+for (n=0; n<=dg-1; n++) { cur = 2*f2*diff(g1,T) - diff(f2,T)*g1 + src3; d = -cf(cur,n+1)/(1+2*n); g1 = g1 + d*T^(n+1); }
+poly R3 = 2*f2*diff(g1,T) - diff(f2,T)*g1 + src3;
+poly src2 = f1*diff(g1,T) - diff(f1,T)*g1 - 2*diff(f0,T)*g2;
+poly g0 = 0;
+for (n=0; n<=dg-1; n++) { cur = 2*f2*diff(g0,T) + src2; d = -cf(cur,n+1)/(2+2*n); g0 = g0 + d*T^(n+1); }
+ideal REST = simplify(addall(2*f2*diff(g0,T) + src2) + addall(R3) + addall(R4)
+                      + addall(f1*diff(g0,T) - diff(f0,T)*g1), 2);
+ring RF = (1000003, a), (A(0..nA-1), B(0..nB-1), U), dp;
+minpoly = a-422048;
+ideal I = imap(R0,REST) + ideal(U*B(nB-1)-1);
+ideal G = std(I);
+"VERDICT dim " + string(dim(G)) + " GB1 " + string(G[1]);
+quit;
