@@ -10,3 +10,57 @@ TRI FF(2)+41559*FF(6)^33+186584*FF(6)^26-43751*FF(6)^19+41222*FF(6)^12-249191*FF
 TRI FF(1)+416212*FF(6)^34+454733*FF(6)^27-135787*FF(6)^20-282409*FF(6)^13+42988*FF(6)^6
 eliminant: FF(6)^35-241486*FF(6)^28-53345*FF(6)^21+473512*FF(6)^14+456483*FF(6)^7+74608
 9 irreducible factors, degrees [1, 2, 2, 3, 3, 6, 6, 6, 6]
+[factor 0 deg 1]    ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 6: `number v4 = -(+316992*a^31-385289*a^24-383555*a^17+46548*a^10-406590*a^3);`
+   ? last reserved name was `number`
+   skipping text from `316992` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 7: `number v3 = -(+481613*a^32-442653*a^25+416962*a^18-33793*a^11-300413*a^4);`
+   ? last reserved name was `number`
+   skipping text from `481613` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 8: `number v2 = -(+41559*a^33+186584*a^26-43751*a^19+41222*a^12-249191*a^5);`
+   ? last reserved name was `number`
+   skipping text from `41559` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 9: `number v1 = -(+416212*a^34+454733*a^27-135787*a^20-282409*a^13+42988*a^6);`
+   ? last reserved name was `number`
+   skipping text from `416212` error at token `)`
+   ? `v1` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 11: ` number(v1),number(v2),number(v3),number(v4),number(v5),number(v6),number(v7);`
+   ? `FVl` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_0.sing line 15: ` f2 = f2 + FVl[i]*T^(i+1); `
+E1residualcount 0
+VERDICT dim -1 GB1 1
+[factor 1 deg 2]    ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 6: `number v4 = -(+316992*a^31-385289*a^24-383555*a^17+46548*a^10-406590*a^3);`
+   ? last reserved name was `number`
+   skipping text from `316992` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 7: `number v3 = -(+481613*a^32-442653*a^25+416962*a^18-33793*a^11-300413*a^4);`
+   ? last reserved name was `number`
+   skipping text from `481613` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 8: `number v2 = -(+41559*a^33+186584*a^26-43751*a^19+41222*a^12-249191*a^5);`
+   ? last reserved name was `number`
+   skipping text from `41559` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 9: `number v1 = -(+416212*a^34+454733*a^27-135787*a^20-282409*a^13+42988*a^6);`
+   ? last reserved name was `number`
+   skipping text from `416212` error at token `)`
+   ? `v1` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 11: ` number(v1),number(v2),number(v3),number(v4),number(v5),number(v6),number(v7);`
+   ? `FVl` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_1.sing line 15: ` f2 = f2 + FVl[i]*T^(i+1); `
+E1residualcount 0
+halt 1
+[factor 2 deg 2]    ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 6: `number v4 = -(+316992*a^31-385289*a^24-383555*a^17+46548*a^10-406590*a^3);`
+   ? last reserved name was `number`
+   skipping text from `316992` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 7: `number v3 = -(+481613*a^32-442653*a^25+416962*a^18-33793*a^11-300413*a^4);`
+   ? last reserved name was `number`
+   skipping text from `481613` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 8: `number v2 = -(+41559*a^33+186584*a^26-43751*a^19+41222*a^12-249191*a^5);`
+   ? last reserved name was `number`
+   skipping text from `41559` error at token `)`
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 9: `number v1 = -(+416212*a^34+454733*a^27-135787*a^20-282409*a^13+42988*a^6);`
+   ? last reserved name was `number`
+   skipping text from `416212` error at token `)`
+   ? `v1` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 11: ` number(v1),number(v2),number(v3),number(v4),number(v5),number(v6),number(v7);`
+   ? `FVl` is not defined
+   ? error occurred in or before /home/user/jacobian_planar/x2/_st_m8_p1000003_2.sing line 15: ` f2 = f2 + FVl[i]*T^(i+1); `
+E1residualcount 0
+halt 1

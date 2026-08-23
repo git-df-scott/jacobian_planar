@@ -93,18 +93,28 @@ print(f"{len(facs)} irreducible factors, degrees {[int(d) for d,_ in facs]}", fl
 
 subs = [t for t in tri if t not in elim]
 for idx, (deg, fac) in enumerate(facs):
+    deg = int(deg)
     fac_a = fac.replace(f'FF({nF-1})', 'a')
-    setf = []
+    if deg == 1:
+        m1 = re.fullmatch(r'a([+-]\d+)?', fac_a.replace(' ', ''))
+        root = str(-int(m1.group(1))) if (m1 and m1.group(1)) else '0'
+        avar = f'({root})'
+        ringdecl = f'ring R0 = {P}, (A(0..nA-1), B(0..nB-1), T), dp;'
+        ringdecl2 = f'ring RF = {P}, (A(0..nA-1), B(0..nB-1), U), dp;'
+    else:
+        avar = 'a'
+        ringdecl = f'ring R0 = ({P}, a), (A(0..nA-1), B(0..nB-1), T), dp;\nminpoly = {fac_a};'
+        ringdecl2 = f'ring RF = ({P}, a), (A(0..nA-1), B(0..nB-1), U), dp;\nminpoly = {fac_a};'
+    vals = {nF - 1: avar}
     for t in subs:
-        mm = re.match(rf'FF\((\d+)\)(.*)', t)
+        mm = re.match(r'FF\((\d+)\)(.*)', t)
         j = int(mm.group(1))
-        rest = mm.group(2).replace(f'FF({nF-1})', 'a')
-        setf.append(f'number v{j} = -({rest});')     # t = FF(j) + rest = 0
-    setf.append(f'number v{nF} = 1;')
+        vals[j] = '-(' + mm.group(2).replace(f'FF({nF-1})', avar) + ')'
+    assert set(vals) == set(range(1, nF + 1)), sorted(vals)
+    setf = [f'number v{j} = {vals[j]};' for j in range(1, nF + 1)]
     fl = ",".join(f'number(v{j})' for j in range(1, nF + 1))
     s2 = f'''int nF = {nF}; int nA = {nA}; int nB = {nB}; int dg = {dg};
-ring R0 = ({P}, a), (A(0..nA-1), B(0..nB-1), T), dp;
-minpoly = {fac_a};
+{ringdecl}
 {chr(10).join(setf)}
 list FVl = {fl};
 proc cf(poly p, int k) {{ matrix M = coeffs(p, T); if (k+1 > nrows(M)) {{ return(poly(0)); }} return(M[k+1,1]); }}
@@ -129,8 +139,7 @@ poly g0 = 0;
 for (n=0; n<=dg-1; n++) {{ cur = 2*f2*diff(g0,T) + src2; d = -cf(cur,n+1)/(2+2*n); g0 = g0 + d*T^(n+1); }}
 ideal REST = simplify(addall(2*f2*diff(g0,T) + src2) + addall(R3) + addall(R4)
                       + addall(f1*diff(g0,T) - diff(f0,T)*g1), 2);
-ring RF = ({P}, a), (A(0..nA-1), B(0..nB-1), U), dp;
-minpoly = {fac_a};
+{ringdecl2}
 ideal I = imap(R0,REST) + ideal(U*B(nB-1)-1);
 ideal G = std(I);
 "VERDICT dim " + string(dim(G)) + " GB1 " + string(G[1]);

@@ -94,6 +94,7 @@ window-for-window.
 | 4 | (12, 18) | 12 | 2 | 3         | **EMPTY** |
 | 6 | (18, 27) | 18 | 4 | 10        | **EMPTY** |
 | 8 | (24, 36) | 24 | 6 | 35 (= 5 orbits × 7) | **EMPTY** — see below |
+| 10 | (30, 45) | 30 | 8 | — | leading level still running |
 
 For `m = 8` the leading level does **not** obstruct: `E1` has exactly 35
 solutions with `F_7 = 1` (5 orbits under the residual scaling `F_i ↦ μ^i F_i`,
@@ -113,9 +114,22 @@ orbits is killed by the lower levels (`stage_0.log`, `stage_1.log` for the two
 leading (period) level, but at levels 3 and 1, where `f_0' ≠ 0` (forced by the
 vertex `(m,2m)`) collides with the `g_1` produced by the cascade.**
 
-Caveat, stated plainly: these are `F_p` verdicts. `1 ∈ I mod p` for one prime
-is strong but not a characteristic-zero proof; the `E1` stage is confirmed at
-two primes and the lower-level kill at one so far.
+### Exactly what is confirmed where
+
+These are `F_p` verdicts: `1 ∈ I mod p` at one prime is strong evidence, not a
+characteristic-zero proof (a solution over a number field reduces to a solution
+mod almost every prime, so emptiness mod `p` fails only if `p` is bad — but the
+bad set is not bounded a priori). Current state for `m = 8`:
+
+| claim | primes |
+|---|---|
+| `E1` is 0-dimensional with `vdim 35`, one triangular component, eliminant a quintic in `F_6^7` | `32003`, `65521`, `1000003` |
+| lower levels kill **all five** orbits | `32003` (`stage_0`, `stage_1`, `stage_ext3`) |
+| lower levels kill the `F_p`-rational orbit | `1000003` (`stage_p1000003_0`) |
+
+`pipeline.py m p` automates the whole chain (E1 → lex triangular set → factor
+the eliminant → per-factor lower-level test over `F_p[a]/(factor)`) for any
+`m` and `p`, and reports the raw Singular verdict lines.
 
 ## 5. Explicit witnesses that DO exist
 
