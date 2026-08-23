@@ -553,3 +553,42 @@ polynomial Keller map on `C^2`. Until that bridge is written down and checked,
 Both halves need saying. The campaign has been stating the first as though the
 bridge existed, and hunting the second as though a witness would settle the
 conjecture.
+
+## A25 — the cyclic-cover route is provably NOT the bridge: a mod-3 obstruction
+
+Following A22 and A24. `BRACKET.md` reads `{P,Q} = x^2` as "a Keller map in the
+coordinates `(s,y)`, `s = x^3/3`, a 3:1 cyclic cover". That reading of the
+EQUATION is correct, and the pullback direction checks out. But it does not
+connect the pentagon to plane Keller pairs, and the reason is a degree
+obstruction that takes three lines.
+
+**CLAIM 1 (verified, 3 examples).** If `{F,G}_(u,v) = 1` then setting
+`P(x,y) = F(x^3/3, y)` and `Q(x,y) = G(x^3/3, y)` gives `{P,Q}_(x,y) = x^2`.
+Chain rule: `P_x = F_u x^2`, `P_y = F_v`, so `{P,Q} = x^2 {F,G} = x^2`.
+Checked on `(u+v^2, v)`, `(u, v+u^3)`, `(u+v^2, v+(u+v^2)^2)` -- all PASS.
+
+**CLAIM 2.** Every such pullback is a polynomial in `x^3`, so
+
+    deg_x P  =  3 * deg_u F   -- always divisible by 3.
+
+**CLAIM 3.** The pentagon has `deg_x P = 8`, recorded as `m = 8` in
+`EDGE_LADDER.md` and reconfirmed from the s-ladder supports in A22. And
+`8 = 2 mod 3`.
+
+**Therefore no pentagon solution is the pullback of a plane Keller pair, and no
+plane Keller pair pulls back to the pentagon's supports.** The cyclic-cover
+route is not the bridge; it is closed by a congruence, not by difficulty.
+
+**What this does and does not say.** It does NOT say the pentagon is unrelated
+to JC2. The pentagon comes from `wave1`'s recursion, with `Q[1] = x^2` as an
+initial condition of the exporter, and that recursion may encode a plane
+counterexample by some route other than pullback along `s = x^3/3`. What it
+does say is that the one interpretation written down in the campaign's own
+documentation cannot be that route, so the bridge remains unwritten and now has
+one fewer candidate.
+
+The live question for whoever picks this up is therefore not about the pentagon
+at all. It is: **what exactly does `wave1`'s recursion encode, and why would a
+solution of it be a counterexample?** Everything downstream -- every EMPTY
+verdict in this campaign, mine included -- inherits its meaning from that
+answer.
