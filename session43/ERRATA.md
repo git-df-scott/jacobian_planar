@@ -520,3 +520,36 @@ tool calls. Use absolute paths for appends, and verify the target exists before
 appending rather than after.
 
 A22 has been merged into this file and the stray root copy deleted.
+
+## A24 — the pentagon-to-JC2 link is documented NOWHERE
+
+Following A22. Searched the pentagon documentation for any statement that a
+pentagon solution yields a counterexample to the plane Jacobian conjecture.
+There is none. The only "equivalence" recorded, in `BILINEAR.md`, is between two
+REPRESENTATIONS of the pentagon system -- the bilinear form and the eliminated
+degree-22 export -- and it says "solutions correspond one-to-one" about those
+two, not about the pentagon and JC2.
+
+The direct check is decisive and takes one line. The pentagon's defining
+identity is
+
+    det J_(x,y) (P, Q)  =  P_x Q_y - P_y Q_x  =  x^2 ,
+
+which is **not a nonzero constant**: it vanishes on the line `x = 0`. So a
+pentagon solution `(P,Q)`, which is an honest polynomial pair in `(x,y)`, is
+**not a Keller map on the plane** and is therefore not a counterexample to JC2
+as it stands. It is a Keller map only in the coordinates `(s,y)`, `s = x^3/3`,
+where it is no longer polynomial.
+
+This does not invalidate any computation in the campaign. Every EMPTY verdict
+remains a correct statement about the pentagon system. What is missing is the
+bridge: an argument carrying a pentagon witness down the 3:1 cover to a genuine
+polynomial Keller map on `C^2`. Until that bridge is written down and checked,
+
+  * "the pentagon is EMPTY" does NOT give "there is no counterexample at
+    (72,108)", and
+  * a pentagon witness would NOT have given a counterexample to JC2.
+
+Both halves need saying. The campaign has been stating the first as though the
+bridge existed, and hunting the second as though a witness would settle the
+conjecture.
