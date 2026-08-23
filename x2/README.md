@@ -114,6 +114,24 @@ orbits is killed by the lower levels (`stage_0.log`, `stage_1.log` for the two
 leading (period) level, but at levels 3 and 1, where `f_0' ≠ 0` (forced by the
 vertex `(m,2m)`) collides with the `g_1` produced by the cascade.**
 
+### The leading level counts Catalan numbers
+
+`vdim` of `E1` in the slice `F_{m-1} = 1`, measured:
+
+| m | genus of `y² = f₂(T)` | vdim | orbits under `F_i ↦ μ^i F_i`, `μ^{m-1}=1` |
+|---|---|---|---|
+| 2 | 0 | 1 | 1 |
+| 4 | 1 | 3 | 1 |
+| 6 | 2 | 10 | 2 |
+| 8 | 3 | 35 | 5 |
+| 10 | 4 | *126 predicted* | *14 predicted* |
+
+`vdim = C(m−1, m/2−1)`, so the orbit count is the **Catalan number** of the
+genus: 1, 1, 2, 5, 14, 42, … In words: the number of degree-`m` polynomials
+`f₂` (up to scaling) for which `T² dT / y⁵` is exact on `y² = f₂(T)` appears to
+be `Catalan(genus)`. Four data points and a prediction — an observation, not a
+theorem. `count_e1.py` states it; `_e1only_10.sing` is the first real test.
+
 ### Exactly what is confirmed where
 
 These are `F_p` verdicts: `1 ∈ I mod p` at one prime is strong evidence, not a
