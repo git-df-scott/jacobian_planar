@@ -91,7 +91,7 @@ independent recount (already requested) should settle it.
 - **B8. Case (2) is EMPTY only mod p (3 primes).** The char-0 route was never
   executed — by the campaign's own proof standard that is not a verdict, and a
   bad-prime false EMPTY is exactly the failure mode `aef2db9` documents.
-- **B9. GGHV Cor 5.7 is refuted (line-by-line), so (9,27) is live in the
+- **B9. CORRECTED 2026-08-23 — see FABLE_CASE_MAP.md. GGHV Cor 5.7 is UNREPLICATED, not refuted; (9,27) is closed in the literature. My original text below was wrong.** GGHV Cor 5.7 is refuted (line-by-line), so (9,27) is live in the
   literature** — the campaign knows this, but GGHV Sec. 5 as a whole has never
   been independently re-derived (open item P12), and the pentagon's admissible
   case list descends from it.
