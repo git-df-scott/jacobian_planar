@@ -592,3 +592,40 @@ at all. It is: **what exactly does `wave1`'s recursion encode, and why would a
 solution of it be a counterexample?** Everything downstream -- every EMPTY
 verdict in this campaign, mine included -- inherits its meaning from that
 answer.
+
+## A26 — audited `wave1`: `{P,Q} = x^2` is a PREMISE, not a derivation
+
+Acting on A25's live question, I traced the recursion to its source.
+`campaign/audit_tracks/trackB1_yadic.py` is where the pentagon's shape actually
+comes from, and its opening line is:
+
+> Then `[P,Q] = P_x Q_y - P_y Q_x = x^2` reads, coefficient of `y^k`, ...
+
+That is stated as the setup. Everything downstream follows from it correctly --
+`P_0 = p_00 + p_10 x` from `N(P)`'s `j = 0` row, `Q_0` constant from `N(Q)`'s,
+hence `p_10 Q_1 = x^2` and `Q_1 = x^2 / p_10` exactly, hence `Q` determined by
+`P`, hence the recursion the exporter runs. The internal logic is sound. What is
+absent, here and everywhere else in the repository and the mailbox, is the step
+BEFORE it: why a counterexample to JC2 produces a pair with `{P,Q} = x^2` and
+these Newton polygons.
+
+**A second candidate cover, also excluded.** A25 killed the pullback along
+`phi = (x^3/3, y)` by a mod-3 obstruction. The other natural map with
+`det J_phi = x^2` is `phi = (x, x^2 y)`, and it fails too, on the same supports:
+
+    pentagon P has 61 monomials x^I y^J
+    phi = (x^3/3, y)  requires 3 | I    -> 39 of 61 violate it
+    phi = (x, x^2 y)  requires I >= 2J  -> 59 of 61 violate it
+
+So a pentagon solution is not the pullback of a plane Keller pair along either
+map with `det J = x^2`. Whatever the bridge is, it is not a pullback of that
+kind.
+
+**Where this leaves the campaign.** The pentagon system is internally coherent,
+its EMPTY verdicts are correct statements about it, and the pipeline that
+produced them passes controls in both directions. But the premise connecting it
+to the Jacobian conjecture is inherited from before `wave1` and is written down
+nowhere that I can reach. Until it is, no verdict here -- EMPTY or NONEMPTY --
+can be reported as a statement about JC2.
+
+That is the first thing to settle, ahead of any further computation.
