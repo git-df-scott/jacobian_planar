@@ -1,0 +1,14 @@
+L= 19: 12 solved on rational pivots, 0 condition(s) carried out, 10 new unknown(s) left free
+        unconditional gate: g11_4
+        unconditional gate: g11_5
+L= 18: 12 solved on rational pivots, 0 condition(s) carried out, 10 new unknown(s) left free
+        unconditional gate: g11_6
+        unconditional gate: g11_7
+L= 17: 12 solved on rational pivots, 0 condition(s) carried out, 9 new unknown(s) left free
+        unconditional gate: g10_12
+        unconditional gate: g10_4
+        unconditional gate: g10_5
+L= 16: 11 solved on rational pivots, 1 condition(s) carried out, 8 new unknown(s) left free
+L= 15: 10 solved on rational pivots, 6 condition(s) carried out, 7 new unknown(s) left free
+L= 14: 9 solved on rational pivots, 9 condition(s) carried out, 6 new unknown(s) left free
+--- slice deadline INSIDE level 13 (8 solved so far); rerun to continue ---
