@@ -1,0 +1,64 @@
+33 configurations, <= 24 unknowns, 420s each
+
+### vars~3  k=2 mu=1 (rmax,smax)=(1,1) m=1 -> (degP,degQ)=(2,2)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=1 M=1 degP=2 degQ=2 vars=5 conds=1 | VERDICT dim -1 GB1 1
+### vars~5  k=2 mu=1 (rmax,smax)=(1,1) m=2 -> (degP,degQ)=(4,4)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=2 M=2 degP=4 degQ=4 vars=7 conds=1 | VERDICT dim 6 GB1 c(2)*c(5)-2*c(3)
+### vars~7  k=1 mu=2 (rmax,smax)=(2,1) m=2 -> (degP,degQ)=(6,3)
+  resonances (free unknowns added): [(0, 0)]
+CFG mu=2 rmax=2 smax=1 k=1 m=2 M=1 degP=6 degQ=3 vars=8 conds=3 | VERDICT dim -1 GB1 1
+### vars~7  k=2 mu=1 (rmax,smax)=(1,1) m=3 -> (degP,degQ)=(6,6)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=3 M=3 degP=6 degQ=6 vars=9 conds=3 | VERDICT dim -1 GB1 1
+### vars~7  k=2 mu=2 (rmax,smax)=(2,3) m=2 -> (degP,degQ)=(6,9)
+  resonances (free unknowns added): [(2, 1), (0, 0)]
+CFG mu=2 rmax=2 smax=3 k=2 m=2 M=3 degP=6 degQ=9 vars=9 conds=5 | VERDICT dim -1 GB1 1
+### vars~9  k=2 mu=1 (rmax,smax)=(1,1) m=4 -> (degP,degQ)=(8,8)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=4 M=4 degP=8 degQ=8 vars=11 conds=5 | VERDICT dim -1 GB1 1
+### vars~10  k=2 mu=3 (rmax,smax)=(4,4) m=2 -> (degP,degQ)=(8,8)
+  resonances (free unknowns added): [(4, 2), (2, 1), (0, 0)]
+CFG mu=3 rmax=4 smax=4 k=2 m=2 M=2 degP=8 degQ=8 vars=13 conds=1 | VERDICT dim -1 GB1 1
+### vars~11  k=2 mu=1 (rmax,smax)=(1,1) m=5 -> (degP,degQ)=(10,10)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=5 M=5 degP=10 degQ=10 vars=13 conds=7 | VERDICT dim -1 GB1 1
+### vars~12  k=2 mu=2 (rmax,smax)=(3,2) m=3 -> (degP,degQ)=(9,6)
+  resonances (free unknowns added): [(0, 0)]
+CFG mu=2 rmax=3 smax=2 k=2 m=3 M=2 degP=9 degQ=6 vars=13 conds=16 | VERDICT dim -1 GB1 1
+### vars~13  k=1 mu=2 (rmax,smax)=(2,1) m=4 -> (degP,degQ)=(12,6)
+  resonances (free unknowns added): [(0, 0)]
+CFG mu=2 rmax=2 smax=1 k=1 m=4 M=2 degP=12 degQ=6 vars=14 conds=10 | VERDICT dim -1 GB1 1
+### vars~13  k=1 mu=3 (rmax,smax)=(3,2) m=3 -> (degP,degQ)=(12,8)
+  resonances (free unknowns added): [(0, 0)]
+CFG mu=3 rmax=3 smax=2 k=1 m=3 M=2 degP=12 degQ=8 vars=14 conds=13 | VERDICT dim -1 GB1 1
+### vars~13  k=2 mu=1 (rmax,smax)=(1,1) m=6 -> (degP,degQ)=(12,12)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=6 M=6 degP=12 degQ=12 vars=15 conds=9 | VERDICT dim -1 GB1 1
+### vars~13  k=2 mu=2 (rmax,smax)=(2,3) m=4 -> (degP,degQ)=(12,18)
+  resonances (free unknowns added): [(2, 1), (0, 0)]
+CFG mu=2 rmax=2 smax=3 k=2 m=4 M=6 degP=12 degQ=18 vars=15 conds=19 | VERDICT dim -1 GB1 1
+### vars~13  k=2 mu=3 (rmax,smax)=(3,5) m=3 -> (degP,degQ)=(12,20)
+  resonances (free unknowns added): [(3, 1), (0, 0)]
+CFG mu=3 rmax=3 smax=5 k=2 m=3 M=5 degP=12 degQ=20 vars=15 conds=23 | VERDICT dim -1 GB1 1
+### vars~14  k=1 mu=5 (rmax,smax)=(6,3) m=2 -> (degP,degQ)=(12,6)
+  resonances (free unknowns added): [(3, 1), (0, 0)]
+CFG mu=5 rmax=6 smax=3 k=1 m=2 M=1 degP=12 degQ=6 vars=16 conds=1 | VERDICT dim -1 GB1 1
+### vars~15  k=2 mu=1 (rmax,smax)=(1,1) m=7 -> (degP,degQ)=(14,14)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=7 M=7 degP=14 degQ=14 vars=17 conds=11 | VERDICT dim -1 GB1 1
+### vars~15  k=2 mu=3 (rmax,smax)=(4,4) m=3 -> (degP,degQ)=(12,12)
+  resonances (free unknowns added): [(4, 2), (2, 1), (0, 0)]
+CFG mu=3 rmax=4 smax=4 k=2 m=3 M=3 degP=12 degQ=12 vars=18 conds=1 | VERDICT dim -1 GB1 1
+### vars~15  k=2 mu=5 (rmax,smax)=(7,7) m=2 -> (degP,degQ)=(12,12)
+  resonances (free unknowns added): [(7, 2), (0, 0)]
+CFG mu=5 rmax=7 smax=7 k=2 m=2 M=2 degP=12 degQ=12 vars=17 conds=1 | VERDICT dim -1 GB1 1
+### vars~17  k=2 mu=1 (rmax,smax)=(1,1) m=8 -> (degP,degQ)=(16,16)
+  resonances (free unknowns added): [(1, 1), (0, 0)]
+CFG mu=1 rmax=1 smax=1 k=2 m=8 M=8 degP=16 degQ=16 vars=19 conds=13 | VERDICT dim -1 GB1 1
+### vars~19  k=1 mu=2 (rmax,smax)=(2,1) m=6 -> (degP,degQ)=(18,9)
+  resonances (free unknowns added): [(0, 0)]
+CFG mu=2 rmax=2 smax=1 k=1 m=6 M=3 degP=18 degQ=9 vars=20 conds=17 | VERDICT dim -1 GB1 1
+### vars~19  k=2 mu=1 (rmax,smax)=(1,1) m=9 -> (degP,degQ)=(18,18)
+  resonances (free unknowns added): [(1, 1), (0, 0)]

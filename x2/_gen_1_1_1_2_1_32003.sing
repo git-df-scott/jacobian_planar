@@ -1,0 +1,29 @@
+ring R0 = 32003, (c(1..5), T), dp;
+poly f0 = c(1)*T^0 + c(2)*T^1;
+poly f1 = 1*T^1;
+proc cf(poly q, int e) { matrix Mx = coeffs(q, T); if (e+1 > nrows(Mx)) { return(poly(0)); } return(Mx[e+1,1]); }
+proc addall(poly q) { matrix Mx = coeffs(q,T); int e; ideal J; for (e=1; e<=nrows(Mx); e++) { J = J + ideal(Mx[e,1]); } return(J); }
+poly cur; poly dd; int n; ideal RES;
+poly src1 = 0 - T^2;
+poly g1 = 0;
+poly op1;
+g1 = g1 + c(4)*T^1;
+op1 = (1)*f1*diff(g1,T) - (1)*diff(f1,T)*g1 + src1;
+RES = RES + addall(op1);
+poly src0 = (0)*f0*diff(g1,T) - (1)*diff(f0,T)*g1;
+poly g0 = 0;
+poly op0;
+g0 = g0 + c(5)*T^0;
+op0 = (1)*f1*diff(g0,T) - (0)*diff(f1,T)*g0 + src0;
+dd = -cf(op0, 1)/(1);
+g0 = g0 + dd*T^1;
+op0 = (1)*f1*diff(g0,T) - (0)*diff(f1,T)*g0 + src0;
+RES = RES + addall(op0);
+RES = RES + addall((0)*f0*diff(g0,T) - (0)*diff(f0,T)*g0);
+RES = simplify(RES,2);
+"CFG mu=1 rmax=1 smax=1 k=2 m=1 M=1 degP=2 degQ=2 vars=5 conds=" + string(size(RES));
+ring RF = 32003, (c(1..5), U), dp;
+ideal I = imap(R0,RES) + ideal(U*c(2)*c(3) - 1);
+ideal G = std(I);
+"VERDICT dim " + string(dim(G)) + " GB1 " + string(G[1]);
+quit;

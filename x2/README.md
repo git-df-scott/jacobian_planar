@@ -243,3 +243,47 @@ after 1800 s / 6 GB of `msolve`* to *decided in about two minutes per orbit*,
 and the reason it dies is now visible rather than opaque — the leading
 period-level admits exactly five solutions, and each is destroyed by the
 `f_0' ≠ 0` that the polygon's own top-left vertex forces.
+
+
+## 9. Widening the question, and a caught false-EMPTY
+
+The campaign's `extract` system asks a *narrow* question: is there a `P` with
+the reduced Newton polygon and a `Q` **in the prescribed windows**? The
+reduction makes a strictly wider question askable: is there such a `P` and
+**any** strip-type `Q` at all?
+
+`general2.py` implements that. Two design points matter, and one of them was
+found the hard way:
+
+* Coefficients of `g_σ` that the cascade cannot solve for — the diagonal
+  `rmax·n − σ·lo_top` vanishes — are **resonances**. They are genuine free
+  unknowns and get their own ring variable. Dropping them silently would make
+  every verdict a statement about a proper subfamily.
+* Prescribing one T-degree per `g_σ` is a restriction. The first version of the
+  scan (`general.py`, `batch.py`) forced every `g_σ` to have the same top degree
+  `M = smax·m/rmax`, and reported `tops=(4,2)`, `μ=1` **EMPTY** — but that
+  configuration is witness `W3` from §5, which is certified exact. The witness
+  has `deg g_1 = 1` and `deg g_0 = 3`; no single `M` fits both. Fixed in
+  `general2.py` by bounding every `g_σ` by a generous common `N`; the same
+  configuration now returns `dim 8`, non-empty, as it must.
+
+  **`general.py` / `batch.py` are superseded and their EMPTY verdicts are
+  statements about the restricted subfamily only.** They are kept because the
+  failure is instructive: it is exactly the campaign's failure class (v),
+  a certifier that could not have failed, and it was caught only because §5
+  supplied a positive control. Every scan here now runs against that control.
+
+### The wider verdict on the 2:3 ray
+
+`focused.py` runs `μ=2, (rmax,smax)=(2,3), tops=(m,m,m)` — the 2:3 ray, with
+`m = 8` the `(72,108)` polygon — against **all** strip-type `Q` with
+`deg_T g_σ ≤ 2m+2`:
+
+| m | deg P | unknowns | conditions | verdict |
+|---|---|---|---|---|
+| 2 | 6 | 9 | 8 | **EMPTY** |
+| 3 | 9 | 12 | 17 | **EMPTY** |
+
+(running upward; `m = 8` is the target). Where these come back empty they say
+something stronger than the campaign's verdict: not merely that no `Q` fits the
+prescribed windows, but that no strip-type `Q` exists at all.
