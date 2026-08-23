@@ -1,1 +1,3 @@
 x2/*.gens
+x2/__pycache__/
+*.pyc
