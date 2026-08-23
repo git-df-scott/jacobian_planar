@@ -1,0 +1,15 @@
+LIB "elim.lib";
+ring R = 32003, (F(1..7), A(0..7), B(0..8)), dp;
+ideal I;
+string s = read("/home/user/jacobian_planar/x2/graded_525122.gens");
+execute("I = " + s + ";");
+"gens: " + string(size(I));
+ring R2 = 32003, (F(1..7), A(0..7), B(0..8), U), dp;
+ideal I = imap(R,I);
+I = I + ideal(U*F(7)*B(8) - 1);
+ideal J = std(I);
+"dim = " + string(dim(J));
+if (dim(J) >= 0) { "vdim = " + string(vdim(J)); }
+"GBsize = " + string(size(J));
+if (size(J) == 1) { "GB[1] = " + string(J[1]); }
+quit;

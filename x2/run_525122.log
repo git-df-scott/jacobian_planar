@@ -1,0 +1,23 @@
+c19711d9c1808fefd6c0a8236cf67dfbe61b4764.sing: n=25 nd=[2, 23, 25]
+Q1: support=[2] win=(1, 2) pending=0 free=24
+Q2: support=[2] win=(1, 2) pending=0 free=24
+Q3: support=[2, 3] win=(2, 3) pending=0 free=24
+Q4: support=[3] win=(2, 3) pending=0 free=24
+Q5: support=[2, 3, 4] win=(3, 4) pending=1 free=24
+Q6: support=[2, 3, 4] win=(3, 4) pending=2 free=24
+Q7: support=[2, 3, 4, 5] win=(4, 5) pending=4 free=24
+Q8: support=[2, 3, 4, 5] win=(4, 5) pending=6 free=24
+Q9: support=[2, 3, 4, 5, 6] win=(5, 6) pending=9 free=24
+Q10: support=[2, 3, 4, 5, 6] win=(5, 6) pending=12 free=24
+Q11: support=[2, 3, 4, 5, 6, 7] win=(6, 7) pending=16 free=24
+Q12: support=[2, 3, 4, 5, 6, 7] win=(6, 7) pending=20 free=24
+Q13: support=[2, 3, 4, 5, 6, 7, 8] win=(7, 8) pending=25 free=24
+Q14: support=[2, 3, 4, 5, 6, 7, 8] win=(7, 8) pending=30 free=24
+Q15: support=[2, 3, 4, 5, 6, 7, 8, 9] win=(8, 9) pending=36 free=24
+Q16: support=[2, 3, 4, 5, 6, 7, 8, 9] win=(8, 9) pending=42 free=24
+Q17: support=[2, 3, 4, 5, 6, 7, 8, 9, 10] win=(9, 10) pending=49 free=24
+Q18: support=[2, 3, 4, 5, 6, 7, 8, 9, 10] win=(9, 10) pending=56 free=24
+Q19: support=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] win=(10, 11) pending=64 free=24
+Q20: support=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] win=(10, 11) pending=72 free=24
+Q21: support=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] win=(11, 12) pending=81 free=24
+Q22: support=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] win=(11, 12) pending=90 free=24
