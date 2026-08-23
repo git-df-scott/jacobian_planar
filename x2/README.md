@@ -311,3 +311,13 @@ one: solve the leading level first (it involves `f₂` alone), decompose, then
 adjoin the lower levels per orbit — but with `g₂, g₁, g₀` bounded only by
 `NW = 2m+2` rather than the campaign's windows. `g₃` keeps degree `3m/2`, which
 is forced, not assumed, by the argument above.
+
+| m | deg P | leading level | wider verdict |
+|---|---|---|---|
+| 2 | 6 | free | **EMPTY** |
+| 4 | 12 | 3 solutions | **EMPTY** |
+| 6 | 18 | 10 solutions (2 orbits) | **EMPTY** |
+| 8 | 24 = `(72,108)` | 35 solutions (5 orbits) | running per orbit |
+
+So the `(18,27)` rung is empty not merely against the campaign's prescribed
+`Q`-windows but against **every** strip-type `Q` of `T`-degree up to `2m+2`.
