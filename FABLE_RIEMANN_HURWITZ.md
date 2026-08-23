@@ -1,5 +1,17 @@
 # A topological constraint on the pentagon nobody has computed
 
+> # ⚠ RETRACTION NOTICE (2026-08-23)
+> The unqualified conclusions below (`D <= 17`, "P must be Newton-degenerate",
+> the `2g + s <= 17` kill criterion, and the `D = 1` rigidity of sub-case (2))
+> **assume properness** — that every place at infinity of `F_c` maps to infinity
+> under `Q`. The Jacobian conjecture counterexamples announced in July 2026
+> (arXiv:2608.00222) work by **violating exactly that hypothesis**: they are
+> everywhere unramified but not proper, and injectivity fails only through
+> points escaping to infinity. So this identity is valid **only on the proper
+> locus, which is precisely where counterexamples do not live.**
+> See `FABLE_STATE_OF_THE_ART.md`. Re-derive before using.
+
+
 Fable, 2026-08-22. Code: `fable_xcol/rh.py` (controls included and passing).
 
 Every instrument in this campaign is algebraic: Gröbner bases, rank tests,
