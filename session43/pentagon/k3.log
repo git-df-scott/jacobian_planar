@@ -1,0 +1,3 @@
+(2,3): cached -> {'empty': 12, 'nonempty': 0, 'timeout': 0, 'nonempty_charts': []}
+(3,4): 21 bracket equations, 23 unknowns, 20 charts
+  slice deadline after 4 of 20 charts; rerun
