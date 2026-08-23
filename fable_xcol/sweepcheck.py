@@ -1,0 +1,40 @@
+"""Hand-derived quadratic-sweep recipe for {P,Q} = x^2 in the PLANE, verified."""
+import sympy as sp
+g,w = sp.symbols('g w')          # g = x, w = y
+mu,rho = sp.symbols('mu rho')
+
+print("=== the general quadratic sweep  T = K + g*mu*K' + g^2*rho*v ===")
+print("Conditions (hand-derived):  rho = -mu^2 V /(2E),  and  (mu^3/2)(V' - 3 V E'/E) = 1")
+print("with V = det[K',K''],  E = det[v,K'],  E' = det[v,K''].")
+print("So the construction exists iff   mu^3 = 2E / (V'E - 3 V E')   is a CUBE.\n")
+
+print("=== worked example: K(w) = (w, w^3),  v = (0,1) ===")
+K = sp.Matrix([w, w**3]); v = sp.Matrix([0,1])
+Kp = K.diff(w); Kpp = Kp.diff(w)
+V = sp.simplify(Kp[0]*Kpp[1]-Kp[1]*Kpp[0])
+E = sp.simplify(v[0]*Kp[1]-v[1]*Kp[0]); Ep = sp.simplify(sp.diff(E,w))
+mu3 = sp.simplify(2*E/(sp.diff(V,w)*E - 3*V*Ep))
+print(f"  V = {V},  E = {E},  mu^3 = {mu3}   (a constant -> mu is a constant: OK)")
+M = sp.Symbol('M')   # M = mu with M**3 = 1/3
+rho_v = sp.simplify(-M**2*V/(2*E))
+print(f"  rho = {rho_v}   (polynomial: OK)")
+T1 = sp.expand(K[0] + g*M*Kp[0] + g**2*rho_v*v[0])
+T2 = sp.expand(K[1] + g*M*Kp[1] + g**2*rho_v*v[1])
+J = sp.expand(sp.diff(T1,g)*sp.diff(T2,w) - sp.diff(T1,w)*sp.diff(T2,g))
+print(f"  T1 = {T1}\n  T2 = {T2}")
+print(f"  det J = {sp.factor(J)}   -> with M^3 = 1/3 this is {sp.simplify(J.subs(M**3,sp.Rational(1,3)))}")
+J2 = sp.expand(J - g**2)
+J2 = sp.simplify(J2.subs(M**3, sp.Rational(1,3)))
+print(f"  det J - x^2 = {J2}   (must be 0)")
+print(f"\n  Closed form:  P = y + M x,  Q = P^3 - x^3/3  with M^3 = 1/3")
+P = w + M*g; Q = sp.expand(P**3 - g**3/3)
+JJ = sp.expand(sp.diff(P,g)*sp.diff(Q,w)-sp.diff(P,w)*sp.diff(Q,g))
+print(f"  independent check: {{P,Q}} = {sp.simplify(JJ)}  (must be x^2 = g^2)")
+
+print("\n=== WHY THIS CANNOT REACH THE PENTAGON ===")
+print("  A sweep of degree k in g gives P of x-degree <= k.")
+print("  The quadratic sweep gives x-degree(P) <= 2 (here exactly 1).")
+print("  The pentagon needs x-degree(P) = 8 and x-degree(Q) = 12.")
+print("  So no linear or quadratic tangent sweep can carry the pentagon polygon;")
+print("  the solutions it produces are exactly the DEGENERATE families (P linear")
+print("  in x, all three P-vertices zero) that the campaign already knows.")
