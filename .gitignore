@@ -1,3 +1,4 @@
 x2/*.gens
 x2/__pycache__/
 *.pyc
+x2/_*.sing

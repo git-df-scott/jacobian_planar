@@ -3,3 +3,5 @@ CFG mu=2 r=2 s=3 k=2 tops=(2, 2, 2) M=6 degP=6 degQ=18 vars=9 conds=8 | VERDICT 
 --- 2:3 ray, tops=(3,3,3), N=8  [m=8 is the (72,108) polygon]
 CFG mu=2 r=2 s=3 k=2 tops=(3, 3, 3) M=8 degP=9 degQ=24 vars=12 conds=17 | VERDICT dim -1 GB1 1   resonant-free: [(2, 1), (0, 0)]
 --- 2:3 ray, tops=(4,4,4), N=10  [m=8 is the (72,108) polygon]
+CFG mu=2 r=2 s=3 k=2 tops=(4, 4, 4) M=10 degP=12 degQ=30 vars=15 conds=24 | VERDICT dim -1 GB1 1   resonant-free: [(2, 1), (0, 0)]
+--- 2:3 ray, tops=(5,5,5), N=12  [m=8 is the (72,108) polygon]

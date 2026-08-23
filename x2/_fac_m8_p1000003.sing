@@ -1,5 +1,0 @@
-ring R = 1000003, FF(6), dp;
-poly h = FF(6)^35-241486*FF(6)^28-53345*FF(6)^21+473512*FF(6)^14+456483*FF(6)^7+74608;
-list L = factorize(h); int i;
-for (i=1; i<=size(L[1]); i++) { if (deg(L[1][i])>0) { "FAC " + string(deg(L[1][i])) + " " + string(L[1][i]); } }
-quit;

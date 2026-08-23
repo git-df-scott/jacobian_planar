@@ -283,6 +283,7 @@ found the hard way:
 |---|---|---|---|---|
 | 2 | 6 | 9 | 8 | **EMPTY** |
 | 3 | 9 | 12 | 17 | **EMPTY** |
+| 4 | 12 | 15 | 24 | **EMPTY** |
 
 (running upward; `m = 8` is the target). Where these come back empty they say
 something stronger than the campaign's verdict: not merely that no `Q` fits the
