@@ -282,9 +282,32 @@ found the hard way:
 | m | deg P | unknowns | conditions | verdict |
 |---|---|---|---|---|
 | 2 | 6 | 9 | 8 | **EMPTY** |
-| 3 | 9 | 12 | 17 | **EMPTY** |
+| 3 | 9 | 12 | 17 | **EMPTY** (and see below — free) |
 | 4 | 12 | 15 | 24 | **EMPTY** |
+| 5 | 15 | 18 | — | TIMEOUT at 900 s (and see below — free) |
 
-(running upward; `m = 8` is the target). Where these come back empty they say
-something stronger than the campaign's verdict: not merely that no `Q` fits the
-prescribed windows, but that no strip-type `Q` exists at all.
+Where these come back empty they say something stronger than the campaign's
+verdict: not merely that no `Q` fits the prescribed windows, but that no
+strip-type `Q` exists at all.
+
+### Odd m is free
+
+`odd_m.py`. The top level is `2 f g' − 3 f' g = T²` with `f = f₂` of degree `m`
+(top coefficient nonzero — that is the polygon's vertex, and the nondegeneracy
+condition) and `g = g₃` of degree `d`. The coefficient of `T^{m+d−1}` is
+`(2d − 3m)·f_m·g_d`. If `2d ≠ 3m` it is nonzero, so `deg(LHS) = m+d−1`, and
+`LHS = T²` forces `m + d = 3`. So either `m + d = 3` (only `m = 1, 2`), or
+`2d = 3m`, which requires **`m` even**.
+
+So every odd `m ≥ 3` on the 2:3 ray is empty at the top coefficient alone, with
+no Gröbner basis required. That is why `m = 5` ground for 900 s without
+finishing: a degrevlex GB reaches the top coefficient last. Half the ladder is
+free, and only even `m` needs computing.
+
+### Staged form of the wider question
+
+`wide_m.sing` runs the wider question the way `decide_m.sing` runs the narrow
+one: solve the leading level first (it involves `f₂` alone), decompose, then
+adjoin the lower levels per orbit — but with `g₂, g₁, g₀` bounded only by
+`NW = 2m+2` rather than the campaign's windows. `g₃` keeps degree `3m/2`, which
+is forced, not assumed, by the argument above.

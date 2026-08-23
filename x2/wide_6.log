@@ -1,0 +1,6 @@
+// ** int division with `/`: use `div` instead in line >>int dg = 3*m/2;<<
+// ** int division with `/`: use `div` instead in line >>2) + " p=" + string(32003) + " degP=" + string(3*m) + " degQ=" + string(9*m/2)<<
+WIDE m=6 NW=14 p=32003 degP=18 degQ=27 unknowns=18 E1conds=4 lower=33
+  E1 (F_top=1): dim 0
+  E1 vdim 10
+  triangular components: 1
