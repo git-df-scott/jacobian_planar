@@ -113,6 +113,45 @@ exhausted over `F_101` and `F_103` in both orientations (404 total normalized
 slices): zero were consistent.  Planted matrix controls pass.  This kills the
 most rigid common-power construction, but not the full loose varieties.
 
+The full quadrilateral recurrence was then searched directly by
+`sol3/degree144_numeric.py`, with the three driver vertices fixed nonzero to
+block the `(x,x^2y)` collapse.  The live `Q`-drives orientation has both complex
+and real reduced points: best real support residual `1.74e-14`, with the two
+generated P vertices of magnitudes `0.626` and `1.117`.  This is the strongest
+new signal in the sweep, but it is **not a JC2 candidate yet**.  On the saved
+point, the reverse-Laurent polynomiality residual is `2.57e3` already on chart
+`(lambda_2,lambda_3,lambda_4)=(0,0,1)` and grows on the other tested charts.
+The combined support-plus-lift solve on that chart bottoms out near `0.77`, not
+zero.  It is therefore retained as a reduced-system diagnostic and explicitly
+not reported as a counterexample.
+
+The same intersection was then formed exactly over Q.  It is the unit ideal,
+with a three-generator certificate.  If `a` is the driver's x coefficient,
+`b` its xy coefficient, and `w` the Rabinowitsch inverse of `a`, the full ideal
+contains
+
+    F1 = a-b,
+    F2 = -(1/2)*b*w^2+w,
+    F3 = a*w-1,
+
+and direct expansion gives
+
+    (-b*w^2+w)*F1 + 2*b*F2 + (b*w-1)*F3 = 1.
+
+`sol3/degree144_lift_certificate.py` verifies this identity over Q without a
+CAS.  Singular independently returned exactly these three nonzero certificate
+multipliers, and the combined ideal was also empty over 65521, 65537, 32003,
+and 101.  Therefore the real reduced family does **not** meet the polynomial
+inverse-lift locus on the expected length-1 `(0,0,1)` chart.
+
+The opposite epsilon orientation is structurally dead even earlier.  Exact
+degree propagation in the y-adic recurrence gives x-degree at most 15 for the
+generated row 12, while that polygon requires the vertex `(16,12)`.  The
+coefficient is therefore identically zero.  This upper-degree calculation is
+also checked by `degree144_lift_certificate.py`.  Both arguments use only the
+low/right rows, whose upper bounds are identical for `c'=0` and `c'=4`; hence
+they cover all four derived degree-144 shapes on the length-1 chart.
+
 Full vertex-saturated elimination of the first `c'=0` variety was also
 launched; its final transcript/verdict is recorded below when it terminates.
 
