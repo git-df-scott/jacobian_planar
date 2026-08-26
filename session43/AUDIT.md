@@ -1,8 +1,12 @@
 # Session 43 — audit sweep
 
 Prompted by "these results are fast, we've gotten our hands burned from that
-before". The sweep was justified: **eight bugs**, one of them biasing in the
+before". The sweep was justified: **ten bugs**, one of them biasing in the
 dangerous direction, and one process failure that matters more than any of them.
+
+Three of the ten were caught by a *control* rather than by reading the code, and
+two of those three were in code I had written to fix an earlier bug. That is the
+single most useful lesson of the session.
 
 ## The process failure, first
 
@@ -23,6 +27,9 @@ after that was noticed.
 | 6 | `leading_form_places` | counted irreducible factors **over Q**, not points over **C**. A binary form splits over C, so `u²+v²` is 2 points at infinity, reported as 1. | inflated `chi`, i.e. false candidates |
 | 7 | hit test | a component `f` with `f | B` is a **1-dimensional centre** (S reducible, hence disconnected since S is smooth), reported as an ordinary hit. | manufactured false hits |
 | 8 | `_fibre_count_on_orbit` | fibre counts at special values by **mod-p majority vote** rather than exact arithmetic. Produced badly wrong numbers: the non-linear family was reported as `chi = −167, −258`; the exact values are **−3, −4, −5**. | numbers simply wrong |
+
+| 9 | `solve_Q` (Lane P) | the linear system was built only from monomials that **appear** in some bracket, so when no bracket produced a constant term the row demanding "constant = 1" was never built: the solver silently solved `[P,Q] = 0` and reported success on an **inconsistent** system. `P = x²` over `F_2` returned **401 "solutions"**. | manufactured false hits |
+| 10 | my own fix to #9 | used `()` for the constant monomial (the convention of a *different* module); this file uses `(i,j)` exponent pairs, so the constant is `(0,0)`. The sanity control went to 0 solutions and failed loudly. | none (caught) |
 
 Bug 5 is the serious one. `chi(S) = 3 − 2·chi(A_W) − #C_W`, so an **under**count
 of `chi(A_W)` makes `chi(S)` too **large** and silently discards genuine
