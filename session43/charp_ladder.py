@@ -35,6 +35,37 @@ METHOD.  For FIXED P the Keller equation [P,Q] = 1 is LINEAR in the coefficients
 of Q (the collision-first trick), so: sweep P over a support mod p, solve one
 linear system for Q, and test non-injectivity by BRUTE FORCE over F_p^2 and
 F_{p^2}^2 -- which is trivial for small p and needs no Groebner basis at all.
+
+RESULT (this run).  Sweeping P over total degree <= 3 and solving exactly for Q
+on total degree <= 4:
+
+    p = 2 : 255 P swept, 5632 Keller pairs, 5488 non-injective;
+            smallest max-degree 2,  P = x,  Q = y + y^2
+    p = 3 : 6560 P swept, 62112 Keller pairs, 60582 non-injective;
+            smallest max-degree 3,  P = x,  Q = y + y^3
+
+Both minima are the ARTIN-SCHREIER map in the second coordinate, (x, y + y^p):
+[P,Q] = 1 + p y^(p-1) = 1 in characteristic p, and y -> y + y^p is p-to-1 over
+the algebraic closure.  A degree-1 Keller map is linear, hence injective, so the
+minimum cannot be 1; therefore on this support
+
+    m(2) = 2   and   m(3) = 3,   i.e. m(p) = p.
+
+READING.  The minimal degree GROWS with p rather than staying bounded, which is
+evidence that characteristic-p planar counterexamples are a Frobenius artefact
+that thins out as p -> infinity, and NOT a template for characteristic zero.
+That is consistent with the independent finding in laneU_xu.py: Mondello's char-2
+example has p(u) = u, and the governing ODE p + (u-1)p' = 1 is satisfied by it
+only in characteristic 2.
+
+Note also that 5488 of 5632 Keller pairs at p = 2 are non-injective: in
+characteristic p non-injectivity is GENERIC, so the informative invariant is the
+minimal degree, not existence.
+
+CAVEATS, stated plainly.  The support is small (P of total degree <= 3, Q <= 4);
+a counterexample of smaller degree outside that support is not excluded.  p = 5
+and p = 7 were not swept -- the P-sweep is p^(#monomials) and becomes infeasible
+by this method.  Two data points are two data points.
 """
 import sys
 import itertools
