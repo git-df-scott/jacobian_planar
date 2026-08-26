@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Exact algebraic first-jet branch in the live (4,6) collision frontier.
+"""Exact algebraic *truncated linear slice* in the live (4,6) frontier.
 
-This restores linear lower jets omitted by the sparse-edge closure.  It proves
-compatibility only through x^1; it is a seed for full recurrence/search and is
-not a Keller map or counterexample.
+This restores linear lower coefficients omitted by the sparse-edge closure but
+sets all quadratic coefficients to zero.  Since the equations are first order,
+quadratic coefficients also enter the x^1 residual.  Thus this is an exact
+special polynomial slice, not a formal first-jet lifting result and not a
+Keller map or counterexample.  See ribbon46_recurrence_rungs.py for the proper
+kernel-retaining recurrence.
 """
 import sympy as sp
 
@@ -42,9 +45,9 @@ for degree, target in ((2, 0), (1, 0), (0, 1)):
         (7*u**12+663*u**7-16380*u**2)/3258)).as_numer_denom()[0]
     assert sp.rem(numerator, h, domain=sp.QQ) == 0
 
-print("COLLISION RIBBON (4,6) LINEAR-JET BRANCH: PASS")
+print("COLLISION RIBBON (4,6) TRUNCATED LINEAR SLICE: PASS")
 print("h(u)=u^15+96*u^10-2052*u^5-216=0")
 print("3258*v=7*u^12+663*u^7-16380*u^2")
 print("all E2,E1,E0 coefficients through x^1 vanish exactly modulo h")
-print("CANDIDATE-UNVERIFIED: higher x-orders and Q(1)=0 remain unsolved")
+print("NOT A FORMAL-JET CLAIM: quadratic coefficients were fixed to zero")
 
