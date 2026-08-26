@@ -315,3 +315,93 @@ particular constructions. Evaluating at the origin gives
 
 That collapse is what turns the `alpha_v` question into a small exact Gröbner
 computation instead of an intractable one.
+
+## 11. The contracted curve, and what the Keller condition looks like on it
+
+`G = (alpha·A, alpha^2·B)` sends the whole curve `{alpha = 0}` to the origin —
+`G` **contracts** it. That is where the condition is easiest to read.
+
+For the Path S target `alpha = k + (u−r)v` the contracted curve is the hyperbola
+`(u−r)v = −k`, i.e. `C ≅ C*`, parametrized by `u = r+w`, `v = −k/w`. On it
+(`contracted_curve.py`, **10/10**):
+
+```
+W|_C  =  w (2 B A' − A B')        ' = d/dw
+```
+
+so Keller forces a **Laurent-polynomial identity**
+
+```
+w(2BA' − AB') = c    ⟺    D(B/A^2) = −c/A^3   (D = w d/dw)   ⟺   (B/A^2)' = −c/(w A^3)
+```
+
+The last form is the useful one: a derivative of a rational function has zero
+residue at every point of `P^1`, so the 1-form `dw/(wA^3)` must have zero residue
+everywhere. Consequences, all verified:
+
+- If `A` has no zero in `C*` it is a **monomial** `a·w^m`, and integrating gives
+  `B = (c/(3ma))·w^(−m)` exactly, with `m ≠ 0` — `m = 0` would need a logarithm.
+- Pole-order bookkeeping forces every zero of `A` in `C*` to be **simple**, with
+  `B` non-vanishing there.
+- `A` and `B` both independent of `v` is impossible for a separate exact reason:
+  then `W = alpha1(u)·u^3·(2d b' − b d')`, divisible by `u^3`, never a nonzero
+  constant.
+
+Separately, a pole-order count at a root `r` of `alpha1` shows the leading
+Laurent coefficient of `W|_C` is proportional to `(b − 2a)` with `a = deg_v A`,
+`b = deg_v B` — so `deg_v B = 2 deg_v A` is forced, and when it holds the pole
+order drops by exactly one and the next condition appears. Measured on the whole
+`0 ≤ a ≤ 2`, `0 ≤ b ≤ 4` grid.
+
+**What this does not do.** It is a *necessary* condition. The exhaustive
+enumeration finds that non-monomial solutions of the curve identity **do** exist,
+so the curve alone does not close the Path S target; it cuts the candidates to
+an explicit finite list of shapes, each of which still has to satisfy `W = c` on
+all of `C^2`.
+
+**An eleventh bug, caught by a contradiction rather than by a control.** The
+first enumeration reported *zero* monomial solutions, contradicting the hand
+derivation that exhibits them. Cause: for a support pair whose only equation is
+the `k = 0` one, the list of non-constant constraints is **empty**, and sympy's
+`solve([], vars)` returns `[]` — "no solutions" — for a system every point
+satisfies. Every family is now verified by substitution before being reported.
+(A twelfth, smaller one: a predicate written as an `is_polynomial()` test on a
+cancelled expression, which did not test its claim and failed while printing
+exactly the claimed factorization.)
+
+## 12. Lane 6 — the ribbon-(4,6) shooting problem
+
+**No counterexample, no candidate.** 28,198,016 parameter points across 22
+primes, zero survivors of the polynomiality tower at any level. Code in
+`lane6/`, report in `lane6/lane6_report.md`.
+
+Validation was gated before any search: the re-implementation reproduces **all
+65** published coefficients of `ribbon46_rational_seed_boundary.py` exactly, and
+the re-derived `q_j` ODE chain and rows `E2,E1,E0` were confirmed identically
+equal to `ribbon46_reduction.py`'s objects (9/9). Survival histograms match the
+naive Bezout expectation at every level and prime — no anomalous structure.
+
+Three findings worth carrying forward:
+
+1. **`c = 1` is not a safe gauge for a modular search.** At `p = 41` sweeping
+   `(u,v,w,c)` finds 40 points passing the first three cap conditions; the
+   `c = 1` slice finds **0**, because the orbit's `c` is not a fifth power mod 41
+   and `F_p^*` is not divisible. Anyone repeating this on the `c=1` slice can
+   miss real solutions.
+2. **Two exact symmetries**, measured then verified as identities:
+   quasi-homogeneity with `wt(u,v,w,c) = (1,2,3,5)`, `wt(x) = −4`; and an
+   `x`-rescaling `(a,c,u,v,w) ~ (1, ac, u/a, v/a, w/a)`. Together they give a
+   *complete* slice at the cost of the naive grid.
+3. **The main gap: the chart is narrower than "the `u ≠ 0` chart".** The prior
+   ansatz `p1(0) = p2(0) = p3(0) = 0` is **not a gauge** — the collision only
+   forces `p0(0) = p0(1) = 0`, and the degree-preserving `y`-shears have
+   `f(0) = f(1) = 0`, so they cannot move those constants. Restoring generic
+   `g1,g2,g3` and solving rung 0 symbolically gives a unique `(A1,A2,A3)` branch
+   specialising correctly at `g = 0`, and rung 0 imposes **no** condition on
+   them. The real local problem has **6 essential parameters, not 3** — beyond
+   exhaustive `F_p` search.
+
+Both controls pass: a positive control replays the `p = 67` three-condition
+point through the original `survivors` objects, proving a real candidate would
+not be missed; the negative control reproduces the published seed's death at
+`x^22`.

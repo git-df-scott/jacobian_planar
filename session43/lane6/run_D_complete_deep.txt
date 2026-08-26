@@ -1,0 +1,44 @@
+==========================================================================
+p = 41   complete slice {a=1,u=1} x (v,w,c): 67240 points   depth 39
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 1654
+      after p3[23] : 38
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 39 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(30,13,36) dies at ['p3', 25]   [3.7s]
+
+==========================================================================
+p = 43   complete slice {a=1,u=1} x (v,w,c): 77658 points   depth 41
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 1774
+      after p3[23] : 37
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 41 : 0
+   three-condition solutions (u=1,a=1): 0  -   [4.4s]
+
+==========================================================================
+p = 67   complete slice {a=1,u=1} x (v,w,c): 296274 points   depth 60
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 4485
+      after p3[23] : 71
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 60 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(12,5,13) dies at ['p3', 25]   [29.1s]
+
+==========================================================================
+TOTAL over 3 primes: 2 three-condition solutions, 0 survivors of the full tower
+distinct first-failure rungs of those solutions: [('p3', 25)]
+mean number of three-condition solutions per prime: 0.667
+wrote /tmp/claude-0/-home-user-jacobian-planar/9c0f56a7-85d4-5d2a-8150-2daa4480a93e/scratchpad/lane6/lane6_complete_deep.json

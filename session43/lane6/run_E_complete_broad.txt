@@ -1,0 +1,252 @@
+==========================================================================
+p = 29   complete slice {a=1,u=1} x (v,w,c): 23548 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 765
+      after p3[23] : 35
+      after p3[24] : 2
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(1,18,12) dies at ['p3', 25]; (v,w,c)=(28,4,25) dies at ['p3', 25]   [0.9s]
+
+==========================================================================
+p = 31   complete slice {a=1,u=1} x (v,w,c): 28830 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 931
+      after p3[23] : 29
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(24,22,10) dies at ['p3', 25]   [1.0s]
+
+==========================================================================
+p = 37   complete slice {a=1,u=1} x (v,w,c): 49284 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 1311
+      after p3[23] : 37
+      after p3[24] : 2
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(11,1,22) dies at ['p3', 25]; (v,w,c)=(15,17,3) dies at ['p3', 25]   [1.8s]
+
+==========================================================================
+p = 47   complete slice {a=1,u=1} x (v,w,c): 101614 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 2180
+      after p3[23] : 33
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(22,21,19) dies at ['p3', 25]   [3.5s]
+
+==========================================================================
+p = 53   complete slice {a=1,u=1} x (v,w,c): 146068 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 2762
+      after p3[23] : 49
+      after p3[24] : 2
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(41,15,24) dies at ['p3', 25]; (v,w,c)=(46,1,6) dies at ['p3', 25]   [4.8s]
+
+==========================================================================
+p = 59   complete slice {a=1,u=1} x (v,w,c): 201898 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 3335
+      after p3[23] : 45
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 0  -   [6.6s]
+
+==========================================================================
+p = 61   complete slice {a=1,u=1} x (v,w,c): 223260 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 3626
+      after p3[23] : 56
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(46,11,43) dies at ['p3', 25]   [8.0s]
+
+==========================================================================
+p = 71   complete slice {a=1,u=1} x (v,w,c): 352870 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 4782
+      after p3[23] : 68
+      after p3[24] : 2
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(29,5,46) dies at ['p3', 25]; (v,w,c)=(37,12,22) dies at ['p3', 25]   [12.1s]
+
+==========================================================================
+p = 73   complete slice {a=1,u=1} x (v,w,c): 383688 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 5228
+      after p3[23] : 73
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 0  -   [12.7s]
+
+==========================================================================
+p = 79   complete slice {a=1,u=1} x (v,w,c): 486798 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 6067
+      after p3[23] : 67
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 0  -   [16.8s]
+
+==========================================================================
+p = 83   complete slice {a=1,u=1} x (v,w,c): 564898 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 6664
+      after p3[23] : 87
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(49,17,31) dies at ['p3', 25]   [20.5s]
+
+==========================================================================
+p = 89   complete slice {a=1,u=1} x (v,w,c): 697048 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 7907
+      after p3[23] : 94
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 0  -   [22.8s]
+
+==========================================================================
+p = 97   complete slice {a=1,u=1} x (v,w,c): 903264 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 9149
+      after p3[23] : 82
+      after p3[24] : 2
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(28,64,34) dies at ['p3', 25]; (v,w,c)=(61,15,18) dies at ['p3', 25]   [30.5s]
+
+==========================================================================
+p = 101   complete slice {a=1,u=1} x (v,w,c): 1020100 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 9814
+      after p3[23] : 97
+      after p3[24] : 1
+      after p3[25] : 1
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(4,23,72) dies at ['p3', 26]   [34.7s]
+
+==========================================================================
+p = 103   complete slice {a=1,u=1} x (v,w,c): 1082118 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 10630
+      after p3[23] : 120
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(83,21,55) dies at ['p3', 25]   [36.6s]
+
+==========================================================================
+p = 107   complete slice {a=1,u=1} x (v,w,c): 1213594 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 11369
+      after p3[23] : 101
+      after p3[24] : 0
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 0  -   [41.2s]
+
+==========================================================================
+p = 109   complete slice {a=1,u=1} x (v,w,c): 1283148 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 11895
+      after p3[23] : 118
+      after p3[24] : 1
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 1  (v,w,c)=(59,9,48) dies at ['p3', 25]   [43.1s]
+
+==========================================================================
+p = 113   complete slice {a=1,u=1} x (v,w,c): 1430128 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 12514
+      after p3[23] : 111
+      after p3[24] : 2
+      after p3[25] : 1
+      after p3[26] : 1
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 2  (v,w,c)=(40,7,18) dies at ['p3', 27]; (v,w,c)=(53,37,102) dies at ['p3', 25]   [45.4s]
+
+==========================================================================
+p = 127   complete slice {a=1,u=1} x (v,w,c): 2032254 points   depth 27
+   symmetry re-verification: T1 invariance True, T2 invariance True
+   nested survival (cumulative through each condition):
+      after p3[22] : 16057
+      after p3[23] : 117
+      after p3[24] : 3
+      after p3[25] : 0
+      after p3[26] : 0
+      after p3[27] : 0
+   survivors of EVERY condition to rung 27 : 0
+   three-condition solutions (u=1,a=1): 3  (v,w,c)=(69,75,54) dies at ['p3', 25]; (v,w,c)=(93,5,14) dies at ['p3', 25]; (v,w,c)=(94,99,80) dies at ['p3', 25]   [67.8s]
+
+==========================================================================
+TOTAL over 19 primes: 22 three-condition solutions, 0 survivors of the full tower
+distinct first-failure rungs of those solutions: [('p3', 25), ('p3', 26), ('p3', 27)]
+mean number of three-condition solutions per prime: 1.158
+wrote lane6_complete_broad.json
