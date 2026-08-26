@@ -54,6 +54,16 @@ irreducible with constant fibre count `m`, then `(d-m)chi(A) = d-1`; since
 of `d`: holds at 6 (smallest open degree), at 16 (Borisov's value at (108,72)),
 everywhere.
 
+**4b. A finite catalogue of admissible tears.** (E) constrains the whole
+configuration at once, so it enumerates: at `d = 6` there are **83** admissible
+configurations (up to 2 components, 1 deeper point, `chi >= -2`), each a concrete
+Path C target. Enumerating also **corrected one of my own claims**: I had read
+(E) as "the tear always contains a `chi = 1` component". False — the required
+positive contribution can come from an isolated *deeper point*, which is a
+stratum of `chi = 1` without being a component (7 of the 83 are of that kind).
+The correct statement is about **strata**, not components. `tear_theorem.py` is
+unaffected: it hypothesizes constant fibre count, i.e. no deeper strata.
+
 **5. The pentagon bottom-edge seeds.** The never-run characteristic-zero RUR,
 factored over ℚ: eliminant degree 9 splits **[1, 1, 2, 5]**. Checking *all* RUR
 blocks (not a guessed index): no block vanishes on the quintic; `c8` and `d12`
