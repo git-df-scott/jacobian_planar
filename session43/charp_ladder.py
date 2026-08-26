@@ -70,9 +70,16 @@ def solve_Q(P, qsupport, p):
         br = bracket_mod(P, {m: 1}, p)
         for k, v in br.items():
             rows.setdefault(k, [0]*len(qsupport))[idx] = v
+    # BUG FIX.  `rows` only holds monomials that ACTUALLY appear in some
+    # bracket.  If no bracket produces a constant term, the row demanding
+    # "constant coefficient = 1" was never built, so the solver silently solved
+    # [P,Q] = 0 instead of [P,Q] = 1 and reported success on an INCONSISTENT
+    # system.  Concretely P = x^2 in char 2: [P,Q] = 2x Q_y = 0 always, yet
+    # solve_Q returned 401 "solutions".  The constant key must always be a row.
+    rows.setdefault((0, 0), [0]*len(qsupport))
     keys = sorted(rows)
     A = [rows[k][:] for k in keys]
-    b = [1 if k == (0, 0) else 0 for k in keys]
+    b = [1 if k == (0, 0) else 0 for k in keys]   # monomials here are (i,j) exponent pairs
     n = len(qsupport)
     # Gaussian elimination over F_p
     piv, r = [], 0
@@ -247,34 +254,76 @@ def noninjective_upto(P, Q, p, kmax=3):
     return False, None, None
 
 
-if __name__ == '__main__':
-    print("POSITIVE CONTROL: the Artin-Schreier pair (x^p + x, y)")
-    for p in (2, 3, 5, 7, 11):
-        k, n, w = artin_schreier_control(p)
-        print("   p=%-3d  Keller=%-5s  non-injective over F_p=%-5s  witness=%s"
-              % (p, k, n, w))
+def _solver_controls():
+    """Can-fail controls for solve_Q itself."""
+    ok = True
+    # (1) an inconsistent P must give NO solutions
+    for p, P, why in [(2, {(2, 0): 1}, "P=x^2 in char 2: [P,Q]=2x Q_y=0"),
+                      (3, {(3, 0): 1}, "P=x^3 in char 3: [P,Q]=3x^2 Q_y=0"),
+                      (5, {(1, 0): 1, (0, 1): 1}, "P=x+y admits solutions (sanity)")]:
+        qs = [(i, j) for i in range(4) for j in range(3) if i + j <= 3]
+        n = len(solve_Q(P, qs, p))
+        expect_zero = "=0" in why
+        good = (n == 0) if expect_zero else (n > 0)
+        ok &= good
+        print(("  PASS  " if good else "  FAIL  ") + "%s -> %d solutions" % (why, n))
+    # (2) every returned Q must actually satisfy [P,Q] = 1
+    p = 5
+    P = {(1, 0): 1, (0, 2): 1}
+    qs = [(i, j) for i in range(4) for j in range(3) if i + j <= 3]
+    sols = solve_Q(P, qs, p)
+    good = bool(sols) and all(bracket_mod(P, Q, p) == {(0, 0): 1} for Q in sols)
+    ok &= good
+    print(("  PASS  " if good else "  FAIL  ")
+          + "every returned Q replays [P,Q] = 1 exactly (%d checked)" % len(sols))
+    return ok
 
-    print("\nSWEEP: for each p, the smallest total degree at which a non-injective")
-    print("Keller pair turns up, over the support swept.")
-    for p in (2, 3, 5):
+
+if __name__ == '__main__':
+    print("SOLVER CONTROLS (these would have caught the constant-row bug)")
+    if not _solver_controls():
+        raise SystemExit("solver controls FAILED")
+
+    print("\nPOSITIVE CONTROL: the Artin-Schreier pair (x^p + x, y)")
+    print("(tested over F_{p^k}: on F_p alone it looks INJECTIVE, since x^p = x")
+    print(" there makes it x -> 2x -- that is why the F_p-only test was wrong)")
+    for p in (2, 3, 5, 7):
+        P = {(p, 0): 1, (1, 0): 1}
+        Q = {(0, 1): 1}
+        keller = (bracket_mod(P, Q, p) == {(0, 0): 1})
+        ni, k, w = noninjective_upto(P, Q, p, kmax=3 if p <= 3 else 2)
+        print("   p=%-2d  Keller=%-5s  non-injective=%-5s  first at k=%s"
+              % (p, keller, ni, k))
+        assert keller and ni, "positive control FAILED at p=%d" % p
+
+    print("\nSWEEP.  For fixed P the Keller equation is LINEAR in Q, so sweep P")
+    print("and solve exactly; then test bijectivity on F_{p^k}, k = 1..kmax.")
+    import sys
+    for p, kmax in ((2, 3), (3, 2)):
         MON = [(i, j) for i in range(4) for j in range(3) if 0 < i + j <= 3]
         QSUP = [(i, j) for i in range(5) for j in range(4) if i + j <= 4]
-        best, nfound, nkeller = None, 0, 0
+        best, nfound, nkeller, ntried = None, 0, 0, 0
         for coeffs in itertools.product(range(p), repeat=len(MON)):
             P = {m: c for m, c in zip(MON, coeffs) if c}
             if not P:
                 continue
+            ntried += 1
             for Q in solve_Q(P, QSUP, p):
                 if not Q:
                     continue
                 nkeller += 1
-                ni, wit = is_noninjective_Fp(P, Q, p)
+                ni, k, wit = noninjective_upto(P, Q, p, kmax=kmax)
                 if ni:
                     nfound += 1
                     d = max(total_degree(P), total_degree(Q))
                     if best is None or d < best[0]:
-                        best = (d, dict(P), dict(Q), wit)
-        print("   p=%d : Keller pairs seen %d, non-injective %d" % (p, nkeller, nfound))
+                        best = (d, dict(P), dict(Q), k)
+        print("   p=%d : P swept %d, Keller pairs %d, NON-INJECTIVE %d"
+              % (p, ntried, nkeller, nfound))
         if best:
-            print("        smallest max-degree %d:  P=%s  Q=%s  collision %s"
-                  % (best[0], best[1], best[2], best[3]))
+            print("        smallest max-degree %d (first seen at k=%s)"
+                  % (best[0], best[3]))
+            print("        P = %s" % best[1])
+            print("        Q = %s" % best[2])
+        else:
+            print("        none found on this support")
