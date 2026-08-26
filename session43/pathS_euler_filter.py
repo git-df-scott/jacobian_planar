@@ -1,3 +1,21 @@
+"""*** WITHDRAWN -- SUPERSEDED, DO NOT TRUST THE NUMBERS IN THIS FILE ***
+
+This module ran on the pre-audit chi machinery, which carried three bugs:
+  BUG 5  pairwise-only inclusion-exclusion (a point on >=3 components is
+         over-subtracted), so chi(A_W) came out too SMALL, hence chi(S) too
+         LARGE -- it wrongly REJECTED genuine candidates.
+  BUG 6  points at infinity counted over Q instead of over C.
+  BUG 7  a component dividing B is a 1-dimensional centre (S reducible), not
+         an ordinary hit.
+The fibre counts at special values also used mod-p majority voting rather than
+exact arithmetic, and were simply wrong in places (the non-linear family was
+reported as chi = -167, -258; the exact values are -3, -4, -5).
+
+Replaced by chi_exact.py (25/25 calibrations), pathS_scan2.py and
+pathS_graphs2.py.  Kept only so the corrected results can be diffed against the
+wrong ones.
+"""
+
 """Session 43, Path S — the EXACT Euler filter on the slice family.
 
 From pathS_tear.py / strata.py, the fibre structure of Alpoge's map F is
