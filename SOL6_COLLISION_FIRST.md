@@ -130,6 +130,36 @@ A1=-1, A2=-1/2, A3=-1/3, A5=-1/5.
 Thus extension fields are not required at these recurrence levels. This
 rational point is the preferred planted seed for the next descent.
 
+## Rational planted seed dies at the degree boundary
+
+The kernel-retaining recurrence for that fixed rational specialization was
+continued exactly through `x^21`. Every kernel coefficient `p3[n]` for
+`3 <= n <= 21` is nonzero, and all three reduced original-Jacobian rows replay
+coefficientwise through `x^21`.
+
+The next obstruction is decisive. Its kernel coefficient is `23/4`, and
+vanishing requires
+
+```text
+p3[22] =
+421966423176051225964907643652535431
+------------------------------------------------
+885443715538058477568
+```
+
+which is nonzero. The degree-126 weighted triangle requires `deg(p3)<=21`.
+Therefore this fixed rational specialization cannot be an admissible
+polynomial pair. It dies before reconstruction of the second endpoint
+`Q(1)=0` is relevant.
+
+`ribbon46_rational_seed_boundary.py` contains the complete exact recurrence
+output through degree 21, replays all vanished coefficients, and independently
+reconstructs the forbidden degree-22 coefficient.
+
+This closes only the planted specialization `u=1,v=w=0,p3[3]=0`; the generic
+three-parameter recurrence remains open and could choose its initial/kernel
+parameters to make the degree-boundary obstruction vanish.
+
 ## Export audit and representation correction
 
 `collision_first/ribbon46_export.py` constructs exact dense coefficient
@@ -162,5 +192,7 @@ reserve coefficient expansion for a final small lifted candidate.
   linear slice, with its non-formal status stated explicitly.
 - `collision_first/ribbon46_recurrence_rungs.py`: proper kernel-retaining
   recurrence through `x^2`.
+- `collision_first/ribbon46_rational_seed_boundary.py`: exact degree-boundary
+  closure of the planted rational specialization.
 - `collision_first/ribbon46_export.py`: exact small-scale saturated exporter
   and guard against the known scale-21 dense-expansion failure.
