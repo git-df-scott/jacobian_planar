@@ -48,10 +48,11 @@ collision tail and the top-Q vertex.
 
 This closes only this sparse chart, not the full 212-variable frontier.
 
-## Restoring linear jets opens an exact algebraic branch
+## Correction: the algebraic equation belongs to a truncated slice
 
-The preceding contradiction depends on omitting the linear lower jets of
-`p1,p2,p3`. Restore them in the minimal chart
+The preceding contradiction depends on omitting the linear lower coefficients
+of `p1,p2,p3`. Restoring them while still forcing every quadratic coefficient
+to zero gives the exact special slice
 
 ```text
 p0=x^84-x, p1=b*x^63+u*x, p2=d*x^42+v*x, p3=e*x^21.
@@ -76,11 +77,58 @@ The degree-15 equation has nonzero constant term, so every root has `u != 0`.
 the three reduced original-Jacobian rows and verifies all six coefficients
 through `x^1` vanish exactly modulo the degree-15 polynomial.
 
-This is the first exact surviving collision-first seed in the `(4,6)` lane.
-It is **not a counterexample or full modular point**: coefficients from `x^2`
-upward and the endpoint condition `Q(1)=0` remain to be solved. It specifically
-justifies extension-field searches, because the seed is naturally algebraic
-rather than rational.
+This was previously called a “first-jet branch.” That interpretation is
+withdrawn: because the differential equations are first order, quadratic
+coefficients also contribute to the `x^1` residual. The degree-15 equation is
+valid only on the displayed truncated slice. It is not an obstruction or an
+extension-field requirement for the full recurrence.
+
+## Proper kernel-retaining recurrence survives through `x^2`
+
+`ribbon46_recurrence_rungs.py` restores all coefficients needed by the first
+three recurrence levels. Locally `p0=-x`; write
+
+```text
+p1=u*x+a*x^2+r*x^3+...
+p2=v*x+b*x^2+s*x^3+...
+p3=w*x+t*x^2+z*x^3+...
+```
+
+At `x^0`, the slopes `u,v,w` are free and
+
+```text
+A1=-1, A2=-u/2, A3=-(u^2+v)/3.
+```
+
+At `x^1`, the obstruction determines
+
+```text
+A5=-(u^4+3*u^2*v+2*u*w+v^2)/5,
+```
+
+the other two equations determine `a,b`, and `t` is retained as the kernel.
+At `x^2`, the obstruction is linear in that kernel with coefficient `3*u/4`.
+Thus on the generic chart `u!=0` it determines `t`. The two remaining rows
+determine `r,s`; their coefficient determinant is exactly `-9`, while `z`
+is the next retained kernel.
+
+Therefore a three-parameter generic formal branch survives exactly through
+`x^2`. This is not yet a CE: later rungs may obstruct it, formal survival does
+not imply polynomial termination, and `Q(1)=0` remains untested.
+
+There is already a completely rational specialization, independently replayed
+through the same level:
+
+```text
+u=1, v=w=0, p3[3]=0,
+p1=x+(7/4)x^2+(1/4)x^3,
+p2=-(39/8)x^2-(49/8)x^3,
+p3=(33/8)x^2,
+A1=-1, A2=-1/2, A3=-1/3, A5=-1/5.
+```
+
+Thus extension fields are not required at these recurrence levels. This
+rational point is the preferred planted seed for the next descent.
 
 ## Export audit and representation correction
 
@@ -110,7 +158,9 @@ reserve coefficient expansion for a final small lifted candidate.
 
 - `collision_first/ribbon46_sparse_edge_certificate.py`: exact sparse-chart
   closure and negative controls.
-- `collision_first/ribbon46_linear_jet_branch.py`: exact algebraic first-jet
-  seed after restoring the missing linear lower jets.
+- `collision_first/ribbon46_linear_jet_branch.py`: exact algebraic truncated
+  linear slice, with its non-formal status stated explicitly.
+- `collision_first/ribbon46_recurrence_rungs.py`: proper kernel-retaining
+  recurrence through `x^2`.
 - `collision_first/ribbon46_export.py`: exact small-scale saturated exporter
   and guard against the known scale-21 dense-expansion failure.
