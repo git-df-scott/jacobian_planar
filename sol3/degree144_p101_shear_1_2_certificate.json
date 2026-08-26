@@ -1,0 +1,2486 @@
+{
+  "prime": 101,
+  "lambda2": 1,
+  "lambda3": 2,
+  "lambda4": 1,
+  "degree": 4,
+  "original_equations": 76,
+  "reduced_equations": 70,
+  "variables": [
+    "d0",
+    "d3",
+    "d5",
+    "d6",
+    "d7",
+    "d8",
+    "o0",
+    "o4",
+    "o5",
+    "o6"
+  ],
+  "linear_substitutions": [
+    [
+      "o1",
+      "-2*o4 + 12*o5 - 43*o6 + 2"
+    ],
+    [
+      "o2",
+      "5*o4 - 24*o5 - 25*o6 - 2"
+    ],
+    [
+      "o3",
+      "-2*o4 + 17*o5 - 29*o6 - 1"
+    ],
+    [
+      "d1",
+      "-2*d3 - 6*d5 + 46*d6 - 35*d7 + 8*d8 - 25*o4 + 3*o5 + o6 + 24"
+    ],
+    [
+      "d2",
+      "2*d3 + 9*d5 + 43*d6 + 10*d7 - 27*d8 - 14*o4 - 45*o5 + 18*o6 + 32"
+    ],
+    [
+      "d4",
+      "4*d5 - 14*d6 - 14*d7 + 7*d8 - 48*o4 - 10*o5 + 4*o6 - 49"
+    ]
+  ],
+  "macaulay_shape": [
+    4620,
+    1001
+  ],
+  "macaulay_rank": 569,
+  "certificate_terms": [
+    {
+      "coefficient": 20,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 55,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 12,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 36,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 54,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 42,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 54,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 88,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 70,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 55,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 82,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 37,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 88,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 75,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 66,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 48,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 22,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 41,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 66,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 57,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 3,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 84,
+      "equation": 0,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 1,
+      "equation": 0,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 0,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 42,
+      "equation": 0,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 99,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 7,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 86,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 49,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 41,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 1,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 98,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 74,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 91,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 77,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 79,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 14,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 88,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 43,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 29,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 1,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 79,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 93,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 11,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 16,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 58,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 38,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 59,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 55,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 77,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 16,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 22,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 7,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 17,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 14,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 24,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 44,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 26,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 57,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 91,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 31,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 81,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 67,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 11,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 22,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 88,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 92,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 100,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 79,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 83,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 48,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 69,
+      "equation": 3,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 50,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 23,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 50,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 62,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 68,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 100,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 25,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 24,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 17,
+      "equation": 1,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 62,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 99,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 68,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 45,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 47,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 10,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 18,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 29,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 10,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 35,
+      "equation": 1,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 4,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 70,
+      "equation": 1,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 9,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 96,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 96,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 20,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 2,
+      "multiplier": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 82,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 26,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 74,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 92,
+      "equation": 1,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 13,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 82,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 18,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 54,
+      "equation": 5,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 11,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 73,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 2,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 59,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "coefficient": 21,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 21,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 89,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 1,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "coefficient": 33,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "coefficient": 94,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 37,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 88,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 22,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 77,
+      "equation": 7,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 33,
+      "equation": 7,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 20,
+      "equation": 4,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 81,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 2,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 63,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 8,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 36,
+      "equation": 7,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 86,
+      "equation": 7,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 68,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 60,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 5,
+      "equation": 6,
+      "multiplier": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 50,
+      "equation": 6,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "coefficient": 53,
+      "equation": 6,
+      "multiplier": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 65,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "coefficient": 68,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 15,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "coefficient": 48,
+      "equation": 9,
+      "multiplier": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

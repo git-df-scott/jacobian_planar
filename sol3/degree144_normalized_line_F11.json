@@ -1,0 +1,164 @@
+{
+  "prime": 11,
+  "lambda2": 1,
+  "lambda4": 1,
+  "degree": 4,
+  "scope": "all F_p-rational lambda3 values",
+  "warning": "not a certificate over the algebraic closure",
+  "fibres": [
+    {
+      "lambda3": 0,
+      "original_equations": 67,
+      "reduced_equations": 59,
+      "variables": 10,
+      "macaulay_shape": [
+        3894,
+        1001
+      ],
+      "rank": 564,
+      "certificate_terms": 34,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 1,
+      "original_equations": 75,
+      "reduced_equations": 69,
+      "variables": 10,
+      "macaulay_shape": [
+        4554,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 117,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 2,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 135,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 3,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 131,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 4,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 130,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 5,
+      "original_equations": 75,
+      "reduced_equations": 69,
+      "variables": 10,
+      "macaulay_shape": [
+        4554,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 137,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 6,
+      "original_equations": 75,
+      "reduced_equations": 69,
+      "variables": 10,
+      "macaulay_shape": [
+        4554,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 125,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 7,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 127,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 8,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 143,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 9,
+      "original_equations": 76,
+      "reduced_equations": 70,
+      "variables": 10,
+      "macaulay_shape": [
+        4620,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 133,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    },
+    {
+      "lambda3": 10,
+      "original_equations": 75,
+      "reduced_equations": 69,
+      "variables": 10,
+      "macaulay_shape": [
+        4554,
+        1001
+      ],
+      "rank": 569,
+      "certificate_terms": 143,
+      "replay": "PASS",
+      "negative_control": "PASS"
+    }
+  ]
+}
