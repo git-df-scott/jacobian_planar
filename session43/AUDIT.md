@@ -87,3 +87,23 @@ Do not report a validation suite as evidence unless its output has been read.
 Calibrate every instrument on inputs of independently known value **before**
 pointing it at the problem, and include at least one input the instrument is
 expected to get wrong if the suspected bug is present.
+
+## Fibre structure: what was verified, and what was not
+
+The load-bearing claim under the whole Euler filter is the fibre-size
+stratification. Two routes were attempted:
+
+* **The strongest route did NOT finish.** `verify_fibres.py` attempts a lex
+  Gröbner over the function fields `Q(w1,w2,w3)` and `Q(mu,r)` — the generic
+  point of each stratum. It was **killed at 2400 s without completing**. That is
+  a NO RESULT and is recorded as one; it is not a confirmation.
+* **The routes that terminate all pass** (`verify_fibres_light.py`, 6/6): the
+  parametrization is proved **onto** the tear (exact identity modulo `Delta`),
+  and dense sampling at exact rational points gives fibre **3** off the tear (12
+  points), **1** on the tear with `mu != 0` (27 points), **0** on `C_sing` (6
+  points), and **3** on the `E=0` locus — confirming `E=0` is not part of the
+  tear.
+
+The measured fibre-size set is **{3, 1, 0}**, which is exactly Gao
+(arXiv:2608.00222) Theorem 3.4 — an independent published statement, derived
+here from scratch.
