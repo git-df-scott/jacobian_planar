@@ -27,6 +27,17 @@ CONTROLS (can-fail, run first):
     solution after reduction;
   * an INCONSISTENT system must be reported inconsistent, not silently reduced;
   * a system with NO linear equations must come back untouched.
+
+WHEN NOT TO USE greedy_reduce.  Measured on p11zero: the linear-only loop gives
+174 vars / 294 equations and keeps every equation QUADRATIC.  Letting the greedy
+pass also use constant-coefficient linear occurrences inside higher-degree
+equations removes 20 more variables (154/274) but TRIPLES the term count
+(6757 -> 20261) and raises the maximum degree from 2 to 6.  That is a bad trade
+for F4/Groebner, whose cost is dominated by degree, not by variable count: a
+system of quadrics is far better behaved than one of sextics in slightly fewer
+variables.  For a quadratic target, degree-preserving elimination means LINEAR
+elimination only -- i.e. reduce_system is already the right tool, and
+greedy_reduce should be reserved for systems where degree growth is acceptable.
 """
 import re
 import sys
@@ -179,6 +190,79 @@ def write_ms(path, variables, p, polys):
         f.write(",".join(variables) + "\n")
         f.write("%d\n" % p)
         f.write(",\n".join(poly_str(q, p) for q in polys) + "\n")
+
+
+
+
+# ------------------------------------------------------- greedy solve-and-substitute
+# The linear-only loop above uses total-degree-1 equations.  But a HIGHER-degree
+# equation can still be linear in one variable with a CONSTANT coefficient
+# (e.g. 3z + xy + ...), and then z = -(xy+...)/3 substitutes polynomially -- no
+# denominators, exact and reversible, so no solution is created or destroyed.
+# In p11zero 179 of 186 variables occur that way.
+#
+# The catch is expression swell: substituting a big expression into many
+# equations can cost more than the variable saves.  So this is greedy on SIZE --
+# always eliminate the variable whose replacement has the fewest terms and
+# lowest degree -- and it aborts if the total system size grows past a cap.
+
+def _size(polys):
+    return sum(len(q) for q in polys)
+
+
+def _deg(q):
+    return max((sum(e for _v, e in m) for m in q), default=0)
+
+
+def candidates(polys):
+    """(i, var, coeff, nterms, degree) for every constant-coefficient linear occurrence."""
+    out = []
+    for i, q in enumerate(polys):
+        for mono, c in q.items():
+            if len(mono) == 1 and mono[0][1] == 1:
+                var = mono[0][0]
+                rest = {m: cc for m, cc in q.items() if m != mono}
+                out.append((i, var, c, len(rest), _deg(rest)))
+    return out
+
+
+def greedy_reduce(variables, p, polys, growth_cap=8.0, max_deg=6, verbose=True):
+    polys = [dict(q) for q in polys if q]
+    start = _size(polys)
+    elim = 0
+    while True:
+        cands = candidates(polys)
+        if not cands:
+            break
+        # cheapest first: small replacement, low degree
+        cands.sort(key=lambda t: (t[4], t[3]))
+        done = False
+        for (i, var, c, nt, dg) in cands:
+            q = polys[i]
+            inv = pow(c, p - 2, p)
+            repl = {m: (-cc*inv) % p for m, cc in q.items() if m != ((var, 1),)}
+            repl = {k: v for k, v in repl.items() if v}
+            if any(var == v for m in repl for v, _e in m):
+                continue                      # must not contain the variable itself
+            trial = [substitute(r, var, repl, p) for j, r in enumerate(polys) if j != i]
+            trial = [t for t in trial if t]
+            if any(list(t) == [()] for t in trial):
+                return None, None, "INCONSISTENT after eliminating %s" % var
+            if _size(trial) > growth_cap*start or max((_deg(t) for t in trial), default=0) > max_deg:
+                continue                      # too expensive; try the next candidate
+            polys = trial
+            elim += 1
+            done = True
+            break
+        if not done:
+            break
+    live = sorted({v for q in polys for m in q for v, _e in m})
+    if verbose:
+        print("   greedy: eliminated %d more variables -> %d vars / %d equations "
+              "(terms %d -> %d, max degree %d)"
+              % (elim, len(live), len(polys), start, _size(polys),
+                 max((_deg(q) for q in polys), default=0)))
+    return live, polys, elim
 
 
 # ------------------------------------------------------------------ controls
