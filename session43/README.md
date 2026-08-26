@@ -282,9 +282,36 @@ time was. Recorded as a failure, not a verdict.
 
 The live chain is now explicit and short:
 
-> find a C\*-equivariant dimension-3 counterexample with `deg alpha >= 2`
-> → its `z`-linear component has a non-monomial `z`-coefficient
-> → Path S slicing is no longer blocked at the first step.
+> find a C\*-equivariant dimension-3 counterexample with `alpha_v`
+> **non-constant** → its `z`-linear component has a non-monomial
+> `z`-coefficient → Path S slicing is no longer blocked at the first step.
 
-`Psi`'s trilinearity makes step one an exact linear-algebra sweep rather than an
-elimination problem. That is the next computation.
+## 10. The Keller condition collapses to one plane identity
+
+`Psi` was the wrong bookkeeping. Pushing everything through the descent
+`G = (alpha·A, alpha^2·B)` with `A := u·beta + v·epsilon` and
+`B := u^2·delta + v·gamma` gives `det JG = alpha^2 · W` with
+
+```
+W  =  A{alpha,B} - 2B{alpha,A} + alpha{A,B}          {f,g} := f_u g_v - f_v g_u
+```
+
+and **`W` equals `det JF`** up to the permutation sign — verified on all seven
+maps (`descent_keller.py`). So the entire dimension-3 Keller condition for a
+C\*-equivariant map is the single scalar identity
+
+```
+A{alpha,B} - 2B{alpha,A} + alpha{A,B}  =  c != 0,     A in (u,v),  B in (u^2,v)
+```
+
+**trilinear** in `(alpha, A, B)`, in place of a 40-term expression in five
+functions. The two ideal memberships are exactly the statement that `A, B` come
+from honest `beta, epsilon, gamma, delta`. This re-derives the census fact for
+free: `det JG = alpha^2·W = c·alpha^2`, so the descent's Jacobian is a constant
+times a perfect square because `W` is the constant — nothing to do with the
+particular constructions. Evaluating at the origin gives
+`c = alpha(0,0)·beta(0,0)·gamma(0,0)`, the analogue of the `(-1,1,0)` case's
+`A(0,z)B(0,z)C_z(0,z)`.
+
+That collapse is what turns the `alpha_v` question into a small exact Gröbner
+computation instead of an intractable one.
