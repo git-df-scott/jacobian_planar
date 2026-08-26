@@ -1,0 +1,149 @@
+{
+ "ribbon12": {
+  "template": "ribbon12",
+  "kmax": 23,
+  "runs": [
+   {
+    "lam": 548423,
+    "mu": 903174,
+    "n_level2_quadrics": 1,
+    "level1_nullity": 2,
+    "level2_fp_points_found": 20,
+    "quadric_sample": [
+     "-308638*t0**2 - 246408*t0*t1 - 99279*t1**2"
+    ],
+    "descent_log": [
+     {
+      "k": 2,
+      "g": 21,
+      "rows": 4,
+      "cols": 5,
+      "nullity_with_lookahead": 2
+     }
+    ],
+    "n_points_tried": 20,
+    "death_levels": [
+     [
+      3,
+      20
+     ]
+    ],
+    "death_detail": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    },
+    "result": "descent died at every level-2 point tried",
+    "error": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    }
+   },
+   {
+    "lam": 588881,
+    "mu": 661207,
+    "n_level2_quadrics": 1,
+    "level1_nullity": 2,
+    "level2_fp_points_found": 20,
+    "quadric_sample": [
+     "-326126*t0**2 - 298014*t0*t1 + 14338*t1**2"
+    ],
+    "descent_log": [
+     {
+      "k": 2,
+      "g": 21,
+      "rows": 4,
+      "cols": 5,
+      "nullity_with_lookahead": 2
+     }
+    ],
+    "n_points_tried": 20,
+    "death_levels": [
+     [
+      3,
+      20
+     ]
+    ],
+    "death_detail": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    },
+    "result": "descent died at every level-2 point tried",
+    "error": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    }
+   },
+   {
+    "lam": 747841,
+    "mu": 222276,
+    "n_level2_quadrics": 1,
+    "level1_nullity": 2,
+    "level2_fp_points_found": 20,
+    "quadric_sample": [
+     "-370035*t0**2 + 484091*t0*t1 - 289417*t1**2"
+    ],
+    "descent_log": [
+     {
+      "k": 2,
+      "g": 21,
+      "rows": 4,
+      "cols": 5,
+      "nullity_with_lookahead": 2
+     }
+    ],
+    "n_points_tried": 20,
+    "death_levels": [
+     [
+      3,
+      20
+     ]
+    ],
+    "death_detail": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    },
+    "result": "descent died at every level-2 point tried",
+    "error": {
+     "failed_level": 3,
+     "g": 20,
+     "reason": "inconsistent (with lookahead)",
+     "consistent_without_lookahead": true,
+     "bare_nullity": 2,
+     "n_lookahead_rows": 1,
+     "rows": 4,
+     "cols": 5
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,287 @@
+{
+ "t44/seed1": {
+  "template": "t44",
+  "p": 1000003,
+  "lam": 473190,
+  "mu": 511823,
+  "h": {
+   "(0, 1)": 1,
+   "(1, 0)": 755170
+  },
+  "level1": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 5,
+   "nullity": 5,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 7,
+   "cols": 8,
+   "rank": 7,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t1**2 - 417277*t1*t3 - 92631*t1*t4 - 62957*t2**2 + 433266*t2*t3 + 284538*t2*t4 - 429279*t3**2 + 330172*t3*t4 + 38619*t4**2",
+   "t1*t2 + 291085*t1*t3 - 485605*t1*t4 - 31687*t2**2 + 125914*t2*t3 + 92631*t2*t4 - 144422*t3**2 - 491411*t3*t4 - 235453*t4**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "t44/seed2": {
+  "template": "t44",
+  "p": 1000003,
+  "lam": 837578,
+  "mu": 261613,
+  "h": {
+   "(0, 1)": 1,
+   "(1, 0)": 109306
+  },
+  "level1": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 5,
+   "nullity": 5,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 7,
+   "cols": 8,
+   "rank": 7,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t1**2 + 141806*t1*t3 - 222091*t1*t4 - 393647*t2**2 + 200238*t2*t3 - 101637*t2*t4 + 339019*t3**2 - 258136*t3*t4 + 104904*t4**2",
+   "t1*t2 + 66712*t1*t3 - 451506*t1*t4 + 50034*t2**2 - 212709*t2*t3 + 222091*t2*t4 - 66746*t3**2 + 56465*t3*t4 - 279556*t4**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "t44/seed3": {
+  "template": "t44",
+  "p": 1000003,
+  "lam": 811507,
+  "mu": 85650,
+  "h": {
+   "(0, 1)": 1,
+   "(1, 0)": 179442
+  },
+  "level1": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 5,
+   "nullity": 5,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 7,
+   "cols": 8,
+   "rank": 7,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t1**2 - 194975*t1*t3 - 190324*t1*t4 - 396232*t2**2 + 57418*t2*t3 - 170725*t2*t4 - 102435*t3**2 - 310576*t3*t4 + 276155*t4**2",
+   "t1*t2 - 199664*t1*t3 - 4188*t1*t4 - 149748*t2**2 - 207539*t2*t3 + 190324*t2*t4 + 314195*t3**2 - 460710*t3*t4 - 268631*t4**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "ribbon12/seed1": {
+  "template": "ribbon12",
+  "p": 1000003,
+  "lam": 473190,
+  "mu": 511823,
+  "h": {
+   "(0, 1)": 1,
+   "(6, 0)": 948652
+  },
+  "level1": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 3,
+   "nullity": 2,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 4,
+   "n_obstruction_functionals": 1
+  },
+  "n_quadrics": 1,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 - 491988*t0*t1 - 133503*t1**2"
+  ],
+  "n_groebner_gens": 1,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "ribbon12/seed2": {
+  "template": "ribbon12",
+  "p": 1000003,
+  "lam": 837578,
+  "mu": 261613,
+  "h": {
+   "(0, 1)": 1,
+   "(6, 0)": 91917
+  },
+  "level1": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 3,
+   "nullity": 2,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 4,
+   "n_obstruction_functionals": 1
+  },
+  "n_quadrics": 1,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 + 27427*t0*t1 + 309519*t1**2"
+  ],
+  "n_groebner_gens": 1,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "ribbon12/seed3": {
+  "template": "ribbon12",
+  "p": 1000003,
+  "lam": 811507,
+  "mu": 85650,
+  "h": {
+   "(0, 1)": 1,
+   "(6, 0)": 582164
+  },
+  "level1": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 3,
+   "nullity": 2,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 4,
+   "cols": 5,
+   "rank": 4,
+   "n_obstruction_functionals": 1
+  },
+  "n_quadrics": 1,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 - 207145*t0*t1 + 480576*t1**2"
+  ],
+  "n_groebner_gens": 1,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "t84/seed1": {
+  "template": "t84",
+  "p": 1000003,
+  "lam": 473190,
+  "mu": 511823,
+  "h": {
+   "(0, 1)": 1,
+   "(2, 0)": 950466
+  },
+  "level1": {
+   "rows": 9,
+   "cols": 10,
+   "rank": 6,
+   "nullity": 4,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 8,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 - 495813*t0*t2 + 166691*t0*t3 - 121859*t1**2 - 299958*t1*t2 - 491851*t1*t3 - 95110*t2**2 + 316842*t2*t3 - 126914*t3**2",
+   "t0*t1 + 4966*t0*t2 - 86824*t0*t3 - 496277*t1**2 + 243718*t1*t2 - 166691*t1*t3 + 99986*t2**2 + 384362*t2*t3 + 183992*t3**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "t84/seed2": {
+  "template": "t84",
+  "p": 1000003,
+  "lam": 837578,
+  "mu": 261613,
+  "h": {
+   "(0, 1)": 1,
+   "(2, 0)": 298492
+  },
+  "level1": {
+   "rows": 9,
+   "cols": 10,
+   "rank": 6,
+   "nullity": 4,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 8,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 + 94974*t0*t2 + 132492*t0*t3 - 428771*t1**2 + 38485*t1*t2 - 42020*t1*t3 - 25212*t2**2 - 257459*t2*t3 + 350813*t3**2",
+   "t0*t1 - 368614*t0*t2 - 79145*t0*t3 + 223541*t1**2 - 142461*t1*t2 - 132492*t1*t3 + 320506*t2**2 - 87767*t2*t3 - 488031*t3**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ },
+ "t84/seed3": {
+  "template": "t84",
+  "p": 1000003,
+  "lam": 811507,
+  "mu": 85650,
+  "h": {
+   "(0, 1)": 1,
+   "(2, 0)": 236811
+  },
+  "level1": {
+   "rows": 9,
+   "cols": 10,
+   "rank": 6,
+   "nullity": 4,
+   "consistent": true
+  },
+  "level2": {
+   "rows": 8,
+   "cols": 10,
+   "rank": 8,
+   "n_obstruction_functionals": 3
+  },
+  "n_quadrics": 3,
+  "groebner_is_unit_ideal": false,
+  "groebner_gens_sample": [
+   "t0**2 + 17692*t0*t2 + 250269*t0*t3 + 13269*t1**2 + 50483*t1*t2 - 257407*t1*t3 + 245557*t2**2 + 254136*t2*t3 - 307644*t3**2",
+   "t0*t1 - 450787*t0*t2 + 318591*t0*t3 + 411912*t1**2 - 26538*t1*t2 - 250269*t1*t3 - 350162*t2**2 - 79219*t2*t3 - 52945*t3**2"
+  ],
+  "n_groebner_gens": 2,
+  "verdict": "level-2 solution locus is NONEMPTY as a variety of positive codimension -- random sampling cannot see it",
+  "fp_points": []
+ }
+}
