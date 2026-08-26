@@ -33,6 +33,23 @@ matters is its geometric degree, computed exactly.  Degree 1 = automorphism
 solutions at all).  Degrees 2,3,4,5 are excluded by Campbell / Orevkov /
 Domrina-Orevkov / Domrina / Zoladek, so any such hit would signal a BUG.
 Degree >= 6 would be a counterexample candidate and goes to the full gate.
+
+STRENGTH OF THE NEGATIVE RESULT -- stated honestly.  The 0-hits outcome is WEAK
+evidence, and the reason is structural: NO member of this family with Psi_u != 0
+is an automorphism.  The y-degree-k coefficient of P = x + x^2 Psi(x,u) is
+divisible by x^(2+k) (since u^k = (1+xy)^k contributes y-degree k with an
+x^(2+i+k) coefficient), so P is never linear in y with constant leading
+coefficient, hence never a coordinate.  Consequently the search CANNOT be
+validated by planting a nontrivial solution and recovering it -- the only
+positive control available is Psi = 0, which exercises almost none of the code
+path.  "0 Keller pairs found" is therefore consistent both with JC2 being TRUE
+and with an undetected bug, and must not be quoted as an exclusion.
+
+The ONLY hard result in this lane is the exact closure of Psi = c*u, which is a
+proof (the top-level ODE forces gamma_e = A x^{2e} with a one-dimensional
+solution space, so gamma_j has no constant term for j >= 2, and the constant
+term of the j=1 equation then reads 3c = 0).  Everything else here is
+reconnaissance.
 """
 import sys
 import sympy as sp
