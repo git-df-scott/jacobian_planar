@@ -48,6 +48,40 @@ collision tail and the top-Q vertex.
 
 This closes only this sparse chart, not the full 212-variable frontier.
 
+## Restoring linear jets opens an exact algebraic branch
+
+The preceding contradiction depends on omitting the linear lower jets of
+`p1,p2,p3`. Restore them in the minimal chart
+
+```text
+p0=x^84-x, p1=b*x^63+u*x, p2=d*x^42+v*x, p3=e*x^21.
+```
+
+The constant coefficients of `E2=E1=0,E0=1` solve
+
+```text
+A1=-1, A2=-u/2, A3=-(v+u^2)/3.
+```
+
+The three linear coefficients then give an exact compatible branch with
+
+```text
+A5=-(3*u^2*v+u^4+v^2)/5,
+u^15+96*u^10-2052*u^5-216=0,
+3258*v=7*u^12+663*u^7-16380*u^2.
+```
+
+The degree-15 equation has nonzero constant term, so every root has `u != 0`.
+`ribbon46_linear_jet_branch.py` independently substitutes this branch into
+the three reduced original-Jacobian rows and verifies all six coefficients
+through `x^1` vanish exactly modulo the degree-15 polynomial.
+
+This is the first exact surviving collision-first seed in the `(4,6)` lane.
+It is **not a counterexample or full modular point**: coefficients from `x^2`
+upward and the endpoint condition `Q(1)=0` remain to be solved. It specifically
+justifies extension-field searches, because the seed is naturally algebraic
+rather than rational.
+
 ## Export audit and representation correction
 
 `collision_first/ribbon46_export.py` constructs exact dense coefficient
@@ -76,6 +110,7 @@ reserve coefficient expansion for a final small lifted candidate.
 
 - `collision_first/ribbon46_sparse_edge_certificate.py`: exact sparse-chart
   closure and negative controls.
+- `collision_first/ribbon46_linear_jet_branch.py`: exact algebraic first-jet
+  seed after restoring the missing linear lower jets.
 - `collision_first/ribbon46_export.py`: exact small-scale saturated exporter
   and guard against the known scale-21 dense-expansion failure.
-
