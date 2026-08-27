@@ -9,3 +9,5 @@ j=2 (pair 112,80) mu3=1 sat[mu1!=0]=True: EMPTY
 ### 1800 2 --gauge 1 --satvar mu2
 ### 1800 2 --gauge 1 --satvar mu2
 ### 1800 2 --gauge 1 --satvar mu2
+j=2 (pair 112,80) mu3=1 sat[mu2!=0]=True: UNPARSED
+### 2400 3 --gauge 1
