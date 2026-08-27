@@ -232,6 +232,20 @@ obstructions in f1..f8, p1..p8, q2..q8, exactly over Q.
   * control: msolve over GF(65521) gives ideal + (a_2_1 - 1) = (1), so
     a_2_1 = 0 really is forced.
 
+## a_2_1 = 0 and a_4_2 = 0 are THEOREMS over Q, not hypotheses
+
+The task's two inputs need not be assumed; radical propagation on the exact
+obstruction system proves both unconditionally in characteristic zero:
+
+    (2,0) = f1^2                      =>  a_2_1 = f1 = 0        (all branches)
+    (3,0) = (1/5) f2 p1^2             =>  f2 = 0  or  p1 = 0
+      on p1 = 0:  (4,0) = (12/5) f2^2 =>  f2 = 0
+    hence                                 a_4_2 = f2 = 0        (all branches)
+
+So the descent's level-4 and level-8 conclusions hold with no branch caveat,
+exactly over Q.  (The level-6 obstruction a_1_1^2 a_4_2 is reproduced here as
+the single monomial f2 p1^2.)
+
 ## The cascade that decides everything
 
 The obstructions split by z-degree into a triangular cascade:
