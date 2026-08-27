@@ -1,6 +1,10 @@
 # Literature batch 3 -- assessed, with honest value ratings
 
-## 1. arXiv:1202.2949 -- L.A. Campbell (2012, rev. 2013), unpublished
+## 1. Campbell -- CORRECTION: this IS published
+"On the Rational Real Jacobian Conjecture", Universitatis Iagellonicae
+Acta Mathematica, Fasciculus LI (2013), doi:10.4467/20843828AM.13.001.2277.
+(The arXiv note "too long to publish" refers to a longer manuscript; the
+published paper is the one to cite.) arXiv:1202.2949
 "Rational Jacobian conjectures" (real n-space, rational everywhere-defined
 maps, NO constant-Jacobian requirement).
 Abstract result: the associated rational function field extension "must be
@@ -59,3 +63,41 @@ No new instrument from this batch. One real protocol tightening (item 3),
 one structural note (item 1), one context paper (item 2). The three
 instruments that DO have teeth remain: GGHV's reduction (the target),
 McKay-Wang Cor 14 (the certificate), Le-Weber (the combinatorial sieve).
+
+
+## ADDENDUM after reading the published Campbell paper in full
+
+Contents confirmed: Prop 1 (geometric degree 1 => extension of odd degree
+with trivial automorphism group); extension degree and maximum fiber size
+have the same parity; Pinchuk maps have geometric degree 2, extension
+degree 6, trivial automorphism group; Thm 1 (birational nonsingular =>
+global inverse); Prop 2 (rational nonsingular + generically injective =>
+invertible).
+
+Still the REAL rational setting, so the odd-degree conclusion does not
+import to complex plane JC and does NOT exclude geometric degree 6.
+
+THE ONE TRANSFERABLE THREAD, and it is worth pursuing: Campbell's
+discussion points at Jelonek's asymptotic variety A(F) (his refs 11,12,13)
+-- the set where F fails to be proper. Facts he quotes: every connected
+component of A(F) is unbounded and of positive dimension, and A(F) is
+uniruled. In the COMPLEX plane case this is a genuine constraint on a
+counterexample: a Keller map that is not an automorphism is not proper, so
+A(F) is a nonempty curve, it is C-uniruled (parameterised by rational
+curves), and Jelonek has degree bounds tying deg A(F) to the degrees of F.
+
+This is the "Einstein's elevator" reframe parked in SWEEP_FRAMEWORKS.md.
+It is now the best-supported unexplored lead: an independent numerical
+constraint on the SAME (72,108) candidate, from a completely different
+invariant than Newton polygons or resolution trees. Next step is to pull
+Jelonek's actual bounds and check them against deg P = 72, deg Q = 108.
+
+## 4. arXiv:1401.1784 (GGV, J. Algebra 471 (2017) 13-74)
+"On the shape of possible counterexamples to the Jacobian Conjecture."
+Already the BACKBONE of this campaign, used indirectly throughout: its
+Theorem 8.10 is the B = 16 normal form our F-system lane is built on
+(P = x^3 y + x^2 p2 + x p1 + p0, Q = x^2 y + x q1 + q0,
+[P,Q] = x^4 y + mu3 x^3 + mu2 x^2 + mu1 x + mu0, mu0 != 0), and it is
+reference [1] of GGHV 2022. It also contains the elementary proof of
+Heitmann's B >= 16 and the result B != 2p for p prime.
+Nothing new to extract -- confirming provenance, not a new lead.

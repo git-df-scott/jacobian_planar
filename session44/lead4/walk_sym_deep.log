@@ -1,0 +1,7 @@
+target: (8,28) case (2) quadrilaterals  [OPEN in GGHV] | DIRECT (72,108)
+gauge: pivot a_0_1 = 1 (scaling slice)
+  level 4: obstruction [a_2_1**2] -> branch {a_2_1: 0}, continuing
+  level 6: obstruction [a_1_1**2*a_4_2] -> branch {a_1_1: 0}, continuing
+  level 8: obstruction [4*a_4_2**2] -> branch {a_4_2: 0}, continuing
+  level 12: obstruction [(a_3_2**4 - 9*a_3_2**2*a_6_3 + 27*a_6_3**2)/91] -> branch {a_3_2: -sqrt(9*a_6_3/2 - 3*sqrt(3)*I*a_6_3/2)}, continuing
+  level 14: obstruction [I*a_6_3*(60*sqrt(3)*a_2_2*a_6_3 - 20*I*a_2_2*a_6_3 + 45*sqrt(2)*a_5_3*sqrt(3*a_6_3 - sqrt(3)*I*a_6_3) - 5*sqrt(6)*I*a_5_3*sqrt(3*a_6_3 - sqrt(3)*I*a_6_3) + 60*sqrt(3)*a_8_4 - 76*I*a_8_4)/420] -> branch {a_2_2: (-45*sqrt(2)*a_5_3*sqrt(a_6_3*(3 - sqrt(3)*I)) + 5*sqrt(6)*I*a_5_3*sqrt(a_6_3*(3 - sqrt(3)*I)) - 60*sqrt(3)*a_8_4 + 76*I*a_8_4)/(20*a_6_3*(3*sqrt(3) - I))}, continuing
