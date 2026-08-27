@@ -1,2 +1,4 @@
 F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))
   conditions 129  free 51  nondeg factors 6  char 65521  Qvertices True
+VERDICT: EMPTY (a required vertex coefficient is 0)
+[script] None

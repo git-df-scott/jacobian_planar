@@ -60,13 +60,13 @@ def poly_from_string(s, p):
     return [co.get(i, 0) % p for i in range(d + 1)]
 
 
-def main(path):
+def main(path, base=None, tagpfx='ext'):
     txt = open(path).read().strip().rstrip(":").replace("\n", "")
     D = ast.literal_eval(txt)
     p, nv, deg, varn, lf, rest = D[1]
     elim, den, plist = rest[1]
     w = elim[1]
-    facs = factor_univariate(w, p, "elimfac")
+    facs = factor_univariate(w, p, tagpfx + "_elimfac")
     print(f"eliminating polynomial of degree {len(w)-1} over GF({p}) factors "
           f"as {[(m, len(poly_from_string(f,p))-1) for m, f in facs]}"
           f"  (multiplicity, degree)")
@@ -99,6 +99,8 @@ def main(path):
             continue
         iv = K.inv(dv)
         val = {v: K.zero() for v in PVARS}
+        for _k, _v in (base or {}).items():
+            val[_k] = K.const(_v)
         val[varn[-1]] = T
         for name, entry in zip(varn[:len(plist)], plist):
             dd, co = entry[0]
@@ -258,7 +260,7 @@ def main(path):
                 L.append(f'"     {nm}{a+1} can be nonzero: " + '
                          "string(!(size(G)==1 and G[1]==1));")
         L.append("exit;")
-        out, err = singular("\n".join(L), f"ext_{p}_{fi}")
+        out, err = singular("\n".join(L), f"{tagpfx}_{p}_{fi}")
         print(out)
         if err:
             print("     STDERR:", err[:300])
