@@ -373,6 +373,21 @@ standard caveat applies in full.
 
 ## 10. A consequence for the OTHER subcase, flagged not claimed
 
+CHECKED, not assumed: running `case1_face_derive.py 1` on subcase 2's own
+polygons returns the identical essential face -- direction (2,-1),
+faceP = (1,0)..(8,14) (the same 8 lattice points), faceQ = (2,1)..(12,21)
+(the same 11), and the same weight arithmetic wtop = 4 = w(x^2).  So the
+essential-face equation W = 1, and its 35 solutions, are literally SHARED
+between the two subcases, not merely analogous.
+
+CROSS-LINE CORROBORATION.  The independent subcase-2 line, working from a
+different formulation ("the gauged q-layer") and a codebase this line did
+not write, reports exactly 35 solutions with Singular vdim = 35, matching
+its own msolve RUR degree.  That is the same 35 obtained here from the
+essential-face system, and the shared-face fact above explains why the two
+numbers must agree.  Two independent routes to the same count is the
+strongest check Part I has.
+
 Subcase 2's polygons are the QUADRILATERALS obtained by deleting the
 vertices (0,8) and (0,12), and deleting a vertex SHRINKS a hull:
 
