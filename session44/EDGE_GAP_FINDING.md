@@ -76,3 +76,60 @@ honest next step is to determine, from the corner-chain data of the (8,28)
 case, whether the (0,0)-(8,16) face form is required to be a linear power.
 If yes, subcase 2 dies immediately by the argument above -- with no
 Groebner basis, no solver, and no waiting on the descent.
+
+## Update: GGHV's Proposition 3.12 located, and case (1) eliminated
+
+Source: Guccione-Guccione-Valqui, "The Two-Dimensional Jacobian Conjecture
+and the Lower Side of the Newton Polygon", arXiv:1605.09430, Prop 3.12.
+This is the tool GGHV-2022 use to eliminate cases by forcing multiplicities
+of linear factors in face forms.
+
+Statement (paraphrased): for (rho,sigma) in V cap ](0,-1),(1,-1)[ and R a
+(rho,sigma)-homogeneous non-monomial with [G,R] = R^i, writing
+R = x^(u/rho) r(z) with z = x^(-sigma/rho) y, ONE of these holds:
+  (1) rho | l and r = xi * h^j for a linear h != z;
+  (2) there are theta, t' in N with theta <= N1, 0 < t' < l*theta and
+      (rho,sigma) = -dir(t' st(R) + theta(1,1)); then r has a linear
+      factor of multiplicity theta;
+  (3) similar with theta | N2, and then nu2 > 0.
+Notation 3.10: (upsilon1, nu1) := en(R) - st(R), (upsilon2, nu2) := st(R),
+N1 = gcd(upsilon1, nu1), N2 = gcd(upsilon2, nu2).
+
+### What is now established
+
+CASE (1) IS INCOMPATIBLE WITH THE EDGE GAP.
+Case (1) says the face root r is xi*h^j for a LINEAR h that is explicitly
+NOT z. Our gap analysis showed that a gapped root which is a pure power of
+a linear form forces that linear form to be h = z (alpha = 0), because any
+other alpha forces c0 = 0 and c0 != 0 is required by the vertex (0,0).
+Since case (1) forbids h = z, case (1) cannot occur on this face.
+
+So the open subcase-2 face must fall under case (2) or case (3).
+
+Combined with the multiplicity result proved above -- a gapped R has AT
+MOST a double root -- case (2) can only occur with theta <= 2. If the
+data of this face force theta >= 3, subcase 2 is EMPTY.
+
+### Where this becomes uncertain, stated honestly
+
+Deciding between (2) and (3) needs the correct (rho,sigma), st(R) and
+en(R) for THIS face in THEIR conventions, and that is a notation-matching
+task I have not yet verified rather than asserted. Two specific risks:
+
+  * If st(R) = (0,0) for our face then nu2 = 0, which would rule out case
+    (3) (it concludes nu2 > 0), and case (2)'s direction equation would
+    reduce to (rho,sigma) = -dir(theta(1,1)) = (-1,-1). That direction is
+    NOT in the required range ](0,-1),(1,-1)[, which would rule out case
+    (2) as well -- and with case (1) already gone, that would be a
+    contradiction, i.e. subcase 2 EMPTY.
+  * BUT the face direction also has to lie in ](0,-1),(1,-1)[ for the
+    proposition to apply at all. The edge (0,0)-(8,16) has edge vector
+    (1,2), so its outer normal is (2,-1)-ish, which appears to fall
+    OUTSIDE that interval. If so, Prop 3.12 simply does not apply to this
+    face and the whole route is void.
+
+Both possibilities are live and they point in opposite directions, so no
+conclusion is drawn here. The next step is narrow and well defined: fix
+GGHV's (rho,sigma) convention, compute st and en of R for this face in it,
+and check membership in ](0,-1),(1,-1)[. That single check either kills
+subcase 2 outright or closes this route cleanly.
