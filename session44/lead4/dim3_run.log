@@ -1,3 +1,6 @@
 primes [65521, 65539]  targets 2  queue 2  budget 1800s/prime
 [1/2] max=99 params=127 TIMEOUT [1800s]
     F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))
+[2/2] max=108 params=127 TIMEOUT [1800s]
+    (9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))
+TALLY: {'UNKNOWN': 4, 'EMPTY': 7, 'TIMEOUT': 11}

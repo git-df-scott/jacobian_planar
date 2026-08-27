@@ -123,9 +123,16 @@ class Walker:
     # top level.  The always-on affinity check is the runtime guard.
     def walk(self, rng, restarts=40, verbose=False):
         jd = max(self.levels)
-        if 2 * jd + 1 <= self.jmax + 1:
-            raise ValueError(f"short driver (2*{jd}+1 <= {self.jmax}+1): "
-                             "affine schedule invalid for this shape")
+        # Merged top block: any product of two driver rows both > jmax/2
+        # exceeds the label cutoff jmax+1, so ALL conditions are JOINTLY
+        # affine in the rows >= j0 = jmax//2 + 1 (given the rows below).
+        # Solving that block as one affine system keeps its kernel freedom
+        # joint instead of committing greedy per-level draws - the greedy
+        # walk provably cannot reach consistency loci of codimension >= 1
+        # in the draws it commits, this can.
+        j0 = self.jmax // 2 + 1
+        steps = ([j for j in self.levels if j < j0]
+                 + (["MERGE"] if any(j >= j0 for j in self.levels) else []))
         best_fail = (-1, None)
         nc_total = None
         fail_hist = {}
@@ -135,14 +142,19 @@ class Walker:
             done = set()
             kdims = []
             ok = True
-            for j in self.levels:
-                unks = [k for k in self.vars_at[j] if k != self.pivot]
+            for j_raw in steps:
+                j = self.jmax + 99 if j_raw == "MERGE" else j_raw
+                if j_raw == "MERGE":
+                    unks = [k for jj in self.levels if jj >= j0
+                            for k in self.vars_at[jj] if k != self.pivot]
+                else:
+                    unks = [k for k in self.vars_at[j] if k != self.pivot]
                 base = self.conds_labeled(vec)
                 if base is None:
                     ok = False
                     break
                 nc_total = len(base)
-                if j == jd:
+                if j_raw == "MERGE":
                     new = [t for t in range(len(base)) if t not in done]
                 else:
                     new = [t for t in range(len(base))
@@ -177,7 +189,8 @@ class Walker:
                             rkA = len(unks) - hom[1]
                             best_fail = (j, {"new": len(new),
                                              "unks": len(unks),
-                                             "rankA": rkA})
+                                             "rankA": rkA,
+                                             "kdims_before": list(kdims)})
                         break
                     u, kdim = sol
                     if kdim:

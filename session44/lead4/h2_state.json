@@ -368,5 +368,20 @@
   "tier": "dim3-loose",
   "budget": 1800,
   "secs": 1800
+ },
+ "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1800,
+    "out": ""
+   }
+  },
+  "max": 108,
+  "params": 127,
+  "tier": "dim3-loose",
+  "budget": 1800,
+  "secs": 1800
  }
 }
