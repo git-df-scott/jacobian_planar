@@ -359,5 +359,18 @@ along (0,0)-(8,16) are (a00, 0,0,0,0, 1, 0,0,0), i.e. a_1 = a_2 = 0 with
 a_5 != 0 -- exactly the opposite of the predicted "gap at 1,2,5".  (f = a00+u^5
 is of course not R^2 either.)
 
-The branches deg q in {2,4,6} (also a_14_8 = 0, also outside subcase 2) are
-left undecided; they cannot affect the subcase-2 conclusion.
+Branch tally for the RAW ideal (supports + f1 = f2 = 0, no vertex condition).
+deg q must lie in {1,2,4,6,8}: the leading coefficient of 2qt' - 3q't = u^2 is
+(2 deg t - 3 deg q) q_top t_top, so either 2 deg t = 3 deg q (deg q even) or
+deg q + deg t - 1 = 2, i.e. q = u.
+
+    deg q = 8  a_14_8 != 0  -- SUBCASE 2.  a_10_5 = 0 forced (with everything
+                              else on the face); complete over all 35 q at two
+                              primes.  Subcase 2 is EMPTY.
+    deg q = 2                 a_10_5 = 0 forced (msolve, GF(999983): the
+                              saturated ideal is (1)).
+    deg q = 1                 a_10_5 != 0 POSSIBLE -- the exact witness above.
+    deg q = 4, 6              pending.
+
+None of the deg q < 8 branches has the vertex (8,14), so none of them can
+affect the subcase-2 conclusion.
