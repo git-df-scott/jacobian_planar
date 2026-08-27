@@ -391,7 +391,17 @@ q_m = 1, q_a = 0 for a > m and solving the q-layer gives
     deg q = 2                 a_10_5 = 0 forced (msolve, GF(999983): the
                               saturated ideal is (1)).
     deg q = 1                 a_10_5 != 0 POSSIBLE -- the exact witness above.
-    deg q = 4, 6              pending.
+    deg q = 4, 6              UNDECIDED (see below).
 
 None of the deg q < 8 branches has the vertex (8,14), so none of them can
 affect the subcase-2 conclusion.
+
+Why 4 and 6 are undecided, stated precisely.  The cascade reduction assumes the
+f-layer map M (the 7x8 matrix of the (n,2) equations) is surjective onto the
+span of the quadratic Q(p); on deg q = 8 that held for all 35 q, but on
+deg q = 4 and 6 it fails (rank M = 4 with a 3-dimensional cokernel), so there
+are extra solvability conditions the reduction does not carry.  The endgame
+would be 8-12 parameters instead of 4.  The tools print "UNDECIDED" there;
+earlier drafts of uz_lowq.py printed "NO SOLUTION", which was a bug in the
+reporting, not a result -- it must NOT be read as emptiness.  Direct Groebner
+on those branches (17 and 19 variables) did not terminate.

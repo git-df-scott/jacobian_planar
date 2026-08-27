@@ -163,7 +163,12 @@ def main(path, base=None, tagpfx='ext'):
         print(f"     p-kernel dim {nk}, ker(M) dim {nf}, "
               f"f-layer solvable {not bad}")
         if bad:
-            print("     -> no solution for this q at all")
+            # NOT a mathematical verdict: it means the quadratic Q(p) is
+            # outside image(M) for some basis quadratic, i.e. there are extra
+            # solvability conditions on the parameters that this reduction
+            # does not carry.  The branch is UNDECIDED here, not empty.
+            print("     -> UNDECIDED: this reduction cannot handle a "
+                  "non-surjective f-layer (extra cokernel conditions)")
             continue
         # ---- build the (n,1),(n,0) equations in nk+nf parameters, over K
         NV = nk + nf

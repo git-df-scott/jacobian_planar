@@ -95,7 +95,10 @@ def cascade(qval, tag, mod=MOD):
             parts[(i, j)] = r[0] if r else None
     print(f"  p-kernel dim {nk}, ker(M) dim {nf}, f-layer solvable {not bad}")
     if bad:
-        print("  -> NO SOLUTION on this branch")
+        # NOT "no solution": Q(p) leaves image(M), so there are extra
+        # cokernel conditions on the parameters that this reduction drops.
+        print("  -> UNDECIDED: non-surjective f-layer, extra cokernel "
+              "conditions not carried by this reduction")
         return
     NV = nk + nf
     names = VN[:NV]
