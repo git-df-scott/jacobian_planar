@@ -44,3 +44,7 @@ F24(m,n)=3,4 | a=8 b=4 c'=4 r=7 eps=((7, 1),(1, 0))
 (11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=4 eps=((1, 0),(4, 1))
   WITNESS mod 65521 attempt=0 kdims=[(0, 1), (1, 2), (2, 2), (3, 3), (4, 3), (5, 3), (6, 4), (7, 4), (8, 4), (9, 5), (10, 5), (11, 5), (12, 6), (13, 6), (14, 6), ('MERGE', 1)]
   gate: FAIL bracket mismatch at [(0, 30), (0, 31), (0, 32), (0, 33), (0, 34)]
+F24(m,n)=3,4 | a=8 b=4 c'=4 r=8 eps=((8, 1),(1, 0))
+  WALK-FAIL restarts=30 deepest-level=117 profile={'new': 291, 'unks': 222, 'rankA': 222, 'kdims_before': [(0, 1), (1, 4), (2, 6), (3, 8), (4, 10), (5, 12), (6, 14), (7, 16), (8, 18), (9, 18)]} hist={117: 30} nconds=238  (not an emptiness proof)
+(11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=2 eps=((1, 0),(2, 1))
+  WALK-FAIL restarts=30 deepest-level=128 profile={'new': 55, 'unks': 23, 'rankA': 23, 'kdims_before': [(0, 1), (1, 2), (2, 2), (3, 3), (4, 3), (5, 4), (6, 4), (7, 5), (8, 5), (9, 5), (10, 6), (11, 6), (12, 7), (13, 7), (14, 8)]} hist={128: 30} nconds=54  (not an emptiness proof)
