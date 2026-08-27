@@ -96,11 +96,17 @@ class Walker:
         return Q
 
     def conds_labeled(self, vec, k=None):
-        """[(label_j, val, eps)] for the support conditions, or None."""
+        """{(row_j, x_i): (val, eps)} for the support conditions, or None.
+
+        Keyed by (row, x-power), NOT positionally: trim() makes row lengths
+        value-dependent, so positional indexing misaligns conditions between
+        evaluations (the source of a spurious NONAFFINE).  A key absent from
+        one evaluation means that coefficient is 0 there; align via dict.
+        """
         Q = self.qrows(self.build(vec, k))
         if Q is None:
             return None
-        out = []
+        out = {}
         for j in range(1, self.jmax + 1):
             A, B = Q.get(j, ([], []))
             if j in self.OR_:
@@ -110,8 +116,8 @@ class Walker:
             else:
                 bad = list(range(max(len(A), len(B))))
             for i in bad:
-                out.append((j, A[i] if i < len(A) else 0,
-                            B[i] if i < len(B) else 0))
+                out[(j, i)] = (A[i] if i < len(A) else 0,
+                               B[i] if i < len(B) else 0)
         return out
 
     # -------------------------------------------------------------- walk ---
@@ -155,29 +161,34 @@ class Walker:
                     break
                 nc_total = len(base)
                 if j_raw == "MERGE":
-                    new = [t for t in range(len(base)) if t not in done]
+                    new = [key for key in base if key not in done]
                 else:
-                    new = [t for t in range(len(base))
-                           if t not in done and base[t][0] <= j + 1]
+                    new = [key for key in base
+                           if key not in done and key[0] <= j + 1]
                 if unks:
-                    cols = []
-                    for k in unks:
-                        c = self.conds_labeled(vec, k)
-                        cols.append([c[t][2] for t in new])
-                    c0 = [base[t][1] for t in new]
-                    A = [[cols[q][r] for q in range(len(unks))]
-                         for r in range(len(new))]
+                    cols = [self.conds_labeled(vec, k) for k in unks]
+                    # key set: union over base and eps evaluations so no
+                    # value-dependent coefficient is silently dropped
+                    keys = set(new)
+                    for c in cols:
+                        keys |= {key for key in c
+                                 if key not in done
+                                 and (j_raw == "MERGE" or key[0] <= j + 1)}
+                    new = sorted(keys)
+                    c0 = [base.get(key, (0, 0))[0] for key in new]
+                    A = [[cols[q].get(key, (0, 0))[1]
+                          for q in range(len(unks))] for key in new]
                     ut = [rng.randrange(p) for _ in unks]
                     v2 = list(vec)
                     for q, k in enumerate(unks):
                         v2[k] = ut[q]
                     chk = self.conds_labeled(v2)
-                    for r, t in enumerate(new):
+                    for r, key in enumerate(new):
                         lin = (c0[r] + sum(A[r][q] * ut[q]
                                            for q in range(len(unks)))) % p
-                        if chk[t][1] != lin:
+                        if chk.get(key, (0, 0))[0] != lin:
                             raise RuntimeError(
-                                f"NONAFFINE at level {j} label {base[t][0]}: "
+                                f"NONAFFINE at level {j_raw} cond {key}: "
                                 f"schedule premise violated")
                     sol = solve_affine(A, c0, rng, n=len(unks))
                     if sol is None:
@@ -194,11 +205,11 @@ class Walker:
                         break
                     u, kdim = sol
                     if kdim:
-                        kdims.append((j, kdim))
+                        kdims.append((j_raw, kdim))
                     for q, k in enumerate(unks):
                         vec[k] = u[q]
                 else:
-                    if any(base[t][1] != 0 for t in new):
+                    if any(base[key][0] != 0 for key in new):
                         ok = False
                         fail_hist[j] = fail_hist.get(j, 0) + 1
                         if j > best_fail[0]:
@@ -208,11 +219,10 @@ class Walker:
             if not ok:
                 continue
             fin = self.conds_labeled(vec)
-            resid = [t for t in range(len(fin)) if fin[t][1] != 0]
+            resid = [key for key in fin if fin[key][0] != 0]
             if resid:
                 if verbose:
-                    print(f"  attempt {attempt}: residual labels "
-                          f"{[fin[t][0] for t in resid[:6]]}")
+                    print(f"  attempt {attempt}: residual at {resid[:6]}")
                 continue
             return {"status": "WITNESS", "vec": list(vec), "kdims": kdims,
                     "attempt": attempt}
@@ -341,7 +351,7 @@ def control_W2(rng, targets):
     vec = [rng.randrange(p) for _ in w.idx]
     vec[w.pivot] = rng.randrange(1, p)
     fin = w.conds_labeled(vec)
-    nz = sum(1 for c in fin if c[1] != 0)
+    nz = sum(1 for v, _ in fin.values() if v != 0)
     if nz == 0:
         print("W2 SKIP: random vector satisfied all conditions (?!)")
         return False

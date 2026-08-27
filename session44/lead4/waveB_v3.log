@@ -1,0 +1,17 @@
+W1 recurrence+bracket vs sympy (below y^19): PASS
+W2a gate rejects a random non-solution: PASS
+F24(m,n)=3,4 | a=8 b=4 c'=4 r=4 eps=((1, 0),(4, 1))
+  WALK-FAIL restarts=30 deepest-level=117 profile={'new': 118, 'unks': 75, 'rankA': 75, 'kdims_before': [(0, 1), (1, 4), (2, 7), (3, 9), (4, 12), (5, 14), (6, 17), (7, 19), (8, 22), (9, 25)]} hist={117: 30} nconds=118  (not an emptiness proof)
+F24(m,n)=3,4 | a=8 b=4 c'=4 r=4 eps=((4, 1),(1, 0))
+  WALK-FAIL restarts=30 deepest-level=8 profile={'new': 1, 'unks': 22, 'rankA': 0, 'kdims_before': [(0, 1), (1, 4), (2, 7), (3, 9), (4, 12), (5, 14), (6, 17), (7, 20)]} hist={8: 30} nconds=268  (not an emptiness proof)
+F24(m,n)=3,4 | a=8 b=4 c'=4 r=5 eps=((1, 0),(5, 1))
+  WALK-FAIL restarts=30 deepest-level=3 profile={'new': 1, 'unks': 9, 'rankA': 0, 'kdims_before': [(0, 1), (1, 4), (2, 7)]} hist={3: 30} nconds=104  (not an emptiness proof)
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/session44/lead4/walk_pair.py", line 394, in <module>
+    main()
+  File "/home/user/jacobian_planar/session44/lead4/walk_pair.py", line 378, in main
+    r = w.walk(rng, restarts=a.restarts, verbose=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/session44/lead4/walk_pair.py", line 179, in walk
+    raise RuntimeError(
+RuntimeError: NONAFFINE at level 128 label 27: schedule premise violated
