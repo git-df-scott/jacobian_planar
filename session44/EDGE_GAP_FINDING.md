@@ -133,3 +133,54 @@ conclusion is drawn here. The next step is narrow and well defined: fix
 GGHV's (rho,sigma) convention, compute st and en of R for this face in it,
 and check membership in ](0,-1),(1,-1)[. That single check either kills
 subcase 2 outright or closes this route cleanly.
+
+
+## VERIFICATION PASS (run explicitly, results below)
+
+Every step of the chain was re-derived from the polygons rather than
+assumed. Results:
+
+  CLAIM 1  (0,0)-(8,16) is the w-max face of N(P) for w(i,j) = j - 2i,
+           and (0,0)-(12,24) is the w-max face of N(Q).
+           w on N(P) = {(0,0):0, (1,0):-2, (8,14):-2, (8,16):0};
+           w on N(Q) = {(0,0):0, (2,1):-3, (12,21):-3, (12,24):0}.   VERIFIED
+
+  CLAIM 2  the two face forms MUST commute. For monomials,
+           [x^a y^b, x^c y^d] = (ad-bc) x^(a+c-1) y^(b+d-1), so
+           w(result) = w(first) + w(second) + 1, giving max w = 1 for
+           [P,Q]; the target x^2 has w = -4 < 1, so the w=1 component
+           vanishes identically, i.e. [face(P), face(Q)] = 0.        VERIFIED
+           (This was the step previously ASSUMED; it is now derived.)
+
+  CLAIM 3  lattice lengths 8 and 12, gcd 4, so face(P) = R^2,
+           face(Q) = R^3 with deg R = 4.                            VERIFIED
+
+  CLAIM 4  a1 = 2 c0 c1 and a2 = 2 c0 c2 + c1^2; with c0 != 0 the
+           descent's a1 = a2 = 0 solve uniquely to c1 = c2 = 0.      VERIFIED
+
+  CLAIM 5  every root pattern with multiplicity >= 3 (patterns 4, 3+1,
+           2+2) forces c0 = 0, contradicting the vertex (0,0).       VERIFIED
+
+## CORRECTION: the Proposition 3.12 route is VOID
+
+Checked rather than assumed, and it fails. Prop 3.12 requires
+(rho,sigma) in ](0,-1),(1,-1)[, an arc from 270 to 315 degrees. Our face
+is the maximiser of j - 2i, i.e. (rho,sigma) = (-2,1), at 153.43 degrees
+-- outside the admissible arc. So Proposition 3.12 does NOT apply to this
+face in these coordinates, and NO emptiness conclusion follows from it.
+This is the risk that was flagged when the route was recorded; it has now
+materialised, and the route is closed rather than left dangling.
+
+## WHAT STANDS AFTER VERIFICATION
+
+Independent of Prop 3.12, and now fully derived:
+
+  Any counterexample of the open (72,108) subcase-2 shape has, on the
+  N(P) face from (0,0) to (8,16), a face form R^2 with
+      R(t) = c0 + c3 t^3 + c4 t^4,   c0 != 0,  c4 != 0,
+  so R has AT MOST A DOUBLE ROOT, and its discriminant is
+      c0^2 (256 c0 c4^3 - 27 c3^4).
+
+That is a genuine, verified structural constraint on any counterexample of
+this shape -- the campaign's first such statement -- and it is what should
+be carried forward, not the Prop 3.12 speculation.
