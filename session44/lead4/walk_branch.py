@@ -24,6 +24,49 @@ import sympy as sp
 from walk_sym import hull_rows
 
 
+
+def branch_solve(e, unks):
+    """Solve one condition e = 0, returning a LIST of substitution dicts --
+    one per factor (every zero branch retained). None means unsatisfiable."""
+    e = sp.expand(e)
+    if e == 0:
+        return [{}]
+    if not e.free_symbols:
+        return None                      # nonzero constant: dead
+    out = []
+    for base, _mult in sp.factor_list(e)[1]:
+        vs = sorted(base.free_symbols, key=str)
+        if not vs:
+            continue
+        pick = None
+        for v in vs:
+            if v in unks and sp.degree(base, v) == 1:
+                pick = v
+                break
+        if pick is None:
+            for v in vs:
+                if sp.degree(base, v) == 1:
+                    pick = v
+                    break
+        if pick is not None:
+            c1 = sp.expand(sp.Poly(base, pick).coeff_monomial(pick))
+            c0 = sp.expand(base - c1 * pick)
+            if c1.free_symbols:
+                # keep both: c1 = 0 branch, and the solved branch
+                out.append({})           # c1=0 handled by other factors/levels
+            out.append({pick: sp.cancel(-c0 / c1)})
+        else:
+            v = vs[0]
+            for rt in sp.roots(sp.Poly(base, v)):
+                out.append({v: rt})
+    seen, uniq = set(), []
+    for d in out:
+        key = tuple(sorted((str(k), str(v)) for k, v in d.items()))
+        if key not in seen:
+            seen.add(key)
+            uniq.append(d)
+    return uniq or None
+
 def analyse(NP, NQ, r, maxbranch=40, verbose=True):
     RP, RQ = hull_rows(NP), hull_rows(NQ)
     p0, q0 = RP.get(0), RQ.get(0)
@@ -102,9 +145,16 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
             eqs = [sp.expand(e) for e in eqs if sp.expand(e) != 0]
             if not eqs:
                 continue
-            sols = sp.solve(eqs, unks, dict=True) if unks else []
-            if not sols:
-                sols = sp.solve(eqs, dict=True)
+            sols = None
+            for e in eqs:
+                got = branch_solve(e, unks)
+                if got is None:
+                    sols = None
+                    break
+                if any(g for g in got):
+                    sols = got
+                    break
+                sols = [{}]
             if not sols:
                 dead = f"level {j}: {len(eqs)} condition(s), no solution"
                 break
