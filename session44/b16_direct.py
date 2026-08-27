@@ -42,6 +42,37 @@ def bracket(P, Q):
     return sp.expand(sp.diff(P, x) * sp.diff(Q, y) - sp.diff(P, y) * sp.diff(Q, x))
 
 
+def control_C2():
+    """The planted deg-3 pair's coefficients must annihilate build(2)'s
+    equations exactly (symbolic mu3), checked by direct substitution —
+    no solver in the loop."""
+    eqs, unks = build(2, gauge_mu3=None)
+    third = sp.Rational(1, 3)
+    assign = {mu0: 0, mu1: 0, mu2: 0}
+    for u in unks:
+        s = str(u)
+        if s in ("mu0", "mu1", "mu2", "mu3"):
+            continue
+        assign[u] = 0
+    def setc(name, val):
+        for u in unks:
+            if str(u) == name:
+                assign[u] = val
+                return
+        raise KeyError(name)
+    setc("p2_0", mu3); setc("p2_3", 2)
+    setc("p1_2", mu3); setc("p1_5", 1)
+    setc("p0_4", sp.Rational(1, 4) * mu3); setc("p0_7", sp.Rational(1, 7))
+    setc("q1_0", mu3); setc("q1_3", 1)
+    setc("q0_2", sp.Rational(1, 2) * mu3); setc("q0_5", sp.Rational(1, 5))
+    bad = [sp.expand(e.subs(assign)) for e in eqs]
+    bad = [b for b in bad if b != 0]
+    ok = not bad
+    print(f"C2 planted coefficients annihilate build(2): "
+          f"{'PASS' if ok else 'FAIL ' + str(bad[:2])}")
+    return ok
+
+
 def control_C1():
     P = x**3 * y + x**2 * (2 * y**3 + mu3) + x * (y**5 + mu3 * y**2) \
         + y**7 / 7 + mu3 * y**4 / 4
@@ -111,15 +142,18 @@ def run_msolve(gens, vars2, timeout):
     return f"UNPARSED", out[:150]
 
 
-def query(j, saturate=True, gauge=1, timeout=3000):
+SATVARS = {"mu0": mu0, "mu1": mu1, "mu2": mu2}
+
+
+def query(j, saturate=True, gauge=1, timeout=3000, satvar="mu0"):
     eqs, unks = build(j, gauge_mu3=gauge)
     s = sp.Symbol("s_sat")
     if saturate:
-        eqs = eqs + [mu0 * s - 1]
+        eqs = eqs + [SATVARS[satvar] * s - 1]
         unks = unks + [s]
     v, raw = run_msolve(eqs, unks, timeout)
     print(f"j={j} (pair {16*(3*j+1)},{16*(2*j+1)}) mu3={gauge} "
-          f"sat={saturate}: {v}", flush=True)
+          f"sat[{satvar}!=0]={saturate}: {v}", flush=True)
     return v
 
 
@@ -131,19 +165,16 @@ def main():
     ap.add_argument("--free", action="store_true")
     ap.add_argument("--skipcal", action="store_true")
     ap.add_argument("--timeout", type=int, default=3000)
+    ap.add_argument("--satvar", default="mu0", choices=["mu0", "mu1", "mu2"])
     a = ap.parse_args()
     if not a.skipcal:
         if not control_C1():
             sys.exit(1)
-        # C2: j=2 unsaturated with mu3 gauged 2 (the planted pair value at
-        # mu3=2) must be NONEMPTY
-        v = query(2, saturate=False, gauge=2, timeout=a.timeout)
-        print(f"C2 j=2 unsat mu3=2: {v} (expect NONEMPTY)")
-        if v != "NONEMPTY":
-            print("C2 FAIL")
+        if not control_C2():
             sys.exit(1)
     query(a.j, saturate=not a.nosat,
-          gauge=None if a.free else a.gauge, timeout=a.timeout)
+          gauge=None if a.free else a.gauge, timeout=a.timeout,
+          satvar=a.satvar)
 
 
 if __name__ == "__main__":
