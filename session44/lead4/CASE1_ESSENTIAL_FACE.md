@@ -286,8 +286,8 @@ F_p-rational (chosen with 7 not dividing p-1 so the 7th root is unique):
     ==> over the algebraic closure of F_p there is NO pair (P,Q) with
         support in N(P), N(Q), all vertices present, and [P,Q] = x^2.
 
-Primes tested, five covers each: 5189, 5441, 7523, 8053 -- twenty face
-points, twenty EMPTY verdicts, no exceptions.
+Primes tested, five covers each: 5189, 5441, 7523, 8053, 11827 --
+TWENTY-FIVE face points, twenty-five EMPTY verdicts, no exceptions.
 
 ## 8a. The obstruction, sharpened
 
