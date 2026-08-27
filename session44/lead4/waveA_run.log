@@ -5,3 +5,7 @@ primes [65521, 65539]  targets 39  queue 39  budget 900s/prime
     F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))
 [3/39] max=144 params=51 TIMEOUT [900s]
     (8,28)/7/4,3 (m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))
+[4/39] max=150 params=66 TIMEOUT [900s]
+    (10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=3 eps=((1, 0),(3, 1))
+[5/39] max=150 params=66 EMPTY [6s]
+    (10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=4 eps=((1, 0),(4, 1))

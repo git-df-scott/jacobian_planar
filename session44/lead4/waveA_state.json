@@ -48,5 +48,40 @@
   "tier": "loose",
   "budget": 900,
   "secs": 900
+ },
+ "(10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 900,
+    "out": ""
+   }
+  },
+  "max": 150,
+  "params": 66,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 900
+ },
+ "(10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 66 | conditions: 66 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 66 | conditions: 66 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 150,
+  "params": 66,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 6
  }
 }

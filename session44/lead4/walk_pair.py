@@ -43,7 +43,7 @@ from trackB1_polygon import (hull_rows, trim, pscal, dadd, dmul, dscal,
 
 # ---------------------------------------------------------------- engine ---
 class Walker:
-    def __init__(self, NA, NB, rhs, name="shape"):
+    def __init__(self, NA, NB, rhs, name="shape", full_depth=False):
         self.pair = SH.Pair(name, NA, NB, rhs)
         o = self.pair.orient()
         if o is None:
@@ -52,7 +52,14 @@ class Walker:
         self.DR, self.OR_, self.rhs, self.flipped = o
         self.idx = [(j, i) for j in sorted(self.DR)
                     for i in range(self.DR[j][0], self.DR[j][1] + 1)]
-        self.jmax = max(max(self.OR_), max(self.DR)) + 2
+        if full_depth:
+            # full bracket height: products D_j * Q_k reach y-row
+            # jd + OR_top - 1; conditions to that depth make the truncated
+            # system EQUIVALENT to the full bracket relation (a gate-passing
+            # witness is then genuine with no tail caveat).
+            self.jmax = max(self.DR) + max(self.OR_) - 1
+        else:
+            self.jmax = max(max(self.OR_), max(self.DR)) + 2
         self.R = SH.rhs_rows(self.rhs, self.jmax)
         self.pivot = self.idx.index((0, 1))
         self.levels = sorted(self.DR)
@@ -371,6 +378,7 @@ def main():
     ap.add_argument("--restarts", type=int, default=40)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--skipcal", action="store_true")
+    ap.add_argument("--fulldepth", action="store_true")
     a = ap.parse_args()
     rng = random.Random(a.seed)
     if not a.targets:
@@ -384,7 +392,8 @@ def main():
             sys.exit(1)
     sel = targets if a.all else [targets[a.index or 0]]
     for t in sel:
-        w = Walker(t["NP"], t["NQ"], [(t["r"], 0, 1)], t["tag"])
+        w = Walker(t["NP"], t["NQ"], [(t["r"], 0, 1)], t["tag"],
+                   full_depth=a.fulldepth)
         r = w.walk(rng, restarts=a.restarts, verbose=True)
         if r["status"] == "WITNESS":
             ok, det = w.bracket_gate(r["vec"])
