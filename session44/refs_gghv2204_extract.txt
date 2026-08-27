@@ -1,0 +1,1875 @@
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO
+THE JACOBIAN CONJECTURE FROM 100 TO 108
+
+arXiv:2204.14178v1 [math.AG] 29 Apr 2022
+
+JORGE A. GUCCIONE1, 2 , JUAN J. GUCCIONE1,3 , RODRIGO HORRUITINER4 ,
+AND CHRISTIAN VALQUI5, 6
+Abstract. We list all the pairs (deg(P ), deg(Q)) with max{deg(P ), deg(Q)} < 125 for any
+hypothetical counterexample to the plane Jacobian Conjecture and discard them all, except
+the pair (72, 108) (and the symmetric pair (108, 72)), thus we confirm the lower bound of 100
+obtained by Moh and raise it up to 108.
+
+Contents
+1
+2
+3
+4
+5
+6
+
+Introduction . . . . . . . . . . . . . . . . . . . . .
+Complete list of small cases . . . . . . . . . . . . . . . .
+The cases max{deg(P ), deg(Q)} = 84 and max{deg(P ), deg(Q)} = 120
+Reducing the size of the Newton polygon . . . . . . . . . . .
+Systems of polynomial equations for (9, 24) and (9, 27) . . . . . .
+Systems of polynomial equations for (7, 21) . . . . . . . . . .
+
+1
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+1
+2
+3
+5
+14
+20
+
+Introduction
+
+The plane Jacobian Conjecture (see [8]) can be rephrased in the following manner:
+If a pair of polynomials (P, Q) in K[x, y] satisfies [P, Q] := Px Qy − Py Qx ∈ K × , then there
+exists a polynomial inverse to the morphism (P, Q) : K 2 → K 2 .
+In [10] the author discards all possible counterexamples with max{deg(P ), deg(Q)} ≤ 100
+using approximate roots of polynomials in two variables, but provides a detailed proof only for
+1
+
+Universidad de Buenos Aires. Facultad de Ciencias Exactas y Naturales. Departamento de
+Matemática. Buenos Aires. Argentina
+2 CONICET-Universidad de Buenos Aires. Instituto de Investigaciones Matemáticas “Luis A. santaló”
+(IMAS). Buenos Aires. Argentina
+3 CONICET. Instituto Argentino de Matemática (IAM). Buenos Aires. Argentina
+4 Cornell University, Department of Mathematics, 310 Malott Hall, Cornell University, Ithaca, New
+York, USA.
+5 Pontificia Universidad Católica del Perú, Sección Matemáticas, PUCP, Av. Universitaria 1801, San
+Miguel, Lima 32, Perú.
+6 Instituto de Matemática y Ciencias Afines (IMCA) Calle Los Biólogos 245. Urb San César. La
+Molina, Lima 12, Perú.
+E-mail addresses: vander@dm.uba.ar, jjgucci@dm.uba.ar, rmh322@cornell.edu, cvalqui@pucp.edu.pe.
+2010 Mathematics Subject Classification. Primary 14R15; secondary 13F20.
+Key words and phrases. Jacobian conjecture.
+Jorge A. Guccione and Juan J. Guccione were supported by UBACyT 20020150100153BA (UBA) and PIP
+11220110100800CO (CONICET).
+This work was supported by CONCYTEC-FONDECYT within the framework of the contest “Proyectos de
+Investigación Básica 2020-01” [contract number 120-2020-FONDECYT].
+1
+
+2
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+the smallest case. In [1] the shape of the support of possible counterexamples to the Jacobian
+Conjecture in dimension 2 is described in great detail. Based on its results, and some results of [2],
+in [5] a list of possible corners of small counterexample is given. We will adapt the techniques
+of [1], [2] and [3] in order to discard nearly all the cases with max{deg(P ), deg(Q)} < 125, which
+haven’t been discarded previously. The only exception is the case (deg P, deg Q) = (72, 108), and
+so, if one manages to discard this case, it would increase the lower bound from 108 up to 125.
+The article is organized as follows. In section 2 we list all the cases with max{deg(P ), deg(Q)} <
+125, following [5]. There are 10 cases, from which we consider 5 to be discarded already by previous work of different authors. If we assume deg(P ) < deg(Q), then the remaining 5 cases
+satisfy
+(deg(P ), deg(Q)) ∈ {(56, 84), (66, 99), (72, 108), (80, 120)},
+where there are two cases with (deg(P ), deg(Q)) = (72, 108). In section 3 we first discard the
+case max{deg(P ), deg(Q)} = 120, as a straightforward application of one of our previous results
+in [2]. Then we discard max{deg(P ), deg(Q)} = 84 using an inequality for the intersection
+number proved in [6]. In section 4 we apply some transformation of K[x, y] introduced in [1]
+in order to reduce the size of the support of P and Q in all cases except in the discarded case
+(deg(P ), deg(Q)) = (80, 120). In section 5 we use the systems of polynomial equations associated
+to a possible counterexample as in [3] in order to discard the case (deg(P ), deg(Q)) = (66, 99) and
+one of the cases with (deg(P ), deg(Q)) = (72, 108). For the other case with (deg(P ), deg(Q)) =
+(72, 108) we couldn’t solve the corresponding system of polynomial equations, thus it is left open.
+In section 6 we provide another proof of the case (deg(P ), deg(Q)) = (56, 84), without using
+the machinery of intersection numbers.
+We want to emphasize that all the techniques developed in each of the articles [2], [3] and [5]
+are very useful in discarding some families of possible counterexamples. However, the Jacobian
+conjecture is a very hard problem, so we have to combine these techniques in order to be able
+to increase the lower bound of 100 for max{deg(P ), deg(Q)} established in 1983 by Moh in [10],
+up to 108. With enough computing power we would be able to raise it up from 108 to 125, since
+there is only one case left.
+Since this article continues the work in [1], [2], [3] and [5], we will use the notations and
+conventions established in these articles.
+
+2
+
+Complete list of small cases
+
+Based on the tables obtained in sections 5 and 6 of [5], we begin with the study of the cases with
+max{deg(P ), deg(Q)} < 125. The aim is to prove the following result:
+Theorem 2.1. If (P, Q) is a counterexample to the Jacobian Conjecture, then we have either
+max{deg(P ), deg(Q)} ≥ 125, or (deg(P ), deg(Q)) ∈ {(72, 108), (108, 72)}.
+Following [5], we take the smallest members of the families F1 , F2 , F3 , F9 , F17 , F22 in section 5
+of [5] and three additional cases in the tables of section 6 of [5]. The following table presents the
+10 resulting cases. Five of them have been shown to be impossible in various cited articles: In [10]
+the cases with max{deg(P ), deg(Q)} ∈ {64, 75, 84, 99} have been considered, but only in the case
+64 a complete proof is given. This case was also computed by Heitman in [7]. In [4] this case and
+the case (deg P, deg Q) = (80, 112) have been discarded. The case max{deg(P ), deg(Q)} = 75
+of Moh in [10], corresponds to two cases in two different families in [5, section 5], and has
+been discarded in [3, section 5]. The case max{deg(P ), deg(Q)} = 120 can be discarded by
+a straightforward argument mentioned in [2, Remark 3.31], which we will describe in detail
+in the next section. In that section we will discard also the case max{deg(P ), deg(Q)} = 84
+using [6, Theorem 7.3].
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+3
+
+A0
+
+(m, n)
+
+max{deg(P ), deg(Q)}
+
+Discarded?
+
+(4, 12)
+(4, 12)
+(5, 20)
+(5, 20)
+(7, 21)
+(8, 24)
+(8, 28)
+(8, 32)
+(9, 24)
+(9, 27)
+
+(3,4)
+(5,7)
+(2,3)
+(3,2)
+(2,3)
+(2,3)
+*(3,2)
+(3,2)
+(2,3)
+(2,3)
+
+64
+112
+75
+75
+84
+96
+108
+120
+99
+108
+
+[4, section 3.5],[10], [7]
+[4, section 3.5]
+[3, section 5], no detail in [10]
+[3, section 5], no detail in [10]
+no detail in [10]
+[5, Proposition 6.1]
+no detail in [10]
+-
+
+We highlight with red the cases that we consider solved. Four of the remaining five cases will be
+discarded in this paper. In section 3 we will discard the cases max{deg(P ), deg(Q)} = 84 and
+max{deg(P ), deg(Q)} = 120. The case max{deg(P ), deg(Q)} = 84 uses one of the main results
+of [6]. In section 6 we offer another proof for this case.
+
+3
+
+The cases max{deg(P ), deg(Q)} = 84 and max{deg(P ), deg(Q)} = 120
+
+We first discard the case max{deg(P ), deg(Q)} = 120. This is the first case in the first table at
+page 28 of [5].
+y
+
+y
+
+A0 = (8, 32)
+
+A0 = (8, 32)
+
+y 7→ y + λ1
+x 7→ x
+
+A1 = (8, 28)
+
+A′0 = (8, 4)
+x
+
+x
+
+Figure 1. Discarding (8, 32): (8, 4) is not a last possible corner
+Here A0 = (8, 32), A1 = (8, 28) and A2 = (11/4, 7). Since vρ1 ,σ1 (A1 ) = vρ1 ,σ1 (A2 ) we have
+(ρ1 , σ1 ) = (4, −1), and so en4,−1 (F1 ) = (6, 21) (Note that (6, 21) is the only point of the form
+µ(8, 28) with vρ1 ,σ1 (F1 ) = vρ1 ,σ1 (A0 )(1, 1) = 3). Since
+en4,−1 (F1 ) =
+
+3
+p1
+A1 = A1
+q1
+4
+
+4
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+we obtain that q1 = 4, since by [1, Theorem 7.6(5)] we know that q1 = 4|d0 , where d0 = max{d :
+ℓ1,0 (P ) = Rmd } (Note that we use the order of [5] on the directions, opposed to the order in [1]).
+1
+st1,0 (P ) = (8, 28) = 4(2, 7) and gcd(2, 7) = 1. Hence,
+But d0 ≤ 4, since d0 st1,0 (R) = m
+ℓ1,0 (P ) = R4m = (λP x2 y 7 (y − λ1 ))4m ,
+and if we apply the automorphism ϕ given by ϕ(x) = x and ϕ(y) = y + λ1 , then we have
+ℓ1,0 (ϕ(P )) = (λP x2 y(y + λ1 )7 )4m and so A′0 = (8, 4) would be the last possible corner of ϕ(P )
+(See [2, Definition 3.21]). But this is impossible by [2, Proposition 3.29], which discards this case.
+Now we discard the case max{deg(P ), deg(Q)} = 84. We will use [6, Theorem 7.3]. The
+present proof is very short, but uses the machinery of [6]. In the last section we will give a proof
+that is very similar to the proofs in the other cases.
+We first compute IM . Remember that we are in the smallest case of the family F9 in the table
+at page 25 of [5]. So
+A0 = (7, 21),
+
+A′0 = (1, 0),
+
+A1 = (11/7, 2),
+
+k = 1,
+
+m = j + 2 and n = 2j + 3.
+
+y
+A0 = (7, 21)
+
+A1 = (11/7, 2)
+A′0 = (1, 0)
+
+x
+
+Figure 2. The case max{deg(P ), deg(Q)} = 84: Family F9 .
+Since en7,−2 (F ) = (5, 15), we have F = xyf (z 7 ) for some f of degree 2, and so, by [1,
+Proposition 2.11(3)], we have ℓ7,−2 (P ) = xp(z 7 ), where p is of degree 3m and has at most two
+different factors, with each factor with a multiplicity that is a multiple of m. Since A1 = (11/7, 2),
+it has exactly two factors. Hence ℓ7,−2 (P ) = ((z 7 − α1 )2 (z 7 − α2 ))m , and so ℓ7,−2 (P ) has 14
+different factors. For 7 of them there is a final corner at A1 = (11/7, 2) = (a/l, b), and these
+yield the 7 major final π-roots of P . Moreover, for each of them, by [6, Proposition 6.6(2)], we
+P
+have |Dτ ξ | = mb = 2m and λQ
+τ = 1/7, since k = 1 and l = 7. Hence
+X
+1
+P
+IM =
+|Dτ ξ |λQ
+τ = 7 · (2m) = 2(j + 2).
+7
+τ ∈PM
+
+Since we consider the case j = 0 we obtain IM = 4.
+The other 7 factors yield seven final minor roots at A1 = (9/7, 1), and for each of them we have
+δτ = −9/7. Since q0 = a = 7, a standard argument (see [6, Example 6.7]) shows that there is
+only one final minor π-root τ corresponding to the 7m top minor roots of Pξ (see [6, Proposition
+6.4]). Moreover, one verifies that there exist λ0 and λ−2 such that
+τ = −x + λ0 + λ−2 x−2 + πx−3 ,
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+5
+
+and so δτ = −3. Consequently, by definition of Im (see [6, Theorem 7.3]) we have
+X
+Im = 1 −
+(δτ + 1) = 1 − (−3 + 1) − 7(−9/7 + 1) = 5.
+τ ∈Pm
+
+This contradicts the fact that, by [6, Theorem 7.3], we have IM ≥ Im , and discards this case.
+
+4
+
+Reducing the size of the Newton polygon
+
+In this section we apply some automorphisms reminiscent of the procedure in section 8 of the
+ArXiv version of [1] (arXiv:1401.1784) to the Newton Polygons in order to greatly reduce their
+sizes.
+Proposition 4.1 (Case (9,27)). If there is a counterexample to the Jacobian Conjecture in the
+case (9, 27), then there exist P, Q ∈ L(1) with [P, Q] = x and
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 18)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 27)}
+Proof. The corners of the polygons of P and Q are {(0, 0), (1, 0), (9, 24), (9, 27), (0, 9)} multiplied by (m, n) = (2, 3) respectively. The edge {(9, 27), (0, 9)} is given by y 9 (xy 2 − α1 )9 , because enF = 91 (9, 27) when looking at its corresponding direction, by [1, Corollary 7.4]. After
+applying the automorphism φ1 with φ1 (x) = y and φ1 (y) = x and then the automorphism
+φ2 with φ2 (x) = x and φ2 (y) = y + α1 x−2 we transform the corners of the polygons to
+{(0, 0), (27, 9), (24, 9), (0, 1), (−2, 0)}, again multiplied by (2, 3) respectively.
+y
+
+y
+
+A0 = (9, 27)
+A1 = (9, 24)
+x
+
+x 7→ y
+y 7→ x
+
+y
+
+x 7→ x
+y 7→ y + α1 x−2
+
+x
+
+x
+
+Figure 3. Applying φ2 ◦ φ1 to the case (9, 27)
+The edge {(24, 9), (0, 1)} is given by y(yx3 − α2 )8 for some constant α2 (this corresponds to
+the edge {(1, 0), (9, 24)} in the original polygon which is of this form). Apply the automorphism
+φ3 given by φ3 (x) = x and φ3 (y) = y + α2 x−3 to reduce this edge to {(24, 9), (21, 8)}. Let us
+analyze the possibilities for the opposite vertex in the other edge containing (21, 8).
+
+6
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+To do this, set (ρ2 , σ2 ) = min{SuccP (−1, 3), SuccQ (−1, 3)} Then if enρ2 ,σ2 (P ) ∼ enρ2 ,σ2 (Q),
+the point (a′ , b′ ) = 12 enρ2 ,σ2 (P ) = 13 enρ2 ,σ2 (Q) could be at any of
+{(−2, 0), (−1, 0), (1, 1), (2, 1), (4, 2), (5, 2), (7, 3), (10, 4), (13, 5)}. To discard all but (5, 2) and
+(13, 5), it is enough to check that there cannot exist an element F in the other cases. The
+corner of F which is not (1, 1) must be of the form (1, 1) + c(21 − a′ , 8 − b′ )/ gcd(21 − a′ , 8 − b′ )
+for some positive integer c, so that
+(1, 1) + c
+
+p
+(21 − a′ , 8 − b′ )
+= (21, 8).
+′
+′
+gcd(21 − a , 8 − b )
+q
+
+Computing v−8,21 on both sides of this equality gives 13 gcd(21 − a′ , 8 − b′ ) + c(8a′ − 21b′) = 0,
+which implies that 21b′ − 8a′ |13 gcd(21 − a′ , 8 − b′ ). For each of the possibilities for (a′ , b′ ) above,
+we can discard (1, 1) as (a′ , b′ ) cannot lie in the diagonal, and for the rest, only (5, 2) and (13, 5)
+satisfy this divisibility condition, as can be seen in the table below.
+(a′ , b′ )
+
+21b′ − 8a′
+
+(−2, 0)
+(−1, 0)
+(2, 1)
+(4, 2)
+(5, 2)
+(7, 3)
+(10, 4)
+(13, 5)
+
+16
+8
+5
+10
+2
+7
+4
+1
+
+13 gcd(21 − a′ , 8 − b′ )
+13
+26
+13
+13
+26
+13
+13
+13
+
+Whether we continue assuming (a′ , b′ ) ∈ {(5, 2), (13, 5)} or we consider instead the case
+enρ2 ,σ2 (P ) 6∼ enρ2 ,σ2 (Q), we can apply [1, Proposition 8.2] and get the existence of k ∈ N
+with
+(k + 1)b < a
+and
+{enρ,σ (P ), enρ,σ (Q)} = {(−k, 0), (k + 1, 1)},
+y
+
+P
+y
+
+x
+
+Q
+x
+Figure 4. The shape of P and Q
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+7
+
+where (a, b) is one of {(21, 8), (13, 5), (5, 2)} and (ρ, σ) is the direction corresponding to the
+edge in question. In all cases this gives k = 1 and so {enρ,σ (P ), enρ,σ (Q)} = {(−1, 0), (2, 1)}, with
+the same direction (ρ, σ) = (−3, 8). (Note that if we started assuming (a′ , b′ ) ∈ {(5, 2), (13, 5)}
+then we have reached a contradiction, as we have a different end for the direction (−3, 8).) Since
+st−3,8 (P ) = (42, 16) and st−3,8 (Q) = (63, 24), we get that en−3,8 (P ) = (2, 1) and en−3,8 (Q) =
+(−1, 0). In fact, (−3, 8) × ((42, 16) − (−1, 0)) 6= 0.
+y
+y
+
+Q
+P
+x
+
+x
+
+Figure 5. The shape of P and Q according to Proposition 4.1
+For convenience, we now apply the morphism ϕ such that ϕ(x) = x−1 and ϕ(y) = x3 y. Note
+that this is an automorphism of L(1) = K[x, x−1 , y] but not of K[x, y]. By the chain rule we
+have
+[ϕ(P ), ϕ(Q)] = ϕ[P, Q][ϕ(x), ϕ(y)] = −[P, Q]x,
+and multiplying by a nonzero constant we can assume [ϕ(P ), ϕ(Q)] = x. This transforms the
+polygons of P and Q into
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 18)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 27)}
+as desired.
+
+
+
+Proposition 4.2 (Case (9,24)). If there is a counterexample to the Jacobian Conjecture in the
+case (9, 24), then there exist P, Q ∈ L(1) with [P, Q] = x and one of the following cases holds:
+(1) N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 12)}, N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 18)}
+(2) N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 6)}, N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 9)}
+(3) N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18)},
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27)}
+Proof. We will prove first that the corners of the polygons of P and Q are {(0, 0), (1, 0), (9, 24), (0, 6)}
+multiplied by (m, n) = (2, 3).
+For this we apply the automorphism φ1 with φ1 (x) = y, φ1 (y) = x and we use [1, Corollary 7.4]
+with (ρ0 , σ0 ) = (−1, 3), l = 1 and (a/l, b) = (24, 9). Then en−1,3 (F ) = (16, 6) = 32 (24, 9), which
+means that q = 3 in the corollary, and for (ρ, σ) = PredP (−1, 3) we have (ρ, σ) ∈](0, −1), (1, −1)]
+
+8
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+and there exists a (ρ, σ)-homogeneous element R, such that ℓρ,σ (P ) = λRqm = λR3m and
+vρ,σ (R) > 0. Thus enρ,σ (R) = (8, 3), and there exists a (ρ, σ)-homogeneous element G satisfying
+[R, G] = Ri
+
+for some i.
+
+(4.1)
+
+Therefore, we are in the setting of [2, Proposition 3.12]. The following algorithm with l = 1,
+a = 8 and b = 3, shows that PredP (1, 0) ∈ {(1, −2), (2, −5)}.
+Algorithm 1: Possible starting points
+Procedure PossibleStartingPoints(M )
+Input: A corner (a/l, b) ∈ 1l N × N
+Output: A list PossibleStartingPoints of points (c/l, d) such that (4.1) is satisfied
+2
+for d = 0 to b − 1 do
+3
+for c = ⌊d ∗ ab ⌋ + 1 to ld + a − bl − 1 do
+4
+N1 = gcd(a − c, b − d);
+5
+N2 = gcd(c, d);
+6
+(ρ, σ) = dir((a/l, b) − (c/l, d));
+7
+s = (ρa + σlb)/ gcd(ρa + σlb, l(ρ + σ));
+8
+if (s | N2 and d > 0), or s ≤ N1 then
+9
+(c/l, d) ֒→ PossibleStartingPoints
+10
+end
+11
+end
+12
+end
+13 RETURN List PossibleStartingPoints
+1
+
+But PredP (1, 0) = (2, −5) leads to st2,−5 (P ) = 3m(3, 1), and PredP (2, −5) ≤ (1, −3), and
+then degx (P (x, 0)) ≤ 0, which contradicts [12, Proposition 10.2.6], since P ∈ kK[x, y]. Similarly st1,−2 (R) = (6, 2) leads to PredP (1, −2) ≤ (1, −3), using the above algorithm. But then
+degx (P (x, 0)) ≤ 0, which again contradicts [12, Proposition 10.2.6]. By the same [12, Proposition
+10.2.6] we have PredP (1, 0) ≤ (3, −8) and stρ,σ (R) 6= (0, 0) for (ρ, σ) = PredP (1, 0).
+Thus PredP (1, 0) = (1, −2) and st1,−2 (R) ∈ {(2, 0), (4, 1)}.
+y
+A0 = (9, 24)
+
+y
+
+x 7→ y
+y 7→ x
+(24,9)
+3(4, 1)
+A′0 = (1, 0)
+
+x
+
+3(2, 0)
+
+x
+
+Figure 6. PredP (1, 0) = (−1, 2) and st1,−2 (R) ∈ {(2, 0), (4, 1)}.
+By [1, Corollary 7.4] we have ℓ1,−2 (P1 ) = λR3m , and R has either one, two or three linear
+factors in z = x2 y, hence
+R = x2 (z − λ1 )3 ,
+
+R = x2 (z − λ1 )2 (z − λ2 ) or R = x2 (z − λ1 )(z − λ2 )(z − λ3 ),
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+9
+
+for three different λi . Let ϕ be given by ϕ(x) = x and ϕ(y) = y + λ1 x−2 . In the last case we
+obtain (c, d) = (12, 3) and (a, b) = (24, 9), and s = ϑ, N1 , N2 in [2, Proposition 3.12] are given
+by s = ϑ = 6, N1 = 6, N2 = 3. By [2, Proposition 3.12](2) there is a linear factor of R3 with
+multiplicity s = ϑ = 6, contradicting the fact that all linear factors of R are different, thus
+eliminating the third case.
+Moreover λ1 6= 0, since in the first case λ1 = 0 implies PredP (1, 0) = (2, −5) or PredP (1, 0) ≤
+(8, −3), which is impossible by the argument above; and similarly in the second case λ1 = 0
+implies stρ,σ (R) = (6, 2), which is also impossible by the argument above.
+If R = x2 (z − λ1 )2 (z − λ2 ), apply an automorphism φ2 with φ2 (x) = x and φ2 (y) = y +
+λ1 x−2 and we transform the corners of the polygons to {(0, 0), (18, 6), (24, 9), (0, 1), (−2, 0)},
+again multiplied by (2, 3) respectively. In fact, if PredP (1, −2) = (ρ, σ), then ℓρ,σ (P ) = λR13m ,
+hence enρ,σ (R1 ) = (6, 2), and the algorithm above shows that stρ,σ (R1 ) = (0, 0)
+After doing the transformations on the edge {(24, 9), (0, 1)} exactly as in the case (9, 27), one
+obtains the desired form:
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 12)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 18)}.
+y
+
+φ2 (P )
+
+2 · (24, 9)
+
+y
+
+y
+
+(6, 18)
+
+2 · (21, 8)
+(6, 16)
+
+2 · (18, 6)
+
+x
+
+x
+
+x
+
+Figure 7. The transformation of P when R = x2 (z − λ1 )2 (z − λ2 ).
+On the other hand, if R = x2 (z − λ1 )3 then the edge {(6, 0), (24, 9)} is completely cut by
+φ2 , and the new (preceding) edge {(a′ , b′ ), (24, 9)} must satisfy (a′ , b′ ) ∈ {(0, 0), (9, 3)}. In
+fact, en F = 23 (9, 24) and so the algorithm above with l = 1, a = 8 and b = 3, shows that
+stρ,σ (φ2 (P )) ∈ 3m{(0, 0), (3, 1)}. Transforming the edge {(24, 9), (0, 1)} as before, we arrive at
+the polygons
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27)}
+y
+
+φ2 (P )
+
+2 · (24, 9)
+
+y
+
+y
+
+(6, 18)
+
+2 · (21, 8)
+(6, 16)
+
+x
+
+x
+
+Figure 8. The transformation of P when R = x2 (z − λ1 )3 and (a′ , b′ ) = (0, 0).
+and
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 6)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 9)}
+
+x
+
+10
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+respectively.
+y
+
+φ2 (P )
+
+2 · (24, 9)
+
+y
+
+y
+
+(6, 18)
+
+2 · (21, 8)
+(6, 16)
+
+2 · (9, 3)
+
+x
+
+x
+
+x
+
+Figure 9. The transformation of P when R = x2 (z − λ1 )3 and (a′ , b′ ) = (9, 3).
+
+Proposition 4.3 (Case (8,28)). If there is a counterexample to the Jacobian Conjecture in the
+case (8, 28), then there exist P, Q ∈ L(1) with [P, Q] = x2 and one of the following cases holds:
+(1) N (P ) = {(0, 0), (1, 0), (8, 14), (8, 16), (0, 8)}, N (Q) = {(0, 0), (2, 1), (12, 21), (12, 24), (0, 12)}.
+(2) N (P ) = {(0, 0), (1, 0), (8, 14), (8, 16)}, N (Q) = {(0, 0), (2, 1), (12, 21), (12, 24)}
+Proof. We first prove that the corners of the polygons of P and Q in this case are given by
+{(0, 0), (1, 0), (8, 28), (0, 4)}, multiplied by (m, n) = (3, 2).
+For this we apply the automorphism φ1 with φ1 (x) = y, φ1 (y) = x and we use [1, Corollary 7.4]
+with (ρ0 , σ0 ) = (−1, 4), l = 1 and (a/l, b) = (28, 8). Then en−1,4 (F ) = (21, 6) = 34 (28, 8), which
+means that q = 4 in the corollary, and for (ρ, σ) = PredP (−1, 4) we have (ρ, σ) ∈](0, −1), (1, −1)]
+and there exists a (ρ, σ)-homogeneous element R, such that ℓρ,σ (P ) = λRqm = λR4m and
+vρ,σ (R) > 0. Thus enρ,σ (R) = (7, 2), and there exists a (ρ, σ)-homogeneous element G satisfying
+[R, G] = Ri for some i. Therefore, we are in the setting of [2, Proposition 3.12]. By [6, Proposition
+2.5], necessarily PredP (1, 0) ∈ {(1, −2), (1, −3)}.
+y
+A0 = (8, 28)
+y
+
+x 7→ y
+y 7→ x
+
+A′0 = (1, 0)
+
+x
+
+(28,8)
+
+(4,0) (12,0)
+
+x
+
+Figure 10. PredP (1, 0) ∈ {(1, −2), (1, −3)}
+By the same proposition, if PredP (1, 0) = (1, −2), then ℓ1,−2 (P ) = λ(z − λ1 )8m , which implies
+that if we apply the morphism given by ϕ(x) = x and ϕ(y) = y + λ1 x−2 , then Predϕ(P ) (1, 0) ∈
+{(1, −3), (2, −7)}. If Pred ϕ(P )(1, 0) = (2, −7) then the lower side of ϕ(P ) has only the corners
+m(−2, 0), (0, 0) and m(28, 8).
+If Predϕ(P ) (1, 0) = (1, −3), then there are one or two different linear factors in ℓ1,−3 (ϕ(P )).
+If there is only one factor, we apply the morphism x 7→ x, y 7→ y + λx−3 for adequate λ and
+obtain that the lower side of P has only the corners m(−3, 0), (0, 0) and m(28, 8). If are two
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+11
+
+factors in ℓ1,−3 (P ), then ℓ1,−3 (P ) = λx4m (x3 y − α1 )4m (x3 y − α2 )4m . We apply the morphism
+x 7→ x, y 7→ y + α1 x−3 and obtain that the lower side of P has only the corners m(−3, 0), (0, 0),
+m(16, 4) and m(28, 8).
+Thus after the transformations we have three possibilities for the Newton polygon of P and
+Q:
+a) (m, n) times {(−2, 0), (0, 0), (28, 8), (0, 1)},
+b) (m, n) times {(−3, 0), (0, 0), (28, 8), (0, 1)},
+c) (m, n) times {(−3, 0), (0, 0), (16, 4), (28, 8), (0, 1)}.
+y
+
+y
+(28, 8)
+
+(28, 8)
+
+(16, 4)
+
+x
+1
+1
+2 N (P ) = 3 N (Q) in the cases a) and b)
+
+x
+
+1
+1
+2 N (P ) = 3 N (Q) in the case c)
+
+In all the three cases the edge {(28, 8), (1, 0)} must be of the form y(x4 y − α)7 , corresponding
+to its form before the transformations. Apply then the automorphism φ3 given by φ3 (x) = x,
+φ3 (y) = y + αx−4 , reducing the edge {(28, 8), (0, 1)} to {(28, 8), (24, 7)}. As in Proposition 4.1,
+one can analyze the possibilities for the opposite vertex (a, b) in the other edge containing (24, 7)
+and obtain that SuccP (−1, 4) = SuccQ (−1, 4) = (−2, 7). We can apply [1, Proposition 8.2] and
+get the existence of k ∈ N with
+(k + 1)b < a
+
+and
+
+{enρ,σ (P ), enρ,σ (Q)} = {(−k, 0), (k + 1, 1)}.
+
+where (a, b) is one of {(24, 7), (17, 5), (10, 3), (3, 1)} and (ρ, σ) is the direction corresponding to
+the edge in question, obtaining k ∈ {1, 2}. The case k = 2 is impossible, as the edges of P and
+Q would have no way of being parallel. In the case k = 1, we can set (enρ,σ (Q), enρ,σ (P )) =
+((2, 1), (−1, 0)). In the first two cases a) and b) we obtain
+N (P ) = {(−1, 0), (0, 0), 2(28, 8), 2(24, 7)}
+N (Q) = {(2, 1), (0, 0), 3(28, 8), 3(24, 7)},
+y
+3(28, 8)
+3(24, 7)
+
+y
+2(24, 7)
+
+2(28, 8)
+
+x
+N (P ) in the cases a) and b)
+
+(2, 1)
+
+x
+N (Q) in the cases a) and b)
+
+whereas in the third case c) we obtain
+N (P ) = {(−1, 0), (0, 0), 2(16, 4), 2(28, 8), 2(24, 7)}
+N (Q) = {(2, 1), (0, 0), 3(16, 4), 3(28, 8), 3(24, 7)}.
+
+12
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+y
+3(28, 8)
+3(24, 7)
+
+y
+2(28, 8)
+
+2(24, 7)
+
+(2, 1)
+
+x
+
+x
+
+N (P ) in the case c)
+
+N (Q) in the case c)
+
+Apply the the morphism ϕ with ϕ(x) = x−1 and ϕ(y) = x4 y. As in Proposition 4.1, this
+is not an automorphism and the chain rule gives [ϕ(P ), ϕ(Q)] = −[P, Q]x2 . A straightforward
+computation shows that in the cases a) and b) the Newton Polygons of P and Q become
+N (P ) = {(0, 0), (1, 0), (8, 14), (8, 16)}
+N (Q) = {(0, 0), (2, 1), (12, 21), (12, 24)},
+y
+
+y
+(12, 24)
+
+(12, 24)
+
+y
+
+y
+(12, 21)
+
+(8, 16)
+(8, 14)
+
+(8, 16)
+
+(12, 21)
+
+(8, 14)
+
+x
+N (P ) and N (Q) in cases a) and b)
+
+x
+
+x
+N (P ) and N (Q) in case c)
+
+x
+
+and in the case c) it becomes
+N (P ) = {(0, 0), (1, 0), (8, 14), (8, 16), (0, 8)}
+N (Q) = {(0, 0), (2, 1), (12, 21), (12, 24), (0, 12)}.
+
+Proposition 4.4 (Case (7,21)). If there is a counterexample to the Jacobian Conjecture in the
+case (7, 21), then there exist P, Q ∈ K[x, y] with [P, Q] = x and
+N (P ) = {(0, 0), 2(2, 0), 2(3, 1), 2(0, 7)}
+N (Q) = {(0, 0), 3(2, 0), 3(3, 1), 3(0, 7)}
+Proof. The corners of the polygons of P and Q in this case are {(0, 0), (1, 0), (7, 21), (0, 7)} multiplied by (m, n) = (2, 3) respectively (This time, en7,−2 F = 57 (7, 21) for the relevant direction,
+and so q = 7). After the automorphism φ1 with φ1 (x) = y and φ1 (y) = x, we have the polygon
+{(0, 0), (7, 0), (21, 7), (0, 1)}.
+Since q = 7 for the direction (ρ, σ) = (−2, 7), by [1, Corollary 7.4] we know that
+ℓ1,−2 (P ) = x28 λp (y − λx−2 )14
+
+and ℓ1,−2 (Q) = x42 λq (y − λx−2 )21 .
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+13
+
+y
+
+(7, 21)
+
+y
+
+x
+
+y
+
+(21, 7)
+
+y
+
+(21, 7)
+
+x
+
+x
+
+x
+
+Figure 11. The transformation of 21 N (P ) = 13 N (Q)
+Now we apply the automorphism φ2 of L(1) given by φ2 (x) = x, φ2 (y) = y + λx−2 and obtain
+the polygon {(−2, 0), (0, 0), (21, 7), (0, 1)} Finally apply the automorphism φ3 of L(1) given by
+φ3 (x) = x−1 , φ3 (y) = yx3 and obtain the polygon {(0, 0), (2, 0), (3, 1), (0, 7)}, as desired.
+
+
+14
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+5
+
+Systems of polynomial equations for (9, 24) and (9, 27)
+
+In this section we will prove the following theorem.
+Theorem 5.1. There exist no pair of polynomials P, Q ∈ K[x, y] such that
+(1) [P, Q] = x + g(y) for some g(y) ∈ K[y],
+(2) en3,−1 (P ) = st1,0 (P ) = 2(3, 8) = (6, 16) and st−1,1 (P ) = en1,0 (P ) = 2(3, 9) = (6, 18),
+(3) en3,−1 (Q) = st1,0 (Q) = 3(3, 8) = (9, 24) and st−1,1 (Q) = en1,0 (Q) = 3(3, 9) = (9, 27),
+So we assume that such a pair exists, and we will arrive at a contradiction. By [1, Propositions 1.13 and 2.1] there exists a (1, 0)-homogeneous R with ℓ1,0 (P ) = R2 and ℓ1,0 (Q) = R3 .
+Necessarily R = x3 C3 with C3 = y 8 (a0 + a1 y) for some a0 , a1 ∈ K × , and by a linear change of
+variables we may also assume that C3 = y 8 (y + 1).
+Proposition 5.2. There exist C, F ∈ K[y, C3−1 ]((x−1 )) with v1,0 (F ) = −4 and α2 , α1 , α0 , α−1 ∈
+K such that
+(1) P = C 2 and Q = C 3 + α2 C 2 + α1 C + α0 + α−1 C −1 + F ,
+(2) ℓ1,0 (C) = x3 C3 ,
+(3) v−1,1 (C) = v−1,1 (3, 9) = 6, if we consider K[y, C3−1 ] ⊂ K((y −1 )),
+(4) v3,−1 (C) = v3,−1 (3, 8) = 1, if we consider K[y, C3−1 ] ⊂ K((y)).
+Proof. We will construct inductively
+C = x3 C3 + x2 C2 + xC1 + C0 + x−1 C−1 + . . . ,
+with Ck ∈ K[y, C3−1 ] such that C 2 = P and such that items (3) and (4) are satisfied. It suffices
+to find C3−k for k ≥ 0 such that
+
+2 
+Pk
+3−i
+ak )
+= P6−j for j = 0, . . . k,
+i=0 C3−i x
+6−j
+
+bk ) v−1,1 (x3−j C3−j ) ≤ 6 for j = 0, . . . , k, if we consider K[y, C3−1 ] ⊂ K((y −1 )), and
+ck ) v3,−1 (x3−j C3−j ) ≤ 1 for j = 0, . . . , k, if we consider K[y, C3−1 ] ⊂ K((y)).
+We already have
+a0 ) (x3 C3 )2 = x6 P6 ,
+b0 ) v−1,1 (x3 C3 ) = v−1,1 (3, 9) = 6 and
+c0 ) v3,−1 (x3 C3 ) = v3,−1 (3, 8) = 1.
+Assume that we have constructed C3 , . . . , C3−k+1 ∈ K[y, C3−1 ] such that
+
+2 
+Pk−1
+3−i
+ak−1 )
+= P6−j for j = 0, . . . k − 1,
+i=0 C3−i x
+6−j
+
+bk−1 ) v−1,1 (x3−j C3−j ) ≤ 6 for j = 0, . . . , k − 1, if we consider K[y, C3−1 ] ⊂ K((y −1 )), and
+ck−1 ) v3,−1 (x3−j C3−j ) ≤ 1 for j = 0, . . . , k − 1, if we consider K[y, C3−1 ] ⊂ K((y)).
+Then we want to find C3−k such that
+
+!2 
+k
+X
+
+= P6−j for j = 0, . . . , k.
+C3−i x3−i 
+i=0
+
+3−k
+
+6−j
+
+3
+
+6−k
+
+But the term 2C3−k x
+C3 x = 2C3−k C3 x
+contains the highest power of x whose coefficient
+is touched by C3−k . Hence it suffices to guarantee
+
+!2 
+k
+k
+X
+X
+C3−j C3−k+j .
+=
+C3−i x3−i 
+P6−k = 
+i=0
+
+6−k
+
+j=0
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+15
+
+So we want
+2C3 C3−k = −P6−k −
+
+k−1
+X
+
+C3−j C3−k+j
+
+j=1
+
+and it suffices to set
+
+
+
+k−1
+X
+1 
+C3−j C3−k+j  ∈ K[y, C3−1 ],
+P6−k +
+C3−k := −
+2C3
+j=1
+
+(5.2)
+
+and we obtain that ak ) is satisfied.
+If we consider K[y, C3−1 ] ⊂ K((y −1 )), we have v−1,1 (C3−1 ) = −9, since
+
+C3−1 = y −9 (1 + y −1 )−1 = y −9 (1 − y −1 + y −2 − y −3 + y −4 − . . . )
+and by induction hypothesis we also have v−1,1 (C3−j x3−j ) ≤ 6, hence v−1,1 (C3−j ) + j − 3 ≤ 6,
+and so v−1,1 (C3−j ) ≤ 9 − j for j = 1, . . . , k − 1. This implies
+v−1,1 (C3−j C3−k+j ) ≤ v−1,1 (C3−j )v−1,1 (C3−k+j ) ≤ 9 − j + 9 − k + j = 18 − k
+We also have v−1,1 (P6−k x6−k ) ≤ 12, hence v−1,1 (P6−k ) + k − 6 ≤ 12, and so v−1,1 (P6−k ) ≤ 18 − k.
+Now from (5.2) it follows that
+
+
+k−1
+X
+C3−j C3−k+j  ≤ −9 + 18 − k = 9 − k,
+v−1,1 (C3−k ) ≤ −v−1,1 (C3 ) + v−1,1 P6−k +
+j=1
+
+which implies v−1,1 (C3−k x3−k ) ≤ 6 and so bk ) holds.
+Similarly, if we consider K[y, C3−1 ] ⊂ K((y)), we have v3,−1 (C3−1 ) = 8, since
+C3−1 = y −8 (1 + y)−1 = y −8 (1 − y + y 2 − y 3 + y 4 − . . . )
+
+and by induction hypothesis we also have v3,−1 (C3−j x3−j ) ≤ 1, hence v3,−1 (C3−j ) + 9 − 3j ≤ 1,
+and so v3,−1 (C3−j ) ≤ −8 + 3j for j = 1, . . . , k − 1. This implies
+v3,−1 (C3−j C3−k+j ) ≤ v3,−1 (C3−j )v3,−1 (C3−k+j ) ≤ −8 + 3j − 8 + 3(k − j) = −16 + 3k
+We also have v3,−1 (P6−k x6−k ) ≤ 2, hence v3,−1 (P6−k ) + 18 − 3k ≤ 2, and so v3,−1 (P6−k ) ≤
+−16 + 3k. Now from (5.2) it follows that
+
+
+k−1
+X
+C3−j C3−k+j  ≤ 8 − 16 + 3k = −8 + 3k,
+v3,−1 (C3−k ) ≤ v3,−1 (C3−1 ) + v3,−1 P6−k +
+j=1
+
+3−k
+
+which implies v3,−1 (C3−k x
+) ≤ 1 and so ck ) holds.
+In order to finish the proof it suffices to find F ∈ K[y, C3−1 ]((x−1 )) with v1,0 (F ) = −4 such
+that
+Q = C 3 + α2 C 2 + α1 C + α0 + α−1 C −1 + F.
+(5.3)
+3
+3
+3
+Since ℓ1,0 (Q) = ℓ1,0 (C ) we have that v1,0 (Q − C ) < 9. If v1,0 (Q − C ) > −4, then
+v1,0 (Q − C 3 ) + v1,0 (P ) − v1,0 (1, 1) > −4 + 6 − 1 = 1 = v1,0 (x) = v1,0 ([Q − C 3 , P ])
+which by [1, Proposition 1.13] implies [ℓ1,0 (P ), ℓ1,0 (Q − C 3 )] = 0, and so, by [1, Proposition 2.1]
+and the fact that x3 C3 is not the positive power of any element of K[x, y], we have
+ℓ1,0 (Q − C 3 ) = αk (x3 C3 )k ,
+for some k with −2 < k < 3. Using the arguments of [3, Section 1], we find α2 , α1 , α0 , α−1 ∈ K
+such that
+[ℓ1,0 (P ), ℓ1,0 (Q − C 3 − α2 C 2 − α1 C − α0 − α−1 C −1 )] 6= 0,
+
+16
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+and so, again by [1, Proposition 1.13] we know that F := Q − C 3 − α2 C 2 − α1 C − α0 − α−1 C −1
+satisfies
+v1,0 (F ) + v1,0 (P ) − v1,0 (1, 1) = v1,0 ([F, P ]),
+which implies v1,0 (F ) = −4 and concludes the proof.
+
+
+
+Remark 5.3. Note that if we replace Q by Q̃ := Q − α2 P − α0 and P by P̃ := P + 23 α1 , then
+Q̃ = C 3 + α1 C + λC −1 + F.
+Moreover C̃ with C̃ 2 = P̃ is given by a series
+1
+C̃ = C + α1 C −1 + γ3 C −3 + γ5 C −5 + . . .
+3
+and so
+C̃ 3 = C 3 + α1 C + γ̃1 C −1 + γ̃3 C −3 + . . . .
+It follows that
+Q̃ = C̃ 3 + λC̃ −1 + F̃ ,
+
+for some λ ∈ K.
+
+Since P̃ , Q̃ satisfy the conditions of Theorem 5.1, we can and will assume that α2 , α1 , α0 vanish
+in Proposition 5.2.
+By definition F−4 ∈ K[y, C3−1 ].
+Proposition 5.4. Set f := C32 F−4 then f ∈ K[y] is a separable polynomial (it has no multiple
+roots), y(y + 1) divides f and deg(f ) = 6.
+Proof. Note that Q2 = C 6 + 2λC 2 + 2C 3 F + λ2 C −2 + 2λC −1 F + F 2 , and so
+ℓ1,0 (Q2 − P 3 − 2λP ) = ℓ1,0 (2C 3 F ) = 2x5 C33 F−4 ∈ K[x, y]
+
+(5.4)
+
+Moreover, [ℓ1,0 (P ), ℓ1,0 (F )] 6= 0, and so
+[ℓ1,0 (P ), ℓ1,0 (Q2 − P 3 − 2λP )] 6= 0.
+This implies that
+ℓ1,0 [P, Q2 − P 3 − 2λP ] = [ℓ1,0 (P ), ℓ1,0 (Q2 − P 3 − 2λP )] = [x6 C32 , 2x5 C33 F−4 ]
+and so
+2x10 C33 = ℓ1,0 (2xQ) = ℓ1,0 ([P, Q2 ]) = ℓ1,0 ([P, Q2 − P 3 − 2λP )]) = [x6 C32 , 2x5 C33 F−4 ]
+Set f1 := C33 F−4 . By (5.4) we know that f1 ∈ K[y]. From (5.5) we obtain
+x10 C33 = 2C3 x3 [x3 C3 , x5 f1 ],
+and so
+x7 C32
+
+=
+
+2[x3 C3 , x5 f1 ]
+
+=
+
+2[x3 , f1 ]C3 x5 + 2[C3 , x5 ]x3 f1
+
+=
+
+6x2 [x, f1 ]C3 x5 + 10x4 [C3 , x]x3 f1
+
+=
+
+x7 (6C3 f1′ − 10C3′ f1 ).
+
+Since C3′ = (9y + 8)y 7 , this yields
+y 16 (y + 1)2 = 6y 8 (y + 1)f1′ − 10(9y + 8)y 7 f1
+and so we arrive at the following differential equation for f1 :
+y 9 (y + 1)2 = 6y(y + 1)f1′ − 10(9y + 8)f1 .
+
+(5.5)
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+17
+
+This equation has a unique solution that can be found using a CAS:
+1 9
+y (y + 1)2 (35 − 42y + 54y 2 − 81y 3 + 243y 4),
+f1 = −
+910
+1
+(35 − 42y + 54y 2 − 81y 3 + 243y 4),
+and one also checks that neither y nor (y + 1) divide g(y) := − 910
+f1
+which has four different (complex) roots. So f := C3 has the desired properties.
+
+The equalities
+C 2 = P and Q = C 3 + λC −1 + F
+(5.6)
+yield a system of polynomial equations for Ck , similar to the systems of [3], which correspond to
+the equalities
+P−k = 0
+
+for k = 1, . . . , 8 and Q−k = 0
+
+for k = 1, . . . 5.
+
+(5.7)
+
+However Ck in general is not a polynomial, so we will transform the system into a system for
+certain Dk ’s which are polynomials.
+Proposition 5.5. Set Dk := Ck C35−2k . Then Dk ∈ K[y].
+Proof. By definition D3 = 1 and D2 = C2 C3 = 21 P5 , so D1 , D2 ∈ K[y]. Now assume that
+Dj ∈ K[y] for j > k. Then
+Pk+3 =
+
+3
+X
+
+Cj Ck+3−j = 2C3 Ck +
+
+j=k
+
+2
+X
+
+Cj Ck+3−j .
+
+j=k+1
+
+Note that Pk ∈ K[y] for all k. In fact, for k < 0, Pk = 0 ∈ K[y]. Then
+
+
+2
+2
+X
+X
+1
+1
+Cj Ck+3−j  C34−2k = Pk+3 C34−2k −
+Dj Dk+3−j ,
+Dk = C35−2k Ck = Pk+3 −
+2
+2
+j=k+1
+
+j=k+1
+
+since
+
+5−2(k+3−j)
+
+Dj Dk+3−j = Cj Ck+3−j C35−2j C3
+This shows inductively that Dk ∈ K[y].
+P
+If we set D := k≤3 xk Dk , then
+X
+X
+Ci C35−2i Cj C35−2j =
+Di Dj =
+(D2 )−k =
+
+= Cj Ck+3−j C34−2k .
+
+
+X
+
+i,j≤3
+
+i,j≤3
+
+i,j≤3
+
+i+j=−k
+
+i+j=−k
+
+i+j=−k
+
+and
+
+X
+
+(D3 )−k =
+
+Di Dj Dl =
+
+10−2(i+j)
+
+Ci Cj C3
+
+15−2(i+j+l)
+
+X
+
+Ci Cj Cl C3
+
+i,j,l≤3
+
+i,j,l≤3
+
+i+j+l=−k
+
+i+j+l=−k
+
+= (C 2 )−k C310+2k
+
+= (C 3 )−k C315+2k .
+
+Now the equalities (5.7) imply that the following equalities
+(D2 )−k = 0
+3
+
+for k = 1, . . . , 8,
+
+(D )−3 + λC320 = 0
+
+(D3 )−1 = 0,
+
+(D3 )−2 = 0,
+
+(5.8)
+
+3
+
+(D )−4 − λD2 C320 + F−4 C323 = 0
+
+and
+hold. Note that we don’t use the equality Q−5 = 0.
+So there exists D, F̂ ∈ K[y]((x−1 )), such that ordx−1 (F̂ ) ≥ 5, P̂ := D2 ∈ K[x, y] and
+Q̂ := D3 + D−1 λC320 + x−4 F−4 C323 + F̂ ∈ K[x, y].
+In fact, P = C 2 ∈ K[x, y] implies that (C 2 )−k = 0 for all k > 0, hence (D2 )−k = 0 for all k > 0,
+so P̂ ∈ K[x, y]; on the other hand the equalities (5.8) imply that (Q̂)−k = 0 for k = 1, 2, 3, 4.
+Now set
+(F̂ )−k := −(D3 + D−1 λC320 + F−4 C323 )−k for k ≥ 5
+
+18
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+which implies that Q̂ ∈ K[x, y], as desired.
+Consider the automorphism ϕ of K[y]((x−1 )) given by ϕ(y) = y, ϕ(x) = x − D2 (and so
+ϕ(x−1 ) = x−1 + x−2 D2 + x−3 D22 + x−4 D23 + . . . ). Then ϕ(P̂ ), ϕ(Q̂) ∈ K[x, y], and if we set
+D̃ := ϕ(D), then
+D̃ = x3 + xd1 + d0 + x−1 d−1 + x−2 d−2 + . . .
+for some di ∈ K[y] (note that d2 = 0), and the conditions ϕ(P̂ ), ϕ(Q̂) ∈ K[x, y] imply the
+equalities
+(D̃2 )−k = 0 for
+
+k = 1, . . . , 8
+
+and (D̃3 + D̃−1 λC320 + x−4 F−4 C323 )−j = 0 for
+
+j = 1, . . . 4.
+
+Note that we can take x−4 instead of ϕ(x−4 ) and that we can ignore the term ϕ(F̂ ), since we
+only consider j ≤ 4. So we obtain the following equalities:
+0 = (D̃2 )−1 = 2d0 d−1 + 2d1 d−2 + 2d−4
+0 = (D̃2 )−2 = d2−1 + 2d0 d−2 + 2d1 d−3 + 2d−5
+0 = (D̃2 )−3 = 2d−1 d−2 + 2d0 d−3 + 2d1 d−4 + 2d−6
+0 = (D̃2 )−4 = d2−2 + 2d−1 d−3 + 2d0 d−4 + 2d1 d−5 + 2d−7
+0 = (D̃2 )−5 = 2d−2 d−3 + 2d−1 d−4 + 2d0 d−5 + 2d1 d−6 + 2d−8
+0 = (D̃2 )−7 = 2d−1 0 + 2d−3 d−4 + 2d−2 d−5 + 2d−1 d−6 + 2d0 d−7 + 2d1 d−8
+0 = (Q̃)−1 = 3d20 d−1 + 3d1 d2−1 + 6d0 d1 d−2 + 3d2−2 + 3d21 d−3 + 6d−1 d−3 + 6d0 d−4 + 6d1 d−5
++ 3d−7
+0 = (Q̃)−2 = 3d0 d2−1 + 3d20 d−2 + 6d1 d−1 d−2 + 6d0 d1 d−3 + 6d−2 d−3 + 3d21 d−4 + 6d−1 d−4
++ 6d0 d−5 + 6d1 d−6 + 3d−8
+0 = (Q̃)−4 = 3d−10 + 3d2−1 d−2 + 3d0 d2−2 + 6d0 d−1 d−3 + 6d1 d−2 d−3 + 3d20 d−4 + 6d1 d−1 d−4
++ 6d−3 d−4 + 6d0 d1 d−5 + 6d−2 d−5 + 3d21 d−6 + 6d−1 d−6 + 6d0 d−7 + 6d1 d−8
++ F−4 C323 .
+We consider this as a system of 9 equations and using a CAS (for example Mathematica) we
+eliminate the variables d−10 , d−8 , d−7 , d−6 , d−5 , d−4 , d−3 , d−2 , obtaining
+3
+18C323 d1 (d−1 )6 F−4 + 8C369 F−4
++ 27d0 (d−1 )9 = 0.
+
+(5.9)
+
+Proposition 5.6. We have v−13,−1 (D) = −39 and v17,1 (D) = 51.
+Proof. On the one hand, if we embed C3−1 in K((y)), then by Proposition 5.2 we know that
+v3,−1 (C) = 1. Thus the lowest power of y of a term of Ck is at least y 3k−1 , since
+v3,−1 (xk y 3k−1 ) = 3k − (3k − 1) = 1 = v3,−1 (C).
+But then
+v−13,−1 (Dk xk ) =
+≤
+=
+=
+
+v−13,−1 (Ck ) + v−13,−1 (xk ) + v−13,−1 (C35−2k )
+−(3k − 1) − 13k + (5 − 2k)v−13,−1 (C3 )
+−16k + 1 + (5 − 2k)(−8)
+−39.
+
+Since v−13,−1 (D3 ) = −39, this proves v−13,−1 (D) = −39.
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+19
+
+On the other hand, if we embed C3−1 in K((y −1 )), then by Proposition 5.2 we know that
+v−1,1 (C) = 6. Thus the highest power of y of a term of Ck is at most y k+6 , since
+v−1,1 (xk y k+6 ) = −k + k + 6 = 6 = v−1,1 (C).
+But then
+v17,1 (Dk xk ) =
+≤
+
+v17,1 (Ck ) + v17,1 (xk ) + v17,1 (C35−2k )
+k + 6 + 17k + (5 − 2k)v17,1 (C3 )
+
+=
+
+18k + 6 + (5 − 2k)9
+
+=
+
+51.
+
+Since v17,1 (D3 ) = 51, this proves v17,1 (D) = 51.
+
+
+
+Proof of Theorem 5.1. Note that ϕ preserves v−13,−1 and v17,1 , since v0,−1 (D2 ) ≤ −13 and
+v0,1 (D2 ) ≤ 17. In particular
+51 ≥ v17,1 (x3−k d3−k ) = 51 − 17k + v17,1 (d3−k )
+and so v0,1 (d3−k ) = v17,1 (d3−k ) ≤ 17k, hence
+deg(d1 ) ≤ 34 and
+
+deg(d0 ) ≤ 51.
+
+(5.10)
+
+This also implies that
+−39 ≥ v−13,−1 (x3−k d3−k ) = −39 + 13k + v−13,−1 (d3−k ),
+and so v0,−1 (d3−k ) = v−13,−1 (d3−k ) ≤ −13k, i.e.,
+• v0,−1 (d1 ) ≤ 26 and so y 26 divides d1 ,
+• v0,−1 (d0 ) ≤ 39 and so y 39 divides d0 ,
+• v0,−1 (d−1 ) ≤ 52 and so y 52 divides d−1 .
+Define the polynomials d˜1 , d˜0 and d˜−1 by
+d1 = y 26 d˜1 ,
+
+d0 = y 39 d˜0
+
+and d−1 = y 52 d˜−1 .
+
+Then, using that
+C32 F−4 = f = y(y + 1)g(y) and C3 = y 8 (y + 1),
+we obtain
+C323 d1 d6−1 F−4 = (y 8 (y + 1))21 y 26 d˜1 y 52·6 (d˜−1 )6 y(y + 1)g(y) = y 507 (y + 1)22 d˜1 (d˜−1 )6 g(y)
+3
+C369 F−4
+= (y 8 (y + 1))63 (y(y + 1)g(y))3 = y 507 (y + 1)66 g(y)3
+d0 d9 = y 507 d˜0 (d˜−1 )9 .
+−1
+
+Hence, from equality (5.9) we obtain
+(5.11)
+0 = 18(y + 1)22 d˜1 (d˜−1 )6 g(y) + 8(y + 1)66 g(y)3 + 27d˜0 (d˜−1 )9 .
+6
+66
+3
+˜
+This implies that (d−1 ) divides (y + 1) g(y) , and since g(y) is separable, necessarily there
+exists some k such that d˜−1 = (y + 1)k .
+Now we will arrive at the desired contradiction, proving that k ≥ 8 is impossible and that
+k ≤ 7 is also impossible:
+Assume by contradiction that k ≥ 8, then (y + 1)70 divides 18(y + 1)22 d˜1 (d˜−1 )6 g(y) and
+(y + 1)72 divides 27d˜0 (d˜−1 )9 . But the multiplicity of (y + 1) in 8(y + 1)66 g(y)3 is exactly 66, since
+(y + 1) doesn’t divide g(y), so (5.11) yields the contradiction.
+
+20
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+On the other hand, if k ≤ 7, then deg(d˜−1 ) ≤ 7 and so, since by (5.10) we know that
+deg(d˜1 ) ≤ 8 and deg(d˜0 ) ≤ 12, we obtain
+deg(18(y + 1)22 d˜1 (d˜−1 )6 g(y)) ≤ 22 + 8 + 42 + 4 = 76
+and
+
+deg(27d˜0 (d˜−1 )9 ) ≤ 12 + 9 · 7 = 75,
+which is impossible by (5.11), since deg((y + 1)66 g(y)3 ) = 78. This contradiction concludes the
+proof of Theorem 5.1.
+
+Corollary 5.7. There exist no P, Q ∈ K[x, y] with [P, Q] = x and
+N (P ) = {(0, 0), (1, 1), (6, 16), (6, 18), (0, 18)}
+N (Q) = {(0, 0), (1, 0), (9, 24), (9, 27), (0, 27)}
+Proof. We claim that ℓ0,1 (P ) = λp y 1 8(x − λ)6 for some λp , λ ∈ K × . If the claim is true, take
+φ ∈ Aut(K[x, y]) with φ(y) = y and φ(x) = x + λ. Then
+Succφ(P ) (1, 0) ≥ (−1, 1) and
+
+Succφ(Q) (1, 0) ≥ (−1, 1).
+
+(5.12)
+
+Since [φ(P ), φ(Q)] = x + λ, the polynomials φ(P ), φ(Q) satisfy the conditions of Theorem 5.1,
+a contradiction which concludes the proof.
+In order to prove the claim and (5.12), consider the map ψ : K[x, y] → L(2) given by ψ(x) =
+x1/2 and ψ(y) = y. Then (ψ(P ), ψ(Q)) is an m, n-pair for (m, n) = (2, 3) (see [1, Definition
+1
+en1,0 (P ) for F as in [1, Theorem 2.6]. Hence q = 3 in [1, Corollary
+4.3]), and en1,0 (F ) = /2 3 m
+7.2] and so ℓ0,1 (ψ(P )) is a sixth power, hence so is ℓ0,1 (P ). By the same argument, for (ρ, σ) =
+Succψ(φ(P )) (0, 1) we also have that ℓρ,σ (ψ(φ(P ))) is a sixth power, and since stρ,σ (ψ(φ(P ))) =
+(6, 18), we know that (ρ, σ) ∈ {(−1, 1), (−2, 1), (−3, 1)}, which proves (5.12).
+
+
+6
+
+Systems of polynomial equations for (7, 21)
+
+In this section we will prove the following theorem.
+Theorem 6.1. There exist no pair of polynomials P, Q ∈ K[x, y] such that [P, Q] = x and
+N (P ) = {(0, 0), (4, 0), (2, 6), (0, 14)}
+N (Q) = {(0, 0), (6, 0), (3, 9), (0, 21)}
+So we assume that such a pair exists, and we will arrive at a contradiction. By a linear change
+of variables we may assume that ℓ1,0 (P ) = x6 y 2 and ℓ1,0 (Q) = x9 y 3
+Proposition 6.2. There exist C, F ∈ K[y, y −1 ]((x−1 )) with v1,0 (F ) = −4 and α2 , α1 , α0 , α−1 ∈
+K such that
+(1) P = C 2 and Q = C 3 + α2 C 2 + α1 C + α0 + α−1 C −1 + F ,
+(2) ℓ1,0 (C) = x3 y,
+(3) v2,1 (C) = v2,1 (3, 1) = 7, if we consider K[y, y −1 ] ⊂ K((y −1 )),
+(4) v1,−1 (C) = v1,−1 (3, 1) = 2, if we consider K[y, y −1 ] ⊂ K((y)).
+Proof. We will construct inductively
+C = x3 y + x2 C2 + xC1 + C0 + x−1 C−1 + . . . ,
+with Ck ∈ K[y, y −1 ] such that C 2 = P and such that items (3) and (4) are satisfied. It suffices
+to find C3−k for k ≥ 0 such that
+
+2 
+Pk
+3−i
+ak )
+C
+x
+= P6−j for j = 0, . . . k,
+i=0 3−i
+6−j
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+21
+
+bk ) v2,1 (x3−j C3−j ) ≤ 7 for j = 0, . . . , k, if we consider K[y, y −1 ] ⊂ K((y −1 )), and
+ck ) v1,−1 (x3−j C3−j ) ≤ 2 for j = 0, . . . , k, if we consider K[y, y −1] ⊂ K((y)).
+We already have
+a0 ) (x3 y)2 = x6 P6 ,
+b0 ) v2,1 (x3 y) = v2,1 (3, 1) = 6 and
+c0 ) v1,−1 (x3 y) = v1,−1 (3, 1) = 2.
+Assume that we have constructed C3 , . . . , C3−k+1 ∈ K[y, y −1 ] such that
+
+2 
+Pk−1
+3−i
+ak−1 )
+C
+x
+= P6−j for j = 0, . . . k − 1,
+3−i
+i=0
+6−j
+
+bk−1 ) v2,1 (x3−j C3−j ) ≤ 7 for j = 0, . . . , k − 1, if we consider K[y, y −1 ] ⊂ K((y −1 )), and
+ck−1 ) v1,−1 (x3−j C3−j ) ≤ 2 for j = 0, . . . , k − 1, if we consider K[y, y −1] ⊂ K((y)).
+Then we want to find C3−k such that
+
+!2 
+k
+X
+
+= P6−j for j = 0, . . . , k.
+C3−i x3−i 
+i=0
+
+3−k
+
+6−j
+
+3
+
+6−k
+
+But the term 2C3−k x
+yx = 2C3−k yx
+contains the highest power of x whose coefficient is
+touched by C3−k . Hence it suffices to guarantee
+
+!2 
+k
+k
+X
+X
+C3−j C3−k+j .
+=
+C3−i x3−i 
+P6−k = 
+i=0
+
+6−k
+
+j=0
+
+So we want
+
+2yC3−k = P6−k −
+
+k−1
+X
+
+C3−j C3−k+j
+
+j=1
+
+and it suffices to set
+
+
+
+k−1
+X
+1 
+C3−k :=
+C3−j C3−k+j  ∈ K[y, y −1 ],
+P6−k −
+2y
+j=1
+
+(6.13)
+
+and we obtain that ak ) is satisfied.
+If we consider K[y, y −1 ] ⊂ K((y −1 )), we have v2,1 (y −1 ) = −1, and by induction hypothesis
+we also have v2,1 (C3−j x3−j ) ≤ 7, hence v2,1 (C3−j ) + 6 − 2j ≤ 7, and so v2,1 (C3−j ) ≤ 1 + 2j for
+j = 1, . . . , k − 1. This implies
+v2,1 (C3−j C3−k+j ) ≤ v2,1 (C3−j )v2,1 (C3−k+j ) ≤ 1 + 2j + 1 + 2(k − j) = 2 + 2k.
+We also have v2,1 (P6−k x6−k ) ≤ 14, hence v2,1 (P6−k ) + 12 − 2k ≤ 14, and so v2,1 (P6−k ) ≤ 2 + 2k.
+Now from (6.13) it follows that
+
+
+k−1
+X
+C3−j C3−k+j  ≤ −1 + 2 + 2k = 1 + 2k,
+v2,1 (C3−k ) ≤ −v2,1 (y) + v2,1 P6−k +
+j=1
+
+which implies v2,1 (C3−k x3−k ) ≤ 7 and so bk ) holds.
+Similarly, if we consider K[y, y −1 ] ⊂ K((y)), we have v1,−1 (y −1 ) = 1, and by induction
+hypothesis we also have v1,−1 (C3−j x3−j ) ≤ 2, hence v1,−1 (C3−j )+3−j ≤ 2, and so v1,−1 (C3−j ) ≤
+j − 1 for j = 1, . . . , k − 1. This implies
+v1,−1 (C3−j C3−k+j ) ≤ v1,−1 (C3−j )v1,−1 (C3−k+j ) ≤ j − 1 + (k − j) − 1 = k − 2
+
+22
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+We also have v1,−1 (P6−k x6−k ) ≤ 4, hence v1,−1 (P6−k ) + 6 − k ≤ 4, and so v1,−1 (P6−k ) ≤ k − 2.
+Now from (6.13) it follows that
+
+
+k−1
+X
+C3−j C3−k+j  ≤ 1 + k − 2 = k − 1,
+v1,−1 (C3−k ) ≤ v1,−1 (y −1 ) + v1,−1 P6−k +
+j=1
+
+which implies v1,−1 (C3−k x3−k ) ≤ 2 and so ck ) holds.
+In order to finish the proof it suffices to find F ∈ K[y, y −1 ]((x−1 )) with v1,0 (F ) = −4 such
+that
+Q = C 3 + α2 C 2 + α1 C + α0 + α−1 C −1 + F.
+(6.14)
+3
+Since ℓ1,0 (Q) = ℓ1,0 (C ) we have v1,0 (Q − C 3 ) < 9. If v1,0 (Q − C 3 ) > −4, then
+v1,0 (Q − C 3 ) + v1,0 (P ) − v1,0 (1, 1) > −4 + 6 − 1 = 1 = v1,0 (x) = v1,0 ([Q − C 3 , P ])
+which by [1, Proposition 1.13] implies [ℓ1,0 (P ), ℓ1,0 (Q − C 3 )] = 0, and so, by [1, Proposition 2.1]
+and the fact that x3 y is not the positive power of any element of K[x, y], we have
+ℓ1,0 (Q − C 3 ) = αk (x3 y)k ,
+
+for some k with −2 < k < 3. Using the arguments of [3, Section 1], we find α2 , α1 , α0 , α−1 ∈ K
+such that
+[ℓ1,0 (P ), ℓ1,0 (Q − C 3 − α2 C 2 − α1 C − α0 − α−1 C −1 )] 6= 0,
+and so, again by [1, Proposition 1.13] we know that F := Q − C 3 − α2 C 2 − α1 C − α0 − α−1 C −1
+satisfies
+v1,0 (F ) + v1,0 (P ) − v1,0 (1, 1) = v1,0 ([F, P ]),
+which implies v1,0 (F ) = −4 and concludes the proof.
+
+Remark 6.3. Note that if we replace Q by Q̃ := Q − α2 P − α0 and P by P̃ := P + 23 α1 , then
+Q̃ = C 3 + α1 C + λC −1 + F.
+Moreover C̃ with C̃ 2 = P̃ is given by a series
+1
+C̃ = C + α1 C −1 + γ3 C −3 + γ5 C −5 + . . .
+3
+and so
+C̃ 3 = C 3 + α1 C + γ̃1 C −1 + γ̃3 C −3 + . . . .
+It follows that
+Q̃ = C̃ 3 + λC̃ −1 + F̃ , for some λ ∈ K.
+Since P̃ , Q̃ satisfy the conditions of Theorem 5.1, we can and will assume that α2 , α1 , α0 vanish
+in Proposition 5.2.
+By definition F−4 ∈ K[y, y −1 ]. From
+x = [ℓ1,0 (P ), ℓ1,0 (F )] = [x6 y 2 , F−4 x−4 ]
+it follows immediately that F−4 = 12 y −1 .
+The equalities
+C 2 = P and Q = C 3 + λC −1 + F
+(6.15)
+yield a system of polynomial equations for Ck , similar to the systems of [3], which correspond to
+the equalities
+P−k = 0
+
+for k = 1, . . . , 8 and Q−k = 0 for
+
+k = 1, . . . 5.
+
+(6.16)
+
+However Ck in general is not a polynomial, so we will transform the system into a system for
+certain Dk ’s which are polynomials.
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+23
+
+Proposition 6.4. Set Dk := Ck y 2−k . Then Dk ∈ K[y].
+1
+Proof. By definition D3 = 1 and D2 = C2 = 2y
+P5 . But v1,−1 (P5 x5 ) ≤ 4, hence v1,−1 (P5 ) ≤ −1,
+which implies that y | P5 . So D2 ∈ K[y]. Now assume that Dj ∈ K[y] for j > k ≤ 1. Then
+
+Pk+3 =
+
+3
+X
+
+Cj Ck+3−j = 2yCk +
+
+j=k
+
+2
+X
+
+Cj Ck+3−j .
+
+j=k+1
+
+Note that Pk ∈ K[y] for all k. In fact, for k < 0, Pk = 0 ∈ K[y]. Then
+
+
+2
+2
+X
+X
+1
+1
+Dk = y 2−k Ck = Pk+3 −
+Cj Ck+3−j  y 1−k = Pk+3 y 1−k −
+Dj Dk+3−j ,
+2
+2
+j=k+1
+
+j=k+1
+
+since
+
+2−(k+3−j)
+
+Dj Dk+3−j = Cj Ck+3−j y 2−j C3
+
+= Cj Ck+3−j y 4−3−k .
+
+This shows inductively that Dk ∈ K[y].
+P
+Proof of Theorem 6.1: If we set D := k≤3 xk Dk , then
+X
+X
+X
+Ci Cj y 4−(i+j) = (C 2 )−k y 4+k
+Ci y 2−i Cj y 2−j =
+Di Dj =
+(D2 )−k =
+i,j≤3
+
+i,j≤3
+
+i,j≤3
+
+i+j=−k
+
+i+j=−k
+
+i+j=−k
+
+
+
+and
+(D3 )−k =
+
+X
+
+Di Dj Dl =
+
+X
+
+i,j,l≤3
+
+i,j,l≤3
+
+i+j+l=−k
+
+i+j+l=−k
+
+Ci Cj Cl y 6−(i+j+l) = (C 3 )−k y 6+k .
+
+Now the equalities (6.16) imply that the following equalities
+(D2 )−k = 0
+
+for k = 1, . . . , 8,
+
+(D3 )−3 + λy 8 = 0
+
+(D3 )−1 = 0,
+
+(D3 )−2 = 0,
+
+(6.17)
+
+and (D3 )−4 − λD2 y 8 + F−4 y 10 = 0
+
+hold. Note that we don’t use the equality Q−5 = 0.
+So there exists D, F̂ ∈ K[y]((x−1 )), such that ordx−1 (F̂ ) ≥ 5, P̂ := D2 ∈ K[x, y] and
+Q̂ := D3 + D−1 λy 8 + x−4 F−4 y 10 + F̂ ∈ K[x, y].
+In fact, P = C 2 ∈ K[x, y] implies that (C 2 )−k = 0 for all k > 0, hence (D2 )−k = 0 for all k > 0,
+so P̂ ∈ K[x, y]; on the other hand the equalities (6.17) imply that (Q̂)−k = 0 for k = 1, 2, 3, 4.
+Now set
+(F̂ )−k := −(D3 + D−1 λy 8 + F−4 y 10 )−k for k ≥ 5
+which implies that Q̂ ∈ K[x, y], as desired.
+Consider the automorphism ϕ of K[y]((x−1 )) given by ϕ(y) = y, ϕ(x) = x − D2 (and so
+ϕ(x−1 ) = x−1 + x−2 D2 + x−3 D22 + x−4 D23 + . . . ). Then ϕ(P̂ ), ϕ(Q̂) ∈ K[x, y], and if we set
+D̃ := ϕ(D), then
+D̃ = x3 + xd1 + d0 + x−1 d−1 + x−2 d−2 + . . .
+for some di ∈ K[y] (note that d2 = 0), and the conditions ϕ(P̂ ), ϕ(Q̂) ∈ K[x, y] imply the
+equalities
+(D̃2 )−k = 0
+
+for k = 1, . . . , 8 and (D̃3 + D̃−1 λy 8 + x−4 F−4 y 10 )−j = 0 for
+
+j = 1, . . . 4.
+
+24
+
+JORGE A. GUCCIONE, JUAN J. GUCCIONE, RODRIGO HORRUITINER, AND CHRISTIAN VALQUI
+
+Note that we can take x−4 instead of ϕ(x−4 ) and that we can ignore the term ϕ(F̂ ), since we
+only consider j ≤ 4. So we obtain the following equalities:
+0 = (D̃2 )−1 = 2d0 d−1 + 2d1 d−2 + 2d−4
+0 = (D̃2 )−2 = d2−1 + 2d0 d−2 + 2d1 d−3 + 2d−5
+0 = (D̃2 )−3 = 2d−1 d−2 + 2d0 d−3 + 2d1 d−4 + 2d−6
+0 = (D̃2 )−4 = d2−2 + 2d−1 d−3 + 2d0 d−4 + 2d1 d−5 + 2d−7
+0 = (D̃2 )−5 = 2d−2 d−3 + 2d−1 d−4 + 2d0 d−5 + 2d1 d−6 + 2d−8
+0 = (D̃2 )−6 = d2−3 + 2d−2 d−4 + 2d−1 d−5 + 2d0 d−6 + 2d1 d−7 + 2d−9
+0 = (D̃2 )−7 = 2d−1 0 + 2d−3 d−4 + 2d−2 d−5 + 2d−1 d−6 + 2d0 d−7 + 2d1 d−8
+0 = (D̃2 )−8 = 2d−11 + d2−4 + 2d−3 d−5 + 2d−2 d−6 + 2d−1 d−7 + 2d0 d−8 + 2d1 d−9
+0 = (Q̃)−1 = 3d20 d−1 + 3d1 d2−1 + 6d0 d1 d−2 + 3d2−2 + 3d21 d−3 + 6d−1 d−3 + 6d0 d−4 + 6d1 d−5
++ 3d−7
+0 = (Q̃)−2 = 3d0 d2−1 + 3d20 d−2 + 6d1 d−1 d−2 + 6d0 d1 d−3 + 6d−2 d−3 + 3d21 d−4 + 6d−1 d−4
++ 6d0 d−5 + 6d1 d−6 + 3d−8
+0 = (Q̃)−3 = d3−1 + 6d0 d−1 d−2 + 3d1 d2−2 + 3d20 d−3 + 6d1 d−1 d−3 + 3d2−3 + 6d0 d1 d−4 + 6d−2 d−4
++ 3d21 d−5 + 6d−1 d−5 + 6d0 d−6 + 6d1 d−7 + 3d−9 + λy 8
+0 = (Q̃)−4 = 3d−10 + 3d2−1 d−2 + 3d0 d2−2 + 6d0 d−1 d−3 + 6d1 d−2 d−3 + 3d20 d−4 + 6d1 d−1 d−4
++ 6d−3 d−4 + 6d0 d1 d−5 + 6d−2 d−5 + 3d21 d−6 + 6d−1 d−6 + 6d0 d−7 + 6d1 d−8
++ F−4 y 10 .
+We use that F−4 = 12 y −1 and we consider this as a system of 9 equations (excluding (D̃2 )−8 ,
+(D̃2 )−6 and (D̃3 )−3 ) and using a CAS (for example Mathematica) we eliminate the variables
+d−10 , d−8 , d−7 , d−6 , d−5 , d−4 , d−3 , d−2 , obtaining
+9y 9 d1 (d−1 )6 + y 27 + 27d0 (d−1 )9 = 0.
+k
+
+×
+
+(6.18)
+
+It follows that d−1 = αy for some k ∈ N0 and α ∈ K . A straightforward computation using
+degy (d0 ) = 9 and deg(d1 ) = 6, shows that k = 2.
+From the system of equations we also obtain
+2d−3 y 9 = 3d0 (d−1 )4
+
+and 3(d−1 )2 d−2 = y 9 ,
+
+which, together with (6.18), yield
+−27d0 (d−1 )9 − y 27
+,
+9(d−1 )6 y 9
+y9
+,
+d−2 =
+3(d−1 )2
+3d0 (d−1 )4
+d−3 =
+.
+2y 9
+d1 =
+
+Finally, inserting these values in
+0 = −(d−1 )3 − 6d0 d−1 d−2 − 3d1 (d−2 )2 + 3(d−3 )2 + 2λy 8 ,
+
+INCREASING THE DEGREE OF A POSSIBLE COUNTEREXAMPLE TO THE JACOBIAN CONJECTURE FROM 100 TO 108
+25
+
+which comes from
+
+
+0 = 2(D̃3 )−3 − 3 (D̃2 )−6 + d1 (D̃2 )−4 + d0 (D̃2 )−3 + d−1 (D̃2 )−2 + d−2 (D̃2 )−1 ,
+
+we obtain
+
+(27α9 d0 − 2y 9 )2
+= α3 y 8 − 2λy 10 ,
+108α10
+which yields the desired contradiction, since the right hand side is not the square of a polynomial,
+because α, λ 6= 0.
+
+
+References
+[1] Jorge Alberto Guccione, Juan José Guccione, and Christian Valqui, On the shape of possible counterexamples
+to the Jacobian Conjecture, J. Algebra 471 (2017), 13–74.
+[2]
+, The Two-Dimensional Jacobian Conjecture and the Lower Side of the Newton Polygon, available
+at arXiv:1605.09430.
+, A system of polynomial equations related to the Jacobian Conjecture, available at arXiv:1406.0886.
+[3]
+[4]
+, A Differential Equation for Polynomials related to the Jacobian Conjecture, Pro Mathematica 27,
+Num 53-54 (2013), 83–98.
+[5] Jorge Alberto Guccione, Juan José Guccione, Rodrigo Horruitiner, and Christian Valqui, Some algorithms
+related to the Jacobian Conjecture, available at arXiv:1708.07936.
+, The Jacobian Conjecture: Approximate roots and intersection numbers, Pro Mathematica 30, Num
+[6]
+60 (2019), 51–89.
+[7] R. Heitmann, On the Jacobian conjecture, Journal of Pure and Applied Algebra 64 (1990), 35–72. MR1055020
+(91c :14018)
+[8] Ott-Heinrich Keller, Ganze Cremona-Transformationen, Monatsh. Math. Phys. 47 (1939), no. 1, 299–306,
+DOI 10.1007/BF01695502 (German). MR1550818
+[9] Lih-Chung Wang, On the Jacobian conjecture, Taiwanese J. Math. 9 (2005), no. 3, 421–431. MR2162887
+[10] T. T. Moh, On the Jacobian conjecture and the configurations of roots, J. Reine Angew. Math. 340 (1983),
+140–212. MR691964 (84m:14018)
+[11] S. Yu. Orevkov, Counterexamples to the “Jacobian conjecture at infinity”, Tr. Mat. Inst. Steklova 235 (2001),
+no. Anal. i Geom. Vopr. Kompleks. Analiza, 181–210 (Russian, with Russian summary); English transl., Proc.
+Steklov Inst. Math. 4(235) (2001), 173–201. MR1886583
+[12] Arno van den Essen, Polynomial automorphisms and the Jacobian conjecture, Progress in Mathematics,
+vol. 190, Birkhäuser Verlag, Basel, 2000. MR1790619 (2001j:14082)
+[13] S. S. Abhyankar, Lectures on expansion techniques in algebraic geometry, Tata Institute of Fundamental
+Research Lectures on Mathematics and Physics, vol. 57, Tata Institute of Fundamental Research, Bombay,
+1977. Notes by Balwant Singh. MR542446 (80m:14016)
+
+
