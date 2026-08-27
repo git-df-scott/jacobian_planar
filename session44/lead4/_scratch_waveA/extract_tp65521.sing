@@ -21,7 +21,7 @@ poly Pd18 = 0;
 poly Pd19 = 0;
 poly Pd20 = 0;
 poly Pd21 = 0;
-poly Rr0 = 1*x^3;
+poly Rr0 = 1*x^4;
 poly Rr1 = 0;
 poly Rr2 = 0;
 poly Rr3 = 0;
@@ -71,27 +71,27 @@ poly t; int e; matrix cf;
 t = Q1;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 3) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 4) { I = I + ideal(cf[e, 1]); }
 }
 t = Q2;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 3) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 4) { I = I + ideal(cf[e, 1]); }
 }
 t = Q3;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 4) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 5) { I = I + ideal(cf[e, 1]); }
 }
 t = Q4;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 4) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 5) { I = I + ideal(cf[e, 1]); }
 }
 t = Q5;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 5) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 6) { I = I + ideal(cf[e, 1]); }
 }
 t = Q6;
 cf = coeffs(t, x);
@@ -101,12 +101,12 @@ for (e = 1; e <= nrows(cf); e++) {
 t = Q7;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 6) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 7) { I = I + ideal(cf[e, 1]); }
 }
 t = Q8;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 7) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 8) { I = I + ideal(cf[e, 1]); }
 }
 t = Q9;
 cf = coeffs(t, x);
@@ -116,7 +116,7 @@ for (e = 1; e <= nrows(cf); e++) {
 t = Q10;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 0 || e-1 > 8) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 0 || e-1 > 9) { I = I + ideal(cf[e, 1]); }
 }
 t = Q11;
 cf = coeffs(t, x);

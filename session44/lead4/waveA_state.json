@@ -83,5 +83,25 @@
   "tier": "loose",
   "budget": 900,
   "secs": 6
+ },
+ "(12,36)/21/4,9/12/4,5 (m,n)=2,3 | a=4 b=6 c'=6 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 86,
+    "out": "params: 74 | conditions: 46 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 100,
+    "out": "params: 74 | conditions: 46 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 144,
+  "params": 74,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 185
  }
 }
