@@ -25,6 +25,33 @@ from walk_sym import hull_rows
 
 
 
+
+MODP = None
+
+
+def _red(e):
+    """Reduce rational coefficients mod MODP (identity when MODP is None).
+
+    The descent's algebra is unchanged; only the coefficient ring changes.
+    Rational-coefficient growth is what stalls the exact walk, and mod p each
+    coefficient is a single small integer. A modular run is a SEARCH device:
+    an EMPTY here is emptiness mod p only, and any candidate must be lifted
+    and re-verified exactly before it means anything.
+    """
+    e = sp.expand(e)
+    if MODP is None:
+        return e
+    if not e.free_symbols:
+        r = sp.Rational(e)
+        return sp.Integer((r.p * pow(int(r.q), MODP - 2, MODP)) % MODP)
+    out = 0
+    for mono, c in e.as_coefficients_dict().items():
+        r = sp.Rational(c)
+        cc = (r.p * pow(int(r.q), MODP - 2, MODP)) % MODP
+        if cc:
+            out += sp.Integer(cc) * mono
+    return sp.expand(out)
+
 def branch_solve(e, unks):
     """Solve one condition e = 0, returning a LIST of substitution dicts --
     one per factor (every zero branch retained). None means unsatisfiable."""
@@ -97,7 +124,7 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
                     for i2, c2 in enumerate(B):
                         if c2 == 0:
                             continue
-                        acc[i1 + i2] += sc * c1 * c2
+                        acc[i1 + i2] = _red(acc[i1 + i2] + sc * c1 * c2)
             def drow(jj):
                 if jj not in DR:
                     return []
@@ -114,7 +141,7 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
                 if a >= 1 and a in DR and (b + 1) in Q:
                     addp([sp.expand(i * c) for i, c in enumerate(drow(a))][1:],
                          Q[b + 1], -(b + 1))
-            Q[k + 1] = [sp.expand(c / (k + 1)) for c in acc]
+            Q[k + 1] = [_red(c / (k + 1)) for c in acc]
         return Q
 
     def conds(assign, upto):
@@ -125,7 +152,7 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
             lo, hi = OR_.get(jj, (1, 0))
             for i, c in enumerate(row):
                 if i < lo or i > hi:
-                    e = sp.expand(c)
+                    e = _red(c)
                     if e != 0:
                         out[(jj, i)] = e
         return out
@@ -142,7 +169,7 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
             unks = [coeff[(j, i)] for i in range(DR[j][0], DR[j][1] + 1)
                     if coeff[(j, i)] not in assign]
             eqs = [v for k, v in C.items() if k[0] <= j + 1]
-            eqs = [sp.expand(e) for e in eqs if sp.expand(e) != 0]
+            eqs = [_red(e) for e in eqs if _red(e) != 0]
             if not eqs:
                 continue
             sols = None
@@ -169,7 +196,7 @@ def analyse(NP, NQ, r, maxbranch=40, verbose=True):
                 dead = f"level {j}: required vertex {bad} forced to 0"
                 break
             assign = dict(assign)
-            assign.update({k: sp.expand(v) for k, v in s0.items()})
+            assign.update({k: _red(v) for k, v in s0.items()})
             if s0:
                 hist = hist + [f"L{j}:{ {str(k): str(v) for k,v in s0.items()} }"]
         if dead:
