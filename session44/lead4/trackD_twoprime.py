@@ -53,6 +53,7 @@ def classify(out):
     if "live component" in out: return "LIVE"
     if "VERDICT: EMPTY" in out: return "EMPTY"
     if not (out or "").strip(): return "TIMEOUT"   # OOM-killed / no output
+    if "no more memory" in out: return "TIMEOUT"   # Singular OOM under shim
     return "UNKNOWN"
 
 

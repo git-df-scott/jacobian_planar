@@ -38,5 +38,45 @@
   "tier": "sec6>=125",
   "budget": 600,
   "secs": 233
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 75,
+    "out": "Singular error: no more memory | System 5468180k:5468275k Appl 5382448k/85483k Malloc 35k/0k Valloc 5467896k/85483k Pages 1366974/0 Regions 3115:3115 Internal: 351504 |  | halt 14"
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 72,
+    "out": "Singular error: no more memory | System 5468180k:5468275k Appl 5382448k/85483k Malloc 35k/0k Valloc 5467896k/85483k Pages 1366974/0 Regions 3115:3115 Internal: 351344 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 147
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 77,
+    "out": "Singular error: no more memory | System 5468180k:5468263k Appl 5382436k/85483k Malloc 35k/0k Valloc 5467884k/85483k Pages 1366971/0 Regions 3112:3112 Internal: 351720 |  | halt 14"
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 75,
+    "out": "Singular error: no more memory | System 5468180k:5468263k Appl 5382436k/85483k Malloc 35k/0k Valloc 5467884k/85483k Pages 1366971/0 Regions 3112:3112 Internal: 351968 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 152
  }
 }
