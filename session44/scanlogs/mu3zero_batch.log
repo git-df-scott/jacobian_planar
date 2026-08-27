@@ -5,3 +5,6 @@ D2 (derived p0' == printed (3.3)): PASS
 D3 (planted deg-3 solution annihilates j=2 system): PASS
 F-system j=2 (deg q1=3) mu3=1 sat[mu0!=0]: EMPTY
 D4 (j=2 mu0!=0 must be EMPTY): PASS
+F-system j=2 (deg q1=3) mu3=0 sat[mu0!=0]: TIMEOUT
+=== j=2 mu1 gauge 0 ===
+D0 (eq3 identity for the paper's q1,p2 ansatz): PASS

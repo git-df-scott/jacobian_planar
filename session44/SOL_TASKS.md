@@ -1,3 +1,21 @@
+# T0 — THE OPEN (72,108) CASE (highest priority, supersedes T1-T4 ordering)
+
+GGHV arXiv:2204.14178 left exactly ONE case below max-degree 125 open —
+one of the two (72,108) shapes — saying "we couldn't solve the
+corresponding system of polynomial equations" (2022 CAS technology).
+See session44/OPERATION_108.md. What sol should run, in order:
+
+1. `session44/lead4/trackD_targets_108.json` holds both (72,108) reduced
+   chart systems (params 25 and 61). Run them through msolve/Singular
+   char-0 with mu-saturation as in the trackD pipeline; this box is
+   running the mod-p two-prime pass already.
+2. The derivation-grade D_k (approximate-root) systems will be committed
+   as `session44/deg108_dk.py` once the derivation passes its controls —
+   msolve char-0 those; the (66,99) system is the control (must come out
+   EMPTY, reproducing the paper's published kill).
+Verdict standards unchanged: two primes agree; char-0 for claims;
+witness replay; a reduced survivor is never a CE.
+
 # Tasks for Sol (bigger-box compute; artifacts on branch claude/past-code-session-8mdjqn)
 
 Context: Session 44 rebuilt the B=16 program on the F-system — the Pro
