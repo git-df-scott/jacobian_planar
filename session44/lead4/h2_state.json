@@ -1,1 +1,42 @@
-{}
+{
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 154,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 149,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 303
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 142,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 91,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 233
+ }
+}
