@@ -268,12 +268,22 @@ Instrument validation, run before the verdict was trusted:
   FACE REDUCTION: the essential-face variety still has vdim 35 modulo each
   prime used, so no face solutions are lost or gained by the reduction.
 
-  SYMMETRY: it suffices to test ONE point per cover.  The mu_7 ambiguity
+  SYMMETRY -- CHECKED, NOT ASSERTED (`case1_symmetry.py`).  It suffices to
+  test ONE point per cover, because the mu_7 ambiguity
   (u -> t u, a_i -> t^i a_i, b_j -> t^j b_j) is induced by the genuine
-  symmetry (x,y) -> (tx, y) followed by P -> t^{-1}P, Q -> t^{-2}Q, which
-  preserves the Newton polygons and the equation [P,Q] = x^2.  Likewise
-  (P,Q) -> (lam P, lam^{-1} Q).  So the 35 face points form 5 orbits and a
-  representative of each is enough.
+  symmetry phi(x,y) = (tx, y) followed by P -> t^{-1}(P o phi),
+  Q -> t^{-2}(Q o phi).  Run at t = 2,3,5,7,11,-1 on an explicit face point,
+  all four things were verified numerically each time: the coefficient rule
+  really is the u-scaling, the transformed pair still has [P,Q] = x^2, it
+  still satisfies W = 1, and both supports stay inside the polygons.
+  Likewise (P,Q) -> (lam P, lam^{-1} Q).  So the 35 face points form 5
+  orbits of size 7 and a representative of each is enough -- which matters
+  here because modulo a prime with 7 not dividing p-1 exactly one point of
+  each mu_7 orbit is F_p-rational, and those are the ones tested.
+
+  (This was the one step in the chain still resting on a paper argument.
+  An earlier session's Prop 3.12 route died precisely on an unchecked
+  convention, so it was checked.)
 
 Result, for each of the FIVE covers, at primes where all five are
 F_p-rational (chosen with 7 not dividing p-1 so the 7th root is unique):
@@ -386,3 +396,5 @@ check the containment argument and reproduce it independently.
   case1_envcheck.py  the campaign pipeline on the known-EMPTY target
   case1_obstruction.py  which vertex the cascade kills (answer: all of them)
   case1_vertexpolys.py  the vertex coefficients as explicit polynomials
+  case1_symmetry.py     verification that the mu_7 normalisation really is
+                        a symmetry of the full problem
