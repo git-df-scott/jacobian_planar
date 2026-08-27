@@ -344,13 +344,22 @@ the whole elimination pipeline against the literature).
 **1. Upgrade the verdicts to characteristic zero.**  This is the highest-value
 work and it is well-defined.  Two routes:
 
-   * *Subcase 2, cheap route.*  Prove `(p,s) = 0` on the `deg q = 8` branch.
-     Section 3d then finishes the subcase in characteristic zero with no
-     further computation.  This is a question about the linear operator
-     `E3(p,s) = 3p't + 2q's - pt' - 2qs'` over the quintic field carrying the
-     five covers.  Known kernel element: `(0, c*q)`, excluded by the support
-     constraint `val s >= 2 > 1 = val q`.  The reported kernel dimension was
-     2 — IDENTIFY THE SECOND ELEMENT.  That is the crux and it is small.
+   * *Subcase 2.*  Section 3d shows that IF `p = s = 0` then the subcase is
+     empty in characteristic zero, with no computation.  **But `p = s = 0` is
+     not forced by `E3` alone, and an earlier version of this handoff wrongly
+     said it was.**  Counting settles it: with the polygon supports, `p` has
+     u-exponents 1..8 and `s` has 2..12, so `E3(p,s) = 3p't + 2q's - pt' -
+     2qs'` is **18 equations in 19 unknowns** (its u-powers run 2..19).  The
+     kernel is therefore at least 1-dimensional at EVERY face point, by pure
+     dimension count, independent of `(q,t)`.  So "identify the second kernel
+     element and you are done" is wrong — checked, not assumed
+     (`session44/verify`).
+     The obstruction has to come from the composite `E3 -> E2 -> E1 -> E0`:
+     parameterise `ker E3` over the field carrying the five covers, substitute
+     into `E2` (linear in `f,r`), then `E1` (linear in `g`), then `E0`, and
+     show the composite forces `f' = 0`.  Section 3d is then the finish.
+     That is the real characteristic-zero route, and it is the same order of
+     work as the subcase-1 route below, not cheaper.
    * *Subcase 1, heavy route.*  Redo the cascade over the quintic number field
      down to depth `W = -11`.  Mechanical but expensive; the minlevel probe
      says shallow depths do not suffice.
