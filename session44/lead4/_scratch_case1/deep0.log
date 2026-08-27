@@ -18,3 +18,10 @@ W= -13 eqs   9 unk   0 rank   0 newparams 0 newconds  8 (deg<=17)  params 9 cond
 W= -14 eqs   8 unk   0 rank   0 newparams 0 newconds  7 (deg<=18)  params 9 conds 103
 W= -15 eqs   7 unk   0 rank   0 newparams 0 newconds  6 (deg<=19)  params 9 conds 109
 W= -16 eqs   6 unk   0 rank   0 newparams 0 newconds  5 (deg<=20)  params 9 conds 114
+W= -17 eqs   5 unk   0 rank   0 newparams 0 newconds  4 (deg<=21)  params 9 conds 118
+W= -18 eqs   4 unk   0 rank   0 newparams 0 newconds  3 (deg<=22)  params 9 conds 121
+W= -19 eqs   3 unk   0 rank   0 newparams 0 newconds  2 (deg<=23)  params 9 conds 123
+W= -20 eqs   2 unk   0 rank   0 newparams 0 newconds  1 (deg<=24)  params 9 conds 124
+W= -21 eqs   1 unk   0 rank   0 newparams 0 newconds  0 (deg<=0)  params 9 conds 124
+
+RESULT: ('SURVIVES (all levels done)', None, 124, 9)
