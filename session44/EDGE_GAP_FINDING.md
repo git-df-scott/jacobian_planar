@@ -305,9 +305,17 @@ the face collapses to a single point, and subcase 2 is empty.
 ## Status / caveats
 
   * The elimination and the 45 obstructions are EXACT over Q.
-  * The decision (all f_a, p_a forced to 0) is MODULAR: complete over all 35
-    q-solutions at p = 999983 (and at p = 1000003), plus 9 rational q's at 8
-    more primes.  It is not yet a characteristic-zero proof.
+  * The decision (all f_a, p_a forced to 0) is MODULAR.  It is COMPLETE over
+    all 35 solutions of the q-layer at TWO primes:
+        p =  999983  eliminant factors 1,1,3,6,6,6,6,6   -> 128/128 forced-zero
+        p = 1000003  eliminant factors 1,2,2,3,3,6,6,6,6 -> 144/144 forced-zero
+    and holds for 9 GF(p)-rational q at 8 further primes.  It is not yet a
+    characteristic-zero proof: a mod-p verdict does not formally lift, though a
+    char-0 point with f5 != 0 would reduce to one mod almost every prime, so two
+    complete primes plus eight partial ones is strong.
+  * Direct Groebner attempts on the whole ungauged 20-23 variable system
+    (msolve, GF(65521), 90 min) did not terminate; the layered cascade is what
+    makes the problem decidable at all.
   * It covers deg q = 8, which is forced by the vertex (8,14) of N(P), so it
     covers all of subcase 2.  The branches deg q in {1,2,4,6} (a_14_8 = 0) lie
     outside subcase 2; they are not needed for the emptiness claim but are not
