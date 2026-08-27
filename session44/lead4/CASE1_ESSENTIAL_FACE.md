@@ -286,8 +286,28 @@ F_p-rational (chosen with 7 not dividing p-1 so the 7th root is unique):
     ==> over the algebraic closure of F_p there is NO pair (P,Q) with
         support in N(P), N(Q), all vertices present, and [P,Q] = x^2.
 
-Primes tested, five covers each: 5189, 5441, 7523 (and 8053, 11827 queued).
-Every one of the fifteen face points returns EMPTY.
+Primes tested, five covers each: 5189, 5441, 7523, 8053 -- twenty face
+points, twenty EMPTY verdicts, no exceptions.
+
+## 8a. The obstruction, sharpened
+
+Testing each vertex separately (`case1_obstruction.py`, p = 5189, cover 0)
+shows the cascade does not merely fail to make them SIMULTANEOUSLY nonzero.
+Each one is individually impossible:
+
+    P at (0,8)   FORCED TO ZERO by the cascade
+    P at (8,16)  FORCED TO ZERO
+    Q at (0,12)  FORCED TO ZERO
+    Q at (12,24) FORCED TO ZERO
+    and the parameter t2 itself is FORCED TO ZERO
+
+So the statement is stronger and cleaner than "subcase 1 is empty":
+
+    modulo p, EVERY pair (P,Q) with support in the two pentagons and
+    [P,Q] = x^2 has its whole upper part vanish -- its Newton polygon
+    collapses onto the essential edge (1,0)-(8,14), resp. (2,1)-(12,21).
+    The pentagon is not merely unrealisable, it is unreachable in every
+    direction at once.
 
 Shape of the obstruction, at p = 5189, cover 0 (all five look the same):
 the level-0 condition is a PERFECT SQUARE binary quadratic in (t2^2, t5),
@@ -335,6 +355,25 @@ in this work has been lifted to honest polynomials in the original
 coordinates with the Jacobian verified to be a nonzero constant -- the
 standard caveat applies in full.
 
+## 10. A consequence for the OTHER subcase, flagged not claimed
+
+Subcase 2's polygons are the QUADRILATERALS obtained by deleting the
+vertices (0,8) and (0,12), and deleting a vertex SHRINKS a hull:
+
+    hull{(0,0),(1,0),(8,14),(8,16)}  is contained in
+    hull{(0,0),(1,0),(8,14),(8,16),(0,8)}
+
+and likewise for Q.  Subcase 2 has the SAME essential face (direction
+(2,-1), same two edges, same weight arithmetic 2+3-1 = 4 = w(x^2)), hence
+the same 35 face solutions.  So any subcase-2 realisation is in particular a
+pair with support inside subcase 1's pentagons with the vertices (8,16) and
+(12,24) nonzero -- which the computation above says is impossible mod p.
+
+That would make subcase 2 empty mod p as well.  It is recorded here as an
+IMPLICATION OF THIS COMPUTATION, not as a result: subcase 2 is another
+line's work and was deliberately not run here.  Whoever owns it should
+check the containment argument and reproduce it independently.
+
 ## Files (part II)
   case1_cascade.py   slices, the bracket formula and its verification,
                      level-by-level bookkeeping
@@ -345,3 +384,5 @@ standard caveat applies in full.
   case1_verdict.py   all five covers at one prime
   case1_validate.py  positive and negative controls
   case1_envcheck.py  the campaign pipeline on the known-EMPTY target
+  case1_obstruction.py  which vertex the cascade kills (answer: all of them)
+  case1_vertexpolys.py  the vertex coefficients as explicit polynomials
