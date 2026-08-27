@@ -331,6 +331,12 @@ so t5 = t2^2/3507 on the nose, while the two upper vertices are
 
 Neither vanishes identically on the level-0 locus, so the kill is not a
 one-line corner argument; it takes the levels down to W = -11.
+Measured directly (`case1_minlevel.py`, which adds the vertex conditions to
+the partial cascade at each depth): at depth W = 0 (2 conditions) and depth
+W = -1 (4 conditions) a live component still survives.  So the obstruction
+is genuinely NOT shallow -- which is the practical reason a
+characteristic-zero version is expensive: it would have to redo many levels
+of the cascade over the quintic number field, not just the first one or two.
 The perfect-square degeneracy is NOT an artefact of one prime: the
 discriminant of that binary quadratic is 0 for every cover at every prime
 tested (5189, 5441, 7523), so it is a structural identity of the cascade.

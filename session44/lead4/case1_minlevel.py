@@ -3,7 +3,12 @@
 
 Adds the Rabinowitsch inverse of the vertex product (and separately of t2)
 to the conditions accumulated down to each level, and reports the first
-level at which the ideal becomes the unit ideal."""
+level at which the ideal becomes the unit ideal.
+
+Convention: case1_descend.run() breaks AFTER processing level W when
+W <= stopW, so stopW is the DEEPEST level actually included -- the printed
+label is stopW itself, not stopW+1.  (An earlier version printed stopW+1
+and mislabelled every line by one level.)"""
 import subprocess, sys
 import case1_descend as CD
 from case1_cascade import SP, SQ, base
@@ -16,7 +21,7 @@ for stopW in range(0, -13, -1):
     L = CD.LAST
     RG, Pw, Qw, conds = L["RG"], L["Pw"], L["Qw"], L["conds"]
     if not conds:
-        print("levels down to W=%d : no conditions yet" % (stopW + 1))
+        print("levels down to W=%d : no conditions yet" % stopW)
         continue
     names = ["t%d" % (i + 1) for i in range(len(L["params"]))]
     picks = []
@@ -30,7 +35,7 @@ for stopW in range(0, -13, -1):
             if pol:
                 picks.append(RG.s(pol, names))
     if not picks:
-        print("levels down to W=%d : vertices not yet reached" % (stopW + 1))
+        print("levels down to W=%d : vertices not yet reached" % stopW)
         continue
     nd = "*".join("(%s)" % q for q in picks)
     src = ["ring R = %d, (%s,z), dp;" % (p, ",".join(names)),
@@ -46,7 +51,7 @@ for stopW in range(0, -13, -1):
     o = subprocess.run(["Singular", "-q", fn], capture_output=True,
                        text=True, timeout=3000).stdout.strip()
     print("levels down to W=%d : %d conditions, %d vertices available -> %s"
-          % (stopW + 1, len(conds), len(picks),
+          % (stopW, len(conds), len(picks),
              o.splitlines()[-1] if o else "?"), flush=True)
     if o.strip().endswith("EMPTY"):
         break
