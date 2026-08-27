@@ -261,8 +261,11 @@ For every one of the 35 q's (128/128 saturation tests, GF(999983); repeated for
 
 So:
 
-  1. a_10_5 = f5 = 0 IS forced.  The prediction of PREDICTION_AND_SUBCASE1.md
-     survives its falsification test.
+  1. a_10_5 = f5 = 0 IS forced ON SUBCASE 2 (i.e. once a_14_8 != 0, the vertex
+     (8,14), is imposed).  The prediction of PREDICTION_AND_SUBCASE1.md
+     survives its falsification test in that -- and only that -- reading; see
+     "SHARPENING" below, where an exact char-0 solution with a_2_1 = a_4_2 = 0
+     and a_10_5 != 0 is exhibited on a degenerate polygon.
 
   2. But so are a_6_3, a_8_4, a_12_6, a_14_7 and a_16_8.  The only solutions
      are   P = a_00 + q(u) z^2 ,  Q = b_00 + t(u) z^3 ,  with 2qt' - 3q't = u^2
@@ -317,6 +320,44 @@ the face collapses to a single point, and subcase 2 is empty.
     (msolve, GF(65521), 90 min) did not terminate; the layered cascade is what
     makes the problem decidable at all.
   * It covers deg q = 8, which is forced by the vertex (8,14) of N(P), so it
-    covers all of subcase 2.  The branches deg q in {1,2,4,6} (a_14_8 = 0) lie
-    outside subcase 2; they are not needed for the emptiness claim but are not
-    yet fully decided.
+    covers all of subcase 2.
+
+## SHARPENING: the vertex condition is INDISPENSABLE (exact, char 0)
+
+The branch deg q = 1 (q = u, i.e. a_14_8 = 0 -- outside subcase 2, but inside
+the descent's raw ideal, which only imposes SUPPORTS) is decided exactly over
+Q by radical propagation: obstruction (16,2) = c*p8^2, then (14,2) = c*p7^2,
+(17,1) = c*p6^3, (14,1) = c*p5^3, (16,0) = c*f8^2, each a pure power of a
+single variable, so p5 = p6 = p7 = p8 = f8 = 0 exactly.  The remainder is 9
+unknowns / 11 obstructions, and on the ansatz f = a00 + u^5, p = alpha u^3 the
+entire system collapses to the SINGLE exact equation
+
+        7 alpha^4 - 60 alpha^2 + 150 = 0        (irreducible over Q)
+
+giving, over the quartic field K = Q[alpha]/(that), the EXACT solution
+
+  P = a00 + x + alpha x^3 y^5 + x^5 y^10
+  Q = b00 + x^2 y + (7 alpha/6) x^4 y^6 + (7 alpha^2/33 + 15/11) x^6 y^11
+          + (alpha(250 - 21 alpha^2)/528) x^8 y^16
+
+verified symbolically:  [P,Q] = x^2  identically in K[x,y].  Its supports lie
+inside N(P) and N(Q), and
+
+        a_2_1 = 0 ,   a_4_2 = 0 ,   but   a_10_5 = 1 != 0 .
+
+So, stated precisely:
+
+  * from the bracket equation + supports + (a_2_1 = 0, a_4_2 = 0) ALONE,
+    a_10_5 = 0 does NOT follow -- there is an explicit characteristic-zero
+    counterexample;
+  * it follows only once the vertex condition a_14_8 != 0 (the vertex (8,14)
+    of N(P)) is also imposed -- i.e. only on genuine subcase 2, where in fact
+    the whole face collapses and the subcase is empty.
+
+This witness also refutes the edge-gap pattern head on: its face coefficients
+along (0,0)-(8,16) are (a00, 0,0,0,0, 1, 0,0,0), i.e. a_1 = a_2 = 0 with
+a_5 != 0 -- exactly the opposite of the predicted "gap at 1,2,5".  (f = a00+u^5
+is of course not R^2 either.)
+
+The branches deg q in {2,4,6} (also a_14_8 = 0, also outside subcase 2) are
+left undecided; they cannot affect the subcase-2 conclusion.

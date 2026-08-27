@@ -1,0 +1,12 @@
+alpha is a root of   7*alpha^4 - 60*alpha^2 + 150 = 0   (irreducible over Q: True )
+
+P = a00 + x + alpha*x^3*y^5 + x^5*y^10
+Q = b00
+      + (1) * x^2*y^1
+      + (7*alpha/6) * x^4*y^6
+      + (7*alpha**2/33 + 15/11) * x^6*y^11
+      + (alpha*(250 - 21*alpha**2)/528) * x^8*y^16
+
+[P,Q] = x^2 exactly.   a_2_1 = 0,  a_4_2 = 0,  a_10_5 = 1 != 0.
+N(P) = conv{(0,0),(1,0),(5,10)}   (NOT the subcase-2 quadrilateral:
+       a_14_8 = 0 and a_16_8 = 0, so the vertices (8,14) and (8,16) are absent)
