@@ -21,3 +21,4 @@ dim_full=  1 (was  59) params=104 max=144  (12,36)/21/4,9/19/4,8 (m,n)=2,3 | a=4
 dim_full=  1 (was  56) params=187 max=144  (8,28)/7/4,3 (m,n)=3,4 | a=4 b=4 c'=4 r=2 eps=((2, 1
 dim_full=  1 (was  54) params=194 max=120  (8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=8 r=2 eps=
 dim_full=  1 (was  54) params=194 max=144  (8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=8 r=2 eps=
+dim_full=  1 (was  52) params=206 max=128  F24(m,n)=3,4 | a=8 b=4 c'=4 r=8 eps=((1, 0),(8, 1))
