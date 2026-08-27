@@ -18,5 +18,20 @@
   "tier": "loose",
   "budget": 900,
   "secs": 3
+ },
+ "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 900,
+    "out": ""
+   }
+  },
+  "max": 64,
+  "params": 51,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 900
  }
 }

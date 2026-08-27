@@ -1,0 +1,4 @@
+W1 recurrence+bracket vs sympy (below y^19): PASS
+W2a gate rejects a random non-solution: PASS
+F24(m,n)=3,4 | a=8 b=4 c'=4 r=4 eps=((1, 0),(4, 1))
+  WALK-FAIL restarts=30 deepest-level=117 profile={'new': 114, 'unks': 75, 'rankA': 75, 'kdims_before': [(0, 1), (1, 4), (2, 7), (3, 9), (4, 12), (5, 14), (6, 17), (7, 19), (8, 22), (9, 24)]} hist={117: 30} nconds=114  (not an emptiness proof)
