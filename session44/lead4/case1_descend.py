@@ -19,6 +19,8 @@ it contains 1 (that cover is then EMPTY over F_p).
 import subprocess
 import sys
 
+LAST = {}
+
 from case1_cascade import SP, SQ, base
 from case1_point import find
 from case1_ranks import level_range
@@ -118,6 +120,7 @@ def run(p, which, verbose=True, check_at=(), dump=None, stopW=-22):
         return None, err
     av, f, g, bad, nr = r
     assert not bad
+    global LAST
     RG = Ring(p)
     Pw = {2: [RG.const(c) for c in f]}
     Qw = {3: [RG.const(c) for c in g]}
@@ -230,6 +233,8 @@ def run(p, which, verbose=True, check_at=(), dump=None, stopW=-22):
             with open(dump, "a") as fh:
                 for c in newc:
                     fh.write("W=%d: %s\n" % (W, RG.s(c, names)))
+        LAST = dict(RG=RG, Pw=Pw, Qw=Qw, conds=conds, params=params,
+                    f=f, g=g)
         if W in check_at and conds:
             v = decide(conds, len(params), p, RG, tag="%d_%d_%d"
                        % (p, which, -W))
@@ -240,6 +245,7 @@ def run(p, which, verbose=True, check_at=(), dump=None, stopW=-22):
                         len(params)), None
         if W <= stopW:
             break
+    LAST = dict(RG=RG, Pw=Pw, Qw=Qw, conds=conds, params=params, f=f, g=g)
     return ("SURVIVES (all levels done)", None, len(conds),
             len(params)), None
 

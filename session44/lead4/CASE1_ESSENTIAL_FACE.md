@@ -181,3 +181,135 @@ campaign has not run.
   case1_orbits.py       mu_7 structure and the quintic's factorisation
   case1_hurwitz.py      Frobenius/Murnaghan-Nakayama counter + brute-force
                         validation ("python3 case1_hurwitz.py validate")
+
+# Part II: the (2,-1)-weight cascade below the face
+
+## 6. The cascade, and why it is the right descent
+
+Grading by w = 2i - j turns the whole problem into UNIVARIATE identities.
+For u = x y^2 and slices written x^a y^b phi(u),
+
+    [x^a y^b phi, x^c y^d psi] = x^{a+c-1} y^{b+d-1}
+        [ (ad-bc) phi psi + (2a-b) u phi psi' - (2c-d) u phi' psi ]
+
+(`case1_cascade.py verify`: checked on 54 explicit cases).  The slices of
+N(P) are w = 2..-8 with 8,8,9,8,7,6,5,4,3,2,1 coefficients (61 in all,
+matching the campaign's own parameter count for this shape) and those of
+N(Q) are w = 3..-12 with 125 coefficients.  Level W of
+
+    sum_{w1+w2 = W+1} [P_w1, Q_w2] = delta_{W,4} x^2
+
+has exactly TWO new unknown slices, P_{W-2} and Q_{W-1}, and they enter
+LINEARLY through L_W(p,q) = [face P, q] + [p, face Q].  Everything else at
+that level is a product of slices already settled.  So the whole system is a
+linear cascade over a growing parameter space -- unlike the y-adic descent,
+whose unknowns are not organised by the face at all.
+
+Ranks of L_W at an explicit face point (`case1_ranks.py`):
+
+    W       3   2   1   0  -1  -2  -3  -4  -5  -6  -7  -8 .. -11  -12..-21
+    ker     2   3   3   1   0   0   0   0   0   0   0     0          0
+    coker   1   1   2   2   4   5   6   7   8   9  10    10          10..1
+
+Total: 9 free parameters against 150 cokernel rows.  Running the cascade
+symbolically in those parameters (`case1_descend.py`) all the way to W = -21
+takes about a minute and produces 124 genuine conditions of degree up to 24
+in the 9 parameters.  The first three levels (W = 3,2,1) impose NOTHING --
+their cokernel rows are automatically satisfied -- and conditions start at
+W = 0 with a binary quartic in two of the parameters only.
+
+## 7. The point that must not be forgotten: the trivial solution
+
+The all-parameters-zero point ALWAYS solves the cascade, because it gives
+
+    P = face(P) = x f(u),    Q = face(Q) = x^2 y g(u),   [P,Q] = x^2
+
+exactly.  That is a real solution of the bracket equation, but its Newton
+polygon is the single essential edge, not the pentagon.  So the cascade
+ideal is NEVER the unit ideal and "the ideal is proper" proves nothing.
+The emptiness question for subcase 1 is precisely whether the cascade has a
+solution with the FOUR remaining vertices present:
+
+    P at (0,8)  = slice P_{-8}          P at (8,16)  = slice P_0, i = 8
+    Q at (0,12) = slice Q_{-12}         Q at (12,24) = slice Q_0, i = 12
+
+all nonzero (the other four vertices lie on the essential face and are
+nonzero there already).  `case1_nondeg.py` adjoins the Rabinowitsch
+inverse of their product and reruns the decision.
+
+## 8. Verdict of the cascade: EMPTY modulo p
+
+Instrument validation, run before the verdict was trusted:
+
+  POSITIVE CONTROL (`case1_validate.py`): the all-parameters-zero point of
+  the cascade was substituted back into the slices, P and Q reassembled as
+  honest polynomials over F_p, and the bracket computed DIRECTLY by
+  polynomial multiplication.  Result: 8 monomials in P and 11 in Q, all
+  inside the polygons, and P_x Q_y - P_y Q_x = x^2 exactly.  The slice
+  bookkeeping, base points, bracket formula, level ranges and linear solves
+  are therefore all correct end to end.
+
+  NEGATIVE CONTROL: with the vertex non-degeneracy conditions REMOVED, the
+  same decision engine reports a live component (dimension 2) rather than
+  EMPTY -- the instrument does not answer EMPTY unconditionally.
+
+  ENVIRONMENT CHECK (`case1_envcheck.py`): the campaign's own Singular
+  pipeline, re-run in this container on trackD_targets_validate.json,
+  reproduces the EMPTY verdict the independent run reported.
+
+  FACE REDUCTION: the essential-face variety still has vdim 35 modulo each
+  prime used, so no face solutions are lost or gained by the reduction.
+
+  SYMMETRY: it suffices to test ONE point per cover.  The mu_7 ambiguity
+  (u -> t u, a_i -> t^i a_i, b_j -> t^j b_j) is induced by the genuine
+  symmetry (x,y) -> (tx, y) followed by P -> t^{-1}P, Q -> t^{-2}Q, which
+  preserves the Newton polygons and the equation [P,Q] = x^2.  Likewise
+  (P,Q) -> (lam P, lam^{-1} Q).  So the 35 face points form 5 orbits and a
+  representative of each is enough.
+
+Result, for each of the FIVE covers, at primes where all five are
+F_p-rational (5189, 5441, 7523 -- chosen with 7 not dividing p-1 so the
+7th root is unique):
+
+    the cascade conditions down to level W = -11 (88 of the 124), together
+    with the four vertex conditions
+        P(0,8) != 0, P(8,16) != 0, Q(0,12) != 0, Q(12,24) != 0
+    generate the UNIT IDEAL.
+
+    ==> over the algebraic closure of F_p there is NO pair (P,Q) with
+        support in N(P), N(Q), all vertices present, and [P,Q] = x^2.
+
+Only a subset of the conditions is used, which is the safe direction: fewer
+conditions means a larger variety, so emptiness of the subsystem implies
+emptiness of the full system.
+
+## 9. What this is, stated exactly
+
+THIS IS A MODULAR RESULT.  It says subcase 1 has no realisation in
+characteristic p, for the primes tested.  It is NOT a characteristic-zero
+proof.  A characteristic-zero solution would reduce to a solution modulo
+almost every prime, so the modular emptiness at several independently chosen
+primes is strong evidence that subcase 1 is empty over C -- but a specific
+prime can be a bad prime, and no bound on bad primes has been computed here.
+Turning this into a theorem needs the same cascade run over the quintic
+number field of the five covers (or over Q with the face left as an ideal),
+which is a heavier but entirely mechanical computation.
+
+AND, INDEPENDENTLY OF ALL OF THAT: even a non-degenerate (P,Q) here would
+NOT be a counterexample to the Jacobian Conjecture.  GGHV Prop 4.3 is a
+one-way implication: a counterexample in case (8,28) forces such a (P,Q) to
+exist.  Producing one does not run the implication backwards.  And nothing
+in this work has been lifted to honest polynomials in the original
+coordinates with the Jacobian verified to be a nonzero constant -- the
+standard caveat applies in full.
+
+## Files (part II)
+  case1_cascade.py   slices, the bracket formula and its verification,
+                     level-by-level bookkeeping
+  case1_ranks.py     ranks / kernels / cokernels of L_W
+  case1_point.py     an explicit F_p point of the face variety, verified
+  case1_descend.py   the symbolic cascade in the free parameters
+  case1_nondeg.py    cascade + the four vertex non-degeneracy conditions
+  case1_verdict.py   all five covers at one prime
+  case1_validate.py  positive and negative controls
+  case1_envcheck.py  the campaign pipeline on the known-EMPTY target
