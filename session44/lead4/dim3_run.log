@@ -1,0 +1,1 @@
+primes [65521, 65539]  targets 2  queue 2  budget 1800s/prime

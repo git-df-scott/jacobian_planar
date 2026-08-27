@@ -1,0 +1,37 @@
+{
+ "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 22,
+    "out": "params: 18 | conditions: 28 | time: 22 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 24,
+    "out": "params: 18 | conditions: 28 | time: 24 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 75,
+  "params": 18,
+  "tier": "?",
+  "budget": 600,
+  "secs": 46
+ },
+ "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 600,
+    "out": ""
+   }
+  },
+  "max": 108,
+  "params": 25,
+  "tier": "?",
+  "budget": 600,
+  "secs": 600
+ }
+}
