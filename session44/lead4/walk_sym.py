@@ -67,6 +67,7 @@ def build_walk(NP, NQ, r, jextra=2, maxlevel=None, verbose=True):
     # and is labelled as such.
     assign = {coeff[(0, 1)]: sp.Integer(1)}
     obstructions = []
+    branches = []
 
     def drow(j):
         lo, hi = DR[j]
@@ -77,12 +78,13 @@ def build_walk(NP, NQ, r, jextra=2, maxlevel=None, verbose=True):
         return [sp.Integer(0)] * r + [sp.Integer(sign)] if j == 0 else []
 
     # integrate Q rows: the campaign recurrence, exactly
-    def qrows():
+    def qrows(maxrow=None):
         pivot = sp.expand(coeff[(0, 1)].subs(assign))
         Q = {0: [sp.Integer(0)]}
         R0 = rhs_row(0)
         Q[1] = [sp.cancel(c / pivot) for c in R0]
-        for k in range(1, jmax + 1):
+        KTOP = jmax if maxrow is None else min(jmax, maxrow)
+        for k in range(1, KTOP + 1):
             acc = [sp.Integer(0)] * 40
             def addpoly(P1, P2, scal):
                 for i1, c1 in enumerate(P1):
@@ -108,10 +110,10 @@ def build_walk(NP, NQ, r, jextra=2, maxlevel=None, verbose=True):
     for j in levels:
         if j > top:
             break
-        Q = qrows()
+        Q = qrows(maxrow=j + 2)
         # conditions: Q rows outside the other polygon's support
         conds = {}
-        for jj in range(1, jmax + 1):
+        for jj in range(1, min(jmax, j + 2) + 1):
             row = Q.get(jj, [])
             if jj in OR_:
                 lo, hi = OR_[jj]
@@ -147,15 +149,35 @@ def build_walk(NP, NQ, r, jextra=2, maxlevel=None, verbose=True):
                 e = sp.expand(conds[k].subs(assign))
                 if e != 0:
                     obstructions.append(e)
-            if verbose:
-                print(f"  level {j}: {len(new)} conds, {len(unks)} unknowns "
-                      f"-> {len(obstructions)} obstruction(s) collected",
-                      flush=True)
             if obstructions:
-                break
+                # Descend the obstruction: solve it exactly and continue on
+                # that branch (retaining the zero branch rather than dividing
+                # it away). Only unique/finite solutions are followed; a
+                # branch with no solution is a genuine EMPTY.
+                bs = sp.solve(obstructions, dict=True)
+                if not bs:
+                    if verbose:
+                        print(f"  level {j}: obstruction has NO solution "
+                              f"-> EMPTY on this branch", flush=True)
+                    return obstructions, tsyms, {"levels": levels,
+                                                 "jmax": jmax,
+                                                 "assign": assign,
+                                                 "status": "EMPTY"}
+                br = bs[0]
+                branches.append((j, [str(k) + "=" + str(v)
+                                     for k, v in br.items()]))
+                for k2, v2 in br.items():
+                    assign[k2] = sp.expand(v2)
+                for w in list(assign):
+                    assign[w] = sp.expand(sp.sympify(assign[w]).subs(br))
+                if verbose:
+                    print(f"  level {j}: obstruction {[sp.factor(o) for o in obstructions]}"
+                          f" -> branch {br}, continuing", flush=True)
+                obstructions = []
         done |= set(new)
     return obstructions, tsyms, {"levels": levels, "jmax": jmax,
-                                 "assign": assign}
+                                 "assign": assign, "branches": branches,
+                                 "status": "WALKED"}
 
 
 def main():
