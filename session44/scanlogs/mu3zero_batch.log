@@ -8,3 +8,6 @@ D4 (j=2 mu0!=0 must be EMPTY): PASS
 F-system j=2 (deg q1=3) mu3=0 sat[mu0!=0]: TIMEOUT
 === j=2 mu1 gauge 0 ===
 D0 (eq3 identity for the paper's q1,p2 ansatz): PASS
+F-system j=2 (deg q1=3) mu3=0 sat[mu1!=0]: TIMEOUT
+=== j=3 mu0 gauge 0 ===
+D0 (eq3 identity for the paper's q1,p2 ansatz): PASS
