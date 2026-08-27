@@ -1,0 +1,4 @@
+k=4  d=27  [3^9] , [2^13,1] , [22,1^5]   RH: 52 vs 52
+    triples with product 1 : 152444172305856930250752000000
+    N/d!  (weighted # of covers) : 14
+    predicted # normalised (f,g) = m * N/d! = 126

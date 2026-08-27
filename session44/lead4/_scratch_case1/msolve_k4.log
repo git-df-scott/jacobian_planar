@@ -1,0 +1,66 @@
+
+---------------- TIMINGS ---------------
+overall(elapsed)       35.29 sec
+overall(cpu)           14.51 sec
+select                  0.58 sec   1.6%
+symbolic prep.          0.65 sec   1.9%
+update                 32.12 sec  91.0%
+convert                 0.16 sec   0.5%
+linear algebra          1.71 sec   4.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   462
+#terms in basis                6396
+#pairs reduced                19670
+#GM criterion               8022385
+#redundant elements            3549
+#rows reduced                 40010
+#zero reductions              15785
+max. matrix data              28419 x 35081 (0.085%)
+max. symbolic hash table size  2^16
+max. basis hash table size     2^21
+-----------------------------------------
+
+
+ERR 
+--------------- INPUT DATA ---------------
+#variables                      22
+#equations                      22
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 126
+------------------------------------------------------------------------------------
+msolve overall time          35.31 sec (elapsed) / 14.52 sec (cpu)
+------------------------------------------------------------------------------------
+
+output size 122043
+#Reduced Groebner basis data
+#---
+#field characteristic: 1073741827
+#variable order:       a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, z
+#monomial order:       graded reverse lexicographical
+#length of basis:      462 elements sorted by increasing leading monomials
+#---
+[1*a3^1+671088641*b3^1,
+1*a2^1+1073741826*b2^1,
+1*a1^1+536870912*b1^1,
+1*b13^1*z^1+1073741826,
+1*b12^1*z^1+536870912*a8^1,
+1*a8^1*b13^1+715827884*b12^1,
+1*a8^1*b12^1+6*a7^1*b13^1+1073741823*b11^1,
+1*a8^1*b11^1+1073741823*a7^1*b12^1+1073741818*a6^1*b13^1+6*b10^1,
+1*a8^1*b10^1+715827884
