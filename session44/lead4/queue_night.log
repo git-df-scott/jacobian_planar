@@ -9,3 +9,4 @@ primes [65521, 65539]  targets 70  queue 68  budget 600s/prime
 [2/68] max=140 params=51 UNKNOWN [152s]
     F11(m,n)=2,5 | a=7 b=4 c'=2 r=8 eps=((1, 0),(8, 1))
 primes [65521, 65539]  targets 70  queue 66  budget 600s/prime
+primes [65521, 65539]  targets 70  queue 20  budget 600s/prime

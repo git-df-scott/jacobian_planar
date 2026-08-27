@@ -8,3 +8,4 @@ j=2 (pair 112,80) mu3=0 sat[mu0!=0]=True: EMPTY
 j=2 (pair 112,80) mu3=1 sat[mu1!=0]=True: EMPTY
 ### 1800 2 --gauge 1 --satvar mu2
 ### 1800 2 --gauge 1 --satvar mu2
+### 1800 2 --gauge 1 --satvar mu2
