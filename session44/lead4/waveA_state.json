@@ -1,0 +1,22 @@
+{
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 50 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 50 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 3
+ }
+}
