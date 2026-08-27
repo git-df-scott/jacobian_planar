@@ -184,3 +184,131 @@ Independent of Prop 3.12, and now fully derived:
 That is a genuine, verified structural constraint on any counterexample of
 this shape -- the campaign's first such statement -- and it is what should
 be carried forward, not the Prop 3.12 speculation.
+
+================================================================================
+
+# INDEPENDENT TEST OF THE a_10_5 PREDICTION -- and a RETRACTION of CLAIM 3
+
+Run in session44/lead4 as `uz_*.py`.  Method: a completely independent
+formulation of `[P,Q] = x^2` on the subcase-2 polygons, cross-checked against a
+direct bracket computation in (x,y); it does NOT use any face-form assumption.
+
+## The reformulation
+
+Put u = x y^2, v = y, z = 1/v.  A monomial x^i y^j is u^i v^(j-2i), so the
+weight w = j - 2i is the v-exponent, and both polygons are thin in it:
+w in {0,-1,-2} on N(P) and {0,-1,-2,-3} on N(Q).  Hence
+
+    P = f(u) + p(u) z + q(u) z^2                deg_u <= 8
+    Q = g(u) + r(u) z + s(u) z^2 + t(u) z^3     deg_u <= 12
+
+with p,q,r = O(u), s,t = O(u^2), and (since d(u,v)/d(x,y) = y^2 and
+dv/dz = -z^-2)
+
+    [P,Q]_{x,y} = x^2     <==>     [P,Q]_{u,z} = -u^2 z^4 .
+
+Dictionary to the descent's symbols a_j_i = coeff of x^i y^j:
+
+    f_a = a_{2a}_{a}  (the (0,0)-(8,16) face!),  p_a = a_{2a-1}_{a},
+    q_a = a_{2a-2}_{a}                so   a_2_1 = f1, a_4_2 = f2,
+                                           a_10_5 = f5, a_1_1 = p1,
+                                           a_3_2 = p2, a_6_3 = f3,
+                                           a_0_1 = q1 (= 1, scaling gauge).
+
+Everything is weighted-homogeneous for W(f_a)=5a+1, W(p_a)=5a-2, W(q_a)=5a-5
+(the residual gauge torus), and the equation of bidegree (u^n, z^k) has weight
+5n-3k+2.  Eliminating g,r,s,t (they are determined triangularly) leaves 45
+obstructions in f1..f8, p1..p8, q2..q8, exactly over Q.
+
+## Validation
+
+  * the (u,z) equations reproduce a direct (x,y) bracket on random data;
+  * the descent's obstructions come out IDENTICALLY:
+        level  4: (2,0) = f1^2                        = a_2_1^2
+        level  6: (3,0) = p1^2 f2 /5 (mod f1)          = a_1_1^2 a_4_2
+        level  8: (4,0) = 12/5 f2^2 (mod f1, p1)       = 4 a_4_2^2
+        level 12: (6,0) = -(27 f3^2 - 9 f3 p2^2 + p2^4)/7 (mod f1,f2,p1)
+                                = a_3_2^4 - 9 a_3_2^2 a_6_3 + 27 a_6_3^2
+  * control: msolve over GF(65521) gives ideal + (a_2_1 - 1) = (1), so
+    a_2_1 = 0 really is forced.
+
+## The cascade that decides everything
+
+The obstructions split by z-degree into a triangular cascade:
+
+    (n,4), n=13..18   6 eqs, in q2..q8 ONLY
+    (n,3), n=13..19   7 eqs, LINEAR homogeneous in p over Q[q]
+    (n,2), n=13..19   7 eqs, LINEAR in f, quadratic in p (no f*p mixing --
+                      forbidden by the weight)
+    (n,1), n=13..19   7 eqs
+    (n,0), n= 2..19  18 eqs
+
+The q-layer, with the torus gauge q8 = 1 (q8 = a_14_8 != 0 is exactly the
+vertex (8,14) of N(P)), is 0-dimensional of degree 35.  Over GF(999983) its
+eliminating polynomial factors into irreducibles of degrees 1,1,3,6,6,6,6,6;
+running the cascade over GF(999983)[a]/(h) for every factor covers ALL 35
+solutions.  For each one the p-layer kernel is 2-dimensional and ker(M) on the
+f-layer is 2-dimensional, so the whole remaining system is 4 unknowns and 25
+equations -- decided instantly by Singular.
+
+## RESULT
+
+For every one of the 35 q's (128/128 saturation tests, GF(999983); repeated for
+9 GF(p)-rational q's at 8 further primes):
+
+    f1 = f2 = f3 = f4 = f5 = f6 = f7 = f8 = 0   and
+    p1 = p2 = p3 = p4 = p5 = p6 = p7 = p8 = 0   are ALL forced.
+
+So:
+
+  1. a_10_5 = f5 = 0 IS forced.  The prediction of PREDICTION_AND_SUBCASE1.md
+     survives its falsification test.
+
+  2. But so are a_6_3, a_8_4, a_12_6, a_14_7 and a_16_8.  The only solutions
+     are   P = a_00 + q(u) z^2 ,  Q = b_00 + t(u) z^3 ,  with 2qt' - 3q't = u^2
+     -- verified end to end: [P,Q] = x^2 exactly, with
+        N(P) = conv{(0,0),(1,0),(8,14)}  and  N(Q) = conv{(0,0),(2,1),(12,21)},
+     triangles, NOT the subcase-2 quadrilaterals.
+
+  3. a_16_8 = 0 kills the vertex (8,16).  Modulo the prime, therefore,
+     OPEN SUBCASE 2 IS EMPTY.
+
+## RETRACTION: CLAIM 3 above is WRONG
+
+CLAIM 2 ("the two face forms must commute") is true but VACUOUS, and CLAIM 3
+does not follow from it.  On the w-max face the face forms are
+
+    face(P) = sum_a a_{2a}_a x^a y^{2a} = f(x y^2),   face(Q) = g(x y^2),
+
+i.e. both are polynomials in the SINGLE quantity u = x y^2, so
+[face(P), face(Q)] = 0 identically for ARBITRARY coefficients (checked
+symbolically on random f of degree 8 and g of degree 12).  The lemma
+"commuting quasi-homogeneous forms are powers of a common form" needs a
+POSITIVE weight; here the face has w-degree 0 for the indefinite weight
+w = j - 2i, and the w = 0 graded piece is a commutative subalgebra in which
+every pair commutes.  So gcd(8,12) = 4 gives NOTHING, and
+
+    face(P) = R^2,  face(Q) = R^3,  deg R = 4        is UNFOUNDED.
+
+A second defect: the premise "a_0 = c0^2 != 0 because (0,0) is a vertex" is
+not a constraint at all -- a_0_0 is the constant term of P, which never occurs
+in [P,Q] (constants are in the kernel of the bracket).  It is a free
+normalisation, and the descent's ideal is entirely independent of it.
+
+Consistency check on the retraction: the true forced face form is
+f = a_0_0 (a constant), which is NOT of the shape R^2 with
+R = c0 + c3 u^3 + c4 u^4 and c4 != 0.  The gapped-quartic picture, the
+"at most a double root" statement and the discriminant c0^2(256 c0 c4^3 -
+27 c3^4) should all be withdrawn.  What survives is stronger and different:
+the face collapses to a single point, and subcase 2 is empty.
+
+## Status / caveats
+
+  * The elimination and the 45 obstructions are EXACT over Q.
+  * The decision (all f_a, p_a forced to 0) is MODULAR: complete over all 35
+    q-solutions at p = 999983 (and at p = 1000003), plus 9 rational q's at 8
+    more primes.  It is not yet a characteristic-zero proof.
+  * It covers deg q = 8, which is forced by the vertex (8,14) of N(P), so it
+    covers all of subcase 2.  The branches deg q in {1,2,4,6} (a_14_8 = 0) lie
+    outside subcase 2; they are not needed for the emptiness claim but are not
+    yet fully decided.
