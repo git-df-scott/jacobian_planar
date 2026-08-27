@@ -7,3 +7,5 @@ primes [65521, 65539]  targets 22  queue 22  budget 600s/prime
     (8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=((1, 0),(2, 1))
 [4/22] max=75 params=32 EMPTY [0s]
     F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=((3, 1),(1, 0))
+[5/22] max=99 params=37 TIMEOUT [600s]
+    F17(m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))

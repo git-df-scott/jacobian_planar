@@ -68,5 +68,20 @@
   "tier": "?",
   "budget": 600,
   "secs": 0
+ },
+ "F17(m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 600,
+    "out": ""
+   }
+  },
+  "max": 99,
+  "params": 37,
+  "tier": "?",
+  "budget": 600,
+  "secs": 600
  }
 }
