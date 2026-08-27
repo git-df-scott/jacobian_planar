@@ -74,3 +74,31 @@ This neither finds nor excludes a counterexample:
 The two large formulations died on memory; the 17-unknown one solved in
 minutes. Reduce the system by structure BEFORE handing it to a solver --
 that is what worked, and it is the approach to keep using.
+
+## The face equation is an ODE in a single quantity (verified)
+
+Setting h = g^2 / f^3, one has h'/h = 2g'/g - 3f'/f, hence
+
+    W  =  f g + 2u f g' - 3u f' g  =  f g * (u h)' / h        [VERIFIED True]
+
+so the essential-face condition W = 1 is equivalent to the first-order
+relation
+
+    (u h)'  =  h / (f g),        h = g^2 / f^3.               [VERIFIED True]
+
+(An earlier version of this with h = u f^-3 g^2 was WRONG -- the identity
+check returned False and the extra factor of u was the error. The corrected
+form above checks True.)
+
+READING. The face data is governed by ONE scalar quantity h = g^2/f^3
+rather than by two independent polynomials. That is a rigidity statement,
+and it explains two things observed computationally:
+
+  * why the solution set is FINITE (35 points) rather than a family;
+  * why the coordinates sit in a degree-35 extension and are essentially
+    never individually rational at a small prime -- the 35 solutions are
+    Galois-conjugate points of one rigid configuration, not independent
+    choices.
+
+This is the cleanest description of the leading data any counterexample of
+either open (72,108) subcase must have.

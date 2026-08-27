@@ -112,7 +112,7 @@ def rref(mat, ncol, p):
     return R, T, piv
 
 
-def run(p, which, verbose=True, stop_on_empty=True):
+def run(p, which, verbose=True, check_at=(), dump=None, stopW=-22):
     r, err = find(p, which)
     if err:
         return None, err
@@ -225,26 +225,53 @@ def run(p, which, verbose=True, stop_on_empty=True):
                   "newconds %2d (deg<=%d)  params %d conds %d"
                   % (W, n, ncol, len(piv), len(free), len(newc), maxdeg,
                      len(params), len(conds)), flush=True)
-        if newc and stop_on_empty:
-            v = decide(conds, len(params), p, RG)
+        if dump and newc:
+            names = ["t%d" % (i + 1) for i in range(max(len(params), 1))]
+            with open(dump, "a") as fh:
+                for c in newc:
+                    fh.write("W=%d: %s\n" % (W, RG.s(c, names)))
+        if W in check_at and conds:
+            v = decide(conds, len(params), p, RG, tag="%d_%d_%d"
+                       % (p, which, -W))
             if verbose:
-                print("      ideal after this level: %s" % v, flush=True)
+                print("      ideal after level %d: %s" % (W, v), flush=True)
             if v == "CONTAINS 1":
-                return ("EMPTY", W, len(conds), len(params)), None
-    return ("SURVIVES", None, len(conds), len(params)), None
+                return ("EMPTY at level %d" % W, W, len(conds),
+                        len(params)), None
+        if W <= stopW:
+            break
+    return ("SURVIVES (all levels done)", None, len(conds),
+            len(params)), None
 
 
-def decide(conds, nv, p, RG):
+def decide(conds, nv, p, RG, tag="x", engine="msolve"):
     if not conds:
         return "trivial"
     names = ["t%d" % (i + 1) for i in range(max(nv, 1))]
+    if engine == "msolve":
+        fn = "_scratch_case1/dec_%s.ms" % tag
+        body = ",\n".join(RG.s(c, names).replace("^", "^") for c in conds)
+        open(fn, "w").write(",".join(names) + "\n%d\n" % p + body + "\n")
+        out = fn.replace(".ms", ".res")
+        try:
+            subprocess.run(["msolve", "-f", fn, "-o", out],
+                           capture_output=True, text=True, timeout=3600)
+        except subprocess.TimeoutExpired:
+            return "msolve TIMEOUT"
+        t = open(out).read().strip()
+        if t.startswith("[-1]"):
+            return "CONTAINS 1"
+        if t.startswith("[1,"):
+            return "positive-dimensional"
+        return "zero-dimensional: solutions EXIST"
     src = ["ring R = %d, (%s), dp;" % (p, ",".join(names)),
            "ideal I = " + ",\n".join(RG.s(c, names) for c in conds) + ";",
            "ideal G = std(I);",
            'if (size(G)==1 && G[1]==1) { "CONTAINS 1"; } else '
            '{ "dim " + string(dim(G)); }', "quit;"]
-    open("_scratch_case1/dec.sing", "w").write("\n".join(src))
-    pr = subprocess.run(["Singular", "-q", "_scratch_case1/dec.sing"],
+    fn = "_scratch_case1/dec_%s.sing" % tag
+    open(fn, "w").write("\n".join(src))
+    pr = subprocess.run(["Singular", "-q", fn],
                         capture_output=True, text=True, timeout=1800)
     return pr.stdout.strip().splitlines()[-1] if pr.stdout.strip() else "?"
 
@@ -252,5 +279,10 @@ def decide(conds, nv, p, RG):
 if __name__ == "__main__":
     p = int(sys.argv[1]) if len(sys.argv) > 1 else 10007
     which = int(sys.argv[2]) if len(sys.argv) > 2 else 0
-    res, err = run(p, which)
+    ck = tuple(int(v) for v in sys.argv[3].split(",")) if len(sys.argv) > 3 \
+        else (0, -1, -2, -3, -4, -5, -6)
+    stopW = int(sys.argv[4]) if len(sys.argv) > 4 else -22
+    res, err = run(p, which, check_at=ck,
+                   dump="_scratch_case1/conds_%d_%d.txt" % (p, which),
+                   stopW=stopW)
     print("\nRESULT:", res if res else err)

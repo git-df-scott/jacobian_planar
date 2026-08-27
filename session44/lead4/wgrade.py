@@ -113,7 +113,8 @@ def weight_candidates(NP, NQ):
 
 # ---------------------------------------------------------------- the walk
 class Walk:
-    def __init__(self, NP, NQ, r, weight, sign=1, gauge=None, verbose=True):
+    def __init__(self, NP, NQ, r, weight, sign=1, gauge=None, verbose=True,
+                 tdir=None):
         self.NP, self.NQ, self.r = NP, NQ, r
         self.u, self.v = weight
         self.sign = sign
@@ -127,13 +128,17 @@ class Walk:
         self.gauge = list(gauge or [])
         # direction along the level lines, and the coordinate along it
         g = math.gcd(abs(self.u), abs(self.v))
-        self.d = (-self.v // g, self.u // g)
-        for p, val in self.gauge:
+        # direction along the level lines; the in-level equation order.  It
+        # must run AWAY from the gauge-fixed corner, so that each successive
+        # coefficient equation introduces one new unknown with a rational
+        # pivot -- that is what makes the level systems triangular.
+        self.d = tuple(tdir) if tdir else (-self.v // g, self.u // g)
+        for which, p, val in self.gauge:
             key = tuple(p)
-            if key in self.a:
-                self.assign[self.a[key]] = sp.Integer(val)
-            else:
-                raise SystemExit(f"gauge point {p} not in N(P)")
+            tab = self.a if which == "P" else self.b
+            if key not in tab:
+                raise SystemExit(f"gauge point {p} not in N({which})")
+            self.assign[tab[key]] = sp.Integer(val)
 
     def w(self, p):
         return self.u*p[0] + self.v*p[1]
@@ -158,11 +163,13 @@ class Walk:
             lev[L].sort()
         return lev
 
-    def run(self, order=None):
+    def run(self, order=None, nlevels=None, dump=None):
         lev = self.build()
         Ls = sorted(lev)
         if order == "down":
             Ls = Ls[::-1]
+        if nlevels is not None:
+            Ls = Ls[:nlevels]
         if self.verbose:
             print(f"  weight w(i,j) = {self.u}*i + {self.v}*j ; "
                   f"{len(self.LP)}+{len(self.LQ)} coefficients ; "
@@ -184,8 +191,12 @@ class Walk:
                     s, val = pivot
                     self.assign[s] = val
                     for k in list(self.assign):
-                        self.assign[k] = sp.expand(
-                            sp.sympify(self.assign[k]).subs({s: val}))
+                        if k is s:
+                            continue
+                        vk = self.assign[k]
+                        if getattr(vk, "free_symbols", set()) and \
+                                s in vk.free_symbols:
+                            self.assign[k] = sp.expand(vk.subs({s: val}))
                     solved += 1
                 else:
                     self.conds.append(e)
@@ -194,7 +205,17 @@ class Walk:
                 print(f"    level {L:4d}: {len(lev[L]):4d} eqs -> "
                       f"{solved:4d} eliminated, {ncond:4d} conditions "
                       f"(total {len(self.conds)})", flush=True)
+            if dump:
+                self.save(dump)
         return self.conds
+
+    def save(self, path):
+        import pickle
+        pickle.dump({"conds": [sp.srepr(c) for c in self.conds],
+                     "assign": {str(k): sp.srepr(v)
+                                for k, v in self.assign.items()},
+                     "unassigned": [str(s) for s in self.unassigned()]},
+                    open(path, "wb"))
 
     def pivkey(self, s):
         """triangular preference: eliminate Q-coefficients first, highest

@@ -3,5 +3,3 @@ cands: [(2, -1), (1, 0)]
   weight w(i,j) = -2*i + 1*j ; 25+47 coefficients ; 92 equations in 5 w-levels
     level   -4:   17 eqs ->   11 eliminated,    6 conditions (total 6)
     level   -3:   18 eqs ->   11 eliminated,    7 conditions (total 13)
-    level   -2:   19 eqs ->   12 eliminated,    7 conditions (total 20)
-    level   -1:   19 eqs ->   12 eliminated,    7 conditions (total 27)
