@@ -68,3 +68,5 @@ primes [65521, 65539]  targets 13  queue 13  budget 1500s/prime
     F11(m,n)=2,5 | a=7 b=4 c'=3 r=8 eps=((1, 0),(8, 1))
 [8/13] max=126 params=68 TIMEOUT [1500s]
     (7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=3 r=4 eps=((1, 0),(4, 1))
+[9/13] max=125 params=75 TIMEOUT [230s]
+    F2(m,n)=3,5 | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))

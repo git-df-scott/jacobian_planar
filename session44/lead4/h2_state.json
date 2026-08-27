@@ -338,5 +338,20 @@
   "tier": "sec6>=125",
   "budget": 1500,
   "secs": 1500
+ },
+ "F2(m,n)=3,5 | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 230,
+    "out": "params: 75 | conditions: 149 |  | Singular error: no more memory | System 5458388k:5458388k Appl 5339539k/84954k Malloc 54681k/0k Valloc 5369812k/84954k Pages 1342453/0 Regions 3122:3122 Internal: 371864 |  | halt 14"
+   }
+  },
+  "max": 125,
+  "params": 75,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 230
  }
 }
