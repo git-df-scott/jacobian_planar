@@ -44,3 +44,11 @@ primes [65521, 65539]  targets 70  queue 20  budget 600s/prime
     F24(m,n)=3,4 | a=8 b=4 c'=0 r=7 eps=((7, 1),(1, 0))
 [17/20] max=128 params=82 EMPTY [5s]
     F24(m,n)=3,4 | a=8 b=4 c'=0 r=8 eps=((8, 1),(1, 0))
+[18/20] max=126 params=83 TIMEOUT [600s]
+    (7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=4 r=4 eps=((1, 0),(4, 1))
+[19/20] max=147 params=98 TIMEOUT [537s]
+    F7(m,n)=2,7 | a=3 b=5 c'=0 r=1 eps=((1, 1),(1, 0))
+[20/20] max=126 params=98 TIMEOUT [600s]
+    (7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=5 r=4 eps=((1, 0),(4, 1))
+TALLY: {'UNKNOWN': 4, 'TIMEOUT': 13, 'EMPTY': 7}
+primes [65521, 65539]  targets 13  queue 13  budget 1500s/prime
