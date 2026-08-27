@@ -1,0 +1,16 @@
+### GAUGE CHECK deg5 free-mu3 saturated
+deg(q1)=5 free-mu3 sat=True: EMPTY
+raw: [-1]:
+### deg(q1)=9 mu3=1 saturated (mu0!=0)
+deg(q1)=9 mu3=1 sat=True: EMPTY
+raw: [-1]:
+### deg(q1)=10 mu3=1 saturated (mu0!=0)
+deg(q1)=10 mu3=1 sat=True: EMPTY
+raw: [-1]:
+### deg(q1)=11 mu3=1 saturated (mu0!=0)
+deg(q1)=11 mu3=1 sat=True: EMPTY
+raw: [-1]:
+### deg(q1)=12 mu3=1 saturated (mu0!=0)
+deg(q1)=12 mu3=1 sat=True: EMPTY
+raw: [-1]:
+ABEL-EXT-DONE

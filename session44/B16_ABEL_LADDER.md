@@ -102,3 +102,37 @@ paper's Theorem 1.2 equivalence). A hypothetical `NONEMPTY` at some degree
 would still require the Section-2 lift to explicit `P,Q` and the full binding
 gate before being called a counterexample. The EMPTY verdicts need no such
 caveat — an empty variety is an unconditional non-existence at that degree.
+
+## EXTENDED RESULTS — ladder complete through the resonant cell
+
+`deg(q1) = 9, 10, 11, 12` all **EMPTY** (exact msolve `[-1]`). Gauge check:
+`deg(q1)=5` free-`µ3` also EMPTY, so `µ3=1` is validated at deg 3 and 5.
+
+**Verdict: no B=16 counterexample with `deg(q1) ≤ 12`** — an exact
+characteristic-zero result at every cell, including the campaign's resonant
+`d = 3·2² = 12` cell (its self-described anomaly), which the campaign's brute
+Gröbner approach could never reach (OOM), decided here in minutes via the
+Abel form.
+
+## The conjecture, verified degree by degree (route to B > 16)
+
+The paper's unconditional lemma: `µ1 = µ2 = 0 ⟹ µ0 = 0`. Its open conjecture:
+**every** solution of (3.5) has `µ2 = µ1 = 0` — which with the lemma gives
+`B > 16` outright. Session 44 tests the conjecture's hypothesis directly, per
+degree, by the emptiness of `{(3.5),(3.6), µ_i ≠ 0}`:
+
+| deg(q1) | `µ2 ≠ 0` | `µ1 ≠ 0` |
+|---|---|---|
+| 3 | EMPTY | EMPTY |
+| 4 | EMPTY | EMPTY |
+| 5 | EMPTY | EMPTY |
+| 6 | EMPTY | EMPTY |
+
+So `µ2 = 0` and `µ1 = 0` are **forced** at deg(q1) ≤ 6 — the paper's
+conjecture, verified exactly for the first time beyond the anecdotal. Each row
+re-derives the `µ0 = 0` (no-counterexample) verdict through the conjecture's
+own mechanism, and the uniform pattern is the concrete target for a
+degree-independent proof (the standing route to `B > 16`).
+
+`abel_conj.py` runs these queries; `abel_msolve.py` / `abel_msolve_sweep.sh`
+/ `abel_msolve_ext.sh` run the µ0-ladder; logs under `session44/scanlogs/`.
