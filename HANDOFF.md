@@ -123,13 +123,38 @@ General rule, if you need to re-derive: writing `P = sum a_i z^i`,
 
 Cascade run over `GF(p)[T]/(h)` for every irreducible factor `h` of the
 degree-35 eliminant, so all 35 face solutions are covered at once.  Result:
-`f_1..f_8 = 0` and `p_1..p_8 = 0` forced, at **p = 999983 (128/128)** and
-**p = 1000003 (144/144)**, complete coverage.  Since `f_8 = a_16_8` is the
+`f_1..f_8 = 0` and `p_1..p_8 = 0` forced, at **p = 999983 (128/128)**,
+**p = 1000003 (144/144)** and **p = 1500007 (112/112)** — three primes,
+exhaustive coverage of all 35 face solutions at each.  Since `f_8 = a_16_8` is the
 vertex `(8,16)`, the polygon collapses to a triangle and the subcase is
 empty.  The only surviving solutions are `P = a00 + q(u)z^2`,
 `Q = b00 + t(u)z^3` — reconstructed and verified end-to-end (`[P,Q] = x^2`
 exactly), with triangular Newton polygons.  Consistent with McKay–Wang
 Cor 14 (isomorphism => triangle), which is a good sign.
+
+**Also exact over Q, unconditionally** (not modular): `a_2_1 = 0` and
+`a_4_2 = 0`; and `deg q` is confined to `{1,2,4,6,8}` — every odd degree
+above 1 is inconsistent, which agrees with the independent degree-forcing
+argument above (`3D = 2E` needs `D` even, and `D = 1` survives only because
+there the top coefficient IS the target).
+
+**A REPORTING BUG THAT WAS FOUND AND FIXED — do not re-read the old output.**
+The cascade solves `M f = -Q(p)` per basis quadratic and used to print
+"NO SOLUTION on this branch" when `Q(p)` left `image(M)`.  That is wrong: it
+means only that there are extra cokernel conditions the reduction does not
+carry, so the branch is **UNDECIDED, not empty**.  Consequences:
+
+  * On `deg q = 8` — which is subcase 2 — the `f`-layer is SURJECTIVE for all
+    35 face solutions, checked explicitly.  **The subcase-2 verdict is
+    unaffected.**
+  * On `deg q = 4` and `deg q = 6`, `rank M = 4` with a 3-dimensional
+    cokernel, so those two branches are recorded as **UNDECIDED**.  Neither
+    can touch subcase 2: both lack the vertex `(8,14)`, and the degree-forcing
+    argument above pins subcase 2 to `deg q = 8` exactly.  Direct Groebner on
+    those branches (17/19 variables) did not terminate.
+
+This is exactly the class of error that has to be caught — a bug that turns
+"I could not decide" into "empty" manufactures a false closure.
 
 ### 3b. Subcase 1 — EMPTY mod p
 
@@ -258,6 +283,9 @@ machinery is legitimate there and only there.
   included.  Fixed.  Real data points are depths `W = 0` (2 conditions) and
   `W = -1` (4 conditions), with a live component at both — the obstruction is
   genuinely not shallow, which is why the full verdict needs depth `W = -11`.
+* **"NO SOLUTION" vs "UNDECIDED" in the cascade reduction** — see 3a.  A
+  non-surjective `f`-layer means undecided, never empty.  Fixed in
+  `uz_lowq.py`; the subcase-2 result does not depend on it.
 * **`walk_ideal.py`** failed validation (timed out at 540s on a target
   Singular decided EMPTY in 3s) and was killed rather than trusted.
 * **Singular has no ternary operator** `? :` — it silently produces no output.
