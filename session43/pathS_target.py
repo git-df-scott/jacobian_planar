@@ -92,9 +92,10 @@ def build(dA, dB, alpha_shape='target'):
     return varlist, eqs, (al, A, B, vA, vB, extra)
 
 
-def singular_unit(varlist, eqs, timeout=2400, tag='t'):
+def singular_unit(varlist, eqs, timeout=2400, tag='t', prime=None):
     path = os.path.join(SCRATCH, 'pst_%s.sing' % tag)
-    body = ["ring R = %d, (%s), dp;" % (P, ','.join(str(s) for s in varlist)),
+    pr = prime or P
+    body = ["ring R = %d, (%s), dp;" % (pr, ','.join(str(s) for s in varlist)),
             "ideal I = " + ",\n  ".join(str(e).replace('**', '^') for e in eqs) + ";",
             "ideal G = slimgb(I);",
             'if (size(G) == 1 and G[1] == 1) { "RESULT:EMPTY"; }',
@@ -135,15 +136,45 @@ def main():
             "[%d vars, %d eqs]" % (len(varlist), len(eqs)))
     print()
 
-    print("[B]  CONTROL: alpha_v CONSTANT (alpha = k + c1 u + c2 v).  Alpoge lives")
-    print("     here, so EMPTY would prove the pipeline broken.")
+    print("[B]  TRANSCRIPTION CONTROL.  Asking Singular whether the alpha_v-CONSTANT")
+    print("     system is the unit ideal is the EXPENSIVE direction: that ideal is")
+    print("     positive-dimensional (Gallagher's whole family lies in it), and the")
+    print("     query ran 25 minutes and 700 MB without finishing.  The decisive and")
+    print("     instant control instead: same generator, same Singular transcription,")
+    print("     pin every variable to a point that provably lies on the variety, and")
+    print("     check Singular reports NONEMPTY.  A broken transcription says EMPTY.")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import equivariant_ansatz as EA
+    F = EA.load(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             'maps', 'alpoge_dim3_degree3.py'))
+    (a_, b_, g_, d_, e_), _perm = EA.decompose(F)
+    a_, b_, g_, d_, e_ = (t.subs({EA.u: u, EA.v: v}) for t in (a_, b_, g_, d_, e_))
+    Aa = sp.expand(u * b_ + v * e_)
+    Bb = sp.expand(u**2 * d_ + v * g_)
+    a_s = sp.expand(a_ / W(a_, Aa, Bb))   # rescale so W = 1, which build() demands
+    rec("the control point really is on the variety: W(alpha/c, A, B) = 1",
+        sp.simplify(W(a_s, Aa, Bb) - 1) == 0,
+        "alpha_v = %s -- CONSTANT, i.e. the known blocked shape" % sp.diff(a_s, v))
     varlist, eqs, _ = build(3, 4, alpha_shape='known')
-    st, det = singular_unit(varlist, eqs, timeout=2000, tag='ctrl')
-    if st == 'NOVERDICT':
-        rec("control: NO VERDICT (%s) -- everything below is UNCALIBRATED" % det, False)
-    else:
-        rec("control: alpha_v constant gives a NONEMPTY system", st == 'NONEMPTY',
-            "%s  [%d vars, %d eqs]" % (st, len(varlist), len(eqs)))
+    kk, c1, c2 = sp.symbols('k c1 c2')
+    pa = sp.Poly(a_s, u, v).as_dict()
+    vals = {kk: pa.get((0, 0), 0), c1: pa.get((1, 0), 0), c2: pa.get((0, 1), 0),
+            sp.Symbol('sk'): sp.Rational(1, 1) / pa.get((0, 0), 1)}
+    for m, cf in sp.Poly(Aa, u, v).terms():
+        vals[sp.Symbol('A_%d_%d' % m)] = cf
+    for m, cf in sp.Poly(Bb, u, v).terms():
+        vals[sp.Symbol('B_%d_%d' % m)] = cf
+    full = {t: vals.get(t, 0) for t in varlist}
+    rec("that point satisfies every generated equation",
+        all(sp.simplify(e.subs(full)) == 0 for e in eqs), "%d equations" % len(eqs))
+
+    def tofp(q):
+        q = sp.Rational(q)
+        return (int(q.p) % P) * pow(int(q.q) % P, P - 2, P) % P
+    pins = [sp.Symbol(str(t)) - tofp(full[t]) for t in varlist]
+    st, det = singular_unit(varlist, eqs + pins, timeout=900, tag='ctrl')
+    rec("Singular, same transcription pinned at that point, reports NONEMPTY",
+        st == 'NONEMPTY', "%s %s" % (st, det))
     print()
 
     print("[C]  THE QUESTION: alpha = k + (u-1)v, k != 0 (saturated).")
@@ -154,8 +185,14 @@ def main():
         st, det = singular_unit(varlist, eqs, timeout=2700, tag='q%d%d' % (dA, dB))
         lab = "deg A <= %d, deg B <= %d" % (dA, dB)
         if st == 'EMPTY':
-            rec("%s: NO SOLUTION -- 1 is in the ideal, exact over F_%d" % (lab, P),
-                True, "[%d vars, %d eqs]" % (len(varlist), len(eqs)))
+            # A single-prime Groebner result is not a verdict.  Cross-check.
+            st2, det2 = singular_unit(varlist, eqs, timeout=2700,
+                                      tag='q%d%d_p2' % (dA, dB), prime=1000033)
+            rec("%s: NO SOLUTION -- 1 is in the ideal at p = %d, cross-checked at "
+                "p = 1000033: %s" % (lab, P, st2),
+                st2 == 'EMPTY',
+                "[%d vars, %d eqs]" % (len(varlist), len(eqs))
+                if st2 == 'EMPTY' else "second prime disagrees or gave no verdict")
         elif st == 'NONEMPTY':
             rec("%s: *** SOLUTIONS EXIST -- FOLLOW UP IMMEDIATELY ***" % lab, True,
                 "%s [%d vars, %d eqs]" % (det, len(varlist), len(eqs)))

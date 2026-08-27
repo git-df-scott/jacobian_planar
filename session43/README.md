@@ -405,3 +405,48 @@ Both controls pass: a positive control replays the `p = 67` three-condition
 point through the original `survivors` objects, proving a real candidate would
 not be missed; the negative control reproduces the published seed's death at
 `x^22`.
+
+## 13. First verdict on the Path S target
+
+`descent_keller.py` ran the `alpha_v` non-constant question at three degree
+budgets. One returned a verdict:
+
+| shape | verdict |
+|---|---|
+| `deg alpha1 = 1, deg alpha0 = 1, deg A = 3, deg B = 4` (25 vars, 36 eqs) | **EMPTY — `1 ∈ I`, exact over `F_1000003`** |
+| `deg alpha1 = 1, deg alpha0 = 2, deg A = 3, deg B = 4` | timeout 2400 s — **no verdict** |
+| `deg alpha1 = 1, deg alpha0 = 1, deg A = 4, deg B = 5` | timeout 2400 s — **no verdict** |
+
+So the *smallest* shape in which a C\*-equivariant counterexample could escape
+the Path S obstruction **does not exist**. That is one cell, not the family.
+
+**Its control timed out**, and the file said so and marked the run
+uncalibrated. That was the right call but the wrong control: asking Singular
+whether the `alpha_v`-**constant** system is the unit ideal is the *expensive*
+direction — that ideal is positive-dimensional, since Gallagher's entire family
+lies in it, and the query ran 25 minutes and 700 MB without finishing. The
+decisive control is instant instead: take the same generator and the same
+Singular transcription, pin every variable to a point that provably lies on the
+variety (Alpöge's own map, rescaled so `W = 1`), and check Singular reports
+NONEMPTY — a broken transcription would report EMPTY. It does report NONEMPTY.
+`pathS_target.py` now uses that control, asks the **normalized one-parameter**
+question (23 unknowns rather than ~30), and cross-checks every EMPTY at a second
+prime, since a single-prime Gröbner result is not a verdict.
+
+## Compute ledger, continued
+
+| system | result |
+|---|---|
+| `p11zero` reduced (174 var / 294 eq), Singular `slimgb` | **timeout 1:30:00**, 2.5 GB |
+| `alpha_v`-constant control ideal, Singular `slimgb` | **timeout 25:00**, 700 MB |
+| Path S target, `deg alpha0 = 2` and `deg A = 4` cells | **timeout 40:00** each |
+
+All **NO VERDICT**.
+
+## Lane 7 follow-up, partial
+
+Restarted on its own stated gap — exact joint elimination of descent levels 1+2,
+to convert its sampled level-2 death into a proof. It reported one closure,
+**`t44` branch `e = 2` (shared-factor): `1 ∈ I`** (506 s, 396 MB), and was
+waiting on its second-prime cross-check when the session's agent budget ran out.
+Partial: one branch, one prime. Not a verdict for the template.
