@@ -1,0 +1,11 @@
+{
+ "(8,28) case (1) pentagons  [OPEN in GGHV] | DIRECT (72,108) | NORM c(1)=0": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "out": " | Singular error: no more memory | System 5468184k:5468272k Appl 5339726k/128205k Malloc 35k/0k Valloc 5467896k/128205k Pages 1366974/0 Regions 3115:3115 Internal: 349224 |  | halt 14 | "
+   }
+  }
+ }
+}
