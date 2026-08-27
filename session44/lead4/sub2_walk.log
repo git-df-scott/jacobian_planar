@@ -3,3 +3,9 @@ cands: [(2, -1), (1, 0)]
   weight w(i,j) = -2*i + 1*j ; 25+47 coefficients ; 92 equations in 5 w-levels
     level   -4:   17 eqs ->   11 eliminated,    6 conditions (total 6)
     level   -3:   18 eqs ->   11 eliminated,    7 conditions (total 13)
+    level   -2:   19 eqs ->   12 eliminated,    7 conditions (total 20)
+    level   -1:   19 eqs ->   12 eliminated,    7 conditions (total 27)
+    level    0:   19 eqs ->    0 eliminated,   18 conditions (total 45)
+
+walk done in 851s: 45 conditions, 23 unknowns left
+unknowns: ['a_1_1', 'a_1_2', 'a_2_2', 'a_2_3', 'a_2_4', 'a_3_4', 'a_3_5', 'a_3_6', 'a_4_6', 'a_4_7', 'a_4_8', 'a_5_10', 'a_5_8', 'a_5_9', 'a_6_10', 'a_6_11', 'a_6_12', 'a_7_12', 'a_7_13', 'a_7_14', 'a_8_14', 'a_8_15', 'a_8_16']

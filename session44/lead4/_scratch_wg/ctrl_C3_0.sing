@@ -1,6 +1,6 @@
-ring R = 0, (v(1..0), zz), dp;
+ring R = 0, (v(1..1), zz), dp;
 ideal I = 0;
-poly nd = a_0_2;
+poly nd = (v(1));
 I = I + ideal(zz*nd - 1);
 int t0 = timer;
 list LL = facstd(I);
@@ -11,7 +11,7 @@ for (ii = 1; ii <= size(LL); ii++) {
   ideal Gi = std(LL[ii]);
   if (size(Gi) != 1 || Gi[1] != 1) { alive = alive + 1;
     if (dim(Gi) > dmax) { dmax = dim(Gi); }
-    "  live component " + string(ii) + ": dim " + string(dim(Gi)) + (dim(Gi)==0 ? ", vdim " + string(vdim(Gi)) : ""); }
+    "  live component " + string(ii) + ": dim " + string(dim(Gi)); }
 }
 if (alive == 0) { "VERDICT: EMPTY"; } else { "VERDICT: " + string(alive) + " live component(s), max dim " + string(dmax); }
 quit;

@@ -21,9 +21,26 @@ for nm, NP, NQ, r, P, Q in CTRL:
         for tdir in [None]:
             wk = W.Walk(NP, NQ, r, wt, gauge=[("P",(1,0),1)] if (1,0) in NP else [])
             c = wk.run()
-            nd = [wk.a[p] for p in W.hull_vertices(NP) if p != (0,0)]
-            nd = [n for n in nd if n not in wk.assign]
+            nd = W.nondeg_exprs(wk, "P") + W.nondeg_exprs(wk, "Q")
             free = wk.unassigned()
             out, fn = W.singular_verdict(c, free, nd, char=0, tag=f"ctrl_{nm}")
             print(f"    weight {wt}: {len(c)} conditions, {len(free)} free")
             for L in out.splitlines(): print("      "+L)
+
+# ---- C4: a richer positive control, several w-levels ----------------------
+a, lam = sp.Rational(3), sp.Rational(2)
+P4 = 1 + x + a*x**2*y
+Q4 = 1 + x**2*y + lam*P4**2
+br = sp.expand(sp.diff(P4,x)*sp.diff(Q4,y) - sp.diff(P4,y)*sp.diff(Q4,x))
+assert br == x**2, br
+def supp(e):
+    p = sp.Poly(e, x, y); return [m for m in p.monoms()]
+NP4, NQ4 = W.hull_vertices(supp(P4)), W.hull_vertices(supp(Q4))
+print(f"=== C4: witness [P,Q]=x^2 verified; NP={NP4} NQ={NQ4}")
+for wt in W.weight_candidates(NP4, NQ4):
+    wk = W.Walk(NP4, NQ4, 2, wt, gauge=[("P",(1,0),1)])
+    c = wk.run()
+    nd = W.nondeg_exprs(wk,"P") + W.nondeg_exprs(wk,"Q")
+    out, fn = W.singular_verdict(c, wk.unassigned(), nd, char=0, tag="ctrl_C4")
+    print(f"    weight {wt}: {len(c)} conditions, {len(wk.unassigned())} free")
+    for L in out.splitlines(): print("      "+L)

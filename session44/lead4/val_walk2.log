@@ -1,0 +1,12 @@
+VALIDATION target: F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))
+  independent instrument (Singular/facstd, mod 65521 and 65539): EMPTY
+  cands: [(1, 0), (-1, 2)]
+  weight w(i,j) = 1*i + -2*j ; 50+84 coefficients ; 210 equations in 13 w-levels
+    level   14:    2 eqs ->    2 eliminated,    0 conditions (total 0)
+    level   13:    4 eqs ->    4 eliminated,    0 conditions (total 0)
+    level   12:    7 eqs ->    7 eliminated,    0 conditions (total 0)
+    level   11:   10 eqs ->    9 eliminated,    0 conditions (total 0)
+    level   10:   12 eqs ->   12 eliminated,    0 conditions (total 0)
+    level    9:   15 eqs ->   14 eliminated,    0 conditions (total 0)
+    level    8:   16 eqs ->   15 eliminated,    1 conditions (total 1)
+    level    7:   19 eqs ->   16 eliminated,    3 conditions (total 4)

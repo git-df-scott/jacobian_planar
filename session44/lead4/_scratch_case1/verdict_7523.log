@@ -1,0 +1,45 @@
+=== p=7523 cover 0/5  f=[1, 2568, 624, 1179, 6553, 1872, 1569, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_7523 for this face point
+
+=== p=7523 cover 1/5  f=[1, 1293, 552, 2601, 1834, 5176, 2574, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_7523 for this face point
+
+=== p=7523 cover 2/5  f=[1, 4525, 4602, 2070, 2908, 4007, 7148, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_7523 for this face point
+
+=== p=7523 cover 3/5  f=[1, 4630, 4299, 7393, 1482, 18, 3694, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_7523 for this face point
+
+=== p=7523 cover 4/5  f=[1, 5353, 2228, 609, 4955, 5117, 5100, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_7523 for this face point
+

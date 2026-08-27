@@ -237,22 +237,37 @@ class Walk:
 # ------------------------------------------------------------- the verdict
 def singular_verdict(conds, syms, nondeg, char=0, timeout=900, tag="wg",
                      scratch="_scratch_wg"):
+    """Decide the condition ideal, saturated by the non-degeneracy product."""
     os.makedirs(scratch, exist_ok=True)
-    names = {s: f"v({k+1})" for k, s in enumerate(syms)}
+    conds = [sp.expand(c) for c in conds if sp.expand(c) != 0]
+    nondeg = [sp.expand(n) for n in nondeg]
+    for n in nondeg:
+        if n.is_number and n == 0:
+            return "VERDICT: EMPTY (a required vertex coefficient is 0)", None
+    nondeg = [n for n in nondeg if not n.is_number]
+    allsym = set()
+    for e in list(conds) + list(nondeg):
+        allsym |= e.free_symbols
+    allsym |= set(syms)
+    order = sorted(allsym, key=str)
+    names = {s: f"v({k+1})" for k, s in enumerate(order)}
 
     def cv(e):
         e = sp.expand(e)
-        s = str(e)
-        for sym in sorted(syms, key=lambda z: -len(str(z))):
-            s = s.replace(str(sym), names[sym])
-        return s
-    L = [f"ring R = {char}, (v(1..{len(syms)}), zz), dp;"]
-    if conds:
-        L.append("ideal I = " + ",\n  ".join(cv(c) for c in conds) + ";")
-    else:
-        L.append("ideal I = 0;")
+        if not e.is_number:
+            p = sp.Poly(e, *order)
+            den = sp.ilcm(1, *[sp.denom(c) for c in p.coeffs()])
+            e = sp.expand(e*den)
+            g = sp.igcd(0, *[sp.numer(c) for c in sp.Poly(e, *order).coeffs()])
+            if g and g != 1:
+                e = sp.expand(e/g)
+        return str(e.xreplace({s: sp.Symbol(names[s]) for s in order})
+                   ).replace("**", "^")
+    L = [f"ring R = {char}, (v(1..{len(order)}), zz), dp;"]
+    L.append("ideal I = " + (",\n  ".join(cv(c) for c in conds) or "0") + ";")
     if nondeg:
-        L.append("poly nd = " + " * ".join(cv(n) for n in nondeg) + ";")
+        L.append("poly nd = " + " * ".join("(" + cv(n) + ")" for n in nondeg)
+                 + ";")
         L.append("I = I + ideal(zz*nd - 1);")
     L.append("int t0 = timer;")
     L.append("list LL = facstd(I);")
@@ -263,8 +278,8 @@ def singular_verdict(conds, syms, nondeg, char=0, timeout=900, tag="wg",
     L.append("  ideal Gi = std(LL[ii]);")
     L.append("  if (size(Gi) != 1 || Gi[1] != 1) { alive = alive + 1;")
     L.append("    if (dim(Gi) > dmax) { dmax = dim(Gi); }")
-    L.append('    "  live component " + string(ii) + ": dim " + string(dim(Gi))'
-             ' + (dim(Gi)==0 ? ", vdim " + string(vdim(Gi)) : ""); }')
+    L.append('    "  live component " + string(ii) + ": dim " '
+             '+ string(dim(Gi)); }')
     L.append("}")
     L.append('if (alive == 0) { "VERDICT: EMPTY"; } else '
              '{ "VERDICT: " + string(alive) + " live component(s), max dim " '
@@ -275,6 +290,24 @@ def singular_verdict(conds, syms, nondeg, char=0, timeout=900, tag="wg",
     try:
         pr = subprocess.run(["Singular", "-q", fn], capture_output=True,
                             text=True, timeout=timeout)
-        return pr.stdout.strip(), fn
+        out = pr.stdout.strip() + pr.stderr.strip()
+        if "? " in out:
+            out = "SINGULAR ERROR -- verdict void:\n" + out
+        return out, fn
     except subprocess.TimeoutExpired:
         return f"TIMEOUT after {timeout}s", fn
+
+
+def nondeg_exprs(walk, which="P"):
+    """vertex coefficients that the Newton polygon forces to be nonzero,
+    with the walk's eliminations substituted in.  (0,0) is skipped: the
+    constant term of P and of Q never enters the bracket."""
+    verts = hull_vertices(walk.NP if which == "P" else walk.NQ)
+    tab = walk.a if which == "P" else walk.b
+    out = []
+    for p in verts:
+        if p == (0, 0):
+            continue
+        e = sp.expand(sp.sympify(tab[p]).subs(walk.assign))
+        out.append(e)
+    return out

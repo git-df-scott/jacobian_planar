@@ -1,0 +1,5 @@
+  P(0,8)     : FORCED TO ZERO by the cascade
+  P(8,16)    : FORCED TO ZERO by the cascade
+  Q(0,12)    : FORCED TO ZERO by the cascade
+  Q(12,24)   : FORCED TO ZERO by the cascade
+  t2 alone   : FORCED TO ZERO by the cascade

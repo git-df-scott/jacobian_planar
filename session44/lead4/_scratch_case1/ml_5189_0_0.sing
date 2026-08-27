@@ -1,0 +1,9 @@
+ring R = 5189, (t1,t2,t3,t4,t5,t6,t7,t8,t9,z), dp;
+ideal I = 143*t2^4+3664*t2^2*t5+4347*t5^2,
+949*t2^4+1201*t2^2*t5+3375*t5^2;
+I = I + ideal(z*((524*t2^2+3665*t5)*(2079*t2^3+4427*t2*t5)) - 1);
+list LL = facstd(I); int i; int alive = 0;
+for (i=1;i<=size(LL);i++) { ideal Gi = std(LL[i]);
+ if (size(Gi)!=1 || Gi[1]!=1) { alive = alive+1; } }
+if (alive==0) { "EMPTY"; } else { "alive " + string(alive); }
+quit;

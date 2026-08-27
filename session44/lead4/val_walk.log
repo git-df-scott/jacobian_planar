@@ -12,3 +12,8 @@ VALIDATION target: F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))
     level    7:   19 eqs ->   16 eliminated,    3 conditions (total 4)
     level    6:   21 eqs ->    0 eliminated,   21 conditions (total 25)
     level    5:   24 eqs ->    0 eliminated,   24 conditions (total 49)
+    level    4:   26 eqs ->    0 eliminated,   26 conditions (total 75)
+    level    3:   27 eqs ->    0 eliminated,   27 conditions (total 102)
+    level    2:   27 eqs ->    0 eliminated,   27 conditions (total 129)
+
+walk done in 1910s: 129 conditions, 51 unknowns left
