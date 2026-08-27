@@ -249,6 +249,14 @@ Instrument validation, run before the verdict was trusted:
   bookkeeping, base points, bracket formula, level ranges and linear solves
   are therefore all correct end to end.
 
+  SECOND POSITIVE CONTROL: a NON-trivial cascade point (the two parameters
+  that appear in no condition, set to 3 and 7) reassembles to a genuinely
+  different pair -- 9 monomials in P and 12 in Q instead of 8 and 11 --
+  again with supports inside the polygons and P_x Q_y - P_y Q_x = x^2
+  verified directly.  So the cascade really does produce solutions of the
+  bracket equation that are not just the face; it is the four vertex
+  coefficients, and only those, that refuse to become nonzero.
+
   NEGATIVE CONTROL: with the vertex non-degeneracy conditions REMOVED, the
   same decision engine reports a live component (dimension 2) rather than
   EMPTY -- the instrument does not answer EMPTY unconditionally.
@@ -268,8 +276,7 @@ Instrument validation, run before the verdict was trusted:
   representative of each is enough.
 
 Result, for each of the FIVE covers, at primes where all five are
-F_p-rational (5189, 5441, 7523 -- chosen with 7 not dividing p-1 so the
-7th root is unique):
+F_p-rational (chosen with 7 not dividing p-1 so the 7th root is unique):
 
     the cascade conditions down to level W = -11 (88 of the 124), together
     with the four vertex conditions
@@ -278,6 +285,31 @@ F_p-rational (5189, 5441, 7523 -- chosen with 7 not dividing p-1 so the
 
     ==> over the algebraic closure of F_p there is NO pair (P,Q) with
         support in N(P), N(Q), all vertices present, and [P,Q] = x^2.
+
+Primes tested, five covers each: 5189, 5441, 7523 (and 8053, 11827 queued).
+Every one of the fifteen face points returns EMPTY.
+
+Shape of the obstruction, at p = 5189, cover 0 (all five look the same):
+the level-0 condition is a PERFECT SQUARE binary quadratic in (t2^2, t5),
+
+    143 t2^4 + 3664 t2^2 t5 + 4347 t5^2 = 143 (t2^2 - 3507 t5)^2 = 0
+
+so t5 = t2^2/3507 on the nose, while the two upper vertices are
+
+    P at (8,16)  =  524 t2^2 - 1524 t5
+    Q at (12,24) =  t2 (2079 t2^2 - 762 t5)
+
+Neither vanishes identically on the level-0 locus, so the kill is not a
+one-line corner argument; it takes the levels down to W = -11.
+The perfect-square degeneracy is NOT an artefact of one prime: the
+discriminant of that binary quadratic is 0 for every cover at every prime
+tested (5189, 5441, 7523), so it is a structural identity of the cascade.
+
+Two further consistency checks on the machinery: the lattice-point sets of
+the two polygons computed by `case1_cascade.inside` agree exactly, point for
+point, with the campaign's independent `trackB1_polygon.hull_rows` (61 and
+125 points); and both parameter counts match the catalogue's own entry for
+this shape.
 
 Only a subset of the conditions is used, which is the safe direction: fewer
 conditions means a larger variety, so emptiness of the subsystem implies
