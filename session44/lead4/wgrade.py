@@ -175,7 +175,7 @@ class Walk:
                 if e == 0:
                     continue
                 pivot = None
-                for s in sorted(e.free_symbols, key=str):
+                for s in sorted(e.free_symbols, key=self.pivkey):
                     c = e.coeff(s, 1)
                     if c.is_number and c != 0 and sp.degree(e, s) == 1:
                         pivot = (s, sp.expand(-(e - c*s)/c))
@@ -195,6 +195,13 @@ class Walk:
                       f"{solved:4d} eliminated, {ncond:4d} conditions "
                       f"(total {len(self.conds)})", flush=True)
         return self.conds
+
+    def pivkey(self, s):
+        """triangular preference: eliminate Q-coefficients first, highest
+        position along the level line first."""
+        nm = str(s).split("_")
+        p = (int(nm[1]), int(nm[2]))
+        return (0 if nm[0] == "b" else 1, -self.tcoord(p), str(s))
 
     def unassigned(self):
         allsym = set(self.a.values()) | set(self.b.values())
