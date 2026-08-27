@@ -15,3 +15,4 @@ F-system j=4 (deg q1=5) mu3=1 sat[mu1!=0]: NO-OUTPUT(OOM?)
 ### F 2400 5 --satvar mu1
 F-system j=5 (deg q1=6) mu3=1 sat[mu1!=0]: NO-OUTPUT(OOM?)
 ### F 2400 6 --satvar mu1
+F-system j=6 (deg q1=7) mu3=1 sat[mu1!=0]: NO-OUTPUT(OOM?)
