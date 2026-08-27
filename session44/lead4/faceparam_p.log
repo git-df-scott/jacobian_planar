@@ -1,0 +1,2 @@
+/bin/bash: line 2:  3890 Killed                  nice -n 6 timeout 3000 msolve -f faceparam_case1_c65521.ms -o faceparam_case1_p.out 2>&1
+exit=137
