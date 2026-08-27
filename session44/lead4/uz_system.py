@@ -319,8 +319,10 @@ def check_random_bracket(mod=1000003, seed=7):
             for c, x, y in eqs[(n, k)]:
                 tot += c * ev(x) * ev(y)
             tot %= mod
-            # equation value = [P,Q]_{u,z} coefficient at (n,k)
-            direct = br_uz.get((n, k), 0) % mod
+            # [P,Q]_{x,y} = v^2 * [P,Q]_{u,v} = v^2 * (-z^2) * [P,Q]_{u,z}
+            #             = -[P,Q]_{u,z}   (because v^2 z^2 = 1)
+            # so the (n,k) coefficient of [P,Q]_{u,z} is MINUS the direct one.
+            direct = (-br_uz.get((n, k), 0)) % mod
             if tot != direct:
                 mismatches.append((n, k, tot, direct))
     return mismatches
