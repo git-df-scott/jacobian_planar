@@ -296,3 +296,51 @@ base system dim (in the (par,W) ring) = 1
      p8 can be nonzero: 0
   factor 7: deg 6, mult 1, q verifies: True
      p-kernel dim 2, ker(M) dim 2, f-layer solvable True
+base system dim (in the (par,W) ring) = 1
+     f1 can be nonzero: 0
+// ** redefining J (+1468697*a^3+445986*a^4+75241*a^5)*mu+(857147*a^1)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:8
+// ** redefining G (+1468697*a^3+445986*a^4+75241*a^5)*mu+(857147*a^1)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:8
+     p1 can be nonzero: 0
+// ** redefining J (1+725337*a^2+981110*a^3+1376049*a^4+1389407*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:10
+// ** redefining G (1+725337*a^2+981110*a^3+1376049*a^4+1389407*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:10
+     f2 can be nonzero: 0
+// ** redefining J (6*a^1+731333*a^2+479025*a^3+792052*a^4+653946*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:12
+// ** redefining G (6*a^1+731333*a^2+479025*a^3+792052*a^4+653946*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:12
+     p2 can be nonzero: 0
+// ** redefining J (+337318*a^2+1426559*a^3+1088757*a^4+1376973*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:14
+// ** redefining G (+337318*a^2+1426559*a^3+1088757*a^4+1376973*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:14
+     f3 can be nonzero: 0
+// ** redefining J (*a^1+161869*a^2+994195*a^3+1405845*a^4+880647*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:16
+// ** redefining G (*a^1+161869*a^2+994195*a^3+1405845*a^4+880647*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:16
+     p3 can be nonzero: 0
+// ** redefining J (a^1+39385*a^2+890734*a^3+1483421*a^4+515477*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:18
+// ** redefining G (a^1+39385*a^2+890734*a^3+1483421*a^4+515477*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:18
+     f4 can be nonzero: 0
+// ** redefining J (1+1349272*a^2+1206215*a^3+1355014*a^4+1007871*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:20
+// ** redefining G (1+1349272*a^2+1206215*a^3+1355014*a^4+1007871*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:20
+     p4 can be nonzero: 0
+// ** redefining J (^1+781982*a^2+1246599*a^3+340502*a^4+429290*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:22
+// ** redefining G (^1+781982*a^2+1246599*a^3+340502*a^4+429290*a^5)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:22
+     f5 can be nonzero: 0
+// ** redefining J (*a^1+455866*a^2+1104498*a^3+281734*a^4+770369*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:24
+// ** redefining G (*a^1+455866*a^2+1104498*a^3+281734*a^4+770369*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:24
+     p5 can be nonzero: 0
+// ** redefining J (8082*a^3+647286*a^4+1498069*a^5)*lam*mu+(910719)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:26
+// ** redefining G (8082*a^3+647286*a^4+1498069*a^5)*lam*mu+(910719)*lam^2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:26
+     f6 can be nonzero: 0
+// ** redefining J (4*a^1+1172314*a^2+1127697*a^3+184911*a^4+1824*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:28
+// ** redefining G (4*a^1+1172314*a^2+1127697*a^3+184911*a^4+1824*a^5)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:28
+     p6 can be nonzero: 0
+// ** redefining J (ideal J = I, ((1)*nu1)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:30
+// ** redefining G (ideal J = I, ((1)*nu1)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:30
+     f7 can be nonzero: 0
+// ** redefining J (ideal J = I, ((1)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:32
+// ** redefining G (ideal J = I, ((1)*lam)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:32
+     p7 can be nonzero: 0
+// ** redefining J (ideal J = I, ((1)*nu2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:34
+// ** redefining G (ideal J = I, ((1)*nu2)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:34
+     f8 can be nonzero: 0
+// ** redefining J (ideal J = I, ((1)*mu)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:36
+// ** redefining G (ideal J = I, ((1)*mu)*W-1; ideal G = std(J);) /home/user/jacobian_planar/session44/lead4/ext_1500007_7.sing:36
+     p8 can be nonzero: 0
+total degree covered: 35 (should be 35)

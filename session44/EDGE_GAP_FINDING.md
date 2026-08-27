@@ -325,9 +325,10 @@ the face collapses to a single point, and subcase 2 is empty.
 
   * The elimination and the 45 obstructions are EXACT over Q.
   * The decision (all f_a, p_a forced to 0) is MODULAR.  It is COMPLETE over
-    all 35 solutions of the q-layer at TWO primes:
+    all 35 solutions of the q-layer at THREE primes:
         p =  999983  eliminant factors 1,1,3,6,6,6,6,6   -> 128/128 forced-zero
         p = 1000003  eliminant factors 1,2,2,3,3,6,6,6,6 -> 144/144 forced-zero
+        p = 1500007  eliminant factors 2,3,6,6,6,6,6     -> 112/112 forced-zero
     and holds for 9 GF(p)-rational q at 8 further primes.  It is not yet a
     characteristic-zero proof: a mod-p verdict does not formally lift, though a
     char-0 point with f5 != 0 would reduce to one mod almost every prime, so two
