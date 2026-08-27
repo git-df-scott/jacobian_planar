@@ -17,9 +17,21 @@ def gen(m, n, char, sat=True):
     for N in range(1, m + n + 1):
         terms = []
         for (c, i, j) in W[N]:
-            terms.append(f"({c})*{sym('a',i,m)}*{sym('b',j,m)}")
+            # msolve does NOT parse parenthesised coefficients ("(1)*x^2+(-1)"
+            # is silently misread -- verified on a two-line sanity system).
+            # Emit plain products only.
+            fac = [f"{abs(c)}"] if abs(c) != 1 else []
+            av, bv = sym('a', i, m), sym('b', j, m)
+            if av != "1":
+                fac.append(av)
+            if bv != "1":
+                fac.append(bv)
+            if not fac:
+                fac = ["1"]
+            terms.append(("-" if c < 0 else "+") + "*".join(fac))
         if terms:
-            polys.append(" + ".join(terms))
+            e = "".join(terms)
+            polys.append(e[1:] if e[0] == "+" else e)
     if sat:
         polys.append(f"z*b{n} - 1")
     return ",".join(vs) + "\n" + str(char) + "\n" + ",\n".join(polys) + "\n"
