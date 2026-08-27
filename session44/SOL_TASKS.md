@@ -24,6 +24,24 @@ Status on our box: defeated msolve char-0 (OOM), msolve mod-p solving (900 s),
 msolve mod-p GB-only (2400 s), Singular mod-p (in flight). Needs RAM (or
 magma). Run: `msolve -f j7mu1_char0.ms` (and the two mod-p files).
 
+## T1b — the µ3=0 companion of the crack test  (ADDENDUM, run right after T1)
+
+T1's three `.ms` files were generated in the gauge **µ3=1**.  The scaling
+`(x,y) -> (λ^a x, λ^b y)` rescales µ3 by `λ^(a+b)`, so the gauge covers
+every µ3 ≠ 0 — but the **µ3=0 stratum is fixed by the action and is a
+separate branch that T1 cannot see.**  The companion systems with µ3 = 0
+substituted exactly are committed alongside T1's:
+
+    session44/lead4/j7mu1_mu3zero_char0.ms
+    session44/lead4/j7mu1_mu3zero_p65521.ms
+    session44/lead4/j7mu1_mu3zero_p65539.ms
+
+Same question, same verdict standards as T1 (both primes must agree;
+NONEMPTY needs witness replay into the F-system; char-0 confirmation
+before any claim).  These systems are smaller than T1's (µ3=0 kills
+terms), so try them FIRST if T1 stalls — a NONEMPTY here is just as much
+of a crack as one in T1.
+
 ## T2 — extend the µ1-rigidity ladder: deg(q1) = 5, 6, 7
 
 Same construction at j=4,5,6. Generate inputs with:
