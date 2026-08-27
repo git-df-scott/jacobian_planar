@@ -1,4 +1,4 @@
-ring R = 65539, (c(1..18), w, u, x), dp;
+ring R = 65539, (c(1..32), w, u, x), dp;
 poly Pd0 = c(1)*x^0 + c(2)*x^1;
 poly Pd1 = c(3)*x^2;
 poly Pd2 = c(4)*x^3 + c(5)*x^4;
@@ -6,16 +6,16 @@ poly Pd3 = c(6)*x^4 + c(7)*x^5;
 poly Pd4 = c(8)*x^5 + c(9)*x^6 + c(10)*x^7;
 poly Pd5 = c(11)*x^7 + c(12)*x^8;
 poly Pd6 = c(13)*x^8 + c(14)*x^9 + c(15)*x^10;
-poly Pd7 = c(16)*x^9 + c(17)*x^10;
-poly Pd8 = c(18)*x^10;
-poly Pd9 = 0;
-poly Pd10 = 0;
-poly Pd11 = 0;
-poly Pd12 = 0;
+poly Pd7 = c(16)*x^9 + c(17)*x^10 + c(18)*x^11;
+poly Pd8 = c(19)*x^10 + c(20)*x^11 + c(21)*x^12 + c(22)*x^13;
+poly Pd9 = c(23)*x^12 + c(24)*x^13 + c(25)*x^14 + c(26)*x^15;
+poly Pd10 = c(27)*x^13 + c(28)*x^14 + c(29)*x^15;
+poly Pd11 = c(30)*x^14 + c(31)*x^15;
+poly Pd12 = c(32)*x^15;
 poly Pd13 = 0;
 poly Pd14 = 0;
 poly Pd15 = 0;
-poly Rr0 = 1*x^3;
+poly Rr0 = 65538*x^3;
 poly Rr1 = 0;
 poly Rr2 = 0;
 poly Rr3 = 0;
@@ -63,7 +63,7 @@ for (e = 1; e <= nrows(cf); e++) {
 t = Q3;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 4 || e-1 > 6) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 4 || e-1 > 5) { I = I + ideal(cf[e, 1]); }
 }
 t = Q4;
 cf = coeffs(t, x);
@@ -73,7 +73,7 @@ for (e = 1; e <= nrows(cf); e++) {
 t = Q5;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 7 || e-1 > 9) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 7 || e-1 > 8) { I = I + ideal(cf[e, 1]); }
 }
 t = Q6;
 cf = coeffs(t, x);
@@ -83,32 +83,32 @@ for (e = 1; e <= nrows(cf); e++) {
 t = Q7;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 9 || e-1 > 12) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 9 || e-1 > 10) { I = I + ideal(cf[e, 1]); }
 }
 t = Q8;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 10 || e-1 > 13) { I = I + ideal(cf[e, 1]); }
+  if (e-1 < 10 || e-1 > 10) { I = I + ideal(cf[e, 1]); }
 }
 t = Q9;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 12 || e-1 > 15) { I = I + ideal(cf[e, 1]); }
+  I = I + ideal(cf[e, 1]);
 }
 t = Q10;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 13 || e-1 > 15) { I = I + ideal(cf[e, 1]); }
+  I = I + ideal(cf[e, 1]);
 }
 t = Q11;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 14 || e-1 > 15) { I = I + ideal(cf[e, 1]); }
+  I = I + ideal(cf[e, 1]);
 }
 t = Q12;
 cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
-  if (e-1 < 15 || e-1 > 15) { I = I + ideal(cf[e, 1]); }
+  I = I + ideal(cf[e, 1]);
 }
 t = Q13;
 cf = coeffs(t, x);
@@ -120,10 +120,10 @@ cf = coeffs(t, x);
 for (e = 1; e <= nrows(cf); e++) {
   I = I + ideal(cf[e, 1]);
 }
-poly nd = c(2) * c(15) * c(18);
+poly nd = c(2) * c(26) * c(32);
 I = I + ideal(w*p10 - 1);
 I = I + ideal(u*nd - 1);
-"params: " + string(18);
+"params: " + string(32);
 "conditions: " + string(size(simplify(I,2)));
 int t0 = timer;
 list LL = facstd(I);
