@@ -128,6 +128,7 @@ class Walker:
                              "affine schedule invalid for this shape")
         best_fail = (-1, None)
         nc_total = None
+        fail_hist = {}
         for attempt in range(restarts):
             vec = [0] * len(self.idx)
             vec[self.pivot] = rng.randrange(1, p)
@@ -169,8 +170,14 @@ class Walker:
                     sol = solve_affine(A, c0, rng, n=len(unks))
                     if sol is None:
                         ok = False
+                        fail_hist[j] = fail_hist.get(j, 0) + 1
                         if j > best_fail[0]:
-                            best_fail = (j, len(new))
+                            hom = solve_affine(A, [0] * len(new), rng,
+                                               n=len(unks))
+                            rkA = len(unks) - hom[1]
+                            best_fail = (j, {"new": len(new),
+                                             "unks": len(unks),
+                                             "rankA": rkA})
                         break
                     u, kdim = sol
                     if kdim:
@@ -180,8 +187,9 @@ class Walker:
                 else:
                     if any(base[t][1] != 0 for t in new):
                         ok = False
+                        fail_hist[j] = fail_hist.get(j, 0) + 1
                         if j > best_fail[0]:
-                            best_fail = (j, len(new))
+                            best_fail = (j, {"new": len(new), "unks": 0})
                         break
                 done |= set(new)
             if not ok:
@@ -197,7 +205,8 @@ class Walker:
                     "attempt": attempt}
         return {"status": "FAIL", "restarts": restarts,
                 "deepest_fail_level": best_fail[0],
-                "conds_at_fail": best_fail[1], "nconds": nc_total}
+                "fail_profile": best_fail[1], "fail_hist": fail_hist,
+                "nconds": nc_total}
 
     # ------------------------------------------------- independent gate ---
     def bracket_gate(self, vec):
@@ -364,7 +373,8 @@ def main():
         else:
             print(f"{t['tag']}\n  WALK-FAIL restarts={r['restarts']} "
                   f"deepest-level={r['deepest_fail_level']} "
-                  f"nconds={r['nconds']}  (not an emptiness proof)")
+                  f"profile={r['fail_profile']} hist={r['fail_hist']} "
+                  f"nconds={r['nconds']}  (not an emptiness proof)", flush=True)
 
 
 if __name__ == "__main__":
