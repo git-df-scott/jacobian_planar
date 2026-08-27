@@ -1,3 +1,17 @@
 ### F 1800 4 --satvar mu0
 F-STEP-TIMEOUT 1800 4 --satvar mu0
 ### F 1800 5 --satvar mu0
+F-system j=5 (deg q1=6) mu3=1 sat[mu0!=0]: NO-OUTPUT(OOM?)
+### F 2400 6 --satvar mu0
+F-system j=6 (deg q1=7) mu3=1 sat[mu0!=0]: NO-OUTPUT(OOM?)
+### F 2400 7 --satvar mu0
+F-system j=7 (deg q1=8) mu3=1 sat[mu0!=0]: NO-OUTPUT(OOM?)
+### F 1800 2 --satvar mu1
+F-system j=2 (deg q1=3) mu3=1 sat[mu1!=0]: EMPTY
+### F 1800 3 --satvar mu1
+F-system j=3 (deg q1=4) mu3=1 sat[mu1!=0]: EMPTY
+### F 1800 4 --satvar mu1
+F-system j=4 (deg q1=5) mu3=1 sat[mu1!=0]: NO-OUTPUT(OOM?)
+### F 2400 5 --satvar mu1
+F-system j=5 (deg q1=6) mu3=1 sat[mu1!=0]: NO-OUTPUT(OOM?)
+### F 2400 6 --satvar mu1
