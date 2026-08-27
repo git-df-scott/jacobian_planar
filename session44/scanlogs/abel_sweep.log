@@ -1,1 +1,5 @@
 ### deg(q1)=4 chart mu3=1 p=32003
+deg(q1)=4 mu3=1 sat_mu0=True mod 32003: |GB|=1  EMPTY (no mu0!=0 solution)
+### deg(q1)=4 chart mu3=0 p=32003
+deg(q1)=4 mu3=0 sat_mu0=True mod 32003: |GB|=1  EMPTY (no mu0!=0 solution)
+### deg(q1)=5 chart mu3=1 p=32003

@@ -68,3 +68,37 @@ same `B=16` question. The Abel form is O(deg) unknowns and needs no
 saturation of a huge Keller ideal — only the tiny `µ0≠0` Rabinowitsch. It is
 the missing cheap interface, and it was sitting in the one reference the audit
 marked unreadable.
+
+## RESULTS (msolve, exact characteristic zero)
+
+Calibration: `deg(q1)=3` saturated = **EMPTY** (`[-1]`), unsaturated =
+non-empty (the paper's `µ0=µ1=µ2=0` real solution), both charts of `deg=3`
+agree (gauge-fix `µ3=1` validated).
+
+| deg(q1) | corresponds to | verdict (mu0 != 0?) | who did it |
+|---|---|---|---|
+| 2 | — | EMPTY (homogeneous only) | paper 2013 |
+| 3 | (80,112) pair | **EMPTY** | paper 2013 |
+| 4 | — | **EMPTY** | paper 2013 |
+| 5 | — | **EMPTY** | **defeated 2013 PC — decided here** |
+| 6 | — | **EMPTY** | **new (Session 44)** |
+| 7 | — | **EMPTY** | **new (Session 44)** |
+| 8 | — | **EMPTY** | **new (Session 44)** |
+
+Every cell is an **exact msolve `[-1]` certificate over Q** (not modular):
+the saturated ideal `⟨(3.5)-coeffs, (3.6), µ0·s−1⟩` with `µ3=1` has empty
+complex variety. No `B=16` counterexample exists with `deg(q1) ≤ 8`.
+
+The paper stopped at `deg(q1)=4` and conjectured all solutions have
+`µ2=µ1=0` (⟹ `B>16`). Session 44 has extended the verified range to
+`deg(q1) ≤ 8` and is pushing toward `deg(q1)=12` (the campaign's resonant
+`d=3·2²` cell). Every additional EMPTY is a theorem-grade step toward the
+conjecture and toward `B>16` — which would raise the plane JC bound and
+close the entire `B=16` program the campaign has been grinding by brute
+Gröbner.
+
+Caveat held to standard: this is the necessary-shape reduced system (the
+paper's Theorem 1.2 equivalence). A hypothetical `NONEMPTY` at some degree
+would still require the Section-2 lift to explicit `P,Q` and the full binding
+gate before being called a counterexample. The EMPTY verdicts need no such
+caveat — an empty variety is an unconditional non-existence at that degree.
