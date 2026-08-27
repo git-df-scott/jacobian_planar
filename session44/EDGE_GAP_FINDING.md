@@ -244,7 +244,9 @@ The obstructions split by z-degree into a triangular cascade:
     (n,0), n= 2..19  18 eqs
 
 The q-layer, with the torus gauge q8 = 1 (q8 = a_14_8 != 0 is exactly the
-vertex (8,14) of N(P)), is 0-dimensional of degree 35.  Over GF(999983) its
+vertex (8,14) of N(P)), is 0-dimensional of degree 35 -- confirmed
+independently by Singular (dim = 0, vdim = 35), which is what makes the
+enumeration below provably exhaustive rather than merely a sample.  Over GF(999983) its
 eliminating polynomial factors into irreducibles of degrees 1,1,3,6,6,6,6,6;
 running the cascade over GF(999983)[a]/(h) for every factor covers ALL 35
 solutions.  For each one the p-layer kernel is 2-dimensional and ker(M) on the
