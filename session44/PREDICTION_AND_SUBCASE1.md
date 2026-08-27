@@ -60,3 +60,33 @@ deg R = 4 on that face too.
 So the same machinery applies to subcase 1, just on the (-1,1) face
 instead of the (-2,1) one. Running the descent's obstructions through that
 face is the natural next analysis, and it is cheap.
+
+## 4. Subcase 1's twin face worked through (verified)
+
+Direction (-1,1), weight w = j - i:
+
+    P-face (w = 8):  [(8,16), (0,8)]        lattice length 8
+    Q-face (w = 12): [(12,24), (0,12)]      lattice length 12
+
+Commuting check done properly for THIS weight: the monomial bracket sends
+(a,b),(c,d) -> (a+c-1, b+d-1), so w(result) = w1 + w2 + w(-1,-1), and here
+w(-1,-1) = 0, giving w(result) = w1 + w2. The top component of [P,Q] then
+has w = 8 + 12 = 20, while the target x^2 has w = -2. So the top component
+vanishes identically and the two face forms commute.        VERIFIED
+
+gcd(8,12) = 4, so face(P) = R^2, face(Q) = R^3, deg R = 4 -- the same
+structure as subcase 2, on a different face.
+
+The face lattice points of N(P) run
+
+    (0,8), (1,9), (2,10), (3,11), (4,12), (5,13), (6,14), (7,15), (8,16)
+
+and BOTH endpoints (0,8) and (8,16) are vertices of N(P), so both end
+coefficients are nonzero. Therefore, if subcase 1's descent forces zeros
+among the interior points of this list, the identical gap argument applies
+and yields the same conclusion: R can have at most a double root, since
+multiplicity 3 or 4 would force an endpoint coefficient to vanish.
+
+Subcase 1's ideal descent is now running (walk_ideal --index 0), so the
+forced-zero pattern on this face can be read off and compared directly
+against subcase 2's.
