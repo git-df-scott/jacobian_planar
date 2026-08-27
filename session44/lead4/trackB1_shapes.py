@@ -172,3 +172,55 @@ if __name__ == "__main__":
                   f"exact rank={r['rank']}  dim bound={r['dim_bound']}")
             print(f"    identically-zero Jacobian columns: {r['zero_cols']}")
         print()
+
+
+def _external_conds(pair, vec, k):
+    """Expose run_pair's inner build+conds for external solvers (cand_hunt)."""
+    o = pair.orient()
+    if o is None:
+        return None
+    DR, OR_, rhs, flipped = o
+    idx = [(j, i) for j in sorted(DR) for i in range(DR[j][0], DR[j][1] + 1)]
+    jmax = max(max(OR_), max(DR)) + 2
+    R = rhs_rows(rhs, jmax)
+    def build(vec, k=None):
+        D = {}
+        for t, ((j, i), val) in enumerate(zip(idx, vec)):
+            A, B = D.setdefault(j, ([], []))
+            while len(A) <= i:
+                A.append(0); B.append(0)
+            A[i] = val % p
+            if k is not None and t == k:
+                B[i] = 1
+            D[j] = (A, B)
+        return {j: (trim(a), trim(b)) for j, (a, b) in D.items()}
+    def conds(D):
+        A0, B0 = D[0]
+        p10 = (A0[1] if len(A0) > 1 else 0, B0[1] if len(B0) > 1 else 0)
+        if p10[0] == 0:
+            return None
+        inv = dinv_scalar(*p10)
+        r0 = R.get(0, [])
+        Q = {0: ([0], [0]), 1: (pscal(r0, inv[0]), pscal(r0, inv[1]))}
+        for kk in range(1, jmax + 1):
+            acc = (list(R.get(kk, [])), [])
+            for a in range(0, kk + 1):
+                b = kk - a
+                if (a + 1) in D and b in Q:
+                    acc = dadd(acc, dscal(dmul(D[a + 1], dderiv(Q[b])), a + 1))
+                if a >= 1 and a in D and (b + 1) in Q:
+                    acc = dadd(acc, dscal(dmul(dderiv(D[a]), Q[b + 1]), -(b + 1)))
+            Q[kk + 1] = dscal(dmul(acc, ([inv[0]], [inv[1]])), pow(kk + 1, p - 2, p))
+        val, eps = [], []
+        for j in range(1, jmax + 1):
+            A, B = Q.get(j, ([], []))
+            if j in OR_:
+                lo, hi = OR_[j]
+                bad = [i for i in range(max(len(A), len(B))) if i < lo or i > hi]
+            else:
+                bad = list(range(max(len(A), len(B))))
+            for i in bad:
+                val.append(A[i] if i < len(A) else 0)
+                eps.append(B[i] if i < len(B) else 0)
+        return val, eps
+    return conds(build(vec, k))
