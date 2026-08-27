@@ -45,3 +45,10 @@ dim_full=  1 (was  23) params= 92 max=132  (11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'
 dim_full=  1 (was  23) params= 92 max=144  (12,36)/21/4,9/19/4,8 (m,n)=2,3 | a=4 b=9 c'=8 r=3 e
 dim_full=  1 (was  22) params= 74 max=144  (12,36)/21/4,9/12/4,5 (m,n)=2,3 | a=4 b=6 c'=6 r=4 e
 dim_full=  1 (was  21) params=215 max=132  (11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=4 eps=((4,
+dim_full=  1 (was  21) params=215 max=144  (12,36)/21/4,9/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=4 e
+dim_full=  1 (was  21) params=152 max=144  (12,36)/21/4,9/12/4,5 (m,n)=2,3 | a=4 b=6 c'=6 r=3 e
+dim_full=  1 (was  15) params=254 max=150  (10,40)/16/5,6/23/10,3 (m,n)=3,2 | a=10 b=4 c'=4 r=4
+dim_full=  1 (was  14) params=104 max=132  (11,33)/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=6 eps=((1,
+dim_full=  1 (was  14) params=104 max=144  (12,36)/21/4,9/19/4,8 (m,n)=2,3 | a=4 b=9 c'=9 r=6 e
+dim_full=  1 (was  13) params= 51 max= 64  F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))
+dim_full=  1 (was  13) params= 51 max=144  (8,28)/7/4,3 (m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1
