@@ -24,6 +24,9 @@ Status on our box: defeated msolve char-0 (OOM), msolve mod-p solving (900 s),
 msolve mod-p GB-only (2400 s), Singular mod-p (in flight). Needs RAM (or
 magma). Run: `msolve -f j7mu1_char0.ms` (and the two mod-p files).
 
+
+**Memory data point (this box, 16GB):** msolve `-g 2` on the mod-p T1 system was cgroup-OOM-killed at ~9.4GB RSS after ~25 min. Budget well above 12GB (ideally 32GB+) for T1; T1b's systems are smaller and may fit where T1 does not.
+
 ## T1b — the µ3=0 companion of the crack test  (ADDENDUM, run right after T1)
 
 T1's three `.ms` files were generated in the gauge **µ3=1**.  The scaling
