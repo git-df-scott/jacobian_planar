@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""Exhaustive gauge decision for RIGID full-depth charts.
+"""RETIRED FOR VERDICTS -- X1 control FAILED (2026-08-27).
+
+Diagnosis: this tool looped the PIVOT p10 = (0,1) as if it were the dim-1
+gauge. It is not. The recurrence divides by p10 (enters as 1/p10, NONlinear),
+so p10 is a fixed nonzero parameter, not a coordinate to enumerate. The
+actual dim-1 freedom on the real (72,108) charts is the driver's (0,0)
+CONSTANT coefficient (verified: fixing param#0 = coeff (0,0) drops
+dim_given to 0), which enters LINEARLY. So looping p10 never traced the
+solution variety, and the "EMPTY at p=13,19" it printed is MEANINGLESS.
+
+Kept only for the diagnostic scaffolding (complete_at_gauge, decide) and the
+correct reduction it points to, now implemented in the full-depth Groebner
+path (run_108_full.py): the full-depth systems are rigid (dim 1 = scaling),
+hence exactly what facstd decides, and are fed to the two-prime queue
+directly. Do NOT cite any verdict from THIS file.
+"""
+
+"""(original design note follows)
+
+Exhaustive gauge decision for RIGID full-depth charts.
 
 The full-depth measurement showed every published <=150 chart has
 dim_full = 1, and that 1 is the scaling gauge t = p10 (the (0,1) driver
