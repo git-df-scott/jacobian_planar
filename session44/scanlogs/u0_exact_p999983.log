@@ -22,3 +22,35 @@ rung 18: solved slot-1 kernel in K, deg ~ 160
 rung 19: solved slot-1 kernel in K, deg ~ 170
 rung 20: solved slot-1 kernel in K, deg ~ 180
 rung 21: solved slot-1 kernel in K, deg ~ 190
+rung 22: solved slot-1 kernel in K, deg ~ 200
+rung 23: PURE CONDITION, num deg ~ 209
+rung 24: PURE CONDITION, num deg ~ 219
+rung 25: PURE CONDITION, num deg ~ 229
+rung 26: PURE CONDITION, num deg ~ 239
+== conditions mod 999983 ==
+N_23: deg 419
+N_24: deg 439
+N_25: deg 459
+N_26: deg 479
+gcd of all condition norms mod 999983: deg 64
+NONTRIVIAL FACTOR: x^64
+stratum rung 3: c1 numerator degs (0,1)
+stratum rung 4: c1 numerator degs (0,1)
+stratum rung 5: c1 numerator degs (0,1)
+stratum rung 6: c1 numerator degs (0,1)
+stratum rung 7: c1 numerator degs (0,1)
+stratum rung 8: c1 numerator degs (0,1)
+stratum rung 9: c1 numerator degs (0,1)
+stratum rung 10: c1 numerator degs (0,1)
+stratum rung 11: c1 numerator degs (0,1)
+stratum rung 12: c1 numerator degs (0,1)
+stratum rung 13: c1 numerator degs (0,1)
+stratum rung 14: c1 numerator degs (0,1)
+stratum rung 15: c1 numerator degs (0,1)
+stratum rung 16: c1 numerator degs (0,1)
+stratum rung 17: c1 numerator degs (0,1)
+stratum rung 18: c1 numerator degs (0,1)
+stratum rung 19: c1 numerator degs (0,1)
+stratum rung 20: c1 numerator degs (0,1)
+stratum rung 21: c1 numerator degs (0,1)
+stratum rung 22: c1 numerator degs (0,1)
