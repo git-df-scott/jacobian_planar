@@ -362,7 +362,11 @@ is of course not R^2 either.)
 Branch tally for the RAW ideal (supports + f1 = f2 = 0, no vertex condition).
 deg q must lie in {1,2,4,6,8}: the leading coefficient of 2qt' - 3q't = u^2 is
 (2 deg t - 3 deg q) q_top t_top, so either 2 deg t = 3 deg q (deg q even) or
-deg q + deg t - 1 = 2, i.e. q = u.
+deg q + deg t - 1 = 2, i.e. q = u.  Verified computationally as well -- fixing
+q_m = 1, q_a = 0 for a > m and solving the q-layer gives
+
+    m = 1,2  q-layer imposes nothing        m = 3,5,7  EMPTY
+    m = 4,6,8                SOLUTIONS
 
     deg q = 8  a_14_8 != 0  -- SUBCASE 2.  a_10_5 = 0 forced (with everything
                               else on the face); complete over all 35 q at two
