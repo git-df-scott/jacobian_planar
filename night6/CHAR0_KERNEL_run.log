@@ -1,0 +1,25 @@
+==============================================================================
+CHARACTERISTIC ZERO -- face system over Q
+==============================================================================
+   residual ideal: dim = 0, vdim = 35
+   lex GB in shape position; eliminant degree 35
+   eliminant factorisation over Q (flint):
+      degree 35, multiplicity 1 : x^35+42022389595776/6311981*x^28+265472843532245531128968765/9374377445732*x^21+147853711990125992821207785996960/2343594361433*x^14+11279413270271808313324551549335678976/180276489341*x^7+(-472010836902934881599035667581952428867584/2343594361433)
+   Singular's own factorize() reported 2 factor(s), degrees (see log)
+      [Singular] mult 1 : 1
+      [Singular] mult 1 : 9374377445732*A6^35+62410476400737833472*A6^28+265472843532245531128968765*A6^21+591414847960503971284831143987840*A6^14+586529490054134032292876680565455306752*A6^7-1888043347611739526396142670327809
+
+##############################################################################
+FACTOR 0 : degree 35, multiplicity 1  (covers 35 of the 35 face solutions)
+   h(T) = x^35+42022389595776/6311981*x^28+265472843532245531128968765/9374377445732*x^21+147853711990125992821207785996960/2343594361433*x^14+11279413270271808313324551549335678976/180276489341*x^7+(-472010836902934881599035667581952428867584/2343594361433)
+   face solution rebuilt in K = Q[T]/(h)  (0.0s)
+   2*q*t' - 3*q'*t - u^2 identically zero in K (exact substitution): True
+   q_1 = 1, q_8 = 1 ; t_2 != 0: True ; t_12 != 0: True
+   support-restricted E3 matrix over K: 18 x 19, rank = 17, KERNEL DIMENSION = 2
+   free columns: ['s11', 's12']
+      kernel vector: val p_=1 deg p_=7 val s_=2 deg s_=11 ; E3(p_,s_) identically zero in K: True
+      kernel vector: val p_=1 deg p_=8 val s_=2 deg s_=12 ; E3(p_,s_) identically zero in K: True
+   relaxed matrix (s_ from u^1): 19 x 20, rank = 17, kernel dim = 3
+
+face solutions covered: 35 of 35
+total wall 1.1s
