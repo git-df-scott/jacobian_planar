@@ -1,0 +1,79 @@
+[
+ {
+  "h": "x + 577955",
+  "q": [
+   "1",
+   "266414",
+   "799341",
+   "819280",
+   "305052",
+   "868145",
+   "422048",
+   "1"
+  ],
+  "t": [
+   "1",
+   "844278",
+   "799341",
+   "936320",
+   "829885",
+   "301560",
+   "414274",
+   "898882",
+   "986828",
+   "80442",
+   "709713"
+  ],
+  "E4": true,
+  "variants": [
+   {
+    "chart": "A",
+    "rabinowitsch": false,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "seconds": 0.010703563690185547,
+    "n_eqs": 57,
+    "n_vars": 33,
+    "E3_identically_zero": true,
+    "gb": []
+   },
+   {
+    "chart": "A",
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "seconds": 0.009867191314697266,
+    "n_eqs": 59,
+    "n_vars": 35,
+    "E3_identically_zero": true,
+    "gb": []
+   },
+   {
+    "chart": "B",
+    "rabinowitsch": false,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "seconds": 0.01008152961730957,
+    "n_eqs": 57,
+    "n_vars": 32,
+    "E3_identically_zero": true,
+    "gb": []
+   },
+   {
+    "chart": "B",
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "seconds": 0.008944511413574219,
+    "n_eqs": 59,
+    "n_vars": 34,
+    "E3_identically_zero": true,
+    "gb": []
+   }
+  ]
+ }
+]
