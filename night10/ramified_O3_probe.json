@@ -1,0 +1,539 @@
+{
+ "ring": "O3 = Z[pi]/(pi^3-2), w(pi)=1, w(2)=3",
+ "ceiling": 12,
+ "points": [
+  {
+   "index": 1,
+   "bits": "101011000",
+   "budget_exceeded": false,
+   "nodes": 28945,
+   "max_level_reached": 5,
+   "n_deaths": 27136,
+   "death_levels": [
+    4,
+    5,
+    6
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 4,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "3": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "wmin": 4,
+    "nonzero_rho_rows": [
+     "K(10,1)",
+     "K(5,2)"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 2,
+   "bits": "101011010",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(7,1)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 3,
+   "bits": "101111000",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(10,1)",
+     "K(5,2)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 4,
+   "bits": "101111010",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(12,3)",
+     "K(10,1)",
+     "K(7,1)",
+     "K(5,2)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 5,
+   "bits": "111011100",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(1,1)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 6,
+   "bits": "111011111",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(9,3)",
+     "K(7,1)",
+     "K(1,1)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 7,
+   "bits": "111111100",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     0,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(11,2)",
+     "K(10,1)",
+     "K(5,2)",
+     "K(1,1)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  },
+  {
+   "index": 8,
+   "bits": "111111111",
+   "budget_exceeded": false,
+   "nodes": 273,
+   "max_level_reached": 2,
+   "n_deaths": 256,
+   "death_levels": [
+    3
+   ],
+   "survivor": null,
+   "representative_death": {
+    "level": 3,
+    "ds": {
+     "1": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "2": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "rho": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "wmin": 3,
+    "nonzero_rho_rows": [
+     "K(13,4)",
+     "K(12,3)",
+     "K(11,2)",
+     "K(10,1)",
+     "K(9,3)",
+     "K(7,1)",
+     "K(5,2)",
+     "K(1,1)",
+     "C2_P"
+    ],
+    "rank_J": 5,
+    "rank_aug": 6
+   }
+  }
+ ]
+}
