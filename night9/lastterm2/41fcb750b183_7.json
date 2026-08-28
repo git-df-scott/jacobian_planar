@@ -155,6 +155,7 @@
    "of_those_with_collisions_intact": 0,
    "HALT_EVENTS": [],
    "n_halt_events": 0,
+   "assignments_with_bracket_identically_zero": 0,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -183,7 +184,8 @@
     "collision_Q_diff_over_Z": 1,
     "collisions_hold_over_Z": false,
     "residual_rows_there": {},
-    "degenerate_by_additive_screen": true
+    "degenerate_by_additive_screen": true,
+    "bracket_identically_zero": false
    },
    "min_collisions_ok": {
     "min_nonzero_residual_rows": 1,
@@ -215,7 +217,41 @@
     "residual_rows_there": {
      "(11, 88)": -1068
     },
-    "degenerate_by_additive_screen": false
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
+   },
+   "min_collisions_ok_and_bracket_nonzero": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 1068,
+    "attaining_assignment": {
+     "a": [
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "+1*y^89+1*x^1",
+    "Q": "+1*y^1+1*x^12",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(11, 88)": -1068
+    },
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
    }
   },
   {
@@ -245,6 +281,7 @@
    "of_those_with_collisions_intact": 0,
    "HALT_EVENTS": [],
    "n_halt_events": 0,
+   "assignments_with_bracket_identically_zero": 0,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -273,7 +310,8 @@
     "collision_Q_diff_over_Z": 1,
     "collisions_hold_over_Z": false,
     "residual_rows_there": {},
-    "degenerate_by_additive_screen": true
+    "degenerate_by_additive_screen": true,
+    "bracket_identically_zero": false
    },
    "min_collisions_ok": {
     "min_nonzero_residual_rows": 1,
@@ -305,7 +343,41 @@
     "residual_rows_there": {
      "(11, 88)": -1068
     },
-    "degenerate_by_additive_screen": false
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
+   },
+   "min_collisions_ok_and_bracket_nonzero": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 1068,
+    "attaining_assignment": {
+     "a": [
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "+1*y^89+1*x^1",
+    "Q": "+1*y^1+1*x^12",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(11, 88)": -1068
+    },
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
    }
   },
   {
@@ -335,6 +407,7 @@
    "of_those_with_collisions_intact": 0,
    "HALT_EVENTS": [],
    "n_halt_events": 0,
+   "assignments_with_bracket_identically_zero": 0,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -363,7 +436,8 @@
     "collision_Q_diff_over_Z": 1,
     "collisions_hold_over_Z": false,
     "residual_rows_there": {},
-    "degenerate_by_additive_screen": true
+    "degenerate_by_additive_screen": true,
+    "bracket_identically_zero": false
    },
    "min_collisions_ok": {
     "min_nonzero_residual_rows": 1,
@@ -395,7 +469,41 @@
     "residual_rows_there": {
      "(11, 88)": -1068
     },
-    "degenerate_by_additive_screen": false
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
+   },
+   "min_collisions_ok_and_bracket_nonzero": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 1068,
+    "attaining_assignment": {
+     "a": [
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "+1*y^89+1*x^1",
+    "Q": "+1*y^1+1*x^12",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(11, 88)": -1068
+    },
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
    }
   }
  ]

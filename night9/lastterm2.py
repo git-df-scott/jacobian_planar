@@ -31,6 +31,14 @@ WHAT THIS ADDS TO night9/lastterm.py.
         number of non-zero residual rows achieved WITH BOTH COLLISION
         EQUALITIES INTACT over Z, and an exact attaining pair (P, Q).
 
+        VACUOUS POINTS ARE EXCLUDED FROM THE GLOBAL BEST.  A box point at
+        which the bracket [P,Q] = P_x Q_y - P_y Q_x is IDENTICALLY ZERO (for
+        instance P identically 0) has residual equal to the constant -1: one
+        non-zero row, content 1.  That is the far end of the landscape, not a
+        near miss, so the global best is taken over the stratum
+        "collisions intact AND bracket not identically zero".  The vacuous
+        points are still counted and reported separately.
+
 HALT EVENT (protocol unchanged): an assignment whose FULL residual over Z is
 identically zero on ALL rows AND whose two collision differences are both
 zero.  Reported paths-only if it occurs.
@@ -126,10 +134,12 @@ def scan(eqs, pairs, SP, SQ, a0, b0, varlist, box):
         return bmap[j] if j in bmap else np.int64(b0[j])
 
     nrows = np.zeros(N, dtype=np.int64)
+    nbracket = np.zeros(N, dtype=np.int64)   # non-zero rows of [P,Q] itself
     for e in eqs:
         v = np.zeros(N, dtype=np.int64)
         for (mi, ni, c) in pairs[e]:
             v = v + np.int64(c) * av(mi) * bv(ni)
+        nbracket += (v != 0)
         if e == (0, 0):
             v = v - 1
         nrows += (v != 0)
@@ -143,7 +153,7 @@ def scan(eqs, pairs, SP, SQ, a0, b0, varlist, box):
         s = (1 if n[0] == 0 else 0) - (1 if n[1] == 0 else 0)
         if s:
             cQ = cQ + np.int64(s) * bv(j)
-    return nrows, cP, cQ, G
+    return nrows, cP, cQ, G, nbracket
 
 
 def assignment_at(a0, b0, varlist, G, t):
@@ -166,8 +176,10 @@ def examine(tag, eqs, pairs, SP, SQ, a0, b0, varlist, box):
                 "box": "[%d..%d]" % (box[0], box[-1]),
                 "points": npoints, "status": "NOT-ATTEMPTED-point-cap",
                 "point_cap": FULLBOX_POINT_CAP}
-    nrows, cP, cQ, G = scan(eqs, pairs, SP, SQ, a0, b0, varlist, box)
+    nrows, cP, cQ, G, nbracket = scan(eqs, pairs, SP, SQ, a0, b0,
+                                      varlist, box)
     coll = (cP == 0) & (cQ == 0)
+    nonvac = nbracket > 0
     zero_all = int((nrows == 0).sum())
     zero_coll = int(((nrows == 0) & coll).sum())
 
@@ -190,8 +202,10 @@ def examine(tag, eqs, pairs, SP, SQ, a0, b0, varlist, box):
            "of_those_with_collisions_intact": zero_coll,
            "HALT_EVENTS": halts, "n_halt_events": len(halts)}
 
+    out["assignments_with_bracket_identically_zero"] = int((~nonvac).sum())
     for name, mask in (("all", np.ones_like(coll)),
-                       ("collisions_ok", coll)):
+                       ("collisions_ok", coll),
+                       ("collisions_ok_and_bracket_nonzero", coll & nonvac)):
         if not mask.any():
             out["min_" + name] = None
             continue
@@ -219,6 +233,9 @@ def examine(tag, eqs, pairs, SP, SQ, a0, b0, varlist, box):
             "collisions_hold_over_Z": best[3] == 0 and best[4] == 0,
             "residual_rows_there": {str(k): v for k, v in best[5].items()},
             "degenerate_by_additive_screen": best[6],
+            "bracket_identically_zero": all(
+                sum(c * best[1][mi] * best[2][ni]
+                    for (mi, ni, c) in pairs[e]) == 0 for e in eqs),
         }
     return out
 
@@ -301,7 +318,7 @@ def main():
                 halt_paths.append(path)
             bc = None
             for bx in boxes:
-                m = bx.get("min_collisions_ok")
+                m = bx.get("min_collisions_ok_and_bracket_nonzero")
                 if m is None:
                     continue
                 k2 = (m["min_nonzero_residual_rows"],
