@@ -30,8 +30,9 @@ R2 itself expanded.
 """
 import numpy as np
 
-LAPLACE_MAX = 18
-DP_STATE_CAP = 200000
+LAPLACE_MAX = 30
+DP_STATE_CAP = 400000
+DET_TIME_BUDGET = 5.0    # seconds per Laplace expansion; abort -> not computed
 
 
 # ---------------------------------------------------- sparse poly over F_p
@@ -68,12 +69,19 @@ ONE = {(0, 0, 0): 1}
 
 
 def det_laplace(M, p):
-    """Exact determinant of a square matrix of sparse polys, by row-subset DP."""
+    """Exact determinant of a square matrix of sparse polys, by row-subset DP.
+    Returns None if the state cap or the per-call time budget is exceeded."""
+    import time as _t
+    _t0 = _t.time()
     N = len(M)
     dp = {0: ONE}
+    _cnt = 0
     for col in range(N):
         ndp = {}
         for mask, poly in dp.items():
+            _cnt += 1
+            if not (_cnt & 511) and _t.time() - _t0 > DET_TIME_BUDGET:
+                return None
             for r in range(N):
                 if mask >> r & 1:
                     continue
@@ -88,7 +96,7 @@ def det_laplace(M, p):
                 nm = mask | (1 << r)
                 ndp[nm] = padd(ndp.get(nm, {}), t, p)
         dp = ndp
-        if len(dp) > DP_STATE_CAP:
+        if len(dp) > DP_STATE_CAP or _t.time() - _t0 > DET_TIME_BUDGET:
             return None
     return dp.get((1 << N) - 1, {})
 

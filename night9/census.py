@@ -98,17 +98,26 @@ def main():
         sup[d["hash"]] = d
     hd = os.path.join(HERE, "hits_nondegenerate")
     os.makedirs(hd, exist_ok=True)
-    fh = open(os.path.join(HERE, "census.csv"), "w", newline="")
+    cpath = os.path.join(HERE, "census.csv")
+    done = set()
+    if os.path.exists(cpath):
+        for rr in csv.DictReader(open(cpath)):
+            done.add((rr["hash"], int(rr["p"])))
+    newf = not os.path.exists(cpath)
+    fh = open(cpath, "a", newline="")
     F = ["hash", "p", "family", "exact_count", "enumerated", "truncated",
          "n_degenerate", "n_nondegenerate", "n_sampled", "n_verify_fail",
          "tear_nonempty", "tear_empty", "tear_other", "climb_p2", "climb_p3",
          "wall_s"]
     w = csv.DictWriter(fh, fieldnames=F)
-    w.writeheader()
+    if newf:
+        w.writeheader()
     for r in rows:
         if r["verdict"] != "NONEMPTY":
             continue
         p = int(r["p"]); h = r["hash"]
+        if (h, p) in done:
+            continue
         d = sup[h]
         SP = [tuple(m) for m in d["support_P"]]
         SQ = [tuple(m) for m in d["support_Q"]]
