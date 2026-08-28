@@ -15,7 +15,7 @@ monomials xy and x^2 do not divide one another, so the DAG is a single
 exhausted leaf.  Independently, the exact mate system for x + x^2*y is
 inconsistent on every support tried (deg Q <= 3,6,9,12,15; see below).
 
-  x + x^2*y  stage Y  deg Q <= 2   n=0    defl=1 -> EMPTY_over_Q   [lambda_exact]  lambda support=1
+  x + x^2*y  stage Y  deg Q <= 2   n=2    defl=1 -> EMPTY_over_Q   [lambda_exact]  lambda support=2
   x + x^2*y  stage C  deg Q <= 4   n=3    defl=2 -> EMPTY_over_Q   [lambda_exact]  lambda support=2
   x + x^2*y  stage W  deg Q <= 5   n=3    defl=2 -> EMPTY_over_Q   [lambda_exact]  lambda support=2
   x + x^2*y  stage W2 deg Q <= 15  n=130  defl=6 -> EMPTY_over_Q   [lambda_exact]  lambda support=9
@@ -27,11 +27,11 @@ C-POS  P = x + y^126   P = [((0, 126), 1), ((1, 0), 1)]
   S3: places_at_infinity=1  genus_newton=0  lead_terms=1
   screens passed: True
   SY: COORDINATE (nodes=2 leaves=0)
-  stage Y: deg_Q<=125  n_raw=126 thin_t=1 n_unknowns=125 deflated_kernel_dim=1  -> MATE_over_Q [exact_solution]
+  stage Y: deg_Q<=125  n_raw=127 thin_t=1 n_unknowns=126 deflated_kernel_dim=1  -> MATE_over_Q [exact_solution]
         exact Q (deg 1): [((0, 1), Fraction(1, 1))]
         bracket [P,Q] == 1 over Q: True
         degree pair (126,1) divisibility-ordered: True
-  (0.5s)
+  (0.4s)
 ==============================================================================
 C-NEG  P = x^126 + y^127 + x^2*y^2   P = [((0, 127), 1), ((2, 2), 1), ((126, 0), 1)]
   S2=pass (gcd(P_x,P_y) is a unit)
@@ -47,3 +47,21 @@ C-NEG  P = x^126 + y^127 + x^2*y^2   P = [((0, 127), 1), ((2, 2), 1), ((126, 0),
   stage W: deg_Q<=253  n_raw=32006 thin_t=3 n_unknowns=926 deflated_kernel_dim=1  -> EMPTY_over_Q [lambda_exact]
         lambda: support=1  (constant row of A is identically zero)
   (0.1s)
+
+==============================================================================
+HARD GATE: 15 checks, 0 failed -> PASS
+  [ok] SY[x]                                                got COORDINATE, brief label COORDINATE
+  [ok] SY[x + y^2]                                          got COORDINATE, brief label COORDINATE
+  [ok] SY[x + x^2*y] (unlabeled in brief)                   got NON_COORDINATE
+  [ok] SY[x*y]                                              got NON_COORDINATE, brief label NON_COORDINATE
+  [ok] SY[x^2*y]                                            got NON_COORDINATE, brief label NON_COORDINATE
+  [ok] SY[x + y^126]                                        got COORDINATE, brief label COORDINATE
+  [ok] SY[x^126 + y^127 + x^2*y^2] (unlabeled in brief)     got NON_COORDINATE
+  [ok] SY[x + y^2 + 2x^2y + x^4]                            got COORDINATE, brief label COORDINATE
+  [ok] C-POS screens pass                                   S2=pass S1=pass
+  [ok] C-POS SY COORDINATE                                  COORDINATE
+  [ok] C-POS mate found                                     MATE
+  [ok] C-POS mate is exact_solution certified               
+  [ok] C-NEG rejected by S1                                 origin is a common zero of (P_x,P_y)
+  [ok] C-NEG no mate on override                            NO_MATE_ALL_STAGES
+  [ok] C-NEG every stage EMPTY_over_Q with a certificate    Y:EMPTY_over_Q[lambda_exact], C:EMPTY_over_Q[lambda_exact], W:EMPTY_over_Q[lambda_exact]

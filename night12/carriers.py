@@ -86,7 +86,6 @@ def carrier(H, m, stage, cap):
     index is recorded.
     """
     H3 = M.ppow(H, 3)
-    base = list(H3.keys()) + [(0, 0), (0, 1)]
     if stage == "Y":
         D = 2 * m - 1
     elif stage == "C":
@@ -95,9 +94,37 @@ def carrier(H, m, stage, cap):
         D = 4 * m - 1
     else:
         raise ValueError(stage)
-    # scale the H^3 polygon to the stage bound (exact, on a doubled lattice)
+    # Scale the H^3 polygon to the stage bound (exact, on a common-denominator
+    # lattice: a carrier point (a,b) is tested as (a*den, b*den)).
+    #
+    # The ANCHORS (0,0) and (0,1) are adjoined at their true positions, i.e.
+    # already multiplied by den, and are NOT scaled by num.  H is a form, so
+    # supp(H^3) lies on the single line a+b = 3m and conv(supp(H^3)) is a
+    # segment; the anchors are what make the carrier two-dimensional and, in
+    # particular, are what put the monomial (0,1) in it.  Scaling them by
+    # num/den < 1 (which is every stage with D < 3m, i.e. stage Y) shrank
+    # (0,1) below the lattice and dropped it, contradicting this function's
+    # own stated contract that (0,0) and (0,1) are always retained.
+    #
+    # Consequence of the old behaviour, recorded: with (0,1) absent the row of
+    # the Keller system at the constant monomial was identically zero, because
+    # the only carrier column that can meet it through the linear term x of P
+    # is exactly a = (1,1)-(1,0) = (0,1).  Stage Y then returned EMPTY_over_Q
+    # by the degenerate zero-row certificate for every M1 P -- a true statement
+    # about that carrier, but a vacuous one.  Restoring the anchors strictly
+    # ENLARGES the carrier, so it can only strengthen an emptiness verdict and
+    # can only help a mate be found; it cannot make a true emptiness false.
+    # The anchors are adjoined BOTH scaled (as before) and unscaled, i.e. the
+    # polygon is the convex hull of the union.  Taking the union rather than
+    # replacing keeps the new carrier a superset of the old one at every
+    # stage: when D > 3m the old scaling inflated the anchors outward, and
+    # dropping that would have SHRUNK stage W, which weakens an emptiness
+    # verdict.  Enlarging is the only safe direction here.
     num, den = D, 3 * m
-    pts = [(p[0] * num, p[1] * num) for p in base]
+    anchors = [(0, 0), (0, 1)]
+    pts = ([(p[0] * num, p[1] * num) for p in H3]
+           + [(p[0] * num, p[1] * num) for p in anchors]
+           + [(p[0] * den, p[1] * den) for p in anchors])
     verts = M._hull(sorted(set(pts)))
     S = []
     for a in range(D + 1):

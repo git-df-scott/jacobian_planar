@@ -53,8 +53,21 @@ def general_carrier(P, stage, cap):
     if D < 1:
         return [], {"stage": stage, "deg_Q_bound": D, "n_raw": 0,
                     "thin_t": 1, "n_used": 0, "deflated_kernel_dim": 0}
-    base = list(P.keys()) + M.BASE
-    verts = M._hull(sorted(set((p[0] * D, p[1] * D) for p in base)))
+    # Same anchor convention as carriers.carrier: the Newton polygon of P is
+    # scaled to the stage bound (factor D/d, applied on the common-denominator
+    # lattice where a carrier point (a,b) is tested as (a*d, b*d)), while the
+    # anchors M.BASE = {(0,0),(1,0),(0,1)} are adjoined UNSCALED.  Scaling the
+    # anchors shrinks them below the lattice whenever D < d -- which is stage Y
+    # for every P -- and in particular drops (0,1), the only column that can
+    # meet the constant row of the Keller system through a linear term of P.
+    # Adjoining them unscaled strictly enlarges the carrier, so it can only
+    # strengthen an emptiness verdict and can only help a mate be found.
+    # Adjoined BOTH scaled and unscaled, so the carrier is a superset of the
+    # old one at every stage (when D > d the old scaling inflated the anchors
+    # outward, and dropping that would have shrunk stage W).
+    verts = M._hull(sorted(set([(p[0] * D, p[1] * D) for p in P]
+                               + [(p[0] * D, p[1] * D) for p in M.BASE]
+                               + [(p[0] * d, p[1] * d) for p in M.BASE])))
     S = []
     for a in range(D + 1):
         for b in range(D + 1 - a):
