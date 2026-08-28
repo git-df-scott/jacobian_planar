@@ -52,6 +52,19 @@ SY NON_COORDINATE verdicts among U-passers was independently reproduced by
 the FIB-screen.  (The FIB-screen can never certify COORDINATE; on the 11
 SY COORDINATE objects it returned INCONCLUSIVE, which is consistent.)
 
+Third check on the other side of the SY verdict: all 11 objects that SY called
+COORDINATE are, as generated, of the shape `x + phi(y)`
+
+    -3*y^2 + x + 4*y - 1 ;  x - y + 3 ;  x ;  x + 4*y - 1 ;  x - y + 2 ;
+    -2*y^4 + 3*y^3 - y^2 + x - 5*y - 4 ;  y^2 + x + 3*y + 1 ;  x - 3*y - 3 ;
+    x + 2*y + 4 ;  -y^3 - y^2 + x + 2 ;  y^2 + x + 3*y - 5
+
+each of which is the image of x under the shear (x, y) -> (x + phi(y), y), so
+each is a coordinate by construction and the SY COORDINATE verdict is correct
+on all 11.  (Generator note: the "triangular" branch of F3 produces f and g
+both in y alone, so that branch always lands on this shape -- that is why the
+SY COORDINATE verdicts in this run all come from it.)
+
 ## Which of the three routes each object takes
 
 Route counts over the 90 U-passers (a fibre may take more than one route);
