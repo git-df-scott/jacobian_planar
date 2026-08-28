@@ -381,3 +381,113 @@ def hensel_step(SP, SQ, a, b, p, level):
     if any(v % (pk * p) for v in r2):
         return None
     return na, nb
+
+
+# --------------------------------------------------------------- tear data
+# Per-hit TEAR DATA mod p (protocol addition):
+#   R1 = Res_y(P - u, Q - v)   -> polynomial in x, u, v
+#   R2 = Res_x(P - u, Q - v)   -> polynomial in y, u, v
+# Record the leading coefficient of R1 in its source variable x (i.e. the
+# coefficient of x^{deg_x R1}, a polynomial in u, v), likewise the leading
+# coefficient of R2 in y, and their product.
+#   product a nonzero CONSTANT   -> TEAR-EMPTY
+#   product NONCONSTANT in u,v   -> TEAR-NONEMPTY
+# Both resultants are computed over Z (the coefficients of P, Q are the
+# integer representatives 0..p-1, so the y-degree resp. x-degree of P-u, Q-v
+# is unchanged by reduction and Res commutes with reduction), then reduced
+# mod p BEFORE the leading coefficient in x resp. y is read off, because the
+# top degree can drop mod p.
+# This is a characteristic-p measurement and is labelled as such.
+
+class TearTimeout(Exception):
+    pass
+
+
+def _reduce_mod_p(expr, gens, p):
+    import sympy
+    P = sympy.Poly(expr, *gens)
+    d = {}
+    for mono, c in zip(P.monoms(), P.coeffs()):
+        c = int(c) % p
+        if c:
+            d[mono] = c
+    return d
+
+
+def tear_data(SP, SQ, a, b, p, timeout=60):
+    import signal
+    import sympy
+    x, y, u, v = sympy.symbols('x y u v')
+
+    def handler(sig, frm):
+        raise TearTimeout()
+
+    fP = sum(int(a[i]) * x ** SP[i][0] * y ** SP[i][1] for i in range(len(SP))) - u
+    fQ = sum(int(b[i]) * x ** SQ[i][0] * y ** SQ[i][1] for i in range(len(SQ))) - v
+    old = signal.signal(signal.SIGALRM, handler)
+    signal.alarm(timeout)
+    try:
+        R1 = sympy.resultant(sympy.Poly(fP, y), sympy.Poly(fQ, y))
+        R2 = sympy.resultant(sympy.Poly(fP, x), sympy.Poly(fQ, x))
+        d1 = _reduce_mod_p(R1, (x, u, v), p)
+        d2 = _reduce_mod_p(R2, (y, u, v), p)
+        signal.alarm(0)
+    except TearTimeout:
+        return {"tear": "TEAR-TIMEOUT", "characteristic": p}
+    except Exception as ex:
+        signal.alarm(0)
+        return {"tear": "TEAR-ERROR", "err": str(ex)[:200], "characteristic": p}
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old)
+
+    def lead(d, name):
+        if not d:
+            return None, None
+        dd = max(m[0] for m in d)
+        lc = {(m[1], m[2]): c for m, c in d.items() if m[0] == dd}
+        return dd, lc
+
+    if not d1 or not d2:
+        return {"tear": "TEAR-RES-ZERO", "characteristic": p,
+                "R1_zero_mod_p": not d1, "R2_zero_mod_p": not d2}
+    dx, lc1 = lead(d1, 'x')
+    dy, lc2 = lead(d2, 'y')
+    prod = {}
+    for (i1, j1), c1 in lc1.items():
+        for (i2, j2), c2 in lc2.items():
+            k = (i1 + i2, j1 + j2)
+            prod[k] = (prod.get(k, 0) + c1 * c2) % p
+    prod = {k: c for k, c in prod.items() if c}
+    if not prod:
+        cls = "TEAR-PRODUCT-ZERO"
+    elif set(prod.keys()) == {(0, 0)}:
+        cls = "TEAR-EMPTY"
+    else:
+        cls = "TEAR-NONEMPTY"
+    fmt = lambda d: {"u^%d v^%d" % k: c for k, c in sorted(d.items())}
+    return {"tear": cls, "characteristic": p,
+            "deg_x_R1": dx, "deg_y_R2": dy,
+            "lead_coeff_R1_in_x": fmt(lc1),
+            "lead_coeff_R2_in_y": fmt(lc2),
+            "product": fmt(prod)}
+
+
+def degenerate_screen(SP, SQ, a, b):
+    """Cheap additive-type screen on the EFFECTIVE support of the solution.
+
+    DEGENERATE if  P has no monomial involving y  AND  Q minus its pure-y
+    part has no monomial involving y  (so P in F_p[x], Q = (poly in y with
+    no x) + poly in x -- the additive shape);  or the x <-> y mirror.
+    """
+    eP = [SP[i] for i in range(len(SP)) if a[i]]
+    eQ = [SQ[i] for i in range(len(SQ)) if b[i]]
+    P_no_y = all(m[1] == 0 for m in eP)
+    Q_no_y_off = all(n[1] == 0 for n in eQ if n[0] != 0)
+    Q_no_x = all(n[0] == 0 for n in eQ)
+    P_no_x_off = all(m[0] == 0 for m in eP if m[1] != 0)
+    if P_no_y and Q_no_y_off:
+        return True, "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+    if Q_no_x and P_no_x_off:
+        return True, "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+    return False, ""

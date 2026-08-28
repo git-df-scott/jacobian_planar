@@ -55,7 +55,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import numpy as np
 from keller_solver import (build_system, exhaustive, verify_solution,
-                           hensel_step, solve_gfp, _affine_enum_spec)
+                           hensel_step, solve_gfp, _affine_enum_spec,
+                           tear_data, degenerate_screen)
 
 BUDGET = 400000
 GB_TIMEOUT = 300
@@ -293,29 +294,58 @@ def run_cell(SP, SQ, p, family, hitdir):
                     rec["note"] = "groebner " + gb["status"] + ", sampling MISS"
 
     nver = nfail = climb2 = climb3 = 0
+    ndeg = nte = ntn = ntother = 0
+    climb2_tn = 0
     if rec["verdict"] == "NONEMPTY" and sols:
         details = []
+        staged = []
         for (a, b) in sols[:20]:
+            # cheap additive-type screen first: DEGENERATE hits are recorded
+            # and go no further (no verification, no tear, no Hensel).
+            isdeg, why = degenerate_screen(SP, SQ, a, b)
+            if isdeg:
+                ndeg += 1
+                details.append({"a": a, "b": b, "status": "DEGENERATE",
+                                "reason": why})
+                continue
             chk = verify_solution(SP, SQ, a, b, p)
             ok = chk["det_ok"] and chk["coll_ok"]
             nver += 1
             if not ok:
                 nfail += 1
-            d = {"a": a, "b": b, "verify": chk}
-            if ok:
-                l2 = hensel_step(SP, SQ, a, b, p, 1)
-                d["lift_to_p2"] = l2 is not None
-                if l2 is not None:
-                    climb2 += 1
-                    d["p2_point"] = {"a": l2[0], "b": l2[1]}
-                    l3 = hensel_step(SP, SQ, l2[0], l2[1], p, 2)
-                    d["lift_to_p3"] = l3 is not None
-                    if l3 is not None:
-                        climb3 += 1
-                        d["p3_point"] = {"a": l3[0], "b": l3[1]}
+                details.append({"a": a, "b": b, "status": "VERIFY-FAIL",
+                                "verify": chk})
+                continue
+            td = tear_data(SP, SQ, a, b, p, timeout=30)
+            if td["tear"] == "TEAR-NONEMPTY":
+                ntn += 1
+            elif td["tear"] == "TEAR-EMPTY":
+                nte += 1
+            else:
+                ntother += 1
+            staged.append({"a": a, "b": b, "status": "VERIFIED",
+                           "verify": chk, "tear": td})
+        # PRIORITY RULE: TEAR-NONEMPTY hits get the Hensel p^2/p^3 steps first.
+        order = {"TEAR-NONEMPTY": 0}
+        staged.sort(key=lambda d: order.get(d["tear"]["tear"], 1))
+        for d in staged:
+            a, b = d["a"], d["b"]
+            l2 = hensel_step(SP, SQ, a, b, p, 1)
+            d["lift_to_p2"] = l2 is not None
+            if l2 is not None:
+                climb2 += 1
+                if d["tear"]["tear"] == "TEAR-NONEMPTY":
+                    climb2_tn += 1
+                d["p2_point"] = {"a": l2[0], "b": l2[1]}
+                l3 = hensel_step(SP, SQ, l2[0], l2[1], p, 2)
+                d["lift_to_p3"] = l3 is not None
+                if l3 is not None:
+                    climb3 += 1
+                    d["p3_point"] = {"a": l3[0], "b": l3[1]}
             details.append(d)
         with open(os.path.join(hitdir, "%s_p%d.json" % (h, p)), "w") as f:
             json.dump({"hash": h, "p": p, "family": family,
+                       "characteristic": p,
                        "support_P": [list(m) for m in SP],
                        "support_Q": [list(m) for m in SQ],
                        "method": rec["method"],
@@ -323,15 +353,21 @@ def run_cell(SP, SQ, p, family, hitdir):
                        "solutions": details}, f, indent=1)
     rec["n_verified"] = nver
     rec["n_verify_fail"] = nfail
+    rec["n_degenerate"] = ndeg
+    rec["n_tear_nonempty"] = ntn
+    rec["n_tear_empty"] = nte
+    rec["n_tear_other"] = ntother
     rec["climb_p2"] = climb2
+    rec["climb_p2_tear_nonempty"] = climb2_tn
     rec["climb_p3"] = climb3
     rec["wall_s"] = round(time.time() - t0, 3)
     return rec
 
 
 FIELDS = ["hash", "p", "family", "nP", "nB", "n", "method", "n_enum",
-          "verdict", "count", "n_verified", "n_verify_fail", "climb_p2",
-          "climb_p3", "wall_s", "note"]
+          "verdict", "count", "n_verified", "n_verify_fail", "n_degenerate",
+          "n_tear_nonempty", "n_tear_empty", "n_tear_other", "climb_p2",
+          "climb_p2_tear_nonempty", "climb_p3", "wall_s", "note"]
 
 
 def main():
