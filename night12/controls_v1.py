@@ -121,9 +121,70 @@ def main():
     out.append(run("C-NEG  P = x^126 + y^127 + x^2*y^2",
                    {(126, 0): 1, (0, 127): 1, (2, 2): 1}, override=True))
 
-    json.dump(out, open(os.path.join(HERE, "controls_v1.json"), "w"), indent=1)
+    gate = assess(out)
+
+    json.dump({"controls": out, "gate": gate},
+              open(os.path.join(HERE, "controls_v1.json"), "w"), indent=1)
     open(os.path.join(HERE, "controls_v1_log.txt"), "w").write("\n".join(LOG) + "\n")
+    return 0 if gate["gate"] == "PASS" else 1
+
+
+def assess(out):
+    """Explicit hard gate.  The controls script previously printed its
+    measurements but returned success unconditionally, so a regression in
+    C-POS/C-NEG/SY could not stop a pipeline run.  This makes each required
+    property a named check with an explicit verdict and a nonzero exit code on
+    failure.  It asserts only properties the controls already measured -- no
+    screen, certificate or decision contract is touched.
+    """
+    checks = []
+
+    def chk(name, ok, detail=""):
+        checks.append({"check": name, "ok": bool(ok), "detail": detail})
+
+    # (a) SY validation set: every entry the brief actually labels must match.
+    for name, P, expect in sy.VALIDATION:
+        v, _ = sy.certify(P)
+        if expect in ("COORDINATE", "NON_COORDINATE"):
+            chk("SY[%s]" % name, v == expect, "got %s, brief label %s" % (v, expect))
+        else:
+            chk("SY[%s] (unlabeled in brief)" % name, True, "got %s" % v)
+
+    cpos = next(r for r in out if r["name"].startswith("C-POS"))
+    cneg = next(r for r in out if r["name"].startswith("C-NEG"))
+
+    # (b) C-POS: screens pass, SY COORDINATE, a mate certified over Q.
+    chk("C-POS screens pass", cpos["screens"]["passed"],
+        "S2=%s S1=%s" % (cpos["screens"]["S2"], cpos["screens"]["S1"]))
+    chk("C-POS SY COORDINATE", cpos["SY"] == "COORDINATE", cpos["SY"])
+    chk("C-POS mate found", cpos.get("outcome") == "MATE", str(cpos.get("outcome")))
+    chk("C-POS mate is exact_solution certified",
+        any(s.get("certificate") == "exact_solution" for s in cpos["stages"]), "")
+
+    # (c) C-NEG: S1 must reject BEFORE the solver, and the solver on override
+    #     must certify emptiness exactly at every stage it tried.
+    chk("C-NEG rejected by S1", cneg["screens"]["S1"] == "reject",
+        cneg["screens"]["S1_detail"])
+    chk("C-NEG no mate on override", cneg.get("outcome") != "MATE",
+        str(cneg.get("outcome")))
+    chk("C-NEG every stage EMPTY_over_Q with a certificate",
+        bool(cneg["stages"]) and all(
+            s["verdict"] == "EMPTY_over_Q"
+            and s["certificate"] in ("lambda_exact", "rank_full_column_exact")
+            for s in cneg["stages"]),
+        ", ".join("%s:%s[%s]" % (s.get("stage"), s["verdict"], s["certificate"])
+                  for s in cneg["stages"]))
+
+    bad = [c for c in checks if not c["ok"]]
+    gate = {"gate": "PASS" if not bad else "FAIL",
+            "n_checks": len(checks), "n_failed": len(bad), "checks": checks}
+    say("")
+    say("=" * 78)
+    say("HARD GATE: %d checks, %d failed -> %s" % (len(checks), len(bad), gate["gate"]))
+    for c in checks:
+        say("  [%s] %-52s %s" % ("ok" if c["ok"] else "FAIL", c["check"], c["detail"]))
+    return gate
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
