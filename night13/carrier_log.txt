@@ -1,0 +1,135 @@
+{
+ "H_exponents": [
+  2,
+  14,
+  29,
+  41
+ ],
+ "H_exponents_mod3": [
+  2,
+  2,
+  2,
+  2
+ ],
+ "H2_x_exponents": [
+  4,
+  16,
+  28,
+  31,
+  43,
+  55,
+  58,
+  70,
+  82
+ ],
+ "H2_x_exponents_mod3": [
+  1
+ ],
+ "H3_x_exponents": [
+  6,
+  18,
+  30,
+  33,
+  42,
+  45,
+  57,
+  60,
+  69,
+  72,
+  84,
+  87,
+  96,
+  99,
+  111,
+  123
+ ],
+ "H3_x_exponents_mod3": [
+  0
+ ],
+ "n_supp_H2": 9,
+ "n_supp_H3": 16,
+ "hull_P_vertices": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   82,
+   2
+  ],
+  [
+   4,
+   80
+  ]
+ ],
+ "hull_Q_vertices": [
+  [
+   0,
+   0
+  ],
+  [
+   123,
+   3
+  ],
+  [
+   6,
+   120
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "n_candidates_P": 1087,
+ "n_candidates_Q": 2439,
+ "deg_P": 84,
+ "deg_Q": 126,
+ "jvdk_84_divides_126": false,
+ "jvdk_126_divides_84": false,
+ "jvdk_divisibility_ordered": false
+}
+step    1 Q (3, 40)    score=  +8 ties=    3 gain=1  sing=    17  P=  1 Q=  2
+step    2 Q (15, 28)   score=  +2 ties=    2 gain=1  sing=    15  P=  1 Q=  3
+step    3 Q (30, 13)   score=  +2 ties=    1 gain=None  sing=    13  P=  1 Q=  4
+step    4 Q (18, 25)   score=  -4 ties=    2 gain=1  sing=    17  P=  1 Q=  5
+step   10 Q (24, 19)   score=  -2 ties=    1 gain=None  sing=    27  P=  1 Q= 11
+step   20 Q (69, 15)   score=  +2 ties=    1 gain=None  sing=    28  P=  1 Q= 21
+step   30 Q (36, 48)   score=  -1 ties=    1 gain=None  sing=    36  P=  1 Q= 31
+step   40 Q (3, 6)     score=  -9 ties=   21 gain=1  sing=    56  P=  1 Q= 41
+step   50 Q (72, 20)   score=  +1 ties=    1 gain=None  sing=    60  P=  1 Q= 51
+step   60 Q (15, 77)   score=  -3 ties=    6 gain=1  sing=    62  P=  1 Q= 61
+step   70 Q (3, 60)    score=  -9 ties=   20 gain=1  sing=    79  P=  1 Q= 71
+step   80 Q (33, 30)   score=  -2 ties=    1 gain=None  sing=    89  P=  1 Q= 81
+step   90 Q (6, 12)    score=  -9 ties=   17 gain=1  sing=   107  P=  1 Q= 91
+step  100 Q (45, 56)   score=  +2 ties=    1 gain=None  sing=   124  P=  1 Q=101
+step  110 Q (51, 50)   score=  +1 ties=    1 gain=None  sing=   118  P=  1 Q=111
+step  120 Q (78, 23)   score=  +1 ties=    1 gain=None  sing=   114  P=  1 Q=121
+step  130 Q (3, 24)    score=  -4 ties=    2 gain=1  sing=   127  P=  1 Q=131
+step  140 Q (54, 56)   score=  +2 ties=    1 gain=None  sing=   131  P=  1 Q=141
+step  150 Q (36, 74)   score=  +0 ties=    1 gain=None  sing=   129  P=  1 Q=151
+step  160 Q (87, 23)   score=  +0 ties=    2 gain=1  sing=   129  P=  1 Q=161
+step  170 Q (9, 27)    score=  -3 ties=    1 gain=None  sing=   139  P=  1 Q=171
+step  180 Q (18, 101)  score=  +3 ties=    2 gain=1  sing=   152  P=  1 Q=181
+step  190 Q (81, 38)   score=  +1 ties=    1 gain=None  sing=   150  P=  1 Q=191
+step  200 Q (24, 95)   score=  -1 ties=    3 gain=1  sing=   152  P=  1 Q=201
+step  210 Q (87, 32)   score=  +0 ties=    2 gain=1  sing=   148  P=  1 Q=211
+step  220 Q (18, 27)   score=  -3 ties=    1 gain=None  sing=   156  P=  1 Q=221
+step  230 Q (18, 36)   score=  -9 ties=   11 gain=1  sing=   177  P=  1 Q=231
+step  240 Q (39, 15)   score=  -2 ties=    1 gain=None  sing=   188  P=  1 Q=241
+step  250 Q (51, 21)   score=  +2 ties=    1 gain=None  sing=   201  P=  1 Q=251
+step  260 P (13, 6)    score= +33 ties=    1 gain=None  sing=   187  P=  6 Q=256
+step  270 P (13, 15)   score=  +0 ties=    1 gain=None  sing=   196  P= 16 Q=256
+step  280 P (52, 23)   score=  +2 ties=    1 gain=None  sing=   195  P= 26 Q=256
+step  290 P (22, 53)   score=  -2 ties=    1 gain=None  sing=   200  P= 36 Q=256
+step  300 P (31, 6)    score=  +9 ties=    1 gain=None  sing=   211  P= 46 Q=256
+step  310 P (4, 13)    score=  +4 ties=    1 gain=None  sing=   204  P= 56 Q=256
+step  320 P (19, 7)    score=  +6 ties=    1 gain=None  sing=   225  P= 66 Q=256
+step  330 P (31, 4)    score=  +4 ties=    1 gain=None  sing=   238  P= 76 Q=256
+step  340 P (16, 26)   score=  +2 ties=    1 gain=None  sing=   210  P= 86 Q=256
+step  350 P (7, 26)    score= +50 ties=    1 gain=None  sing=   177  P= 96 Q=256
+census {"n_rows_with_adjustable_pairs": 2308, "n_singleton_mandatory": 177, "constant_row_adjustable_pairs": 1, "singletons": [[0, 7], [0, 9], [0, 16], [0, 18], [3, 4], [3, 5], [3, 6], [3, 12], [3, 13], [3, 15], [3, 22], [3, 24], [3, 29], [3, 31], [3, 33], [3, 38], [3, 46], [3, 55], [3, 71], [3, 75], [3, 77], [3, 80], [6, 1], [6, 2], [6, 3], [6, 10], [6, 12], [6, 19], [6, 21], [6, 26], [6, 28], [6, 30], [6, 34], [6, 35], [6, 76], [6, 84], [6, 86], [6, 90], [6, 93], [6, 95]]}
+accepted: False

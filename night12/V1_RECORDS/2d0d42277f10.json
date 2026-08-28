@@ -24,13 +24,36 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      7,
+      34
+     ],
+     [
+      1,
+      8
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "Y",
    "deg_Q_bound": 83,
    "n_raw": 44,
    "thin_t": 1,
    "n_used": 43,
    "deflated_kernel_dim": 1,
-   "secs": 0.1
+   "secs": 0.0
   },
   {
    "n_unknowns": 96,
@@ -43,6 +66,29 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      7,
+      34
+     ],
+     [
+      1,
+      8
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "C",
    "deg_Q_bound": 126,
    "n_raw": 98,
@@ -62,16 +108,39 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      7,
+      34
+     ],
+     [
+      1,
+      8
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "W",
    "deg_Q_bound": 167,
    "n_raw": 168,
    "thin_t": 1,
    "n_used": 166,
    "deflated_kernel_dim": 2,
-   "secs": 0.7
+   "secs": 0.6
   }
  ],
  "outcome": "EMPTY_all_stages_tried",
  "hit": false,
- "secs": 1.0
+ "secs": 0.9
 }

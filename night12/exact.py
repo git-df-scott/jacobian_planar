@@ -45,6 +45,20 @@ def zero_row_certificate(rows):
     return None
 
 
+def _lam_out(lam):
+    """Serialise a lambda certificate so it can be re-checked offline.
+
+    Recording only -- no verdict depends on this.  Previously a record kept
+    only `lambda_support`, the number of nonzero entries, so the certificate
+    the brief asks to be emitted on EMPTY could not actually be verified from
+    the record.  Entries are [[i, j], [numerator, denominator]] over the
+    monomial keys of the Keller rows.
+    """
+    return [[[int(k[0]), int(k[1])],
+             [int(v.numerator), int(v.denominator)]]
+            for k, v in sorted(lam.items()) if v != 0]
+
+
 def verify_lambda(lam, rows, ncols):
     """exact check (ring: Q): lambda^T A = 0 on every column, lambda^T e = 1."""
     acc = {}
@@ -219,6 +233,8 @@ def decide(P, S, sched_prime=M.P1, want_lambda=True):
     if lam is not None and verify_lambda(lam, rows, n):
         out.update({"verdict": "EMPTY_over_Q", "certificate": "lambda_exact",
                     "lambda_support": 1,
+                    "lambda_vector": _lam_out(lam),
+                    "lambda_reverified": bool(verify_lambda(lam, rows, n)),
                     "lambda_detail": "constant row of A is identically zero",
                     "rank_A_p": None, "rank_Ae_p": None})
         return out, rows, None
@@ -254,6 +270,8 @@ def decide(P, S, sched_prime=M.P1, want_lambda=True):
             if lam is not None and verify_lambda(lam, rows, n):
                 out["certificate"] = "lambda_exact"
                 out["lambda_support"] = sum(1 for v in lam.values() if v != 0)
+                out["lambda_vector"] = _lam_out(lam)
+                out["lambda_reverified"] = True
         return out, rows, None
 
     out.update({"verdict": "NOT_CERTIFIED", "certificate": "none",
