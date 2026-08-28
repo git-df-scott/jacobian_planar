@@ -1,0 +1,112 @@
+# night3 — collision-system search
+
+Executor record. No interpretation.
+
+Implementation: `night3/collision.py`. Results: `night3/collision_sweep.csv`,
+`night3/supports/support_<hash>.json` (one per support pair, exact supports),
+`night3/results/controls.json`, `night3/results/keller_only_check.json`.
+
+---
+
+## The system as implemented
+
+For a support pair (S_P, S_Q), finite subsets of Z_{>=0}^2 each containing (0,0),
+with one unknown coefficient per support monomial:
+
+    P = sum_{(i,j) in S_P} a_{ij} x^i y^j
+    Q = sum_{(i,j) in S_Q} b_{ij} x^i y^j
+
+over GF(p), p in {999983, 1000003}:
+
+- **(K)** every coefficient of `P_x*Q_y - P_y*Q_x - 1`, as a polynomial in x and y,
+  equals 0;
+- **(C)** `P(0,0) = 0`, `Q(0,0) = 0`, `P(1,0) = 0`, `Q(1,0) = 0`.
+
+Solved by Groebner basis (grevlex) over GF(p). **Unit ideal = EMPTY.** The full
+system (K)+(C) is handed to the solver as written; the driver pre-eliminates
+nothing.
+
+Solver: sympy 1.14.0 `groebner(..., modulus=p)`. Per the night3 tooling audit no
+dedicated Groebner system (msolve / Singular / Macaulay2 / sage) is present on this
+container, so the audit's fallback engine is what is used here.
+
+---
+
+## Mandatory controls
+
+Run via `python3 night3/collision.py controls`; raw record in
+`night3/results/controls.json`. All passed; nothing was hard-exited.
+
+| control | requirement | result |
+|---|---|---|
+| P2 | `P = x^2 - x`, `Q = y` satisfies (C) by direct substitution | **PASS** — P(0,0)=0, Q(0,0)=0, P(1,0)=0, Q(1,0)=0 |
+| P1 | (C) alone, dense degree-2 supports, must be NONEMPTY | **PASS** — NONEMPTY at 999983 (0.60 s) and at 1000003 (0.72 s) |
+| N1 | (K)+(C), dense supports of total degree <= 2, must be EMPTY at both primes | **PASS** — EMPTY at 999983 (0.46 s) and at 1000003 (0.48 s) |
+| N1 | (K)+(C), dense supports of total degree <= 3, must be EMPTY at both primes | **PASS** — EMPTY at 999983 (4.18 s) and at 1000003 (4.13 s) |
+
+N1 did not return NONEMPTY at any point, so no instrument anomaly was raised.
+
+---
+
+## Sweep
+
+Seed 20260829, per-solve timeout 300 s, both primes on every support pair.
+
+Construction, as specified: degree pairs `(a*t, b*t)` for coprime `(a,b)` in
+{(2,3), (3,4), (4,5), (5,6), (3,5)} with the maximum degree in [126, 200]; P's
+Newton polygon from 3–5 random base vertices including (0,0) and one realizing the
+top degree, checked to be genuinely 2-dimensional; Q's polygon the same base scaled
+by `b/a`, so the two are similar with ratio `deg Q / deg P` and integral; each
+support filled with its polygon vertices plus random interior lattice points up to a
+monomial budget `k` in {10, 14, 18}.
+
+| item | value |
+|---|---|
+| support pairs run | 261 |
+| rows (pairs x primes) | 522 |
+| rows per prime | 261 at 999983, 261 at 1000003 |
+| rows per k | 174 each at k=10, 14, 18 |
+| deg Q range | 126 – 200 |
+| deg P range | 78 – 165 |
+| support sizes realized | 10 – 18 monomials |
+| total solver wall time | 284.3 s (max 1.70 s, mean 0.54 s per solve) |
+
+**Verdict tally: EMPTY 522, NONEMPTY 0, TIMEOUT 0, ERROR 0.**
+
+No cell returned NONEMPTY, so the halt-and-report protocol was not triggered and no
+`night3/NONEMPTY_<hash>/` directory exists.
+
+---
+
+## Additional executor check (not part of the contract)
+
+Recorded because it bears on what the sweep rows do and do not cover, and is stated
+as a measurement only.
+
+The Keller equations **(K) alone**, with the collision equations (C) omitted, were
+run against 25 randomly chosen sweep support pairs at p=999983. Raw record in
+`night3/results/keller_only_check.json`.
+
+- Result: **EMPTY in 25 of 25.**
+- On dense degree-<=2 supports the same (K)-alone system returns NONEMPTY, so the
+  check does distinguish the two outcomes.
+
+So on the support pairs sampled, (K) alone is already the unit ideal, and the
+EMPTY verdicts recorded in the sweep are produced without the collision equations
+(C) contributing. Interpretation of this is out of scope here.
+
+---
+
+## Honest scope statement
+
+- **This sweep is modular.** Every verdict is a statement about the ideal over
+  GF(p) for p in {999983, 1000003}. A mod-p solution is not a characteristic-zero
+  result of any kind until it is lifted and verified exactly, and agreement across
+  the two primes is a bug-detection standard, not a proof in characteristic zero.
+- **Sparse supports are an exploratory subfamily.** EMPTY closes only the supports
+  actually run — the 261 support pairs listed in `night3/supports/`. It says
+  nothing about supports not in that list, about other monomial budgets, about
+  degrees outside [126, 200], or about dense supports at these degrees.
+- NONEMPTY, had it occurred, would mean only that the Groebner basis is not the
+  unit ideal, i.e. the ideal is proper over the algebraic closure of GF(p). It
+  would not by itself assert a solution with coordinates in GF(p).
