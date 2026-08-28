@@ -1,0 +1,48 @@
+{
+ "d": 4,
+ "p": 1000003,
+ "seed": 44,
+ "n_coeff": 30,
+ "n_feat": 496,
+ "multidegrees": [
+  [],
+  [
+   2
+  ],
+  [
+   3
+  ],
+  [
+   4
+  ],
+  [
+   2,
+   2
+  ]
+ ],
+ "controls": {
+  "I1_rank_saturated": true,
+  "I2_heldout_violations": 0,
+  "I3_trivial_separators": 0
+ },
+ "batches": [
+  {
+   "samples": 200,
+   "rank": 187
+  },
+  {
+   "samples": 400,
+   "rank": 322
+  },
+  {
+   "samples": 600,
+   "rank": 395
+  },
+  {
+   "samples": 800,
+   "rank": 395
+  }
+ ],
+ "n_separators_deg2": 101,
+ "verdict": "PASS"
+}
