@@ -75,3 +75,7 @@ Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 
 
 Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
 
+
+## end of night1 run
+
+All three specs completed. controls: PASS. Total rows: 1158 (320 + 486 + 352).
