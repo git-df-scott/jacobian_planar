@@ -201,6 +201,23 @@ def main():
     w("the same divisibility obstruction as at (84,126) applies, and it is")
     w("reported alongside as the small-degree image of the mission problem.")
     w("")
+    w("N3 reads as follows. At `(2,4)` -- 21 parameters -- random seeds do")
+    w("reach machine precision (%d of %d, best `%.2e`), which is the check the"
+      % (n3['2_4']['n_machine_precision'], n3['2_4']['seeds'],
+         n3['2_4']['best']))
+    w("brief asked for. At `(4,8)` -- 60 parameters -- they do not inside a")
+    w("2000-iteration budget (best `%.2e`), even though N2a shows that same"
+      % n3['4_8']['best'])
+    w("shape's automorphism basin is reachable to `%.2e` when the descent"
+      % a['EK_final'])
+    w("starts near it. So the `(4,8)` shortfall is a reach-from-random-start")
+    w("and budget effect, not a defect in the residual or its gradient, which")
+    w("N1 pins to `%.0e`. This is recorded as the state of the gate, not"
+      % n1['max_abs_err_all'])
+    w("argued away: the net's own stall values below have to be read knowing")
+    w("that random-start descent already fails to find known exact structure")
+    w("at 60 parameters in this budget.")
+    w("")
     w("Controls wall time: %.1f s." % C['results']['wall_seconds'])
     w("")
 

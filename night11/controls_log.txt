@@ -14,3 +14,20 @@ N2a automorphism (deg 4, deg 8), 60 params
       E_K at exact automorphism      : 1.624e-29
       E_K at perturbed start (1e-3)  : 6.855e-03
       E_K after L-BFGS-B ( 528 iters) : 6.960e-20
+N2b automorphism (deg 84, deg 168), 18020 params
+      E_K at exact automorphism      : 1.338e-24
+      E_K at perturbed start (1e-8)  : 6.025e-05
+      E_K after L-BFGS-B (4000 iters) : 6.749e-13  [36.3 s]
+      NOTE  the campaign degree shape (2m, 3m) = (84, 126) admits no
+            automorphism at all: by Jung-van der Kulk every planar
+            polynomial automorphism is tame and its two degrees are
+            divisibility-ordered, while 84 does not divide 126 and
+            126 does not divide 84.  N2 is therefore run at (84, 168),
+            the nearest same-scale shape that does carry one.
+N3  degrees (4, 8), 60 params, 12 random seeds: 0 reached E_K < 1e-18, best 2.434e-10, median 1.424e-07
+N3  degrees (2, 4), 21 params, 12 random seeds: 9 reached E_K < 1e-18, best 7.217e-32, median 2.128e-29
+N3  degrees (4, 6), 43 params, 12 random seeds: 1 reached E_K < 1e-18, best 3.713e-19, median 6.657e-09
+      (4,8) and (2,4) are shapes d | 2d where automorphisms are
+      abundant; (4,6) is the mission shape (2m,3m) at m=2, where
+      the same divisibility obstruction as at (84,126) applies.
+total 57.9 s

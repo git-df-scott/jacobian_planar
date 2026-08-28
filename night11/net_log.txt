@@ -1,0 +1,8 @@
+  arm G15_lamT0      t=15 (aP=1,aQ=14) lambda_T=0       120 seeds: 788 params, 1463 residual cells
+  arm G15_lamT1e-3   t=15 (aP=1,aQ=14) lambda_T=0.001   120 seeds: 788 params, 1463 residual cells
+  arm G5_lamT1e-3    t= 5 (aP=1,aQ=4) lambda_T=0.001    60 seeds: 2357 params, 4389 residual cells
+night11 net: 300 tasks on 4 cores
+  10/300  (228 s)
+  20/300  (385 s)
+  30/300  (604 s)
+  40/300  (810 s)
