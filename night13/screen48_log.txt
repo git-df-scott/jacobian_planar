@@ -1,0 +1,8 @@
+m=48 arm r2_P1_Q0
+  m=48 r2_P1_Q0 size 3: 560 supports, 0 survivors, F1 hist {'2': 560} (0.6s)
+  m=48 r2_P1_Q0 size 4: 1820 supports, 0 survivors, F1 hist {'2': 1820} (2.8s)
+  m=48 r2_P1_Q0 size 5: 4368 supports, 0 survivors, F1 hist {'2': 4368} (9.1s)
+  m=48 r2_P1_Q0 size 6: 8008 supports, 0 survivors, F1 hist {'2': 8008} (22.0s)
+m=48 arm r0_P0_Q0
+m=48 arm r1_P2_Q0
+wrote /home/user/jacobian_planar/night13/h_screen_m48.json
