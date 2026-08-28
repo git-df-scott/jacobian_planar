@@ -1,0 +1,24 @@
+=== own end-to-end verdict, p = 5189, 5 covers ===
+CONTROL first (no vertex condition; must be LIVE):
+   cover 0: 75 equations, 51 unknowns
+     secs 0
+     RESULT LIVE dim 0
+   control sound: True
+MAIN (vertices (8,16) and (12,24) both required nonzero):
+     secs 0
+     RESULT EMPTY
+   cover 0: EMPTY
+     secs 0
+     RESULT EMPTY
+   cover 1: EMPTY
+     secs 0
+     RESULT EMPTY
+   cover 2: EMPTY
+     secs 0
+     RESULT EMPTY
+   cover 3: EMPTY
+     secs 0
+     RESULT EMPTY
+   cover 4: EMPTY
+
+5/5 covers EMPTY

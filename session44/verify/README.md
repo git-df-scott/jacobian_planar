@@ -78,3 +78,72 @@ It is a genuine solution of the reduced Laurent problem and it is NOT a
 counterexample -- its Newton polygon is the triangle conv{(0,0),(1,0),(5,10)},
 the vertices (8,14) and (8,16) are absent, and [P,Q] = x^2 is not a nonzero
 constant in original coordinates.
+
+---
+
+# INDEPENDENT END-TO-END VERDICT ON SUBCASE 2
+
+Reached entirely with instruments built in this directory.
+
+## How the blocker was cleared
+
+The campaign had been stuck because the 35 essential-face solutions live in a
+degree-35 extension and would not come out as explicit tuples: msolve's RUR
+would not parse, and its eliminant is taken with respect to a linear form of
+its own choosing, which had produced wrong substitutions.
+
+FGLM clears it in 28 seconds.  The face ideal is zero-dimensional with
+vdim 35, so `stdfglm` converts the cheap degree-order basis to a lex basis,
+which for a zero-dimensional ideal is triangular.  At p = 5189 it is:
+
+    t9^5 + ...                     <- DEGREE 5: the five covers
+    t8^7 + (quartic in t9)         <- DEGREE 7: the mu_7
+    t2 - 1                         <- t2 = 1 exactly
+    every other coordinate = a polynomial in t8, t9
+
+So 35 = 5 x 7 is not inferred, it is read off the basis.  Because 7 does not
+divide p-1, x -> x^7 is a bijection of F_p*, so each root of the quintic has
+exactly ONE seventh root: five roots of the quintic give exactly five
+F_p-rational points, one per cover, covering all 35 by the mu_7 symmetry.
+
+All five were substituted back and verified against 2 q t' - 3 q' t = u^2,
+exactly, at both primes.  5/5 at p = 5189 and 5/5 at p = 5441.
+
+## The verdict
+
+At an explicit face point the four identities E0..E3 become 75 equations in
+51 unknowns (f1..f8, p1..p8, g1..g12, r1..r12, s2..s12 -- f0 and g0 are
+absent, as they must be, since constant terms never enter the bracket), of
+degrees 1 and 2.
+
+    CONTROL (no vertex condition):        LIVE, dim 0     <- engine is sound
+    MAIN (f8 and g12 both nonzero):       EMPTY, 5/5 covers, p = 5189
+                                          EMPTY, 5/5 covers, p = 5441
+
+Each cover decides in under a second.  The hours the other routes spent were
+spent working over field extensions; with an explicit rational face point at
+a well-chosen prime the system collapses.
+
+## The mechanism, which is sharper than the verdict
+
+Without any vertex condition the system at a face point is dim 0 with
+vdim 10, and its lex basis begins with `s9^4` -- a NILPOTENT.  The reduced
+solution set is therefore a single fat point at the origin: the only solution
+is
+
+    f = p = r = s = g = 0,
+
+i.e. P = a00 + q(u) z^2 and Q = b00 + t(u) z^3 and nothing else.  In
+particular f8 = 0 and g12 = 0, so the vertices (8,16) of N(P) and (12,24) of
+N(Q) are both absent and neither Newton polygon is the claimed quadrilateral.
+
+This reproduces, independently and by a different route, the conclusion the
+two subcase agents reached: the only survivors are the triangular pairs.
+
+## Status
+
+MODULAR, at two primes, with a passing positive control and a passing
+soundness control.  A characteristic-zero run (`fglm_char0.sing`, stdfglm over
+Q on the face ideal) is the remaining step; with the face available over Q the
+same 75/51 system decides the subcase over Q(face) and the result becomes a
+theorem rather than evidence.
