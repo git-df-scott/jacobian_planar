@@ -1,0 +1,890 @@
+{
+ "top1_char2": {
+  "E": [
+   5,
+   8,
+   11,
+   17,
+   29,
+   32
+  ],
+  "char": 2,
+  "n_checked": 20,
+  "seed_agreement": true,
+  "any_B1_solvable": false,
+  "deg_Q_plain_values": [
+   1
+  ],
+  "B_values_in_plain_solution": [
+   0
+  ],
+  "records": [
+   {
+    "sample": 0,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 1,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 2,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 3,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 4,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 5,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 6,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 7,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 8,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 9,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 10,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 11,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 12,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 13,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 14,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 15,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 16,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 17,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 18,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 19,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   }
+  ]
+ },
+ "top1_char5": {
+  "E": [
+   5,
+   8,
+   11,
+   17,
+   29,
+   32
+  ],
+  "char": 5,
+  "n_checked": 20,
+  "seed_agreement": true,
+  "any_B1_solvable": false,
+  "deg_Q_plain_values": [
+   null
+  ],
+  "B_values_in_plain_solution": [
+   null
+  ],
+  "records": [
+   {
+    "sample": 0,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 1,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 2,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 3,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 4,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 5,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 6,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 7,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 8,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 9,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 10,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 11,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 12,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 13,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 14,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 15,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 16,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 17,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 18,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 19,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   }
+  ]
+ },
+ "top2_char2": {
+  "E": [
+   5,
+   8,
+   11,
+   23,
+   29,
+   32
+  ],
+  "char": 2,
+  "n_checked": 20,
+  "seed_agreement": true,
+  "any_B1_solvable": false,
+  "deg_Q_plain_values": [
+   1
+  ],
+  "B_values_in_plain_solution": [
+   0
+  ],
+  "records": [
+   {
+    "sample": 0,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 1,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 2,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 3,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 4,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 5,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 6,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 7,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 8,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 9,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 10,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 11,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 12,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 13,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 14,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 15,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 16,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 17,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 18,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   },
+   {
+    "sample": 19,
+    "consistent_seedA": true,
+    "consistent_seedB": true,
+    "rank_A": 2,
+    "rank_Ae": 2,
+    "solve_with_B_equal_1": "inconsistent",
+    "plain_solve_status": "ok",
+    "B_in_plain_solution": 0,
+    "deg_Q_plain": 1,
+    "bracket_plain_is_one": true
+   }
+  ]
+ },
+ "top2_char5": {
+  "E": [
+   5,
+   8,
+   11,
+   23,
+   29,
+   32
+  ],
+  "char": 5,
+  "n_checked": 20,
+  "seed_agreement": true,
+  "any_B1_solvable": false,
+  "deg_Q_plain_values": [
+   null
+  ],
+  "B_values_in_plain_solution": [
+   null
+  ],
+  "records": [
+   {
+    "sample": 0,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 1,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 2,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 3,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 4,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 5,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 6,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 7,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 8,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 9,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 10,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 11,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 12,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 13,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 14,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 15,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 16,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 17,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 18,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   },
+   {
+    "sample": 19,
+    "consistent_seedA": false,
+    "consistent_seedB": false,
+    "rank_A": 185,
+    "rank_Ae": 186,
+    "solve_with_B_equal_1": "inconsistent"
+   }
+  ]
+ }
+}

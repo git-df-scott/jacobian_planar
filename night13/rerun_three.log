@@ -1,0 +1,6 @@
+  reusing cached carrier /home/user/jacobian_planar/night13/carrier_top1_char5.json
+  top1_char5: gate=True tally={'consistent': 0, 'consistent_with_nonzero_B': 0, 'inconsistent': 220, 'degenerate_B_forced_zero': 0} hits=0 (24.8s)
+  reusing cached carrier /home/user/jacobian_planar/night13/carrier_top2_char2.json
+  top2_char2: gate=True tally={'consistent': 220, 'consistent_with_nonzero_B': 0, 'inconsistent': 0, 'degenerate_B_forced_zero': 220} hits=0 (1.0s)
+  reusing cached carrier /home/user/jacobian_planar/night13/carrier_top2_char5.json
+  top2_char5: gate=True tally={'consistent': 0, 'consistent_with_nonzero_B': 0, 'inconsistent': 220, 'degenerate_B_forced_zero': 0} hits=0 (21.7s)
