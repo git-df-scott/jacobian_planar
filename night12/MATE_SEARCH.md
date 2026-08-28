@@ -7,6 +7,26 @@ Ring labels used throughout:
 - **ring: Q** -- exact arithmetic in `Q[x,y]` (python `int` / `Fraction`).
 - **ring: F_p** -- the finite field `F_p`, `p = 999983` or `p = 1000003`.
 
+
+---
+
+## 0. STATUS ANNOTATION (added by the v1 brief -- read this before section 3)
+
+**v0's dual-prime consistency gate can produce FALSE NEGATIVES.** Reduction
+mod `p` can only lower ranks, and it can lower `rank(A)` without lowering
+`rank([A|e])`: a system that is consistent over `Q` can therefore be reported
+inconsistent over `F_p` (bad reduction). The one-variable instance is
+`A = [p]`, `e = [1]`: consistent over `Q` with `q = 1/p`, inconsistent mod `p`.
+
+Consequently **every negative verdict recorded in sections 6 and 7 below is
+support-AND-prime-relative**: it is a statement about the bounded `Q`-support
+recorded per `P` and about the two primes 999983 and 1000003, and it is *not*
+a statement about `Q`. The positive verdicts are unaffected -- they were each
+certified by exact bracket expansion over `Q`, which no modular step can fake.
+
+**Henceforth (v1) modular ranks are used for SCHEDULING ONLY**; every verdict
+is decided by exact rational linear algebra. See `MATE_V1.md`.
+
 ---
 
 ## 1. The construction being measured

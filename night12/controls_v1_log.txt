@@ -1,0 +1,49 @@
+SY validation set (brief item 2)
+  x                            -> COORDINATE        brief label: COORDINATE        nodes=1 leaves=0
+  x + y^2                      -> COORDINATE        brief label: COORDINATE        nodes=2 leaves=0
+  x + x^2*y                    -> NON_COORDINATE    brief label: ?                 nodes=1 leaves=1
+  x*y                          -> NON_COORDINATE    brief label: NON_COORDINATE    nodes=1 leaves=1
+  x^2*y                        -> NON_COORDINATE    brief label: NON_COORDINATE    nodes=1 leaves=1
+  x + y^126                    -> COORDINATE        brief label: COORDINATE        nodes=2 leaves=0
+  x^126 + y^127 + x^2*y^2      -> NON_COORDINATE    brief label: ?                 nodes=1 leaves=1
+  x + y^2 + 2x^2y + x^4        -> COORDINATE        brief label: COORDINATE        nodes=4 leaves=0
+
+NOTE (measurement, recorded not resolved): the brief labels x + x^2*y a
+coordinate.  This implementation of the Shpilrain-Yu reduction returns
+NON_COORDINATE for it -- the gradient pair is (1+2xy, x^2), whose leading
+monomials xy and x^2 do not divide one another, so the DAG is a single
+exhausted leaf.  Independently, the exact mate system for x + x^2*y is
+inconsistent on every support tried (deg Q <= 3,6,9,12,15; see below).
+
+  x + x^2*y  stage Y  deg Q <= 2   n=0    defl=1 -> EMPTY_over_Q   [lambda_exact]  lambda support=1
+  x + x^2*y  stage C  deg Q <= 4   n=3    defl=2 -> EMPTY_over_Q   [lambda_exact]  lambda support=2
+  x + x^2*y  stage W  deg Q <= 5   n=3    defl=2 -> EMPTY_over_Q   [lambda_exact]  lambda support=2
+  x + x^2*y  stage W2 deg Q <= 15  n=130  defl=6 -> EMPTY_over_Q   [lambda_exact]  lambda support=9
+
+==============================================================================
+C-POS  P = x + y^126   P = [((0, 126), 1), ((1, 0), 1)]
+  S2=pass (gcd(P_x,P_y) is a unit)
+  S1=pass (1 in (P_x,P_y) over Q)
+  S3: places_at_infinity=1  genus_newton=0  lead_terms=1
+  screens passed: True
+  SY: COORDINATE (nodes=2 leaves=0)
+  stage Y: deg_Q<=125  n_raw=126 thin_t=1 n_unknowns=125 deflated_kernel_dim=1  -> MATE_over_Q [exact_solution]
+        exact Q (deg 1): [((0, 1), Fraction(1, 1))]
+        bracket [P,Q] == 1 over Q: True
+        degree pair (126,1) divisibility-ordered: True
+  (0.5s)
+==============================================================================
+C-NEG  P = x^126 + y^127 + x^2*y^2   P = [((0, 127), 1), ((2, 2), 1), ((126, 0), 1)]
+  S2=pass (gcd(P_x,P_y) is a unit)
+  S1=reject (origin is a common zero of (P_x,P_y))
+  S3: places_at_infinity=1  genus_newton=7875  lead_terms=1
+  screens passed: False
+  SY: NON_COORDINATE (nodes=1 leaves=1)
+  -> OVERRIDE: screens rejected, running the solver anyway.
+  stage Y: deg_Q<=126  n_raw=8002 thin_t=3 n_unknowns=233 deflated_kernel_dim=1  -> EMPTY_over_Q [lambda_exact]
+        lambda: support=1  (constant row of A is identically zero)
+  stage C: deg_Q<=190  n_raw=18083 thin_t=3 n_unknowns=529 deflated_kernel_dim=1  -> EMPTY_over_Q [lambda_exact]
+        lambda: support=1  (constant row of A is identically zero)
+  stage W: deg_Q<=253  n_raw=32006 thin_t=3 n_unknowns=926 deflated_kernel_dim=1  -> EMPTY_over_Q [lambda_exact]
+        lambda: support=1  (constant row of A is identically zero)
+  (0.1s)

@@ -1,0 +1,118 @@
+[
+ {
+  "name": "C-POS  P = x + y^126",
+  "P": {
+   "0,126": 1,
+   "1,0": 1
+  },
+  "screens": {
+   "S2": "pass",
+   "S2_detail": "gcd(P_x,P_y) is a unit",
+   "S1": "pass",
+   "S1_detail": "1 in (P_x,P_y) over Q",
+   "places_at_infinity": 1,
+   "genus_newton": 0,
+   "lead_terms": 1,
+   "passed": true
+  },
+  "SY": "COORDINATE",
+  "stages": [
+   {
+    "n_unknowns": 125,
+    "n_rows_nonzero": 125,
+    "rank_A_p": 125,
+    "rank_Ae_p": 125,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 125,
+    "n_raw": 126,
+    "thin_t": 1,
+    "n_used": 125,
+    "deflated_kernel_dim": 1
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  }
+ },
+ {
+  "name": "C-NEG  P = x^126 + y^127 + x^2*y^2",
+  "P": {
+   "0,127": 1,
+   "2,2": 1,
+   "126,0": 1
+  },
+  "screens": {
+   "S2": "pass",
+   "S2_detail": "gcd(P_x,P_y) is a unit",
+   "S1": "reject",
+   "S1_detail": "origin is a common zero of (P_x,P_y)",
+   "places_at_infinity": 1,
+   "genus_newton": 7875,
+   "lead_terms": 1,
+   "passed": false
+  },
+  "SY": "NON_COORDINATE",
+  "stages": [
+   {
+    "n_unknowns": 233,
+    "n_rows_nonzero": 646,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 126,
+    "n_raw": 8002,
+    "thin_t": 3,
+    "n_used": 233,
+    "deflated_kernel_dim": 1
+   },
+   {
+    "n_unknowns": 529,
+    "n_rows_nonzero": 1508,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "C",
+    "deg_Q_bound": 190,
+    "n_raw": 18083,
+    "thin_t": 3,
+    "n_used": 529,
+    "deflated_kernel_dim": 1
+   },
+   {
+    "n_unknowns": 926,
+    "n_rows_nonzero": 2672,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "W",
+    "deg_Q_bound": 253,
+    "n_raw": 32006,
+    "thin_t": 3,
+    "n_used": 926,
+    "deflated_kernel_dim": 1
+   }
+  ],
+  "outcome": "NO_MATE_ALL_STAGES"
+ }
+]
