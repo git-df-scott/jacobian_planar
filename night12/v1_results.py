@@ -75,6 +75,7 @@ def main():
     scr = load("v1_screens.json", [])
     recs = load("v1_records.json", [])
     m1 = load("m1_records.json", [])
+    und = load("undecided_records.json", [])
     retry = load("s1_retry.json", [])
     cross = load("sy_crosscheck.json", [])
 
@@ -85,14 +86,15 @@ def main():
     w("scheduling prime, which decides nothing.")
     w()
     w("Apparatus: `sy.py`, `screens.py`, `carriers.py`, `pool.py`, `exact.py`,")
-    w("`v1.py`, `controls_v1.py` (all documented in `MATE_V1.md`), plus the three")
-    w("files added by this run: `s1_retry.py`, `m1_run.py`, `sy_crosscheck.py`.")
+    w("`v1.py`, `controls_v1.py` (all documented in `MATE_V1.md`), plus the files")
+    w("added by this run: `s1_retry.py`, `m1_run.py`, `undecided_run.py`,")
+    w("`sy_crosscheck.py`, `v1_results.py`.")
     w()
 
     # ------------------------------------------------------------------ gate
     w("## 1. Hit gate")
     w()
-    allrecs = list(recs) + list(m1)
+    allrecs = list(recs) + list(m1) + list(und)
     hits = [r for r in allrecs if r.get("hit")]
     w("The gate is: a mate `Q` certified over `Q` by E3 (coefficientwise expansion")
     w("of `[P,Q] - 1`), for a `P` that S1/S2 passed, whose SY verdict is")
@@ -102,6 +104,7 @@ def main():
     w("| --- | --- |")
     w("| P through the screened-and-passed pipeline | %d |" % len(recs))
     w("| P through the M1 override arm | %d |" % len(m1))
+    w("| P through the undecided override arm | %d |" % len(und))
     w("| P through some arm, total | %d |" % len(allrecs))
     w("| mates certified over Q (E3) | %d |"
       % sum(1 for r in allrecs if r["outcome"] == "MATE"))
@@ -326,12 +329,34 @@ def main():
         w("_not run_")
         w()
 
+    # ------------------------------------------------------------ undecided
+    w("## 5b. Undecided arm (non-M1 S1 timeouts)")
+    w()
+    w("`undecided_run.py`. Same override route, for the 13 non-M1 `P` whose S1 timed")
+    w("out in the screen phase and which therefore carried no verdict at all. These")
+    w("certificates are carrier-level and independent of S1: they decide the mate")
+    w("system on the carrier each stage built and nothing beyond it, and they neither")
+    w("assume nor establish unimodularity of the gradient pair, so they stand")
+    w("whichever way S1 resolves.")
+    w()
+    if und:
+        w("SY verdicts: %s. Outcomes: %s. Certificates: %s."
+          % (dict(collections.Counter(r["SY_verdict"] for r in und)),
+             dict(collections.Counter(r["outcome"] for r in und)),
+             dict(cert_tally(und))))
+        w()
+        verdict_table(und, "verdicts")
+    else:
+        w("_not run_")
+        w()
+
     # ---------------------------------------------------------- certificates
     w("## 6. Certificates emitted")
     w()
     w("| arm | (verdict, certificate) | count |")
     w("| --- | --- | --- |")
-    for nm, rs in (("pipeline", recs), ("M1 override", m1)):
+    for nm, rs in (("pipeline", recs), ("M1 override", m1),
+                   ("undecided override", und)):
         for k, v in sorted(cert_tally(rs).items(), key=lambda kv: -kv[1]):
             w("| %s | %s | %d |" % (nm, k, v))
     w()

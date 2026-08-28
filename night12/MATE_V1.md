@@ -2,6 +2,40 @@
 
 Measurements only. Nothing in this file is a conclusion.
 
+> **STATUS ANNOTATION (added when the v1 pipeline was run to completion).**
+> The results of the run are in **`V1_RESULTS.md`**; this file remains the
+> method note. Four things recorded there amend what is written below.
+>
+> 1. **Section 5's family M1 does not survive S1.** All 200 M1/M1L `P` are
+>    rejected by S1: for `P = x + A*H^2 + P_lower` the gradient is
+>    `P_x = 1 + 2A H H_x + ...`, `P_y = 2A H H_y + ...`, so a common zero needs
+>    `H = 0` (where `P_x = 1`, no zero) or `H_y = 0`; the latter is a union of
+>    lines through the origin, and `1 + 2A H H_x` restricted to such a line has
+>    degree `2m - 1 > 0` and therefore has roots. The shape carries gradient
+>    common zeros generically, which reproduces at `m = 5, 8, 11, 14`. Such a
+>    `P` has no mate at any degree, so the `mu_3` grading argument of section 5
+>    is correct about the grading but is never reached.
+> 2. **The carrier anchors were being scaled away.** Section 5 says carriers
+>    are thinned with `(0,0)` and `(0,1)` always retained; in fact both
+>    `carriers.carrier` and `v1.general_carrier` put the anchors into the base
+>    point set *before* the stage scaling, so whenever the stage bound fell
+>    below the polygon degree the anchor `(0,1)` was shrunk below the lattice
+>    and dropped -- stage Y for every `P`, and stages Y and C for M1. For an M1
+>    `P` the column `(0,1)` is the only one in the `mu_3` grading that can meet
+>    the Keller constant row (through the linear term `x` of `P`, via
+>    `a = (1,1) - (1,0)`), so with it gone that row was identically zero and
+>    stage Y returned `EMPTY_over_Q` by the degenerate zero-row certificate for
+>    every M1 `P` -- true of the carrier built, but vacuous. Fixed by adjoining
+>    the anchors both scaled and unscaled, which makes every carrier a superset
+>    of the old one at every stage.
+> 3. **Section 3's S1 has a third outcome, `timeout`, which is undecided.**
+>    22 `P` returned it in the screen phase and, since the driver selects by the
+>    `passed` flag, fell out of the run with no verdict at all. They are picked
+>    up by `s1_retry.py` (S1 again, longer budget) and by the override arms.
+> 4. **Section 4's hit gate is unchanged and was never tripped.** 243 `P`
+>    reached a decision arm; 20 mates were certified over `Q` by E3, all on `P`
+>    that SY certifies `COORDINATE`.
+
 Ring labels: **ring: Q** = exact rational arithmetic; **ring: F_p** = the
 finite field, used in v1 for **scheduling only**.
 
