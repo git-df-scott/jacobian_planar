@@ -196,3 +196,19 @@ handoff's stated expectation, plus what `cascade.py`'s code accepts as input. Th
 disagreement is reported as measured. Nothing here says which of the two
 instruments is correct, and nothing here bears on any underlying mathematical
 question.
+
+## Coordinator interpretation (Fable, added after the run)
+
+The handoff (night6/SESSION44_HANDOFF.md, section 4b) already records:
+"walk_ideal.py failed validation (timed out at 540s on a target Singular
+decided EMPTY in 3s) and was KILLED RATHER THAN TRUSTED." The instrument
+that reported OPEN here is that same walk_ideal — the one instrument
+session 44 itself condemned. The session-44 EMPTY verdicts rest on the
+Singular/msolve runs performed then, which this box cannot re-run
+(no Singular, per night3/TOOLING.md). Consequence, stated at honest
+strength: the session-44 modular closures are NOT re-validated on this
+machine, and the restored pure-Python cascade tooling must NOT be used
+for new verdicts. Any future cascade-type verdict on this box needs a
+from-scratch solver with its own controls (as done for E3), or real
+Singular/msolve. The restored engine is hereby demoted from "validated
+instrument" to "reference code".
