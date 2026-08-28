@@ -70,7 +70,7 @@ def n1_symbolic():
 
     # fused-FFT residual vs the explicit-convolution reference path
     fused_err = float(np.max(np.abs(keller_residual_slow(P, Q)
-                                    - R[:dP + dQ - 1, :dP + dQ - 1])))
+                                    - R[:dP + dQ + 1, :dP + dQ + 1])))
 
     # direct vs FFT convolution at a larger size
     A = rng.normal(size=(40, 40)) * np.tri(40)[::-1].T

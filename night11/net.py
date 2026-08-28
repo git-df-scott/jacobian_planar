@@ -1,7 +1,7 @@
 """night11 -- the numeric net (v0).
 
 Continuous optimization of E(c) = E_K + lambda_T * E_T over real coefficient
-vectors for pairs (P, Q) of degrees (84, 126) on the L_16-restricted
+vectors for pairs (P, Q) of degrees (84, 126) on the torus-graded
 triangular supports described in supports.py.  Many random restarts, run in
 parallel over the machine's cores.  v0 maps the landscape only: every seed is
 run, classified and recorded, and nothing is lifted or certified.
@@ -26,7 +26,7 @@ try:
 except Exception:
     HAVE_SCIPY = False
 
-DP, DQ, TLAT = 84, 126, 16
+DP, DQ = 84, 126
 HERE = os.path.dirname(os.path.abspath(__file__))
 STALLDIR = os.path.join(HERE, 'stalls')
 
@@ -38,7 +38,16 @@ FAMILIES = [
     ('vsteep', 0.82),
 ]
 
-ARMS = [('A_lamT0', 0.0), ('B_lamT1e-3', 1e-3)]
+# (name, t, aP, aQ, lambda_T).  See supports.py for why t=5 and t=15 are the
+# two gradings worth running: t=5 is the only nontrivial one compatible with
+# BOTH the Keller constant and the (H^2,H^3) leading-form shape; t=15 keeps the
+# Keller constant, drops the leading-form shape, and lands inside the requested
+# 300-800 parameter band.
+ARMS = [
+    ('G5_lamT0',    5, 1, 4,  0.0),
+    ('G5_lamT1e-3', 5, 1, 4,  1e-3),
+    ('G15_lamT0',  15, 1, 14, 0.0),
+]
 
 
 def make_seed(sup, seed, decay):
@@ -75,8 +84,8 @@ def adam(obj, c0, iters, lr=3e-3):
 
 
 def run_one(task):
-    arm, lamT, seed, fam, decay, maxiter = task
-    sup = Support(DP, DQ, TLAT)
+    arm, t, aP, aQ, lamT, seed, fam, decay, maxiter = task
+    sup = Support(DP, DQ, t, aP, aQ)
     obj = Objective(sup, lambda_T=lamT)
     t0 = time.time()
     c0 = make_seed(sup, seed, decay)
@@ -108,7 +117,8 @@ def run_one(task):
     else:
         cls = 'STALLED'
 
-    rec = dict(arm=arm, lambda_T=lamT, seed=seed, family=fam, decay=decay,
+    rec = dict(arm=arm, t=t, aP=aP, aQ=aQ, lambda_T=lamT, seed=seed,
+               family=fam, decay=decay,
                EK0=float(EK0), EK=float(EK), ET=float(ET), ETprop=float(ETp),
                ETnd=float(ETn), gnorm=gn, gnorm_EK=gKn, cnorm=cn,
                nit=nit, status=status, cls=cls, secs=time.time() - t0)
@@ -150,19 +160,23 @@ def profile(sup, c):
 def main():
     n_seeds = int(sys.argv[1]) if len(sys.argv) > 1 else 200
     maxiter = int(sys.argv[2]) if len(sys.argv) > 2 else 2000
-    sup = Support(DP, DQ, TLAT)
     os.makedirs(STALLDIR, exist_ok=True)
 
     tasks = []
-    for arm, lamT in ARMS:
+    for arm, t, aP, aQ, lamT in ARMS:
         for k in range(n_seeds):
             fam, decay = FAMILIES[k % len(FAMILIES)]
-            tasks.append((arm, lamT, 110000 + k, fam, decay, maxiter))
+            tasks.append((arm, t, aP, aQ, lamT, 110000 + k, fam, decay,
+                          maxiter))
 
     t0 = time.time()
     ncpu = min(4, os.cpu_count() or 1)
-    print("night11 net: %d params, %d residual cells, %d tasks on %d cores"
-          % (sup.n, sup.n_residual_cells(), len(tasks), ncpu), flush=True)
+    for arm, t, aP, aQ, lamT in ARMS:
+        s = Support(DP, DQ, t, aP, aQ)
+        print("  arm %-12s t=%2d (aP=%d,aQ=%d) lambda_T=%g: %d params,"
+              " %d residual cells" % (arm, t, aP, aQ, lamT, s.n,
+                                      s.n_residual_cells()), flush=True)
+    print("night11 net: %d tasks on %d cores" % (len(tasks), ncpu), flush=True)
     recs = []
     with mp.Pool(ncpu) as pool:
         for i, rec in enumerate(pool.imap_unordered(run_one, tasks, chunksize=1)):
@@ -178,10 +192,12 @@ def main():
     deepest = []
     for rank, r in enumerate(stalls[:10]):
         c = r['_c']
+        sup = Support(DP, DQ, r['t'], r['aP'], r['aQ'])
         fn = os.path.join(STALLDIR, 'stall_%02d_%s_seed%d.npz'
                           % (rank + 1, r['arm'], r['seed']))
-        np.savez_compressed(fn, c=c, dP=DP, dQ=DQ, t=TLAT, EK=r['EK'],
-                            ET=r['ET'], arm=r['arm'], seed=r['seed'])
+        np.savez_compressed(fn, c=c, dP=DP, dQ=DQ, t=r['t'], aP=r['aP'],
+                            aQ=r['aQ'], EK=r['EK'], ET=r['ET'],
+                            arm=r['arm'], seed=r['seed'])
         p = profile(sup, c)
         p.update(rank=rank + 1, file=os.path.basename(fn), arm=r['arm'],
                  seed=r['seed'], family=r['family'], EK_recorded=r['EK'],
@@ -192,9 +208,7 @@ def main():
     for r in recs:
         r.pop('_c', None)
 
-    out = dict(config=dict(dP=DP, dQ=DQ, t=TLAT, nparam=sup.n,
-                           nP=sup.nP, nQ=sup.nQ,
-                           residual_cells=sup.n_residual_cells(),
+    out = dict(config=dict(dP=DP, dQ=DQ,
                            n_seeds_per_arm=n_seeds, maxiter=maxiter,
                            arms=[list(a) for a in ARMS],
                            families=[list(f) for f in FAMILIES],
