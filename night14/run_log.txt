@@ -1,0 +1,162 @@
+F2   (9/2)*x^5 + 6*x^4*y + 2*x^3*y^2 - 9*x^4 - 6*x^ tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   2*x^4*y^2 + 6*x^4*y - 8*x^3*y^2 + (9/2)*x^4 -  tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (-1/2)*x^6 + 4*x^5 + 2*x^4*y - 14*x^4 - 12*x^3 tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -1*x^3*y^2 + x^3*y + 6*x^2*y^2 + (-1/4)*x^3 -  tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -2*x^3*y^2 - 6*x^3*y + 12*x^2*y^2 + (-9/2)*x^3 tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (1/4)*x^3 - 1*x^2*y + x*y^2 + (1/2)*x^2 - 1*x* tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   2*x^2*y^2 + 4*x^2*y + 4*x*y^2 + 2*x^2 + 8*x*y  tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   3*x*y^2 + 6*x*y + 3*x - 3*y - 3                tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -1*x^2*y^2 + 3*x^2*y + (-9/4)*x^2 + 2*y - 3    tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (27/4)*x^4 + 9*x^3*y + 3*x^2*y^2 - 9*x^3 - 6*x tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   x^2*y^2 - 3*x^2*y + (9/4)*x^2 - 3*y + (9/2)    tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (-9/4)*x^7 + (33/2)*x^6 + 3*x^5*y - 49*x^5 - 2 tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   3*x^6 + 6*x^5*y + 3*x^4*y^2 + 9*x^5 + 9*x^4*y  tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (9/4)*x^5 + 3*x^4*y + x^3*y^2 + (39/4)*x^4 + 1 tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -1*x^2*y^2 - 1*x^2*y + 2*x*y^2 + (-1/4)*x^2 +  tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (-9/2)*x^8 - 9*x^7 - 6*x^6*y + (-21/2)*x^6 - 6 tdeg=8   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -2*x^2*y^2 - 2*x^2*y + (-1/2)*x^2 - 1*y + (-1/ tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (-9/4)*x^7 + (-45/4)*x^6 - 3*x^5*y - 21*x^5 -  tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -2*x*y^2 - 4*x*y - 2*y^2 - 2*x - 3*y - 1       tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (1/2)*x^8 - 2*x^7 - 2*x^6*y - 5*x^6 + 12*x^5*y tdeg=8   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (9/2)*x^6 + 3*x^5 - 6*x^4*y + (19/2)*x^4 - 2*x tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (9/2)*x^7 - 9*x^6 + 6*x^5*y + (27/2)*x^5 - 6*x tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (9/2)*x^8 + 18*x^7 + 6*x^6*y + 18*x^6 + 24*x^5 tdeg=8   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (1/2)*x^6 - 3*x^5 + 2*x^4*y + (15/2)*x^4 - 8*x tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   x^3*y^2 - 1*x^3*y + (1/4)*x^3 + y + (-1/2)     tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   2*x^5 - 4*x^4*y + 2*x^3*y^2 - 8*x^4 + 14*x^3*y tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   x^4*y^2 + x^4*y - 8*x^3*y^2 + (1/4)*x^4 - 8*x^ tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (27/4)*x^7 + (-9/2)*x^6 + 9*x^5*y + (-51/4)*x^ tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   -1*x^4*y^2 + 2*x^4*y - 1*x^4 - 3*y + 3         tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2   (27/4)*x^4 - 9*x^3*y + 3*x^2*y^2 - 9*x^3 + 15* tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (9/8)*x^7 - 3*x^6*y + 2*x^5*y^2 + (-3/2)*x + 2 tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x*y^2 + x*y + (1/4)*x + y                      tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^3*y^2 - 1*y + (-1/8)                       tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x^2*y^2 + 2*x^2*y + x^2 + y + (3/4)            tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x*y^2 + x*y + (1/4)*x + y + (-1/4)             tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^4*y^2 - 3*x^4*y + (9/8)*x^4 + 2*y + (-13/8 tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x^4*y^2 + x^4*y + (1/4)*x^4 + 2*y + (3/4)      tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (1/4)*x^7 + x^6*y + x^5*y^2 + (1/2)*x^6 + x^5* tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (9/8)*x^7 + 3*x^6*y + 2*x^5*y^2 + (9/4)*x^6 +  tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^2*y^2 + 2*x^2*y - 1*x^2 + y + (-5/4)      tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^5*y^2 + 3*x^5*y + (9/8)*x^5 + y + (3/8)    tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (1/2)*x^3 - 2*x^2*y + 2*x*y^2 + (-1/2)*x + y + tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (9/4)*x^7 - 3*x^6*y + x^5*y^2 + (3/2)*x^6 - 1* tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^3 + 2*x^2*y - 1*x*y^2 - 1*x^2 + x*y + (-5 tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x*y^2 + 3*x*y + (9/8)*x + 2*y + (11/8)       tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (9/4)*x^7 + 3*x^6*y + x^5*y^2 + (3/2)*x^6 + x^ tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^2*y^2 - 3*x^2*y + (9/8)*x^2 + y + (-9/8)   tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^2*y^2 - 3*x^2*y + (-9/4)*x^2 - 1*y - 2    tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (9/4)*x^9 + (9/2)*x^8 + 3*x^7*y + (9/4)*x^7 +  tdeg=9   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x^9 + 2*x^8 + 2*x^7*y - 2*x^7 + 2*x^6*y + x^5* tdeg=9   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^5*y^2 - 1*y + (-3/8)                       tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (1/8)*x^4 + x^3*y + 2*x^2*y^2 + (-1/2)*x^3 - 2 tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^3*y^2 + 2*x^3*y - 1*x^3 + 2*y + (-3/2)    tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^2*y^2 + 2*x^2*y + (1/2)*x^2 + 2*y + (9/8)  tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  2*x^2*y^2 - 3*x^2*y + (9/8)*x^2 + y + (-1/2)   tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x^5*y^2 + x^5*y + (1/4)*x^5 + 2*y + (3/2)      tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^4 - 2*x^3*y - 1*x^2*y^2 + x^3 + x^2*y + ( tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  x^5*y^2 - 2*x^5*y + x^5 + y + (-1/2)           tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  (-1/4)*x^5 + x^4*y - 1*x^3*y^2 - 1*x^4 + 2*x^3 tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F2b  -1*x^5*y^2 + 3*x^5*y + (-9/4)*x^5 + y - 2      tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1   x^3 - 2*x^2*y + x*y^2 - 2*x^2 - 2*x*y - 1*x    tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^6 - 2*x^5*y + 2*x^4*y^2 - 2*x^3*y^3 + x^2*y^ tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x*y^2 - 3*x^2                                  tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^3*y - 1*x^2*y^2 - 1*x*y^3 + y^4 - 3*x^3 - 1* tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^4 + x^3*y - 1*x^2*y^2 - 1*x*y^3 + 2*x^3      tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^5 + x^4*y - 1*x*y^4 - 1*y^5 - 1*x^3 - 2*x^2  tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^2*y^2 - 1*x^2 - 3*y                          tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^2*y^2 - 2*x*y^3 + y^4 + 2*x*y - 3            tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^3 + 2*x^2*y + x*y^2 - 2*x^2 + 3              tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^4 - 1*x^3*y - 1*x^2*y^2 + x*y^3              tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^3 + x^2*y - 1*x*y^2 - 1*y^3 - 1*x            tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^7 - 2*x^6*y + 3*x^5*y^2 - 4*x^4*y^3 + 3*x^3* tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^3 + x^2*y - 3*x^2 - 1*x*y - 3*y              tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^3 + x*y^2 - 1                                tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^4*y^2 + x^2*y^4 - 2*x^4                      tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^2*y + 2*x*y^2 + y^3 - 2*x                    tdeg=3   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^5*y - 1*x^4*y^2 + 2*x^3*y^3 - 2*x^2*y^4 + x* tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^2*y^2 + x*y^3 - 3*x^2*y + y^3                tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^5 + x^4*y + 2*x^3*y^2 + 2*x^2*y^3 + x*y^4 +  tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1   x^6 - 1*x^4*y^2 - 1*x^2*y^4 + y^6 + x^2*y^3 -  tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^4*y^3 + x^3*y^3 + x                        tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^4*y^4 + 2*x^3*y^2 - 1*x                    tdeg=8   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  -1*x^2*y^3 + x                                 tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  -1*x^5*y^3 - 1*x^2*y^3 + 3*x                   tdeg=8   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^4*y^3 + x^3*y^3 + 3*x                      tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^3*y^3 - 3*x^2*y^4 + 2*x                    tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  x^2*y^4 - 1*x^4*y - 1*x                        tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^4*y + 2*x^2*y^2 + x                        tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^5*y + 2*x^4*y^2 + 3*x                      tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  -3*x^3*y + x                                   tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  -2*x^2*y^3 - 1*x                               tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  2*x^5*y^2 + 3*x                                tdeg=7   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  x^5*y^3 + 3*x                                  tdeg=8   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  x^4*y^2 + 2*x                                  tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  -1*x^3*y^2 + 2*x^2*y^2 + 3*x                   tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  -3*x^5*y^2 + x^4*y + 3*x                       tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  2*x^5*y + 3*x                                  tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  -3*x^5*y + 2*x^2*y + 2*x                       tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F1b  -1*x^5*y^4 - 1*x^4*y^3 - 1*x                   tdeg=9   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F1b  -3*x^4*y^4 + 2*x                               tdeg=8   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   -1*x^6 - 2*x^5 + x^4*y - 1*x^4 + x             tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   y^5 + 2*x^2*y + x                              tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F3   -3*y^2 + x + 4*y - 1                           tdeg=2   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x - 1*y + 3                                    tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x^5 + x^4*y + 2*x^4 + x                        tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   x                                              tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   -3*x^5 + x^4*y + x^4 + x                       tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   -3*x^6 + 2*x^5 - 3*x^4 + x^3*y + x             tdeg=6   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   x + 4*y - 1                                    tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x - 1*y + 2                                    tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   -2*y^4 + 3*y^3 - 1*y^2 + x - 5*y - 4           tdeg=4   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   y^2 + x + 3*y + 1                              tdeg=2   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x - 3*y - 3                                    tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x^3*y + 2*x^3 + x                              tdeg=4   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   x^5 + x^4*y + 3*x^4 + x                        tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F3   -1*x^2*y^2 + y^3 + x                           tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F3   x + 2*y + 4                                    tdeg=1   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   -1*y^3 - 1*y^2 + x + 2                         tdeg=3   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   y^2 + x + 3*y - 5                              tdeg=2   Q=PASS  SY=COORDINATE      FIB=INCONCLUSIVE          
+F3   x^2*y + x^2 + x                                tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F4   2*x^4*y^3 + x^5 - 3*x^4 + 2*x                  tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^4*y^5 + 2*x^5*y^3 + 2*x^5*y^2 - 3*x*y^3 + tdeg=9   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   3*x^2*y^5 + 2*y^5 + x^4 + x                    tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^3*y^4 - 1*x^2*y^5 + 2*y^5 - 1*x^3*y + 2*x tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -1*x^4*y^5 - 2*x^4*y^2 - 1*x                   tdeg=9   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   3*x^5*y^3 + 2*x^4*y^4 - 2*x^2*y^3 + y^3 + 2*x  tdeg=8   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^2*y^2 - 3*y^4 - 2*y^2 + 2*x - 1*y         tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   3*x^4*y^5 + 2*x*y^4 - 1*x                      tdeg=9   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^5*y^5 + x                                 tdeg=10  Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F4   -1*x^4 + 3*x^3 + 2*x                           tdeg=4   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^4*y^5 + 3*x*y^3 - 2*x*y^2 + 2*x           tdeg=9   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^5*y - 1*x^3 + 2*y^3 - 2*x*y - 1*x         tdeg=6   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^2*y^5 + 2*y^5 + x                         tdeg=7   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -1*x^4*y + 2*x^2*y^3                           tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   x^3*y^5 + 3*x^5*y^2 - 1*y^5 + x                tdeg=8   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -1*x^5*y^4 + 2*x*y^5 - 3*x*y^4 - 3*x^3 - 2*x^2 tdeg=9   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   -3*x^2*y + 2*x                                 tdeg=3   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F4   3*x^3*y^2 - 3*x^2*y + x                        tdeg=5   Q=PASS  SY=NON_COORDINATE  FIB=NON_COORDINATE_BY_R   CRUX
+F4   x^5*y^5 - 3*x^2*y^5 - 1*x^3*y^3 + 2*x          tdeg=10  Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+F4   2*x^2*y^3 + y^3 - 1*x + y                      tdeg=5   Q=FAIL  SY=NOT_RUN         FIB=NOT_RUN               
+
+| family | candidates | U PASS | U FAIL | SY COORD | SY NON_COORD | SY budget-out | U+SY objects | COORD rate among U-passers |
+|---|---|---|---|---|---|---|---|---|
+| F2 | 30 | 30 | 0 | 0 | 30 | 0 | 30 | 0% (0/30) |
+| F2b | 30 | 30 | 0 | 0 | 30 | 0 | 30 | 0% (0/30) |
+| F1 | 20 | 0 | 20 | 0 | 0 | 0 | 0 | n/a |
+| F1b | 20 | 9 | 11 | 0 | 9 | 0 | 9 | 0% (0/9) |
+| F3 | 20 | 18 | 2 | 11 | 7 | 0 | 7 | 61% (11/18) |
+| F4 | 20 | 3 | 17 | 0 | 3 | 0 | 3 | 0% (0/3) |
+| ALL | 140 | 90 | 50 | 11 | 79 | 0 | 79 | 12% (11/90) |
+
+| family | U-passers | SY NON_COORD corroborated by FIB | SY NON_COORD, FIB inconclusive | SY COORD, FIB consistent | conflicts |
+|---|---|---|---|---|---|
+| F2 | 30 | 30 | 0 | 0 | 0 |
+| F2b | 30 | 30 | 0 | 0 | 0 |
+| F1 | 0 | 0 | 0 | 0 | 0 |
+| F1b | 9 | 9 | 0 | 0 | 0 |
+| F3 | 18 | 7 | 0 | 11 | 0 |
+| F4 | 3 | 3 | 0 | 0 | 0 |
+| ALL | 90 | 79 | 0 | 11 | 0 |
+
+total wall 18.2s   candidates 140
