@@ -107,6 +107,13 @@ EMPTY verdicts recorded in the sweep are produced without the collision equation
   actually run — the 261 support pairs listed in `night3/supports/`. It says
   nothing about supports not in that list, about other monomial budgets, about
   degrees outside [126, 200], or about dense supports at these degrees.
+- **Normalization scope (external audit finding).** The fixed normalization of the
+  collision to (0,0) and (1,0) can densify a sparse pair out of its carrier, so on
+  non-affine-saturated supports the formulation can produce false EMPTYs; it never
+  produces false NONEMPTYs. Accordingly: EMPTY verdicts in sweeps 1–2 certify only
+  the absence of solutions with a collision normalizable to (0,0),(1,0) within the
+  fixed carrier; they do not close the support family under general affine
+  position. NONEMPTY verdicts are unaffected by this and remain fully valid.
 - NONEMPTY, had it occurred, would mean only that the Groebner basis is not the
   unit ideal, i.e. the ideal is proper over the algebraic closure of GF(p). It
   would not by itself assert a solution with coordinates in GF(p).
