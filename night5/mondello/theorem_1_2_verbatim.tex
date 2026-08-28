@@ -1,0 +1,30 @@
+\begin{theorem}\label{thm:main}
+Over \(k=\overline{\F}_2\), define
+\[
+\begin{aligned}
+ P(x,y)&=x+x^2y+x^4+x^6y^2,\\
+ Q(x,y)&=y+x^5+x^6y+x^7y^2+x^8y^3
+\end{aligned}
+\]
+and \(F=(P,Q)\colon\A_k^2\to\A_k^2\).  Then:
+\begin{enumerate}
+\renewcommand{\labelenumi}{\textup{(\roman{enumi})}}
+  \item \(F(0,0)=(0,0)\), \(JF(0,0)=I_2\), and \(\det JF=1\);
+  \item \(F\) is \etale{};
+  \item \(P,Q\) are algebraically independent and
+  \[
+    [k(x,y):k(P,Q)]=3;
+  \]
+  \item the function-field extension is separable, and, over an algebraic
+  closure \(\Omega\) of \(k(P,Q)\), the geometric generic fiber has exactly
+  three \(\Omega\)-valued points;
+  \item
+  \[
+    F(0,1)=F(1,0)=F(1,1)=(0,1),
+  \]
+  so \(F\) is not an automorphism.
+\end{enumerate}
+Consequently \(\deg_{\mathrm{gen}}(F)=3\) is prime to the characteristic, and
+\(F\) is a counterexample to the separable Jacobian conjecture in dimension
+two and characteristic two.
+\end{theorem}

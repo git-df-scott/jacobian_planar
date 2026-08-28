@@ -1,0 +1,53 @@
+{
+ "source": {
+  "arxiv_id": "2608.02634",
+  "title": "A Dimension-Two Counterexample to the Separable Jacobian Conjecture in Characteristic Two",
+  "author": "Mondello, Romy",
+  "arxiv_date": "2026/07/29",
+  "retrieved_from": "https://arxiv.org/e-print/2608.02634 (original LaTeX source)",
+  "source_file": "main.tex",
+  "source_file_sha256": "e10aab38e859b719c101f9e11610896fe2961b179f481a638d86b3fdbecf537c",
+  "theorem": "Theorem 1.2 in the numbering of the request; the source labels it \\label{thm:main} and it is the only theorem environment in main.tex",
+  "theorem_source_lines": "104-133",
+  "jacobian_collision_source_lines": "155-187",
+  "base_field_verbatim": "k = \\overline{\\F}_2",
+  "characteristic": 2
+ },
+ "map": {
+  "P_verbatim_latex": "P(x,y)=x+x^2y+x^4+x^6y^2",
+  "Q_verbatim_latex": "Q(x,y)=y+x^5+x^6y+x^7y^2+x^8y^3",
+  "note": "Every printed coefficient is 1. Monomials are given as [i, j] meaning x^i*y^j, with the coefficient in F_2.",
+  "P_monomials": [[1, 0], [2, 1], [4, 0], [6, 2]],
+  "P_coefficients": [1, 1, 1, 1],
+  "Q_monomials": [[0, 1], [5, 0], [6, 1], [7, 2], [8, 3]],
+  "Q_coefficients": [1, 1, 1, 1, 1],
+  "deg_P": 8,
+  "deg_Q": 11,
+  "max_deg": 11,
+  "constant_terms": {"P": 0, "Q": 0},
+  "linear_part_matrix_rows": [[1, 0], [0, 1]],
+  "linear_part_note": "read off the printed P and Q: the degree-1 part of P is x and of Q is y; the paper independently states JF(0,0) = I_2"
+ },
+ "stated_partial_derivatives_verbatim": {
+  "P_x": "1",
+  "P_y": "x^2",
+  "Q_x": "x^4+x^6y^2",
+  "Q_y": "1+x^6+x^8y^2",
+  "det_JF_verbatim": "\\det JF =1+x^6+x^8y^2-x^2(x^4+x^6y^2)=1"
+ },
+ "collision": {
+  "statement_verbatim": "F(0,1)=F(1,0)=F(1,1)=(0,1)",
+  "points": [[0, 1], [1, 0], [1, 1]],
+  "common_image": [0, 1],
+  "paper_remark_verbatim": "They are distinct as \\(k\\)-points, so \\(F\\) is not injective on points."
+ },
+ "theorem_claims_verbatim": [
+  "\\(F(0,0)=(0,0)\\), \\(JF(0,0)=I_2\\), and \\(\\det JF=1\\);",
+  "\\(F\\) is \\etale{};",
+  "\\(P,Q\\) are algebraically independent and \\[ [k(x,y):k(P,Q)]=3; \\]",
+  "the function-field extension is separable, and, over an algebraic closure \\(\\Omega\\) of \\(k(P,Q)\\), the geometric generic fiber has exactly three \\(\\Omega\\)-valued points;",
+  "\\[ F(0,1)=F(1,0)=F(1,1)=(0,1), \\] so \\(F\\) is not an automorphism."
+ ],
+ "ambiguous": false,
+ "ambiguity_notes": "No entry required a judgement call. Every monomial, exponent and coefficient is printed explicitly in the displayed equations of the theorem; all coefficients are 1; there are no ellipses, no parameters and no unreduced or irregular expressions anywhere in the map data."
+}
