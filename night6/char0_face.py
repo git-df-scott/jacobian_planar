@@ -132,8 +132,10 @@ def main():
                      " term counts %s\n"
                      % (len(res), [max(sum(m) for m in f) for f in res],
                         [len(f) for f in res]))
-    src = ["ring R=0,(A1,A2,A3,A4,A5,A6),dp;",
-           "ideal I=%s;" % (",\n".join(sing_poly(f) for f in res)),
+    src = ["ring R=0,(A1,A2,A3,A4,A5,A6),dp;"]
+    for i, f in enumerate(res):
+        src += sing_poly_stmts(f, "e%d" % i)
+    src += ["ideal I = %s;" % ",".join("e%d" % i for i in range(len(res))),
            "option(redSB);",
            'int t0=timer;',
            "ideal G=std(I);",
