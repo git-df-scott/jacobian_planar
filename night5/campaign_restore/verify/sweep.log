@@ -1,0 +1,104 @@
+quintic in t9 has 5 roots in F_7523: [1236, 1364, 2942, 3714, 5656]
+  cover t9= 1236  t8= 6086  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 1364  t8= 3445  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 2942  t8= 3223  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 3714  t8= 3237  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 5656  t8= 7065  -> VERIFY 2qt'-3q't == u^2 : True
+5 of 5 points VERIFIED exactly
+wrote facepts_verified_p7523.json
+     secs 0
+     RESULT LIVE dim 0
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+p=7523: control OK, 5/5 covers EMPTY
+quintic in t9 has 5 roots in F_8053: [782, 1537, 2315, 2674, 2684]
+  cover t9=  782  t8= 3769  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 1537  t8= 7796  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 2315  t8= 3127  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 2674  t8= 7587  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 2684  t8= 2160  -> VERIFY 2qt'-3q't == u^2 : True
+5 of 5 points VERIFIED exactly
+wrote facepts_verified_p8053.json
+     secs 0
+     RESULT LIVE dim 0
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+p=8053: control OK, 5/5 covers EMPTY
+quintic in t9 has 5 roots in F_11827: [1524, 3824, 4205, 7758, 11737]
+  cover t9= 1524  t8= 2151  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 3824  t8= 4586  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 4205  t8= 3775  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 7758  t8= 3183  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9=11737  t8= 3179  -> VERIFY 2qt'-3q't == u^2 : True
+5 of 5 points VERIFIED exactly
+wrote facepts_verified_p11827.json
+     secs 0
+     RESULT LIVE dim 0
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+     secs 0
+     RESULT EMPTY
+p=11827: control OK, 5/5 covers EMPTY
+quintic in t9 has 1 roots in F_10883: [10805]
+  cover t9=10805  t8= 1147  -> VERIFY 2qt'-3q't == u^2 : True
+1 of 1 points VERIFIED exactly
+wrote facepts_verified_p10883.json
+p=10883: only 1/5 covers rational, skip
+quintic in t9 has 1 roots in F_12241: [6310]
+  cover t9= 6310  t8=10752  -> VERIFY 2qt'-3q't == u^2 : True
+1 of 1 points VERIFIED exactly
+wrote facepts_verified_p12241.json
+p=12241: only 1/5 covers rational, skip
+quintic in t9 has 1 roots in F_13327: [2998]
+  cover t9= 2998  t8=11248  -> VERIFY 2qt'-3q't == u^2 : True
+1 of 1 points VERIFIED exactly
+wrote facepts_verified_p13327.json
+p=13327: only 1/5 covers rational, skip
+quintic in t9 has 3 roots in F_15809: [7318, 11783, 13501]
+  cover t9= 7318  t8=11378  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9=11783  t8= 9150  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9=13501  t8=  499  -> VERIFY 2qt'-3q't == u^2 : True
+3 of 3 points VERIFIED exactly
+wrote facepts_verified_p15809.json
+p=15809: only 3/5 covers rational, skip
+p=16787: skip (7 | p-1)
+quintic in t9 has 3 roots in F_17203: [2637, 4562, 6990]
+  cover t9= 2637  t8= 6131  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 4562  t8=16783  -> VERIFY 2qt'-3q't == u^2 : True
+  cover t9= 6990  t8= 1793  -> VERIFY 2qt'-3q't == u^2 : True
+3 of 3 points VERIFIED exactly
+wrote facepts_verified_p17203.json
+p=17203: only 3/5 covers rational, skip
+quintic in t9 has 1 roots in F_19301: [15492]
+  cover t9=15492  t8=12227  -> VERIFY 2qt'-3q't == u^2 : True
+1 of 1 points VERIFIED exactly
+wrote facepts_verified_p19301.json
+p=19301: only 1/5 covers rational, skip
+
+=== SWEEP SUMMARY ===
+  p=    7523: 5/5 covers EMPTY
+  p=    8053: 5/5 covers EMPTY
+  p=   11827: 5/5 covers EMPTY
+  primes with complete 5/5 emptiness: 3/3
