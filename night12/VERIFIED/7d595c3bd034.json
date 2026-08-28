@@ -1,0 +1,39 @@
+{
+ "tag": "C_struct_x",
+ "arm": "calib",
+ "deg": 6,
+ "hash": "7d595c3bd034",
+ "n_supp_P": 3,
+ "has_linear_term": 1,
+ "n_full_support": 14,
+ "thin_k": 1,
+ "n_unknowns": 14,
+ "cap_full": 4000,
+ "cap_work": 1200,
+ "deg_Q_max": 9,
+ "n_rows_nonzero": 12,
+ "rank_A_p999983": 12,
+ "rank_Ae_p999983": 12,
+ "consistent_p999983": 1,
+ "nullity_p999983": 2,
+ "rank_A_p1000003": 12,
+ "rank_Ae_p1000003": 12,
+ "consistent_p1000003": 1,
+ "nullity_p1000003": 2,
+ "dual_prime_consistent": 1,
+ "exact_status": "verified_bracket_eq_1",
+ "deg_Q": 1,
+ "div_ordered": "True",
+ "Q": {
+  "0,1": [
+   1,
+   1
+  ]
+ },
+ "secs": 0.0,
+ "P": {
+  "0,1": 2,
+  "0,6": 1,
+  "1,0": 1
+ }
+}

@@ -1,0 +1,1 @@
+P swept: 174 ; exactly verified mates: 12 ; main-arm non-divisibility-ordered: 0

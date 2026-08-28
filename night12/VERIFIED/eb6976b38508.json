@@ -1,0 +1,38 @@
+{
+ "tag": "F_coord",
+ "arm": "calib",
+ "deg": 4,
+ "hash": "eb6976b38508",
+ "n_supp_P": 2,
+ "has_linear_term": 1,
+ "n_full_support": 10,
+ "thin_k": 1,
+ "n_unknowns": 10,
+ "cap_full": 4000,
+ "cap_work": 1200,
+ "deg_Q_max": 6,
+ "n_rows_nonzero": 8,
+ "rank_A_p999983": 8,
+ "rank_Ae_p999983": 8,
+ "consistent_p999983": 1,
+ "nullity_p999983": 2,
+ "rank_A_p1000003": 8,
+ "rank_Ae_p1000003": 8,
+ "consistent_p1000003": 1,
+ "nullity_p1000003": 2,
+ "dual_prime_consistent": 1,
+ "exact_status": "verified_bracket_eq_1",
+ "deg_Q": 1,
+ "div_ordered": "True",
+ "Q": {
+  "0,1": [
+   1,
+   1
+  ]
+ },
+ "secs": 0.0,
+ "P": {
+  "0,4": 1,
+  "1,0": 1
+ }
+}

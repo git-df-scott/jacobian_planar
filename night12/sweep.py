@@ -37,6 +37,7 @@ def run_one(rec):
     Praw = rec["P"]
     P = Praw if all(isinstance(k, tuple) for k in Praw) else parse_P(rec)
     rec = {k: v for k, v in rec.items() if k != "P"}
+    rec["P"] = {("%d,%d" % k): int(v) for k, v in sorted(P.items())}
     t0 = time.time()
     S, info = M.q_support(P, cap_full=CAP_FULL, cap_work=CAP_WORK)
     rows, _ = M.build_system(P, S)
