@@ -1,0 +1,212 @@
+{
+ "label": "CANDIDATE-UNVERIFIED",
+ "hash": "efae6ba71cb6",
+ "lift_index_in_altitude_json": 0,
+ "max_total_degree": 160,
+ "support_P": [
+  [
+   0,
+   90
+  ],
+  [
+   0,
+   126
+  ],
+  [
+   0,
+   134
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   4,
+   132
+  ],
+  [
+   12,
+   21
+  ],
+  [
+   36,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   5,
+   20
+  ],
+  [
+   33,
+   124
+  ],
+  [
+   60,
+   16
+  ],
+  [
+   104,
+   0
+  ],
+  [
+   106,
+   2
+  ],
+  [
+   160,
+   0
+  ]
+ ],
+ "ring": "Z (exact integer arithmetic throughout)",
+ "lift_mod_6": {
+  "a": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "b": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ]
+ },
+ "single_term_residual": {
+  "monomial_x_exponent": 103,
+  "monomial_y_exponent": 89,
+  "coefficient_over_Z": -9360,
+  "bracket_coefficient_formula": "-9360*a_0*b_4"
+ },
+ "free_set": {
+  "a_indices": [
+   0
+  ],
+  "b_indices": [
+   4
+  ],
+  "size": 2
+ },
+ "box": "[-4..4] independently on each free coefficient; all other coefficients held at the lift value",
+ "assignments_examined": 81,
+ "full_residual_computed_on_all_rows": true,
+ "n_equation_rows": 42,
+ "HALT_EVENTS": [],
+ "n_halt_events": 0,
+ "assignments_with_residual_identically_zero_over_Z": {
+  "total": 17,
+  "also_satisfying_collisions": 0,
+  "also_satisfying_collisions_and_nondegenerate": 0
+ },
+ "near_miss_minimum_by_stratum": {
+  "all": {
+   "min_nonzero_residual_rows": 0,
+   "content_gcd_at_minimum": 0,
+   "attaining_assignment": {
+    "a": [
+     -4,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": -5,
+    "collision_Q_diff_over_Z": 1,
+    "collisions_hold_over_Z": false
+   },
+   "residual_rows_there": {},
+   "degenerate_by_additive_screen": true
+  },
+  "collisions_ok": {
+   "min_nonzero_residual_rows": 1,
+   "content_gcd_at_minimum": 9360,
+   "attaining_assignment": {
+    "a": [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true
+   },
+   "residual_rows_there": {
+    "(103, 89)": -9360
+   },
+   "degenerate_by_additive_screen": false
+  },
+  "collisions_ok_and_nondegenerate": {
+   "min_nonzero_residual_rows": 1,
+   "content_gcd_at_minimum": 9360,
+   "attaining_assignment": {
+    "a": [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true
+   },
+   "residual_rows_there": {
+    "(103, 89)": -9360
+   },
+   "degenerate_by_additive_screen": false
+  }
+ }
+}
