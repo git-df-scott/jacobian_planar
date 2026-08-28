@@ -1,0 +1,669 @@
+{
+ "supports": {
+  "E0_P": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    6,
+    2
+   ]
+  ],
+  "E0_Q": [
+   [
+    0,
+    1
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    7,
+    2
+   ],
+   [
+    8,
+    3
+   ]
+  ],
+  "E0_sizes": [
+   4,
+   5
+  ],
+  "E1_P": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    2
+   ]
+  ],
+  "E1_Q": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    4,
+    2
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    5,
+    2
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    6,
+    2
+   ],
+   [
+    7,
+    2
+   ],
+   [
+    8,
+    3
+   ]
+  ],
+  "E1_sizes": [
+   9,
+   13
+  ],
+  "hull_vertices_P": [
+   [
+    1,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    6,
+    2
+   ],
+   [
+    2,
+    1
+   ]
+  ],
+  "hull_vertices_Q": [
+   [
+    0,
+    1
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    8,
+    3
+   ]
+  ]
+ },
+ "witness_control": {
+  "E0": {
+   "n_equations": 15,
+   "n_K_equations": 13,
+   "n_unknowns": 9,
+   "residual_mod2_all_zero": true,
+   "failures": [],
+   "integer_residual_nonzero_entries": {
+    "K(13, 4)": 2,
+    "K(12, 3)": -2,
+    "K(11, 2)": 6,
+    "K(10, 1)": -2,
+    "K(9, 3)": -2,
+    "K(9, 0)": 4,
+    "K(7, 1)": -2,
+    "K(6, 0)": -4,
+    "K(5, 2)": 6,
+    "K(3, 0)": 4,
+    "K(1, 1)": 2,
+    "C2_P": -2
+   }
+  },
+  "E1": {
+   "n_equations": 34,
+   "n_K_equations": 32,
+   "n_unknowns": 22,
+   "residual_mod2_all_zero": true,
+   "failures": [],
+   "integer_residual_nonzero_entries": {
+    "K(13, 4)": 2,
+    "K(12, 3)": -2,
+    "K(11, 2)": 6,
+    "K(10, 1)": -2,
+    "K(9, 3)": -2,
+    "K(9, 0)": 4,
+    "K(7, 1)": -2,
+    "K(6, 0)": -4,
+    "K(5, 2)": 6,
+    "K(3, 0)": 4,
+    "K(1, 1)": 2,
+    "C2_P": -2
+   }
+  }
+ },
+ "step1": {
+  "E0": {
+   "n_unknowns": 9,
+   "n_equations": 15,
+   "rank_mod2": 5,
+   "nullity_mod2": 4,
+   "n_identically_zero_rows_mod2": 10,
+   "zero_rows_mod2": [
+    "K(13, 4)",
+    "K(12, 3)",
+    "K(11, 2)",
+    "K(10, 1)",
+    "K(9, 3)",
+    "K(9, 0)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(3, 0)",
+    "K(1, 1)"
+   ]
+  },
+  "E1": {
+   "n_unknowns": 22,
+   "n_equations": 34,
+   "rank_mod2": 14,
+   "nullity_mod2": 8,
+   "n_identically_zero_rows_mod2": 10,
+   "zero_rows_mod2": [
+    "K(13, 4)",
+    "K(11, 3)",
+    "K(9, 3)",
+    "K(9, 1)",
+    "K(7, 2)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(5, 1)",
+    "K(3, 1)",
+    "K(1, 1)"
+   ]
+  }
+ },
+ "step1_groebner_E0": {
+  "attempted": true,
+  "timeout_s": 600,
+  "status": "COMPLETED",
+  "elapsed_s": 0.0,
+  "n_basis_elements": 7,
+  "basis": [
+   "a_2_1 + a_4_0**2*b_6_1",
+   "a_2_1*b_5_0 + a_4_0*b_6_1",
+   "a_4_0*b_5_0 + 1",
+   "a_2_1*b_7_2 + a_4_0*b_8_3",
+   "b_5_0*b_8_3 + b_6_1*b_7_2",
+   "a_1_0 + a_4_0",
+   "b_0_1 + b_5_0"
+  ],
+  "leading_exponents": [
+   [
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "vars": [
+   "a_1_0",
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_0_1",
+   "b_5_0",
+   "b_6_1",
+   "b_7_2",
+   "b_8_3"
+  ],
+  "variables_with_pure_power_leading_term": [
+   "a_1_0",
+   "b_0_1"
+  ],
+  "quotient_finite_dimensional_over_GF2bar": false
+ },
+ "step2": {
+  "n_unknowns": 9,
+  "n_equations": 15,
+  "rank_J_mod2": 5,
+  "corank_in_unknowns": 4,
+  "full_unknown_rank_odd_minor_exists": false,
+  "smooth_mod2_point_of_integral_system": false,
+  "equations_with_vanishing_gradient_mod2": [
+   "K(13, 4)",
+   "K(12, 3)",
+   "K(11, 2)",
+   "K(10, 1)",
+   "K(9, 3)",
+   "K(9, 0)",
+   "K(7, 1)",
+   "K(5, 2)",
+   "K(3, 0)",
+   "K(1, 1)"
+  ],
+  "integer_residual_at_base": {
+   "K(13, 4)": 2,
+   "K(12, 3)": -2,
+   "K(11, 2)": 6,
+   "K(10, 1)": -2,
+   "K(9, 3)": -2,
+   "K(9, 0)": 4,
+   "K(7, 1)": -2,
+   "K(6, 0)": -4,
+   "K(5, 2)": 6,
+   "K(3, 0)": 4,
+   "K(1, 1)": 2,
+   "C2_P": -2
+  },
+  "all_residuals_even": true,
+  "J_mod2": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  ],
+  "equation_labels": [
+   "K(13, 4)",
+   "K(12, 3)",
+   "K(11, 2)",
+   "K(10, 1)",
+   "K(9, 3)",
+   "K(9, 0)",
+   "K(8, 2)",
+   "K(7, 1)",
+   "K(6, 0)",
+   "K(5, 2)",
+   "K(3, 0)",
+   "K(1, 1)",
+   "K(0, 0)",
+   "C2_P",
+   "C2_Q"
+  ],
+  "variable_names": [
+   "a_1_0",
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_0_1",
+   "b_5_0",
+   "b_6_1",
+   "b_7_2",
+   "b_8_3"
+  ]
+ },
+ "step3_lift_levels": [
+  {
+   "level_from": 2,
+   "level_to": 4,
+   "rhs_s_mod2": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "rhs_nonzero_positions": [
+    "K(13, 4)",
+    "K(12, 3)",
+    "K(11, 2)",
+    "K(10, 1)",
+    "K(9, 3)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(1, 1)",
+    "C2_P"
+   ],
+   "exists": "DOES-NOT-EXIST",
+   "reason": "J*delta = s (mod 2) inconsistent: s is not in the column space of J mod 2",
+   "rank_J_mod2": 5,
+   "rank_augmented_mod2": 6
+  }
+ ],
+ "lift_summary": {
+  "mod4": "DOES-NOT-EXIST"
+ },
+ "lift_reached": 2,
+ "log": [
+  "E0 support sizes: |S_P|=4 |S_Q|=5  (unknowns 9)",
+  "E1 hull lattice sizes: |S_P|=9 |S_Q|=13  (unknowns 22)",
+  "",
+  "=== WITNESS CONTROL (base point satisfies the F_2 system) ===",
+  "E0: 15 equations (13 from K, 2 from C2), 9 unknowns; base residual mod 2 all zero: True",
+  "E1: 34 equations (32 from K, 2 from C2), 22 unknowns; base residual mod 2 all zero: True",
+  "WITNESS CONTROL PASSED for E0 and E1.",
+  "",
+  "=== STEP 1: Jacobian of (K)+(C2) at the base point over F_2 ===",
+  "E0: unknowns=9 equations=15  rank(J mod 2)=5  nullity=4  (zero rows mod 2: 10)",
+  "E1: unknowns=22 equations=34  rank(J mod 2)=14  nullity=8  (zero rows mod 2: 10)",
+  "",
+  "--- STEP 1b: Groebner basis of the E0 ideal over GF(2) ---",
+  "Groebner (GF(2), grevlex) COMPLETED in 0.00s; 7 basis elements",
+  "  variables with a pure-power leading term: 2 of 9",
+  "  Krull dimension of the ideal is 0 iff that count is full: False",
+  "",
+  "=== STEP 2: integral system on E0, smoothness mod 2 at the base ===",
+  "unknowns N=9, equations M=15, rank(J mod 2)=5, corank=4",
+  "square minor of size N=9 that is odd exists: False",
+  "all integer residuals at the base even: True",
+  "",
+  "=== STEP 2/3: 2-adic lifting of the base point on E0 ===",
+  "mod 4: DOES-NOT-EXIST (linear system inconsistent mod 2)"
+ ]
+}
