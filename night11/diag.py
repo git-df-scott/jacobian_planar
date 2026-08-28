@@ -172,22 +172,58 @@ def run_one(fn, n_dominant):
     return out
 
 
+def sylvester_baseline(dP, dQ, t, aP, aQ, n=5, seed=0):
+    """D1 null model: the same diagnostic at RANDOM points of the same graded
+    support.  If sigma_min vanishes here too, it vanishes for support reasons
+    and says nothing about any particular stall."""
+    sup = Support(dP, dQ, t, aP, aQ)
+    rng = np.random.default_rng(seed)
+    smin, smax, dim = [], [], None
+    for _ in range(n):
+        P, Q = sup.unpack(rng.normal(size=sup.n))
+        sv = sylvester_sigma(top_form(P, dP), top_form(Q, dQ))
+        if sv is None:
+            continue
+        dim = int(len(sv))
+        smin.append(float(sv[-1]))
+        smax.append(float(sv[0]))
+    iP = np.flatnonzero(top_form(sup.maskP.astype(float), dP))
+    iQ = np.flatnonzero(top_form(sup.maskQ.astype(float), dQ))
+    return dict(t=t, aP=aP, aQ=aQ, n_random_points=len(smin), dim=dim,
+                sigma_min_random=smin, sigma_max_random=smax,
+                x_power_dividing_P_top=int(iP.min()),
+                x_power_dividing_Q_top=int(iQ.min()),
+                y_power_dividing_P_top=int(dP - iP.max()),
+                y_power_dividing_Q_top=int(dQ - iQ.max()))
+
+
 def main():
     n_stalls = int(sys.argv[1]) if len(sys.argv) > 1 else 5
     n_dom = int(sys.argv[2]) if len(sys.argv) > 2 else 6
     files = sorted(f for f in os.listdir(STALLDIR) if f.endswith('.npz'))[:n_stalls]
     res = []
+    grades = []
     for f in files:
         print('diag %s ...' % f, flush=True)
+        z = np.load(os.path.join(STALLDIR, f))
+        g = (int(z['dP']), int(z['dQ']), int(z['t']), int(z['aP']), int(z['aQ']))
+        if g not in grades:
+            grades.append(g)
         r = run_one(os.path.join(STALLDIR, f), n_dom)
         print('   exact residual nonzero cells: %d' %
               r['D2_rational_reconstruction']['exact_residual_nonzero_cells'],
               flush=True)
         res.append(r)
+    base = [sylvester_baseline(*g) for g in grades]
+    for b in base:
+        print('D1 baseline t=%d: sigma_min at random points %s'
+              % (b['t'], ["%.3g" % v for v in b['sigma_min_random']]), flush=True)
+    out = dict(stalls=res, sylvester_random_baseline=base)
     with open(os.path.join(HERE, 'diag_results.json'), 'w') as fh:
-        json.dump(res, fh, indent=1)
+        json.dump(out, fh, indent=1)
     hits = [r for r in res
-            if r['D2_rational_reconstruction']['exact_residual_identically_zero']]
+            if r['D2_rational_reconstruction']
+                ['exact_residual_identically_zero']]
     print('done; %d files, %d with identically-zero exact residual'
           % (len(res), len(hits)))
 

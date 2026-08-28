@@ -256,7 +256,7 @@ def main():
                'DIVERGED']
     w("| arm | seeds | " + " | ".join(c.replace('-', '-<br>') for c in classes)
       + " | min E_K | median E_K |")
-    w("|---" * (3 + len(classes)) + "|")
+    w("|---" * (4 + len(classes)) + "|")
     for arm in arms:
         rows = [x for x in R if x['arm'] == arm]
         cnt = Counter(x['cls'] for x in rows)
@@ -294,6 +294,43 @@ def main():
          cnt.get('CONVERGED-AUTOMORPHISM-LIKE', 0), cnt.get('DIVERGED', 0)))
     w("")
 
+    w("Reading of the tally, kept to what was measured:")
+    w("")
+    w("* **The classification is degenerate: every one of the %d seeds landed"
+      % len(R))
+    w("  in the single class `STALLED`.** Nothing converged, nothing collapsed")
+    w("  onto the `E_K = 1` degenerate locus, nothing diverged. The four-way")
+    w("  classification therefore separated nothing in this run, and the")
+    w("  informative object is the `E_K` distribution, not the class labels.")
+    w("* The `STALLED-COLLAPSED` count being `0` is the one thing the labels do")
+    w("  say: the corrected support fixed the failure mode recorded in")
+    w("  `STATUS.md`, where every seed on the old `aP = aQ = 0` support ran to")
+    w("  `E_K = 1`. Here the median `||P_x Q_y - P_y Q_x||` is `1`, i.e. the")
+    w("  Keller constant is being fitted rather than the Jacobian being killed.")
+    w("* The whole distribution sits between `%.2g` and `%.2g`. The smallest"
+      % (min(eks_all), max(eks_all)))
+    w("  `E_K` reached anywhere in %d seeds x %d iterations is `%.3g`, which is"
+      % (len(R), cfg['maxiter'], min(eks_all)))
+    w("  about %.0f decades above the `1e-18` bar this campaign set for"
+      % abs(np.log10(min(eks_all)) - (-18)))
+    w("  `CONVERGED-AUTOMORPHISM-LIKE`.")
+    w("* That gap has to be read against control N3, which is the reason the")
+    w("  bar is not the interesting quantity here: at **60** parameters and the")
+    w("  same budget, random starts already failed to find known exact")
+    w("  structure, bottoming out at `%.2g`. A floor at %d parameters is"
+      % (n3['4_8']['best'], sup['GRADED-15']['n']))
+    w("  consistent with that and carries no information about whether")
+    w("  anything exists at degrees (84, 126).")
+    w("* Every seed in every arm used its full %d-iteration budget in a single"
+      % cfg['maxiter'])
+    w("  L-BFGS-B pass (median passes 1, median iterations %d): no run stopped"
+      % int(np.median([x['nit'] for x in R])))
+    w("  early on a line-search failure, so these are budget-limited end")
+    w("  points, not points where the descent demonstrably ran out of")
+    w("  descent direction. The gradient norms in the stall table (`~1e-4`)")
+    w("  say the same thing.")
+    w("")
+
     # per-family
     w("### Plateau by initialisation family")
     w("")
@@ -304,6 +341,53 @@ def main():
         if rows:
             w("| `%s` | %.2f | %d | %.4g | %.4g |"
               % (fam, dec, len(rows), float(np.median(rows)), min(rows)))
+    w("")
+
+    # ---------------- tear proxy by arm
+    w("### The tear proxy, by arm")
+    w("")
+    w("| arm | lambda_T | median E_prop | min E_prop | median E_T | min E_T |")
+    w("|---|---|---|---|---|---|")
+    for arm, t_, aP_, aQ_, lamT, share in cfg['arms']:
+        rows = [x for x in R if x['arm'] == arm]
+        if not rows:
+            continue
+        ep = [x['ETprop'] for x in rows]
+        et = [x['ET'] for x in rows]
+        w("| `%s` | %g | %s | %s | %s | %s |"
+          % (arm, lamT,
+             "not computed" if lamT == 0 else "%.4g" % float(np.median(ep)),
+             "not computed" if lamT == 0 else "%.4g" % min(ep),
+             "not computed" if lamT == 0 else "%.4g" % float(np.median(et)),
+             "not computed" if lamT == 0 else "%.4g" % min(et)))
+    w("")
+    w("`E_T` and `E_prop` are only evaluated when `lambda_T != 0`; the")
+    w("`G15_lamT0` records carry `0.0` in those fields because the term was")
+    w("never formed, not because the proxy vanished. Read those two cells as")
+    w("*not computed*, and the same applies to the `E_T` / `E_prop` columns of")
+    w("the `G15_lamT0` rows in the stall table below.")
+    w("")
+    w("On the arms where it was computed the proxy behaves exactly as the")
+    w("grading arithmetic predicts, which is the one place in this run where a")
+    w("derivation made a numerical prediction and the numbers met it:")
+    w("")
+    w("* `G15_lamT1e-3` (`t = 15`): `E_prop = 1` at **every one of the 120**")
+    w("  seeds, minimum and median alike -- the maximum the proxy can take.")
+    w("  `t = 15` admits no weight `w` with `2w = aP`, `3w = aQ`, so the")
+    w("  `(H^2, H^3)` shape is not in the support at all and `E_prop` cannot")
+    w("  descend. It did not.")
+    w("* `G5_lamT1e-3` (`t = 5`): `E_prop` reaches `%.3g` (median `%.3g`),"
+      % (min(x['ETprop'] for x in R if x['arm'] == 'G5_lamT1e-3'),
+         float(np.median([x['ETprop'] for x in R if x['arm'] == 'G5_lamT1e-3']))))
+    w("  four to five decades below `1`. `t = 5` is the grading that does carry")
+    w("  the shape (`w = 3`), and the optimizer finds the direction.")
+    w("")
+    w("That contrast is a check on the parametrization, not evidence about the")
+    w("Jacobian conjecture: `E_prop` small is a necessary shape condition on the")
+    w("leading forms and nothing more, and the `t = 5` arm's `E_K` is the")
+    w("*worst* of the three (median `%.3g` against `%.3g` on `G15_lamT0`)."
+      % (float(np.median([x['EK'] for x in R if x['arm'] == 'G5_lamT1e-3'])),
+         float(np.median([x['EK'] for x in R if x['arm'] == 'G15_lamT0']))))
     w("")
 
     # ---------------- deepest stalls
@@ -345,7 +429,12 @@ def main():
     # ---------------- post-hoc diagnostics
     dpath = os.path.join(HERE, 'diag_results.json')
     if os.path.exists(dpath):
-        D = json.load(open(dpath))
+        Dall = json.load(open(dpath))
+        if isinstance(Dall, dict):
+            D = Dall['stalls']
+            BASE = Dall.get('sylvester_random_baseline', [])
+        else:
+            D, BASE = Dall, []
         w("## 6. Post-hoc diagnostics on the five deepest stalls")
         w("")
         w("Run by `diag.py` after the net, on the saved `.npz` vectors only.")
@@ -354,11 +443,8 @@ def main():
         w("### D1 -- Sylvester singular values of the two leading forms")
         w("")
         w("Sylvester matrix of `P_top`, `Q_top` dehomogenised in one variable;")
-        w("a small `sigma_min` relative to `sigma_max` is the numerical shadow")
-        w("of a common root of the two leading forms. Reported as a number, not")
-        w("as evidence of anything: at these dimensions the matrix is built from")
-        w("float coefficients spanning many decades and its conditioning is")
-        w("dominated by that spread.")
+        w("a small `sigma_min` relative to `sigma_max` would be the numerical")
+        w("shadow of a common root of the two leading forms.")
         w("")
         w("| # | file | E_K | Sylvester dim | sigma_max | sigma_min | log10 cond | five smallest sigma |")
         w("|---|---|---|---|---|---|---|---|")
@@ -372,6 +458,39 @@ def main():
               % (k + 1, d['file'], d['EK_recorded'], s['dim'],
                  s['sigma_max'], s['sigma_min'], s['log10_cond'],
                  ", ".join("%.2g" % v for v in s['smallest_five'])))
+        w("")
+        w("**The diagnostic is void on the primary arm, and the null model is")
+        w("what shows it.** Running the same diagnostic at *random* points of")
+        w("the same graded support gives:")
+        w("")
+        if BASE:
+            w("| arm grading | Sylvester dim | `sigma_min` at 5 random points | `x^k` dividing `P_top`, `Q_top` | `y^k` dividing `P_top`, `Q_top` |")
+            w("|---|---|---|---|---|")
+            for b in BASE:
+                w("| `t = %d` (aP=%d, aQ=%d) | %s | %s | %d, %d | %d, %d |"
+                  % (b['t'], b['aP'], b['aQ'], b['dim'],
+                     ", ".join("%.3g" % v for v in b['sigma_min_random']),
+                     b['x_power_dividing_P_top'], b['x_power_dividing_Q_top'],
+                     b['y_power_dividing_P_top'], b['y_power_dividing_Q_top']))
+            w("")
+        w("On `t = 15` the grading puts `P_top` on exponents `i = 5, 20, ..., 80`")
+        w("and `Q_top` on `i = 10, 25, ..., 115`, so `x^5 | P_top` and")
+        w("`x^10 | Q_top` **for every point of that support**. The two leading")
+        w("forms therefore share the factor `x` identically on the whole arm,")
+        w("the dehomogenised Sylvester matrix is exactly singular everywhere on")
+        w("it, and `sigma_min = 0` at the stalls is a property of the")
+        w("parametrization, not of the stalls. The `log10 cond ~ 296` column is")
+        w("just `log10(sigma_max / 1e-300)` from the divide-by-zero guard and")
+        w("should be read as `infinity`, not as a large finite number.")
+        w("")
+        w("So D1 as posed measures nothing on the primary arm. Recorded as a")
+        w("negative result about the diagnostic. On `t = 5` the shared factor is")
+        w("`y` rather than `x`, which the one-variable dehomogenisation absorbs")
+        w("as a degree drop, and `sigma_min` there is nonzero at random points;")
+        w("no `t = 5` seed reached the ten deepest stalls, so no `t = 5` stall")
+        w("was available to run it on. A diagnostic that would carry information")
+        w("here has to divide out the forced monomial factors first, or work")
+        w("with the homogeneous resultant of the two forms directly.")
         w("")
         w("### D2 -- rational-reconstruction experiment (labelled experiment)")
         w("")

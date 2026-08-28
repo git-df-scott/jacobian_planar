@@ -1,6 +1,8 @@
-# night11 -- numeric net (v0): PAUSED
+# night11 -- numeric net (v0): RUN COMPLETE
 
-State at pause. Nothing here is a result; the search itself has not been run.
+Controls N1/N2/N3 have run and the seed campaign `net.py 120 4000` has run to
+completion (300 seeds, 4594.7 s). Everything measured is in `NUMERIC_NET.md`;
+nothing in this directory is a result about the Jacobian conjecture.
 
 ## What is built and in the tree
 
@@ -55,9 +57,39 @@ State at pause. Nothing here is a result; the search itself has not been run.
    and 84 does not divide 126 nor conversely. Control N2 is therefore run at
    (84,168), the nearest same-scale shape that does carry one.
 
+## Measured by the run itself
+
+6. **Controls.** N1 pass (`3.6e-15` symbolic-vs-FFT), N2a `6.96e-20`, N2b eight
+   decades from its perturbed start, N3 census recorded. See `controls.json`.
+
+7. **The net.** 300 seeds x 4000 iterations, 4594.7 s on 4 cores. All 300 land
+   in the single class `STALLED`: 0 converged (`E_K < 1e-18`), 0 in the
+   degenerate `E_K = 1` collapse, 0 diverged. Smallest `E_K` anywhere `2.0e-9`;
+   median `1.5e-5`. Every seed used its full budget in one L-BFGS-B pass, so
+   these are budget-limited end points. Control N3 already showed random starts
+   failing to find known exact structure at 60 parameters in the same budget,
+   so the floor at 788 parameters carries no information about existence.
+
+8. **The tear proxy tracked the grading arithmetic.** `E_prop = 1` at all 120
+   seeds of the `t = 15` arm (the shape is not in that support) and down to
+   `8.2e-6` on `t = 5` (the shape is). The `t = 5` arm nonetheless has the
+   worst `E_K` of the three.
+
+9. **The Sylvester diagnostic is void on the primary arm.** The `t = 15`
+   grading forces `x^5 | P_top` and `x^10 | Q_top`, so the two leading forms
+   share the factor `x` at every point of the support and `sigma_min = 0`
+   identically -- confirmed against random points of the same support. Recorded
+   as a negative result about the diagnostic.
+
+10. **Rational reconstruction (labelled experiment).** Six dominant
+    coefficients of each of the five deepest stalls reconstructed by
+    `nsimplify` and substituted back; the whole vector taken exactly over `Q`
+    and the bracket formed exactly. Exact residual nonzero (1463 cells) in all
+    five, as expected. `HIT/` was not created.
+
 ## Not yet done
 
-- Controls N1/N2/N3 have not completed a clean run (last attempt died on a
-  slicing bug in the N1 fused-vs-reference comparison, now fixed; not re-run).
-- The net itself has not been run: no seeds, no classification tally, no stall
-  histogram. `stalls/` is empty and there is no `NUMERIC_NET.md`.
+- No lifting or certification of any stall; per the v0 brief, none was
+  attempted beyond the labelled D2 experiment.
+- No `t = 5` stall reached the deepest-ten list, so the D1 diagnostic was never
+  exercised on the arm where it is not structurally void.
