@@ -53,7 +53,8 @@ def verdict_table(recs, title, note=""):
         cells = {s.get("stage"): stage_cell(s) for s in r["stages"]}
         w("| `%s` | %s | %s | %d | %s | %s | %s | %s | %s | %s |"
           % (r["hash"], r["family"], r["profile"], r["deg_P"],
-             r["SY_verdict"][:5] + ("" if r["SY_verdict"] == "COORDINATE" else "-COORD"),
+             {"COORDINATE": "COORD", "NON_COORDINATE": "NON-COORD"}
+             .get(r["SY_verdict"], r["SY_verdict"]),
              cells.get("Y", "-"), cells.get("C", "-"), cells.get("W", "-"),
              r["outcome"], r.get("bracket_is_one", "-")))
     w("")
