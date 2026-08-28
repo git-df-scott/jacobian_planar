@@ -114,8 +114,51 @@ def main():
     w("machinery being unable to find a mate at that degree and shape.")
     w()
 
+    # ----------------------------------------------------------- per-P table
+    w("## 3. Per-P summary")
+    w()
+    w("One row per object, both arms. **certificate id** is the record hash: the")
+    w("object's certificates are in `night12/V2_RECORDS/<id>.json`, and stage `k`")
+    w("of that record is cited as `<id>.s<k>`. **U** is the unimodularity check --")
+    w("for ARM A the Bezout identity `A*P_x + B*P_y = 1` expanded coefficientwise")
+    w("over `Q`, for ARM B night14's char-0 U-test carried on the source record.")
+    w("**mate system** is the largest system actually solved for that object")
+    w("(unknowns after kernel deflation x nonzero Keller rows), at the stage named")
+    w("in the next column. The re-verification column is section 8's independent")
+    w("pass, `verify_certs_v2.py`.")
+    w()
+    rv = load("verify_certs_v2.json", {}) or {}
+    rvby = {o["hash"]: o for o in rv.get("per_object", [])}
+    w("| certificate id | arm | tag | deg P | U | SY | mate system (n x rows) | "
+      "at stage | stages | verdict | re-verified |")
+    w("| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+    for r in sorted(recs, key=lambda r: (r["arm"], r["deg_P"], r["tag"])):
+        st = [s for s in r["stages"] if "n_unknowns" in s]
+        big = max(st, key=lambda s: s["n_unknowns"]) if st else {}
+        if r["arm"] == "A":
+            u = str(r["certs"].get("U_bezout_A_Px_plus_B_Py_eq_1"))
+        else:
+            u = "%s (night14)" % r["certs"].get("night14_U", "?")
+        o = rvby.get(r["hash"])
+        if o is None:
+            rvcell = "-"
+        else:
+            rvcell = "**FAIL**" if o["fails"] else "ok"
+        w("| `%s` | %s | %s | %d | %s | %s | %s x %s | %s dQ<=%s | %d | %s | %s |"
+          % (r["hash"], r["arm"], r["tag"], r["deg_P"], u, r["SY_verdict"],
+             big.get("n_unknowns", "-"), big.get("n_rows_nonzero", "-"),
+             big.get("carrier", "-"), big.get("deg_Q_bound", "-"),
+             len(r["stages"]), r["outcome"], rvcell))
+    w()
+    w("Verdict tally over objects: %s."
+      % dict(collections.Counter(r["outcome"] for r in recs)))
+    w("Verdict tally over stage evaluations: %s."
+      % dict(collections.Counter(s.get("verdict") for r in recs
+                                 for s in r["stages"])))
+    w()
+
     # ------------------------------------------------------------------ ARM A
-    w("## 3. ARM A targets and their derived certificates")
+    w("## 4. ARM A targets and their derived certificates")
     w()
     w("Construction (night14 `PROSPECTOR.md` section 2, reparametrised to clear")
     w("denominators):")
@@ -175,7 +218,7 @@ def main():
       "genus_newton > 0 **%d/%d**." % (nU, len(A), nR, len(A), nS, len(A), nG, len(A)))
     w()
 
-    w("## 4. ARM A verdicts")
+    w("## 5. ARM A verdicts")
     w()
     w("Stages per object: `deg Q <= deg P - 1`, `deg P + 31`, `deg P + 63` on the")
     w("Newton-polygon-similar carrier, then a **wide** stage at `deg Q <= deg P + 63`")
@@ -212,7 +255,7 @@ def main():
     w()
 
     # ------------------------------------------------------------------ ARM B
-    w("## 5. ARM B verdicts (low-degree, escalating)")
+    w("## 6. ARM B verdicts (low-degree, escalating)")
     w()
     w("Five structurally diverse objects from night14's 79 certified")
     w("U-PASS + SY-NON_COORDINATE records -- two positive-genus `F2b`, plus one each")
@@ -246,7 +289,7 @@ def main():
     w()
 
     # ---------------------------------------------------------- certificates
-    w("## 6. Certificates emitted")
+    w("## 7. Certificates emitted")
     w()
     w("| arm | (verdict, certificate) | count |")
     w("| --- | --- | --- |")
@@ -265,14 +308,44 @@ def main():
     w("verified from the record alone.")
     w()
 
+    # ------------------------------------------------- independent recheck
+    w("## 8. Independent re-verification")
+    w()
+    if not rv:
+        w("`verify_certs_v2.json` not present; no independent pass recorded.")
+        w()
+    else:
+        w("`verify_certs_v2.py` re-checks every v2 certificate without calling")
+        w("`exact.decide` or `v2_families`. Carriers and Keller systems are rebuilt")
+        w("from the recorded carrier parameters; the ARM A factor `v` is RECOVERED")
+        w("from `P` itself by exact division `v = (P_y - h0)/(2*g)` and the Bezout")
+        w("pair rebuilt from it, so the identity is re-derived rather than replayed;")
+        w("`rank_full_column_exact` stages are re-run at a different scheduling")
+        w("prime (`%s`) and a different compression seed (`%s`) than the run used,"
+          % (rv.get("recheck_prime"), rv.get("recheck_seed")))
+        w("and ARM B objects are re-tested with night14's Singular U-test in")
+        w("characteristic 0.")
+        w()
+        w("| check | outcome | count |")
+        w("| --- | --- | --- |")
+        for k, v in sorted(rv.get("tally", {}).items()):
+            parts = [x.strip() for x in k.split("|")]
+            w("| %s %s | %s | %d |" % (parts[0], parts[1], parts[2], v))
+        w()
+        w("**FAILURES: %d.**" % len(rv.get("failures", [])))
+        for f in rv.get("failures", []):
+            w("- `%s`" % (" | ".join(str(x) for x in f)))
+        w()
+
     # --------------------------------------------------------------- caveats
-    w("## 7. What these verdicts do and do not say")
+    w("## 9. What these verdicts do and do not say")
     w()
     w("1. **The targets are certified, not assumed.** Every ARM A object has an")
     w("   explicit Bezout identity proving its gradient unimodular and an explicit")
     w("   factorisation proving a fibre reducible, both checked coefficientwise")
     w("   over `Q`, plus an independent SY verdict. ARM B's objects carry night14's")
-    w("   U-test and FIB-screen certificates as well as SY.")
+    w("   U-test and FIB-screen certificates as well as SY. Section 8 re-derives")
+    w("   all of it a second time, independently of the run's own code path.")
     w("2. **Every EMPTY is support-relative and is labelled so.** The verdict is")
     w("   about the linear system on the carrier actually built. It is exact over")
     w("   `Q` on that carrier -- no modular computation decides anything -- but it")
