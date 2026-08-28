@@ -56,7 +56,8 @@ sys.path.insert(0, HERE)
 import numpy as np
 from keller_solver import (build_system, exhaustive, verify_solution,
                            hensel_step, solve_gfp, _affine_enum_spec,
-                           tear_data, degenerate_screen)
+                           degenerate_screen)
+from tear import tear_data
 
 BUDGET = 400000
 GB_TIMEOUT = 300
@@ -317,7 +318,7 @@ def run_cell(SP, SQ, p, family, hitdir):
                 details.append({"a": a, "b": b, "status": "VERIFY-FAIL",
                                 "verify": chk})
                 continue
-            td = tear_data(SP, SQ, a, b, p, timeout=20)
+            td = tear_data(SP, SQ, a, b, p)
             if td["tear"] == "TEAR-NONEMPTY":
                 ntn += 1
             elif td["tear"] == "TEAR-EMPTY":

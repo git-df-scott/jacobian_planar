@@ -1,0 +1,414 @@
+{
+ "hash": "979a01822d85",
+ "p": 17,
+ "family": "F2",
+ "characteristic": 17,
+ "support_P": [
+  [
+   0,
+   18
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   3,
+   9
+  ],
+  [
+   8,
+   8
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   17,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   2,
+   13
+  ],
+  [
+   13,
+   1
+  ],
+  [
+   15,
+   3
+  ],
+  [
+   17,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 272,
+ "solutions": [
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 306,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 16
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     1
+    ],
+    "image_1_0": [
+     2,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    9,
+    9,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    0,
+    2
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 9,
+    "P_at_1_0": 9,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     9,
+     2
+    ],
+    "image_1_0": [
+     9,
+     2
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 306,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 16
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    10,
+    9,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    0,
+    2
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 10,
+    "P_at_1_0": 10,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     10,
+     2
+    ],
+    "image_1_0": [
+     10,
+     2
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    6,
+    6,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 6,
+    "P_at_1_0": 6,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     6,
+     3
+    ],
+    "image_1_0": [
+     6,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 306,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 16
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    7,
+    6,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 7,
+    "P_at_1_0": 7,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     7,
+     3
+    ],
+    "image_1_0": [
+     7,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    13,
+    13,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    4,
+    0,
+    0,
+    0,
+    4
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 13,
+    "P_at_1_0": 13,
+    "Q_at_0_1": 4,
+    "Q_at_1_0": 4,
+    "coll_ok": true,
+    "image_0_1": [
+     13,
+     4
+    ],
+    "image_1_0": [
+     13,
+     4
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 306,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 16
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    14,
+    13,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    4,
+    0,
+    0,
+    0,
+    4
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 14,
+    "P_at_1_0": 14,
+    "Q_at_0_1": 4,
+    "Q_at_1_0": 4,
+    "coll_ok": true,
+    "image_0_1": [
+     14,
+     4
+    ],
+    "image_1_0": [
+     14,
+     4
+    ]
+   },
+   "tear": {
+    "characteristic": 17,
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 19 for elimination of y"
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

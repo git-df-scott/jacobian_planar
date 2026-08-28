@@ -141,19 +141,14 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-NONEMPTY",
     "characteristic": 3,
-    "deg_x_R1": 36,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 36,
-    "lead_coeff_R1_in_x": {
-     "u^0 v^0": 1
-    },
     "lead_coeff_R2_in_y": {
      "u^1 v^0": 1
     },
-    "product": {
-     "u^1 v^0": 1
-    }
+    "tear": "TEAR-NONEMPTY",
+    "decided_by": "leading coefficient of the cheaper resultant is nonconstant and the other resultant is certified nonzero by numeric evaluation; F_p[u,v] is a domain, so the product is nonconstant"
    },
    "lift_to_p2": false
   },
@@ -194,19 +189,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-NONEMPTY",
     "characteristic": 3,
-    "deg_x_R1": 108,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 108,
-    "lead_coeff_R1_in_x": {
-     "u^0 v^9": 2
-    },
     "lead_coeff_R2_in_y": {
      "u^0 v^0": 1
     },
-    "product": {
-     "u^0 v^9": 2
-    }
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 21 for elimination of y"
    },
    "lift_to_p2": false
   },
@@ -247,125 +238,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-NONEMPTY",
     "characteristic": 3,
-    "deg_x_R1": 108,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 117,
-    "lead_coeff_R1_in_x": {
-     "u^0 v^9": 2
-    },
     "lead_coeff_R2_in_y": {
      "u^0 v^0": 1
     },
-    "product": {
-     "u^0 v^9": 2
-    }
-   },
-   "lift_to_p2": false
-  },
-  {
-   "a": [
-    2,
-    1,
-    0,
-    0,
-    2,
-    0
-   ],
-   "b": [
-    2,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0
-   ],
-   "status": "VERIFIED",
-   "verify": {
-    "det_J_minus_1_residual": {},
-    "det_ok": true,
-    "P_at_0_1": 0,
-    "P_at_1_0": 0,
-    "Q_at_0_1": 0,
-    "Q_at_1_0": 0,
-    "coll_ok": true,
-    "image_0_1": [
-     0,
-     0
-    ],
-    "image_1_0": [
-     0,
-     0
-    ]
-   },
-   "tear": {
-    "tear": "TEAR-NONEMPTY",
-    "characteristic": 3,
-    "deg_x_R1": 108,
-    "deg_y_R2": 108,
-    "lead_coeff_R1_in_x": {
-     "u^0 v^9": 2
-    },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 1
-    },
-    "product": {
-     "u^0 v^9": 2
-    }
-   },
-   "lift_to_p2": false
-  },
-  {
-   "a": [
-    2,
-    1,
-    0,
-    0,
-    2,
-    0
-   ],
-   "b": [
-    2,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0
-   ],
-   "status": "VERIFIED",
-   "verify": {
-    "det_J_minus_1_residual": {},
-    "det_ok": true,
-    "P_at_0_1": 0,
-    "P_at_1_0": 0,
-    "Q_at_0_1": 0,
-    "Q_at_1_0": 0,
-    "coll_ok": true,
-    "image_0_1": [
-     0,
-     0
-    ],
-    "image_1_0": [
-     0,
-     0
-    ]
-   },
-   "tear": {
-    "tear": "TEAR-NONEMPTY",
-    "characteristic": 3,
-    "deg_x_R1": 108,
-    "deg_y_R2": 117,
-    "lead_coeff_R1_in_x": {
-     "u^0 v^9": 2
-    },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 2
-    },
-    "product": {
-     "u^0 v^9": 1
-    }
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 21 for elimination of y"
    },
    "lift_to_p2": false
   },
@@ -406,8 +287,108 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 3
+    "characteristic": 3,
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 21 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    1,
+    0,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 0,
+    "Q_at_1_0": 0,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     0
+    ],
+    "image_1_0": [
+     0,
+     0
+    ]
+   },
+   "tear": {
+    "characteristic": 3,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 108,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 21 for elimination of y"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    1,
+    0,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 0,
+    "Q_at_1_0": 0,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     0
+    ],
+    "image_1_0": [
+     0,
+     0
+    ]
+   },
+   "tear": {
+    "characteristic": 3,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 117,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 2
+    },
+    "method_R1": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 21 for elimination of y"
    },
    "lift_to_p2": false
   }

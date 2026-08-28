@@ -96,8 +96,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -134,8 +141,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 2
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -172,8 +186,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -210,8 +231,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 4
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -248,8 +276,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 5
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -286,8 +321,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 6
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -324,8 +366,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-TIMEOUT",
-    "characteristic": 13
+    "characteristic": 13,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 78,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 7
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 52 for elimination of x"
    },
    "lift_to_p2": false
   }

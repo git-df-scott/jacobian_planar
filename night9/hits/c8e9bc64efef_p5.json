@@ -192,19 +192,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 15,
-    "deg_y_R2": 15,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 15,
     "lead_coeff_R2_in_y": {
-     "u^0 v^0": 1
+     "u^0 v^0": 4
     },
     "product": {
-     "u^0 v^0": 1
-    }
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -246,19 +248,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
-    "deg_x_R1": 15,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 15,
-    "lead_coeff_R1_in_x": {
+    "lead_coeff_R2_in_y": {
      "u^0 v^0": 4
     },
-    "lead_coeff_R2_in_y": {
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 15,
+    "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
     "product": {
      "u^0 v^0": 4
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -300,19 +304,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
-    "deg_x_R1": 15,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 15,
-    "lead_coeff_R1_in_x": {
+    "lead_coeff_R2_in_y": {
      "u^0 v^0": 4
     },
-    "lead_coeff_R2_in_y": {
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 15,
+    "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
     "product": {
      "u^0 v^0": 4
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -354,19 +360,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
-    "deg_x_R1": 15,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 15,
-    "lead_coeff_R1_in_x": {
+    "lead_coeff_R2_in_y": {
      "u^0 v^0": 4
     },
-    "lead_coeff_R2_in_y": {
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 15,
+    "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
     "product": {
      "u^0 v^0": 4
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   }

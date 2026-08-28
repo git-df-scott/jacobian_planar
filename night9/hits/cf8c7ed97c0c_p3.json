@@ -89,19 +89,14 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-NONEMPTY",
     "characteristic": 3,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 9,
-    "deg_y_R2": 9,
     "lead_coeff_R1_in_x": {
      "u^0 v^1": 2
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^3": 2
-    },
-    "product": {
-     "u^0 v^4": 1
-    }
+    "tear": "TEAR-NONEMPTY",
+    "decided_by": "leading coefficient of the cheaper resultant is nonconstant and the other resultant is certified nonzero by numeric evaluation; F_p[u,v] is a domain, so the product is nonconstant"
    },
    "lift_to_p2": true,
    "p2_point": {
@@ -158,19 +153,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 3,
-    "deg_x_R1": 12,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 12,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 2
+    },
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 12,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 1
-    },
     "product": {
-     "u^0 v^0": 1
-    }
+     "u^0 v^0": 2
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -209,19 +206,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 3,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 12,
-    "deg_y_R2": 12,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 12,
     "lead_coeff_R2_in_y": {
      "u^0 v^0": 1
     },
     "product": {
      "u^0 v^0": 1
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -260,19 +259,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 3,
-    "deg_x_R1": 12,
+    "method_R2": "laplace-mod-p",
     "deg_y_R2": 12,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 2
+    },
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 12,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 2
     },
-    "lead_coeff_R2_in_y": {
+    "product": {
      "u^0 v^0": 1
     },
-    "product": {
-     "u^0 v^0": 2
-    }
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -311,19 +312,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 3,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 12,
-    "deg_y_R2": 12,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 12,
     "lead_coeff_R2_in_y": {
      "u^0 v^0": 1
     },
     "product": {
      "u^0 v^0": 1
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   },
@@ -362,19 +365,21 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 3,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 12,
-    "deg_y_R2": 12,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 2
     },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 12,
     "lead_coeff_R2_in_y": {
      "u^0 v^0": 2
     },
     "product": {
      "u^0 v^0": 1
-    }
+    },
+    "tear": "TEAR-EMPTY"
    },
    "lift_to_p2": false
   }

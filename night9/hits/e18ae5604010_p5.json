@@ -147,19 +147,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 15,
-    "deg_y_R2": 15,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 4
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 1
-    },
-    "product": {
-     "u^0 v^0": 4
-    }
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 20 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -196,19 +192,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 15,
-    "deg_y_R2": 15,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 2
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 4
-    },
-    "product": {
-     "u^0 v^0": 3
-    }
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 20 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -245,19 +237,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 15,
-    "deg_y_R2": 15,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 3
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 4
-    },
-    "product": {
-     "u^0 v^0": 2
-    }
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 20 for elimination of x"
    },
    "lift_to_p2": false
   },
@@ -294,19 +282,15 @@
     ]
    },
    "tear": {
-    "tear": "TEAR-EMPTY",
     "characteristic": 5,
+    "method_R1": "laplace-mod-p",
     "deg_x_R1": 15,
-    "deg_y_R2": 15,
     "lead_coeff_R1_in_x": {
      "u^0 v^0": 1
     },
-    "lead_coeff_R2_in_y": {
-     "u^0 v^0": 1
-    },
-    "product": {
-     "u^0 v^0": 1
-    }
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 20 for elimination of x"
    },
    "lift_to_p2": false
   }
