@@ -5,8 +5,9 @@ Measurements only. Nothing in this file is a conclusion. Ring labels as in
 scheduling prime, which decides nothing.
 
 Apparatus: `sy.py`, `screens.py`, `carriers.py`, `pool.py`, `exact.py`,
-`v1.py`, `controls_v1.py` (all documented in `MATE_V1.md`), plus the three
-files added by this run: `s1_retry.py`, `m1_run.py`, `sy_crosscheck.py`.
+`v1.py`, `controls_v1.py` (all documented in `MATE_V1.md`), plus the files
+added by this run: `s1_retry.py`, `m1_run.py`, `undecided_run.py`,
+`sy_crosscheck.py`, `v1_results.py`.
 
 ## 1. Hit gate
 
