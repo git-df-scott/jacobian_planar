@@ -20,11 +20,7 @@ import numpy as np
 from polykit import keller_residual, top_form, sylvester_sigma
 from supports import Support, Objective
 
-try:
-    from scipy.optimize import minimize
-    HAVE_SCIPY = True
-except Exception:
-    HAVE_SCIPY = False
+from opt import descend, HAVE_SCIPY
 
 DP, DQ = 84, 126
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -43,10 +39,11 @@ FAMILIES = [
 # BOTH the Keller constant and the (H^2,H^3) leading-form shape; t=15 keeps the
 # Keller constant, drops the leading-form shape, and lands inside the requested
 # 300-800 parameter band.
+# (name, t, aP, aQ, lambda_T, seed_share)
 ARMS = [
-    ('G5_lamT0',    5, 1, 4,  0.0),
-    ('G5_lamT1e-3', 5, 1, 4,  1e-3),
-    ('G15_lamT0',  15, 1, 14, 0.0),
+    ('G15_lamT0',    15, 1, 14, 0.0,  1.0),   # primary, in-band (788 params)
+    ('G15_lamT1e-3', 15, 1, 14, 1e-3, 1.0),   # primary + tear proxy
+    ('G5_lamT1e-3',   5, 1, 4,  1e-3, 0.5),   # secondary (2357 params)
 ]
 
 
@@ -73,14 +70,19 @@ def make_seed(sup, seed, decay):
     return sup.pack(P, Q)
 
 
-def adam(obj, c0, iters, lr=3e-3):
-    c = c0.copy(); m = np.zeros_like(c); v = np.zeros_like(c)
-    for t in range(1, iters + 1):
-        E, g = obj(c)
-        m = 0.9 * m + 0.1 * g
-        v = 0.999 * v + 0.001 * g * g
-        c = c - lr * (m / (1 - 0.9 ** t)) / (np.sqrt(v / (1 - 0.999 ** t)) + 1e-12)
-    return c, iters, 'adam'
+_DELTA_CACHE = {}
+
+
+def _delta(n):
+    """Array with a single 1 at (0,0), shaped like the padded residual."""
+    key = n
+    if key not in _DELTA_CACHE:
+        from polykit import _fftshape
+        s = _fftshape(n + 1, n + 1)
+        d = np.zeros(s)
+        d[0, 0] = 1.0
+        _DELTA_CACHE[key] = d
+    return _DELTA_CACHE[key]
 
 
 def run_one(task):
@@ -90,15 +92,9 @@ def run_one(task):
     t0 = time.time()
     c0 = make_seed(sup, seed, decay)
     EK0 = obj.parts(c0)[0]
-    status = 'ok'
+    npass = 0
     try:
-        if HAVE_SCIPY:
-            r = minimize(obj, c0, jac=True, method='L-BFGS-B',
-                         options=dict(maxiter=maxiter, maxfun=3 * maxiter,
-                                      ftol=1e-18, gtol=1e-16, maxcor=15))
-            c1, nit, status = r.x, int(r.nit), str(r.message)[:60]
-        else:
-            c1, nit, status = adam(obj, c0, maxiter)
+        c1, _E, nit, npass, status = descend(obj, c0, maxiter)
     except Exception as exc:  # pragma: no cover
         return dict(arm=arm, seed=seed, family=fam, cls='DIVERGED',
                     error=repr(exc)[:120], secs=time.time() - t0)
@@ -110,10 +106,19 @@ def run_one(task):
     gKn = float(np.linalg.norm(gK))
     cn = float(np.linalg.norm(c1))
 
+    # E_K = 1 exactly is the degenerate attractor P_x Q_y - P_y Q_x = 0
+    # (the residual is then just the missing constant); |E_K - 1| < 1e-6 with a
+    # tiny Jacobian norm is recorded separately so it does not pollute the
+    # stall census.
+    P1, Q1 = sup.unpack(c1)
+    Jn = float(np.linalg.norm(keller_residual(P1, Q1) + _delta(DP + DQ)))
+
     if not np.isfinite(EK) or EK > 1e6 or not np.isfinite(cn):
         cls = 'DIVERGED'
     elif EK < 1e-18:
         cls = 'CONVERGED-AUTOMORPHISM-LIKE'
+    elif abs(EK - 1.0) < 1e-6 and Jn < 1e-3:
+        cls = 'STALLED-COLLAPSED'
     else:
         cls = 'STALLED'
 
@@ -121,8 +126,9 @@ def run_one(task):
                family=fam, decay=decay,
                EK0=float(EK0), EK=float(EK), ET=float(ET), ETprop=float(ETp),
                ETnd=float(ETn), gnorm=gn, gnorm_EK=gKn, cnorm=cn,
-               nit=nit, status=status, cls=cls, secs=time.time() - t0)
-    if cls == 'STALLED':
+               nit=nit, npass=npass, jac_norm=Jn, status=status, cls=cls,
+               secs=time.time() - t0)
+    if cls.startswith('STALLED'):
         rec['_c'] = c1
     return rec
 
@@ -163,19 +169,21 @@ def main():
     os.makedirs(STALLDIR, exist_ok=True)
 
     tasks = []
-    for arm, t, aP, aQ, lamT in ARMS:
-        for k in range(n_seeds):
+    for arm, t, aP, aQ, lamT, share in ARMS:
+        ns = max(1, int(round(n_seeds * share)))
+        for k in range(ns):
             fam, decay = FAMILIES[k % len(FAMILIES)]
             tasks.append((arm, t, aP, aQ, lamT, 110000 + k, fam, decay,
                           maxiter))
 
     t0 = time.time()
     ncpu = min(4, os.cpu_count() or 1)
-    for arm, t, aP, aQ, lamT in ARMS:
+    for arm, t, aP, aQ, lamT, share in ARMS:
         s = Support(DP, DQ, t, aP, aQ)
-        print("  arm %-12s t=%2d (aP=%d,aQ=%d) lambda_T=%g: %d params,"
-              " %d residual cells" % (arm, t, aP, aQ, lamT, s.n,
-                                      s.n_residual_cells()), flush=True)
+        print("  arm %-14s t=%2d (aP=%d,aQ=%d) lambda_T=%-6g %4d seeds:"
+              " %d params, %d residual cells"
+              % (arm, t, aP, aQ, lamT, max(1, int(round(n_seeds * share))),
+                 s.n, s.n_residual_cells()), flush=True)
     print("night11 net: %d tasks on %d cores" % (len(tasks), ncpu), flush=True)
     recs = []
     with mp.Pool(ncpu) as pool:

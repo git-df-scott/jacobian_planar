@@ -13,11 +13,7 @@ from polykit import (conv2, conv2_direct, keller_residual,
                      tear_energy_grad)
 from supports import Support, Objective
 
-try:
-    from scipy.optimize import minimize
-    HAVE_SCIPY = True
-except Exception:  # pragma: no cover
-    HAVE_SCIPY = False
+from opt import descend, HAVE_SCIPY
 
 RES = {}
 LOG = []
@@ -142,23 +138,8 @@ def automorphism(dP_target, k, coeffs_f, coeffs_g):
 
 
 def _run(obj, c0, maxiter):
-    if HAVE_SCIPY:
-        r = minimize(obj, c0, jac=True, method='L-BFGS-B',
-                     options=dict(maxiter=maxiter, maxfun=maxiter * 2,
-                                  ftol=1e-18, gtol=1e-16, maxcor=15))
-        return r.x, float(r.fun), int(r.nit)
-    return adam(obj, c0, maxiter)
-
-
-def adam(obj, c0, iters, lr=1e-3):
-    c = c0.copy(); m = np.zeros_like(c); v = np.zeros_like(c)
-    E = np.inf
-    for t in range(1, iters + 1):
-        E, g = obj(c)
-        m = 0.9 * m + 0.1 * g
-        v = 0.999 * v + 0.001 * g * g
-        c = c - lr * (m / (1 - 0.9**t)) / (np.sqrt(v / (1 - 0.999**t)) + 1e-12)
-    return c, E, iters
+    c, E, nit, npass, msg = descend(obj, c0, maxiter)
+    return c, E, nit
 
 
 def n2_automorphism_basin():
@@ -176,7 +157,7 @@ def n2_automorphism_basin():
     EK_star = obj(c_star)[0]
     c0 = c_star + rng.normal(size=sup.n) * 1e-3
     t0 = time.time()
-    c1, E1, nit = _run(obj, c0, 2000)
+    c1, E1, nit = _run(obj, c0, 6000)
     out['N2a'] = dict(degrees=[dP, dQ], nparam=sup.n,
                       EK_at_exact=float(EK_star),
                       EK_at_perturbed_start=float(obj(c0)[0]),
@@ -200,17 +181,17 @@ def n2_automorphism_basin():
     c_star = sup.pack(P, Q)
     EK_star = obj(c_star)[0]
     c0 = c_star.copy()
-    pert = rng.normal(size=sup.n) * 1e-4
+    pert = rng.normal(size=sup.n) * 1e-8
     c0 = c0 + pert
     t0 = time.time()
-    c1, E1, nit = _run(obj, c0, 1500)
+    c1, E1, nit = _run(obj, c0, 4000)
     out['N2b'] = dict(degrees=[dP, dQ], nparam=sup.n,
                       EK_at_exact=float(EK_star),
                       EK_at_perturbed_start=float(obj(c0)[0]),
                       EK_final=float(E1), nit=nit, secs=time.time() - t0)
     say("N2b automorphism (deg 84, deg 168), %d params" % sup.n)
     say("      E_K at exact automorphism      : %.3e" % EK_star)
-    say("      E_K at perturbed start (1e-4)  : %.3e" % out['N2b']['EK_at_perturbed_start'])
+    say("      E_K at perturbed start (1e-8)  : %.3e" % out['N2b']['EK_at_perturbed_start'])
     say("      E_K after L-BFGS-B (%4d iters) : %.3e  [%.1f s]"
         % (nit, E1, out['N2b']['secs']))
 
@@ -235,7 +216,7 @@ def n3_small_random():
         fin = []
         for s in range(24):
             c0 = rng.normal(size=sup.n) * 0.5
-            c1, E1, nit = _run(obj, c0, 3000)
+            c1, E1, nit = _run(obj, c0, 6000)
             fin.append(float(E1))
         fin = np.array(fin)
         out[tag] = dict(degrees=[dP, dQ], nparam=sup.n, seeds=len(fin),

@@ -262,7 +262,8 @@ def stmts(terms, name, per=8):
     return out
 
 
-def run(eqs, varnames, tag, timeout=86400, order='dp', engine='modStd'):
+def run(eqs, varnames, tag, timeout=86400, order='dp', engine='modStd',
+        char=0):
     """engine='std'    : Singular's deterministic Buchberger/Groebner over Q
        engine='modStd' : modstd.lib, modStd(I, 1) -- modular computation with
                          exactness = 1, which the library documents as
@@ -272,7 +273,7 @@ def run(eqs, varnames, tag, timeout=86400, order='dp', engine='modStd'):
     src = []
     if engine == 'modStd':
         src.append('LIB "modstd.lib";')
-    src.append("ring R = 0,(%s),%s;" % (",".join(varnames), order))
+    src.append("ring R = %d,(%s),%s;" % (char, ",".join(varnames), order))
     en = []
     for i, e in enumerate(eqs):
         src += stmts(sing_terms(e), "q%d" % i)
@@ -314,6 +315,7 @@ if __name__ == '__main__':
     ap.add_argument('--timeout', type=int, default=86400)
     ap.add_argument('--order', default='dp')
     ap.add_argument('--engine', default='modStd')
+    ap.add_argument('--char', type=int, default=0)
     a = ap.parse_args()
     W = a.what
     if W in ('C2', 'C3'):
@@ -341,11 +343,13 @@ if __name__ == '__main__':
               " (non-vanishing rows: %s)" % (not bad, bad or "none"),
               flush=True)
     t0 = time.time()
-    r = run(eqs, vn, W, timeout=a.timeout, order=a.order,
-            engine=a.engine)
+    eng = a.engine if a.char == 0 else 'std'
+    tag = W if a.char == 0 else "%s_p%d" % (W, a.char)
+    r = run(eqs, vn, tag, timeout=a.timeout, order=a.order,
+            engine=eng, char=a.char)
     print("RESULT %s : unit ideal = %s, dim = %s, |GB| = %s, wall %.1fs"
           % (W, r[0], r[1], r[2], r[4]), flush=True)
-    json.dump(dict(what=W, engine=a.engine, unit_ideal=r[0], dim=r[1], gb_size=r[2],
+    json.dump(dict(what=W, engine=eng, char=a.char, unit_ideal=r[0], dim=r[1], gb_size=r[2],
                    seconds=r[4], n_eqs=meta['n_eqs'], n_vars=meta['n_vars'],
                    gb=r[3] if not r[0] else []),
-              open(os.path.join(SCRATCH, 'imp_%s.json' % W), 'w'), indent=1)
+              open(os.path.join(SCRATCH, 'imp_%s.json' % tag), 'w'), indent=1)
