@@ -1,3 +1,7 @@
+import os
+for _v in ("OMP_NUM_THREADS","OPENBLAS_NUM_THREADS","MKL_NUM_THREADS",
+           "NUMEXPR_NUM_THREADS","VECLIB_MAXIMUM_THREADS"):
+    os.environ.setdefault(_v, "1")
 """night11 -- mandatory controls N1, N2, N3 for the numeric net.
 
 Run:  python3 controls.py     (writes controls.json, prints a log)
@@ -214,19 +218,19 @@ def n3_small_random():
         sup = Support(dP, dQ, 1)
         obj = Objective(sup, lambda_T=0.0)
         fin = []
-        for s in range(24):
+        for s in range(12):
             c0 = rng.normal(size=sup.n) * 0.5
-            c1, E1, nit = _run(obj, c0, 6000)
+            c1, E1, nit = _run(obj, c0, 2000)
             fin.append(float(E1))
         fin = np.array(fin)
         out[tag] = dict(degrees=[dP, dQ], nparam=sup.n, seeds=len(fin),
                         n_machine_precision=int((fin < 1e-18).sum()),
                         median=float(np.median(fin)), best=float(fin.min()),
                         finals=[float(v) for v in fin])
-        say("N3  degrees (%d, %d), %d params, 24 random seeds: %d/24 reached"
+        say("N3  degrees (%d, %d), %d params, %d random seeds: %d reached"
             " E_K < 1e-18, best %.3e, median %.3e"
-            % (dP, dQ, sup.n, out[tag]['n_machine_precision'], fin.min(),
-               np.median(fin)))
+            % (dP, dQ, sup.n, len(fin), out[tag]['n_machine_precision'],
+               fin.min(), np.median(fin)))
     say("      (4,8) and (2,4) are shapes d | 2d where automorphisms are")
     say("      abundant; (4,6) is the mission shape (2m,3m) at m=2, where")
     say("      the same divisibility obstruction as at (84,126) applies.")

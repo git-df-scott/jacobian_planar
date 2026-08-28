@@ -1,3 +1,7 @@
+import os
+for _v in ("OMP_NUM_THREADS","OPENBLAS_NUM_THREADS","MKL_NUM_THREADS",
+           "NUMEXPR_NUM_THREADS","VECLIB_MAXIMUM_THREADS"):
+    os.environ.setdefault(_v, "1")
 """night11 -- the numeric net (v0).
 
 Continuous optimization of E(c) = E_K + lambda_T * E_T over real coefficient
