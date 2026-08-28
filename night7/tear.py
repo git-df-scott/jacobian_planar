@@ -98,6 +98,16 @@ def _factors(expr, char):
         mono = [tuple(int(e) for e in m) for m in p.monoms()]
         cu = min(m[0] for m in mono)
         cv = min(m[1] for m in mono)
+        if len(mono) == 1:
+            # a single monomial: the factorisation is unambiguous
+            facs = []
+            if cu:
+                facs.append({"poly": "u", "mult": cu})
+            if cv:
+                facs.append({"poly": "v", "mult": cv})
+            return {"unit": str(p.coeffs()[0]), "factors": facs, "complete": True,
+                    "note": "monomial; factored by inspection (sympy GF(%d) "
+                            "multivariate factorisation unavailable)" % char}
         return {
             "complete": False,
             "reason": "sympy cannot factor multivariate polynomials over GF(%d)" % char,
