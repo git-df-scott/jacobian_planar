@@ -1,0 +1,21 @@
+pair rebuilt from night5/mondello/mondello_map.json:
+  P = x**6*y**2 + x**4 + x**2*y + x
+  Q = x**8*y**3 + x**7*y**2 + x**6*y + x**5 + y
+  identical to mckay_wang.py's own hardcoded Control-B pair: True
+
+--- certificate() as-is (its full entry point) ---
+  night5/mondello extracted pair
+    det J = 2*x**13*y**4 - 2*x**12*y**3 + 6*x**11*y**2 - 2*x**10*y - 2*x**9*y**3 + 4*x**9 - 2*x**7*y - 4*x**6 + 6*x**5*y**2 + 4*x**3 + 2*x*y + 1   Keller: False
+    N(f) triangular: False  {'k': 4, 'n': 0, 'outside_triangle': [(6, 2), (2, 1)]}
+    N(g) triangular: False  {'k': 5, 'n': 1, 'outside_triangle': [(8, 3), (7, 2), (6, 1)]}
+    => not Keller; Cor 14 certificate does not apply
+  verdict: NOT-KELLER
+
+--- triangle test alone (what the script's own Control B uses) ---
+  N(P) triangular: False {'k': 4, 'n': 0, 'outside_triangle': [(6, 2), (2, 1)]}
+  N(Q) triangular: False {'k': 5, 'n': 1, 'outside_triangle': [(8, 3), (7, 2), (6, 1)]}
+  flagged as non-automorphism by the polygon test: True
+
+--- why certificate() says what it says: det J computed over Z ---
+  keller() over the integers -> Keller: False
+  det J over Z has 12 terms; reduced mod 2 = 1

@@ -1,0 +1,17 @@
+=== controls ===
+C1 line at infinity has K-multiplicity -3: PASS
+C2 free chain multiplicities [-2, -1, 0, 1, 2] (expect [-2,-1,0,1,2]): PASS
+C3 satellite(L,E1) multiplicity -4 (expect -4): PASS
+multiplicity calculus: VALIDATED
+
+=== sieve applied to free-chain depths ===
+  depth 1: multiplicity -2  -> KILLED
+  depth 2: multiplicity -1  -> KILLED
+  depth 3: multiplicity +0  -> SURVIVES
+  depth 4: multiplicity +1  -> SURVIVES
+  depth 5: multiplicity +2  -> SURVIVES
+
+Reading: any candidate whose dicritical component sits within
+two free blow-ups of the line at infinity is killed outright.
+A counterexample needs a dicritical component at free-depth >= 3,
+and satellite blow-ups only make multiplicities more negative.
