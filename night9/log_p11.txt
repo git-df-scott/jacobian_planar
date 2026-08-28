@@ -70,3 +70,21 @@ db7b946268e5  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.0s
 9f08fa32039e  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.5s
 b578baafdd93  p=11  F2  exhaustive-bilinear    NONEMPTY      cnt=10       7.5s
 a5c5ad20383a  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        3.2s
+adfa574619d8  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        6.7s
+86dbff17d516  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.0s
+557656b56afc  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.3s
+5039368076b4  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        5.8s
+d1f6f5090419  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.0s
+2d70eb13b204  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        6.2s
+dd9a9fbb0cb5  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.4s
+6c8bf3a74aa2  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.0s
+6a9e2a3fd78f  p=11  F2  exhaustive-bilinear    NONEMPTY      cnt=10       0.0s
+c4abfed0b690  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        5.6s
+e0ab438bb4b3  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        3.6s
+5389e72774ad  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        3.9s
+1f2efd9378dc  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.2s
+3b1a54e29821  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.2s
+11e0ad7180c8  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.0s
+740112e43c01  p=11  F2  exhaustive-bilinear    EMPTY         cnt=0        0.2s
+e43c4718fea8  p=11  F3  exhaustive-bilinear    EMPTY         cnt=0        0.0s
+cells run this pass: 89

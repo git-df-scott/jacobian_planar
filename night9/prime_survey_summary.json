@@ -1,0 +1,146 @@
+{
+ "total_cells": 534,
+ "cells_per_family_per_prime": {
+  "F1_p3": 48,
+  "F1_p5": 48,
+  "F1_p7": 48,
+  "F1_p11": 48,
+  "F1_p13": 48,
+  "F1_p17": 48,
+  "F2_p3": 40,
+  "F2_p5": 40,
+  "F2_p7": 40,
+  "F2_p11": 40,
+  "F2_p13": 40,
+  "F2_p17": 40,
+  "F3_p3": 1,
+  "F3_p5": 1,
+  "F3_p7": 1,
+  "F3_p11": 1,
+  "F3_p13": 1,
+  "F3_p17": 1
+ },
+ "verdict_totals": {
+  "NONEMPTY": 333,
+  "EMPTY": 201
+ },
+ "verdict_by_prime": {
+  "p3": {
+   "NONEMPTY": 67,
+   "EMPTY": 22
+  },
+  "p5": {
+   "NONEMPTY": 63,
+   "EMPTY": 26
+  },
+  "p7": {
+   "NONEMPTY": 53,
+   "EMPTY": 36
+  },
+  "p11": {
+   "NONEMPTY": 50,
+   "EMPTY": 39
+  },
+  "p13": {
+   "NONEMPTY": 51,
+   "EMPTY": 38
+  },
+  "p17": {
+   "NONEMPTY": 49,
+   "EMPTY": 40
+  }
+ },
+ "method_counts": {
+  "exhaustive-bilinear": 522,
+  "groebner-gfp-field": 12
+ },
+ "NONEMPTY_cells_by_prime": {
+  "p3": 67,
+  "p5": 63,
+  "p7": 53,
+  "p11": 50,
+  "p13": 51,
+  "p17": 49
+ },
+ "exact_F_p_solution_count_summed_over_cells_by_prime": {
+  "p3": 774,
+  "p5": 748,
+  "p7": 1146,
+  "p11": 2200,
+  "p13": 3636,
+  "p17": 6928
+ },
+ "sampled_solutions_verified_fail": 0,
+ "degenerate_screened_by_prime": {
+  "p3": 140,
+  "p5": 226,
+  "p7": 288,
+  "p11": 372,
+  "p13": 364,
+  "p17": 356
+ },
+ "tear_by_prime": {
+  "p3": {
+   "TEAR-NONEMPTY": 126,
+   "TEAR-EMPTY": 69,
+   "other/not-computed": 7
+  },
+  "p5": {
+   "TEAR-NONEMPTY": 6,
+   "TEAR-EMPTY": 40,
+   "other/not-computed": 40
+  },
+  "p7": {
+   "TEAR-NONEMPTY": 0,
+   "TEAR-EMPTY": 20,
+   "other/not-computed": 28
+  },
+  "p11": {
+   "TEAR-NONEMPTY": 0,
+   "TEAR-EMPTY": 0,
+   "other/not-computed": 28
+  },
+  "p13": {
+   "TEAR-NONEMPTY": 0,
+   "TEAR-EMPTY": 16,
+   "other/not-computed": 28
+  },
+  "p17": {
+   "TEAR-NONEMPTY": 0,
+   "TEAR-EMPTY": 0,
+   "other/not-computed": 36
+  }
+ },
+ "climb_counts_by_prime": {
+  "p3": {
+   "to_Z_p2": 3,
+   "to_Z_p2_from_TEAR-NONEMPTY": 1,
+   "to_Z_p3": 0
+  },
+  "p5": {
+   "to_Z_p2": 4,
+   "to_Z_p2_from_TEAR-NONEMPTY": 0,
+   "to_Z_p3": 0
+  },
+  "p7": {
+   "to_Z_p2": 0,
+   "to_Z_p2_from_TEAR-NONEMPTY": 0,
+   "to_Z_p3": 0
+  },
+  "p11": {
+   "to_Z_p2": 0,
+   "to_Z_p2_from_TEAR-NONEMPTY": 0,
+   "to_Z_p3": 0
+  },
+  "p13": {
+   "to_Z_p2": 0,
+   "to_Z_p2_from_TEAR-NONEMPTY": 0,
+   "to_Z_p3": 0
+  },
+  "p17": {
+   "to_Z_p2": 0,
+   "to_Z_p2_from_TEAR-NONEMPTY": 0,
+   "to_Z_p3": 0
+  }
+ }
+}
