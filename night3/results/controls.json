@@ -1,0 +1,92 @@
+{
+ "N1": [
+  {
+   "degree": 2,
+   "prime": 999983,
+   "verdict": "EMPTY",
+   "wall_s": 0.46,
+   "n_eqs": 10,
+   "n_vars": 12,
+   "gb_len": 1,
+   "gb": [
+    "1"
+   ]
+  },
+  {
+   "degree": 2,
+   "prime": 1000003,
+   "verdict": "EMPTY",
+   "wall_s": 0.48,
+   "n_eqs": 10,
+   "n_vars": 12,
+   "gb_len": 1,
+   "gb": [
+    "1"
+   ]
+  },
+  {
+   "degree": 3,
+   "prime": 999983,
+   "verdict": "EMPTY",
+   "wall_s": 4.18,
+   "n_eqs": 19,
+   "n_vars": 20,
+   "gb_len": 1,
+   "gb": [
+    "1"
+   ]
+  },
+  {
+   "degree": 3,
+   "prime": 1000003,
+   "verdict": "EMPTY",
+   "wall_s": 4.13,
+   "n_eqs": 19,
+   "n_vars": 20,
+   "gb_len": 1,
+   "gb": [
+    "1"
+   ]
+  }
+ ],
+ "P1": [
+  {
+   "prime": 999983,
+   "verdict": "NONEMPTY",
+   "wall_s": 0.6,
+   "n_eqs": 4,
+   "n_vars": 6,
+   "gb_len": 4,
+   "gb": [
+    "a_0_0",
+    "a_1_0 + a_2_0",
+    "b_0_0",
+    "b_1_0 + b_2_0"
+   ]
+  },
+  {
+   "prime": 1000003,
+   "verdict": "NONEMPTY",
+   "wall_s": 0.72,
+   "n_eqs": 4,
+   "n_vars": 6,
+   "gb_len": 4,
+   "gb": [
+    "a_0_0",
+    "a_1_0 + a_2_0",
+    "b_0_0",
+    "b_1_0 + b_2_0"
+   ]
+  }
+ ],
+ "P2": {
+  "values": {
+   "P(0,0)": 0,
+   "Q(0,0)": 0,
+   "P(1,0)": 0,
+   "Q(1,0)": 0
+  },
+  "pass": true
+ },
+ "verdict": "PASS"
+}
