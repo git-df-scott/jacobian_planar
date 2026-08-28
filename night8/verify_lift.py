@@ -45,6 +45,7 @@ out['brute_force_mod4'] = {
     'n_solutions_mod4_total': len(all4),
     'n_solutions_mod4_congruent_to_base_mod2': len(lift_of_base),
     'example_solutions_mod4': [list(p) for p in all4[:5]],
+    'all_solutions_mod4': [list(p) for p in all4],
     'variable_names': [str(v) for v in vars_],
     'base_point': base,
 }

@@ -1,0 +1,334 @@
+{
+ "E0_coordinate_order": [
+  "a_1_0",
+  "a_2_1",
+  "a_4_0",
+  "a_6_2",
+  "b_0_1",
+  "b_5_0",
+  "b_6_1",
+  "b_7_2",
+  "b_8_3"
+ ],
+ "star_point": [
+  1,
+  0,
+  1,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0
+ ],
+ "n_unknowns": 9,
+ "n_equations": 15,
+ "equation_labels": [
+  "K(13, 4)",
+  "K(12, 3)",
+  "K(11, 2)",
+  "K(10, 1)",
+  "K(9, 3)",
+  "K(9, 0)",
+  "K(8, 2)",
+  "K(7, 1)",
+  "K(6, 0)",
+  "K(5, 2)",
+  "K(3, 0)",
+  "K(1, 1)",
+  "K(0, 0)",
+  "C2_P",
+  "C2_Q"
+ ],
+ "ceiling": 64,
+ "J_mod2_at_star": [
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0
+  ]
+ ],
+ "rank_J_mod2_at_star": 5,
+ "nullity_J_mod2_at_star": 4,
+ "rows_with_vanishing_gradient_mod2": [
+  "K(13, 4)",
+  "K(12, 3)",
+  "K(11, 2)",
+  "K(10, 1)",
+  "K(9, 3)",
+  "K(9, 0)",
+  "K(7, 1)",
+  "K(5, 2)",
+  "K(3, 0)",
+  "K(1, 1)"
+ ],
+ "J_mod2_equals_base_point_J": false,
+ "star_residual_over_Z": {
+  "K(3, 0)": 4,
+  "C2_P": -2
+ },
+ "ladder": [
+  {
+   "level_from": 2,
+   "level_to": 4,
+   "n_points_at_level_2": 1,
+   "n_of_them_with_a_solvable_linear_step": 1,
+   "linear_step_solution_space_dim": 4,
+   "n_solutions_at_level_4": 16,
+   "exists": "EXISTS",
+   "dead_examples": [],
+   "sampled_verification_residual_zero_mod_4": true,
+   "n_sampled": 16
+  },
+  {
+   "level_from": 4,
+   "level_to": 8,
+   "n_points_at_level_4": 16,
+   "n_of_them_with_a_solvable_linear_step": 0,
+   "linear_step_solution_space_dim": null,
+   "n_solutions_at_level_8": 0,
+   "exists": "DOES-NOT-EXIST",
+   "dead_examples": [
+    {
+     "point_mod_4": [
+      1,
+      0,
+      3,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+     ],
+     "rhs_s_mod2_nonzero_rows": [
+      "K(3, 0)",
+      "C2_P"
+     ],
+     "obstruction_rows_zero_gradient_but_rhs_1": [
+      "K(3, 0)"
+     ],
+     "rank_J_mod2": 5,
+     "rank_augmented_mod2": 6
+    },
+    {
+     "point_mod_4": [
+      1,
+      0,
+      3,
+      0,
+      1,
+      1,
+      0,
+      2,
+      0
+     ],
+     "rhs_s_mod2_nonzero_rows": [
+      "K(7, 1)",
+      "K(3, 0)",
+      "C2_P"
+     ],
+     "obstruction_rows_zero_gradient_but_rhs_1": [
+      "K(7, 1)",
+      "K(3, 0)"
+     ],
+     "rank_J_mod2": 5,
+     "rank_augmented_mod2": 6
+    },
+    {
+     "point_mod_4": [
+      1,
+      2,
+      3,
+      0,
+      1,
+      1,
+      2,
+      0,
+      0
+     ],
+     "rhs_s_mod2_nonzero_rows": [
+      "K(3, 0)",
+      "K(1, 1)",
+      "C2_P"
+     ],
+     "obstruction_rows_zero_gradient_but_rhs_1": [
+      "K(3, 0)",
+      "K(1, 1)"
+     ],
+     "rank_J_mod2": 5,
+     "rank_augmented_mod2": 6
+    }
+   ]
+  }
+ ],
+ "death_level": 8,
+ "highest_level_reached": 4,
+ "example_solutions_at_highest_level": [],
+ "controls": {
+  "ladder_mod4_count": 16,
+  "matches_exhaustive_mod4_search": true,
+  "exhaustive_mod8_candidates_tested": 8192,
+  "exhaustive_mod8_solutions_over_the_16": 0
+ }
+}
