@@ -144,3 +144,130 @@ collision-respecting, non-degenerate stratum.
   of the three strata with an attaining assignment.
 * `night9/lastterm_index.json` — the 88-case index.
 * `night9/lastterm_log.txt` — the run log.
+
+
+---
+
+# Part II — the WIDENED last-term kill
+
+Script: `night9/lastterm2.py`. Raw data: `night9/lastterm2/<hash>_<i>.json`,
+index `night9/lastterm2_index.json`, run log `night9/lastterm2_log.txt`.
+Same scope note; every object filed **CANDIDATE-UNVERIFIED**.
+
+## 6. Two-term residuals do not exist — substitution recorded
+
+Over all **882** matched lifts in `night9/altitude/`, the number of monomials
+in the exact integer residual takes the values
+
+| terms in R | 1 | 2 | 3 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|
+| lifts | 88 | **0** | 474 | 256 | 16 | 48 |
+
+There is **no** lift with a two-term residual. The prescribed two-term kill
+was therefore run on the smallest existing multi-term class, the **three-term**
+residuals, with the box over the **union of all three terms' feeding
+coefficients**. This substitution is recorded, not silently made.
+
+After de-duplicating lifts that share a support and a coefficient vector
+(a lift and its negation give the same residual), **562 cases** were run:
+88 single-term (feeding set size 2) and 474 three-term (feeding set size 4 in
+402 cases, 5 in 72).
+
+## 7. Boxes run
+
+Per case:
+
+* `[-4..4]` on the **full** feeding set;
+* `[-9..9]` on the **at most four most influential** feeding coefficients,
+  the rest held at their lift values, where influence is defined as
+
+      infl(a_i) = sum over the non-zero residual rows e of |d v_e / d a_i|
+                  evaluated at the lift
+
+  (and symmetrically for `b_j`), ties broken by index. This definition is a
+  choice made here and is recorded as such;
+* `[-9..9]` on the full feeding set as well, whenever that set has at most
+  four members.
+
+**121 120 910 box points** scanned in total. The scan is vectorised over
+int64 numpy arrays; every short-listed point is then re-verified in pure
+Python integer arithmetic, and the recount is asserted to agree.
+
+## 8. HALT EVENTS
+
+**0.** Across all 562 cases and all 121 120 910 assignments, **no assignment
+has residual identically zero over Z with both collision differences zero**.
+Nothing to halt-and-commit on.
+
+Counts over the whole scan:
+
+| | assignments |
+|---|---|
+| residual identically zero over Z **and** collisions intact | **0** |
+| bracket `[P,Q] = P_x Q_y - P_y Q_x` identically zero (residual is then the constant `-1`) | 411 060 |
+| failing the additive degeneracy screen | 5 531 818 |
+
+## 9. Two exclusions applied to the global best
+
+Two families of box points reach a one-row residual for reasons that are not
+near misses, and are recorded but excluded from the global best.
+
+* **Vacuous.** If the bracket is identically zero — for instance `P = 0` —
+  the residual is the constant `-1`: one non-zero row, content 1. Encountered
+  411 060 times.
+* **Degenerate.** Points failing `keller_solver.degenerate_screen`. The best
+  such point found is `P = x - x^36`, `Q = y + x^104` with residual
+  `-36*x^35` (one row, content 36, collisions intact) — the additive shape.
+
+## 10. GLOBAL BEST
+
+Ordering is lexicographic on `(number of non-zero residual rows, content gcd)`,
+with both collision equalities intact over Z.
+
+**Global best, collisions intact, bracket non-zero, NON-DEGENERATE:
+`(1 row, content 48)`** — support `0ba45c61d577`, box `full-feeding-set/[-4..4]`,
+file `lastterm2/0ba45c61d577_12.json`:
+
+    P = +1*y^24+1*x^1
+    Q = +1*y^1+1*x^2
+    residual over Z:  {'(1, 23)': -48}      (collision differences both 0)
+
+**Global best, collisions intact, bracket non-zero, degeneracy allowed:
+`(1 row, content 36)`** — support `efae6ba71cb6`, file `lastterm2/efae6ba71cb6_8.json`:
+
+    P = +1*x^1-1*x^36
+    Q = +1*y^1+1*x^104
+    residual over Z:  {'(35, 0)': -36}      (degenerate by the additive screen)
+
+Per-case minima over the non-degenerate stratum: **434 of 562 cases** reach a
+one-row residual, **128** reach three rows; no case reaches zero rows.
+
+| min rows | min content | cases |
+|---|---|---|
+| 1 | 48 | 12 |
+| 1 | 84 | 62 |
+| 1 | 90 | 16 |
+| 1 | 156 | 38 |
+| 1 | 204 | 10 |
+| 1 | 288 | 14 |
+| 1 | 690 | 20 |
+| 1 | 780 | 24 |
+| 1 | 792 | 8 |
+| 1 | 834 | 2 |
+| 1 | 870 | 2 |
+| 1 | 1068 | 8 |
+
+The smallest content seen anywhere in the non-degenerate stratum is **6**,
+always at a three-row residual — lexicographically worse than the one-row
+minima above, and recorded here so the two axes are not conflated.
+
+## 11. Files (Part II)
+
+* `night9/lastterm2.py` — the widened search.
+* `night9/lastterm2/<hash>_<i>.json` — per case: supports, lift, residual rows
+  at the lift, feeding set, influence values, the coefficients chosen for the
+  wide box, and one record per box with the halt-event list and the minimum at
+  each of four strata (all / collisions intact / + bracket non-zero /
+  + non-degenerate).
+* `night9/lastterm2_index.json` — 562-case index and both global bests.
+* `night9/lastterm2_log.txt` — the run log.

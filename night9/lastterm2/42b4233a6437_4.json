@@ -156,6 +156,7 @@
    "HALT_EVENTS": [],
    "n_halt_events": 0,
    "assignments_with_bracket_identically_zero": 161,
+   "assignments_degenerate_by_additive_screen": 729,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -252,6 +253,41 @@
     },
     "degenerate_by_additive_screen": true,
     "bracket_identically_zero": false
+   },
+   "min_collisions_ok_bracket_nonzero_nondegenerate": {
+    "min_nonzero_residual_rows": 3,
+    "content_gcd_at_minimum": 6,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      -1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      1,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^131-1*x^1-1*x^6*y^119",
+    "Q": "-1*y^1+1*y^72",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(0, 71)": -72,
+     "(5, 119)": 6,
+     "(5, 190)": -432
+    },
+    "degenerate_by_additive_screen": false,
+    "bracket_identically_zero": false
    }
   },
   {
@@ -282,6 +318,7 @@
    "HALT_EVENTS": [],
    "n_halt_events": 0,
    "assignments_with_bracket_identically_zero": 721,
+   "assignments_degenerate_by_additive_screen": 6859,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -377,6 +414,41 @@
      "(0, 71)": -72
     },
     "degenerate_by_additive_screen": true,
+    "bracket_identically_zero": false
+   },
+   "min_collisions_ok_bracket_nonzero_nondegenerate": {
+    "min_nonzero_residual_rows": 3,
+    "content_gcd_at_minimum": 6,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      -1,
+      0,
+      -7,
+      0,
+      0,
+      0,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      1,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^131-1*x^1-7*x^6*y^119",
+    "Q": "-1*y^1+1*y^72",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(0, 71)": -72,
+     "(5, 119)": 42,
+     "(5, 190)": -3024
+    },
+    "degenerate_by_additive_screen": false,
     "bracket_identically_zero": false
    }
   },
@@ -408,6 +480,7 @@
    "HALT_EVENTS": [],
    "n_halt_events": 0,
    "assignments_with_bracket_identically_zero": 721,
+   "assignments_degenerate_by_additive_screen": 6859,
    "min_all": {
     "min_nonzero_residual_rows": 0,
     "content_gcd_at_minimum": 0,
@@ -503,6 +576,41 @@
      "(0, 71)": -72
     },
     "degenerate_by_additive_screen": true,
+    "bracket_identically_zero": false
+   },
+   "min_collisions_ok_bracket_nonzero_nondegenerate": {
+    "min_nonzero_residual_rows": 3,
+    "content_gcd_at_minimum": 6,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      -1,
+      0,
+      -7,
+      0,
+      0,
+      0,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      1,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^131-1*x^1-7*x^6*y^119",
+    "Q": "-1*y^1+1*y^72",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(0, 71)": -72,
+     "(5, 119)": 42,
+     "(5, 190)": -3024
+    },
+    "degenerate_by_additive_screen": false,
     "bracket_identically_zero": false
    }
   }

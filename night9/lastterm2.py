@@ -31,6 +31,12 @@ WHAT THIS ADDS TO night9/lastterm.py.
         number of non-zero residual rows achieved WITH BOTH COLLISION
         EQUALITIES INTACT over Z, and an exact attaining pair (P, Q).
 
+        DEGENERATE AND VACUOUS POINTS ARE EXCLUDED FROM THE GLOBAL BEST.
+        Points failing the additive degeneracy screen of
+        keller_solver.degenerate_screen are reported but do not set the global
+        best; a second global best over the merely non-vacuous stratum is
+        reported alongside.
+
         VACUOUS POINTS ARE EXCLUDED FROM THE GLOBAL BEST.  A box point at
         which the bracket [P,Q] = P_x Q_y - P_y Q_x is IDENTICALLY ZERO (for
         instance P identically 0) has residual equal to the constant -1: one
@@ -180,6 +186,23 @@ def examine(tag, eqs, pairs, SP, SQ, a0, b0, varlist, box):
                                       varlist, box)
     coll = (cP == 0) & (cQ == 0)
     nonvac = nbracket > 0
+    # degeneracy depends only on the zero-pattern of the varying coordinates
+    N = nrows.size
+    nz = [(g != 0) for g in G]
+    degmask = np.zeros(N, dtype=bool)
+    for bits in range(1 << len(varlist)):
+        a, b = list(a0), list(b0)
+        sel = np.ones(N, dtype=bool)
+        for t, (side, idx) in enumerate(varlist):
+            on = bool((bits >> t) & 1)
+            if side == "a":
+                a[idx] = 1 if on else 0
+            else:
+                b[idx] = 1 if on else 0
+            sel &= (nz[t] if on else ~nz[t])
+        if sel.any() and degenerate_screen(SP, SQ, a, b)[0]:
+            degmask |= sel
+    nondeg = ~degmask
     zero_all = int((nrows == 0).sum())
     zero_coll = int(((nrows == 0) & coll).sum())
 
@@ -203,9 +226,12 @@ def examine(tag, eqs, pairs, SP, SQ, a0, b0, varlist, box):
            "HALT_EVENTS": halts, "n_halt_events": len(halts)}
 
     out["assignments_with_bracket_identically_zero"] = int((~nonvac).sum())
+    out["assignments_degenerate_by_additive_screen"] = int(degmask.sum())
     for name, mask in (("all", np.ones_like(coll)),
                        ("collisions_ok", coll),
-                       ("collisions_ok_and_bracket_nonzero", coll & nonvac)):
+                       ("collisions_ok_and_bracket_nonzero", coll & nonvac),
+                       ("collisions_ok_bracket_nonzero_nondegenerate",
+                        coll & nonvac & nondeg)):
         if not mask.any():
             out["min_" + name] = None
             continue
@@ -249,6 +275,7 @@ def main():
     cases = []
     seen = set()
     global_best = None
+    global_best_vac = None
     halt_paths = []
 
     files = sorted(os.listdir(os.path.join(HERE, "altitude")))
@@ -317,14 +344,29 @@ def main():
             if nh:
                 halt_paths.append(path)
             bc = None
+            bd = None
             for bx in boxes:
-                m = bx.get("min_collisions_ok_and_bracket_nonzero")
+                m = bx.get("min_collisions_ok_bracket_nonzero_nondegenerate")
                 if m is None:
                     continue
                 k2 = (m["min_nonzero_residual_rows"],
                       m["content_gcd_at_minimum"])
                 if bc is None or k2 < bc[0]:
                     bc = (k2, bx["box_tag"], m)
+            for bx in boxes:
+                m = bx.get("min_collisions_ok_and_bracket_nonzero")
+                if m is None:
+                    continue
+                k3 = (m["min_nonzero_residual_rows"],
+                      m["content_gcd_at_minimum"])
+                if bd is None or k3 < bd[0]:
+                    bd = (k3, bx["box_tag"], m)
+            if bd and (global_best_vac is None or
+                       bd[0] < global_best_vac["key"]):
+                global_best_vac = {"key": bd[0], "hash": d["hash"],
+                                   "lift_index": i, "box_tag": bd[1],
+                                   "file": os.path.relpath(path, HERE),
+                                   "detail": bd[2]}
             if bc and (global_best is None or
                        bc[0] < global_best["key"]):
                 global_best = {"key": bc[0], "hash": d["hash"],
@@ -359,7 +401,10 @@ def main():
         "total_points_scanned": sum(c["points_scanned"] for c in cases),
         "total_halt_events": sum(c["n_halt_events"] for c in cases),
         "halt_event_files": halt_paths,
-        "GLOBAL_BEST_with_collisions_intact": global_best,
+        "GLOBAL_BEST_collisions_intact_bracket_nonzero_NONDEGENERATE":
+            global_best,
+        "GLOBAL_BEST_collisions_intact_bracket_nonzero_any_degeneracy":
+            global_best_vac,
         "cases": cases,
     }
     with open(os.path.join(HERE, "lastterm2_index.json"), "w") as g:
@@ -367,7 +412,10 @@ def main():
     print("\ncases=%d  points=%d  HALT events=%d"
           % (len(cases), idx["total_points_scanned"],
              idx["total_halt_events"]))
-    print("GLOBAL BEST (collisions intact):", global_best["key"] if global_best else None)
+    print("GLOBAL BEST (collisions intact, bracket nonzero, NON-DEGENERATE):",
+          global_best["key"] if global_best else None)
+    print("GLOBAL BEST (collisions intact, bracket nonzero, any degeneracy):",
+          global_best_vac["key"] if global_best_vac else None)
 
 
 if __name__ == "__main__":
