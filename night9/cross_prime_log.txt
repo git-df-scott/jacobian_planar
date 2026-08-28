@@ -1,0 +1,8 @@
+3ee4c514dba8 p=2   exhaustive-bilinear  NONEMPTY  cnt=14       nondeg=13     tearNE=0   c2=1   0.0s
+3ee4c514dba8 p=3   exhaustive-bilinear  NONEMPTY  cnt=18       nondeg=12     tearNE=0   c2=3   0.0s
+3ee4c514dba8 p=5   exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    0.3s
+3ee4c514dba8 p=7   exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    0.9s
+3ee4c514dba8 p=11  exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    5.2s
+3ee4c514dba8 p=13  exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    12.0s
+3ee4c514dba8 p=17  exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    43.2s
+3ee4c514dba8 p=19  exhaustive-bilinear  EMPTY     cnt=0        nondeg=       tearNE=    c2=    79.4s

@@ -1,0 +1,9 @@
+hash,p,origin,nP,nQ,n,method,n_enum,verdict,count,enumerated,truncated,n_degenerate,n_nondegenerate,n_sampled,n_verify_fail,tear_nonempty,tear_empty,tear_other,climb_p2,climb_p3,wall_s,note
+3ee4c514dba8,2,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,32,NONEMPTY,14,14,False,1,13,8,0,0,8,0,1,0,0.02,
+3ee4c514dba8,3,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,243,NONEMPTY,18,18,False,6,12,8,0,0,8,0,3,0,0.04,
+3ee4c514dba8,5,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,3125,EMPTY,0,,False,,,,,,,,,,0.3,
+3ee4c514dba8,7,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,16807,EMPTY,0,,False,,,,,,,,,,0.93,
+3ee4c514dba8,11,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,161051,EMPTY,0,,False,,,,,,,,,,5.17,
+3ee4c514dba8,13,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,371293,EMPTY,0,,False,,,,,,,,,,11.98,
+3ee4c514dba8,17,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,1419857,EMPTY,0,,False,,,,,,,,,,43.24,
+3ee4c514dba8,19,climber-to-Z/p^2,7,6,13,exhaustive-bilinear,2476099,EMPTY,0,,False,,,,,,,,,,79.43,
