@@ -127,3 +127,7 @@ Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 
 
 Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
 
+
+## end of follow-up round (n4, n5)
+
+Both follow-up specs completed. controls: PASS. Rows this round: 960 (432 + 528). Cumulative rows across n1-n5: 2118.
