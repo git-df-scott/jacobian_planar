@@ -61,6 +61,7 @@ from keller_solver import (build_system, exhaustive, verify_solution,
 BUDGET = 400000
 GB_TIMEOUT = 300
 N_DRAWS = 200000
+SAMPLE = 8      # per-cell solution sample: verified, tear-classified, lifted
 PRIMES = [3, 5, 7, 11, 13, 17]
 
 MONDELLO_P = [(1, 0), (2, 1), (4, 0), (6, 2)]
@@ -257,7 +258,7 @@ def run_cell(SP, SQ, p, family, hitdir):
     NA, NB = len(SP), len(SQ)
     rec = {"hash": h, "p": p, "family": family, "nP": NA, "nB": NB,
            "n": NA + NB}
-    ex = exhaustive(SP, SQ, p, budget=BUDGET, max_solutions=20)
+    ex = exhaustive(SP, SQ, p, budget=BUDGET, max_solutions=SAMPLE)
     sols = []
     if ex["feasible"]:
         rec["method"] = "exhaustive-bilinear"
@@ -273,11 +274,11 @@ def run_cell(SP, SQ, p, family, hitdir):
             rec["count"] = ""
             rec["verdict"] = "EMPTY" if gb["empty"] else "NONEMPTY"
             if not gb["empty"]:
-                sp = sampling_cell(SP, SQ, p, seed=p)
+                sp = sampling_cell(SP, SQ, p, seed=p, max_solutions=SAMPLE)
                 sols = sp["solutions"]
                 rec["sampling_after_groebner_hits"] = sp["n_hit_fibres"]
         else:
-            sp = sampling_cell(SP, SQ, p, seed=p)
+            sp = sampling_cell(SP, SQ, p, seed=p, max_solutions=SAMPLE)
             rec["method"] = "sampling-linear-fibres"
             rec["n_enum"] = sp["points_covered"]
             rec["count"] = ""
@@ -299,7 +300,7 @@ def run_cell(SP, SQ, p, family, hitdir):
     if rec["verdict"] == "NONEMPTY" and sols:
         details = []
         staged = []
-        for (a, b) in sols[:20]:
+        for (a, b) in sols[:SAMPLE]:
             # cheap additive-type screen first: DEGENERATE hits are recorded
             # and go no further (no verification, no tear, no Hensel).
             isdeg, why = degenerate_screen(SP, SQ, a, b)
@@ -316,7 +317,7 @@ def run_cell(SP, SQ, p, family, hitdir):
                 details.append({"a": a, "b": b, "status": "VERIFY-FAIL",
                                 "verify": chk})
                 continue
-            td = tear_data(SP, SQ, a, b, p, timeout=30)
+            td = tear_data(SP, SQ, a, b, p, timeout=20)
             if td["tear"] == "TEAR-NONEMPTY":
                 ntn += 1
             elif td["tear"] == "TEAR-EMPTY":
@@ -375,7 +376,9 @@ def main():
     hitdir = os.path.join(HERE, "hits")
     os.makedirs(supdir, exist_ok=True)
     os.makedirs(hitdir, exist_ok=True)
-    csvpath = os.path.join(HERE, "prime_survey.csv")
+    only = [int(z) for z in sys.argv[1:]] or PRIMES
+    tag = "" if only == PRIMES else "_p" + "_".join(map(str, only))
+    csvpath = os.path.join(HERE, "prime_survey%s.csv" % tag)
     done = set()
     if os.path.exists(csvpath):
         with open(csvpath) as f:
@@ -388,7 +391,7 @@ def main():
         w.writeheader()
 
     cells = []
-    for p in PRIMES:
+    for p in only:
         for fam, gen in (("F1", family_F1), ("F2", family_F2), ("F3", family_F3)):
             for SP, SQ in gen(p):
                 cells.append((p, fam, SP, SQ))

@@ -1,0 +1,198 @@
+{
+ "hash": "add129cbe0b0",
+ "p": 3,
+ "family": "F2",
+ "characteristic": 3,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   4,
+   4
+  ],
+  [
+   7,
+   10
+  ],
+  [
+   9,
+   0
+  ],
+  [
+   12,
+   5
+  ],
+  [
+   15,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   11,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 18,
+ "solutions": [
+  {
+   "a": [
+    1,
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    2
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    2
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    1,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    2,
+    1,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  }
+ ]
+}

@@ -1,0 +1,374 @@
+{
+ "hash": "c8e9bc64efef",
+ "p": 5,
+ "family": "F2",
+ "characteristic": 5,
+ "support_P": [
+  [
+   0,
+   3
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   7,
+   11
+  ],
+  [
+   8,
+   9
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   17,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   15
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   7,
+   8
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   10,
+   4
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 20,
+ "solutions": [
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    3,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    3,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    4,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 5,
+    "deg_x_R1": 15,
+    "deg_y_R2": 15,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 1
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    3,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     1
+    ],
+    "image_1_0": [
+     2,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 5,
+    "deg_x_R1": 15,
+    "deg_y_R2": 15,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 4
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 4
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    3,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    4,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 3,
+    "P_at_1_0": 3,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     3,
+     1
+    ],
+    "image_1_0": [
+     3,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 5,
+    "deg_x_R1": 15,
+    "deg_y_R2": 15,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 4
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 4
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    4,
+    2,
+    0,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 4,
+    "P_at_1_0": 4,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     4,
+     1
+    ],
+    "image_1_0": [
+     4,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 5,
+    "deg_x_R1": 15,
+    "deg_y_R2": 15,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 4
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 4
+    }
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

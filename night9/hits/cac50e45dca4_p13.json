@@ -1,0 +1,333 @@
+{
+ "hash": "cac50e45dca4",
+ "p": 13,
+ "family": "F1",
+ "characteristic": 13,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   26,
+   0
+  ],
+  [
+   26,
+   2
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   26,
+   0
+  ],
+  [
+   27,
+   1
+  ],
+  [
+   28,
+   2
+  ],
+  [
+   29,
+   3
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 156,
+ "solutions": [
+  {
+   "a": [
+    12,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    1
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    2
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    3
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    4
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    5
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    6
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    12,
+    0,
+    1,
+    7
+   ],
+   "b": [
+    12,
+    12,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 12,
+    "Q_at_1_0": 12,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     12
+    ],
+    "image_1_0": [
+     0,
+     12
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-TIMEOUT",
+    "characteristic": 13
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

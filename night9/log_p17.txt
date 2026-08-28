@@ -1,0 +1,13 @@
+376ebcbe6f85  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.7s
+177283154864  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=272      142.7s
+5117aa220e6a  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+6ea6b99ecf9b  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+3ee44a89c2a2  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+60bf9e7c3055  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.1s
+162625e34709  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+3831f7d00305  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+7113f11e78e0  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+799b7c968b97  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+a4b44f2ae805  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+6ad54376483f  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s
+5fb91e7067b8  p=17  F1  exhaustive-bilinear    NONEMPTY      cnt=16       0.2s

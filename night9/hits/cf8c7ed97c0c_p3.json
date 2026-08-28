@@ -1,0 +1,382 @@
+{
+ "hash": "cf8c7ed97c0c",
+ "p": 3,
+ "family": "F2",
+ "characteristic": 3,
+ "support_P": [
+  [
+   0,
+   4
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   1,
+   6
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   6,
+   1
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   11,
+   3
+  ],
+  [
+   12,
+   2
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 18,
+ "solutions": [
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-NONEMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 9,
+    "deg_y_R2": 9,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^1": 2
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^3": 2
+    },
+    "product": {
+     "u^0 v^4": 1
+    }
+   },
+   "lift_to_p2": true,
+   "p2_point": {
+    "a": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     1,
+     1,
+     0,
+     0
+    ]
+   },
+   "lift_to_p3": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 12,
+    "deg_y_R2": 12,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 1
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 12,
+    "deg_y_R2": 12,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 1
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     2
+    ],
+    "image_1_0": [
+     2,
+     2
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 12,
+    "deg_y_R2": 12,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 2
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 2
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     2
+    ],
+    "image_1_0": [
+     2,
+     2
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 12,
+    "deg_y_R2": 12,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 1
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     2
+    ],
+    "image_1_0": [
+     2,
+     2
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 3,
+    "deg_x_R1": 12,
+    "deg_y_R2": 12,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 2
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 2
+    },
+    "product": {
+     "u^0 v^0": 1
+    }
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

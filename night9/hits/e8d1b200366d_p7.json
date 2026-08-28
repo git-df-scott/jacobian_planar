@@ -1,0 +1,250 @@
+{
+ "hash": "e8d1b200366d",
+ "p": 7,
+ "family": "F1",
+ "characteristic": 7,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   7,
+   1
+  ],
+  [
+   14,
+   0
+  ],
+  [
+   16,
+   2
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   14,
+   0
+  ],
+  [
+   15,
+   1
+  ],
+  [
+   16,
+   2
+  ],
+  [
+   17,
+   3
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 42,
+ "solutions": [
+  {
+   "a": [
+    6,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    6,
+    6,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    5,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    3,
+    3,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    4,
+    0,
+    3,
+    0
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    3,
+    0,
+    4,
+    0
+   ],
+   "b": [
+    5,
+    5,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    5,
+    0
+   ],
+   "b": [
+    4,
+    4,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    6,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    6,
+    1,
+    1,
+    0
+   ],
+   "b": [
+    6,
+    6,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 6,
+    "Q_at_1_0": 6,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     6
+    ],
+    "image_1_0": [
+     0,
+     6
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 7,
+    "deg_x_R1": 21,
+    "deg_y_R2": 21,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 6
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 6
+    }
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    5,
+    1,
+    2,
+    0
+   ],
+   "b": [
+    3,
+    3,
+    0,
+    0,
+    0
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     3
+    ],
+    "image_1_0": [
+     0,
+     3
+    ]
+   },
+   "tear": {
+    "tear": "TEAR-EMPTY",
+    "characteristic": 7,
+    "deg_x_R1": 21,
+    "deg_y_R2": 21,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 2
+    },
+    "product": {
+     "u^0 v^0": 6
+    }
+   },
+   "lift_to_p2": false
+  }
+ ]
+}
