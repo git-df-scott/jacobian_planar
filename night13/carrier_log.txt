@@ -84,8 +84,8 @@
    1
   ]
  ],
- "n_candidates_P": 1087,
- "n_candidates_Q": 2439,
+ "n_pool_P": 1087,
+ "n_pool_Q": 2439,
  "deg_P": 84,
  "deg_Q": 126,
  "jvdk_84_divides_126": false,

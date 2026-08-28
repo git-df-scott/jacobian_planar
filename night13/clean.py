@@ -77,7 +77,7 @@ def classify(sing):
 
 
 def main():
-    cp, cq, hp, hq, SP, SQ = PS.candidates()
+    cp, cq, hp, hq, SP, SQ = PS.pools()
     cnt, one = incidence(SP, SQ, cp, cq)
     sing = {k: v for k, v in one.items() if k != (0, 0)}
     rep, unrep = classify(sing)

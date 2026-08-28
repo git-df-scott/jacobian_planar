@@ -64,7 +64,17 @@ def build_Q_system(P, Qtop_form, Qlow, p):
             k = (p1 + a1 - 1, p2 + a2 - 1)
             r = rows.setdefault(k, {})
             r[j + 1] = (r.get(j + 1, 0) + c * f) % p
-    return {k: {c: v for c, v in r.items() if v} for k, r in rows.items()}
+    out, vanish = {}, []
+    for k, r in rows.items():
+        r = {c: v for c, v in r.items() if v}
+        if r:
+            out[k] = r
+        else:
+            # every contribution to this row key cancelled: a top x top row
+            # of the identity [A*H^2, B*H^3] = 0, seen on the matrix itself.
+            vanish.append(k)
+    build_Q_system.last_vanishing = sorted(vanish)
+    return out
 
 
 def sample_P(rng, C_P, p, sparse=0.0):
@@ -172,7 +182,11 @@ def control_Cc(C_P, C_Q, p):
     idx_b01 = 1 + C_Q.index((0, 1))
     pred380 = (4 * meta["A"]) % p
     return {"name": "Cc_rank_sanity", "char": p,
-            "n_rows": len(rows), "n_cols": 1 + len(C_Q),
+            "n_rows_nonzero": len(rows),
+            "n_rows_identically_vanishing":
+                len(build_Q_system.last_vanishing),
+            "vanishing_row_degrees":
+                sorted({k[0] + k[1] for k in build_Q_system.last_vanishing}), "n_cols": 1 + len(C_Q),
             "rank_A": r["rank_A"], "rank_positive": r["rank_A"] > 0,
             "constant_row_present": bool(row00),
             "constant_row_entries": {str(k): v for k, v in row00.items()},
@@ -255,7 +269,9 @@ def main():
             rk = K.rank_modp(rows, 1 + len(C_Q), p, seed=7 + s, augment=True)
             cons[p] = rk["consistent"]
             rowsp[p] = (rows, meta, P)
-            res["char_%d" % p] = {"n_rows": len(rows),
+            res["char_%d" % p] = {"n_rows_nonzero": len(rows),
+                                  "n_rows_identically_vanishing":
+                                      len(build_Q_system.last_vanishing),
                                   "rank_A": rk["rank_A"],
                                   "rank_Ae": rk["rank_Ae"],
                                   "consistent": rk["consistent"]}

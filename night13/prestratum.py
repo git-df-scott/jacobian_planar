@@ -66,7 +66,7 @@ entirely by its adjustable pairs.
 
 Greedy: seed C_P with x = (1,0) and the vertices of the P-polygon that carry
 i = 1 (mod 3); seed C_Q with y = (0,1) and the analogous Q-polygon vertices.
-Then repeatedly add the candidate monomial that removes the most singleton
+Then repeatedly add the pool monomial that removes the most singleton
 mandatory rows, scored as (singletons removed) - (singletons created), with
 ties broken by generic rank gain of the linearisation at char p = 999983.
 Stop at 96 P-lower and 256 Q-lower.
@@ -95,7 +95,7 @@ DEG_Q = 126
 N_PLOW = 96
 N_QLOW = 256
 TIE_PRIME = K.P1
-TIE_CANDIDATE_CAP = 8             # at most this many tied candidates get the
+TIE_POOL_CAP = 8             # at most this many tied pool monomials get the
                                   # rank-gain tie-break (recorded deviation)
 
 
@@ -123,7 +123,7 @@ def polygons():
     return hp, hq, SP, SQ
 
 
-def candidates():
+def pools():
     hp, hq, SP, SQ = polygons()
     cp = [m for m in K.lattice_in(hp, DEG_P, 3, 1, deg_lt=DEG_P)]
     cq = [m for m in K.lattice_in(hq, DEG_Q, 3, 0, deg_lt=DEG_Q)
@@ -256,7 +256,7 @@ def generic_rank(inc, cP_top, cQ_top, rng, p, extra_P=None, extra_Q=None):
 # ------------------------------------------------------------------- builder
 
 def build(verbose=True, n_plow=N_PLOW, n_qlow=N_QLOW, log=None):
-    cp, cq, hp, hq, SP, SQ = candidates()
+    cp, cq, hp, hq, SP, SQ = pools()
     vertsP = [v for v in hp if v[0] % 3 == 1 and v[0] + v[1] < DEG_P]
     vertsQ = [v for v in hq if v[0] % 3 == 0 and v[0] + v[1] < DEG_Q
               and v != (0, 0)]
@@ -303,12 +303,12 @@ def build(verbose=True, n_plow=N_PLOW, n_qlow=N_QLOW, log=None):
         if tie > 1:
             base = generic_rank(inc, cP_top, cQ_top, random.Random(step), p)
             scored = []
-            for cand in best[:TIE_CANDIDATE_CAP]:
-                _, _, _, side, mon = cand
+            for poolmon in best[:TIE_POOL_CAP]:
+                _, _, _, side, mon = poolmon
                 g = generic_rank(inc, cP_top, cQ_top, random.Random(step), p,
                                  extra_P=mon if side == "P" else None,
                                  extra_Q=mon if side == "Q" else None)
-                scored.append((g - base, cand))
+                scored.append((g - base, poolmon))
             scored.sort(key=lambda t: (-t[0], t[1][3], t[1][4]))
             gain, pick = scored[0]
         else:
@@ -337,13 +337,13 @@ def build(verbose=True, n_plow=N_PLOW, n_qlow=N_QLOW, log=None):
                 log.write(msg + "\n")
                 log.flush()
     return inc, trace, {"hullP": hp, "hullQ": hq, "SP": SP, "SQ": SQ,
-                        "candP": cp, "candQ": cq,
+                        "poolmonP": cp, "poolmonQ": cq,
                         "seedsP": seedsP, "seedsQ": seedsQ}
 
 
 def main():
     logf = open(os.path.join(HERE, "carrier_log.txt"), "w")
-    cp, cq, hp, hq, SP, SQ = candidates()
+    cp, cq, hp, hq, SP, SQ = pools()
     head = {
         "H_exponents": list(H_EXPS),
         "H_exponents_mod3": [e % 3 for e in H_EXPS],
@@ -354,7 +354,7 @@ def main():
         "n_supp_H2": len(SP), "n_supp_H3": len(SQ),
         "hull_P_vertices": [list(v) for v in hp],
         "hull_Q_vertices": [list(v) for v in hq],
-        "n_candidates_P": len(cp), "n_candidates_Q": len(cq),
+        "n_pool_P": len(cp), "n_pool_Q": len(cq),
         "deg_P": DEG_P, "deg_Q": DEG_Q,
         "jvdk_84_divides_126": DEG_Q % DEG_P == 0,
         "jvdk_126_divides_84": DEG_P % DEG_Q == 0,
