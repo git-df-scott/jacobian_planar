@@ -342,8 +342,92 @@ def main():
     w("locus.")
     w("")
 
-    # ---------------- files
-    w("## 6. Files")
+    # ---------------- post-hoc diagnostics
+    dpath = os.path.join(HERE, 'diag_results.json')
+    if os.path.exists(dpath):
+        D = json.load(open(dpath))
+        w("## 6. Post-hoc diagnostics on the five deepest stalls")
+        w("")
+        w("Run by `diag.py` after the net, on the saved `.npz` vectors only.")
+        w("Neither experiment feeds back into the search.")
+        w("")
+        w("### D1 -- Sylvester singular values of the two leading forms")
+        w("")
+        w("Sylvester matrix of `P_top`, `Q_top` dehomogenised in one variable;")
+        w("a small `sigma_min` relative to `sigma_max` is the numerical shadow")
+        w("of a common root of the two leading forms. Reported as a number, not")
+        w("as evidence of anything: at these dimensions the matrix is built from")
+        w("float coefficients spanning many decades and its conditioning is")
+        w("dominated by that spread.")
+        w("")
+        w("| # | file | E_K | Sylvester dim | sigma_max | sigma_min | log10 cond | five smallest sigma |")
+        w("|---|---|---|---|---|---|---|---|")
+        for k, d in enumerate(D):
+            s = d.get('D1_sylvester')
+            if s is None:
+                w("| %d | `%s` | %.6g | n/a (a leading form is degenerate) | | | | |"
+                  % (k + 1, d['file'], d['EK_recorded']))
+                continue
+            w("| %d | `%s` | %.6g | %d | %.4g | %.4g | %.2f | %s |"
+              % (k + 1, d['file'], d['EK_recorded'], s['dim'],
+                 s['sigma_max'], s['sigma_min'], s['log10_cond'],
+                 ", ".join("%.2g" % v for v in s['smallest_five'])))
+        w("")
+        w("### D2 -- rational-reconstruction experiment (labelled experiment)")
+        w("")
+        w("**This is an experiment, not a lifting step, and its expected")
+        w("outcome is a nonzero exact residual.** For each stall the six")
+        w("dominant coefficients (largest `|c|`) were passed through")
+        w("`sympy.nsimplify(..., rational=True, tolerance=1e-6)`; any")
+        w("reconstruction with denominator `<= 1e6` was substituted back. Every")
+        w("remaining coefficient was taken as the exact dyadic rational the")
+        w("float already is, so the whole vector is exactly rational and the")
+        w("bracket `B = P_x Q_y - P_y Q_x` was formed exactly over `Q` by")
+        w("`Fraction` convolution. The table records the exact residual")
+        w("`B - 1`.")
+        w("")
+        w("| # | dominant coeffs attempted | substituted | exact residual: nonzero cells | exact `R[0,0]` | max abs exact coeff | identically zero? |")
+        w("|---|---|---|---|---|---|---|")
+        for k, d in enumerate(D):
+            e = d['D2_rational_reconstruction']
+            c0 = e['exact_residual_constant_term']
+            if len(c0) > 28:
+                c0 = c0[:12] + "..." + c0[-12:]
+            w("| %d | %d | %d | %d | `%s` | %.4g | %s |"
+              % (k + 1, e['n_dominant_attempted'], e['n_substituted'],
+                 e['exact_residual_nonzero_cells'], c0,
+                 e['exact_residual_max_abs_float'],
+                 "**YES**" if e['exact_residual_identically_zero'] else "no"))
+        w("")
+        w("Reconstructions attempted, per stall:")
+        w("")
+        w("| # | coefficient index | float value | nsimplify output | \\|error\\| | substituted |")
+        w("|---|---|---|---|---|---|")
+        for k, d in enumerate(D):
+            for r in d['D2_rational_reconstruction']['reconstructions']:
+                rr = str(r.get('reconstructed'))
+                if len(rr) > 30:
+                    rr = rr[:14] + "..." + rr[-14:]
+                w("| %d | %d | %.12g | `%s` | %.3g | %s |"
+                  % (k + 1, r['index'], r['float_value'], rr,
+                     r.get('abs_error', float('nan')),
+                     "yes" if r.get('substituted') else "no"))
+        w("")
+        nz = sum(1 for d in D
+                 if d['D2_rational_reconstruction']['exact_residual_identically_zero'])
+        w("Stalls whose exact residual is identically zero over `Q`: **%d**." % nz)
+        w("")
+        if nz == 0:
+            w("That is the expected outcome and it is the only thing the")
+            w("experiment establishes: these float points are not exact")
+            w("solutions, and nothing about the size of `E_K` at them says")
+            w("otherwise. `nsimplify` at tolerance `1e-6` will return *some*")
+            w("small-denominator rational for almost any float, so a successful")
+            w("reconstruction of an individual coefficient is not a signal.")
+        w("")
+        w("## 7. Files")
+    else:
+        w("## 6. Files")
     w("")
     w("| file | contents |")
     w("|---|---|")
@@ -354,6 +438,7 @@ def main():
     w("| `net.py`, `net_results.json`, `net_log.txt` | the search; one record per seed |")
     w("| `stalls/*.npz` | coefficient vectors of the ten deepest stalls |")
     w("| `report.py` | builds this file |")
+    w("| `diag.py`, `diag_results.json` | post-hoc D1/D2 diagnostics on the deepest stalls |")
     w("")
 
     open(os.path.join(HERE, 'NUMERIC_NET.md'), 'w').write("\n".join(L) + "\n")
