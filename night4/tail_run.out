@@ -1,0 +1,69 @@
+night4/tail.py -- formal-inverse tail evaluator, p = 999983, seed = 20260831
+
+=== T0: known-answer check against closed-form inverses ===
+  (x + y^2, y)         PASS   G1={(1, 0): 1, (0, 2): 999982}  G2={(0, 1): 1}
+  (x, y + x^2)         PASS   G1={(1, 0): 1}  G2={(0, 1): 1, (2, 0): 999982}
+  (x + y^3, y)         PASS   G1={(1, 0): 1, (0, 3): 999982}  G2={(0, 1): 1}
+  (2x + 3y, x + 2y)    PASS   G1={(1, 0): 2, (0, 1): 999980}  G2={(1, 0): 999982, (0, 1): 2}
+  T0 wall: 0.001 s
+T0 PASS
+
+=== T1: tails of 20 random tame automorphisms, degrees 4..12 ===
+   1: deg F= 4 (target  4) D=14 deg G= 4  tail all zero: True   self-check: PASS
+   2: deg F= 5 (target  5) D=16 deg G= 5  tail all zero: True   self-check: PASS
+   3: deg F= 6 (target  6) D=18 deg G= 6  tail all zero: True   self-check: PASS
+   4: deg F= 7 (target  7) D=20 deg G= 7  tail all zero: True   self-check: PASS
+   5: deg F= 8 (target  8) D=22 deg G= 8  tail all zero: True   self-check: PASS
+   6: deg F= 9 (target  9) D=24 deg G= 9  tail all zero: True   self-check: PASS
+   7: deg F=10 (target 10) D=26 deg G=10  tail all zero: True   self-check: PASS
+   8: deg F=11 (target 11) D=28 deg G=11  tail all zero: True   self-check: PASS
+   9: deg F=12 (target 12) D=30 deg G=12  tail all zero: True   self-check: PASS
+  10: deg F= 4 (target  4) D=14 deg G= 4  tail all zero: True   self-check: PASS
+  11: deg F= 5 (target  5) D=16 deg G= 5  tail all zero: True   self-check: PASS
+  12: deg F= 6 (target  6) D=18 deg G= 6  tail all zero: True   self-check: PASS
+  13: deg F= 7 (target  7) D=20 deg G= 7  tail all zero: True   self-check: PASS
+  14: deg F= 8 (target  8) D=22 deg G= 8  tail all zero: True   self-check: PASS
+  15: deg F= 9 (target  9) D=24 deg G= 9  tail all zero: True   self-check: PASS
+  16: deg F=10 (target 10) D=26 deg G=10  tail all zero: True   self-check: PASS
+  17: deg F=11 (target 11) D=28 deg G=11  tail all zero: True   self-check: PASS
+  18: deg F=12 (target 12) D=30 deg G=12  tail all zero: True   self-check: PASS
+  19: deg F= 4 (target  4) D=14 deg G= 4  tail all zero: True   self-check: PASS
+  20: deg F= 5 (target  5) D=16 deg G= 5  tail all zero: True   self-check: PASS
+  T1 wall: 18.44 s
+T1 PASS
+
+=== T2: non-Keller map P = x + y^2 + x^3, Q = y + x^2, D = 12 ===
+  deg F = 3, D = 12, deg G (truncated) = 12
+  tail (m = 4..12): [6, 8, 11, 14, 17, 18, 22, 24, 26]
+  self-check: PASS
+  T2 wall: 0.004 s
+T2 PASS
+
+T3: the composition self-check is run inside every tail() call above and below; every one reported PASS so far.
+
+=== perturbation measurement: +1 on one random non-vertex coefficient ===
+  1: deg F=4 D=14  perturbed Q at (1, 3) (was in support: True)
+     baseline tail all zero: True | perturbed tail lights up: True
+     perturbed tail: [12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+     perturbed self-check: PASS
+  2: deg F=5 D=16  perturbed Q at (0, 4) (was in support: True)
+     baseline tail all zero: True | perturbed tail lights up: True
+     perturbed tail: [14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34]
+     perturbed self-check: PASS
+  3: deg F=6 D=18  perturbed P at (2, 0) (was in support: True)
+     baseline tail all zero: True | perturbed tail lights up: True
+     perturbed tail: [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
+     perturbed self-check: PASS
+  4: deg F=7 D=20  perturbed P at (3, 3) (was in support: True)
+     baseline tail all zero: True | perturbed tail lights up: True
+     perturbed tail: [18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42]
+     perturbed self-check: PASS
+  5: deg F=8 D=22  perturbed P at (0, 4) (was in support: True)
+     baseline tail all zero: True | perturbed tail lights up: True
+     perturbed tail: [20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46]
+     perturbed self-check: PASS
+  perturbation wall: 5.86 s
+  lit up in 5 of 5
+
+TOTAL wall: 24.30 s
+CONTROLS: PASS (T1, T2, T3)

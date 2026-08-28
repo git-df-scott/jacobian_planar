@@ -356,6 +356,40 @@ def hard_exit(msg, code=2):
     sys.exit(code)
 
 
+def control_T0(p, log):
+    """known-answer check: closed-form inverses the recursion must reproduce.
+    Anchors the self-check against independently known values, so that a
+    recursion which merely agrees with itself cannot pass."""
+    print("=== T0: known-answer check against closed-form inverses ===")
+    t0 = time.time()
+    cases = [
+        ("(x + y^2, y)", {(1, 0): 1, (0, 2): 1}, {(0, 1): 1},
+         {(1, 0): 1, (0, 2): p - 1}, {(0, 1): 1}),
+        ("(x, y + x^2)", {(1, 0): 1}, {(0, 1): 1, (2, 0): 1},
+         {(1, 0): 1}, {(0, 1): 1, (2, 0): p - 1}),
+        ("(x + y^3, y)", {(1, 0): 1, (0, 3): 1}, {(0, 1): 1},
+         {(1, 0): 1, (0, 3): p - 1}, {(0, 1): 1}),
+        ("(2x + 3y, x + 2y)", {(1, 0): 2, (0, 1): 3}, {(1, 0): 1, (0, 1): 2},
+         {(1, 0): 2, (0, 1): p - 3}, {(1, 0): p - 1, (0, 1): 2}),
+    ]
+    rows = []
+    ok_all = True
+    for name, P, Q, eG1, eG2 in cases:
+        _, G1, G2, chk = formal_inverse(P, Q, p, 12)
+        good = (G1 == eG1 and G2 == eG2 and chk["pass"])
+        ok_all &= good
+        rows.append({"case": name, "pass": bool(good),
+                     "selfcheck": chk["pass"]})
+        print("  %-20s %s   G1=%s  G2=%s"
+              % (name, "PASS" if good else "FAIL", G1, G2))
+    wall = time.time() - t0
+    log["T0"] = {"rows": rows, "wall_s": round(wall, 3), "pass": bool(ok_all)}
+    print("  T0 wall: %.3f s" % wall)
+    if not ok_all:
+        hard_exit("T0 (a closed-form inverse was not reproduced)")
+    print("T0 PASS\n")
+
+
 def control_T1(rng, p, log):
     print("=== T1: tails of 20 random tame automorphisms, degrees 4..12 ===")
     t0 = time.time()
@@ -487,6 +521,7 @@ def main():
     t0 = time.time()
     print("night4/tail.py -- formal-inverse tail evaluator, p = %d, seed = %d\n"
           % (p, args.seed))
+    control_T0(p, log)
     control_T1(rng, p, log)
     control_T2(p, log)
     print("T3: the composition self-check is run inside every tail() call above "
