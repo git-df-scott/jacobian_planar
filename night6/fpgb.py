@@ -82,25 +82,55 @@ def normalize(f, p):
     return {m: (v * inv) % p for m, v in f.items()}
 
 
-def reduce_full(f, G, p):
-    """Full (tail) reduction of f modulo the list G."""
-    Glm = [(lm(g), g) for g in G]
+def reduce_full(f, G, p, Gpre=None):
+    """Full (tail) reduction of f modulo the list G.
+
+    Heap-driven: monomials are processed in decreasing grevlex order; every
+    monomial introduced by a reduction step is strictly smaller than the one
+    being cancelled, so a priority queue suffices and no repeated max() over
+    the whole polynomial is needed.
+    """
+    import heapq
+    if Gpre is None:
+        Gpre = [(lm(g), g, pow(g[lm(g)], p - 2, p)) for g in G]
+    cur = dict(f)
+    heap = [(_negkey(m), m) for m in cur]
+    heapq.heapify(heap)
     out = {}
-    f = dict(f)
-    while f:
-        m = lm(f)
-        c = f[m]
-        red = False
-        for glm, g in Glm:
+    seen = set(cur)
+    while heap:
+        _, m = heapq.heappop(heap)
+        c = cur.get(m, 0) % p
+        if c == 0:
+            continue
+        q = None
+        for glm, g, ginv in Gpre:
             q = mdiv(m, glm)
             if q is not None:
-                f = padd(f, pmulmono(g, q, -c * pow(g[glm], p - 2, p), p), p)
-                red = True
                 break
-        if not red:
+        if q is None:
             out[m] = c
-            del f[m]
+            del cur[m]
+            continue
+        f2 = (-c * ginv) % p
+        del cur[m]
+        for k, v in g.items():
+            if k == glm:
+                continue
+            mm = mmul(k, q)
+            nv = (cur.get(mm, 0) + v * f2) % p
+            if nv:
+                cur[mm] = nv
+            else:
+                cur.pop(mm, None)
+            if mm not in seen:
+                seen.add(mm)
+                heapq.heappush(heap, (_negkey(mm), mm))
     return out
+
+
+def _negkey(m):
+    return (-sum(m),) + tuple(e for e in reversed(m))
 
 
 def spoly(f, g, p):
@@ -112,17 +142,28 @@ def spoly(f, g, p):
 
 
 def buchberger(F, p, verbose=False):
+    import heapq
     G = [normalize(f, p) for f in F if f]
+    Glm = [lm(g) for g in G]
+    Gpre = [(Glm[k], G[k], pow(G[k][Glm[k]], p - 2, p)) for k in range(len(G))]
     pairs = set()
+    heap = []
+
+    def push(a, b):
+        if (a, b) in pairs:
+            return
+        pairs.add((a, b))
+        heapq.heappush(heap, (grevlex_key(mlcm(Glm[a], Glm[b])), a, b))
+
     for i in range(len(G)):
         for j in range(i):
-            pairs.add((j, i))
-    while pairs:
-        # normal strategy: smallest lcm degree first
-        best = min(pairs, key=lambda ij: grevlex_key(mlcm(lm(G[ij[0]]), lm(G[ij[1]]))))
-        pairs.discard(best)
-        i, j = best
-        li, lj = lm(G[i]), lm(G[j])
+            push(j, i)
+    while heap:
+        _, i, j = heapq.heappop(heap)
+        if (i, j) not in pairs:
+            continue
+        pairs.discard((i, j))
+        li, lj = Glm[i], Glm[j]
         L = mlcm(li, lj)
         if L == mmul(li, lj):          # coprime criterion
             continue
@@ -131,7 +172,7 @@ def buchberger(F, p, verbose=False):
         for k in range(len(G)):
             if k in (i, j):
                 continue
-            if mdiv(L, lm(G[k])) is not None:
+            if mdiv(L, Glm[k]) is not None:
                 a = (min(i, k), max(i, k))
                 b = (min(j, k), max(j, k))
                 if a not in pairs and b not in pairs:
@@ -139,15 +180,21 @@ def buchberger(F, p, verbose=False):
                     break
         if skip:
             continue
-        h = reduce_full(spoly(G[i], G[j], p), G, p)
+        h = reduce_full(spoly(G[i], G[j], p), G, p, Gpre)
         if h:
             h = normalize(h, p)
             G.append(h)
+            hlm = lm(h)
+            Glm.append(hlm)
+            Gpre.append((hlm, h, 1))
             n = len(G) - 1
             for k in range(n):
-                pairs.add((k, n))
+                push(k, n)
             if verbose:
-                print("   GB grew to %d, new LM %s" % (len(G), lm(h)))
+                import sys as _s
+                print("   GB grew to %d (%d terms), new LM %s"
+                      % (len(G), len(h), hlm))
+                _s.stdout.flush()
     # reduce to a minimal reduced basis
     G.sort(key=lambda f: grevlex_key(lm(f)))
     keep = []
