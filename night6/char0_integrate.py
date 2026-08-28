@@ -181,16 +181,72 @@ def hpoly_terms(K, names, tvar="T"):
     return out
 
 
-def run_singular0(eqs, names, K, tag, timeout=36000, want_gb=True):
-    src = ["ring R = 0,(%s),dp;" % ",".join(names)]
-    enames = []
-    for i, e in enumerate(eqs):
-        n = "q%d" % i
-        src += _stmts(_terms_of(e, names, K), n)
-        enames.append(n)
-    src += _stmts(hpoly_terms(K, names), "hh")
-    enames.append("hh")
-    src += ["ideal I = %s;" % ",".join(enames),
+def _terms_ext(P, names, K):
+    """Poly over K -> signed term strings for Singular's algext ring Q(a)."""
+    out = []
+    for m, c in P.d.items():
+        cs = K.coeffs(c)
+        num = []
+        for e, coef in enumerate(cs):
+            if coef:
+                s = ("+" if coef > 0 else "-") + str(abs(coef.numerator))
+                if coef.denominator != 1:
+                    s += "/" + str(coef.denominator)
+                if e:
+                    s += "*a^%d" % e
+                num.append(s)
+        if not num:
+            continue
+        s = "+(" + "".join(num) + ")"
+        for i, ex in enumerate(m):
+            if ex:
+                s += "*%s^%d" % (names[i], ex)
+        out.append(s)
+    return out or ["+0"]
+
+
+def minpoly_str(K):
+    cs = K.coeffs(K.h) + [F(1)]      # h is monic of degree deg
+    ts = []
+    for e, c in enumerate(cs):
+        if not c:
+            continue
+        s = ("+" if c > 0 else "-") + str(abs(c.numerator))
+        if c.denominator != 1:
+            s += "/" + str(c.denominator)
+        if e:
+            s += "*a^%d" % e
+        ts.append(s)
+    return "".join(ts)
+
+
+def run_singular0(eqs, names, K, tag, timeout=36000, want_gb=True,
+                  mode='var'):
+    """mode='var': carry the number field as an extra variable T with h(T) in
+    the ideal.  mode='ext': Singular's algebraic extension Q(a), minpoly h."""
+    if mode == 'ext':
+        vnames = [n for n in names if n != 'T']
+        src = ["ring R = (0,a),(%s),dp;" % ",".join(vnames)]
+        src.append("minpoly = %s;" % minpoly_str(K))
+        enames = []
+        for i, e in enumerate(eqs):
+            n = "q%d" % i
+            src += _stmts(_terms_ext(e, names, K), n, per=3)
+            enames.append(n)
+        src += ["ideal I = %s;" % ",".join(enames)]
+        names_used = vnames
+    else:
+        src = ["ring R = 0,(%s),dp;" % ",".join(names)]
+        enames = []
+        for i, e in enumerate(eqs):
+            n = "q%d" % i
+            src += _stmts(_terms_of(e, names, K), n)
+            enames.append(n)
+        src += _stmts(hpoly_terms(K, names), "hh")
+        enames.append("hh")
+        src += ["ideal I = %s;" % ",".join(enames)]
+        names_used = names
+    src += [
             "option(redSB);",
             "int t0 = timer;",
             "ideal G = std(I);",

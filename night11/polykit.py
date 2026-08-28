@@ -101,31 +101,45 @@ def dy_adjoint(G):
 # ------------------------------------------------------------ Keller energy
 
 
-def keller_residual(P, Q):
-    """R = P_x Q_y - P_y Q_x - 1, as a dense coefficient array."""
+def _fused(P, Q, want_grad=True):
     Px, Py = dx(P), dy(P)
     Qx, Qy = dx(Q), dy(Q)
-    R = conv2(Px, Qy) - conv2(Py, Qx)
+    n = P.shape[0] + Q.shape[0] - 1
+    s = _fftshape(n, n)
+    FPx = np.fft.rfft2(Px, s=s)
+    FPy = np.fft.rfft2(Py, s=s)
+    FQx = np.fft.rfft2(Qx, s=s)
+    FQy = np.fft.rfft2(Qy, s=s)
+    FR = FPx * FQy - FPy * FQx - 1.0        # -1.0 in freq == -delta_(0,0)
+    R = np.fft.irfft2(FR, s=s)
+    E = float(np.sum(R * R))
+    if not want_grad:
+        return E, R, None, None
+    shP, shQ = P.shape, Q.shape
+    gPx = 2.0 * np.fft.irfft2(FR * np.conj(FQy), s=s)[:shP[0], :shP[1]]
+    gPy = -2.0 * np.fft.irfft2(FR * np.conj(FQx), s=s)[:shP[0], :shP[1]]
+    gQy = 2.0 * np.fft.irfft2(FR * np.conj(FPx), s=s)[:shQ[0], :shQ[1]]
+    gQx = -2.0 * np.fft.irfft2(FR * np.conj(FPy), s=s)[:shQ[0], :shQ[1]]
+    gP = dx_adjoint(gPx) + dy_adjoint(gPy)
+    gQ = dx_adjoint(gQx) + dy_adjoint(gQy)
+    return E, R, gP, gQ
+
+
+def keller_residual(P, Q):
+    """R = P_x Q_y - P_y Q_x - 1, as a dense coefficient array (padded)."""
+    return _fused(P, Q, want_grad=False)[1]
+
+
+def keller_residual_slow(P, Q):
+    """Same, by explicit linear convolutions (reference path for control N1)."""
+    R = conv2(dx(P), dy(Q)) - conv2(dy(P), dx(Q))
     R[0, 0] -= 1.0
     return R
 
 
 def keller_energy_grad(P, Q):
     """E_K = ||R||_2^2 and its gradients w.r.t. the dense arrays P, Q."""
-    Px, Py = dx(P), dy(P)
-    Qx, Qy = dx(Q), dy(Q)
-    R = conv2(Px, Qy) - conv2(Py, Qx)
-    R[0, 0] -= 1.0
-    E = float(np.sum(R * R))
-
-    sh = P.shape
-    gPx = 2.0 * corr2(R, Qy, sh)
-    gPy = -2.0 * corr2(R, Qx, sh)
-    gQy = 2.0 * corr2(R, Px, Q.shape)
-    gQx = -2.0 * corr2(R, Py, Q.shape)
-
-    gP = dx_adjoint(gPx) + dy_adjoint(gPy)
-    gQ = dx_adjoint(gQx) + dy_adjoint(gQy)
+    E, R, gP, gQ = _fused(P, Q)
     return E, gP, gQ, R
 
 

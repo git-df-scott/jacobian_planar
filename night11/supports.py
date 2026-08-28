@@ -7,40 +7,64 @@ Target degree shape: deg P = 2m, deg Q = 3m, with m = 42, i.e. (84, 126).
 1) Newton-triangle similarity.  Both supports sit in triangles
       supp(P) subset Delta(2m) = conv{(0,0), (2m,0), (0,2m)}
       supp(Q) subset Delta(3m) = (3/2) * Delta(2m),
-   i.e. one Newton triangle and a scaled copy of it.  Taken alone this is
+   one Newton triangle and a scaled copy of it.  Taken alone that is
    3655 + 8128 = 11783 real parameters -- too many for a many-restart net.
 
-2) Diagonal-congruence sublattice L_t.  We additionally restrict both supports
-   to
-      L_t = { (i, j) : i - j = 0  (mod t) },
-   a rank-2 sublattice of Z^2 of index t.  L_t is exactly the set of
-   exponents of monomials invariant under the torus action
-      (x, y) --> (zeta * x, zeta^{-1} * y),   zeta^t = 1,
-   so this is the ansatz "P and Q are Z/t-invariant".  The restriction is
-   self-consistent for the Keller equation:
-      * (1,1) in L_t, so d/dx and d/dy shift the class by an element of L_t;
-      * L_t is closed under addition, so products stay in L_t;
-      * (0,0) in L_t, so the target constant 1 is reachable.
-   Hence for P, Q supported in L_t the whole residual P_x Q_y - P_y Q_x - 1
-   is supported in L_t as well, and nothing is thrown away by construction.
+2) Torus grading.  Let zeta be a primitive t-th root of unity and act by
+      sigma_zeta : (x, y) --> (zeta * x, zeta^{-1} * y).
+   A monomial x^i y^j has weight (i - j) mod t.  We take P and Q to be
+   semi-invariant of weights aP and aQ:
+      supp(P) subset { (i,j) : i - j = aP  (mod t) },
+      supp(Q) subset { (i,j) : i - j = aQ  (mod t) }.
+   These are cosets of the index-t sublattice L_t = {i - j = 0 (mod t)}, not
+   L_t itself.  The Jacobian of a weight-aP and a weight-aQ polynomial has
+   weight aP + aQ, so the residual P_x Q_y - P_y Q_x - 1 stays inside one
+   coset provided aP + aQ = 0 (mod t).
 
-   With t = 16 this gives 233 free coefficients for P and 512 for Q,
-   745 real parameters in total (target band was 300-800).
+3) Which gradings are admissible.  Two constraints pin the weights down.
 
-3) Over-determination.  The residual lives on
-      { (i,j) in L_t : i + j <= 2m + 3m - 2 = 208 },
-   which has 1379 lattice points.  So the net always searches a 745-parameter
-   space against 1379 equations; the ratio 745/1379 = 0.54 is independent of t
-   (both counts scale like 1/t), so t is a resolution knob only, not a knob on
-   how over-determined the Keller system is.
+   (a) Keller normalisation.  The (0,0) coefficient of P_x Q_y - P_y Q_x is
+       P[1,0] Q[0,1] - P[0,1] Q[1,0], and nothing else -- it is the only way
+       to reach total degree 0.  So the constant 1 is reachable ONLY if
+       (1,0) is in supp(P) and (0,1) is in supp(Q) (or the mirror), i.e.
+            aP = 1,  aQ = -1  (mod t).
+       Any other choice forces E_K >= 1 identically, with equality exactly on
+       the degenerate locus P_x Q_y - P_y Q_x = 0.  (This was measured, not
+       assumed: an earlier run with aP = aQ = 0 drove every seed to
+       E_K = 1.0000000 with ||Jacobian|| ~ 2e-4.)
+
+   (b) Leading-form shape.  The (H^2, H^3) shape wanted by the tear proxy
+       needs a form H of some weight w with 2w = aP and 3w = aQ (mod t).
+       With aP = 1, aQ = -1 this gives 2w = 1 and 3w = -1, hence w = -2 and
+       then -4 = 1 (mod t), i.e.  t divides 5.
+       So t = 5 is the ONLY nontrivial torus grading compatible with both the
+       Keller constant and the (H^2, H^3) leading-form shape;  w = 3 works
+       (2*3 = 6 = 1, 3*3 = 9 = 4 = -1 mod 5).
+
+   Consequence for the parameter budget: the requested 300-800 band is not
+   reachable by a grading that keeps both constraints.  The net therefore runs
+   two arms:
+      GRADED-5   t = 5,  aP = 1, aQ = 4 -- both constraints hold; 2357 params
+                 (above the 300-800 target band, and recorded as such);
+      GRADED-15  t = 15, aP = 1, aQ = 14 -- Keller constant reachable, the
+                 (H^2, H^3) shape NOT reachable (no valid w); 788 params,
+                 inside the target band.  Its E_T can therefore not go to 0,
+                 which is itself the measurement.
+   A third small arm FULL (t = 1, 11783 params) is used only by the controls.
+
+4) Over-determination.  The residual lives on
+      { (i,j) : i + j <= 2m + 3m - 2 = 208, i - j = aP + aQ = 0 (mod t) },
+   so the count of equations and the count of unknowns both scale like 1/t and
+   the ratio (unknowns / equations) ~ 0.537 is independent of t.  t is a
+   resolution knob, not a knob on how over-determined the Keller system is.
 
 OBJECTIVE
 =========
     E(c) = E_K + lambda_T * E_T
 E_K is the exact sum of squares of the coefficients of P_x Q_y - P_y Q_x - 1
-(FFT convolution, verified against a direct/symbolic product in control N1).
-E_T is documented in polykit.tear_energy_grad.  The objective is passed around
-as a small object so a refined E_T can be dropped in without touching the net.
+(FFT convolution, checked against sympy and against a direct product in N1).
+E_T is documented in polykit.tear_energy_grad.  The objective is a small
+object so a refined E_T can be dropped in without touching the net.
 """
 
 import numpy as np
@@ -50,10 +74,11 @@ from polykit import (keller_energy_grad, tear_energy_grad, top_form,
 
 
 class Support:
-    def __init__(self, dP, dQ, t):
+    def __init__(self, dP, dQ, t, aP=1, aQ=-1):
         self.dP, self.dQ, self.t = dP, dQ, t
-        self.maskP = self._mask(dP, t)
-        self.maskQ = self._mask(dQ, t)
+        self.aP, self.aQ = aP % t if t > 1 else 0, aQ % t if t > 1 else 0
+        self.maskP = self._mask(dP, t, aP)
+        self.maskQ = self._mask(dQ, t, aQ)
         self.iP = np.flatnonzero(self.maskP.ravel())
         self.iQ = np.flatnonzero(self.maskQ.ravel())
         self.nP = self.iP.size
@@ -61,11 +86,11 @@ class Support:
         self.n = self.nP + self.nQ
 
     @staticmethod
-    def _mask(d, t):
+    def _mask(d, t, a):
         I, J = np.meshgrid(np.arange(d + 1), np.arange(d + 1), indexing='ij')
         m = (I + J <= d)
         if t > 1:
-            m &= ((I - J) % t == 0)
+            m &= ((I - J - a) % t == 0)
         return m
 
     def n_residual_cells(self):
@@ -73,8 +98,14 @@ class Support:
         I, J = np.meshgrid(np.arange(d + 1), np.arange(d + 1), indexing='ij')
         m = (I + J <= d)
         if self.t > 1:
-            m &= ((I - J) % self.t == 0)
+            m &= ((I - J - (self.aP + self.aQ)) % self.t == 0)
         return int(m.sum())
+
+    def n_topform(self):
+        return int(self.maskP[np.arange(self.dP + 1),
+                              self.dP - np.arange(self.dP + 1)].sum()), \
+               int(self.maskQ[np.arange(self.dQ + 1),
+                              self.dQ - np.arange(self.dQ + 1)].sum())
 
     def unpack(self, c):
         P = np.zeros((self.dP + 1, self.dP + 1))
@@ -121,7 +152,6 @@ class Objective:
         return E, g
 
     def tear_only(self, c):
-        """E_T at a point, with lambda_T ignored (for reporting)."""
         sup = self.sup
         P, Q = sup.unpack(c)
         tP = top_form(P, sup.dP)

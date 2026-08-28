@@ -31,8 +31,10 @@ class Ext0:
         self.zero = flint.fmpq_poly([])
 
     def c(self, k):
-        return flint.fmpq_poly([F(k).numerator]) if isinstance(k, int) \
-            else flint.fmpq_poly([k])
+        if isinstance(k, int):
+            return flint.fmpq_poly([k])
+        k = F(k)
+        return flint.fmpq_poly([flint.fmpq(k.numerator, k.denominator)])
 
     def gen(self):
         return flint.fmpq_poly([0, 1]) % self.h

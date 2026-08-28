@@ -1,0 +1,13 @@
+night11 numeric net -- controls   (scipy=True)
+support GRADED-5   deg(84,126) t= 5 (aP=1,aQ=4):   731+ 1626 =  2357 params,  4389 residual cells, top-form dims (17,26)
+support GRADED-15  deg(84,126) t=15 (aP=1,aQ=14):   245+  543 =   788 params,  1463 residual cells, top-form dims (6,8)
+support FULL       deg(84,126) t= 1 (aP=0,aQ=0):  3655+ 8128 = 11783 params, 21945 residual cells, top-form dims (85,127)
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/night11/controls.py", line 280, in <module>
+    main()
+  File "/home/user/jacobian_planar/night11/controls.py", line 270, in main
+    n1_symbolic()
+  File "/home/user/jacobian_planar/night11/controls.py", line 72, in n1_symbolic
+    fused_err = float(np.max(np.abs(keller_residual_slow(P, Q)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: operands could not be broadcast together with shapes (8,8) (6,6) 

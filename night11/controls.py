@@ -8,8 +8,9 @@ import time
 
 import numpy as np
 
-from polykit import (conv2, conv2_direct, keller_residual, keller_energy_grad,
-                     top_form, tear_energy_grad)
+from polykit import (conv2, conv2_direct, keller_residual,
+                     keller_residual_slow, keller_energy_grad, top_form,
+                     tear_energy_grad)
 from supports import Support, Objective
 
 try:
@@ -67,6 +68,10 @@ def n1_symbolic():
         S[i, j] = float(co)
     err_all = float(np.max(np.abs(R - S)))
 
+    # fused-FFT residual vs the explicit-convolution reference path
+    fused_err = float(np.max(np.abs(keller_residual_slow(P, Q)
+                                    - R[:dP + dQ - 1, :dP + dQ - 1])))
+
     # direct vs FFT convolution at a larger size
     A = rng.normal(size=(40, 40)) * np.tri(40)[::-1].T
     B = rng.normal(size=(60, 60)) * np.tri(60)[::-1].T
@@ -91,11 +96,13 @@ def n1_symbolic():
     say("      monomials compared              : %d" % checked)
     say("      max |sympy - numeric| (listed)  : %.3e" % err)
     say("      max |sympy - numeric| (all cells): %.3e" % err_all)
+    say("      fused-vs-reference residual err : %.3e" % fused_err)
     say("      direct-vs-FFT conv rel error    : %.3e" % conv_err)
     say("      analytic-vs-FD gradient rel err : %.3e  (%d params)"
         % (grad_err, sup.n))
     RES['N1'] = dict(monomials=checked, max_abs_err=err, max_abs_err_all=err_all,
                      conv_rel_err=conv_err, grad_rel_err=grad_err,
+                     fused_vs_reference=fused_err,
                      pass_=bool(err_all < 1e-10 and conv_err < 1e-10
                                 and grad_err < 1e-6))
     say("      N1 PASS" if RES['N1']['pass_'] else "      N1 FAIL")
@@ -248,12 +255,18 @@ def n3_small_random():
 def main():
     t0 = time.time()
     say("night11 numeric net -- controls   (scipy=%s)" % HAVE_SCIPY)
-    sup = Support(84, 126, 16)
-    say("main support: deg (84,126), sublattice t=16 -> %d + %d = %d params,"
-        " %d residual cells"
-        % (sup.nP, sup.nQ, sup.n, sup.n_residual_cells()))
-    RES['support'] = dict(dP=84, dQ=126, t=16, nP=sup.nP, nQ=sup.nQ, n=sup.n,
-                          residual_cells=sup.n_residual_cells())
+    RES['support'] = {}
+    for name, t, aP, aQ in [('GRADED-5', 5, 1, 4), ('GRADED-15', 15, 1, 14),
+                            ('FULL', 1, 0, 0)]:
+        sup = Support(84, 126, t, aP, aQ)
+        tp, tq = sup.n_topform()
+        say("support %-10s deg(84,126) t=%2d (aP=%d,aQ=%d): %5d+%5d = %5d params,"
+            " %5d residual cells, top-form dims (%d,%d)"
+            % (name, t, aP, aQ, sup.nP, sup.nQ, sup.n,
+               sup.n_residual_cells(), tp, tq))
+        RES['support'][name] = dict(t=t, aP=aP, aQ=aQ, nP=sup.nP, nQ=sup.nQ,
+                                    n=sup.n, residual_cells=sup.n_residual_cells(),
+                                    topform_dims=[tp, tq])
     n1_symbolic()
     n2_automorphism_basin()
     n3_small_random()
