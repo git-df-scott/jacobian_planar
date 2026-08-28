@@ -1,0 +1,113 @@
+{
+ "hash": "e66454742942",
+ "max_total_degree": 138,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   7,
+   35
+  ],
+  [
+   22,
+   101
+  ],
+  [
+   28,
+   74
+  ],
+  [
+   52,
+   84
+  ],
+  [
+   135,
+   0
+  ],
+  [
+   138,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   25,
+   14
+  ],
+  [
+   34,
+   94
+  ],
+  [
+   62,
+   49
+  ],
+  [
+   70,
+   53
+  ],
+  [
+   102,
+   0
+  ]
+ ],
+ "primes": [
+  2,
+  3
+ ],
+ "per_prime": {
+  "2": {
+   "hash": "e66454742942",
+   "p": 2,
+   "nP": 7,
+   "nQ": 6,
+   "n": 13,
+   "max_total_degree": 138,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 32,
+   "count": 24,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 1,
+   "n_nondegenerate": 23,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.01
+  },
+  "3": {
+   "hash": "e66454742942",
+   "p": 3,
+   "nP": 7,
+   "nQ": 6,
+   "n": 13,
+   "max_total_degree": 138,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 243,
+   "count": 6,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 6,
+   "n_nondegenerate": 0,
+   "n_sampled": 0,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 0,
+   "wall_s": 0.03
+  }
+ },
+ "n_shared_support_patterns": 0,
+ "n_matched_pairs_examined": 0,
+ "matched_pair_list_truncated": false,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_lifts_over_Z": []
+}

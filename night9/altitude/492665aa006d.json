@@ -1,0 +1,654 @@
+{
+ "hash": "492665aa006d",
+ "max_total_degree": 146,
+ "support_P": [
+  [
+   0,
+   114
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   13,
+   122
+  ],
+  [
+   30,
+   12
+  ],
+  [
+   71,
+   50
+  ],
+  [
+   127,
+   0
+  ],
+  [
+   134,
+   0
+  ],
+  [
+   146,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   4
+  ],
+  [
+   0,
+   146
+  ],
+  [
+   27,
+   27
+  ],
+  [
+   97,
+   8
+  ],
+  [
+   122,
+   0
+  ]
+ ],
+ "primes": [
+  2,
+  3
+ ],
+ "per_prime": {
+  "2": {
+   "hash": "492665aa006d",
+   "p": 2,
+   "nP": 8,
+   "nQ": 6,
+   "n": 14,
+   "max_total_degree": 146,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 32,
+   "count": 64,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 12,
+   "n_nondegenerate": 52,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.01
+  },
+  "3": {
+   "hash": "492665aa006d",
+   "p": 3,
+   "nP": 8,
+   "nQ": 6,
+   "n": 14,
+   "max_total_degree": 146,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 243,
+   "count": 18,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 0,
+   "n_nondegenerate": 18,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.03
+  }
+ },
+ "n_shared_support_patterns": 2,
+ "n_matched_pairs_examined": 6,
+ "matched_pair_list_truncated": false,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_lifts_over_Z": [
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 1,
+   "residual_str": "-13908*x**121*y**113",
+   "residual_content": 13908,
+   "residual_content_factorization": {
+    "2": 2,
+    "3": 1,
+    "19": 1,
+    "61": 1
+   },
+   "residual_content_n_distinct_primes": 4,
+   "residual_content_n_prime_factors_with_multiplicity": 5,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 1,
+   "residual_str": "-13908*x**121*y**113",
+   "residual_content": 13908,
+   "residual_content_factorization": {
+    "2": 2,
+    "3": 1,
+    "19": 1,
+    "61": 1
+   },
+   "residual_content_n_distinct_primes": 4,
+   "residual_content_n_prime_factors_with_multiplicity": 5,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     2,
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     -1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "-1464*x**151*y**11 - 13908*x**121*y**113 + 30*x**29*y**12",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1,
+     3
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "1464*x**151*y**11 - 13908*x**121*y**113 - 30*x**29*y**12",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1,
+     3
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     1,
+     1,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     1,
+     1,
+     0,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "1464*x**151*y**11 - 13908*x**121*y**113 - 30*x**29*y**12",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1,
+     3
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     2,
+     2,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     -1,
+     -1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     -1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "-1464*x**151*y**11 - 13908*x**121*y**113 + 30*x**29*y**12",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1,
+     3
+    ],
+    "Q_nonzero_indices": [
+     0,
+     5
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     2,
+     2,
+     0,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     -1,
+     -1,
+     0,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     -1
+    ]
+   }
+  }
+ ]
+}
