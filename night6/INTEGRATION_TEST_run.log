@@ -1,0 +1,592 @@
+==============================================================================
+PRIME p = 999983
+==============================================================================
+face system: dim=0 vdim=35 ; face families handled: 8 (residue-field degrees [1, 1, 3, 6, 6, 6, 6, 6], covering 35 of the 35 face solutions)
+
+##########################################################################
+FACE FAMILY 0   deg h = 1 (covers 1 of the 35)   h = x+39876
+   q_1..q_8  = ['1', '837658', '498604', '437449', '256910', '618550', '960107', '1']
+   t_2..t_12 = ['1', '225111', '498604', '357087', '674165', '741731', '721534', '301137', '732566', '103107', '883773']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 1   deg h = 1 (covers 1 of the 35)   h = x+240311
+   q_1..q_8  = ['1', '205335', '857249', '261184', '943005', '154272', '759672', '1']
+   t_2..t_12 = ['1', '136890', '857249', '298496', '372801', '500138', '323440', '296555', '817497', '316382', '679231']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 2   deg h = 3 (covers 3 of the 35)   h = x^3+167481*x^2+964177*x+8748
+   q_1..q_8  = ['1', '784993*x^2+227455*x+168313', '471713*x^2+179470*x+77276', '876632*x^2+48215*x+134437', '379375*x^2+105717*x+368379', '716979*x^2+67873*x+561548', 'x', '1']
+   t_2..t_12 = ['1', '190001*x^2+818292*x+778864', '471713*x^2+179470*x+77276', '573301*x^2+483667*x+296497', '679017*x^2+497304*x+401345', '827921*x^2+699395*x+965285', '290419*x^2+135449*x+582852', '518490*x^2+842709*x+288936', '834663*x^2+823616*x+28791', '357236*x^2+116625*x+350382', '793284*x^2+827743*x+267961']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 3   deg h = 6 (covers 6 of the 35)   h = x^6+447375*x^5+220188*x^4+794342*x^3+658730*x^2+237229*x+528796
+   q_1..q_8  = ['1', '723469*x^5+138538*x^4+288103*x^3+491882*x^2+498500*x+999630', '67309*x^5+122059*x^4+213488*x^3+376870*x^2+77913*x+158868', '149571*x^5+301126*x^4+245517*x^3+876524*x^2+100597*x+346787', '402453*x^5+592385*x^4+714307*x^3+774272*x^2+679300*x+796236', '578693*x^5+37119*x^4+890700*x^3+317014*x^2+792256*x+890973', 'x', '1']
+   t_2..t_12 = ['1', '148985*x^5+759014*x^4+858724*x^3+661249*x^2+665661*x+666420', '67309*x^5+122059*x^4+213488*x^3+376870*x^2+77913*x+158868', '313793*x^5+344144*x^4+709155*x^3+858887*x^2+114968*x+396328', '10545*x^5+935448*x^4+488154*x^3+174990*x^2+408704*x+660024', '994339*x^5+337453*x^4+251183*x^3+910128*x^2+125085*x+644813', '713362*x^5+723805*x^4+540572*x^3+962672*x^2+134722*x+221749', '944829*x^5+982794*x^4+333545*x^3+540391*x^2+42329*x+554953', '662860*x^5+597843*x^4+635261*x^3+313676*x^2+923857*x+913950', '392801*x^5+874886*x^4+644563*x^3+253887*x^2+480390*x+304657', '164785*x^5+537844*x^4+213010*x^3+968100*x^2+837658*x+765589']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 4   deg h = 6 (covers 6 of the 35)   h = x^6+668940*x^5+987927*x^4+78625*x^3+483669*x^2+146962*x+528796
+   q_1..q_8  = ['1', '122183*x^5+415346*x^4+291015*x^3+971091*x^2+89791*x+516934', '162988*x^5+689224*x^4+884552*x^3+394391*x^2+151360*x+603191', '933819*x^5+738388*x^4+953745*x^3+58659*x^2+268488*x+778221', '633519*x^5+741488*x^4+684415*x^3+721901*x^2+364171*x+463421', '472606*x^5+762204*x^4+832475*x^3+427934*x^2+861567*x+443895', 'x', '1']
+   t_2..t_12 = ['1', '414783*x^5+610225*x^4+194010*x^3+647394*x^2+726516*x+11295', '162988*x^5+689224*x^4+884552*x^3+394391*x^2+151360*x+603191', '924367*x^5+843872*x^4+232866*x^3+495603*x^2+21134*x+603686', '875824*x^5+996139*x^4+676702*x^3+103635*x^2+944072*x+688157', '213947*x^5+75057*x^4+779284*x^3+647594*x^2+946262*x+545881', '911534*x^5+818895*x^4+839556*x^3+224450*x^2+329090*x+823438', '251580*x^5+197866*x^4+382043*x^3+130627*x^2+697604*x+519613', '827233*x^5+360580*x^4+318681*x^3+673129*x^2+662795*x+295653', '135679*x^5+596526*x^4+158406*x^3+979943*x^2+685209*x+841422', '589184*x^5+202380*x^4+74629*x^3+485129*x^2+867294*x+587827']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 5   deg h = 6 (covers 6 of the 35)   h = x^6+716170*x^5+164966*x^4+106139*x^3+942296*x^2+852001*x+528796
+   q_1..q_8  = ['1', '99709*x^5+210530*x^4+521334*x^3+581685*x^2+342264*x+731364', '649201*x^5+800249*x^4+520292*x^3+929862*x^2+493611*x+198306', '688492*x^5+123644*x^4+398758*x^3+724827*x^2+590973*x+213607', '173601*x^5+626699*x^4+516243*x^3+886377*x^2+717011*x+259987', '322541*x^5+244662*x^4+706254*x^3+996055*x^2+836153*x+857536', 'x', '1']
+   t_2..t_12 = ['1', '733128*x^5+473681*x^4+347556*x^3+387790*x^2+228176*x+487576', '649201*x^5+800249*x^4+520292*x^3+929862*x^2+493611*x+198306', '786848*x^5+855581*x^4+170014*x^3+685519*x^2+532543*x+386977', '715622*x^5+800655*x^4+147812*x^3+344453*x^2+68651*x+512634', '80535*x^5+219722*x^4+257898*x^3+441409*x^2+747662*x+848445', '248154*x^5+407554*x^4+516007*x^3+522815*x^2+566637*x+156866', '195976*x^5+895213*x^4+855649*x^3+388259*x^2+762369*x+910663', '962049*x^5+696651*x^4+379922*x^3+449049*x^2+172549*x+899907', '887617*x^5+936302*x^4+288462*x^3+188911*x^2+274957*x+422838', '449027*x^5+391952*x^4+404903*x^3+279281*x^2+331696*x+806813']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 6   deg h = 6 (covers 6 of the 35)   h = x^6+759672*x^5+358471*x^4+11037*x^3+642392*x^2+511679*x+817426
+   q_1..q_8  = ['1', '737510*x^5+221395*x^4+441670*x^3+36250*x^2+578146*x+794648', '665046*x^5', '463012*x^4', '362406*x^3', '971725*x^2', 'x', '1']
+   t_2..t_12 = ['1', '825001*x^5+814252*x^4+961102*x^3+690822*x^2+52103*x+863093', '665046*x^5', '814866*x^4', '689068*x^3', '427853*x^2', '820846*x', '296555', '812451*x^5+768574*x^4+73586*x^3+174126*x^2+895432*x+182486', '339786*x^5', '226524*x^4']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 7   deg h = 6 (covers 6 of the 35)   h = x^6+960107*x^5+122406*x^4+855350*x^3+483547*x^2+752017*x+60312
+   q_1..q_8  = ['1', '159087*x^5+138940*x^4+534363*x^3+378759*x^2+349348*x+162325', '602280*x^5', '68597*x^4', '241336*x^3', '428980*x^2', 'x', '1']
+   t_2..t_12 = ['1', '106058*x^5+759282*x^4+356242*x^3+252506*x^2+899554*x+774872', '602280*x^5', '364106*x^4', '719162*x^3', '48230*x^2', '833602*x', '301137', '383670*x^5+514980*x^4+308408*x^3+713509*x^2+631415*x+267417', '599745*x^5', '399830*x^4']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+==============================================================================
+PRIME p = 1000003
+==============================================================================
+face system: dim=0 vdim=35 ; face families handled: 9 (residue-field degrees [1, 2, 2, 3, 3, 6, 6, 6, 6], covering 35 of the 35 face solutions)
+
+##########################################################################
+FACE FAMILY 0   deg h = 1 (covers 1 of the 35)   h = x+577955
+   q_1..q_8  = ['1', '266414', '799341', '819280', '305052', '868145', '422048', '1']
+   t_2..t_12 = ['1', '844278', '799341', '936320', '829885', '301560', '414274', '898882', '986828', '80442', '709713']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 1   deg h = 2 (covers 2 of the 35)   h = x^2+641790*x+208493
+   q_1..q_8  = ['1', '862971*x+559142', '227259*x+345778', '221190*x+785765', '119462*x+5788', '733082*x+748274', 'x', '1']
+   t_2..t_12 = ['1', '575314*x+39427', '227259*x+345778', '109931*x+612302', '482021*x+724355', '515765*x+771876', '22737*x+756675', '78472*x+304358', '94138*x+10558', '647706*x+2258', '265383*x+76414']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 2   deg h = 2 (covers 2 of the 35)   h = x^2+867199*x+749239
+   q_1..q_8  = ['1', '954437*x+894280', '808453*x+12827', '913136*x+267895', '250837*x+641469', '460619*x+328657', 'x', '1']
+   t_2..t_12 = ['1', '302957*x+929521', '808453*x+12827', '43581*x+877596', '20277*x+39536', '241453*x+188638', '830981*x+768465', '492723*x+493014', '400631*x+345570', '707223*x+674436', '432952*x+886568']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 3   deg h = 3 (covers 3 of the 35)   h = x^3+627672*x^2+937606*x+633857
+   q_1..q_8  = ['1', '720838*x^2+471792*x+6248', '473264*x^2+835126*x+200662', '888423*x^2+25436*x+417097', '444436*x^2+979165*x+305052', '896262*x^2', 'x', '1']
+   t_2..t_12 = ['1', '813893*x^2+314528*x+670834', '473264*x^2+835126*x+200662', '872483*x^2+600500*x+905255', '248672*x^2+594369*x+829885', '916671*x^2', '453510*x', '898882', '467961*x^2+135617*x+725083', '687047*x^2+435435*x+919561', '118483*x^2+363169*x+328718']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 4   deg h = 3 (covers 3 of the 35)   h = x^3+794379*x^2+82465*x+633857
+   q_1..q_8  = ['1', '720838*x^2+851754*x+727341', '896174*x^2+835126*x+200662', '888423*x^2+25436*x+763629', '311013*x^2+237791*x+305052', '896262*x^2', 'x', '1']
+   t_2..t_12 = ['1', '813893*x^2+567836*x+484894', '896174*x^2+835126*x+200662', '872483*x^2+600500*x+158431', '137109*x^2+794600*x+829885', '916671*x^2', '453510*x', '898882', '467961*x^2+276008*x+288095', '357708*x^2+435435*x+919561', '118483*x^2+363169*x+961575']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 5   deg h = 6 (covers 6 of the 35)   h = x^6+428816*x^5+423295*x^4+915675*x^3+818929*x^2+810220*x+978995
+   q_1..q_8  = ['1', '838815*x^5+836887*x^4+409895*x^3+614864*x^2+260371*x+987921', '710466*x^5+764268*x^4+188400*x^3+486387*x^2+579646*x+581339', '573918*x^5+327723*x^4+235547*x^3+690747*x^2+778849*x+486784', '53995*x^5+177510*x^4+82523*x^3+301066*x^2+104463*x+37126', '85334*x^5+876278*x^4+435450*x^3+936319*x^2+227462*x+996941', 'x', '1']
+   t_2..t_12 = ['1', '559210*x^5+891259*x^4+939932*x^3+76575*x^2+506915*x+658614', '710466*x^5+764268*x^4+188400*x^3+486387*x^2+579646*x+581339', '84476*x^5+231683*x^4+126339*x^3+503710*x^2+604398*x+413467', '118622*x^5+198751*x^4+5563*x^3+407612*x^2+455869*x+421706', '296221*x^5+230661*x^4+693548*x^3+991611*x^2+929302*x+917257', '723337*x^5+32955*x^4+923946*x^3+416876*x^2+622838*x+880055', '112839*x^5+17164*x^4+170664*x^3+531293*x^2+506524*x+233102', '86538*x^5+511779*x^4+396789*x^3+77873*x^2+389578*x+31047', '548070*x^5+503485*x^4+473218*x^3+241213*x^2+681648*x+973810', '776182*x^5+627378*x^4+643022*x^3+969479*x^2+536313*x+747844']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 6   deg h = 6 (covers 6 of the 35)   h = x^6+578019*x^5+612345*x^4+268274*x^3+42072*x^2+816857*x+327010
+   q_1..q_8  = ['1', '415427*x^5+623735*x^4+490467*x^3+136239*x^2+262166*x+928547', '159333*x^5+434327*x^4+756558*x^3+639334*x^2+326392*x+504464', '786839*x^5+9200*x^4+452957*x^3+960205*x^2+348605*x+664431', '289607*x^5+417674*x^4+874901*x^3+524046*x^2+62355*x+710155', '373048*x^5+786083*x^4+737013*x^3+817444*x^2+921340*x+107069', 'x', '1']
+   t_2..t_12 = ['1', '943620*x^5+82489*x^4+326978*x^3+90826*x^2+841446*x+285697', '159333*x^5+434327*x^4+756558*x^3+639334*x^2+326392*x+504464', '756387*x^5+439087*x^4+231950*x^3+811662*x^2+969836*x+330777', '889251*x^5+472980*x^4+185760*x^3+721480*x^2+922719*x+447384', '632512*x^5+568801*x^4+364523*x^3+25526*x^2+732811*x+923536', '948188*x^5+227058*x^4+808277*x^3+522667*x^2+841910*x+739687', '886712*x^5+303852*x^4+290068*x^3+782158*x^2+736813*x+646188', '343556*x^5+26268*x^4+663947*x^3+727112*x^2+402299*x+356843', '738886*x^5+13525*x^4+11840*x^3+599276*x^2+614229*x+545185', '823177*x^5+344855*x^4+150215*x^3+998552*x^2+665031*x+286927']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 7   deg h = 6 (covers 6 of the 35)   h = x^6+703991*x^5+977967*x^4+915675*x^3+171061*x^2+252591*x+978995
+   q_1..q_8  = ['1', '947257*x^5+869369*x^4+318926*x^3+884043*x^2+694911*x+212570', '163712*x^5+764268*x^4+500760*x^3+741741*x^2+99361*x+251033', '339161*x^5+995303*x^4+615171*x^3+690747*x^2+919010*x+225541', '34950*x^5+345292*x^4+296471*x^3+258055*x^2+729778*x+37126', '85334*x^5+969564*x^4+637342*x^3+685684*x^2+131798*x+950351', 'x', '1']
+   t_2..t_12 = ['1', '964839*x^5+246245*x^4+879286*x^3+589362*x^2+463274*x+808382', '163712*x^5+764268*x^4+500760*x^3+741741*x^2+99361*x+251033', '244755*x^5+851774*x^4+560195*x^3+503710*x^2+764582*x+972049', '467560*x^5+73083*x^4+831695*x^3+947237*x^2+792677*x+421706', '296221*x^5+607220*x^4+398219*x^3+654908*x^2+57389*x+179461', '875581*x^5+779071*x^4+923946*x^3+864781*x^2+877723*x+626070', '180688*x^5+425601*x^4+596007*x^3+977987*x^2+506524*x+680311', '642399*x^5+761454*x^4+32439*x^3+151799*x^2+571002*x+142049', '156301*x^5+503485*x^4+641233*x^3+438208*x^2+560794*x+873649', '649084*x^5+360935*x^4+496876*x^3+969479*x^2+250498*x+991985']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+##########################################################################
+FACE FAMILY 8   deg h = 6 (covers 6 of the 35)   h = x^6+780197*x^5+10744*x^4+268274*x^3+263078*x^2+540276*x+327010
+   q_1..q_8  = ['1', '730714*x^5+465333*x^4+310253*x^3+456948*x^2+882475*x+546343', '606988*x^5+434327*x^4+133901*x^3+28489*x^2+201336*x+519037', '631112*x^5+962076*x^4+617935*x^3+960205*x^2+114116*x+674932', '226228*x^5+704441*x^4+913106*x^3+150599*x^2+184442*x+710155', '373048*x^5+936780*x^4+949641*x^3+579021*x^2+836901*x+484481', 'x', '1']
+   t_2..t_12 = ['1', '820477*x^5+310222*x^4+873504*x^3+304632*x^2+921651*x+697563', '606988*x^5+434327*x^4+133901*x^3+28489*x^2+201336*x+519037', '6983*x^5+242370*x^4+849069*x^3+811662*x^2+558991*x+57063', '728817*x^5+374809*x^4+451375*x^3+119127*x^2+610404*x+447384', '632512*x^5+553761*x^4+808117*x^3+507361*x^2+226900*x+255', '854897*x^5+265444*x^4+808277*x^3+910134*x^2+677636*x+626087', '604816*x^5+812766*x^4+319169*x^3+641529*x^2+736813*x+429727', '892514*x^5+44438*x^4+194830*x^3+641527*x^2+18952*x+522514', '314024*x^5+13525*x^4+992854*x^3+56410*x^2+519898*x+779910', '680683*x^5+117371*x^4+578564*x^3+998552*x^2+555999*x+265173']
+   E4 (3q't - 2qt' = -u^2) verified exactly: True
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 33
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart A (alpha=1, beta free), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 35
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant free
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+0 Rabinowitsch) = 57 ; unknowns 32
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+   --------------------------------------------------------------------
+   chart B (alpha=0, beta=1), variant vertex non-degeneracy f_8 != 0, g_12 != 0 imposed (Rabinowitsch)
+      E3 vanishes identically in the unknowns (kernel property, symbolic): True
+      equations: E0 19 rows, E1 19 rows, E2 19 rows (+2 Rabinowitsch) = 59 ; unknowns 34
+      Singular std: |GB| = 1, unit ideal = True, dim = -1   (0.0s)
+      => NO solution in this chart: with alpha,beta scaled to this chart the identities E0,E1,E2 have no common zero at all.
+
+==============================================================================
+SUMMARY  (unit ideal = no solution in that chart)
+   p=999983 family 0 (deg 1) chart A free : unit ideal = True
+   p=999983 family 0 (deg 1) chart A rab  : unit ideal = True
+   p=999983 family 0 (deg 1) chart B free : unit ideal = True
+   p=999983 family 0 (deg 1) chart B rab  : unit ideal = True
+   p=999983 family 1 (deg 1) chart A free : unit ideal = True
+   p=999983 family 1 (deg 1) chart A rab  : unit ideal = True
+   p=999983 family 1 (deg 1) chart B free : unit ideal = True
+   p=999983 family 1 (deg 1) chart B rab  : unit ideal = True
+   p=999983 family 2 (deg 3) chart A free : unit ideal = True
+   p=999983 family 2 (deg 3) chart A rab  : unit ideal = True
+   p=999983 family 2 (deg 3) chart B free : unit ideal = True
+   p=999983 family 2 (deg 3) chart B rab  : unit ideal = True
+   p=999983 family 3 (deg 6) chart A free : unit ideal = True
+   p=999983 family 3 (deg 6) chart A rab  : unit ideal = True
+   p=999983 family 3 (deg 6) chart B free : unit ideal = True
+   p=999983 family 3 (deg 6) chart B rab  : unit ideal = True
+   p=999983 family 4 (deg 6) chart A free : unit ideal = True
+   p=999983 family 4 (deg 6) chart A rab  : unit ideal = True
+   p=999983 family 4 (deg 6) chart B free : unit ideal = True
+   p=999983 family 4 (deg 6) chart B rab  : unit ideal = True
+   p=999983 family 5 (deg 6) chart A free : unit ideal = True
+   p=999983 family 5 (deg 6) chart A rab  : unit ideal = True
+   p=999983 family 5 (deg 6) chart B free : unit ideal = True
+   p=999983 family 5 (deg 6) chart B rab  : unit ideal = True
+   p=999983 family 6 (deg 6) chart A free : unit ideal = True
+   p=999983 family 6 (deg 6) chart A rab  : unit ideal = True
+   p=999983 family 6 (deg 6) chart B free : unit ideal = True
+   p=999983 family 6 (deg 6) chart B rab  : unit ideal = True
+   p=999983 family 7 (deg 6) chart A free : unit ideal = True
+   p=999983 family 7 (deg 6) chart A rab  : unit ideal = True
+   p=999983 family 7 (deg 6) chart B free : unit ideal = True
+   p=999983 family 7 (deg 6) chart B rab  : unit ideal = True
+   p=1000003 family 0 (deg 1) chart A free : unit ideal = True
+   p=1000003 family 0 (deg 1) chart A rab  : unit ideal = True
+   p=1000003 family 0 (deg 1) chart B free : unit ideal = True
+   p=1000003 family 0 (deg 1) chart B rab  : unit ideal = True
+   p=1000003 family 1 (deg 2) chart A free : unit ideal = True
+   p=1000003 family 1 (deg 2) chart A rab  : unit ideal = True
+   p=1000003 family 1 (deg 2) chart B free : unit ideal = True
+   p=1000003 family 1 (deg 2) chart B rab  : unit ideal = True
+   p=1000003 family 2 (deg 2) chart A free : unit ideal = True
+   p=1000003 family 2 (deg 2) chart A rab  : unit ideal = True
+   p=1000003 family 2 (deg 2) chart B free : unit ideal = True
+   p=1000003 family 2 (deg 2) chart B rab  : unit ideal = True
+   p=1000003 family 3 (deg 3) chart A free : unit ideal = True
+   p=1000003 family 3 (deg 3) chart A rab  : unit ideal = True
+   p=1000003 family 3 (deg 3) chart B free : unit ideal = True
+   p=1000003 family 3 (deg 3) chart B rab  : unit ideal = True
+   p=1000003 family 4 (deg 3) chart A free : unit ideal = True
+   p=1000003 family 4 (deg 3) chart A rab  : unit ideal = True
+   p=1000003 family 4 (deg 3) chart B free : unit ideal = True
+   p=1000003 family 4 (deg 3) chart B rab  : unit ideal = True
+   p=1000003 family 5 (deg 6) chart A free : unit ideal = True
+   p=1000003 family 5 (deg 6) chart A rab  : unit ideal = True
+   p=1000003 family 5 (deg 6) chart B free : unit ideal = True
+   p=1000003 family 5 (deg 6) chart B rab  : unit ideal = True
+   p=1000003 family 6 (deg 6) chart A free : unit ideal = True
+   p=1000003 family 6 (deg 6) chart A rab  : unit ideal = True
+   p=1000003 family 6 (deg 6) chart B free : unit ideal = True
+   p=1000003 family 6 (deg 6) chart B rab  : unit ideal = True
+   p=1000003 family 7 (deg 6) chart A free : unit ideal = True
+   p=1000003 family 7 (deg 6) chart A rab  : unit ideal = True
+   p=1000003 family 7 (deg 6) chart B free : unit ideal = True
+   p=1000003 family 7 (deg 6) chart B rab  : unit ideal = True
+   p=1000003 family 8 (deg 6) chart A free : unit ideal = True
+   p=1000003 family 8 (deg 6) chart A rab  : unit ideal = True
+   p=1000003 family 8 (deg 6) chart B free : unit ideal = True
+   p=1000003 family 8 (deg 6) chart B rab  : unit ideal = True
+
+   p=999983 : (alpha,beta) = (0,0) forced at every F_p-rational face solution, free variant: True
+   p=1000003 : (alpha,beta) = (0,0) forced at every F_p-rational face solution, free variant: True

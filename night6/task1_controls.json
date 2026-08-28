@@ -1,0 +1,386 @@
+{
+ "999983": {
+  "C1": true,
+  "branches": [
+   {
+    "face": 0,
+    "hdeg": 1,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 0,
+    "hdeg": 1,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 1,
+    "hdeg": 1,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 1,
+    "hdeg": 1,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 2,
+    "hdeg": 3,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 2,
+    "hdeg": 3,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 3,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 3,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 4,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 4,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 5,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 5,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 6,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 6,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 7,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 7,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   }
+  ]
+ },
+ "1000003": {
+  "C1": true,
+  "branches": [
+   {
+    "face": 0,
+    "hdeg": 1,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 0,
+    "hdeg": 1,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 1,
+    "hdeg": 2,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 1,
+    "hdeg": 2,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 2,
+    "hdeg": 2,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 2,
+    "hdeg": 2,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 3,
+    "hdeg": 3,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 3,
+    "hdeg": 3,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 4,
+    "hdeg": 3,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 4,
+    "hdeg": 3,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 5,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 5,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 6,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 6,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 7,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 7,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   },
+   {
+    "face": 8,
+    "hdeg": 6,
+    "rabinowitsch": false,
+    "unit_ideal": false,
+    "dim": 0,
+    "gb_size": 33,
+    "known_point_ok": true,
+    "n_eqs": 57,
+    "n_vars": 32
+   },
+   {
+    "face": 8,
+    "hdeg": 6,
+    "rabinowitsch": true,
+    "unit_ideal": true,
+    "dim": -1,
+    "gb_size": 1,
+    "known_point_ok": null,
+    "n_eqs": 59,
+    "n_vars": 34
+   }
+  ]
+ }
+}

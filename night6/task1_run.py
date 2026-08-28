@@ -75,20 +75,24 @@ def main(p, out):
     flush("=" * 78)
     flush("PRIME p = %d" % p)
     flush("=" * 78)
-    fams, vdim, dim = face_families(p)
-    flush("face system: dim=%d vdim=%d ; F_p-rational face solutions: %d"
-          % (dim, vdim, len(fams)))
+    onlyrat = os.environ.get('T1_ONLY_RATIONAL', '0') == '1'
+    fams, vdim, dim = face_families(p, only_rational=onlyrat)
+    flush("face system: dim=%d vdim=%d ; face families handled: %d"
+          " (residue-field degrees %s, covering %d of the 35 face solutions)"
+          % (dim, vdim, len(fams), [f[5].degree() for f in fams],
+             sum(f[5].degree() for f in fams)))
     recs = []
     for fi, (K, q, t, basis, cols, h) in enumerate(fams):
         flush("")
         flush("#" * 74)
-        flush("FACE POINT %d   (h = %s)" % (fi, h.str().replace(' ', '')))
+        flush("FACE FAMILY %d   deg h = %d (covers %d of the 35)   h = %s"
+              % (fi, h.degree(), h.degree(), h.str().replace(' ', '')))
         flush("   q_1..q_8  = %s" % [K.show(q[i]) for i in E.QIDX])
         flush("   t_2..t_12 = %s" % [K.show(t[j]) for j in E.TIDX])
         # E4 check
         e4 = E.face_residual(q, t, K, p)
         flush("   E4 (3q't - 2qt' = -u^2) verified exactly: %s" % (not e4))
-        rec = dict(h=h.str(), q=[K.show(q[i]) for i in E.QIDX],
+        rec = dict(h=h.str(), hdeg=h.degree(), q=[K.show(q[i]) for i in E.QIDX],
                    t=[K.show(t[j]) for j in E.TIDX], E4=not e4, variants=[])
         for chart in ('A', 'B'):
             for rabin in (False, True):
@@ -149,8 +153,9 @@ if __name__ == '__main__':
     for p, recs in allr.items():
         for fi, r in enumerate(recs):
             for v in r['variants']:
-                flush("   p=%s face %d chart %s %-4s : unit ideal = %s"
-                      % (p, fi, v['chart'],
+                flush("   p=%s family %d (deg %d) chart %s %-4s :"
+                      " unit ideal = %s"
+                      % (p, fi, r['hdeg'], v['chart'],
                          'rab' if v['rabinowitsch'] else 'free',
                          v['unit_ideal']))
     flush("")
