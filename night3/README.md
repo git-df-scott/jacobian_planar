@@ -117,3 +117,98 @@ EMPTY verdicts recorded in the sweep are produced without the collision equation
 - NONEMPTY, had it occurred, would mean only that the Groebner basis is not the
   unit ideal, i.e. the ideal is proper over the algebraic closure of GF(p). It
   would not by itself assert a solution with coordinates in GF(p).
+
+---
+
+# Sweep 2 — Keller-admissible supports
+
+Implementation: `night3/collision2.py` (imports the sweep-1 system builder, solver
+wrapper and hashing from `night3/collision.py` unchanged). Results:
+`night3/collision_sweep2.csv`, `night3/supports2/support2_<hash>.json`.
+
+Same contract (K)+(C), same solver, same unit-ideal = EMPTY rule. Seed 20260830,
+per-solve timeout 600 s, both primes on every cell.
+
+## Support generator
+
+Supports are the exact supports of an actual sparse automorphism, built as a
+composition of monomial elementary maps `(x, y + c*x^a)` and `(x + c*y^b, y)` —
+2–4 of them, alternating type, random nonzero `c` mod 999983 — with one general
+det-1 affine factor inserted at a random position, exponents rejected unless the
+composition's max degree lands in [126, 220]. (0,0) is added to both supports. A
+pair is rejected if `|S_P| + |S_Q| > 140`. Each support record stores the
+generating word, its exponents, the degrees and the support sizes.
+
+Variants solved per support pair:
+- **V0** — the exact support;
+- **V1** — each support enlarged by 4 random extra lattice points inside its own
+  convex hull.
+
+Recorded structural observation: of the 15 accepted words, the affine factor sits
+last in 14 and second-of-three in 1. Support sizes realized: `|S_P|` 12–120,
+`|S_Q|` 4–24.
+
+## Witness control
+
+Per support and per variant, the generating automorphism's own coefficients are
+substituted into the (K) equation vector; every entry must be exactly zero mod p.
+This replaces sweep 1's (K)-alone check and certifies the support admits a Keller
+point.
+
+**Witness tally: 30 checks (15 pairs x 2 variants), 30 PASS, 0 FAIL.** No hard exit.
+
+## Rows and verdicts
+
+| item | value |
+|---|---|
+| support pairs | 15 |
+| rows | 66 (34 V0, 32 V1; both primes) |
+| **EMPTY** | **62** |
+| **NONEMPTY** | **0** |
+| **TIMEOUT** | **4** |
+| ERROR | 0 |
+
+No cell returned NONEMPTY, so the halt-and-report protocol was not triggered and no
+`night3/NONEMPTY_<hash>/` directory exists. TIMEOUT is recorded as a real outcome.
+
+Five slowest cells:
+
+| wall | hash | variant | prime | verdict |
+|---|---|---|---|---|
+| 600.1 s | 4470c68c7758 | V1 | 999983 | TIMEOUT |
+| 600.1 s | 4470c68c7758 | V1 | 1000003 | TIMEOUT |
+| 600.1 s | 97455928a391 | V0 | 999983 | TIMEOUT |
+| 600.1 s | 97455928a391 | V0 | 1000003 | TIMEOUT |
+| 66.8 s | 4470c68c7758 | V0 | 999983 | EMPTY |
+
+## Framing recorded for sweep 2
+
+On these supports the Keller variety is nonempty — the witness control certifies a
+Keller point on every one — but automorphisms never satisfy (C), since they are
+injective. Any NONEMPTY here would therefore be exactly a Keller point outside the
+generating family, which is why the halt-and-report protocol matters more in this
+sweep than in sweep 1. No NONEMPTY occurred.
+
+## Closure note
+
+Sweep 2 was closed at 66 rows on coordinator instruction; no further sweep-2 cells
+were run. The coordinator's closure note, recorded verbatim:
+
+> Sweep 2 closed at 66 rows (62 EMPTY, 4 TIMEOUT, 0 NONEMPTY). Post-hoc review:
+> many sweep-2 support pairs have equal or divisible degree pairs (e.g. 126/126,
+> 144/72), where invertibility of Keller pairs is already a known theorem; those
+> EMPTY verdicts were therefore expected independent of the collision system.
+> Future sweeps must filter degree pairs by the published necessary conditions
+> before solving.
+
+Executor check of the numbers in that note against `night3/collision_sweep2.csv`:
+66 rows, 62 EMPTY, 4 TIMEOUT, 0 NONEMPTY — matches. Degree pairs of the 15 support
+pairs: 13 equal (126/126, 130/130, 133/133, 143/143, 150/150, 171/171, 176/176,
+180/180, 187/187, 190/190, 208/208, 209/209, 209/209) and 2 divisible non-equal
+(133/19, 144/72) — so all 15 fall in the equal-or-divisible class, and both
+examples cited in the note appear in the data. The theorem claim and the
+forward-looking instruction in the note are the coordinator's; they are recorded
+here as received and are not an executor finding.
+
+A reformulated sweep 3 (unnormalized collision points with saturation) is to follow
+separately and was not designed or started here.
