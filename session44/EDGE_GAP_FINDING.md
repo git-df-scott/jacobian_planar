@@ -321,6 +321,34 @@ R = c0 + c3 u^3 + c4 u^4 and c4 != 0.  The gapped-quartic picture, the
 27 c3^4) should all be withdrawn.  What survives is stronger and different:
 the face collapses to a single point, and subcase 2 is empty.
 
+## Reconciliation with session44/RETRACTION.md (independent, same session)
+
+A second line of work reached RETRACTION.md's verdict by a different route:
+on the RAW bracket system (all coefficients of both polygons free, NO vertex
+non-vanishing imposed), with a_2_1 = a_4_2 = 0, saturating by a_10_5 gives
+NONEMPTY of dimension 22 in both GF(65521) and characteristic 0 -- "a_5 is
+FREE".  That is the SAME regime as the deg q = 1 branch here, and the two
+results AGREE: my exact quartic-field witness above is an explicit point of
+that 22-dimensional set, which corroborates their computation constructively
+rather than contradicting it.  The two lines also agree independently on WHY
+the face analysis failed -- both face forms are polynomials in u = x y^2, so
+their bracket vanishes identically and the commuting condition is vacuous.
+
+The one thing to keep straight, because the two documents can otherwise look
+contradictory:
+
+    RAW ideal (supports only)            a_10_5 is FREE          -- both lines
+    + vertex (8,14), i.e. a_14_8 != 0    a_10_5 = 0 is FORCED    -- this line
+      (which is what subcase 2 requires) and so is the whole face,
+                                         so subcase 2 is EMPTY
+
+Neither statement refutes the other; the vertex condition is what separates
+them, and it is exactly the "the sweep never asks that the required vertex
+coefficients are NONZERO" gap that trackD_extract.py's own docstring flags.
+So RETRACTION.md is right that the PREDICTION as stated (a forced zero from
+the gapped-R^2 face) is dead, and the face analysis stays retracted; what
+replaces it is the stronger vertex-conditioned statement above.
+
 ## Status / caveats
 
   * The elimination and the 45 obstructions are EXACT over Q.
