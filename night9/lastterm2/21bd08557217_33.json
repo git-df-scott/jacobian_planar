@@ -1,0 +1,424 @@
+{
+ "label": "CANDIDATE-UNVERIFIED",
+ "hash": "21bd08557217",
+ "lift_index_in_altitude_json": 33,
+ "max_total_degree": 145,
+ "ring": "Z (exact integer arithmetic)",
+ "support_P": [
+  [
+   0,
+   14
+  ],
+  [
+   0,
+   26
+  ],
+  [
+   0,
+   115
+  ],
+  [
+   0,
+   132
+  ],
+  [
+   0,
+   139
+  ],
+  [
+   0,
+   145
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   111,
+   14
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   131
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   6,
+   19
+  ],
+  [
+   72,
+   53
+  ],
+  [
+   79,
+   29
+  ],
+  [
+   105,
+   3
+  ]
+ ],
+ "lift_mod_6": {
+  "a": [
+   -1,
+   1,
+   0,
+   0,
+   0,
+   -1,
+   -1,
+   0
+  ],
+  "b": [
+   -1,
+   0,
+   -1,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "residual_n_terms": 3,
+ "residual_rows_at_lift": {
+  "(5, 13)": -84,
+  "(5, 25)": 156,
+  "(5, 144)": -870
+ },
+ "feeding_set": [
+  [
+   "a",
+   0
+  ],
+  [
+   "a",
+   1
+  ],
+  [
+   "a",
+   5
+  ],
+  [
+   "b",
+   2
+  ]
+ ],
+ "influence_at_lift": {
+  "a_0": 84,
+  "a_1": 156,
+  "a_5": 870,
+  "b_2": 1110
+ },
+ "most_influential_used_for_the_wide_box": [
+  [
+   "a",
+   0
+  ],
+  [
+   "a",
+   1
+  ],
+  [
+   "a",
+   5
+  ],
+  [
+   "b",
+   2
+  ]
+ ],
+ "boxes": [
+  {
+   "box_tag": "full-feeding-set/[-4..4]",
+   "variables": [
+    [
+     "a",
+     0
+    ],
+    [
+     "a",
+     1
+    ],
+    [
+     "a",
+     5
+    ],
+    [
+     "b",
+     2
+    ]
+   ],
+   "box": "[-4..4]",
+   "points": 6561,
+   "status": "COMPLETE",
+   "assignments_with_residual_identically_zero_over_Z": 737,
+   "of_those_with_collisions_intact": 0,
+   "HALT_EVENTS": [],
+   "n_halt_events": 0,
+   "min_all": {
+    "min_nonzero_residual_rows": 0,
+    "content_gcd_at_minimum": 0,
+    "attaining_assignment": {
+     "a": [
+      -4,
+      -4,
+      0,
+      0,
+      0,
+      -4,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-4*y^14-4*y^26-4*y^145-1*x^1",
+    "Q": "-1*y^1",
+    "collision_P_diff_over_Z": -11,
+    "collision_Q_diff_over_Z": -1,
+    "collisions_hold_over_Z": false,
+    "residual_rows_there": {},
+    "degenerate_by_additive_screen": true
+   },
+   "min_collisions_ok": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 84,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^14-1*x^1",
+    "Q": "-1*y^1-1*x^6",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(5, 13)": -84
+    },
+    "degenerate_by_additive_screen": false
+   }
+  },
+  {
+   "box_tag": "top4-influential/[-9..9]",
+   "variables": [
+    [
+     "a",
+     0
+    ],
+    [
+     "a",
+     1
+    ],
+    [
+     "a",
+     5
+    ],
+    [
+     "b",
+     2
+    ]
+   ],
+   "box": "[-9..9]",
+   "points": 130321,
+   "status": "COMPLETE",
+   "assignments_with_residual_identically_zero_over_Z": 6877,
+   "of_those_with_collisions_intact": 0,
+   "HALT_EVENTS": [],
+   "n_halt_events": 0,
+   "min_all": {
+    "min_nonzero_residual_rows": 0,
+    "content_gcd_at_minimum": 0,
+    "attaining_assignment": {
+     "a": [
+      -9,
+      -9,
+      0,
+      0,
+      0,
+      -9,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-9*y^14-9*y^26-9*y^145-1*x^1",
+    "Q": "-1*y^1",
+    "collision_P_diff_over_Z": -26,
+    "collision_Q_diff_over_Z": -1,
+    "collisions_hold_over_Z": false,
+    "residual_rows_there": {},
+    "degenerate_by_additive_screen": true
+   },
+   "min_collisions_ok": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 84,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^14-1*x^1",
+    "Q": "-1*y^1-1*x^6",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(5, 13)": -84
+    },
+    "degenerate_by_additive_screen": false
+   }
+  },
+  {
+   "box_tag": "full-feeding-set/[-9..9]",
+   "variables": [
+    [
+     "a",
+     0
+    ],
+    [
+     "a",
+     1
+    ],
+    [
+     "a",
+     5
+    ],
+    [
+     "b",
+     2
+    ]
+   ],
+   "box": "[-9..9]",
+   "points": 130321,
+   "status": "COMPLETE",
+   "assignments_with_residual_identically_zero_over_Z": 6877,
+   "of_those_with_collisions_intact": 0,
+   "HALT_EVENTS": [],
+   "n_halt_events": 0,
+   "min_all": {
+    "min_nonzero_residual_rows": 0,
+    "content_gcd_at_minimum": 0,
+    "attaining_assignment": {
+     "a": [
+      -9,
+      -9,
+      0,
+      0,
+      0,
+      -9,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-9*y^14-9*y^26-9*y^145-1*x^1",
+    "Q": "-1*y^1",
+    "collision_P_diff_over_Z": -26,
+    "collision_Q_diff_over_Z": -1,
+    "collisions_hold_over_Z": false,
+    "residual_rows_there": {},
+    "degenerate_by_additive_screen": true
+   },
+   "min_collisions_ok": {
+    "min_nonzero_residual_rows": 1,
+    "content_gcd_at_minimum": 84,
+    "attaining_assignment": {
+     "a": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      0
+     ],
+     "b": [
+      -1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "P": "-1*y^14-1*x^1",
+    "Q": "-1*y^1-1*x^6",
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true,
+    "residual_rows_there": {
+     "(5, 13)": -84
+    },
+    "degenerate_by_additive_screen": false
+   }
+  }
+ ]
+}
