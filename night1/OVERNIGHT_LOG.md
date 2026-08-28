@@ -103,3 +103,27 @@ All three specs completed. controls: PASS. Total rows: 1158 (320 + 486 + 352).
 
 Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
 
+
+## n5_widecaps
+
+- csv: night1/results/n5_widecaps.csv
+- rows written: 528
+- wall-clock: 205 s
+
+10 deepest cells with calibrated=0:
+
+| F | g | d | p | depth | status | indep_check |
+|---|---|---|---|---|---|---|
+| Fa | u^1v^2 | 42 | 999983 | 22 | obstructed@23:degree-overflow |  |
+| Fa | u^1v^2 | 42 | 1000003 | 22 | obstructed@23:degree-overflow |  |
+| Fa | u^1v^2 | 36 | 999983 | 19 | obstructed@20:degree-overflow |  |
+| Fa | u^1v^2 | 36 | 1000003 | 19 | obstructed@20:degree-overflow |  |
+| Fc | u^1v^2 | 42 | 999983 | 15 | obstructed@16:degree-overflow |  |
+| Fc | u^1v^2 | 42 | 1000003 | 15 | obstructed@16:degree-overflow |  |
+| Fb | u^2v^1 | 42 | 999983 | 13 | obstructed@14:degree-overflow |  |
+| Fb | u^2v^1 | 42 | 1000003 | 13 | obstructed@14:degree-overflow |  |
+| Fc | u^1v^2 | 36 | 999983 | 13 | obstructed@14:degree-overflow |  |
+| Fc | u^1v^2 | 36 | 1000003 | 13 | obstructed@14:degree-overflow |  |
+
+Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
+
