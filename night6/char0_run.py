@@ -26,7 +26,8 @@ import char0_integrate as CI
 import char0_controls as CC
 
 SCRATCH = os.environ.get('N6SCRATCH', '/tmp')
-FACEOUT = os.path.join(SCRATCH, 'char0_face.out')
+FACEOUT = os.environ.get('N6FACEOUT') or os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), 'CHAR0_FACE_modstd.log')
 
 
 def flush(*a):

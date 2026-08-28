@@ -1,0 +1,14 @@
+p = 999983 : face system dim 0 vdim 35, 8 families covering 35 of the 35 face solutions
+   (p_,s_)=(0,0)    : inconsistent = False rank = 30, certificate verified = n/a    [8 of 8 families]
+   chart A be=0     : inconsistent = True  rank = 32, certificate verified = True   [8 of 8 families]
+   chart A be=1     : inconsistent = True  rank = 32, certificate verified = True   [8 of 8 families]
+   chart A be=2     : inconsistent = True  rank = 32, certificate verified = True   [8 of 8 families]
+   chart A be=3     : inconsistent = True  rank = 32, certificate verified = True   [8 of 8 families]
+   chart B          : inconsistent = True  rank = 32, certificate verified = True   [8 of 8 families]
+p = 1000003 : face system dim 0 vdim 35, 9 families covering 35 of the 35 face solutions
+   (p_,s_)=(0,0)    : inconsistent = False rank = 30, certificate verified = n/a    [9 of 9 families]
+   chart A be=0     : inconsistent = True  rank = 32, certificate verified = True   [9 of 9 families]
+   chart A be=1     : inconsistent = True  rank = 32, certificate verified = True   [9 of 9 families]
+   chart A be=2     : inconsistent = True  rank = 32, certificate verified = True   [9 of 9 families]
+   chart A be=3     : inconsistent = True  rank = 32, certificate verified = True   [9 of 9 families]
+   chart B          : inconsistent = True  rank = 32, certificate verified = True   [9 of 9 families]
