@@ -1,0 +1,48 @@
+{
+ "hash": "7d595c3bd034",
+ "family": "V0_C_struct_x",
+ "profile": "(6,-)",
+ "deg_P": 6,
+ "n_supp_P": 3,
+ "P": {
+  "0,1": 2,
+  "0,6": 1,
+  "1,0": 1
+ },
+ "SY_verdict": "COORDINATE",
+ "SY_nodes": 3,
+ "SY_leaves": 0,
+ "stages": [
+  {
+   "n_unknowns": 5,
+   "n_rows_nonzero": 5,
+   "rank_A_p": 5,
+   "rank_Ae_p": 5,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "MATE_over_Q",
+   "certificate": "exact_solution",
+   "exact_status": "verified_bracket_eq_1",
+   "deg_Q": 1,
+   "stage": "Y",
+   "deg_Q_bound": 5,
+   "n_raw": 6,
+   "thin_t": 1,
+   "n_used": 5,
+   "deflated_kernel_dim": 1,
+   "secs": 0.0
+  }
+ ],
+ "outcome": "MATE",
+ "deg_Q": 1,
+ "div_ordered": "True",
+ "Q": {
+  "0,1": [
+   1,
+   1
+  ]
+ },
+ "bracket_is_one": true,
+ "hit": false,
+ "secs": 0.0
+}

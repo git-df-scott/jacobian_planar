@@ -1,0 +1,1798 @@
+[
+ {
+  "hash": "28072e1d99e9",
+  "family": "HDC",
+  "profile": "(143,13)",
+  "deg_P": 143,
+  "n_supp_P": 13,
+  "P": {
+   "0,11": 1,
+   "1,0": 1,
+   "13,10": 11,
+   "26,9": 55,
+   "39,8": 165,
+   "52,7": 330,
+   "65,6": 462,
+   "78,5": 462,
+   "91,4": 330,
+   "104,3": 165,
+   "117,2": 55,
+   "130,1": 11,
+   "143,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 13,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 857,
+    "n_rows_nonzero": 2982,
+    "rank_A_p": 857,
+    "rank_Ae_p": 857,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 13,
+    "stage": "Y",
+    "deg_Q_bound": 142,
+    "n_raw": 858,
+    "thin_t": 1,
+    "n_used": 857,
+    "deflated_kernel_dim": 1,
+    "secs": 29.1
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 13,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "13,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 29.1
+ },
+ {
+  "hash": "a10ee6c835f4",
+  "family": "HDC",
+  "profile": "(132,12)",
+  "deg_P": 132,
+  "n_supp_P": 13,
+  "P": {
+   "0,11": 1,
+   "1,0": 1,
+   "12,10": 11,
+   "24,9": 55,
+   "36,8": 165,
+   "48,7": 330,
+   "60,6": 462,
+   "72,5": 462,
+   "84,4": 330,
+   "96,3": 165,
+   "108,2": 55,
+   "120,1": 11,
+   "132,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 13,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 791,
+    "n_rows_nonzero": 2751,
+    "rank_A_p": 791,
+    "rank_Ae_p": 791,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 12,
+    "stage": "Y",
+    "deg_Q_bound": 131,
+    "n_raw": 792,
+    "thin_t": 1,
+    "n_used": 791,
+    "deflated_kernel_dim": 1,
+    "secs": 26.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 12,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "12,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 26.0
+ },
+ {
+  "hash": "1410212dbd72",
+  "family": "HDC",
+  "profile": "(132,1)",
+  "deg_P": 132,
+  "n_supp_P": 2,
+  "P": {
+   "0,132": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 131,
+    "n_rows_nonzero": 131,
+    "rank_A_p": 131,
+    "rank_Ae_p": 131,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 131,
+    "n_raw": 132,
+    "thin_t": 1,
+    "n_used": 131,
+    "deflated_kernel_dim": 1,
+    "secs": 0.5
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.5
+ },
+ {
+  "hash": "e97f275c150c",
+  "family": "HDC",
+  "profile": "(130,1)",
+  "deg_P": 130,
+  "n_supp_P": 2,
+  "P": {
+   "0,130": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 129,
+    "n_rows_nonzero": 129,
+    "rank_A_p": 129,
+    "rank_Ae_p": 129,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 129,
+    "n_raw": 130,
+    "thin_t": 1,
+    "n_used": 129,
+    "deflated_kernel_dim": 1,
+    "secs": 0.5
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.5
+ },
+ {
+  "hash": "b7d738c97e6d",
+  "family": "HDC",
+  "profile": "(128,1)",
+  "deg_P": 128,
+  "n_supp_P": 2,
+  "P": {
+   "0,128": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 127,
+    "n_rows_nonzero": 127,
+    "rank_A_p": 127,
+    "rank_Ae_p": 127,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 127,
+    "n_raw": 128,
+    "thin_t": 1,
+    "n_used": 127,
+    "deflated_kernel_dim": 1,
+    "secs": 0.2
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.2
+ },
+ {
+  "hash": "f8b3d1bf96f8",
+  "family": "HDC",
+  "profile": "(126,1)",
+  "deg_P": 126,
+  "n_supp_P": 2,
+  "P": {
+   "0,126": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 125,
+    "n_rows_nonzero": 125,
+    "rank_A_p": 125,
+    "rank_Ae_p": 125,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 125,
+    "n_raw": 126,
+    "thin_t": 1,
+    "n_used": 125,
+    "deflated_kernel_dim": 1,
+    "secs": 0.1
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.1
+ },
+ {
+  "hash": "3e52e6ee53ad",
+  "family": "HDC",
+  "profile": "(121,11)",
+  "deg_P": 121,
+  "n_supp_P": 13,
+  "P": {
+   "0,11": 1,
+   "1,0": 1,
+   "11,10": 11,
+   "22,9": 55,
+   "33,8": 165,
+   "44,7": 330,
+   "55,6": 462,
+   "66,5": 462,
+   "77,4": 330,
+   "88,3": 165,
+   "99,2": 55,
+   "110,1": 11,
+   "121,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 13,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 725,
+    "n_rows_nonzero": 2520,
+    "rank_A_p": 725,
+    "rank_Ae_p": 725,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 11,
+    "stage": "Y",
+    "deg_Q_bound": 120,
+    "n_raw": 726,
+    "thin_t": 1,
+    "n_used": 725,
+    "deflated_kernel_dim": 1,
+    "secs": 22.2
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 11,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "11,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 22.2
+ },
+ {
+  "hash": "c11e0c48a5fc",
+  "family": "HDC",
+  "profile": "(110,10)",
+  "deg_P": 110,
+  "n_supp_P": 13,
+  "P": {
+   "0,11": 1,
+   "1,0": 1,
+   "10,10": 11,
+   "20,9": 55,
+   "30,8": 165,
+   "40,7": 330,
+   "50,6": 462,
+   "60,5": 462,
+   "70,4": 330,
+   "80,3": 165,
+   "90,2": 55,
+   "100,1": 11,
+   "110,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 13,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 659,
+    "n_rows_nonzero": 2289,
+    "rank_A_p": 659,
+    "rank_Ae_p": 659,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 10,
+    "stage": "Y",
+    "deg_Q_bound": 109,
+    "n_raw": 660,
+    "thin_t": 1,
+    "n_used": 659,
+    "deflated_kernel_dim": 1,
+    "secs": 20.2
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 10,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "10,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 20.2
+ },
+ {
+  "hash": "393be222c29c",
+  "family": "V0_C_struct_x",
+  "profile": "(108,-)",
+  "deg_P": 108,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "9,72": -1,
+   "12,96": 2
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 53,
+    "n_rows_nonzero": 115,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 107,
+    "n_raw": 54,
+    "thin_t": 1,
+    "n_used": 53,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 123,
+    "n_rows_nonzero": 238,
+    "rank_A_p": 123,
+    "rank_Ae_p": 124,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 162,
+    "n_raw": 125,
+    "thin_t": 1,
+    "n_used": 123,
+    "deflated_kernel_dim": 2,
+    "secs": 0.2
+   },
+   {
+    "n_unknowns": 214,
+    "n_rows_nonzero": 373,
+    "rank_A_p": 214,
+    "rank_Ae_p": 215,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 215,
+    "n_raw": 216,
+    "thin_t": 1,
+    "n_used": 214,
+    "deflated_kernel_dim": 2,
+    "secs": 0.6
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.8
+ },
+ {
+  "hash": "682706856007",
+  "family": "V0_C_struct_x",
+  "profile": "(108,-)",
+  "deg_P": 108,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "53,1": 2,
+   "106,2": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 53,
+    "n_rows_nonzero": 157,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 107,
+    "n_raw": 54,
+    "thin_t": 1,
+    "n_used": 53,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 110,
+    "n_rows_nonzero": 217,
+    "rank_A_p": 110,
+    "rank_Ae_p": 111,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 162,
+    "n_raw": 112,
+    "thin_t": 1,
+    "n_used": 110,
+    "deflated_kernel_dim": 2,
+    "secs": 0.2
+   },
+   {
+    "n_unknowns": 214,
+    "n_rows_nonzero": 425,
+    "rank_A_p": 214,
+    "rank_Ae_p": 215,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 3,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 215,
+    "n_raw": 216,
+    "thin_t": 1,
+    "n_used": 214,
+    "deflated_kernel_dim": 2,
+    "secs": 0.8
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 1.0
+ },
+ {
+  "hash": "14efba30d718",
+  "family": "V0_C_struct_x",
+  "profile": "(108,-)",
+  "deg_P": 108,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "4,50": 3,
+   "8,100": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 53,
+    "n_rows_nonzero": 143,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 107,
+    "n_raw": 54,
+    "thin_t": 1,
+    "n_used": 53,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 121,
+    "n_rows_nonzero": 273,
+    "rank_A_p": 121,
+    "rank_Ae_p": 122,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 162,
+    "n_raw": 123,
+    "thin_t": 1,
+    "n_used": 121,
+    "deflated_kernel_dim": 2,
+    "secs": 0.2
+   },
+   {
+    "n_unknowns": 214,
+    "n_rows_nonzero": 418,
+    "rank_A_p": 214,
+    "rank_Ae_p": 215,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 215,
+    "n_raw": 216,
+    "thin_t": 1,
+    "n_used": 214,
+    "deflated_kernel_dim": 2,
+    "secs": 0.6
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.8
+ },
+ {
+  "hash": "0c061d633814",
+  "family": "V0_C_struct_x",
+  "profile": "(96,-)",
+  "deg_P": 96,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "12,12": 1,
+   "48,48": 1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 47,
+    "n_rows_nonzero": 47,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 95,
+    "n_raw": 48,
+    "thin_t": 1,
+    "n_used": 47,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 121,
+    "n_rows_nonzero": 171,
+    "rank_A_p": 121,
+    "rank_Ae_p": 122,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 144,
+    "n_raw": 123,
+    "thin_t": 1,
+    "n_used": 121,
+    "deflated_kernel_dim": 2,
+    "secs": 0.1
+   },
+   {
+    "n_unknowns": 190,
+    "n_rows_nonzero": 274,
+    "rank_A_p": 190,
+    "rank_Ae_p": 191,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 191,
+    "n_raw": 192,
+    "thin_t": 1,
+    "n_used": 190,
+    "deflated_kernel_dim": 2,
+    "secs": 0.4
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.6
+ },
+ {
+  "hash": "963c989df902",
+  "family": "V0_C_struct_x",
+  "profile": "(96,-)",
+  "deg_P": 96,
+  "n_supp_P": 4,
+  "P": {
+   "1,0": 1,
+   "15,9": 1,
+   "45,27": 3,
+   "60,36": 1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 45,
+    "n_rows_nonzero": 116,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 95,
+    "n_raw": 46,
+    "thin_t": 1,
+    "n_used": 45,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 113,
+    "n_rows_nonzero": 239,
+    "rank_A_p": 113,
+    "rank_Ae_p": 114,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 144,
+    "n_raw": 115,
+    "thin_t": 1,
+    "n_used": 113,
+    "deflated_kernel_dim": 2,
+    "secs": 0.2
+   },
+   {
+    "n_unknowns": 186,
+    "n_rows_nonzero": 352,
+    "rank_A_p": 186,
+    "rank_Ae_p": 187,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 3,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 191,
+    "n_raw": 188,
+    "thin_t": 1,
+    "n_used": 186,
+    "deflated_kernel_dim": 2,
+    "secs": 0.7
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 1.0
+ },
+ {
+  "hash": "2d0d42277f10",
+  "family": "V0_C_struct_x",
+  "profile": "(84,-)",
+  "deg_P": 84,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "8,34": -1,
+   "16,68": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 41,
+    "n_rows_nonzero": 108,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 83,
+    "n_raw": 42,
+    "thin_t": 1,
+    "n_used": 41,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 96,
+    "n_rows_nonzero": 210,
+    "rank_A_p": 96,
+    "rank_Ae_p": 97,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 126,
+    "n_raw": 98,
+    "thin_t": 1,
+    "n_used": 96,
+    "deflated_kernel_dim": 2,
+    "secs": 0.1
+   },
+   {
+    "n_unknowns": 166,
+    "n_rows_nonzero": 320,
+    "rank_A_p": 166,
+    "rank_Ae_p": 167,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 167,
+    "n_raw": 168,
+    "thin_t": 1,
+    "n_used": 166,
+    "deflated_kernel_dim": 2,
+    "secs": 0.4
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.6
+ },
+ {
+  "hash": "ad4d9b110acd",
+  "family": "V0_C_struct_x",
+  "profile": "(9,-)",
+  "deg_P": 9,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 1,
+   "6,0": -1,
+   "8,1": 1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 5,
+    "n_rows_nonzero": 5,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 8,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 5,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 18,
+    "n_rows_nonzero": 26,
+    "rank_A_p": 18,
+    "rank_Ae_p": 19,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 13,
+    "n_raw": 20,
+    "thin_t": 1,
+    "n_used": 18,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 24,
+    "n_rows_nonzero": 32,
+    "rank_A_p": 24,
+    "rank_Ae_p": 25,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 17,
+    "n_raw": 26,
+    "thin_t": 1,
+    "n_used": 24,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "5bf4f9822cd4",
+  "family": "V0_F_coord",
+  "profile": "(9,-)",
+  "deg_P": 9,
+  "n_supp_P": 5,
+  "P": {
+   "0,3": 1,
+   "1,0": 1,
+   "3,2": 3,
+   "6,1": 3,
+   "9,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 5,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 17,
+    "n_rows_nonzero": 40,
+    "rank_A_p": 17,
+    "rank_Ae_p": 17,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 3,
+    "stage": "Y",
+    "deg_Q_bound": 8,
+    "n_raw": 18,
+    "thin_t": 1,
+    "n_used": 17,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 3,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "3,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "693586fd5f7e",
+  "family": "V0_F_coord",
+  "profile": "(9,-)",
+  "deg_P": 9,
+  "n_supp_P": 5,
+  "P": {
+   "0,1": 1,
+   "0,9": 1,
+   "1,6": 3,
+   "2,3": 3,
+   "3,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 5,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 17,
+    "n_rows_nonzero": 40,
+    "rank_A_p": 17,
+    "rank_Ae_p": 17,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 3,
+    "stage": "Y",
+    "deg_Q_bound": 8,
+    "n_raw": 18,
+    "thin_t": 1,
+    "n_used": 17,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 3,
+  "div_ordered": "True",
+  "Q": {
+   "0,3": [
+    -1,
+    1
+   ],
+   "1,0": [
+    -1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "d9103ff114e1",
+  "family": "V0_F_coord",
+  "profile": "(9,-)",
+  "deg_P": 9,
+  "n_supp_P": 2,
+  "P": {
+   "0,9": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 8,
+    "n_rows_nonzero": 8,
+    "rank_A_p": 8,
+    "rank_Ae_p": 8,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 8,
+    "n_raw": 9,
+    "thin_t": 1,
+    "n_used": 8,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "7d595c3bd034",
+  "family": "V0_C_struct_x",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 3,
+  "P": {
+   "0,1": 2,
+   "0,6": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 3,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 5,
+    "n_rows_nonzero": 5,
+    "rank_A_p": 5,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 5,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "8ba8b61b4912",
+  "family": "V0_C_struct_x",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 3,
+  "P": {
+   "1,0": 3,
+   "2,0": 2,
+   "5,1": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "n_unknowns": 1,
+    "n_rows_nonzero": 1,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 2,
+    "thin_t": 1,
+    "n_used": 1,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 9,
+    "n_rows_nonzero": 14,
+    "rank_A_p": 9,
+    "rank_Ae_p": 10,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 9,
+    "n_raw": 11,
+    "thin_t": 1,
+    "n_used": 9,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 9,
+    "n_rows_nonzero": 14,
+    "rank_A_p": 9,
+    "rank_Ae_p": 10,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 11,
+    "n_raw": 11,
+    "thin_t": 1,
+    "n_used": 9,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "84d01285324b",
+  "family": "V0_F_coord",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 5,
+  "P": {
+   "0,3": 1,
+   "1,0": 1,
+   "2,2": 3,
+   "4,1": 3,
+   "6,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 5,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 11,
+    "n_rows_nonzero": 25,
+    "rank_A_p": 11,
+    "rank_Ae_p": 11,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 2,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 12,
+    "thin_t": 1,
+    "n_used": 11,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 2,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "2,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "2253023eddc1",
+  "family": "V0_F_coord",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 5,
+  "P": {
+   "0,1": 1,
+   "0,6": 1,
+   "1,4": 3,
+   "2,2": 3,
+   "3,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 5,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 11,
+    "n_rows_nonzero": 25,
+    "rank_A_p": 11,
+    "rank_Ae_p": 11,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 2,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 12,
+    "thin_t": 1,
+    "n_used": 11,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 2,
+  "div_ordered": "True",
+  "Q": {
+   "0,2": [
+    -1,
+    1
+   ],
+   "1,0": [
+    -1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "6df7f7c0a35c",
+  "family": "V0_F_coord",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 4,
+  "P": {
+   "0,2": 1,
+   "1,0": 1,
+   "3,1": 2,
+   "6,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 4,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 8,
+    "n_rows_nonzero": 15,
+    "rank_A_p": 8,
+    "rank_Ae_p": 8,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 3,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 9,
+    "thin_t": 1,
+    "n_used": 8,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 3,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "3,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "241c5be4e3a9",
+  "family": "V0_F_coord",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 4,
+  "P": {
+   "0,1": 1,
+   "0,6": 1,
+   "1,3": 2,
+   "2,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 4,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 8,
+    "n_rows_nonzero": 15,
+    "rank_A_p": 8,
+    "rank_Ae_p": 8,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 3,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 9,
+    "thin_t": 1,
+    "n_used": 8,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 3,
+  "div_ordered": "True",
+  "Q": {
+   "0,3": [
+    -1,
+    1
+   ],
+   "1,0": [
+    -1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "40c3553b8128",
+  "family": "V0_F_coord",
+  "profile": "(6,-)",
+  "deg_P": 6,
+  "n_supp_P": 2,
+  "P": {
+   "0,6": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 5,
+    "n_rows_nonzero": 5,
+    "rank_A_p": 5,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 5,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 5,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "bfd27e14c46e",
+  "family": "V0_A_rand_sparse_lin",
+  "profile": "(4,-)",
+  "deg_P": 4,
+  "n_supp_P": 4,
+  "P": {
+   "1,0": 1,
+   "3,0": 2,
+   "3,1": -1,
+   "4,0": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 3,
+  "SY_leaves": 2,
+  "stages": [
+   {
+    "n_unknowns": 3,
+    "n_rows_nonzero": 3,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 1,
+    "lambda_detail": "constant row of A is identically zero",
+    "rank_A_p": null,
+    "rank_Ae_p": null,
+    "stage": "Y",
+    "deg_Q_bound": 3,
+    "n_raw": 4,
+    "thin_t": 1,
+    "n_used": 3,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 11,
+    "n_rows_nonzero": 14,
+    "rank_A_p": 11,
+    "rank_Ae_p": 12,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 6,
+    "n_raw": 13,
+    "thin_t": 1,
+    "n_used": 11,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 13,
+    "n_rows_nonzero": 16,
+    "rank_A_p": 13,
+    "rank_Ae_p": 14,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 7,
+    "n_raw": 15,
+    "thin_t": 1,
+    "n_used": 13,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "1deacb524623",
+  "family": "V0_C_struct_x",
+  "profile": "(4,-)",
+  "deg_P": 4,
+  "n_supp_P": 2,
+  "P": {
+   "1,0": 5,
+   "3,1": -1
+  },
+  "SY_verdict": "NON_COORDINATE",
+  "SY_nodes": 1,
+  "SY_leaves": 1,
+  "stages": [
+   {
+    "stage": "Y",
+    "deg_Q_bound": 3,
+    "n_raw": 1,
+    "thin_t": 1,
+    "n_used": 0,
+    "deflated_kernel_dim": 1,
+    "verdict": "EMPTY_trivial_carrier"
+   },
+   {
+    "n_unknowns": 4,
+    "n_rows_nonzero": 7,
+    "rank_A_p": 4,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "C",
+    "deg_Q_bound": 6,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 4,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   },
+   {
+    "n_unknowns": 4,
+    "n_rows_nonzero": 7,
+    "rank_A_p": 4,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+    "stage": "W",
+    "deg_Q_bound": 7,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 4,
+    "deflated_kernel_dim": 2,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "EMPTY_all_stages_tried",
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "a4012387e160",
+  "family": "V0_F_coord",
+  "profile": "(4,-)",
+  "deg_P": 4,
+  "n_supp_P": 4,
+  "P": {
+   "0,2": 1,
+   "1,0": 1,
+   "2,1": 2,
+   "4,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 4,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 5,
+    "n_rows_nonzero": 9,
+    "rank_A_p": 5,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 2,
+    "stage": "Y",
+    "deg_Q_bound": 3,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 5,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 2,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ],
+   "2,0": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "fbf00970ade6",
+  "family": "V0_F_coord",
+  "profile": "(4,-)",
+  "deg_P": 4,
+  "n_supp_P": 4,
+  "P": {
+   "0,1": 1,
+   "0,4": 1,
+   "1,2": 2,
+   "2,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 4,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 5,
+    "n_rows_nonzero": 9,
+    "rank_A_p": 5,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 2,
+    "stage": "Y",
+    "deg_Q_bound": 3,
+    "n_raw": 6,
+    "thin_t": 1,
+    "n_used": 5,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 2,
+  "div_ordered": "True",
+  "Q": {
+   "0,2": [
+    -1,
+    1
+   ],
+   "1,0": [
+    -1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ },
+ {
+  "hash": "eb6976b38508",
+  "family": "V0_F_coord",
+  "profile": "(4,-)",
+  "deg_P": 4,
+  "n_supp_P": 2,
+  "P": {
+   "0,4": 1,
+   "1,0": 1
+  },
+  "SY_verdict": "COORDINATE",
+  "SY_nodes": 2,
+  "SY_leaves": 0,
+  "stages": [
+   {
+    "n_unknowns": 3,
+    "n_rows_nonzero": 3,
+    "rank_A_p": 3,
+    "rank_Ae_p": 3,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "MATE_over_Q",
+    "certificate": "exact_solution",
+    "exact_status": "verified_bracket_eq_1",
+    "deg_Q": 1,
+    "stage": "Y",
+    "deg_Q_bound": 3,
+    "n_raw": 4,
+    "thin_t": 1,
+    "n_used": 3,
+    "deflated_kernel_dim": 1,
+    "secs": 0.0
+   }
+  ],
+  "outcome": "MATE",
+  "deg_Q": 1,
+  "div_ordered": "True",
+  "Q": {
+   "0,1": [
+    1,
+    1
+   ]
+  },
+  "bracket_is_one": true,
+  "hit": false,
+  "secs": 0.0
+ }
+]

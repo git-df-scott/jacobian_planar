@@ -1,0 +1,54 @@
+{
+ "hash": "693586fd5f7e",
+ "family": "V0_F_coord",
+ "profile": "(9,-)",
+ "deg_P": 9,
+ "n_supp_P": 5,
+ "P": {
+  "0,1": 1,
+  "0,9": 1,
+  "1,6": 3,
+  "2,3": 3,
+  "3,0": 1
+ },
+ "SY_verdict": "COORDINATE",
+ "SY_nodes": 5,
+ "SY_leaves": 0,
+ "stages": [
+  {
+   "n_unknowns": 17,
+   "n_rows_nonzero": 40,
+   "rank_A_p": 17,
+   "rank_Ae_p": 17,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "MATE_over_Q",
+   "certificate": "exact_solution",
+   "exact_status": "verified_bracket_eq_1",
+   "deg_Q": 3,
+   "stage": "Y",
+   "deg_Q_bound": 8,
+   "n_raw": 18,
+   "thin_t": 1,
+   "n_used": 17,
+   "deflated_kernel_dim": 1,
+   "secs": 0.0
+  }
+ ],
+ "outcome": "MATE",
+ "deg_Q": 3,
+ "div_ordered": "True",
+ "Q": {
+  "0,3": [
+   -1,
+   1
+  ],
+  "1,0": [
+   -1,
+   1
+  ]
+ },
+ "bracket_is_one": true,
+ "hit": false,
+ "secs": 0.0
+}
