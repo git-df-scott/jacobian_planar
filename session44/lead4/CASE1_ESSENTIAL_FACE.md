@@ -331,12 +331,20 @@ so t5 = t2^2/3507 on the nose, while the two upper vertices are
 
 Neither vanishes identically on the level-0 locus, so the kill is not a
 one-line corner argument; it takes the levels down to W = -11.
-Measured directly (`case1_minlevel.py`, which adds the vertex conditions to
-the partial cascade at each depth): at depth W = 0 (2 conditions) and depth
-W = -1 (4 conditions) a live component still survives.  So the obstruction
-is genuinely NOT shallow -- which is the practical reason a
+Probed with `case1_minlevel.py`, which adjoins the vertex conditions to the
+PARTIAL cascade at each depth.  Established: at depth W = 0 (2 conditions)
+and at depth W = -1 (4 conditions) a live component still survives, so the
+obstruction is genuinely NOT shallow.  That is the practical reason a
 characteristic-zero version is expensive: it would have to redo many levels
 of the cascade over the quintic number field, not just the first one or two.
+
+NOT established: the MINIMUM depth.  The probe was killed by its own 3000s
+timeout having tested only depths W = 0 and W = -1 -- the Groebner step gets
+rapidly harder as conditions accumulate.  So the minimum depth at which the
+contradiction appears is somewhere in -2 >= W >= -11 and is UNMEASURED; the
+only depth known to suffice is the W = -11 used by the verdict runs.  Anyone
+picking this up should not read the two logged lines as a completed
+measurement.
 The perfect-square degeneracy is NOT an artefact of one prime: the
 discriminant of that binary quadratic is 0 for every cover at every prime
 tested (5189, 5441, 7523), so it is a structural identity of the cascade.
