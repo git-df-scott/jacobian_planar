@@ -1,0 +1,19 @@
+night12 v2 controls -- the v1 controls stand (see controls_v1.py, 15/15 PASS); these add the coordinate-of-similar-shape positive control the V2 brief requires.
+
+==============================================================================
+V2-POS-1  P = x + y^2   deg P = 2, |supp P| = 2
+  SY: COORDINATE (nodes=2 leaves=0)
+  deg Q <= 1    np_similar     n_raw=3      thin=1  n=2      defl=1   -> MATE_over_Q    [exact_solution]
+  mate found: deg Q = 1, |supp Q| = 1, [P,Q]-1 = 0 over Q: True
+  (0.5s)
+==============================================================================
+V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0)   deg P = 124, |supp P| = 55
+  SY: COORDINATE (nodes=55 leaves=0)
+  deg Q <= 123  np_similar     n_raw=125    thin=1  n=124    defl=1   -> MATE_over_Q    [exact_solution]
+  mate found: deg Q = 1, |supp Q| = 1, [P,Q]-1 = 0 over Q: True
+  (0.1s)
+
+==============================================================================
+V2 CONTROL GATE: 2 checks, 0 failed -> PASS
+  [ok] V2-POS-1  P = x + y^2                                      deg Q = 1, bracket ok = True
+  [ok] V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0) deg Q = 1, bracket ok = True

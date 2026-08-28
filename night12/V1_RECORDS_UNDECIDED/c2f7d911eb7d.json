@@ -26,6 +26,29 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      15,
+      10
+     ],
+     [
+      -1,
+      16
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "Y",
    "deg_Q_bound": 107,
    "n_raw": 56,
@@ -45,13 +68,46 @@
    "certificate": "lambda_exact",
    "lambda_support": 3,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      15,
+      10
+     ],
+     [
+      -1,
+      16
+     ]
+    ],
+    [
+     [
+      30,
+      20
+     ],
+     [
+      11,
+      416
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "C",
    "deg_Q_bound": 162,
    "n_raw": 132,
    "thin_t": 1,
    "n_used": 130,
    "deflated_kernel_dim": 2,
-   "secs": 1.0
+   "secs": 0.6
   },
   {
    "n_unknowns": 219,
@@ -64,18 +120,81 @@
    "certificate": "lambda_exact",
    "lambda_support": 6,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      -77,
+      158
+     ]
+    ],
+    [
+     [
+      15,
+      10
+     ],
+     [
+      -37,
+      1264
+     ]
+    ],
+    [
+     [
+      16,
+      11
+     ],
+     [
+      7,
+      158
+     ]
+    ],
+    [
+     [
+      31,
+      21
+     ],
+     [
+      -21,
+      1264
+     ]
+    ],
+    [
+     [
+      46,
+      31
+     ],
+     [
+      11,
+      1264
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "W",
    "deg_Q_bound": 215,
    "n_raw": 221,
    "thin_t": 1,
    "n_used": 219,
    "deflated_kernel_dim": 2,
-   "secs": 3.5
+   "secs": 2.3
   }
  ],
  "outcome": "EMPTY_all_stages_tried",
  "hit": false,
- "secs": 4.8,
+ "secs": 3.1,
  "arm": "undecided_override",
  "screens_overridden": true,
  "screen_S1": "timeout",
