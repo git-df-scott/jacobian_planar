@@ -113,20 +113,26 @@ on the full degree triangle thinned to 2500. The bound `deg P + 63` is the
 one the brief sets. Cell format `VERDICT[cert]`; `lam` = exact lambda
 certificate, `rank` = full-column-rank certificate, `sol` = exact solution.
 
+The two carriers are **complementary, not nested**. The similar carrier is a
+dense sample of one sub-polygon of the degree triangle; the wide carrier is a
+stride-`t` sample spread over the whole triangle (before thinning it contains
+the similar one, after thinning it does not). An EMPTY on each is a separate
+statement, and neither is a claim about every `Q` of that degree.
+
 | tag | deg P | dQ<=P-1 | dQ<=P+31 | dQ<=P+63 | wide dQ<=P+63 | wide n_raw -> n_used (thin) | outcome |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| F2  T=1 a=0 | 124 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 17766 -> 531 (t=3) | EMPTY_all_stages_tried |
-| F2  T=2 a=0 | 124 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 17766 -> 534 (t=3) | EMPTY_all_stages_tried |
-| F2  T=61 a=0 | 124 | EMPTY[lam] | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | 17766 -> 535 (t=3) | EMPTY_all_stages_tried |
-| F2  T=3 a=1 | 126 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18145 -> 876 (t=3) | EMPTY_all_stages_tried |
-| F2  T=5 a=0 | 126 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18145 -> 534 (t=3) | EMPTY_all_stages_tried |
-| F2  T=1 a=1 | 128 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18528 -> 888 (t=3) | EMPTY_all_stages_tried |
-| F2b T=2 a=2 | 128 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18528 -> 885 (t=3) | EMPTY_all_stages_tried |
-| F2b T=3 a=0 | 130 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18915 -> 572 (t=3) | EMPTY_all_stages_tried |
-| F2b T=5 a=-1 | 130 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18915 -> 915 (t=3) | EMPTY_all_stages_tried |
-| F2b T=61 a=1 | 130 | EMPTY[lam] | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | 18915 -> 615 (t=3) | EMPTY_all_stages_tried |
-| F2  T=1 a=-1 | 132 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 19306 -> 932 (t=3) | EMPTY_all_stages_tried |
-| F2b T=2 a=0 | 132 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 19306 -> 570 (t=3) | EMPTY_all_stages_tried |
+| F2  T=1 a=0 | 124 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 17766 -> 2019 (t=3) | EMPTY_all_stages_tried |
+| F2  T=2 a=0 | 124 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 17766 -> 2022 (t=3) | EMPTY_all_stages_tried |
+| F2  T=61 a=0 | 124 | EMPTY[lam] | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | 17766 -> 2023 (t=3) | EMPTY_all_stages_tried |
+| F2  T=3 a=1 | 126 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18145 -> 2407 (t=3) | EMPTY_all_stages_tried |
+| F2  T=5 a=0 | 126 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18145 -> 2085 (t=3) | EMPTY_all_stages_tried |
+| F2  T=1 a=1 | 128 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18528 -> 2419 (t=3) | EMPTY_all_stages_tried |
+| F2b T=2 a=2 | 128 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18528 -> 2416 (t=3) | EMPTY_all_stages_tried |
+| F2b T=3 a=0 | 130 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18915 -> 2154 (t=3) | EMPTY_all_stages_tried |
+| F2b T=5 a=-1 | 130 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 18915 -> 2477 (t=3) | EMPTY_all_stages_tried |
+| F2b T=61 a=1 | 130 | EMPTY[lam] | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | 18915 -> 2193 (t=3) | EMPTY_all_stages_tried |
+| F2  T=1 a=-1 | 132 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 19306 -> 1585 (t=4) | EMPTY_all_stages_tried |
+| F2b T=2 a=0 | 132 | EMPTY[lam] | EMPTY[rank] | EMPTY[rank] | EMPTY[rank] | 19306 -> 2219 (t=3) | EMPTY_all_stages_tried |
 
 Unknown counts on the similar carrier, per stage (min/median/max): 186 / 380 / 740.
 
