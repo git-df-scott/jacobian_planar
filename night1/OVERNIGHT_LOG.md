@@ -27,3 +27,27 @@ controls: CONTROLS: PASS
 
 Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
 
+
+## n2_deepcaps
+
+- csv: night1/results/n2_deepcaps.csv
+- rows written: 486
+- wall-clock: 41 s
+
+10 deepest cells with calibrated=0:
+
+| F | g | d | p | depth | status | indep_check |
+|---|---|---|---|---|---|---|
+| Fa | u^1v^2 | 30 | 999983 | 16 | survived | PASS |
+| Fa | u^1v^2 | 30 | 1000003 | 16 | survived | PASS |
+| Fa | u^1v^2 | 26 | 999983 | 14 | obstructed@15:degree-overflow | PASS |
+| Fa | u^1v^2 | 26 | 1000003 | 14 | obstructed@15:degree-overflow | PASS |
+| Fa | u^1v^2 | 22 | 999983 | 12 | obstructed@13:degree-overflow | PASS |
+| Fa | u^1v^2 | 22 | 1000003 | 12 | obstructed@13:degree-overflow | PASS |
+| Fc | u^1v^2 | 30 | 999983 | 11 | obstructed@12:degree-overflow | PASS |
+| Fc | u^1v^2 | 30 | 1000003 | 11 | obstructed@12:degree-overflow | PASS |
+| Fc | u^1v^2 | 26 | 999983 | 10 | obstructed@11:degree-overflow | PASS |
+| Fc | u^1v^2 | 26 | 1000003 | 10 | obstructed@11:degree-overflow | PASS |
+
+Prime agreement on the depth of those cells: AGREE (999983 vs 1000003, over the 5 distinct (F,g,d) cells listed).
+
