@@ -101,7 +101,8 @@ def _gcd(a, b):
     return a
 
 
-def sing_poly(f):
+def sing_terms(f):
+    """list of signed term strings"""
     ts = []
     for m, c in sorted(f.items()):
         t = ("+" if c > 0 else "-") + str(abs(c))
@@ -109,7 +110,20 @@ def sing_poly(f):
             if e:
                 t += "*A%d^%d" % (i + 1, e)
         ts.append(t)
-    return "".join(ts) if ts else "0"
+    return ts or ["+0"]
+
+
+def sing_poly(f):
+    return "".join(sing_terms(f))
+
+
+def sing_poly_stmts(f, name, per=8):
+    """emit `poly name = ...;` in short lines (Singular chokes on long ones)"""
+    ts = sing_terms(f)
+    out = ["poly %s = 0;" % name]
+    for i in range(0, len(ts), per):
+        out.append("%s = %s %s;" % (name, name, "".join(ts[i:i + per])))
+    return out
 
 
 def main():
