@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/jc2.face-triage.v1.schema.json",
+  "title": "JC2 complete-frontier essential-face triage",
+  "type": "object",
+  "required": ["schema_version", "required_primes", "cases", "summary"],
+  "properties": {
+    "schema_version": {"const": "jc2.face-triage.v1"},
+    "required_primes": {
+      "type": "array", "prefixItems": [{"const": 999983}, {"const": 1000003}],
+      "minItems": 2, "maxItems": 2
+    },
+    "sources": {"type": "array", "items": {"type": "object"}},
+    "cases": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/case"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["case_count", "tally"],
+      "properties": {
+        "case_count": {"type": "integer"},
+        "tally": {
+          "type": "object",
+          "required": ["KILLED", "SURVIVES", "UNCLEAR"],
+          "additionalProperties": {"type": "integer"}
+        },
+        "best_survivor_case_id": {"type": ["string", "null"]}
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+      "minItems": 2, "maxItems": 2
+    },
+    "rational": {
+      "type": "object", "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "corner": {
+      "type": "object", "required": ["x", "y"],
+      "properties": {"x": {"$ref": "#/$defs/rational"}, "y": {"type": "integer"}}
+    },
+    "term": {
+      "type": "object", "required": ["integer", "variables"],
+      "properties": {"integer": {"type": "integer"}, "variables": {"type": "array", "items": {"type": "string"}}}
+    },
+    "equation": {
+      "type": "object", "required": ["output_monomial", "terms", "rhs"],
+      "properties": {
+        "output_monomial": {"$ref": "#/$defs/point"},
+        "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+        "rhs": {"type": "integer"}
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": ["nonconstant_unknowns", "independent_conditions", "slack", "basis"],
+      "properties": {
+        "nonconstant_unknowns": {"type": "integer"},
+        "independent_conditions": {"type": "integer"},
+        "slack": {"type": "integer"},
+        "basis": {"enum": ["proved_rank", "explicit_diagonal", "symbolic_jacobian_generic_rank", "upper_bound_only"]}
+      }
+    },
+    "kill": {
+      "type": ["object", "null"],
+      "properties": {
+        "equation_index": {"type": "integer"},
+        "mandatory_vertex": {"$ref": "#/$defs/point"},
+        "mandatory_variable": {"type": "string"},
+        "integer_coefficient": {"type": "integer"},
+        "modular_residues": {
+          "type": "object", "required": ["999983", "1000003"],
+          "additionalProperties": {"type": "integer"}
+        },
+        "checker": {"type": "string"}
+      }
+    },
+    "face": {
+      "type": "object",
+      "required": ["weight", "P_monomials", "Q_monomials", "equations", "budget", "status"],
+      "properties": {
+        "weight": {"$ref": "#/$defs/point"},
+        "P_monomials": {"type": "array", "items": {"$ref": "#/$defs/point"}},
+        "Q_monomials": {"type": "array", "items": {"$ref": "#/$defs/point"}},
+        "face_form": {"type": "object"},
+        "equations": {"type": "array", "items": {"$ref": "#/$defs/equation"}},
+        "budget": {"$ref": "#/$defs/budget"},
+        "status": {"enum": ["KILLED", "SOLVED", "UNSOLVED"]},
+        "kill_certificate": {"$ref": "#/$defs/kill"},
+        "solution_family": {"type": ["object", "null"]}
+      }
+    },
+    "chart": {
+      "type": "object",
+      "required": ["chart_id", "cprime", "orientation", "newton_polygons", "essential_faces", "status"],
+      "properties": {
+        "chart_id": {"type": "string"},
+        "cprime": {"type": "integer"},
+        "orientation": {"type": "object"},
+        "newton_polygons": {
+          "type": "object", "required": ["P", "Q"],
+          "properties": {"P": {"type": "array", "items": {"$ref": "#/$defs/point"}}, "Q": {"type": "array", "items": {"$ref": "#/$defs/point"}}}
+        },
+        "essential_faces": {"type": "array", "items": {"$ref": "#/$defs/face"}},
+        "status": {"enum": ["KILLED", "SURVIVES", "UNCLEAR"]}
+      }
+    },
+    "case": {
+      "type": "object",
+      "required": ["case_id", "published_index", "degree_pair", "chain", "mn", "reduction", "charts", "verdict", "coverage"],
+      "properties": {
+        "case_id": {"type": "string"},
+        "published_index": {"type": ["integer", "null"]},
+        "ranking_positions": {"type": "array", "items": {"type": "integer"}},
+        "degree_pair": {"$ref": "#/$defs/point"},
+        "chain": {"type": "array", "items": {"$ref": "#/$defs/corner"}},
+        "mn": {"$ref": "#/$defs/point"},
+        "max_degree": {"type": "integer"},
+        "reduction": {
+          "type": "object",
+          "required": ["status", "target_bracket"],
+          "properties": {
+            "status": {"enum": ["derived", "out_of_scope", "failed"]},
+            "a": {"type": ["integer", "null"]},
+            "b": {"type": ["integer", "null"]},
+            "target_bracket": {"type": ["object", "null"]},
+            "base_polygons": {"type": "array"},
+            "notes": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "charts": {"type": "array", "items": {"$ref": "#/$defs/chart"}},
+        "verdict": {"enum": ["KILLED", "SURVIVES", "UNCLEAR"]},
+        "coverage": {
+          "type": "object", "required": ["level", "statement", "checker_or_citation"],
+          "properties": {
+            "level": {"enum": ["published_exact", "derived_from_published_lemmas", "verified_extrapolation", "conjectural_pattern"]},
+            "statement": {"type": "string"},
+            "checker_or_citation": {"type": "string"}
+          }
+        },
+        "survivor_dossier": {"type": ["object", "null"]},
+        "derivation_note": {"type": "string"}
+      }
+    }
+  }
+}
