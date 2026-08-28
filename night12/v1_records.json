@@ -41,7 +41,7 @@
     "thin_t": 1,
     "n_used": 857,
     "deflated_kernel_dim": 1,
-    "secs": 29.1
+    "secs": 61.5
    }
   ],
   "outcome": "MATE",
@@ -59,7 +59,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 29.1
+  "secs": 61.5
  },
  {
   "hash": "a10ee6c835f4",
@@ -103,7 +103,7 @@
     "thin_t": 1,
     "n_used": 791,
     "deflated_kernel_dim": 1,
-    "secs": 26.0
+    "secs": 59.5
    }
   ],
   "outcome": "MATE",
@@ -121,7 +121,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 26.0
+  "secs": 59.5
  },
  {
   "hash": "1410212dbd72",
@@ -138,10 +138,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 131,
-    "n_rows_nonzero": 131,
-    "rank_A_p": 131,
-    "rank_Ae_p": 131,
+    "n_unknowns": 132,
+    "n_rows_nonzero": 132,
+    "rank_A_p": 132,
+    "rank_Ae_p": 132,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -150,11 +150,11 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 131,
-    "n_raw": 132,
+    "n_raw": 133,
     "thin_t": 1,
-    "n_used": 131,
+    "n_used": 132,
     "deflated_kernel_dim": 1,
-    "secs": 0.5
+    "secs": 1.0
    }
   ],
   "outcome": "MATE",
@@ -168,7 +168,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 0.5
+  "secs": 1.1
  },
  {
   "hash": "e97f275c150c",
@@ -185,10 +185,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 129,
-    "n_rows_nonzero": 129,
-    "rank_A_p": 129,
-    "rank_Ae_p": 129,
+    "n_unknowns": 130,
+    "n_rows_nonzero": 130,
+    "rank_A_p": 130,
+    "rank_Ae_p": 130,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -197,11 +197,11 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 129,
-    "n_raw": 130,
+    "n_raw": 131,
     "thin_t": 1,
-    "n_used": 129,
+    "n_used": 130,
     "deflated_kernel_dim": 1,
-    "secs": 0.5
+    "secs": 0.8
    }
   ],
   "outcome": "MATE",
@@ -215,7 +215,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 0.5
+  "secs": 0.8
  },
  {
   "hash": "b7d738c97e6d",
@@ -232,10 +232,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 127,
-    "n_rows_nonzero": 127,
-    "rank_A_p": 127,
-    "rank_Ae_p": 127,
+    "n_unknowns": 128,
+    "n_rows_nonzero": 128,
+    "rank_A_p": 128,
+    "rank_Ae_p": 128,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -244,11 +244,11 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 127,
-    "n_raw": 128,
+    "n_raw": 129,
     "thin_t": 1,
-    "n_used": 127,
+    "n_used": 128,
     "deflated_kernel_dim": 1,
-    "secs": 0.2
+    "secs": 0.3
    }
   ],
   "outcome": "MATE",
@@ -262,7 +262,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 0.2
+  "secs": 0.3
  },
  {
   "hash": "f8b3d1bf96f8",
@@ -279,10 +279,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 125,
-    "n_rows_nonzero": 125,
-    "rank_A_p": 125,
-    "rank_Ae_p": 125,
+    "n_unknowns": 126,
+    "n_rows_nonzero": 126,
+    "rank_A_p": 126,
+    "rank_Ae_p": 126,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -291,11 +291,11 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 125,
-    "n_raw": 126,
+    "n_raw": 127,
     "thin_t": 1,
-    "n_used": 125,
+    "n_used": 126,
     "deflated_kernel_dim": 1,
-    "secs": 0.1
+    "secs": 0.3
    }
   ],
   "outcome": "MATE",
@@ -309,7 +309,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 0.1
+  "secs": 0.3
  },
  {
   "hash": "3e52e6ee53ad",
@@ -353,7 +353,7 @@
     "thin_t": 1,
     "n_used": 725,
     "deflated_kernel_dim": 1,
-    "secs": 22.2
+    "secs": 50.7
    }
   ],
   "outcome": "MATE",
@@ -371,7 +371,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 22.2
+  "secs": 50.7
  },
  {
   "hash": "c11e0c48a5fc",
@@ -415,7 +415,7 @@
     "thin_t": 1,
     "n_used": 659,
     "deflated_kernel_dim": 1,
-    "secs": 20.2
+    "secs": 43.6
    }
   ],
   "outcome": "MATE",
@@ -433,7 +433,7 @@
   },
   "bracket_is_one": true,
   "hit": false,
-  "secs": 20.2
+  "secs": 43.6
  },
  {
   "hash": "393be222c29c",
@@ -451,21 +451,23 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 53,
-    "n_rows_nonzero": 115,
+    "n_unknowns": 55,
+    "n_rows_nonzero": 119,
+    "rank_A_p": 55,
+    "rank_Ae_p": 56,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 107,
-    "n_raw": 54,
+    "n_raw": 56,
     "thin_t": 1,
-    "n_used": 53,
+    "n_used": 55,
     "deflated_kernel_dim": 1,
-    "secs": 0.0
+    "secs": 0.1
    },
    {
     "n_unknowns": 123,
@@ -484,7 +486,7 @@
     "thin_t": 1,
     "n_used": 123,
     "deflated_kernel_dim": 2,
-    "secs": 0.2
+    "secs": 0.3
    },
    {
     "n_unknowns": 214,
@@ -503,12 +505,12 @@
     "thin_t": 1,
     "n_used": 214,
     "deflated_kernel_dim": 2,
-    "secs": 0.6
+    "secs": 1.1
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 0.8
+  "secs": 1.6
  },
  {
   "hash": "682706856007",
@@ -526,21 +528,23 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 53,
-    "n_rows_nonzero": 157,
+    "n_unknowns": 55,
+    "n_rows_nonzero": 161,
+    "rank_A_p": 55,
+    "rank_Ae_p": 56,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 107,
-    "n_raw": 54,
+    "n_raw": 56,
     "thin_t": 1,
-    "n_used": 53,
+    "n_used": 55,
     "deflated_kernel_dim": 1,
-    "secs": 0.0
+    "secs": 0.1
    },
    {
     "n_unknowns": 110,
@@ -559,7 +563,7 @@
     "thin_t": 1,
     "n_used": 110,
     "deflated_kernel_dim": 2,
-    "secs": 0.2
+    "secs": 0.3
    },
    {
     "n_unknowns": 214,
@@ -578,12 +582,12 @@
     "thin_t": 1,
     "n_used": 214,
     "deflated_kernel_dim": 2,
-    "secs": 0.8
+    "secs": 1.5
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 1.0
+  "secs": 2.1
  },
  {
   "hash": "14efba30d718",
@@ -601,21 +605,23 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 53,
-    "n_rows_nonzero": 143,
+    "n_unknowns": 55,
+    "n_rows_nonzero": 147,
+    "rank_A_p": 55,
+    "rank_Ae_p": 56,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 107,
-    "n_raw": 54,
+    "n_raw": 56,
     "thin_t": 1,
-    "n_used": 53,
+    "n_used": 55,
     "deflated_kernel_dim": 1,
-    "secs": 0.0
+    "secs": 0.1
    },
    {
     "n_unknowns": 121,
@@ -634,7 +640,7 @@
     "thin_t": 1,
     "n_used": 121,
     "deflated_kernel_dim": 2,
-    "secs": 0.2
+    "secs": 0.3
    },
    {
     "n_unknowns": 214,
@@ -653,12 +659,12 @@
     "thin_t": 1,
     "n_used": 214,
     "deflated_kernel_dim": 2,
-    "secs": 0.6
+    "secs": 1.2
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 0.8
+  "secs": 1.7
  },
  {
   "hash": "0c061d633814",
@@ -676,19 +682,21 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 47,
-    "n_rows_nonzero": 47,
+    "n_unknowns": 49,
+    "n_rows_nonzero": 51,
+    "rank_A_p": 49,
+    "rank_Ae_p": 50,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 95,
-    "n_raw": 48,
+    "n_raw": 50,
     "thin_t": 1,
-    "n_used": 47,
+    "n_used": 49,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    },
@@ -709,7 +717,7 @@
     "thin_t": 1,
     "n_used": 121,
     "deflated_kernel_dim": 2,
-    "secs": 0.1
+    "secs": 0.3
    },
    {
     "n_unknowns": 190,
@@ -728,12 +736,12 @@
     "thin_t": 1,
     "n_used": 190,
     "deflated_kernel_dim": 2,
-    "secs": 0.4
+    "secs": 0.7
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 0.6
+  "secs": 1.1
  },
  {
   "hash": "963c989df902",
@@ -752,21 +760,23 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 45,
-    "n_rows_nonzero": 116,
+    "n_unknowns": 47,
+    "n_rows_nonzero": 121,
+    "rank_A_p": 47,
+    "rank_Ae_p": 48,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 95,
-    "n_raw": 46,
+    "n_raw": 48,
     "thin_t": 1,
-    "n_used": 45,
+    "n_used": 47,
     "deflated_kernel_dim": 1,
-    "secs": 0.0
+    "secs": 0.1
    },
    {
     "n_unknowns": 113,
@@ -785,7 +795,7 @@
     "thin_t": 1,
     "n_used": 113,
     "deflated_kernel_dim": 2,
-    "secs": 0.2
+    "secs": 0.3
    },
    {
     "n_unknowns": 186,
@@ -804,12 +814,12 @@
     "thin_t": 1,
     "n_used": 186,
     "deflated_kernel_dim": 2,
-    "secs": 0.7
+    "secs": 1.2
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 1.0
+  "secs": 1.7
  },
  {
   "hash": "2d0d42277f10",
@@ -827,21 +837,23 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 41,
-    "n_rows_nonzero": 108,
+    "n_unknowns": 43,
+    "n_rows_nonzero": 112,
+    "rank_A_p": 43,
+    "rank_Ae_p": 44,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 83,
-    "n_raw": 42,
+    "n_raw": 44,
     "thin_t": 1,
-    "n_used": 41,
+    "n_used": 43,
     "deflated_kernel_dim": 1,
-    "secs": 0.0
+    "secs": 0.1
    },
    {
     "n_unknowns": 96,
@@ -860,7 +872,7 @@
     "thin_t": 1,
     "n_used": 96,
     "deflated_kernel_dim": 2,
-    "secs": 0.1
+    "secs": 0.2
    },
    {
     "n_unknowns": 166,
@@ -879,12 +891,12 @@
     "thin_t": 1,
     "n_used": 166,
     "deflated_kernel_dim": 2,
-    "secs": 0.4
+    "secs": 0.7
    }
   ],
   "outcome": "EMPTY_all_stages_tried",
   "hit": false,
-  "secs": 0.6
+  "secs": 1.0
  },
  {
   "hash": "ad4d9b110acd",
@@ -902,19 +914,21 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 5,
-    "n_rows_nonzero": 5,
+    "n_unknowns": 6,
+    "n_rows_nonzero": 8,
+    "rank_A_p": 6,
+    "rank_Ae_p": 7,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 8,
-    "n_raw": 6,
+    "n_raw": 7,
     "thin_t": 1,
-    "n_used": 5,
+    "n_used": 6,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    },
@@ -1084,10 +1098,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 8,
-    "n_rows_nonzero": 8,
-    "rank_A_p": 8,
-    "rank_Ae_p": 8,
+    "n_unknowns": 9,
+    "n_rows_nonzero": 9,
+    "rank_A_p": 9,
+    "rank_Ae_p": 9,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -1096,9 +1110,9 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 8,
-    "n_raw": 9,
+    "n_raw": 10,
     "thin_t": 1,
-    "n_used": 8,
+    "n_used": 9,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    }
@@ -1132,10 +1146,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 5,
-    "n_rows_nonzero": 5,
-    "rank_A_p": 5,
-    "rank_Ae_p": 5,
+    "n_unknowns": 6,
+    "n_rows_nonzero": 6,
+    "rank_A_p": 6,
+    "rank_Ae_p": 6,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -1144,9 +1158,9 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 5,
-    "n_raw": 6,
+    "n_raw": 7,
     "thin_t": 1,
-    "n_used": 5,
+    "n_used": 6,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    }
@@ -1180,19 +1194,21 @@
   "SY_leaves": 1,
   "stages": [
    {
-    "n_unknowns": 1,
-    "n_rows_nonzero": 1,
+    "n_unknowns": 2,
+    "n_rows_nonzero": 4,
+    "rank_A_p": 2,
+    "rank_Ae_p": 3,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 5,
-    "n_raw": 2,
+    "n_raw": 3,
     "thin_t": 1,
-    "n_used": 1,
+    "n_used": 2,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    },
@@ -1468,10 +1484,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 5,
-    "n_rows_nonzero": 5,
-    "rank_A_p": 5,
-    "rank_Ae_p": 5,
+    "n_unknowns": 6,
+    "n_rows_nonzero": 6,
+    "rank_A_p": 6,
+    "rank_Ae_p": 6,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -1480,9 +1496,9 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 5,
-    "n_raw": 6,
+    "n_raw": 7,
     "thin_t": 1,
-    "n_used": 5,
+    "n_used": 6,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    }
@@ -1517,19 +1533,21 @@
   "SY_leaves": 2,
   "stages": [
    {
-    "n_unknowns": 3,
-    "n_rows_nonzero": 3,
+    "n_unknowns": 4,
+    "n_rows_nonzero": 6,
+    "rank_A_p": 4,
+    "rank_Ae_p": 5,
+    "sched_prime": 999983,
+    "nullity_p": 0,
     "verdict": "EMPTY_over_Q",
     "certificate": "lambda_exact",
-    "lambda_support": 1,
-    "lambda_detail": "constant row of A is identically zero",
-    "rank_A_p": null,
-    "rank_Ae_p": null,
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 3,
-    "n_raw": 4,
+    "n_raw": 5,
     "thin_t": 1,
-    "n_used": 3,
+    "n_used": 4,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    },
@@ -1591,13 +1609,23 @@
   "SY_leaves": 1,
   "stages": [
    {
+    "n_unknowns": 2,
+    "n_rows_nonzero": 3,
+    "rank_A_p": 2,
+    "rank_Ae_p": 3,
+    "sched_prime": 999983,
+    "nullity_p": 0,
+    "verdict": "EMPTY_over_Q",
+    "certificate": "lambda_exact",
+    "lambda_support": 2,
+    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
     "stage": "Y",
     "deg_Q_bound": 3,
-    "n_raw": 1,
+    "n_raw": 3,
     "thin_t": 1,
-    "n_used": 0,
+    "n_used": 2,
     "deflated_kernel_dim": 1,
-    "verdict": "EMPTY_trivial_carrier"
+    "secs": 0.0
    },
    {
     "n_unknowns": 4,
@@ -1763,10 +1791,10 @@
   "SY_leaves": 0,
   "stages": [
    {
-    "n_unknowns": 3,
-    "n_rows_nonzero": 3,
-    "rank_A_p": 3,
-    "rank_Ae_p": 3,
+    "n_unknowns": 4,
+    "n_rows_nonzero": 4,
+    "rank_A_p": 4,
+    "rank_Ae_p": 4,
     "sched_prime": 999983,
     "nullity_p": 0,
     "verdict": "MATE_over_Q",
@@ -1775,9 +1803,9 @@
     "deg_Q": 1,
     "stage": "Y",
     "deg_Q_bound": 3,
-    "n_raw": 4,
+    "n_raw": 5,
     "thin_t": 1,
-    "n_used": 3,
+    "n_used": 4,
     "deflated_kernel_dim": 1,
     "secs": 0.0
    }

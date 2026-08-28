@@ -14,19 +14,21 @@
  "SY_leaves": 1,
  "stages": [
   {
-   "n_unknowns": 47,
-   "n_rows_nonzero": 47,
+   "n_unknowns": 49,
+   "n_rows_nonzero": 51,
+   "rank_A_p": 49,
+   "rank_Ae_p": 50,
+   "sched_prime": 999983,
+   "nullity_p": 0,
    "verdict": "EMPTY_over_Q",
    "certificate": "lambda_exact",
-   "lambda_support": 1,
-   "lambda_detail": "constant row of A is identically zero",
-   "rank_A_p": null,
-   "rank_Ae_p": null,
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
    "stage": "Y",
    "deg_Q_bound": 95,
-   "n_raw": 48,
+   "n_raw": 50,
    "thin_t": 1,
-   "n_used": 47,
+   "n_used": 49,
    "deflated_kernel_dim": 1,
    "secs": 0.0
   },
@@ -47,7 +49,7 @@
    "thin_t": 1,
    "n_used": 121,
    "deflated_kernel_dim": 2,
-   "secs": 0.1
+   "secs": 0.3
   },
   {
    "n_unknowns": 190,
@@ -66,10 +68,10 @@
    "thin_t": 1,
    "n_used": 190,
    "deflated_kernel_dim": 2,
-   "secs": 0.4
+   "secs": 0.7
   }
  ],
  "outcome": "EMPTY_all_stages_tried",
  "hit": false,
- "secs": 0.6
+ "secs": 1.1
 }

@@ -13,10 +13,10 @@
  "SY_leaves": 0,
  "stages": [
   {
-   "n_unknowns": 5,
-   "n_rows_nonzero": 5,
-   "rank_A_p": 5,
-   "rank_Ae_p": 5,
+   "n_unknowns": 6,
+   "n_rows_nonzero": 6,
+   "rank_A_p": 6,
+   "rank_Ae_p": 6,
    "sched_prime": 999983,
    "nullity_p": 0,
    "verdict": "MATE_over_Q",
@@ -25,9 +25,9 @@
    "deg_Q": 1,
    "stage": "Y",
    "deg_Q_bound": 5,
-   "n_raw": 6,
+   "n_raw": 7,
    "thin_t": 1,
-   "n_used": 5,
+   "n_used": 6,
    "deflated_kernel_dim": 1,
    "secs": 0.0
   }

@@ -13,13 +13,23 @@
  "SY_leaves": 1,
  "stages": [
   {
+   "n_unknowns": 2,
+   "n_rows_nonzero": 3,
+   "rank_A_p": 2,
+   "rank_Ae_p": 3,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
    "stage": "Y",
    "deg_Q_bound": 3,
-   "n_raw": 1,
+   "n_raw": 3,
    "thin_t": 1,
-   "n_used": 0,
+   "n_used": 2,
    "deflated_kernel_dim": 1,
-   "verdict": "EMPTY_trivial_carrier"
+   "secs": 0.0
   },
   {
    "n_unknowns": 4,

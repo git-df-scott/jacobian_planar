@@ -40,7 +40,7 @@
    "thin_t": 1,
    "n_used": 659,
    "deflated_kernel_dim": 1,
-   "secs": 20.2
+   "secs": 43.6
   }
  ],
  "outcome": "MATE",
@@ -58,5 +58,5 @@
  },
  "bracket_is_one": true,
  "hit": false,
- "secs": 20.2
+ "secs": 43.6
 }

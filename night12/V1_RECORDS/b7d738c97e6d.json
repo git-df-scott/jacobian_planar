@@ -13,10 +13,10 @@
  "SY_leaves": 0,
  "stages": [
   {
-   "n_unknowns": 127,
-   "n_rows_nonzero": 127,
-   "rank_A_p": 127,
-   "rank_Ae_p": 127,
+   "n_unknowns": 128,
+   "n_rows_nonzero": 128,
+   "rank_A_p": 128,
+   "rank_Ae_p": 128,
    "sched_prime": 999983,
    "nullity_p": 0,
    "verdict": "MATE_over_Q",
@@ -25,11 +25,11 @@
    "deg_Q": 1,
    "stage": "Y",
    "deg_Q_bound": 127,
-   "n_raw": 128,
+   "n_raw": 129,
    "thin_t": 1,
-   "n_used": 127,
+   "n_used": 128,
    "deflated_kernel_dim": 1,
-   "secs": 0.2
+   "secs": 0.3
   }
  ],
  "outcome": "MATE",
@@ -43,5 +43,5 @@
  },
  "bracket_is_one": true,
  "hit": false,
- "secs": 0.2
+ "secs": 0.3
 }
