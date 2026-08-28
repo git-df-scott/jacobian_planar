@@ -198,8 +198,11 @@ def rank_modp(rows, ncols, p, seed=0, augment=False):
             "n_rows_nonzero": len(keys)}
 
 
-def solve_modp(rows, ncols, p, cols=None):
-    """Exact solve of  A z = e  over F_p on the given columns (default: all).
+def solve_modp(rows, ncols, p, cols=None, rhs=None):
+    """Exact solve of  A z = b  over F_p on the given columns (default: all).
+
+    b defaults to the Keller right-hand side e (the indicator of the row key
+    (0,0)); pass `rhs` as {row key: value} to use another one.
 
     Returns (solution dict {col: value}, status).  No compression is used
     here: every row is kept, so the returned vector satisfies every equation
@@ -208,15 +211,16 @@ def solve_modp(rows, ncols, p, cols=None):
     import numpy as np
     cols = list(range(ncols)) if cols is None else list(cols)
     cidx = {c: t for t, c in enumerate(cols)}
-    keys = sorted(set(rows) | {(0, 0)})
+    rhs = {(0, 0): 1} if rhs is None else rhs
+    keys = sorted(set(rows) | set(rhs) | {(0, 0)})
     n = len(cols)
     M = np.zeros((len(keys), n + 1), dtype=np.int64)
     for t, key in enumerate(keys):
         for j, v in rows.get(key, {}).items():
             if j in cidx:
                 M[t, cidx[j]] = v % p
-        if key == (0, 0):
-            M[t, n] = 1
+        if rhs.get(key):
+            M[t, n] = rhs[key] % p
     row = 0
     where = [None] * n
     for c in range(n):

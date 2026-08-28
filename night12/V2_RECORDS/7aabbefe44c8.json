@@ -1,0 +1,283 @@
+{
+ "hash": "7aabbefe44c8",
+ "arm": "A",
+ "family": "F2",
+ "tag": "F2  T=2 a=0",
+ "deg_P": 124,
+ "n_supp_P": 9,
+ "P": {
+  "0,0": [
+   1,
+   1
+  ],
+  "0,1": [
+   1,
+   1
+  ],
+  "2,0": [
+   1,
+   1
+  ],
+  "120,0": [
+   1,
+   1
+  ],
+  "120,1": [
+   2,
+   1
+  ],
+  "120,2": [
+   1,
+   1
+  ],
+  "122,0": [
+   2,
+   1
+  ],
+  "122,1": [
+   2,
+   1
+  ],
+  "124,0": [
+   1,
+   1
+  ]
+ },
+ "P_integerised": {
+  "0,0": [
+   1,
+   1
+  ],
+  "0,1": [
+   1,
+   1
+  ],
+  "2,0": [
+   1,
+   1
+  ],
+  "120,0": [
+   1,
+   1
+  ],
+  "120,1": [
+   2,
+   1
+  ],
+  "120,2": [
+   1,
+   1
+  ],
+  "122,0": [
+   2,
+   1
+  ],
+  "122,1": [
+   2,
+   1
+  ],
+  "124,0": [
+   1,
+   1
+  ]
+ },
+ "integerising_scale": 1,
+ "certs": {
+  "U_bezout_A_Px_plus_B_Py_eq_1": true,
+  "U_bezout_residual_terms": 0,
+  "R_factorisation_P_minus_kappa_eq_v_times_h0_plus_gv": true,
+  "R_factor_degrees": [
+   2,
+   122
+  ],
+  "R_kappa": [
+   0,
+   1
+  ],
+  "params": {
+   "n": 120,
+   "T": 2,
+   "a": "0",
+   "c": "1",
+   "h0": "1"
+  }
+ },
+ "stages": [
+  {
+   "n_unknowns": 245,
+   "n_rows_nonzero": 609,
+   "rank_A_p": 245,
+   "rank_Ae_p": 246,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 8,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      -120,
+      61
+     ]
+    ],
+    [
+     [
+      116,
+      1
+     ],
+     [
+      1210,
+      2379
+     ]
+    ],
+    [
+     [
+      118,
+      0
+     ],
+     [
+      -121,
+      122
+     ]
+    ],
+    [
+     [
+      118,
+      1
+     ],
+     [
+      7260,
+      7259
+     ]
+    ],
+    [
+     [
+      120,
+      0
+     ],
+     [
+      -121,
+      122
+     ]
+    ],
+    [
+     [
+      120,
+      1
+     ],
+     [
+      30,
+      61
+     ]
+    ],
+    [
+     [
+      240,
+      0
+     ],
+     [
+      121,
+      244
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "carrier": "np_similar",
+   "deg_Q_bound": 123,
+   "n_raw": 246,
+   "thin_t": 1,
+   "n_used": 245,
+   "deflated_kernel_dim": 1,
+   "decisive_for_published_bound": false,
+   "secs": 3.6,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 370,
+   "n_rows_nonzero": 796,
+   "rank_A_p": 370,
+   "rank_Ae_p": 371,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "np_similar",
+   "deg_Q_bound": 155,
+   "n_raw": 372,
+   "thin_t": 1,
+   "n_used": 370,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": false,
+   "secs": 1.3,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 498,
+   "n_rows_nonzero": 986,
+   "rank_A_p": 498,
+   "rank_Ae_p": 499,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "np_similar",
+   "deg_Q_bound": 187,
+   "n_raw": 500,
+   "thin_t": 1,
+   "n_used": 498,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": true,
+   "secs": 3.1,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 2022,
+   "n_rows_nonzero": 15292,
+   "rank_A_p": 2022,
+   "rank_Ae_p": 2023,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "wide_triangle",
+   "deg_Q_bound": 187,
+   "n_raw": 17766,
+   "thin_t": 3,
+   "n_used": 2022,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": true,
+   "secs": 212.9,
+   "support_relative": true
+  }
+ ],
+ "SY_verdict": "NON_COORDINATE",
+ "SY_nodes": 2,
+ "SY_leaves": 1,
+ "places_at_infinity": 1,
+ "genus_newton": 121,
+ "lead_terms": 1,
+ "outcome": "EMPTY_all_stages_tried",
+ "hit": false,
+ "secs": 222.8
+}

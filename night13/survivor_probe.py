@@ -152,11 +152,46 @@ def sample_P_char(rng, E, m, C_P, char, ones):
     return P, {"H": H, "A": A, "low": low, "e0": e0}
 
 
+def drop_col0(rows):
+    return {k: {c - 1: v for c, v in r.items() if c > 0}
+            for k, r in rows.items()
+            if any(c > 0 for c in r)}
+
+
+def B_free(rows, ncols, char, seed):
+    """Is the B column (column 0) in the span of the other columns?  If it is,
+    the kernel contains a vector with a nonzero B entry, so the solution set
+    projects onto all of F_char in that coordinate and a solution with a
+    NONVANISHING Q leading form exists.  Otherwise B takes one fixed value on
+    the whole solution set."""
+    ra = K.rank_modp(rows, ncols, char, seed=seed)["rank"]
+    rb = K.rank_modp(drop_col0(rows), ncols - 1, char, seed=seed)["rank"]
+    return ra == rb, ra, rb
+
+
 def run(E, m, char, tag, n_plow=96, n_qlow=256, n_samples=None):
     t0 = time.time()
     n_samples = N_SAMPLES if n_samples is None else n_samples
-    print("  building carrier for E=%s char=%d" % (list(E), char), flush=True)
-    car = build_carrier(E, m, char, n_plow, n_qlow)
+    cpath = os.path.join(HERE, "carrier_%s.json" % tag)
+    if os.path.exists(cpath):
+        car = json.load(open(cpath))
+        car["C_P"] = [tuple(v) for v in car["C_P"]]
+        car["C_Q"] = [tuple(v) for v in car["C_Q"]]
+        print("  reusing cached carrier %s" % cpath, flush=True)
+    else:
+        print("  building carrier for E=%s char=%d" % (list(E), char),
+              flush=True)
+        car = build_carrier(E, m, char, n_plow, n_qlow)
+        json.dump({**car, "C_P": [list(v) for v in car["C_P"]],
+                   "C_Q": [list(v) for v in car["C_Q"]],
+                   "SP": [list(v) for v in car["SP"]],
+                   "SQ": [list(v) for v in car["SQ"]],
+                   "hullP": [list(v) for v in car["hullP"]],
+                   "hullQ": [list(v) for v in car["hullQ"]],
+                   "census": {k: (v if k != "singletons"
+                                  else [list(t) for t in v])
+                              for k, v in car["census"].items()}},
+                  open(cpath, "w"), indent=1)
     C_P, C_Q = car["C_P"], car["C_Q"]
     e0, e1 = min(E), max(E)
     row_P = (2 * e0 - 1, 2 * (m - e0))          # the two extreme-ray rows
@@ -192,7 +227,8 @@ def run(E, m, char, tag, n_plow=96, n_qlow=256, n_samples=None):
                 "pass": rk0["rank_A"] > 0 and bool(rows0.get((0, 0)))})
     gate = all(c["pass"] for c in ctl)
 
-    tally = {"consistent": 0, "inconsistent": 0}
+    tally = {"consistent": 0, "consistent_with_nonzero_B": 0,
+             "inconsistent": 0, "degenerate_B_forced_zero": 0}
     hits = []
     samples = []
     for s in range(n_samples):
@@ -205,29 +241,53 @@ def run(E, m, char, tag, n_plow=96, n_qlow=256, n_samples=None):
         rec = {"sample": s, "ones": ones, "n_rows_nonzero": len(rows),
                "rank_A": rk["rank_A"], "rank_Ae": rk["rank_Ae"],
                "consistent": rk["consistent"]}
-        if rk["consistent"]:
-            tally["consistent"] += 1
-            sol, st = K.solve_modp(rows, 1 + len(C_Q), char)
-            rec["solve_status"] = st
-            if st == "ok":
-                Q = K.pscale(K.ppow(meta["H"], 3, char), sol.get(0, 0), char)
-                for c, v in sol.items():
-                    if c:
-                        mm = C_Q[c - 1]
-                        Q[mm] = (Q.get(mm, 0) + v) % char
-                Q = {k: v for k, v in Q.items() if v}
-                rec["bracket_is_one"] = K.bracket(P, Q, char) == {(0, 0): 1}
-                rec["deg_P"] = K.pdeg(P)
-                rec["deg_Q"] = K.pdeg(Q)
-                if rec["bracket_is_one"]:
-                    hits.append({"rec": rec, "P": {str(k): v for k, v in P.items()},
-                                 "Q": {str(k): v for k, v in Q.items()}})
-        else:
+        if not rk["consistent"]:
             tally["inconsistent"] += 1
+            samples.append(rec)
+            continue
+        tally["consistent"] += 1
+        # A solution exists.  It only realises the degree profile (2m, 3m)
+        # when the Q leading form survives, i.e. B != 0.
+        free, ra, rb = B_free(rows, 1 + len(C_Q), char, seed=31 + s)
+        rec["B_column_in_span_of_others"] = free
+        rec["rank_A_all"], rec["rank_A_without_B"] = ra, rb
+        if not free:
+            sol0, st0 = K.solve_modp(rows, 1 + len(C_Q), char)
+            rec["B_forced_value"] = 0 if st0 != "ok" else sol0.get(0, 0)
+            if not rec["B_forced_value"]:
+                tally["degenerate_B_forced_zero"] += 1
+                samples.append(rec)
+                continue
+        # build a solution with B = 1: move that column to the right-hand side
+        col0 = {k: (-r[0]) % char for k, r in rows.items() if r.get(0)}
+        rhs = dict(col0)
+        rhs[(0, 0)] = (rhs.get((0, 0), 0) + 1) % char
+        sol, st = K.solve_modp(rows, 1 + len(C_Q), char,
+                               cols=list(range(1, 1 + len(C_Q))), rhs=rhs)
+        rec["solve_status_B1"] = st
+        if st != "ok":
+            samples.append(rec)
+            continue
+        Q = K.pscale(K.ppow(meta["H"], 3, char), 1, char)
+        for c, v in sol.items():
+            mm = C_Q[c - 1]
+            Q[mm] = (Q.get(mm, 0) + v) % char
+        Q = {k: v for k, v in Q.items() if v}
+        rec["bracket_is_one"] = K.bracket(P, Q, char) == {(0, 0): 1}
+        rec["deg_P"] = K.pdeg(P)
+        rec["deg_Q"] = K.pdeg(Q)
+        rec["profile_realised"] = (rec["deg_P"] == 2 * m
+                                   and rec["deg_Q"] == 3 * m)
+        if rec["bracket_is_one"] and rec["profile_realised"]:
+            tally["consistent_with_nonzero_B"] += 1
+            hits.append({"rec": rec,
+                         "P": {str(k): v for k, v in P.items()},
+                         "Q": {str(k): v for k, v in Q.items()}})
         samples.append(rec)
         if s % 40 == 0:
-            print("    sample %d %s %.1fs" % (s, rk["consistent"],
-                                              time.time() - t0), flush=True)
+            print("    sample %d cons=%s Bfree=%s %.1fs"
+                  % (s, rk["consistent"], free, time.time() - t0), flush=True)
+
     out = {"tag": tag, "E": list(E), "m": m, "char": char,
            "deg_P": 2 * m, "deg_Q": 3 * m,
            "divisibility_ordered": K.divisibility_ordered(2 * m, 3 * m),
@@ -252,6 +312,10 @@ def run(E, m, char, tag, n_plow=96, n_qlow=256, n_samples=None):
 if __name__ == "__main__":
     ranked = json.load(open(os.path.join(HERE, "rank_char2.json")))["42"]["ranked"]
     top = ranked[:2]
+    if len(sys.argv) > 2:            # single configuration: <rank 1|2> <char>
+        i, ch = int(sys.argv[1]), int(sys.argv[2])
+        run(tuple(top[i - 1]["E"]), 42, ch, "top%d_char%d" % (i, ch))
+        sys.exit(0)
     res = []
     # each of the two top-ranked supports is probed in BOTH characteristics
     # in which it survives the screen (2 and 5 here), which is the analogue of

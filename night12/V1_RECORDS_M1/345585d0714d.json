@@ -25,13 +25,36 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      81,
+      50
+     ],
+     [
+      -1,
+      2624
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "Y",
    "deg_Q_bound": 131,
    "n_raw": 153,
    "thin_t": 1,
    "n_used": 152,
    "deflated_kernel_dim": 1,
-   "secs": 0.4
+   "secs": 0.6
   },
   {
    "n_unknowns": 331,
@@ -44,13 +67,36 @@
    "certificate": "lambda_exact",
    "lambda_support": 2,
    "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      81,
+      50
+     ],
+     [
+      -1,
+      2624
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
    "stage": "C",
    "deg_Q_bound": 198,
    "n_raw": 332,
    "thin_t": 1,
    "n_used": 331,
    "deflated_kernel_dim": 1,
-   "secs": 3.3
+   "secs": 4.5
   },
   {
    "n_unknowns": 576,
@@ -69,12 +115,12 @@
    "thin_t": 1,
    "n_used": 576,
    "deflated_kernel_dim": 1,
-   "secs": 2.3
+   "secs": 3.2
   }
  ],
  "outcome": "EMPTY_all_stages_tried",
  "hit": false,
- "secs": 6.1,
+ "secs": 8.3,
  "arm": "M1_override",
  "screens_overridden": true,
  "screen_S1": "reject",

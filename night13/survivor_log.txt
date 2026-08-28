@@ -1,0 +1,21 @@
+  building carrier for E=[5, 8, 11, 17, 29, 32] char=2
+    step 50 sing=13 P=51 Q=1
+    step 100 sing=13 P=96 Q=6
+    step 150 sing=13 P=96 Q=56
+    step 200 sing=13 P=96 Q=106
+    step 250 sing=13 P=96 Q=156
+    step 300 sing=13 P=96 Q=206
+    step 350 sing=13 P=96 Q=256
+    sample 0 True 639.9s
+    sample 40 True 640.0s
+    sample 80 True 640.2s
+    sample 120 True 640.3s
+    sample 160 True 640.4s
+    sample 200 True 640.6s
+  HALT-AND-COMMIT: /home/user/jacobian_planar/night13/HIT_char2_top1_char2
+  top1_char2: gate=True tally={'consistent': 220, 'inconsistent': 0} hits=220 (640.6s)
+  building carrier for E=[5, 8, 11, 17, 29, 32] char=5
+    step 50 sing=17 P=33 Q=19
+    step 100 sing=17 P=33 Q=69
+    step 150 sing=32 P=42 Q=110
+    step 200 sing=24 P=53 Q=149

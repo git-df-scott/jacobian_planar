@@ -332,6 +332,31 @@ SY verdicts: {'NON_COORDINATE': 13}. Outcomes: {'EMPTY_all_stages_tried': 13}. C
 
 `NOT_CERTIFIED` records (never reported as emptiness): **0**.
 
+## 6b. Independent re-verification of the emitted certificates
+
+`verify_certs.py` trusts nothing in the records but the raw data: it looks
+each `P` up in the pools by hash, rebuilds the carrier and the Keller
+system from scratch, and re-checks each certificate over `Q` with
+`Fraction` arithmetic without calling `exact.decide`.
+
+| arm | certificate | result | count |
+| --- | --- | --- | --- |
+| M1 override | lambda_exact | True | 22 |
+| M1 override | rank_full_column_exact | not_recheckable | 578 |
+| pipeline | exact_solution | True | 20 |
+| pipeline | lambda_exact | True | 30 |
+| undecided override | lambda_exact | True | 13 |
+| undecided override | rank_full_column_exact | not_recheckable | 26 |
+
+**Failures: 0.**
+
+`rank_full_column_exact` is marked `not_recheckable` because it is a rank
+statement at the scheduling prime rather than an object that can be
+re-derived from the record; its validity is the lower-bound argument in
+`MATE_V1.md` (E2), not a stored witness. Every certificate that HAS a
+stored witness -- all 65 lambda vectors and all 20 exact solutions -- was
+re-derived and re-checked here and holds.
+
 ## 7. Mechanics fixed in this run
 
 The mathematical contracts are frozen: the S1/S2/S3 screens, the
@@ -390,4 +415,21 @@ screened-and-passed arm, and the hit gate stays armed.
 
 **(F5) no independent check on the SY verdicts.** Added `sy_crosscheck.py`
 (section 2). It feeds no decision.
+
+**(F6) the lambda certificates were not actually recorded.** A stage record
+kept `lambda_support`, the number of nonzero entries, but not the vector, so
+the certificate the brief asks to be emitted on EMPTY could not be checked
+from the record. `exact.py` now stores `lambda_vector` (entries
+`[[i,j],[num,den]]`) and a `lambda_reverified` flag; recording only, no
+verdict depends on it. `verify_certs.py` (section 6b) re-checks them all.
+
+**(F7) the carrier thinning compounds its strides.** Both v1 carrier builders
+thin by repeatedly filtering the ALREADY thinned set, so `t = 2` followed by
+`t = 3` keeps only the points divisible by 6 -- about 1/36 of the set -- while
+recording `thin_t = 3`. `n_used` is accurate either way and is what every
+verdict in this file is relative to, so no verdict here is affected; but the
+recorded `thin_t` understates how much was removed, and the carriers are
+smaller than the cap intends. Recorded, not changed in v1 (changing it would
+invalidate the run this file reports); v2's `_thin` recomputes from the base
+set instead, and `MATE_V2.md` uses that.
 

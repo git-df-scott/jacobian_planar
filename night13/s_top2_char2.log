@@ -1,0 +1,9 @@
+  building carrier for E=[5, 8, 11, 23, 29, 32] char=2
+    step 50 sing=14 P=51 Q=1
+    step 100 sing=14 P=96 Q=6
+    step 150 sing=14 P=96 Q=56
+    step 200 sing=14 P=96 Q=106
+    step 250 sing=14 P=96 Q=156
+    step 300 sing=14 P=96 Q=206
+    step 350 sing=14 P=96 Q=256
+  top2_char2: gate=True tally={'consistent': 220, 'consistent_with_nonzero_B': 0, 'inconsistent': 0, 'degenerate_B_forced_zero': 220} hits=0 (555.5s)

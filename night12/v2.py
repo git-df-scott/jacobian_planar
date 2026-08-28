@@ -105,6 +105,30 @@ def _deflate(S, P, D):
     return sorted(Sset - drop), len(drop)
 
 
+def _thin(S, cap, keep, tmax):
+    """thin S to at most `cap` points on the sublattice of stride t.
+
+    The thinning is recomputed from the ORIGINAL point set at each candidate
+    stride, not applied cumulatively on top of the previous stride.  The
+    cumulative form (which v1 uses) compounds the strides -- t = 2 then t = 3
+    leaves only the points divisible by 6, about 1/36 of the set, while
+    recording `thin_t = 3` -- so it overshoots the cap by a wide margin and the
+    recorded index understates how much was removed.  Recomputing from the
+    base keeps the used support as close to the cap as the lattice allows and
+    makes `thin_t` mean what it says.  `n_used` was accurate either way; this
+    changes how much support the stage actually gets.
+    """
+    base = sorted(set(S))
+    if len(base) <= cap:
+        return base, 1
+    kept = keep & set(base)
+    for t in range(2, tmax + 1):
+        T = sorted(set(p for p in base if p[0] % t == 0 and p[1] % t == 0) | kept)
+        if len(T) <= cap:
+            return T, t
+    return sorted(kept), tmax
+
+
 def carrier_np(P, D, cap=CAP_NP):
     """Newton-polygon-similar carrier: NP(P) scaled to the stage bound, with
     the anchors adjoined both scaled and unscaled (see v1.general_carrier)."""
@@ -118,15 +142,7 @@ def carrier_np(P, D, cap=CAP_NP):
     S = [(a, b) for a in range(D + 1) for b in range(D + 1 - a)
          if M._inside(verts, (a * d, b * d))]
     info = {"carrier": "np_similar", "deg_Q_bound": D, "n_raw": len(S), "thin_t": 1}
-    t = 1
-    keep = set(M.BASE)
-    while len(S) > cap:
-        t += 1
-        S = sorted(set(p for p in S if p[0] % t == 0 and p[1] % t == 0)
-                   | (keep & set(S)))
-        info["thin_t"] = t
-        if t > 40:
-            break
+    S, info["thin_t"] = _thin(S, cap, set(M.BASE), 40)
     S, nd = _deflate(S, P, D)
     info["n_used"] = len(S)
     info["deflated_kernel_dim"] = nd
@@ -136,22 +152,18 @@ def carrier_np(P, D, cap=CAP_NP):
 def carrier_wide(P, D, cap=CAP_WIDE):
     """the full degree-D triangle, thinned on both exponents to the cap.
 
-    Strictly contains the Newton-polygon-similar carrier before thinning, so
-    an EMPTY here is a statement about a much larger space of Q than the
-    similar carrier can make -- at the price of the recorded thinning index.
+    Before thinning this strictly contains the Newton-polygon-similar carrier.
+    AFTER thinning it does not: at stride t it keeps only the points with both
+    exponents divisible by t, so it is a coarse sample spread over the WHOLE
+    degree-D triangle, whereas the similar carrier is a dense sample of one
+    sub-polygon.  The two are therefore complementary supports, not nested
+    ones, and an EMPTY on each is a separate statement.  Neither is a claim
+    about all Q of degree <= D.
     """
     S = [(a, b) for a in range(D + 1) for b in range(D + 1 - a)]
     info = {"carrier": "wide_triangle", "deg_Q_bound": D, "n_raw": len(S),
             "thin_t": 1}
-    t = 1
-    keep = set(M.BASE) | set(P)
-    while len(S) > cap:
-        t += 1
-        S = sorted(set(p for p in S if p[0] % t == 0 and p[1] % t == 0)
-                   | (keep & set(S)))
-        info["thin_t"] = t
-        if t > 60:
-            break
+    S, info["thin_t"] = _thin(S, cap, set(M.BASE) | set(P), 60)
     S, nd = _deflate(S, P, D)
     info["n_used"] = len(S)
     info["deflated_kernel_dim"] = nd

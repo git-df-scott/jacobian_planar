@@ -32,7 +32,7 @@
    "thin_t": 1,
    "n_used": 1282,
    "deflated_kernel_dim": 1,
-   "secs": 26.4
+   "secs": 43.2
   },
   {
    "n_unknowns": 1457,
@@ -51,7 +51,7 @@
    "thin_t": 2,
    "n_used": 1457,
    "deflated_kernel_dim": 1,
-   "secs": 40.9
+   "secs": 26.4
   },
   {
    "n_unknowns": 862,
@@ -70,12 +70,12 @@
    "thin_t": 3,
    "n_used": 862,
    "deflated_kernel_dim": 1,
-   "secs": 7.9
+   "secs": 5.3
   }
  ],
  "outcome": "EMPTY_all_stages_tried",
  "hit": false,
- "secs": 75.3,
+ "secs": 75.0,
  "arm": "M1_override",
  "screens_overridden": true,
  "screen_S1": "reject",
