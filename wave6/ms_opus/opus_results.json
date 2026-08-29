@@ -80,5 +80,11 @@
   "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/p108_638901_dump.sing']' timed out after 2700 seconds",
   "wall": 2700.3,
   "nvars": 119
+ },
+ {
+  "name": "w6_35657_4",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_4_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.2,
+  "nvars": 130
  }
 ]
