@@ -1,2 +1,6 @@
   singular stage done: 0 designed-support unimodular so far (2s)
 D= 4 size=3 :     29 designed supports,     25056 coefficient vectors,     0 survivors, 2s
+  singular stage done: 0 designed-support unimodular so far (165s)
+D= 4 size=4 :    142 designed supports,   1472256 coefficient vectors,     0 survivors, 165s
+  singular stage done: 0 designed-support unimodular so far (169s)
+D= 5 size=3 :     94 designed supports,     81216 coefficient vectors,     0 survivors, 169s
