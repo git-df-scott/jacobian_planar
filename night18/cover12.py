@@ -7,7 +7,7 @@ for H in (1, 2):
     print("=" * 78); sys.stdout.flush()
     ch = cover18.walk(H, 12)
     for c in ch:
-        c.pop('_dens', None)
+        c.pop('_dens', None); c.pop('_lamraw', None); c.pop('_restr', None)
     out["H%d_D12" % H] = ch
     json.dump(out, open(os.path.join(HERE, 'cover18_D12.json'), 'w'), indent=1)
 print("done")

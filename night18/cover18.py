@@ -38,7 +38,7 @@ def cert(Fm, sub, D):
             "gens": [str(g) for g in gens], "lambda_support": len(lam),
             "lambda": {"%d,%d" % k: sp.sstr(v) for k, v in sorted(lam.items())},
             "denominator_factors": [[sp.sstr(f), int(m)] for f, m in dens],
-            "_dens": [f for f, m in dens],
+            "_dens": [f for f, m in dens], "_lamraw": lam,
             "n_unknowns": len(S), "n_equations": len(rows)}
 
 
@@ -58,6 +58,7 @@ def walk(H, D, maxdepth=4):
         c = cert(Fm, sub, D)
         c.update(chart=label, depth=depth,
                  restriction={str(k): sp.sstr(v) for k, v in sub.items()},
+                 _restr=dict(sub),
                  secs=round(time.time() - t0, 1))
         charts.append(c)
         print("  [d=%d] %-34s %-22s denominators=%s  (%.1fs)"
@@ -99,7 +100,7 @@ if __name__ == "__main__":
             print("=" * 78)
             ch = walk(H, D)
             for c in ch:
-                c.pop('_dens', None)
+                c.pop('_dens', None); c.pop('_lamraw', None); c.pop('_restr', None)
             out["H%d_D%d" % (H, D)] = ch
             json.dump(out, open(os.path.join(HERE, 'cover18.json'), 'w'), indent=1)
     print("done")
