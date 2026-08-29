@@ -1,0 +1,87 @@
+{
+  "method": "nonzero holomorphic differential on compact genus-one fibre",
+  "targets": [
+    {
+      "H": "3*s^2*p^3-8*s*p^2+4*s*p+(1)*s-3*p+3",
+      "P_degree": 10,
+      "all_infinity_valuations_nonnegative": true,
+      "cleared_fibre_identity_verified": true,
+      "compact_genus": 1,
+      "eta_nonzero": true,
+      "fibre": "t=1",
+      "finite_base_points_checked": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "function_field_relation_verified": true,
+      "jacobian_change_verified": true,
+      "name": "g",
+      "p_infinity": {
+        "branches": 2,
+        "discriminant": 100,
+        "eta_valuation_each": 0,
+        "leading_denominator_coprime": true,
+        "tangent_polynomial": [
+          "-3",
+          "-8",
+          "3"
+        ]
+      },
+      "s_infinity": {
+        "branches": 1,
+        "eta_leading_coefficient": "3",
+        "eta_valuation": 0,
+        "z_leading": "-3*p^3"
+      },
+      "strength": "EXACT-ALL-DEGREES",
+      "verdict": "PERIOD-NONZERO"
+    },
+    {
+      "H": "9*s^2*p^3-16*s*p^2+8*s*p+(-1)*s-9*p+9",
+      "P_degree": 10,
+      "all_infinity_valuations_nonnegative": true,
+      "cleared_fibre_identity_verified": true,
+      "compact_genus": 1,
+      "eta_nonzero": true,
+      "fibre": "t=1",
+      "finite_base_points_checked": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "function_field_relation_verified": true,
+      "jacobian_change_verified": true,
+      "name": "gprime",
+      "p_infinity": {
+        "branches": 2,
+        "discriminant": 580,
+        "eta_valuation_each": 0,
+        "leading_denominator_coprime": true,
+        "tangent_polynomial": [
+          "-9",
+          "-16",
+          "9"
+        ]
+      },
+      "s_infinity": {
+        "branches": 1,
+        "eta_leading_coefficient": "-9",
+        "eta_valuation": 0,
+        "z_leading": "9*p^3"
+      },
+      "strength": "EXACT-ALL-DEGREES",
+      "verdict": "PERIOD-NONZERO"
+    }
+  ]
+}

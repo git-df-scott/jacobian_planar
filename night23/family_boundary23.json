@@ -1,0 +1,43 @@
+{
+  "conclusion": "no all-fibres-irreducible period-zero point in this two-parameter family",
+  "critical_eliminant_b0": "(a+1)*p-a",
+  "degeneration_divisor": {
+    "all_fibres_irreducible": false,
+    "condition": "b = 0",
+    "factorization": "P_a0 = p*(p*u+a*s)"
+  },
+  "exceptional_control": {
+    "U": "(3)*x^1*y^0+(7)*x^2*y^0+(12)*x^3*y^0+(15)*x^3*y^1+(24)*x^4*y^1+(12)*x^5*y^2",
+    "V": "(1)*x^0*y^0+(-6)*x^1*y^0+(-9)*x^1*y^1+(-30)*x^2*y^1+(-18)*x^2*y^2+(-42)*x^3*y^2+(-18)*x^4*y^3",
+    "a": -1,
+    "b": 0,
+    "bezout_degree": 7,
+    "bezout_residual_terms": 0,
+    "degree": 10,
+    "factor_1": "(1)*x^0*y^0+(1)*x^1*y^0+(1)*x^2*y^1",
+    "factor_2": "(1)*x^0*y^1+(1)*x^1*y^0+(2)*x^1*y^1+(3)*x^2*y^1+(2)*x^2*y^2+(3)*x^3*y^2+(1)*x^4*y^3",
+    "non_coordinate": "NON_COORDINATE",
+    "sy_stats": {
+      "leaves": 1,
+      "nodes": 1
+    },
+    "unimodular": "EXACT_BEZOUT",
+    "zero_fibre_reducible": true
+  },
+  "family": "P_ab=p^2*u+a*p*s+b*s",
+  "open_stratum": {
+    "condition": "b != 0",
+    "period_obstruction": "eta extends holomorphically at all infinity places on the genus-one Briancon profile",
+    "verdict": "PERIOD-NONZERO"
+  },
+  "period_zero_local_degeneration": {
+    "a": 0,
+    "b": 0,
+    "eta_valuation": -2,
+    "fatal_global_failure": "P_00=p^2*u has a reducible fibre",
+    "local_model": "p^3+t*z^2",
+    "residue": "0",
+    "series": "p=r^2; z=r^3*(alpha+r/2+3*alpha*r^2/8+...); alpha^2=-1"
+  },
+  "symbolic_cleared_fibre_and_boundary_faces_verified": true
+}
