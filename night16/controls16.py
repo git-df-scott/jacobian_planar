@@ -118,17 +118,25 @@ import csv as _csv
 n_ok = n_bad = n_skip = 0
 bad = []
 crows = {r["hash"]: r for r in _csv.DictReader(open("../night15/period_screen.csv"))}
+import glob as _glob
+_screen = {}
+for _f in _glob.glob("atypical16_*.json"):
+    for _r in json.load(open(_f)):
+        _screen[_r["hash"]] = _r
 for rec in load16.survivors():
     row = crows[rec["hash"]]
     try:
         g = int(row["genus"]); r_ = int(row["places_at_infinity"])
     except ValueError:
         n_skip += 1; continue
-    Pe = A.dict_to_expr(load16.Pdict(rec))
-    try:
-        cg = A.atypical(Pe, n_generic=3)["chi_gen"]
-    except Exception as e:
-        n_skip += 1; continue
+    if rec["hash"] in _screen and _screen[rec["hash"]].get("chi_gen") is not None:
+        cg = _screen[rec["hash"]]["chi_gen"]      # from the screen run, unchanged
+    else:
+        Pe = A.dict_to_expr(load16.Pdict(rec))
+        try:
+            cg = A.atypical(Pe, n_generic=3)["chi_gen"]
+        except Exception:
+            n_skip += 1; continue
     if cg == 2 - 2 * g - r_:
         n_ok += 1
     else:

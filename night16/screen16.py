@@ -43,10 +43,10 @@ def exact_with_timeout(Pe, cval, secs=180, Dmax=6):
         signal.alarm(0)
 
 
-def numrun(Pd, c):
+def numrun(Pd, c, budget=None):
     t0 = time.time()
     try:
-        r = M.screen_fibre_checked(Pd, c, tol=1e-6, nsub=6, ncirc=48, budget=BUDGET)
+        r = M.screen_fibre_checked(Pd, c, tol=1e-6, nsub=6, ncirc=48, budget=budget or BUDGET)
     except Exception as e:
         return {"error": "%s: %s" % (type(e).__name__, e), "t": time.time() - t0}
     if "error" in r:

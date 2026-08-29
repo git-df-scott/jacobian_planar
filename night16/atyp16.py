@@ -227,6 +227,32 @@ def chi_fibre(Pexpr, cval, dom=sp.QQ, extra=False, reduce_=True):
 
 # ------------------------------------------------------------------ candidates
 
+def _res_interp(Pexpr, N):
+    """Res_y(P - c, d(P-c)/dy) as an element of Q[x,c], by interpolation in c.
+
+    c enters only the y^0 coefficient of f = P - c, and only linearly, and the
+    Sylvester matrix of (f, f_y) has N - 1 rows carrying f, so deg_c of the
+    resultant is at most N - 1.  Evaluating the resultant at N distinct
+    rational c and interpolating is therefore exact -- and far cheaper than one
+    resultant over Q[x,c], which is what makes the high-degree members
+    tractable.
+    """
+    fy = sp.Poly(sp.diff(Pexpr, y), y)
+    vals = []
+    for t in range(N):
+        ft = sp.Poly(sp.expand(Pexpr - sp.Integer(t)), y)
+        vals.append(sp.Poly(sp.resultant(ft, fy, y), x))
+    # Lagrange interpolation in c, coefficientwise in x
+    out = sp.Integer(0)
+    for t in range(N):
+        L = sp.Integer(1)
+        for u in range(N):
+            if u != t:
+                L *= (cc - u) / sp.Integer(t - u)
+        out += sp.expand(L) * vals[t].as_expr()
+    return sp.expand(out)
+
+
 def candidates(Pexpr):
     """polynomials in c whose roots contain every possible atypical value."""
     Pf = sp.Poly(Pexpr, y)
@@ -249,7 +275,7 @@ def candidates(Pexpr):
     f = sp.expand(Pexpr - cc)
     A = sp.Poly(sp.Poly(f, y).nth(N), x)
     if N >= 2:
-        R = sp.resultant(sp.Poly(f, y), sp.Poly(sp.diff(f, y), y), y)
+        R = _res_interp(Pexpr, N)
     else:
         R = sp.Integer(1)
     W = sp.expand(A.as_expr() * R)
@@ -306,7 +332,7 @@ def candidate_roots(pieces):
 
 # ------------------------------------------------------------------ driver
 
-def atypical(Pexpr, n_generic=6, verbose=False):
+def atypical(Pexpr, n_generic=6, verbose=False, alg_max_deg=4):
     """full detector.  Returns a dict."""
     import random
     rng = random.Random(20250829)
@@ -343,7 +369,16 @@ def atypical(Pexpr, n_generic=6, verbose=False):
         if r["chi"] != chi_gen:
             atyp.append({"c": str(v), "kind": "rational", "chi": r["chi"],
                          "chi_gen": chi_gen, "detail": r})
+    untested = []
     for Fp in irr:
+        if Fp.degree() > alg_max_deg:
+            untested.append({"minpoly": str(Fp.as_expr()), "deg": Fp.degree()})
+            tested.append({"c": "root of a degree-%d irreducible" % Fp.degree(),
+                           "kind": "algebraic", "chi": None,
+                           "note": "NOT TESTED: minimal polynomial of degree %d > %d"
+                                   % (Fp.degree(), alg_max_deg),
+                           "minpoly": str(Fp.as_expr())})
+            continue
         alpha = sp.CRootOf(Fp.as_expr(), 0)
         dom = sp.QQ.algebraic_field(alpha)
         try:
@@ -358,7 +393,11 @@ def atypical(Pexpr, n_generic=6, verbose=False):
             atyp.append({"c": "root of %s" % Fp.as_expr(), "kind": "algebraic",
                          "chi": r["chi"], "chi_gen": chi_gen, "detail": r,
                          "minpoly": str(Fp.as_expr()), "deg": Fp.degree()})
+    jump = sum(a["chi"] - chi_gen for a in atyp)
     return {"chi_gen": chi_gen, "chi_gen_votes": "%d/%d" % (nmode, len(gen_chis)),
+            "suzuki_jump_sum": jump, "suzuki_required": 1 - chi_gen,
+            "suzuki_closes": bool(jump == 1 - chi_gen),
+            "untested_algebraic_candidates": untested,
             "generic_c": [str(v) for v in gen_vals], "generic_chi": gen_chis,
             "n_candidates_rational": len(rat),
             "n_candidates_algebraic": len(irr),

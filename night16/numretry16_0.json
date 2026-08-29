@@ -1,0 +1,40 @@
+[
+ {
+  "hash": "39f56b091e75",
+  "c": "0",
+  "verdict": "VANISHING",
+  "error": null,
+  "ls_residual": 1.0517682977067204e-13,
+  "max_period": 1.3985506777926513e-13,
+  "rel_ls_residual": 1.0517682977067204e-13,
+  "err_ls_residual": 6.044427710928524e-14,
+  "chi": 0,
+  "n_components": 2,
+  "n_punctures": 4,
+  "genus_sum": 0,
+  "n_cycles": 2,
+  "max_abs_residue": 2.7839817461309814e-13,
+  "sum_abs_residues": 2.896339772991379e-13,
+  "n_places_total": 4,
+  "t": 434.2
+ },
+ {
+  "hash": "894a95da1a0d",
+  "c": "0",
+  "verdict": null,
+  "error": "transport: transport wall-clock budget exceeded",
+  "ls_residual": null,
+  "max_period": null,
+  "rel_ls_residual": null,
+  "err_ls_residual": null,
+  "chi": null,
+  "n_components": null,
+  "n_punctures": null,
+  "genus_sum": null,
+  "n_cycles": null,
+  "max_abs_residue": null,
+  "sum_abs_residues": null,
+  "n_places_total": null,
+  "t": 400.0
+ }
+]

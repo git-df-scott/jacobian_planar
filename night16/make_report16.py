@@ -1,10 +1,21 @@
 """night16 -- assemble ATYPICAL.md and atypical.csv from the run records."""
-import csv, glob, json
+import csv, glob, json, os
 from collections import Counter
 
 R = []
 for f in sorted(glob.glob("atypical16_*.json")):
     R.extend(json.load(open(f)))
+RT = []
+for f in sorted(glob.glob("numretry16_*.json")):
+    RT.extend(json.load(open(f)))
+RTD = {(z["hash"], z["c"]): z for z in RT}
+for r in R:
+    for fb in r.get("fibres", []):
+        key = (r["hash"], fb.get("c"))
+        if key in RTD and fb.get("num_on", {}).get("verdict") is None:
+            z = dict(RTD[key]); z["retry"] = True
+            fb["num_on"] = z
+
 order = {r["hash"]: i for i, r in enumerate(json.load(open("survivor_order16.json")))}
 R.sort(key=lambda r: order.get(r["hash"], 999))
 json.dump(R, open("atypical16.json", "w"), indent=1, default=str)
@@ -17,8 +28,9 @@ COLS = ["hash", "label", "deg_P", "deg_y", "n15_instrument", "n15_fibres_tested"
         "nummono_verdict_on", "nummono_ls_residual_on", "nummono_max_period_on",
         "nummono_max_abs_residue_on", "nummono_sum_abs_residues_on",
         "nummono_chi_on", "nummono_ncomp_on", "nummono_npunct_on",
-        "near_c", "near_exact_chi", "near_nummono_verdict", "near_nummono_max_period",
-        "verdict"]
+        "near_c", "near_exact_chi", "near_exact_periods", "near_exact_degF",
+        "suzuki_jump_sum", "suzuki_required", "suzuki_closes",
+        "untested_algebraic_candidates", "detector_orientation", "verdict"]
 
 
 def fmt(v):
@@ -55,11 +67,17 @@ def row(r):
     nr = fs[0].get("num_near", {}) if fs else {}
     d["near_c"] = "|".join(nr.keys())
     d["near_exact_chi"] = "|".join(fmt(v.get("exact_chi")) for v in nr.values())
-    d["near_nummono_verdict"] = "|".join(
-        fmt((v.get("num") or {}).get("verdict") or (v.get("num") or {}).get("error"))
-        for v in nr.values())
-    d["near_nummono_max_period"] = "|".join(
-        fmt((v.get("num") or {}).get("max_period")) for v in nr.values())
+    d["near_exact_periods"] = "|".join(fmt(v.get("exact_periods")) for v in nr.values())
+    d["near_exact_degF"] = "|".join(
+        ",".join(str(z) for z in (v.get("degF") or [])) for v in nr.values())
+    j = sum(a["chi"] - r["chi_gen"] for a in r.get("atypical", []))
+    d["suzuki_jump_sum"] = j
+    d["suzuki_required"] = 1 - r["chi_gen"]
+    d["suzuki_closes"] = (j == 1 - r["chi_gen"])
+    d["untested_algebraic_candidates"] = "|".join(
+        "deg %d: %s" % (u["deg"], u["minpoly"])
+        for u in r.get("untested_algebraic_candidates", []))
+    d["detector_orientation"] = r.get("detector_orientation", "as given")
     return d
 
 
@@ -73,3 +91,48 @@ cnt = Counter(r["verdict"] for r in R)
 still = [r["hash"] for r in R if r["verdict"] == "STILL-VANISHING"]
 json.dump(still, open("still_vanishing16.json", "w"), indent=1)
 print("rows", len(R), dict(cnt))
+
+# ------------------------------------------------------------------- ATYPICAL.md
+def md_table(R):
+    L = []
+    L.append("| # | hash | deg P | deg_y | chi_gen | atypical c | chi(F_c) | jump | "
+             "components of F_c (degrees) | EXACT-PRIM on F_c (deg F per component) | "
+             "NUM-MONO on F_c: ls-residual / max period / max residue | "
+             "nearby generic c: exact chi | verdict |")
+    L.append("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    for i, r in enumerate(R):
+        fs = r.get("fibres", [])
+        ac = "; ".join(a["c"] for a in r["atypical"]) or "NONE"
+        ch = "; ".join(str(a["chi"]) for a in r["atypical"]) or "-"
+        jp = "; ".join(str(a["chi"] - r["chi_gen"]) for a in r["atypical"]) or "-"
+        comp = "; ".join("%s (%s)" % (f.get("n_Qfactors"),
+                                      ",".join(str(z) for z in (f.get("Qfactor_degs") or [])))
+                         for f in fs)
+        ep = "; ".join("%s [%s]" % (f.get("exact", {}).get("verdict", ""),
+                                    ",".join(str(cp.get("degF"))
+                                             for cp in f.get("exact", {}).get("components", [])))
+                       for f in fs)
+        nm = []
+        for f in fs:
+            z = f.get("num_on", {})
+            if z.get("verdict"):
+                nm.append("%s %.2g / %.2g / %.2g" % (z["verdict"], z.get("ls_residual") or 0,
+                                                     z.get("max_period") or 0,
+                                                     z.get("max_abs_residue") or 0))
+            else:
+                nm.append("budget exceeded")
+        nr = fs[0].get("num_near", {}) if fs else {}
+        near = "; ".join("%s:%s" % (k, v.get("exact_chi")) for k, v in nr.items())
+        L.append("| %d | `%s` | %d | %d | %d | %s | %s | %s | %s | %s | %s | %s | **%s** |"
+                 % (i + 1, r["hash"], r["deg_P"], r["deg_y"], r["chi_gen"], ac, ch, jp,
+                    comp, ep, " ; ".join(nm), near, r["verdict"]))
+    return "\n".join(L)
+
+
+head = open("ATYPICAL_head.md").read()
+mid = open("ATYPICAL_mid.md").read()
+tail = open("ATYPICAL_tail.md").read() if os.path.exists("ATYPICAL_tail.md") else ""
+ctl = "\n```\n" + open("controls16_log.txt").read().rstrip() + "\n```\n"
+ctl += "\n```\n" + open("controls16b_log.txt").read().rstrip() + "\n```\n"
+open("ATYPICAL.md", "w").write(head + ctl + mid + "\n" + md_table(R) + "\n" + tail)
+print("wrote ATYPICAL.md")

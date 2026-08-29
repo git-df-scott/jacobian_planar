@@ -1,0 +1,21 @@
+[
+ {
+  "hash": "8ccaea9ee461",
+  "c": "0",
+  "verdict": "VANISHING",
+  "error": null,
+  "ls_residual": 1.0533590627667833e-14,
+  "max_period": 1.0151224712167747e-14,
+  "rel_ls_residual": 1.0533590627667833e-14,
+  "err_ls_residual": 1.0336648849858133e-14,
+  "chi": 0,
+  "n_components": 3,
+  "n_punctures": 6,
+  "genus_sum": 0,
+  "n_cycles": 3,
+  "max_abs_residue": 5.0968211425269925e-15,
+  "sum_abs_residues": 9.217181483103985e-15,
+  "n_places_total": 6,
+  "t": 422.7
+ }
+]

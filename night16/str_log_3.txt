@@ -1,0 +1,2 @@
+[s] c689ce7fc834 deg=18 dy=18 dx= 9 y<->x swapped chi_gen=-3 atyp=['0'] -> STILL-VANISHING (51s)
+[s] cf1c601f3d1c deg=20 dy=10 dx=20 as given chi_gen=-1 atyp=['0'] -> STILL-VANISHING (213s)

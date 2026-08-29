@@ -1,0 +1,2 @@
+[s] 11b99f22adf6 deg=18 dy=18 dx=18 as given chi_gen=-3 atyp=['0'] -> STILL-VANISHING (420s)
+[s] 4667d741b2d6 deg=13 dy=13 dx=13 as given chi_gen=-3 atyp=['0'] -> STILL-VANISHING (26s)

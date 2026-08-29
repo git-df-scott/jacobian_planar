@@ -38,6 +38,9 @@ def unimodular_and_noncoordinate(rec):
 
 def main():
     names = json.load(open("still_vanishing16.json"))
+    if len(sys.argv) > 2:
+        kk, nn = int(sys.argv[1]), int(sys.argv[2])
+        names = [h for i, h in enumerate(names) if i % nn == kk]
     S = {r["hash"]: r for r in load16.survivors()}
     res = []
     if os.path.exists(OUT):

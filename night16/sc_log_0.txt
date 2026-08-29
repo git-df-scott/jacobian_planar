@@ -4,3 +4,5 @@
 [19/57] 3bd161cf7a22 deg=11 dy= 4 chi_gen=-2 atyp=['0'] -> STILL-VANISHING (47s)
 [25/57] 8ccaea9ee461 deg= 7 dy= 5 chi_gen=-1 atyp=['0'] -> STILL-VANISHING (82s)
 [31/57] 894a95da1a0d deg=14 dy= 5 chi_gen=-3 atyp=['0'] -> STILL-VANISHING (73s)
+[37/57] b35d46339ef4 deg= 5 dy= 3 chi_gen=-1 atyp=['0'] -> STILL-VANISHING (82s)
+[43/57] d01448b8b96a deg= 5 dy= 3 chi_gen=-1 atyp=['0'] -> STILL-VANISHING (66s)
