@@ -68,8 +68,8 @@ for name, P in CASES:
         if sp.sstr(f) not in seen:
             seen.add(sp.sstr(f))
             ded.append(f)
-    rr = MT.rational_mate_box(P, ded, kmax=2,
-                              DAmax=min(8, 2 * sp.Poly(P, x, y).total_degree()))
+    rr = MT.rational_mate_box(P, ded, kmax=4,
+                              DAmax=max(12, 2 * sp.Poly(P, x, y).total_degree()))
     say("%-26s %4d %6s  %-9s  %-38s %s"
         % (name, sp.Poly(P, x, y).total_degree(), g,
            "FOUND" if rr.get("found") else "none in box",

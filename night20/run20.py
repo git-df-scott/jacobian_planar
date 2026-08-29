@@ -38,6 +38,10 @@ def denominator_candidates(P, rec):
     return ded
 
 
+RM_K = 2
+RM_A = 8
+
+
 def main(src, dst, mult=2, cap=26, tlim=100000):
     recs = json.load(open(os.path.join(HERE, src)))
     out = []
@@ -68,7 +72,7 @@ def main(src, dst, mult=2, cap=26, tlim=100000):
                 __import__("hashlib").sha1(r["P"].encode()).hexdigest()[:10],
                 last["D"])
             gens = [g for (_, g) in denominator_candidates(P, r)]
-            rr = MT.rational_mate_box(P, gens, kmax=2, DAmax=min(8, 2 * d))
+            rr = MT.rational_mate_box(P, gens, kmax=RM_K, DAmax=min(RM_A, 2 * d))
             r2["rational_mate"] = rr
             r2["rational_mate_found"] = bool(rr.get("found"))
             r2["rational_mate_poles"] = rr.get("poles")

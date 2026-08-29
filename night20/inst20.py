@@ -28,10 +28,25 @@ def singular(script, timeout=300):
 
 
 def sstr(e):
-    """sympy Expr -> Singular input string (^ is fine in Singular)."""
+    """sympy Expr -> Singular input string.  Built term by term from the Poly
+    so that a rational coefficient never lands after the exponent (Singular
+    reads x^6*y^4/2 as x^6*y^(4/2))."""
     e = sp.expand(e)
-    s = sp.sstr(e)
-    return s.replace("**", "^")
+    try:
+        gens = sorted(e.free_symbols, key=lambda t: t.name)
+        if not gens:
+            return sp.sstr(e)
+        pol = sp.Poly(e, *gens)
+    except Exception:
+        return sp.sstr(e).replace("**", "^")
+    terms = []
+    for mono, co in zip(pol.monoms(), pol.coeffs()):
+        f = ["(%s)" % sp.sstr(co)]
+        for g, k in zip(gens, mono):
+            if k:
+                f.append("%s^%d" % (g.name, k))
+        terms.append("*".join(f))
+    return "+".join(terms) if terms else "0"
 
 
 def parse_marked(out, key):
