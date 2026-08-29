@@ -232,3 +232,113 @@ and none at infinity. Consequently:
 Genus and punctures come from the Riemann–Hurwitz count of 1.3; the supports
 with `gcd`s making the genus positive are kept and reported as
 `UNDECIDED_BY_RESIDUES`, not as survivors.
+
+---
+
+## 3. Controls — verbatim
+
+Instruments: `res17.py` (residues), `certs17.py` (Bezout + Shpilrain–Yu),
+`mate17.py` (exact mate solve), `coord17.py` (coordinate pairs with a verified
+mate). Full logs: `controls17_log.txt` / `controls17.json`,
+`mate17_control.txt`.
+
+### 3.1 C1 — THE MANDATORY CONTROL (coordinates must satisfy the equations)
+
+```
+==============================================================================
+C1  MANDATORY CONTROL -- coordinates must SATISFY the residue equations
+==============================================================================
+HE  x + y^2                          deg=2   deg_y=2  deg Delta_c=1 genus=0  all-res-zero=True  SY=COORDINATE  -> SATISFIES the equations
+HE  triangular composition, deg 10   deg=10  deg_y=2  deg Delta_c=1 genus=0  all-res-zero=True  SY=COORDINATE  -> SATISFIES the equations
+HE  triangular composition, deg 12   deg=12  deg_y=2  deg Delta_c=1 genus=0  all-res-zero=True  SY=COORDINATE  -> SATISFIES the equations
+HE  triangular composition, deg 6    deg=6   deg_y=2  deg Delta_c=1 genus=0  all-res-zero=True  SY=COORDINATE  -> SATISFIES the equations
+SE  x + y^2 (coordinate)             genus=0 punctures=1  equations=[]  SY=COORDINATE  -> SATISFIES
+SE  x + y^3 (coordinate)             genus=0 punctures=1  equations=[]  SY=COORDINATE  -> SATISFIES
+SE  x + y^4 (coordinate)             genus=0 punctures=1  equations=[]  SY=COORDINATE  -> SATISFIES
+SE  x + y^5 (coordinate)             genus=0 punctures=1  equations=[]  SY=COORDINATE  -> SATISFIES
+```
+
+The three triangular compositions are built by the bracket-preserving moves
+`(F,G) -> (F, G+p(F))` and `(F,G) -> (G,-F)` from `(x,y)`, so each comes with an
+explicit `Q` for which `[P,Q] - 1 = 0` was expanded coefficientwise over `Q`
+and came out identically zero. They are members of the supports H1/H2 (`g`
+constant), and in the sweep the same check is repeated at INSTANCE level:
+substituting each instance's coefficient vector into that support's residue
+equations returned `0` for every equation on every instance, coordinates
+included ("by-construction check ... = True" in `run17_log.txt`).
+
+### 3.2 C2 — negatives (a residue that must NOT vanish)
+
+```
+    x^2 + y^2 (HE)                                 res_inf = 1              -> NONZERO ok
+    x*y (HE, g=x)                                  res_inf = 1              -> NONZERO ok
+    y + x^2 y^4 (SE-swap n=2 m=4, night15 witness) equations = ['h0/(2*lam)']   -> NONZERO ok
+    y + x^2 y^2 (SE-swap n=2 m=2)                  equations = ['1']            -> NONZERO ok
+    y + x^3 y^6 (SE-swap n=3 m=6)                  equations = ['2*h0/(3*lam)'] -> NONZERO ok
+```
+
+The `n=2, m=4` row is night15's own instrument-bug witness: EXACT-G1 first
+claimed "residue nonzero iff `n = m`", NUM-MONO contradicted it at `n=2, m=4`,
+and the corrected rule is `n | m`. This lane's engine, derived independently
+from the exponent rule of 1.2, reproduces the corrected rule exactly — nonzero
+residue iff `n >= 2`, `m >= n`, `n | m` — on every `(n,m)` tested.
+
+### 3.3 C3 — residues sum to zero
+
+Structural in this engine: the several places over one branch point differ only
+by the branch of the radical, i.e. by a root of unity multiplying the nonzero
+prefactor, and those roots of unity sum to zero whenever more than one place
+lies over the point. Checked numerically as well through C5.
+
+### 3.4 C4 — cross-instrument (HE17 vs SE17 on `P = A(x) + B(x) y^2`)
+
+```
+    x + y^2                    SE17: res-zero=True  genus=0 | HE17: res-zero=True  genus=0  -> AGREE
+    x + (x-1)^2 y^2            SE17: res-zero=False genus=0 | HE17: res-zero=False genus=0  -> AGREE
+    x + (x-1)^3 y^2            SE17: res-zero=True  genus=0 | HE17: res-zero=True  genus=0  -> AGREE
+    x + x^2(x-1)^2 y^2         SE17: res-zero=False genus=0 | HE17: res-zero=False genus=0  -> AGREE
+    x + (x-1)^4 y^2            SE17: res-zero=False genus=0 | HE17: res-zero=False genus=0  -> AGREE
+    x + x^2 (x-1)^3 y^2        SE17: res-zero=False genus=0 | HE17: res-zero=False genus=0  -> AGREE
+    x^2 + y^2                  SE17: res-zero=False genus=0 | HE17: res-zero=False genus=0  -> AGREE
+```
+
+> **An instrument error found by this control and fixed, recorded because it
+> changed answers.** The first HE17 read only the residue at `x = infinity`
+> and reported `x + (x-1)^2 y^2` as residue-free, while SE17 reported a nonzero
+> residue at the puncture over `x = 1`. SE17 was right: there
+> `Delta_c = 4(x-1)^2 (c-x)` has a DOUBLE root, the exponent `w = -1` is an
+> integer, and the residue is the (nonzero) leading coefficient. The finite
+> places are not optional: the general rule of 1.2 must be applied at every
+> branch point, not only at infinity. `res17.he_finite_residues` does that now,
+> by factoring `Delta_c` over `Q(c)` and reducing the residue coefficient
+> modulo each irreducible factor. All seven rows agree after the fix.
+
+### 3.5 C5 — cross-night numeric (night15 NUM-MONO, imported read-only)
+
+```
+    x + y^2 (coordinate)       VANISHING      expect VANISHING      ok   [c=1 rel=3.93e-16 punct=1 g=0; c=-1 rel=3.07e-16 punct=1 g=0]
+    x*y^2 + y                  VANISHING      expect VANISHING      ok   [c=1 rel=1.94e-15 punct=2 g=0; c=-1 rel=8.89e-15 punct=2 g=0]
+    x^2 + y^2                  NONVANISHING   expect NONVANISHING   ok   [c=1 rel=9.33e-01 punct=2 g=0; c=-1 rel=1.14e+00 punct=2 g=0]
+    y + x^2 y^4                NONVANISHING   expect NONVANISHING   ok   [c=1 rel=5.55e-01 punct=3 g=0; c=-1 rel=5.35e-01 punct=3 g=0]
+    y + x^2 y^3                VANISHING      expect VANISHING      ok   [c=1 rel=2.11e-14 punct=3 g=0; c=-1 rel=2.11e-14 punct=3 g=0]
+    x + (x-1)^3 y^2            VANISHING      expect VANISHING      ok   [c=1 rel=6.34e-16 punct=4 g=0; c=-1 rel=9.82e-15 punct=3 g=0]
+```
+
+### 3.6 The mate-solver control (mandatory before any EMPTY is trusted)
+
+```
+MATE-SOLVER CONTROL -- recover the mate of a known coordinate
+      D=10  n=66    MATE_over_Q      (1.0s)
+  coordinate deg 10  (known mate deg 5): MATE_over_Q     ok  [1.0s]
+      [P,Q]-1 residual terms = 0 ; deg Q = 5
+      D=12  n=91    MATE_over_Q      (2.8s)
+  coordinate deg 12  (known mate deg 6): MATE_over_Q     ok  [2.8s]
+      [P,Q]-1 residual terms = 0 ; deg Q = 6
+  negative control x*y        -> EMPTY_over_Q_all_stages
+  negative control x^2 + y^2  -> EMPTY_over_Q_all_stages
+CONTROL PASS
+```
+
+The solver recovers the mate of a degree-10 and a degree-12 coordinate with a
+zero coefficientwise residual, and returns exactly-verified `lambda`
+certificates on the two standard negatives.
