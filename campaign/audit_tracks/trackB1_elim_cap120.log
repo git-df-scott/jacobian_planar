@@ -1,0 +1,7 @@
+eliminator: 283 equations, 165 variables, nonzero=['c_1_0', 'c_8_14', 'd_12_21', 's_4_8'], normalize={}, mode=exact-Q
+  [t=1s] node 0: 10 rule apps, 275 eqs, largest eq 76 terms, total terms 8568
+  [t=2s] node 0: 20 rule apps, 265 eqs, largest eq 82 terms, total terms 9062
+  [t=4s] node 0: 30 rule apps, 255 eqs, largest eq 173 terms, total terms 14249
+  [t=7s] node 0: 40 rule apps, 245 eqs, largest eq 386 terms, total terms 28130
+  [t=14s] node 0: 50 rule apps, 235 eqs, largest eq 2018 terms, total terms 75077
+  [t=43s] node 0: 60 rule apps, 225 eqs, largest eq 16534 terms, total terms 494368

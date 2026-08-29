@@ -1,0 +1,18 @@
+--- 1. can't-fail scan over MY OWN certifiers ------------------------
+    findings: 0
+
+--- 2. are the two contradiction legs independent? ------------------
+    pole branch: deg W~ = 15, ord_0 = 2, ord_1 = 9, map-degree = 4
+    => they are ONE leg reported twice.  The independent second leg is
+       E4's ladder pole bound, which E4 itself labels genericity-conditional.
+
+--- 3. is the nine-chart enumeration exhaustive? --------------------
+    => the nine charts are exhaustive only under H-PROP, which is not
+       proved for (108,72).  Label: CONDITIONAL, not exhaustive.
+
+--- 4. the argument that closes (108,72) without any of that --------
+    => (108,72) closes on k == 4 (mod 5) alone -- no chart enumeration,
+       no beta, no p, no D = 15 - 12/beta.  The remaining gap is the
+       3|D_ode family branch (needs D_ode != 3*13 = 39).
+
+w3_10872_and_legs_audit: 13/13 checks pass

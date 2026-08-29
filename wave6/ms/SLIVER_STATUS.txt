@@ -1,0 +1,3 @@
+shape1 p108_192622: TIMEOUT at 1800s (peak 6.0GB) -- UNDECIDED, requeue overnight (covers 6 records per unique_system_map)
+shape2 p108_525122: INTERRUPTED-RATIONED at ~20min 22:20Z (user-authorized RAM rationing for twin) -- UNDECIDED, requeue overnight (covers 2 records)
+0-byte _long.out files are NOT verdicts.

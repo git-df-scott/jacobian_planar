@@ -1,0 +1,60 @@
+==============================================================================
+A6(i)  THE SEVENTH CONTROL: the descent map G through the gate
+==============================================================================
+  G = (G1,G2), deg = (6,4), det JG = -2*(3*u + v - 2)**2
+
+    G0: PASS
+    G1: FAIL
+    G2: PASS
+    G3: PASS
+    G4: PASS
+    G5: PASS
+    G6: FAIL
+  PASS  G is REJECTED by the gate (it is non-injective but NOT Keller)   <CERTIFIED>   [verdict=REJECT]
+  PASS  G is rejected by G1 (Jacobian non-constancy) -- the CORRECT reason   <CERTIFIED>   [rejected-by: ['G1', 'G6']]
+  PASS  G is NOT rejected by G2 (its degrees (6,4) genuinely do not divide), so the gate is discriminating, not blanket-rejecting   <CERTIFIED>   [G2 passed -- 6 does not divide 4, 4 does not divide 6]
+
+==============================================================================
+A6(ii)  CROSS-ENGINE LEG: msolve 0.10.1
+==============================================================================
+  PASS  msolve sanity: <xy-1, x, y> -> no solutions   <CERTIFIED>   [msolve: [-1]:]
+  PASS  msolve sanity: a zero-dimensional system -> solutions reported   <CERTIFIED>   [msolve: [0, [65521, 
+7, 
+2, 
+['d_9_15', 'd_4_5',]
+  PASS  p=65521 msolve input prepared (6 planted + 6 real, reduced by Singular)   <CERTIFIED>   [6/6]
+  PASS  p=65521 msolve POS on the REAL pinned system -> solutions exist   <CERTIFIED>   [22s, msolve: [0, [65521, 
+8, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65521 msolve POS on the PLANTED data-mutant -> solutions exist (independent engine confirms A6b)   <CERTIFIED>   [3s, msolve: [0, [65521, 
+7, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65521 msolve NEG on the contradictory system -> no solutions   <CERTIFIED>   [0.0s, msolve: [-1]:]
+  PASS  p=65539 msolve input prepared (6 planted + 6 real, reduced by Singular)   <CERTIFIED>   [6/6]
+  PASS  p=65539 msolve POS on the REAL pinned system -> solutions exist   <CERTIFIED>   [22s, msolve: [0, [65539, 
+8, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65539 msolve POS on the PLANTED data-mutant -> solutions exist (independent engine confirms A6b)   <CERTIFIED>   [4s, msolve: [0, [65539, 
+7, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65539 msolve NEG on the contradictory system -> no solutions   <CERTIFIED>   [0.0s, msolve: [-1]:]
+  PASS  p=65599 msolve input prepared (6 planted + 6 real, reduced by Singular)   <CERTIFIED>   [6/6]
+  PASS  p=65599 msolve POS on the REAL pinned system -> solutions exist   <CERTIFIED>   [23s, msolve: [0, [65599, 
+8, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65599 msolve POS on the PLANTED data-mutant -> solutions exist (independent engine confirms A6b)   <CERTIFIED>   [4s, msolve: [0, [65599, 
+7, 
+1144, 
+['d_3_3', 'd_4_5]
+  PASS  p=65599 msolve NEG on the contradictory system -> no solutions   <CERTIFIED>   [0.0s, msolve: [-1]:]
+
+==============================================================================
+A6 COMPLETE.  Gate discrimination proven by the seventh control (G is
+stopped by G1 alone), and the planted-solution controls confirmed by an
+independent engine at all three campaign primes.
+==============================================================================

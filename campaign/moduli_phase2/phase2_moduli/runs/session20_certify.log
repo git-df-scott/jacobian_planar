@@ -1,0 +1,172 @@
+
+Plane Jacobian campaign - Session 20
+REVERSE-ENGINEERING A SKELETON THAT ACCEPTS THE TRAPDOOR.
+
+Session 19 located the trapdoor in the Session-18 emptiness proof: the
+endgame is unlocked (Keller constant c != 0) exactly when the realization
+functional R is allowed a pole of order 4 at U = v+1 = 0, and the
+unlocking R then has map-degree 4, so the realization layer - which
+demands map-degree = chain degree D - is satisfied only at D = 4.
+Session 19 declared D = 4 inadmissible because the (2,3)-cusp fork
+profile forces D = 1 (mod 6).
+
+CORRECTION (Result 2 below).  That congruence was an artefact of pinning
+BOTH the cusp type to (2,3) AND the cancellation depth to delta = 3.
+With those freed, D = 4 IS constructible, and this session exhibits the
+skeleton explicitly:
+
+    cusp type (m,n) = (2,5),  cancellation depth delta = 2,
+    Belyi degree N = 6,  p = w^3 + (5/2)w^2 + (15/8)w + 5/16,  r = w + 1,
+    deg(p^2 - w r^5) = 2,  ramification 3x2 / 1 + 1x5 / 1x4 + 2x1,
+    rigid (solution set = the scaling orbit),  chain degree D = 4.
+
+So steps 1 and 2 of the reverse-engineering programme SUCCEED.  The
+D = 1 (mod 6) obstruction reported in Session 19 was too narrow, and is
+withdrawn as a general statement (it remains correct for the (2,3),
+delta = 3 family it was derived in).
+
+WHAT KILLS THE PROGRAMME (Results 1 and 3).  Generalise the endgame to an
+arbitrary cusp exponent s and contact exponent k,
+
+    T_{k,s,D}(R) = (v+1)^k ( s v(v+1) R' - D R ) = -c,
+
+with (k,s) = (4,3) the First Framework.  Then:
+
+  RESULT 1 (generalised trapdoor).  For every (k,s,D), pole order < k
+  still forces c = 0, pole order k unlocks it, and the unlocking R has
+  numerator a degree-k polynomial not vanishing at v = -1.  So the
+  unlocking R has map-degree exactly k, ALWAYS - it never sees D.  The
+  realization layer demands map-degree D, so self-consistency forces
+  D = k.  The correct target is not "force D = 4" but "force the chain
+  degree to equal the contact exponent".
+
+  RESULT 3 (the Belyi gate, and it is where step 4 dies).  With k = D
+  forced, the unlocking R has one pole of order D at v = -1 and D-1
+  finite critical points.  Those critical points are simple and their
+  critical values are DISTINCT, so R has D critical values in all.  A
+  Belyi map has exactly 3, and affine post-composition R -> lambda*R+nu
+  cannot change how many there are.  Hence R is affine-equivalent to a
+  degree-D Belyi map only when D <= 3, uniformly in s.
+
+  In particular D = 4 fails at EVERY cusp exponent s - by the Belyi gate
+  when s does not divide 4, by resonance collision when it does.  Step 3's
+  hardcoded ansatz is not a Belyi realization at D = 4 no matter what
+  geometry is placed underneath it, so step 4 cannot pass, and it fails
+  for a reason entirely independent of steps 1 and 2.
+
+SURVIVING WINDOW.  Chain degree D <= 3, e.g. the rigid skeleton
+(m,n) = (5,2), delta = 2, N = 5, deg p = 1, deg r = 2, D = 3, also
+constructed explicitly below.  Two honest caveats about that window:
+  * it still needs the pole-fiber theorem to FAIL for its own geometry -
+    the trapdoor is not avoided there, only made degree-consistent;
+  * D = 13 corresponds to Moh's degree pair (99,66).  Chain degrees 2
+    and 3 correspond to far smaller degree pairs, inside the range where
+    the plane Jacobian conjecture is already proved.  Checking that is
+    the natural next step, and it is not done here.
+
+All arithmetic below is exact.  Companion Singular routine:
+    ../singular/skeleton_generator.sing
+
+======================================================================
+RESULT 1  generalised trapdoor: unlocking pole order = k,
+          map-degree of the unlocking R = k, independent of D
+======================================================================
+   cases swept (k = 2..6, s = 2..5, D in 1,2,5,7,11,13): 110
+  [PASS] pole order strictly below k always forces c = 0
+  [PASS] the unlocking numerator has degree exactly k, for every (k,s,D)
+  [PASS] that numerator never vanishes at v = -1 (pole order is exactly k)
+
+   => map-degree(R) = k always.  The realization layer demands
+      map-degree(R) = D, so self-consistency forces D = k.
+
+======================================================================
+RESULT 2  D = 4 IS constructible - Session 19's D = 1 mod 6 withdrawn
+======================================================================
+   rigid skeletons with chain degree 4 (m, n, N, deg p, deg r, delta, D):
+      (2, 5, 6, 3, 1, 2, 4)
+  [PASS] chain degree 4 is constructible
+  [PASS] the First Framework (2,3,N=16,8,5,delta=3,D=13) is in the census
+
+   explicit D = 4 skeleton:  p = w**3 + 5*w**2/2 + 15*w/8 + 5/16
+                             r = w + 1
+                             p^2 - w r^5 = (20*w**2 + 44*w + 25)/256
+  [PASS] deg(p^2 - w r^5) == 2 == delta (the cancellation fires)
+  [PASS] p is squarefree
+  [PASS] p(0) != 0 and r(0) != 0 (non-degenerate: gcd(p, w r) = 1)
+  [PASS] Riemann-Hurwitz: ramification 10 == 2*6 - 2
+   profile: 3x2  /  1 + 1x5  /  1x4 + 2x1   -> chain degree D = 4
+
+   => steps 1 and 2 of the programme SUCCEED.  The D = 1 mod 6
+      statement holds only for the (2,3) cusp with delta = 3.
+
+======================================================================
+RESULT 3  the Belyi gate - where step 4 dies, for every skeleton
+======================================================================
+   with k = D forced, count the critical values of the unlocking R
+
+    s \ D:   2   3   4   5   6   7   8   9
+    2     :  x   Y   x   .   x   .   x   .
+    3     :  Y   x   .   .   x   .   .   x
+    4     :  Y   Y   x   .   .   .   x   .
+    5     :  Y   Y   .   x   .   .   .   .
+    6     :  Y   Y   .   .   x   .   .   .
+    7     :  Y   Y   .   .   .   x   .   .
+
+    Y = clears the Belyi gate   . = fails it   x = resonance collision
+  [PASS] D = 4 fails the gate at EVERY cusp exponent s
+  [PASS] the gate clears only for D <= 3, uniformly in s
+
+   the D = 4 ansatz (s = 3): R = (-243*v**4 - 648*v**3 - 540*v**2 - 120*v + 10)/(40*v**4 + 160*v**3 + 240*v**2 + 160*v + 40)
+   residual of the endgame  = 0
+   critical points: 3 simple, critical values: 3 finite + 1 pole = 4
+  [PASS] the D = 4 ansatz solves the endgame exactly
+  [PASS] but it has 4 critical values, so it is affine-equivalent to no Belyi map (a Belyi map has 3)
+
+======================================================================
+RESULT 4  the surviving window: chain degree D <= 3
+======================================================================
+   rigid skeletons with D <= 3 (m, n, N, deg p, deg r, delta, D):
+      (2, 3, 4, 2, 1, 1, 3)    [resonance collision - dead]
+      (3, 2, 3, 1, 1, 1, 2)    [resonance collision - dead]
+      (3, 5, 6, 2, 1, 3, 3) 
+      (4, 3, 4, 1, 1, 2, 2) 
+      (4, 7, 8, 2, 1, 5, 3) 
+      (5, 2, 5, 1, 2, 2, 3) 
+      (5, 4, 5, 1, 1, 3, 2) 
+      (6, 5, 6, 1, 1, 4, 2) 
+
+   surviving after the resonance gate: [(3, 5, 6, 2, 1, 3, 3), (4, 3, 4, 1, 1, 2, 2), (4, 7, 8, 2, 1, 5, 3), (5, 2, 5, 1, 2, 2, 3), (5, 4, 5, 1, 1, 3, 2), (6, 5, 6, 1, 1, 4, 2)]
+
+   explicit D = 3 survivor:  p = w + 1
+                             r = w**2 + 5*w/2 + 15/8
+                             p^5 - w r^2 = (40*w**2 + 95*w + 64)/64
+  [PASS] deg(p^5 - w r^2) == 2 == delta
+  [PASS] r is squarefree and r(0) != 0
+  [PASS] Riemann-Hurwitz: ramification 8 == 2*5 - 2
+   its unlocking R = (-16*v**3 - 24*v**2 - 6*v + 1)/(3*v**3 + 9*v**2 + 9*v + 3)
+   critical values: 2 finite + 1 pole = 3  (Belyi needs 3)
+  [PASS] the D = 3 survivor's unlocking R clears the Belyi gate
+
+======================================================================
+17/17 certifications passed.
+======================================================================
+
+VERDICT ON THE FOUR-STEP PROGRAMME.
+  step 1  reverse-engineer the edge-count equations   -> SUCCEEDS, but the
+          right target is chain degree = contact exponent, not D = 4.
+  step 2  build a skeleton natively producing D = 4   -> SUCCEEDS: cusp
+          type (2,5), delta = 2, exhibited explicitly and certified.
+  step 3  hardcode the pole-order-4 R at D = 4        -> the ansatz is
+          exact for the endgame, as Session 19 already showed.
+  step 4  run the realization pipeline                -> FAILS, and not
+          for a degree-bookkeeping reason.  The D = 4 unlocking R has 4
+          critical values and no Belyi map has more than 3, so it cannot
+          realize the chain's degree-4 Belyi map under ANY skeleton.  The
+          failure is independent of steps 1 and 2, so no amount of
+          re-engineering the polygon can repair it.
+
+Still no counterexample, and no candidate counterexample.  The one place
+left to look is chain degree D <= 3, which needs the pole-fiber theorem
+to fail on its own terms AND lands in degree ranges where the plane
+Jacobian conjecture is already proved.
+

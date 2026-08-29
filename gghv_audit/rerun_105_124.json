@@ -1,0 +1,127 @@
+{
+ "nodes": [
+  {
+   "deg_pair": [
+    108,
+    72
+   ],
+   "max": 108,
+   "A0": [
+    8,
+    1,
+    28
+   ],
+   "intermediate_corners": [],
+   "final_corner": [
+    11,
+    4,
+    7
+   ],
+   "m": 3,
+   "n": 2,
+   "v11_A0": 36,
+   "eliminated_by_node": "GGHV section 5: LEFT OPEN by the paper itself",
+   "class": "OPEN-IN-SOURCE"
+  },
+  {
+   "deg_pair": [
+    72,
+    108
+   ],
+   "max": 108,
+   "A0": [
+    9,
+    1,
+    27
+   ],
+   "intermediate_corners": [
+    [
+     9,
+     1,
+     24
+    ]
+   ],
+   "final_corner": [
+    11,
+    3,
+    8
+   ],
+   "m": 2,
+   "n": 3,
+   "v11_A0": 36,
+   "eliminated_by_node": "GGHV section 5 (polynomial system for (9,27))",
+   "class": "NOT-RE-DERIVED-HERE"
+  },
+  {
+   "deg_pair": [
+    80,
+    112
+   ],
+   "max": 112,
+   "A0": [
+    4,
+    1,
+    12
+   ],
+   "intermediate_corners": [],
+   "final_corner": [
+    7,
+    4,
+    3
+   ],
+   "m": 5,
+   "n": 7,
+   "v11_A0": 16,
+   "eliminated_by_node": "GGHV section 2 table row 2: '[4, section 3.5]'",
+   "class": "EXTERNAL-NOT-RE-DERIVED"
+  },
+  {
+   "deg_pair": [
+    120,
+    80
+   ],
+   "max": 120,
+   "A0": [
+    8,
+    1,
+    32
+   ],
+   "intermediate_corners": [
+    [
+     8,
+     1,
+     28
+    ]
+   ],
+   "final_corner": [
+    11,
+    4,
+    7
+   ],
+   "m": 3,
+   "n": 2,
+   "v11_A0": 40,
+   "eliminated_by_node": "GGHV section 3, via [2, Proposition 3.29] applied to (8,4)",
+   "class": "RE-DERIVED-KEY-STEP"
+  }
+ ],
+ "degree_pairs": [
+  [
+   72,
+   108
+  ],
+  [
+   80,
+   112
+  ],
+  [
+   108,
+   72
+  ],
+  [
+   120,
+   80
+  ]
+ ],
+ "note": "one orientation per case; (deg P, deg Q) = (m,n)*v11(A0)"
+}

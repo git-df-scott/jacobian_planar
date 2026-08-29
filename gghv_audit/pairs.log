@@ -1,0 +1,14 @@
+==============================================================================
+T1(b) -- every ordered degree pair with 105 <= max <= 124
+==============================================================================
+    index built from 5706 distinct admissible complete chains; 48 distinct v11(A0) values
+    ordered pairs in the window: 4560
+    pairs that ARISE: 6 -> [(72, 108), (80, 112), (80, 120), (108, 72), (112, 80), (120, 80)]
+    [PASS] Q1 the pairs that arise are exactly the six orientations of GGHV's three degree pairs in this window   [(72, 108), (80, 112), (80, 120), (108, 72), (112, 80), (120, 80)]
+    [PASS] Q2 the same code path reproduces (66,99), a pair GGHV lists OUTSIDE the window   ARISES: 
+    [PASS] Q3a NEGATIVE: (110,110) is eliminated because it forces m = n = 1   gcd(deg P, deg Q) = 110 forces (m,n) = (1,1); a counterexample needs m, n > 1
+    [PASS] Q3b NEGATIVE: (115,138) -- (m,n) = (5,6), both > 1 and coprime -- is eliminated for a DIFFERENT stated reason, about the chains   no admissible complete chain has v11(A0) = 23
+    elimination reasons: {'gcd(deg P, deg Q)': 214, 'no admissible complete chain has v11(A0)': 4316, 'chains with v11(A0)': 24}
+==============================================================================
+    4/4 checks passed
+==============================================================================

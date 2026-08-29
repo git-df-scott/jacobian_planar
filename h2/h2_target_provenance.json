@@ -1,0 +1,74 @@
+{
+ "matched": 179,
+ "unmatched": [
+  {
+   "tag": "F6(j=0;m,n=4,10) | a=5 b=5 c'=0 r=3 eps=((3, 1),(1, 0))",
+   "A0": [
+    5,
+    1,
+    20
+   ],
+   "final": [
+    9,
+    5,
+    4
+   ],
+   "mn": [
+    4,
+    10
+   ],
+   "recorded_max": 250,
+   "computed_max": 250,
+   "MN_at_that_corner": [
+    [
+     7,
+     18
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     13,
+     34
+    ],
+    [
+     16,
+     9
+    ],
+    [
+     19,
+     50
+    ],
+    [
+     23,
+     13
+    ]
+   ]
+  }
+ ],
+ "family_tagged": 0,
+ "unparsed": 0,
+ "checks": [
+  [
+   "P1 POSITIVE: chain-tagged targets are matched against the independent enumeration",
+   true,
+   "179 matched, 1 not"
+  ],
+  [
+   "P1b every target is now parsed (no tag shape left unread)",
+   true,
+   "0 unparsed"
+  ],
+  [
+   "P2 NEGATIVE: a corrupted tag does not match",
+   true,
+   "corrupted final corner (99, 4, 8)"
+  ],
+  [
+   "P3 NEGATIVE: an (m,n) that is not in MN is rejected",
+   true,
+   "(9, 14) not in [(2, 3), (7, 11), (12, 19), (17, 27), (22, 35)]"
+  ]
+ ]
+}

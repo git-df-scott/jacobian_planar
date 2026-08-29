@@ -1,0 +1,216 @@
+==============================================================================
+0.  VALIDATION of the invariant-ring generator routine
+==============================================================================
+    weights (1, -1, -2): generators [(1, 1, 0), (2, 0, 1)]   expected [(1, 1, 0), (2, 0, 1)]   (Alpoge: C[xy, x^2 z])
+    weights (1, -1, 0): generators [(0, 0, 1), (1, 1, 0)]   expected [(0, 0, 1), (1, 1, 0)]   (C[z, xy])
+    weights (1, -1, -1): generators [(1, 0, 1), (1, 1, 0)]   expected [(1, 0, 1), (1, 1, 0)]   (C[xz, xy])
+    NEGATIVE CONTROL weights (1, 1, -2): 3 generators [(0, 2, 1), (1, 1, 1), (2, 0, 1)] (must not be 2)
+
+==============================================================================
+1.  m(pi) = D * xi   (the Euler relation, checked on every weight system)
+==============================================================================
+    144 weight systems with a free rank-2 invariant ring enumerated
+
+==============================================================================
+2.  THE CONTENT D, over every enumerated weight system
+==============================================================================
+    deg D = 0:  6 systems, e.g. [((-1, 0, 1), '1'), ((-1, 1, 0), '1'), ((0, -1, 1), '1'), ((0, 1, -1), '1'), ((1, -1, 0), '1')]
+    deg D = 1:  18 systems, e.g. [((-2, 0, 1), 'z'), ((-2, 1, 0), 'y'), ((-1, -1, 1), 'z'), ((-1, 0, 2), 'x'), ((-1, 1, -1), 'y')]
+    deg D = 2:  36 systems, e.g. [((-3, 0, 1), 'z**2'), ((-3, 1, 0), 'y**2'), ((-2, -1, 1), 'z**2'), ((-2, -1, 2), 'y*z'), ((-2, 1, -1), 'y**2')]
+    deg D = 3:  42 systems, e.g. [((-3, -1, 1), 'z**3'), ((-3, -1, 3), 'y**2*z'), ((-3, 0, 2), 'x*z**2'), ((-3, 1, -1), 'y**3'), ((-3, 1, 3), 'x*y**2')]
+    deg D = 4:  36 systems, e.g. [((-3, -2, 1), 'z**4'), ((-3, -2, 2), 'x*z**3'), ((-3, -2, 3), 'y**2*z**2'), ((-3, 1, -2), 'y**4'), ((-3, 2, -2), 'x*y**3')]
+    deg D = 5:  6 systems, e.g. [((-3, -3, 1), 'z**5'), ((-3, 1, -3), 'y**5'), ((-1, 3, 3), 'x**5'), ((1, -3, -3), 'x**5'), ((3, -1, 3), 'y**5')]
+
+    D = 1 (k = 0) occurs for exactly these weight systems:
+        (-1, 0, 1)
+        (-1, 1, 0)
+        (0, -1, 1)
+        (0, 1, -1)
+        (1, -1, 0)
+        (1, 0, -1)
+
+    Alpoge's weights (1,-1,-2): D = x**2
+
+==============================================================================
+3.  THEOREM W3-4 verified on Alpoge's map
+==============================================================================
+    source pi = [x*y, x**2*z];   m = [x**3, -x**2*y, -2*x**2*z];   D = x**2
+    target pi' = [u1*u3**2, u2*u3];  m' = [-2*u1*u3**2, -u2*u3**2, u3**3];  D' = u3**2
+    det JF = -2;   det JG = -2*(3*u + v - 2)**2
+    (det JG) o pi * D  =  -2*x**2*(x**2*z + 3*x*y - 2)**2
+    (det JF) * (D' o F) =  -2*x**2*(x**2*z + 3*x*y - 2)**2
+    h = f3/x = -x**2*z - 3*x*y + 2;   det JG expressed in h: -2*(x**2*z + 3*x*y - 2)**2
+
+==============================================================================
+4.  THE k = 0 CLASS: weights (1,-1,0), source and target
+==============================================================================
+    det JF (weights (1,-1,0), generic A,B,C) computed
+    det JG (descent G = (u*A*B, C))         computed
+    (det JG) o pi  -  det JF  =  0
+    8 randomized explicit instances agree: True
+
+    So in the k = 0 class an equivariant F is exactly
+        F = ( x*A(u,v), y*B(u,v), C(u,v) ),   u = xy, v = z,
+    its descent is G = (u*A*B, C), and det JG = det JF identically.
+
+    A C^3 Keller counterexample with these weights therefore IS a plane Keller
+    counterexample whose first coordinate factors as u * A * B.  The k = 0 class
+    does not open a new search space -- it is the plane problem wearing a third
+    variable.  Alpoge's counterexample lives at k = 2 precisely because that is
+    where the C^3 problem is strictly weaker than the plane one.
+
+==============================================================================
+5.  THEOREM W3-4 in the k = 1 class, weights (1,-1,-1)
+==============================================================================
+    Invariants u = xy, v = xz; D = x.  A weight-graded F is
+        F1 = x*A(u,v),  F2 = y*B1 + z*B2,  F3 = y*B3 + z*B4,
+    the target quotient is pi' = (u1 u2, u1 u3) with D' = u1, and the descent is
+        G = ( u*A*B1 + v*A*B2 ,  u*A*B3 + v*A*B4 ).
+    W3-4 then reads   (det JG) o pi * x  =  (det JF) * F1.
+    descent identity G o pi = pi' o F on 6 instances: True
+    W3-4 holds on the same 6 instances:               True
+
+    W3-4 is now verified in three weight classes with three different contents:
+        D = x^2  (Alpoge, k = 2)   D = x  (k = 1)   D = 1  (k = 0).
+    The formula, not the exponent, is what is universal.
+
+==============================================================================
+6.  LEMMA W3-4a: D is a monomial, in closed form -- no box needed
+==============================================================================
+    Let the two invariant generators have exponent vectors e1, e2, so
+    p_i = x^a_i y^b_i z^c_i.  Row i of J pi is (a_i p_i/x, b_i p_i/y, c_i p_i/z),
+    so the maximal-minor vector is
+
+        m(pi) = (p1 p2 / (x y z)) * (Delta_1 x, Delta_2 y, Delta_3 z),
+        (Delta_1, Delta_2, Delta_3) = e1 x e2   (the cross product).
+
+    Both generators are invariant, so e1 . w = e2 . w = 0, hence e1 x e2 is
+    parallel to w: e1 x e2 = lambda * w.  Therefore
+
+        m(pi) = lambda * (p1 p2 / (x y z)) * xi,
+        D     = x^(a1+a2-1) y^(b1+b2-1) z^(c1+c2-1).                    (**)
+
+    D is a MONOMIAL determined by the weights alone, and
+
+        k := deg D = deg p1 + deg p2 - 3.
+
+    COROLLARY.  D = 1  <=>  e1 + e2 = (1,1,1)  <=>  the two generators are one
+    of {x, yz}, {y, xz}, {z, xy}  <=>  the weight system is (0,1,-1), (1,0,-1)
+    or (1,-1,0) up to sign.  This is a PROOF for all weight systems, not an
+    observation inside a search box.
+
+    lambda values seen (e1 x e2 = lambda * w): [-1, 1]
+    closed form (**) matches the computed content on all 144 systems: True
+    k = deg D = deg p1 + deg p2 - 3 on all systems: True
+
+    unordered splittings of (1,1,1) into two nonzero parts: 3
+        generators (0, 0, 1) and (1, 1, 0)
+        generators (0, 1, 0) and (1, 0, 1)
+        generators (0, 1, 1) and (1, 0, 0)
+
+==============================================================================
+7.  ITEM A2: the Alpoge weight class, completely
+==============================================================================
+    Source weights (1,-1,-2), invariants u = xy, v = x^2 z; target weights
+    (-2,-1,1), pi' = (u1 u3^2, u2 u3).  Grading the components by weight:
+
+        f3 (weight +1) = x * A(u,v)
+        f2 (weight -1) = y * B(u,v) + x z * C(u,v)
+        f1 (weight -2) = y^2 * E(u,v) + z * H(u,v)
+
+    so pi' o F = ( A^2 (u^2 E + v H),  A (u B + v C) ) and the descent is
+
+        THEOREM W3-5.   G = ( A^2 (u^2 E + v H),  A (u B + v C) ),
+                        det JG = det JF * A^2,    where f3 = x * A.
+
+    The square is therefore forced FOR THIS WEIGHT CLASS, for every equivariant
+    map in it -- exactly as W3-4 predicts, since D = x^2 and D' o F = f3^2.
+    G is Keller if and only if A is a constant.
+    descent identity G o pi = pi' o F on 6 random instances: True
+    THEOREM W3-5: det JG = det JF * A^2 on the same 6:        True
+
+    Alpoge: f3 = x*(2 - 3u - v)?  True
+
+    A2 bullet 1: is h^2 intrinsic under coordinate changes?
+      factorization types of det JG under 6 random affine gauges: {((1, 2),)}
+
+    A2 bullet 2: does G = G' o sigma with det J sigma = c h^2?
+      det J sigma = c*h^2 on a reduced curve means ramification index 3 along
+      it, so every component of G would have order divisible by 3 along h = 0.
+      In adapted coordinates s = 3u + v - 2, t = u:
+        s-exponents of G1: [2, 3]      ord_s G1 = 2
+        s-exponents of G2: [1, 2]      ord_s G2 = 1
+
+    A2 ANSWERED.  In the (1,-1,-2) class the obstruction is exactly A^2 with
+    f3 = x*A -- intrinsic, and not removable by factoring G through a map that
+    carries it.  It vanishes only when A is a constant, and then
+
+        G = ( c^2 (u^2 E + v H),  c (u B + v C) ),
+
+    whose two components are an arbitrary plane Keller pair normalised so that
+    G(0,0) = (0,0) and dG1/du (0,0) = 0 -- a normalisation any plane Keller map
+    can be put in by a translation and a linear change on the target, since
+    JG(0) is invertible.  So the A = const sub-class is again the plane problem,
+    exactly as the k = 0 class was.
+
+    UNIFIED ANSWER TO A1 + A2.  Whenever the descent is Keller, the
+    correspondence identifies the C^3 problem with the plane problem.  Alpoge's
+    map is a genuine C^3 counterexample precisely BECAUSE its descent is not
+    Keller: A = 2 - 3u - v is non-constant, and det JG = -2 A^2 is the campaign's
+    h^2.  The obstruction is not a defect of the descent -- it is the exact
+    measure of how much weaker the C^3 problem is than the plane one.
+
+==============================================================================
+    PASS  generator routine correct for weights (1, -1, -2)
+    PASS  generator routine correct for weights (1, -1, 0)
+    PASS  generator routine correct for weights (1, -1, -1)
+    PASS  NEGATIVE CONTROL: a non-free weight system is not reported as free
+    PASS  the enumeration is non-empty and contains Alpoge's weight system
+    PASS  m(pi) || xi verified on every enumerated weight system
+    PASS  D = 1 occurs -- the square is NOT forced
+    PASS  D = 1 happens exactly when one weight is 0 and the others are +-1
+    PASS  deg D = 1 (k = 1) also occurs
+    PASS  Alpoge's weight system gives D = x^2 (k = 2)
+    PASS  source content D = x^2
+    PASS  target content D' = u3^2
+    PASS  THEOREM W3-4 holds exactly on Alpoge's map
+    PASS  NEGATIVE CONTROL: the identity FAILS without the content factor D
+    PASS  det JG o pi = -2 h^2 with h = f3/x
+    PASS  k = 0 class: the descent is Jacobian-PRESERVING, det JG o pi = det JF
+    PASS  k = 0 identity confirmed on 8 randomized explicit instances
+    PASS  NEGATIVE CONTROL: the same identity FAILS in Alpoge's k = 2 class
+    PASS  k = 1 class: the constructed G really is the descent of F
+    PASS  THEOREM W3-4 holds in the k = 1 class, weights (1,-1,-1)
+    PASS  NEGATIVE CONTROL: W3-4 with the wrong content x^2 fails here
+    PASS  e1 x e2 is always parallel to w, with lambda = +-1
+    PASS  LEMMA W3-4a closed form matches the computed content everywhere
+    PASS  k = deg p1 + deg p2 - 3 on every enumerated system
+    PASS  exactly three splittings of (1,1,1), matching the three k = 0 weight systems
+    PASS  and every k = 0 weight system found by enumeration has |w| = (0,1,1)
+    PASS  NEGATIVE CONTROL: the closed form without the -1 shift is rejected
+    PASS  W3-5: the constructed G is the descent of F in the (1,-1,-2) class
+    PASS  W3-5: det JG = det JF * A^2 in the (1,-1,-2) class
+    PASS  Alpoge's f3 factors as x * A with A = 2 - 3u - v
+    PASS  and then det JG = -2 A^2 reproduces the campaign's h^2
+    PASS  A2: h^2 is intrinsic -- det JG stays (constant)*(linear)^2 under every gauge
+    PASS  A2: ord_s G2 = 1, not a multiple of 3, so no such factorization exists
+    PASS  A2: G1 and G2 are not polynomials in (s^3, t)
+    PASS  A2: G contracts the line h = 0 to the single point (0,0)
+==============================================================================
+    35/35 checks passed
+    VERDICT (A1 answered)
+      THEOREM W3-4:  (det JG) o pi * D = (det JF) * (D' o F).
+      LEMMA W3-4a:   D = x^(a1+a2-1) y^(b1+b2-1) z^(c1+c2-1)  is a monomial,
+        and k = deg D = deg p1 + deg p2 - 3.
+      The square is NOT forced: k = 0 and k = 1 both occur, and D = 1 holds
+      exactly for the three weight systems (0,1,-1), (1,0,-1), (1,-1,0) up to
+      sign -- PROVED for all weights, since e1 + e2 = (1,1,1) has exactly three
+      splittings into nonzero parts.
+      THEOREM W3-5:  in Alpoge's class, G = (A^2(u^2 E + v H), A(u B + v C))
+        and det JG = det JF * A^2 with f3 = x*A.  A2 answered: the square is
+        intrinsic, not removable by factoring, and vanishes only for A constant.
+      Every class in which the descent IS Keller turns out to be the plane
+      problem in disguise -- both k = 0 and A = const.  Alpoge is a genuine C^3
+      counterexample precisely because its descent is not Keller.  The exponent
+      k is not a defect: it measures how much weaker the C^3 problem is than the
+      plane one.

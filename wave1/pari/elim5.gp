@@ -1,0 +1,12 @@
+default(parisize, 4000000000);
+s = concat(readstr("/tmp/elim_clean.txt"));
+V = eval(s);
+A = V[2][2];
+print("entries: ", #A, "   each of length: ", #A[1]);
+print("--- entry 1, coordinate 1 ---");
+print(type(A[1][1]), "  len ", if(type(A[1][1])=="t_VEC", #A[1][1], 0));
+print(A[1][1]);
+print("--- is any entry a long coefficient list (degree ~1144)? ---");
+mx = 0; for(i=1,#A, for(j=1,#A[i], if(type(A[i][j])=="t_VEC" && #A[i][j]>mx, mx=#A[i][j])));
+print("max nested vector length found: ", mx);
+quit;

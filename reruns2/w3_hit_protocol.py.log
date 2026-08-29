@@ -1,0 +1,32 @@
+==============================================================================
+H6  VALIDATION OF THE GATE
+==============================================================================
+
+    POSITIVE CONTROL (C^3, Alpoge): the gate's H2/H3 logic must ACCEPT it
+      H2 analogue: det JF = -2 (nonzero constant: True)
+      H3 analogue: (1, -3/2, 13/2) and (-1, 3/2, 13/2) both map to (-1/4, 0, 0)
+
+==============================================================================
+CANDIDATES ON RECORD IN THIS REPOSITORY
+==============================================================================
+
+    No candidate in this repository passes the gate.  That is the correct
+    result: the Path A descent is non-injective but not Keller, which is
+    precisely the h^2 obstruction file `39` describes.  No hit is claimed.
+
+==============================================================================
+    PASS  NEGATIVE rejected: identity  (expected failure at H4 (automorphism: generic fiber has 1 point))
+    PASS  NEGATIVE rejected: triangular (x, y + x^2)  (expected failure at H4)
+    PASS  NEGATIVE rejected: triangular (x + y^3, y)  (expected failure at H4)
+    PASS  NEGATIVE rejected: tame composite  (expected failure at H4)
+    PASS  NEGATIVE rejected: linear shear  (expected failure at H4)
+    PASS  NEGATIVE rejected: NOT Keller: (x, x*y)  (expected failure at H2 (det J = x, not constant))
+    PASS  NEGATIVE rejected: NOT Keller: Path A descent factor  (expected failure at H2 (det J = 0))
+    PASS  NEGATIVE rejected: degenerate: (x^2, y)  (expected failure at H2 (det J = 2x, not constant))
+    PASS  POSITIVE CONTROL: H2 analogue accepts Alpoge (det JF is a nonzero constant)
+    PASS  POSITIVE CONTROL: H3 analogue accepts Alpoge (two distinct points, one image)
+    PASS  H6: the gate is validated (all negatives rejected, positive control fired)
+    PASS  Path A descent G is correctly NOT a hit (det JG = -2 h^2, fails H2)
+==============================================================================
+    12/12 checks passed
+    VERDICT: gate validated; no hit in this repository.

@@ -1,0 +1,59 @@
+--- 1. the exponent m on (v+1) is 4 for every (2,3)-cusp framework ---
+  [PASS] block == (alpha^5/2) (v+1)^4 v^{a+b-1} * bracket  (E1's general form)
+    bracket|_{v=-1} = -(3*beta + 2*e)*R(-1)
+  [PASS] bracket|_{v=-1} = -(2e+3beta) R(-1), nonzero for generic R -> m = 4 exactly
+  [PASS] m = 4 is independent of beta, e, a, b, G, N, p
+
+--- 2. D as a function of the framework data ------------------------
+  [PASS] D = 9 + 6 e/beta
+  [PASS] D = (15 beta - 6p + 6)/beta
+  [PASS] at p = 3: D = 15 - 12/beta
+  [PASS] (99,66): beta = 6 gives D = 13
+  [PASS] D < 15 for every beta > 0, so D = 23 is unreachable
+  [PASS] D = 23 would need 12/beta = -8: impossible for beta > 0
+
+    integral D at p = 3 requires beta | 12:
+      beta =  1  ->  D =  3   NO solution at all (fatal outright)
+      beta =  2  ->  D =  9   NO solution at all (fatal outright)
+      beta =  3  ->  D = 11   unique solution, map-degree 4
+      beta =  4  ->  D = 12   NO solution at all (fatal outright)
+      beta =  6  ->  D = 13   unique solution, map-degree 4
+      beta = 12  ->  D = 14   unique solution, map-degree 4
+  [PASS] beta in {1,2,4} (D in {3,9,12}) kills the framework at the endgame equation
+  [PASS] beta in {3,6,12} (D in {11,13,14}) gives a unique degree-4 solution
+
+--- 3. the corrected transfer theorem -------------------------------
+  [PASS] D = 11: endgame solution has map-degree 4 (framework needs its chain degree)
+  [PASS] D = 13: endgame solution has map-degree 4 (framework needs its chain degree)
+  [PASS] D = 14: endgame solution has map-degree 4 (framework needs its chain degree)
+  [PASS] D = 27/2: endgame solution has map-degree 4 (framework needs its chain degree)
+  [PASS] D = 45/4: endgame solution has map-degree 4 (framework needs its chain degree)
+  [PASS] D = 3, 9, 12 at m = 4: no solution at all
+
+    THEOREM (corrected transfer).  Let a Borisov-type framework have cusp type
+    (2,3), Keller chart exponent p = 3, (-2)-curve y2-valuation beta, and let
+    its realization layer demand that R realize a map of degree D_chain.  Then
+    the endgame equation
+            alpha^5 (v+1)^4 (3 v(v+1) R' - D R) = -c,   D = 15 - 12/beta,
+    has (i) no rational solution when beta in {1,2,4}, and (ii) otherwise
+    exactly one, of map-degree 4.  In either case the framework is EMPTY as
+    soon as D_chain != 4.  In particular every framework with a chain of five
+    or more curves dies, with no reference to Belyi coefficients, to the
+    pole-fiber argument (Theorem 3), or to evaluation at v = -1.
+  [PASS] First Framework: beta=6, D=13, D_chain=13 != 4 -> EMPTY
+  [PASS] Second Framework: D_chain = 23 != 4 -> EMPTY whatever its beta is
+
+--- 4. instantiation at (108,72) (the L4 target) --------------------
+    (99,66) = 11*(9,6) and (108,72) = 12*(9,6): identical ratio 3:2 and
+    identical (-2)-curve valuation shape (gamma,beta) = (9,6) whenever the
+    chart is built the same way.  Then e = 4, m = 4, D = 13 verbatim, and
+    the endgame solution is the SAME rational function
+        R = S(v)/(v+1)^4,  deg S = 4,
+    so (108,72) closes exactly as (99,66) does, for any chain degree != 4.
+  [PASS] (108,72): 108/72 == 99/66 == 3/2
+  [PASS] (108,72) = 12*(9,6) and (99,66) = 11*(9,6)
+    NOTE: this instantiation is conditional on (108,72)'s chart producing
+    (gamma,beta) = (9,6); the theorem itself is uniform in (beta,e), so
+    supplying that framework's valuations instantiates it immediately.
+
+E6: ALL 21 CHECKS PASS

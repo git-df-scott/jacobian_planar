@@ -1,0 +1,7 @@
+system: 9 equations, eliminating dm10,dm8,dm7,dm6,dm5,dm4,dm3,dm2
+--- elimination ideal ---
+E[1]=y^27+9*y^9*d1*dm1^6+27*d0*dm1^9
+size =  1
+--- GGHV (6.18) target: 9y^9 d1 dm1^6 + y^27 + 27 d0 dm1^9 ---
+target reduces to zero modulo the elimination ideal?  0
+gen 1  equals target?  1    negated?  0

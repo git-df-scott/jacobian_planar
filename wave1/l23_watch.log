@@ -1,0 +1,12 @@
+L23 msolve verdict  (2026-08-19T22:10:28Z)
+system : pent_L23.ms  -- 66 conditions, 1,080,147 monomials, 59 variables
+         (levels 13..23 of the pentagon y-adic conditions; gauges p_00=0, p_10=1)
+exit   : 137   output bytes: 0
+VERDICT: OOM -- STALLED
+         stall point: msolve exhausted memory (15 GB box). Same failure
+         class as the recorded 166-variable run, at 59 variables and
+         degree <= 23 rather than 166 variables at degree 2.
+
+NEXT (per 6.4 escalation ladder, capped): staged eliminator on the
+smaller exports (L17/L18) -> case-derived weighted ordering -> Singular
+slimgb as the second engine -> STALLED-with-named-stall-point.

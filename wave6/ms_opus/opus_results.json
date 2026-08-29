@@ -1,0 +1,98 @@
+[
+ {
+  "name": "w6_35657_0",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4
+ },
+ {
+  "name": "w6_35657_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1801.1,
+  "nvars": 23
+ },
+ {
+  "name": "p108_525122",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.3,
+  "nvars": 28
+ },
+ {
+  "name": "w6_79970_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4,
+  "nvars": 35
+ },
+ {
+  "name": "w6_289012_0",
+  "verdict": "EMPTY",
+  "head": "[-1]:\n",
+  "wall": 0.0,
+  "nvars": 41
+ },
+ {
+  "name": "w6_35657_7",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.6,
+  "nvars": 44
+ },
+ {
+  "name": "w6_79970_0",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.8,
+  "nvars": 54
+ },
+ {
+  "name": "p108_671059",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/p108_671059_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.1,
+  "nvars": 64
+ },
+ {
+  "name": "w6_35657_5",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.9,
+  "nvars": 65
+ },
+ {
+  "name": "w6_35657_6",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_6_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.2,
+  "nvars": 85
+ },
+ {
+  "name": "w6_35657_3",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1801.6,
+  "nvars": 86
+ },
+ {
+  "name": "w6_79970_3",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4,
+  "nvars": 113
+ },
+ {
+  "name": "p108_638901",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/p108_638901_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.3,
+  "nvars": 119
+ },
+ {
+  "name": "w6_35657_4",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_4_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.2,
+  "nvars": 130
+ },
+ {
+  "name": "orph_345092",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/orph_345092_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.2,
+  "nvars": 132
+ },
+ {
+  "name": "w6_35657_2",
+  "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/w6_35657_2_dump.sing']' timed out after 2700 seconds",
+  "wall": 2700.2,
+  "nvars": 175
+ }
+]

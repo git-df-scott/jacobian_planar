@@ -1,0 +1,37 @@
+"""
+Plane Jacobian campaign - Session 9, layer 2
+Boundary rigidity for the (99,66) First Framework decision system.
+
+CORRECTION to the Session-8 close: y1^2/y2^3 restricts to a CONSTANT on
+the whole (-2)-cluster (all neighboring valuations are proportional to
+(3,2)), and that constant is forced to 1 by propagation from the
+{1}-marked corner of the (-5)-curve.  So H^2/K^3 == 1 is a framework
+REQUIREMENT, not the near-miss's failure; the degree-13 Belyi map is
+realized one order deeper (second-order parameter -> layer 3).
+
+Two certain layer-2 conditions, both certified on the exact near-miss:
+
+(A) (-2)-cluster rigidity: the boundary-line polynomials
+        A1(U) = sum_i c_{i,3i-9} U^i   (deg <= 27)
+        A2(U) = sum_i d_{i,3i-6} U^i   (deg <= 18)
+    must satisfy A1 = g^3, A2 = g^2 for a single g of degree <= 9
+    (up to the scale pair (h^3, h^2)).  Near-miss: g = U(U-1)^8.
+    Cuts 47 boundary-line coefficients to 11 parameters.
+
+(B) (-5)-block pinning: with p, r the certified squarefree, coprime
+    Belyi polynomials, unique factorization applied to
+        G1^2 * w * r^3 = G2^3 * p^2
+    together with the layer-1 support bounds (G1: w^[-2..6],
+    G2: w^[-1..4]) forces
+        G1 = gamma * p(mu w) / w^2,     G2 = eps * r(mu w) / w :
+    the (-5)-boundary IS the certified Belyi data up to three scalars.
+    Adds 15 independent linear pins on top of layer 1 (rank 159->174).
+    Near-miss sits at (mu, gamma, eps) = (1, 1, 1) exactly.
+
+Net: linear dimension 1508 -> 1493 at fixed scalars, plus the
+36-condition nonlinear boundary-line cut: effective ~1450 interior
+dimensions remain for the chain / long-branch layers.
+Run session8_layer1.py first (this file documents + re-derives layer 2;
+the executable check is the Session 9 inline run recorded in transcript).
+"""
+print(__doc__)

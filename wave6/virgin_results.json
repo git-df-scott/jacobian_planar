@@ -1,0 +1,296 @@
+[
+ {
+  "case": "(12,30)/16/3,10/11/6,3",
+  "max": 126,
+  "shape_tag": "a=6 b=4 r=1 i=0",
+  "verdict": "{'name': 'w6_289012_0', 'status': 'RAN', 'out': 'params: 38\\nconditions: 82\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.016792774200439453, 'info': {'nparams': 38, 'jmax': 14, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(31)', 'c(38)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(12,30)/16/3,10/11/6,3",
+  "max": 126,
+  "shape_tag": "a=6 b=4 r=1 i=1",
+  "verdict": "{'name': 'w6_289012_1', 'status': 'RAN', 'out': 'params: 20\\nconditions: 69\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.011884689331054688, 'info': {'nparams': 20, 'jmax': 14, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(17)', 'c(20)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_35657_0', 'status': 'TIMEOUT', 'secs': 240.14827346801758, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=1",
+  "verdict": "{'name': 'w6_35657_1', 'status': 'TIMEOUT', 'secs': 240.15296816825867, 'info': {'nparams': 20, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(18)', 'c(20)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=2",
+  "verdict": "{'name': 'w6_35657_2', 'status': 'TIMEOUT', 'secs': 240.1655969619751, 'info': {'nparams': 172, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(142)', 'c(163)', 'c(172)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=3",
+  "verdict": "{'name': 'w6_35657_3', 'status': 'TIMEOUT', 'secs': 240.05922555923462, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_35657_4', 'status': 'TIMEOUT', 'secs': 240.13321208953857, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_35657_5', 'status': 'TIMEOUT', 'secs': 240.05819749832153, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=6",
+  "verdict": "{'name': 'w6_35657_6', 'status': 'TIMEOUT', 'secs': 240.1156075000763, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(9,36)/9,24/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=7",
+  "verdict": "{'name': 'w6_35657_7', 'status': 'TIMEOUT', 'secs': 240.11354088783264, 'info': {'nparams': 41, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(15)', 'c(39)', 'c(41)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_80206_0', 'status': 'TIMEOUT', 'secs': 240.09959745407104, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=1",
+  "verdict": "{'name': 'w6_80206_1', 'status': 'TIMEOUT', 'secs': 240.11274552345276, 'info': {'nparams': 20, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(18)', 'c(20)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=2",
+  "verdict": "{'name': 'w6_80206_2', 'status': 'TIMEOUT', 'secs': 240.18516373634338, 'info': {'nparams': 172, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(142)', 'c(163)', 'c(172)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=3",
+  "verdict": "{'name': 'w6_80206_3', 'status': 'TIMEOUT', 'secs': 240.13186311721802, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_80206_4', 'status': 'TIMEOUT', 'secs': 240.16687774658203, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_80206_5', 'status': 'TIMEOUT', 'secs': 240.12845301628113, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=6",
+  "verdict": "{'name': 'w6_80206_6', 'status': 'TIMEOUT', 'secs': 240.14675307273865, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,33)/11/3,8",
+  "max": 135,
+  "shape_tag": "a=3 b=9 r=1 i=7",
+  "verdict": "{'name': 'w6_80206_7', 'status': 'TIMEOUT', 'secs': 240.12367844581604, 'info': {'nparams': 41, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(15)', 'c(39)', 'c(41)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(7,21)/11/7,2",
+  "max": 140,
+  "shape_tag": "a=7 b=3 r=2 i=0",
+  "verdict": "{'name': 'w6_582584_0', 'status': 'RAN', 'out': 'params: 40\\nconditions: 72\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.028499603271484375, 'info': {'nparams': 40, 'jmax': 11, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(31)', 'c(40)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(7,21)/11/7,2",
+  "max": 140,
+  "shape_tag": "a=7 b=3 r=2 i=1",
+  "verdict": "{'name': 'w6_582584_1', 'status': 'RAN', 'out': 'params: 20\\nconditions: 54\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.01424407958984375, 'info': {'nparams': 20, 'jmax': 11, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(16)', 'c(20)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=0",
+  "verdict": "{'name': 'w6_79970_0', 'status': 'TIMEOUT', 'secs': 240.12378311157227, 'info': {'nparams': 51, 'jmax': 18, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(41)', 'c(51)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=1",
+  "verdict": "{'name': 'w6_79970_1', 'status': 'TIMEOUT', 'secs': 240.17647099494934, 'info': {'nparams': 32, 'jmax': 18, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(26)', 'c(32)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=2",
+  "verdict": "{'name': 'w6_79970_2', 'status': 'TIMEOUT', 'secs': 240.1694438457489, 'info': {'nparams': 187, 'jmax': 18, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(119)', 'c(171)', 'c(187)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(8,28)/7/4,3",
+  "max": 144,
+  "shape_tag": "a=4 b=4 r=2 i=3",
+  "verdict": "{'name': 'w6_79970_3', 'status': 'TIMEOUT', 'secs': 240.18480277061462, 'info': {'nparams': 110, 'jmax': 18, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(71)', 'c(98)', 'c(110)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_356508_0', 'status': 'TIMEOUT', 'secs': 240.16918921470642, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=1",
+  "verdict": "{'name': 'w6_356508_1', 'status': 'TIMEOUT', 'secs': 240.1519811153412, 'info': {'nparams': 20, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(18)', 'c(20)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=2",
+  "verdict": "{'name': 'w6_356508_2', 'status': 'TIMEOUT', 'secs': 240.29369449615479, 'info': {'nparams': 172, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(142)', 'c(163)', 'c(172)']}}",
+  "wall_s": 240.3
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=3",
+  "verdict": "{'name': 'w6_356508_3', 'status': 'TIMEOUT', 'secs': 240.14908480644226, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_356508_4', 'status': 'TIMEOUT', 'secs': 240.2252595424652, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_356508_5', 'status': 'TIMEOUT', 'secs': 240.14404773712158, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=6",
+  "verdict": "{'name': 'w6_356508_6', 'status': 'TIMEOUT', 'secs': 240.2230179309845, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/9,24/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=7",
+  "verdict": "{'name': 'w6_356508_7', 'status': 'TIMEOUT', 'secs': 240.13650965690613, 'info': {'nparams': 41, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(15)', 'c(39)', 'c(41)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,36)/12,30/16/3,10/11/6,3",
+  "max": 144,
+  "shape_tag": "a=6 b=4 r=1 i=0",
+  "verdict": "{'name': 'w6_384804_0', 'status': 'RAN', 'out': 'params: 38\\nconditions: 82\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.03960609436035156, 'info': {'nparams': 38, 'jmax': 14, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(31)', 'c(38)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(12,36)/12,30/16/3,10/11/6,3",
+  "max": 144,
+  "shape_tag": "a=6 b=4 r=1 i=1",
+  "verdict": "{'name': 'w6_384804_1', 'status': 'RAN', 'out': 'params: 20\\nconditions: 69\\ntime: 0\\ncomponents: 1\\nVERDICT: EMPTY -- no non-degenerate realization', 'secs': 0.014365434646606445, 'info': {'nparams': 20, 'jmax': 14, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(17)', 'c(20)']}}",
+  "wall_s": 0.0
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=0",
+  "verdict": "{'name': 'w6_6587_0', 'status': 'TIMEOUT', 'secs': 240.18493223190308, 'info': {'nparams': 37, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(34)', 'c(37)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=1",
+  "verdict": "{'name': 'w6_6587_1', 'status': 'TIMEOUT', 'secs': 240.20940375328064, 'info': {'nparams': 20, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(18)', 'c(20)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=2",
+  "verdict": "{'name': 'w6_6587_2', 'status': 'TIMEOUT', 'secs': 240.33713746070862, 'info': {'nparams': 172, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(142)', 'c(163)', 'c(172)']}}",
+  "wall_s": 240.3
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=3",
+  "verdict": "{'name': 'w6_6587_3', 'status': 'TIMEOUT', 'secs': 240.22981476783752, 'info': {'nparams': 83, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(69)', 'c(77)', 'c(83)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=4",
+  "verdict": "{'name': 'w6_6587_4', 'status': 'TIMEOUT', 'secs': 240.2171277999878, 'info': {'nparams': 127, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(82)', 'c(121)', 'c(127)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=5",
+  "verdict": "{'name': 'w6_6587_5', 'status': 'TIMEOUT', 'secs': 240.1480951309204, 'info': {'nparams': 62, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(40)', 'c(59)', 'c(62)']}}",
+  "wall_s": 240.1
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=6",
+  "verdict": "{'name': 'w6_6587_6', 'status': 'TIMEOUT', 'secs': 240.17444944381714, 'info': {'nparams': 82, 'jmax': 29, 'driver_is_P': False, 'ndegen': ['c(2)', 'c(28)', 'c(78)', 'c(82)']}}",
+  "wall_s": 240.2
+ },
+ {
+  "case": "(12,36)/12,33/11/3,8",
+  "max": 144,
+  "shape_tag": "a=3 b=9 r=1 i=7",
+  "verdict": "{'name': 'w6_6587_7', 'status': 'TIMEOUT', 'secs': 240.13306283950806, 'info': {'nparams': 41, 'jmax': 29, 'driver_is_P': True, 'ndegen': ['c(2)', 'c(15)', 'c(39)', 'c(41)']}}",
+  "wall_s": 240.1
+ }
+]
