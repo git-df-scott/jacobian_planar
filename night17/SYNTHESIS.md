@@ -342,3 +342,248 @@ CONTROL PASS
 The solver recovers the mate of a degree-10 and a degree-12 coordinate with a
 zero coefficientwise residual, and returns exactly-verified `lambda`
 certificates on the two standard negatives.
+
+---
+
+## 4. The sweep
+
+`systems17.py` (systems + Groebner), `sweep17.py` (instance builders, screening,
+certificates), `run17.py` (driver), `supp17.py` (three follow-ups),
+`deep17.py` (deeper mate escalation). Logs: `run17_log.txt` / `run17_out.txt`,
+`supp17_log.txt`, `deep17_out.txt`. Machine-readable: `records17.json`,
+`supp17.json`, `deep17.json`, `synthesis.csv`.
+
+**33 supports swept**, spanning the required classes:
+
+| class | supports |
+|---|---|
+| genus 0 with 2 places at infinity | H1–H8 (`deg g <= 1`), V1 |
+| genus 0 with >= 3 places | E1, E4, E5, E7, E12, V2, V3, V4 |
+| positive-genus fibres | E6 (g=1), E10 (g=1), E11 (g=2), E13 (g=1), E14 (g=2), V5 (g=1) |
+| v-quadratic | H1–H10, E1–E5, E9, E10, E12, V1, V5, V6 |
+| v-cubic and higher | E6–E8, E11, E13, E14, V2, V3, V4 |
+| mixed Newton supports | M1 (y-shear), M2 (y- then x-shear), M3 (x-shear) |
+| strata the system kills | H9, H10, E2, E3, E8, E9, V6 |
+
+Degrees of the instances run: 2, 3, 5, 6, 7, 8, 9, 11, 12, 15, 29.
+
+### 4.1 Per support: system size, solution structure, survivors
+
+| support | shape | unknowns | residue equations | solution structure | instances | survivors |
+|---|---|---|---|---|---|---|
+| H1 | HE(G=0,H=1,K=2) | 6 | -4*g0*k2 + h1**2 | proper ideal (Groebner basis of 1 elements); solvable with h1 nonzero | 2 | 0 |
+| H2 | HE(G=0,H=3,K=6) | 12 | -4*g0*k2 + 2*h0*h2 + h1**2; -4*g0*k3 + 2*h0*h3 + 2*h1*h2; -4*g0*k4 + 2*h1*h3 + h2**2 ... (5 total) | Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_ | 1 | 0 |
+| H3 | HE(G=1,H=1,K=1) | 6 | -4*g1*k1 + h1**2 | proper ideal (Groebner basis of 1 elements) | 1 | 1 |
+| H4 | HE(G=1,H=2,K=3) | 9 | -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2; -4*g0*k3 - 4*g1*k2 + 2*h1*h2; -4*g1*k3 + h2**2 | proper ideal (Groebner basis of 7 elements) | 1 | 1 |
+| H5 | HE(G=1,H=3,K=5) | 12 | -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2; -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2; -4*g0*k4 - 4*g1*k3 + 2*h1*h3 + h2**2 ... (5 total) | Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_ | 1 | 1 |
+| H6 | HE(G=1,H=5,K=9) | 18 | -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2; -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2; -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 ... (9 total) | Groebner not attempted (18 unknowns, 9 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_ | 1 | 0 |
+| H7 | HE(G=1,H=8,K=15) | 27 | -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2; -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2; -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 ... (15 total) | Groebner not attempted (27 unknowns, 15 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g | 1 | 1 |
+| H8 | HE(G=1,H=15,K=29) | 48 | -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2; -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2; -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 ... (29 total) | Groebner not attempted (48 unknowns, 29 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g | 1 | 1 |
+| H9 | HE(G=2,H=2,K=2) | 9 | g2; -4*g0*k2 - 4*g1*k1 - 4*g2*k0 + 2*h0*h2 + h1**2; -4*g1*k2 - 4*g2*k1 + 2*h1*h2 ... (4 total) | UNIT IDEAL with g2 nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| H10 | HE(G=0,H=0,K=2) | 5 | -4*g0*k2 | proper ideal (Groebner basis of 1 elements); solvable with k2 nonzero | 0 | 0 |
+| E1 | SE(m=2;3) | 4 | none (every point of the support solves) | no equations: the whole support solves | 2 | 2 |
+| E2 | SE(m=2;2) | 4 | 1 | UNIT IDEAL with alpha c nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| E3 | SE(m=2;4) | 4 | -alpha | UNIT IDEAL with alpha c nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| E4 | SE(m=2;5) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| E5 | SE(m=2;9) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| E6 | SE(m=3;2) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| E7 | SE(m=3;4) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| E8 | SE(m=3;3) | 4 | 1 | UNIT IDEAL with alpha c nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| E9 | SE(m=2;2,3) | 5 | 1 | UNIT IDEAL with alpha c nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| E10 | SE(m=2;3,3) | 5 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| E11 | SE(m=3;5,4) | 5 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| E12 | SE(m=2;27) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| E13 | SE(m=4;3) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| E14 | SE(m=5;3) | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| V1 | v-power  P = h0 y + c x^1 y^2 | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| V2 | v-power  P = h0 y + c x^2 y^3 | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| V3 | v-power  P = h0 y + c x^2 y^5 | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| V4 | v-power  P = h0 y + c x^3 y^4 | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 1 |
+| V5 | v-power  P = h0 y + c x^4 y^2 | 4 | none (every point of the support solves) | no equations: the whole support solves | 1 | 0 |
+| V6 | v-power  P = h0 y + c x^2 y^4 | 4 | -alpha | UNIT IDEAL with alpha c nonzero adjoined: NO SOLUTIONS | 0 | 0 |
+| M1 | shear image | 10 | none (every point of the support solves) | shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3) | 1 | 1 |
+| M2 | shear image | 15 | none (every point of the support solves) | shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3) | 1 | 1 |
+| M3 | shear image | 6 | none (every point of the support solves) | shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3) | 1 | 1 |
+
+### 4.2 Per instance: certificates and mate verdicts
+
+| support | id | deg | deg_y | screen | genus | punctures | Bezout | SY | survivor | mate | NUM-MONO rel |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| H1 | `1e8144b39dbd` | 2 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | COORDINATE | no | - | 4.6e-16 |
+| H1 | `05448ae01b6d` | 2 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | COORDINATE | no | - | 4.8e-16 |
+| H2 | `f9c3e6131ab8` | 6 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | COORDINATE | no | - | 1.1e-15 |
+| H3 | `d37142063698` | 3 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=3:EMPTY_over_Q;D=5:EMPTY_over_Q;D=6:EMPTY_over_Q | 2.0e-13 |
+| H4 | `431f3f1966ca` | 3 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=3:EMPTY_over_Q;D=5:EMPTY_over_Q;D=6:EMPTY_over_Q | 3.6e-15 |
+| H5 | `9667585bcb72` | 5 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | 5.8e-14 |
+| H6 | `fb63dd1ccaec` | 9 | 2 | PERIODS_VANISH | 0 | - | NOT_CERTIFIED (None) | NON_COORDINATE | no | - | 3.4e-15 |
+| H7 | `2c6dbb9e3815` | 15 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=15:EMPTY_over_Q;D=23:EMPTY_over_Q | - |
+| H8 | `02299003cb19` | 29 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=29:EMPTY_over_Q | - |
+| E1 | `4b3d403b5051` | 5 | 2 | PERIODS_VANISH | 0 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | 6.9e-14 |
+| E1 | `e57028c3921e` | 5 | 2 | PERIODS_VANISH | 0 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | 5.4e-15 |
+| E4 | `168e0b30d46b` | 7 | 2 | PERIODS_VANISH | 0 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | yes | D=7:EMPTY_over_Q;D=11:EMPTY_over_Q;D=14:EMPTY_over_Q | 4.3e-14 |
+| E5 | `65551d9727e7` | 11 | 2 | PERIODS_VANISH | 0 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | yes | D=11:EMPTY_over_Q;D=17:EMPTY_over_Q;D=22:EMPTY_over_Q | 1.3e-13 |
+| E6 | `b520c37ad02b` | 5 | 3 | UNDECIDED_BY_RESIDUES_genus>=1 | 1 | 2 | OK residual 0 (LINALG) | NON_COORDINATE | no | - | 1.5e+00 |
+| E7 | `f2782c9f083f` | 7 | 3 | PERIODS_VANISH | 0 | 4 | OK residual 0 (LINALG) | NON_COORDINATE | yes | D=7:EMPTY_over_Q;D=11:EMPTY_over_Q;D=14:EMPTY_over_Q | 6.9e-14 |
+| E10 | `5ba43826fa42` | 8 | 2 | UNDECIDED_BY_RESIDUES_genus>=1 | 1 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | no | - | 1.4e+00 |
+| E11 | `e507bc4e8db0` | 12 | 3 | UNDECIDED_BY_RESIDUES_genus>=1 | 2 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | no | - | - |
+| E12 | `13aa79d7382f` | 29 | 2 | PERIODS_VANISH | 0 | 3 | NOT_CERTIFIED (None) | NON_COORDINATE | no | - | - |
+| E13 | `462652ead2a6` | 7 | 4 | UNDECIDED_BY_RESIDUES_genus>=1 | 1 | 3 | OK residual 0 (LINALG) | NON_COORDINATE | no | - | 2.0e+00 |
+| E14 | `5497083f3554` | 8 | 5 | UNDECIDED_BY_RESIDUES_genus>=1 | 2 | 2 | OK residual 0 (LINALG) | NON_COORDINATE | no | - | 2.1e+00 |
+| V1 | `2f401c620811` | 3 | 2 | PERIODS_VANISH | 0 | 2 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=3:EMPTY_over_Q;D=5:EMPTY_over_Q;D=6:EMPTY_over_Q | 8.9e-15 |
+| V2 | `977aeb39d938` | 5 | 3 | PERIODS_VANISH | 0 | 3 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | 2.1e-14 |
+| V3 | `3d71c055f95f` | 7 | 5 | PERIODS_VANISH | 0 | 3 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=7:EMPTY_over_Q;D=11:EMPTY_over_Q;D=14:EMPTY_over_Q | 1.8e-15 |
+| V4 | `8cf19228f363` | 7 | 4 | PERIODS_VANISH | 0 | 4 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=7:EMPTY_over_Q;D=11:EMPTY_over_Q;D=14:EMPTY_over_Q | 1.2e-13 |
+| V5 | `e1961840267e` | 6 | 2 | UNDECIDED_BY_RESIDUES_genus>=1 | 1 | 3 | OK residual 0 (EUCLID) | NON_COORDINATE | no | - | 1.6e+00 |
+| M1 | `2d9fa751f027` | 5 | 2 | PERIODS_VANISH | 0 | - | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | 2.0e-13 |
+| M2 | `97e25aa31406` | 6 | 6 | PERIODS_VANISH | 0 | 2 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=6:EMPTY_over_Q;D=9:EMPTY_over_Q;D=12:EMPTY_over_Q | - |
+| M3 | `61cc00cd7420` | 5 | 5 | PERIODS_VANISH | 0 | 2 | OK residual 0 (EUCLID) | NON_COORDINATE | yes | D=5:EMPTY_over_Q;D=8:EMPTY_over_Q;D=10:EMPTY_over_Q | - |
+
+### 4.3 The synthesised P (survivors)
+
+* `d37142063698`  (support H3, degree 3) — `P = 1*x*y^2 + 1*x*y + (1/4)*x + 1*y`
+* `431f3f1966ca`  (support H4, degree 3) — `P = (1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (3/4)*x^2 + 1*x*y - 1*y^2 + (3/2)*x + 1*y + (7/4)`
+* `9667585bcb72`  (support H5, degree 5) — `P = (1/8)*x^5 + (1/4)*x^4 + 1*x^3*y + (1/8)*x^3 + 1*x^2*y + 2*x*y^2 + (1/4)*x^2 + (1/4)*x + 1*y + (-3/8)`
+* `2c6dbb9e3815`  (support H7, degree 15) — `P = (1/4)*x^15 + (1/2)*x^14 + (1/4)*x^13 + (1/2)*x^12 + (1/2)*x^11 + (3/4)*x^9 + 1*x^8*y + (1/2)*x^8 + 1*x^7*y + (1/2)*x^7 + 1*x^6 + 1*x^5*y + (1/2)*x^4 + (1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (1/2)*x + 1*y + (-1/4)`
+* `02299003cb19`  (support H8, degree 29) — `P = (1/4)*x^29 + (1/2)*x^28 + (1/4)*x^27 + 1*x^15*y + 1*x^14*y + (1/2)*x^14 + (1/2)*x^13 + 1*x*y^2 + 1*y + (-1/4)`
+* `4b3d403b5051`  (support E1, degree 5) — `P = 1*x^3*y^2 + 1*x`
+* `e57028c3921e`  (support E1, degree 5) — `P = 3*x^3*y^2 - 9*x^2*y^2 + 9*x*y^2 - 3*y^2 + 2*x + 1`
+* `168e0b30d46b`  (support E4, degree 7) — `P = 1*x^5*y^2 + 1*x`
+* `65551d9727e7`  (support E5, degree 11) — `P = 1*x^9*y^2 + 1*x`
+* `f2782c9f083f`  (support E7, degree 7) — `P = 1*x^4*y^3 + 1*x`
+* `2f401c620811`  (support V1, degree 3) — `P = 1*x*y^2 + 1*y`
+* `977aeb39d938`  (support V2, degree 5) — `P = 1*x^2*y^3 + 1*y`
+* `3d71c055f95f`  (support V3, degree 7) — `P = 1*x^2*y^5 + 1*y`
+* `8cf19228f363`  (support V4, degree 7) — `P = 1*x^3*y^4 + 1*y`
+* `2d9fa751f027`  (support M1, degree 5) — `P = 1*x^5 + 2*x^4 + 2*x^3*y + 2*x^3 + 2*x^2*y + 1*x*y^2 + 2*x^2 + 1*x*y + (5/4)*x + 1*y`
+* `97e25aa31406`  (support M2, degree 6) — `P = 1*y^6 + 3*x*y^4 + 2*y^5 + 3*x^2*y^2 + 4*x*y^3 + 2*y^4 + 1*x^3 + 2*x^2*y + 3*x*y^2 + 1*y^3 + 1*x^2 + 1*x*y + (5/4)*y^2 + (5/4)*x + 1*y`
+* `61cc00cd7420`  (support M3, degree 5) — `P = 1*x^3*y^2 + 3*x^2*y^3 + 3*x*y^4 + 1*y^5 + 1*x + 1*y`
+
+### 4.4 The three supplementary items
+
+```
+S1  H10 = HE(G=0,H=0,K=2) with BOTH g0 != 0 and k2 != 0
+    equations: ['-4*g0*k2']
+    Rabinowitsch (g0 != 0, k2 != 0): unsolvable = True   basis = [1]
+
+S2  H6 = HE(G=1,H=5,K=9), a second instance with h(a) != 0
+    g = x + 1, h = 2*x**5 + x**4 + x + 1, h(a) = -1, Delta = x + 2
+    deg 9  PERIODS_VANISH  unimod=UNIMODULAR_CERTIFIED (EUCLID, residual 0)  SY=NON_COORDINATE
+    NUM-MONO: c=1 rel = 3.2e-14
+      D=9   n=55    EMPTY_over_Q     (0.5s)
+      D=14  n=120   EMPTY_over_Q     (2.7s)
+      D=18  n=190   EMPTY_over_Q     (10.7s)
+    mate: EMPTY_over_Q_all_stages
+
+S3  E12 = SE(m=2; 27), deg 29, closed-form Bezout
+    U = -27*x**26*y**2 + 1
+    V = 729*x**25*y**3/2
+    U P_x + V P_y - 1 expanded over Q: 0 residual terms
+    screen=PERIODS_VANISH  SY=NON_COORDINATE  survivor=True
+      D=29  n=465   EMPTY_over_Q     (0.4s)
+
+    closed-form Bezout re-checked on further SE members:
+      alpha=1 c=1 m=2 roots=[(0, 3)]  deg P=5  residual terms = 0
+      alpha=2 c=3 m=2 roots=[(1, 3)]  deg P=5  residual terms = 0
+      alpha=1 c=1 m=3 roots=[(0, 5), (2, 4)]  deg P=12  residual terms = 0
+      alpha=1 c=3 m=3 roots=[(0, 4)]  deg P=7  residual terms = 0
+```
+
+The H6 instance that the driver drew first had `h(a) = 0` and came back
+`NOT_CERTIFIED` by the Bezout producers — not an instrument failure but the
+sharpness of 2.1: on the `deg g = 1` stratum unimodularity IS `h(a) != 0`, and
+that instance sits on the excluded wall. The second instance, with
+`h(a) = -1`, certifies immediately.
+
+### 4.5 Deeper mate escalation
+
+Every survivor of degree `<= 7` was re-run at `deg Q <= 2 deg P, 3 deg P,
+4 deg P` (`deep17.py`): thirteen instances, `EMPTY_over_Q` with an exactly
+verified `lambda` at every stage, **0 mates found**. Largest carrier decided:
+435 unknowns (`deg P = 7`, `deg Q <= 28`).
+
+---
+
+## 5. Measurements
+
+**M1. The mandatory control passed on every coordinate tested**, at support
+level (the residue equations) and at instance level (substituting the
+coefficient vector into the equations returned `0` for every equation), for
+`x + y^2`, `x + y^m` (`m = 2,3,4,5`) and triangular compositions of degree 6,
+10 and 12 with verified mates.
+
+**M2. Nineteen `P` were synthesised satisfying (a), (b) and (c') by
+construction** — degrees 3, 3, 3, 5, 5, 5, 5, 5, 5, 6, 7, 7, 7, 7, 9, 11, 15,
+29, 29 — each with
+
+* an exact Bezout certificate `U P_x + V P_y - 1 = 0` with an EMPTY residual;
+* the Shpilrain–Yu verdict `NON_COORDINATE`;
+* a fibre witness of non-coordinacy (generic fibre of genus 0 with 2, 3 or 4
+  punctures, never `A^1`);
+* all residues zero and genus 0 on the generic fibre, exactly and symbolically,
+  and (where the numeric instrument was run) `ls_residual/scale <= 3.2e-14` from
+  night15's NUM-MONO.
+
+**M3. Every one of them has an EMPTY mate system over `Q`.** Nineteen for
+nineteen `EMPTY_over_Q` at every carrier attempted — `deg Q <= 2 deg P` for all
+of them and `deg Q <= 4 deg P` for the thirteen of degree `<= 7` — each with a
+`lambda` solved and verified exactly over `Q` (`lambda^T A = 0` on every column,
+`lambda^T e = 1`). **No mate system was consistent; the hit gate did not
+fire.**
+
+**M4. The necessary condition (c') is very far from sufficient.** The inverted
+search produces survivors in unbounded families, not in ones and twos: on the
+`HE`, `deg g = 1` stratum the solution set of the residue system INTERSECTED
+with the unimodular locus is a rational variety of dimension `deg h + 4` whose
+every point is a non-coordinate survivor, giving survivors at every odd degree
+`>= 3`; on the `SE` supports with `m` dividing no `e_i`, the residue system is
+EMPTY — every unimodular member of the support is a survivor. So (c') removes
+no member of these families at all, and the 193/256 rejection rate night15
+measured is a property of that corpus, not of the condition.
+
+**M5. Supports whose residue system has no solution off the coordinate locus
+(the brief's item 4), with Groebner evidence.**
+
+| support | shape | residue system | evidence |
+|---|---|---|---|
+| H1, H2 | `HE`, `g` constant | `[x^j](h^2 - 4 g k) = 0`, `j >= 2` | solvable, but every unimodular solution is a COORDINATE (2.1: `4 g P = w^2 - alpha x - beta` exhibits the inverse), confirmed by Shpilrain–Yu on all three instances |
+| H9 | `HE(2,2,2)` | `g2 = 0`, ... | Rabinowitsch with `g2 != 0`: Groebner basis `[1]` — NO solutions |
+| H10 | `HE(0,0,2)` | `-4 g0 k2 = 0` | with `k2 != 0` only: basis `[k2 z1 - 1, g0]`, i.e. solutions force `g0 = 0` (no `y^2` term, outside the support); with `g0 != 0` AND `k2 != 0`: basis `[1]` — NO solutions |
+| E2 | `SE(m=2; 2)` | `1 = 0` | basis `[1]` — NO solutions |
+| E3 | `SE(m=2; 4)` | `-alpha = 0` | basis `[1]` with `alpha != 0` adjoined; `alpha != 0` is FORCED by unimodularity (2.2), so the residue condition and unimodularity are incompatible on this support |
+| E8 | `SE(m=3; 3)` | `1 = 0` | basis `[1]` — NO solutions |
+| E9 | `SE(m=2; 2,3)` | `1 = 0` | basis `[1]` — NO solutions |
+| V6 | v-power `h0 y + c x^2 y^4` | `h0/(2 lam) = 0` | basis `[1]` with `h0 != 0, c != 0` — NO solutions |
+
+The pattern behind the `SE` rows is the exponent rule: `e_i = m` puts the
+residue equation at the LEADING Taylor coefficient, which is a nonzero constant
+(`1 = 0`), and `e_i = 2m` puts it at the next one, which is `alpha` — the very
+coefficient unimodularity needs nonzero.
+
+**M6. Positive-genus supports: residues vanish, periods do not.** On E6, E10,
+E11, E13, E14 and V5 the residue system is EMPTY (no equations at all) and the
+generic fibre has genus 1 or 2, so residues cannot decide. These are recorded
+as `UNDECIDED_BY_RESIDUES`, never as survivors. night15's NUM-MONO, run on the
+same members, returns `ls_residual/scale` between `1.15` and `2.15` on the
+fibres `c = 1, -1` — i.e. NONVANISHING periods. The obstruction there is
+carried entirely by the genus part of `H_1`, which the residue equations do not
+see: a second, independent reason not to treat (c') as the whole condition.
+
+**M7. Mixed Newton supports behave as the shear control requires.** M1
+(`y -> y + x + x^2`), M2 (`y`- then `x`-shear, which raises `deg_y` to 4 and
+makes the Newton support genuinely two-dimensional) and M3 (`x -> x + y`) are
+Jacobian-1 images of H3 and E1 members. All three keep the unimodularity and
+non-coordinacy certificates, keep `PERIODS_VANISH`, and return
+`EMPTY_over_Q` at every carrier — as they must, since a Jacobian-1 change of
+variables carries mates to mates and `eta` to `eta`.
+
+---
+
+## 6. Hit-gate status
+
+**No mate system was consistent.** Every mate solve in this lane — 19
+survivors, plus 13 deeper escalations, plus the negative controls — returned
+`EMPTY_over_Q` with a `lambda` certificate verified exactly over `Q`, on
+carriers up to `deg Q <= 4 deg P`. The mate solver's own control (recovering
+the mate of a degree-10 and a degree-12 coordinate, coefficientwise residual 0)
+passed before any of those verdicts was recorded. `night17/HIT_<hash>/` was
+therefore never written.
