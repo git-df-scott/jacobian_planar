@@ -315,7 +315,13 @@ Sweep C found supports in abundance whose Newton design already forces every
 fibre to be irreducible (500 at degree 4, 3066 at degree 5, 10111 at degree 6,
 36604 at degree 7, 90352 at degree 8, of sizes 3-5, all with an interior lattice
 point).  On those supports, no critical-point-free polynomial was found in the
-coefficient box swept -- the log `search3_log.txt` carries the running count.
+coefficient box swept.  Extent completed at the time of writing
+(`search3_log.txt`, coefficients `{+-1, +-2, +-3, +-4, +-6, +-1/2}`):
+degree 4 / support size 3 -- 29 designed supports, 25056 coefficient vectors,
+0 survivors of the axis + Bernstein-degeneracy filters, hence 0 unimodular;
+degree 4 / size 4 -- 142 supports, 1472256 vectors, 0 survivors;
+degree 5 / size 3 -- 94 supports, 81216 vectors, 0 survivors;
+degree 5 / size 4 still running.
 The tension the sweep exposes, recorded as the measurement it is: an
 indecomposable 2-dimensional Newton polygon makes `Newton(P_x)` and
 `Newton(P_y)` 2-dimensional too, so `MV(Newton(P_x), Newton(P_y)) > 0` and a
