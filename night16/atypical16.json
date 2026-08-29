@@ -818,5 +818,127 @@
   ],
   "verdict": "STILL-VANISHING",
   "t_total": 84.4
+ },
+ {
+  "hash": "39f56b091e75",
+  "label": "G1 h0=-1 c=2 a=0 n=1 m=3 t=[(0, Fraction(-3, 1)), (1, Fraction(-2, 1)), (2, Fraction(-1, 1))]",
+  "deg_P": 7,
+  "deg_y": 3,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": 0,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.5,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": 0,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     2,
+     5
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x",
+       "F_expr": "Symbol('x')",
+       "cofactor_deg": 3,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2 + 2*x - 2*y + 3",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**5 + 4*x**4 - 4*x**3*y + 10*x**3 - 8*x**2*y + 12*x**2 + 4*x*y**2 - 12*x*y + 9*x - 2",
+       "h_deg": 5,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.2,
+    "num_on": {
+     "error": "RuntimeError: transport wall-clock budget exceeded",
+     "t": 40.10040545463562
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 53.6
  }
 ]

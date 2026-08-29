@@ -1,1 +1,2 @@
 [ 6/57] 52830078b770 deg= 4 dy= 3 chi_gen=0 atyp=['0'] -> STILL-VANISHING (84s)
+[ 7/57] 39f56b091e75 deg= 7 dy= 3 chi_gen=0 atyp=['0'] -> STILL-VANISHING (54s)
