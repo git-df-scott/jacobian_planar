@@ -1,0 +1,113 @@
+{
+ "M1": {
+  "weights": {
+   "(1, 2)": 1,
+   "(0, 1)": 1
+  },
+  "isobaric_weight": 1,
+  "bracket_raises_weight_by_1_on_carrier_10": true
+ },
+ "M2": {
+  "rows": [
+   {
+    "N": 0,
+    "residual": "(2*gamma/c)*x^1*y^1",
+    "predicted": "(2*gamma/c)*x^1*y^1",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 1,
+    "residual": "(-3*gamma**2/c**2)*x^2*y^2",
+    "predicted": "(-3*gamma**2/c**2)*x^2*y^2",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 2,
+    "residual": "(4*gamma**3/c**3)*x^3*y^3",
+    "predicted": "(4*gamma**3/c**3)*x^3*y^3",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 3,
+    "residual": "(-5*gamma**4/c**4)*x^4*y^4",
+    "predicted": "(-5*gamma**4/c**4)*x^4*y^4",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 4,
+    "residual": "(6*gamma**5/c**5)*x^5*y^5",
+    "predicted": "(6*gamma**5/c**5)*x^5*y^5",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 5,
+    "residual": "(-7*gamma**6/c**6)*x^6*y^6",
+    "predicted": "(-7*gamma**6/c**6)*x^6*y^6",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 6,
+    "residual": "(8*gamma**7/c**7)*x^7*y^7",
+    "predicted": "(8*gamma**7/c**7)*x^7*y^7",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 7,
+    "residual": "(-9*gamma**8/c**8)*x^8*y^8",
+    "predicted": "(-9*gamma**8/c**8)*x^8*y^8",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 8,
+    "residual": "(10*gamma**9/c**9)*x^9*y^9",
+    "predicted": "(10*gamma**9/c**9)*x^9*y^9",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 9,
+    "residual": "(-11*gamma**10/c**10)*x^10*y^10",
+    "predicted": "(-11*gamma**10/c**10)*x^10*y^10",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 10,
+    "residual": "(12*gamma**11/c**11)*x^11*y^11",
+    "predicted": "(12*gamma**11/c**11)*x^11*y^11",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 11,
+    "residual": "(-13*gamma**12/c**12)*x^12*y^12",
+    "predicted": "(-13*gamma**12/c**12)*x^12*y^12",
+    "agree": true,
+    "residual_is_zero": false
+   },
+   {
+    "N": 12,
+    "residual": "(14*gamma**13/c**13)*x^13*y^13",
+    "predicted": "(14*gamma**13/c**13)*x^13*y^13",
+    "agree": true,
+    "residual_is_zero": false
+   }
+  ],
+  "all_match": true,
+  "any_truncation_is_a_mate": false
+ },
+ "M3": {
+  "rational_mate": "-x/(c + gamma*x*y)",
+  "bracket": "1",
+  "bracket_is_one": true,
+  "fibre": "y*(c + gamma*x*y)"
+ }
+}
