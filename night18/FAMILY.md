@@ -187,3 +187,35 @@ CROSS-CHECK PASS
 `uni` is `night17/certs17.unimodular` (exact Bezout, residual 0 terms), `SY` is
 `night17/certs17.sy` (Shpilrain–Yu), `res0`/`genus` are `night17/res17.he17`.
 Machine-readable: `members18.json`.
+
+---
+
+## 5. A structural identity used later: the family is one Jacobian-1 orbit
+
+`reduce18.py` records an identity that is not needed for §2–§3 but explains the
+shape of the obstruction computed in `OBSTRUCTION.md`.  Put
+
+```
+p(x) := (h(x) - h(a)) / (2 gamma (x - a))       -- a polynomial, deg p = deg h - 1
+```
+
+(the numerator vanishes at `x = a` identically in the parameters).  Under the
+Jacobian-1 substitution `(x, y) -> (x + a, y - p(x + a))`,
+
+| `deg h` | `p` | Jacobian | image `-` `(gamma x y^2 + h(a) y)` | carrier-preserving |
+|---|---|---|---|---|
+| 1 | `h1/(2 gamma)` | `1` | `-alpha/(4 gamma)` | **yes** (`deg p = 0`) |
+| 2 | `(a h2 + h1 + h2 x)/(2 gamma)` | `1` | `-alpha/(4 gamma)` | no (`deg p = 1`) |
+| 3 | `(a^2 h3 + a h2 + a h3 x + h1 + h2 x + h3 x^2)/(2 gamma)` | `1` | `-alpha/(4 gamma)` | no (`deg p = 2`) |
+
+i.e. **identically in the parameters**
+
+```
+P( x + a,  y - p(x + a) )  =  gamma * x * y^2  +  h(a) * y  -  alpha/(4 gamma).
+```
+
+So the whole `deg h + 4`-dimensional family is the Jacobian-1 orbit of the
+three-parameter member `gamma x y^2 + c y + kappa`, and `alpha` enters `P` only
+through an additive constant — which the bracket `[P, Q]` does not see.  For
+`deg h = 1` the substitution is a degree-0 shear plus a translation, so it
+preserves each carrier `deg Q <= D` exactly.  Machine-readable: `reduce18.json`.

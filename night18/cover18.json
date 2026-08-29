@@ -1,0 +1,452 @@
+{
+ "H1_D3": [
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "a",
+    "alpha",
+    "gamma",
+    "h0",
+    "h1"
+   ],
+   "lambda_support": 8,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "(-2*a*h1 + h0)/(6*a*gamma)",
+    "0,2": "(a*h1**2 - 2*h0*h1)/(12*a*gamma**2)",
+    "0,3": "h0*h1**2/(8*a*gamma**3)",
+    "0,4": "(-a*h1**4 - 4*h0*h1**3)/(48*a*gamma**4)",
+    "1,0": "-2*a/3",
+    "1,1": "-h0/(3*gamma)",
+    "1,2": "-h0**2/(6*a*gamma**2)"
+   },
+   "denominator_factors": [
+    [
+     "a",
+     1
+    ],
+    [
+     "gamma",
+     4
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 13,
+   "chart": "generic",
+   "depth": 0,
+   "restriction": {},
+   "secs": 0.2,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0",
+    "h1"
+   ],
+   "lambda_support": 8,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "-h1/(6*gamma)",
+    "0,2": "-h1**2/(12*gamma**2)",
+    "0,3": "h1**3/(8*gamma**3)",
+    "0,4": "-5*h1**4/(48*gamma**4)",
+    "1,0": "-2*h0/(3*h1)",
+    "1,1": "-h0/(6*gamma)",
+    "2,1": "h0**2/(3*gamma*h1)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     4
+    ],
+    [
+     "h1",
+     1
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 13,
+   "chart": "generic & {a=0}",
+   "depth": 1,
+   "restriction": {
+    "a": "0"
+   },
+   "secs": 0.1,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0"
+   ],
+   "lambda_support": 3,
+   "lambda": {
+    "0,0": "1",
+    "1,1": "-h0/(2*gamma)",
+    "2,2": "h0**2/(3*gamma**2)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     2
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 12,
+   "chart": "generic & {a=0} & {h1=0}",
+   "depth": 2,
+   "restriction": {
+    "a": "0",
+    "h1": "0"
+   },
+   "secs": 0.0,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  }
+ ],
+ "H1_D6": [
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 28 columns and lambda^T e = 1",
+   "gens": [
+    "a",
+    "alpha",
+    "gamma",
+    "h0",
+    "h1"
+   ],
+   "lambda_support": 20,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "(-4*a*h1 + h0)/(10*a*gamma)",
+    "0,2": "(3*a*h1**2 - 2*h0*h1)/(20*a*gamma**2)",
+    "0,3": "(-2*a*h1**3 + 3*h0*h1**2)/(40*a*gamma**3)",
+    "0,4": "(a*h1**4 - 4*h0*h1**3)/(80*a*gamma**4)",
+    "0,5": "h0*h1**4/(32*a*gamma**5)",
+    "0,6": "(-a*h1**6 - 6*h0*h1**5)/(320*a*gamma**6)",
+    "0,7": "(2*a*h1**7 + 7*h0*h1**6)/(640*a*gamma**7)",
+    "1,0": "-4*a/3",
+    "1,1": "(4*a*h1 - 6*h0)/(15*gamma)",
+    "1,2": "(-a**2*h1**2 + 6*a*h0*h1 - 3*h0**2)/(30*a*gamma**2)",
+    "1,3": "(-3*a**2*h0*h1**2 + 6*a*h0**2*h1 - h0**3)/(60*a**2*gamma**3)",
+    "1,4": "(-3*a*h0**2*h1**2 + 2*h0**3*h1)/(60*a**2*gamma**4)",
+    "1,5": "-h0**3*h1**2/(24*a**2*gamma**5)",
+    "1,6": "(a**3*h1**6 + 6*a**2*h0*h1**5 + 15*a*h0**2*h1**4 + 20*h0**3*h1**3)/(480*a**2*gamma**6)",
+    "2,0": "8*a**2/15",
+    "2,1": "4*a*h0/(15*gamma)",
+    "2,2": "2*h0**2/(15*gamma**2)",
+    "2,3": "h0**3/(15*a*gamma**3)",
+    "2,4": "h0**4/(30*a**2*gamma**4)"
+   },
+   "denominator_factors": [
+    [
+     "a",
+     2
+    ],
+    [
+     "gamma",
+     7
+    ]
+   ],
+   "n_unknowns": 28,
+   "n_equations": 34,
+   "chart": "generic",
+   "depth": 0,
+   "restriction": {},
+   "secs": 4.4,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 28 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0",
+    "h1"
+   ],
+   "lambda_support": 13,
+   "lambda": {
+    "0,0": "1",
+    "0,2": "-h1**2/(4*gamma**2)",
+    "0,3": "h1**3/(4*gamma**3)",
+    "0,4": "-3*h1**4/(16*gamma**4)",
+    "0,5": "h1**5/(8*gamma**5)",
+    "0,6": "-5*h1**6/(64*gamma**6)",
+    "0,7": "3*h1**7/(64*gamma**7)",
+    "1,1": "-h0/(2*gamma)",
+    "1,3": "h0*h1**2/(8*gamma**3)",
+    "1,5": "-5*h0*h1**4/(32*gamma**5)",
+    "1,6": "h0*h1**5/(4*gamma**6)",
+    "2,2": "h0**2/(3*gamma**2)",
+    "3,3": "-h0**3/(4*gamma**3)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     7
+    ]
+   ],
+   "n_unknowns": 28,
+   "n_equations": 34,
+   "chart": "generic & {a=0}",
+   "depth": 1,
+   "restriction": {
+    "a": "0"
+   },
+   "secs": 0.3,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  }
+ ],
+ "H2_D3": [
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "a",
+    "alpha",
+    "gamma",
+    "h0",
+    "h1",
+    "h2"
+   ],
+   "lambda_support": 8,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "(-2*a*h1 + h0)/(6*a*gamma)",
+    "0,2": "(a**3*h2**2 + 2*a**2*h1*h2 + 2*a*h0*h2 + a*h1**2 - 2*h0*h1)/(12*a*gamma**2)",
+    "0,3": "(a**2*h0*h2**2 + 2*a*h0*h1*h2 + 2*h0**2*h2 + h0*h1**2)/(8*a*gamma**3)",
+    "0,4": "(-a**5*h2**4 - 4*a**4*h1*h2**3 - 4*a**3*h0*h2**3 - 6*a**3*h1**2*h2**2 - 12*a**2*h0*h1*h2**2 - 4*a**2*h1**3*h2 - 12*a*h0*h1**2*h2 - a*h1**4 - 4*h0*h1**3)/(48*a*gamma**4)",
+    "1,0": "-2*a/3",
+    "1,1": "-h0/(3*gamma)",
+    "1,2": "-h0**2/(6*a*gamma**2)"
+   },
+   "denominator_factors": [
+    [
+     "a",
+     1
+    ],
+    [
+     "gamma",
+     4
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 15,
+   "chart": "generic",
+   "depth": 0,
+   "restriction": {},
+   "secs": 1.8,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0",
+    "h1",
+    "h2"
+   ],
+   "lambda_support": 8,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "-h1/(6*gamma)",
+    "0,2": "(6*h0*h2 - h1**2)/(12*gamma**2)",
+    "0,3": "(-2*h0**2*h2**2 - 2*h0*h1**2*h2 + h1**4)/(8*gamma**3*h1)",
+    "0,4": "(8*h0*h1**2*h2 - 5*h1**4)/(48*gamma**4)",
+    "1,0": "-2*h0/(3*h1)",
+    "1,1": "-h0/(6*gamma)",
+    "2,1": "h0**2/(3*gamma*h1)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     4
+    ],
+    [
+     "h1",
+     1
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 15,
+   "chart": "generic & {a=0}",
+   "depth": 1,
+   "restriction": {
+    "a": "0"
+   },
+   "secs": 0.5,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0",
+    "h2"
+   ],
+   "lambda_support": 5,
+   "lambda": {
+    "0,0": "1",
+    "0,2": "h0*h2/(2*gamma**2)",
+    "0,4": "-h0**2*h2**2/(2*gamma**4)",
+    "1,1": "-h0/(2*gamma)",
+    "2,2": "h0**2/(3*gamma**2)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     4
+    ]
+   ],
+   "n_unknowns": 10,
+   "n_equations": 15,
+   "chart": "generic & {a=0} & {h1=0}",
+   "depth": 2,
+   "restriction": {
+    "a": "0",
+    "h1": "0"
+   },
+   "secs": 0.1,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  }
+ ],
+ "H2_D6": [
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 28 columns and lambda^T e = 1",
+   "gens": [
+    "a",
+    "alpha",
+    "gamma",
+    "h0",
+    "h1",
+    "h2"
+   ],
+   "lambda_support": 20,
+   "lambda": {
+    "0,0": "1",
+    "0,1": "(8*a**2*h2 - 12*a*h1 + 3*h0)/(30*a*gamma)",
+    "0,2": "(a**3*h2**2 + 2*a**2*h1*h2 + 18*a*h0*h2 + 9*a*h1**2 - 6*h0*h1)/(60*a*gamma**2)",
+    "0,3": "(-2*a**3*h1*h2**2 - a**2*h0*h2**2 - 4*a**2*h1**2*h2 - 6*a*h0*h1*h2 - 2*a*h1**3 + 6*h0**2*h2 + 3*h0*h1**2)/(40*a*gamma**3)",
+    "0,4": "(3*a**6*h2**4 + 12*a**5*h1*h2**3 + 12*a**4*h0*h2**3 + 18*a**4*h1**2*h2**2 + 12*a**3*h0*h1*h2**2 + 12*a**3*h1**3*h2 - 12*a**2*h0*h1**2*h2 + 3*a**2*h1**4 - 48*a*h0**2*h1*h2 - 12*a*h0*h1**3 + 8*h0**3*h2)/(240*a**2*gamma**4)",
+    "0,5": "(3*a**5*h0*h2**4 + 12*a**4*h0*h1*h2**3 + 12*a**3*h0**2*h2**3 + 18*a**3*h0*h1**2*h2**2 + 24*a**2*h0**2*h1*h2**2 + 12*a**2*h0*h1**3*h2 + 8*a*h0**3*h2**2 + 12*a*h0**2*h1**2*h2 + 3*a*h0*h1**4 - 8*h0**3*h1*h2)/(96*a**2*gamma**5)",
+    "0,6": "(-a**8*h2**6 - 6*a**7*h1*h2**5 - 6*a**6*h0*h2**5 - 15*a**6*h1**2*h2**4 - 30*a**5*h0*h1*h2**4 - 20*a**5*h1**3*h2**3 - 60*a**4*h0*h1**2*h2**3 - 15*a**4*h1**4*h2**2 - 60*a**3*h0*h1**3*h2**2 - 6*a**3*h1**5*h2 + 40*a**2*h0**3*h2**3 - 30*a**2*h0*h1**4*h2 - a**2*h1**6 + 80*a*h0**3*h1*h2**2 - 6*a*h0*h1**5 + 40*h0**4*h2**2 + 40*h0**3*h1**2*h2)/(320*a**2*gamma**6)",
+    "0,7": "(-8*a**9*h2**7 - 42*a**8*h1*h2**6 - 63*a**7*h0*h2**6 - 84*a**7*h1**2*h2**5 - 294*a**6*h0*h1*h2**5 - 70*a**6*h1**3*h2**4 - 210*a**5*h0**2*h2**5 - 525*a**5*h0*h1**2*h2**4 - 840*a**4*h0**2*h1*h2**4 - 420*a**4*h0*h1**3*h2**3 + 42*a**4*h1**5*h2**2 - 280*a**3*h0**3*h2**4 - 1260*a**3*h0**2*h1**2*h2**3 - 105*a**3*h0*h1**4*h2**2 + 28*a**3*h1**6*h2 - 840*a**2*h0**3*h1*h2**3 - 840*a**2*h0**2*h1**3*h2**2 + 42*a**2*h0*h1**5*h2 + 6*a**2*h1**7 - 840*a*h0**3*h1**2*h2**2 - 210*a*h0**2*h1**4*h2 + 21*a*h0*h1**6 - 280*h0**3*h1**3*h2)/(1920*a**2*gamma**7)",
+    "1,0": "-4*a/3",
+    "1,1": "(4*a*h1 - 6*h0)/(15*gamma)",
+    "1,2": "(-a**4*h2**2 - 2*a**3*h1*h2 - 2*a**2*h0*h2 - a**2*h1**2 + 6*a*h0*h1 - 3*h0**2)/(30*a*gamma**2)",
+    "1,3": "(-3*a**4*h0*h2**2 - 6*a**3*h0*h1*h2 - 6*a**2*h0**2*h2 - 3*a**2*h0*h1**2 + 6*a*h0**2*h1 - h0**3)/(60*a**2*gamma**3)",
+    "1,4": "(-3*a**3*h0**2*h2**2 - 6*a**2*h0**2*h1*h2 - 6*a*h0**3*h2 - 3*a*h0**2*h1**2 + 2*h0**3*h1)/(60*a**2*gamma**4)",
+    "1,5": "(-a**2*h0**3*h2**2 - 2*a*h0**3*h1*h2 - 2*h0**4*h2 - h0**3*h1**2)/(24*a**2*gamma**5)",
+    "1,6": "(a**9*h2**6 + 6*a**8*h1*h2**5 + 6*a**7*h0*h2**5 + 15*a**7*h1**2*h2**4 + 30*a**6*h0*h1*h2**4 + 20*a**6*h1**3*h2**3 + 15*a**5*h0**2*h2**4 + 60*a**5*h0*h1**2*h2**3 + 15*a**5*h1**4*h2**2 + 60*a**4*h0**2*h1*h2**3 + 60*a**4*h0*h1**3*h2**2 + 6*a**4*h1**5*h2 + 20*a**3*h0**3*h2**3 + 90*a**3*h0**2*h1**2*h2**2 + 30*a**3*h0*h1**4*h2 + a**3*h1**6 + 60*a**2*h0**3*h1*h2**2 + 60*a**2*h0**2*h1**3*h2 + 6*a**2*h0*h1**5 + 60*a*h0**3*h1**2*h2 + 15*a*h0**2*h1**4 + 20*h0**3*h1**3)/(480*a**2*gamma**6)",
+    "2,0": "8*a**2/15",
+    "2,1": "4*a*h0/(15*gamma)",
+    "2,2": "2*h0**2/(15*gamma**2)",
+    "2,3": "h0**3/(15*a*gamma**3)",
+    "2,4": "h0**4/(30*a**2*gamma**4)"
+   },
+   "denominator_factors": [
+    [
+     "a",
+     2
+    ],
+    [
+     "gamma",
+     7
+    ]
+   ],
+   "n_unknowns": 28,
+   "n_equations": 36,
+   "chart": "generic",
+   "depth": 0,
+   "restriction": {},
+   "secs": 59.5,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  },
+  {
+   "verdict": "EMPTY_over_Q(params)",
+   "lambda_verified": true,
+   "verification": "lambda^T M = 0 on all 28 columns and lambda^T e = 1",
+   "gens": [
+    "alpha",
+    "gamma",
+    "h0",
+    "h1",
+    "h2"
+   ],
+   "lambda_support": 14,
+   "lambda": {
+    "0,0": "1",
+    "0,2": "(2*h0*h2 - h1**2)/(4*gamma**2)",
+    "0,3": "h1**3/(4*gamma**3)",
+    "0,4": "(-4*h0*h1**2*h2 - 3*h1**4)/(16*gamma**4)",
+    "0,5": "(10*h0**2*h1*h2**2 + h1**5)/(8*gamma**5)",
+    "0,6": "(-80*h0**3*h2**3 - 120*h0**2*h1**2*h2**2 + 30*h0*h1**4*h2 - 5*h1**6)/(64*gamma**6)",
+    "0,7": "(140*h0**2*h1**3*h2**2 - 56*h0*h1**5*h2 + 3*h1**7)/(64*gamma**7)",
+    "1,1": "-h0/(2*gamma)",
+    "1,3": "(-2*h0**2*h2 + h0*h1**2)/(8*gamma**3)",
+    "1,4": "-h0**2*h1*h2/(2*gamma**4)",
+    "1,5": "(20*h0**3*h2**2 + 20*h0**2*h1**2*h2 - 5*h0*h1**4)/(32*gamma**5)",
+    "1,6": "(-5*h0**2*h1**3*h2 + 2*h0*h1**5)/(8*gamma**6)",
+    "2,2": "h0**2/(3*gamma**2)",
+    "3,3": "-h0**3/(4*gamma**3)"
+   },
+   "denominator_factors": [
+    [
+     "gamma",
+     7
+    ]
+   ],
+   "n_unknowns": 28,
+   "n_equations": 36,
+   "chart": "generic & {a=0}",
+   "depth": 1,
+   "restriction": {
+    "a": "0"
+   },
+   "secs": 0.9,
+   "closed_on_wall": [
+    "gamma"
+   ]
+  }
+ ]
+}
