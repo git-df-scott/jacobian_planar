@@ -1,0 +1,2 @@
+[ 1/57] c5e02d711fe5 deg= 3 dy= 2 chi_gen=0 atyp=['0'] -> STILL-VANISHING (37s)
+[ 2/57] a3b909a78c74 deg= 3 dy= 2 chi_gen=0 atyp=['0'] -> STILL-VANISHING (78s)
