@@ -6,3 +6,8 @@ Traceback (most recent call last):
     "EXACT_G1":g1["verdict"],"NUM_base":r0["verdict"],"NUM_sheared":r1["verdict"],
                                                                     ~~^^^^^^^^^^^
 KeyError: 'verdict'
+Traceback (most recent call last):
+  File "/tmp/sh4.py", line 13, in <module>
+    "EXACT_G1":g1["verdict"],"NUM_base":r0["verdict"],"NUM_sheared":r1["verdict"],
+                                                                    ~~^^^^^^^^^^^
+KeyError: 'verdict'
