@@ -1,0 +1,10 @@
+MATE-SOLVER CONTROL -- recover the mate of a known coordinate
+      D=10  n=66    MATE_over_Q      (1.0s)
+  coordinate deg 10  (known mate deg 5): MATE_over_Q     ok  [1.0s]
+      [P,Q]-1 residual terms = 0 ; deg Q = 5
+      D=12  n=91    MATE_over_Q      (2.8s)
+  coordinate deg 12  (known mate deg 6): MATE_over_Q     ok  [2.8s]
+      [P,Q]-1 residual terms = 0 ; deg Q = 6
+  negative control x*y        -> EMPTY_over_Q_all_stages
+  negative control x^2 + y^2  -> EMPTY_over_Q_all_stages
+CONTROL PASS
