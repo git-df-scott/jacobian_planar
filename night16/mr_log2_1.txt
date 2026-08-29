@@ -1,0 +1,2 @@
+632afa8e6433 deg=13 EMPTY_all_stages   stages=[(27, 'EMPTY_over_Q', 'lambda_exact'), (28, 'EMPTY_over_Q', 'lambda_exact')] (90s)
+cd46f9341dc7 deg= 7 EMPTY_all_stages   stages=[(15, 'EMPTY_over_Q', 'lambda_exact'), (16, 'EMPTY_over_Q', 'lambda_exact'), (21, 'EMPTY_over_Q', 'lambda_exact')] (7s)

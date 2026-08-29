@@ -55,5 +55,24 @@
   "sum_abs_residues": 3.077596590117356e-13,
   "n_places_total": 5,
   "t": 330.6
+ },
+ {
+  "hash": "7887429824c2",
+  "c": "0",
+  "verdict": "VANISHING",
+  "error": null,
+  "ls_residual": 1.819257786114127e-14,
+  "max_period": 1.503564405230638e-14,
+  "rel_ls_residual": 1.819257786114127e-14,
+  "err_ls_residual": 1.567765048936192e-14,
+  "chi": 1,
+  "n_components": 3,
+  "n_punctures": 5,
+  "genus_sum": 0,
+  "n_cycles": 3,
+  "max_abs_residue": 5.5791161964912285e-11,
+  "sum_abs_residues": 8.201914431295809e-11,
+  "n_places_total": 5,
+  "t": 460.2
  }
 ]

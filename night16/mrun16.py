@@ -18,13 +18,14 @@ import sympy as sp
 
 MAXCOLS = int(os.environ.get("MAXCOLS", "2400"))
 TBUDGET = float(os.environ.get("TBUDGET", "900"))
+EXTRACOLS = int(os.environ.get("EXTRACOLS", "400"))
 OUT = "mate16_%s.json" % (sys.argv[1] if len(sys.argv) > 1 else "all")
 
 
 def degs_for(d):
     """the two carriers just above night15's ceiling, plus the largest that fits."""
     fit = 2 * d + 1
-    while (fit + 2) * (fit + 3) // 2 <= MAXCOLS and fit + 1 <= 3 * d:
+    while (fit + 2) * (fit + 3) // 2 <= EXTRACOLS and fit + 1 <= 3 * d:
         fit += 1
     out = []
     for D in (2 * d + 1, 2 * d + 2, fit):
