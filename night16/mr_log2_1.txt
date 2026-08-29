@@ -1,2 +1,8 @@
 632afa8e6433 deg=13 EMPTY_all_stages   stages=[(27, 'EMPTY_over_Q', 'lambda_exact'), (28, 'EMPTY_over_Q', 'lambda_exact')] (90s)
 cd46f9341dc7 deg= 7 EMPTY_all_stages   stages=[(15, 'EMPTY_over_Q', 'lambda_exact'), (16, 'EMPTY_over_Q', 'lambda_exact'), (21, 'EMPTY_over_Q', 'lambda_exact')] (7s)
+d735085d2c22 deg=15 EMPTY_all_stages   stages=[(31, 'EMPTY_over_Q', 'lambda_exact'), (32, 'EMPTY_over_Q', 'lambda_exact')] (410s)
+00427d4924d2 deg= 6 EMPTY_all_stages   stages=[(13, 'EMPTY_over_Q', 'lambda_exact'), (14, 'EMPTY_over_Q', 'lambda_exact'), (18, 'EMPTY_over_Q', 'lambda_exact')] (11s)
+f406b3aeda22 deg=16 EMPTY_all_stages   stages=[(33, 'EMPTY_over_Q', 'lambda_exact'), (34, 'EMPTY_over_Q', 'lambda_exact')] (385s)
+e52860893178 deg= 7 EMPTY_all_stages   stages=[(15, 'EMPTY_over_Q', 'lambda_exact'), (16, 'EMPTY_over_Q', 'lambda_exact'), (21, 'EMPTY_over_Q', 'lambda_exact')] (23s)
+726da7cd9516 deg=17 EMPTY_all_stages   stages=[(35, 'EMPTY_over_Q', 'lambda_exact'), (36, 'EMPTY_over_Q', 'lambda_exact')] (368s)
+e94c47f785e6 deg= 9 EMPTY_all_stages   stages=[(19, 'EMPTY_over_Q', 'lambda_exact'), (20, 'EMPTY_over_Q', 'lambda_exact'), (26, 'EMPTY_over_Q', 'lambda_exact')] (77s)
