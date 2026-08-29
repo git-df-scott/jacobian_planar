@@ -502,6 +502,20 @@ row, and independently with Singular's `genus` where checked
 | SY = NON_COORDINATE | 256 |
 | independent fibre witness NON_COORDINATE_BY_* | 254 |
 
+### 6.1b The six P the screen did not decide
+
+They are all in the G2 family (or sheared copies of it); none is a survivor and
+none is counted as obstructed.
+
+| hash | deg P | deg_y | outcome | reason |
+|---|---|---|---|---|
+| `4e6d65590834` | 6 | 2 | UNRESOLVED | EXACT-HE case F on every fibre: `s` nonconstant with no simple root outside `Delta_0` |
+| `0b2454cfc6f6` | 4 | 4 | UNRESOLVED | NUM-MONO transport exceeded its wall-clock budget on both fibres |
+| `1c74c3bae320` | 5 | 5 | UNRESOLVED | same |
+| `db353c3be5c6` | 11 | 11 | NOT_SCREENED | cost guard: `deg_y * #branch points = 143 > 44` |
+| `cdd4d7d1e9b5` | 14 | 14 | NOT_SCREENED | cost guard: `238 > 44` |
+| `672095a9d89d` | 24 | 12 | NOT_SCREENED | cost guard: `276 > 44` |
+
 ### 6.2 Period verdict by instrument
 
 | instrument | NONVANISHING | VANISHING | other |
