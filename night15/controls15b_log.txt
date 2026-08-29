@@ -3,3 +3,8 @@ C1 (addendum) -- HIGH-DEGREE coordinates with an exact mate
 ==============================================================================
 
 deg9 coordinate (deg_y 3)   deg P=9 deg_y=3  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   c=0    EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=2.79e+00 err=1.2e-04 sumres=3.4e-13 g=0.5 npunct=1
+   c=1    EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=4.06e+00 err=5.9e-13 sumres=2.0e-12 g=0.5 npunct=1
+   c=-1   EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=3.14e+00 err=6.1e-02 sumres=2.1e-12 g=1 npunct=1
+
+deg10 coordinate (deg_y 5)   deg P=10 deg_y=5  [P,Q]-1 = 0 exactly, SY=COORDINATE

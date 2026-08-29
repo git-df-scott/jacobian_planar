@@ -171,6 +171,7 @@ class Tracker(object):
         self.Ady = to_ycoeffs({(i, j - 1): v * j
                                for (i, j), v in P.items() if j > 0})
         self._cx, self._cv = None, None
+        self.qtol = 1e-9      # per-panel quadrature tolerance (adaptive)
 
     def roots(self, x):
         return _roots_at(self.Ac, x)
@@ -237,7 +238,7 @@ class Tracker(object):
             used.add(o)
         return True
 
-    def transport(self, xs, ys, nsub, maxdepth=14):
+    def transport(self, xs, ys, nsub, maxdepth=22):
         """Follow all sheets ys (roots at xs[0]) along the polyline xs.
 
         Adaptive: every substep is validated against the true root set at its
@@ -257,9 +258,23 @@ class Tracker(object):
             stack = seg[::-1]
             while stack:
                 a, b, dep = stack.pop()
+                mid = 0.5 * (a + b)
                 try:
-                    ynew, contrib = self._substep(a, b, ys)
-                    ok = self._validate(b, ynew)
+                    # coarse: one Gauss-Legendre panel on [a, b]
+                    ycoarse, acc_c = self._substep(a, b, ys)
+                    # fine: two panels.  Their difference is the QUADRATURE
+                    # error estimate -- validating the sheet identification
+                    # alone is not enough, and an earlier version of this file
+                    # returned converged-looking but wrong periods without it.
+                    ymid, acc1 = self._substep(a, mid, ys)
+                    yfine, acc2 = self._substep(mid, b, ymid)
+                    ok = (self._validate(mid, ymid) and self._validate(b, yfine)
+                          and self._validate(b, ycoarse))
+                    if ok:
+                        qerr = float(np.max(np.abs(acc_c - (acc1 + acc2))))
+                        ok = qerr <= self.qtol
+                    contrib = acc1 + acc2
+                    ynew = yfine
                 except (RuntimeError, OverflowError, FloatingPointError):
                     ok = False
                 if ok:
