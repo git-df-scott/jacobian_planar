@@ -1,0 +1,2 @@
+size 2: 575 supports with MV=0, interior>=1, degree<=25
+size 3: 71654 supports with MV=0, interior>=1, degree<=25

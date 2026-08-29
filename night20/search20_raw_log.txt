@@ -1,3 +1,4 @@
 size 2: 120 supports with MV=0, interior>=1, degree<=12
 size 3: 4739 supports with MV=0, interior>=1, degree<=12
 size 4: 16666 supports with MV=0, interior>=1, degree<=12
+fast-filter survivors: 92  (of 109714 coefficient vectors tried) in 367.9s
