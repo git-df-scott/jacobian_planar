@@ -460,6 +460,12 @@ Jacobian-1 `phi = (x + s(y), y)` then `(x, y + t(x))`:
 | G1 n=2 m=2 | 4 | 2 | 6 | 6 | NONVANISHING | NONVANISHING | NONVANISHING | yes |
 | G1 n=1 m=3 | 4 | 3 | 5 | 5 | VANISHING | VANISHING | VANISHING | yes |
 
+A fourth case (G1 `n=2 m=3`, sheared from degree 5 / `deg_y` 3 to degree 7 /
+`deg_y` 7) is NOT reported: NUM-MONO on the sheared member exceeded its
+wall-clock budget on both attempts (150 s and 900 s per fibre) and returned no
+verdict, so there is nothing to compare. It is recorded as a cost limit, not as
+a disagreement.
+
 **EXACT-G1 vs NUM-MONO cross-validation** (`val2.txt`), on the normal forms
 `y + 2 x^n y^m`, fibre `c = 1`:
 
@@ -649,10 +655,12 @@ count is how many corpus members carry that pair.
 | 1f53638e8cf6 | 19 | 5 | G1 h0=-3 c=3 a=1 n=4 m=5 t=[(0, Fraction(-2, | EMPTY_all_stages | D=19:EMPTY_over_Q/lambda_exact; D=29:EMPTY_over_Q/lambda_exact; D=38:EMPTY_over_Q/lambda_exact |
 | a814ad47ed0c | 20 | 7 | G1 h0=-1 c=1 a=0 n=6 m=7 t=[(0, Fraction(3,  | EMPTY_all_stages | D=20:EMPTY_over_Q/lambda_exact; D=30:EMPTY_over_Q/lambda_exact; D=40:EMPTY_over_Q/lambda_exact |
 | cf1c601f3d1c | 20 | 10 | G1 h0=-3 c=1 a=-1 n=2 m=3 t=[(0, Fraction(-2 | EMPTY_all_stages | D=20:EMPTY_over_Q/lambda_exact; D=30:EMPTY_over_Q/lambda_exact; D=40:EMPTY_over_Q/lambda_exact |
-| 96e4a2c6d1d3 | 24 | 12 | G1 h0=-1 c=1 a=-1 n=1 m=5 t=[(0, Fraction(-3 | NOT_CERTIFIED | D=24:EMPTY_over_Q/lambda_exact; D=36:EMPTY_over_Q/lambda_exact; D=48:NOT_CERTIFIED/none |
-| 282a9f40c368 | 24 | 24 | G1 h0=-3 c=1 a=-1 n=2 m=5 t=[(1, Fraction(3, | NOT_CERTIFIED | D=24:EMPTY_over_Q/lambda_exact; D=36:EMPTY_over_Q/lambda_exact; D=48:NOT_CERTIFIED/none |
+| 96e4a2c6d1d3 | 24 | 12 | G1 h0=-1 c=1 a=-1 n=1 m=5 t=[(0, Fraction(-3 | EMPTY_all_stages | D=24:EMPTY_over_Q/lambda_exact; D=36:EMPTY_over_Q/lambda_exact; D=48:EMPTY_over_Q/lambda_exact (topup15, 842-row lambda) |
+| 282a9f40c368 | 24 | 24 | G1 h0=-3 c=1 a=-1 n=2 m=5 t=[(1, Fraction(3, | EMPTY_all_stages | D=24:EMPTY_over_Q/lambda_exact; D=36:EMPTY_over_Q/lambda_exact; D=48:EMPTY_over_Q/lambda_exact (topup15, 845-row lambda) |
 
-mate verdicts: {'EMPTY_all_stages': 55, 'NOT_CERTIFIED': 2}
+mate verdicts after the topup at the 2 deg P carrier: {'EMPTY_all_stages': 57}
+(the 55/2 split in `survivors15.json` is the first pass, before the raised
+exact-lambda budget of `topup15.py`; `period_screen.csv` carries the final 57)
 
 
 ### 6.5b Independent re-verification of the lambda certificates
@@ -672,10 +680,11 @@ and so preserves emptiness -- all 169 verify.)
 
 ### 6.6 Hit gate
 
-No mate system was consistent. Of the 57 survivors, 55 returned `EMPTY_over_Q`
-at every carrier up to `deg Q = 2 deg P`, each stage carrying a lambda
-certificate re-verified exactly over `Q`; the remaining 2 (both `deg P = 24`)
-are certified `EMPTY_over_Q` at `deg Q = 24` and `deg Q = 36` and are recorded
-as `NOT_CERTIFIED` at `deg Q = 48`, where the carrier has 1225 unknowns
-(see `topup15.json` for the follow-up attempt at that carrier). No
-`HIT_<hash>/` directory was created.
+**No mate system was consistent.** All 57 survivors returned `EMPTY_over_Q` at
+every carrier, up to and including `deg Q = 2 deg P`, each stage carrying a
+lambda certificate re-verified exactly over `Q` (169 certificates in the first
+pass plus 2 more from `topup15.json`, all re-verified independently by
+`verify_lambdas15.py`). The two `deg P = 24` members needed a raised
+exact-lambda budget for their `deg Q = 48` carrier (1225 unknowns); they came
+back `EMPTY_over_Q` with lambda supports of 842 and 845 rows in 1356 s and
+1224 s. No `HIT_<hash>/` directory was created.

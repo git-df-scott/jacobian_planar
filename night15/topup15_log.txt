@@ -1,1 +1,4 @@
 96e4a2c6d1d3 deg=24  carrier D=48 n=1225
+   EMPTY_over_Q / lambda_exact  (verified exactly over Q on 842 rows)  1356s
+282a9f40c368 deg=24  carrier D=48 n=1225
+   EMPTY_over_Q / lambda_exact  (verified exactly over Q on 845 rows)  1224s

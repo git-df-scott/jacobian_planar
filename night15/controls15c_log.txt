@@ -1,3 +1,8 @@
 G1 n=1 m=2   deg  3 ->  4 (deg_y 2 -> 4)  EXACT-G1=VANISHING      EXACT-HE=VANISHING      NUM base=VANISHING     sheared=VANISHING      MATCH=True
 G1 n=2 m=2   deg  4 ->  6 (deg_y 2 -> 6)  EXACT-G1=NONVANISHING   EXACT-HE=NONVANISHING   NUM base=NONVANISHING  sheared=NONVANISHING   MATCH=True
 G1 n=1 m=3   deg  4 ->  5 (deg_y 3 -> 5)  EXACT-G1=VANISHING      EXACT-HE=None           NUM base=VANISHING     sheared=VANISHING      MATCH=True
+Traceback (most recent call last):
+  File "/tmp/sh4.py", line 13, in <module>
+    "EXACT_G1":g1["verdict"],"NUM_base":r0["verdict"],"NUM_sheared":r1["verdict"],
+                                                                    ~~^^^^^^^^^^^
+KeyError: 'verdict'
