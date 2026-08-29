@@ -1,0 +1,92 @@
+==============================================================================
+C1  a COORDINATE with a known mate: the machinery must FIND the mate
+    and must NOT produce a valid lambda
+==============================================================================
+  P = x + y^2        D=1  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P = x + y^2        D=2  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P = x + y^2        D=3  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P = x + y^2        D=4  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P = x + y^2        D=5  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P = x + y^2        D=6  MATE_over_Q    Q = (1)*x^0*y^1            [P,Q]-1 terms = 0  | lambda exists = False  ok
+  P10 = (y + x^5)^2 - x   deg P = 10 ; construction's own mate deg 5 ; [P,Q0]-1 terms = 0
+  P10                D=5  MATE_over_Q    Q = (-1)*x^0*y^1 + (-1)*x^5*y^0 [P,Q]-1 terms = 0  | lambda exists = False  ok (0.0s)
+  P10                D=6  MATE_over_Q    Q = (-1)*x^0*y^1 + (-1)*x^5*y^0 [P,Q]-1 terms = 0  | lambda exists = False  ok (0.0s)
+  P10                D=7  MATE_over_Q    Q = (-1)*x^0*y^1 + (-1)*x^5*y^0 [P,Q]-1 terms = 0  | lambda exists = False  ok (0.0s)
+  C1 PASS
+
+==============================================================================
+C2  the closed-form lambda at rational (gamma, c), verified over Q alone
+==============================================================================
+  gamma=1     c=1     D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=1     c=1     D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=1     c=1     D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=1     c=1     D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=1     c=1     D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=1     c=1     D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=2     c=3     D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=2     c=3     D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=2     c=3     D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=2     c=3     D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=2     c=3     D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=2     c=3     D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=-1    c=5     D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=-1    c=5     D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=-1    c=5     D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=-1    c=5     D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=-1    c=5     D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=-1    c=5     D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=3     c=-7    D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=3     c=-7    D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=3     c=-7    D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=3     c=-7    D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=3     c=-7    D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=3     c=-7    D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=1/2   c=2/3   D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=1/2   c=2/3   D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=1/2   c=2/3   D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=1/2   c=2/3   D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=1/2   c=2/3   D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=1/2   c=2/3   D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=-4    c=-9    D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=-4    c=-9    D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=-4    c=-9    D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=-4    c=-9    D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=-4    c=-9    D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=-4    c=-9    D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  gamma=7     c=1/5   D=2   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=2 verified=True)
+  gamma=7     c=1/5   D=3   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=3 verified=True)
+  gamma=7     c=1/5   D=5   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=4 verified=True)
+  gamma=7     c=1/5   D=8   closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=5 verified=True)
+  gamma=7     c=1/5   D=11  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=7 verified=True)
+  gamma=7     c=1/5   D=14  closed lambda verified over Q: True  | independent solve: EMPTY_over_Q   (own lambda |supp|=8 verified=True)
+  C2 PASS
+
+==============================================================================
+C3  unimodular (exact Bezout, zero residual) and NON-COORDINATE (SY + fibre)
+==============================================================================
+  Bezout over Q(gamma,c):  U = 4*gamma*x^2/c^2 ,  V = (c - 2*gamma*x*y)/c^2
+     U*P_x + V*P_y - 1  expands to 0 terms  (must be 0)
+     search at gamma=1     c=1     : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=2     c=3     : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=-1    c=5     : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=3     c=-7    : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=1/2   c=2/3   : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=-4    c=-9    : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     search at gamma=7     c=1/5   : U*P_x + V*P_y = 1 found at deg <= 2, residual 0 terms
+     Shpilrain-Yu at gamma=1     c=1     : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=2     c=3     : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=-1    c=5     : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=3     c=-7    : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=1/2   c=2/3   : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=-4    c=-9    : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu at gamma=7     c=1/5   : NON_COORDINATE   nodes=1 leaves=1
+     Shpilrain-Yu sanity  x + y^2          : COORDINATE       (a coordinate; must be COORDINATE)
+     Shpilrain-Yu sanity  (y+x^5)^2 - x    : COORDINATE       (a coordinate; must be COORDINATE)
+     fibre witness: P = c*y + gamma*x*y**2  factors as y*(c + gamma*x*y)
+       -> the zero fibre P = 0 has 2 distinct irreducible components: {y = 0} and {gamma x y + c = 0}.
+       -> {gamma x y + c = 0} is isomorphic to A^1 minus a point (x = -c/(gamma y)),
+          so it is not isomorphic to the affine line; a coordinate has every fibre
+          irreducible and isomorphic to A^1.
+  C3 PASS
+
+CONTROLS PASS
