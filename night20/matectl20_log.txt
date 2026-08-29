@@ -1,0 +1,34 @@
+==============================================================================
+M1  the mate solver must FIND the mate of a coordinate of degree >= 10
+==============================================================================
+  P10 = (y + x^5)^2 - x                    deg = 10   verdict = MATE
+      Q = -x**5 - y
+      deg Q = 5 ; [P,Q] - 1 = 0 ; verified = True
+  P12 = ((y + x^3)^2 + (y + x^3))^2 - x    deg = 12   verdict = MATE
+      Q = -x**3 - y
+      deg Q = 3 ; [P,Q] - 1 = 0 ; verified = True
+  P15 = (y + x^5)^3 - x                    deg = 15   verdict = MATE
+      Q = -x**5 - y
+      deg Q = 5 ; [P,Q] - 1 = 0 ; verified = True
+  M1 verdict: PASS
+
+==============================================================================
+M2  the same code path must return EMPTY with a re-verified lambda on
+    night19's P = x*y^2 + y (proved mate-free there)
+==============================================================================
+  P = x*y^2 + y   verdict = EMPTY
+      D=1   EMPTY_over_Q   |lambda| = 2  lambda re-verified = True
+      D=2   EMPTY_over_Q   |lambda| = 2  lambda re-verified = True
+      D=3   EMPTY_over_Q   |lambda| = 3  lambda re-verified = True
+      D=4   EMPTY_over_Q   |lambda| = 3  lambda re-verified = True
+      D=12  EMPTY_over_Q   |lambda| = 7  lambda re-verified = True
+  M2 verdict: PASS
+
+==============================================================================
+M3  the rational-mate solver must recover night19's rational mate
+    Q_inf = -x/(x*y + 1)  of  P = x*y^2 + y   (gamma = c = 1)
+==============================================================================
+  {"found": true, "k": 1, "deg_A": 1, "A": "-x", "g": "x*y + 1", "Q": "-x/(x*y + 1)", "poles": "x*y + 1", "check": "0"}
+  M3 verdict: PASS
+
+MATE-SOLVER CONTROLS PASS
