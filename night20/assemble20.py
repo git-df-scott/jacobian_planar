@@ -3,7 +3,7 @@ import sys, os, json, csv, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 CENSUS = ["cert20.json", "cert2_20.json", "cert20b.json", "cert20c.json"]
-MATES = ["mate20_pass1.json", "mate20_sel.json"]
+MATES = ["mate20_pass1.json", "mate20_sel.json", "AverdictAll20.json"]
 
 rows = {}
 for f in CENSUS:
@@ -24,7 +24,7 @@ for f in MATES:
             rows[r["P"]].update({k: v for k, v in r.items()
                                  if k.startswith(("mate", "lambda", "rational",
                                                   "certificate", "Q", "bracket",
-                                                  "verified"))})
+                                                  "verified", "A_"))})
             nm += 1
 
 COLS = ["P", "deg", "unimodular", "bezout_U", "bezout_V", "bezout_residual",
@@ -32,7 +32,9 @@ COLS = ["P", "deg", "unimodular", "bezout_U", "bezout_V", "bezout_residual",
         "all_fibres_irreducible", "mate_verdict", "mate_top_D",
         "mate_deg_bound_multiple", "lambda_support", "lambda_verified",
         "certificate_id", "rational_mate_found", "rational_mate_poles",
-        "rational_mate_denominators_tried", "source"]
+        "rational_mate_denominators_tried",
+        "A_verdict", "A_top_D", "A_lambda_support", "A_lambda_verified",
+        "source"]
 
 out = os.path.join(HERE, "irreducible.csv")
 with open(out, "w", newline="") as fh:
@@ -93,5 +95,10 @@ for r in rows.values():
 st["unique_reducible_value_equals_P(0,0)"] = agree
 st["unique_reducible_value_other"] = dis
 st["components_of_the_reducible_fibre"] = compdist
+st["A_system_decided"] = sum(1 for r in rows.values() if r.get("A_verdict"))
+st["A_system_EMPTY"] = sum(1 for r in rows.values() if r.get("A_verdict") == "EMPTY")
+st["A_system_FOUND"] = sum(1 for r in rows.values() if r.get("A_verdict") == "A_FOUND")
+st["A_lambda_all_verified"] = all(r.get("A_lambda_verified") for r in rows.values()
+                                  if r.get("A_verdict") == "EMPTY")
 json.dump(st, open(os.path.join(HERE, "stats20.json"), "w"), indent=1)
 print(json.dumps(st, indent=1))

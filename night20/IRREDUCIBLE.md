@@ -549,110 +549,149 @@ V2  Result 1 (pole theorem) on three constructed examples: every finite
 VERIFICATIONS PASS
 ```
 
-The verification also records the reason the consequence of Result 1 is true,
-and exactly where it breaks: a pole of order `k` along the FULL fibre
-`{P = c0}` means `Q = f/(P-c0)^k` with `D_P(f) = (P-c0)^k`; restricting to the
-fibre gives `D_P(f)|_{P=c0} = 0`, so `f` is constant along the fibre.  If the
-fibre is **irreducible** that constant is a single number `a`, so `(P-c0)`
-divides `f - a`, and since `D_P(a/(P-c0)^k) = 0` the pole order drops by one --
-induction ends at a polynomial mate.  If the fibre is **reducible**, `f` may
-take a different constant on each component and the induction breaks.  That is
-the night19 mechanism, now stated as the exact place irreducibility enters.
+The verification also records *why* the consequence of Result 1 holds and
+exactly where it breaks.  A pole of order `k` along the FULL fibre `{P = c0}`
+means `Q = f/(P-c0)^k` with `D_P(f) = (P-c0)^k`; restricting to the fibre gives
+`D_P(f)|_{P=c0} = 0`, so `f` is constant along the fibre.  If the fibre is
+**irreducible** that constant is a single number `a`, so `(P-c0)` divides
+`f - a`, and since `D_P(a/(P-c0)^k) = 0` the pole order drops by one --
+induction ends at `k = 0`, a polynomial mate.  If the fibre is **reducible**,
+`f` may take a different constant on each component and the induction breaks.
+That is the night19 mechanism, now located at the exact point where
+irreducibility enters.
 
-The right-hand side used throughout below is the general one the pole theorem
-allows, not just `P`: since `D_P(P - c) = 0`,
-`D_P( A / prod_i (P-c_i)^{k_i} ) = D_P(A) / prod_i (P-c_i)^{k_i}`, so a
-rational mate with poles on the fibres `c_i` of orders `k_i` exists exactly when
+The right-hand side used below is the general one the pole theorem allows, not
+just `P`.  Since `D_P(P - c) = 0`,
+`D_P( A / prod_i (P-c_i)^{k_i} ) = D_P(A) / prod_i (P-c_i)^{k_i}`, so a rational
+mate with poles on the fibres `c_i` of orders `k_i` exists exactly when
 `D_P(A) = prod_i (P - c_i)^{k_i}` is solvable for a polynomial `A`
 (`pole20.solve_A_rhs`).  `RHS = P` is the special case of a simple pole on the
-fibre `P = 0`.  The distinction matters: `D_P(A) = P` is EMPTY for
-`P = x y^2 + y + 1` while `D_P(A) = P - 1` is solved by `A = -x*y`, and these
-are the same mate problem.
+fibre `P = 0`, and the distinction matters: `D_P(A) = P` is EMPTY for
+`P = x y^2 + y + 1`, while `D_P(A) = P - 1` is solved by `A = -x*y` -- and these
+are the same mate problem, since `P` and `P + const` have the same `D_P`.
 
 ### 9.1 Task 2 -- A-solvability on the certified objects
 
 The lane certified **no** object passing the triple gate (T), so the hit case of
 Task 2 -- a consistent `A`-system on an all-fibres-irreducible `P` -- has no
-input here and was not reached.  What was run instead, on 250 certified objects
-drawn at random from the census (`selA20.json`, degrees 5-25, genus 1-9, each
-unimodular with an expanded Bezout residual `0` and exactly one reducible
-fibre), is the same decision, with `A` escalating over the carriers
-`S(1)...S(min(deg P + 8, 24))` and the right-hand sides
-`(P - c0)`, `(P - c0)^2` for `c0` the reducible value, `c0 = 0` and
-`c0 = P(0,0)`, and the product over those `c0`:
+input here and was not reached.  What was run instead is the same decision on
+**all 3408 certified objects** (`allcert20.json`; degrees 5-25, genus 1-11, each
+unimodular with an expanded Bezout residual `0`, each with exactly one reducible
+fibre), with `A` escalating over the carriers `S(1) ... S(min(deg P + 8, 24))`
+and the right-hand sides `(P - c0)` and `(P - c0)^2` for `c0` the reducible
+value, `c0 = 0`, `c0 = P(0,0)`, and the product over those `c0`
+(`runA20.py` -> `runAall_log.txt`, `AverdictAll20.json`):
 
 | `D_P(A) = prod (P-c_i)^{k_i}` verdict | count |
 |---|---|
-| `A_over_Q` (a rational mate `A/prod(P-c_i)^{k_i}`) | **0** |
-| `EMPTY_over_Q`, `lambda` re-verified by expansion | **250** |
+| `A_over_Q` (a rational mate `A / prod (P-c_i)^{k_i}`) | **0** |
+| `EMPTY_over_Q`, `lambda` re-verified by expansion | **3408** |
 
 every `lambda` re-verified: **True**.  The solver is not vacuous: on the family
-`P = x^a y^{a+1} + y + 1` (`a = 2..6`, in `qh2.json`) it returns `A = -x*y`
-against `RHS = P - 1` at once, residual `0`, reproducing night19's rational
+`P = x^a y^{a+1} + y + 1` (`a = 2..6`, `qh2.json`) it returns `A = -x*y` against
+`RHS = P - 1` immediately with residual `0`, reproducing night19's rational
 mate `A/(P-1) = -x/(xy+1)`.  Those `P` have genus 0.
 
 ### 9.2 Task 3 -- the inverted sweep, and what forces the specialist's `P` to factor
 
-**Direction used.**  `D_P(A) = P` written out is `A_y P_x - A_x P_y - P = 0`,
-which is **linear in the coefficients of `P`** once `A` is fixed.  So `A` is
-swept and the entire solution SPACE of `P` is computed exactly over `Q`
-(`pole20.kernel_P`, a kernel basis, not a single solution); every `P` in that
-space carries the rational mate `A/P`.  This is the specialist's direction, and
-it is stated here because the alternative -- sweep `P`, test `A`-solvability --
-is what §9.1 does.
+**Direction used, stated explicitly.**  `D_P(A) = P` written out is
+`A_y P_x - A_x P_y - P = 0`, which is **linear in the coefficients of `P`** once
+`A` is fixed.  So `A` is swept and the entire solution SPACE of `P` is computed
+exactly over `Q` (`pole20.kernel_P` returns a kernel basis, not one solution);
+every `P` in that space carries the rational mate `A/P`.  This is the
+specialist's direction; the other direction -- sweep `P`, decide
+`A`-solvability -- is what §9.1 does, on the census.
 
-**What forces the resulting `P` to factor** (predicted, then measured).  For
-`A = mu * x * y` the equation reads `mu (x P_x - y P_y) = P`, which is Euler's
-identity for the torus action of weights `(w1, w2) = (1, -1)`.  It therefore
-forces every monomial `x^i y^j` of `P` to satisfy `mu (i - j) = 1`, i.e. `i - j`
-constant, i.e.
+**Why the resulting `P` factor** (predicted first, then measured).  For
+`A = mu*x*y` the equation reads `mu (x P_x - y P_y) = P`, which is Euler's
+identity for the torus action of weights `(w1, w2) = (1, -1)`.  It forces every
+monomial `x^i y^j` of `P` to satisfy `mu (i - j) = 1`, i.e. `i - j` constant:
 
-  `P = x^k f(x y)`  or  `P = y^k f(x y)` .
+  `P = x^k f(x y)`   or   `P = y^k f(x y)` .
 
-Every such `P` has the monomial factor `x^k` (or `y^k`) **and** `f(xy)` splits
-into linear factors in `xy`, so its fibre `P = 0` is reducible -- unless `f` is
-constant, and then `P` is the coordinate `const * x` (or `const * y`).  And
-`A = mu x y` is the *only* monomial that can work: matching `A_y = (w1/d) x`
-and `-A_x = (w2/d) y` against Euler forces `w1 = -w2`.  So the specialist's
-2755-factoring / 80-coordinate / 0-survivor split is exactly what this family
-predicts.
+Every such `P` carries the monomial factor `x^k` (or `y^k`) **and** `f(xy)`
+splits into linear factors in `xy`, so the fibre `P = 0` is reducible -- unless
+`f` is constant, and then `P` is the coordinate `const*x` (or `const*y`).  And
+`A = mu*x*y` is the *only* monomial that can work: matching `A_y = (w1/d) x`
+and `-A_x = (w2/d) y` against Euler forces `w1 = -w2`.  Measured: of the 105
+monomial `A` swept, exactly one (`A = x*y`, up to sign and scale) has a
+non-trivial `P`-space, and that space is spanned by `x, x^2 y, x^3 y^2, ...`,
+i.e. `x*f(xy)` -- the predicted family, and nothing else.
 
-**Design against it.**  The sweep here (`sweepA20.py`) is therefore aimed away
-from `x*y`: `A` runs over supports of size 1, 2, 3 in degree `<= 7` with
-coefficients in `{+-1, +-2, +-3}`, and for each the full kernel `P`-space on
-`S(12)` is taken (basis members plus two generic members of the space, since
-the space -- not just its basis -- is the set of solutions).  Result so far
-(`sweepA20_log.txt`, `sweepA20.json`): of the 105 monomial `A` swept, exactly
-**one** (`A = x*y`) has a non-trivial `P`-space, and that space is spanned by
-`x, x^2 y, x^3 y^2, x^4 y^3, ...` -- i.e. `x * f(xy)`, precisely the predicted
-family.  8 distinct `P` recorded, 7 of them reducible; the 1 irreducible one
-is the coordinate `P = x`.
+The same reasoning explains the multi-term `A` too, and is recorded as the
+reasoning it is rather than as a claim proved in this lane: `delta = ham(A)` is
+a divergence-free derivation, and `delta(P) = P` says `P` is an eigenvector with
+eigenvalue 1.  When `delta` generates a `C*`-action, Bialynicki-Birula's
+linearisation of `C*`-actions on the affine plane puts `delta` in the form
+`u d_u - v d_v` for a Jacobian-1 coordinate pair `(u,v)`, and then the
+eigenvectors are the monomials `u^i v^j` -- which are reducible unless one of
+`i, j` is 0 and the other is 1, i.e. unless `P` is a coordinate.  The
+dichotomy "reducible fibre, or a coordinate" is exactly what the sweep sees.
+
+**Design against it, and the sweep.**  `sweepA20.py` therefore aims `A` away
+from `x*y`: supports of size 1 (degree `<= 7`) and sizes 2, 3 (degree `<= 5`),
+coefficients in `{+-1, +-2, +-3}`, and for each `A` the FULL kernel `P`-space
+on `S(12)` (size 1) / `S(9)` (sizes 2, 3), basis members plus two generic
+members of the space, since it is the space and not just its basis that solves
+the equation.  105 monomial `A` + 3420 two-term `A` + 14976 three-term `A` were
+swept, and the tally over the 2113 distinct `P` produced is:
+
+| `P` produced by the inverted sweep | count |
+|---|---|
+| `P` reducible (so the fibre `P = 0` is reducible) | **1943** |
+| `P` irreducible | **170** |
+
+and every one of those 170 irreducible `P` was then put through the full
+instrument stack (`sweepA20_irr_cert.json`):
+
+| unimodular | genus | all fibres irreducible | mate verdict | count |
+|---|---|---|---|---|
+| True | 0 | True | `MATE_over_Q`, `[P,Q]-1 = 0` | **170** |
+
+-- i.e. **every irreducible `P` the construction produces is a coordinate**, and
+its "mate" being found is the control behaviour of §2.2, not a hit: a coordinate
+of degree `<= 4` is not a target.
 
 ### 9.3 Task 4 -- the measurement
 
 Across everything measured in this lane:
 
-* every `P` found by the inverted `A`-sweep with a rational mate `A/P` either
-  factors (reducible fibre `P = 0`) or is a coordinate;
-* every one of the 250 certified unimodular objects of genus `>= 1` returns
+* of the 2113 distinct `P` produced by the inverted `A`-sweep, 1943 have a reducible
+  fibre and the remaining 170 are coordinates (unimodular, genus 0, all fibres
+  irreducible, polynomial mate exhibited with residual `0`).  **No `P` in the
+  sweep is simultaneously non-coordinate and all-fibres-irreducible.**
+* every one of the 3408 certified unimodular objects of genus `>= 1` returns
   `EMPTY_over_Q`, with a re-verified `lambda`, for `D_P(A) = (P-c0)^k` at the
-  tested `c0` and `k <= 2`;
-* every one of the 143 certified objects mate-solved in §5 returns
-  `EMPTY_over_Q` for the polynomial mate system as well;
+  tested `c0` and `k <= 2` -- so having a reducible fibre is very far from
+  sufficient for the `A`-construction to apply;
+* every one of the 151 certified objects mate-solved in §5 returns
+  `EMPTY_over_Q` for the polynomial mate system;
 * and in §6 no rational mate was found in the searched box for any
   positive-genus object, while the genus-0 unimodular non-coordinates all have
   one, with poles on a component of their reducible fibre.
 
-Stated as precisely as the data supports it: **in this lane's sweeps, a
-polynomial `P` admitting a polynomial `A` with `D_P(A) = P` is either a
-coordinate or has a reducible fibre** -- and the reason, for the `A = mu x y`
-branch that carries all of them, is the Euler identity for the weights
-`(1, -1)`, which forces `P = x^k f(xy)`.  The converse fails: having a
-reducible fibre is far from sufficient -- 250 of 250 certified objects with a
-reducible fibre admit no such `A` at all.
+Stated as precisely as the data supports it: **in every sweep run in this lane,
+a polynomial `P` admitting a polynomial `A` with
+`D_P(A) = prod (P - c_i)^{k_i}` is either a coordinate or has a reducible
+fibre**, and for the `A = mu*x*y` branch -- which carries all of them -- the
+reason is the Euler identity for the weights `(1,-1)`, forcing `P = x^k f(xy)`.
+That accounts for the specialist's 2755 factoring / 80 coordinate / 0 survivor
+split.  The converse fails badly: 3408 of 3408 certified objects have a reducible
+fibre and admit no such `A` at all.
 
 ### 9.4 Hit gate, after the addendum
 
-No `A`-system was consistent on an all-fibres-irreducible `P` (there is no such
-certified `P` in this lane), and no mate system was consistent.  The hit gate
-was not reached; no `HIT_<hash>/` directory was written.
+No `A`-system was consistent on an all-fibres-irreducible non-coordinate `P`
+(this lane certified no such `P`), and no mate system was consistent on any
+certified object.  The hit gate was not reached; no `HIT_<hash>/` directory was
+written.
+
+### 9.5 Files added by the addendum
+
+`pole20.py` (the identity, the pole-component test, `solve_A_rhs`, `kernel_P`),
+`poletest20.py` / `poletest20_log.txt` (the two verifications),
+`runA20.py` / `runAall_log.txt` / `AverdictAll20.json` (A-solvability on the
+whole census), `sweepA20.py` / `sweepA20_log.txt` / `sweepA20.json` /
+`sweepA20_size1.json` (the inverted sweep), `sweepA20_irr.json` /
+`sweepA20_irr_cert.json` (the irreducible `P` it produced, fully certified),
+`qh2.json` (the quasi-homogeneous family the solver recovers `A` for).

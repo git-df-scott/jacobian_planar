@@ -1,0 +1,176 @@
+[
+ {
+  "P": "x + 1",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "y",
+  "mate": "MATE",
+  "Q": "-x",
+  "residual": "0"
+ },
+ {
+  "P": "x + 2",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "x + 3",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "x",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "y - 1",
+  "mate": "MATE",
+  "Q": "-x",
+  "residual": "0"
+ },
+ {
+  "P": "y - 2",
+  "mate": "MATE",
+  "Q": "-x",
+  "residual": "0"
+ },
+ {
+  "P": "y - 3",
+  "mate": "MATE",
+  "Q": "-x",
+  "residual": "0"
+ },
+ {
+  "P": "x + y",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "x + 2*y",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "x + 3*y",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "x + y**2",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "-x + y**2",
+  "mate": "MATE",
+  "Q": "-y",
+  "residual": "0"
+ },
+ {
+  "P": "x/2 + y**2",
+  "mate": "MATE",
+  "Q": "2*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/2 + y**2",
+  "mate": "MATE",
+  "Q": "-2*y",
+  "residual": "0"
+ },
+ {
+  "P": "x/3 + y**2",
+  "mate": "MATE",
+  "Q": "3*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/3 + y**2",
+  "mate": "MATE",
+  "Q": "-3*y",
+  "residual": "0"
+ },
+ {
+  "P": "x + y**3",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "-x + y**3",
+  "mate": "MATE",
+  "Q": "-y",
+  "residual": "0"
+ },
+ {
+  "P": "x/2 + y**3",
+  "mate": "MATE",
+  "Q": "2*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/2 + y**3",
+  "mate": "MATE",
+  "Q": "-2*y",
+  "residual": "0"
+ },
+ {
+  "P": "x/3 + y**3",
+  "mate": "MATE",
+  "Q": "3*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/3 + y**3",
+  "mate": "MATE",
+  "Q": "-3*y",
+  "residual": "0"
+ },
+ {
+  "P": "x + y**4",
+  "mate": "MATE",
+  "Q": "y",
+  "residual": "0"
+ },
+ {
+  "P": "-x + y**4",
+  "mate": "MATE",
+  "Q": "-y",
+  "residual": "0"
+ },
+ {
+  "P": "x/2 + y**4",
+  "mate": "MATE",
+  "Q": "2*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/2 + y**4",
+  "mate": "MATE",
+  "Q": "-2*y",
+  "residual": "0"
+ },
+ {
+  "P": "x/3 + y**4",
+  "mate": "MATE",
+  "Q": "3*y",
+  "residual": "0"
+ },
+ {
+  "P": "-x/3 + y**4",
+  "mate": "MATE",
+  "Q": "-3*y",
+  "residual": "0"
+ }
+]
