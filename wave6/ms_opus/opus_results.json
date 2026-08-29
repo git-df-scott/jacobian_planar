@@ -54,5 +54,11 @@
   "verdict": "BRIDGE-ERROR Command '['Singular', '-q', '/home/user/jacobian_planar/wave6/ms_opus/p108_671059_dump.sing']' timed out after 2700 seconds",
   "wall": 2700.1,
   "nvars": 64
+ },
+ {
+  "name": "w6_35657_5",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.9,
+  "nvars": 65
  }
 ]
