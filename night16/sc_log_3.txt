@@ -1,2 +1,4 @@
-[ 6/57] 52830078b770 deg= 4 dy= 3 chi_gen=0 atyp=['0'] -> STILL-VANISHING (84s)
-[ 7/57] 39f56b091e75 deg= 7 dy= 3 chi_gen=0 atyp=['0'] -> STILL-VANISHING (54s)
+[ 4/57] fef547c2b095 deg= 7 dy= 2 chi_gen=0 atyp=['0'] -> STILL-VANISHING (85s)
+[10/57] fa25edeecbfe deg= 5 dy= 3 chi_gen=-1 atyp=['0'] -> STILL-VANISHING (83s)
+[16/57] 632afa8e6433 deg=13 dy= 4 chi_gen=0 atyp=['0'] -> STILL-VANISHING (154s)
+[22/57] 00427d4924d2 deg= 6 dy= 5 chi_gen=0 atyp=['0'] -> STILL-VANISHING (116s)

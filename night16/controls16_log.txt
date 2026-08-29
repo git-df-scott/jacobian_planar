@@ -57,3 +57,15 @@ C3e CROSS-CHECK OF chi ITSELF AGAINST NUM-MONO (independent, numerical)
     x*y^2 + y        c=0    exact chi=1   n_vert=0  chi-n_vert=1    NUM-MONO chi=1     agree=True
     x*y^2 + y        c=1    exact chi=0   n_vert=0  chi-n_vert=0    NUM-MONO chi=0     agree=True
     x*y^2 + y        c=3    exact chi=0   n_vert=0  chi-n_vert=0    NUM-MONO chi=0     agree=True
+    x + (y+x^2)^5    c=0    exact chi=1   n_vert=0  chi-n_vert=1    NUM-MONO chi=1     agree=True
+    x + (y+x^2)^5    c=2    exact chi=1   n_vert=0  chi-n_vert=1    NUM-MONO chi=1     agree=True
+    y + x*y^3        c=0    exact chi=1   n_vert=0  chi-n_vert=1    NUM-MONO chi=1     agree=True
+    y + x*y^3        c=1    exact chi=0   n_vert=0  chi-n_vert=0    NUM-MONO chi=0     agree=True
+    y + x*y^3        c=-1   exact chi=0   n_vert=0  chi-n_vert=0    NUM-MONO chi=0     agree=True
+    y^2 + x*y^3      c=0    exact chi=1   n_vert=0  chi-n_vert=1    NUM-MONO chi=None  agree=False
+    y^2 + x*y^3      c=1    exact chi=0   n_vert=0  chi-n_vert=0    NUM-MONO chi=0     agree=True
+
+C3f CROSS-CHECK AGAINST night15's RECORDED GENUS AND PLACES AT INFINITY
+    for an irreducible fibre  chi = 2 - 2g - r.  night15 recorded (g, r)
+    for the generic fibre of each of the 57 survivors; the detector's
+    chi_gen is computed with no reference to either number.

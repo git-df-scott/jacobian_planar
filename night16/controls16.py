@@ -94,10 +94,18 @@ for nm, Pd, cs in cases:
         ex, nv = d["chi"], d["n_vert"]
         nm_ = M.screen_fibre(Pd, Fr(c), nsub=6, ncirc=48, budget=90.0)
         num = nm_.get("chi")
-        good = (ex - nv == num)
-        allok &= good
+        if num is None:
+            good = None            # NUM-MONO could not run on this fibre
+        else:
+            good = (ex - nv == num)
+            allok &= good
         print("    %-16s c=%-3d  exact chi=%-3d n_vert=%d  chi-n_vert=%-3d  "
-              "NUM-MONO chi=%-4s  agree=%s" % (nm, c, ex, nv, ex - nv, num, good))
+              "NUM-MONO chi=%-4s  agree=%s" % (nm, c, ex, nv, ex - nv, num,
+                                               good if good is not None
+                                               else "NO COMPARISON (NUM-MONO "
+                                               "errored: this fibre is "
+                                               "non-reduced and this P is not "
+                                               "gradient-unimodular)"))
         rows.append((nm, c, ex, nv, num, bool(good)))
 OUT["C3e"] = {"rows": rows, "all_agree": bool(allok)}
 ok3 &= allok

@@ -130,11 +130,19 @@ def one(rec):
 
 def main():
     S = load16.survivors()
+    OUT = OUTJ
+    idx = list(range(len(S)))
+    if len(sys.argv) > 2:
+        k, n = int(sys.argv[1]), int(sys.argv[2])
+        idx = [i for i in idx if i % n == k]
+        S = [S[i] for i in idx]
+        OUT = "atypical16_%d.json" % k
     done = {}
-    if os.path.exists(OUTJ):
-        done = {r["hash"]: r for r in json.load(open(OUTJ))}
+    if os.path.exists(OUT):
+        done = {r["hash"]: r for r in json.load(open(OUT))}
     res = []
-    for i, rec in enumerate(S):
+    for t, rec in enumerate(S):
+        i = idx[t]
         if rec["hash"] in done:
             res.append(done[rec["hash"]]); continue
         try:
@@ -148,8 +156,8 @@ def main():
               % (i + 1, r["hash"], r["deg_P"], r["deg_y"], r.get("chi_gen"),
                  [a["c"] for a in r.get("atypical", [])], r["verdict"],
                  r.get("t_total", 0)), flush=True)
-        json.dump(res, open(OUTJ, "w"), indent=1, default=str)
-    json.dump(res, open(OUTJ, "w"), indent=1, default=str)
+        json.dump(res, open(OUT, "w"), indent=1, default=str)
+    json.dump(res, open(OUT, "w"), indent=1, default=str)
 
 
 if __name__ == "__main__":
