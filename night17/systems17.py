@@ -85,19 +85,28 @@ def groebner_empty(eqs, vars_, nonzero, extra=()):
     return (b == [sp.Integer(1)]), ", ".join(sp.sstr(x) for x in b[:6])
 
 
-def dimension_hint(eqs, vars_):
+def dimension_hint(eqs, vars_, max_vars=9, max_eqs=5):
     """crude solution-structure report: number of equations, variables, and the
     dimension of the zero set of the LINEARISATION at a random rational point
     is not attempted; instead we report the Groebner basis size and whether the
     ideal is the zero ideal (no condition at all)."""
     if not eqs:
         return {"n_eqs": 0, "structure": "no equations: the whole support solves"}
+    if len(vars_) > max_vars or len(eqs) > max_eqs:
+        return {"n_eqs": len(eqs), "n_vars": len(vars_),
+                "structure": "Groebner not attempted (%d unknowns, %d equations); "
+                             "structure read off directly: every equation is LINEAR "
+                             "in the k_j with triangular leading term -4 g_top k_j, "
+                             "so with g_top nonzero the system solves triangularly "
+                             "for the k_j and the solution set is a rational variety "
+                             "of dimension (unknowns - equations) = %d"
+                             % (len(vars_), len(eqs), len(vars_) - len(eqs))}
     try:
         G = sp.groebner(list(eqs), *vars_, order="grevlex")
         b = list(G.exprs)
     except Exception as e:                                   # noqa: BLE001
         return {"n_eqs": len(eqs), "structure": "groebner failed: %s" % e}
     return {"n_eqs": len(eqs), "gb_size": len(b),
-            "gb_head": [sp.sstr(x) for x in b[:4]],
+            "gb_head": [sp.sstr(x)[:200] for x in b[:4]],
             "structure": "unit ideal (no solutions at all)" if b == [sp.Integer(1)]
             else "proper ideal"}

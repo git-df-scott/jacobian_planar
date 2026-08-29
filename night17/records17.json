@@ -1,0 +1,4027 @@
+{
+ "supports": [
+  {
+   "id": "H1",
+   "kind": "HE",
+   "label": "HE(G=0,H=1,K=2)",
+   "note": "deg g = 0: g constant",
+   "n_unknowns": 6,
+   "variables": [
+    "g0",
+    "h0",
+    "h1",
+    "k0",
+    "k1",
+    "k2"
+   ],
+   "equations": [
+    "-4*g0*k2 + h1**2"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "-4*g0*k2 + h1**2"
+    ],
+    "structure": "proper ideal"
+   },
+   "groebner_empty_with_h1_nonzero": false,
+   "groebner_basis_head": "4*g0*k2*z1 - h1, -4*g0*k2 + h1**2, h1*z1 - 1"
+  },
+  {
+   "id": "H2",
+   "kind": "HE",
+   "label": "HE(G=0,H=3,K=6)",
+   "note": "deg g = 0: g constant",
+   "n_unknowns": 12,
+   "variables": [
+    "g0",
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6"
+   ],
+   "equations": [
+    "-4*g0*k2 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 + 2*h0*h3 + 2*h1*h2",
+    "-4*g0*k4 + 2*h1*h3 + h2**2",
+    "-4*g0*k5 + 2*h2*h3",
+    "-4*g0*k6 + h3**2"
+   ],
+   "n_equations": 5,
+   "structure": {
+    "n_eqs": 5,
+    "n_vars": 12,
+    "structure": "Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 7"
+   },
+   "groebner_empty_with_h3_nonzero": false,
+   "groebner_basis_head": "50*h0**2*k5*k6*z1 - 40*h0*k2*k6 - 5*h0*k3*k5 + 8*h0*k4**2 + 2*h1*k3*k4 - 4*h2*k2*k4, 20*h0**2*k6**2*z1 - 10*h0*k3*k6 + 4*h0*k4*k5 + h1*k3*k5 - 2*h2*k2*k5, 20*h0*k5*k6**2*z1 - 16*k2*k6**2 - 2*k3*k5*k6 + 4*k4**2*k6 - k4*k5**2, 16*h0*k6**3*z1 - 8*k3*k6**2 + 4*k4*k5*k6 - k5**3, 4*g0*h0*k2*k4 - 5*g0*h0*k3**2 - 4*g0*h1*k2*k3 + 8*g0*h2*k2**2 + 5*h0**3*k6 + 15*h0**2*h1*k5 - 10*h0**2*h2*k4, 10*g0*h0*k2*k5 - 4*g0*h0*k3*k4 - g0*h1*k3**2 + 2*g0*h2*k2*k3 + 5*h0**2*h1*k6 - 5*h0**2*h2*k5"
+  },
+  {
+   "id": "H3",
+   "kind": "HE",
+   "label": "HE(G=1,H=1,K=1)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 6,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "k0",
+    "k1"
+   ],
+   "equations": [
+    "-4*g1*k1 + h1**2"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "-4*g1*k1 + h1**2"
+    ],
+    "structure": "proper ideal"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H4",
+   "kind": "HE",
+   "label": "HE(G=1,H=2,K=3)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 9,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "h2",
+    "k0",
+    "k1",
+    "k2",
+    "k3"
+   ],
+   "equations": [
+    "-4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 - 4*g1*k2 + 2*h1*h2",
+    "-4*g1*k3 + h2**2"
+   ],
+   "n_equations": 3,
+   "structure": {
+    "n_eqs": 3,
+    "gb_size": 7,
+    "gb_head": [
+     "g0**2*k3**2 - 2*g0*g1*k2*k3 - 4*g1**2*k1*k3 + g1**2*k2**2 + 2*g1*h0*h2*k3",
+     "g0*h1*k2*k3 + 2*g0*h2*k1*k3 - 2*g0*h2*k2**2 + 4*g1*h0*k2*k3 - 4*g1*h1*k1*k3 + g1*h1*k2**2",
+     "-g0*h1*k3 + 2*g0*h2*k2 - 4*g1*h0*k3 - g1*h1*k2 + 2*g1*h2*k1",
+     "g0*h2*k3 - 2*g1*h1*k3 + g1*h2*k2"
+    ],
+    "structure": "proper ideal"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H5",
+   "kind": "HE",
+   "label": "HE(G=1,H=3,K=5)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 12,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5"
+   ],
+   "equations": [
+    "-4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2",
+    "-4*g0*k4 - 4*g1*k3 + 2*h1*h3 + h2**2",
+    "-4*g0*k5 - 4*g1*k4 + 2*h2*h3",
+    "-4*g1*k5 + h3**2"
+   ],
+   "n_equations": 5,
+   "structure": {
+    "n_eqs": 5,
+    "n_vars": 12,
+    "structure": "Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 7"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H6",
+   "kind": "HE",
+   "label": "HE(G=1,H=5,K=9)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 18,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9"
+   ],
+   "equations": [
+    "-4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2",
+    "-4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2",
+    "-4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3",
+    "-4*g0*k6 - 4*g1*k5 + 2*h1*h5 + 2*h2*h4 + h3**2",
+    "-4*g0*k7 - 4*g1*k6 + 2*h2*h5 + 2*h3*h4",
+    "-4*g0*k8 - 4*g1*k7 + 2*h3*h5 + h4**2",
+    "-4*g0*k9 - 4*g1*k8 + 2*h4*h5",
+    "-4*g1*k9 + h5**2"
+   ],
+   "n_equations": 9,
+   "structure": {
+    "n_eqs": 9,
+    "n_vars": 18,
+    "structure": "Groebner not attempted (18 unknowns, 9 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 9"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H7",
+   "kind": "HE",
+   "label": "HE(G=1,H=8,K=15)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 27,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "h7",
+    "h8",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9",
+    "k10",
+    "k11",
+    "k12",
+    "k13",
+    "k14",
+    "k15"
+   ],
+   "equations": [
+    "-4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2",
+    "-4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2",
+    "-4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3",
+    "-4*g0*k6 - 4*g1*k5 + 2*h0*h6 + 2*h1*h5 + 2*h2*h4 + h3**2",
+    "-4*g0*k7 - 4*g1*k6 + 2*h0*h7 + 2*h1*h6 + 2*h2*h5 + 2*h3*h4",
+    "-4*g0*k8 - 4*g1*k7 + 2*h0*h8 + 2*h1*h7 + 2*h2*h6 + 2*h3*h5 + h4**2",
+    "-4*g0*k9 - 4*g1*k8 + 2*h1*h8 + 2*h2*h7 + 2*h3*h6 + 2*h4*h5",
+    "-4*g0*k10 - 4*g1*k9 + 2*h2*h8 + 2*h3*h7 + 2*h4*h6 + h5**2",
+    "-4*g0*k11 - 4*g1*k10 + 2*h3*h8 + 2*h4*h7 + 2*h5*h6",
+    "-4*g0*k12 - 4*g1*k11 + 2*h4*h8 + 2*h5*h7 + h6**2",
+    "-4*g0*k13 - 4*g1*k12 + 2*h5*h8 + 2*h6*h7",
+    "-4*g0*k14 - 4*g1*k13 + 2*h6*h8 + h7**2",
+    "-4*g0*k15 - 4*g1*k14 + 2*h7*h8",
+    "-4*g1*k15 + h8**2"
+   ],
+   "n_equations": 15,
+   "structure": {
+    "n_eqs": 15,
+    "n_vars": 27,
+    "structure": "Groebner not attempted (27 unknowns, 15 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 12"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H8",
+   "kind": "HE",
+   "label": "HE(G=1,H=15,K=29)",
+   "note": "deg g = 1: Delta = h^2 - 4gk forced to degree <= 1",
+   "n_unknowns": 48,
+   "variables": [
+    "g0",
+    "g1",
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "h7",
+    "h8",
+    "h9",
+    "h10",
+    "h11",
+    "h12",
+    "h13",
+    "h14",
+    "h15",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9",
+    "k10",
+    "k11",
+    "k12",
+    "k13",
+    "k14",
+    "k15",
+    "k16",
+    "k17",
+    "k18",
+    "k19",
+    "k20",
+    "k21",
+    "k22",
+    "k23",
+    "k24",
+    "k25",
+    "k26",
+    "k27",
+    "k28",
+    "k29"
+   ],
+   "equations": [
+    "-4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2",
+    "-4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2",
+    "-4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2",
+    "-4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3",
+    "-4*g0*k6 - 4*g1*k5 + 2*h0*h6 + 2*h1*h5 + 2*h2*h4 + h3**2",
+    "-4*g0*k7 - 4*g1*k6 + 2*h0*h7 + 2*h1*h6 + 2*h2*h5 + 2*h3*h4",
+    "-4*g0*k8 - 4*g1*k7 + 2*h0*h8 + 2*h1*h7 + 2*h2*h6 + 2*h3*h5 + h4**2",
+    "-4*g0*k9 - 4*g1*k8 + 2*h0*h9 + 2*h1*h8 + 2*h2*h7 + 2*h3*h6 + 2*h4*h5",
+    "-4*g0*k10 - 4*g1*k9 + 2*h0*h10 + 2*h1*h9 + 2*h2*h8 + 2*h3*h7 + 2*h4*h6 + h5**2",
+    "-4*g0*k11 - 4*g1*k10 + 2*h0*h11 + 2*h1*h10 + 2*h2*h9 + 2*h3*h8 + 2*h4*h7 + 2*h5*h6",
+    "-4*g0*k12 - 4*g1*k11 + 2*h0*h12 + 2*h1*h11 + 2*h10*h2 + 2*h3*h9 + 2*h4*h8 + 2*h5*h7 + h6**2",
+    "-4*g0*k13 - 4*g1*k12 + 2*h0*h13 + 2*h1*h12 + 2*h10*h3 + 2*h11*h2 + 2*h4*h9 + 2*h5*h8 + 2*h6*h7",
+    "-4*g0*k14 - 4*g1*k13 + 2*h0*h14 + 2*h1*h13 + 2*h10*h4 + 2*h11*h3 + 2*h12*h2 + 2*h5*h9 + 2*h6*h8 + h7**2",
+    "-4*g0*k15 - 4*g1*k14 + 2*h0*h15 + 2*h1*h14 + 2*h10*h5 + 2*h11*h4 + 2*h12*h3 + 2*h13*h2 + 2*h6*h9 + 2*h7*h8",
+    "-4*g0*k16 - 4*g1*k15 + 2*h1*h15 + 2*h10*h6 + 2*h11*h5 + 2*h12*h4 + 2*h13*h3 + 2*h14*h2 + 2*h7*h9 + h8**2",
+    "-4*g0*k17 - 4*g1*k16 + 2*h10*h7 + 2*h11*h6 + 2*h12*h5 + 2*h13*h4 + 2*h14*h3 + 2*h15*h2 + 2*h8*h9",
+    "-4*g0*k18 - 4*g1*k17 + 2*h10*h8 + 2*h11*h7 + 2*h12*h6 + 2*h13*h5 + 2*h14*h4 + 2*h15*h3 + h9**2",
+    "-4*g0*k19 - 4*g1*k18 + 2*h10*h9 + 2*h11*h8 + 2*h12*h7 + 2*h13*h6 + 2*h14*h5 + 2*h15*h4",
+    "-4*g0*k20 - 4*g1*k19 + h10**2 + 2*h11*h9 + 2*h12*h8 + 2*h13*h7 + 2*h14*h6 + 2*h15*h5",
+    "-4*g0*k21 - 4*g1*k20 + 2*h10*h11 + 2*h12*h9 + 2*h13*h8 + 2*h14*h7 + 2*h15*h6",
+    "-4*g0*k22 - 4*g1*k21 + 2*h10*h12 + h11**2 + 2*h13*h9 + 2*h14*h8 + 2*h15*h7",
+    "-4*g0*k23 - 4*g1*k22 + 2*h10*h13 + 2*h11*h12 + 2*h14*h9 + 2*h15*h8",
+    "-4*g0*k24 - 4*g1*k23 + 2*h10*h14 + 2*h11*h13 + h12**2 + 2*h15*h9",
+    "-4*g0*k25 - 4*g1*k24 + 2*h10*h15 + 2*h11*h14 + 2*h12*h13",
+    "-4*g0*k26 - 4*g1*k25 + 2*h11*h15 + 2*h12*h14 + h13**2",
+    "-4*g0*k27 - 4*g1*k26 + 2*h12*h15 + 2*h13*h14",
+    "-4*g0*k28 - 4*g1*k27 + 2*h13*h15 + h14**2",
+    "-4*g0*k29 - 4*g1*k28 + 2*h14*h15",
+    "-4*g1*k29 + h15**2"
+   ],
+   "n_equations": 29,
+   "structure": {
+    "n_eqs": 29,
+    "n_vars": 48,
+    "structure": "Groebner not attempted (48 unknowns, 29 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 19"
+   },
+   "parametrisation": "g = gamma (x - a), h free, alpha free, beta = h(a)^2 - alpha a, k = (h^2 - alpha x - beta)/(4g)"
+  },
+  {
+   "id": "H9",
+   "kind": "HE",
+   "label": "HE(G=2,H=2,K=2)",
+   "note": "top coefficient g2 required nonzero",
+   "n_unknowns": 9,
+   "variables": [
+    "g0",
+    "g1",
+    "g2",
+    "h0",
+    "h1",
+    "h2",
+    "k0",
+    "k1",
+    "k2"
+   ],
+   "equations": [
+    "g2",
+    "-4*g0*k2 - 4*g1*k1 - 4*g2*k0 + 2*h0*h2 + h1**2",
+    "-4*g1*k2 - 4*g2*k1 + 2*h1*h2",
+    "-4*g2*k2 + h2**2"
+   ],
+   "n_equations": 4,
+   "structure": {
+    "n_eqs": 4,
+    "gb_size": 8,
+    "gb_head": [
+     "g1**2*k2**2",
+     "-2*g0*h2*k2**2 + g1*h1*k2**2",
+     "2*g0*h2*k2 - g1*h1*k2 + 2*g1*h2*k1",
+     "g1*h2*k2"
+    ],
+    "structure": "proper ideal"
+   },
+   "groebner_empty_with_g2_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "H10",
+   "kind": "HE",
+   "label": "HE(G=0,H=0,K=2)",
+   "note": "top coefficient k2 required nonzero",
+   "n_unknowns": 5,
+   "variables": [
+    "g0",
+    "h0",
+    "k0",
+    "k1",
+    "k2"
+   ],
+   "equations": [
+    "-4*g0*k2"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "g0*k2"
+    ],
+    "structure": "proper ideal"
+   },
+   "groebner_empty_with_k2_nonzero": false,
+   "groebner_basis_head": "k2*z1 - 1, g0"
+  },
+  {
+   "id": "E1",
+   "kind": "SE",
+   "label": "SE(m=2;3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E2",
+   "kind": "SE",
+   "label": "SE(m=2;2)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [
+    "1"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "1"
+    ],
+    "structure": "unit ideal (no solutions at all)"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 2)",
+     "n_places": 2,
+     "y": "infinity",
+     "residue": "conditional",
+     "residue_expr": "1"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ],
+   "groebner_empty_with_alpha_c_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "E3",
+   "kind": "SE",
+   "label": "SE(m=2;4)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [
+    "-alpha"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "alpha"
+    ],
+    "structure": "proper ideal"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 4)",
+     "n_places": 2,
+     "y": "infinity",
+     "residue": "conditional",
+     "residue_expr": "-alpha/(2*a1*alpha + 2*beta - 2*lam)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ],
+   "groebner_empty_with_alpha_c_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "E4",
+   "kind": "SE",
+   "label": "SE(m=2;5)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 5)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E5",
+   "kind": "SE",
+   "label": "SE(m=2;9)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 9)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E6",
+   "kind": "SE",
+   "label": "SE(m=3;2)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 1, 2 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "1",
+   "n_punctures": 2,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 2)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E7",
+   "kind": "SE",
+   "label": "SE(m=3;4)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 0, 4 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 4,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 4)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 3,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E8",
+   "kind": "SE",
+   "label": "SE(m=3;3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 0, 4 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [
+    "1"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "1"
+    ],
+    "structure": "unit ideal (no solutions at all)"
+   },
+   "genus": "0",
+   "n_punctures": 4,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 3)",
+     "n_places": 3,
+     "y": "infinity",
+     "residue": "conditional",
+     "residue_expr": "1"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ],
+   "groebner_empty_with_alpha_c_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "E9",
+   "kind": "SE",
+   "label": "SE(m=2;2,3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 5 punctures",
+   "n_unknowns": 5,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1",
+    "a2"
+   ],
+   "equations": [
+    "1"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "1"
+    ],
+    "structure": "unit ideal (no solutions at all)"
+   },
+   "genus": "0",
+   "n_punctures": 5,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 2)",
+     "n_places": 2,
+     "y": "infinity",
+     "residue": "conditional",
+     "residue_expr": "1"
+    },
+    {
+     "over": "x = a2 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ],
+   "groebner_empty_with_alpha_c_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "E10",
+   "kind": "SE",
+   "label": "SE(m=2;3,3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 1, 3 punctures",
+   "n_unknowns": 5,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1",
+    "a2"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "1",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = a2 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E11",
+   "kind": "SE",
+   "label": "SE(m=3;5,4)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 2, 3 punctures",
+   "n_unknowns": 5,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1",
+    "a2"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "2",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 5)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = a2 (root of B, mult 4)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E12",
+   "kind": "SE",
+   "label": "SE(m=2;27)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 27)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E13",
+   "kind": "SE",
+   "label": "SE(m=4;3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^4 ; genus 1, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "1",
+   "n_punctures": 3,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 2,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "E14",
+   "kind": "SE",
+   "label": "SE(m=5;3)",
+   "note": "P = alpha x + beta + c prod (x-a_i)^e_i y^5 ; genus 2, 2 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "2",
+   "n_punctures": 2,
+   "places": [
+    {
+     "over": "x = a1 (root of B, mult 3)",
+     "n_places": 1,
+     "y": "infinity",
+     "residue": "identically 0 (exponent rule)"
+    },
+    {
+     "over": "x = infinity",
+     "n_places": 1,
+     "residue": "identically 0 (exponent rule)"
+    }
+   ]
+  },
+  {
+   "id": "V1",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^1 y^2",
+   "note": "the (x,y) swap of SE(m=1; 2): night14 F2/F2b shape, genus 0, 2 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 2
+  },
+  {
+   "id": "V2",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^2 y^3",
+   "note": "the (x,y) swap of SE(m=2; 3): night14 F2/F2b shape, genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3
+  },
+  {
+   "id": "V3",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^2 y^5",
+   "note": "the (x,y) swap of SE(m=2; 5): night14 F2/F2b shape, genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 3
+  },
+  {
+   "id": "V4",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^3 y^4",
+   "note": "the (x,y) swap of SE(m=3; 4): night14 F2/F2b shape, genus 0, 4 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "0",
+   "n_punctures": 4
+  },
+  {
+   "id": "V5",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^4 y^2",
+   "note": "the (x,y) swap of SE(m=4; 2): night14 F2/F2b shape, genus 1, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "n_eqs": 0,
+    "structure": "no equations: the whole support solves"
+   },
+   "genus": "1",
+   "n_punctures": 3
+  },
+  {
+   "id": "V6",
+   "kind": "SE-swap",
+   "label": "v-power  P = h0 y + c x^2 y^4",
+   "note": "the (x,y) swap of SE(m=2; 4): night14 F2/F2b shape, genus 0, 3 punctures",
+   "n_unknowns": 4,
+   "variables": [
+    "alpha",
+    "beta",
+    "c",
+    "a1"
+   ],
+   "equations": [
+    "-alpha"
+   ],
+   "n_equations": 1,
+   "structure": {
+    "n_eqs": 1,
+    "gb_size": 1,
+    "gb_head": [
+     "alpha"
+    ],
+    "structure": "proper ideal"
+   },
+   "genus": "0",
+   "n_punctures": 3,
+   "groebner_empty_with_alpha_c_nonzero": true,
+   "groebner_basis_head": "1"
+  },
+  {
+   "id": "M1",
+   "kind": "MIXED",
+   "label": "shear image",
+   "note": "y-shear y -> y + x + x^2 of the H3 survivor (deg_y stays 2)",
+   "n_unknowns": 10,
+   "variables": [],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "structure": "shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3)"
+   },
+   "newton_support": [
+    "0,1",
+    "1,0",
+    "1,1",
+    "1,2",
+    "2,0",
+    "2,1",
+    "3,0",
+    "3,1",
+    "4,0",
+    "5,0"
+   ]
+  },
+  {
+   "id": "M2",
+   "kind": "MIXED",
+   "label": "shear image",
+   "note": "y-shear then x-shear x -> x + y^2 (deg_y grows: genuinely mixed)",
+   "n_unknowns": 15,
+   "variables": [],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "structure": "shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3)"
+   },
+   "newton_support": [
+    "0,1",
+    "0,2",
+    "0,3",
+    "0,4",
+    "0,5",
+    "0,6",
+    "1,0",
+    "1,1",
+    "1,2",
+    "1,3",
+    "1,4",
+    "2,0",
+    "2,1",
+    "2,2",
+    "3,0"
+   ]
+  },
+  {
+   "id": "M3",
+   "kind": "MIXED",
+   "label": "shear image",
+   "note": "x-shear x -> x + y of the E1 survivor",
+   "n_unknowns": 6,
+   "variables": [],
+   "equations": [],
+   "n_equations": 0,
+   "structure": {
+    "structure": "shear image of a solved support; Jacobian-1 shears preserve eta and all periods (control G3)"
+   },
+   "newton_support": [
+    "0,1",
+    "0,5",
+    "1,0",
+    "1,4",
+    "2,3",
+    "3,2"
+   ]
+  }
+ ],
+ "records": [
+  {
+   "support": "H1",
+   "hash": "1e8144b39dbd",
+   "deg": 2,
+   "deg_y": 2,
+   "n_terms": 5,
+   "P": "(1/4)*x^2 + 1*x*y + 1*y^2 + 1*y + (1/4)",
+   "note": "g const, h = x + 1",
+   "screen": {
+    "Delta_c": "4*c + 2*x",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "2*c + x",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "COORDINATE",
+   "sy_nodes": 4,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 3.185024504257066e-16,
+     "punct": 1,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 4.629612623393476e-16,
+     "punct": 1,
+     "genus": 0
+    }
+   },
+   "survivor": false,
+   "secs": 38.7,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0"
+   ]
+  },
+  {
+   "support": "H1",
+   "hash": "05448ae01b6d",
+   "deg": 2,
+   "deg_y": 2,
+   "n_terms": 4,
+   "P": "(1/4)*x^2 + 1*x*y + 1*y^2 + (-1/2)*x",
+   "note": "g const, h = x",
+   "screen": {
+    "Delta_c": "4*c + 2*x",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "2*c + x",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "COORDINATE",
+   "sy_nodes": 5,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 3.221565177806841e-16,
+     "punct": 1,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 4.846499998819566e-16,
+     "punct": 1,
+     "genus": 0
+    }
+   },
+   "survivor": false,
+   "secs": 42.6,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0"
+   ]
+  },
+  {
+   "support": "H2",
+   "hash": "f9c3e6131ab8",
+   "deg": 6,
+   "deg_y": 2,
+   "n_terms": 11,
+   "P": "1*x^6 + 1*x^5 + (1/4)*x^4 + 2*x^3*y + 1*x^3 + 1*x^2*y + (1/2)*x^2 + 1*y^2 + (-1/2)*x + 1*y + (1/4)",
+   "note": "g const, h = 2*x**3 + x**2 + 1",
+   "screen": {
+    "Delta_c": "4*c + 2*x",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "2*c + x",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "COORDINATE",
+   "sy_nodes": 7,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 9.74910495731254e-16,
+     "punct": null,
+     "genus": null
+    },
+    "-1": {
+     "rel": 1.0762340476814986e-15,
+     "punct": null,
+     "genus": null
+    }
+   },
+   "survivor": false,
+   "secs": 120.1,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "support": "H3",
+   "hash": "d37142063698",
+   "deg": 3,
+   "deg_y": 2,
+   "n_terms": 4,
+   "P": "1*x*y^2 + 1*x*y + (1/4)*x + 1*y",
+   "note": "g = x, h = x + 1",
+   "screen": {
+    "Delta_c": "4*c*x + 2*x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x*(4*c + 2) + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.9506843681979927e-13,
+     "punct": 2,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 7.168912750598533e-15,
+     "punct": 2,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 76.9,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0"
+   ],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 3,
+      "n_unknowns": 10,
+      "n_equations": 13,
+      "rank_mod_p": 8,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 8,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1/6",
+       "0,2": "-1/12",
+       "0,3": "1/8",
+       "0,4": "-5/48",
+       "1,0": "-2/3",
+       "1,1": "-1/6",
+       "2,1": "1/3"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 27,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 15,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-5/24",
+       "0,2": "-1/24",
+       "0,3": "3/32",
+       "0,4": "-1/12",
+       "0,5": "23/384",
+       "0,6": "-5/128",
+       "1,0": "-5/9",
+       "1,1": "-2/9",
+       "1,2": "5/72",
+       "1,3": "1/48",
+       "1,5": "-5/96",
+       "2,1": "5/18",
+       "2,2": "1/18",
+       "3,2": "-1/6"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 6,
+      "n_unknowns": 28,
+      "n_equations": 34,
+      "rank_mod_p": 25,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 13,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "-1/4",
+       "0,3": "1/4",
+       "0,4": "-3/16",
+       "0,5": "1/8",
+       "0,6": "-5/64",
+       "0,7": "3/64",
+       "1,1": "-1/2",
+       "1,3": "1/8",
+       "1,5": "-5/32",
+       "1,6": "1/4",
+       "2,2": "1/3",
+       "3,3": "-1/4"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "H4",
+   "hash": "431f3f1966ca",
+   "deg": 3,
+   "deg_y": 2,
+   "n_terms": 9,
+   "P": "(1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (3/4)*x^2 + 1*x*y - 1*y^2 + (3/2)*x + 1*y + (7/4)",
+   "note": "g = x - 1, h = x**2 + x + 1",
+   "screen": {
+    "Delta_c": "4*c*x - 4*c + x + 8",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "-4*c + x*(4*c + 1) + 8",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 3,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 2.3089180660311333e-16,
+     "punct": 2,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 3.578800795657869e-15,
+     "punct": null,
+     "genus": null
+    }
+   },
+   "survivor": true,
+   "secs": 102.0,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0"
+   ],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 3,
+      "n_unknowns": 10,
+      "n_equations": 15,
+      "rank_mod_p": 8,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 8,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1/6",
+       "0,2": "1/3",
+       "0,3": "3/4",
+       "0,4": "-1",
+       "1,0": "-2/3",
+       "1,1": "-1/3",
+       "1,2": "-1/6"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 28,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 14,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1/6",
+       "0,2": "1/3",
+       "0,3": "3/4",
+       "0,4": "-5/6",
+       "0,5": "-41/6",
+       "0,6": "673/8",
+       "1,0": "-2/3",
+       "1,1": "-1/3",
+       "1,2": "-1/6",
+       "1,3": "-1/12",
+       "1,4": "10/3",
+       "1,5": "-547/12",
+       "2,4": "27/2"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 6,
+      "n_unknowns": 28,
+      "n_equations": 36,
+      "rank_mod_p": 25,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 20,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-10/303",
+       "0,2": "485/1212",
+       "0,3": "-123/808",
+       "0,4": "43/1212",
+       "0,5": "2471/2424",
+       "0,6": "-155/404",
+       "0,7": "-19597/4848",
+       "1,0": "-809/606",
+       "1,1": "-161/1212",
+       "1,2": "-121/1212",
+       "1,3": "-263/1212",
+       "1,4": "-167/606",
+       "1,5": "-167/1212",
+       "1,6": "7523/4848",
+       "2,0": "54/101",
+       "2,1": "27/101",
+       "2,2": "27/202",
+       "2,3": "27/404",
+       "3,4": "-27/404"
+      },
+      "secs": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "support": "H5",
+   "hash": "9667585bcb72",
+   "deg": 5,
+   "deg_y": 2,
+   "n_terms": 10,
+   "P": "(1/8)*x^5 + (1/4)*x^4 + 1*x^3*y + (1/8)*x^3 + 1*x^2*y + 2*x*y^2 + (1/4)*x^2 + (1/4)*x + 1*y + (-3/8)",
+   "note": "g = 2*x, h = x**3 + x**2 + 1",
+   "screen": {
+    "Delta_c": "8*c*x + 3*x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x*(8*c + 3) + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 4,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 5.812825270767318e-14,
+     "punct": null,
+     "genus": null
+    },
+    "-1": {
+     "rel": 7.084748727354691e-16,
+     "punct": null,
+     "genus": null
+    }
+   },
+   "survivor": true,
+   "secs": 120.2,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 39,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 10,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "1/8",
+       "0,3": "-1/16",
+       "0,6": "-7/256",
+       "1,1": "-1/4",
+       "1,3": "-1/32",
+       "1,4": "1/32",
+       "1,5": "5/256",
+       "2,2": "1/12",
+       "3,3": "-1/32"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 72,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 30,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1/100",
+       "0,2": "9/100",
+       "0,3": "-53/800",
+       "0,4": "83/2400",
+       "0,5": "-59/1920",
+       "0,6": "-1/160",
+       "0,7": "143/2048",
+       "0,8": "-51/5120",
+       "0,9": "-2121/40960",
+       "1,1": "-11/100",
+       "1,2": "1/200",
+       "1,3": "-31/1200",
+       "1,4": "31/800",
+       "1,5": "-61/3840",
+       "1,6": "-11/512",
+       "1,7": "159/4096",
+       "1,8": "91/2560",
+       "2,0": "-14/25",
+       "2,2": "1/75",
+       "2,3": "-3/400",
+       "2,4": "7/1200",
+       "2,5": "1/384",
+       "2,6": "-7/256",
+       "2,7": "-3/256",
+       "3,1": "7/50",
+       "3,3": "-1/800",
+       "3,4": "1/160",
+       "4,2": "-1/25",
+       "5,3": "1/80"
+      },
+      "secs": 0.3
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 99,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 50,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-14/45",
+       "0,2": "641/2520",
+       "0,3": "-17/168",
+       "0,4": "5611/100800",
+       "0,5": "-101/3360",
+       "0,6": "59/10752",
+       "0,7": "2083/92160",
+       "0,8": "-2933/92160",
+       "0,9": "-317/20480",
+       "0,10": "2227/24576",
+       "0,11": "-523/49152",
+       "1,0": "56/45",
+       "1,1": "-1/4",
+       "1,2": "13/126",
+       "1,3": "-4133/50400",
+       "1,4": "261/5600",
+       "1,5": "-127/10080",
+       "1,6": "-193/40320",
+       "1,7": "613/30720",
+       "1,8": "-65/9216",
+       "1,9": "-5969/122880",
+       "1,10": "249/8192",
+       "2,1": "-13/63",
+       "2,2": "2/35",
+       "2,3": "-43/1400",
+       "2,4": "131/6300",
+       "2,5": "-559/40320",
+       "2,6": "-23/5376",
+       "2,7": "85/9216",
+       "2,8": "133/15360",
+       "2,9": "-31/1024",
+       "3,1": "11/105",
+       "3,2": "43/1050",
+       "3,3": "-13/1120",
+       "3,4": "61/6300",
+       "3,5": "-13/8064",
+       "3,6": "-1/768",
+       "3,8": "23/1536",
+       "4,0": "-44/105"
+      },
+      "secs": 0.8
+     }
+    ]
+   }
+  },
+  {
+   "support": "H6",
+   "hash": "fb63dd1ccaec",
+   "deg": 9,
+   "deg_y": 2,
+   "n_terms": 11,
+   "P": "(1/4)*x^9 + (1/4)*x^8 + 1*x^5*y + (1/2)*x^5 + 1*x^4*y + (1/2)*x^4 + 1*x*y^2 + 1*x*y + 1*y^2 + (1/4)*x + 1*y",
+   "note": "g = x + 1, h = x**5 + x**4 + x + 1",
+   "screen": {
+    "Delta_c": "4*c*x + 4*c + x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "NOT_CERTIFIED",
+   "bezout_method": null,
+   "bezout_residual_terms": null,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 6,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 3.438848731793128e-15,
+     "punct": null,
+     "genus": null
+    },
+    "-1": {
+     "rel": 9.132972940982103e-16,
+     "punct": null,
+     "genus": null
+    }
+   },
+   "survivor": false,
+   "secs": 121.7,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "support": "H7",
+   "hash": "2c6dbb9e3815",
+   "deg": 15,
+   "deg_y": 2,
+   "n_terms": 19,
+   "P": "(1/4)*x^15 + (1/2)*x^14 + (1/4)*x^13 + (1/2)*x^12 + (1/2)*x^11 + (3/4)*x^9 + 1*x^8*y + (1/2)*x^8 + 1*x^7*y + (1/2)*x^7 + 1*x^6 + 1*x^5*y + (1/2)*x^4 + (1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (1/2)*x + 1*y + (-1/4)",
+   "note": "g = x, h = x**8 + x**7 + x**5 + x**2 + 1",
+   "screen": {
+    "Delta_c": "4*c*x + x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x*(4*c + 1) + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 6,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "survivor": true,
+   "secs": 0.1,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 15,
+      "n_unknowns": 136,
+      "n_equations": 335,
+      "rank_mod_p": 134,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 62,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "1/2",
+       "0,4": "5/14",
+       "0,5": "-1/2",
+       "0,6": "5/56",
+       "0,7": "-5/4",
+       "0,8": "-1/8",
+       "0,9": "27/56",
+       "0,10": "-19/4",
+       "0,11": "-55/56",
+       "0,12": "175101/2240",
+       "0,13": "30571/360",
+       "0,14": "-68967/320",
+       "0,15": "-22703035/29568",
+       "0,16": "-2633/128",
+       "1,1": "-1/2",
+       "1,3": "-3/7",
+       "1,5": "-15/56",
+       "1,6": "1/2",
+       "1,7": "1/4",
+       "1,8": "15/14",
+       "1,9": "5/8",
+       "1,10": "-25/28",
+       "1,11": "667/560",
+       "1,12": "-2509/72",
+       "1,13": "20283/1120",
+       "1,14": "650407/1584",
+       "1,15": "11105/128",
+       "2,2": "1/3",
+       "2,4": "5/14",
+       "2,6": "3/28",
+       "2,7": "-1/2",
+       "2,8": "-7/12",
+       "2,9": "-23/28",
+       "2,10": "-879/560",
+       "2,11": "415/24",
+       "2,12": "1593/160",
+       "2,13": "-54601/288",
+       "2,14": "-14459/240",
+       "3,3": "-1/4"
+      },
+      "secs": 2.7
+     },
+     {
+      "deg_Q_bound": 23,
+      "n_unknowns": 300,
+      "n_equations": 603,
+      "rank_mod_p": 298,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 162,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "25/78",
+       "0,3": "4/13",
+       "0,4": "118/429",
+       "0,5": "83/234",
+       "0,6": "71/858",
+       "0,7": "-3473/11440",
+       "0,8": "1809/5720",
+       "0,9": "-18919/11440",
+       "0,10": "2514157/416416",
+       "0,11": "-1318969/243360",
+       "0,12": "748728479/24984960",
+       "0,13": "-9923723/320320",
+       "0,14": "612713/126720",
+       "0,15": "-104023/18304",
+       "0,16": "-7524995/20592",
+       "0,17": "19779241/12870",
+       "0,18": "-1971973049/366080",
+       "0,19": "688200599/274560",
+       "0,20": "-53753371511/1812096",
+       "0,21": "1019180652133/1711424",
+       "0,22": "474185197909/2471040",
+       "0,23": "-470457793468549/270885888",
+       "0,24": "-15311346139129111/10781971200",
+       "1,1": "-11/78",
+       "1,3": "-119/572",
+       "1,4": "-10/39",
+       "1,5": "-875/3432",
+       "1,6": "-2153/8580",
+       "1,7": "-217/2574",
+       "1,8": "17167/25740",
+       "1,9": "-16651/22880",
+       "1,10": "58459/20592",
+       "1,11": "-11178827/1135680",
+       "1,12": "4708303/520520",
+       "1,13": "-355545167/11531520",
+       "1,14": "1492681/41184",
+       "1,15": "51772333/439296",
+       "1,16": "-67429871/102960",
+       "1,17": "-234192823/329472"
+      },
+      "secs": 23.5
+     }
+    ]
+   }
+  },
+  {
+   "support": "H8",
+   "hash": "02299003cb19",
+   "deg": 29,
+   "deg_y": 2,
+   "n_terms": 10,
+   "P": "(1/4)*x^29 + (1/2)*x^28 + (1/4)*x^27 + 1*x^15*y + 1*x^14*y + (1/2)*x^14 + (1/2)*x^13 + 1*x*y^2 + 1*y + (-1/4)",
+   "note": "g = x, h = x**15 + x**14 + 1",
+   "screen": {
+    "Delta_c": "4*c*x + x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x*(4*c + 1) + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 3,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "survivor": true,
+   "secs": 0.0,
+   "satisfies_support_equations": true,
+   "equation_values": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 29,
+      "n_unknowns": 465,
+      "n_equations": 1152,
+      "rank_mod_p": 463,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 33,
+      "lambda": {
+       "0,0": "1",
+       "0,14": "1/2",
+       "0,15": "-1/2",
+       "1,1": "-1/2",
+       "1,15": "-1/2",
+       "1,16": "1/2",
+       "2,2": "1/3",
+       "2,16": "1/2",
+       "2,17": "2/3",
+       "3,3": "-1/4",
+       "3,17": "4/5",
+       "3,18": "2/11",
+       "4,4": "1/5",
+       "4,18": "16/45",
+       "4,19": "4/55",
+       "5,5": "-1/6",
+       "5,19": "2/9",
+       "5,20": "4/99",
+       "6,6": "1/7",
+       "6,20": "4/21",
+       "6,21": "1/33",
+       "7,7": "-1/8",
+       "7,21": "2/9",
+       "7,22": "1/33",
+       "8,8": "1/9",
+       "8,22": "16/45",
+       "9,9": "-1/10",
+       "10,10": "1/11",
+       "11,11": "-1/12",
+       "12,12": "1/13",
+       "13,13": "-1/14",
+       "14,14": "1/15",
+       "15,15": "-1/16"
+      },
+      "secs": 4.5
+     }
+    ]
+   }
+  },
+  {
+   "support": "E1",
+   "hash": "4b3d403b5051",
+   "deg": 5,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x^3*y^2 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 3)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 3,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 6.890091022526975e-14,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 3.0302454742577926e-14,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 31.7,
+   "satisfies_support_equations": true,
+   "equation_values": [],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 32,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 65,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 92,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5",
+       "6,6": "-1/7"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "E1",
+   "hash": "e57028c3921e",
+   "deg": 5,
+   "deg_y": 2,
+   "n_terms": 6,
+   "P": "3*x^3*y^2 - 9*x^2*y^2 + 9*x*y^2 - 3*y^2 + 2*x + 1",
+   "note": "alpha=2 beta=1 c=3 roots=[(1, 3)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 3,
+    "places": [
+     {
+      "over": "x = 1 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 8.514223576271388e-16,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 5.449157164835849e-15,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 32.3,
+   "satisfies_support_equations": true,
+   "equation_values": [],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 37,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 9,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "14/5",
+       "0,4": "-4/3",
+       "0,6": "8/27",
+       "1,2": "28/15",
+       "1,4": "-16/45",
+       "2,0": "-8/5",
+       "2,2": "32/45",
+       "3,0": "-32/5"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 71,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 12,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "-2/5",
+       "0,4": "4/45",
+       "0,6": "-488/34749",
+       "0,8": "9616/9903465",
+       "1,0": "4/5",
+       "1,2": "-4/45",
+       "1,6": "16/5265",
+       "1,8": "-31936/29710395",
+       "2,0": "8/15",
+       "2,6": "64/173745",
+       "3,6": "128/173745"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 97,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 20,
+      "lambda": {
+       "0,0": "1",
+       "0,2": "-2662/4079",
+       "0,4": "12308/61185",
+       "0,6": "-25288/550665",
+       "0,8": "15664/1651995",
+       "0,10": "-207776/123899625",
+       "1,0": "17604/20395",
+       "1,2": "-14884/61185",
+       "1,4": "5152/183555",
+       "1,6": "-656/770931",
+       "1,8": "-64/330399",
+       "1,10": "79936/371698875",
+       "2,0": "14312/20395",
+       "2,2": "-10304/183555",
+       "2,6": "-1856/3854655",
+       "2,8": "1664/4955985",
+       "3,0": "10304/20395",
+       "3,6": "-1664/3854655",
+       "4,6": "-1024/3854655",
+       "5,6": "-2048/11563965"
+      },
+      "secs": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "support": "E4",
+   "hash": "168e0b30d46b",
+   "deg": 7,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x^5*y^2 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 5)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 5,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 5)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 4.3496440978952725e-14,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 1.965693248277303e-15,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 34.5,
+   "satisfies_support_equations": true,
+   "equation_values": [],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 7,
+      "n_unknowns": 36,
+      "n_equations": 60,
+      "rank_mod_p": 34,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "4,2": "-1/5",
+       "8,4": "3/35"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 11,
+      "n_unknowns": 78,
+      "n_equations": 122,
+      "rank_mod_p": 76,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "4,2": "-1/5",
+       "8,4": "3/35"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 14,
+      "n_unknowns": 120,
+      "n_equations": 179,
+      "rank_mod_p": 117,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "4,2": "-1/5",
+       "8,4": "3/35",
+       "12,6": "-1/21"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "E5",
+   "hash": "65551d9727e7",
+   "deg": 11,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x^9*y^2 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 9)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 9,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 9)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.2991427803288204e-13,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 6.800811312508249e-14,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 37.8,
+   "satisfies_support_equations": true,
+   "equation_values": [],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 11,
+      "n_unknowns": 78,
+      "n_equations": 140,
+      "rank_mod_p": 76,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "8,2": "-1/9",
+       "16,4": "1/33"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 17,
+      "n_unknowns": 171,
+      "n_equations": 287,
+      "rank_mod_p": 169,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "8,2": "-1/9",
+       "16,4": "1/33"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 22,
+      "n_unknowns": 276,
+      "n_equations": 437,
+      "rank_mod_p": 273,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "8,2": "-1/9",
+       "16,4": "1/33",
+       "24,6": "-5/429"
+      },
+      "secs": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "support": "E6",
+   "hash": "b520c37ad02b",
+   "deg": 5,
+   "deg_y": 3,
+   "n_terms": 2,
+   "P": "1*x^2*y^3 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 2)]",
+   "screen": {
+    "m": 3,
+    "deg_A": 1,
+    "deg_B": 2,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 2)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 1,
+    "n_punctures": 2,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 1, 2 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.4986879326991318,
+     "punct": 2,
+     "genus": 1
+    },
+    "-1": {
+     "rel": 1.45881784608064,
+     "punct": 2,
+     "genus": 1
+    }
+   },
+   "survivor": false,
+   "secs": 30.2,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "E7",
+   "hash": "f2782c9f083f",
+   "deg": 7,
+   "deg_y": 3,
+   "n_terms": 2,
+   "P": "1*x^4*y^3 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 4)]",
+   "screen": {
+    "m": 3,
+    "deg_A": 1,
+    "deg_B": 4,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 4)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 3,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 4,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 4 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 6.896750857811129e-14,
+     "punct": 4,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 1.567780579313303e-14,
+     "punct": 4,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 30.6,
+   "satisfies_support_equations": true,
+   "equation_values": [],
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 7,
+      "n_unknowns": 36,
+      "n_equations": 60,
+      "rank_mod_p": 34,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 11,
+      "n_unknowns": 78,
+      "n_equations": 122,
+      "rank_mod_p": 76,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 14,
+      "n_unknowns": 120,
+      "n_equations": 179,
+      "rank_mod_p": 117,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7",
+       "9,9": "-1/10"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "E10",
+   "hash": "5ba43826fa42",
+   "deg": 8,
+   "deg_y": 2,
+   "n_terms": 5,
+   "P": "1*x^6*y^2 - 3*x^5*y^2 + 3*x^4*y^2 - 1*x^3*y^2 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 3), (1, 3)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 6,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = 1 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 1,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 1, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.4070462859983839,
+     "punct": 4,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 1.1517110553943626,
+     "punct": 3,
+     "genus": 1
+    }
+   },
+   "survivor": false,
+   "secs": 30.6,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "E11",
+   "hash": "e507bc4e8db0",
+   "deg": 12,
+   "deg_y": 3,
+   "n_terms": 6,
+   "P": "1*x^9*y^3 - 8*x^8*y^3 + 24*x^7*y^3 - 32*x^6*y^3 + 16*x^5*y^3 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 5), (2, 4)]",
+   "screen": {
+    "m": 3,
+    "deg_A": 1,
+    "deg_B": 9,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 5)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = 2 (root of B, mult 4)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 2,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 2, 3 punctures)",
+   "survivor": false,
+   "secs": 0.8,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "E12",
+   "hash": "13aa79d7382f",
+   "deg": 29,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x^27*y^2 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 27)]",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 27,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 27)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": []
+   },
+   "unimodular": "NOT_CERTIFIED",
+   "bezout_method": null,
+   "bezout_residual_terms": null,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "survivor": false,
+   "secs": 0.1,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "E13",
+   "hash": "462652ead2a6",
+   "deg": 7,
+   "deg_y": 4,
+   "n_terms": 2,
+   "P": "1*x^3*y^4 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 3)]",
+   "screen": {
+    "m": 4,
+    "deg_A": 1,
+    "deg_B": 3,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 1,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 1, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 2.048419463964265,
+     "punct": 3,
+     "genus": 1
+    },
+    "-1": {
+     "rel": 2.026227391614737,
+     "punct": 3,
+     "genus": 1
+    }
+   },
+   "survivor": false,
+   "secs": 30.5,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "E14",
+   "hash": "5497083f3554",
+   "deg": 8,
+   "deg_y": 5,
+   "n_terms": 2,
+   "P": "1*x^3*y^5 + 1*x",
+   "note": "alpha=1 beta=0 c=1 roots=[(0, 3)]",
+   "screen": {
+    "m": 5,
+    "deg_A": 1,
+    "deg_B": 3,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 2,
+    "n_punctures": 2,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": []
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "LINALG",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 2, 2 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 2.1475287858273635,
+     "punct": 2,
+     "genus": 2
+    },
+    "-1": {
+     "rel": 2.045895725244896,
+     "punct": 2,
+     "genus": 2
+    }
+   },
+   "survivor": false,
+   "secs": 33.7,
+   "satisfies_support_equations": true,
+   "equation_values": []
+  },
+  {
+   "support": "V1",
+   "hash": "2f401c620811",
+   "deg": 3,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x*y^2 + 1*y",
+   "note": "h0=1 c=1",
+   "screen": {
+    "m": 1,
+    "deg_A": 1,
+    "deg_B": 2,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 2)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "conditional",
+      "residue_expr": "0"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [
+     "0"
+    ],
+    "genus": 0,
+    "n_punctures": 2,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": [
+     "0"
+    ],
+    "note": "computed in the swapped variables"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 2 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.9356085082238586e-15,
+     "punct": 2,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 8.89304856502495e-15,
+     "punct": 2,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 24.7,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 3,
+      "n_unknowns": 10,
+      "n_equations": 12,
+      "rank_mod_p": 8,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "1,1": "-1/2",
+       "2,2": "1/3"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 26,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "1,1": "-1/2",
+       "2,2": "1/3",
+       "3,3": "-1/4"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 6,
+      "n_unknowns": 28,
+      "n_equations": 33,
+      "rank_mod_p": 25,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "1,1": "-1/2",
+       "2,2": "1/3",
+       "3,3": "-1/4"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "V2",
+   "hash": "977aeb39d938",
+   "deg": 5,
+   "deg_y": 3,
+   "n_terms": 2,
+   "P": "1*x^2*y^3 + 1*y",
+   "note": "h0=1 c=1",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 3,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 3)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": [],
+    "note": "computed in the swapped variables"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 2.108708007000973e-14,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 2.108708007000973e-14,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 34.7,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 32,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 65,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 92,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "2,2": "-1/3",
+       "4,4": "1/5",
+       "6,6": "-1/7"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "V3",
+   "hash": "3d71c055f95f",
+   "deg": 7,
+   "deg_y": 5,
+   "n_terms": 2,
+   "P": "1*x^2*y^5 + 1*y",
+   "note": "h0=1 c=1",
+   "screen": {
+    "m": 2,
+    "deg_A": 1,
+    "deg_B": 5,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 5)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 2,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": [],
+    "note": "computed in the swapped variables"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.79730204379648e-15,
+     "punct": 3,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 1.79730204379648e-15,
+     "punct": 3,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 39.2,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 7,
+      "n_unknowns": 36,
+      "n_equations": 60,
+      "rank_mod_p": 34,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,4": "-1/5",
+       "4,8": "3/35"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 11,
+      "n_unknowns": 78,
+      "n_equations": 122,
+      "rank_mod_p": 76,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "2,4": "-1/5",
+       "4,8": "3/35"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 14,
+      "n_unknowns": 120,
+      "n_equations": 179,
+      "rank_mod_p": 117,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "2,4": "-1/5",
+       "4,8": "3/35",
+       "6,12": "-1/21"
+      },
+      "secs": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "support": "V4",
+   "hash": "8cf19228f363",
+   "deg": 7,
+   "deg_y": 4,
+   "n_terms": 2,
+   "P": "1*x^3*y^4 + 1*y",
+   "note": "h0=1 c=1",
+   "screen": {
+    "m": 3,
+    "deg_A": 1,
+    "deg_B": 4,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 4)",
+      "n_places": 1,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 3,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 0,
+    "n_punctures": 4,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH",
+    "equations_evaluated": [],
+    "note": "computed in the swapped variables"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 4 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.7113939130816505e-15,
+     "punct": 4,
+     "genus": 0
+    },
+    "-1": {
+     "rel": 1.166822371249849e-13,
+     "punct": 4,
+     "genus": 0
+    }
+   },
+   "survivor": true,
+   "secs": 52.9,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 7,
+      "n_unknowns": 36,
+      "n_equations": 60,
+      "rank_mod_p": 34,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 11,
+      "n_unknowns": 78,
+      "n_equations": 122,
+      "rank_mod_p": 76,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 3,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 14,
+      "n_unknowns": 120,
+      "n_equations": 179,
+      "rank_mod_p": 117,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 4,
+      "lambda": {
+       "0,0": "1",
+       "3,3": "-1/4",
+       "6,6": "1/7",
+       "9,9": "-1/10"
+      },
+      "secs": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "support": "V5",
+   "hash": "e1961840267e",
+   "deg": 6,
+   "deg_y": 2,
+   "n_terms": 2,
+   "P": "1*x^4*y^2 + 1*y",
+   "note": "h0=1 c=1",
+   "screen": {
+    "m": 4,
+    "deg_A": 1,
+    "deg_B": 2,
+    "places": [
+     {
+      "over": "x = 0 (root of B, mult 2)",
+      "n_places": 2,
+      "y": "infinity",
+      "residue": "identically 0 (exponent rule)"
+     },
+     {
+      "over": "x = infinity",
+      "n_places": 1,
+      "residue": "identically 0 (exponent rule)"
+     }
+    ],
+    "equations": [],
+    "genus": 1,
+    "n_punctures": 3,
+    "instrument": "SE17",
+    "residues_all_zero": true,
+    "periods_vanish": false,
+    "verdict": "UNDECIDED_BY_RESIDUES_genus>=1",
+    "equations_evaluated": [],
+    "note": "computed in the swapped variables"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 1, 3 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.6342758982364085,
+     "punct": 3,
+     "genus": 1
+    },
+    "-1": {
+     "rel": 1.6305640294451837,
+     "punct": 3,
+     "genus": 1
+    }
+   },
+   "survivor": false,
+   "secs": 53.8
+  },
+  {
+   "support": "M1",
+   "hash": "2d9fa751f027",
+   "deg": 5,
+   "deg_y": 2,
+   "n_terms": 10,
+   "P": "1*x^5 + 2*x^4 + 2*x^3*y + 2*x^3 + 2*x^2*y + 1*x*y^2 + 2*x^2 + 1*x*y + (5/4)*x + 1*y",
+   "note": "y-shear y -> y + x + x^2 of the H3 survivor (deg_y stays 2)",
+   "screen": {
+    "Delta_c": "4*c*x + 2*x + 1",
+    "deg_Delta_c": 1,
+    "deg_Delta_0": 1,
+    "genus": 0,
+    "n_places_inf": 1,
+    "residue_at_infinity": "identically 0",
+    "finite_places": [
+     {
+      "factor": "x*(4*c + 2) + 1",
+      "mult": 1,
+      "deg_factor": 1,
+      "residue": "identically 0 (exponent rule: mu = 1)"
+     }
+    ],
+    "finite_residues_all_zero": true,
+    "residues_all_zero": true,
+    "instrument": "HE17",
+    "periods_vanish": true,
+    "verdict": "PERIODS_VANISH"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 4,
+   "fibre_witness": "no witness (genus 0, 1 puncture)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "rel": 1.9509856063445493e-13,
+     "punct": null,
+     "genus": null
+    },
+    "-1": {
+     "rel": 7.374778301809425e-15,
+     "punct": null,
+     "genus": null
+    }
+   },
+   "survivor": true,
+   "secs": 120.1,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 39,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 16,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-11/72",
+       "0,2": "25/72",
+       "0,3": "-127/96",
+       "0,4": "65/12",
+       "0,5": "-1431/128",
+       "0,6": "-1265/128",
+       "1,0": "-5/9",
+       "1,1": "-2/9",
+       "1,2": "1/72",
+       "1,3": "-43/48",
+       "1,4": "11/4",
+       "1,5": "79/96",
+       "2,1": "5/18",
+       "2,2": "1/18",
+       "3,2": "-1/6"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 72,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 34,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-47/20",
+       "0,2": "26/5",
+       "0,3": "-597/80",
+       "0,4": "2843/240",
+       "0,5": "-2453/192",
+       "0,6": "-1067/32",
+       "0,7": "363353/768",
+       "0,8": "-1028005/768",
+       "0,9": "-84707/1024",
+       "1,0": "7/2",
+       "1,1": "-17/20",
+       "1,2": "73/40",
+       "1,3": "-1627/480",
+       "1,4": "2759/480",
+       "1,5": "-115/24",
+       "1,6": "-15415/384",
+       "1,7": "420311/1536",
+       "1,8": "-189239/1536",
+       "2,0": "-7/5",
+       "2,1": "-21/20",
+       "2,2": "1/3",
+       "2,3": "-99/80",
+       "2,4": "191/120",
+       "2,5": "175/96",
+       "2,6": "-85/2",
+       "2,7": "1825/48",
+       "3,1": "7/10",
+       "3,2": "7/20",
+       "3,3": "-1/10",
+       "3,4": "7/8",
+       "4,2": "-2/5",
+       "4,3": "-1/10",
+       "5,3": "1/4"
+      },
+      "secs": 0.2
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 99,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 43,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1/12",
+       "0,2": "11/30",
+       "0,3": "-17/16",
+       "0,4": "683/400",
+       "0,5": "-4153/960",
+       "0,6": "759/80",
+       "0,7": "-20401/1280",
+       "0,8": "12441/1280",
+       "0,9": "-127823/5120",
+       "0,10": "-904919/7680",
+       "0,11": "35474153/61440",
+       "1,0": "-7/15",
+       "1,1": "-4/15",
+       "1,2": "-1/30",
+       "1,3": "-9/50",
+       "1,4": "373/400",
+       "1,5": "-41/24",
+       "1,6": "77/20",
+       "1,7": "-483/80",
+       "1,8": "13487/1280",
+       "1,9": "-5557/480",
+       "1,10": "-909679/7680",
+       "2,1": "7/30",
+       "2,2": "1/10",
+       "2,3": "9/200",
+       "2,4": "13/150",
+       "2,5": "-361/480",
+       "2,6": "213/160",
+       "2,7": "-931/640",
+       "2,8": "287/40",
+       "2,9": "39149/2560",
+       "3,2": "-7/50",
+       "3,3": "-1/25",
+       "3,4": "-1/30",
+       "3,5": "-1/30",
+       "3,6": "77/160",
+       "3,7": "-343/160",
+       "4,3": "7/75",
+       "4,4": "1/75"
+      },
+      "secs": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "support": "M2",
+   "hash": "97e25aa31406",
+   "deg": 6,
+   "deg_y": 6,
+   "n_terms": 15,
+   "P": "1*y^6 + 3*x*y^4 + 2*y^5 + 3*x^2*y^2 + 4*x*y^3 + 2*y^4 + 1*x^3 + 2*x^2*y + 3*x*y^2 + 1*y^3 + 1*x^2 + 1*x*y + (5/4)*y^2 + (5/4)*x + 1*y",
+   "note": "y-shear then x-shear x -> x + y^2 (deg_y grows: genuinely mixed)",
+   "screen": {
+    "instrument": "shear-invariance + NUM-MONO",
+    "verdict": "PERIODS_VANISH",
+    "periods_vanish": true,
+    "genus": 0,
+    "n_punctures": 2,
+    "note": "inherited from the pre-shear member by G3"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 6,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 2 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "error": "'ls_residual'"
+    },
+    "-1": {
+     "error": "'ls_residual'"
+    }
+   },
+   "survivor": true,
+   "secs": 120.1,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 6,
+      "n_unknowns": 28,
+      "n_equations": 57,
+      "rank_mod_p": 26,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 21,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "844265/900672",
+       "0,2": "-968975/900672",
+       "0,3": "744641/600448",
+       "0,4": "-283513/150112",
+       "0,5": "782165/1200896",
+       "0,6": "971913/1200896",
+       "0,7": "-3573801/2401792",
+       "0,8": "541229/300224",
+       "0,9": "-20756759/14410752",
+       "0,10": "13613599/43232256",
+       "1,0": "-35967/37528",
+       "1,1": "9313/56292",
+       "1,2": "5075/14073",
+       "1,4": "30/4691",
+       "1,5": "-220/4691",
+       "2,0": "3926/14073",
+       "2,1": "52/14073",
+       "2,2": "-104/14073",
+       "2,3": "-208/4691",
+       "2,5": "208/14073"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 9,
+      "n_unknowns": 55,
+      "n_equations": 96,
+      "rank_mod_p": 53,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 33,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-4955060365277/696428279867",
+       "0,2": "12895333798985/1392856559734",
+       "0,3": "-6005191213465/696428279867",
+       "0,4": "-1957940949961/8357139358404",
+       "0,5": "2651073774169/363353885148",
+       "0,6": "-53216406079913/5571426238936",
+       "0,7": "27099594457881/2785713119468",
+       "0,8": "-63686831385269/11142852477872",
+       "0,9": "-22913282795117/11142852477872",
+       "0,10": "585631369628603/66857114867232",
+       "0,11": "-125300475170833/11142852477872",
+       "0,12": "3573554976982229/401142689203392",
+       "0,13": "-3088896695912569/1203428067610176",
+       "1,0": "-5894124109700/2089284839601",
+       "1,1": "7335636953260/2089284839601",
+       "1,2": "228238118138/2089284839601",
+       "1,3": "-141894016251/696428279867",
+       "1,4": "-1037119490708/2089284839601",
+       "1,5": "358114500508/2089284839601",
+       "1,7": "200278843/146616479972",
+       "1,8": "1731994597685/8357139358404",
+       "1,9": "-48204768951/121117961716",
+       "1,10": "6558123131839/16714278716808",
+       "1,11": "-2675897360731/11142852477872",
+       "2,0": "981288324720/696428279867",
+       "2,1": "-1172673049504/2089284839601",
+       "2,2": "556002472256/2089284839601",
+       "2,3": "-340131223168/2089284839601",
+       "2,4": "1949176064/30279490429",
+       "2,5": "-50678577664/2089284839601",
+       "2,6": "38983521280/2089284839601",
+       "2,7": "-15593408512/2089284839601"
+      },
+      "secs": 0.1
+     },
+     {
+      "deg_Q_bound": 12,
+      "n_unknowns": 91,
+      "n_equations": 144,
+      "rank_mod_p": 88,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 53,
+      "lambda": {
+       "0,0": "1",
+       "0,1": "-1818585890183/1007249741414",
+       "0,2": "971420653849/1510874612121",
+       "0,3": "5297305352351/2014499482828",
+       "0,4": "-37383289433545/6043498448484",
+       "0,5": "91508737087333/12086996896968",
+       "0,6": "-9838789627559/2014499482828",
+       "0,7": "-2182535128913/1151142561616",
+       "0,8": "81185152499827/8057997931312",
+       "0,9": "-35285229887329/2302285123232",
+       "0,10": "336426454982881/24173993793936",
+       "0,11": "-468587145088339/96695975175744",
+       "0,12": "-289152529505347/32231991725248",
+       "0,13": "4136524676162629/193391950351488",
+       "0,14": "-118299523752169/4604570246464",
+       "0,15": "20921992476869665/1160351702108928",
+       "0,16": "161545870704241/3481055106326784",
+       "1,0": "1071428961941/1510874612121",
+       "1,1": "-248715390235/131380401054",
+       "1,2": "3268689098039/1510874612121",
+       "1,3": "-9282841337993/6043498448484",
+       "1,4": "1374185062379/6043498448484",
+       "1,5": "15223828900081/12086996896968",
+       "1,6": "-1915640332091/863356921212",
+       "1,7": "52931070078949/24173993793936",
+       "1,8": "-9387804705081/8057997931312",
+       "1,9": "-20751037908949/48347987587872",
+       "1,10": "15210328989825/8057997931312",
+       "1,11": "-81639380637131/32231991725248",
+       "1,12": "197210238669547/96695975175744",
+       "1,13": "-114646096419367/193391950351488",
+       "1,14": "-48893720266165/41441132218176",
+       "1,15": "8625416395861637/3481055106326784",
+       "2,0": "-81169978208/1510874612121",
+       "2,1": "17440384832/503624870707",
+       "2,2": "-9188232192/503624870707",
+       "2,3": "2587451904/503624870707",
+       "2,4": "-4053291520/1510874612121",
+       "2,5": "2629968896/1510874612121",
+       "2,6": "-394522624/1510874612121"
+      },
+      "secs": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "support": "M3",
+   "hash": "61cc00cd7420",
+   "deg": 5,
+   "deg_y": 5,
+   "n_terms": 6,
+   "P": "1*x^3*y^2 + 3*x^2*y^3 + 3*x*y^4 + 1*y^5 + 1*x + 1*y",
+   "note": "x-shear x -> x + y of the E1 survivor",
+   "screen": {
+    "instrument": "shear-invariance + NUM-MONO",
+    "verdict": "PERIODS_VANISH",
+    "periods_vanish": true,
+    "genus": 0,
+    "n_punctures": 2,
+    "note": "inherited from the pre-shear member by G3"
+   },
+   "unimodular": "UNIMODULAR_CERTIFIED",
+   "bezout_method": "EUCLID",
+   "bezout_residual_terms": 0,
+   "sy": "NON_COORDINATE",
+   "sy_nodes": 1,
+   "fibre_witness": "NON_COORDINATE (generic fibre: genus 0, 2 punctures)",
+   "numeric_NUM_MONO": {
+    "1": {
+     "error": "'ls_residual'"
+    },
+    "-1": {
+     "error": "'ls_residual'"
+    }
+   },
+   "survivor": true,
+   "secs": 120.2,
+   "mate": {
+    "verdict": "EMPTY_over_Q_all_stages",
+    "stages": [
+     {
+      "deg_Q_bound": 5,
+      "n_unknowns": 21,
+      "n_equations": 41,
+      "rank_mod_p": 19,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 6,
+      "lambda": {
+       "0,0": "1",
+       "0,4": "-4/5",
+       "0,8": "7/25",
+       "1,3": "1/5",
+       "2,2": "1/15",
+       "2,6": "-1/75"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 8,
+      "n_unknowns": 45,
+      "n_equations": 74,
+      "rank_mod_p": 43,
+      "kernel_dim_mod_p": 2,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 6,
+      "lambda": {
+       "0,0": "1",
+       "0,4": "-4/5",
+       "0,8": "7/25",
+       "1,3": "1/5",
+       "2,2": "1/15",
+       "2,6": "-1/75"
+      },
+      "secs": 0.0
+     },
+     {
+      "deg_Q_bound": 10,
+      "n_unknowns": 66,
+      "n_equations": 101,
+      "rank_mod_p": 63,
+      "kernel_dim_mod_p": 3,
+      "verdict": "EMPTY_over_Q",
+      "certificate": "lambda_exact",
+      "lambda_support": 12,
+      "lambda": {
+       "0,0": "1",
+       "0,4": "-51/23",
+       "0,8": "171/115",
+       "0,12": "-561/805",
+       "1,3": "181/161",
+       "1,7": "-317/805",
+       "1,11": "81/805",
+       "2,2": "-176/483",
+       "2,6": "32/805",
+       "3,1": "-10/161",
+       "3,5": "2/161",
+       "3,9": "-2/805"
+      },
+      "secs": 0.1
+     }
+    ]
+   }
+  }
+ ]
+}

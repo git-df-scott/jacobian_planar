@@ -1,0 +1,395 @@
+
+==============================================================================
+SUPPORT H1  HE(G=0,H=1,K=2)   (deg g = 0: g constant)
+  unknowns (6): g0, h0, h1, k0, k1, k2
+  residue system (1 equations):
+      -4*g0*k2 + h1**2 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['-4*g0*k2 + h1**2'], 'structure': 'proper ideal'}
+  Rabinowitsch (h1 != 0): unsolvable = False
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0'])
+      1e8144b39dbd   deg=2   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=COORDINATE      mate=-
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0'])
+      05448ae01b6d   deg=2   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=COORDINATE      mate=-
+
+==============================================================================
+SUPPORT H2  HE(G=0,H=3,K=6)   (deg g = 0: g constant)
+  unknowns (12): g0, h0, h1, h2, h3, k0, k1, k2, k3, k4, k5, k6
+  residue system (5 equations):
+      -4*g0*k2 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 + 2*h0*h3 + 2*h1*h2 = 0
+      -4*g0*k4 + 2*h1*h3 + h2**2 = 0
+      -4*g0*k5 + 2*h2*h3 = 0
+      -4*g0*k6 + h3**2 = 0
+  solution structure: {'n_eqs': 5, 'n_vars': 12, 'structure': 'Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 7'}
+  Rabinowitsch (h3 != 0): unsolvable = False
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0', '0', '0'])
+      f9c3e6131ab8   deg=6   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=COORDINATE      mate=-
+
+==============================================================================
+SUPPORT H3  HE(G=1,H=1,K=1)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (6): g0, g1, h0, h1, k0, k1
+  residue system (1 equations):
+      -4*g1*k1 + h1**2 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['-4*g1*k1 + h1**2'], 'structure': 'proper ideal'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0'])
+      -> SURVIVOR d37142063698 deg 3 : mate solve (D in [3, 5, 6])
+      D=3   n=10    EMPTY_over_Q     (0.0s)
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=6   n=28    EMPTY_over_Q     (0.0s)
+      d37142063698   deg=3   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT H4  HE(G=1,H=2,K=3)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (9): g0, g1, h0, h1, h2, k0, k1, k2, k3
+  residue system (3 equations):
+      -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 - 4*g1*k2 + 2*h1*h2 = 0
+      -4*g1*k3 + h2**2 = 0
+  solution structure: {'n_eqs': 3, 'gb_size': 7, 'gb_head': ['g0**2*k3**2 - 2*g0*g1*k2*k3 - 4*g1**2*k1*k3 + g1**2*k2**2 + 2*g1*h0*h2*k3', 'g0*h1*k2*k3 + 2*g0*h2*k1*k3 - 2*g0*h2*k2**2 + 4*g1*h0*k2*k3 - 4*g1*h1*k1*k3 + g1*h1*k2**2', '-g0*h1*k3 + 2*g0*h2*k2 - 4*g1*h0*k3 - g1*h1*k2 + 2*g1*h2*k1', 'g0*h2*k3 - 2*g1*h1*k3 + g1*h2*k2'], 'structure': 'proper ideal'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0'])
+      -> SURVIVOR 431f3f1966ca deg 3 : mate solve (D in [3, 5, 6])
+      D=3   n=10    EMPTY_over_Q     (0.0s)
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=6   n=28    EMPTY_over_Q     (0.1s)
+      431f3f1966ca   deg=3   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT H5  HE(G=1,H=3,K=5)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (12): g0, g1, h0, h1, h2, h3, k0, k1, k2, k3, k4, k5
+  residue system (5 equations):
+      -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2 = 0
+      -4*g0*k4 - 4*g1*k3 + 2*h1*h3 + h2**2 = 0
+      -4*g0*k5 - 4*g1*k4 + 2*h2*h3 = 0
+      -4*g1*k5 + h3**2 = 0
+  solution structure: {'n_eqs': 5, 'n_vars': 12, 'structure': 'Groebner not attempted (12 unknowns, 5 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 7'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0', '0', '0'])
+      -> SURVIVOR 9667585bcb72 deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.3s)
+      D=10  n=66    EMPTY_over_Q     (0.8s)
+      9667585bcb72   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT H6  HE(G=1,H=5,K=9)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (18): g0, g1, h0, h1, h2, h3, h4, h5, k0, k1, k2, k3, k4, k5, k6, k7, k8, k9
+  residue system (9 equations):
+      -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2 = 0
+      -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 = 0
+      -4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3 = 0
+      -4*g0*k6 - 4*g1*k5 + 2*h1*h5 + 2*h2*h4 + h3**2 = 0
+      -4*g0*k7 - 4*g1*k6 + 2*h2*h5 + 2*h3*h4 = 0
+      -4*g0*k8 - 4*g1*k7 + 2*h3*h5 + h4**2 = 0
+      -4*g0*k9 - 4*g1*k8 + 2*h4*h5 = 0
+      -4*g1*k9 + h5**2 = 0
+  solution structure: {'n_eqs': 9, 'n_vars': 18, 'structure': 'Groebner not attempted (18 unknowns, 9 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 9'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0', '0', '0', '0'])
+      fb63dd1ccaec   deg=9   PERIODS_VANISH         unimod=NOT_CERTIFIED          SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT H7  HE(G=1,H=8,K=15)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (27): g0, g1, h0, h1, h2, h3, h4, h5, h6, h7, h8, k0, k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15
+  residue system (15 equations):
+      -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2 = 0
+      -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 = 0
+      -4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3 = 0
+      -4*g0*k6 - 4*g1*k5 + 2*h0*h6 + 2*h1*h5 + 2*h2*h4 + h3**2 = 0
+      -4*g0*k7 - 4*g1*k6 + 2*h0*h7 + 2*h1*h6 + 2*h2*h5 + 2*h3*h4 = 0
+      -4*g0*k8 - 4*g1*k7 + 2*h0*h8 + 2*h1*h7 + 2*h2*h6 + 2*h3*h5 + h4**2 = 0
+      -4*g0*k9 - 4*g1*k8 + 2*h1*h8 + 2*h2*h7 + 2*h3*h6 + 2*h4*h5 = 0
+      -4*g0*k10 - 4*g1*k9 + 2*h2*h8 + 2*h3*h7 + 2*h4*h6 + h5**2 = 0
+      -4*g0*k11 - 4*g1*k10 + 2*h3*h8 + 2*h4*h7 + 2*h5*h6 = 0
+      -4*g0*k12 - 4*g1*k11 + 2*h4*h8 + 2*h5*h7 + h6**2 = 0
+      -4*g0*k13 - 4*g1*k12 + 2*h5*h8 + 2*h6*h7 = 0
+      -4*g0*k14 - 4*g1*k13 + 2*h6*h8 + h7**2 = 0
+      -4*g0*k15 - 4*g1*k14 + 2*h7*h8 = 0
+      -4*g1*k15 + h8**2 = 0
+  solution structure: {'n_eqs': 15, 'n_vars': 27, 'structure': 'Groebner not attempted (27 unknowns, 15 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 12'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0', '0', '0', '0'])
+      -> SURVIVOR 2c6dbb9e3815 deg 15 : mate solve (D in [15, 23])
+      D=15  n=136   EMPTY_over_Q     (2.7s)
+      D=23  n=300   EMPTY_over_Q     (23.5s)
+      2c6dbb9e3815   deg=15  PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT H8  HE(G=1,H=15,K=29)   (deg g = 1: Delta = h^2 - 4gk forced to degree <= 1)
+  unknowns (48): g0, g1, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, k0, k1, k2, k3, k4, k5, k6, k7, k8, k9, k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k20, k21, k22, k23, k24, k25, k26, k27, k28, k29
+  residue system (29 equations):
+      -4*g0*k2 - 4*g1*k1 + 2*h0*h2 + h1**2 = 0
+      -4*g0*k3 - 4*g1*k2 + 2*h0*h3 + 2*h1*h2 = 0
+      -4*g0*k4 - 4*g1*k3 + 2*h0*h4 + 2*h1*h3 + h2**2 = 0
+      -4*g0*k5 - 4*g1*k4 + 2*h0*h5 + 2*h1*h4 + 2*h2*h3 = 0
+      -4*g0*k6 - 4*g1*k5 + 2*h0*h6 + 2*h1*h5 + 2*h2*h4 + h3**2 = 0
+      -4*g0*k7 - 4*g1*k6 + 2*h0*h7 + 2*h1*h6 + 2*h2*h5 + 2*h3*h4 = 0
+      -4*g0*k8 - 4*g1*k7 + 2*h0*h8 + 2*h1*h7 + 2*h2*h6 + 2*h3*h5 + h4**2 = 0
+      -4*g0*k9 - 4*g1*k8 + 2*h0*h9 + 2*h1*h8 + 2*h2*h7 + 2*h3*h6 + 2*h4*h5 = 0
+      -4*g0*k10 - 4*g1*k9 + 2*h0*h10 + 2*h1*h9 + 2*h2*h8 + 2*h3*h7 + 2*h4*h6 + h5**2 = 0
+      -4*g0*k11 - 4*g1*k10 + 2*h0*h11 + 2*h1*h10 + 2*h2*h9 + 2*h3*h8 + 2*h4*h7 + 2*h5*h6 = 0
+      -4*g0*k12 - 4*g1*k11 + 2*h0*h12 + 2*h1*h11 + 2*h10*h2 + 2*h3*h9 + 2*h4*h8 + 2*h5*h7 + h6**2 = 0
+      -4*g0*k13 - 4*g1*k12 + 2*h0*h13 + 2*h1*h12 + 2*h10*h3 + 2*h11*h2 + 2*h4*h9 + 2*h5*h8 + 2*h6*h7 = 0
+      -4*g0*k14 - 4*g1*k13 + 2*h0*h14 + 2*h1*h13 + 2*h10*h4 + 2*h11*h3 + 2*h12*h2 + 2*h5*h9 + 2*h6*h8 + h7**2 = 0
+      -4*g0*k15 - 4*g1*k14 + 2*h0*h15 + 2*h1*h14 + 2*h10*h5 + 2*h11*h4 + 2*h12*h3 + 2*h13*h2 + 2*h6*h9 + 2*h7*h8 = 0
+      -4*g0*k16 - 4*g1*k15 + 2*h1*h15 + 2*h10*h6 + 2*h11*h5 + 2*h12*h4 + 2*h13*h3 + 2*h14*h2 + 2*h7*h9 + h8**2 = 0
+      -4*g0*k17 - 4*g1*k16 + 2*h10*h7 + 2*h11*h6 + 2*h12*h5 + 2*h13*h4 + 2*h14*h3 + 2*h15*h2 + 2*h8*h9 = 0
+      -4*g0*k18 - 4*g1*k17 + 2*h10*h8 + 2*h11*h7 + 2*h12*h6 + 2*h13*h5 + 2*h14*h4 + 2*h15*h3 + h9**2 = 0
+      -4*g0*k19 - 4*g1*k18 + 2*h10*h9 + 2*h11*h8 + 2*h12*h7 + 2*h13*h6 + 2*h14*h5 + 2*h15*h4 = 0
+      -4*g0*k20 - 4*g1*k19 + h10**2 + 2*h11*h9 + 2*h12*h8 + 2*h13*h7 + 2*h14*h6 + 2*h15*h5 = 0
+      -4*g0*k21 - 4*g1*k20 + 2*h10*h11 + 2*h12*h9 + 2*h13*h8 + 2*h14*h7 + 2*h15*h6 = 0
+      -4*g0*k22 - 4*g1*k21 + 2*h10*h12 + h11**2 + 2*h13*h9 + 2*h14*h8 + 2*h15*h7 = 0
+      -4*g0*k23 - 4*g1*k22 + 2*h10*h13 + 2*h11*h12 + 2*h14*h9 + 2*h15*h8 = 0
+      -4*g0*k24 - 4*g1*k23 + 2*h10*h14 + 2*h11*h13 + h12**2 + 2*h15*h9 = 0
+      -4*g0*k25 - 4*g1*k24 + 2*h10*h15 + 2*h11*h14 + 2*h12*h13 = 0
+      -4*g0*k26 - 4*g1*k25 + 2*h11*h15 + 2*h12*h14 + h13**2 = 0
+      -4*g0*k27 - 4*g1*k26 + 2*h12*h15 + 2*h13*h14 = 0
+      -4*g0*k28 - 4*g1*k27 + 2*h13*h15 + h14**2 = 0
+      -4*g0*k29 - 4*g1*k28 + 2*h14*h15 = 0
+      -4*g1*k29 + h15**2 = 0
+  solution structure: {'n_eqs': 29, 'n_vars': 48, 'structure': 'Groebner not attempted (48 unknowns, 29 equations); structure read off directly: every equation is LINEAR in the k_j with triangular leading term -4 g_top k_j, so with g_top nonzero the system solves triangularly for the k_j and the solution set is a rational variety of dimension (unknowns - equations) = 19'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values ['0', '0', '0', '0', '0', '0'])
+      -> SURVIVOR 02299003cb19 deg 29 : mate solve (D in [29])
+      D=29  n=465   EMPTY_over_Q     (4.5s)
+      02299003cb19   deg=29  PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT H9  HE(G=2,H=2,K=2)   (top coefficient g2 required nonzero)
+  unknowns (9): g0, g1, g2, h0, h1, h2, k0, k1, k2
+  residue system (4 equations):
+      g2 = 0
+      -4*g0*k2 - 4*g1*k1 - 4*g2*k0 + 2*h0*h2 + h1**2 = 0
+      -4*g1*k2 - 4*g2*k1 + 2*h1*h2 = 0
+      -4*g2*k2 + h2**2 = 0
+  solution structure: {'n_eqs': 4, 'gb_size': 8, 'gb_head': ['g1**2*k2**2', '-2*g0*h2*k2**2 + g1*h1*k2**2', '2*g0*h2*k2 - g1*h1*k2 + 2*g1*h2*k1', 'g1*h2*k2'], 'structure': 'proper ideal'}
+  Rabinowitsch (g2 != 0): unsolvable = True   basis = [1]
+
+==============================================================================
+SUPPORT H10  HE(G=0,H=0,K=2)   (top coefficient k2 required nonzero)
+  unknowns (5): g0, h0, k0, k1, k2
+  residue system (1 equations):
+      -4*g0*k2 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['g0*k2'], 'structure': 'proper ideal'}
+  Rabinowitsch (k2 != 0): unsolvable = False   basis = [k2*z1 - 1, g0]
+
+==============================================================================
+SUPPORT E1  SE(m=2;3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      -> SURVIVOR 4b3d403b5051 deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.0s)
+      D=10  n=66    EMPTY_over_Q     (0.0s)
+      4b3d403b5051   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      -> SURVIVOR e57028c3921e deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.0s)
+      D=10  n=66    EMPTY_over_Q     (0.1s)
+      e57028c3921e   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT E2  SE(m=2;2)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (1 equations):
+      1 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['1'], 'structure': 'unit ideal (no solutions at all)'}
+  Rabinowitsch (alpha != 0, c != 0 -- alpha != 0 is forced by unimodularity): unsolvable = True   basis = [1]
+
+==============================================================================
+SUPPORT E3  SE(m=2;4)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (1 equations):
+      -alpha = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['alpha'], 'structure': 'proper ideal'}
+  Rabinowitsch (alpha != 0, c != 0 -- alpha != 0 is forced by unimodularity): unsolvable = True   basis = [1]
+
+==============================================================================
+SUPPORT E4  SE(m=2;5)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      -> SURVIVOR 168e0b30d46b deg 7 : mate solve (D in [7, 11, 14])
+      D=7   n=36    EMPTY_over_Q     (0.0s)
+      D=11  n=78    EMPTY_over_Q     (0.0s)
+      D=14  n=120   EMPTY_over_Q     (0.0s)
+      168e0b30d46b   deg=7   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT E5  SE(m=2;9)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      -> SURVIVOR 65551d9727e7 deg 11 : mate solve (D in [11, 17, 22])
+      D=11  n=78    EMPTY_over_Q     (0.0s)
+      D=17  n=171   EMPTY_over_Q     (0.0s)
+      D=22  n=276   EMPTY_over_Q     (0.1s)
+      65551d9727e7   deg=11  PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT E6  SE(m=3;2)   (P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 1, 2 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      b520c37ad02b   deg=5   UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT E7  SE(m=3;4)   (P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 0, 4 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      -> SURVIVOR f2782c9f083f deg 7 : mate solve (D in [7, 11, 14])
+      D=7   n=36    EMPTY_over_Q     (0.0s)
+      D=11  n=78    EMPTY_over_Q     (0.0s)
+      D=14  n=120   EMPTY_over_Q     (0.0s)
+      f2782c9f083f   deg=7   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT E8  SE(m=3;3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 0, 4 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (1 equations):
+      1 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['1'], 'structure': 'unit ideal (no solutions at all)'}
+  Rabinowitsch (alpha != 0, c != 0 -- alpha != 0 is forced by unimodularity): unsolvable = True   basis = [1]
+
+==============================================================================
+SUPPORT E9  SE(m=2;2,3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 5 punctures)
+  unknowns (5): alpha, beta, c, a1, a2
+  residue system (1 equations):
+      1 = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['1'], 'structure': 'unit ideal (no solutions at all)'}
+  Rabinowitsch (alpha != 0, c != 0 -- alpha != 0 is forced by unimodularity): unsolvable = True   basis = [1]
+
+==============================================================================
+SUPPORT E10  SE(m=2;3,3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 1, 3 punctures)
+  unknowns (5): alpha, beta, c, a1, a2
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      5ba43826fa42   deg=8   UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT E11  SE(m=3;5,4)   (P = alpha x + beta + c prod (x-a_i)^e_i y^3 ; genus 2, 3 punctures)
+  unknowns (5): alpha, beta, c, a1, a2
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      e507bc4e8db0   deg=12  UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT E12  SE(m=2;27)   (P = alpha x + beta + c prod (x-a_i)^e_i y^2 ; genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      13aa79d7382f   deg=29  PERIODS_VANISH         unimod=NOT_CERTIFIED          SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT E13  SE(m=4;3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^4 ; genus 1, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      462652ead2a6   deg=7   UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT E14  SE(m=5;3)   (P = alpha x + beta + c prod (x-a_i)^e_i y^5 ; genus 2, 2 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      by-construction check: the coefficient vector satisfies the support equations = True   (values [])
+      5497083f3554   deg=8   UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT V1  v-power  P = h0 y + c x^1 y^2   (the (x,y) swap of SE(m=1; 2): night14 F2/F2b shape, genus 0, 2 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      -> SURVIVOR 2f401c620811 deg 3 : mate solve (D in [3, 5, 6])
+      D=3   n=10    EMPTY_over_Q     (0.0s)
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=6   n=28    EMPTY_over_Q     (0.0s)
+      2f401c620811   deg=3   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT V2  v-power  P = h0 y + c x^2 y^3   (the (x,y) swap of SE(m=2; 3): night14 F2/F2b shape, genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      -> SURVIVOR 977aeb39d938 deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.0s)
+      D=10  n=66    EMPTY_over_Q     (0.0s)
+      977aeb39d938   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT V3  v-power  P = h0 y + c x^2 y^5   (the (x,y) swap of SE(m=2; 5): night14 F2/F2b shape, genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      -> SURVIVOR 3d71c055f95f deg 7 : mate solve (D in [7, 11, 14])
+      D=7   n=36    EMPTY_over_Q     (0.0s)
+      D=11  n=78    EMPTY_over_Q     (0.0s)
+      D=14  n=120   EMPTY_over_Q     (0.0s)
+      3d71c055f95f   deg=7   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT V4  v-power  P = h0 y + c x^3 y^4   (the (x,y) swap of SE(m=3; 4): night14 F2/F2b shape, genus 0, 4 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      -> SURVIVOR 8cf19228f363 deg 7 : mate solve (D in [7, 11, 14])
+      D=7   n=36    EMPTY_over_Q     (0.0s)
+      D=11  n=78    EMPTY_over_Q     (0.0s)
+      D=14  n=120   EMPTY_over_Q     (0.1s)
+      8cf19228f363   deg=7   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT V5  v-power  P = h0 y + c x^4 y^2   (the (x,y) swap of SE(m=4; 2): night14 F2/F2b shape, genus 1, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (0 equations):
+  solution structure: {'n_eqs': 0, 'structure': 'no equations: the whole support solves'}
+      e1961840267e   deg=6   UNDECIDED_BY_RESIDUES_genus>=1 unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=-
+
+==============================================================================
+SUPPORT V6  v-power  P = h0 y + c x^2 y^4   (the (x,y) swap of SE(m=2; 4): night14 F2/F2b shape, genus 0, 3 punctures)
+  unknowns (4): alpha, beta, c, a1
+  residue system (1 equations):
+      -alpha = 0
+  solution structure: {'n_eqs': 1, 'gb_size': 1, 'gb_head': ['alpha'], 'structure': 'proper ideal'}
+  Rabinowitsch (h0 != 0, c != 0): unsolvable = True  basis = [1]
+
+==============================================================================
+SUPPORT M1  MIXED NEWTON SUPPORT  (y-shear y -> y + x + x^2 of the H3 survivor (deg_y stays 2))
+  Newton support: [(0, 1), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (3, 0), (3, 1), (4, 0), (5, 0)]
+      -> SURVIVOR 2d9fa751f027 deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.2s)
+      D=10  n=66    EMPTY_over_Q     (0.3s)
+      2d9fa751f027   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT M2  MIXED NEWTON SUPPORT  (y-shear then x-shear x -> x + y^2 (deg_y grows: genuinely mixed))
+  Newton support: [(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (3, 0)]
+      -> SURVIVOR 97e25aa31406 deg 6 : mate solve (D in [6, 9, 12])
+      D=6   n=28    EMPTY_over_Q     (0.0s)
+      D=9   n=55    EMPTY_over_Q     (0.1s)
+      D=12  n=91    EMPTY_over_Q     (0.4s)
+      97e25aa31406   deg=6   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+==============================================================================
+SUPPORT M3  MIXED NEWTON SUPPORT  (x-shear x -> x + y of the E1 survivor)
+  Newton support: [(0, 1), (0, 5), (1, 0), (1, 4), (2, 3), (3, 2)]
+      -> SURVIVOR 61cc00cd7420 deg 5 : mate solve (D in [5, 8, 10])
+      D=5   n=21    EMPTY_over_Q     (0.0s)
+      D=8   n=45    EMPTY_over_Q     (0.0s)
+      D=10  n=66    EMPTY_over_Q     (0.1s)
+      61cc00cd7420   deg=5   PERIODS_VANISH         unimod=UNIMODULAR_CERTIFIED   SY=NON_COORDINATE  mate=EMPTY_over_Q_all_stages
+
+supports swept: 33   instances: 28   survivors: 17   mates found: 0
+total 1517.0 s
