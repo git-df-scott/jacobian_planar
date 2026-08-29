@@ -1,0 +1,51 @@
+[
+ {
+  "hash": "cf1c601f3d1c",
+  "label": "G1 h0=-3 c=1 a=-1 n=2 m=3 t=[(0, Fraction(-2, 1)), (1, Fraction(-3, 1))] | sheared",
+  "deg_P": 20,
+  "degs_tried": [
+   41,
+   42
+  ],
+  "stages": [
+   {
+    "n_unknowns": 903,
+    "n_rows_nonzero": 1730,
+    "rank_A_p": 900,
+    "rank_Ae_p": 901,
+    "sched_prime": 999983,
+    "nullity_p": 3,
+    "verdict": "NOT_CERTIFIED",
+    "certificate": "none",
+    "note": "rank_p(A) < n at the scheduling prime; the negative is prime-relative and is not reported as emptiness",
+    "deg_Q_bound": 41,
+    "lambda_attempt": "carrier too large for the exact lambda solve (n=903)",
+    "secs": 8.1,
+    "scale_den": 8
+   },
+   {
+    "n_unknowns": 946,
+    "n_rows_nonzero": 1791,
+    "rank_A_p": 943,
+    "rank_Ae_p": 944,
+    "sched_prime": 999983,
+    "nullity_p": 3,
+    "verdict": "NOT_CERTIFIED",
+    "certificate": "none",
+    "note": "rank_p(A) < n at the scheduling prime; the negative is prime-relative and is not reported as emptiness",
+    "deg_Q_bound": 42,
+    "lambda_attempt": "carrier too large for the exact lambda solve (n=946)",
+    "secs": 9.2,
+    "scale_den": 8
+   }
+  ],
+  "hypotheses": {
+   "U_bezout_identity": true,
+   "U_reason": "exact Bezout identity verified over Q",
+   "SY": "NON_COORDINATE",
+   "FIB": "NON_COORDINATE_BY_R"
+  },
+  "verdict": "NOT_CERTIFIED",
+  "secs": 17.3
+ }
+]

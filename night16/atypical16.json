@@ -2079,8 +2079,24 @@
     },
     "t_exact": 0.5,
     "num_on": {
-     "error": "transport: transport wall-clock budget exceeded",
-     "t": 40.036255836486816
+     "hash": "632afa8e6433",
+     "c": "0",
+     "verdict": "VANISHING",
+     "error": null,
+     "ls_residual": 1.0932959945246157e-10,
+     "max_period": 1.8906751835892507e-10,
+     "rel_ls_residual": 1.0932959945246157e-10,
+     "err_ls_residual": 4.5103363369065436e-11,
+     "chi": 0,
+     "n_components": 2,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 2,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 800.2,
+     "retry": true
     },
     "num_near": {
      "1/8": {
@@ -2889,8 +2905,24 @@
     },
     "t_exact": 0.3,
     "num_on": {
-     "error": "transport: transport wall-clock budget exceeded",
-     "t": 80.09739303588867
+     "hash": "00427d4924d2",
+     "c": "0",
+     "verdict": "VANISHING",
+     "error": null,
+     "ls_residual": 1.9168133211219706e-13,
+     "max_period": 1.888962443557198e-13,
+     "rel_ls_residual": 1.9168133211219706e-13,
+     "err_ls_residual": 1.006670212362065e-13,
+     "chi": 0,
+     "n_components": 2,
+     "n_punctures": 4,
+     "genus_sum": 0,
+     "n_cycles": 2,
+     "max_abs_residue": 8.37605177032131e-14,
+     "sum_abs_residues": 1.0534158747181534e-13,
+     "n_places_total": 4,
+     "t": 501.1,
+     "retry": true
     },
     "num_near": {
      "1/8": {
@@ -3531,8 +3563,24 @@
     },
     "t_exact": 0.7,
     "num_on": {
-     "error": "RuntimeError: transport wall-clock budget exceeded",
-     "t": 40.02593374252319
+     "hash": "7887429824c2",
+     "c": "0",
+     "verdict": "VANISHING",
+     "error": null,
+     "ls_residual": 1.819257786114127e-14,
+     "max_period": 1.503564405230638e-14,
+     "rel_ls_residual": 1.819257786114127e-14,
+     "err_ls_residual": 1.567765048936192e-14,
+     "chi": 1,
+     "n_components": 3,
+     "n_punctures": 5,
+     "genus_sum": 0,
+     "n_cycles": 3,
+     "max_abs_residue": 5.5791161964912285e-11,
+     "sum_abs_residues": 8.201914431295809e-11,
+     "n_places_total": 5,
+     "t": 460.2,
+     "retry": true
     },
     "num_near": {
      "1/8": {
@@ -6223,8 +6271,24 @@
     },
     "t_exact": 0.2,
     "num_on": {
-     "error": "RuntimeError: transport wall-clock budget exceeded",
-     "t": 40.044081926345825
+     "hash": "ac09181bd1e3",
+     "c": "0",
+     "verdict": "VANISHING",
+     "error": null,
+     "ls_residual": 8.234084653920753e-13,
+     "max_period": 6.789287092389093e-13,
+     "rel_ls_residual": 8.234084653920753e-13,
+     "err_ls_residual": 5.058776415562588e-13,
+     "chi": 1,
+     "n_components": 3,
+     "n_punctures": 5,
+     "genus_sum": 0,
+     "n_cycles": 3,
+     "max_abs_residue": 4.2171712836419895e-12,
+     "sum_abs_residues": 7.168310567029203e-13,
+     "n_places_total": 5,
+     "t": 566.2,
+     "retry": true
     },
     "num_near": {
      "1/8": {
@@ -7013,8 +7077,24 @@
     },
     "t_exact": 0.3,
     "num_on": {
-     "error": "transport: transport wall-clock budget exceeded",
-     "t": 40.03840231895447
+     "hash": "7747339a4408",
+     "c": "0",
+     "verdict": "VANISHING",
+     "error": null,
+     "ls_residual": 1.62920679031059e-12,
+     "max_period": 1.4714223685600112e-12,
+     "rel_ls_residual": 1.62920679031059e-12,
+     "err_ls_residual": 3.4922093524804333e-13,
+     "chi": 1,
+     "n_components": 3,
+     "n_punctures": 5,
+     "genus_sum": 0,
+     "n_cycles": 3,
+     "max_abs_residue": 5.6759411114100595e-12,
+     "sum_abs_residues": 4.725359910398719e-12,
+     "n_places_total": 5,
+     "t": 480.9,
+     "retry": true
     },
     "num_near": {
      "1/8": {

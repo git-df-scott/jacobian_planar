@@ -19,7 +19,8 @@ import sympy as sp
 MAXCOLS = int(os.environ.get("MAXCOLS", "2400"))
 TBUDGET = float(os.environ.get("TBUDGET", "900"))
 EXTRACOLS = int(os.environ.get("EXTRACOLS", "400"))
-OUT = "mate16_%s.json" % (sys.argv[1] if len(sys.argv) > 1 else "all")
+LAMCAP = int(os.environ.get("LAMCAP", "900"))
+OUT = "mate16_%s.json" % (os.environ.get("TAG", "") + (sys.argv[1] if len(sys.argv) > 1 else "all"))
 
 
 def degs_for(d):
@@ -41,7 +42,7 @@ def unimodular_and_noncoordinate(rec):
 
 
 def main():
-    names = json.load(open("still_vanishing16.json"))
+    names = json.load(open(os.environ.get("NAMES", "still_vanishing16.json")))
     if len(sys.argv) > 2:
         kk, nn = int(sys.argv[1]), int(sys.argv[2])
         names = [h for i, h in enumerate(names) if i % nn == kk]
@@ -64,7 +65,7 @@ def main():
             if time.time() - t0 > TBUDGET:
                 stages.append({"deg_Q_bound": D, "verdict": "SKIPPED_time_budget"})
                 break
-            r = mate16.solve(P, max_cols=MAXCOLS, verbose=False, degs=(D,))
+            r = mate16.solve(P, max_cols=MAXCOLS, verbose=False, degs=(D,), lam_cap=LAMCAP)
             stages.extend(r["stages"])
             if r["verdict"] == "MATE_over_Q":
                 hit = r

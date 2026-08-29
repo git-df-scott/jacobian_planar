@@ -359,18 +359,18 @@ on `m` and on the roots `a_i`.
 | 13 | `7f2b3c396f45` | 5 | 4 | 0 | 0 | 1 | 1 | 2 (1,4) | VANISHING_EXACT [1,1] | VANISHING 1.4e-14 / 1.9e-14 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 14 | `abc13407cc8e` | 5 | 4 | 0 | 0 | 1 | 1 | 2 (1,4) | VANISHING_EXACT [1,1] | VANISHING 3e-15 / 3e-15 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 15 | `55a9ae0456b4` | 9 | 4 | 0 | 0 | 1 | 1 | 2 (2,7) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
-| 16 | `632afa8e6433` | 13 | 4 | 0 | 0 | 1 | 1 | 2 (3,10) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
+| 16 | `632afa8e6433` | 13 | 4 | 0 | 0 | 1 | 1 | 2 (3,10) | VANISHING_EXACT [1,1] | VANISHING 1.1e-10 / 1.9e-10 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 17 | `7b72f1effa40` | 7 | 4 | -2 | 0 | 1 | 3 | 3 (1,2,4) | VANISHING_EXACT [1,1,1] | VANISHING 1.1e-14 / 1e-14 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 18 | `cd46f9341dc7` | 7 | 4 | -2 | 0 | 1 | 3 | 2 (1,6) | VANISHING_EXACT [1,1] | VANISHING 1.1e-14 / 5.9e-15 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 19 | `3bd161cf7a22` | 11 | 4 | -2 | 0 | 1 | 3 | 2 (2,9) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 20 | `d735085d2c22` | 15 | 4 | -2 | 0 | 1 | 3 | 3 (3,4,8) | VANISHING_EXACT [1,1,1] | VANISHING 3.6e-10 / 2.4e-10 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 21 | `37670b444e89` | 6 | 5 | 0 | 0 | 1 | 1 | 2 (1,5) | VANISHING_EXACT [1,1] | VANISHING 1.6e-14 / 1.5e-14 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
-| 22 | `00427d4924d2` | 6 | 5 | 0 | 0 | 1 | 1 | 2 (1,5) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
+| 22 | `00427d4924d2` | 6 | 5 | 0 | 0 | 1 | 1 | 2 (1,5) | VANISHING_EXACT [1,1] | VANISHING 1.9e-13 / 1.9e-13 / 8.4e-14 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 23 | `c8aa6fd84bbc` | 11 | 5 | 0 | 0 | 1 | 1 | 2 (2,9) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 24 | `f406b3aeda22` | 16 | 5 | 0 | 0 | 1 | 1 | 2 (3,13) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 25 | `8ccaea9ee461` | 7 | 5 | -1 | 0 | 1 | 2 | 2 (1,6) | VANISHING_EXACT [1,1] | VANISHING 1.1e-14 / 1e-14 / 5.1e-15 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 26 | `e52860893178` | 7 | 5 | -1 | 0 | 1 | 2 | 2 (1,6) | VANISHING_EXACT [1,1] | VANISHING 3.4e-11 / 2.9e-11 / 1.2e-10 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
-| 27 | `7887429824c2` | 12 | 5 | -1 | 0 | 1 | 2 | 2 (2,10) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
+| 27 | `7887429824c2` | 12 | 5 | -1 | 0 | 1 | 2 | 2 (2,10) | VANISHING_EXACT [1,1] | VANISHING 1.8e-14 / 1.5e-14 / 5.6e-11 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 28 | `726da7cd9516` | 17 | 5 | -1 | 0 | 1 | 2 | 2 (3,14) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 29 | `c4e207c544a0` | 9 | 5 | -3 | 0 | 1 | 4 | 2 (1,8) | VANISHING_EXACT [1,1] | VANISHING 4.2e-14 / 4.1e-14 / 0 | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
 | 30 | `e94c47f785e6` | 9 | 5 | -3 | 0 | 1 | 4 | 4 (1,2,2,4) | VANISHING_EXACT [1,1,1,1] | VANISHING 8.5e-12 / 5.4e-12 / 0 | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
@@ -388,12 +388,12 @@ on `m` and on the roots `a_i`.
 | 42 | `c447da45ca02` | 14 | 5 | -3 | 0 | 1 | 4 | 4 (2,3,3,6) | VANISHING_EXACT [1,1,1,1] | budget exceeded | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
 | 43 | `d01448b8b96a` | 5 | 3 | -1 | 0 | 1 | 2 | 3 (1,2,2) | VANISHING_EXACT [1,1,1] | VANISHING 9.2e-15 / 7.3e-15 / 0 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 44 | `7c887944e856` | 5 | 3 | -1 | 0 | 1 | 2 | 3 (1,2,2) | VANISHING_EXACT [1,1,1] | VANISHING 4.6e-14 / 3.7e-14 / 3.7e-13 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
-| 45 | `ac09181bd1e3` | 8 | 3 | -1 | 0 | 1 | 2 | 3 (2,3,3) | VANISHING_EXACT [1,1,1] | budget exceeded | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
+| 45 | `ac09181bd1e3` | 8 | 3 | -1 | 0 | 1 | 2 | 3 (2,3,3) | VANISHING_EXACT [1,1,1] | VANISHING 8.2e-13 / 6.8e-13 / 4.2e-12 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 46 | `a9b90eff1970` | 13 | 7 | -5 | 0 | 1 | 6 | 5 (1,2,2,4,4) | VANISHING_EXACT [1,1,1,1,1] | budget exceeded | 1/8:-5; -1/8:-5; 1/64:-5; -1/64:-5 | **STILL-VANISHING** |
 | 47 | `762dac3fbdb1` | 13 | 7 | -5 | 0 | 1 | 6 | 5 (1,2,2,4,4) | VANISHING_EXACT [1,1,1,1,1] | budget exceeded | 1/8:-5; -1/8:-5; 1/64:-5; -1/64:-5 | **STILL-VANISHING** |
 | 48 | `a814ad47ed0c` | 20 | 7 | -5 | 0 | 1 | 6 | 5 (2,3,3,6,6) | VANISHING_EXACT [1,1,1,1,1] | budget exceeded | 1/8:-5; -1/8:-5; 1/64:-5; -1/64:-5 | **STILL-VANISHING** |
 | 49 | `11b99f22adf6` | 18 | 18 | -3 | 0 | 1 | 4 | 4 (2,4,4,8) | VANISHING_EXACT [1,2,2,2] | budget exceeded | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
-| 50 | `7747339a4408` | 5 | 3 | -1 | 0 | 1 | 2 | 3 (1,2,2) | VANISHING_EXACT [1,1,1] | budget exceeded | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
+| 50 | `7747339a4408` | 5 | 3 | -1 | 0 | 1 | 2 | 3 (1,2,2) | VANISHING_EXACT [1,1,1] | VANISHING 1.6e-12 / 1.5e-12 / 5.7e-12 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 51 | `d57b38902c84` | 18 | 9 | -3 | 0 | 1 | 4 | 4 (2,4,4,8) | VANISHING_EXACT [1,2,2,2] | budget exceeded | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
 | 52 | `96e4a2c6d1d3` | 24 | 12 | 0 | 0 | 1 | 1 | 2 (4,20) | VANISHING_EXACT [2,4] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 53 | `c689ce7fc834` | 18 | 18 | -3 | 0 | 1 | 4 | 4 (2,4,4,8) | VANISHING_EXACT [1,2,2,2] | budget exceeded | 1/8:-3; -1/8:-3; 1/64:-3; -1/64:-3 | **STILL-VANISHING** |
@@ -516,3 +516,64 @@ HIT GATE: a consistent system would be reconstructed to an exact `Q`, verified
 by expanding `[P,Q] - 1` coefficientwise over `Q`, and written to
 `night16/HIT_<hash>/`.
 
+| # | hash | deg P | carriers D tried (night15 stopped at D = 2 deg P) | n unknowns | verdict | certificate | lambda support | lambda re-verified over Q |
+|---|---|---|---|---|---|---|---|---|
+| 1 | `c5e02d711fe5` | 3 | 7, 8, 9 | 36, 45, 55 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 24, 21, 41 | True, True, True |
+| 2 | `a3b909a78c74` | 3 | 7, 8, 9 | 36, 45, 55 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 24, 22, 43 | True, True, True |
+| 3 | `a03f511f7ecd` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 60, 59, 96 | True, True, True |
+| 4 | `fef547c2b095` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 90, 100, 167 | True, True, True |
+| 5 | `207b968cb4c5` | 4 | 9, 10, 12 | 55, 66, 91 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 26, 34, 66 | True, True, True |
+| 6 | `52830078b770` | 4 | 9, 10, 12 | 55, 66, 91 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 38, 43, 60 | True, True, True |
+| 7 | `39f56b091e75` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 63, 65, 141 | True, True, True |
+| 8 | `36bc150f8dae` | 10 | 21, 22, 30 | 253, 276, 496 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 128, 151, 236 | True, True, True |
+| 9 | `0a32a1935a5d` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 21, 29, 42 | True, True, True |
+| 10 | `fa25edeecbfe` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 105 | True, True, True |
+| 11 | `1ef523b227e7` | 8 | 17, 18, 24 | 171, 190, 325 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 102, 95, 266 | True, True, True |
+| 12 | `a4d6d040e138` | 11 | 23, 24, 33 | 300, 325, 595 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 163, 187, 349 | True, True, True |
+| 13 | `7f2b3c396f45` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 40, 74, 112 | True, True, True |
+| 14 | `abc13407cc8e` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 48, 74, 112 | True, True, True |
+| 15 | `55a9ae0456b4` | 9 | 19, 20, 27 | 210, 231, 406 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 141, 173, 191 | True, True, True |
+| 16 | `632afa8e6433` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 211, 278 | True, True |
+| 17 | `7b72f1effa40` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 32, 21, 34 | True, True, True |
+| 18 | `cd46f9341dc7` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 66, 67, 144 | True, True, True |
+| 19 | `3bd161cf7a22` | 11 | 23, 24, 33 | 300, 325, 595 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 156, 181, 339 | True, True, True |
+| 20 | `d735085d2c22` | 15 | 31, 32 | 528, 561 | EMPTY_all_stages | lambda_exact, lambda_exact | 290, 437 | True, True |
+| 21 | `37670b444e89` | 6 | 13, 14, 18 | 105, 120, 190 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 66, 65, 103 | True, True, True |
+| 22 | `00427d4924d2` | 6 | 13, 14, 18 | 105, 120, 190 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 82, 82, 132 | True, True, True |
+| 23 | `c8aa6fd84bbc` | 11 | 23, 24, 33 | 300, 325, 595 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 126, 217, 290 | True, True, True |
+| 24 | `f406b3aeda22` | 16 | 33, 34 | 595, 630 | EMPTY_all_stages | lambda_exact, lambda_exact | 294, 444 | True, True |
+| 25 | `8ccaea9ee461` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 40, 42, 76 | True, True, True |
+| 26 | `e52860893178` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 106, 85, 172 | True, True, True |
+| 27 | `7887429824c2` | 12 | 25, 26, 36 | 351, 378, 703 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 214, 104, 283 | True, True, True |
+| 28 | `726da7cd9516` | 17 | 35, 36 | 666, 703 | EMPTY_all_stages | lambda_exact, lambda_exact | 281, 440 | True, True |
+| 29 | `c4e207c544a0` | 9 | 19, 20, 27 | 210, 231, 406 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 117, 124, 250 | True, True, True |
+| 30 | `e94c47f785e6` | 9 | 19, 20, 26 | 210, 231, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 117, 124, 285 | True, True, True |
+| 31 | `894a95da1a0d` | 14 | 29, 30 | 465, 496 | EMPTY_all_stages | lambda_exact, lambda_exact | 357, 239 | True, True |
+| 32 | `1f53638e8cf6` | 19 | 39, 40 | 820, 861 | EMPTY_all_stages | lambda_exact, lambda_exact | 563, 359 | True, True |
+| 33 | `1de9e111cb5d` | 3 | 7, 8, 9 | 36, 45, 55 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 5, 5, 6 | True, True, True |
+| 34 | `c3dbaae9c4ab` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 71, 83, 125 | True, True, True |
+| 35 | `46a40cb56510` | 7 | 15, 16, 21 | 136, 153, 253 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 34, 22, 37 | True, True, True |
+| 36 | `808e52fdb1b6` | 9 | 19, 20, 26 | 210, 231, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 17, 20, 33 | True, True, True |
+| 37 | `b35d46339ef4` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 97 | True, True, True |
+| 38 | `d6a8255e8c96` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 105 | True, True, True |
+| 39 | `11b94e5ad1be` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 105 | True, True, True |
+| 40 | `83022ceaab23` | 9 | 19, 20, 26 | 210, 231, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 24, 25, 61 | True, True, True |
+| 41 | `40d4c9f57c36` | 9 | 19, 20, 26 | 210, 231, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 99, 102, 230 | True, True, True |
+| 42 | `c447da45ca02` | 14 | 29, 30 | 465, 496 | EMPTY_all_stages | lambda_exact, lambda_exact | 102, 103 | True, True |
+| 43 | `d01448b8b96a` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 97 | True, True, True |
+| 44 | `7c887944e856` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 39, 58, 88 | True, True, True |
+| 45 | `ac09181bd1e3` | 8 | 17, 18, 24 | 171, 190, 325 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 111, 114, 210 | True, True, True |
+| 46 | `a9b90eff1970` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 299, 156 | True, True |
+| 47 | `762dac3fbdb1` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 188, 192 | True, True |
+| 48 | `a814ad47ed0c` | 20 | 41, 42 | 903, 946 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 49 | `11b99f22adf6` | 18 | 37, 38 | 741, None | EMPTY_all_stages | lambda_exact, None | 508, None | True, None |
+| 50 | `7747339a4408` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 105 | True, True, True |
+| 51 | `d57b38902c84` | 18 | 37, 38 | 741, 780 | EMPTY_all_stages | lambda_exact, lambda_exact | 438, 587 | True, True |
+| 52 | `96e4a2c6d1d3` | 24 | 49, 50 | 1275, 1326 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 53 | `c689ce7fc834` | 18 | 37, 38 | 741, 780 | EMPTY_all_stages | lambda_exact, lambda_exact | 508, 400 | True, True |
+| 54 | `4667d741b2d6` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 214, 313 | True, True |
+| 55 | `282a9f40c368` | 24 | 49, 50 | 1275, 1326 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 56 | `b7612f47cd64` | 10 | 21, 22, 26 | 253, 276, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 185, 121, 285 | True, True, True |
+| 57 | `cf1c601f3d1c` | 20 | 41, 42 | 903, 946 | NOT_CERTIFIED | none, none | None, None | None, None |
+
+**53 of 57 came back `EMPTY_over_Q` at every carrier tried, each with an exact lambda certificate re-verified over Q; 4 are `NOT_CERTIFIED` — at those carriers the system is inconsistent at the scheduling prime (rank_p[A|e] = rank_p(A) + 1) but the carrier exceeded the exact-lambda solver's size cap, so no exact certificate was produced and no emptiness is claimed for them.  No system was consistent: the HIT GATE did not fire.**

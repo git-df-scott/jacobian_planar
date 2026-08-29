@@ -133,7 +133,7 @@ def exact_lambda(rows, ncols, cap=900):
     return lam, "verified exactly over Q on %d rows" % len(lam)
 
 
-def solve(P, max_cols=2600, verbose=True, degs=None):
+def solve(P, max_cols=2600, verbose=True, degs=None, lam_cap=900):
     d = P14.tdeg(P)
     Pi = {k: int(v) if F(v).denominator == 1 else F(v) for k, v in P.items()}
     den = 1
@@ -152,7 +152,7 @@ def solve(P, max_cols=2600, verbose=True, degs=None):
         out, rows, Qd = EX.decide(Pi, S)
         out["deg_Q_bound"] = D
         if out["verdict"] == "NOT_CERTIFIED":
-            lam, why = exact_lambda(rows, len(S))
+            lam, why = exact_lambda(rows, len(S), cap=lam_cap)
             out["lambda_attempt"] = why
             if lam is not None:
                 out["verdict"] = "EMPTY_over_Q"

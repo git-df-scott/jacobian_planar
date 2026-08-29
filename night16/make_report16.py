@@ -134,5 +134,40 @@ mid = open("ATYPICAL_mid.md").read()
 tail = open("ATYPICAL_tail.md").read() if os.path.exists("ATYPICAL_tail.md") else ""
 ctl = "\n```\n" + open("controls16_log.txt").read().rstrip() + "\n```\n"
 ctl += "\n```\n" + open("controls16b_log.txt").read().rstrip() + "\n```\n"
-open("ATYPICAL.md", "w").write(head + ctl + mid + "\n" + md_table(R) + "\n" + tail)
+MT = {}
+for f in sorted(glob.glob("mate16_*.json")):
+    for z in json.load(open(f)):
+        prev = MT.get(z["hash"])
+        if prev is None or (prev["verdict"] != "EMPTY_all_stages"
+                            and z["verdict"] == "EMPTY_all_stages"):
+            MT[z["hash"]] = z
+ML = []
+ML.append("| # | hash | deg P | carriers D tried (night15 stopped at D = 2 deg P) | "
+          "n unknowns | verdict | certificate | lambda support | lambda re-verified over Q |")
+ML.append("|---|---|---|---|---|---|---|---|---|")
+nemp = nnc = 0
+for i, r in enumerate(R):
+    z = MT.get(r["hash"])
+    if not z:
+        ML.append("| %d | `%s` | %d | - | - | NOT RUN | | | |" % (i + 1, r["hash"], r["deg_P"]))
+        continue
+    nemp += z["verdict"] == "EMPTY_all_stages"
+    nnc += z["verdict"] != "EMPTY_all_stages"
+    ML.append("| %d | `%s` | %d | %s | %s | %s | %s | %s | %s |"
+              % (i + 1, r["hash"], r["deg_P"],
+                 ", ".join(str(s0.get("deg_Q_bound")) for s0 in z["stages"]),
+                 ", ".join(str(s0.get("n_unknowns")) for s0 in z["stages"]),
+                 z["verdict"],
+                 ", ".join(str(s0.get("certificate")) for s0 in z["stages"]),
+                 ", ".join(str(s0.get("lambda_support")) for s0 in z["stages"]),
+                 ", ".join(str(s0.get("lambda_reverified")) for s0 in z["stages"])))
+summ = ("\n**%d of %d came back `EMPTY_over_Q` at every carrier tried, each with an "
+        "exact lambda certificate re-verified over Q; %d are `NOT_CERTIFIED` — at those "
+        "carriers the system is inconsistent at the scheduling prime "
+        "(rank_p[A|e] = rank_p(A) + 1) but the carrier exceeded the exact-lambda solver's "
+        "size cap, so no exact certificate was produced and no emptiness is claimed for "
+        "them.  No system was consistent: the HIT GATE did not fire.**\n"
+        % (nemp, nemp + nnc, nnc))
+open("ATYPICAL.md", "w").write(head + ctl + mid + "\n" + md_table(R) + "\n" + tail
+                               + "\n".join(ML) + "\n" + summ)
 print("wrote ATYPICAL.md")
