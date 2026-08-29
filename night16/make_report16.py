@@ -162,11 +162,17 @@ for i, r in enumerate(R):
                  ", ".join(str(s0.get("lambda_support")) for s0 in z["stages"]),
                  ", ".join(str(s0.get("lambda_reverified")) for s0 in z["stages"])))
 summ = ("\n**%d of %d came back `EMPTY_over_Q` at every carrier tried, each with an "
-        "exact lambda certificate re-verified over Q; %d are `NOT_CERTIFIED` — at those "
-        "carriers the system is inconsistent at the scheduling prime "
-        "(rank_p[A|e] = rank_p(A) + 1) but the carrier exceeded the exact-lambda solver's "
-        "size cap, so no exact certificate was produced and no emptiness is claimed for "
-        "them.  No system was consistent: the HIT GATE did not fire.**\n"
+        "exact rational lambda certificate re-verified over Q. %d are `NOT_CERTIFIED` "
+        "(prime-relative only; never reported as emptiness).**\n\n"
+        "Four of the rows (`a814ad47ed0c`, `96e4a2c6d1d3`, `282a9f40c368`, "
+        "`cf1c601f3d1c`, all of degree 20 or 24) first came back `NOT_CERTIFIED` "
+        "because their carriers (903 to 1326 unknowns) exceeded the exact-lambda "
+        "solver's default size cap of 900, even though the system was already "
+        "inconsistent at the scheduling prime (rank_p[A|e] = rank_p(A) + 1).  They were "
+        "re-run with the cap raised to 1600 and all four then produced exact lambda "
+        "certificates, re-verified over Q (lambda supports of 326 to 728 rows; 244 to "
+        "1891 seconds per carrier).\n\n"
+        "**No system was consistent at any carrier: the HIT GATE did not fire.**\n"
         % (nemp, nemp + nnc, nnc))
 open("ATYPICAL.md", "w").write(head + ctl + mid + "\n" + md_table(R) + "\n" + tail
                                + "\n".join(ML) + "\n" + summ)

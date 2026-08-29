@@ -21,8 +21,10 @@ The screen was evaluated only at a few generic `c` — `c = 1, -1, 3/2` for the
 whose derivation states in its own header that it "assumes lam != 0".  Checking
 the 57 survivor records confirms this verbatim: 49 of them have
 `period_detail.fibres == []` (EXACT-G1, generic `lam` only) and 8 list only
-`c in {1, -1, 3/2}`.  **No survivor was ever measured at `c = 0`, and no
-survivor was ever measured at an atypical value.**
+`c in {1, -1, 3/2}`.  **No survivor was ever measured at `c = 0`.**  Exactly one
+survivor was measured at an atypical value — `808e52fdb1b6`, whose only two
+measured fibres, `c = 1` and `c = -1`, both turn out to be atypical values of it,
+so that it had no generic measurement at all (§5.3).
 
 A polynomial `P` with unimodular gradient has **no critical points at all**, so
 every fibre is smooth; but if `P` is not a coordinate its fibration still fails

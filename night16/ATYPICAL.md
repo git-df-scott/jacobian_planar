@@ -21,8 +21,10 @@ The screen was evaluated only at a few generic `c` — `c = 1, -1, 3/2` for the
 whose derivation states in its own header that it "assumes lam != 0".  Checking
 the 57 survivor records confirms this verbatim: 49 of them have
 `period_detail.fibres == []` (EXACT-G1, generic `lam` only) and 8 list only
-`c in {1, -1, 3/2}`.  **No survivor was ever measured at `c = 0`, and no
-survivor was ever measured at an atypical value.**
+`c in {1, -1, 3/2}`.  **No survivor was ever measured at `c = 0`.**  Exactly one
+survivor was measured at an atypical value — `808e52fdb1b6`, whose only two
+measured fibres, `c = 1` and `c = -1`, both turn out to be atypical values of it,
+so that it had no generic measurement at all (§5.3).
 
 A polynomial `P` with unimodular gradient has **no critical points at all**, so
 every fibre is smooth; but if `P` is not a coordinate its fibration still fails
@@ -351,7 +353,7 @@ on `m` and on the roots `a_i`.
 | 5 | `207b968cb4c5` | 4 | 3 | 0 | 0 | 1 | 1 | 2 (1,3) | VANISHING_EXACT [1,1] | VANISHING 1.6e-14 / 1.9e-14 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 6 | `52830078b770` | 4 | 3 | 0 | 0 | 1 | 1 | 2 (1,3) | VANISHING_EXACT [1,1] | VANISHING 1.7e-15 / 1.6e-15 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 7 | `39f56b091e75` | 7 | 3 | 0 | 0 | 1 | 1 | 2 (2,5) | VANISHING_EXACT [1,1] | VANISHING 1.1e-13 / 1.4e-13 / 2.8e-13 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
-| 8 | `36bc150f8dae` | 10 | 3 | 0 | 0 | 1 | 1 | 2 (3,7) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
+| 8 | `36bc150f8dae` | 10 | 3 | 0 | 0 | 1 | 1 | 2 (3,7) | VANISHING_EXACT [1,1] | VANISHING 2e-12 / 2.8e-12 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 9 | `0a32a1935a5d` | 5 | 3 | -1 | 0 | 1 | 2 | 2 (1,4) | VANISHING_EXACT [1,1] | VANISHING 8e-15 / 6.3e-15 / 0 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 10 | `fa25edeecbfe` | 5 | 3 | -1 | 0 | 1 | 2 | 2 (1,4) | VANISHING_EXACT [1,1] | VANISHING 2.1e-14 / 1.8e-14 / 0 | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
 | 11 | `1ef523b227e7` | 8 | 3 | -1 | 0 | 1 | 2 | 3 (2,3,3) | VANISHING_EXACT [1,1,1] | budget exceeded | 1/8:-1; -1/8:-1; 1/64:-1; -1/64:-1 | **STILL-VANISHING** |
@@ -362,7 +364,7 @@ on `m` and on the roots `a_i`.
 | 16 | `632afa8e6433` | 13 | 4 | 0 | 0 | 1 | 1 | 2 (3,10) | VANISHING_EXACT [1,1] | VANISHING 1.1e-10 / 1.9e-10 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 17 | `7b72f1effa40` | 7 | 4 | -2 | 0 | 1 | 3 | 3 (1,2,4) | VANISHING_EXACT [1,1,1] | VANISHING 1.1e-14 / 1e-14 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 18 | `cd46f9341dc7` | 7 | 4 | -2 | 0 | 1 | 3 | 2 (1,6) | VANISHING_EXACT [1,1] | VANISHING 1.1e-14 / 5.9e-15 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
-| 19 | `3bd161cf7a22` | 11 | 4 | -2 | 0 | 1 | 3 | 2 (2,9) | VANISHING_EXACT [1,1] | budget exceeded | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
+| 19 | `3bd161cf7a22` | 11 | 4 | -2 | 0 | 1 | 3 | 2 (2,9) | VANISHING_EXACT [1,1] | VANISHING 4.4e-10 / 2.8e-10 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 20 | `d735085d2c22` | 15 | 4 | -2 | 0 | 1 | 3 | 3 (3,4,8) | VANISHING_EXACT [1,1,1] | VANISHING 3.6e-10 / 2.4e-10 / 0 | 1/8:-2; -1/8:-2; 1/64:-2; -1/64:-2 | **STILL-VANISHING** |
 | 21 | `37670b444e89` | 6 | 5 | 0 | 0 | 1 | 1 | 2 (1,5) | VANISHING_EXACT [1,1] | VANISHING 1.6e-14 / 1.5e-14 / 0 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
 | 22 | `00427d4924d2` | 6 | 5 | 0 | 0 | 1 | 1 | 2 (1,5) | VANISHING_EXACT [1,1] | VANISHING 1.9e-13 / 1.9e-13 / 8.4e-14 | 1/8:0; -1/8:0; 1/64:0; -1/64:0 | **STILL-VANISHING** |
@@ -565,15 +567,19 @@ by expanding `[P,Q] - 1` coefficientwise over `Q`, and written to
 | 45 | `ac09181bd1e3` | 8 | 17, 18, 24 | 171, 190, 325 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 111, 114, 210 | True, True, True |
 | 46 | `a9b90eff1970` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 299, 156 | True, True |
 | 47 | `762dac3fbdb1` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 188, 192 | True, True |
-| 48 | `a814ad47ed0c` | 20 | 41, 42 | 903, 946 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 48 | `a814ad47ed0c` | 20 | 41, 42 | 903, 946 | EMPTY_all_stages | lambda_exact, lambda_exact | 506, 509 | True, True |
 | 49 | `11b99f22adf6` | 18 | 37, 38 | 741, None | EMPTY_all_stages | lambda_exact, None | 508, None | True, None |
 | 50 | `7747339a4408` | 5 | 11, 12, 15 | 78, 91, 136 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 55, 68, 105 | True, True, True |
 | 51 | `d57b38902c84` | 18 | 37, 38 | 741, 780 | EMPTY_all_stages | lambda_exact, lambda_exact | 438, 587 | True, True |
-| 52 | `96e4a2c6d1d3` | 24 | 49, 50 | 1275, 1326 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 52 | `96e4a2c6d1d3` | 24 | 49, 50 | 1275, 1326 | EMPTY_all_stages | lambda_exact, lambda_exact | 326, 728 | True, True |
 | 53 | `c689ce7fc834` | 18 | 37, 38 | 741, 780 | EMPTY_all_stages | lambda_exact, lambda_exact | 508, 400 | True, True |
 | 54 | `4667d741b2d6` | 13 | 27, 28 | 406, 435 | EMPTY_all_stages | lambda_exact, lambda_exact | 214, 313 | True, True |
-| 55 | `282a9f40c368` | 24 | 49, 50 | 1275, 1326 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 55 | `282a9f40c368` | 24 | 49, 50 | 1275, 1326 | EMPTY_all_stages | lambda_exact, lambda_exact | 453, 621 | True, True |
 | 56 | `b7612f47cd64` | 10 | 21, 22, 26 | 253, 276, 378 | EMPTY_all_stages | lambda_exact, lambda_exact, lambda_exact | 185, 121, 285 | True, True, True |
-| 57 | `cf1c601f3d1c` | 20 | 41, 42 | 903, 946 | NOT_CERTIFIED | none, none | None, None | None, None |
+| 57 | `cf1c601f3d1c` | 20 | 41, 42 | 903, 946 | EMPTY_all_stages | lambda_exact, lambda_exact | 624, 565 | True, True |
 
-**53 of 57 came back `EMPTY_over_Q` at every carrier tried, each with an exact lambda certificate re-verified over Q; 4 are `NOT_CERTIFIED` — at those carriers the system is inconsistent at the scheduling prime (rank_p[A|e] = rank_p(A) + 1) but the carrier exceeded the exact-lambda solver's size cap, so no exact certificate was produced and no emptiness is claimed for them.  No system was consistent: the HIT GATE did not fire.**
+**57 of 57 came back `EMPTY_over_Q` at every carrier tried, each with an exact rational lambda certificate re-verified over Q. 0 are `NOT_CERTIFIED` (prime-relative only; never reported as emptiness).**
+
+Four of the rows (`a814ad47ed0c`, `96e4a2c6d1d3`, `282a9f40c368`, `cf1c601f3d1c`, all of degree 20 or 24) first came back `NOT_CERTIFIED` because their carriers (903 to 1326 unknowns) exceeded the exact-lambda solver's default size cap of 900, even though the system was already inconsistent at the scheduling prime (rank_p[A|e] = rank_p(A) + 1).  They were re-run with the cap raised to 1600 and all four then produced exact lambda certificates, re-verified over Q (lambda supports of 326 to 728 rows; 244 to 1891 seconds per carrier).
+
+**No system was consistent at any carrier: the HIT GATE did not fire.**

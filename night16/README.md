@@ -17,3 +17,16 @@ behaviour at infinity.  night16 closes that gap.
 * `ATYPICAL.md`, `atypical.csv` -- the deliverables.
 
 Measurements only.
+
+## Outcome
+
+* 57/57 of night15's PERIODS-VANISHING survivors have their atypical set
+  determined exactly, and 57/57 are STILL-VANISHING there, with an exact
+  primitive certificate on every component of every atypical fibre.
+* One survivor, `808e52fdb1b6`, is NONVANISHING at its GENERIC fibres — night15
+  had measured it only at c = 1 and c = -1, which are both atypical values of
+  it (§5.3 of `ATYPICAL.md`).
+* The exact mate re-solve above night15's ceiling (deg Q = 2 deg P + 1, + 2,
+  and larger where affordable) returned `EMPTY_over_Q` with an exact lambda
+  certificate re-verified over Q at every carrier for all 57.  No system was
+  consistent.

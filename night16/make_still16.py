@@ -8,7 +8,10 @@ S = {r["hash"]: r for r in load16.survivors()}
 MT = {}
 for f in sorted(glob.glob("mate16_*.json")):
     for z in json.load(open(f)):
-        MT[z["hash"]] = z
+        prev = MT.get(z["hash"])
+        if prev is None or (prev["verdict"] != "EMPTY_all_stages"
+                            and z["verdict"] == "EMPTY_all_stages"):
+            MT[z["hash"]] = z
 
 L = []
 L.append("# night16 — STILL-VANISHING at every atypical value\n")

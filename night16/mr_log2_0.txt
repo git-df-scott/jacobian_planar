@@ -9,3 +9,6 @@ ac09181bd1e3 deg= 8 EMPTY_all_stages   stages=[(17, 'EMPTY_over_Q', 'lambda_exac
 762dac3fbdb1 deg=13 EMPTY_all_stages   stages=[(27, 'EMPTY_over_Q', 'lambda_exact'), (28, 'EMPTY_over_Q', 'lambda_exact')] (24s)
 11b99f22adf6 deg=18 EMPTY_all_stages   stages=[(37, 'EMPTY_over_Q', 'lambda_exact'), (38, 'SKIPPED_time_budget', None)] (1174s)
 d57b38902c84 deg=18 EMPTY_all_stages   stages=[(37, 'EMPTY_over_Q', 'lambda_exact'), (38, 'EMPTY_over_Q', 'lambda_exact')] (1503s)
+c689ce7fc834 deg=18 EMPTY_all_stages   stages=[(37, 'EMPTY_over_Q', 'lambda_exact'), (38, 'EMPTY_over_Q', 'lambda_exact')] (828s)
+282a9f40c368 deg=24 NOT_CERTIFIED      stages=[(49, 'NOT_CERTIFIED', 'none'), (50, 'NOT_CERTIFIED', 'none')] (63s)
+cf1c601f3d1c deg=20 NOT_CERTIFIED      stages=[(41, 'NOT_CERTIFIED', 'none'), (42, 'NOT_CERTIFIED', 'none')] (16s)

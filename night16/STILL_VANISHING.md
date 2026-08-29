@@ -333,7 +333,7 @@ Suzuki accounting: sum of jumps = 1, required 1 - chi_gen = 1, closes = True
         F = -x/2   deg F = 1   verified: [P,F] - 1 = G*h verified coefficientwise over Q
       h = 12*x**7 + 24*x**6 - 9*x**5 + 24*x**4*y + 9*x**4 + 12*x**3*y + 18*x**3 - 36*x**2*y - 54*x**2 + 12*x*y**2 + 36*x*y + 27*x - 12*y**2 - 36*y - 19
         F = x/4   deg F = 1   verified: [P,F] - 1 = G*h verified coefficientwise over Q
-    NUM-MONO on F_c: did not complete within the wall-clock budget
+    NUM-MONO on F_c: VANISHING  ls_residual=1.95e-12 (err 5.26e-13)  max_period=2.76e-12  chi=0  components=2  punctures=None  max|residue|=None  sum residues=None  [second pass, larger budget]
     nearby generic c (exact chi | EXACT-PRIM | deg F):
       c = 1/8        chi = 0     NO_EXACT_CERTIFICATE  [None]
       c = -1/8       chi = 0     NO_EXACT_CERTIFICATE  [None]
@@ -712,7 +712,7 @@ Suzuki accounting: sum of jumps = 3, required 1 - chi_gen = 3, closes = True
         F = x   deg F = 1   verified: [P,F] - 1 = G*h verified coefficientwise over Q
       h = 8*x**9 + 36*x**8 - 24*x**7*y + 42*x**7 - 72*x**6*y - 9*x**6 + 24*x**5*y**2 - 30*x**5*y - 21*x**5 + 36*x**4*y**2 + 36*x**4*y + 9*x**4 - 8*x**3*y**3 - 12*x**3*y**2 - 6*x**3*y - x**3 + 4
         F = -x/3   deg F = 1   verified: [P,F] - 1 = G*h verified coefficientwise over Q
-    NUM-MONO on F_c: did not complete within the wall-clock budget
+    NUM-MONO on F_c: VANISHING  ls_residual=4.35e-10 (err 3.17e-10)  max_period=2.78e-10  chi=1  components=4  punctures=None  max|residue|=None  sum residues=None  [second pass, larger budget]
     nearby generic c (exact chi | EXACT-PRIM | deg F):
       c = 1/8        chi = -2    VANISHING_EXACT  [3]
       c = -1/8       chi = -2    VANISHING_EXACT  [3]
@@ -1766,9 +1766,9 @@ Suzuki accounting: sum of jumps = 6, required 1 - chi_gen = 6, closes = True
       c = -1/64      chi = -5    VANISHING_EXACT  [3]
 
   exact mate re-solve above night15's ceiling (deg Q = 2 deg P):
-    D = 41   n_unknowns = 903    NOT_CERTIFIED      none  lambda support None re-verified None  (6.7s)
-    D = 42   n_unknowns = 946    NOT_CERTIFIED      none  lambda support None re-verified None  (7.4s)
-    overall: NOT_CERTIFIED
+    D = 41   n_unknowns = 903    EMPTY_over_Q       lambda_exact  lambda support 506 re-verified True  (573.6s)
+    D = 42   n_unknowns = 946    EMPTY_over_Q       lambda_exact  lambda support 509 re-verified True  (530.3s)
+    overall: EMPTY_all_stages
 ```
 
 ## 49. `11b99f22adf6`
@@ -1912,9 +1912,9 @@ Suzuki accounting: sum of jumps = 1, required 1 - chi_gen = 1, closes = True
       c = -1/64      chi = 0     NO_EXACT_CERTIFICATE  [None]
 
   exact mate re-solve above night15's ceiling (deg Q = 2 deg P):
-    D = 49   n_unknowns = 1275   NOT_CERTIFIED      none  lambda support None re-verified None  (22.6s)
-    D = 50   n_unknowns = 1326   NOT_CERTIFIED      none  lambda support None re-verified None  (26.6s)
-    overall: NOT_CERTIFIED
+    D = 49   n_unknowns = 1275   EMPTY_over_Q       lambda_exact  lambda support 326 re-verified True  (243.8s)
+    D = 50   n_unknowns = 1326   EMPTY_over_Q       lambda_exact  lambda support 728 re-verified True  (1891.4s)
+    overall: EMPTY_all_stages
 ```
 
 ## 53. `c689ce7fc834`
@@ -1950,8 +1950,8 @@ Suzuki accounting: sum of jumps = 4, required 1 - chi_gen = 4, closes = True
       c = -1/64      chi = -3    VANISHING_EXACT  [4]
 
   exact mate re-solve above night15's ceiling (deg Q = 2 deg P):
-    D = 37   n_unknowns = 741    EMPTY_over_Q       lambda_exact  lambda support 508 re-verified True  (431.9s)
-    D = 38   n_unknowns = 780    EMPTY_over_Q       lambda_exact  lambda support 400 re-verified True  (354.8s)
+    D = 37   n_unknowns = 741    EMPTY_over_Q       lambda_exact  lambda support 508 re-verified True  (498.7s)
+    D = 38   n_unknowns = 780    EMPTY_over_Q       lambda_exact  lambda support 400 re-verified True  (329.0s)
     overall: EMPTY_all_stages
 ```
 
@@ -2022,9 +2022,9 @@ Suzuki accounting: sum of jumps = 2, required 1 - chi_gen = 2, closes = True
       c = -1/64      chi = -1    NO_EXACT_CERTIFICATE  [None]
 
   exact mate re-solve above night15's ceiling (deg Q = 2 deg P):
-    D = 49   n_unknowns = 1275   NOT_CERTIFIED      none  lambda support None re-verified None  (23.2s)
-    D = 50   n_unknowns = 1326   NOT_CERTIFIED      none  lambda support None re-verified None  (26.2s)
-    overall: NOT_CERTIFIED
+    D = 49   n_unknowns = 1275   EMPTY_over_Q       lambda_exact  lambda support 453 re-verified True  (372.1s)
+    D = 50   n_unknowns = 1326   EMPTY_over_Q       lambda_exact  lambda support 621 re-verified True  (751.4s)
+    overall: EMPTY_all_stages
 ```
 
 ## 56. `b7612f47cd64`
@@ -2091,7 +2091,7 @@ Suzuki accounting: sum of jumps = 2, required 1 - chi_gen = 2, closes = True
       c = -1/64      chi = -1    NO_EXACT_CERTIFICATE  [None]
 
   exact mate re-solve above night15's ceiling (deg Q = 2 deg P):
-    D = 41   n_unknowns = 903    NOT_CERTIFIED      none  lambda support None re-verified None  (8.1s)
-    D = 42   n_unknowns = 946    NOT_CERTIFIED      none  lambda support None re-verified None  (9.2s)
-    overall: NOT_CERTIFIED
+    D = 41   n_unknowns = 903    EMPTY_over_Q       lambda_exact  lambda support 624 re-verified True  (980.7s)
+    D = 42   n_unknowns = 946    EMPTY_over_Q       lambda_exact  lambda support 565 re-verified True  (702.4s)
+    overall: EMPTY_all_stages
 ```
