@@ -1,0 +1,250 @@
+{
+ "night17_instances": [
+  {
+   "support": "H1",
+   "hash": "1e8144b39dbd",
+   "P": "(1/4)*x^2 + 1*x*y + 1*y^2 + 1*y + (1/4)",
+   "member": false,
+   "reason": "deg g != 1 (stratum deg g = 0 or >= 2)"
+  },
+  {
+   "support": "H1",
+   "hash": "05448ae01b6d",
+   "P": "(1/4)*x^2 + 1*x*y + 1*y^2 + (-1/2)*x",
+   "member": false,
+   "reason": "deg g != 1 (stratum deg g = 0 or >= 2)"
+  },
+  {
+   "support": "H2",
+   "hash": "f9c3e6131ab8",
+   "P": "1*x^6 + 1*x^5 + (1/4)*x^4 + 2*x^3*y + 1*x^3 + 1*x^2*y + (1/2)*x^2 + 1*y^2 + (-1/2)*x + 1*y + (1/4)",
+   "member": false,
+   "reason": "deg g != 1 (stratum deg g = 0 or >= 2)"
+  },
+  {
+   "support": "H3",
+   "hash": "d37142063698",
+   "P": "1*x*y^2 + 1*x*y + (1/4)*x + 1*y",
+   "member": true,
+   "deg_h": 1,
+   "gamma": "1",
+   "a": "0",
+   "alpha": "2",
+   "h": [
+    "1",
+    "1"
+   ],
+   "h_at_a": "1",
+   "beta_equals_ha2_minus_alpha_a": true
+  },
+  {
+   "support": "H4",
+   "hash": "431f3f1966ca",
+   "P": "(1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (3/4)*x^2 + 1*x*y - 1*y^2 + (3/2)*x + 1*y + (7/4)",
+   "member": true,
+   "deg_h": 2,
+   "gamma": "1",
+   "a": "1",
+   "alpha": "1",
+   "h": [
+    "1",
+    "1",
+    "1"
+   ],
+   "h_at_a": "3",
+   "beta_equals_ha2_minus_alpha_a": true
+  },
+  {
+   "support": "H5",
+   "hash": "9667585bcb72",
+   "P": "(1/8)*x^5 + (1/4)*x^4 + 1*x^3*y + (1/8)*x^3 + 1*x^2*y + 2*x*y^2 + (1/4)*x^2 + (1/4)*x + 1*y + (-3/8)",
+   "member": true,
+   "deg_h": 3,
+   "gamma": "2",
+   "a": "0",
+   "alpha": "3",
+   "h": [
+    "1",
+    "0",
+    "1",
+    "1"
+   ],
+   "h_at_a": "1",
+   "beta_equals_ha2_minus_alpha_a": true
+  },
+  {
+   "support": "H6",
+   "hash": "fb63dd1ccaec",
+   "P": "(1/4)*x^9 + (1/4)*x^8 + 1*x^5*y + (1/2)*x^5 + 1*x^4*y + (1/2)*x^4 + 1*x*y^2 + 1*x*y + 1*y^2 + (1/4)*x + 1*y",
+   "member": true,
+   "deg_h": 5,
+   "gamma": "1",
+   "a": "-1",
+   "alpha": "1",
+   "h": [
+    "1",
+    "1",
+    "0",
+    "0",
+    "1",
+    "1"
+   ],
+   "h_at_a": "0",
+   "beta_equals_ha2_minus_alpha_a": true
+  },
+  {
+   "support": "H7",
+   "hash": "2c6dbb9e3815",
+   "P": "(1/4)*x^15 + (1/2)*x^14 + (1/4)*x^13 + (1/2)*x^12 + (1/2)*x^11 + (3/4)*x^9 + 1*x^8*y + (1/2)*x^8 + 1*x^7*y + (1/2)*x^7 + 1*x^6 + 1*x^5*y + (1/2)*x^4 + (1/4)*x^3 + 1*x^2*y + 1*x*y^2 + (1/2)*x + 1*y + (-1/4)",
+   "member": true,
+   "deg_h": 8,
+   "gamma": "1",
+   "a": "0",
+   "alpha": "1",
+   "h": [
+    "1",
+    "0",
+    "1",
+    "0",
+    "0",
+    "1",
+    "0",
+    "1",
+    "1"
+   ],
+   "h_at_a": "1",
+   "beta_equals_ha2_minus_alpha_a": true
+  },
+  {
+   "support": "H8",
+   "hash": "02299003cb19",
+   "P": "(1/4)*x^29 + (1/2)*x^28 + (1/4)*x^27 + 1*x^15*y + 1*x^14*y + (1/2)*x^14 + (1/2)*x^13 + 1*x*y^2 + 1*y + (-1/4)",
+   "member": true,
+   "deg_h": 15,
+   "gamma": "1",
+   "a": "0",
+   "alpha": "1",
+   "h": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "1",
+    "1"
+   ],
+   "h_at_a": "1",
+   "beta_equals_ha2_minus_alpha_a": true
+  }
+ ],
+ "random_members": [
+  {
+   "deg_h": 1,
+   "params": {
+    "gamma": "-2",
+    "a": "-2",
+    "alpha": "-2",
+    "h0": "-3",
+    "h1": "-2"
+   },
+   "P": "-2*x*y**2 - 2*x*y - x/2 - 4*y**2 - 3*y - 3/4",
+   "deg_P": 3,
+   "bezout": "UNIMODULAR_CERTIFIED",
+   "bezout_residual_terms": 0,
+   "bezout_method": "EUCLID",
+   "sy": "NON_COORDINATE",
+   "deg_Delta_c": 1,
+   "genus": 0,
+   "residues_all_zero": true
+  },
+  {
+   "deg_h": 1,
+   "params": {
+    "gamma": "3",
+    "a": "-3",
+    "alpha": "-3",
+    "h0": "2",
+    "h1": "1"
+   },
+   "P": "3*x*y**2 + x*y + x/12 + 9*y**2 + 2*y + 1/3",
+   "deg_P": 3,
+   "bezout": "UNIMODULAR_CERTIFIED",
+   "bezout_residual_terms": 0,
+   "bezout_method": "EUCLID",
+   "sy": "NON_COORDINATE",
+   "deg_Delta_c": 1,
+   "genus": 0,
+   "residues_all_zero": true
+  },
+  {
+   "deg_h": 2,
+   "params": {
+    "gamma": "2",
+    "a": "2",
+    "alpha": "2",
+    "h0": "-3",
+    "h1": "3",
+    "h2": "-1"
+   },
+   "P": "x**3/8 - x**2*y - x**2/2 + 2*x*y**2 + 3*x*y + 7*x/8 - 4*y**2 - 3*y - 3/4",
+   "deg_P": 3,
+   "bezout": "UNIMODULAR_CERTIFIED",
+   "bezout_residual_terms": 0,
+   "bezout_method": "EUCLID",
+   "sy": "NON_COORDINATE",
+   "deg_Delta_c": 1,
+   "genus": 0,
+   "residues_all_zero": true
+  },
+  {
+   "deg_h": 2,
+   "params": {
+    "gamma": "-1",
+    "a": "0",
+    "alpha": "3",
+    "h0": "1",
+    "h1": "-1",
+    "h2": "3"
+   },
+   "P": "-9*x**3/4 + 3*x**2*y + 3*x**2/2 - x*y**2 - x*y - 7*x/4 + y + 5/4",
+   "deg_P": 3,
+   "bezout": "UNIMODULAR_CERTIFIED",
+   "bezout_residual_terms": 0,
+   "bezout_method": "EUCLID",
+   "sy": "NON_COORDINATE",
+   "deg_Delta_c": 1,
+   "genus": 0,
+   "residues_all_zero": true
+  },
+  {
+   "deg_h": 3,
+   "params": {
+    "gamma": "2",
+    "a": "0",
+    "alpha": "4",
+    "h0": "3",
+    "h1": "-3",
+    "h2": "-1",
+    "h3": "3"
+   },
+   "P": "9*x**5/8 - 3*x**4/4 + 3*x**3*y - 17*x**3/8 - x**2*y + 3*x**2 + 2*x*y**2 - 3*x*y + 3*x/8 + 3*y - 11/4",
+   "deg_P": 5,
+   "bezout": "UNIMODULAR_CERTIFIED",
+   "bezout_residual_terms": 0,
+   "bezout_method": "EUCLID",
+   "sy": "NON_COORDINATE",
+   "deg_Delta_c": 1,
+   "genus": 0,
+   "residues_all_zero": true
+  }
+ ]
+}
