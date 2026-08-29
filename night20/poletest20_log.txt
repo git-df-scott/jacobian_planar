@@ -1,0 +1,52 @@
+==============================================================================
+V1  Result 2's identity, symbolically:  D_P(P) = 0  and
+    D_P(A/P) = D_P(A)/P ,  hence  D_P(A) = P  =>  Q = A/P is a rational mate
+==============================================================================
+  generic A, P (sympy Functions): D_P(A/P) - D_P(A)/P simplifies to  ->  0
+  D_P(P) for generic P  ->  0
+  explicit dense A (6 free coefficients) and P of degree 4: D_P(A/P) - D_P(A)/P =  ->  0
+  V1 verdict: PASS
+
+==============================================================================
+V2  Result 1 (pole theorem) on three constructed examples: every finite
+    denominator component of a rational solution of D_P(Q) = 1 must be a
+    component of a fibre {P = c}.  Test: reduce P modulo the pole
+    component g; the component lies in a fibre iff P mod g is a CONSTANT.
+==============================================================================
+  (a) REDUCIBLE FIBRE.  P = x*y^2 + y = y*(x*y+1), unimodular, genus 0,
+      fibre c = 0 reducible.  Two rational mates, from night19 and from
+      the box search in this lane:
+      Q = -x/(x*y + 1)        [P,Q]-1 = 0
+         pole component  g = x*y + 1      multiplicity 1 ;  P mod g = 0         -> lies in the fibre P = 0 : True
+         all poles are fibre components: True
+      Q = -1/y                [P,Q]-1 = 0
+         pole component  g = y            multiplicity 1 ;  P mod g = 0         -> lies in the fibre P = 0 : True
+         all poles are fibre components: True
+      and the components of that fibre, independently: P - 0 factors as y*(x*y + 1)
+
+  (b) COORDINATE.  P = x + y^2 (all fibres irreducible).  By the
+      consequence of Result 1 a rational mate must then be polynomial.
+      polynomial mate found: MATE  ->  Q = y, [P,Q]-1 = 0
+      rational-mate box over the fibres P, P-1, P+1 and over x, y:
+         found = True  poles = y  Q = y
+      D_P(A) = P is solvable with A = P*Q = x*y + y**3 :
+         D_P(A) - P = 0
+
+  (c) ALL FIBRES IRREDUCIBLE, POSITIVE GENUS.  This lane certified no
+      unimodular example of that kind (see IRREDUCIBLE.md §4), so the
+      example constructed here is P = y^2 - x^5 - x - 1: all fibres
+      irreducible (measured), genus 2, but NOT unimodular -- recorded as
+      such, since the pole theorem's hypothesis is gradient-unimodularity.
+      all fibres irreducible = True ; genus = 2 ; unimodular = False
+      D_P(A) = P on S(2): EMPTY_over_Q  |lambda| = 2 verified = True
+      D_P(A) = P on S(4): EMPTY_over_Q  |lambda| = 2 verified = True
+      D_P(A) = P on S(6): EMPTY_over_Q  |lambda| = 4 verified = True
+      D_P(A) = P on S(8): EMPTY_over_Q  |lambda| = 6 verified = True
+
+  (d) the A-formulation reproduces night19's rational mate exactly:
+      A = -x*y ,  P = x*y^2 + y ,  D_P(A) - P = 0 ,  A/P = -x/(x*y + 1)
+      and the linear solver finds it independently on S(4): A_over_Q, A = -x*y, residual 0
+
+  V2 verdict: PASS
+
+VERIFICATIONS PASS

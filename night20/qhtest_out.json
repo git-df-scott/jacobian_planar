@@ -1,0 +1,39 @@
+[
+ {
+  "P": "x**3*y**2 + y + 1",
+  "deg": 5,
+  "unimodular": true,
+  "bezout_U": "4*x**4/3",
+  "bezout_V": "-2*x**3*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "A_verdict": "EMPTY",
+  "A_top_D": 13,
+  "A_rhs_tried": [
+   "(P - 0)",
+   "(P - 0)^2",
+   "(P - 1)",
+   "(P - 1)^2",
+   "prod (P - c_i)"
+  ],
+  "A_lambda_support": 4,
+  "A_lambda_verified": true,
+  "A_lambda_verification": "lambda^T M = 0 on all 105 columns and lambda^T b = 1"
+ }
+]

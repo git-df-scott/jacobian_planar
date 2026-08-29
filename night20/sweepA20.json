@@ -1,0 +1,74 @@
+[
+ {
+  "P": "x",
+  "deg": 1,
+  "P_factors": "x",
+  "P_reducible": false,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "x**2*y",
+  "deg": 3,
+  "P_factors": "x**2*y",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "x**3*y**2",
+  "deg": 5,
+  "P_factors": "x**3*y**2",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "x**4*y**3",
+  "deg": 7,
+  "P_factors": "x**4*y**3",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "x**5*y**4",
+  "deg": 9,
+  "P_factors": "x**5*y**4",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "x**6*y**5",
+  "deg": 11,
+  "P_factors": "x**6*y**5",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "7*x**6*y**5 + 6*x**5*y**4 + 5*x**4*y**3 + 4*x**3*y**2 + 3*x**2*y + 2*x",
+  "deg": 11,
+  "P_factors": "x*(7*x**5*y**5 + 6*x**4*y**4 + 5*x**3*y**3 + 4*x**2*y**2 + 3*x*y + 2)",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ },
+ {
+  "P": "-6*x**6*y**5 + 5*x**5*y**4 - 4*x**4*y**3 + 3*x**3*y**2 - 2*x**2*y + x",
+  "deg": 11,
+  "P_factors": "-x*(6*x**5*y**5 - 5*x**4*y**4 + 4*x**3*y**3 - 3*x**2*y**2 + 2*x*y - 1)",
+  "P_reducible": true,
+  "A": "x*y",
+  "kernel_dim": 6,
+  "residual_D_P(A)-P": "0"
+ }
+]

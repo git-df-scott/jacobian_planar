@@ -29,3 +29,5 @@
 [ 29   3072s] deg=11  x**3*y**8 + y + 1                        EMPTY  topD=22  |lam|=4    ratmate=False poles=None
 [ 30   3118s] deg=11  -x**3*y**8 + y + 1                       EMPTY  topD=22  |lam|=4    ratmate=False poles=None
 [ 31   3165s] deg=11  x**4*y**7 + y + 1                        EMPTY  topD=22  |lam|=4    ratmate=False poles=None
+[ 32   3399s] deg=11  -x**4*y**7 + y + 1                       EMPTY  topD=22  |lam|=4    ratmate=False poles=None
+[ 33   3444s] deg=11  x**6*y**5 + y + 1                        EMPTY  topD=22  |lam|=4    ratmate=False poles=None

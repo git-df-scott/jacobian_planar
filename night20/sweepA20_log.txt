@@ -1,0 +1,1 @@
+size 1 done: 105 A swept, 1 with a non-trivial P-space, 8 distinct P, 11s
