@@ -1,0 +1,146 @@
+{
+ "rows": [
+  {
+   "name": "x + y^2                (coordinate)",
+   "c": 0,
+   "got": "VANISHING_EXACT",
+   "expected": "VANISHING_EXACT",
+   "match": true,
+   "components": [
+    [
+     "x + y**2",
+     1,
+     true,
+     "y"
+    ]
+   ]
+  },
+  {
+   "name": "x + x^2*y              (classical, ON its atypical fibre)",
+   "c": 0,
+   "got": "VANISHING_EXACT",
+   "expected": "VANISHING_EXACT",
+   "match": true,
+   "components": [
+    [
+     "x",
+     1,
+     true,
+     "y"
+    ],
+    [
+     "x*y + 1",
+     1,
+     true,
+     "-y"
+    ]
+   ]
+  },
+  {
+   "name": "x + x^2*y              (generic fibre)",
+   "c": 1,
+   "got": "VANISHING_EXACT",
+   "expected": "VANISHING_EXACT",
+   "match": true,
+   "components": [
+    [
+     "x**2*y + x - 1",
+     2,
+     true,
+     "x*y"
+    ]
+   ]
+  },
+  {
+   "name": "y + x*y^3              (EXACT-G1 n=1,m=3: night15 VANISHING)",
+   "c": 1,
+   "got": "VANISHING_EXACT",
+   "expected": "VANISHING_EXACT",
+   "match": true,
+   "components": [
+    [
+     "x*y**3 + y - 1",
+     3,
+     true,
+     "-x*y*(y + 1)/2"
+    ]
+   ]
+  },
+  {
+   "name": "y + x^3*y^4            (EXACT-G1 n=3,m=4: night15 VANISHING)",
+   "c": 1,
+   "got": "VANISHING_EXACT",
+   "expected": "VANISHING_EXACT",
+   "match": true,
+   "components": [
+    [
+     "x**3*y**4 + y - 1",
+     2,
+     true,
+     "-x*y"
+    ]
+   ]
+  },
+  {
+   "name": "y + x^2*y^2            (EXACT-G1 n=2,m=2: night15 NONVANISHING)",
+   "c": 1,
+   "got": "NO_EXACT_CERTIFICATE",
+   "expected": "NO_EXACT_CERTIFICATE",
+   "match": true,
+   "components": [
+    [
+     "x**2*y**2 + y - 1",
+     null,
+     false,
+     null
+    ]
+   ]
+  },
+  {
+   "name": "y + x^2*y^4            (EXACT-G1 n=2,m=4: night15 NONVANISHING)",
+   "c": 1,
+   "got": "NO_EXACT_CERTIFICATE",
+   "expected": "NO_EXACT_CERTIFICATE",
+   "match": true,
+   "components": [
+    [
+     "x**2*y**4 + y - 1",
+     null,
+     false,
+     null
+    ]
+   ]
+  },
+  {
+   "name": "y + x^4*y^2            (EXACT-G1 n=4,m=2: night15 NONVANISHING)",
+   "c": 1,
+   "got": "NO_EXACT_CERTIFICATE",
+   "expected": "NO_EXACT_CERTIFICATE",
+   "match": true,
+   "components": [
+    [
+     "x**4*y**2 + y - 1",
+     null,
+     false,
+     null
+    ]
+   ]
+  },
+  {
+   "name": "y + x^5*y^3            (EXACT-G1 n=5,m=3: night15 NONVANISHING)",
+   "c": 1,
+   "got": "NO_EXACT_CERTIFICATE",
+   "expected": "NO_EXACT_CERTIFICATE",
+   "match": true,
+   "components": [
+    [
+     "x**5*y**3 + y - 1",
+     null,
+     false,
+     null
+    ]
+   ]
+  }
+ ],
+ "pass": true
+}

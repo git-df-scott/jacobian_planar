@@ -1,0 +1,41 @@
+==============================================================================
+C4  EXACT-PRIM CONTROLS  ([P,F] = 1 mod h, verified by exact division)
+==============================================================================
+  x + y^2                (coordinate)                        c=0
+      got VANISHING_EXACT        expected VANISHING_EXACT        MATCH True
+      components: [('x + y**2', 'degF=1')]
+      why: a coordinate; every fibre is C, H_1 = 0
+  x + x^2*y              (classical, ON its atypical fibre)  c=0
+      got VANISHING_EXACT        expected VANISHING_EXACT        MATCH True
+      components: [('x', 'degF=1'), ('x*y + 1', 'degF=1')]
+      why: F_0 = {x=0} u {1+xy=0}: on each piece eta is d(a linear form)
+  x + x^2*y              (generic fibre)                     c=1
+      got VANISHING_EXACT        expected VANISHING_EXACT        MATCH True
+      components: [('x**2*y + x - 1', 'degF=2')]
+      why: F_c ~ C*, and eta = dy/P_x is exact on it
+  y + x*y^3              (EXACT-G1 n=1,m=3: night15 VANISHING) c=1
+      got VANISHING_EXACT        expected VANISHING_EXACT        MATCH True
+      components: [('x*y**3 + y - 1', 'degF=3')]
+      why: night15 EXACT-G1 case ii: genus 0, all residues zero
+  y + x^3*y^4            (EXACT-G1 n=3,m=4: night15 VANISHING) c=1
+      got VANISHING_EXACT        expected VANISHING_EXACT        MATCH True
+      components: [('x**3*y**4 + y - 1', 'degF=2')]
+      why: night15 EXACT-G1 case ii (the fibre that caught the NUM-MONO bug)
+  y + x^2*y^2            (EXACT-G1 n=2,m=2: night15 NONVANISHING) c=1
+      got NO_EXACT_CERTIFICATE   expected NO_EXACT_CERTIFICATE   MATCH True
+      components: [('x**2*y**2 + y - 1', 'none to deg 6')]
+      why: night15 EXACT-G1 case i: nonzero residues at the places over y=0
+  y + x^2*y^4            (EXACT-G1 n=2,m=4: night15 NONVANISHING) c=1
+      got NO_EXACT_CERTIFICATE   expected NO_EXACT_CERTIFICATE   MATCH True
+      components: [('x**2*y**4 + y - 1', 'none to deg 6')]
+      why: night15 EXACT-G1 case i (n | m); NUM-MONO residue 0.176777
+  y + x^4*y^2            (EXACT-G1 n=4,m=2: night15 NONVANISHING) c=1
+      got NO_EXACT_CERTIFICATE   expected NO_EXACT_CERTIFICATE   MATCH True
+      components: [('x**4*y**2 + y - 1', 'none to deg 6')]
+      why: night15 EXACT-G1 case iii: holomorphic nonzero form, genus 1
+  y + x^5*y^3            (EXACT-G1 n=5,m=3: night15 NONVANISHING) c=1
+      got NO_EXACT_CERTIFICATE   expected NO_EXACT_CERTIFICATE   MATCH True
+      components: [('x**5*y**3 + y - 1', 'none to deg 6')]
+      why: night15 EXACT-G1 case iii, genus 2
+
+GATE C4: PASS
