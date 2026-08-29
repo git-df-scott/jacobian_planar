@@ -1,0 +1,177 @@
+[
+ {
+  "P": "x**4*y**3/2 + x**2*y**2 + y + 1",
+  "deg": 7,
+  "unimodular": true,
+  "bezout_U": "3*x**5*y/4 + 7*x**3/4",
+  "bezout_V": "-x**4*y**2 - 2*x**2*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ },
+ {
+  "P": "x**6*y**4/2 + x**2*y**2 + y + 1",
+  "deg": 10,
+  "unimodular": true,
+  "bezout_U": "52*x**7*y**2/35 - 8*x**5*y/35 + 64*x**3/35",
+  "bezout_V": "-78*x**6*y**3/35 + 12*x**4*y**2/35 - 2*x**2*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "4"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ },
+ {
+  "P": "x**6*y**3/2 + x**3*y**2 + y + 1",
+  "deg": 9,
+  "unimodular": true,
+  "bezout_U": "x**7*y/2 + 7*x**4/6",
+  "bezout_V": "-x**6*y**2 - 2*x**3*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ },
+ {
+  "P": "x**4*y**7/2 + x**2*y**4 + y + 1",
+  "deg": 11,
+  "unimodular": true,
+  "bezout_U": "21*x**5*y**5/4 + 31*x**3*y**2/4",
+  "bezout_V": "-3*x**4*y**6 - 4*x**2*y**3 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ },
+ {
+  "P": "x**6*y**5/2 + x**3*y**3 + y + 1",
+  "deg": 11,
+  "unimodular": true,
+  "bezout_U": "5*x**7*y**3/3 + 17*x**4*y/6",
+  "bezout_V": "-2*x**6*y**4 - 3*x**3*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2
+ },
+ {
+  "P": "x**8*y**3/2 + x**4*y**2 + y + 1",
+  "deg": 11,
+  "unimodular": true,
+  "bezout_U": "3*x**9*y/8 + 7*x**5/8",
+  "bezout_V": "-x**8*y**2 - 2*x**4*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 3,
+  "genus": 3,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 3
+ },
+ {
+  "P": "x**6*y**4/2 + x**4*y**3 + y + 1",
+  "deg": 10,
+  "unimodular": true,
+  "bezout_U": "60*x**7*y**2/43 + 96*x**5*y/43 + x**3/43",
+  "bezout_V": "-90*x**6*y**3/43 - 3*x**4*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "4"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ }
+]
