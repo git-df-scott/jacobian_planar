@@ -3342,5 +3342,118 @@
    "x",
    "8*x**3*y**7 - 1"
   ]
+ },
+ {
+  "P": "x**4*y**7 + y + 1",
+  "deg": 11,
+  "unimodular": true,
+  "bezout_U": "49*x**5*y**5/4",
+  "bezout_V": "-7*x**4*y**6 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22
+  ],
+  "mate_top_D": 22,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 276 columns and lambda^T e = 1",
+  "certificate_id": "lam-e5cb8a0e75-D22",
+  "rational_mate": {
+   "found": false,
+   "n_denominators_tried": 71,
+   "denominators_tried": [
+    "7*x**4*y**6 + 1",
+    "(7*x**4*y**6 + 1)**2",
+    "x",
+    "x*(7*x**4*y**6 + 1)",
+    "x*(7*x**4*y**6 + 1)**2",
+    "x**2",
+    "x**2*(7*x**4*y**6 + 1)",
+    "x**2*(7*x**4*y**6 + 1)**2",
+    "x**4*y**6 + 1",
+    "(x**4*y**6 + 1)*(7*x**4*y**6 + 1)",
+    "(x**4*y**6 + 1)*(7*x**4*y**6 + 1)**2",
+    "x*(x**4*y**6 + 1)",
+    "x*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)",
+    "x*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)**2",
+    "x**2*(x**4*y**6 + 1)",
+    "x**2*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)",
+    "x**2*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)**2",
+    "(x**4*y**6 + 1)**2",
+    "(x**4*y**6 + 1)**2*(7*x**4*y**6 + 1)",
+    "x*(x**4*y**6 + 1)**2",
+    "x*(x**4*y**6 + 1)**2*(7*x**4*y**6 + 1)",
+    "x**2*(x**4*y**6 + 1)**2",
+    "x**2*(x**4*y**6 + 1)**2*(7*x**4*y**6 + 1)",
+    "y",
+    "y*(7*x**4*y**6 + 1)",
+    "y*(7*x**4*y**6 + 1)**2",
+    "x*y",
+    "x*y*(7*x**4*y**6 + 1)",
+    "x*y*(7*x**4*y**6 + 1)**2",
+    "x**2*y",
+    "x**2*y*(7*x**4*y**6 + 1)",
+    "x**2*y*(7*x**4*y**6 + 1)**2",
+    "y*(x**4*y**6 + 1)",
+    "y*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)",
+    "y*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)**2",
+    "x*y*(x**4*y**6 + 1)",
+    "x*y*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)",
+    "x*y*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)**2",
+    "x**2*y*(x**4*y**6 + 1)",
+    "x**2*y*(x**4*y**6 + 1)*(7*x**4*y**6 + 1)"
+   ],
+   "kmax": 2,
+   "DAmax": 8,
+   "generators": [
+    "y",
+    "x**4*y**6 + 1",
+    "x",
+    "7*x**4*y**6 + 1"
+   ]
+  },
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_denominators_tried": 71,
+  "rational_mate_generators": [
+   "y",
+   "x**4*y**6 + 1",
+   "x",
+   "7*x**4*y**6 + 1"
+  ]
  }
 ]

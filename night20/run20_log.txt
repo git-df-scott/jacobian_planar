@@ -28,3 +28,4 @@
 [ 28   3026s] deg=10  -x**8*y**2 + y + 1                       EMPTY  topD=20  |lam|=4    ratmate=False poles=None
 [ 29   3072s] deg=11  x**3*y**8 + y + 1                        EMPTY  topD=22  |lam|=4    ratmate=False poles=None
 [ 30   3118s] deg=11  -x**3*y**8 + y + 1                       EMPTY  topD=22  |lam|=4    ratmate=False poles=None
+[ 31   3165s] deg=11  x**4*y**7 + y + 1                        EMPTY  topD=22  |lam|=4    ratmate=False poles=None
