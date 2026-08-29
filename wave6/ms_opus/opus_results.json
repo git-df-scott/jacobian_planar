@@ -36,5 +36,11 @@
   "head": "[-1]:\n",
   "wall": 0.0,
   "nvars": 41
+ },
+ {
+  "name": "w6_35657_7",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.6,
+  "nvars": 44
  }
 ]
