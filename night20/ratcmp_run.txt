@@ -1,0 +1,13 @@
+====================================================================================================
+rational mate on the pole divisor of the reducible fibre: genus 0 vs genus >= 1
+====================================================================================================
+P                           deg  genus  rat mate   pole divisor of Q (or box searched)    Q
+x*y^2 + y            (night19)    3      0  FOUND      x*y + 1                                -x/(x*y + 1)
+x + x^2*y                     3      0  FOUND      x*y + 1                                y/(x*y + 1)
+x + x^3*y                     4      0  FOUND      (x**2*y + 1)**2                        (x**2*y**2 + 2*y)/(2*x**4*y**2 + 4*x**2*y + 2)
+x + x^2*y^2                   4      0  none in box  8 denominators x deg A <= 8            
+x + x^4*y                     5      0  none in box  8 denominators x deg A <= 8            
+x*y^2 + 2*y                   3      0  FOUND      x*y + 2                                -x/(x*y + 2)
+x^2*y^2 + y                   4      0  none in box  8 denominators x deg A <= 8            
+x + x^2*y^3                   5      1  none in box  8 denominators x deg A <= 8            
+x^3*y^2 + y                   5      1  none in box  8 denominators x deg A <= 8            
