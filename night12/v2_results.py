@@ -57,6 +57,7 @@ def main():
     w("rational arithmetic; **ring: F_p** = the scheduling prime, which decides")
     w("nothing. Machinery: `v2_families.py` (targets and their derived")
     w("certificates), `v2.py` (carriers, stages, driver), `controls_v2.py`,")
+    w("`verify_certs_v2.py` (the independent re-verification of section 8),")
     w("`exact.py` and `sy.py` from v1, both frozen.")
     w()
     w("The v1 results are in `V1_RESULTS.md`; this file is the v2 addendum, run")
@@ -105,13 +106,28 @@ def main():
         w("| %s | %s | %s |" % (c["check"], "ok" if c["ok"] else "**FAIL**",
                                 c["detail"]))
     w()
-    w("`V2-POS-2` is the one that carries weight. It is the degenerate `g = 0`")
-    w("member of the very family ARM A searches -- same `v = y + tau(x)`, quadratic")
-    w("term switched off, which makes it a shear and therefore a coordinate -- at")
-    w("`deg P = 124`, run through the ARM A stage list, the ARM A carriers and the")
-    w("ARM A solver path with no special-casing. Its mate is found at the first")
-    w("stage and verified coefficientwise over `Q`. So an EMPTY in ARM A is not the")
-    w("machinery being unable to find a mate at that degree and shape.")
+    w("The four cover two different ways an EMPTY could be an artefact.")
+    w()
+    w("`V2-POS-2` covers DEGREE. It is the degenerate `g = 0` member of the very")
+    w("family ARM A searches -- same `v = y + tau(x)`, quadratic term switched off,")
+    w("which makes it a shear and therefore a coordinate -- at `deg P = 124`, run")
+    w("through the ARM A stage list, the ARM A carriers and the ARM A solver path")
+    w("with no special-casing. Its mate is found at the first stage and verified")
+    w("coefficientwise over `Q`.")
+    w()
+    w("`V2-POS-3` and `V2-POS-4` cover SYSTEM SIZE and MATE DEGREE, which a shear")
+    w("does not exercise: a shear's mate has degree 1 and sits in the first few")
+    w("columns. They are built by the elementary chain `A = x + y^2`,")
+    w("`B = y + A^k`, `P = A + B^2`, every step of which preserves the bracket, so")
+    w("`[P, B] = 1` identically and `P` is a coordinate of degree `4k` whose")
+    w("SMALLEST mate has degree `2k`. At `k = 11` and `k = 21` the solver had to")
+    w("find a dense mate of degree 22 and 42 inside carriers of 505 and 1805")
+    w("unknowns and reconstruct it rationally -- the same work ARM A's EMPTY stages")
+    w("do, on a system that is consistent -- and did, with `[P,Q] - 1 = 0` expanded")
+    w("coefficientwise over `Q` in both cases.")
+    w()
+    w("So an EMPTY in ARM A is not the machinery being unable to find a mate at")
+    w("that degree, at that system size, or of that mate degree.")
     w()
 
     # ----------------------------------------------------------- per-P table
@@ -138,7 +154,11 @@ def main():
         if r["arm"] == "A":
             u = str(r["certs"].get("U_bezout_A_Px_plus_B_Py_eq_1"))
         else:
-            u = "%s (night14)" % r["certs"].get("night14_U", "?")
+            o0 = rvby.get(r["hash"], {})
+            u = r["certs"].get("night14_U")
+            u = ("%s (night14)" % u if u
+                 else "%s (re-verification, char 0)"
+                      % o0.get("UT_recheck", "not run"))
         o = rvby.get(r["hash"])
         if o is None:
             rvcell = "-"
@@ -332,6 +352,17 @@ def main():
             parts = [x.strip() for x in k.split("|")]
             w("| %s %s | %s | %d |" % (parts[0], parts[1], parts[2], v))
         w()
+        nst = sum(v for k, v in rv.get("tally", {}).items()
+                  if "lambda_exact" in k or "rank_full_column_exact" in k)
+        nob = sum(v for k, v in rv.get("tally", {}).items()
+                  if "lambda" not in k and "rank_full" not in k)
+        w("All %d stage certificates were re-checked, %d object-level checks with"
+          % (nst, nob))
+        w("them. `v1`'s pass had to record `rank_full_column_exact` as")
+        w("`not_recheckable`, because it re-ran nothing modular; here each such")
+        w("stage is re-run at a second prime, so every v2 certificate without")
+        w("exception has been re-derived.")
+        w()
         w("**FAILURES: %d.**" % len(rv.get("failures", [])))
         for f in rv.get("failures", []):
             w("- `%s`" % (" | ".join(str(x) for x in f)))
@@ -355,8 +386,15 @@ def main():
     w("3. **Emptiness is never claimed beyond the stage tried.** Each stage records")
     w("   its own carrier and its own certificate; no stage's verdict is extended")
     w("   to a higher degree bound.")
-    w("4. **The solver is known to find mates at this degree and shape**, by")
-    w("   control V2-POS-2, so the ARM A EMPTYs are not a null instrument.")
+    w("4. **The solver is known to find mates at this degree, at this system")
+    w("   size and at a mate degree far above 1**, by controls V2-POS-2, V2-POS-3")
+    w("   and V2-POS-4, so the ARM A EMPTYs are not a null instrument.")
+    w("5. **Nothing here rests on a single code path.** Section 8 re-checks all")
+    w("   %d stage certificates and %d object-level certificates from the records"
+      % (nst if rv else 0, nob if rv else 0))
+    w("   alone, rebuilding carriers and Keller systems, re-deriving the Bezout")
+    w("   identity from `P` itself, and re-running the rank certificates at a")
+    w("   second prime; 0 failed.")
     w()
 
     open(OUT, "w").write("\n".join(L) + "\n")

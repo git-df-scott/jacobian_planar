@@ -5,7 +5,7 @@ V2-POS-1  P = x + y^2   deg P = 2, |supp P| = 2
   SY: COORDINATE (nodes=2 leaves=0)
   deg Q <= 1    np_similar     n_raw=3      thin=1  n=2      defl=1   -> MATE_over_Q    [exact_solution]
   mate found: deg Q = 1, |supp Q| = 1, [P,Q]-1 = 0 over Q: True
-  (0.5s)
+  (0.4s)
 ==============================================================================
 V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0)   deg P = 124, |supp P| = 55
   SY: COORDINATE (nodes=55 leaves=0)
@@ -13,7 +13,25 @@ V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0)   deg P = 124, |sup
   mate found: deg Q = 1, |supp Q| = 1, [P,Q]-1 = 0 over Q: True
   (0.1s)
 
+  (chain k=11: [P, B] - 1 = 0 over Q: True; deg B = 22)
 ==============================================================================
-V2 CONTROL GATE: 2 checks, 0 failed -> PASS
+V2-POS-3  P = A + B^2, A = x + y^2, B = y + A^11 (coordinate, smallest mate degree 22)   deg P = 44, |supp P| = 37
+  SY: COORDINATE (nodes=26 leaves=0)
+  deg Q <= 43   np_similar     n_raw=506    thin=1  n=505    defl=1   -> MATE_over_Q    [exact_solution]
+  mate found: deg Q = 22, |supp Q| = 13, [P,Q]-1 = 0 over Q: True
+  (4.1s)
+
+  (chain k=21: [P, B] - 1 = 0 over Q: True; deg B = 42)
+==============================================================================
+V2-POS-4  P = A + B^2, A = x + y^2, B = y + A^21 (coordinate, smallest mate degree 42)   deg P = 84, |supp P| = 67
+  SY: COORDINATE (nodes=46 leaves=0)
+  deg Q <= 83   np_similar     n_raw=1806   thin=1  n=1805   defl=1   -> MATE_over_Q    [exact_solution]
+  mate found: deg Q = 42, |supp Q| = 23, [P,Q]-1 = 0 over Q: True
+  (153.7s)
+
+==============================================================================
+V2 CONTROL GATE: 4 checks, 0 failed -> PASS
   [ok] V2-POS-1  P = x + y^2                                      deg Q = 1, bracket ok = True
   [ok] V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0) deg Q = 1, bracket ok = True
+  [ok] V2-POS-3  P = A + B^2, A = x + y^2, B = y + A^11 (coordinate, smallest mate degree 22) deg Q = 22, bracket ok = True
+  [ok] V2-POS-4  P = A + B^2, A = x + y^2, B = y + A^21 (coordinate, smallest mate degree 42) deg Q = 42, bracket ok = True

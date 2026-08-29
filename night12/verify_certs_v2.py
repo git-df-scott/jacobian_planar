@@ -63,6 +63,15 @@ import v2
 RECHECK_PRIME = 1000003          # not the run's 999983
 RECHECK_SEED = 20260901          # not the run's 20260831
 
+# A rank recheck costs the same elimination the run itself paid, and on this
+# host that is several minutes per wide stage.  Stages above this many unknowns
+# are recorded as `skipped_cost` -- NOT as verified, and never as failed -- so
+# the coverage of this pass is explicit rather than implied.  Set from the
+# command line: `python3 verify_certs_v2.py <max_n>` (0 = no cap).
+MAX_RANK_N = int(sys.argv[1]) if len(sys.argv) > 1 else 0
+
+CACHE = os.path.join(HERE, "V2_VERIFY")
+
 
 # ------------------------------------------------------------- unpack helpers
 
@@ -211,6 +220,8 @@ def check_lambda(P, st):
 
 
 def check_rank(P, st):
+    if MAX_RANK_N and st.get("n_unknowns", 0) > MAX_RANK_N:
+        return None, "skipped_cost (n = %d > cap %d)" % (st["n_unknowns"], MAX_RANK_N)
     S, info = rebuild_carrier(P, st)
     if not S:
         return False, "empty carrier"
@@ -233,6 +244,9 @@ def check_rank(P, st):
 def one(fn):
     t0 = time.time()
     rec = json.load(open(fn))
+    cpath = os.path.join(CACHE, os.path.basename(fn))
+    if os.path.exists(cpath):
+        return json.load(open(cpath))
     P = unpack(rec["P_integerised"])
     out = {"hash": rec["hash"], "arm": rec["arm"], "tag": rec["tag"],
            "deg_P": rec["deg_P"], "stages": [], "fails": []}
@@ -278,14 +292,17 @@ def one(fn):
         out["stages"].append(item)
 
     out["secs"] = round(time.time() - t0, 1)
+    os.makedirs(CACHE, exist_ok=True)
+    json.dump(out, open(cpath, "w"), indent=1)
     return out
 
 
 def main():
     fns = sorted(os.path.join(v2.RECDIR, f) for f in os.listdir(v2.RECDIR)
                  if f.endswith(".json"))
-    print("re-verifying %d v2 records (recheck prime %d, seed %d)"
-          % (len(fns), RECHECK_PRIME, RECHECK_SEED), flush=True)
+    print("re-verifying %d v2 records (recheck prime %d, seed %d, rank cap %s)"
+          % (len(fns), RECHECK_PRIME, RECHECK_SEED, MAX_RANK_N or "none"),
+          flush=True)
     with Pool(4) as p:
         res = p.map(one, fns, chunksize=1)
 
