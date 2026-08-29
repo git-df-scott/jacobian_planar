@@ -1,0 +1,1 @@
+G1 n=1 m=2   deg  3 ->  4 (deg_y 2 -> 4)  EXACT-G1=VANISHING      EXACT-HE=VANISHING      NUM base=VANISHING     sheared=VANISHING      MATCH=True

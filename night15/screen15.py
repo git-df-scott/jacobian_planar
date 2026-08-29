@@ -29,6 +29,7 @@ import exact_g1_15
 HERE = os.path.dirname(os.path.abspath(__file__))
 CS_EXACT = [F(1), F(-1), F(3, 2), F(0), F(2), F(-3, 5)]
 CS_NUM = [F(1), F(-1)]
+_DEFERRED_CACHE = {}
 
 
 def deg_y(P):
@@ -57,6 +58,36 @@ def period_screen(P, meta, num_budget=44, num_timeout_note=None):
                 det["exact_he_agrees"] = all(agree)
             return g1["verdict"], det
         det["exact_g1_deferred"] = True
+        # The deferred case is decided ONCE per (n, m).  After the shears of
+        # G3 the member is P = h0 y + c x^n y^m; the further Jacobian-1 map
+        # (x, y) -> (alpha x, y/alpha) and an overall scaling of P (which
+        # scales eta and relabels the fibres, leaving vanishing untouched)
+        # normalise it to y + x^n y^m.  So the verdict on lam != 0 depends only
+        # on (n, m), and one NUM-MONO run on the normal form settles all of
+        # them.  Both fibres c = 1, -1 are run.
+        key = (meta["n"], meta["m"])
+        if key not in _DEFERRED_CACHE:
+            nf = {(0, 1): F(1), (key[0], key[1]): F(1)}
+            sub = {"normal_form": "y + x^%d*y^%d" % key, "fibres": []}
+            verdict = "UNRESOLVED"
+            for c in CS_NUM:
+                try:
+                    r = mono15.screen_fibre_checked(nf, c)
+                except Exception as e:                    # noqa: BLE001
+                    r = {"error": "%s: %s" % (type(e).__name__, e)}
+                sub["fibres"].append({"c": str(c), "res": r})
+                if r.get("verdict") == "NONVANISHING":
+                    verdict = "NONVANISHING"
+                    break
+            if verdict != "NONVANISHING":
+                vs = [f["res"].get("verdict") for f in sub["fibres"]]
+                verdict = "VANISHING" if vs and all(v == "VANISHING" for v in vs) \
+                    else "UNRESOLVED"
+            sub["verdict"] = verdict
+            _DEFERRED_CACHE[key] = sub
+        det["instrument"] = "EXACT-G1+NUM-MONO(normal form)"
+        det["deferred_resolution"] = _DEFERRED_CACHE[key]
+        return _DEFERRED_CACHE[key]["verdict"], det
 
     if dy == 2:
         det["instrument"] = "EXACT-HE"

@@ -127,7 +127,76 @@ negatives, so the sum over all places is symbolically `0`.
 Implementation: `exact_he15.py` (sympy polynomial algebra over `Q`; the only
 irrationality that ever appears is a single square root).
 
-### 2.2 NUM-MONO — numerical monodromy periods, any `deg_y`
+### 2.2 EXACT-G1 — closed form, exact, for the whole v-power family
+
+`exact_g1_15.py`. For `P = h0 v + c (x-a)^n v^m` with `v = y + t(x)/2` and
+`m >= 2`, the shears `y -> y - t(x)/2` and `x -> x + a` have Jacobian 1, so by
+(G3) they leave every period unchanged and one may take
+
+    P = h0 y + c x^n y^m.
+
+On `{P = lam}`, `c x^n y^m = lam - h0 y` and `P_x = c n x^(n-1) y^m`, so
+
+    eta = dy/P_x = x dy / ( n (lam - h0 y) ).
+
+Setting `z = c y^m x` turns the fibre into the **superelliptic curve**
+
+    z^n = c^(n-1) y^(m(n-1)) (lam - h0 y) =: R(y),
+    eta = z dy / ( c n y^m (lam - h0 y) ).
+
+Places (for `lam != 0`), with `d0 = gcd(n,m)` and `dinf = gcd(n,m-1)`:
+`y = 0` (there `x -> infinity`) carries `d0` **punctures**; `y = lam/h0` (there
+`x = 0`) is one honest **affine** point with ramification `n`; `y = infinity`
+(there `x -> 0`) carries `dinf` **punctures**. Riemann–Hurwitz gives
+
+    2g = n + 1 - gcd(n, m) - gcd(n, m-1),
+
+which for `m = 2` is `n - gcd(n,2)`, i.e. `floor((n-1)/2)`, agreeing with
+EXACT-HE. Expanding `eta` in a local parameter at each place:
+
+* at `y = infinity`, `eta/d tau = const * tau^((m-1)/dinf - 1) d tau` — for
+  `m >= 2` the exponent is `>= 0`, so `eta` is holomorphic there and has no
+  residue;
+* at `y = 0`, with `y = tau^(n/d0)`,
+
+      eta/d tau = tau^((n-m)/d0 - 1) * (1/(c d0)) c^((n-1)/n) N(tau^(n/d0))^((1-n)/n)
+
+  with `N = lam - h0 y`, and the residue is the coefficient of `tau^k`,
+  `k = (m-n)/d0`, in the binomial series of `N^((1-n)/n)` — nonzero exactly when
+  `k >= 0`, `(n/d0) | k` and `binom((1-n)/n, k d0/n) != 0`, i.e. exactly when
+
+      **n >= 2, m >= n, and n | m.**
+
+Verdicts: `n >= 2` and `n | m` — NONVANISHING (nonzero residues, which sum to
+zero, control C3 symbolic); otherwise `g = 0` — VANISHING (on `P^1` every
+residue-free meromorphic 1-form is exact); otherwise `n > m` — NONVANISHING
+(`eta` holomorphic and nonzero on a compact curve of genus `>= 1`); otherwise
+deferred to NUM-MONO.
+
+> **An instrument bug found and fixed, recorded because it changed answers.**
+> The first version of EXACT-G1 read the residue off the *leading* exponent
+> only and concluded "residue nonzero iff `n = m`". That is wrong whenever
+> `(n-m)/d0 <= -2`: the `tau^(-1)` coefficient then sits in a *later* term of
+> the expansion. The case `n = 2, m = 4` is the smallest witness — NUM-MONO
+> reported nonzero residues `0.176777` at each of the two places over
+> `x = infinity` there, contradicting the formula, which is how the error was
+> caught. The corrected rule `n | m` is what the table above states and what
+> NUM-MONO confirms.
+
+> **A second instrument bug, in NUM-MONO, found the same way.** At `n = 3,
+> m = 4` EXACT-G1 says VANISHING (all residues zero, genus 0 — Singular's
+> `genus` independently returns 0) while NUM-MONO at the original resolution
+> reported a period of `1.36` *and* a spurious genus of 1. The cause: the
+> adaptive substep validated only the *sheet identification*, never the
+> *quadrature error*, so two different resolutions could agree on the same
+> wrong value and the two-resolution error estimate looked converged. The fix
+> is a genuine adaptive-quadrature control: each panel is computed once on
+> `[a,b]` and once as `[a,mid] + [mid,b]`, and the panel is subdivided until
+> the difference falls below `1e-9`. After the fix that fibre returns
+> `ls_residual = 1.7e-14` and genus 0. **Every NUM-MONO number reported in this
+> file is from the fixed instrument.**
+
+### 2.3 NUM-MONO — numerical monodromy periods, any `deg_y`
 
 `mono15.py`. Write `f(x,y) = P(x,y) - c` as a polynomial in `y` of degree `dy`
 over `Q[x]`. Off the branch set

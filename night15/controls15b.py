@@ -26,39 +26,44 @@ y = {(0, 1): F(1)}
 
 def build():
     out = []
+    # degree 10, deg_y 2: EXACT-HE applies as well as NUM-MONO
     FG = (x, y)
-    FG = T_shift(FG, {3: F(1)})
-    FG = S_swap(FG)
-    FG = T_shift(FG, {3: F(1), 1: F(2)})
-    out.append(("deg9 coordinate (deg_y 3)", FG[1], P14.pscal(-1, FG[0])))
-    FG = (x, y)
-    FG = T_shift(FG, {2: F(1)})
-    FG = S_swap(FG)
-    FG = T_shift(FG, {5: F(1), 2: F(-1)})
-    out.append(("deg10 coordinate (deg_y 5)", FG[1], P14.pscal(-1, FG[0])))
-    FG = (x, y)
-    FG = T_shift(FG, {2: F(1), 1: F(1)})
-    FG = S_swap(FG)
-    FG = T_shift(FG, {3: F(2)})
+    FG = T_shift(FG, {5: F(1)})
     FG = S_swap(FG)
     FG = T_shift(FG, {2: F(1)})
-    out.append(("deg12 coordinate", FG[1], P14.pscal(-1, FG[0])))
+    out.append(("deg10 coordinate (deg_y 2)", FG[1], P14.pscal(-1, FG[0]), False))
+    # degree 12, deg_y 2
+    FG = (x, y)
+    FG = T_shift(FG, {6: F(1), 2: F(-2)})
+    FG = S_swap(FG)
+    FG = T_shift(FG, {2: F(3), 1: F(1)})
+    out.append(("deg12 coordinate (deg_y 2)", FG[1], P14.pscal(-1, FG[0]), False))
+    # coordinates with deg_y >= 3, to exercise NUM-MONO on a higher-sheeted
+    # cover.  P = x + s(y) is a coordinate with mate Q = y for every s, and
+    # composing with the Jacobian-1 shear (x, y) -> (x, y + t(x)) keeps the
+    # pair a mate pair while raising the degree.
+    out.append(("deg5 coordinate (deg_y 5)",
+                P14.padd(x, {(0, 5): F(1), (0, 3): F(1)}), y, True))
+    v = P14.padd(y, {(2, 0): F(1)})
+    out.append(("deg6 coordinate (deg_y 3), sheared",
+                P14.padd(x, P14.ppow(v, 3)), v, True))
     return out
 
 
 def main():
-    CS = [F(0), F(1), F(-1)]
+    CS = [F(1), F(-1)]
     rec = {"C1_high_degree": [], "shear_control": []}
     print("=" * 78)
     print("C1 (addendum) -- HIGH-DEGREE coordinates with an exact mate")
     print("=" * 78)
-    for lab, P, Q in build():
+    for lab, P, Q, want_num in build():
         br = bracket(P, Q)
         assert br == {(0, 0): F(1)}, (lab, br)
         sy, _ = sy15.certify(P, node_budget=200000)
         print("\n%s   deg P=%d deg_y=%d  [P,Q]-1 = 0 exactly, SY=%s"
               % (lab, P14.tdeg(P), max(j for (i, j) in P), sy))
-        fib = run_screen(P, CS, lab)
+        fib = run_screen(P, CS if want_num else CS + [F(0), F(3, 2)], lab,
+                         want_num=want_num)
         for r in fib:
             print("   " + brief(r))
         sys.stdout.flush()
