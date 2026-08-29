@@ -15,7 +15,25 @@ must FIND its mate.  Two of them:
             the machinery could not find a mate here, an EMPTY anywhere in
             ARM A would carry no weight.
 
-Both are run through exactly the ARM A stage list and carriers, with no
+Both of those coordinates are shears, whose mate has degree 1, so between them
+they exercise ARM A's degree but not ARM A's carrier: a degree-1 mate is found
+inside the first few columns.  Two further controls close that axis, built by
+the elementary chain
+
+    A = x + y^2 ,   B = y + A^k ,   P = A + B^2       deg P = 4k
+
+every step of which preserves the bracket, so [P, B] = 1 identically and P is a
+coordinate whose SMALLEST mate has degree 2k:
+
+  V2-POS-3  k = 11, deg P = 44, mate degree 22
+  V2-POS-4  k = 21, deg P = 84, mate degree 42
+
+Here the mate is a dense polynomial of degree deg P / 2 that has to be found in
+a carrier of several hundred to a couple of thousand unknowns and reconstructed
+rationally -- exactly the work ARM A's EMPTY stages do, but on a system that is
+consistent.
+
+All four are run through exactly the ARM A stage list and carriers, with no
 special-casing.  A control fails if no mate is found, or if the mate found does
 not satisfy [P,Q] - 1 = 0 coefficientwise over Q.
 """
@@ -49,6 +67,15 @@ def shear(deg):
     P = {(0, 1): Fraction(1)}
     P.update(tau)
     return {k: v for k, v in P.items() if v != 0}
+
+
+def chain(k):
+    """P = A + B^2 with A = x + y^2, B = y + A^k; [P, B] = 1, deg P = 4k and
+    the smallest mate of P is B, of degree 2k."""
+    A = {(1, 0): Fraction(1), (0, 2): Fraction(1)}
+    B = M.padd({(0, 1): Fraction(1)}, M.ppow(A, k))
+    P = M.padd(A, M.pmul(B, B))
+    return {k2: v for k2, v in P.items() if v != 0}, B
 
 
 def run(name, P, stages, expect_mate=True):
@@ -102,6 +129,18 @@ def main():
     out.append(run("V2-POS-2  P = y + tau(x), deg tau = 124 (ARM A shape, g = 0)",
                    P2, [(d2 - 1, "np", False), (d2 + 31, "np", False),
                         (d2 + 63, "np", True)]))
+
+    for (k, label) in ((11, "V2-POS-3"), (21, "V2-POS-4")):
+        P3, B3 = chain(k)
+        d3 = M.pdeg(P3)
+        say("")
+        say("  (chain k=%d: [P, B] - 1 = 0 over Q: %s; deg B = %d)"
+            % (k, M.is_one(M.bracket(P3, B3)), M.pdeg(B3)))
+        out.append(run("%s  P = A + B^2, A = x + y^2, B = y + A^%d "
+                       "(coordinate, smallest mate degree %d)"
+                       % (label, k, M.pdeg(B3)), P3,
+                       [(d3 - 1, "np", False), (d3 + 31, "np", False),
+                        (d3 + 63, "np", True)]))
 
     checks = [{"check": r["tag"], "ok": r["control_ok"],
                "detail": r["control_detail"]} for r in out]
