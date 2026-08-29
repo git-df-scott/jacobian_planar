@@ -1,0 +1,35 @@
+==============================================================================
+C1  the symbolic layer must reproduce night17's recorded lambda certificates
+==============================================================================
+  H3   d37142063698  D=3    night17 lambda (|supp|=8) against night18 M: True                   | night18 own lambda (|supp|=8) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H3   d37142063698  D=5    night17 lambda (|supp|=15) against night18 M: True                   | night18 own lambda (|supp|=15) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H3   d37142063698  D=6    night17 lambda (|supp|=13) against night18 M: True                   | night18 own lambda (|supp|=13) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H4   431f3f1966ca  D=3    night17 lambda (|supp|=8) against night18 M: True                   | night18 own lambda (|supp|=8) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H4   431f3f1966ca  D=5    night17 lambda (|supp|=14) against night18 M: True                   | night18 own lambda (|supp|=17) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H4   431f3f1966ca  D=6    night17 lambda (|supp|=20) against night18 M: True                   | night18 own lambda (|supp|=20) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H5   9667585bcb72  D=5    night17 lambda (|supp|=10) against night18 M: True                   | night18 own lambda (|supp|=10) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H5   9667585bcb72  D=8    night17 lambda (|supp|=30) against night18 M: True                   | night18 own lambda (|supp|=23) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  H5   9667585bcb72  D=10   night17 lambda (|supp|=40) against night18 M: TRUNCATED_RECORD       | night18 own lambda (|supp|=32) verified: True  | verdict EMPTY_over_Q==EMPTY_over_Q
+  C1 PASS
+
+==============================================================================
+C2  a FAMILY OF COORDINATES: the machinery must find the MATE, symbolically in t
+==============================================================================
+  P(t) = t**2*x**6 + 2*t*x**5 + 2*t*x**3*y + x**4 + 2*x**2*y - x + y**2
+  deg P = 6 ; the construction's own mate Q0 has deg 3 ; [P,Q0]-1 terms = 0
+  D=6   n=28    MATE_over_Q(t)  [P,Q]-1 terms = 0  deg Q = 3  t-dependent = True   Q = -t*x**3 - x**2 - y
+        Fredholm: a lambda certificate exists = False (must be False)
+  D=12  n=91    MATE_over_Q(t)  [P,Q]-1 terms = 0  deg Q = 3  t-dependent = True   Q = -t*x**3 - x**2 - y
+        Fredholm: a lambda certificate exists = False (must be False)
+  C2 PASS
+
+==============================================================================
+C3  symbolic rank of M vs the rank at 5 random specialisations
+==============================================================================
+  deg h=1  D=3   n_cols=10  n_rows=13   rank(symbolic)=8    ranks at 5 random points = [8, 8, 8, 8, 8]  AGREE
+  deg h=1  D=6   n_cols=28  n_rows=34   rank(symbolic)=25   ranks at 5 random points = [25, 25, 25, 25, 25]  AGREE
+  deg h=2  D=3   n_cols=10  n_rows=15   rank(symbolic)=8    ranks at 5 random points = [8, 8, 8, 8, 8]  AGREE
+  deg h=2  D=6   n_cols=28  n_rows=36   rank(symbolic)=25   ranks at 5 random points = [25, 25, 25, 25, 25]  AGREE
+  C3 PASS
+
+CONTROLS PASS
