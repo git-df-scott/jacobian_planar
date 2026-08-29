@@ -219,3 +219,15 @@ three-parameter member `gamma x y^2 + c y + kappa`, and `alpha` enters `P` only
 through an additive constant — which the bracket `[P, Q]` does not see.  For
 `deg h = 1` the substitution is a degree-0 shear plus a translation, so it
 preserves each carrier `deg Q <= D` exactly.  Machine-readable: `reduce18.json`.
+
+### 5.1 `alpha` enters `P` only as an additive constant
+
+Checked identically in the parameters for `deg h = 1, 2, 3, 5`:
+
+```
+k  =  (h^2 - h(a)^2) / (4 gamma (x - a))   -   alpha / (4 gamma)
+```
+
+(because `h^2 - alpha x - beta = (h^2 - h(a)^2) - alpha (x - a)`).  Since
+`[P + const, Q] = [P, Q]`, the mate problem does not see `alpha` at all — which
+is why `alpha` occurs in none of the certificates of `OBSTRUCTION.md`.
