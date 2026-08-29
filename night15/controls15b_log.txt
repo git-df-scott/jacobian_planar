@@ -1,0 +1,5 @@
+==============================================================================
+C1 (addendum) -- HIGH-DEGREE coordinates with an exact mate
+==============================================================================
+
+deg9 coordinate (deg_y 3)   deg P=9 deg_y=3  [P,Q]-1 = 0 exactly, SY=COORDINATE

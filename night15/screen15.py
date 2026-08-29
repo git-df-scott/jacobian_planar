@@ -24,6 +24,7 @@ import fib15
 import exact_he15
 import mono15
 import gen15
+import exact_g1_15
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CS_EXACT = [F(1), F(-1), F(3, 2), F(0), F(2), F(-3, 5)]
@@ -39,6 +40,24 @@ def period_screen(P, meta, num_budget=44, num_timeout_note=None):
     NOT_SCREENED / UNRESOLVED."""
     dy = deg_y(P)
     det = {"deg_y": dy, "fibres": []}
+
+    # ---- EXACT-G1 covers the whole v-power family in closed form --------
+    if meta.get("gen") == "G1" and meta.get("m", 0) >= 2:
+        g1 = exact_g1_15.screen(meta["n"], meta["m"])
+        det["exact_g1"] = g1
+        if g1.get("verdict") in ("NONVANISHING", "VANISHING"):
+            det["instrument"] = "EXACT-G1"
+            # cross-check against EXACT-HE on the deg_y = 2 members
+            if dy == 2:
+                agree = []
+                for c in CS_EXACT[:3]:
+                    he = exact_he15.screen(P, c)
+                    det["fibres"].append({"c": str(c), "res": he})
+                    agree.append(he.get("verdict") == g1["verdict"])
+                det["exact_he_agrees"] = all(agree)
+            return g1["verdict"], det
+        det["exact_g1_deferred"] = True
+
     if dy == 2:
         det["instrument"] = "EXACT-HE"
         for c in CS_EXACT:
@@ -127,8 +146,10 @@ def main(limit=None, out_json="screen15_records.json", csv_path="period_screen.c
         rec["outcome"] = "PERIODS-" + v if v in ("NONVANISHING", "VANISHING") else v
         recs.append(rec)
         f0 = det["fibres"][0]["res"] if det["fibres"] else {}
-        npl = f0.get("n_places_at_infinity", f0.get("n_punctures"))
-        gg = f0.get("genus", f0.get("genus_sum"))
+        g1 = det.get("exact_g1", {})
+        npl = f0.get("n_places_at_infinity", f0.get("n_punctures",
+                                                    g1.get("n_places_at_infinity")))
+        gg = f0.get("genus", f0.get("genus_sum", g1.get("genus")))
         csv.append("%s,%s,%d,%d,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
             h, '"%s"' % lab.replace('"', "'"), rec["deg_P"], rec["deg_y"],
             "|".join(rec["species"]), u.get("U"), u.get("residual_terms"),

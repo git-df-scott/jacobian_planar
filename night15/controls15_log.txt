@@ -50,3 +50,36 @@ x^2 + y^2   (eta = -dx/sqrt(4c-4x^2): residues -+ i/2 at the two places at infin
    c=1    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=4.8e-12 sumres=0.0e+00 g=0 npunct=2
    c=-1   EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=2.7e-15 sumres=0.0e+00 g=0 npunct=2
    c=3/2  EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=4.5e-12 sumres=0.0e+00 g=0 npunct=2
+
+y^2 - x^3 - x - 1   (eta = -dx/w, w^2 = 4(x^3+x+1+c): nonzero HOLOMORPHIC form, genus 1)
+   c=0    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.42e+00 err=7.7e-13 sumres=0.0e+00 g=1 npunct=1
+   c=1    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.06e+00 err=6.7e-13 sumres=0.0e+00 g=1 npunct=1
+
+x*y^3 + y   (deg_y 3, places over the root of lc)
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=1.56e-12 err=1.5e-09 sumres=2.0e-13 g=0 npunct=2
+
+==============================================================================
+C4 CROSS-CHECK -- night12 V2 F2-family targets (P read from record)
+==============================================================================
+
+09d8d1d05e63  F2  T=61 a=0  deg=124  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+
+7aabbefe44c8  F2  T=2 a=0  deg=124  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+
+dada805afbd2  F2  T=3 a=1  deg=126  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+
+==============================================================================
+C3 CONSISTENCY -- sum of residues = 0 on every fibre measured
+==============================================================================
+violations: NONE
+
+written controls15.json

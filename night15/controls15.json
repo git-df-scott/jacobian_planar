@@ -1,0 +1,2491 @@
+{
+ "C1": [
+  {
+   "label": "x + y^2",
+   "deg_P": 2,
+   "deg_Q": 1,
+   "P": "y^2 + x",
+   "Q": "y",
+   "bracket_is_1": true,
+   "SY": "COORDINATE",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "x + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "-4*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.9100999153570945e-15,
+      "max_period": 0.0,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ]
+      ],
+      "scale": 3.7416573867739475,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 3.199719938458657e-17,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 5.10495675555153e-16,
+      "verdict": "VANISHING",
+      "secs": 11.7
+     }
+    },
+    {
+     "c": "1",
+     "tag": "x + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "4 - 4*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 7.021666937153402e-16,
+      "max_period": 0.0,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ]
+      ],
+      "scale": 3.2205660923159907,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 5.636823153414983e-16,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 2.1802586054378857e-16,
+      "verdict": "VANISHING",
+      "secs": 11.9
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "x + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "-4*x - 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 2.531698018113677e-15,
+      "max_period": 0.0,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ]
+      ],
+      "scale": 4.217607966914624,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 1.275624051166657e-15,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 6.002686921055234e-16,
+      "verdict": "VANISHING",
+      "secs": 11.8
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "x + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "6 - 4*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 2.5559253454202264e-15,
+      "max_period": 0.0,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ]
+      ],
+      "scale": 3.685169922194575,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       4.4285548916286634,
+       1.7176733018335695
+      ],
+      "err_ls_residual": 6.458254300631319e-16,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 6.93570554244113e-16,
+      "verdict": "VANISHING",
+      "secs": 11.9
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg4 triangular",
+   "deg_P": 2,
+   "deg_Q": 4,
+   "P": "x^2 + y",
+   "Q": "x^4 + 2*x^2*y + y^2 - 1*x",
+   "bracket_is_1": true,
+   "SY": "COORDINATE",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "deg4 triangular",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.5
+     }
+    },
+    {
+     "c": "1",
+     "tag": "deg4 triangular",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.5
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg4 triangular",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.4
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg4 triangular",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.3
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg4 triangular (swapped)",
+   "deg_P": 4,
+   "deg_Q": 2,
+   "P": "x^4 + 2*x^2*y + y^2 - 1*x",
+   "Q": "-1*x^2 - 1*y",
+   "bracket_is_1": true,
+   "SY": "COORDINATE",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "deg4 triangular (swapped)",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.900395703982448e-15,
+      "max_period": 1.1102230246251565e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        1.1102230246251565e-16
+       ]
+      ],
+      "scale": 3.7416573867739475,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -3.533949646070574e-17,
+          -2.8271597168564594e-16
+         ],
+         "abs": 2.8491612916129404e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.8491612916129404e-16,
+       "max_abs_residue": 2.8491612916129404e-16,
+       "sum_abs_lowres": 7.175310335882151e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 8.589141896583142e-16,
+      "err_max_period": 3.3306690738754696e-16,
+      "rel_ls_residual": 5.079021159713843e-16,
+      "verdict": "VANISHING",
+      "secs": 15.6
+     }
+    },
+    {
+     "c": "1",
+     "tag": "deg4 triangular (swapped)",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x + 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 2.5438405243138005e-15,
+      "max_period": 1.1102230246251565e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        1.1102230246251565e-16
+       ]
+      ],
+      "scale": 4.217607966914624,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -1.7669748230352872e-16,
+          -2.8271597168564594e-16
+         ],
+         "abs": 3.333921428266791e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 3.333921428266791e-16,
+       "max_abs_residue": 3.333921428266791e-16,
+       "sum_abs_lowres": 1.9436723053388158e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 1.2682913809961717e-15,
+      "err_max_period": 1.1102230246251565e-16,
+      "rel_ls_residual": 6.031476951554456e-16,
+      "verdict": "VANISHING",
+      "secs": 17.1
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg4 triangular (swapped)",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x - 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 2.5438405243138005e-15,
+      "max_period": 1.1102230246251565e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        -1.1102230246251565e-16
+       ]
+      ],
+      "scale": 3.2205660923159902,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -3.1805546814635167e-16,
+          1.4135798584282297e-16
+         ],
+         "abs": 3.4805367542856755e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 3.4805367542856755e-16,
+       "max_abs_residue": 3.4805367542856755e-16,
+       "sum_abs_lowres": 4.950683811165745e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 1.456048559905386e-15,
+      "err_max_period": 5.170146810109944e-16,
+      "rel_ls_residual": 7.898737213880497e-16,
+      "verdict": "VANISHING",
+      "secs": 17.6
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg4 triangular (swapped)",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x + 6",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.8444410139024814e-15,
+      "max_period": 1.897149936107019e-15,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        1.7763568394002505e-15,
+        -6.661338147750939e-16
+       ]
+      ],
+      "scale": 4.9688514061012015,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          5.300924469105861e-17,
+          -5.654319433712919e-16
+         ],
+         "abs": 5.679113157944225e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 5.679113157944225e-16,
+       "max_abs_residue": 5.679113157944225e-16,
+       "sum_abs_lowres": 5.831016916016447e-16
+      },
+      "x0": [
+       4.4285548916286634,
+       1.7176733018335695
+      ],
+      "err_ls_residual": 9.839052550339836e-16,
+      "err_max_period": 8.98377921538079e-17,
+      "rel_ls_residual": 3.7120067861914954e-16,
+      "verdict": "VANISHING",
+      "secs": 22.0
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg10 coordinate",
+   "deg_P": 4,
+   "deg_Q": 8,
+   "P": "2*x^4 - 12*x^3 + 4*x^2*y + 18*x^2 - 12*x*y + 2*y^2 - 1*x + 1",
+   "Q": "4*x^8 - 48*x^7 + 16*x^6*y + 216*x^6 - 144*x^5*y + 24*x^4*y^2 - 436*x^5 + 432*x^4*y - 144*x^3*y^2 + 16*x^2*y^3 + 354*x^4 - 440*x^3*y + 216*x^2*y^2 - 48*x*y^3 + 4*y^4 - 72*x^3 + 36*x^2*y - 4*x*y^2 + 54*x^2 - 36*x*y + 6*y^2 - 1*y + 2",
+   "bracket_is_1": true,
+   "SY": "COORDINATE",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "deg10 coordinate",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "8",
+      "s": "1",
+      "Delta0": "8*x - 8",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.926164957854745e-15,
+      "max_period": 1.1102230246251565e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        1.1102230246251565e-16
+       ]
+      ],
+      "scale": 2.2772841231361025,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          1.5902773407317583e-16,
+          -1.4135798584282297e-16
+         ],
+         "abs": 2.127719444992419e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.127719444992419e-16,
+       "max_abs_residue": 2.127719444992419e-16,
+       "sum_abs_lowres": 1.1314159316310867e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 2.9015021747726005e-17,
+      "err_max_period": 1.1102230246251565e-16,
+      "rel_ls_residual": 8.458167069650391e-16,
+      "verdict": "VANISHING",
+      "secs": 19.8
+     }
+    },
+    {
+     "c": "1",
+     "tag": "deg10 coordinate",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "8",
+      "s": "1",
+      "Delta0": "8*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.6136471996107275e-15,
+      "max_period": 4.47545209131181e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        -4.440892098500626e-16,
+        5.551115123125783e-17
+       ]
+      ],
+      "scale": 2.645751311064591,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          3.533949646070574e-17,
+          4.947529504498804e-16
+         ],
+         "abs": 4.960134695640413e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 4.960134695640413e-16,
+       "max_abs_residue": 4.960134695640413e-16,
+       "sum_abs_lowres": 3.5339496460705744e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 6.190831647505863e-16,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 6.099013134236838e-16,
+      "verdict": "VANISHING",
+      "secs": 21.7
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg10 coordinate",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "8",
+      "s": "1",
+      "Delta0": "8*x - 16",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 5.978733960281817e-16,
+      "max_period": 4.577566798522237e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        4.440892098500626e-16,
+        1.1102230246251565e-16
+       ]
+      ],
+      "scale": 2.8976238270354426,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -5.47762195140939e-16,
+          0.0
+         ],
+         "abs": 5.47762195140939e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 5.47762195140939e-16,
+       "max_abs_residue": 5.47762195140939e-16,
+       "sum_abs_lowres": 7.7927396011242e-16
+      },
+      "x0": [
+       5.593964073636207,
+       2.169692591789772
+      ],
+      "err_ls_residual": 1.636407341894364e-15,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 2.0633230250590036e-16,
+      "verdict": "VANISHING",
+      "secs": 31.8
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg10 coordinate",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "8",
+      "s": "1",
+      "Delta0": "8*x + 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 1.0068810866857322e-15,
+      "max_period": 4.742874840267547e-16,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        -4.440892098500626e-16,
+        -1.6653345369377348e-16
+       ]
+      ],
+      "scale": 2.81790092973141,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -2.1203697876423444e-16,
+          -7.067899292141149e-17
+         ],
+         "abs": 2.2350660035857853e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.2350660035857853e-16,
+       "max_abs_residue": 2.2350660035857853e-16,
+       "sum_abs_lowres": 6.204573016027485e-16
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 3.666952604090144e-16,
+      "err_max_period": 3.0775403033298123e-16,
+      "rel_ls_residual": 3.5731599931786945e-16,
+      "verdict": "VANISHING",
+      "secs": 21.9
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg9 coordinate",
+   "deg_P": 3,
+   "deg_Q": 9,
+   "P": "x^3 + y",
+   "Q": "x^9 + 3*x^6*y + 3*x^3*y^2 + 2*x^3 + y^3 - 1*x + 2*y",
+   "bracket_is_1": true,
+   "SY": "COORDINATE",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "deg9 coordinate",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.5
+     }
+    },
+    {
+     "c": "1",
+     "tag": "deg9 coordinate",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.5
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg9 coordinate",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.6
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg9 coordinate",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 0,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 0,
+      "ls_residual": 0.0,
+      "max_period": 0.0,
+      "periods": [],
+      "scale": 1.0,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          6.768341841673447e-15,
+          -9.188200057329468e-15
+         ],
+         "abs": 1.1411988064279456e-14
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 1.1411988064279456e-14,
+       "max_abs_residue": 1.1411988064279456e-14,
+       "sum_abs_lowres": 3.861444975752018e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 0.0,
+      "err_max_period": 0.0,
+      "rel_ls_residual": 0.0,
+      "verdict": "VANISHING",
+      "secs": 6.8
+     }
+    }
+   ]
+  }
+ ],
+ "C2": [
+  {
+   "label": "x*y",
+   "why": "eta = dy/y on {xy=c}: simple pole at the place x=inf (y->0)",
+   "P": "x*y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "x*y",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 6.28318530717953,
+      "max_period": 6.28318530717953,
+      "periods": [
+       [
+        0,
+        0,
+        0,
+        -1.700029006457271e-15,
+        6.28318530717953
+       ]
+      ],
+      "scale": 6.28318530717953,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          0.9999999999999777,
+          1.2443319480180825e-17
+         ],
+         "abs": 0.9999999999999777
+        }
+       ],
+       "y_infinity_places": [
+        {
+         "over_x": [
+          0.0,
+          0.0
+         ],
+         "e": 1,
+         "residue": [
+          -0.9999999999999911,
+          -2.7056801977727833e-16
+         ],
+         "abs": 0.9999999999999911
+        }
+       ],
+       "n_places_total": 2,
+       "sum_abs": 1.3436178265483605e-14,
+       "max_abs_residue": 0.9999999999999911,
+       "sum_abs_lowres": 1.0445454412172752e-14
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 5.3290705182007514e-14,
+      "err_max_period": 5.3290705182007514e-14,
+      "rel_ls_residual": 1.0,
+      "verdict": "NONVANISHING",
+      "secs": 8.2
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "x*y",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 6.28318530717953,
+      "max_period": 6.28318530717953,
+      "periods": [
+       [
+        0,
+        0,
+        0,
+        -1.700029006457271e-15,
+        6.28318530717953
+       ]
+      ],
+      "scale": 6.28318530717953,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          0.9999999999999777,
+          1.2443319480180825e-17
+         ],
+         "abs": 0.9999999999999777
+        }
+       ],
+       "y_infinity_places": [
+        {
+         "over_x": [
+          0.0,
+          0.0
+         ],
+         "e": 1,
+         "residue": [
+          -0.9999999999999911,
+          -2.7056801977727833e-16
+         ],
+         "abs": 0.9999999999999911
+        }
+       ],
+       "n_places_total": 2,
+       "sum_abs": 1.3436178265483605e-14,
+       "max_abs_residue": 0.9999999999999911,
+       "sum_abs_lowres": 1.0445454412172752e-14
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 5.3290705182007514e-14,
+      "err_max_period": 5.3290705182007514e-14,
+      "rel_ls_residual": 1.0,
+      "verdict": "NONVANISHING",
+      "secs": 8.2
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "x*y",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 1"
+     },
+     "num_mono": {
+      "dy": 1,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 6.28318530717953,
+      "max_period": 6.28318530717953,
+      "periods": [
+       [
+        0,
+        0,
+        0,
+        -1.700029006457271e-15,
+        6.28318530717953
+       ]
+      ],
+      "scale": 6.28318530717953,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          0.9999999999999777,
+          1.2443319480180825e-17
+         ],
+         "abs": 0.9999999999999777
+        }
+       ],
+       "y_infinity_places": [
+        {
+         "over_x": [
+          0.0,
+          0.0
+         ],
+         "e": 1,
+         "residue": [
+          -0.9999999999999911,
+          -2.7056801977727833e-16
+         ],
+         "abs": 0.9999999999999911
+        }
+       ],
+       "n_places_total": 2,
+       "sum_abs": 1.3436178265483605e-14,
+       "max_abs_residue": 0.9999999999999911,
+       "sum_abs_lowres": 1.0445454412172752e-14
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 5.3290705182007514e-14,
+      "err_max_period": 5.3290705182007514e-14,
+      "rel_ls_residual": 1.0,
+      "verdict": "NONVANISHING",
+      "secs": 8.1
+     }
+    }
+   ]
+  },
+  {
+   "label": "x^2 + y^2",
+   "why": "eta = -dx/sqrt(4c-4x^2): residues -+ i/2 at the two places at infinity",
+   "P": "x^2 + y^2",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "x^2 + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "4 - 4*x**2",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "-I/2",
+       "I/2"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.5
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 2,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 3,
+      "ls_residual": 3.1415926535897905,
+      "max_period": 3.141592653589791,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ],
+       [
+        1,
+        0,
+        1,
+        -3.141592653589791,
+        1.9984014443252818e-15
+       ],
+       [
+        1,
+        1,
+        0,
+        3.141592653589791,
+        -1.9984014443252818e-15
+       ]
+      ],
+      "scale": 3.366017336227181,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 2,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          -4.8383122557629745e-18,
+          0.4999999999999977
+         ],
+         "abs": 0.4999999999999977
+        },
+        {
+         "cycle": [
+          1
+         ],
+         "e": 1,
+         "residue": [
+          4.8383122557629745e-18,
+          -0.4999999999999977
+         ],
+         "abs": 0.4999999999999977
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 2,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.4999999999999977,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 4.792166663492026e-12,
+      "err_max_period": 4.792610752701876e-12,
+      "rel_ls_residual": 0.9333263438004339,
+      "verdict": "NONVANISHING",
+      "secs": 14.8
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "x^2 + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "-4*x**2 - 4",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "-I/2",
+       "I/2"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.5
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 2,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 3,
+      "ls_residual": 3.141592653589793,
+      "max_period": 3.141592653589793,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ],
+       [
+        1,
+        0,
+        1,
+        3.141592653589793,
+        2.220446049250313e-15
+       ],
+       [
+        1,
+        1,
+        0,
+        -3.141592653589793,
+        -2.220446049250313e-15
+       ]
+      ],
+      "scale": 2.7497163789720216,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 2,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          -6.572771032097508e-18,
+          0.5000000000000003
+         ],
+         "abs": 0.5000000000000003
+        },
+        {
+         "cycle": [
+          1
+         ],
+         "e": 1,
+         "residue": [
+          6.572771032097508e-18,
+          -0.5000000000000003
+         ],
+         "abs": 0.5000000000000003
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 2,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.5000000000000003,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 2.6645352591003757e-15,
+      "err_max_period": 2.6645352591003757e-15,
+      "rel_ls_residual": 1.1425151617870763,
+      "verdict": "NONVANISHING",
+      "secs": 14.7
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "x^2 + y^2",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "6 - 4*x**2",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "-I/2",
+       "I/2"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.5
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 2,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 3,
+      "ls_residual": 3.1415926535897936,
+      "max_period": 3.1415926535897936,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ],
+       [
+        1,
+        0,
+        1,
+        -3.1415926535897936,
+        1.7763568394002505e-15
+       ],
+       [
+        1,
+        1,
+        0,
+        3.1415926535897936,
+        -1.7763568394002505e-15
+       ]
+      ],
+      "scale": 3.3330251515884903,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 2,
+       "residues": [
+        {
+         "cycle": [
+          0
+         ],
+         "e": 1,
+         "residue": [
+          9.191310381663962e-19,
+          0.5000000000000009
+         ],
+         "abs": 0.5000000000000009
+        },
+        {
+         "cycle": [
+          1
+         ],
+         "e": 1,
+         "residue": [
+          -9.191310381663962e-19,
+          -0.5000000000000009
+         ],
+         "abs": 0.5000000000000009
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 2,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.5000000000000009,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.786985183078846,
+       1.4688320462528155
+      ],
+      "err_ls_residual": 4.46886971872118e-12,
+      "err_max_period": 4.46886971872118e-12,
+      "rel_ls_residual": 0.9425649404693326,
+      "verdict": "NONVANISHING",
+      "secs": 15.1
+     }
+    }
+   ]
+  },
+  {
+   "label": "y^2 - x^3 - x - 1",
+   "why": "eta = -dx/w, w^2 = 4(x^3+x+1+c): nonzero HOLOMORPHIC form, genus 1",
+   "P": "-1*x^3 + y^2 - 1*x - 1",
+   "fibres": [
+    {
+     "c": "0",
+     "tag": "y^2 - x^3 - x - 1",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 3,
+      "deg_s": 0,
+      "deg_Delta0": 3,
+      "genus": 1,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x**3 + 4*x + 4",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 1",
+      "n_places_at_infinity": 1,
+      "residues": [],
+      "sum_residues": "0"
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 3,
+      "n_components": 1,
+      "chi": -1,
+      "n_punctures": 1,
+      "genus_sum": 1,
+      "n_independent_cycles_found": 5,
+      "ls_residual": 3.416890124325221,
+      "max_period": 2.643441067130406,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ],
+       [
+        1,
+        0,
+        1,
+        6.661338147750939e-16,
+        -2.643441067130406
+       ],
+       [
+        1,
+        1,
+        0,
+        -6.661338147750939e-16,
+        2.643441067130406
+       ],
+       [
+        2,
+        0,
+        1,
+        -1.8749714890471703,
+        -1.321720533565202
+       ],
+       [
+        2,
+        1,
+        0,
+        1.8749714890471703,
+        1.321720533565202
+       ]
+      ],
+      "scale": 2.779964987063418,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       3.7540342244275404,
+       1.456051583250729
+      ],
+      "err_ls_residual": 7.709388682997087e-13,
+      "err_max_period": 2.1893598045608087e-13,
+      "rel_ls_residual": 1.2291126471828737,
+      "verdict": "NONVANISHING",
+      "secs": 18.3
+     }
+    },
+    {
+     "c": "1",
+     "tag": "y^2 - x^3 - x - 1",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 3,
+      "deg_s": 0,
+      "deg_Delta0": 3,
+      "genus": 1,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x**3 + 4*x + 8",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 1",
+      "n_places_at_infinity": 1,
+      "residues": [],
+      "sum_residues": "0"
+     },
+     "num_mono": {
+      "dy": 2,
+      "n_branch": 3,
+      "n_components": 1,
+      "chi": -1,
+      "n_punctures": 1,
+      "genus_sum": 1,
+      "n_independent_cycles_found": 5,
+      "ls_residual": 3.058055876639927,
+      "max_period": 2.296211457478124,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        0.0,
+        0.0
+       ],
+       [
+        1,
+        0,
+        1,
+        1.5543122344752192e-15,
+        -2.296211457478124
+       ],
+       [
+        1,
+        1,
+        0,
+        -1.5543122344752192e-15,
+        2.296211457478124
+       ],
+       [
+        2,
+        0,
+        1,
+        -1.7490966283766691,
+        -1.1481057287390626
+       ],
+       [
+        2,
+        1,
+        0,
+        1.7490966283766691,
+        1.1481057287390626
+       ]
+      ],
+      "scale": 2.583749934621824,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1
+         ],
+         "e": 2,
+         "residue": [
+          -0.0,
+          0.0
+         ],
+         "abs": 0.0
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 0.0,
+       "max_abs_residue": 0.0,
+       "sum_abs_lowres": 0.0
+      },
+      "x0": [
+       4.22860228742444,
+       1.6401190525855986
+      ],
+      "err_ls_residual": 6.741274205523951e-13,
+      "err_max_period": 2.353672812205332e-14,
+      "rel_ls_residual": 1.1835726962824387,
+      "verdict": "NONVANISHING",
+      "secs": 18.1
+     }
+    }
+   ]
+  },
+  {
+   "label": "x*y^3 + y",
+   "why": "deg_y 3, places over the root of lc",
+   "P": "x*y^3 + y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "x*y^3 + y",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 3"
+     },
+     "num_mono": {
+      "dy": 3,
+      "n_branch": 2,
+      "n_components": 1,
+      "chi": 0,
+      "n_punctures": 2,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 4,
+      "ls_residual": 1.5593220423695222e-12,
+      "max_period": 1.2737107144011929e-12,
+      "periods": [
+       [
+        0,
+        0,
+        0,
+        -6.022959908591474e-15,
+        -4.02247679609502e-14
+       ],
+       [
+        0,
+        2,
+        1,
+        7.993605777301127e-15,
+        3.9940273310890007e-14
+       ],
+       [
+        1,
+        1,
+        0,
+        -1.26704202685346e-12,
+        8.903988657493755e-14
+       ],
+       [
+        1,
+        2,
+        2,
+        1.2706363738956838e-12,
+        -8.844314169920153e-14
+       ]
+      ],
+      "scale": 2.686544208101764,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1,
+          2
+         ],
+         "e": 3,
+         "residue": [
+          -2.332406766406579e-15,
+          -4.240739575284689e-16
+         ],
+         "abs": 2.370645491302538e-15
+        }
+       ],
+       "y_infinity_places": [
+        {
+         "over_x": [
+          0.0,
+          0.0
+         ],
+         "e": 2,
+         "residue": [
+          -1.4171138080743003e-14,
+          -2.0165600167890215e-13
+         ],
+         "abs": 2.021533184680006e-13
+        }
+       ],
+       "n_places_total": 2,
+       "sum_abs": 2.0275286425041546e-13,
+       "max_abs_residue": 2.021533184680006e-13,
+       "sum_abs_lowres": 1.916906904783132e-10
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 1.4735591139896263e-09,
+      "err_max_period": 1.2031554777064893e-09,
+      "rel_ls_residual": 5.804192753155158e-13,
+      "verdict": "VANISHING",
+      "secs": 16.8
+     }
+    }
+   ]
+  }
+ ],
+ "C3": {
+  "violations": [],
+  "note": "sum of residues over all places, both instruments"
+ },
+ "C4": [
+  {
+   "hash": "09d8d1d05e63",
+   "family": "F2",
+   "tag": "F2  T=61 a=0",
+   "deg_P": 124,
+   "night12_outcome": "EMPTY_all_stages_tried",
+   "night12_certificate": "lambda_exact",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "09d8d1d05e63",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x**2 + 1",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "1/2",
+       "-1/2"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.5
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "09d8d1d05e63",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "1 - 4*x**2",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "-I/2",
+       "I/2"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.5
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "09d8d1d05e63",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 2,
+      "deg_s": 0,
+      "deg_Delta0": 2,
+      "genus": 0,
+      "Delta0_lc": "6",
+      "s": "1",
+      "Delta0": "6*x**2 + 1",
+      "verdict": "NONVANISHING",
+      "case": "B",
+      "witness": "residue at each of the two places over x = infinity",
+      "n_places_at_infinity": 2,
+      "residues": [
+       "sqrt(6)/6",
+       "-sqrt(6)/6"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.408248290463863
+     }
+    }
+   ]
+  },
+  {
+   "hash": "7aabbefe44c8",
+   "family": "F2",
+   "tag": "F2  T=2 a=0",
+   "deg_P": 124,
+   "night12_outcome": "EMPTY_all_stages_tried",
+   "night12_certificate": "lambda_exact",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "7aabbefe44c8",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x**120 + 1",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "7aabbefe44c8",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "1 - 4*x**120",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "7aabbefe44c8",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "6",
+      "s": "1",
+      "Delta0": "6*x**120 + 1",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    }
+   ]
+  },
+  {
+   "hash": "dada805afbd2",
+   "family": "F2",
+   "tag": "F2  T=3 a=1",
+   "deg_P": 126,
+   "night12_outcome": "EMPTY_all_stages_tried",
+   "night12_certificate": "lambda_exact",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "dada805afbd2",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x**120 - 480*x**119 + 28560*x**118 - 1123360*x**117 + 32858280*x**116 - 762312096*x**115 + 14610981840*x**114 - 237950275680*x**113 + 3361047643980*x**112 - 41826370680640*x**111 + 464272714555104*x**110 - 4642727145551040*x**109 + 42171438238755280*x**108 - 350347333060428480*x**107 + 2677654616961846240*x**106 - 18922092626530380096*x**105 + 124176232861605619380*x**104 - 759666365741587318560*x**103 + 4346979759521305211760*x**102 - 23336417656377533242080*x**101 + 117848909164706542872504*x**100 - 561185281736697823202400*x**99 + 2525333767815140204410800*x**98 - 10760117793299293044880800*x**97 + 43488809414584642723059900*x**96 - 166997028152005028056550016*x**95 + 610181449016941448668163520*x**94 - 2124335415096018376844717440*x**93 + 7055828342997489608805668640*x**92 - 22384007157095484276211086720*x**91 + 67898155043189635637840296384*x**90 - 197123675931840877658246021760*x**89 + 548250223685432440986996748020*x**88 - 1462000596494486509298657994720*x**87 + 3741001526324127244381860162960*x**86 - 9192175178967855514766856400416*x**85 + 21703746950340769965421744278760*x**84 - 49273371454827693975552068092320*x**83 + 107623416598702594736074253991120*x**82 - 226285132335733660727130482750560*x**81 + 458227392979860662972439227569884*x**80 - 894102230204606171653539956233920*x**79 + 1681763718718187799062610870059040*x**78 - 3050641164186480193648456927083840*x**77 + 5338622037326340338884799622396720*x**76 - 9016339440817819239005439362270016*x**75 + 14700553436116009628813216351527200*x**74 - 23145552218565632181535702340702400*x**73 + 35200527332401898942752213976484900*x**72 - 51723223835366055589350191965447200*x**71 + 73446977846219798936877272590935024*x**70 - 100809577435987959325125668262067680*x**69 + 133766554674676330642955213655435960*x**68 - 171625013544867744975867066576785760*x**67 + 212942146435298868766353582604530480*x**66 - 255530575722358642519624299125436576*x**65 + 296597989677737710067421061484881740*x**64 - 333022304199565148145876279561972480*x**63 + 361731123527113867813624234696625280*x**62 - 380124231503068810244825466969335040*x**61 + 386459635361453290415572558085490624*x**60 - 380124231503068810244825466969335040*x**59 + 361731123527113867813624234696625280*x**58 - 333022304199565148145876279561972480*x**57 + 296597989677737710067421061484881740*x**56 - 255530575722358642519624299125436576*x**55 + 212942146435298868766353582604530480*x**54 - 171625013544867744975867066576785760*x**53 + 133766554674676330642955213655435960*x**52 - 100809577435987959325125668262067680*x**51 + 73446977846219798936877272590935024*x**50 - 51723223835366055589350191965447200*x**49 + 35200527332401898942752213976484900*x**48 - 23145552218565632181535702340702400*x**47 + 14700553436116009628813216351527200*x**46 - 9016339440817819239005439362270016*x**45 + 5338622037326340338884799622396720*x**44 - 3050641164186480193648456927083840*x**43 + 1681763718718187799062610870059040*x**42 - 894102230204606171653539956233920*x**41 + 458227392979860662972439227569884*x**40 - 226285132335733660727130482750560*x**39 + 107623416598702594736074253991120*x**38 - 49273371454827693975552068092320*x**37 + 21703746950340769965421744278760*x**36 - 9192175178967855514766856400416*x**35 + 3741001526324127244381860162960*x**34 - 1462000596494486509298657994720*x**33 + 548250223685432440986996748020*x**32 - 197123675931840877658246021760*x**31 + 67898155043189635637840296384*x**30 - 22384007157095484276211086720*x**29 + 7055828342997489608805668640*x**28 - 2124335415096018376844717440*x**27 + 610181449016941448668163520*x**26 - 166997028152005028056550016*x**25 + 43488809414584642723059900*x**24 - 10760117793299293044880800*x**23 + 2525333767815140204410800*x**22 - 561185281736697823202400*x**21 + 117848909164706542872504*x**20 - 23336417656377533242080*x**19 + 4346979759521305211760*x**18 - 759666365741587318560*x**17 + 124176232861605619380*x**16 - 18922092626530380096*x**15 + 2677654616961846240*x**14 - 350347333060428480*x**13 + 42171438238755280*x**12 - 4642727145551040*x**11 + 464272714555104*x**10 - 41826370680640*x**9 + 3361047643980*x**8 - 237950275680*x**7 + 14610981840*x**6 - 762312096*x**5 + 32858280*x**4 - 1123360*x**3 + 28560*x**2 - 480*x + 8",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "dada805afbd2",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "-4",
+      "s": "1",
+      "Delta0": "-4*x**120 + 480*x**119 - 28560*x**118 + 1123360*x**117 - 32858280*x**116 + 762312096*x**115 - 14610981840*x**114 + 237950275680*x**113 - 3361047643980*x**112 + 41826370680640*x**111 - 464272714555104*x**110 + 4642727145551040*x**109 - 42171438238755280*x**108 + 350347333060428480*x**107 - 2677654616961846240*x**106 + 18922092626530380096*x**105 - 124176232861605619380*x**104 + 759666365741587318560*x**103 - 4346979759521305211760*x**102 + 23336417656377533242080*x**101 - 117848909164706542872504*x**100 + 561185281736697823202400*x**99 - 2525333767815140204410800*x**98 + 10760117793299293044880800*x**97 - 43488809414584642723059900*x**96 + 166997028152005028056550016*x**95 - 610181449016941448668163520*x**94 + 2124335415096018376844717440*x**93 - 7055828342997489608805668640*x**92 + 22384007157095484276211086720*x**91 - 67898155043189635637840296384*x**90 + 197123675931840877658246021760*x**89 - 548250223685432440986996748020*x**88 + 1462000596494486509298657994720*x**87 - 3741001526324127244381860162960*x**86 + 9192175178967855514766856400416*x**85 - 21703746950340769965421744278760*x**84 + 49273371454827693975552068092320*x**83 - 107623416598702594736074253991120*x**82 + 226285132335733660727130482750560*x**81 - 458227392979860662972439227569884*x**80 + 894102230204606171653539956233920*x**79 - 1681763718718187799062610870059040*x**78 + 3050641164186480193648456927083840*x**77 - 5338622037326340338884799622396720*x**76 + 9016339440817819239005439362270016*x**75 - 14700553436116009628813216351527200*x**74 + 23145552218565632181535702340702400*x**73 - 35200527332401898942752213976484900*x**72 + 51723223835366055589350191965447200*x**71 - 73446977846219798936877272590935024*x**70 + 100809577435987959325125668262067680*x**69 - 133766554674676330642955213655435960*x**68 + 171625013544867744975867066576785760*x**67 - 212942146435298868766353582604530480*x**66 + 255530575722358642519624299125436576*x**65 - 296597989677737710067421061484881740*x**64 + 333022304199565148145876279561972480*x**63 - 361731123527113867813624234696625280*x**62 + 380124231503068810244825466969335040*x**61 - 386459635361453290415572558085490624*x**60 + 380124231503068810244825466969335040*x**59 - 361731123527113867813624234696625280*x**58 + 333022304199565148145876279561972480*x**57 - 296597989677737710067421061484881740*x**56 + 255530575722358642519624299125436576*x**55 - 212942146435298868766353582604530480*x**54 + 171625013544867744975867066576785760*x**53 - 133766554674676330642955213655435960*x**52 + 100809577435987959325125668262067680*x**51 - 73446977846219798936877272590935024*x**50 + 51723223835366055589350191965447200*x**49 - 35200527332401898942752213976484900*x**48 + 23145552218565632181535702340702400*x**47 - 14700553436116009628813216351527200*x**46 + 9016339440817819239005439362270016*x**45 - 5338622037326340338884799622396720*x**44 + 3050641164186480193648456927083840*x**43 - 1681763718718187799062610870059040*x**42 + 894102230204606171653539956233920*x**41 - 458227392979860662972439227569884*x**40 + 226285132335733660727130482750560*x**39 - 107623416598702594736074253991120*x**38 + 49273371454827693975552068092320*x**37 - 21703746950340769965421744278760*x**36 + 9192175178967855514766856400416*x**35 - 3741001526324127244381860162960*x**34 + 1462000596494486509298657994720*x**33 - 548250223685432440986996748020*x**32 + 197123675931840877658246021760*x**31 - 67898155043189635637840296384*x**30 + 22384007157095484276211086720*x**29 - 7055828342997489608805668640*x**28 + 2124335415096018376844717440*x**27 - 610181449016941448668163520*x**26 + 166997028152005028056550016*x**25 - 43488809414584642723059900*x**24 + 10760117793299293044880800*x**23 - 2525333767815140204410800*x**22 + 561185281736697823202400*x**21 - 117848909164706542872504*x**20 + 23336417656377533242080*x**19 - 4346979759521305211760*x**18 + 759666365741587318560*x**17 - 124176232861605619380*x**16 + 18922092626530380096*x**15 - 2677654616961846240*x**14 + 350347333060428480*x**13 - 42171438238755280*x**12 + 4642727145551040*x**11 - 464272714555104*x**10 + 41826370680640*x**9 - 3361047643980*x**8 + 237950275680*x**7 - 14610981840*x**6 + 762312096*x**5 - 32858280*x**4 + 1123360*x**3 - 28560*x**2 + 480*x",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "dada805afbd2",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 120,
+      "deg_s": 0,
+      "deg_Delta0": 120,
+      "genus": 59,
+      "Delta0_lc": "6",
+      "s": "1",
+      "Delta0": "6*x**120 - 720*x**119 + 42840*x**118 - 1685040*x**117 + 49287420*x**116 - 1143468144*x**115 + 21916472760*x**114 - 356925413520*x**113 + 5041571465970*x**112 - 62739556020960*x**111 + 696409071832656*x**110 - 6964090718326560*x**109 + 63257157358132920*x**108 - 525520999590642720*x**107 + 4016481925442769360*x**106 - 28383138939795570144*x**105 + 186264349292408429070*x**104 - 1139499548612380977840*x**103 + 6520469639281957817640*x**102 - 35004626484566299863120*x**101 + 176773363747059814308756*x**100 - 841777922605046734803600*x**99 + 3788000651722710306616200*x**98 - 16140176689948939567321200*x**97 + 65233214121876964084589850*x**96 - 250495542228007542084825024*x**95 + 915272173525412173002245280*x**94 - 3186503122644027565267076160*x**93 + 10583742514496234413208502960*x**92 - 33576010735643226414316630080*x**91 + 101847232564784453456760444576*x**90 - 295685513897761316487369032640*x**89 + 822375335528148661480495122030*x**88 - 2193000894741729763947986992080*x**87 + 5611502289486190866572790244440*x**86 - 13788262768451783272150284600624*x**85 + 32555620425511154948132616418140*x**84 - 73910057182241540963328102138480*x**83 + 161435124898053892104111380986680*x**82 - 339427698503600491090695724125840*x**81 + 687341089469790994458658841354826*x**80 - 1341153345306909257480309934350880*x**79 + 2522645578077281698593916305088560*x**78 - 4575961746279720290472685390625760*x**77 + 8007933055989510508327199433595080*x**76 - 13524509161226728858508159043405024*x**75 + 22050830154174014443219824527290800*x**74 - 34718328327848448272303553511053600*x**73 + 52800790998602848414128320964727350*x**72 - 77584835753049083384025287948170800*x**71 + 110170466769329698405315908886402536*x**70 - 151214366153981938987688502393101520*x**69 + 200649832012014495964432820483153940*x**68 - 257437520317301617463800599865178640*x**67 + 319413219652948303149530373906795720*x**66 - 383295863583537963779436448688154864*x**65 + 444896984516606565101131592227322610*x**64 - 499533456299347722218814419342958720*x**63 + 542596685290670801720436352044937920*x**62 - 570186347254603215367238200454002560*x**61 + 579689453042179935623358837128235936*x**60 - 570186347254603215367238200454002560*x**59 + 542596685290670801720436352044937920*x**58 - 499533456299347722218814419342958720*x**57 + 444896984516606565101131592227322610*x**56 - 383295863583537963779436448688154864*x**55 + 319413219652948303149530373906795720*x**54 - 257437520317301617463800599865178640*x**53 + 200649832012014495964432820483153940*x**52 - 151214366153981938987688502393101520*x**51 + 110170466769329698405315908886402536*x**50 - 77584835753049083384025287948170800*x**49 + 52800790998602848414128320964727350*x**48 - 34718328327848448272303553511053600*x**47 + 22050830154174014443219824527290800*x**46 - 13524509161226728858508159043405024*x**45 + 8007933055989510508327199433595080*x**44 - 4575961746279720290472685390625760*x**43 + 2522645578077281698593916305088560*x**42 - 1341153345306909257480309934350880*x**41 + 687341089469790994458658841354826*x**40 - 339427698503600491090695724125840*x**39 + 161435124898053892104111380986680*x**38 - 73910057182241540963328102138480*x**37 + 32555620425511154948132616418140*x**36 - 13788262768451783272150284600624*x**35 + 5611502289486190866572790244440*x**34 - 2193000894741729763947986992080*x**33 + 822375335528148661480495122030*x**32 - 295685513897761316487369032640*x**31 + 101847232564784453456760444576*x**30 - 33576010735643226414316630080*x**29 + 10583742514496234413208502960*x**28 - 3186503122644027565267076160*x**27 + 915272173525412173002245280*x**26 - 250495542228007542084825024*x**25 + 65233214121876964084589850*x**24 - 16140176689948939567321200*x**23 + 3788000651722710306616200*x**22 - 841777922605046734803600*x**21 + 176773363747059814308756*x**20 - 35004626484566299863120*x**19 + 6520469639281957817640*x**18 - 1139499548612380977840*x**17 + 186264349292408429070*x**16 - 28383138939795570144*x**15 + 4016481925442769360*x**14 - 525520999590642720*x**13 + 63257157358132920*x**12 - 6964090718326560*x**11 + 696409071832656*x**10 - 62739556020960*x**9 + 5041571465970*x**8 - 356925413520*x**7 + 21916472760*x**6 - 1143468144*x**5 + 49287420*x**4 - 1685040*x**3 + 42840*x**2 - 720*x + 10",
+      "verdict": "NONVANISHING",
+      "case": "A",
+      "witness": "nonzero holomorphic 1-form dx/w0 on a compact curve of genus 59",
+      "n_places_at_infinity": 2,
+      "residues": [],
+      "sum_residues": "0"
+     }
+    }
+   ]
+  }
+ ]
+}

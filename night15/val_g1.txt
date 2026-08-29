@@ -1,0 +1,11 @@
+n= 1 m=2 EXACT-G1:VANISHING        g=0 pl=2 | NUM:VANISHING ls=1.11e-11 g=0 npunct=2 sumres=1.2e-12    v=True g=True pl=True
+n= 2 m=2 EXACT-G1:NONVANISHING     g=0 pl=3 | NUM:NONVANISHING ls=2.22e+00 g=0 npunct=3 sumres=2.3e-14 v=True g=True pl=True
+n= 3 m=2 EXACT-G1:NONVANISHING     g=1 pl=2 | NUM:UNRESOLVED ls=3.43e+00 g=1 npunct=2 sumres=8.4e-14   v=False g=True pl=True
+n= 1 m=3 EXACT-G1:VANISHING        g=0 pl=2 | NUM:VANISHING ls=7.88e-10 g=0 npunct=2 sumres=1.0e-10    v=True g=True pl=True
+n= 2 m=3 EXACT-G1:VANISHING        g=0 pl=3 | NUM:VANISHING ls=5.04e-12 g=0 npunct=3 sumres=5.7e-13    v=True g=True pl=True
+n= 3 m=3 EXACT-G1:NONVANISHING     g=0 pl=4 | NUM:NONVANISHING ls=2.10e+00 g=0 npunct=4 sumres=1.1e-12 v=True g=True pl=True
+n= 4 m=3 EXACT-G1:NONVANISHING     g=1 pl=3 | NUM:NONVANISHING ls=3.21e+00 g=1.5 npunct=2 sumres=5.7e-12 v=True g=False pl=False
+n= 2 m=4 EXACT-G1:VANISHING        g=0 pl=3 | NUM:NONVANISHING ls=8.60e-01 g=0 npunct=3 sumres=3.9e-12 v=False g=True pl=True
+n= 3 m=4 EXACT-G1:VANISHING        g=0 pl=4 | NUM:NONVANISHING ls=1.60e+00 g=1 npunct=4 sumres=6.1e-12 v=False g=False pl=True
+n= 2 m=5 EXACT-G1:VANISHING        g=0 pl=3 | NUM:VANISHING ls=1.16e-10 g=0 npunct=3 sumres=1.5e-11    v=True g=True pl=True
+n= 3 m=5 EXACT-G1:DEFERRED_TO_NUM  g=1 pl=2 | NUM:NONVANISHING ls=1.41e+00 g=2.5 npunct=2 sumres=2.0e-11 v=True g=False pl=True
