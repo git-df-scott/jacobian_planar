@@ -1,1 +1,3 @@
-a3b909a78c74 deg= 3 EMPTY_all_stages   stages=[(7, 'EMPTY_over_Q', 'lambda_exact'), (8, 'EMPTY_over_Q', 'lambda_exact'), (9, 'EMPTY_over_Q', 'lambda_exact'), (10, 'EMPTY_over_Q', 'lambda_exact'), (11, 'EMPTY_over_Q', 'lambda_exact'), (12, 'EMPTY_over_Q', 'lambda_exact'), (13, 'EMPTY_over_Q', 'lambda_exact'), (14, 'EMPTY_over_Q', 'lambda_exact'), (15, 'EMPTY_over_Q', 'lambda_exact')] (5s)
+a3b909a78c74 deg= 3 EMPTY_all_stages   stages=[(7, 'EMPTY_over_Q', 'lambda_exact'), (8, 'EMPTY_over_Q', 'lambda_exact'), (9, 'EMPTY_over_Q', 'lambda_exact')] (0s)
+fef547c2b095 deg= 7 EMPTY_all_stages   stages=[(15, 'EMPTY_over_Q', 'lambda_exact'), (16, 'EMPTY_over_Q', 'lambda_exact'), (21, 'EMPTY_over_Q', 'lambda_exact')] (14s)
+52830078b770 deg= 4 EMPTY_all_stages   stages=[(9, 'EMPTY_over_Q', 'lambda_exact'), (10, 'EMPTY_over_Q', 'lambda_exact'), (12, 'EMPTY_over_Q', 'lambda_exact')] (1s)

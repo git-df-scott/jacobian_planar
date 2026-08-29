@@ -22,12 +22,15 @@ OUT = "mate16_%s.json" % (sys.argv[1] if len(sys.argv) > 1 else "all")
 
 
 def degs_for(d):
+    """the two carriers just above night15's ceiling, plus the largest that fits."""
+    fit = 2 * d + 1
+    while (fit + 2) * (fit + 3) // 2 <= MAXCOLS and fit + 1 <= 3 * d:
+        fit += 1
     out = []
-    D = 2 * d + 1
-    while (D + 1) * (D + 2) // 2 <= MAXCOLS and D <= 5 * d:
-        out.append(D)
-        D += 1
-    return out
+    for D in (2 * d + 1, 2 * d + 2, fit):
+        if D not in out and (D + 1) * (D + 2) // 2 <= MAXCOLS:
+            out.append(D)
+    return sorted(out)
 
 
 def unimodular_and_noncoordinate(rec):
