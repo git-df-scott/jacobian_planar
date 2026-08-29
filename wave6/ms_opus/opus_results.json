@@ -30,5 +30,11 @@
   "verdict": "MS-TIMEOUT",
   "wall": 1800.3,
   "nvars": 28
+ },
+ {
+  "name": "w6_79970_1",
+  "verdict": "MS-TIMEOUT",
+  "wall": 1800.4,
+  "nvars": 35
  }
 ]
