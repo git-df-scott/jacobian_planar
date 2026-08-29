@@ -1,3 +1,4 @@
+# night15: in-lane copy of the night14 bivariate kernel (read-only lane).
 """night14 -- in-lane bivariate polynomial kernel (ring: Q).
 
 Representation: dict {(i, j): Fraction}  for  sum c_ij x^i y^j.
