@@ -4,3 +4,8 @@
 [  4    580s] deg=6   -x**4*y**2 + y + 1                       EMPTY  topD=24  |lam|=6    ratmate=False poles=None
 [  5    701s] deg=7   x**4*y**3 + y + 1                        EMPTY  topD=14  |lam|=4    ratmate=False poles=None
 [  6   1325s] deg=7   -x**4*y**3 + y + 1                       EMPTY  topD=14  |lam|=4    ratmate=False poles=None
+[  7   1376s] deg=7   x**5*y**2 + y + 1                        EMPTY  topD=14  |lam|=4    ratmate=False poles=None
+[  8   1425s] deg=7   -x**5*y**2 + y + 1                       EMPTY  topD=14  |lam|=4    ratmate=False poles=None
+[  9   1471s] deg=8   x**3*y**5 + y + 1                        EMPTY  topD=16  |lam|=4    ratmate=False poles=None
+[ 10   1518s] deg=8   -x**3*y**5 + y + 1                       EMPTY  topD=16  |lam|=4    ratmate=False poles=None
+[ 11   1565s] deg=8   x**5*y**3 + y + 1                        EMPTY  topD=16  |lam|=4    ratmate=False poles=None
