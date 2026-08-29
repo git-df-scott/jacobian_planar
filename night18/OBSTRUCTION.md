@@ -441,3 +441,16 @@ returned `EMPTY_over_Q` with a `lambda` verified exactly over `Q`; and the
 consistency detector was shown to work on a family of coordinates (control C2,
 which returned `MATE_over_Q(t)` with a residual of 0 terms and NO certificate).
 `night18/HIT_<hash>/` was therefore never written.
+
+---
+
+## 8. One computation not completed, recorded as such
+
+`cover12.py` also attempted the generic chart at `deg h = 2`, `D = 12` over the
+FULL 6-parameter field `Q(gamma, a, alpha, h0, h1, h2)`.  The `deg h = 1` case
+at the same carrier finished in 452s; the `deg h = 2` case did not finish
+within this lane's compute budget and was stopped.  It is not needed for any
+statement above: §5.2 decides that carrier for `deg h = 2` on the slice
+`a = 0, alpha = 0`, which the carrier-preserving translation `TAU_a` and the
+constant-shift identity of `FAMILY.md` §5.1 reach from every member of the
+stratum.  No verdict is claimed for that unfinished run.
