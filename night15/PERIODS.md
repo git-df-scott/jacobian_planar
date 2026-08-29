@@ -655,6 +655,21 @@ count is how many corpus members carry that pair.
 mate verdicts: {'EMPTY_all_stages': 55, 'NOT_CERTIFIED': 2}
 
 
+### 6.5b Independent re-verification of the lambda certificates
+
+`verify_lambdas15.py` rebuilds the Keller linear system from the recorded `P`
+and the recorded carrier, and re-checks every emitted `lambda` in exact rational
+arithmetic (`lambda^T A = 0` on every column, `lambda^T e = 1`), using night12's
+own `verify_lambda`:
+
+    lambda certificates re-verified independently: 169 ok, 0 bad
+
+(The first run of this check reported 130 failures; the cause was in the CHECKER,
+which reconstructed `P` with `int()` on rational coefficients and so truncated
+every half-integer. With the same integerisation `mate15` uses -- multiply `P`
+by the lcm of the denominators, which is a bijection `Q <-> den*Q` on solutions
+and so preserves emptiness -- all 169 verify.)
+
 ### 6.6 Hit gate
 
 No mate system was consistent. Of the 57 survivors, 55 returned `EMPTY_over_Q`
