@@ -2616,5 +2616,917 @@
     "lambda_verified_over_Q": true
    }
   ]
+ },
+ "H2_D6": {
+  "deg_h": 2,
+  "deg_Q_bound": 6,
+  "n_points": 60,
+  "charts_used": {
+   "generic": 49,
+   "generic & {a=0}": 11
+  },
+  "all_verified": true,
+  "points": [
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-1",
+     "alpha": "-3",
+     "h0": "4",
+     "h1": "-3",
+     "h2": "-2"
+    },
+    "h_at_a": "5",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-3",
+     "a": "-5",
+     "alpha": "6",
+     "h0": "-4",
+     "h1": "-1",
+     "h2": "1"
+    },
+    "h_at_a": "26",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "3",
+     "alpha": "5",
+     "h0": "3",
+     "h1": "-4",
+     "h2": "4"
+    },
+    "h_at_a": "27",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-4",
+     "alpha": "0",
+     "h0": "4",
+     "h1": "4",
+     "h2": "-2"
+    },
+    "h_at_a": "-44",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "6",
+     "a": "5",
+     "alpha": "-1",
+     "h0": "1",
+     "h1": "5",
+     "h2": "-2"
+    },
+    "h_at_a": "-24",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-4",
+     "a": "0",
+     "alpha": "4",
+     "h0": "-3",
+     "h1": "4",
+     "h2": "0"
+    },
+    "h_at_a": "-3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-5",
+     "a": "4",
+     "alpha": "2",
+     "h0": "5",
+     "h1": "-4",
+     "h2": "2"
+    },
+    "h_at_a": "21",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-1",
+     "a": "-1",
+     "alpha": "-6",
+     "h0": "-1",
+     "h1": "3",
+     "h2": "-5"
+    },
+    "h_at_a": "-9",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-4",
+     "alpha": "-1",
+     "h0": "3",
+     "h1": "-4",
+     "h2": "2"
+    },
+    "h_at_a": "51",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "-4",
+     "alpha": "3",
+     "h0": "2",
+     "h1": "-5",
+     "h2": "0"
+    },
+    "h_at_a": "22",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-4",
+     "a": "-4",
+     "alpha": "5",
+     "h0": "-3",
+     "h1": "2",
+     "h2": "4"
+    },
+    "h_at_a": "53",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-4",
+     "a": "1",
+     "alpha": "4",
+     "h0": "-3",
+     "h1": "-5",
+     "h2": "-4"
+    },
+    "h_at_a": "-12",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-6",
+     "a": "-5",
+     "alpha": "1",
+     "h0": "5",
+     "h1": "1",
+     "h2": "-4"
+    },
+    "h_at_a": "-100",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "3",
+     "alpha": "-5",
+     "h0": "-3",
+     "h1": "-1",
+     "h2": "4"
+    },
+    "h_at_a": "30",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-6",
+     "a": "-1",
+     "alpha": "-1",
+     "h0": "-3",
+     "h1": "3",
+     "h2": "1"
+    },
+    "h_at_a": "-5",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-3",
+     "a": "5",
+     "alpha": "-6",
+     "h0": "5",
+     "h1": "-2",
+     "h2": "2"
+    },
+    "h_at_a": "45",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-2",
+     "a": "1",
+     "alpha": "0",
+     "h0": "-3",
+     "h1": "0",
+     "h2": "2"
+    },
+    "h_at_a": "-1",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-6",
+     "a": "-5",
+     "alpha": "5",
+     "h0": "4",
+     "h1": "-3",
+     "h2": "4"
+    },
+    "h_at_a": "119",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "1",
+     "a": "0",
+     "alpha": "-5",
+     "h0": "-4",
+     "h1": "-3",
+     "h2": "-1"
+    },
+    "h_at_a": "-4",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-4",
+     "a": "-5",
+     "alpha": "0",
+     "h0": "-3",
+     "h1": "-2",
+     "h2": "3"
+    },
+    "h_at_a": "82",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-1",
+     "a": "5",
+     "alpha": "1",
+     "h0": "-2",
+     "h1": "-1",
+     "h2": "-4"
+    },
+    "h_at_a": "-107",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-1",
+     "a": "-5",
+     "alpha": "4",
+     "h0": "-4",
+     "h1": "3",
+     "h2": "-1"
+    },
+    "h_at_a": "-44",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-6",
+     "a": "2",
+     "alpha": "-6",
+     "h0": "0",
+     "h1": "-2",
+     "h2": "1"
+    },
+    "h_at_a": "0",
+    "unimodular_member": false,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-2",
+     "alpha": "6",
+     "h0": "1",
+     "h1": "1",
+     "h2": "1"
+    },
+    "h_at_a": "3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-1",
+     "a": "1",
+     "alpha": "-5",
+     "h0": "-3",
+     "h1": "-5",
+     "h2": "0"
+    },
+    "h_at_a": "-8",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "5",
+     "a": "-1",
+     "alpha": "6",
+     "h0": "2",
+     "h1": "-2",
+     "h2": "-1"
+    },
+    "h_at_a": "3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "4",
+     "a": "-4",
+     "alpha": "4",
+     "h0": "-1",
+     "h1": "-4",
+     "h2": "0"
+    },
+    "h_at_a": "15",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-3",
+     "a": "5",
+     "alpha": "6",
+     "h0": "5",
+     "h1": "-2",
+     "h2": "1"
+    },
+    "h_at_a": "20",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-2",
+     "a": "0",
+     "alpha": "6",
+     "h0": "-4",
+     "h1": "2",
+     "h2": "1"
+    },
+    "h_at_a": "-4",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-2",
+     "a": "0",
+     "alpha": "2",
+     "h0": "-1",
+     "h1": "5",
+     "h2": "0"
+    },
+    "h_at_a": "-1",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "6",
+     "a": "0",
+     "alpha": "2",
+     "h0": "-3",
+     "h1": "-1",
+     "h2": "1"
+    },
+    "h_at_a": "-3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-2",
+     "a": "-1",
+     "alpha": "4",
+     "h0": "4",
+     "h1": "-3",
+     "h2": "-1"
+    },
+    "h_at_a": "6",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "3",
+     "alpha": "4",
+     "h0": "4",
+     "h1": "4",
+     "h2": "5"
+    },
+    "h_at_a": "61",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "5",
+     "a": "0",
+     "alpha": "-3",
+     "h0": "1",
+     "h1": "0",
+     "h2": "-2"
+    },
+    "h_at_a": "1",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-1",
+     "a": "0",
+     "alpha": "4",
+     "h0": "0",
+     "h1": "-1",
+     "h2": "-2"
+    },
+    "h_at_a": "0",
+    "unimodular_member": false,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "4",
+     "a": "3",
+     "alpha": "-4",
+     "h0": "5",
+     "h1": "-1",
+     "h2": "5"
+    },
+    "h_at_a": "47",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "4",
+     "alpha": "6",
+     "h0": "-2",
+     "h1": "1",
+     "h2": "0"
+    },
+    "h_at_a": "2",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "4",
+     "a": "-1",
+     "alpha": "-6",
+     "h0": "-4",
+     "h1": "3",
+     "h2": "3"
+    },
+    "h_at_a": "-4",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-3",
+     "a": "0",
+     "alpha": "2",
+     "h0": "-1",
+     "h1": "5",
+     "h2": "-3"
+    },
+    "h_at_a": "-1",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "5",
+     "alpha": "6",
+     "h0": "2",
+     "h1": "-2",
+     "h2": "-1"
+    },
+    "h_at_a": "-33",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "5",
+     "a": "4",
+     "alpha": "0",
+     "h0": "2",
+     "h1": "3",
+     "h2": "3"
+    },
+    "h_at_a": "62",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "4",
+     "a": "2",
+     "alpha": "6",
+     "h0": "5",
+     "h1": "4",
+     "h2": "-1"
+    },
+    "h_at_a": "9",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-3",
+     "a": "4",
+     "alpha": "-6",
+     "h0": "-4",
+     "h1": "-1",
+     "h2": "-4"
+    },
+    "h_at_a": "-72",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "3",
+     "a": "0",
+     "alpha": "-6",
+     "h0": "1",
+     "h1": "-1",
+     "h2": "0"
+    },
+    "h_at_a": "1",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "3",
+     "alpha": "5",
+     "h0": "4",
+     "h1": "4",
+     "h2": "-1"
+    },
+    "h_at_a": "7",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-3",
+     "a": "5",
+     "alpha": "-5",
+     "h0": "1",
+     "h1": "1",
+     "h2": "-3"
+    },
+    "h_at_a": "-69",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "-2",
+     "a": "0",
+     "alpha": "-1",
+     "h0": "-3",
+     "h1": "-3",
+     "h2": "2"
+    },
+    "h_at_a": "-3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "5",
+     "a": "4",
+     "alpha": "0",
+     "h0": "1",
+     "h1": "3",
+     "h2": "-3"
+    },
+    "h_at_a": "-35",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-1",
+     "a": "-3",
+     "alpha": "-3",
+     "h0": "-1",
+     "h1": "2",
+     "h2": "4"
+    },
+    "h_at_a": "29",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "5",
+     "a": "-1",
+     "alpha": "-4",
+     "h0": "2",
+     "h1": "4",
+     "h2": "5"
+    },
+    "h_at_a": "3",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "3",
+     "alpha": "-4",
+     "h0": "-4",
+     "h1": "3",
+     "h2": "-2"
+    },
+    "h_at_a": "-13",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "1",
+     "alpha": "-6",
+     "h0": "-4",
+     "h1": "0",
+     "h2": "2"
+    },
+    "h_at_a": "-2",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-5",
+     "a": "-2",
+     "alpha": "4",
+     "h0": "-5",
+     "h1": "4",
+     "h2": "5"
+    },
+    "h_at_a": "7",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "-3",
+     "alpha": "4",
+     "h0": "-5",
+     "h1": "4",
+     "h2": "0"
+    },
+    "h_at_a": "-17",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-3",
+     "alpha": "-4",
+     "h0": "-3",
+     "h1": "4",
+     "h2": "-5"
+    },
+    "h_at_a": "-60",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic & {a=0}",
+    "params": {
+     "gamma": "1",
+     "a": "0",
+     "alpha": "-6",
+     "h0": "0",
+     "h1": "3",
+     "h2": "-2"
+    },
+    "h_at_a": "0",
+    "unimodular_member": false,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "2",
+     "a": "5",
+     "alpha": "-2",
+     "h0": "-3",
+     "h1": "2",
+     "h2": "-5"
+    },
+    "h_at_a": "-118",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "5",
+     "a": "5",
+     "alpha": "0",
+     "h0": "-2",
+     "h1": "-2",
+     "h2": "-4"
+    },
+    "h_at_a": "-112",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "1",
+     "a": "-5",
+     "alpha": "-2",
+     "h0": "-1",
+     "h1": "5",
+     "h2": "0"
+    },
+    "h_at_a": "-26",
+    "unimodular_member": true,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   },
+   {
+    "chart": "generic",
+    "params": {
+     "gamma": "-5",
+     "a": "1",
+     "alpha": "-3",
+     "h0": "3",
+     "h1": "-3",
+     "h2": "0"
+    },
+    "h_at_a": "0",
+    "unimodular_member": false,
+    "specialises": true,
+    "lambda_verified_over_Q": true
+   }
+  ]
  }
 }

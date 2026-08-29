@@ -1,0 +1,8 @@
+SLICE  R(gamma, c) = gamma x y^2 + c y   (the deg h = 1 family, moved)
+  D=3   n=10   rows=12   EMPTY_over_Q(params)   |supp lambda|=3  denominators=['gamma']  (0.0s)
+  D=6   n=28   rows=33   EMPTY_over_Q(params)   |supp lambda|=4  denominators=['gamma']  (0.1s)
+     pulled back to 6 random deg h = 1 members at D=6: verified over Q at 6 / 6
+  D=12  n=91   rows=102  EMPTY_over_Q(params)   |supp lambda|=7  denominators=['gamma']  (0.5s)
+     pulled back to 6 random deg h = 1 members at D=12: verified over Q at 6 / 6
+  D=18  n=190  rows=207  EMPTY_over_Q(params)   |supp lambda|=10  denominators=['gamma']  (2.2s)
+done

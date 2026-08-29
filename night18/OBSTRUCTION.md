@@ -265,3 +265,179 @@ So, at the carrier `deg Q <= 2 deg P = 6`,
 
 Note the cover holds on `gamma != 0` alone: it does not even need
 `h(a) != 0`, so it covers the non-unimodular wall as well.
+
+---
+
+## 4. One certificate, many `P`: the specialisation sweep (`verify18.py`)
+
+60 random rational parameter points per row; for each, the chart whose
+restriction the point satisfies and whose denominators do not vanish is picked,
+its SYMBOLIC `lambda` is substituted, and `lambda^T M = 0` / `lambda^T e = 1`
+are verified EXACTLY over `Q` at that point.
+
+```
+SPECIALISATION SWEEP -- one symbolic certificate, many P
+  deg h=1  D=3    60 points; charts used {generic: 51, a=0: 8, a=0 & h1=0: 1}; verifies over Q at 60 / 60
+  deg h=1  D=6    60 points; charts used {generic: 51, a=0: 9};                verifies over Q at 60 / 60
+  deg h=2  D=3    60 points; charts used {generic: 49, a=0: 10, a=0 & h1=0: 1}; verifies over Q at 60 / 60
+  deg h=2  D=6    60 points; charts used {generic: 49, a=0: 11};               verifies over Q at 60 / 60
+ALL VERIFIED
+```
+
+---
+
+## 5. The carrier `deg Q <= 4 deg P = 12`, and a closed form
+
+### 5.1 Directly, `deg h = 1` (`cover12.py`, full 5-parameter family)
+
+```
+==============================================================================
+COVER  deg h = 1,  carrier deg Q <= 12 (= 4 deg P)
+==============================================================================
+  [d=0] generic                            EMPTY_over_Q(params)   denominators=['a', 'gamma']  (451.9s)
+  [d=1] generic & {a=0}                    EMPTY_over_Q(params)   denominators=['gamma']  (1.9s)
+```
+
+`n = 91` unknowns, `102` equations, `|supp lambda| = 59` on the generic chart
+and `42` on `a = 0`; same two-chart cover, same empty degeneration locus inside
+the family.
+
+### 5.2 `deg h = 2` at `D = 12`, via the carrier-preserving translation (`red2_18.py`)
+
+`TAU_a : (x,y) -> (x + a, y)` has Jacobian 1 and maps the carrier
+`{ deg <= D }` onto itself, and it carries the member with parameters
+`(gamma, a, alpha, h)` to the member with `a = 0` and `h(x) -> h(x + a)`;
+`alpha` may additionally be set to `0` because it only shifts `P` by a constant,
+which `[P, Q]` does not see.  On that slice (free parameters
+`gamma, h0, h1, h2`):
+
+```
+  deg h=2  slice {a=0, alpha=0}  D=6   n=28  rows=36   EMPTY_over_Q(params)  |supp|=14  denominators=['gamma']
+  deg h=2  slice {a=0, alpha=0}  D=12  n=91  rows=105  EMPTY_over_Q(params)  |supp|=45  denominators=['gamma']
+```
+
+### 5.3 The slice `R = gamma x y^2 + c y` and a closed-form certificate
+
+For `deg h = 1` BOTH carrier-preserving moves are available (`FAMILY.md` §5:
+the shear `y -> y - h1/(2 gamma)` has degree 0 there), so every member is
+carried onto the two-parameter slice
+
+```
+    R(gamma, c)  =  gamma * x * y^2  +  c * y ,        c = h(a).
+```
+
+`red18.py` solves the certificate on `R`:
+
+```
+SLICE  R(gamma, c) = gamma x y^2 + c y
+  D=3   n=10   rows=12   EMPTY_over_Q(params)  |supp lambda|=3   denominators=['gamma']  (0.0s)
+  D=6   n=28   rows=33   EMPTY_over_Q(params)  |supp lambda|=4   denominators=['gamma']  (0.1s)
+     pulled back to 6 random deg h = 1 members at D=6:  verified over Q at 6 / 6
+  D=12  n=91   rows=102  EMPTY_over_Q(params)  |supp lambda|=7   denominators=['gamma']  (0.5s)
+     pulled back to 6 random deg h = 1 members at D=12: verified over Q at 6 / 6
+  D=18  n=190  rows=207  EMPTY_over_Q(params)  |supp lambda|=10  denominators=['gamma']  (2.2s)
+```
+
+and the answer has a closed form:
+
+> ### the obstruction
+> ```
+>     lambda_{n,n}  =  (-1)^n * c^n / ( (n+1) * gamma^n ) ,    0 <= n <= floor((D+1)/2)
+>     lambda_m      =  0                                        for every other monomial m
+> ```
+> a DIAGONAL functional on the coefficients of `[P, Q]`, with the only
+> denominator a power of `gamma`.
+
+`closed18.py` writes that formula down independently of any elimination and
+verifies `lambda^T M = 0` on every column and `lambda^T e = 1` over
+`Q(gamma, c)`:
+
+```
+  D=2 ... D=24   |supp lambda| = 2 ... 13   verified over Q(gamma,c): True   at every D
+  CLOSED FORM VERIFIED at every carrier tested
+```
+
+(23 carriers, up to `n = 325` unknowns and `348` equations at `D = 24 = 8 deg P`.)
+
+> **An instrument error found and fixed, recorded because it changed answers.**
+> The first version of `closed18.py` cut the diagonal at `n <= floor(D/2)` and
+> reported `verified = False` at every ODD `D` while passing at every even `D`.
+> The cut is wrong: the row monomials of `M` run up to total degree `D + 1`, so
+> `(n, n)` is a row exactly when `2n <= D + 1`, i.e. `n <= floor((D+1)/2)` —
+> which coincides with `floor(D/2)` only for even `D`.  With the corrected cut
+> all 23 carriers verify.  The rref-produced certificates had the right support
+> all along; it was the hand-written formula that was short by one entry.
+
+---
+
+## 6. Measurements
+
+**N1.  A symbolic certificate EXISTS.**  For the `HE`, `deg g = 1` family with
+its parameters kept symbolic, at `deg h = 1` (5 parameters) and `deg h = 2`
+(6 parameters), a vector `lambda(params)` with entries rational in the
+parameters, satisfying `lambda^T M = 0` on every column of the mate system and
+`lambda^T e_{(0,0)} = 1`, was solved over `Q(params)` and verified by exact
+expansion, at the carriers `deg Q <= 3`, `deg Q <= 6 = 2 deg P` and
+`deg Q <= 12 = 4 deg P`.
+
+**N2.  The degeneration locus of the generic certificate is
+`V(a * gamma)`** — two irreducible hypersurfaces of dimension `deg h + 3` in the
+`deg h + 4`-dimensional parameter space.  `V(gamma)` is not part of the family
+at all (`P` is undefined there and `deg g = 1` fails).  `V(a)` is inside the
+family and is an artefact of the elimination's pivot choice.  No rank-drop locus
+was found: the symbolic rank of `M` equals its rank at every specialisation
+tested (C3 and every point of §2.1).
+
+**N3.  Exact verdicts on every component.**  Sixteen rational points were drawn
+across the components (`V(a)`, `V(gamma)`, and the probed wall `V(h(a))`), for
+`deg h = 1` and `deg h = 2`, and each one's mate system was built and decided
+exactly over `Q` at `deg Q <= 3` and `deg Q <= 6`.  Result:
+**`EMPTY_over_Q` at every point of every component that is a point of the
+family, each with its own `lambda` verified exactly over `Q`**; the points on
+`V(gamma)` are not points of the family and were reported as such.
+
+**N4.  The degeneration locus is removable inside the family.**  Re-solving the
+certificate ON the component `a = 0` produces a second certificate whose only
+denominator is `gamma`.  So at the carrier `deg Q <= 2 deg P = 6` (and at
+`deg Q <= 4 deg P = 12` for `deg h = 1`), **two** exactly verified symbolic
+certificates cover the entire `deg h + 4`-dimensional family, with EMPTY
+degeneration locus inside it.  At `deg Q <= 3` three charts are needed
+(`generic`, `a = 0`, `a = 0 & h1 = 0`), again with empty residue.
+
+**N5.  The carrier-relative statement.**  Stated as the brief asks, carrier
+explicit:
+
+> For every `(gamma, a, alpha, h_0, h_1)` with `gamma != 0` — that is, for the
+> whole `5`-dimensional `deg h = 1` stratum, `deg P = 3`, support `HE(1,1,1)` —
+> the mate system of `P` on the carrier `S(D) = { x^i y^j : i + j <= D }` is
+> INCONSISTENT over `Q`, for `D = 3`, `D = 6 = 2 deg P` and `D = 12 = 4 deg P`,
+> and the inconsistency is witnessed by ONE of two symbolic `lambda(params)`
+> per carrier.  The same holds for the whole `6`-dimensional `deg h = 2`
+> stratum (`deg P = 3`, support `HE(1,2,3)`) at `D = 3` and `D = 6`, and at
+> `D = 12` after the carrier-preserving translation to `a = 0`.
+>
+> On the two-parameter slice `R = gamma x y^2 + c y`, onto which every member of
+> the `deg h = 1` stratum is carried by carrier-preserving Jacobian-1 moves, the
+> statement holds at **every carrier `D = 2, ..., 24`** with the single closed
+> form `lambda_{n,n} = (-1)^n c^n / ((n+1) gamma^n)`.
+
+This replaces night17's nineteen point verdicts by finitely many certificates
+covering infinitely many `P` at once — every odd degree `>= 3` on the `deg h`
+axis, and a continuum in each degree.
+
+**N6.  What is NOT measured here.**  The statement is carrier-relative: it says
+the mate system is inconsistent on the carriers listed, not that no `Q` of any
+degree exists.  Nothing here is a statement about the Jacobian conjecture, and
+nothing here is a claim about strata other than `HE` with `deg g = 1`.
+
+---
+
+## 7. Hit-gate status
+
+**No mate system was consistent.**  Every symbolic solve returned
+`EMPTY_over_Q(params)` with a `lambda` verified by exact expansion over
+`Q(params)`; every exact solve at a rational point of the degeneration locus
+returned `EMPTY_over_Q` with a `lambda` verified exactly over `Q`; and the
+consistency detector was shown to work on a family of coordinates (control C2,
+which returned `MATE_over_Q(t)` with a residual of 0 terms and NO certificate).
+`night18/HIT_<hash>/` was therefore never written.
