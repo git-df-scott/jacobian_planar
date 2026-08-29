@@ -1,0 +1,82 @@
+==============================================================================
+K1  a COORDINATE must come out: unimodular, genus 0, all fibres irreducible
+==============================================================================
+  P = x + y**2                           deg=2  
+     unimodular : YES   U = 1                        V = 0                         U*P_x+V*P_y-1 expands to 0
+     genus(generic fibre, Singular/normal.lib over Q(c)) = 0   |  Baker bound = #interior lattice pts of Newton(P-c) = 0
+     fibre irreducibility over Qbar: 0 candidate special value(s); all fibres irreducible = True
+  P = x**10 + 2*x**5*y - x + y**2        deg=10 
+     unimodular : YES   U = -1                       V = 5*x**4                    U*P_x+V*P_y-1 expands to 0
+     genus(generic fibre, Singular/normal.lib over Q(c)) = 0   |  Baker bound = #interior lattice pts of Newton(P-c) = 4
+     fibre irreducibility over Qbar: 0 candidate special value(s); all fibres irreducible = True
+  P = x**12 + 4*x**9*y + 2*x**9 + 6*x**6*y**2 + 6*x**6*y + x**6 + 4*x**3*y**3 + 6*x**3*y**2 + 2*x**3*y - x + y**4 + 2*y**3 + y**2 deg=12 
+     unimodular : YES   U = -1                       V = 3*x**2                    U*P_x+V*P_y-1 expands to 0
+     genus(generic fibre, Singular/normal.lib over Q(c)) = 0   |  Baker bound = #interior lattice pts of Newton(P-c) = 15
+     fibre irreducibility over Qbar: 0 candidate special value(s); all fibres irreducible = True
+  K1 verdict: PASS
+
+==============================================================================
+K2  x*y -- report what it ACTUALLY is (no assumption)
+==============================================================================
+  P = x*y                                deg=2  
+     unimodular : NO    reduce(1, std(P_x,P_y)) = 1
+     genus(generic fibre, Singular/normal.lib over Q(c)) = 0   |  Baker bound = #interior lattice pts of Newton(P-c) = 0
+     fibre irreducibility over Qbar: 1 candidate special value(s); all fibres irreducible = False
+        c root of  c                                        -> 2 absolutely irreducible component(s)
+  measured: unimodular = False (the ideal (P_x,P_y) = (y,x) is the maximal
+  ideal at the origin, so 1 is NOT in it: x*y is NON-UNIMODULAR, it has
+  the critical point (0,0)); genus = 0; the fibre c = 0 splits as x*y = 0
+  into 2 absolutely irreducible components, so NOT all fibres are irreducible.
+  K2 verdict: PASS
+
+==============================================================================
+K3  hyperelliptic y^2 - f(x): the classical genus floor((deg f - 1)/2)
+==============================================================================
+  P = y^2 - (x**5 + x + 1    )   Singular genus = 2    classical genus = 2    Baker interior-point bound = 2
+  P = y^2 - (x**5 - x        )   Singular genus = 2    classical genus = 2    Baker interior-point bound = 2
+  P = y^2 - (x**7 + x + 1    )   Singular genus = 3    classical genus = 3    Baker interior-point bound = 3
+  P = y^2 - (x**6 + x + 1    )   Singular genus = 2    classical genus = 2    Baker interior-point bound = 2
+  P = y^2 - (x**9 + x**2 + 1 )   Singular genus = 4    classical genus = 4    Baker interior-point bound = 4
+  P = y^2 - (x**11 + x + 1   )   Singular genus = 5    classical genus = 5    Baker interior-point bound = 5
+  K3 verdict: PASS   (two independent computations of the genus agree:
+   Singular's normalisation genus, and the classical hyperelliptic value;
+   the Newton-polygon interior count is an upper bound, as Baker's
+   theorem requires.)
+
+==============================================================================
+K4  a P with a KNOWN reducible special fibre must be DETECTED
+==============================================================================
+  P = x**2*y + x                      candidate special c: ['c']                     all fibres irreducible = False
+       (x + x^2 y at c=0 is x*(x*y+1))
+        c root of c                        -> 2 absolutely irreducible component(s)
+  P = x*y**2 + y                      candidate special c: ['c']                     all fibres irreducible = False
+       (night19's P at c=0 is y*(x*y+1))
+        c root of c                        -> 2 absolutely irreducible component(s)
+  P = x**2*y**3 + x                   candidate special c: ['c']                     all fibres irreducible = False
+       (x + x^2 y^3 at c=0 is x*(x*y^3+1))
+        c root of c                        -> 2 absolutely irreducible component(s)
+  P = x**2*y**2 - 3*x*y + x + 2       candidate special c: ['c + 1/4', 'c - 2']      all fibres irreducible = False
+       (designed to split at some c)
+        c root of c + 1/4                  -> 1 absolutely irreducible component(s)
+        c root of c - 2                    -> 2 absolutely irreducible component(s)
+  P = -x**2 + y**2                    candidate special c: ['c']                     all fibres irreducible = False
+       (y^2-x^2 at c=0 is (y-x)(y+x))
+        c root of c                        -> 2 absolutely irreducible component(s)
+  K4 verdict: PASS
+
+==============================================================================
+K5  the target shape exists at all: unimodular + genus >= 1
+==============================================================================
+  P = x**2*y**3 + x                      deg=5  
+     unimodular : YES   U = -2*x*y**3 + 1            V = 4*y**4/3                  U*P_x+V*P_y-1 expands to 0
+     genus(generic fibre, Singular/normal.lib over Q(c)) = 1   |  Baker bound = #interior lattice pts of Newton(P-c) = 1
+     fibre irreducibility over Qbar: 1 candidate special value(s); all fibres irreducible = False
+        c root of  c                                        -> 2 absolutely irreducible component(s)
+  (recorded as a measurement: this P is unimodular with a genus-1
+   generic fibre, but its fibre c = 0 is reducible -- so it fails the
+   third requirement.  Target = unimodular AND all fibres irreducible
+   AND genus >= 1.  Genus >= 1 is forced by Neumann-Norbury: a
+   nontrivial rational polynomial in two variables has a reducible
+   fibre, so irreducible-fibres + genus 0 leaves only coordinates.)
+
+CONTROLS PASS
