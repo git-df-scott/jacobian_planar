@@ -17,5 +17,43 @@
   "sum_abs_residues": 9.217181483103985e-15,
   "n_places_total": 6,
   "t": 422.7
+ },
+ {
+  "hash": "d735085d2c22",
+  "c": "0",
+  "verdict": "VANISHING",
+  "error": null,
+  "ls_residual": 3.6324056596909954e-10,
+  "max_period": 2.4489648489841773e-10,
+  "rel_ls_residual": 3.6324056596909954e-10,
+  "err_ls_residual": 1.5557248878181425e-11,
+  "chi": 1,
+  "n_components": 4,
+  "n_punctures": null,
+  "genus_sum": null,
+  "n_cycles": 4,
+  "max_abs_residue": null,
+  "sum_abs_residues": null,
+  "n_places_total": null,
+  "t": 800.1
+ },
+ {
+  "hash": "7c887944e856",
+  "c": "0",
+  "verdict": "VANISHING",
+  "error": null,
+  "ls_residual": 4.557731847652188e-14,
+  "max_period": 3.660733301371731e-14,
+  "rel_ls_residual": 4.557731847652188e-14,
+  "err_ls_residual": 1.9760610611031844e-14,
+  "chi": 1,
+  "n_components": 3,
+  "n_punctures": 5,
+  "genus_sum": 0,
+  "n_cycles": 3,
+  "max_abs_residue": 3.7249420443111053e-13,
+  "sum_abs_residues": 3.077596590117356e-13,
+  "n_places_total": 5,
+  "t": 330.6
  }
 ]
