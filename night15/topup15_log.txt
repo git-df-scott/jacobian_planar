@@ -1,0 +1,1 @@
+96e4a2c6d1d3 deg=24  carrier D=48 n=1225

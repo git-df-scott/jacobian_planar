@@ -138,11 +138,33 @@ def main(limit=None, out_json="screen15_records.json", csv_path="period_screen.c
     if limit:
         C = C[:limit]
     recs = []
+    done = {}
+    jp = os.path.join(HERE, out_json)
+    if os.path.exists(jp):                 # resume: keep what is already decided
+        for r in json.load(open(jp)):
+            done[r["hash"]] = r
     csv = ["hash,label,deg_P,deg_y,species,U_bezout,U_residual_terms,SY,FIB,"
            "instrument,n_places_inf,genus,period_verdict,witness"]
     t0 = time.time()
     for idx, (P, lab, meta) in enumerate(C):
         h = P14.phash(P)
+        if h in done and done[h].get("outcome"):
+            rec = done[h]
+            recs.append(rec)
+            det = rec.get("period_detail", {})
+            f0 = det.get("fibres", [{}])[0].get("res", {}) if det.get("fibres") else {}
+            g1 = det.get("exact_g1", {})
+            csv.append("%s,%s,%d,%d,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s" % (
+                h, '"%s"' % lab.replace('"', "'"), rec["deg_P"], rec["deg_y"],
+                "|".join(rec.get("species", [])), rec.get("U", {}).get("U"),
+                rec.get("U", {}).get("residual_terms"), rec.get("SY"), rec.get("FIB"),
+                det.get("instrument"),
+                f0.get("n_places_at_infinity", f0.get("n_punctures",
+                                                      g1.get("n_places_at_infinity"))),
+                f0.get("genus", f0.get("genus_sum", g1.get("genus"))),
+                rec.get("period_verdict"),
+                '"%s"' % str(f0.get("witness", det.get("skipped", "")))[:80].replace('"', "'")))
+            continue
         rec = {"hash": h, "label": lab, "meta": meta,
                "deg_P": P14.tdeg(P), "deg_y": deg_y(P),
                "n_terms": len(P), "P": {"%d,%d" % k: [v.numerator, v.denominator]

@@ -54,6 +54,50 @@ def main():
                                      sum(c.values()) - c["NONVANISHING"] - c["VANISHING"]))
     A("")
 
+    A("### 6.3b Species S1..S5 as MEASURED (not as intended)\n")
+    A("Each row counts the screened P for which the measurement itself puts the")
+    A("member in that species.\n")
+    A("| species (measured) | count | NONVANISHING | VANISHING | other |")
+    A("|---|---|---|---|---|")
+
+    def places_of(r):
+        d = r["period_detail"]
+        g1 = d.get("exact_g1", {})
+        if g1:
+            return g1.get("n_places_at_infinity")
+        f = d.get("fibres") or [{}]
+        return f[0].get("res", {}).get("n_punctures")
+
+    def genus_of(r):
+        d = r["period_detail"]
+        g1 = d.get("exact_g1", {})
+        if g1:
+            return g1.get("genus")
+        f = d.get("fibres") or [{}]
+        return f[0].get("res", {}).get("genus_sum")
+
+    def nfac_of(r):
+        fd = r.get("FIB_detail")
+        if not isinstance(fd, list):
+            return None
+        return max([f.get("nfac") or 0 for f in fd] + [0])
+
+    tests = [
+        ("S1 v-cubic (m = 3)", lambda r: r["meta"].get("m") == 3),
+        ("S2 >= 3 places at infinity", lambda r: (places_of(r) or 0) >= 3),
+        ("S3 positive genus fibre", lambda r: (genus_of(r) or 0) >= 1),
+        ("S4 fibre with >= 3 components", lambda r: (nfac_of(r) or 0) >= 3),
+        ("S5 sheared / mixed support", lambda r: bool(r["meta"].get("sheared"))),
+        ("deg_y >= 3 (not v-quadratic)", lambda r: r["deg_y"] >= 3),
+    ]
+    for name, f in tests:
+        sel = [r for r in scr if f(r)]
+        c = Counter(r["period_verdict"] for r in sel)
+        A("| %s | %d | %d | %d | %d |" % (name, len(sel), c["NONVANISHING"],
+                                          c["VANISHING"],
+                                          len(sel) - c["NONVANISHING"] - c["VANISHING"]))
+    A("")
+
     A("### 6.4 The (n, m) table for the v-power family G1\n")
     A("Every G1 member with the same `(n, m)` receives the same verdict; the")
     A("count is how many corpus members carry that pair.\n")

@@ -51,6 +51,8 @@ itself below that threshold.
 
 import cmath
 import math
+import time
+
 import numpy as np
 
 # ------------------------------------------------------------------ helpers
@@ -172,6 +174,7 @@ class Tracker(object):
                                for (i, j), v in P.items() if j > 0})
         self._cx, self._cv = None, None
         self.qtol = 1e-9      # per-panel quadrature tolerance (adaptive)
+        self.deadline = None  # wall-clock guard for the whole transport
 
     def roots(self, x):
         return _roots_at(self.Ac, x)
@@ -257,6 +260,8 @@ class Tracker(object):
                             xs[s] + (xs[s + 1] - xs[s]) * ((t + 1) / nsub), 0))
             stack = seg[::-1]
             while stack:
+                if self.deadline is not None and time.time() > self.deadline:
+                    raise RuntimeError('transport wall-clock budget exceeded')
                 a, b, dep = stack.pop()
                 mid = 0.5 * (a + b)
                 try:
@@ -310,9 +315,10 @@ def _circle(cen, r, n):
     return [cen + r * cmath.exp(2j * math.pi * t / n) for t in range(n + 1)]
 
 
-def screen_fibre(P, c, nsub=6, ncirc=64, seed=11, verbose=False):
+def screen_fibre(P, c, nsub=6, ncirc=64, seed=11, verbose=False, budget=150.0):
     """The period screen on the single fibre {P = c}.  Returns a dict."""
     T = Tracker(P, c)
+    T.deadline = time.time() + budget
     B = _disc_and_lc_roots(P, c)
     rng = np.random.default_rng(seed)
     R = max([abs(b) for b in B] + [1.0]) * 2.5 + 1.0
@@ -491,10 +497,13 @@ def screen_fibre(P, c, nsub=6, ncirc=64, seed=11, verbose=False):
 
 def screen_fibre_checked(P, c, tol=1e-6, verbose=False, **kw):
     """Run at two resolutions; the difference is the error estimate."""
-    a = screen_fibre(P, c, nsub=kw.get("nsub", 6), ncirc=kw.get("ncirc", 64))
+    bud = kw.get("budget", 150.0)
+    a = screen_fibre(P, c, nsub=kw.get("nsub", 6), ncirc=kw.get("ncirc", 64),
+                     budget=bud)
     if "error" in a:
         return a
-    b = screen_fibre(P, c, nsub=2 * kw.get("nsub", 6), ncirc=2 * kw.get("ncirc", 64))
+    b = screen_fibre(P, c, nsub=2 * kw.get("nsub", 6),
+                     ncirc=2 * kw.get("ncirc", 64), budget=bud)
     if "error" in b:
         return b
     err = abs(a["ls_residual"] - b["ls_residual"])
