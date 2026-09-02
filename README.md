@@ -12,6 +12,20 @@ This repository is a research archive for the plane Jacobian-conjecture campaign
 
 The full scripts, certifiers, logs, and generated data are on the campaign branch. The `main` branch is the lightweight map and archive index.
 
+## Cross-chat JC2 handoff audit
+
+The archived Codex/Claude conversations were checked against the live branches. The older handoff is useful provenance, but its verdicts remain subordinate to the current campaign files.
+
+- The strongest inherited asset is the reconstructed characteristic-zero bottom-seed target over `Q(alpha)`, degree five: 164 variables, 288 quadratic equations, 6,821 terms. It has **NO VERDICT** in characteristic zero.
+- The specialized reduction at `p=1000003` has an independently reproduced unit Gröbner basis and is **EMPTY mod-p** only; that does not prove characteristic-zero emptiness.
+- The corrected level-16 pentagon calculation is a joint condition (`F0 = F1 = a0^3 lambda = 0`), not the previously suggested `sigma^6 | h7` ladder. The quick level-16/15/14 kill path is therefore closed.
+- The bottom quintic orbit does not pin six independent pentagon vertices. It leaves a nonzero residual torus parameter `t`; the transfer audit and exact coefficient formulas are recorded on `codex/pentagon-p11-zero-search`.
+- The exact formal order-two gate and tested structured families are empty only in their stated restricted systems. The unsaturated polynomial core is nonempty, and the full CE-bearing root remains **NO VERDICT**.
+- The above-125 tail census found new exact system families, but 189 records did not close because the unprinted `A'_t` provenance assumption is load-bearing. This is an open audit, not a CE result.
+- The six proposed follow-up leads (exclusion audit, non-injectivity transport, Weyl/Dixmier route, tail saturation, the `k=0` cover transition, and beyond-bound search) are research directions, not established results.
+
+Operationally: read the canonical campaign branch first, then the relevant Codex branch and mailbox artifacts. Do not treat stale transfer archives, timeouts, OOMs, modular results, or solver output without certificates as a JC2 verdict. No archived chat supplied a verified Jacobian-conjecture counterexample.
+
 ## Bottom line (latest audited state)
 
 - **No plane Jacobian counterexample has been produced.** Nothing has passed the HIT protocol.
