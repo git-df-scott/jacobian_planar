@@ -23,6 +23,7 @@ The archived Codex/Claude conversations were checked against the live branches. 
 - The exact formal order-two gate and tested structured families are empty only in their stated restricted systems. The unsaturated polynomial core is nonempty, and the full CE-bearing root remains **NO VERDICT**.
 - The above-125 tail census found new exact system families, but 189 records did not close because the unprinted `A'_t` provenance assumption is load-bearing. This is an open audit, not a CE result.
 - The six proposed follow-up leads (exclusion audit, non-injectivity transport, Weyl/Dixmier route, tail saturation, the `k=0` cover transition, and beyond-bound search) are research directions, not established results.
+- The archived mailbox handoff reached `OPUS43-012` (remote mailbox snapshot `7db7ff2`); the corresponding Codex reply `e4dc2fc` was local-only and must not be presented as delivered. The next assigned checks were the rank-five Corollary 5.7 slices, a bounded characteristic-zero attack, and provenance auditing for the 184 new tail hashes / 189 nonclosing cases.
 
 Operationally: read the canonical campaign branch first, then the relevant Codex branch and mailbox artifacts. Do not treat stale transfer archives, timeouts, OOMs, modular results, or solver output without certificates as a JC2 verdict. No archived chat supplied a verified Jacobian-conjecture counterexample.
 
