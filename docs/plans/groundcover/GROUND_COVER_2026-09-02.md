@@ -112,11 +112,20 @@ Agent output: `artifacts/REGISTER.json`, `artifacts/TIMEOUT_SHAPES.json`, `artif
 
 ## 10. Exact checks in PARI (Lead D steps 1 and 7, Lead F step 2)
 
-Pending at the time of writing; see the addendum below.
+Agent output: `artifacts/PARI_EXACT_CHECKS.md`, `artifacts/check*.gp`, `artifacts/resid6.ms`.
+
+- Bottom-edge eliminant, pentagon case (1). `canon/wave6/bottomedge/be_c2is1_q.out` does not contain an eliminant; it is msolve's real-root-isolation output (three boxes of 18 coordinate intervals). Direct characteristic-zero regeneration timed out at 300 s in both msolve `-P 1` and Singular. The system is triangular in the d-variables: after the gauge c1 = c2 = 1, ten of the sixteen remaining equations are linear in a fresh d-variable with a nonzero integer constant pivot (3, 5, 7, ..., 21), so solving for d3..d12 is an invertible change of variables over Q. The residual is 6 equations in c3..c8 (degrees 5, 6, 6, 6, 6, 6); msolve `-P 1` solves it in 30 s and returns a degree-9 eliminant with coefficients up to 108 digits, matching the degree recorded mod p at all twelve archive primes. PARI factors it as 1 + 1 + 2 + 5: exactly two rational roots (x, and 4100x - 771 for msolve's separating form), one quadratic orbit, one quintic orbit with `polgalois` S5, squarefree. The retracted "4 rational plus one degree-5 orbit" story is refuted with a concrete replacement, and the twelve archive prime counts (5, 4, 5, 4, 5, 4, 5, 3, 3, 2, 5, 6) are consistent with this pattern (expected 4, minimum 2, maximum 6) and impossible under the old one (minimum 4). Label: PROVED-exact for the derived residual, with an independent direct char-0 confirmation on the 18-variable system still outstanding. Consequence for Lead F: the admissible seeds fall into at most four Galois classes (two rational, one quadratic, one quintic), so testing one seed per class decides the family; mapping the roots back to named (c, d) coordinates was not done.
+- Case (2), w = -4 quintic (`canon/wave4/artifacts/edge_eliminant_Q_one.json`): degree 5, content 1, squarefree, irreducible over Q, hence no rational root, discriminant of 806 digits positive and non-square, Galois group S5; both negative controls fire. PROVED-exact for the polynomial as written; its identity with the true w = -4 eliminant remains as strong as the six held-out primes and no stronger.
+- Case (2), degree-1144 edge eliminant (`canon/wave1/edgeQ_eliminant.txt`): gcd(f, f') over Q has degree 0, computed exactly in 72 ms, so squarefreeness is PROVED-exact; three modular certificates agree. Seven fresh primes (100169 to 100237) give multiplicity-free factor patterns, and the Dedekind subset-sum sieve on the fresh primes alone closes to zero surviving proper-factor degrees by p = 100193; the archive's eight old primes close independently with no prime shared. Irreducibility is reported as strengthened modular evidence, not claimed.
+- Tooling gotcha to propagate: `gp -q -f` parses multi-line `for` bodies line by line and can silently execute the body at top level with a symbolic loop variable, printing plausible but meaningless output; every loop body must be on one line, and any output line reading `p=p` must be rejected. `polrootsQ` does not exist in PARI 2.15.4; `galdata` is not installed, so `polgalois` is limited to degree 7 (this did not bind).
+
+On the msolve header anomaly from section 1: the modular parametrization of the c2 = 1 chart reports 1144 in the degree field while the distinct-point count is 9 at every prime and over Q. Whether that field is the quotient dimension (multiplicity 1144 over 9 points) or an artifact of the separating form was not settled today and is a one-line question for tomorrow; it does not affect the factorization above, which is computed on the reduced residual.
 
 ## 11. d=8 chart N, corrected system (Lead C step 2)
 
-`canon/wave5/ms/m16_d8_p1000003.ms`: 23 variables (including the Rabinowitsch variable t), 30 generators, excess 7, no constant generators, all coefficients in range. Launched with msolve 0.10.1 in Groebner-only mode (`-g 2 -t 2`) at p=1000003 with a 90-minute cap. Memory grew from 215 MB at 266 s to 7.8 GB at 586 s. Outcome in the addendum below.
+`canon/wave5/ms/m16_d8_p1000003.ms`: 23 variables (including the Rabinowitsch variable t), 30 generators, excess 7, no constant generators, all coefficients in range. Launched with msolve 0.10.1 in Groebner-only mode (`-g 2 -t 2`) at p=1000003 with a 90-minute cap on the 4-core, 16 GB container. Memory grew from 215 MB at 266 s to 7.8 GB at 586 s and 9.1 GB at 715 s; the memory cgroup killed the process at 737 s with 13.7 GB resident (exit 137, empty output, empty stderr).
+
+Label: OOM, not a verdict. This is the first launch of the corrected d=8 chart N export in the campaign's history, and it establishes that the direct Groebner route on this cell needs more than 14 GB even in Groebner-only mode at a single prime. The measured growth rate suggests a 64 to 128 GB host might finish it, but that is an extrapolation. The alternative routes in the plan (Singular degBound ladder with `lift`, and the graded cofactor certificate) are the ones to try before renting memory.
 
 ## 12. What this changes for tomorrow
 
@@ -127,6 +136,6 @@ Pending at the time of writing; see the addendum below.
 - Lead I: do not compile by tail. Add cmax to the key first.
 - Lead B: the plant exists; the register exists; 88 vacuous systems and 27 duplicate groups are now known by hash.
 
-## Addendum: pending results
+## Addendum
 
-To be filled in when the PARI checks and the d=8 run return.
+All items reported above are complete. The only computations that ended without a verdict are the direct characteristic-zero regenerations of the bottom-edge eliminant on the full 18-variable system (both engines, 300 s) and the d=8 chart N Groebner run (OOM at 13.7 GB).
