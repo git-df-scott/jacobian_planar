@@ -8,8 +8,9 @@ This repository is a research archive for the plane Jacobian-conjecture campaign
 2. **Complete re-walk and open queue:** [`STATE_FULL.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/STATE_FULL.md), [`OPEN_ITEMS.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/OPEN_ITEMS.md)
 3. **What is closed, live, or retired:** [`LIVE_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/LIVE_MAP.md), [`TRUST_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/TRUST_MAP.md)
 4. **Corrections and failed-proof ledger:** [`CATCHES.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/CATCHES.md)
-5. **Fleet plan for the next counterexample hunt:** [`docs/plans/CE_HUNT_PLAN.md`](docs/plans/CE_HUNT_PLAN.md) (audit gates, ordered leads, fleet design, two-week schedule; reader reports, planner outputs and adversarial reviews in [`docs/plans/appendix/`](docs/plans/appendix/))
-6. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
+5. **Handoff for the next session (direct attempts):** [`docs/plans/HANDOFF_CE_HUNT.md`](docs/plans/HANDOFF_CE_HUNT.md); ground-cover audit of 2026-09-02: [`docs/plans/groundcover/GROUND_COVER_2026-09-02.md`](docs/plans/groundcover/GROUND_COVER_2026-09-02.md)
+6. **Fleet plan for the next counterexample hunt:** [`docs/plans/CE_HUNT_PLAN.md`](docs/plans/CE_HUNT_PLAN.md) (audit gates, ordered leads, fleet design, two-week schedule; reader reports, planner outputs and adversarial reviews in [`docs/plans/appendix/`](docs/plans/appendix/))
+7. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
 
 The full scripts, certifiers, logs, and generated data are on the campaign branch. The `main` branch is the lightweight map and archive index.
 
