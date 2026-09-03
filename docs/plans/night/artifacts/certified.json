@@ -1,0 +1,575 @@
+[
+ {
+  "sid": "sbf0493",
+  "tag": "F7(m,n)=2,7 | a=3 b=5 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   42,
+   147
+  ],
+  "maxdeg": 147,
+  "jextra": 6,
+  "jmax": 41,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 41,
+    "xexp": 26,
+    "gen": "224/10455*c_12^5*w^6"
+   }
+  ],
+  "secs": 3.2,
+  "notes": []
+ },
+ {
+  "sid": "s04dd4d",
+  "tag": "F2(m,n)=2,3 | a=5 b=3 c'=0 r=3 eps=(1, 0),(3, 1)",
+  "degrees": [
+   50,
+   75
+  ],
+  "maxdeg": 75,
+  "jextra": 2,
+  "jmax": 11,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 9,
+    "xexp": 21,
+    "gen": "-4/45*c_13^2*w^3"
+   }
+  ],
+  "secs": 0.0,
+  "notes": []
+ },
+ {
+  "sid": "s88277e",
+  "tag": "F9(m,n)=2,3 | a=7 b=3 c'=0 r=2 eps=(1, 0),(2, 1)",
+  "degrees": [
+   56,
+   84
+  ],
+  "maxdeg": 84,
+  "jextra": 2,
+  "jmax": 11,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 9,
+    "xexp": 28,
+    "gen": "4/3*c_16^2*w^3"
+   }
+  ],
+  "secs": 0.0,
+  "notes": [
+   "c_pre = 7/2 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s698d87",
+  "tag": "F17(m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   66,
+   99
+  ],
+  "maxdeg": 99,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": []
+ },
+ {
+  "sid": "s1c92a2",
+  "tag": "(12,33)/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   90,
+   135
+  ],
+  "maxdeg": 135,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s4f232a",
+  "tag": "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   72,
+   108
+  ],
+  "maxdeg": 108,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s7147d7",
+  "tag": "(9,36)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   90,
+   135
+  ],
+  "maxdeg": 135,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s725c21",
+  "tag": "(12,30)/16/3,10/11/6,3 (m,n)=3,2 | a=6 b=4 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   126,
+   84
+  ],
+  "maxdeg": 126,
+  "jextra": 2,
+  "jmax": 14,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 13,
+    "xexp": 23,
+    "gen": "72/91*c_17^2*w^3"
+   }
+  ],
+  "secs": 0.0,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 102/11 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s0da3d1",
+  "tag": "(12,36)/12,33/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   96,
+   144
+  ],
+  "maxdeg": 144,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s8ab4ed",
+  "tag": "(12,36)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   96,
+   144
+  ],
+  "maxdeg": 144,
+  "jextra": 6,
+  "jmax": 33,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 33,
+    "xexp": 11,
+    "gen": "-20/187*c_18^2*w^3"
+   }
+  ],
+  "secs": 0.5,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "sdf5665",
+  "tag": "(12,36)/12,30/16/3,10/11/6,3 (m,n)=3,2 | a=6 b=4 c'=0 r=1 eps=(1, 0),(1, 1)",
+  "degrees": [
+   144,
+   96
+  ],
+  "maxdeg": 144,
+  "jextra": 2,
+  "jmax": 14,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 13,
+    "xexp": 23,
+    "gen": "72/91*c_17^2*w^3"
+   }
+  ],
+  "secs": 0.0,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 168/11 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s7b21b1",
+  "tag": "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=0 r=4 eps=(1, 0),(4, 1)",
+  "degrees": [
+   84,
+   126
+  ],
+  "maxdeg": 126,
+  "jextra": 2,
+  "jmax": 20,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 11,
+    "xexp": 17,
+    "gen": "26/11*c_20*w^2"
+   }
+  ],
+  "secs": 0.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 7/6 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s48444a",
+  "tag": "(9,36)/17/9,4 (m,n)=3,2 | a=9 b=5 c'=0 r=3 eps=(1, 0),(3, 1)",
+  "degrees": [
+   135,
+   90
+  ],
+  "maxdeg": 135,
+  "jextra": 2,
+  "jmax": 17,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 17,
+    "xexp": 37,
+    "gen": "-4/51*c_23^2*w^3"
+   }
+  ],
+  "secs": 0.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 9/2 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s106666",
+  "tag": "(9,36)/17/9,4 (m,n)=2,3 | a=9 b=5 c'=0 r=3 eps=(1, 0),(3, 1)",
+  "degrees": [
+   90,
+   135
+  ],
+  "maxdeg": 135,
+  "jextra": 2,
+  "jmax": 17,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 17,
+    "xexp": 37,
+    "gen": "-4/51*c_23^2*w^3"
+   }
+  ],
+  "secs": 0.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 9/2 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "sc66a96",
+  "tag": "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=(1, 0),(5, 1)",
+  "degrees": [
+   147,
+   98
+  ],
+  "maxdeg": 147,
+  "jextra": 2,
+  "jmax": 23,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 13,
+    "xexp": 18,
+    "gen": "46/13*c_27*w^2"
+   }
+  ],
+  "secs": 1.3,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s801de9",
+  "tag": "(7,42)/13/7,6 (m,n)=2,3 | a=7 b=7 c'=0 r=5 eps=(1, 0),(5, 1)",
+  "degrees": [
+   98,
+   147
+  ],
+  "maxdeg": 147,
+  "jextra": 2,
+  "jmax": 23,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 13,
+    "xexp": 18,
+    "gen": "46/13*c_27*w^2"
+   }
+  ],
+  "secs": 1.3,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s528fdb",
+  "tag": "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=(1, 0),(2, 1)",
+  "degrees": [
+   48,
+   64
+  ],
+  "maxdeg": 64,
+  "jextra": 4,
+  "jmax": 20,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 19,
+    "xexp": 24,
+    "gen": "-9/95*c_26^2*w^3"
+   }
+  ],
+  "secs": 0.3,
+  "notes": []
+ },
+ {
+  "sid": "sd9ca39",
+  "tag": "F3(m,n)=3,2 | a=5 b=4 c'=0 r=3 eps=(3, 1),(1, 0)",
+  "degrees": [
+   75,
+   50
+  ],
+  "maxdeg": 75,
+  "jextra": 2,
+  "jmax": 14,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 10,
+    "xexp": 17,
+    "gen": "-6/5*c_26*w^2"
+   }
+  ],
+  "secs": 0.0,
+  "notes": []
+ },
+ {
+  "sid": "s831b26",
+  "tag": "(8,28)/7/4,3 (m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=(1, 0),(2, 1)",
+  "degrees": [
+   108,
+   144
+  ],
+  "maxdeg": 144,
+  "jextra": 4,
+  "jmax": 20,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 19,
+    "xexp": 24,
+    "gen": "-9/95*c_26^2*w^3"
+   }
+  ],
+  "secs": 0.3,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s84338a",
+  "tag": "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=1 r=4 eps=(1, 0),(4, 1)",
+  "degrees": [
+   84,
+   126
+  ],
+  "maxdeg": 126,
+  "jextra": 2,
+  "jmax": 20,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 11,
+    "xexp": 17,
+    "gen": "26/11*c_35*w^2"
+   }
+  ],
+  "secs": 17.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 7/6 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s6cc334",
+  "tag": "(8,28)/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=(2, 1),(1, 0)",
+  "degrees": [
+   108,
+   72
+  ],
+  "maxdeg": 108,
+  "jextra": 2,
+  "jmax": 26,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 22,
+    "xexp": 13,
+    "gen": "-15/11*c_34*w^2"
+   }
+  ],
+  "secs": 1.0,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s0a07a3",
+  "tag": "(8,32)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=(2, 1),(1, 0)",
+  "degrees": [
+   120,
+   80
+  ],
+  "maxdeg": 120,
+  "jextra": 2,
+  "jmax": 26,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 22,
+    "xexp": 13,
+    "gen": "-15/11*c_34*w^2"
+   }
+  ],
+  "secs": 1.0,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "sf745e6",
+  "tag": "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=0 r=2 eps=(2, 1),(1, 0)",
+  "degrees": [
+   144,
+   96
+  ],
+  "maxdeg": 144,
+  "jextra": 2,
+  "jmax": 26,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 22,
+    "xexp": 13,
+    "gen": "-15/11*c_34*w^2"
+   }
+  ],
+  "secs": 0.9,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)"
+  ]
+ },
+ {
+  "sid": "s7cc579",
+  "tag": "(12,30)/16/3,10/11/6,3 (m,n)=3,2 | a=6 b=4 c'=0 r=1 eps=(1, 1),(1, 0)",
+  "degrees": [
+   126,
+   84
+  ],
+  "maxdeg": 126,
+  "jextra": 2,
+  "jmax": 14,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 10,
+    "xexp": 18,
+    "gen": "9/10*c_31*w^2"
+   }
+  ],
+  "secs": 0.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 102/11 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ },
+ {
+  "sid": "s2ab2c7",
+  "tag": "(12,36)/12,30/16/3,10/11/6,3 (m,n)=3,2 | a=6 b=4 c'=0 r=1 eps=(1, 1),(1, 0)",
+  "degrees": [
+   144,
+   96
+  ],
+  "maxdeg": 144,
+  "jextra": 2,
+  "jmax": 14,
+  "exactQ": "CERTIFIED",
+  "certs": [
+   {
+    "row": 10,
+    "xexp": 18,
+    "gen": "9/10*c_31*w^2"
+   }
+  ],
+  "secs": 0.1,
+  "notes": [
+   "A'_t not printed in Sec.6; assumed (1,0)",
+   "c_pre = 168/11 not a non-negative integer; falling back to the full ladder 0..b"
+  ]
+ }
+]

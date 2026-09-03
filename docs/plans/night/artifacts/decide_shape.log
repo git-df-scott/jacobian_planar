@@ -1,0 +1,3 @@
+s4f232a_j6_p65521 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 2s
+s4f232a_j6_p1000003 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 2s
+s4f232a_j6_p1000033 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 1s
