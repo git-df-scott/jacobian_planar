@@ -53,3 +53,30 @@ representation (convention A failed in 13 representations, B in none).
 
 (2,7)-cusp curves, two (2,5)-cusps, degree 12 on the (2,5) family, reducible
 configurations containing (t^2, t^5), and tacnodes built numerically.
+
+## Literature check (2026-09-03, evening)
+
+- Nguyen Van Chau, "A remark on Vitushkin's covering", Acta Math. Vietnamica 24
+  (1999): a Keller map that is an unbranched covering off a curve homeomorphic to
+  C is bijective. This is the Zaidenberg-Lin lemma used above, already in print.
+- Orevkov, "Rudolph diagrams and analytic realization of Vitushkin's covering",
+  Mat. Zametki 60 (1996): Vitushkin's covering is a three-sheeted branched cover
+  X -> B^4 of the ball, branched of order two along a disc M, with X - M
+  homeomorphic to R^4 and f|M an embedding; monodromy a,b,c,d -> (12),(23),(12),(13)
+  on the group <a,b,c,d | abc = bab, ab = bd, bc = db>. It is realised
+  holomorphically (Stein) but the branch curve is an analytic disc in a ball, not
+  a closed algebraic curve in C^2. So the local topological model of a degree-3
+  Keller counterexample exists; the obstruction is global and algebraic, which is
+  exactly what the target-side search with a polynomial curve S tests.
+- Consistent with the derivation here that the escaping curve R must be a union
+  of topological lines (in Vitushkin's model R = M is a disc).
+
+## Coxeter reading of the Euler passes
+
+In the (2,5)-cusp family the three meridians map to involutions a, b, c with
+(ab)^3 = 1 (ordinary cusp), (bc)^5 = 1 ((2,5)-cusp), (ac)^2 = 1 (node): the H3
+diagram; the image A5 on six points is the icosahedral rotation group on the six
+vertex axes. Ordinary-cusp curves gave the tetrahedral S4/A4. The Euler
+equation is asking the local link groups to assemble into a spherical Coxeter
+group; H3 is the only one that balances at D = 6. It fails because chi(R) = 0.
+Two-(2,5)-cusp (3,7) curves give A7 at D = 7 with Euler 0 or -1 and chi(R) = 1.

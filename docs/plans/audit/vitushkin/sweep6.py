@@ -31,7 +31,7 @@ lib.append(('c36_b_D12', [(a3, I((t**2-1)*(t-2)*(t**2+1)))]))
 names = sys.argv[1:]
 for name, comps in lib:
     if names and name not in names: continue
-    Dmax = 12 if name.endswith('D12') else 10
+    Dmax = 12 if name.endswith("D12") else 10
     try:
         run(name, comps, Dmin=4, Dmax=Dmax)
     except Exception as ex:
