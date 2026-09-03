@@ -1,0 +1,105 @@
+== c34_s2 comps [('t**3 - 3*t', 't**4/4 - 2*t**3/3 - t**2/2 + 2*t')] alpha 3 degs [[3, 4]]
+  c=(2.0, 0.0) W=[1, 2, 1, 1, 1, -2, -1] [([0, 1], 'br', 1, 'cusps', 1)]
+  c=(0.0, 0.0) W=[1, 2, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(-2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 43
+   D=4 n=[ 2 ] cyc=[ [ 1 ] ] S4 chi=[ -2, -4 ] fail=euler s=[ 1, 0, 1 ] euler=
+0
+   D=8 n=[ 4 ] cyc=[ [ ,, 1 ] ] Q8 : S4 chi=[ -4, -8 ] fail=euler s=
+[ 2, 0, 2 ] euler=0
+   D=6 n=[ 2 ] cyc=[ [ ,, 1 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=4 n=[ 1 ] cyc=[ [ , 1 ] ] A4 chi=[ -5, -8 ] fail=euler s=
+[ 0, 1, 0 ] euler=2
+   D=6 n=[ 2 ] cyc=[ [ ,, 1 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -14 ] fail=euler s=
+[ 0, 1, 0 ] euler=4
+   D=8 n=[ 2 ] cyc=[ [ , 2 ] ] SL(2,3) chi=[ -10, -16 ] fail=euler s=
+[ 0, 2, 0 ] euler=4
+   D=7 n=[ 1 ] cyc=[ [ ,,,, 1 ] ] C7 : C6 chi=[ -11, -17 ] fail=euler s=
+[ 0, 1, 0 ] euler=5
+   D=7 n=[ 1 ] cyc=[ [ ,,,, 1 ] ] C7 : C6 chi=[ -11, -17 ] fail=euler s=
+[ 0, 1, 0 ] euler=5
+   D=8 n=[ 1 ] cyc=[ [ ,,,,, 1 ] ] PSL(3,2) chi=[ -13, -20 ] fail=euler s=
+[ 0, 1, 0 ] euler=6
+   (32 reps with a meridian acting freely)
+  [7 s]
+== c34_s5 comps [('t**3 - 3*t', 't**4/4 - 5*t**3/3 - t**2/2 + 5*t')] alpha 3 degs [[3, 4]]
+  c=(2.0, 0.0) W=[1, 2, 1, 1, 1, -2, -1] [([0, 1], 'br', 1, 'cusps', 1)]
+  c=(0.0, 0.0) W=[1, 2, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(-2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 43
+   D=4 n=[ 2 ] cyc=[ [ 1 ] ] S4 chi=[ -2, -4 ] fail=euler s=[ 1, 0, 1 ] euler=
+0
+   D=8 n=[ 4 ] cyc=[ [ ,, 1 ] ] Q8 : S4 chi=[ -4, -8 ] fail=euler s=
+[ 2, 0, 2 ] euler=0
+   D=6 n=[ 2 ] cyc=[ [ ,, 1 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=4 n=[ 1 ] cyc=[ [ , 1 ] ] A4 chi=[ -5, -8 ] fail=euler s=
+[ 0, 1, 0 ] euler=2
+   D=6 n=[ 2 ] cyc=[ [ ,, 1 ] ] S4 chi=[ -6, -10 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -14 ] fail=euler s=
+[ 0, 1, 0 ] euler=4
+   D=8 n=[ 2 ] cyc=[ [ , 2 ] ] SL(2,3) chi=[ -10, -16 ] fail=euler s=
+[ 0, 2, 0 ] euler=4
+   D=7 n=[ 1 ] cyc=[ [ ,,,, 1 ] ] C7 : C6 chi=[ -11, -17 ] fail=euler s=
+[ 0, 1, 0 ] euler=5
+   D=7 n=[ 1 ] cyc=[ [ ,,,, 1 ] ] C7 : C6 chi=[ -11, -17 ] fail=euler s=
+[ 0, 1, 0 ] euler=5
+   D=8 n=[ 1 ] cyc=[ [ ,,,,, 1 ] ] PSL(3,2) chi=[ -13, -20 ] fail=euler s=
+[ 0, 1, 0 ] euler=6
+   (32 reps with a meridian acting freely)
+  [11 s]
+== c35_a comps [('t**3 - 3*t', 't**5/5 + t**4/8 - 2*t**3/9 - t**2/4 - t/3')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[1, 2, 2, 2, -1] [([0, 2], 'br', 1, 'cusps', 1)]
+  c=(-1.753, -3.429) W=[1, -2, 1, 1, 2, -1] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(-1.753, 3.429) W=[1, 2, 1, 1, -2, -1] [([0, 1], 'br', 2, 'cusps', 0)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 5
+   (5 reps with a meridian acting freely)
+  [7 s]
+== c35_b comps [('t**3 - 3*t', 't**5/5 + t**3/3 - 2*t')] alpha 3 degs [[3, 5]]
+  c=(0.0, -4.0) W=[-1, -2, 1, 2, 1, 2] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(0.0, 4.0) W=[1, 2, 1, 2, 1, -2, -1, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(-2.0, 0.0) W=[-1, 2, 2, 2, 1] [([0, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 5
+   (5 reps with a meridian acting freely)
+  [6 s]
+== c35_c comps [('t**3 - 3*t', 't**5/5 - t**3 + 2*t')] alpha 3 degs [[3, 5]]
+  c=(0.0, -4.0) W=[-1, -2, 1, 2, 1, 2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(0.0, 4.0) W=[1, 2, 1, 2, 1, -2, -1, -1] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(-2.0, 0.0) W=[-1, 2, 2, 2, 1] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 5
+   (5 reps with a meridian acting freely)
+  [4 s]
+== c35_d comps [('t**3 - 3*t', 't**5/5 + t**4/4 - 2*t**3/3 - t**2/2 + t')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[1, 2, 2, 2, -1] [([0, 1], 'br', 1, 'cusps', 1)]
+  c=(-2.773, -1.903) W=[1, -2, 1, 1, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(-2.773, 1.903) W=[1, 2, 1, 1, -2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 5
+   (5 reps with a meridian acting freely)
+  [8 s]
+== c35_dbl comps [('t**3 - 3*t', 't**5/5 - t**4/3 - 2*t**3/9 + 2*t**2/3 - t/3')] alpha 3 degs [[3, 5]]
+  c=(2.685, -0.676) W=[2, 1, 2, 2, -1, -2] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 1, 1, 1, -2] [([0, 2], 'br', 1, 'cusps', 1)]
+  c=(2.685, 0.676) W=[2, -1, 2, 2, 1, -2] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(-2.0, 0.0) W=[2, 2, 2] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 5
+   (5 reps with a meridian acting freely)
+  [16 s]
