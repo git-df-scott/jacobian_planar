@@ -2,3 +2,119 @@
   c=(-2.0, 0.0) W=[1, 2, 1, 1, 1, 1, 1, -2, -1] [([1, 2], 'br', 1, 'cusps', 1)]
   c=(1.375, 0.0) W=[1, 2, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
   c=(2.0, 0.0) W=[1, 1, 1] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -12 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -38 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -18 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -24 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -19 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -38 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -44 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   (13 reps with a meridian acting freely)
+  [45 s]
+== c35_25_c1 comps [('t**3 - 3*t', 't**5/5 - t**4/2 + t**3/3 + t**2 - 2*t')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[2, 1, 1, -2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 2, 2] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -14 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -9 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -15 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -30 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -35 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -30 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   (13 reps with a meridian acting freely)
+  [17 s]
+== c35_25_cm1 comps [('t**3 - 3*t', 't**5/5 - t**4/2 - t**3/3 + t**2')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[2, 1, 1, -2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 2, 2] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -14 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -9 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -15 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -30 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -35 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -30 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   (13 reps with a meridian acting freely)
+  [16 s]
+== c35_25_c1o2 comps [('t**3 - 3*t', 't**5/5 - t**4/2 + t**3/6 + t**2 - 3*t/2')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[2, 1, 1, -2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 2, 2] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -14 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -9 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -15 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -30 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -35 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -30 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   (13 reps with a meridian acting freely)
+  [14 s]
+== c35_25_c3 comps [('t**3 - 3*t', 't**5/5 - t**4/2 + t**3 + t**2 - 4*t')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[2, 1, 1, -2] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 2, 2] [([0, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -14 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -9 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -15 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -30 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -35 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -30 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   (13 reps with a meridian acting freely)
+  [14 s]
+== c35_25_cm1o4 comps [('t**3 - 3*t', 't**5/5 - t**4/2 - t**3/12 + t**2 - 3*t/4')] alpha 3 degs [[3, 5]]
+  c=(-2.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[2, 1, 1, -2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[2, 2, 2] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -14 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -9 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -15 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -30 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -35 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -30 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   (13 reps with a meridian acting freely)
+  [13 s]
+== c36_25_s3 comps [('t**3 - 3*t', 't**6/6 - 3*t**5/5 + t**4/2 - 2*t**3 - 3*t**2/2 + 9*t')] alpha 3 degs [[3, 6]]
+  c=(-2.0, 0.0) W=[1, 2, 1, 1, 1, 1, 1, -2, -1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[1, 2, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -12 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -38 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -18 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -24 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -19 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -38 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -44 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   (13 reps with a meridian acting freely)
+  [42 s]
+== c36_25_s5o2 comps [('t**3 - 3*t', 't**6/6 - t**5/2 + t**4/4 - 5*t**3/6 - t**2 + 5*t')] alpha 3 degs [[3, 6]]
+  c=(-2.0, 0.0) W=[1, 2, 1, 1, 1, 1, 1, -2, -1] [([1, 2], 'br', 1, 'cusps', 1)]
+  c=(1.375, 0.0) W=[1, 2, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 20
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -12 ] fail=euler s=[ 1, 0, 2 ] euler=0
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -38 ] fail=euler s=[ 0, 0, 1 ] euler=5
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -18 ] fail=pi1(H1) s=[ 1, 0, 0 ] euler=1 pi1ab=[ 0, 0 ]
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -24 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -19 ] fail=euler s=[ 0, 1, 0 ] euler=3
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -38 ] fail=euler s=[ 0, 2, 0 ] euler=6
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -44 ] fail=euler s=[ 0, 1, 0 ] euler=8
+   (13 reps with a meridian acting freely)
+  [44 s]
