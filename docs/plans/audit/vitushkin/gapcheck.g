@@ -1,6 +1,6 @@
 CosetTableDefaultMaxLimit := 2000000;;
 CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax)
-  local iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
+  local cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
   results := [];
   gens := [];   # one generator per component
   for i in [1..m] do Add(gens, GeneratorsOfGroup(G)[Position(compofgen, i)]); od;
@@ -38,6 +38,9 @@ CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax)
       od;
       res.s := lst;
       res.euler := D*(1 - m + nu) + Sum([1..m], i -> n[i]*(1 - kk[i])) + sums;
+      # Euler characteristic of the escaping curve R: cycles of each meridian on moved points, orbits of size >= 2 at singular points
+      cyc := List(gens, g -> Length(Filtered(Cycles(Image(hom, g), [1..D]), c -> Length(c) > 1)));
+      res.chiR := Sum([1..m], i -> cyc[i] * (1 - kk[i])) + Sum(singpts, sp -> Length(Filtered(Orbits(Group(List(sp.mer, x -> Image(hom, x))), [1..D]), o -> Length(o) > 1)));
       if res.euler <> 1 then ok := false; res.fail := "euler"; fi;
     fi;
     if ok then
@@ -81,7 +84,7 @@ Report := function(r)
   near := Filtered(r.results, x -> not x.ok and x.fail <> "n=0");
   for x in near do
     Print("   D=", x.D, " n=", x.n, " cyc=", x.cycles, " ", x.group, " chi=", x.chi, " fail=", x.fail);
-    if IsBound(x.s) then Print(" s=", x.s, " euler=", x.euler); fi;
+    if IsBound(x.s) then Print(" s=", x.s, " euler=", x.euler, " chiR=", x.chiR); fi;
     if IsBound(x.pi1_ab) then Print(" pi1ab=", x.pi1_ab); fi; if IsBound(x.pi1_size) then Print(" pi1size=", x.pi1_size); fi;
     Print("\n");
   od;

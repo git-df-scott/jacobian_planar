@@ -150,34 +150,37 @@ def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
     crit, disc = critical_values(F)
     cvals = [c for c, m in crit]
     rng = np.random.default_rng(seed)
-    if base is None:
-        cx = np.array(cvals)
-        R = max(abs(cx - cx.mean()).max(), 1.0)
-        best = None
-        for trial in range(40):
-            cand = complex(cx.mean()) + R * (1.3 + 1.5 * rng.random()) * np.exp(2j * np.pi * rng.random())
-            angs = np.sort(np.angle(cx - cand))
-            gaps = np.diff(np.concatenate([angs, [angs[0] + 2*np.pi]])) if len(angs) > 1 else np.array([1.0])
-            score = gaps.min()
-            if best is None or score > best[0]: best = (score, cand)
-        base = best[1]
-    # order critical values by argument from base
-    cvals.sort(key=lambda c: np.angle(c - base))
-    # radii
-    rad = []
+    def path_score(b, rads):
+        sc = np.inf
+        for k, c in enumerate(cvals):
+            for j, o in enumerate(cvals):
+                if j == k: continue
+                seg = c - b
+                tt = np.clip(((o - b) * np.conj(seg)).real / abs(seg)**2, 0, 1)
+                sc = min(sc, abs(b + tt * seg - o) / rads[j])
+        return sc
+    cx = np.array(cvals)
+    R = max(abs(cx - cx.mean()).max(), 1.0) if len(cvals) > 1 else 1.0
+    rad0 = []
     for c in cvals:
         d = min(abs(c - o) for o in cvals if o != c) if len(cvals) > 1 else 1.0
-        rad.append(min(radius_frac * d, 0.3))
-    # check paths avoid other discs
-    for k, c in enumerate(cvals):
-        for j, o in enumerate(cvals):
-            if j == k: continue
-            # distance from o to segment base->c
-            seg = c - base
-            tt = np.clip(((o - base) * np.conj(seg)).real / abs(seg)**2, 0, 1)
-            d = abs(base + tt * seg - o)
-            if d < 1.5 * rad[j]:
-                raise RuntimeError('path to %s passes near %s; change base' % (c, o))
+        rad0.append(min(radius_frac * d, 0.3))
+    if base is None:
+        best = None
+        for trial in range(300):
+            cand = complex(cx.mean()) + R * (1.2 + 2.0 * rng.random()) * np.exp(2j * np.pi * rng.random())
+            sc = path_score(cand, rad0)
+            if best is None or sc > best[0]: best = (sc, cand)
+        base = best[1]
+    # shrink radii until the paths clear the other discs
+    shrink = 1.0
+    while path_score(base, [r * shrink for r in rad0]) < 1.5 and shrink > 1e-3:
+        shrink *= 0.5
+    if shrink <= 1e-3:
+        raise RuntimeError('cannot find a base point with clear paths')
+    # order critical values by argument from base
+    cvals.sort(key=lambda c: np.angle(c - base))
+    rad = [r * shrink for r in rad0]
     gens = [[i+1] for i in range(n)]
     base_roots = vroots(Fc, base)
     base_order = list(np.argsort(base_roots.real))
@@ -255,7 +258,7 @@ def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
         imgs = artin_act(W, gens)
         for j in range(n):
             rels.append(freereduce([-(j+1)] + imgs[j]))
-    degs = [[sp.Poly(a, t).degree(), sp.Poly(b, t).degree()] for a, b in comps]
+    degs = [[max(sp.Poly(a, t).degree(), 0), max(sp.Poly(b, t).degree(), 0)] for a, b in comps]
     return dict(name=name, n=n, F=str(F.as_expr()), crit=[[c.real, c.imag] for c in cvals],
                 loops=loops, rels=rels, comp_of_gen=comp_of_gen, degs=degs, m=len(comps))
 
