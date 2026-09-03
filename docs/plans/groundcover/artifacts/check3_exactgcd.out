@@ -1,0 +1,4 @@
+  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).
+deg = 1144
+EXACT deg_gcd_over_Q = 0 ms=72
+EXACT squarefree = 1

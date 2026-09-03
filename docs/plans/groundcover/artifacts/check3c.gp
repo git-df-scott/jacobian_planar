@@ -1,0 +1,13 @@
+default(parisize, 2*10^9);
+F = "/tmp/claude-0/-home-user-jacobian-planar/bffaee33-4b8d-59cb-b6bb-ff5a3ac3aeb8/scratchpad/wt/canon/wave1/edgeQ_eliminant.txt";
+f = extern(Str("cat ", F));
+lc = pollead(f);
+print("deg=", poldegree(f), " lc_digits=", #Str(abs(lc)), " content_is_one=", content(f)==1);
+sqf(p) = my(fp, g, t); gettime(); fp = Mod(1,p)*f; g = gcd(fp, deriv(fp)); t = gettime(); print("SQF p=", p, " lc_nonzero=", Mod(lc,p)!=0, " deg_gcd=", poldegree(g), " ms=", t);
+ded(p) = my(fa, degs, mu, t); gettime(); fa = factormod(f, p); degs = vector(matsize(fa)[1], k, poldegree(fa[k,1])); mu = vector(matsize(fa)[1], k, fa[k,2]); t = gettime(); print("DED p=", p, " nfac=", #degs, " ms=", t); print("  degs=", vecsort(degs)); print("  mults=", mu); print("  checksum=", sum(k=1,#degs, degs[k]*mu[k]));
+print("== squarefree at 3 fresh primes ==");
+sqf(100169); sqf(100183); sqf(100207);
+print("== Dedekind factorization at 2 NEW primes ==");
+ded(100169);
+ded(100183);
+quit;

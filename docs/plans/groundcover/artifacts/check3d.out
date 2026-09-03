@@ -1,0 +1,6 @@
+  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).
+DED p=100189 nfac=9 ms=457 maxmult=1 degs=[8, 10, 10, 10, 23, 85, 102, 104, 792]
+DED p=100193 nfac=6 ms=466 maxmult=1 degs=[1, 3, 4, 21, 60, 1055]
+DED p=100207 nfac=6 ms=482 maxmult=1 degs=[4, 9, 16, 49, 430, 636]
+DED p=100213 nfac=7 ms=465 maxmult=1 degs=[1, 1, 3, 4, 4, 75, 1056]
+DED p=100237 nfac=5 ms=466 maxmult=1 degs=[16, 116, 147, 355, 510]

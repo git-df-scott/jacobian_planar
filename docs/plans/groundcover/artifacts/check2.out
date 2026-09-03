@@ -1,0 +1,30 @@
+  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).
+deg = 5
+content = 1
+lead digits = 80
+--- squarefree: deg gcd(f,f') ---
+deg gcd(f,f') = 0
+issquarefree = 1
+--- irreducibility over Q ---
+polisirreducible = 1
+factor degrees = [5]
+nfactors = 1
+--- rational roots ---
+  ***   at top-level: print("nbrootsQ = ",#polrootsQ(f))
+  ***                                      ^-------------
+  ***   not a function in function call
+... skipping file '/tmp/claude-0/-home-user-jacobian-planar/bffaee33-4b8d-59cb-b6bb-ff5a3ac3aeb8/scratchpad/groundcover/check2.gp'
+  ***   at top-level: print("polrootsQ = ",polrootsQ(f))
+  ***                                      ^-------------
+  ***   not a function in function call
+--- discriminant ---
+disc digits = 806
+disc sign = 1
+disc issquare = 0
+--- Galois group (monic integral model) ---
+polredbest = w^5 - w^4 - 9*w^3 + w^2 + 24*w - 18
+polgalois(f) = [120, -1, 1, "S5"]
+--- NEGATIVE control: D5 quintic w^5-5w+12 ---
+polgalois(w^5-5*w+12) = [10, 1, 1, "D(5) = 5:2"]
+--- NEGATIVE control: reducible (w^2+1)(w^3-2) ---
+polisirreducible((w^2+1)*(w^3-2)) = 0

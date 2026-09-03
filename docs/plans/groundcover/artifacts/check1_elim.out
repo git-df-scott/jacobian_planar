@@ -1,0 +1,20 @@
+  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).
+DEG = 9
+content = 1
+--- exact factorization over Q ---
+nfactors = 4
+factor_degrees = [1, 1, 2, 5]
+multiplicities = [1, 1, 1, 1]
+--- squarefree ---
+deg gcd(f,f prime) = 0
+--- rational roots (degree-1 factors) ---
+n_rational_roots = 2
+  factor 1 deg=1 mult=1  poly=x
+  factor 2 deg=1 mult=1  poly=4100*x - 771
+  factor 3 deg=2 mult=1  poly=12777897437829*x^2 - 5099242904970*x + 513561091708
+  factor 4 deg=5 mult=1
+--- Galois groups of factors (deg<=7 native) ---
+  factor 3 deg 2 galois = [2, -1, 1, "S2"]
+  factor 4 deg 5 galois = [120, -1, 1, "S5"]
+--- negative control ---
+  polgalois(x^5-5*x+12) = [10, 1, 1, "D(5) = 5:2"]

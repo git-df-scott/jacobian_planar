@@ -1,0 +1,15 @@
+  ***   Warning: new stack size = 2000000000 (1907.349 Mbytes).
+deg=1144 lc_digits=4666 content_is_one=1
+== squarefree at 3 fresh primes ==
+SQF p=100169 lc_nonzero=1 deg_gcd=0 ms=4
+SQF p=100183 lc_nonzero=1 deg_gcd=0 ms=4
+SQF p=100207 lc_nonzero=1 deg_gcd=0 ms=4
+== Dedekind factorization at 2 NEW primes ==
+DED p=100169 nfac=4 ms=457
+  degs=[1, 26, 66, 1051]
+  mults=[1, 1, 1, 1]
+  checksum=1144
+DED p=100183 nfac=10 ms=471
+  degs=[1, 2, 3, 4, 8, 37, 88, 128, 153, 720]
+  mults=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  checksum=1144
