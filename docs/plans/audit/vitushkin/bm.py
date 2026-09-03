@@ -1,0 +1,285 @@
+"""Braid monodromy of an affine plane curve given by parametrisations
+(a_i(t), b_i(t)) (one per component), projection (u,v) -> u.
+Produces a Zariski-van Kampen presentation of pi_1(C^2 - S) plus, for each
+singular fibre, the transported meridians of the strands meeting each
+singular point, the local branch permutation, and the multiplicity data
+needed for the Euler-characteristic bookkeeping.  Output: a GAP file.
+"""
+import sys, json, itertools
+import numpy as np
+import sympy as sp
+
+t, u, v = sp.symbols('t u v')
+
+def curve_equation(comps):
+    """comps: list of (a(t), b(t)) sympy polys.  Returns F(u,v) = prod Res_t(a-u, v-b), monic in v."""
+    F = sp.Integer(1)
+    for a, b in comps:
+        R = sp.resultant(a - u, v - b, t)
+        R = sp.Poly(R, v)
+        F = F * R.as_expr() / R.LC()
+    return sp.Poly(sp.expand(F), v, u)
+
+def vroots(Fpoly_coeffs, uval):
+    # Fpoly_coeffs: list of numpy poly1d in u (coeffs of v^deg..v^0), or sympy exprs
+    c = np.array([complex(cf(uval)) if isinstance(cf, np.poly1d) else complex(cf.subs(u, uval)) for cf in Fpoly_coeffs])
+    return np.roots(c)
+
+def critical_values(F):
+    disc = sp.discriminant(F.as_expr(), v)
+    disc = sp.Poly(sp.expand(disc), u)
+    sqf = sp.Poly(sp.sqf_part(disc.as_expr()), u)
+    cs = [complex(r) for r in sqf.nroots(n=30, maxsteps=500)]
+    # cluster
+    out = []
+    for c in cs:
+        for o in out:
+            if abs(c - o[0]) < 1e-6:
+                o[1] += 1; break
+        else:
+            out.append([c, 1])
+    return out, disc
+
+def match(prev, new):
+    """assign new roots to prev by nearest; return permuted new and ok flag"""
+    n = len(prev)
+    D = np.abs(prev[:, None] - new[None, :])
+    # greedy with global check
+    order = []
+    used = set()
+    for i in range(n):
+        j = int(np.argmin(np.where([k in used for k in range(n)], np.inf, D[i])))
+        order.append(j); used.add(j)
+    newp = new[order]
+    disp = np.abs(newp - prev).max()
+    sep = min(abs(prev[i]-prev[j]) for i in range(n) for j in range(i+1, n))
+    return newp, disp < 0.25 * sep
+
+def track(Fc, path, n, init=None):
+    """track roots along a list of u-values (refined adaptively). returns (pts, roots)"""
+    r0 = vroots(Fc, path[0])
+    if init is not None:
+        r0, ok = match(init, r0)
+        if not ok: raise RuntimeError('cannot seed tracking')
+    roots = [r0]
+    i = 1
+    pts = list(path)
+    while i < len(pts):
+        new = vroots(Fc, pts[i])
+        newp, ok = match(roots[-1], new)
+        if ok:
+            roots.append(newp); i += 1
+        else:
+            mid = (pts[i-1] + pts[i]) / 2
+            if abs(pts[i] - pts[i-1]) < 1e-13:
+                raise RuntimeError('cannot resolve strands near u=%s' % pts[i])
+            pts.insert(i, mid)
+    return pts, roots
+
+def braid_word(roots):
+    """from tracked roots (list of arrays, strand index fixed), produce Artin word.
+    Positions ordered by real part; crossing of adjacent positions i,i+1 -> sigma_i^{+-1}.
+    sign: +1 if the strand moving right (increasing real part) passes with smaller imaginary part."""
+    word = []
+    prev_order = list(np.argsort(roots[0].real))
+    for k in range(1, len(roots)):
+        r = roots[k]
+        order = list(np.argsort(r.real))
+        if order == prev_order:
+            continue
+        # find adjacent transpositions turning prev_order into order (bubble)
+        cur = list(prev_order)
+        changed = True
+        steps = 0
+        while cur != order:
+            steps += 1
+            if steps > 50:
+                raise RuntimeError('too many crossings in one step')
+            for i in range(len(cur) - 1):
+                # strands at positions i, i+1 in cur; do they need to swap?
+                s1, s2 = cur[i], cur[i+1]
+                if order.index(s1) > order.index(s2):
+                    # s1 moves right past s2.  imaginary parts at crossing ~ average of both times
+                    im1 = (roots[k-1][s1].imag + r[s1].imag) / 2
+                    im2 = (roots[k-1][s2].imag + r[s2].imag) / 2
+                    sign = 1 if im1 < im2 else -1
+                    word.append(sign * (i + 1))
+                    cur[i], cur[i+1] = s2, s1
+                    break
+        prev_order = order
+    return word, prev_order
+
+def artin_act(word, gens):
+    """apply braid word (list of signed ints) to free-group words; words are lists of signed ints (generator indices 1..n)."""
+    n = len(gens)
+    cur = [list(g) for g in gens]
+    def inv(w): return [-x for x in reversed(w)]
+    def subst(w, images):
+        out = []
+        for x in w:
+            if x > 0: out += images[x-1]
+            else: out += inv(images[-x-1])
+        return out
+    for s in word:
+        i = abs(s) - 1
+        images = [[j+1] for j in range(n)]
+        if s > 0:
+            images[i] = [i+1, i+2, -(i+1)]
+            images[i+1] = [i+1]
+        else:
+            images[i] = [i+2]
+            images[i+1] = [-(i+2), i+1, i+2]
+        cur = [subst(w, images) for w in cur]
+    return [freereduce(w) for w in cur]
+
+def freereduce(w):
+    out = []
+    for x in w:
+        if out and out[-1] == -x: out.pop()
+        else: out.append(x)
+    return out
+
+def gapword(w, name='g'):
+    if not w: return 'One(F)'
+    return '*'.join(('%s%d' % (name, x)) if x > 0 else ('%s%d^-1' % (name, -x)) for x in w)
+
+def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
+    F = curve_equation(comps)
+    n = F.degree(v)
+    Fc = [np.poly1d([complex(x) for x in sp.Poly(F.as_expr().coeff(v, k), u).all_coeffs()]) for k in range(n, -1, -1)]
+    crit, disc = critical_values(F)
+    cvals = [c for c, m in crit]
+    rng = np.random.default_rng(seed)
+    if base is None:
+        cx = np.array(cvals)
+        R = max(abs(cx - cx.mean()).max(), 1.0)
+        best = None
+        for trial in range(40):
+            cand = complex(cx.mean()) + R * (1.3 + 1.5 * rng.random()) * np.exp(2j * np.pi * rng.random())
+            angs = np.sort(np.angle(cx - cand))
+            gaps = np.diff(np.concatenate([angs, [angs[0] + 2*np.pi]])) if len(angs) > 1 else np.array([1.0])
+            score = gaps.min()
+            if best is None or score > best[0]: best = (score, cand)
+        base = best[1]
+    # order critical values by argument from base
+    cvals.sort(key=lambda c: np.angle(c - base))
+    # radii
+    rad = []
+    for c in cvals:
+        d = min(abs(c - o) for o in cvals if o != c) if len(cvals) > 1 else 1.0
+        rad.append(min(radius_frac * d, 0.3))
+    # check paths avoid other discs
+    for k, c in enumerate(cvals):
+        for j, o in enumerate(cvals):
+            if j == k: continue
+            # distance from o to segment base->c
+            seg = c - base
+            tt = np.clip(((o - base) * np.conj(seg)).real / abs(seg)**2, 0, 1)
+            d = abs(base + tt * seg - o)
+            if d < 1.5 * rad[j]:
+                raise RuntimeError('path to %s passes near %s; change base' % (c, o))
+    gens = [[i+1] for i in range(n)]
+    base_roots = vroots(Fc, base)
+    base_order = list(np.argsort(base_roots.real))
+    # generator j corresponds to position j (sorted by real part) at the base fibre
+    comp_of_gen = []
+    for p in range(n):
+        z = base_roots[base_order[p]]
+        vals = [abs(complex(sp.resultant(a - u, v - b, t).subs({u: base, v: z}))) for a, b in comps]
+        comp_of_gen.append(int(np.argmin(vals)))
+    rels = []
+    sing = []   # per critical value: list of local clusters
+    loops = []
+    for k, c in enumerate(cvals):
+        r = rad[k]
+        direction = (c - base) / abs(c - base)
+        near = c - r * direction
+        N1 = 60
+        path_in = [base + (near - base) * s for s in np.linspace(0, 1, N1)]
+        circle = [c - r * direction * np.exp(1j * th) for th in np.linspace(0, 2*np.pi, 90)]
+        pts_in, roots_in = track(Fc, path_in, n)
+        pts_c, roots_c = track(Fc, circle, n, init=roots_in[-1])
+        path_out = list(reversed(pts_in))
+        pts_o, ro = track(Fc, path_out, n, init=roots_c[-1])
+        full_roots = roots_in + roots_c[1:] + ro[1:]
+        W, _ = braid_word(full_roots)
+        P, order_near = braid_word(roots_in)
+        L, _ = braid_word(roots_c)
+        # local permutation on the circle: strand i (index) ends at position of which strand
+        start, end = roots_c[0], roots_c[-1]
+        perm = {}
+        for i in range(n):
+            j = int(np.argmin(np.abs(start - end[i])))  # strand i ends where strand j started
+            perm[i] = j
+        # clusters at c: exact roots of F(c,v)
+        ex = vroots(Fc, c)
+        near_roots = roots_c[0]
+        assign = [int(np.argmin(np.abs(ex - z))) for z in near_roots]
+        clusters = {}
+        for i, j in enumerate(assign):
+            key = None
+            for kk in clusters:
+                if abs(ex[kk] - ex[j]) < 1e-5: key = kk; break
+            if key is None: key = j; clusters[key] = []
+            clusters[key].append(i)
+        pos_of = {s_: p for p, s_ in enumerate(order_near)}
+        Pinv = [-x for x in reversed(P)]
+        images_Pinv = artin_act(Pinv, gens)
+        local = []
+        for key, strands in clusters.items():
+            if len(strands) < 2: continue
+            vp = ex[key]
+            # parameter values on each component mapping to (c, vp)
+            branches = []
+            for ci, (a, b) in enumerate(comps):
+                ap = sp.Poly(a - c, t)
+                trs = []
+                for tr in np.roots([complex(x) for x in ap.all_coeffs()]):
+                    if all(abs(tr - x) > 1e-3 for x in trs): trs.append(tr)
+                for tr in trs:
+                    if abs(complex(b.subs(t, tr)) - vp) < 1e-3:
+                        singular_branch = abs(complex(sp.diff(a, t).subs(t, tr))) < 1e-6 and abs(complex(sp.diff(b, t).subs(t, tr))) < 1e-6
+                        branches.append(dict(comp=ci, t=[float(tr.real), float(tr.imag)], cusp=bool(singular_branch)))
+            if len(branches) != len(clusters[key]) and len(branches) < 2:
+                pass
+            r_p = len(branches)
+            is_sing = r_p >= 2 or any(br['cusp'] for br in branches)
+            if not is_sing:
+                continue   # smooth point with vertical tangent
+            local.append(dict(strands=strands, positions=[pos_of[s_] for s_ in strands],
+                              branches=r_p, branch_comps=[br['comp'] for br in branches],
+                              cusps=sum(br['cusp'] for br in branches),
+                              merB=[images_Pinv[pos_of[s_]] for s_ in strands],
+                              point=[float(vp.real), float(vp.imag)]))
+        loops.append(dict(c=[c.real, c.imag], W=W, P=P, L=L, local=local))
+        imgs = artin_act(W, gens)
+        for j in range(n):
+            rels.append(freereduce([-(j+1)] + imgs[j]))
+    degs = [[sp.Poly(a, t).degree(), sp.Poly(b, t).degree()] for a, b in comps]
+    return dict(name=name, n=n, F=str(F.as_expr()), crit=[[c.real, c.imag] for c in cvals],
+                loops=loops, rels=rels, comp_of_gen=comp_of_gen, degs=degs, m=len(comps))
+
+def to_gap(res, path):
+    n = res['n']
+    lines = []
+    lines.append('F := FreeGroup(%d);;' % n)
+    for i in range(n):
+        lines.append('g%d := F.%d;;' % (i+1, i+1))
+    lines.append('rels := [ %s ];;' % ', '.join(gapword(r) for r in res['rels'] if r))
+    lines.append('G := F / rels;;')
+    lines.append('gg := GeneratorsOfGroup(G);;')
+    lines.append('tofp := function(w) return MappedWord(w, GeneratorsOfGroup(F), gg); end;;')
+    sp_list = []
+    for lp in res['loops']:
+        for loc in lp['local']:
+            merB = ', '.join('tofp(%s)' % gapword(w) for w in loc['merB'])
+            sp_list.append('rec(branches := %d, nstr := %d, cusps := %d, comps := %s, mer := [%s])'
+                           % (loc['branches'], len(loc['strands']), loc['cusps'], [c+1 for c in loc['branch_comps']], merB))
+    lines.append('singpts := [ %s ];;' % ', '.join(sp_list))
+    lines.append('compofgen := %s;;' % [c+1 for c in res['comp_of_gen']])
+    lines.append('degs := %s;;' % res['degs'])
+    lines.append('m := %d;;' % res['m'])
+    open(path, 'w').write('\n'.join(lines) + '\n')
+
+if __name__ == '__main__':
+    pass
