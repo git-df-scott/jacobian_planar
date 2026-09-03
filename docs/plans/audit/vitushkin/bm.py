@@ -195,66 +195,99 @@ def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
     loops = []
     for k, c in enumerate(cvals):
         r = rad[k]
-        direction = (c - base) / abs(c - base)
-        near = c - r * direction
-        N1 = 60
-        path_in = [base + (near - base) * s for s in np.linspace(0, 1, N1)]
-        circle = [c - r * direction * np.exp(1j * th) for th in np.linspace(0, 2*np.pi, 90)]
-        pts_in, roots_in = track(Fc, path_in, n)
-        pts_c, roots_c = track(Fc, circle, n, init=roots_in[-1])
-        path_out = list(reversed(pts_in))
-        pts_o, ro = track(Fc, path_out, n, init=roots_c[-1])
-        full_roots = roots_in + roots_c[1:] + ro[1:]
-        W, _ = braid_word(full_roots)
-        P, order_near = braid_word(roots_in)
-        L, _ = braid_word(roots_c)
-        # local permutation on the circle: strand i (index) ends at position of which strand
-        start, end = roots_c[0], roots_c[-1]
-        perm = {}
-        for i in range(n):
-            j = int(np.argmin(np.abs(start - end[i])))  # strand i ends where strand j started
-            perm[i] = j
-        # clusters at c: exact roots of F(c,v)
-        ex = vroots(Fc, c)
-        near_roots = roots_c[0]
-        assign = [int(np.argmin(np.abs(ex - z))) for z in near_roots]
-        clusters = {}
-        for i, j in enumerate(assign):
-            key = None
-            for kk in clusters:
-                if abs(ex[kk] - ex[j]) < 1e-5: key = kk; break
-            if key is None: key = j; clusters[key] = []
-            clusters[key].append(i)
-        pos_of = {s_: p for p, s_ in enumerate(order_near)}
-        Pinv = [-x for x in reversed(P)]
-        images_Pinv = artin_act(Pinv, gens)
-        local = []
-        for key, strands in clusters.items():
-            if len(strands) < 2: continue
-            vp = ex[key]
-            # parameter values on each component mapping to (c, vp)
-            branches = []
-            for ci, (a, b) in enumerate(comps):
-                ap = sp.Poly(a - c, t)
-                trs = []
-                for tr in np.roots([complex(x) for x in ap.all_coeffs()]):
-                    if all(abs(tr - x) > 1e-3 for x in trs): trs.append(tr)
-                for tr in trs:
-                    if abs(complex(b.subs(t, tr)) - vp) < 1e-3:
-                        singular_branch = abs(complex(sp.diff(a, t).subs(t, tr))) < 1e-6 and abs(complex(sp.diff(b, t).subs(t, tr))) < 1e-6
-                        branches.append(dict(comp=ci, t=[float(tr.real), float(tr.imag)], cusp=bool(singular_branch)))
-            if len(branches) != len(clusters[key]) and len(branches) < 2:
-                pass
-            r_p = len(branches)
-            is_sing = r_p >= 2 or any(br['cusp'] for br in branches)
-            if not is_sing:
-                continue   # smooth point with vertical tangent
-            local.append(dict(strands=strands, positions=[pos_of[s_] for s_ in strands],
-                              branches=r_p, branch_comps=[br['comp'] for br in branches],
-                              cusps=sum(br['cusp'] for br in branches),
-                              merB=[images_Pinv[pos_of[s_]] for s_ in strands],
-                              point=[float(vp.real), float(vp.imag)]))
-        loops.append(dict(c=[c.real, c.imag], W=W, P=P, L=L, local=local))
+        for attempt in range(8):
+            try:
+                direction = (c - base) / abs(c - base)
+                near = c - r * direction
+                N1 = 60
+                path_in = [base + (near - base) * s for s in np.linspace(0, 1, N1)]
+                circle = [c - r * direction * np.exp(1j * th) for th in np.linspace(0, 2*np.pi, 90)]
+                pts_in, roots_in = track(Fc, path_in, n)
+                pts_c, roots_c = track(Fc, circle, n, init=roots_in[-1])
+                path_out = list(reversed(pts_in))
+                pts_o, ro = track(Fc, path_out, n, init=roots_c[-1])
+                full_roots = roots_in + roots_c[1:] + ro[1:]
+                W, _ = braid_word(full_roots)
+                P, order_near = braid_word(roots_in)
+                L, _ = braid_word(roots_c)
+                # local permutation on the circle: strand i (index) ends at position of which strand
+                start, end = roots_c[0], roots_c[-1]
+                perm = {}
+                for i in range(n):
+                    j = int(np.argmin(np.abs(start - end[i])))  # strand i ends where strand j started
+                    perm[i] = j
+                # clusters at c: exact roots of F(c,v)
+                ex = vroots(Fc, c)
+                near_roots = roots_c[0]
+                assign = [int(np.argmin(np.abs(ex - z))) for z in near_roots]
+                # cluster exact roots with a tolerance adapted to high multiplicity (numpy error ~ eps^(1/mult))
+                tol = 2e-2 * (1 + np.abs(ex).max())
+                clusters = {}
+                for i, j in enumerate(assign):
+                    key = None
+                    for kk in clusters:
+                        if abs(ex[kk] - ex[j]) < tol: key = kk; break
+                    if key is None: key = j; clusters[key] = []
+                    clusters[key].append(i)
+                # sanity: each near root must be unambiguously closer to its own cluster than to any other cluster
+                keys = list(clusters.keys())
+                for i, z in enumerate(near_roots):
+                    own = [kk for kk in keys if i in clusters[kk]][0]
+                    dmine = abs(z - ex[own])
+                    dother = [abs(z - ex[kk]) for kk in keys if kk != own]
+                    if dother and dmine > 0.5 * min(dother):
+                        raise RuntimeError('cluster assignment ambiguous at u=%s' % c)
+                pos_of = {s_: p for p, s_ in enumerate(order_near)}
+                Pinv = [-x for x in reversed(P)]
+                images_Pinv = artin_act(Pinv, gens)
+                local = []
+                fibre = []
+                for key, strands in clusters.items():
+                    fibre.append(dict(positions=sorted(pos_of[s_] for s_ in strands),
+                                      mer=[images_Pinv[pos_of[s_]] for s_ in sorted(strands, key=lambda x: pos_of[x])],
+                                      singular=False))
+                    if len(strands) < 2: continue
+                    vp = ex[key]
+                    # parameter values on each component mapping to (c, vp)
+                    branches = []
+                    for ci, (a, b) in enumerate(comps):
+                        ap = sp.Poly(a - c, t)
+                        trs = []
+                        mult = []
+                        for tr in np.roots([complex(x) for x in ap.all_coeffs()]):
+                            for q_, x in enumerate(trs):
+                                if abs(tr - x) < 1e-2: mult[q_] += 1; break
+                            else:
+                                trs.append(tr); mult.append(1)
+                        aprime_roots = np.roots([complex(x) for x in sp.Poly(sp.diff(a, t), t).all_coeffs()]) if sp.Poly(a, t).degree() > 1 else np.array([])
+                        for q_, tr in enumerate(trs):
+                            if mult[q_] >= 2 and len(aprime_roots):
+                                tr = aprime_roots[int(np.argmin(np.abs(aprime_roots - tr)))]
+                            if abs(complex(b.subs(t, tr)) - vp) < 1e-3 * (1 + abs(vp)):
+                                gcdab = sp.gcd(sp.Poly(sp.diff(a, t), t), sp.Poly(sp.diff(b, t), t))
+                                cusp_params = np.roots([complex(x) for x in gcdab.all_coeffs()]) if gcdab.degree() >= 1 else np.array([])
+                                singular_branch = mult[q_] >= 2 and len(cusp_params) > 0 and np.min(np.abs(cusp_params - tr)) < 1e-2
+                                branches.append(dict(comp=ci, t=[float(tr.real), float(tr.imag)], cusp=bool(singular_branch)))
+                    if len(branches) != len(clusters[key]) and len(branches) < 2:
+                        pass
+                    r_p = len(branches)
+                    is_sing = r_p >= 2 or any(br['cusp'] for br in branches)
+                    if not is_sing:
+                        continue   # smooth point with vertical tangent
+                    fibre[-1]['singular'] = True
+                    local.append(dict(strands=strands, positions=[pos_of[s_] for s_ in strands],
+                                      branches=r_p, branch_comps=[br['comp'] for br in branches],
+                                      cusps=sum(br['cusp'] for br in branches),
+                                      merB=[images_Pinv[pos_of[s_]] for s_ in strands],
+                                      point=[float(vp.real), float(vp.imag)]))
+
+                break
+            except RuntimeError as ex_:
+                if 'ambiguous' in str(ex_) and attempt < 7:
+                    r = r / 2
+                    continue
+                raise
+        loops.append(dict(c=[c.real, c.imag], W=W, P=P, L=L, local=local, fibre=fibre))
         imgs = artin_act(W, gens)
         for j in range(n):
             rels.append(freereduce([-(j+1)] + imgs[j]))
@@ -279,6 +312,13 @@ def to_gap(res, path):
             sp_list.append('rec(branches := %d, nstr := %d, cusps := %d, comps := %s, mer := [%s])'
                            % (loc['branches'], len(loc['strands']), loc['cusps'], [c+1 for c in loc['branch_comps']], merB))
     lines.append('singpts := [ %s ];;' % ', '.join(sp_list))
+    fl = []
+    for lp in res['loops']:
+        cl = []
+        for f in lp['fibre']:
+            cl.append('rec(positions := %s, mer := [%s])' % (list(f['positions']), ', '.join('tofp(%s)' % gapword(w) for w in f['mer'])))
+        fl.append('[ %s ]' % ', '.join(cl))
+    lines.append('fibres := [ %s ];;' % ', '.join(fl))
     lines.append('compofgen := %s;;' % [c+1 for c in res['comp_of_gen']])
     lines.append('degs := %s;;' % res['degs'])
     lines.append('m := %d;;' % res['m'])

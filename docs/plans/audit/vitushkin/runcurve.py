@@ -15,7 +15,7 @@ def run(name, comps, Dmin=4, Dmax=8, base=None, verbose=True, seeds=(0,1,2,3,4))
         print('==', name, 'comps', [(str(a), str(b)) for a, b in comps], 'alpha', res['n'], 'degs', res['degs'])
         for lp in res['loops']:
             print('  c=%s W=%s' % (tuple(round(x,3) for x in lp['c']), lp['W']), [(loc['strands'], 'br', loc['branches'], 'cusps', loc['cusps']) for loc in lp['local']])
-    script = 'SizeScreen([4000,]);; Read("/tmp/%s.g");; Read("/home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g");; Print("abelianization: ", AbelianInvariants(G), "\\n");; r := CheckCurve(G, singpts, compofgen, degs, m, %d, %d);; Report(r);; QUIT;' % (name, Dmin, Dmax)
+    script = 'SizeScreen([4000,]);; Read("/tmp/%s.g");; Read("/home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g");; Print("abelianization: ", AbelianInvariants(G), "\\n");; r := CheckCurve(G, singpts, compofgen, degs, m, %d, %d, fibres);; Report(r);; QUIT;' % (name, Dmin, Dmax)
     try:
         out = subprocess.run(['gap', '-q', '-b'], input=script, capture_output=True, text=True, timeout=7200)
         print(out.stdout.strip())

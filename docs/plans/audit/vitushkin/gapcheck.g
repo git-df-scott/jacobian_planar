@@ -1,6 +1,6 @@
 CosetTableDefaultMaxLimit := 2000000;;
-CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax)
-  local cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
+CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax, fibres)
+  local linefail, fb, cl, loopels, grp, orb, O, chiO, Lq, cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
   results := [];
   gens := [];   # one generator per component
   for i in [1..m] do Add(gens, GeneratorsOfGroup(G)[Position(compofgen, i)]); od;
@@ -25,6 +25,7 @@ CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax)
     res := rec(D := D, n := n, e := e, cycles := List(gens, g -> CycleStructurePerm(Image(hom, g))), group := StructureDescription(img));
     ok := true;
     if Minimum(n) < 1 then ok := false; res.fail := "n=0"; fi;
+    if ok and Minimum(e) < 1 then ok := false; res.fail := "e=0"; fi;
     fibre1 := D - Sum([1..m], i -> degs[i][1] * e[i]);
     fibre2 := D - Sum([1..m], i -> degs[i][2] * e[i]);
     res.chi := [fibre1, fibre2];
@@ -42,6 +43,23 @@ CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax)
       cyc := List(gens, g -> Length(Filtered(Cycles(Image(hom, g), [1..D]), c -> Length(c) > 1)));
       res.chiR := Sum([1..m], i -> cyc[i] * (1 - kk[i])) + Sum(singpts, sp -> Length(Filtered(Orbits(Group(List(sp.mer, x -> Image(hom, x))), [1..D]), o -> Length(o) > 1)));
       if res.euler <> 1 then ok := false; res.fail := "euler"; fi;
+    fi;
+    if ok then
+      # Nguyen line test on every singular fibre: no component of F^-1(L) may have chi = 1
+      linefail := false;
+      for fb in fibres do
+        loopels := List(fb, cl -> Product(List(cl.mer, x -> Image(hom, x))));
+        grp := Group(loopels);
+        for O in Orbits(grp, [1..D]) do
+          chiO := Length(O) * (1 - Length(fb));
+          for cl in fb do
+            Lq := Group(List(cl.mer, x -> Image(hom, x)));
+            chiO := chiO + Length(Filtered(O, i -> ForAll(GeneratorsOfGroup(Lq), gq -> i^gq = i)));
+          od;
+          if chiO = 1 then linefail := true; fi;
+        od;
+      od;
+      if linefail then ok := false; res.fail := "line(C-component)"; fi;
     fi;
     if ok then
       staylifts := [];
@@ -81,7 +99,7 @@ Report := function(r)
   for x in r.results do
     if x.ok then Print("*** SURVIVOR: ", x, "\n"); fi;
   od;
-  near := Filtered(r.results, x -> not x.ok and x.fail <> "n=0");
+  near := Filtered(r.results, x -> not x.ok and not x.fail in ["n=0", "e=0"]);
   for x in near do
     Print("   D=", x.D, " n=", x.n, " cyc=", x.cycles, " ", x.group, " chi=", x.chi, " fail=", x.fail);
     if IsBound(x.s) then Print(" s=", x.s, " euler=", x.euler, " chiR=", x.chiR); fi;

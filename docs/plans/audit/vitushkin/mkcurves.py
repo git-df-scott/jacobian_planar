@@ -45,8 +45,11 @@ def b_with_conditions(a, beta, cusps, tacpairs, extra=()):
         vals = {f: R(3*i + 2 + 5*trial, 7*i + 3) for i, f in enumerate(free)}
         bb = sp.expand(b.subs(dict(zip(cs, s))).subs(vals))
         if sp.Poly(bb, t).degree() != beta: continue
-        F = sp.resultant(a - u, v - bb, t)
-        if sp.discriminant(F, v) == 0: continue
+        import numpy as np
+        u0 = 0.37 + 0.61j
+        ts = np.roots([complex(x) for x in sp.Poly(a - u0, t).all_coeffs()])
+        vs = [complex(bb.subs(t, tr)) for tr in ts]
+        if min(abs(vs[i] - vs[j]) for i in range(len(vs)) for j in range(i)) < 1e-6: continue
         return bb
     return None
 
