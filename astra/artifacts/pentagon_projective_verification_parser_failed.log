@@ -1,0 +1,25 @@
+HOMOGENEOUS_SYSTEM_AND_BOTH_CHARTS: PASS
+Traceback (most recent call last):
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 203, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 175, in main
+    aq=read('pentagon_modular_right_raw_certificate.txt')
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 85, in read
+    def read(name):return [parse(s) for s in (ART/name).read_text().strip().split(',')]
+                           ^^^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 83, in parse
+    return visit(ast.parse(text.strip(),mode='eval').body)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 73, in visit
+    a=visit(n.left)
+      ^^^^^^^^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 73, in visit
+    a=visit(n.left)
+      ^^^^^^^^^^^^^
+  File "/workspace/scratch/1c585d536e74/jacobian_planar/astra/verify_pentagon_projective.py", line 73, in visit
+    a=visit(n.left)
+      ^^^^^^^^^^^^^
+  [Previous line repeated 993 more times]
+RecursionError: maximum recursion depth exceeded

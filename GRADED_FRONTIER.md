@@ -1,6 +1,18 @@
 # Graded frontier
 
-## Current characteristic-zero result
+## Current characteristic-zero results
+
+**Both polygons in GGHV Proposition 4.3 are excluded.** Astra 3 closes the
+pentagon in part (1), so the original case called (8,28) in that proposition
+is excluded as well. This is a scoped computer-assisted result, not a
+resolution of JC2 or a closure of the separate above-125 (3,4) chain.
+
+Read `ASTRA_3_PENTAGON_PROJECTIVE.md` for the complete support reconstruction,
+right-edge normalization, five-parameter descent and weighted-projective
+valuation proof. Run `python astra/verify_pentagon_projective.py` to verify
+the homogeneous equations, affine unit certificate, five boundary power
+certificates and exact good reduction. The written normalization,
+completeness and valuation arguments are not proof-assistant formalized.
 
 **Case (2) is excluded in characteristic zero.** See
 `ASTRA_2_CASE2_EXACT_DESCENT.md` for the five-dessin completeness proof,
@@ -105,11 +117,17 @@ This is a provenance `WALL`, not a computational timeout.  The next work is:
 5. descend level by level, producing exact-Q certificates or an explicit
    surviving branch.
 
-No above-125 published case is claimed closed here. The new exclusion is
-only Proposition 4.3(2) of the degree-108 reduction.
+No above-125 published case is claimed closed here. The new exclusions cover
+both parts of Proposition 4.3 of the degree-108 reduction, with the precise
+scope stated in the Astra 2 and Astra 3 reports.
 
 ## Tooling wall
 
 The second Astra run provisioned Singular 4.3.1 locally and generated an exact
 lower certificate. Its independent FLINT verifier requires no Singular.
+The third run used Singular for finite-field pentagon certificates and
+PARI/GP 2.15.2 for an optional smaller field model, independently checked
+with FLINT. Three direct exact pentagon eliminations timed out; their
+generated inputs and logs are preserved and prove no emptiness. The successful
+projective verifier requires Python and python-flint, not either solver.
 GAP and msolve remain unprovisioned. Missing binaries are not evidence.

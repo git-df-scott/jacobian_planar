@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-04",
+  "base_commit": "e479477263c1f4176b287309dda2dcb4213fcb84",
+  "branch": "astra/jc2-pentagon-geometry-2026-09-04",
+  "result": "Characteristic-zero exclusion of GGHV Proposition 4.3(1), via the written projective valuation argument and exact certificates.",
+  "counterexample_found": false,
+  "proof": "ASTRA_3_PENTAGON_PROJECTIVE.md",
+  "verification": "astra/verify_pentagon_projective.py",
+  "environment": {
+    "python-flint": "0.9.0",
+    "Singular": "4.3.1",
+    "PARI-GP": "2.15.2"
+  },
+  "runs": [
+    {
+      "source": "pentagon_descent_modular.sing",
+      "limit_seconds": 120,
+      "verdict": "TIMEOUT at r=-4; no emptiness evidence"
+    },
+    {
+      "source": "pentagon_descent_modular_right.sing",
+      "verdict": "One normalized modular branch empty at r=-5; reconnaissance only"
+    },
+    {
+      "source": "pentagon_descent_exact_right.sing.gz",
+      "limit_seconds": 180,
+      "verdict": "TIMEOUT at r=-4; no emptiness evidence"
+    },
+    {
+      "source": "pentagon_descent_exact_small_right.sing.gz",
+      "limit_seconds": 180,
+      "verdict": "TIMEOUT at r=-4; no emptiness evidence"
+    },
+    {
+      "source": "pentagon_descent_exact_small_right_raw.sing.gz",
+      "limit_seconds": 180,
+      "verdict": "Nine exact raw compatibility equations generated; final elimination timed out"
+    },
+    {
+      "source": "pentagon_small_field.py",
+      "verdict": "Exact field isomorphism and T scale independently verified with FLINT"
+    },
+    {
+      "source": "verify_pentagon_descent.py --constraints-only",
+      "verdict": "All nine exact raw equations regenerated; PASS"
+    },
+    {
+      "source": "pentagon_descent_modular_right_raw.sing",
+      "verdict": "Nine-generator affine unit certificate; verified independently"
+    },
+    {
+      "source": "pentagon_descent_modular_right_raw_boundary.sing",
+      "verdict": "Fourteen-generator boundary ideal contains u1^9,u2^5,u3^3,u4^2,u5^3; five certificates verified independently"
+    },
+    {
+      "source": "verify_pentagon_projective.py",
+      "verdict": "Homogeneous model, both charts, six certificates and exact good reduction PASS"
+    },
+    {
+      "source": "verify_case2_certificate.py",
+      "verdict": "Inherited leading completeness data and case-(2) certificate replay PASS"
+    },
+    {
+      "log": "pentagon_integral_scale_failed.log",
+      "verdict": "Exploratory GP reserved-symbol parser failure; corrected and not evidence"
+    },
+    {
+      "log": "pentagon_projective_verification_parser_failed.log",
+      "verdict": "Verifier recursion limit reached on long polynomial sums; increased limit, full replay then passed"
+    }
+  ],
+  "compressed_generated_sources": [
+    {
+      "path": "astra/pentagon_descent_exact_right.sing.gz",
+      "original_bytes": 7858772,
+      "original_sha256": "aa6eb0b5d978532df30126360848bf3c8bdd083b94e353685b9429879731b0c1",
+      "compressed_bytes": 3580097
+    },
+    {
+      "path": "astra/pentagon_descent_exact_small_right.sing.gz",
+      "original_bytes": 2310906,
+      "original_sha256": "619865a85a318dc43d182cd9171fb3aee27a4f6f265c5579e98cf46a2c243697",
+      "compressed_bytes": 861063
+    },
+    {
+      "path": "astra/pentagon_descent_exact_small_right_raw.sing.gz",
+      "original_bytes": 1846450,
+      "original_sha256": "dba92bbc0815f7bf26d9493527673f08e4a65756dc668c5dc8d29c842c206532",
+      "compressed_bytes": 712870
+    }
+  ],
+  "limits": [
+    "No direct characteristic-zero Groebner unit certificate is claimed.",
+    "The characteristic-zero bridge is the written valuation proof, with explicitly checked good reduction and boundary certificates.",
+    "No external peer review or proof-assistant formalization.",
+    "No claim about the different (3,4) above-125 reduction or JC2 as a whole."
+  ]
+}

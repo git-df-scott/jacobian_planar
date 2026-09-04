@@ -2,7 +2,8 @@
 
 All verdicts use the repository's binding evidence labels.
 Entries through Phase D describe the first Astra run; Phase E supersedes its
-case-(2) UNKNOWN verdict and Singular availability statement.
+case-(2) UNKNOWN verdict and Singular availability statement. Phase F closes
+the pentagon that Phase E left open.
 
 ## Routing and reconciliation
 
@@ -137,3 +138,46 @@ Current counterexample status: no CEC and no CE.
 - The historical 1144 object is not asserted to coincide with this scheme.
   The neighboring pentagon and above-125 translation wall remain open.
 - Final result: no CE or CEC; exact exclusion of this one reduced polygon.
+
+## Phase F — pentagon geometry and the projective boundary
+
+- Started from `e479477263c1f4176b287309dda2dcb4213fcb84` on
+  `astra/jc2-pentagon-geometry-2026-09-04`. Read the historical pentagon
+  retractions and the p_1_1=0 slice status before constructing the new system.
+- Reconstructed every nonconstant lattice monomial of Proposition 4.3(1):
+  60 for P and 124 for Q. Independently checked the convex hulls and the
+  original x,y monomial determinant identity. Replayed the inherited exact
+  leading-completeness data and case-(2) certificate successfully.
+- Derived the right-edge square/cube relation and exhibited the one residual
+  torus action that normalizes its parameter. Retained every linear kernel;
+  seven unnormalized parameters become five, with weights (1,2,3,3,4).
+- Computed exact coefficient-operator ranks through r=-13. Proved directly
+  that the homogeneous lower operators are injective from r=-3 onward.
+- The initial seven-parameter modular elimination timed out. Right-edge
+  normalization gave an affine modular contradiction, but this alone was
+  kept as finite-field reconnaissance.
+- Three direct characteristic-zero eliminations timed out. PARI/GP suggested
+  a smaller quintic field and an integral scale; FLINT verified the field
+  isomorphism, scale and leading equation exactly. Nine raw exact
+  compatibility equations were independently reconstructed with
+  `verify_pentagon_descent.py --constraints-only`; no direct exact unit
+  certificate was obtained or claimed.
+- Restored the right-edge parameter t and reconstructed the single weighted
+  homogeneous system through weight 8. Generated explicit certificates at
+  p=32003: nine affine equations generate 1; fourteen boundary equations
+  contain u1^9, u2^5, u3^3, u4^2 and u5^3.
+- `verify_pentagon_projective.py` multiplies all six identities with separate
+  sparse arithmetic, matches both charts to the same homogeneous system,
+  checks support windows, weights and modular matrix ranks, and verifies
+  entry by entry the good reduction of all exact field operators. All four
+  reported verification groups pass, including altered-certificate controls.
+- The written valuation argument turns emptiness of the projective special
+  fibre into characteristic-zero emptiness. Together with Astra 2's five-orbit
+  completeness proof this excludes every Proposition 4.3(1) leading branch.
+- Large generated scripts from failed exact eliminations are losslessly
+  compressed. Inputs, partial outputs, parser failures, successful certificates
+  and classifications are preserved in `astra/artifacts/pentagon_run_manifest.json`.
+- Result: no CE or CEC. Computer-assisted characteristic-zero exclusion of
+  Proposition 4.3(1); together with Astra 2, both proposition polygons and the
+  original case called (8,28) there are closed. No claim about JC2 as a whole,
+  the different above-125 (3,4) chain, literature priority or external review.

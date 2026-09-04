@@ -1,0 +1,9 @@
+  ***   variable name expected: I=idealhnf(b,1);
+  ***                           ^----------------
+... skipping file 'astra/pentagon_integral_scale.gp'
+  ***   variable name expected: ...atsize(F)[1],if(F[i,2]<0,
+  ***   I=idealmul(b,I,idealp
+  ***   ^---------------------
+  ***   at top-level: v=bnfisprincipal(b,I);print(v);print(nfbasisto
+  ***                   ^--------------------------------------------
+  *** bnfisprincipal: incorrect type in idealtyp (t_COMPLEX).

@@ -1,69 +1,88 @@
-# Astra handoff — 2026-09-04, second run
+# Astra handoff — 2026-09-04, third run
 
-Branch: `astra/jc2-exact-descent-2026-09-04`.
-Base: `93319412545e84d1093d79c5b59cb87731eec4a9`.
+Branch: `astra/jc2-pentagon-geometry-2026-09-04`.
+Base: `e479477263c1f4176b287309dda2dcb4213fcb84`.
 
 No counterexample or counterexample candidate was found.
 
-GGHV Proposition 4.3(2), the four-vertex reduced polygons with bracket x^2,
-is now excluded in characteristic zero. This supersedes the previous
-UNKNOWN verdict for that specific case. The proof uses a five-dessin upper
-bound, five exact algebraic leading solutions, a complete lower
-parametrization, and an independently verified 26-term contradiction identity.
-It does not close the neighboring pentagon, the whole degree-(72,108) target,
-or JC2.
+Both polygons of GGHV Proposition 4.3 are now excluded in characteristic
+zero by computer-assisted arguments. Astra 2 closed the quadrilateral;
+Astra 3 closes the pentagon with a complete five-parameter reduction and
+explicit certificates on both charts of a weighted projective model.
+Verified good reduction and a written valuation argument supply the bridge
+from the finite-field identities to characteristic zero. This excludes the
+original case called (8,28) in that proposition. It does not resolve JC2 or
+the different above-125 chain with exponent ratio (3,4).
 
-For a session overview, read `ASTRA_2_PROGRESS_REPORT.md`.
-Read `ASTRA_2_CASE2_EXACT_DESCENT.md` for the proof, then `ASTRA_STATE.md` and
-`GRADED_FRONTIER.md`. For prior work read `TARGET_SOURCE_COMPATIBILITY.md`,
-`OFF_BY_ONE.md`, `GROUP_FIRST_SEARCH.md`, `BRIANCON_MATE_STRIKE.md`,
-`ASTRA_RECONCILIATION.md`, and the chronological `ASTRA_RUN_LOG.md`.
+Read `ASTRA_3_PROGRESS_REPORT.md`, then `ASTRA_3_PENTAGON_PROJECTIVE.md`.
+The leading-orbit completeness proof is in `ASTRA_2_CASE2_EXACT_DESCENT.md`.
+`ASTRA_STATE.md` and `GRADED_FRONTIER.md` describe the live targets;
+`ASTRA_RUN_LOG.md` preserves the chronological record. Earlier reports remain
+historical snapshots, including statements that the pentagon was then open.
 
-## Replay the new result
+## Replay the results
 
-With python-flint 0.9.0:
+From the repository root, with Python and python-flint 0.9.0:
 
 ```
 python astra/verify_case2_certificate.py
+python astra/verify_pentagon_projective.py
 ```
 
-Expected: four PASS lines. This rebuilds the relevant equations, verifies the
-leading quintic and five dessin representatives, checks matrix rank and lower
-parametrization, and multiplies the explicit Nullstellensatz identity.
-The universal level-four parametrization and exhaustive dessin reduction are
-proved in the accompanying Markdown; they are not machine-formalized proofs.
+Each command prints four PASS lines. Neither invokes Singular. The pentagon
+checker reconstructs the homogeneous system, specializes both charts,
+multiplies one unit identity and five pure-power identities, checks the
+matrices and verifies good reduction at p=32003. The geometric normalization,
+dessin completeness and valuation arguments are written proofs, not
+proof-assistant formalizations. No external peer review is claimed.
 
-To regenerate the certificate, with SymPy 1.14 and Singular 4.3.1:
+To regenerate the pentagon certificates with Singular 4.3.1:
 
 ```
-python astra/build_case2_descent.py
-Singular -q astra/case2_exact_descent_certificate.sing
-python astra/verify_case2_certificate.py
+python astra/pentagon_descent.py --right-edge --stop-r -5 --defer-gb
+Singular -q astra/pentagon_descent_modular_right_raw.sing
+python astra/pentagon_descent.py --right-edge --stop-r -6 --defer-gb --boundary
+Singular -q astra/pentagon_descent_modular_right_raw_boundary.sing
+python astra/verify_pentagon_projective.py
 ```
 
-The five inherited positive witnesses still pass via
+An additional exact-field reconstruction is available as
+`python astra/verify_pentagon_descent.py --constraints-only`. It verifies nine
+raw characteristic-zero equations from a separate small-field model. Its
+default certificate mode expects a direct exact certificate that was not
+obtained; it is not the verifier for the successful projective proof.
+
+The five inherited positive witnesses pass via
 `python astra/graded_control.py`. Prior controls remain in
-`python astra/run_controls.py`; their archive audit reports historical scope.
+`python astra/run_controls.py`; their archive audit retains historical scope.
 
 ## Next explicit target
 
-Reconstruct the neighboring pentagon in Proposition 4.3(1). It adds `(0,8)`
-to N(P) and `(0,12)` to N(Q), and permits negative grading levels. Derive the
-complete equations and identify which present lemmas survive before running
-any elimination. Do not reuse the five-level case-(2) equations unchanged.
+Repair the translation of the published above-125 chain
+`(8,28)->(7/4,3)`, `(m,n)=(3,4)`, corresponding to the (108,144) campaign
+target. The primary table does not print the compiler's assumed last lower
+corner, and its c' range predates a correction. Derive those data from the
+primary definitions before generating supports or running elimination.
+The matching label (8,28) does not transfer the completed (2,3) proof to this
+different exponent ratio.
 
-Other live lanes remain the H3 boundary-depth theorem, a residue-free
-Briancon construction, and repair of the published above-125 translation.
-The previous six-blowup H3 exclusion is bounded; the Briancon period
-obstructions retain their explicit geometry hypotheses.
+Other live lanes are the H3 boundary-depth theorem and a residue-free
+Briançon construction. The six-blowup H3 exclusion is bounded, and the
+Briançon period obstructions retain their explicit geometry hypotheses.
+Do not restart either completed Proposition 4.3 polygon without identifying
+a concrete flaw in its proof or verification.
 
 ## Evidence cautions
 
+- Affine modular emptiness alone does not prove characteristic-zero emptiness.
+  Astra 3 depends on the verified boundary certificates and good reduction as
+  well as its valuation argument.
 - The exact five/35 leading count is proved independently of the historical
-  degree-1144 object. That object's full provenance is still unresolved.
-- `modStd` was a discovery tool. The raw log's completeness wording is not
-  the proof of enumeration completeness; the dessin count is.
-- Failed and timed-out exploratory runs are classified in
-  `astra/artifacts/case2_run_manifest.json`; they prove no emptiness.
-- The final corner condition is A_8 != 0; Singular calls that variable B(8).
+  degree-1144 object; that object's full provenance remains unresolved.
+- Three direct exact pentagon eliminations timed out. No direct
+  characteristic-zero Groebner unit certificate is claimed for the pentagon.
+  The failed generated scripts are preserved losslessly as `.sing.gz`.
+- Successful and failed runs are classified in
+  `astra/artifacts/pentagon_run_manifest.json`. Parser errors and timeouts
+  are not evidence of emptiness.
 - No numerical near-hit or necessary-condition survivor is a CEC.

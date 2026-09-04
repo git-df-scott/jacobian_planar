@@ -1,0 +1,49 @@
+{
+  "scope": "Necessary graded prefix through r=-5 of the normalized pentagon",
+  "support_sizes_without_constants": [
+    60,
+    124
+  ],
+  "support_and_monomial_bracket_checks": "PASS",
+  "direct_xy_operator_checks": "PASS",
+  "complete_kernel_parameters": 5,
+  "ranks_and_kernels": [
+    [
+      1,
+      17,
+      1
+    ],
+    [
+      0,
+      18,
+      1
+    ],
+    [
+      -1,
+      18,
+      2
+    ],
+    [
+      -2,
+      18,
+      1
+    ],
+    [
+      -3,
+      17,
+      0
+    ],
+    [
+      -4,
+      15,
+      0
+    ],
+    [
+      -5,
+      13,
+      0
+    ]
+  ],
+  "raw_equations_regenerated": "PASS",
+  "nonzero_raw_constraints": 9
+}

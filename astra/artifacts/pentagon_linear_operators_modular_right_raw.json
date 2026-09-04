@@ -1,0 +1,84 @@
+{
+  "evidence": "EXACT mod 32003 at one leading seed",
+  "right_edge_normalized": true,
+  "stop_r": -5,
+  "defer_gb": true,
+  "C": [
+    "0",
+    "1",
+    "1",
+    "21967",
+    "12482",
+    "4342",
+    "19220",
+    "14235",
+    "26088"
+  ],
+  "G": [
+    "0",
+    "0",
+    "1",
+    "21336",
+    "21967",
+    "18837",
+    "10467",
+    "753",
+    "9369",
+    "8462",
+    "11221",
+    "8687",
+    "15373"
+  ],
+  "total_free_parameters": 5,
+  "stages": [
+    {
+      "r": 1,
+      "variables": 18,
+      "rank": 17,
+      "kernel": 1,
+      "cokernel_in_20_rows": 3
+    },
+    {
+      "r": 0,
+      "variables": 19,
+      "rank": 18,
+      "kernel": 1,
+      "cokernel_in_20_rows": 2
+    },
+    {
+      "r": -1,
+      "variables": 20,
+      "rank": 18,
+      "kernel": 2,
+      "cokernel_in_20_rows": 2
+    },
+    {
+      "r": -2,
+      "variables": 19,
+      "rank": 18,
+      "kernel": 1,
+      "cokernel_in_20_rows": 2
+    },
+    {
+      "r": -3,
+      "variables": 17,
+      "rank": 17,
+      "kernel": 0,
+      "cokernel_in_20_rows": 3
+    },
+    {
+      "r": -4,
+      "variables": 15,
+      "rank": 15,
+      "kernel": 0,
+      "cokernel_in_20_rows": 5
+    },
+    {
+      "r": -5,
+      "variables": 13,
+      "rank": 13,
+      "kernel": 0,
+      "cokernel_in_20_rows": 7
+    }
+  ]
+}

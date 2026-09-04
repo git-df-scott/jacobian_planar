@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "scope": "GGHV Proposition 4.3(1), with the written normalization, leading-completeness and valuation arguments",
+  "support_sizes_without_constants": [
+    60,
+    124
+  ],
+  "parameter_weights": [
+    1,
+    2,
+    3,
+    3,
+    4,
+    1
+  ],
+  "levels": [
+    {
+      "r": 1,
+      "equation_weight": 1,
+      "kernel": 1
+    },
+    {
+      "r": 0,
+      "equation_weight": 2,
+      "kernel": 1
+    },
+    {
+      "r": -1,
+      "equation_weight": 3,
+      "kernel": 2
+    },
+    {
+      "r": -2,
+      "equation_weight": 4,
+      "kernel": 1
+    },
+    {
+      "r": -3,
+      "equation_weight": 5,
+      "kernel": 0
+    },
+    {
+      "r": -4,
+      "equation_weight": 6,
+      "kernel": 0
+    },
+    {
+      "r": -5,
+      "equation_weight": 7,
+      "kernel": 0
+    },
+    {
+      "r": -6,
+      "equation_weight": 8,
+      "kernel": 0
+    }
+  ],
+  "homogeneous_reconstruction": "PASS",
+  "affine_unit_certificate": "PASS",
+  "boundary_pure_powers": [
+    9,
+    5,
+    3,
+    2,
+    3
+  ],
+  "boundary_certificates": "PASS",
+  "mutation_controls": "PASS",
+  "good_reduction": {
+    "prime": 32003,
+    "residue_of_original_C8": 26088,
+    "leading_model": "PASS",
+    "all_operator_coefficients_integral": "PASS",
+    "all_row_transformations_commute": "PASS"
+  },
+  "char_zero_bridge": "Written weighted-projective valuation argument; not naive affine mod-p inference.",
+  "sha256": {
+    "pentagon_modular_right_raw_certificate_input.txt": "4f061df885293dec829fa1ae31195c817ca04a45ed4d6b46fe5285ea0520bdf0",
+    "pentagon_modular_right_raw_certificate.txt": "bf0eb2e606c385faacda3cf57ca2176e87290916359e5baa83b35eb3bc5e955c",
+    "pentagon_modular_right_raw_boundary_power_input.txt": "9ba7a35f871273ec2f4f1e8a01702d6dd556f625ffceb4d1cfe2408cd37472a3",
+    "pentagon_modular_right_raw_boundary_power_1.txt": "abbc8e320340527a66fe83a8439c41860d9a9fc527affb4af5d8970bad5ce018",
+    "pentagon_modular_right_raw_boundary_power_2.txt": "5ca6c79f1ee08dc2675178099bf2d7a5fa81a82b1368f92c1c809c92eef55846",
+    "pentagon_modular_right_raw_boundary_power_3.txt": "95a132eecc2607ba3c56a47cd158ddeccda0eebeb87940c2b8072c56b02ddcb1",
+    "pentagon_modular_right_raw_boundary_power_4.txt": "1f004bdab4978a40fe25685cddd938351d05063408cdac8ee6914c176c0fcd0e",
+    "pentagon_modular_right_raw_boundary_power_5.txt": "1e37595abef273f68492ca9549442b00971b0aa51c62face89d5ef5d9304f13e"
+  }
+}

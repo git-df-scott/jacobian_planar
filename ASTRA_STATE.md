@@ -35,12 +35,23 @@
 
 ## CURRENT EXACT COMPUTATIONAL RESULTS
 
+- `EXACT-Q` with written completeness and valuation arguments: GGHV
+  Proposition 4.3(1), the pentagon, is excluded in characteristic zero. The
+  complete graded prefix has five parameters after a justified right-edge
+  normalization. Six independently multiplied finite-field certificates
+  exclude both charts of its weighted projective compactification; every
+  exact coefficient operator has verified good reduction at the chosen prime.
+  See `ASTRA_3_PENTAGON_PROJECTIVE.md`. Together with Astra 2 this excludes
+  both polygons of Proposition 4.3 and its original case called (8,28), not
+  JC2 or the different above-125 (3,4) chain. No external peer review or
+  proof-assistant formalization is claimed.
+
 - `EXACT-Q` with a written completeness proof: GGHV Proposition 4.3(2) is
   excluded in characteristic zero. A five-dessin count proves completeness
   of the five leading scaling orbits; a complete lower parametrization and
   26-term Nullstellensatz certificate exclude every extension with the required
   top corner. Independent FLINT verification passes. See
-  `ASTRA_2_CASE2_EXACT_DESCENT.md`. The neighboring pentagon remains open.
+  `ASTRA_2_CASE2_EXACT_DESCENT.md`. Astra 3 closes the neighboring pentagon.
 
 - `EXACT-Q`: the identity-automorphism compactification control has pole
   vectors `(1,0,1)` and `(1,1,0)`, geometric degree 1, and Keller delta
@@ -65,8 +76,10 @@
 
 ## WALLS
 
-- Singular 4.3.1 was provisioned locally for the second Astra run. GAP and
-  msolve were not provisioned. No timeout or absent executable is evidence.
+- Singular 4.3.1 was provisioned locally for the second Astra run, and PARI/GP
+  2.15.2 for the third. GAP and msolve were not provisioned. No timeout or
+  absent executable is evidence. Three direct exact pentagon eliminations
+  timed out; the successful proof instead controls the projective boundary.
 - The full PR #24 curve-by-curve low-index enumeration was not replayed here.
 - The historical degree-1144 object's provenance remains unresolved. The new
   case-(2) proof reconstructs its inputs directly from the published polygon
@@ -85,7 +98,9 @@
 - Earlier case-(2) `EMPTY over Qbar` claims remain unsupported by their old
   evidence. The new result has a separate completeness proof and exact
   certificate; it does not retroactively validate those claims.
-- A modular nonempty or empty fibre is not a characteristic-zero verdict.
+- An affine modular nonempty or empty fibre alone is not a characteristic-zero
+  verdict. Astra 3 additionally verifies good reduction and excludes the whole
+  projective special fibre, then supplies the valuation argument.
 - The unrestricted `general.py` / `batch.py` graded EMPTY claims are retracted;
   their common-degree restriction excluded positive witness W3.
 - Above-125 monomial kills are not closures of published cases until the
@@ -97,11 +112,9 @@
 1. Construct an all-irreducible, gradient-unimodular, non-coordinate
    Briançon-type P whose eta has a residue-free pole divisor of degree at least
    three, then kill its elliptic de Rham component exactly.
-2. Reconstruct the complete grading for the neighboring pentagon in GGHV
-   Proposition 4.3(1). Negative grading levels prevent directly extending the
-   completed case-(2) proof.
-3. Reconstruct a published above-125 Newton case directly from its primary
+2. Reconstruct a published above-125 Newton case directly from its primary
    chain data; only then derive and run its graded one-variable descent.
+   Both Proposition 4.3 polygons are now closed by separate proofs.
 
 ## LIVE TOPOLOGICAL LANES
 
@@ -120,13 +133,16 @@
    boundary skeleton.
 2. **Residue-free Briançon construction.**  Search embeddings realizing a
    triple-pole exact differential, with Gate 0 and positive controls first.
-3. **Pentagon graded descent.** Start from the published supports and derive
-   all levels. Case (2) is now closed by the independent exact descent.
+3. **Above-125 provenance repair.** Derive the missing lower corner and c'
+   range for `(8,28)->(7/4,3)`, `(m,n)=(3,4)`, before generating equations.
+   The completed (2,3) pentagon descent does not transfer to this ratio.
 
 ## DO-NOT-REPEAT LIST
 
 - Do not scan generic coefficient boxes or restart B=16.
 - Do not run the case-(2) y-adic depth-6 wall.
+- Do not restart either Proposition 4.3 polygon without a concrete flaw in
+  Astra 2 or Astra 3. Replay their certificates before reopening them.
 - Do not call a finite target blueprint an algebraic realization.
 - Do not enlarge target singularity count or source tree size without a forced
   invariant.
