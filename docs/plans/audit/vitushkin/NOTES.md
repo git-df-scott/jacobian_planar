@@ -93,3 +93,22 @@ must satisfy chi + (points over singular points) = 1, be unibranch there, and
 have one place at infinity. On the icosahedral configuration R has two
 components with chi 0 and -1: fails, as the H1 = Z^2 computation predicted.
 The test is now applied to every representation that passes the Euler equation.
+
+## Mate-problem route (parallel line, not yet started here)
+
+Briançon chart used on codex/sol-session3-pole: s = xy + 1, p = xs + 1,
+u = s^2 + y, with (p - 1)u = s(sp - 1). The family P = p^2 u + lambda s p^2 +
+alpha p^2 + beta p + gamma is closed there (night24/CUSP_CLOSURE.md) by the
+elliptic de Rham argument; its conclusion is that the next family must enlarge
+the pole divisor of the prospective primitive to degree at least two. Reusable
+code: night20/mate20.py, night24/cusp_family24.py (period and pole tests).
+
+## Queue at 00:40Z 2026-09-04
+
+Running: degree-12 enumeration on the icosahedral curve (sweep9), 4-strand
+(5,5,3)/(7,3,3)/(5,3,3) curves (sweep13), reducible cuspidal-cubic pairs and
+parabolas (sweep14), (2,7) and (7,5) cusp curves and tacnode curves (sweep17),
+the (3,5) icosahedral curve with lines through its singular points (sweep18).
+Best near misses so far: 4-strand (5,5,3)+4 nodes gives A8 on 8 sheets with
+Euler 0 and chi(R) = 1; two cuspidal cubics (t^2,t^3) and (t^2,t^3+1) give S4 on
+4 sheets with Euler 0 and chi(R) = 1.
