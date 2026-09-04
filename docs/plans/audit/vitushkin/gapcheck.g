@@ -1,6 +1,8 @@
 CosetTableDefaultMaxLimit := 2000000;;
-CheckCurve := function(G, singpts, compofgen, degs, m, Dmin, Dmax, fibres)
-  local linefail, fb, cl, loopels, grp, orb, O, chiO, Lq, cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
+CheckCurve := function(arg)
+  local G, singpts, compofgen, degs, m, Dmin, Dmax, fibres, linefail, fb, cl, loopels, grp, orb, O, chiO, Lq, cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
+  G := arg[1]; singpts := arg[2]; compofgen := arg[3]; degs := arg[4]; m := arg[5]; Dmin := arg[6]; Dmax := arg[7];
+  if Length(arg) >= 8 then fibres := arg[8]; else fibres := []; fi;
   results := [];
   gens := [];   # one generator per component
   for i in [1..m] do Add(gens, GeneratorsOfGroup(G)[Position(compofgen, i)]); od;
