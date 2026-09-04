@@ -1,0 +1,6 @@
+ring R = 1073741827, (x,y), dp;
+ideal I = x-1, x-2;
+ideal G = std(I);
+printf("BASIS SIZE %s", size(G));
+if (G[1]==1) { printf("VERDICT EMPTY"); }
+quit;

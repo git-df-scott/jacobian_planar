@@ -1,0 +1,7 @@
+rung 13 imposed, residual = 0
+rung 17: 8 eqs, 6 unk, rank 6, kernel 0, NEW CONDITIONS 0
+rung 16: 9 eqs, 7 unk, rank 7, kernel 0, NEW CONDITIONS 0
+rung 15: 10 eqs, 8 unk, rank 7, kernel 1, NEW CONDITIONS 0
+rung 14: 11 eqs, 10 unk, rank 9, kernel 1, NEW CONDITIONS 0
+rung 13: 12 eqs, 11 unk, rank 10, kernel 1, NEW CONDITIONS 0
+rung 12: 13 eqs, 12 unk, rank 11, kernel 1, NEW CONDITIONS 0

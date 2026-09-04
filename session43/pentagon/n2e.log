@@ -1,0 +1,7 @@
+RESUMED at level 0: 116 substitutions, 84 conditions so far
+L=  0: 0 solved on rational pivots, 5 condition(s) carried out, 0 new unknown(s) left free
+L= -1: 0 solved on rational pivots, 4 condition(s) carried out, 0 new unknown(s) left free
+L= -2: satisfied
+
+TOTAL 93 conditions in 30 variables
+saved nodivide.pkl

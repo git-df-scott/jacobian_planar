@@ -1,0 +1,21 @@
+2026-08-22T15:21:33Z START cor57_g2 cap=6000000kb timeout=5400s
+2026-08-22T15:24:45Z END cor57_g2 exit=139 wall=192s verdict=NO VERDICT (exit=139, empty output)
+2026-08-22T15:24:47Z START cor57_s1_g2 cap=6000000kb timeout=5400s
+2026-08-22T15:29:11Z END cor57_s1_g2 exit=139 wall=264s verdict=NO VERDICT (exit=139, empty output)
+2026-08-22T15:29:12Z QUEUE COMPLETE
+2026-08-22T15:45:17Z START cor57_g2b cap=nonekb timeout=5400s
+2026-08-22T15:56:43Z END cor57_g2b exit=137 wall=686s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T15:56:45Z START cor57_s1_g2b cap=nonekb timeout=5400s
+2026-08-22T16:22:27Z END cor57_s1_g2b exit=137 wall=1542s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T16:22:28Z QUEUE COMPLETE
+2026-08-22T16:29:28Z START reduced_sing cap=nonekb timeout=7200s
+2026-08-22T16:45:02Z START upper_subst_g2 cap=nonekb timeout=2400s
+2026-08-22T16:45:02Z END upper_subst_g2 exit=0 wall=0s verdict=NONEMPTY_OR_POSDIM (raw: #Reduced Groebner basis data #--- #field characteristic: 100)
+2026-08-22T16:45:03Z START reduced_sing cap=nonekb timeout=2400s
+2026-08-22T17:25:03Z END reduced_sing exit=124 wall=2400s verdict=NO VERDICT (exit=124, empty output)
+2026-08-22T17:25:05Z QUEUE COMPLETE
+2026-08-22T17:25:45Z START eighth_g2 cap=nonekb timeout=2400s
+2026-08-22T17:30:15Z END eighth_g2 exit=137 wall=270s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T17:30:16Z START upper_subst_exp_g2 cap=nonekb timeout=2400s
+2026-08-22T17:38:08Z END upper_subst_exp_g2 exit=137 wall=472s verdict=NO VERDICT (exit=137, empty output)
+2026-08-22T17:38:10Z QUEUE COMPLETE

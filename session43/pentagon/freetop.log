@@ -1,0 +1,6 @@
+witness fixed (h_7=2z^8, h_6=z^8, g_12=z^12): eqs=261 h-block=33 g-block=111 rank(M)=110
+    control PASS | conditions on h = eqs - rank(M) = 151 vs h-block 33  -> expected dim -118  [inconsistent at this h]
+h_6,h_7 FREE                                : eqs=275 h-block=51 g-block=111 rank(M)=110
+    control PASS | conditions on h = eqs - rank(M) = 165 vs h-block 51  -> expected dim -114  [inconsistent at this h]
+h_6,h_7 and g_12 all FREE                   : eqs=295 h-block=51 g-block=124 rank(M)=123
+    control PASS | conditions on h = eqs - rank(M) = 172 vs h-block 51  -> expected dim -121  [inconsistent at this h]

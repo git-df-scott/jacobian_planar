@@ -1,0 +1,8 @@
+h-block free coefficients: 51
+g-block unknowns: 111
+system: 278 equations x 111 unknowns
+PLANTED CONTROL: rank 110, consistent = True  (MUST be True)
+NEGATIVE CONTROL (rhs perturbed): consistent = False  (should usually be False)
+
+REAL right-hand side at a random h: rank 110 of 111 columns, consistent = False
+left-kernel dimension = 278 - 110 = 168  (that many conditions on h)

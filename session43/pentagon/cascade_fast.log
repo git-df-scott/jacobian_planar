@@ -1,0 +1,12 @@
+rung 18 re-check: PASS
+
+rung 17: 8 eqs, 6 unknowns, rank 6, aug rank 6
+    => (y-1) divides A_7
+    => (y-1) divides A_8
+
+rung 16: 9 eqs, 7 unknowns, rank 7, aug rank 7
+    => (y-1) divides A_7
+    => (y-1) divides A_8
+
+rung 15: 10 eqs, 8 unknowns, rank 7, aug rank 8
+    !! still inconsistent
