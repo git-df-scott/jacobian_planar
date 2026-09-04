@@ -8,9 +8,12 @@ This repository is a research archive for the plane Jacobian-conjecture campaign
 2. **Complete re-walk and open queue:** [`STATE_FULL.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/STATE_FULL.md), [`OPEN_ITEMS.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/OPEN_ITEMS.md)
 3. **What is closed, live, or retired:** [`LIVE_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/LIVE_MAP.md), [`TRUST_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/TRUST_MAP.md)
 4. **Corrections and failed-proof ledger:** [`CATCHES.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/CATCHES.md)
-5. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
+5. **Latest handoff (not yet merged):** [`docs/plans/HANDOFF_CE_HUNT.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/jc2-handoff-audit-hartnc/docs/plans/HANDOFF_CE_HUNT.md) on `claude/jc2-handoff-audit-hartnc` (PR [#22](https://github.com/git-df-scott/jacobian_planar/pull/22)) is the most recent self-contained "read this first" for a fresh session — where every verified artifact lives, how to rebuild the worktrees/engines, and the ordered direct attempts with gates and stop rules. See [Open pull requests](#open-pull-requests) below for the night-run logs that continue past it.
+6. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
 
 The full scripts, certifiers, logs, and generated data are on the campaign branch. The `main` branch is the lightweight map and archive index.
+
+**For a new Claude or Codex session:** read this README top to bottom before touching any branch. It is the map; `STATUS.md` on the canonical branch is the verdict; `CATCHES.md` is the list of mistakes not to repeat.
 
 ## Cross-chat JC2 handoff audit
 
@@ -58,9 +61,17 @@ Use the branch that matches the question. Do not search every branch by default.
 
 These are focused or historical worktrees; their names are the routing key.
 
-`ce-acquisition-strategy`, `counter-example-audit`, `d23-borisov-transfer-test`, `fable-counterexample-sweep`, `ggv-conjecture-evidence`, `github-push-issue`, `jacobian-collision-counterexample`, `jacobian-conjecture-campaign`, `jacobian-conjecture-search`, `jacobian-planar-sweep`, `mod-3-keller-pair-obstruction`, `moduli-deformation-exceptions`, `past-code-session`, `poisson-bracket-counterexample`.
+`ce-acquisition-strategy`, `counter-example-audit`, `d23-borisov-transfer-test`, `fable-6o0nqe`, `fable-counterexample-sweep`, `ggv-conjecture-evidence`, `github-push-issue`, `jacobian-collision-counterexample`, `jacobian-conjecture-campaign`, `jacobian-conjecture-search`, `jacobian-planar-sweep`, `mod-3-keller-pair-obstruction`, `moduli-deformation-exceptions`, `past-code-session`, `poisson-bracket-counterexample`.
 
-Use the canonical campaign branch for the latest verdict; use these branches only when tracing the named subproblem or its provenance.
+Three more recent workstreams continue past the canonical branch's `24a06fc` head and are not yet folded in:
+
+| Branch | Use it for |
+| --- | --- |
+| [`claude/jc2-handoff-audit-hartnc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-handoff-audit-hartnc) | The unified fleet plan, the 2026-09-02 ground-cover audit (455 exported systems by content hash), and `docs/plans/HANDOFF_CE_HUNT.md` — read this one first. |
+| [`claude/jc2-counterexample-hunt-handoff-w369mc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-w369mc) | The 2026-09-03 overnight run log against the handoff's direct attempts: strata killed by exact monomial certificates, the case (2) depth-6 timeout, and the next session's priority order. |
+| [`claude/jc2-counterexample-hunt-handoff-x40ahz`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-x40ahz) | The Vitushkin-search sweep logs (dicritical test, cusp families, group-first screen) — a parallel line of attack, not yet reconciled with the ground-cover register. |
+
+Use the canonical campaign branch for the latest adjudicated verdict; use these branches only when tracing the named subproblem or its provenance.
 
 ### Codex workstreams
 
@@ -118,6 +129,46 @@ This compact ref list is the handoff index. The short commit ID makes it possibl
 | Codex | [`codex/sol5-counterexample-hunt`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol5-counterexample-hunt) | `e26ec86` |
 | Codex | [`codex/sol6-collision-first`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol6-collision-first) | `4fbdccb` |
 
+Three branches postdate the 2026-09-01 snapshot above and are tracked separately because they move faster than the rest of the map:
+
+| Family | Branch | Head | Date |
+| --- | --- | --- | --- |
+| Claude | [`claude/jc2-handoff-audit-hartnc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-handoff-audit-hartnc) | `ae58bd3` | 2026-09-03 |
+| Claude | [`claude/jc2-counterexample-hunt-handoff-w369mc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-w369mc) | `e0086a7` | 2026-09-03 |
+| Claude | [`claude/jc2-counterexample-hunt-handoff-x40ahz`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-x40ahz) | `5b1eb0a` | 2026-09-04 |
+
+## Open pull requests
+
+Every workstream branch above has a corresponding **draft** PR against `main` (a few chain against another workstream branch instead — see their base in the list below); none has been merged. That is deliberate: `main` stays a lightweight index, and a PR here is a labelled, reviewable unit of work rather than a merge candidate. Do not merge one of these without checking its claims against `STATUS.md` and `CATCHES.md` on the canonical branch first — several were superseded or partially retracted by later sessions. Newest first:
+
+| PR | Base | Title |
+| --- | --- | --- |
+| [#24](https://github.com/git-df-scott/jacobian_planar/pull/24) | `main` | Clues audit across all branches, 2026-09-03 |
+| [#23](https://github.com/git-df-scott/jacobian_planar/pull/23) | `main` | JC2 counterexample hunt: night run log and direct attempts |
+| [#22](https://github.com/git-df-scott/jacobian_planar/pull/22) | `main` | Add unified JC2 counterexample-hunt fleet plan with audit appendix |
+| [#21](https://github.com/git-df-scott/jacobian_planar/pull/21) | `main` | night1: deformation depth-map engine for the JC2 campaign |
+| [#20](https://github.com/git-df-scott/jacobian_planar/pull/20) | `main` | Session 44 — full audit plan + four calibrated new-angle instruments |
+| [#19](https://github.com/git-df-scott/jacobian_planar/pull/19) | `main` | Session 43 — the C* lane closed, the Keller condition collapsed, and three lanes run to verdict |
+| [#18](https://github.com/git-df-scott/jacobian_planar/pull/18) | `main` | Graded reduction for {P,Q}=x^2, and a verdict on the live (72,108) resister |
+| [#17](https://github.com/git-df-scott/jacobian_planar/pull/17) | `main` | Fable sweep: findings and game plan for the counterexample hunt |
+| [#16](https://github.com/git-df-scott/jacobian_planar/pull/16) | `main` | Solve pentagon cascade level 17 and add controlled residual-edge checks (`work`, not draft) |
+| [#15](https://github.com/git-df-scott/jacobian_planar/pull/15) | `claude/jacobian-planar-sweep-iajyma` | **[MAILBOX — DO NOT MERGE]** Codex ↔ Claude Opus 5 handshake |
+| [#14](https://github.com/git-df-scott/jacobian_planar/pull/14) | `main` | Session 43: the pentagon target was mis-specified — pent_L23.ms is NONEMPTY in every chart |
+| [#13](https://github.com/git-df-scott/jacobian_planar/pull/13) | `claude/opus-5-counterexample-plan-sep6yk` | Bottom-edge orbit structure settled; A1 answered; pentagon reduced 283/165 → 212/95 |
+| [#12](https://github.com/git-df-scott/jacobian_planar/pull/12) | `main` | wave6/ms_opus: resister worker results (16 systems + control) |
+| [#11](https://github.com/git-df-scott/jacobian_planar/pull/11) | `claude/opus-5-counterexample-plan-sep6yk` | ggv: computational evidence and structure data for the GGV B=16 conjecture (G1-G5) |
+| [#10](https://github.com/git-df-scott/jacobian_planar/pull/10) | `claude/plane-counterexample-endgame-az3geq` | Hunt: five-territory sweep (GGHV audit, same-sign sector, symmetry slices, lift pipeline, Gao audit) |
+| [#9](https://github.com/git-df-scott/jacobian_planar/pull/9) | `main` | Adjudicated record + Wave 5: the B=16 door closed past the 2013 stall |
+| [#8](https://github.com/git-df-scott/jacobian_planar/pull/8) | `main` | Solve the endgame residue equation; repair the (99,66) emptiness proof |
+| [#7](https://github.com/git-df-scott/jacobian_planar/pull/7) | `main` | Waves 2–3: refute H1c, repair the framework proof, refute the Session 38 collapse, answer Path A's A1 |
+| [#6](https://github.com/git-df-scott/jacobian_planar/pull/6) | `main` | Plan 43 Waves 0–1: THEOREM 2/3 discharged, the (108,72) framework kill made unconditional |
+| [#5](https://github.com/git-df-scott/jacobian_planar/pull/5) | `main` | Sessions 19–38: framework closure, the tangent sweep, and the GGHV (8,28) relation |
+| [#3](https://github.com/git-df-scott/jacobian_planar/pull/3) | `main` | Counterexample audit campaign: night plan + Sessions 19–20 verification run |
+| [#2](https://github.com/git-df-scott/jacobian_planar/pull/2) | `main` | Sessions 19–20: mod-3 wall re-derived (verdict (c)); (66,99) closed since 2022; retarget to (72,108) |
+| [#1](https://github.com/git-df-scott/jacobian_planar/pull/1) | `main` | D=23 transfer test: Borisov Second Framework (Phase 0 → 1 → 2) |
+
+None of these PRs claims a counterexample; several were later narrowed or retracted (see `CATCHES.md`). #4 does not exist (skipped/never opened).
+
 ## Evidence rules
 
 1. Read the verdict file and its stderr/log before trusting an output file.
@@ -127,12 +178,13 @@ This compact ref list is the handoff index. The short commit ID makes it possibl
 
 ## Archive layout on `main`
 
+- `CLAUDE.md`, `AGENTS.md` — thin pointers so a fresh Claude Code or Codex session reads this README on its first turn, instead of guessing.
 - `docs/sessions/active/` — sessions 39–40 (current paths).
 - `docs/sessions/archive/` — stale sessions 41–42, retained rather than deleted.
 - `docs/history/` — sessions 1–18 status report.
 - `archives/transfer/` — the campaign bundle, state-transfer archive, and restoration instructions.
 
-Sessions 43–44 are not present in the repository. No files were deleted to create this organization; the moves preserve their contents.
+Sessions 43–44 are not merged into `main` itself; their material lives on PR [#19](https://github.com/git-df-scott/jacobian_planar/pull/19) (Session 43) and PR [#20](https://github.com/git-df-scott/jacobian_planar/pull/20) (Session 44) — see [Open pull requests](#open-pull-requests). No files were deleted to create this organization; the moves preserve their contents.
 
 ## Reproduction entry points
 
