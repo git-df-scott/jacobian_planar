@@ -13,7 +13,8 @@ parametrization, and an independently verified 26-term contradiction identity.
 It does not close the neighboring pentagon, the whole degree-(72,108) target,
 or JC2.
 
-Read `ASTRA_2_CASE2_EXACT_DESCENT.md` first, then `ASTRA_STATE.md` and
+For a session overview, read `ASTRA_2_PROGRESS_REPORT.md`.
+Read `ASTRA_2_CASE2_EXACT_DESCENT.md` for the proof, then `ASTRA_STATE.md` and
 `GRADED_FRONTIER.md`. For prior work read `TARGET_SOURCE_COMPATIBILITY.md`,
 `OFF_BY_ONE.md`, `GROUP_FIRST_SEARCH.md`, `BRIANCON_MATE_STRIKE.md`,
 `ASTRA_RECONCILIATION.md`, and the chronological `ASTRA_RUN_LOG.md`.
