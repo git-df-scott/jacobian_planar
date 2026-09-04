@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "routes": {
+    "codex": {
+      "enabled": false,
+      "kind": "codex_pr",
+      "pr_number": null
+    },
+    "claude": {
+      "enabled": false,
+      "kind": "claude_routine",
+      "routine_id": null
+    }
+  }
+}
