@@ -2,3 +2,21 @@
   c=(2.0, 0.0) W=[2, 1, 1, 1, -2] [([0, 2], 'br', 1, 'cusps', 1)]
   c=(1.375, 0.0) W=[2, -1, 2, 2, 1, -2] [([0, 1], 'br', 2, 'cusps', 0)]
   c=(-2.0, 0.0) W=[-1, -2, 1, 1, 1, 1, 1, 2, 1] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 4 ] nu=1 transitive reps: 42
+   D=6 n=[ 3 ] cyc=[ [ , 1 ] ] A6 chi=[ -3, -12 ] fail=euler s=[ 2, 0, 1 ] euler=0 chiR=1
+   D=12 n=[ 6 ] cyc=[ [ , 2 ] ] (C2 x C2 x C2 x C2 x C2) : A6 chi=[ -6, -24 ] fail=euler s=[ 4, 0, 2 ] euler=0 chiR=1
+   D=6 n=[ 2 ] cyc=[ [ 2 ] ] A5 chi=[ -6, -18 ] fail=pi1(H1) s=[ 0, 0, 1 ] euler=1 chiR=0 pi1ab=[ 0, 0 ]
+   D=12 n=[ 4 ] cyc=[ [ 4 ] ] C2 x A5 chi=[ -12, -36 ] fail=euler s=[ 0, 0, 2 ] euler=2 chiR=-1
+   D=12 n=[ 4 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2 x C2) : A5 chi=[ -12, -36 ] fail=euler s=[ 0, 0, 2 ] euler=2 chiR=0
+   D=12 n=[ 4 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2 x C2) : A5 chi=[ -12, -36 ] fail=euler s=[ 0, 0, 2 ] euler=2 chiR=0
+   D=10 n=[ 2 ] cyc=[ [ 4 ] ] A5 chi=[ -14, -38 ] fail=euler s=[ 1, 0, 0 ] euler=5 chiR=-4
+   D=5 n=[ 1 ] cyc=[ [ 2 ] ] A5 chi=[ -7, -19 ] fail=euler s=[ 0, 1, 0 ] euler=3 chiR=-2
+   D=6 n=[ 1 ] cyc=[ [ ,,, 1 ] ] A5 chi=[ -9, -24 ] fail=euler s=[ 0, 1, 0 ] euler=4 chiR=0
+   D=12 n=[ 1 ] cyc=[ [ ,,,,,,,,, 1 ] ] PSL(2,11) chi=[ -21, -54 ] fail=euler s=[ 0, 1, 0 ] euler=10 chiR=0
+   D=10 n=[ 2 ] cyc=[ [ ,, 2 ] ] (C2 x C2 x C2 x C2) : A5 chi=[ -14, -38 ] fail=euler s=[ 0, 2, 0 ] euler=6 chiR=-2
+   D=12 n=[ 2 ] cyc=[ [ ,,, 2 ] ] A5 chi=[ -18, -48 ] fail=euler s=[ 0, 2, 0 ] euler=8 chiR=-2
+   D=12 n=[ 1 ] cyc=[ [ ,,,,,,,,, 1 ] ] PSL(2,11) chi=[ -21, -54 ] fail=euler s=[ 0, 1, 0 ] euler=10 chiR=0
+   D=10 n=[ 1 ] cyc=[ [ , 3 ] ] A6 chi=[ -17, -44 ] fail=euler s=[ 0, 1, 0 ] euler=8 chiR=-5
+   (28 reps with a meridian acting freely)
+  [4102 s]

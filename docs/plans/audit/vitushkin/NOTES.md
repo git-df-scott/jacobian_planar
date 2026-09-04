@@ -112,3 +112,17 @@ the (3,5) icosahedral curve with lines through its singular points (sweep18).
 Best near misses so far: 4-strand (5,5,3)+4 nodes gives A8 on 8 sheets with
 Euler 0 and chi(R) = 1; two cuspidal cubics (t^2,t^3) and (t^2,t^3+1) give S4 on
 4 sheets with Euler 0 and chi(R) = 1.
+
+## Exhaustion of 3-strand irreducible curves with one node (00:45Z, 2026-09-04)
+
+For a = t^3 - 3t the only two-cusp curves with a single node are types [3,3]
+(the (3,4) curve) and [5,3] (the (3,5) curve; the (3,6) instance is the same
+curve up to the automorphism v -> v - u^2/6). Higher cusp pairs [7,5], [9,3],
+[7,7], [9,5], [9,7], [11,5] admit no genuine solution at the minimal degree:
+the solution space of the cusp conditions is spanned by a, a^2, a^3 (graphs).
+Curves with two or more nodes had complement group with only cyclic
+low-index quotients in every instance tried. So irreducible 3-strand curves
+with cusps and nodes are exhausted: [3,3] dies at Euler through degree 8,
+[5,3] passes Euler only in the icosahedral representation through degree 12
+and fails the dicritical test there. Remaining 3-strand options: tacnodes
+(sweep17), reducible configurations (sweeps 14, 18, 19).
