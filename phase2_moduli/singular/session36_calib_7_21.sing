@@ -1,0 +1,31 @@
+// GGHV section 6, case (7,21): reproduce equation (6.18).
+// d_{-k} written dm<k>;  F_{-4} = (1/2) y^{-1} so F_{-4} y^{10} = (1/2) y^9.
+ring R = 0,(dm10,dm8,dm7,dm6,dm5,dm4,dm3,dm2,y,d1,d0,dm1),dp;
+
+poly E1 = 2*d0*dm1 + 2*d1*dm2 + 2*dm4;
+poly E2 = dm1^2 + 2*d0*dm2 + 2*d1*dm3 + 2*dm5;
+poly E3 = 2*dm1*dm2 + 2*d0*dm3 + 2*d1*dm4 + 2*dm6;
+poly E4 = dm2^2 + 2*dm1*dm3 + 2*d0*dm4 + 2*d1*dm5 + 2*dm7;
+poly E5 = 2*dm2*dm3 + 2*dm1*dm4 + 2*d0*dm5 + 2*d1*dm6 + 2*dm8;
+poly E7 = 2*dm10 + 2*dm3*dm4 + 2*dm2*dm5 + 2*dm1*dm6 + 2*d0*dm7 + 2*d1*dm8;
+
+poly Q1 = 3*d0^2*dm1 + 3*d1*dm1^2 + 6*d0*d1*dm2 + 3*dm2^2 + 3*d1^2*dm3
+        + 6*dm1*dm3 + 6*d0*dm4 + 6*d1*dm5 + 3*dm7;
+poly Q2 = 3*d0*dm1^2 + 3*d0^2*dm2 + 6*d1*dm1*dm2 + 6*d0*d1*dm3 + 6*dm2*dm3
+        + 3*d1^2*dm4 + 6*dm1*dm4 + 6*d0*dm5 + 6*d1*dm6 + 3*dm8;
+poly Q4 = 3*dm10 + 3*dm1^2*dm2 + 3*d0*dm2^2 + 6*d0*dm1*dm3 + 6*d1*dm2*dm3
+        + 3*d0^2*dm4 + 6*d1*dm1*dm4 + 6*dm3*dm4 + 6*d0*d1*dm5 + 6*dm2*dm5
+        + 3*d1^2*dm6 + 6*dm1*dm6 + 6*d0*dm7 + 6*d1*dm8 + (1/2)*y^9;
+
+ideal I = E1,E2,E3,E4,E5,E7,Q1,Q2,Q4;
+"system: 9 equations, eliminating dm10,dm8,dm7,dm6,dm5,dm4,dm3,dm2";
+ideal E = eliminate(I, dm10*dm8*dm7*dm6*dm5*dm4*dm3*dm2);
+"--- elimination ideal ---";
+E;
+"size = ", size(E);
+poly target = 9*y^9*d1*dm1^6 + y^27 + 27*d0*dm1^9;
+"--- GGHV (6.18) target: 9y^9 d1 dm1^6 + y^27 + 27 d0 dm1^9 ---";
+"target reduces to zero modulo the elimination ideal? ", reduce(target, std(E));
+int i;
+for (i=1; i<=size(E); i++) { "gen",i," equals target? ", (E[i]-target==0), "   negated? ", (E[i]+target==0); }
+quit;

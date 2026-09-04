@@ -1,0 +1,109 @@
+=============================================================
+CONTROLS: Keller maps (det J = 1).  All must come out d = 1.
+=============================================================
+-------------------------------------------------------------
+identity
+   det J                    =  1
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=y+(-b)
+G[2]=x+(-a)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+   ==> d = 1 and proper: AUTOMORPHISM
+-------------------------------------------------------------
+tame triangular
+   det J                    =  1
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=y+(-b)
+G[2]=x+(b)*y+(-a)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+   ==> d = 1 and proper: AUTOMORPHISM
+-------------------------------------------------------------
+tame deg-4 composite
+   det J                    =  1
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=y+(a2-b)
+G[2]=x+(-a2+b)*y+(-a)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+   ==> d = 1 and proper: AUTOMORPHISM
+-------------------------------------------------------------
+tame deg-6 composite
+   det J                    =  1
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=y+(a2-2ab3+b6-b)
+G[2]=x+(-a+b3)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+   ==> d = 1 and proper: AUTOMORPHISM
+
+=============================================================
+CONTROLS: non-Keller.  The detector must SEE degree and tears.
+=============================================================
+-------------------------------------------------------------
+(x, y^2)     proper, 2 sheets
+   det J                    =  2*y
+   geometric degree  vdim   =  2
+   Groebner basis / Q(a,b)  =  G[1]=x+(-a)
+G[2]=y2+(-b)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+-------------------------------------------------------------
+(x, y^3-3xy) proper, 3 sheets
+   det J                    =  3*y2-3*x
+   geometric degree  vdim   =  3
+   Groebner basis / Q(a,b)  =  G[1]=x+(-a)
+G[2]=y3-3*xy+(-b)
+   leading coefficients:
+         1
+         1
+   ==> all leading coefficients constant: PROPER
+-------------------------------------------------------------
+(x, xy)      TEAR
+   det J                    =  x
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=(a)*y+(-b)
+G[2]=x+(-a)
+   leading coefficients:
+         (a)
+         1
+   ==> NON-CONSTANT leading coefficient: THE FIBRE TEARS
+-------------------------------------------------------------
+(y, xy+x)    TEAR
+   det J                    =  -y-1
+   geometric degree  vdim   =  1
+   Groebner basis / Q(a,b)  =  G[1]=y+(-a)
+G[2]=(a+1)*x+(-b)
+   leading coefficients:
+         1
+         (a+1)
+   ==> NON-CONSTANT leading coefficient: THE FIBRE TEARS
+-------------------------------------------------------------
+(x^2y+x, y)  2 SHEETS + TEAR
+   det J                    =  2*xy+1
+   geometric degree  vdim   =  2
+   Groebner basis / Q(a,b)  =  G[1]=y+(-b)
+G[2]=(b)*x2+x+(-a)
+   leading coefficients:
+         1
+         (b)
+   ==> NON-CONSTANT leading coefficient: THE FIBRE TEARS
+   ==> d >= 2 with a tear: COUNTEREXAMPLE PROFILE
+
+=============================================================
+The last control carries the full counterexample profile -
+geometric degree 2 together with a tear at b = 0 - and fails
+only because det J = 2xy+1 is not constant.  The detector is
+therefore live: it does not return 'automorphism' by fiat.
+=============================================================
