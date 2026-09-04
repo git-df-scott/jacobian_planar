@@ -1,0 +1,26 @@
+{
+  "CE": "NO",
+  "CEC": "NO",
+  "degree_six_model": {
+    "R": "r^3",
+    "R_poles": "6*O",
+    "curve": "w^2=2*t*r-2*r^3",
+    "dR_divisor": "5*B0+Bplus+Bminus-7*O",
+    "degree_witnesses": [
+      "z^3-R is Eisenstein at R over Q(t)[R]",
+      "(t-r^2)/(2r) has odd valuation at t-r^2 in Q(t,r)"
+    ],
+    "field_degree": 6,
+    "genus": 1,
+    "jacobian": "12*u*r^3",
+    "normality": "NON_GALOIS; u->-u survives but r->zeta*r does not extend",
+    "primitive": "dR=3*r^2*dr",
+    "status": "LIVE_RATIONAL_DARBOUX_AFFINE_MODIFICATION",
+    "total_surface": "t=r^2+2*u^2*r, R=r^3 on A2_(u,r)"
+  },
+  "known_dead_degrees": [2, 3, 4, 5],
+  "moskowicz_prime_claim": "UNPROVED_FATAL_CITATION_GAP",
+  "remaining_equation": "Find Q(x,y)=Q(u,r), t and r^3 in Q[x,y], and dx wedge dy=12*u*r^3 du wedge dr, with u=0 and r=0 in the rational chart boundary",
+  "toric_chart_status": "IMPOSSIBLE_BY_EVEN_DETERMINANT",
+  "verdict": "GO"
+}

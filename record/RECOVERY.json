@@ -1,0 +1,84 @@
+{
+  "source_head": "b07d9e9153a926014af67ad1a892c944f00485b0",
+  "source_base": "7095528c8251d88a43d4ec02f3fa43490640a428",
+  "commits": [
+    "5a0592b31d127a6b9ea0d6050801dda96d6092c4",
+    "b07d9e9153a926014af67ad1a892c944f00485b0"
+  ],
+  "status": "Original source files recovered byte-for-byte; night26 GO superseded by RECORD_CORRECTIONS.md",
+  "files": [
+    {
+      "path": "night25/MANIFEST.md",
+      "bytes": 956,
+      "sha256": "50ca4d7e4f093285821ee951f31cacfb6412f5e1188b639e8fede8d011a33e74",
+      "git_blob": "e6174c54f145008362cef69ee69bd83dcc5e5354"
+    },
+    {
+      "path": "night25/PRIMITIVE_FIRST.md",
+      "bytes": 7902,
+      "sha256": "2f3c824b58b1ada27bc942f6874cf331e8d2ebb5ffbe4e7f60cdf1aa04cab50c",
+      "git_blob": "a4d2ef481de1c445d49ea2d93a45e7667ba65e1b"
+    },
+    {
+      "path": "night25/primitive_first25.json",
+      "bytes": 2460,
+      "sha256": "57c35ff866add387774ee68f6c86e4e62f0cc5359a459b768f2b8c780d51807f",
+      "git_blob": "bf1273605ada6afae19c954b39c26dbf5c305b05"
+    },
+    {
+      "path": "night25/primitive_first25.py",
+      "bytes": 7265,
+      "sha256": "c0ba84e44a1662241d0cd3fba99871c5214cfb70a4fbcdd8fc0172db994ec56a",
+      "git_blob": "713f20e369b1dcfab8321d3832f20a75afbd5f10"
+    },
+    {
+      "path": "night25/verify_primitive_first25.py",
+      "bytes": 3352,
+      "sha256": "fc8a1ca36b47f6abaa99da624d3a348c845f11b00f46cdb82c86181efdca2aab",
+      "git_blob": "90c790ccb17249ac24d0094162cf95ddeebbde18"
+    },
+    {
+      "path": "night26/CLOSING_STRIKE.md",
+      "bytes": 5957,
+      "sha256": "fb01b0ed1341b748422361a4a06e88a7349931afeb0eb70dd60bd2823926a780",
+      "git_blob": "697cb1421b9db815ea26497a1eab04836cdb96ae"
+    },
+    {
+      "path": "night26/MANIFEST.md",
+      "bytes": 1171,
+      "sha256": "d7ec1bda08b23134e469b57071d5c9966882b639694118dc6a64eafcf78d7af0",
+      "git_blob": "683fb9e0019b316dc6282fd34bb7c2ff957e2779"
+    },
+    {
+      "path": "night26/PRIME_DEGREE_AUDIT.md",
+      "bytes": 4120,
+      "sha256": "bb4d3f14f942fd087f608ac1bf78c4638a9d39a74aa188d821898dd309c491dd",
+      "git_blob": "6b0d6bd1d667c385ee9cb23f88644fc45092483b"
+    },
+    {
+      "path": "night26/RESTART_PACKAGE.md",
+      "bytes": 2175,
+      "sha256": "2e2c18a163f158552558bf3868a1222723e0a8effba93602ff3156bc0ad5328c",
+      "git_blob": "f7e2d095cb243684b3adc484cc2f364c2580acaf"
+    },
+    {
+      "path": "night26/closing_strike26.json",
+      "bytes": 930,
+      "sha256": "58b94ec005eab319a15635bae3d54bfffe9351ca563c3da403c8a12fdca3d9b2",
+      "git_blob": "d26f51fa9f9563e062802ff90076030ac319463f"
+    },
+    {
+      "path": "night26/closing_strike26.py",
+      "bytes": 3302,
+      "sha256": "c8fa3b6ab7a5f7d9d19095ea3f482c7272049b81a345433a046769d99dacf762",
+      "git_blob": "9bac3b0f0234c6e1a50a7b1a8dad50bb1ade43e8"
+    },
+    {
+      "path": "night26/verify_closing_strike26.py",
+      "bytes": 2813,
+      "sha256": "b5f6fcd43f0bf7350c1b23153730d3fdeaccda5d8908a58b249f52d4b99e6929",
+      "git_blob": "ea909f69f171da41959285dc8817094cebb783e4"
+    }
+  ],
+  "patch_sha256": "5ba052cb4f5c9ef9ac9453fdfad0119659eeee723f2bfe15f381ea8d7d74793c"
+}

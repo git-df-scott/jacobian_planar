@@ -1,5 +1,11 @@
 # Astra handoff — 2026-09-04, third run
 
+**Closeout update:** the complete historical record and recovered nights 25–26
+are on `astra/jc2-complete-record-2026-09-04`. Start with
+`JC2_COMPLETE_RECORD.md` and `RECORD_CORRECTIONS.md`; the latter excludes the
+recovered night26 `R=r^3` model by integral closure and the Jacobian product
+rule. The branch/base below identify the completed third research run.
+
 Branch: `astra/jc2-pentagon-geometry-2026-09-04`.
 Base: `e479477263c1f4176b287309dda2dcb4213fcb84`.
 

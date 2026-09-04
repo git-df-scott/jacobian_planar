@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checks": [
+    "All 44 branch heads resolve to the frozen commit SHAs",
+    "Every catalogued commit object was independently SHA-1 checked",
+    "Every branch tree fully enumerated with path, mode, object SHA and size",
+    "All 26 PRs have successful discussion retrieval",
+    "Exactly the two recovered local commits augment remote history"
+  ],
+  "counts": {
+    "remote_branches": 44,
+    "pull_requests": 26,
+    "discussion_entries": 4,
+    "remote_reachable_commits": 1287,
+    "recovered_commits": 2,
+    "total_catalogued_commits": 1289,
+    "branch_file_entries": 35078,
+    "distinct_path_blob_records": 10062,
+    "distinct_report_path_blob_records": 581,
+    "distinct_file_paths": 9952,
+    "tags": []
+  },
+  "sha256": {
+    "SNAPSHOT.json": "1da030d459e7b57614c697e13e934307f0f4237241a8aec0b8f4b1357a431c99",
+    "PR_DISCUSSIONS.json": "7d4acad9ff3772c4643213e5c2d2b7001e3375a8e05f163e549a02dd9bb94319",
+    "COMMITS.jsonl": "07db7fa5667953f6836a11700147a2a2ff2ce55f42f834c551f07bd08c6480f3",
+    "FILES.jsonl": "704575aba549eeba77ffbbe7be3d92429c51168a5648cde3621f7e471105b0e5",
+    "BRANCHES.json": "e22f355ac90d699de7ef695a5587ebecad9e2768dbcaf1b058bbb76834c364ab",
+    "REPORTS.jsonl": "627d916860091348e66803885049db56134f4340c0eb926ad799f27bd13786e6",
+    "BRANCHES.md": "0b0f37c6ed54e54cc681236ee40a848b8aeeb0aacf852ca7a453a3211cbebdb3",
+    "REPORT_INDEX.md": "d8c6e4bb6db78d7e2ebf8a99b74567beec2b78bb2a5cf1ff37b5223d054264a0",
+    "CHRONOLOGY.md": "f7606c0d3f5a70c50ee250b13b4101dbec0095fff3ca292400827b1c2ecdd399",
+    "PULL_REQUESTS.md": "8a3dffb9b034df9ac4d48801c0893b8952446bc9f7a11dd90e2d273468e2f640",
+    "COUNTS.json": "3afcda822db75f88b0ebd10b15e58abf3b12a3d89ffe9ce39b10100ccfcd57b7",
+    "RECOVERY.json": "0534a87fca7f1ccb76a30573ee84857d814dfd397891b4ed4ad610e7502a643f",
+    "RECOVERED_NIGHTS_25_26.patch": "5ba052cb4f5c9ef9ac9453fdfad0119659eeee723f2bfe15f381ea8d7d74793c",
+    "RECOVERED_NIGHTS_25_26.bundle": "e99fbfe7158e71cbcca3cec55f27f6fced6fdc950c540548c3d8247d824c8716"
+  }
+}

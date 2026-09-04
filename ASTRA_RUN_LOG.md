@@ -181,3 +181,25 @@ Current counterexample status: no CEC and no CE.
   Proposition 4.3(1); together with Astra 2, both proposition polygons and the
   original case called (8,28) there are closed. No claim about JC2 as a whole,
   the different above-125 (3,4) chain, literature priority or external review.
+
+## Closing record — Claude, earlier Codex/Sol and Astra
+
+- Fetched and pinned all 44 remote branches and all 26 PRs at the cutoff.
+  Retrieved their four discussion entries. Built a complete index of 1,287
+  reachable commits and 35,078 branch/file occurrences, deduplicated to
+  10,062 path/blob records; 581 distinct report versions are linked directly.
+- Compared the earlier local checkouts with remote history. Recovered two
+  unpublished Codex commits, 5a0592b and b07d9e9, containing twelve night25/26
+  files. Preserved the original bytes, commit patches and Git bundle. The
+  total commit catalog therefore contains 1,289 records. Another older
+  checkout's 89 existing changed-file contents were already in remote history.
+- Found a direct obstruction to night26's proposed GO model: faithfulness and
+  polynomiality of Q=r^3 imply r is polynomial by integral closure, so its
+  Jacobian has the nonconstant factor r^2. Recorded the complete written proof
+  in RECORD_CORRECTIONS.md without altering the recovered historical files.
+- Wrote JC2_COMPLETE_RECORD.md, the full PR archive, report index, commit
+  chronology, frozen metadata and reproducible inventory builder. Git commit
+  objects were checked against their SHA-1 IDs, every branch tree was fully
+  enumerated, and original recovered file bytes were checked by SHA-256.
+- This was a closeout and reconciliation, not a new full solver campaign or
+  a claim that every historical computation was independently replayed.

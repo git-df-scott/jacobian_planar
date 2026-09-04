@@ -1,0 +1,398 @@
+[
+  {
+    "name": "astra/jc2-exact-descent-2026-09-04",
+    "sha": "e479477263c1f4176b287309dda2dcb4213fcb84",
+    "id": 0,
+    "files": 134,
+    "report_files": 21,
+    "bytes": 4850986,
+    "reachable_commits": 42
+  },
+  {
+    "name": "astra/jc2-frontier-strike-2026-09-04",
+    "sha": "93319412545e84d1093d79c5b59cb87731eec4a9",
+    "id": 1,
+    "files": 88,
+    "report_files": 19,
+    "bytes": 3866792,
+    "reachable_commits": 40
+  },
+  {
+    "name": "astra/jc2-pentagon-geometry-2026-09-04",
+    "sha": "64e925e320afb74f1dcf285fee0803d6a6c2b659",
+    "id": 2,
+    "files": 262,
+    "report_files": 23,
+    "bytes": 11884532,
+    "reachable_commits": 43
+  },
+  {
+    "name": "claude/ce-acquisition-strategy-uyqftb",
+    "sha": "2a9fb4c857c1640fba77d5be3f84bfa3fdbb93ef",
+    "id": 3,
+    "files": 373,
+    "report_files": 48,
+    "bytes": 16560505,
+    "reachable_commits": 133
+  },
+  {
+    "name": "claude/counter-example-audit-dnu9l9",
+    "sha": "b0bd0ad2d6897dace65e8e6dbb7f7d5b32c5ebcd",
+    "id": 4,
+    "files": 861,
+    "report_files": 22,
+    "bytes": 135350523,
+    "reachable_commits": 117
+  },
+  {
+    "name": "claude/d23-borisov-transfer-test-vpr3m6",
+    "sha": "7296164f70765387952fc49ed385b1fff59d2533",
+    "id": 5,
+    "files": 59,
+    "report_files": 6,
+    "bytes": 2051909,
+    "reachable_commits": 18
+  },
+  {
+    "name": "claude/fable-6o0nqe",
+    "sha": "a105bc93e43b9766b90763b2c62ef9df26ddfc36",
+    "id": 6,
+    "files": 4083,
+    "report_files": 218,
+    "bytes": 57434420,
+    "reachable_commits": 234
+  },
+  {
+    "name": "claude/fable-ce-backup",
+    "sha": "0d6dee19d2ffc90c1bc5b341a5d5f114f648a1b5",
+    "id": 7,
+    "files": 7,
+    "report_files": 2,
+    "bytes": 69353,
+    "reachable_commits": 11
+  },
+  {
+    "name": "claude/fable-counterexample-sweep-yyj5vf",
+    "sha": "35c7281dd1aad6dd61919024a2098617a012a0b3",
+    "id": 8,
+    "files": 66,
+    "report_files": 19,
+    "bytes": 3854255,
+    "reachable_commits": 28
+  },
+  {
+    "name": "claude/ggv-conjecture-evidence-r9almu",
+    "sha": "f5e53972c888513e7a86ba2753d08c0d4ea70fd3",
+    "id": 9,
+    "files": 2207,
+    "report_files": 74,
+    "bytes": 974095102,
+    "reachable_commits": 95
+  },
+  {
+    "name": "claude/github-push-issue-oftsm3",
+    "sha": "f73874496699a2c061653cbb01aebb84e1b89b71",
+    "id": 10,
+    "files": 1,
+    "report_files": 0,
+    "bytes": 53469,
+    "reachable_commits": 7
+  },
+  {
+    "name": "claude/github-repo-organization-wdr8n7",
+    "sha": "5c41b3afbbc2927560c3c193ac3cd39b2571786b",
+    "id": 11,
+    "files": 12,
+    "report_files": 10,
+    "bytes": 3512375,
+    "reachable_commits": 13
+  },
+  {
+    "name": "claude/jacobian-collision-counterexample-nsc6ul",
+    "sha": "8b5adec2981f4990aa62267cc0e8386b7a5fc3c2",
+    "id": 12,
+    "files": 90,
+    "report_files": 7,
+    "bytes": 4164875,
+    "reachable_commits": 34
+  },
+  {
+    "name": "claude/jacobian-conjecture-campaign-xcw9p4",
+    "sha": "fbd2864d903583d7c7d2629ba62d936cecd847fd",
+    "id": 13,
+    "files": 2213,
+    "report_files": 77,
+    "bytes": 1004193419,
+    "reachable_commits": 164
+  },
+  {
+    "name": "claude/jacobian-conjecture-search-om7slv",
+    "sha": "df9f9111e79ef33c32199a32cf34017b6bdf3f99",
+    "id": 14,
+    "files": 60,
+    "report_files": 4,
+    "bytes": 285251,
+    "reachable_commits": 11
+  },
+  {
+    "name": "claude/jacobian-planar-sweep-iajyma",
+    "sha": "f307232e982a2f43b7a43a7603575556ee3ffd60",
+    "id": 15,
+    "files": 2577,
+    "report_files": 102,
+    "bytes": 790791603,
+    "reachable_commits": 309
+  },
+  {
+    "name": "claude/jc2-counterexample-hunt-handoff-w369mc",
+    "sha": "e0086a78682a1b91fe483f16e5698b8eda48b6eb",
+    "id": 16,
+    "files": 42,
+    "report_files": 10,
+    "bytes": 3762165,
+    "reachable_commits": 32
+  },
+  {
+    "name": "claude/jc2-counterexample-hunt-handoff-x40ahz",
+    "sha": "0aab6fb4036a4c4bff7e375a2bf9454a22a60790",
+    "id": 17,
+    "files": 65,
+    "report_files": 10,
+    "bytes": 3771581,
+    "reachable_commits": 38
+  },
+  {
+    "name": "claude/jc2-handoff-audit-hartnc",
+    "sha": "ae58bd33dc6a037e9d421a8a0b102c1ad7a2d6f3",
+    "id": 18,
+    "files": 54,
+    "report_files": 29,
+    "bytes": 9013560,
+    "reachable_commits": 15
+  },
+  {
+    "name": "claude/mod-3-keller-pair-obstruction-oceq9z",
+    "sha": "70025d3c5d81080e90f138921a89832778d1d390",
+    "id": 19,
+    "files": 41,
+    "report_files": 10,
+    "bytes": 636416,
+    "reachable_commits": 24
+  },
+  {
+    "name": "claude/moduli-deformation-exceptions-2f4ey2",
+    "sha": "2ea44d81a43d1fc89681565924dd1a593efd183b",
+    "id": 20,
+    "files": 77,
+    "report_files": 3,
+    "bytes": 769761,
+    "reachable_commits": 35
+  },
+  {
+    "name": "claude/opus-5-counterexample-plan-sep6yk",
+    "sha": "b233c708e9b43c597f6f2fa2e82a9b04fb5dd55a",
+    "id": 21,
+    "files": 2460,
+    "report_files": 79,
+    "bytes": 381813492,
+    "reachable_commits": 231
+  },
+  {
+    "name": "claude/opus-errors-false-proofs-820rmd",
+    "sha": "1ebeece43bf5cfdec191d43472b8356f389099de",
+    "id": 22,
+    "files": 19,
+    "report_files": 5,
+    "bytes": 256265,
+    "reachable_commits": 11
+  },
+  {
+    "name": "claude/opus-hunt-territories",
+    "sha": "99b36503f570262886535712028b5d94431646e4",
+    "id": 23,
+    "files": 1905,
+    "report_files": 63,
+    "bytes": 1067042171,
+    "reachable_commits": 68
+  },
+  {
+    "name": "claude/opus-plan-priority-queue-0pultj",
+    "sha": "784eacf46f79c8ab6690760bc6d5410ff3ddc5ed",
+    "id": 24,
+    "files": 775,
+    "report_files": 14,
+    "bytes": 135709545,
+    "reachable_commits": 70
+  },
+  {
+    "name": "claude/opus-support-compute",
+    "sha": "b6bf58cd3e2184067917219dc6b19b08dc4d73f6",
+    "id": 25,
+    "files": 1239,
+    "report_files": 51,
+    "bytes": 243884289,
+    "reachable_commits": 30
+  },
+  {
+    "name": "claude/opus-support-toolchain-62st0d",
+    "sha": "83e0f8046b0eb63e192ed1ec173620f69739f7fc",
+    "id": 26,
+    "files": 1327,
+    "report_files": 52,
+    "bytes": 267251304,
+    "reachable_commits": 33
+  },
+  {
+    "name": "claude/opus-worker-resisters",
+    "sha": "215a04062b1b6147f46dc6f368a0e689f74e1f26",
+    "id": 27,
+    "files": 2209,
+    "report_files": 76,
+    "bytes": 1187483197,
+    "reachable_commits": 169
+  },
+  {
+    "name": "claude/past-code-session-8mdjqn",
+    "sha": "37d2ebe2817dc9b916559c73a94058494110dcc2",
+    "id": 28,
+    "files": 826,
+    "report_files": 33,
+    "bytes": 75116813,
+    "reachable_commits": 137
+  },
+  {
+    "name": "claude/plane-counterexample-endgame-az3geq",
+    "sha": "72e6ce55af9443ce265ec400371759d51e23a2bf",
+    "id": 29,
+    "files": 1250,
+    "report_files": 53,
+    "bytes": 243991605,
+    "reachable_commits": 44
+  },
+  {
+    "name": "claude/poisson-bracket-counterexample-9esk1r",
+    "sha": "10469087a97ca4143ce8a278f3ce0211143ced19",
+    "id": 30,
+    "files": 82,
+    "report_files": 2,
+    "bytes": 3782871,
+    "reachable_commits": 19
+  },
+  {
+    "name": "codex/claude-opus5-mailbox",
+    "sha": "28750938c4276233ce696210436f718492f767db",
+    "id": 31,
+    "files": 2579,
+    "report_files": 104,
+    "bytes": 790981954,
+    "reachable_commits": 362
+  },
+  {
+    "name": "codex/cloud-math-mailbox",
+    "sha": "f916d7b438622cd4f776414bc8e4c42b7f6dc613",
+    "id": 32,
+    "files": 18,
+    "report_files": 10,
+    "bytes": 3559583,
+    "reachable_commits": 12
+  },
+  {
+    "name": "codex/pentagon-level14-rational-obstruction",
+    "sha": "b57cd27c8169a16a73a1661278122c452e5a3b93",
+    "id": 33,
+    "files": 20,
+    "report_files": 7,
+    "bytes": 3493961,
+    "reachable_commits": 10
+  },
+  {
+    "name": "codex/pentagon-level16-exact",
+    "sha": "ae717eddba0971c3b39a6da51f16b818b2200507",
+    "id": 34,
+    "files": 17,
+    "report_files": 6,
+    "bytes": 3483214,
+    "reachable_commits": 14
+  },
+  {
+    "name": "codex/pentagon-p11-zero-search",
+    "sha": "1aed0b47ecb27aae51db87e1aa12a0a3a315c394",
+    "id": 35,
+    "files": 2475,
+    "report_files": 81,
+    "bytes": 382027225,
+    "reachable_commits": 239
+  },
+  {
+    "name": "codex/sol3-all-five",
+    "sha": "e43947e4cabc548961430dc05525736efd7e1277",
+    "id": 36,
+    "files": 74,
+    "report_files": 21,
+    "bytes": 3895525,
+    "reachable_commits": 31
+  },
+  {
+    "name": "codex/sol5-collision-first",
+    "sha": "1d814dd8b07016bd424b1e7c876ef4c8bf06f779",
+    "id": 37,
+    "files": 97,
+    "report_files": 22,
+    "bytes": 4260134,
+    "reachable_commits": 33
+  },
+  {
+    "name": "codex/sol5-counterexample-hunt",
+    "sha": "a5a8327ebffc04cd73c9f58de01d4816094008e2",
+    "id": 38,
+    "files": 92,
+    "report_files": 21,
+    "bytes": 4232751,
+    "reachable_commits": 32
+  },
+  {
+    "name": "codex/sol6-collision-first",
+    "sha": "fd113a59ab34c4be58942818dab61cc72c27e01a",
+    "id": 39,
+    "files": 103,
+    "report_files": 23,
+    "bytes": 4283037,
+    "reachable_commits": 43
+  },
+  {
+    "name": "codex/sol-session3-pole",
+    "sha": "df7471deb9207422b2a5f0b8661f3a7f05f7fee6",
+    "id": 40,
+    "files": 4091,
+    "report_files": 226,
+    "bytes": 56081241,
+    "reachable_commits": 235
+  },
+  {
+    "name": "mailbox/v2",
+    "sha": "f6721ef0de5beaa3033197da08540e1b7f18e7a8",
+    "id": 41,
+    "files": 19,
+    "report_files": 10,
+    "bytes": 3559820,
+    "reachable_commits": 13
+  },
+  {
+    "name": "main",
+    "sha": "b9f5cb89676286c2a3ec8ea43562f0abbba91b5d",
+    "id": 42,
+    "files": 9,
+    "report_files": 7,
+    "bytes": 3491804,
+    "reachable_commits": 11
+  },
+  {
+    "name": "work",
+    "sha": "5627f34edc3f7770efd61a139e6269c1fdcc0ab0",
+    "id": 43,
+    "files": 20,
+    "report_files": 7,
+    "bytes": 3490837,
+    "reachable_commits": 15
+  }
+]

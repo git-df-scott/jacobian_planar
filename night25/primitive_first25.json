@@ -1,0 +1,66 @@
+{
+  "CE": "NO",
+  "CEC": "NO",
+  "base_field": "Q(t)",
+  "minimal_linear_in_v_ansatz": {
+    "form": "x=f(u), y=a(u)*v+b(u)",
+    "reason": "birationality forces deg(f)=1; polynomial recovery of v forces a(u) constant, so Jac(x,y) is constant and cannot equal -(3*u^2+1)",
+    "result": "DEAD"
+  },
+  "model_A": {
+    "R": "u",
+    "R_poles": "2*O",
+    "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^3-X, Q=X",
+    "canonical_quotient_bracket": 1,
+    "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational",
+    "curve": "v^2=u^3+u+t",
+    "dR_divisor": "B1+B2+B3-3*O (Bi: v=0)",
+    "degree_R": 2,
+    "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
+    "generic_discriminant": "-4-27*t^2 != 0",
+    "genus": 1,
+    "punctures_required_for_Keller_open": [
+      "O",
+      "three zeros of du"
+    ]
+  },
+  "model_B": {
+    "R": "u",
+    "R_poles": "O+ + O-",
+    "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^4-X, Q=X",
+    "canonical_quotient_bracket": 1,
+    "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational",
+    "curve": "v^2=u^4+u+t",
+    "dR_divisor": "B1+B2+B3+B4-2*O+-2*O- (Bi: v=0)",
+    "degree_R": 2,
+    "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
+    "generic_discriminant": "256*t^3-27 != 0",
+    "genus": 1,
+    "punctures_required_for_Keller_open": [
+      "O+",
+      "O-",
+      "four zeros of du"
+    ]
+  },
+  "model_C": {
+    "R": "v",
+    "R_poles": "3*O",
+    "canonical_quotient": "X=-u^3-u, Y=v; P=X+Y^2, Q=Y",
+    "canonical_quotient_bracket": 1,
+    "cubic_discriminant": "-4-27*X^2 (not a square)",
+    "cubic_minimal_polynomial": "U^3+U+X",
+    "curve": "v^2=u^3+u+t",
+    "dR_divisor": "Z1+Z2+Z3+Z4-4*O (Zi: 3*u^2+1=0)",
+    "degree_R": 3,
+    "genus": 1,
+    "missing_condition": "replace the ramified normalization A2_(u,v) by a plane model in which the cubic ramification is entirely at infinity",
+    "monodromy": "S3 over Q(X,Y)",
+    "status": "LIVE_INVERSE_REALIZATION_UNKNOWN"
+  },
+  "theorem_gate": {
+    "application": "degree(R)=2 makes the extension quadratic, hence Galois; automorphism would make P a coordinate and its compact generic fibre rational, contradicting genus one",
+    "doi": "10.1090/S0273-0979-1982-15032-7",
+    "reference": "Bass-Connell-Wright (1982), Theorem 2.1, implication (g)=>(a)",
+    "statement": "A characteristic-zero polynomial Keller map with Galois function-field extension is a polynomial automorphism."
+  }
+}

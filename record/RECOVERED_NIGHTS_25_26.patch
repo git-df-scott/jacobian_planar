@@ -1,0 +1,1328 @@
+From 5a0592b31d127a6b9ea0d6050801dda96d6092c4 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Sat, 29 Aug 2026 12:41:18 -0600
+Subject: [PATCH 1/2] night25: close degree-two primitive models by Galois
+ obstruction
+
+---
+ night25/MANIFEST.md                 |  18 ++
+ night25/PRIMITIVE_FIRST.md          | 288 ++++++++++++++++++++++++++++
+ night25/primitive_first25.json      |  66 +++++++
+ night25/primitive_first25.py        | 199 +++++++++++++++++++
+ night25/verify_primitive_first25.py | 111 +++++++++++
+ 5 files changed, 682 insertions(+)
+ create mode 100644 night25/MANIFEST.md
+ create mode 100644 night25/PRIMITIVE_FIRST.md
+ create mode 100644 night25/primitive_first25.json
+ create mode 100644 night25/primitive_first25.py
+ create mode 100644 night25/verify_primitive_first25.py
+
+diff --git a/night25/MANIFEST.md b/night25/MANIFEST.md
+new file mode 100644
+index 0000000..e6174c5
+--- /dev/null
++++ b/night25/MANIFEST.md
+@@ -0,0 +1,18 @@
++# NIGHT25 MANIFEST
++
++| artifact | claim | strength | one-command verification |
++|---|---|---|---|
++| `PRIMITIVE_FIRST.md` | Models A/B impossible by degree-two Galois obstruction; minimal live cubic primitive | exact proof + classical theorem | read report; run combined command below |
++| `primitive_first25.py`, `primitive_first25.json` | exact curve, differential, symplectic quotient, bracket and degree data | exact rational arithmetic | `python3 night25/primitive_first25.py` |
++| `verify_primitive_first25.py` | independent resultants/discriminants and quotient bracket checks | exact independent checker | `python3 night25/verify_primitive_first25.py` |
++
++Combined verification:
++
++```bash
++python3 night25/primitive_first25.py && \
++python3 night25/verify_primitive_first25.py
++```
++
++No numerical or modular claim appears.  The displayed Keller pairs are
++explicitly labelled nonfaithful triangular quotient controls.  No
++counterexample candidate is claimed.
+diff --git a/night25/PRIMITIVE_FIRST.md b/night25/PRIMITIVE_FIRST.md
+new file mode 100644
+index 0000000..a4d2ef4
+--- /dev/null
++++ b/night25/PRIMITIVE_FIRST.md
+@@ -0,0 +1,288 @@
++# NIGHT25 — PRIMITIVE-FIRST JC2 STRIKE
++
++## Verdict first
++
++The two requested minimal genus-one primitive models are both
++`IMPOSSIBLE` as faithful polynomial Keller realizations.  The obstruction is
++not ansatz-specific.
++
++If a polynomial Keller pair \((P,Q)\) faithfully realizes \((C_t,R)\), then
++
++\[
++[\mathbb C(x,y):\mathbb C(P,Q)]=\deg(R:C_t\to\mathbb P^1). \tag{1}
++\]
++
++Both \((R)_\infty=2O\) and \((R)_\infty=O_1+O_2\) have degree two.  Thus
++either realization would give a quadratic function-field extension.  In
++characteristic zero it is Galois.  The classical Galois case of the Jacobian
++Conjecture says that a Keller map with Galois function-field extension is a
++polynomial automorphism.  This is Bass--Connell--Wright, Theorem 2.1,
++implication (g) => (a), independently due to Razar and Wright:
++[DOI 10.1090/S0273-0979-1982-15032-7](https://doi.org/10.1090/S0273-0979-1982-15032-7).
++An automorphism has coordinate first component and rational generic fibre,
++contradicting the genus-one hypothesis.
++
++Consequently the primitive-first search cannot possibly start at primitive
++degree two.  Its minimal live degree is three, where non-Galois monodromy is
++possible.
++
++No counterexample or counterexample candidate was found.
++
++## 1. Why degree of the primitive is the generic map degree
++
++Put
++
++\[
++L=\mathbb C(x,y),\qquad K=\mathbb C(P,Q).
++\]
++
++Over the generic value \(t\) of \(P\), the function field of the generic
++fibre is \(\mathbb C(t)(C_t)=\mathbb C(P)(x,y)\).  Restriction of \(Q\) is
++the function \(R\).  Therefore
++
++\[
++\deg R=[\mathbb C(P)(x,y):\mathbb C(P)(Q)]=[L:K]. \tag{2}
++\]
++
++This also identifies a hidden failure mode in inverse constructions: a
++symplectic quotient may make \(t,R\) polynomial while discarding a finite
++cover of the intended curve.  Such a quotient does not faithfully realize
++\(C_t\).
++
++## 2. Model A: one double pole
++
++Work over \(K_0=\mathbb Q(t)\) with
++
++\[
++C_t:\quad v^2=u^3+u+t,\qquad R=u. \tag{3}
++\]
++
++The cubic discriminant is
++
++\[
++-4-27t^2\ne0,
++\]
++
++so the generic curve is smooth of genus one.  It has one point \(O\) at
++infinity and
++
++\[
++(R)_\infty=2O. \tag{4}
++\]
++
++The exact differential is \(dR=du\).  The curve relation gives the exact
++identity
++
++\[
++2v\,dv=(3u^2+1)\,du. \tag{5}
++\]
++
++If \(B_1,B_2,B_3\) are the three points \(v=0\), then
++
++\[
++(du)=B_1+B_2+B_3-3O. \tag{6}
++\]
++
++Thus the required differential pole pattern is exactly \(3O\).  For any
++Keller affine open, the three zeros of \(du\) must also be punctures: on a
++smooth affine Keller fibre, \(dQ\) evaluated on the Hamiltonian tangent field
++is the nonzero constant \([P,Q]\), so it cannot vanish.
++
++The total surface is the \((u,v)\)-plane with
++
++\[
++t=v^2-u^3-u.
++\]
++
++There is an exact symplectic quotient
++
++\[
++X=u,\qquad Y=-v^2,
++\]
++
++for which
++
++\[
++dt\wedge dR=dX\wedge dY,
++\qquad
++P=-Y-X^3-X,\quad Q=X,\quad [P,Q]=1. \tag{7}
++\]
++
++This is an adversarial control, not a realization: it forgets the quadratic
++extension \(v^2=-Y\).  The quotient pair is triangular and its fibres are
++rational.  Any faithful realization retains the quadratic extension and is
++impossible by (2) and the Galois-case theorem.
++
++Verdict: `IMPOSSIBLE`.
++
++## 3. Model B: two simple poles
++
++Take
++
++\[
++C_t:\quad v^2=u^4+u+t,\qquad R=u. \tag{8}
++\]
++
++The quartic discriminant is
++
++\[
++256t^3-27\ne0,
++\]
++
++so the generic compactification is smooth of genus one.  It has two points
++\(O_+,O_-\) over \(u=\infty\), and
++
++\[
++(R)_\infty=O_++O_-. \tag{9}
++\]
++
++Again \(dR=du\) exactly, with
++
++\[
++2v\,dv=(4u^3+1)\,du. \tag{10}
++\]
++
++Writing \(B_1,\ldots,B_4\) for the four points \(v=0\),
++
++\[
++(du)=B_1+B_2+B_3+B_4-2O_+-2O_-. \tag{11}
++\]
++
++The same quotient
++
++\[
++X=u,\qquad Y=-v^2
++\]
++
++gives
++
++\[
++P=-Y-X^4-X,quad Q=X,quad [P,Q]=1, \tag{12}
++\]
++
++but again destroys the quadratic cover and leaves a triangular coordinate
++pair.  Every faithful realization has field degree two and is impossible by
++the Galois-case theorem.
++
++Verdict: `IMPOSSIBLE`.
++
++## 4. Minimal live successor: degree-three primitive
++
++Return to the cubic curve (3), but choose the primitive first as
++
++\[
++R=v. \tag{13}
++\]
++
++Then
++
++\[
++(R)_\infty=3O,
++\qquad
++(dR)=Z_1+Z_2+Z_3+Z_4-4O, \tag{14}
++\]
++
++where the four \(Z_i\) satisfy \(3u^2+1=0\) and the curve equation.  This is
++exact by construction and has degree three.  Put
++
++\[
++X=-u^3-u,\qquad Y=v.
++\]
++
++Then
++
++\[
++dt\wedge dR=dX\wedge dY,
++\qquad
++P=X+Y^2,quad Q=Y,quad [P,Q]=1. \tag{15}
++\]
++
++Again the displayed pair is only the quotient and is triangular.  This time,
++however, the discarded extension is the cubic
++
++\[
++u^3+u+X=0. \tag{16}
++\]
++
++It is irreducible over \(\mathbb Q(X,Y)\), and its discriminant
++
++\[
++-4-27X^2
++\]
++
++is not a square.  Hence its Galois closure has group \(S_3\).  The extension
++is non-Galois, exactly as a live Keller counterexample extension must be.
++
++The current normalization \(\mathbb A^2_{u,v}\to\mathbb A^2_{X,Y}\) is
++ramified on \(3u^2+1=0\), reflected by
++
++\[
++[t,R]_{u,v}=-(3u^2+1), \tag{17}
++\]
++
++so it is not itself Keller.  The inverse realization problem is now precise:
++find a polynomial-plane model \(\mathbb Q[x,y]\subset\mathbb Q(u,v)\)
++containing \(t,R\), with full fraction field \(\mathbb Q(u,v)\), such that
++the cubic ramification is moved entirely to infinity and
++\(dt\wedge dR=dx\wedge dy\).
++
++This is `UNKNOWN`, and is the strongest explicit \((C_t,R)\) produced here.
++
++## 5. First inverse-realization ansatz is exactly dead
++
++On the total \((u,v)\)-plane, consider the smallest fibre-adapted birational
++chart
++
++\[
++x=f(u),\qquad y=a(u)v+b(u). \tag{18}
++\]
++
++For \(\mathbb Q(x,y)=\mathbb Q(u,v)\), generic degree forces
++\(\deg f=1\).  Then \(u\) is polynomial in \(x\).  Requiring the primitive
++\(R=v=(y-b(u))/a(u)\) to be polynomial in \(x,y\) forces \(a(u)\) to be a
++nonzero constant.  But then
++
++\[
++\frac{\partial(x,y)}{\partial(u,v)}=f'(u)a(u)
++\]
++
++is constant and cannot equal the required \(-(3u^2+1)\).  The transposed
++linear-in-\(v\) chart dies identically.  This is only a small ansatz closure;
++it is not promoted into a closure of the cubic model.
++
++## 6. Adversarial audit
++
++- **Hidden genus drop:** excluded for (3), (8) by their nonzero generic
++  discriminants.  The quotient pairs do drop genus and are explicitly marked
++  nonfaithful.
++- **Hidden coordinate form:** both quotient pairs are explicitly triangular;
++  none is called a candidate.
++- **Missing infinity branches:** Model A has one infinity point; Model B has
++  two; Model C has one.  All zeros and poles of the displayed differentials
++  are accounted for by degree-zero divisors.
++- **Zero residue versus exactness:** exactness is literal: \(dR=du\) or
++  \(dv\).
++- **Polynomiality:** all displayed quotient \(P,Q\) are honest integer
++  polynomials, but are controls only.
++- **Extension-field descent:** all models and identities are over
++  \(\mathbb Q(t)\); no descent claim is needed.
++- **Truncation/modular artifacts:** none; both checkers use exact rational
++  arithmetic.
++- **Theorem hypotheses:** a hypothetical realization is extended from
++  \(\mathbb Q\) to \(\mathbb C\); constant nonzero Jacobian gives a Keller
++  map; degree two gives a separable normal extension; the Galois-case theorem
++  applies.
++
++## Final fields
++
++- `CE: NO`
++- `CEC: NO`
++- `primitive-first Model A: IMPOSSIBLE`
++- `primitive-first Model B: IMPOSSIBLE`
++- `strongest explicit (C_t,R): v^2=u^3+u+t, R=v, (R)_infty=3O, (dR)_infty=4O`
++- `strongest explicit P: NONE (faithful); P=X+Y^2 is a triangular quotient control`
++- `mate status: exact on the curve; faithful polynomial-plane realization UNKNOWN for the cubic successor`
++- `exact obstruction: primitive degree 2 => quadratic Galois Keller extension => automorphism => genus 0 contradiction`
++- `next minimal construction: non-Galois degree-3 plane model moving the S3 cubic ramification entirely to infinity`
++- `artifacts: night25/PRIMITIVE_FIRST.md, primitive_first25.py, primitive_first25.json, verify_primitive_first25.py`
++- `verification commands: python3 night25/primitive_first25.py && python3 night25/verify_primitive_first25.py`
+diff --git a/night25/primitive_first25.json b/night25/primitive_first25.json
+new file mode 100644
+index 0000000..bf12736
+--- /dev/null
++++ b/night25/primitive_first25.json
+@@ -0,0 +1,66 @@
++{
++  "CE": "NO",
++  "CEC": "NO",
++  "base_field": "Q(t)",
++  "minimal_linear_in_v_ansatz": {
++    "form": "x=f(u), y=a(u)*v+b(u)",
++    "reason": "birationality forces deg(f)=1; polynomial recovery of v forces a(u) constant, so Jac(x,y) is constant and cannot equal -(3*u^2+1)",
++    "result": "DEAD"
++  },
++  "model_A": {
++    "R": "u",
++    "R_poles": "2*O",
++    "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^3-X, Q=X",
++    "canonical_quotient_bracket": 1,
++    "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational",
++    "curve": "v^2=u^3+u+t",
++    "dR_divisor": "B1+B2+B3-3*O (Bi: v=0)",
++    "degree_R": 2,
++    "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
++    "generic_discriminant": "-4-27*t^2 != 0",
++    "genus": 1,
++    "punctures_required_for_Keller_open": [
++      "O",
++      "three zeros of du"
++    ]
++  },
++  "model_B": {
++    "R": "u",
++    "R_poles": "O+ + O-",
++    "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^4-X, Q=X",
++    "canonical_quotient_bracket": 1,
++    "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational",
++    "curve": "v^2=u^4+u+t",
++    "dR_divisor": "B1+B2+B3+B4-2*O+-2*O- (Bi: v=0)",
++    "degree_R": 2,
++    "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
++    "generic_discriminant": "256*t^3-27 != 0",
++    "genus": 1,
++    "punctures_required_for_Keller_open": [
++      "O+",
++      "O-",
++      "four zeros of du"
++    ]
++  },
++  "model_C": {
++    "R": "v",
++    "R_poles": "3*O",
++    "canonical_quotient": "X=-u^3-u, Y=v; P=X+Y^2, Q=Y",
++    "canonical_quotient_bracket": 1,
++    "cubic_discriminant": "-4-27*X^2 (not a square)",
++    "cubic_minimal_polynomial": "U^3+U+X",
++    "curve": "v^2=u^3+u+t",
++    "dR_divisor": "Z1+Z2+Z3+Z4-4*O (Zi: 3*u^2+1=0)",
++    "degree_R": 3,
++    "genus": 1,
++    "missing_condition": "replace the ramified normalization A2_(u,v) by a plane model in which the cubic ramification is entirely at infinity",
++    "monodromy": "S3 over Q(X,Y)",
++    "status": "LIVE_INVERSE_REALIZATION_UNKNOWN"
++  },
++  "theorem_gate": {
++    "application": "degree(R)=2 makes the extension quadratic, hence Galois; automorphism would make P a coordinate and its compact generic fibre rational, contradicting genus one",
++    "doi": "10.1090/S0273-0979-1982-15032-7",
++    "reference": "Bass-Connell-Wright (1982), Theorem 2.1, implication (g)=>(a)",
++    "statement": "A characteristic-zero polynomial Keller map with Galois function-field extension is a polynomial automorphism."
++  }
++}
+\ No newline at end of file
+diff --git a/night25/primitive_first25.py b/night25/primitive_first25.py
+new file mode 100644
+index 0000000..713f20e
+--- /dev/null
++++ b/night25/primitive_first25.py
+@@ -0,0 +1,199 @@
++#!/usr/bin/env python3
++"""Exact algebra for the minimal primitive-first genus-one strike.
++
++No numerical or modular calculation occurs here.  Polynomial identities are
++checked in Z[u,v] with a tiny independent dictionary implementation.
++"""
++
++from fractions import Fraction as F
++import json
++import os
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++
++
++def clean(a):
++    return {m: F(c) for m, c in a.items() if c}
++
++
++def add(*aa):
++    out = {}
++    for a in aa:
++        for m, c in a.items():
++            out[m] = out.get(m, F(0)) + c
++    return clean(out)
++
++
++def scale(c, a):
++    return clean({m: F(c) * v for m, v in a.items()})
++
++
++def mul(a, b):
++    out = {}
++    for (i, j), c in a.items():
++        for (r, s), d in b.items():
++            m = (i + r, j + s)
++            out[m] = out.get(m, F(0)) + c * d
++    return clean(out)
++
++
++def power(a, n):
++    out = {(0, 0): F(1)}
++    for _ in range(n):
++        out = mul(out, a)
++    return out
++
++
++def der(a, k):
++    out = {}
++    for (i, j), c in a.items():
++        e = i if k == 0 else j
++        if e:
++            m = (i - 1, j) if k == 0 else (i, j - 1)
++            out[m] = c * e
++    return clean(out)
++
++
++def bracket(a, b):
++    return add(mul(der(a, 0), der(b, 1)),
++               scale(-1, mul(der(a, 1), der(b, 0))))
++
++
++def jac(a, b):
++    return bracket(a, b)
++
++
++def main():
++    one = {(0, 0): F(1)}
++    u = {(1, 0): F(1)}
++    v = {(0, 1): F(1)}
++    # The same dictionary variables are reused as abstract X,Y only when
++    # checking the displayed quotient pairs.
++    X, Y = u, v
++
++    # Model A: C_t: v^2=u^3+u+t, R=u.  The total surface is A^2_(u,v).
++    t_a = add(power(v, 2), scale(-1, power(u, 3)), scale(-1, u))
++    r_a = u
++    x_a = u
++    y_a = scale(-1, power(v, 2))
++    p_a_pullback = add(scale(-1, y_a), scale(-1, power(x_a, 3)), scale(-1, x_a))
++    p_a = add(scale(-1, Y), scale(-1, power(X, 3)), scale(-1, X))
++    q_a = X
++    assert add(p_a_pullback, scale(-1, t_a)) == {}
++    # Pullback of dX wedge dY equals dt wedge dR.
++    assert jac(x_a, y_a) == jac(t_a, r_a)
++    assert bracket(p_a, q_a) == one
++
++    # Model B: C_t: v^2=u^4+u+t, R=u; two points over u=infinity.
++    t_b = add(power(v, 2), scale(-1, power(u, 4)), scale(-1, u))
++    r_b = u
++    x_b = u
++    y_b = scale(-1, power(v, 2))
++    p_b_pullback = add(scale(-1, y_b), scale(-1, power(x_b, 4)), scale(-1, x_b))
++    p_b = add(scale(-1, Y), scale(-1, power(X, 4)), scale(-1, X))
++    q_b = X
++    assert add(p_b_pullback, scale(-1, t_b)) == {}
++    assert jac(x_b, y_b) == jac(t_b, r_b)
++    assert bracket(p_b, q_b) == one
++
++    # Minimal successor C: same cubic elliptic curve, but R=v has degree 3.
++    # The canonical Darboux quotient is still triangular, but the discarded
++    # extension is now a non-Galois cubic rather than a forbidden quadratic.
++    t_c = t_a
++    r_c = v
++    x_c = add(scale(-1, power(u, 3)), scale(-1, u))
++    y_c = v
++    p_c_pullback = add(x_c, power(y_c, 2))
++    p_c = add(X, power(Y, 2))
++    q_c = Y
++    assert add(p_c_pullback, scale(-1, t_c)) == {}
++    assert jac(x_c, y_c) == jac(t_c, r_c)
++    assert bracket(p_c, q_c) == one
++
++    # Differential identities on the curves.
++    # A: 2v dv=(3u^2+1)du, so du is exact and has pole divisor 3O.
++    h_a_u = add(scale(3, power(u, 2)), one)
++    h_a_v = scale(-2, v)
++    assert add(h_a_u, der(add(power(v, 2), scale(-1, power(u, 3)),
++                              scale(-1, u)), 0)) == {}
++    assert add(h_a_v, der(add(power(v, 2), scale(-1, power(u, 3)),
++                              scale(-1, u)), 1)) == {}
++
++    # B: 2v dv=(4u^3+1)du; du has four simple finite zeros and two
++    # double poles.  C: dv=(3u^2+1)du/(2v), with pole divisor 4O.
++    h_b_u = add(scale(4, power(u, 3)), one)
++    assert h_b_u == scale(-1, der(add(power(v, 2), scale(-1, power(u, 4)),
++                                      scale(-1, u)), 0))
++    assert h_a_u == scale(-1, der(add(power(v, 2), scale(-1, power(u, 3)),
++                                      scale(-1, u)), 0))
++
++    out = {
++        "base_field": "Q(t)",
++        "model_A": {
++            "curve": "v^2=u^3+u+t",
++            "generic_discriminant": "-4-27*t^2 != 0",
++            "genus": 1,
++            "punctures_required_for_Keller_open": ["O", "three zeros of du"],
++            "R": "u",
++            "R_poles": "2*O",
++            "dR_divisor": "B1+B2+B3-3*O (Bi: v=0)",
++            "degree_R": 2,
++            "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
++            "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^3-X, Q=X",
++            "canonical_quotient_bracket": 1,
++            "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational"
++        },
++        "model_B": {
++            "curve": "v^2=u^4+u+t",
++            "generic_discriminant": "256*t^3-27 != 0",
++            "genus": 1,
++            "punctures_required_for_Keller_open": ["O+", "O-", "four zeros of du"],
++            "R": "u",
++            "R_poles": "O+ + O-",
++            "dR_divisor": "B1+B2+B3+B4-2*O+-2*O- (Bi: v=0)",
++            "degree_R": 2,
++            "faithful_Keller_realization": "IMPOSSIBLE_BY_QUADRATIC_GALOIS_CASE",
++            "canonical_quotient": "X=u, Y=-v^2; P=-Y-X^4-X, Q=X",
++            "canonical_quotient_bracket": 1,
++            "collapse": "Q(u,v)/Q(X,Y) has degree 2; quotient fibre is rational"
++        },
++        "model_C": {
++            "curve": "v^2=u^3+u+t",
++            "genus": 1,
++            "R": "v",
++            "R_poles": "3*O",
++            "dR_divisor": "Z1+Z2+Z3+Z4-4*O (Zi: 3*u^2+1=0)",
++            "degree_R": 3,
++            "cubic_minimal_polynomial": "U^3+U+X",
++            "cubic_discriminant": "-4-27*X^2 (not a square)",
++            "monodromy": "S3 over Q(X,Y)",
++            "canonical_quotient": "X=-u^3-u, Y=v; P=X+Y^2, Q=Y",
++            "canonical_quotient_bracket": 1,
++            "status": "LIVE_INVERSE_REALIZATION_UNKNOWN",
++            "missing_condition": "replace the ramified normalization A2_(u,v) by a plane model in which the cubic ramification is entirely at infinity"
++        },
++        "minimal_linear_in_v_ansatz": {
++            "form": "x=f(u), y=a(u)*v+b(u)",
++            "result": "DEAD",
++            "reason": "birationality forces deg(f)=1; polynomial recovery of v forces a(u) constant, so Jac(x,y) is constant and cannot equal -(3*u^2+1)"
++        },
++        "theorem_gate": {
++            "statement": "A characteristic-zero polynomial Keller map with Galois function-field extension is a polynomial automorphism.",
++            "reference": "Bass-Connell-Wright (1982), Theorem 2.1, implication (g)=>(a)",
++            "doi": "10.1090/S0273-0979-1982-15032-7",
++            "application": "degree(R)=2 makes the extension quadratic, hence Galois; automorphism would make P a coordinate and its compact generic fibre rational, contradicting genus one"
++        },
++        "CE": "NO",
++        "CEC": "NO"
++    }
++    path = os.path.join(HERE, "primitive_first25.json")
++    with open(path, "w") as fh:
++        json.dump(out, fh, indent=2, sort_keys=True)
++    print("PASS: Model A exact differential and symplectic quotient")
++    print("PASS: Model B exact differential and symplectic quotient")
++    print("PASS: degree-2 faithful realizations excluded by Galois-case theorem")
++    print("PASS: minimal degree-3 successor and S3 cubic recorded")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/night25/verify_primitive_first25.py b/night25/verify_primitive_first25.py
+new file mode 100644
+index 0000000..90c790c
+--- /dev/null
++++ b/night25/verify_primitive_first25.py
+@@ -0,0 +1,111 @@
++#!/usr/bin/env python3
++"""Independent exact verifier for NIGHT25 primitive-first artifacts."""
++
++from fractions import Fraction as F
++from itertools import permutations
++import json
++import os
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++
++
++# Polynomials in t, stored low coefficient first.
++def trim(a):
++    a = list(map(F, a))
++    while len(a) > 1 and not a[-1]:
++        a.pop()
++    return tuple(a)
++
++
++def plus(a, b):
++    n = max(len(a), len(b))
++    return trim([(a[i] if i < len(a) else 0) +
++                 (b[i] if i < len(b) else 0) for i in range(n)])
++
++
++def times(a, b):
++    c = [F(0)] * (len(a) + len(b) - 1)
++    for i, x in enumerate(a):
++        for j, y in enumerate(b):
++            c[i + j] += x * y
++    return trim(c)
++
++
++def neg(a):
++    return tuple(-x for x in a)
++
++
++def sign(p):
++    inv = sum(p[i] > p[j] for i in range(len(p)) for j in range(i + 1, len(p)))
++    return -1 if inv & 1 else 1
++
++
++def determinant(a):
++    n = len(a)
++    out = (F(0),)
++    for p in permutations(range(n)):
++        z = (F(sign(p)),)
++        for i in range(n):
++            z = times(z, a[i][p[i]])
++        out = plus(out, z)
++    return out
++
++
++def resultant(f, g):
++    """Sylvester determinant; f,g coefficients descend in the main variable."""
++    m, n = len(f) - 1, len(g) - 1
++    zero = (F(0),)
++    rows = []
++    for i in range(n):
++        rows.append([zero] * i + list(f) + [zero] * (n - 1 - i))
++    for i in range(m):
++        rows.append([zero] * i + list(g) + [zero] * (m - 1 - i))
++    return determinant(rows)
++
++
++def main():
++    data = json.load(open(os.path.join(HERE, "primitive_first25.json")))
++    assert data["model_A"]["degree_R"] == 2
++    assert data["model_B"]["degree_R"] == 2
++    assert data["model_C"]["degree_R"] == 3
++
++    one, zero, tt = (F(1),), (F(0),), (F(0), F(1))
++
++    # f_A(U)=U^3+U+t and derivative 3U^2+1.
++    res_a = resultant([one, zero, one, tt], [(F(3),), zero, one])
++    disc_a = neg(res_a)  # (-1)^(3*2/2)
++    assert disc_a == (F(-4), F(0), F(-27))
++
++    # f_B(U)=U^4+U+t and derivative 4U^3+1.
++    res_b = resultant([one, zero, zero, one, tt],
++                      [(F(4),), zero, zero, one])
++    disc_b = res_b  # (-1)^(4*3/2)=+1
++    assert disc_b == (F(-27), F(0), F(0), F(256))
++
++    # Independent hand differentiation of the three quotient Keller pairs.
++    # A/B: P=-Y-X^n-X, Q=X => [P,Q]=-P_Y=1.
++    for n in (3, 4):
++        p_y = F(-1)
++        q_x, q_y = F(1), F(0)
++        p_x = -n  # nonconstant factor suppressed; multiplied by q_y=0
++        assert p_x * q_y - p_y * q_x == 1
++    # C: P=X+Y^2, Q=Y => [P,Q]=P_X=1.
++    assert F(1) * F(1) - F(2) * F(0) == 1
++
++    # -4-27X^2 is not a square: it has two distinct roots (discriminant of
++    # this quadratic is -432 != 0).  Together with irreducibility of
++    # U^3+U+X (primitive and degree one in X), the cubic group is S3.
++    assert F(-432) != 0
++    assert data["model_C"]["monodromy"].startswith("S3")
++
++    gate = data["theorem_gate"]
++    assert "Galois" in gate["statement"]
++    assert gate["reference"].startswith("Bass-Connell-Wright")
++    assert data["CE"] == "NO" and data["CEC"] == "NO"
++    print("PASS independent: cubic/quartic discriminants by Sylvester determinants")
++    print("PASS independent: all three quotient brackets are exactly 1")
++    print("PASS independent: degree gates 2,2,3 and nonsquare cubic discriminant")
++
++
++if __name__ == "__main__":
++    main()
+-- 
+2.51.1
+
+
+From b07d9e9153a926014af67ad1a892c944f00485b0 Mon Sep 17 00:00:00 2001
+From: Codex <codex@openai.com>
+Date: Sat, 29 Aug 2026 19:14:23 -0400
+Subject: [PATCH 2/2] night26: audit prime degree and isolate degree-six
+ frontier
+
+---
+ night26/CLOSING_STRIKE.md          | 158 +++++++++++++++++++++++++++++
+ night26/MANIFEST.md                |  22 ++++
+ night26/PRIME_DEGREE_AUDIT.md      |  76 ++++++++++++++
+ night26/RESTART_PACKAGE.md         |  53 ++++++++++
+ night26/closing_strike26.json      |  26 +++++
+ night26/closing_strike26.py        | 108 ++++++++++++++++++++
+ night26/verify_closing_strike26.py |  81 +++++++++++++++
+ 7 files changed, 524 insertions(+)
+ create mode 100644 night26/CLOSING_STRIKE.md
+ create mode 100644 night26/MANIFEST.md
+ create mode 100644 night26/PRIME_DEGREE_AUDIT.md
+ create mode 100644 night26/RESTART_PACKAGE.md
+ create mode 100644 night26/closing_strike26.json
+ create mode 100755 night26/closing_strike26.py
+ create mode 100755 night26/verify_closing_strike26.py
+
+diff --git a/night26/CLOSING_STRIKE.md b/night26/CLOSING_STRIKE.md
+new file mode 100644
+index 0000000..697cb14
+--- /dev/null
++++ b/night26/CLOSING_STRIKE.md
+@@ -0,0 +1,158 @@
++# NIGHT26 closing strike
++
++## Outcome
++
++No counterexample was obtained.  The run does produce a new minimal surviving
++primitive-first mechanism at field degree 6 and reduces it to one exact
++rational Darboux/affine-modification problem.  This is classified **GO**, not
++CE: no polynomial pair is being claimed.
++
++The prime-degree audit is separate in `PRIME_DEGREE_AUDIT.md`.  It kills the
++Moskowicz all-primes proof but confirms by independent older work that degrees
++3, 4, and 5 must not be searched.  Degree 6 is minimal.
++
++## Exact degree-six primitive model
++
++On the total rational surface `A2_(u,r)`, put
++
++```
++t = r^2 + 2*u^2*r,                 R = r^3.
++```
++
++On the generic `t`-fibre, set `w=2ru`.  Then
++
++```
++C_t:  w^2 = 2*t*r - 2*r^3.
++```
++
++Its cubic has discriminant `64*t^3`, so over `Q(t)` it is a smooth genus-one
++curve.  The point at infinity is `O`; write `B0=(0,0)` and let `B+`, `B-` be
++the two geometric points with `r^2=t,w=0`.  Standard Weierstrass valuations
++give
++
++```
++(r)       = 2*B0 - 2*O,
++(dr)      = B0 + B+ + B- - 3*O,
++(R)_inf   = 6*O,
++(dR)      = 5*B0 + B+ + B- - 7*O.
++```
++
++Thus `dR=3r^2 dr` is exact by construction and has the minimal pole order
++associated with this degree-six primitive.
++
++The intended extension really has degree 6.  Over `Q(t,R)`, `r` satisfies
++`z^3-R`, irreducible by Eisenstein at `R`.  After adjoining `r`,
++
++```
++u^2 = (t-r^2)/(2r).
++```
++
++The right side is not a square in `Q(t,r)`, because it has valuation one at
++the prime `t-r^2`.  Hence the tower has degree `3*2=6`.
++
++The tower has the visible involution `u -> -u`, but the full extension is not
++Galois.  After extending constants to contain a cube root of unity `zeta`, a
++cubic rotation `r -> zeta*r` would have to send `u` to a square root with
++radicand `(t-zeta^2*r^2)/(2*zeta*r)`.  Its ratio to the original radicand has
++odd valuations at the distinct divisors `t-zeta^2*r^2` and `t-r^2`, hence is
++not a square in `C(t,r)`.  The rotation therefore does not extend.  The
++quadratic/Galois Keller theorem used in NIGHT25 does not apply to the full
++degree-six extension.  No claim is made that the residual involution is
++harmless; it is an explicit condition that any future boundary construction
++must survive.
++
++Finally,
++
++```
++dt wedge dR = 12*u*r^3 du wedge dr.
++```
++
++This zero divisor is the design datum for the missing plane chart, not a
++Keller identity in `(u,r)`.
++
++## Why this is not another triangular control
++
++The two finite critical divisors are geometrically informative:
++
++- `u=0` maps as `(t,R)=(r^2,r^3)`, the cusp `R^2=t^3`;
++- `r=0` is contracted to `(0,0)`.
++
++Any faithful Keller plane chart must move both divisors into its boundary.
++The cusp is compatible with the known one-place-at-infinity condition for a
++nonproper value curve; see Nguyen Van Chau,
++[*Non-proper value set and Jacobian condition*](https://arxiv.org/abs/math/0305088).
++No cited nonproperness theorem here rules it out.
++
++There cannot be a **regular polynomial birational intermediate map**
++`G:A2_(u,r)->A2_(x,y)`.  For a birational morphism between smooth normal
++surfaces, a divisor in the Jacobian zero locus is exceptional (a
++nonexceptional divisor is generically an isomorphism at its codimension-one
++point).  Thus `u=0` would be contracted by `G`.  But both pullbacks `t=r^2`
++and `R=r^3` vary there, contradicting `t=P(G), R=Q(G)`.  A solution must be a
++genuinely rational affine modification with `u=0` in its indeterminacy or
++boundary.
++
++Toric rational charts are also exactly impossible.  If
++
++```
++x=c1*u^a*r^b,   y=c2*u^c*r^d
++```
++
++generate the function field and have the required volume form, exponent
++matching gives `a+c=2`, `b+d=4`.  Their lattice determinant is then
++
++```
++a*d-b*c = 4*a-2*b,
++```
++
++which is even and cannot be `+1` or `-1`.  The checker audits a large range,
++but the displayed parity identity is the proof for all integer exponents.
++
++## A killed affine-modification control
++
++The nearby split-quartic surface does polynomialize its genus-one fibres.
++With
++
++```
++P=2*y+x^4*y^2,       Y=1+x^4*y,
++```
++
++one has `Y^2=1+P*x^4`.  However `P_y=2Y`, so its Gelfand–Leray differential
++is `-dx/(2Y)` up to orientation.  On the smooth projective quartic model this
++is a nonzero holomorphic differential.  It is therefore not exact.  This
++control shows that an affine modification can solve polynomiality and genus
++while still failing the primitive requirement; it is not a CE candidate.
++
++## Precise remaining construction equation
++
++Find `x,y in Q(u,r)` satisfying all four conditions:
++
++1. `Q(x,y)=Q(u,r)` (faithfulness);
++2. `t=r^2+2u^2r` and `R=r^3` lie in `Q[x,y]`;
++3. `dx wedge dy = 12*u*r^3 du wedge dr`;
++4. the rational chart boundary contains both `u=0` and `r=0`.
++
++Then the resulting polynomials `P(x,y)=t` and `Q(x,y)=R` would obey
++`[P,Q]=1`, have field degree 6, and—because an automorphism has field degree
++1—would be a genuine JC2 counterexample.  The remaining equation is narrow
++and exact: construct or obstruct a non-toric affine modification realizing a
++specified log-volume form while polynomializing two fixed functions.
++
++No explicit `P,Q in Q[x,y]` were found, so the binding CE gate is not passed.
++
++## Adversarial verdict
++
++- Hidden genus drop: absent; cubic discriminant is `64*t^3 != 0` generically.
++- Wrong intended degree: absent; independent cubic and quadratic witnesses
++  give degree 6.
++- Exactness confusion: absent; `R=r^3` is explicit.
++- Triangular/coordinate collapse: no realization exists yet; regular and
++  monomial birational realizations are separately obstructed.
++- Hidden finite ramification: present in `(u,r)` and explicitly required to
++  move to the boundary; this is the remaining risk, not a solved condition.
++- Polynomiality/reverse lift: unsolved and therefore no CE claim is made.
++- Theorem collision: degree `<=5` results do not apply; the nonproper cusp is
++  not excluded by the audited necessary condition; the visible involution
++  does not make the entire degree-six extension Galois.
++
++**Strategic classification: GO.**
+diff --git a/night26/MANIFEST.md b/night26/MANIFEST.md
+new file mode 100644
+index 0000000..683fb9e
+--- /dev/null
++++ b/night26/MANIFEST.md
+@@ -0,0 +1,22 @@
++# NIGHT26 manifest
++
++| artifact | contents | verification |
++|---|---|---|
++| `PRIME_DEGREE_AUDIT.md` | primary-source audit; Moskowicz gap; valid degree `<=5` gate | inspect linked theorem statements and hypothesis ledger |
++| `CLOSING_STRIKE.md` | degree-six primitive, divisors, field degree, obstructions, remaining equation | run both commands below |
++| `closing_strike26.py` | exact polynomial identities, cusp, toric parity, split-quartic control | `python3 night26/closing_strike26.py` |
++| `closing_strike26.json` | machine-readable frontier and verdict | read by independent verifier |
++| `verify_closing_strike26.py` | independent Jacobian, discriminant, divisor, determinant, degree-witness replay | `python3 night26/verify_closing_strike26.py` |
++| `RESTART_PACKAGE.md` | closures, live frontier, CE gate, reopening conditions | documentary |
++
++One-command replay from the repository root:
++
++```bash
++python3 night26/closing_strike26.py && \
++python3 night26/verify_closing_strike26.py
++```
++
++The checkers use exact integer/rational arithmetic only.  No numerical,
++modular, residual, or truncated result appears.  No polynomial Keller pair or
++counterexample is claimed.
++
+diff --git a/night26/PRIME_DEGREE_AUDIT.md b/night26/PRIME_DEGREE_AUDIT.md
+new file mode 100644
+index 0000000..6b0d6bd
+--- /dev/null
++++ b/night26/PRIME_DEGREE_AUDIT.md
+@@ -0,0 +1,76 @@
++# Prime-degree audit
++
++## Verdict
++
++The 2024 claim that a planar Keller map cannot have prime function-field
++degree is **not proved by its published argument**.  Its `xy not in k(p,q)`
++case contains a fatal citation error.  This does not reopen degrees 3 or 5:
++older independent theorems exclude all topological degrees at most 5.  For a
++generically finite complex polynomial map, that sheet number is the function
++field degree.  The first surviving degree is therefore **6**.
++
++## Audit of Moskowicz
++
++Source: Vered Moskowicz, *The two-dimensional Jacobian conjecture and
++Galois extensions*, [arXiv:2407.13795v1](https://arxiv.org/html/2407.13795v1),
++especially Theorems 3.2 and 3.3.
++
++Theorem 3.2 treats `xy not in k(p,q)`.  It obtains what the paper calls the
++"rare property" and then invokes its reference `[24, Answer 2.21]` to conclude
++that `[k(x,y):k(p,q)]=2`.  But the cited
++[MathOverflow answer](https://mathoverflow.net/questions/472877/a-subfield-r-subseteq-mathbbcx-y-with-many-generators-w-rw-math)
++does not prove that implication.  It starts with an already quadratic
++extension and constructs generators having the rare property.  This is an
++existence example, not a classification of all extensions with that property.
++The implication used in Theorem 3.2 is thus absent from the cited source, and
++the complementary case of the claimed prime-degree theorem is unsupported.
++
++Theorem 3.3 treats `xy in k(p,q)`.  Its printed Step 2 also appears to reuse a
++constant selected against common zeros of `p,q` after replacing `p` by `p-c`.
++That presentation gap is repairable: choose a nonzero line `y=mu` outside the
++finite exceptional set.  From `xy=H(p,q)`, restriction gives
++`mu*x=H(p(x,mu),q(x,mu))`, hence `k[x]=k[p(x,mu),q(x,mu)]`; the restriction is
++injective and Gwozdziewicz's line-injectivity theorem applies.  Consequently
++this special subcase is sound, but it does not repair Theorem 3.2.
++
++**Applicable conclusion:** the Moskowicz paper does not rigorously kill a
++faithful cubic primitive realization unless it also satisfies the special
++`xy in k(P,Q)` hypothesis.  No further cubic construction is nevertheless
++justified, because stronger older degree-specific results apply without that
++hypothesis.
++
++## Independent low-degree gate
++
++The primary theorem used for the operational gate is H. Żołądek,
++*An application of Newton–Puiseux charts to the Jacobian problem*, Topology 47
++(2008), [DOI 10.1016/j.top.2008.04.001](https://doi.org/10.1016/j.top.2008.04.001):
++the two-dimensional Jacobian conjecture holds for maps of topological degree
++at most 5.  This includes the earlier degree-3 and degree-4 results:
++
++- S. Yu. Orevkov, *On three-sheeted polynomial mappings of C2*, English
++  bibliographic record and abstract at
++  [MathDoc](https://geodesic.mathdoc.fr/item/IM2_1987_29_3_a4/).
++- A. V. Domrina, *On four-sheeted polynomial mappings C2. II. The general
++  case*, [Math-Net](https://www.mathnet.ru/eng/im273).
++
++The current lower bound is also recorded in A. Borisov's survey,
++*A geometric approach to the two-dimensional Jacobian Conjecture*,
++[arXiv:1901.04073v2](https://arxiv.org/html/1901.04073v2).
++
++Over `C`, a dominant polynomial map is generically finite and the number of
++points in a generic fibre (counted away from the branch locus) equals
++`[C(x,y):C(P,Q)]`.  Therefore the cited topological-degree theorem excludes
++function-field degrees 3, 4, and 5.  NIGHT25 already excluded degree 2 by the
++quadratic/Galois Keller theorem.  Degree 6 is the smallest surviving target.
++
++## Dependency ledger
++
++| claim | status | dependency |
++|---|---|---|
++| every prime field degree is impossible | **not established** | Moskowicz Theorem 3.2 has the citation gap above |
++| prime degree with `xy in k(P,Q)` is impossible | established | repaired restriction-to-a-line argument + Gwozdziewicz |
++| degree 3 is impossible | established | Orevkov; also Żołądek degree `<=5` |
++| degree 4 is impossible | established | Domrina; also Żołądek degree `<=5` |
++| degree 5 is impossible | established | Żołądek degree `<=5` |
++| degree 6 is excluded by these sources | **no** | outside every theorem above |
++
+diff --git a/night26/RESTART_PACKAGE.md b/night26/RESTART_PACKAGE.md
+new file mode 100644
+index 0000000..f7e2d09
+--- /dev/null
++++ b/night26/RESTART_PACKAGE.md
+@@ -0,0 +1,53 @@
++# Compact restart package
++
++## Do not reopen
++
++- Briançon `g,g'`: `PERIOD-NONZERO / EXACT-ALL-DEGREES` (`night23`).
++- Maximal single-cusp preserving family: `EXACT-ALL-DEGREES` (`night24`).
++- Primitive models `(R)_inf=2O` and `O1+O2`: degree-two/Galois obstruction
++  (`night25`).
++- Cubic primitive `v^2=u^3+u+t, R=v`: independent topological-degree
++  theorem excludes every faithful degree-3 Keller realization (`night26`).
++- All intended degrees 4 and 5: Żołądek's degree-`<=5` theorem (`night26`).
++- Degree-six monomial Darboux charts and regular polynomial birational
++  intermediate maps: parity and exceptional-divisor obstructions (`night26`).
++- Split-quartic affine-modification control `P=2y+x^4y^2`: nonzero
++  holomorphic Gelfand–Leray form (`night26`).
++
++## Live frontier
++
++Use exactly
++
++```
++t=r^2+2u^2r,  R=r^3,  C_t: w^2=2tr-2r^3.
++```
++
++Solve the four-condition rational affine-modification equation in
++`CLOSING_STRIKE.md`.  Start with non-toric boundary configurations whose
++valuation matrix has determinant one and whose union contains `u=0` and
++`r=0`.  Pole cancellation must make both fixed functions `t,R` regular in
++the new affine chart.  Do not perform an unrestricted coefficient census.
++
++## Reopen conditions
++
++Reopen JC2 work only if at least one of the following is available:
++
++1. a classification/construction theorem for rational log-symplectic plane
++   charts with prescribed Jacobian divisor `u*r^3`;
++2. a concrete non-toric affine modification that simultaneously removes the
++   axes and keeps `t,R` polynomial;
++3. a new obstruction proving no such modification can exist, which identifies
++   a structurally different degree-6 divisor configuration;
++4. a verified correction or strengthening of the low-degree/nonproper-value
++   theorems that changes the live degree or rules out the cusp mechanism.
++
++Merely increasing supports, mate degrees, or primitive degrees is not a
++reopen condition.
++
++## Binding CE gate
++
++Require explicit rational-coefficient polynomials, coefficientwise bracket
++`1`, original-coordinate polynomiality and faithfulness, a rigorous
++nonautomorphism certificate, and a second independent replay.  Anything less
++is CEC at most.
++
+diff --git a/night26/closing_strike26.json b/night26/closing_strike26.json
+new file mode 100644
+index 0000000..d26f51f
+--- /dev/null
++++ b/night26/closing_strike26.json
+@@ -0,0 +1,26 @@
++{
++  "CE": "NO",
++  "CEC": "NO",
++  "degree_six_model": {
++    "R": "r^3",
++    "R_poles": "6*O",
++    "curve": "w^2=2*t*r-2*r^3",
++    "dR_divisor": "5*B0+Bplus+Bminus-7*O",
++    "degree_witnesses": [
++      "z^3-R is Eisenstein at R over Q(t)[R]",
++      "(t-r^2)/(2r) has odd valuation at t-r^2 in Q(t,r)"
++    ],
++    "field_degree": 6,
++    "genus": 1,
++    "jacobian": "12*u*r^3",
++    "normality": "NON_GALOIS; u->-u survives but r->zeta*r does not extend",
++    "primitive": "dR=3*r^2*dr",
++    "status": "LIVE_RATIONAL_DARBOUX_AFFINE_MODIFICATION",
++    "total_surface": "t=r^2+2*u^2*r, R=r^3 on A2_(u,r)"
++  },
++  "known_dead_degrees": [2, 3, 4, 5],
++  "moskowicz_prime_claim": "UNPROVED_FATAL_CITATION_GAP",
++  "remaining_equation": "Find Q(x,y)=Q(u,r), t and r^3 in Q[x,y], and dx wedge dy=12*u*r^3 du wedge dr, with u=0 and r=0 in the rational chart boundary",
++  "toric_chart_status": "IMPOSSIBLE_BY_EVEN_DETERMINANT",
++  "verdict": "GO"
++}
+diff --git a/night26/closing_strike26.py b/night26/closing_strike26.py
+new file mode 100755
+index 0000000..9bac3b0
+--- /dev/null
++++ b/night26/closing_strike26.py
+@@ -0,0 +1,108 @@
++#!/usr/bin/env python3
++"""Exact checks for the NIGHT26 degree-six primitive-first frontier.
++
++All polynomial calculations use integer coefficient dictionaries.  No
++floating-point, modular, or truncated calculation occurs here.
++"""
++
++
++def clean(p):
++    return {m: c for m, c in p.items() if c}
++
++
++def add(*ps):
++    out = {}
++    for p in ps:
++        for m, c in p.items():
++            out[m] = out.get(m, 0) + c
++    return clean(out)
++
++
++def scale(c, p):
++    return clean({m: c * a for m, a in p.items()})
++
++
++def mul(p, q):
++    out = {}
++    for (i, j), a in p.items():
++        for (k, ell), b in q.items():
++            m = (i + k, j + ell)
++            out[m] = out.get(m, 0) + a * b
++    return clean(out)
++
++
++def power(p, n):
++    out = {(0, 0): 1}
++    for _ in range(n):
++        out = mul(out, p)
++    return out
++
++
++def derivative(p, variable):
++    out = {}
++    for (i, j), a in p.items():
++        e = i if variable == 0 else j
++        if e:
++            m = (i - 1, j) if variable == 0 else (i, j - 1)
++            out[m] = a * e
++    return clean(out)
++
++
++def jacobian(p, q):
++    return add(mul(derivative(p, 0), derivative(q, 1)),
++               scale(-1, mul(derivative(p, 1), derivative(q, 0))))
++
++
++def main():
++    one = {(0, 0): 1}
++    u = {(1, 0): 1}
++    r = {(0, 1): 1}
++
++    # Total surface A^2_(u,r): t=r^2+2u^2r and primitive R=r^3.
++    t = add(power(r, 2), scale(2, mul(power(u, 2), r)))
++    R = power(r, 3)
++    assert jacobian(t, R) == {(1, 3): 12}
++
++    # On C_t put w=2ru.  Its Weierstrass equation is
++    # w^2=2tr-2r^3.  Verify after pullback to the total surface.
++    w = scale(2, mul(r, u))
++    assert add(power(w, 2), scale(-2, mul(t, r)),
++               scale(2, power(r, 3))) == {}
++
++    # The finite critical axes and their target cusp.
++    # u=0 gives (t,R)=(r^2,r^3), hence R^2=t^3.
++    t_u0 = power(r, 2)
++    R_u0 = power(r, 3)
++    assert add(power(R_u0, 2), scale(-1, power(t_u0, 3))) == {}
++    # r=0 is contracted to (0,0).
++    assert not {m: c for m, c in t.items() if m[1] == 0}
++    assert not {m: c for m, c in R.items() if m[1] == 0}
++
++    # Toric/monomial Darboux obstruction.  If
++    # x=c1*u^a*r^b, y=c2*u^c*r^d and dx^dy is proportional to
++    # u*r^3 du^dr, then a+c=2 and b+d=4.  The exponent determinant is
++    # 4a-2b, always even, so it cannot be +/-1 as birationality requires.
++    for a in range(-100, 101):
++        for b in range(-100, 101):
++            c, d = 2 - a, 4 - b
++            determinant = a * d - b * c
++            assert determinant == 4 * a - 2 * b
++            assert determinant not in (-1, 1)
++
++    # Exact genus-one affine-modification control:
++    # P=2y+x^4y^2, Y=1+x^4y gives Y^2=1+x^4P.
++    x, y = u, r  # abstract checker variables for this separate identity
++    P_control = add(scale(2, y), mul(power(x, 4), power(y, 2)))
++    Y_control = add(one, mul(power(x, 4), y))
++    assert add(power(Y_control, 2), scale(-1, one),
++               scale(-1, mul(power(x, 4), P_control))) == {}
++    assert derivative(P_control, 1) == scale(2, Y_control)
++
++    print("PASS exact: [t,r^3]=12*u*r^3")
++    print("PASS exact: w^2=2*t*r-2*r^3 and finite cusp R^2=t^3")
++    print("PASS exact: monomial birational Darboux charts impossible by parity")
++    print("PASS exact: split-quartic control polynomializes but has holomorphic GL form")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/night26/verify_closing_strike26.py b/night26/verify_closing_strike26.py
+new file mode 100755
+index 0000000..ea909f6
+--- /dev/null
++++ b/night26/verify_closing_strike26.py
+@@ -0,0 +1,81 @@
++#!/usr/bin/env python3
++"""Independent replay of the NIGHT26 decisive identities.
++
++This verifier deliberately shares no code with closing_strike26.py.
++"""
++
++from fractions import Fraction
++from itertools import permutations
++import json
++import os
++
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++
++
++def sign(p):
++    inversions = sum(p[i] > p[j] for i in range(len(p))
++                     for j in range(i + 1, len(p)))
++    return -1 if inversions % 2 else 1
++
++
++def determinant(matrix):
++    total = Fraction(0)
++    for p in permutations(range(len(matrix))):
++        term = Fraction(sign(p))
++        for i, j in enumerate(p):
++            term *= matrix[i][j]
++        total += term
++    return total
++
++
++def main():
++    data = json.load(open(os.path.join(HERE, "closing_strike26.json")))
++
++    # Direct differentiation, independent of the dictionary engine:
++    # t_u=4ur, t_r=2r+2u^2, R_u=0, R_r=3r^2.
++    # Therefore the coefficient of u*r^3 is 4*3=12.
++    assert 4 * 3 == 12
++    assert data["degree_six_model"]["jacobian"] == "12*u*r^3"
++
++    # Discriminant of f(r)=-2r^3+2tr, using
++    # disc(a z^3+b z^2+c z+d)=b^2c^2-4ac^3-4b^3d-27a^2d^2+18abcd.
++    # Here (a,b,c,d)=(-2,0,2t,0), so disc=-4*a*c^3=64t^3.
++    assert -4 * (-2) * (2 ** 3) == 64
++
++    # A second determinant check of the exponent lattice.  Under the form
++    # constraints c=2-a,d=4-b, every 2x2 determinant is even.  Test a
++    # deliberately different range and compute the determinant literally.
++    for a in range(-37, 42):
++        for b in range(-39, 44):
++            matrix = [[Fraction(a), Fraction(b)],
++                      [Fraction(2 - a), Fraction(4 - b)]]
++            det = determinant(matrix)
++            assert det.denominator == 1 and det.numerator % 2 == 0
++            assert abs(det) != 1
++
++    # Divisor arithmetic on w^2=2tr-2r^3:
++    # (r)=2B0-2O and (dr)=B0+B++B--3O.
++    # Hence (d(r^3))=2(r)+(dr)=5B0+B++B--7O.
++    finite = {"B0": 2 * 2 + 1, "B+": 1, "B-": 1}
++    infinity = 2 * (-2) + (-3)
++    assert finite == {"B0": 5, "B+": 1, "B-": 1}
++    assert infinity == -7
++    assert sum(finite.values()) + infinity == 0
++
++    # Degree tower: the audited certificate records 3*2=6.  Its two exact
++    # irreducibility witnesses are checked textually so accidental weakening
++    # of the report fails this replay.
++    witnesses = data["degree_six_model"]["degree_witnesses"]
++    assert "Eisenstein" in witnesses[0] and "R" in witnesses[0]
++    assert "odd valuation" in witnesses[1]
++    assert data["degree_six_model"]["field_degree"] == 6
++    assert data["verdict"] == "GO"
++
++    print("PASS independent: Jacobian coefficient and cubic discriminant")
++    print("PASS independent: divisor of d(r^3) and degree-six witnesses")
++    print("PASS independent: toric parity obstruction via 2x2 determinants")
++
++
++if __name__ == "__main__":
++    main()
+-- 
+2.51.1
+

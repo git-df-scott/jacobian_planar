@@ -1,0 +1,13 @@
+{
+  "remote_branches": 44,
+  "pull_requests": 26,
+  "discussion_entries": 4,
+  "remote_reachable_commits": 1287,
+  "recovered_commits": 2,
+  "total_catalogued_commits": 1289,
+  "branch_file_entries": 35078,
+  "distinct_path_blob_records": 10062,
+  "distinct_report_path_blob_records": 581,
+  "distinct_file_paths": 9952,
+  "tags": []
+}

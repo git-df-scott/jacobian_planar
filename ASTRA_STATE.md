@@ -1,5 +1,9 @@
 # ASTRA state — 2026-09-04
 
+Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
+44 remote branches at the cutoff and recover two unpublished Codex commits.
+`RECORD_CORRECTIONS.md` governs interpretation of historical claims.
+
 ## CURRENT VERIFIED THEOREMS
 
 - **THEOREM — Keller escape bridge.**  At a resolved source dicritical
@@ -34,6 +38,12 @@
   certificates in PR #23 retain only their explicitly stated scopes.
 
 ## CURRENT EXACT COMPUTATIONAL RESULTS
+
+- **Written exact obstruction from closeout:** the recovered night26 model
+  `t=r^2+2u^2r, R=r^3` cannot admit a faithful Keller plane chart. Since r is
+  rational and r^3 polynomial, integral closure makes r polynomial; the
+  Jacobian is then divisible by r^2. Its archived GO recommendation is
+  superseded. This excludes that model, not every degree-six construction.
 
 - `EXACT-Q` with written completeness and valuation arguments: GGHV
   Proposition 4.3(1), the pentagon, is excluded in characteristic zero. The
