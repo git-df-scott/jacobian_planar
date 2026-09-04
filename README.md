@@ -8,8 +8,9 @@ This repository is a research archive for the plane Jacobian-conjecture campaign
 2. **Complete re-walk and open queue:** [`STATE_FULL.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/STATE_FULL.md), [`OPEN_ITEMS.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/OPEN_ITEMS.md)
 3. **What is closed, live, or retired:** [`LIVE_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/LIVE_MAP.md), [`TRUST_MAP.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/TRUST_MAP.md)
 4. **Corrections and failed-proof ledger:** [`CATCHES.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/CATCHES.md)
-5. **Latest handoff (not yet merged):** [`docs/plans/HANDOFF_CE_HUNT.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/jc2-handoff-audit-hartnc/docs/plans/HANDOFF_CE_HUNT.md) on `claude/jc2-handoff-audit-hartnc` (PR [#22](https://github.com/git-df-scott/jacobian_planar/pull/22)) is the most recent self-contained "read this first" for a fresh session — where every verified artifact lives, how to rebuild the worktrees/engines, and the ordered direct attempts with gates and stop rules. See [Open pull requests](#open-pull-requests) below for the night-run logs that continue past it.
-6. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
+5. **Branch audit:** [`docs/BRANCH_AUDIT.md`](docs/BRANCH_AUDIT.md) — full inventory of every branch, confirms nothing pushed to GitHub has been lost, and checks each branch against what this README claims about it.
+6. **Latest handoff (not yet merged):** [`docs/plans/HANDOFF_CE_HUNT.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/jc2-handoff-audit-hartnc/docs/plans/HANDOFF_CE_HUNT.md) on `claude/jc2-handoff-audit-hartnc` (PR [#22](https://github.com/git-df-scott/jacobian_planar/pull/22)) is the most recent self-contained "read this first" for a fresh session — where every verified artifact lives, how to rebuild the worktrees/engines, and the ordered direct attempts with gates and stop rules. See [Open pull requests](#open-pull-requests) below for the night-run logs that continue past it.
+7. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
 
 The full scripts, certifiers, logs, and generated data are on the campaign branch. The `main` branch is the lightweight map and archive index.
 
@@ -47,7 +48,7 @@ Use the branch that matches the question. Do not search every branch by default.
 | Branch | Use it for |
 | --- | --- |
 | [`main`](https://github.com/git-df-scott/jacobian_planar/tree/main) | This index, organized session notes, and transfer archives. |
-| [`claude/opus-5-counterexample-plan-sep6yk`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-5-counterexample-plan-sep6yk) | **Canonical full campaign state**: `STATUS.md`, `STATE_FULL.md`, `LIVE_MAP.md`, `OPEN_ITEMS.md`, `CATCHES.md`, `wave0/`, `wave1/`, `wave5/`, `wave6/`, and all certifiers. Head `24a06fc` (prime-sweep continuation). |
+| [`claude/opus-5-counterexample-plan-sep6yk`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-5-counterexample-plan-sep6yk) | **Canonical full campaign state**: `STATUS.md`, `STATE_FULL.md`, `LIVE_MAP.md`, `OPEN_ITEMS.md`, `CATCHES.md`, `wave0/`, `wave1/`, `wave5/`, `wave6/`, and all certifiers. Head `b233c70` (prime-sweep continuation, plus the 2026-09-04 stale-file cleanup). |
 | [`claude/plane-counterexample-endgame-az3geq`](https://github.com/git-df-scott/jacobian_planar/tree/claude/plane-counterexample-endgame-az3geq) | Endgame/framework work and the earlier full campaign snapshot. |
 | [`claude/fable-ce-backup`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-ce-backup) | Backup branch for the corrected ladder and overnight queue. |
 | [`claude/opus-errors-false-proofs-820rmd`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-errors-false-proofs-820rmd) | Error analysis, retractions, and false-proof audit material. |
@@ -63,7 +64,7 @@ These are focused or historical worktrees; their names are the routing key.
 
 `ce-acquisition-strategy`, `counter-example-audit`, `d23-borisov-transfer-test`, `fable-6o0nqe`, `fable-counterexample-sweep`, `ggv-conjecture-evidence`, `github-push-issue`, `jacobian-collision-counterexample`, `jacobian-conjecture-campaign`, `jacobian-conjecture-search`, `jacobian-planar-sweep`, `mod-3-keller-pair-obstruction`, `moduli-deformation-exceptions`, `past-code-session`, `poisson-bracket-counterexample`.
 
-Three more recent workstreams continue past the canonical branch's `24a06fc` head and are not yet folded in:
+Three more recent workstreams continue past the canonical branch's `24a06fc`-era campaign work and are not yet folded in:
 
 | Branch | Use it for |
 | --- | --- |
@@ -87,55 +88,50 @@ These branches are parallel investigations, not independent final verdicts. Reco
 
 The [`work`](https://github.com/git-df-scott/jacobian_planar/tree/work) branch is an additional audit/work area; it is not the canonical state.
 
-### Exact branch heads (2026-09-01)
+### Exact branch heads (2026-09-04)
 
-This compact ref list is the handoff index. The short commit ID makes it possible to verify that an agent opened the intended snapshot without scanning unrelated history.
+This compact ref list is the handoff index. The short commit ID makes it possible to verify that an agent opened the intended snapshot without scanning unrelated history. Refreshed 2026-09-04 after a repo-wide cleanup pass removed four stale root-level files (`39`, `40.md`, `41.md`, `42.md`) from every branch that still had them, which moved almost every head below past its previous value; see [`docs/BRANCH_AUDIT.md`](docs/BRANCH_AUDIT.md) for the full accounting of that pass and confirmation that nothing was lost.
 
 | Family | Branch | Head |
 | --- | --- | --- |
-| Main | [`main`](https://github.com/git-df-scott/jacobian_planar/tree/main) | `74bbe4e` |
-| Other | [`work`](https://github.com/git-df-scott/jacobian_planar/tree/work) | `cc04dad` |
-| Claude | [`claude/opus-5-counterexample-plan-sep6yk`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-5-counterexample-plan-sep6yk) | `24a06fc` |
-| Claude | [`claude/plane-counterexample-endgame-az3geq`](https://github.com/git-df-scott/jacobian_planar/tree/claude/plane-counterexample-endgame-az3geq) | `658960a` |
-| Claude | [`claude/fable-ce-backup`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-ce-backup) | `c630696` |
-| Claude | [`claude/opus-errors-false-proofs-820rmd`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-errors-false-proofs-820rmd) | `55417d0` |
-| Claude | [`claude/opus-hunt-territories`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-hunt-territories) | `26d610d` |
+| Main | [`main`](https://github.com/git-df-scott/jacobian_planar/tree/main) | `b9f5cb8` |
+| Other | [`work`](https://github.com/git-df-scott/jacobian_planar/tree/work) | `5627f34` |
+| Claude | [`claude/opus-5-counterexample-plan-sep6yk`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-5-counterexample-plan-sep6yk) | `b233c70` |
+| Claude | [`claude/plane-counterexample-endgame-az3geq`](https://github.com/git-df-scott/jacobian_planar/tree/claude/plane-counterexample-endgame-az3geq) | `72e6ce5` |
+| Claude | [`claude/fable-ce-backup`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-ce-backup) | `0d6dee1` |
+| Claude | [`claude/opus-errors-false-proofs-820rmd`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-errors-false-proofs-820rmd) | `1ebeece` |
+| Claude | [`claude/opus-hunt-territories`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-hunt-territories) | `99b3650` |
 | Claude | [`claude/opus-plan-priority-queue-0pultj`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-plan-priority-queue-0pultj) | `784eacf` |
-| Claude | [`claude/opus-support-compute`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-support-compute) | `6ed1d53` |
-| Claude | [`claude/opus-support-toolchain-62st0d`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-support-toolchain-62st0d) | `1978a0c` |
-| Claude | [`claude/opus-worker-resisters`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-worker-resisters) | `5e51b09` |
-| Claude | [`claude/ce-acquisition-strategy-uyqftb`](https://github.com/git-df-scott/jacobian_planar/tree/claude/ce-acquisition-strategy-uyqftb) | `873021b` |
+| Claude | [`claude/opus-support-compute`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-support-compute) | `b6bf58c` |
+| Claude | [`claude/opus-support-toolchain-62st0d`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-support-toolchain-62st0d) | `83e0f80` |
+| Claude | [`claude/opus-worker-resisters`](https://github.com/git-df-scott/jacobian_planar/tree/claude/opus-worker-resisters) | `215a040` |
+| Claude | [`claude/ce-acquisition-strategy-uyqftb`](https://github.com/git-df-scott/jacobian_planar/tree/claude/ce-acquisition-strategy-uyqftb) | `2a9fb4c` |
 | Claude | [`claude/counter-example-audit-dnu9l9`](https://github.com/git-df-scott/jacobian_planar/tree/claude/counter-example-audit-dnu9l9) | `b0bd0ad` |
 | Claude | [`claude/d23-borisov-transfer-test-vpr3m6`](https://github.com/git-df-scott/jacobian_planar/tree/claude/d23-borisov-transfer-test-vpr3m6) | `7296164` |
-| Claude | [`claude/fable-6o0nqe`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-6o0nqe) | `b6648e4` |
-| Claude | [`claude/fable-counterexample-sweep-yyj5vf`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-counterexample-sweep-yyj5vf) | `e9a65be` |
-| Claude | [`claude/ggv-conjecture-evidence-r9almu`](https://github.com/git-df-scott/jacobian_planar/tree/claude/ggv-conjecture-evidence-r9almu) | `66899d1` |
-| Claude | [`claude/github-push-issue-oftsm3`](https://github.com/git-df-scott/jacobian_planar/tree/claude/github-push-issue-oftsm3) | `c72e7e4` |
-| Claude | [`claude/jacobian-collision-counterexample-nsc6ul`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-collision-counterexample-nsc6ul) | `2f97e2f` |
-| Claude | [`claude/jacobian-conjecture-campaign-xcw9p4`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-conjecture-campaign-xcw9p4) | `66341b0` |
-| Claude | [`claude/jacobian-conjecture-search-om7slv`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-conjecture-search-om7slv) | `2c4b511` |
-| Claude | [`claude/jacobian-planar-sweep-iajyma`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-planar-sweep-iajyma) | `e4d1de3` |
+| Claude | [`claude/fable-6o0nqe`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-6o0nqe) | `a105bc9` |
+| Claude | [`claude/fable-counterexample-sweep-yyj5vf`](https://github.com/git-df-scott/jacobian_planar/tree/claude/fable-counterexample-sweep-yyj5vf) | `35c7281` |
+| Claude | [`claude/ggv-conjecture-evidence-r9almu`](https://github.com/git-df-scott/jacobian_planar/tree/claude/ggv-conjecture-evidence-r9almu) | `f5e5397` |
+| Claude | [`claude/github-push-issue-oftsm3`](https://github.com/git-df-scott/jacobian_planar/tree/claude/github-push-issue-oftsm3) | `f738744` |
+| Claude | [`claude/jacobian-collision-counterexample-nsc6ul`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-collision-counterexample-nsc6ul) | `8b5adec` |
+| Claude | [`claude/jacobian-conjecture-campaign-xcw9p4`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-conjecture-campaign-xcw9p4) | `fbd2864` |
+| Claude | [`claude/jacobian-conjecture-search-om7slv`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-conjecture-search-om7slv) | `df9f911` |
+| Claude | [`claude/jacobian-planar-sweep-iajyma`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jacobian-planar-sweep-iajyma) | `f307232` |
+| Claude | [`claude/jc2-handoff-audit-hartnc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-handoff-audit-hartnc) | `ae58bd3` |
+| Claude | [`claude/jc2-counterexample-hunt-handoff-w369mc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-w369mc) | `e0086a7` |
+| Claude | [`claude/jc2-counterexample-hunt-handoff-x40ahz`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-x40ahz) | `387d28e` |
 | Claude | [`claude/mod-3-keller-pair-obstruction-oceq9z`](https://github.com/git-df-scott/jacobian_planar/tree/claude/mod-3-keller-pair-obstruction-oceq9z) | `70025d3` |
 | Claude | [`claude/moduli-deformation-exceptions-2f4ey2`](https://github.com/git-df-scott/jacobian_planar/tree/claude/moduli-deformation-exceptions-2f4ey2) | `2ea44d8` |
-| Claude | [`claude/past-code-session-8mdjqn`](https://github.com/git-df-scott/jacobian_planar/tree/claude/past-code-session-8mdjqn) | `a301e16` |
-| Claude | [`claude/poisson-bracket-counterexample-9esk1r`](https://github.com/git-df-scott/jacobian_planar/tree/claude/poisson-bracket-counterexample-9esk1r) | `b08ad5a` |
-| Codex | [`codex/claude-opus5-mailbox`](https://github.com/git-df-scott/jacobian_planar/tree/codex/claude-opus5-mailbox) | `156ba7a` |
-| Codex | [`codex/pentagon-level14-rational-obstruction`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-level14-rational-obstruction) | `338eca4` |
-| Codex | [`codex/pentagon-level16-exact`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-level16-exact) | `1e3ac1f` |
-| Codex | [`codex/pentagon-p11-zero-search`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-p11-zero-search) | `e4fa5ce` |
-| Codex | [`codex/sol-session3-pole`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol-session3-pole) | `7095528` |
-| Codex | [`codex/sol3-all-five`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol3-all-five) | `55a962c` |
-| Codex | [`codex/sol5-collision-first`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol5-collision-first) | `2fe8ab2` |
-| Codex | [`codex/sol5-counterexample-hunt`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol5-counterexample-hunt) | `e26ec86` |
-| Codex | [`codex/sol6-collision-first`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol6-collision-first) | `4fbdccb` |
-
-Three branches postdate the 2026-09-01 snapshot above and are tracked separately because they move faster than the rest of the map:
-
-| Family | Branch | Head | Date |
-| --- | --- | --- | --- |
-| Claude | [`claude/jc2-handoff-audit-hartnc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-handoff-audit-hartnc) | `ae58bd3` | 2026-09-03 |
-| Claude | [`claude/jc2-counterexample-hunt-handoff-w369mc`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-w369mc) | `e0086a7` | 2026-09-03 |
-| Claude | [`claude/jc2-counterexample-hunt-handoff-x40ahz`](https://github.com/git-df-scott/jacobian_planar/tree/claude/jc2-counterexample-hunt-handoff-x40ahz) | `5b1eb0a` | 2026-09-04 |
+| Claude | [`claude/past-code-session-8mdjqn`](https://github.com/git-df-scott/jacobian_planar/tree/claude/past-code-session-8mdjqn) | `37d2ebe` |
+| Claude | [`claude/poisson-bracket-counterexample-9esk1r`](https://github.com/git-df-scott/jacobian_planar/tree/claude/poisson-bracket-counterexample-9esk1r) | `1046908` |
+| Codex | [`codex/claude-opus5-mailbox`](https://github.com/git-df-scott/jacobian_planar/tree/codex/claude-opus5-mailbox) | `2875093` |
+| Codex | [`codex/pentagon-level14-rational-obstruction`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-level14-rational-obstruction) | `b57cd27` |
+| Codex | [`codex/pentagon-level16-exact`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-level16-exact) | `ae717ed` |
+| Codex | [`codex/pentagon-p11-zero-search`](https://github.com/git-df-scott/jacobian_planar/tree/codex/pentagon-p11-zero-search) | `1aed0b4` |
+| Codex | [`codex/sol-session3-pole`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol-session3-pole) | `df7471d` |
+| Codex | [`codex/sol3-all-five`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol3-all-five) | `e43947e` |
+| Codex | [`codex/sol5-collision-first`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol5-collision-first) | `1d814dd` |
+| Codex | [`codex/sol5-counterexample-hunt`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol5-counterexample-hunt) | `a5a8327` |
+| Codex | [`codex/sol6-collision-first`](https://github.com/git-df-scott/jacobian_planar/tree/codex/sol6-collision-first) | `fd113a5` |
 
 ## Open pull requests
 
@@ -179,6 +175,7 @@ None of these PRs claims a counterexample; several were later narrowed or retrac
 ## Archive layout on `main`
 
 - `CLAUDE.md`, `AGENTS.md` — thin pointers so a fresh Claude Code or Codex session reads this README on its first turn, instead of guessing.
+- `docs/BRANCH_AUDIT.md` — full per-branch audit: confirms nothing is lost, checks every branch against this README's claims.
 - `docs/sessions/active/` — sessions 39–40 (current paths).
 - `docs/sessions/archive/` — stale sessions 41–42, retained rather than deleted.
 - `docs/history/` — sessions 1–18 status report.
