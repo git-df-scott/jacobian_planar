@@ -1,0 +1,41 @@
+{
+  "evidence_label": "EXACT-Q",
+  "h3": {
+    "centralizer_size": 16,
+    "coarse_chi_R": 0,
+    "conjugacy_class_size": 45,
+    "degree": 6,
+    "escaping_local_orbit_counts": {
+      "2_5_cusp": 1,
+      "node": 3,
+      "ordinary_cusp": 2
+    },
+    "generated_group_identification": "A5 (order 60; inherited identification checked independently in GAP archive)",
+    "generated_group_order": 60,
+    "labeled_triples_after_fixing_a": 16,
+    "meridian_cycle_type": [
+      2,
+      2,
+      1,
+      1
+    ],
+    "orbit_sizes": [
+      16
+    ],
+    "simultaneous_conjugacy_orbits": 1,
+    "source_euler": 1,
+    "staying_counts": {
+      "2_5_cusp": 1,
+      "node": 0,
+      "ordinary_cusp": 0
+    },
+    "verdict": "BLUEPRINT near-miss: Euler passes, R-line condition fails"
+  },
+  "positive_control": {
+    "degree": 3,
+    "group": "S3",
+    "order": 6,
+    "status": "PASS"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,94 @@
+{
+  "controls": [
+    {
+      "chart_jacobian_verified": true,
+      "chart_relation_verified": true,
+      "cleared_fibre_identity_verified": true,
+      "cleared_fibre_t1": "p**3*s**2 - 8*p**2*s/3 + 4*p*s/3 - p + s/3 + 1",
+      "degree": 10,
+      "evidence": "EXACT-Q plus stated theorem inputs",
+      "gradient_groebner_basis": [
+        "1"
+      ],
+      "gradient_ideal": "(1)",
+      "mate_verdict": "NO: nonzero holomorphic Gelfand--Leray differential",
+      "name": "g",
+      "p_infinity": {
+        "branches": 2,
+        "coprimality_verified": true,
+        "discriminant": "100/9",
+        "eta_valuations": [
+          0,
+          0
+        ],
+        "tangent_polynomial": "lam**2 - 8*lam/3 - 1"
+      },
+      "parameters": {
+        "a": "-5/3",
+        "b": "-1/3"
+      },
+      "s_infinity": {
+        "branches": 1,
+        "eta_valuation": 0,
+        "initial_form": "p^3 - (-1/3)*z"
+      },
+      "theorem_inputs": {
+        "fibres_irreducible": true,
+        "source": "Dimca--Sticlaru, arXiv:2406.19795, Theorem 1.7 and Propositions 3.3--3.4",
+        "t1_compact_genus": 1
+      }
+    },
+    {
+      "chart_jacobian_verified": true,
+      "chart_relation_verified": true,
+      "cleared_fibre_identity_verified": true,
+      "cleared_fibre_t1": "p**3*s**2 - 16*p**2*s/9 + 8*p*s/9 - p - s/9 + 1",
+      "degree": 10,
+      "evidence": "EXACT-Q plus stated theorem inputs",
+      "gradient_groebner_basis": [
+        "1"
+      ],
+      "gradient_ideal": "(1)",
+      "mate_verdict": "NO: nonzero holomorphic Gelfand--Leray differential",
+      "name": "gprime",
+      "p_infinity": {
+        "branches": 2,
+        "coprimality_verified": true,
+        "discriminant": "580/81",
+        "eta_valuations": [
+          0,
+          0
+        ],
+        "tangent_polynomial": "lam**2 - 16*lam/9 - 1"
+      },
+      "parameters": {
+        "a": "-7/9",
+        "b": "1/9"
+      },
+      "s_infinity": {
+        "branches": 1,
+        "eta_valuation": 0,
+        "initial_form": "p^3 - (1/9)*z"
+      },
+      "theorem_inputs": {
+        "fibres_irreducible": true,
+        "source": "Dimca--Sticlaru, arXiv:2406.19795, Theorem 1.7 and Propositions 3.3--3.4",
+        "t1_compact_genus": 1
+      }
+    }
+  ],
+  "evidence_label": "EXACT-Q",
+  "family_boundary": {
+    "b_nonzero_boundary_profile": {
+      "necessary_exception_at_t1": "(a-1)^2+4=0",
+      "p_infinity_branches": 2,
+      "s_infinity_branches": 1
+    },
+    "b_zero_factorization": "P_(a,0)=p*(p*u+a*s)",
+    "b_zero_leaves_all_fibres_irreducible_class": true,
+    "cleared_generic_fibre": "a*p**2*s - a*p*s + b*p*s - b*s + p**3*s**2 - p**2*s - p*t + t",
+    "family": "P_(a,b)=p^2*u+a*p*s+b*s",
+    "identity_verified": true
+  },
+  "status": "PASS"
+}

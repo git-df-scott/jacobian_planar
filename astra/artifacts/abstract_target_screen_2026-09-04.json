@@ -1,0 +1,39 @@
+{
+  "counts_by_degree": {
+    "4": 224,
+    "5": 112,
+    "6": 96,
+    "7": 57,
+    "8": 708,
+    "9": 514,
+    "10": 463,
+    "11": 323,
+    "12": 2764
+  },
+  "evidence_label": "ADMISSIBLE-SHAPE",
+  "raw_feasible_configurations": 5261,
+  "realizability": "UNKNOWN: no group, peripheral system, or polynomial curve is constructed",
+  "scope": {
+    "cusp_count": [
+      1,
+      4
+    ],
+    "cusp_orders": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "degree": [
+      4,
+      12
+    ],
+    "even_moved_sheets": true,
+    "node_count": [
+      1,
+      4
+    ]
+  },
+  "status": "PASS",
+  "unique_basic_signatures": 635
+}

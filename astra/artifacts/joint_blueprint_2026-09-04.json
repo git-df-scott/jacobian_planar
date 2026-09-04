@@ -1,0 +1,92 @@
+{
+  "controls": {
+    "bridge_negative_rejected": true,
+    "bridge_positive": {
+      "source": [
+        {
+          "degree": 2,
+          "discrepancy": -1,
+          "ramification": 2
+        }
+      ],
+      "target_moved_cycles_and_sheets": [
+        2,
+        4
+      ]
+    },
+    "identity_automorphism": {
+      "discrepancies": [
+        3,
+        2,
+        2
+      ],
+      "geometric_degree": 1,
+      "keller_delta": [
+        0,
+        0,
+        0
+      ],
+      "p_horizontal_degrees": [
+        0,
+        1,
+        0
+      ],
+      "p_poles": [
+        1,
+        0,
+        1
+      ],
+      "q_horizontal_degrees": [
+        0,
+        0,
+        1
+      ],
+      "q_poles": [
+        1,
+        1,
+        0
+      ],
+      "self_intersections": [
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "kernel_walls": 0,
+    "status": "PASS"
+  },
+  "evidence_label": "EXACT-Q",
+  "h3_3_5": {
+    "escape_placements": 654,
+    "generated_tree_records": 11465,
+    "geometric_degree": 6,
+    "higher_dimensional_kernel_walls": 0,
+    "joint_survivors": 0,
+    "max_blowups": 6,
+    "p_coordinate_solutions": 0,
+    "paired_coordinate_solutions": 0,
+    "q_coordinate_solutions": 0,
+    "relevant_tree_records": 557,
+    "target_bidegree": [
+      3,
+      5
+    ]
+  },
+  "h3_3_6": {
+    "escape_placements": 654,
+    "generated_tree_records": 11465,
+    "geometric_degree": 6,
+    "higher_dimensional_kernel_walls": 0,
+    "joint_survivors": 0,
+    "max_blowups": 6,
+    "p_coordinate_solutions": 0,
+    "paired_coordinate_solutions": 0,
+    "q_coordinate_solutions": 0,
+    "relevant_tree_records": 557,
+    "target_bidegree": [
+      3,
+      6
+    ]
+  },
+  "scope": "archived boundary-tree records through the stated blowup bound"
+}

@@ -1,0 +1,66 @@
+{
+  "F1000003": {
+    "certified_lower_level_scope": "one rational orbit only",
+    "leading_solutions_geometric": 35,
+    "verdict": "partial EMPTY-mod-p; not a full-prime verdict"
+  },
+  "F32003": {
+    "leading_solutions_geometric": 35,
+    "lower_level_certificate_logs": [
+      "stage_0.log",
+      "stage_1.log",
+      "stage_ext3.log"
+    ],
+    "orbit_factor_degrees": [
+      1,
+      1,
+      3
+    ],
+    "residual_scaling_orbits": 5,
+    "verdict": "EMPTY-mod-p"
+  },
+  "archive_commit": "10469087a97ca4143ce8a278f3ce0211143ced19",
+  "archive_integrity": "PASS",
+  "characteristic_zero": {
+    "reason": "no exact-Q lower-level certificate was found; archived degree-35 and degree-1144 characteristic-zero descriptions are not proven to be the same residual object",
+    "verdict": "UNKNOWN"
+  },
+  "independent_F32003_factor_check": {
+    "irreducible_factor_degrees": [
+      1,
+      1,
+      3
+    ],
+    "linear_roots": [
+      5934,
+      14549
+    ],
+    "prime": 32003,
+    "quintic_coefficients_low_to_high": [
+      3114,
+      4712,
+      5742,
+      10358,
+      -1464,
+      1
+    ],
+    "residual_cubic_coefficients_low_to_high": [
+      20172,
+      14344,
+      19019,
+      1
+    ],
+    "residual_scaling_orbits": 5,
+    "status": "PASS"
+  },
+  "overall_evidence_label": "EMPTY-mod-p at p=32003; UNKNOWN over characteristic zero",
+  "sha256": {
+    "c19711d9c1808fefd6c0a8236cf67dfbe61b4764.sing": "c86029c1be31134c0ba49fb07f8d4a17afd9c93d0aeb918b09791c35143ee0b4",
+    "decide_m_8.log": "dea07f0217f08fc6a7e273fbf7328e61a38c38bab58b4851b38ecc764a2b8942",
+    "e1_points.log": "f1bff0764676b0a04a7aa03227a0877876c5a0486dc0aac09ad7d07a9dbc4324",
+    "stage_0.log": "91ab204bd2833a9be0fdb597f2a34aea0f86d27b5e5af56878276209774a92b5",
+    "stage_1.log": "91ab204bd2833a9be0fdb597f2a34aea0f86d27b5e5af56878276209774a92b5",
+    "stage_ext3.log": "71b0bc3c33487676fb027b0f97d584f05437b8bdf9eeac0395ca08fa2f34d9a7",
+    "stage_p1000003_0.log": "91ab204bd2833a9be0fdb597f2a34aea0f86d27b5e5af56878276209774a92b5"
+  }
+}

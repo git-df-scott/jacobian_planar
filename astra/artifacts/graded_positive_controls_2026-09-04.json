@@ -1,0 +1,58 @@
+{
+  "evidence_label": "EXACT-Q",
+  "grading_identity": {
+    "identity": "{y^-rho f(T),y^-sigma g(T)}=y^(mu-1-rho-sigma)(rho*f*g'-sigma*f'*g)",
+    "mu": 2,
+    "rho": 2,
+    "sigma": 3,
+    "status": "PASS"
+  },
+  "positive_witnesses": [
+    {
+      "P": "x*y + x",
+      "Q": "x**2*y**2/2 + x**2*y",
+      "bracket": "x^2",
+      "degree_P": 2,
+      "degree_Q": 4,
+      "name": "W1",
+      "status": "PASS"
+    },
+    {
+      "P": "x**4*y**4/4 + x",
+      "Q": "x**5*y**5/5 + x**2*y",
+      "bracket": "x^2",
+      "degree_P": 8,
+      "degree_Q": 10,
+      "name": "W2",
+      "status": "PASS"
+    },
+    {
+      "P": "x**4*y**4/4 - x**3*y**3/3 + x**2*y - x",
+      "Q": "-x**3*y**3/3 - x",
+      "bracket": "x^2",
+      "degree_P": 8,
+      "degree_Q": 6,
+      "name": "W3",
+      "status": "PASS"
+    },
+    {
+      "P": "x**6*y**6/6 - x**5*y**5/5 - x**3*y**3/3 + x**2*y**2/2 + x**2*y - x",
+      "Q": "x**6*y**6/3 - 3*x**5*y**5/5 - 2*x**3*y**3/3 + 3*x**2*y**2/2 + 2*x**2*y - 3*x",
+      "bracket": "x^2",
+      "degree_P": 12,
+      "degree_Q": 12,
+      "name": "W4",
+      "status": "PASS"
+    },
+    {
+      "P": "x**4*y**4/2 + 5*x**3*y**3/3 + 2*x**2*y + 5*x",
+      "Q": "x**4*y**4/4 + 2*x**3*y**3/3 + x**2*y + 2*x",
+      "bracket": "x^2",
+      "degree_P": 8,
+      "degree_Q": 8,
+      "name": "W5",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}
