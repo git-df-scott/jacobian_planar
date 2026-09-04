@@ -81,6 +81,12 @@ in this runtime because GAP is absent.  This is a tooling wall only.  The pure
 Python abstract count and H3 group computation above were independently
 replayed.
 
+The source/target comparison also yields an adjunction bridge not present in
+the inherited screens: `chi(P fibre)=sum_E(k_E-1)dP_E`.  After subtracting the
+escape contribution, all remaining P-horizontal components have weighted sum
+D, and likewise for Q.  For H3 both non-escape budgets equal +6, recovering
+the target fibre values `-6` and `-14/-18` exactly.
+
 ## Machine-readable evidence
 
 All new scripts are under `astra/`; exact outputs are under

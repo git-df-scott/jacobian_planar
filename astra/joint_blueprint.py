@@ -80,6 +80,8 @@ class SearchSummary:
     paired_coordinate_solutions: int
     joint_survivors: int
     higher_dimensional_kernel_walls: int
+    expected_p_fibre_euler: int
+    expected_q_fibre_euler: int
 
 
 def bridge_counts(components: Sequence[EscapeComponent]) -> tuple[int, int]:
@@ -208,6 +210,19 @@ def keller_delta(tree, p_poles: Sequence[int], q_poles: Sequence[int]) -> list[i
     ]
 
 
+def fibre_euler(tree, horizontal_degrees: Sequence[int]) -> int:
+    """Euler characteristic of a smooth generic affine coordinate fibre.
+
+    Adjunction gives 2g-2=-sum(k_E*d_E), while the number of punctures is
+    sum(d_E), hence chi=sum((k_E-1)*d_E).
+    """
+
+    return sum(
+        (tree.k[i] - 1) * horizontal_degrees[i]
+        for i in range(len(tree.k))
+    )
+
+
 def search_h3(beta: int, max_blowups: int = 6) -> SearchSummary:
     if beta not in (5, 6):
         raise ValueError("the audited H3 target has beta 5 or 6")
@@ -263,6 +278,10 @@ def search_h3(beta: int, max_blowups: int = 6) -> SearchSummary:
                             continue
                         if min(keller_delta(tree, p_poles, q_poles)) < 0:
                             continue
+                        if fibre_euler(tree, p_degrees) != 6 - target.alpha * target.moved_sheets:
+                            continue
+                        if fibre_euler(tree, q_degrees) != 6 - target.beta * target.moved_sheets:
+                            continue
                         survivors += 1
 
     return SearchSummary(
@@ -277,6 +296,8 @@ def search_h3(beta: int, max_blowups: int = 6) -> SearchSummary:
         paired_coordinate_solutions=pairs,
         joint_survivors=survivors,
         higher_dimensional_kernel_walls=walls,
+        expected_p_fibre_euler=6 - target.alpha * target.moved_sheets,
+        expected_q_fibre_euler=6 - target.beta * target.moved_sheets,
     )
 
 
@@ -295,7 +316,15 @@ def run_controls() -> dict:
     delta = keller_delta(identity_tree, expected_p[0], expected_q[0])
     degree_pq = sum(a * b for a, b in zip(expected_p[0], expected_q[1]))
     degree_qp = sum(a * b for a, b in zip(expected_q[0], expected_p[1]))
-    if delta != [0, 0, 0] or degree_pq != 1 or degree_qp != 1:
+    p_euler = fibre_euler(identity_tree, expected_p[1])
+    q_euler = fibre_euler(identity_tree, expected_q[1])
+    if (
+        delta != [0, 0, 0]
+        or degree_pq != 1
+        or degree_qp != 1
+        or p_euler != 1
+        or q_euler != 1
+    ):
         raise AssertionError("identity-map intersection invariants are wrong")
 
     h3_source = (EscapeComponent(2, 2),)
@@ -314,6 +343,7 @@ def run_controls() -> dict:
             "q_horizontal_degrees": list(expected_q[1]),
             "geometric_degree": degree_pq,
             "keller_delta": delta,
+            "generic_fibre_euler": [p_euler, q_euler],
         },
         "bridge_positive": {
             "source": [asdict(x) | {"discrepancy": x.discrepancy} for x in h3_source],

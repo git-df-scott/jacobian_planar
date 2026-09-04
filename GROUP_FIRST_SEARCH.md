@@ -62,6 +62,7 @@ Euler source budget and componentwise R-line budget
 target parametrization degrees
 source discrepancy/tangential-degree partitions
 source coordinate complementarity status
+generic-fibre weighted boundary budgets
 ```
 
 The cheap rejection order is:
@@ -72,8 +73,9 @@ The cheap rejection order is:
 4. coarse escaping budget;
 5. componentwise longitude/R-line test;
 6. target/source discrepancy and intersection compatibility;
-7. generic-line and connected-fibre conditions;
-8. only then braid and polynomial-curve realization.
+7. the +D non-escape horizontal budget for each coordinate;
+8. generic-line and connected-fibre conditions;
+9. only then braid and polynomial-curve realization.
 
 ## Duplication control
 

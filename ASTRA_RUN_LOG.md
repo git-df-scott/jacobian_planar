@@ -49,6 +49,10 @@ was stopped.  No research verdict depends on it.
 
 - Derived the generic bridge `r_E=1-k_E`,
   `c_i=sum d_E`, `e_i=sum d_E(1-k_E)`, and coordinate degree products.
+- Derived the adjunction bridge
+  `chi(P fibre)=sum(k_E-1)dP_E`.  Escape components give the target subtraction,
+  forcing a +D weighted contribution from all other coordinate-horizontal
+  components.  H3 therefore has fixed +6 P and Q infinity budgets.
 - Added a complete principal-kernel solver for `M m=d`, nonnegativity, and
   coordinate complementarity.
 - Positive control: the resolved identity map is recovered with D=1 and zero

@@ -1,5 +1,8 @@
 # ASTRA handoff — 2026-09-04
 
+Initial pushed checkpoint: `4f917d0` on
+`astra/jc2-frontier-strike-2026-09-04`.
+
 ## Result first
 
 No explicit Keller pair, CEC, or CE was found.
@@ -16,6 +19,11 @@ class is unique up to simultaneous conjugacy and misses the escaping-line
 Euler budget by exactly one.  The Briançon targets remain exactly closed by a
 nonzero holomorphic period.  Graded case (2) remains `EMPTY-mod-p` at p=32003
 and `UNKNOWN` over characteristic zero.
+
+The adjunction bridge also fixes the deeper-search budget: H3's escape
+components account for the negative part of each generic-fibre Euler number,
+and all remaining horizontal boundary components must contribute exactly +6
+for P and +6 for Q.
 
 ## Start here
 
@@ -59,7 +67,8 @@ Do not blindly run more trees.  Analyze the principal-kernel recurrence for a
 discrepancy -1 component with forced degree 3d.  Either prove that no
 nonnegative coordinate divisor can occur at any depth in the relevant tree
 class, or derive the first possible depth and a finite list of skeletons.  Only
-those skeletons should be enumerated.
+those skeletons satisfying the new +6 weighted generic-fibre budget should be
+enumerated.
 
 ### 2. Build a residue-free second-kind Briançon target
 

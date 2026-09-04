@@ -15,6 +15,9 @@ the archived 11,465 boundary records gives:
 This is stronger than the earlier degree-two source sweep for this one target,
 but it is not an unbounded exclusion.
 
+Within the archived P2-boundary blowup model, a realization of the H3
+blueprint therefore requires at least seven boundary blowups.
+
 ## Joint discrete object
 
 | target | source | linking datum |
@@ -95,6 +98,35 @@ submatrix of M.  `astra/joint_blueprint.py` enumerates all such zero sets,
 solves them over Q, scales by the target-forced degrees (3), checks integrality,
 then applies (5).  No degree bound or support-size bound is imposed.
 
+## Generic-fibre budget
+
+There is a second exact bridge.  Let C be the smooth completion of a generic
+P-fibre.  Its divisor class is m, so complementarity gives `C^2=m dot dP=0`.
+Since the rational volume form has boundary divisor `-sum k_E E`, adjunction
+and puncture counting give
+
+```
+2g(C)-2 = -sum_E k_E dP_E,
+chi(P^-1(c)) = sum_E (k_E-1)dP_E.                 (6)
+```
+
+The target cover computes the same number as
+
+```
+chi(P^-1(c)) = D-sum_i alpha_i e_i.               (7)
+```
+
+By (1)--(3), the escape components contribute exactly
+`-sum_i alpha_i e_i` to (6).  Therefore all other P-horizontal boundary
+components must satisfy the finite weighted budget
+
+```
+sum_(E not over R) (k_E-1)dP_E = D.               (8)
+```
+
+Likewise, `sum_(E not over R)(k_E-1)dQ_E=D`.  Equation (8) is a cheap new
+group-to-source filter: it should be imposed before any larger tree search.
+
 ## Positive control
 
 For the identity map, blow up the two distinct coordinate base points on the
@@ -107,6 +139,7 @@ m                  = (1,0,1),  dP=(0,1,0)
 n                  = (1,1,0),  dQ=(0,0,1)
 D                  = 1
 delta              = (0,0,0).
+generic fibre chi  = (1,1).
 ```
 
 The solver recovers both coordinate solutions.  A mismatched target
@@ -134,6 +167,17 @@ blowups, 557 records contain a discrepancy -1 component and 654 placements of
 these partitions are possible.  Exact principal-kernel enumeration returns
 zero P-coordinate solutions and zero Q-coordinate solutions for both target
 bidegrees.  No higher-dimensional principal-kernel case was skipped.
+
+The fibre budgets predict
+
+```
+chi(P fibre)=6-3*4=-6,
+chi(Q fibre)=6-5*4=-14  or  6-6*4=-18,
+```
+
+exactly matching the target calculation.  The non-escape horizontal
+components must contribute +6 for each coordinate, regardless of whether the
+target bidegree is (3,5) or (3,6).
 
 The certificate is `astra/artifacts/joint_blueprint_2026-09-04.json`.
 

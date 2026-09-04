@@ -10,6 +10,13 @@
   bidegree (alpha_i,beta_i), its coordinate horizontal degrees on E are
   alpha_i d_E and beta_i d_E.
 
+- **THEOREM — generic-fibre bridge.**  Adjunction on the source boundary gives
+  `chi(P fibre)=sum_E(k_E-1)dP_E`.  The escape components supply
+  `-sum_i alpha_i e_i`, so the remaining P-horizontal components must have
+  weighted contribution D; identically for Q.  For H3 this recovers fibre
+  Euler values `-6` and `-14/-18` and forces a +6 non-escape budget for each
+  coordinate.
+
 - **THEOREM — Euler/escape budgets.**  Every target blueprint in the
   stratified-cover model must satisfy both the source Euler equation and the
   escaping-curve Euler equation in `OFF_BY_ONE.md`.  Failure of either equation

@@ -75,6 +75,12 @@ The source bridge adds an independent bounded exclusion: the same cycle data
 force discrepancy -1 dicriticals and no compatible coordinate divisor exists
 on the archived trees through six blowups.
 
+Adjunction makes the join still tighter.  The H3 escape components contribute
+`-12` to the P-fibre Euler sum and `-20` or `-24` to the Q-fibre sum.  Every
+non-escape horizontal boundary must contribute exactly +6 to each coordinate,
+recovering target fibre Euler values `-6` and `-14/-18`.  Thus a deeper source
+tree must solve a fixed weighted partition, not an open-ended degree search.
+
 ## A8: the opposite side
 
 The audited four-strand `(5,5,3)+4 nodes` A8 families have the reverse coarse
