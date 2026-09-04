@@ -1,0 +1,49 @@
+==============================================================================
+T1  GGHV AUDIT -- re-derivation of the enumeration behind Theorem 2.1
+==============================================================================
+
+  Algorithm 1 (PLLC, xmax=60): 1266 possible last lower corners
+
+  POSITIVE CONTROLS
+    [PASS] P1  (2,1) is not a possible last lower corner   [5] section 6: one of Moh's cases is discarded exactly because of this
+    [PASS] P2  (6,3) is not a possible last lower corner   [5] section 5: this is what kills families F18-F21
+    [PASS] P3  (8,4) is not a possible last lower corner   arXiv:2204.14178 section 3: this is what kills max = 120
+    [PASS] P4  no admissible complete chain with v11(A0) <= 15   found 0
+
+  Algorithm 8 (M=35): 27 distinct admissible complete chains
+  Algorithm 8 (M=50): 260 distinct admissible complete chains
+    [PASS] P5  all 14 published length-1 chains (M=35) are reproduced   missing []; mine 16, extra 2
+        EXTRA length-1 chain not in [5] section 5: ((8, 1, 24), (2, 1, 0), (14, 4, 6))   MN(final) = []
+        EXTRA length-1 chain not in [5] section 5: ((9, 1, 24), (1, 1, 0), (9, 3, 6))   MN(final) = []
+    [PASS] P6  all 7 published length-2 chains F18-F24 (M=35) are reproduced   mine 11, published 7, missing [], extra 4
+        EXTRA length-2 chain not in [5] section 5: ((6, 1, 18), (6, 1, 0), (6, 1, 15), (1, 1, 0), (7, 3, 4))
+        EXTRA length-2 chain not in [5] section 5: ((6, 1, 18), (6, 1, 0), (6, 1, 15), (1, 1, 0), (8, 3, 5))
+        EXTRA length-2 chain not in [5] section 5: ((6, 1, 24), (6, 1, 0), (6, 1, 15), (1, 1, 0), (7, 3, 4))
+        EXTRA length-2 chain not in [5] section 5: ((6, 1, 24), (6, 1, 0), (6, 1, 15), (1, 1, 0), (8, 3, 5))
+    [PASS] P7  all 13 family-derived section-6 cases are reproduced   missing []
+    [PASS] P8  all 9 further length-1 section-6 cases are reproduced   missing []
+    [PASS] P9  all 11 further length-2 section-6 cases are reproduced   missing []
+    [PASS] P10 the single length-3 section-6 case is reproduced   missing []
+    [PASS] P11 exactly 34 cases with max <= 150, one orientation   found 34
+    [PASS] P12 GGHV's ten-case table equals my max<=124 reproduction   mine 10 rows, GGHV 10 rows
+
+  NEGATIVE CONTROLS  (each MUST break the reproduction)
+    [PASS] N1  with Algorithm 1's theta filter removed, PLLC gains exactly the corners the paper's kills depend on   |PLLC| 1266 -> 1526; the F18-F21 kill and the max=120 kill both stop working, i.e. controls P2 and P3 fail on this variant
+        SENSITIVITY: with theta dropped the max<=150 case count is still 34 -- the filter is load-bearing for P2/P3 but not for the count
+    [PASS] N2  Algorithm 1's v_{rho,sigma}(a,b) >= rho filter is REDUNDANT at xmax=60 (recorded, not a control)   removing it changes PLLC by 0 corners; this is a finding about the paper's Algorithm 1, not a defect of this certifier
+    [PASS] N2b corrupting Proposition 3.2's Diophantine breaks the 34-case count   broken variant gives 0 cases
+    [PASS] N2c deleting the corner (1,0) from PLLC destroys the published families   12 of the 14 published length-1 chains disappear; cases 10 vs 34
+        SENSITIVITY: re-inserting the excluded corner (6,3) leaves the max<=150 count at 34 -- (6,3) is excluded for reasons that do not bite inside this bound
+    [PASS] N3  dropping Definition 2.25 admissibility changes the answer   chains 721 vs 260, cases 117 vs 34
+    [PASS] N4  a mutated reference table is NOT matched   the comparison is against real data, not against itself
+
+  RERUN OVER 105 <= max{deg P, deg Q} <= 124
+    (108,72)  A0=(8, 1, 28)  mid=()  final=(11, 4, 7)  (m,n)=(3,2)   -> OPEN-IN-SOURCE
+    (72,108)  A0=(9, 1, 27)  mid=((9, 1, 24),)  final=(11, 3, 8)  (m,n)=(2,3)   -> NOT-RE-DERIVED-HERE
+    (80,112)  A0=(4, 1, 12)  mid=()  final=(7, 4, 3)  (m,n)=(5,7)   -> EXTERNAL-NOT-RE-DERIVED
+    (120,80)  A0=(8, 1, 32)  mid=((8, 1, 28),)  final=(11, 4, 7)  (m,n)=(3,2)   -> RE-DERIVED-KEY-STEP
+    [PASS] the rerun's 105<=max<=124 degree pairs are exactly {(72,108),(108,72),(80,112),(120,80)}   found [(72, 108), (80, 112), (108, 72), (120, 80)]
+
+==============================================================================
+    19/19 checks passed
+==============================================================================

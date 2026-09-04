@@ -1,0 +1,5 @@
+timestamp	system	generators	levels	gauges	bytes	threads	exit	seconds	peak_rss_kb	out_bytes	verdict	head
+2026-08-20T03:31:49Z	pent_L18_g3.ms	22	13..18	3	2704015	1	-9	1798.9	6238548	0	OOM	
+2026-08-20T04:31:49Z	pent_L18_g2.ms	21	13..18	2	2704006	1	None	3600.1	-1	0	TIMEOUT	
+2026-08-20T05:01:04Z	pent_L19_g3.ms	29	13..19	3	5055198	1	-9	1754.9	4890392	0	OOM	
+2026-08-20T05:08:23Z	pent_L14_g3.ms	4	13..14	3	84351	1	-9	1597.1	4934708	0	OOM	

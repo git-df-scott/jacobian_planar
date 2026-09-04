@@ -1,0 +1,11 @@
+==============================================================================
+cross-validation of wave1/pent_L23.ms against an independent recursion
+==============================================================================
+    66 generators, 59 variables, characteristic 1000003
+    [PASS] the export's variable set is the detector's, up to the third gauge   only in export [], only in detector []
+    [PASS] X1 POSITIVE: every exported generator equals the independent recursion's condition up to a per-generator constant, at 3 points   66 of 66 with a nonzero constant ratio
+    [PASS] X2 NEGATIVE: perturbing one coordinate changes the exported values   66 of 66 changed
+    [PASS] X3 NEGATIVE: comparing generator k with generator k+1 does NOT match
+==============================================================================
+    4/4 checks passed
+==============================================================================
