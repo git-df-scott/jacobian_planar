@@ -46,3 +46,24 @@ Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans
   c=(2.0, 0.0) W=[1, 1, 2, 2, 2, -1, -1] [([0, 2], 'br', 1, 'cusps', 1)]
   c=(1.668, 0.0) W=[1, 1, -2, 1, 1, 2, -1, -1] [([0, 1], 'br', 2, 'cusps', 0)]
   c=(-2.0, 0.0) W=[-2, -1, 2, 2, 2, 2, 2, 2, 2, 1, 2] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0 ]
+k=[ 6 ] nu=2 transitive reps: 7
+   (7 reps with a meridian acting freely)
+STDERR Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:51
+      dic := DicriticalTest(hom, D, compofgen, m, kk, longitudes, fibres);
+      ^^^
+Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:51
+      dic := DicriticalTest(hom, D, compofgen, m, kk, longitudes, fibres);
+                                                      ^^^^^^^^^^
+Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:52
+      res.dicrit := List(dic.comps, c -> [c.d, c.chi, c.Nsing, c.unibranch, c.places_inf]);
+                         ^^^
+Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:53
+      if dic.fails <> [] then ok := false; res.fail := "dicritical"; fi;
+         ^^^
+  [965 s]
+== c38_75_0 comps [('t**3 - 3*t', '3*t**8 - 60*t**7/7 + 2*t**6 + 36*t**5 - 66*t**4 + t**3 + 114*t**2 - 123*t')] alpha 3 degs [[3, 8]]
+  c=(1.338, -0.815) W=[1, 1, 1, 2, 1, 1, -2, 2, 1, -1, -2, -1, -1, -1] [([0, 1, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[1, 1, 1, 2, 2, 2, 2, 2, -1, -1, -1] []
+  c=(1.338, 0.815) W=[1, 1, 1, -2, 1, 1, 2, -1, -1, -1] [([0, 1, 2], 'br', 2, 'cusps', 0)]
+  c=(-2.0, 0.0) W=[1, 1, 1, 1, 1, 1, 1] [([1, 2], 'br', 1, 'cusps', 1)]
