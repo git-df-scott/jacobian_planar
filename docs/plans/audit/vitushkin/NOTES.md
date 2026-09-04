@@ -80,3 +80,16 @@ vertex axes. Ordinary-cusp curves gave the tetrahedral S4/A4. The Euler
 equation is asking the local link groups to assemble into a spherical Coxeter
 group; H3 is the only one that balances at D = 6. It fails because chi(R) = 0.
 Two-(2,5)-cusp (3,7) curves give A7 at D = 7 with Euler 0 or -1 and chi(R) = 1.
+
+## Dicritical test (2026-09-04)
+
+Orevkov's structure theorem for the regular extension of a Keller map (quoted in
+Nguyen 1999): every dicritical component is a copy of C, so every component of
+the escaping curve R in the normalisation is a topological line, unramified
+over the smooth part of S. `dicrit.g` computes R from the braid data: nodes are
+(strand, escaping cycle of its meridian), the longitude of each strand around
+each critical value transports cycles, components of R are the orbits, and each
+must satisfy chi + (points over singular points) = 1, be unibranch there, and
+have one place at infinity. On the icosahedral configuration R has two
+components with chi 0 and -1: fails, as the H1 = Z^2 computation predicted.
+The test is now applied to every representation that passes the Euler equation.

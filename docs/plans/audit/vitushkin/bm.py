@@ -139,6 +139,18 @@ def freereduce(w):
         else: out.append(x)
     return out
 
+
+def conj_decompose(word):
+    """word = w g w^-1 (free-reduced) -> (g, w) with g a signed generator; returns (None, None) if not of that form."""
+    w = list(word)
+    L = len(w)
+    if L % 2 == 0: return None, None
+    h = L // 2
+    pre, g, post = w[:h], w[h], w[h+1:]
+    if [-x for x in reversed(pre)] == post:
+        return g, pre
+    return None, None
+
 def gapword(w, name='g'):
     if not w: return 'One(F)'
     return '*'.join(('%s%d' % (name, x)) if x > 0 else ('%s%d^-1' % (name, -x)) for x in w)
@@ -289,8 +301,12 @@ def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
                 raise
         loops.append(dict(c=[c.real, c.imag], W=W, P=P, L=L, local=local, fibre=fibre))
         imgs = artin_act(W, gens)
+        longit = []
         for j in range(n):
             rels.append(freereduce([-(j+1)] + imgs[j]))
+            g_, w_ = conj_decompose(imgs[j])
+            longit.append(dict(to=(abs(g_) if g_ else None), sign=(1 if (g_ or 1) > 0 else -1), w=w_))
+        loops[-1]['longit'] = longit
     degs = [[max(sp.Poly(a, t).degree(), 0), max(sp.Poly(b, t).degree(), 0)] for a, b in comps]
     return dict(name=name, n=n, F=str(F.as_expr()), crit=[[c.real, c.imag] for c in cvals],
                 loops=loops, rels=rels, comp_of_gen=comp_of_gen, degs=degs, m=len(comps))
@@ -316,9 +332,13 @@ def to_gap(res, path):
     for lp in res['loops']:
         cl = []
         for f in lp['fibre']:
-            cl.append('rec(positions := %s, mer := [%s])' % (list(f['positions']), ', '.join('tofp(%s)' % gapword(w) for w in f['mer'])))
+            cl.append('rec(positions := %s, singular := %s, mer := [%s])' % (list(f['positions']), 'true' if f['singular'] else 'false', ', '.join('tofp(%s)' % gapword(w) for w in f['mer'])))
         fl.append('[ %s ]' % ', '.join(cl))
     lines.append('fibres := [ %s ];;' % ', '.join(fl))
+    ll = []
+    for lp in res['loops']:
+        ll.append('[ %s ]' % ', '.join(('rec(to := %d, w := tofp(%s))' % (d['to'], gapword(d['w']))) if d['to'] else 'fail' for d in lp['longit']))
+    lines.append('longitudes := [ %s ];;' % ', '.join(ll))
     lines.append('compofgen := %s;;' % [c+1 for c in res['comp_of_gen']])
     lines.append('degs := %s;;' % res['degs'])
     lines.append('m := %d;;' % res['m'])
