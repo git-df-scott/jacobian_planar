@@ -1,0 +1,43 @@
+name: Math mailbox tests
+
+on:
+  pull_request:
+    paths: ['tools/math_mailbox/**', '.github/workflows/math-mailbox*.yml']
+  push:
+    branches: [main, codex/cloud-math-mailbox]
+    paths: ['tools/math_mailbox/**', '.github/workflows/math-mailbox*.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tools/math_mailbox -p 'test_*.py' -v
+
+  github-storage:
+    # Only our own push/manual runs get write access; PR tests use read access.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify real GitHub transport without agent pings
+        env:
+          MATH_MAILBOX_GITHUB_TOKEN: ${{ github.token }}
+        run: python tools/math_mailbox/cloud_smoke.py

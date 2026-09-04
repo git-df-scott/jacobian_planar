@@ -10,6 +10,8 @@ This repository is a research archive for the plane Jacobian-conjecture campaign
 4. **Corrections and failed-proof ledger:** [`CATCHES.md`](https://github.com/git-df-scott/jacobian_planar/blob/claude/opus-5-counterexample-plan-sep6yk/CATCHES.md)
 5. **Session narrative:** [`docs/history/sessions-01-18-status.md`](docs/history/sessions-01-18-status.md), [`docs/sessions/active/`](docs/sessions/active/), [`docs/sessions/archive/`](docs/sessions/archive/)
 
+6. **Cloud agent mailbox:** [`docs/math-mailbox.md`](docs/math-mailbox.md) — structured Codex/Claude messages, read receipts, and cloud ping setup; destinations start disabled.
+
 The full scripts, certifiers, logs, and generated data are on the campaign branch. The `main` branch is the lightweight map and archive index.
 
 ## Cross-chat JC2 handoff audit
@@ -137,3 +139,4 @@ Sessions 43–44 are not present in the repository. No files were deleted to cre
 ## Reproduction entry points
 
 On the canonical campaign branch, start with `MANIFEST.md` and `ARTIFACT_INDEX.md`, then use the certifiers named by `STATUS.md`. The large `.ms`, `.out`, `.gens`, and archive files are data products; do not infer a verdict from their presence alone.
+
