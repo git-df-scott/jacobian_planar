@@ -1,0 +1,19 @@
+== c3525_line25_tan_D6 comps [('t**3 - 3*t', 't**5/5 - t**4/2 + t**3/3 + t**2 - 2*t'), ('t', 't/3 - 3/10')] alpha 4 degs [[3, 5], [1, 1]]
+  c=(-2.0, 0.0) W=[3, 2, 1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 3, 2, 3, -1, -2, -3] [([1, 2, 3], 'br', 2, 'cusps', 1)]
+  c=(1.125, 0.0) W=[-2, -1, -2, 3, 2, 1, 1, -2, -3, 2, 1, 2] [([0, 3], 'br', 2, 'cusps', 0)]
+  c=(1.375, 0.0) W=[-2, -1, -2, 3, 2, 2, 2, -2, -3, 2, 1, 2] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(2.0, 0.0) W=[-2, -1, -2, 3, 3, 3, 2, 1, 2] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0, 0 ]
+k=[ 5, 2 ] nu=3 transitive reps: 35
+   D=5 n=[ 3, 3 ] cyc=[ [ 1 ], [ 1 ] ] S5 chi=[ -3, -7 ] fail=euler s=[ 1, 1, 1, 2 ] euler=0 chiR=1
+   (30 reps with a meridian acting freely)
+STDERR Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:51
+      dic := DicriticalTest(hom, D, compofgen, m, kk, longitudes, fibres);
+      ^^^
+Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:52
+      res.dicrit := List(dic.comps, c -> [c.d, c.chi, c.Nsing, c.unibranch, c.places_inf]);
+                         ^^^
+Syntax warning: Unbound global variable in /home/user/jacobian_planar/docs/plans/audit/vitushkin/gapcheck.g:53
+      if dic.fails <> [] then ok := false; res.fail := "dicritical"; fi;
+         ^^^
+  [25 s]
