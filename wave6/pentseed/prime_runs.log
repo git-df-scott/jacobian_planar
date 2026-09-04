@@ -1,0 +1,12 @@
+reduced_72v(p=1000003,73vars) exit=0 bytes=6 verdict=[-1]:
+P2=1000033 94vars exit=139 bytes=0 verdict=
+CHAR0 119vars exit=139 bytes=0 verdict=
+reduced_p1000033_106v exit=139 bytes=0 verdict=
+reduced_p1000033_120v exit=139 bytes=0 verdict=
+p1000033 DONE
+reduced_p1000033ctl_121v exit=139 bytes=0 verdict=
+reduced_p1000033ctl_135v exit=143 bytes=0 verdict=
+p1000033ctl DONE
+P2-msolve p=1000039 89vars exit=0 bytes=6 verdict=[-1]:
+SEEDPIN 1000039 DONE
+reduced_p1000033_93v.ms: header 94 used 94 undeclared 0 -> WELL-FORMED

@@ -1,0 +1,80 @@
+### wave5/ms/m16_d6_p1000003.ms
+m16_d6_p1000003.ms: 22 equations, 17 variables, p=1000003
+    leaf [] -> EMPTY  (22 eq / 17 vars [msolve])
+
+leaves: 1  EMPTY=1  NONEMPTY=0  NOVERDICT=0
+
+VERDICT: EMPTY -- every branch of an exhaustive split is empty
+### wave5/ms/m16_d7_p1000033.ms
+m16_d7_p1000033.ms: 26 equations, 20 variables, p=1000033
+    leaf [] -> NOVERDICT  (26 eq / 20 vars (both engines: no verdict))
+
+leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
+  unresolved leaf:   26 eq / 20 vars (both engines: no verdict)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+### wave5/ms2/b16r_d5_A_q.ms
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 187, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 163, in main
+    V, eqs, p = parse_ms(src)
+                ^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_chain_modp.py", line 64, in parse_ms
+    coef = coef * int(f) % p
+           ~~~~~~~~~~~~~~^~~
+ZeroDivisionError: integer modulo by zero
+### wave5/ms2/b16r_d6_A_q.ms
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 187, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 163, in main
+    V, eqs, p = parse_ms(src)
+                ^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_chain_modp.py", line 64, in parse_ms
+    coef = coef * int(f) % p
+           ~~~~~~~~~~~~~~^~~
+ZeroDivisionError: integer modulo by zero
+### wave5/ms2/b16r_d7_A_q.ms
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 187, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 163, in main
+    V, eqs, p = parse_ms(src)
+                ^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_chain_modp.py", line 64, in parse_ms
+    coef = coef * int(f) % p
+           ~~~~~~~~~~~~~~^~~
+ZeroDivisionError: integer modulo by zero
+### wave5/ms/u16_d7_q.ms
+Traceback (most recent call last):
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 187, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_branch_solve.py", line 163, in main
+    V, eqs, p = parse_ms(src)
+                ^^^^^^^^^^^^^
+  File "/home/user/jacobian_planar/wave6/w6_chain_modp.py", line 64, in parse_ms
+    coef = coef * int(f) % p
+           ~~~~~~~~~~~~~~^~~
+ZeroDivisionError: integer modulo by zero
+### wave4/artifacts/c2_w4_one_real_p1000003.ms
+c2_w4_one_real_p1000003.ms: 19 equations, 20 variables, p=1000003
+    leaf [] -> NOVERDICT  (14 eq / 15 vars (both engines: no verdict))
+
+leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
+  unresolved leaf:   14 eq / 15 vars (both engines: no verdict)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+### wave4/artifacts/probe_w4m4_real_p1000003.ms
+probe_w4m4_real_p1000003.ms: 19 equations, 20 variables, p=1000003
+    leaf [] -> NOVERDICT  (14 eq / 15 vars (both engines: no verdict))
+
+leaves: 1  EMPTY=0  NONEMPTY=0  NOVERDICT=1
+  unresolved leaf:   14 eq / 15 vars (both engines: no verdict)
+
+VERDICT: NO VERDICT -- some leaf unresolved, so the root is unresolved
+RANKED DONE

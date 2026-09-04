@@ -1,5 +1,10 @@
-p=999979 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0
 p=999961 elim_deg=9 rational=4/9 admissible=0 degenerate=4 verify_fail=0
+p=999979 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0
+p=999983 elim_deg=9 rational=4/9 admissible=2 degenerate=2 verify_fail=0 (recensus)
+p=1000003 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0 (recensus)
+p=1000033 elim_deg=9 rational=4/9 admissible=0 degenerate=4 verify_fail=0 (recensus)
+p=1000039 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0 (recensus)
+p=1000081 elim_deg=9 rational=7/9 admissible=3 degenerate=4 verify_fail=0 (recensus)
 p=1000117 elim_deg=9 rational=5/9 admissible=1 degenerate=4 verify_fail=0
 p=1000121 elim_deg=9 rational=3/9 admissible=1 degenerate=2 verify_fail=0
 p=1000133 elim_deg=9 rational=3/9 admissible=1 degenerate=2 verify_fail=0
