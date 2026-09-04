@@ -40,6 +40,36 @@ def critical_values(F):
             out.append([c, 1])
     return out, disc
 
+
+def critical_values_param(comps):
+    """Critical u-values of the projection from the parametrisations: branch points (a_i'(t) = 0)
+    and collisions (two distinct parameter values, possibly on different components, with equal (a, b))."""
+    t1, t2 = sp.symbols('t1 t2')
+    vals = []
+    for a, b in comps:
+        ap = sp.Poly(sp.diff(a, t), t)
+        if ap.degree() >= 1:
+            for tr in np.roots([complex(x) for x in ap.all_coeffs()]):
+                vals.append(complex(a.subs(t, tr)))
+    for i, (a1, b1) in enumerate(comps):
+        for j, (a2, b2) in enumerate(comps):
+            if j < i: continue
+            A = sp.expand(a1.subs(t, t1) - a2.subs(t, t2)); B = sp.expand(b1.subs(t, t1) - b2.subs(t, t2))
+            if i == j:
+                A = sp.cancel(A / (t1 - t2)); B = sp.cancel(B / (t1 - t2))
+            R = sp.resultant(sp.Poly(A, t2), sp.Poly(B, t2))
+            R = sp.Poly(sp.expand(R), t1)
+            if R.degree() < 1: continue
+            for tr in np.roots([complex(x) for x in R.all_coeffs()]):
+                vals.append(complex(a1.subs(t, tr)))
+    out = []
+    for c in vals:
+        for o in out:
+            if abs(c - o[0]) < 1e-6 * (1 + abs(c)): o[1] += 1; break
+        else:
+            out.append([c, 1])
+    return out
+
 def match(prev, new):
     """assign new roots to prev by nearest; return permuted new and ok flag"""
     n = len(prev)
@@ -159,7 +189,7 @@ def analyse(comps, name, base=None, radius_frac=0.25, seed=0):
     F = curve_equation(comps)
     n = F.degree(v)
     Fc = [np.poly1d([complex(x) for x in sp.Poly(F.as_expr().coeff(v, k), u).all_coeffs()]) for k in range(n, -1, -1)]
-    crit, disc = critical_values(F)
+    crit = critical_values_param(comps)
     cvals = [c for c, m in crit]
     rng = np.random.default_rng(seed)
     def path_score(b, rads):

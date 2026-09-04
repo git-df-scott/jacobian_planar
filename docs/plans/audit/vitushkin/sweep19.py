@@ -10,6 +10,7 @@ lib = [
  ('c34_cc', [(a, t**4/4 - t**3/9 - t**2/2 + t/3), (t**2 + 1, t**3)]),
  ('cc_c25', [(t**2, t**3), (t**2 + 1, t**5 + t**3)]),
 ]
+import resource; resource.setrlimit(resource.RLIMIT_AS, (6_000_000_000, 6_000_000_000))
 for name, comps in lib:
     try:
         run(name, comps, Dmin=4, Dmax=8)
