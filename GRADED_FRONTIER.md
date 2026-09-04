@@ -1,5 +1,17 @@
 # Graded frontier
 
+## Current characteristic-zero result
+
+**Case (2) is excluded in characteristic zero.** See
+`ASTRA_2_CASE2_EXACT_DESCENT.md` for the five-dessin completeness proof,
+universal two-parameter level-four solution, and independently verified
+26-generator lower certificate. Run `python astra/verify_case2_certificate.py`.
+
+The five exact leading solutions use `C_1=C_2=1`; the older `C_1=C_8=1`
+normalization has seven representatives per scaling orbit, hence 35 points.
+The separate degree-1144 object's provenance remains unresolved and is not
+used. The modular archive audit below describes historical evidence only.
+
 ## Correct instrument for case (2)
 
 For the GGHV Proposition 4.3 case-(2) reduced polygon `p108_525122`, grade by
@@ -58,7 +70,7 @@ standalone lower-stage log kills only one rational orbit.  The automated
 pipeline log contains generated Singular syntax errors on later factors, so it
 is not a full second-prime certificate.
 
-Characteristic-zero status remains `UNKNOWN`.  In particular:
+Before the new exact descent, characteristic-zero status was `UNKNOWN`:
 
 - a claimed degree-35 field calculation is not identified with canon's
   degree-1144 residual object;
@@ -93,10 +105,11 @@ This is a provenance `WALL`, not a computational timeout.  The next work is:
 5. descend level by level, producing exact-Q certificates or an explicit
    surviving branch.
 
-No untouched published case is claimed closed here.
+No above-125 published case is claimed closed here. The new exclusion is
+only Proposition 4.3(2) of the degree-108 reduction.
 
 ## Tooling wall
 
-The current runtime has Python/SymPy and python-flint but no Singular, GAP, or
-msolve executable.  The exact positive controls and modular archive audit run
-without them.  Missing binaries are not mathematical evidence.
+The second Astra run provisioned Singular 4.3.1 locally and generated an exact
+lower certificate. Its independent FLINT verifier requires no Singular.
+GAP and msolve remain unprovisioned. Missing binaries are not evidence.

@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-04",
+  "base_commit": "93319412545e84d1093d79c5b59cb87731eec4a9",
+  "environment": {
+    "sympy": "1.14.0",
+    "python-flint": "0.9.0",
+    "Singular": "4.3.1 (Debian 4.3.1-p3+ds-2)"
+  },
+  "proof_entrypoint": "ASTRA_2_CASE2_EXACT_DESCENT.md",
+  "independent_verifier": "astra/verify_case2_certificate.py",
+  "runs": [
+    {
+      "source": "case2_exact_leading.sing",
+      "result": "TIMEOUT",
+      "limit_seconds": 300,
+      "evidence": "NONE",
+      "note": "Initially lacked dynamic Singular procedure path; no basis obtained."
+    },
+    {
+      "source": "case2_exact_low.sing",
+      "result": "TIMEOUT",
+      "limit_seconds": 300,
+      "evidence": "NONE"
+    },
+    {
+      "source": "case2_exact_deterministic.sing",
+      "result": "TIMEOUT",
+      "limit_seconds": 300,
+      "evidence": "NONE"
+    },
+    {
+      "source": "case2_direct_high.sing",
+      "result": "TIMEOUT",
+      "limit_seconds": 180,
+      "evidence": "NONE"
+    },
+    {
+      "source": "case2_exact_zero.sing",
+      "result": "GB=[1] over Q",
+      "evidence": "AUXILIARY, not used in final proof"
+    },
+    {
+      "source": "case2_exact_zero_certificate.sing",
+      "result": "TIMEOUT",
+      "limit_seconds": 180,
+      "evidence": "NONE",
+      "note": "No lifted certificate produced."
+    },
+    {
+      "source": "case2_low_probe.sing",
+      "result": "Leading quotient dimension five mod 32003",
+      "evidence": "MODULAR DISCOVERY ONLY"
+    },
+    {
+      "source": "case2_exact_modular.sing",
+      "result": "Five characteristic-zero candidates",
+      "evidence": "Candidates verified independently; completeness proved by dessin count."
+    },
+    {
+      "log": "case2_exact_descent_syntax_failed.log",
+      "result": "PARSER ERROR",
+      "evidence": "NONE",
+      "note": "Algebraic coefficient exponent parsing corrected in generator; failed output retained."
+    },
+    {
+      "source": "case2_exact_descent.sing",
+      "result": "Final GB=[1] in quintic field",
+      "evidence": "EXACT FIELD, subsequently certified"
+    },
+    {
+      "source": "case2_exact_descent_certificate.sing",
+      "result": "26 explicit multipliers; residual zero",
+      "evidence": "EXACT FIELD, independently replayed with FLINT"
+    },
+    {
+      "log": "case2_exact_descent_certificate_replay.log",
+      "result": "Regenerated producer and repeated full lower certificate successfully; independent FLINT replay passes.",
+      "evidence": "EXACT FIELD"
+    }
+  ],
+  "notes": [
+    "Raw SECONDS log labels are uncalibrated Singular timer output, not wall-clock measurements.",
+    "Raw modStd completeness wording is superseded by the written mathematical count.",
+    "Historical degree-1144 eliminant is not used.",
+    "Proof combines written mathematics with exact machine verification, not a formal proof assistant."
+  ]
+}

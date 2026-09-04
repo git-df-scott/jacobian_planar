@@ -1,6 +1,8 @@
 # ASTRA run log — 2026-09-04
 
 All verdicts use the repository's binding evidence labels.
+Entries through Phase D describe the first Astra run; Phase E supersedes its
+case-(2) UNKNOWN verdict and Singular availability statement.
 
 ## Routing and reconciliation
 
@@ -106,3 +108,32 @@ python3 astra/run_controls.py
 Expected final line: `ALL ASTRA CONTROLS: PASS`.
 
 Current counterexample status: no CEC and no CE.
+
+## Phase E — Astra 2, exact case-(2) descent
+
+- Started from `93319412545e84d1093d79c5b59cb87731eec4a9` on a separate
+  branch, `astra/jc2-exact-descent-2026-09-04`.
+- Reconstructed the complete one-variable grading directly from GGHV
+  Proposition 4.3(2), including the absent T term in F.
+- Provisioned SymPy 1.14, python-flint 0.9.0 and Singular 4.3.1 locally.
+  System apt setup failed; locally unpacked official Debian binaries worked.
+- Replayed all five positive Poisson witnesses successfully.
+- Leading modular reconstruction over Q produced an irreducible quintic in
+  the `C_1=C_2=1` chart. A separate exact checker verifies all five solutions.
+- Proved completeness using the degree-21 Belyi passport
+  `(3^7; 2^10,1; 17,1^4)`, whose dessins reduce to the five rooted plane full
+  binary trees with three internal vertices. Checked permutations,
+  connectedness, genus, passports and inequivalence independently.
+- Derived the complete two-parameter solution of level (4). Solved (3) with
+  exact matrix rank six and verified its full parametrization independently.
+- Regenerated the 25 remaining lower equations and produced 26 multipliers
+  certifying 1 after imposing `z*A_8-1`. FLINT exact replay and altered-
+  certificate controls pass. Label: `EXACT-Q` with the written completeness
+  proof in `ASTRA_2_CASE2_EXACT_DESCENT.md`.
+- Direct leading GB attempts and an auxiliary chart certificate lift timed
+  out; an initial coefficient-parser run failed. Their logs are retained and
+  not used as evidence. The successful modStd log's completeness wording is
+  superseded by the explicit dessin proof, not accepted on its own.
+- The historical 1144 object is not asserted to coincide with this scheme.
+  The neighboring pentagon and above-125 translation wall remain open.
+- Final result: no CE or CEC; exact exclusion of this one reduced polygon.

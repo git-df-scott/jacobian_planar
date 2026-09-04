@@ -1,0 +1,42 @@
+// Independent characteristic-zero construction from 2*C*G'-3*C'*G=t^2.
+// Explore the c_1=c_2=1 chart, saturated by c_8.
+ring R=0,(c(3..8),t),dp;
+option(redSB);
+poly C=t+t^2;
+int i;
+for(i=3;i<=8;i++){C=C+c(i)*t^i;}
+proc coefficient(poly p,int k){
+  matrix M=coeffs(p,t);
+  if(k+1>nrows(M)){return(poly(0));}
+  return(M[k+1,1]);
+}
+poly G=0;
+poly residual;
+int n;
+for(n=2;n<=12;n++){
+  residual=2*C*diff(G,t)-3*diff(C,t)*G-t^2;
+  G=G-coefficient(residual,n)*t^n/(2*n-3);
+}
+residual=2*C*diff(G,t)-3*diff(C,t)*G-t^2;
+ideal E;
+for(n=0;n<=19;n++){if(coefficient(residual,n)!=0){E=E+coefficient(residual,n);}}
+E=simplify(E,2);
+"GENERATORS="+string(size(E));
+write(":w astra/artifacts/case2_exact_low_input.txt",string(E));
+ring S=0,(u,c(3..8)),dp;
+ideal E=imap(R,E)+ideal(u*c(8)-1);
+int started=timer;
+ideal B=std(E);
+"EXACT_Q_DIM="+string(dim(B));
+"EXACT_Q_VDIM="+string(vdim(B));
+"SECONDS="+string(timer-started);
+write(":w astra/artifacts/case2_exact_low_dp.txt",string(B));
+if(dim(B)==0){
+  ring L=0,(u,c(3..8)),lp;
+  ideal B=fglm(S,B);
+  short=0;
+  write(":w astra/artifacts/case2_exact_low_lex.txt",string(B));
+  "LEX_SIZE="+string(size(B));
+  "LEADING_EXACT_Q_COMPLETE";
+}
+quit;

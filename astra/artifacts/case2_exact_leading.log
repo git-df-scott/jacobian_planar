@@ -1,0 +1,6 @@
+// ** Could not find dynamic library: p_Procs_FieldIndep.so (path )
+// ** Singular will work properly, but much slower.
+// ** See the INSTALL section in the Singular manual for details.
+GENERATORS=6
+
+halt 1

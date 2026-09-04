@@ -1,0 +1,20 @@
+// ** redefining mod_init (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining addcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining addcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining setcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining setcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining getcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining getcores (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining semaphore (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining semaphore (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining setcores_subtree (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining resetcores_subtree (LIB "resources.lib";) astra/case2_exact_modular.sing:4
+// ** redefining sem_cores (    exportto(Resources, sem_cores);)
+// ** redefining NCORES (    exportto(Resources, NCORES);)
+2
+GENERATORS=6
+EXACT_Q_DIM=0
+EXACT_Q_VDIM=5
+SECONDS=1364
+LEX_SIZE=7
+LEADING_EXACT_Q_COMPLETE

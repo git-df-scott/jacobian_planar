@@ -1,0 +1,67 @@
+   ? `number` ^ `number` failed
+   ? expected `number` ^ `int`
+   ? error occurred in or before astra/case2_exact_descent.sing line 6: `5038067799754190997422908568828659070801494262662616106374963589)*T^7+(a)*T^8;`
+   ? expected poly-expression. type 'help poly;'
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 25: `  residual=2*C*diff(G,T)-3*diff(C,T)*G-T^2;`
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 31: `"LEADING_IDENTITY_EXACT";`
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 33: `poly B=b0*(diff(C,T)-C/T)+b1*(T*diff(C,T)-3*C/2);`
+   ? expected poly-expression. type 'help poly;'
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 34: `poly F=b0*(diff(G,T)-3*G/(2*T)-C/2)+b1*(T*diff(G,T)-9*G/4);`
+   ? expected poly-expression. type 'help poly;'
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 36: `"LEVEL_FOUR_EXACT";`
+   ? `F` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 39: `poly source=B*diff(F,T)-2*diff(B,T)*F-3*diff(A,T)*G;`
+   ? expected poly-expression. type 'help poly;'
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 41: `  residual=2*C*diff(E,T)-diff(C,T)*E+source;`
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 46: `ideal level3=coefficients(2*C*diff(E,T)-diff(C,T)*E+source);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `level3` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 47: `"LEVEL_THREE_EQUATIONS="+string(size(level3));`
+   ? wrong type declaration. type 'help string;'
+   ? `level3` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 48: `ideal K=std(level3);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `K` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 50: `"LEVEL_THREE_BASIS="+string(size(K));`
+   ? wrong type declaration. type 'help string;'
+   ? `K` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 51: `poly An=reduce(A,K);`
+   ? expected poly-expression. type 'help poly;'
+   ? `K` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 52: `poly En=reduce(E,K);`
+   ? expected poly-expression. type 'help poly;'
+   ? `source` is undefined
+   ? error occurred in or before astra/case2_exact_descent.sing line 54: `source=B*diff(En,T)-diff(B,T)*En-2*diff(An,T)*F;`
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 56: `  residual=2*C*diff(D,T)+source;`
+   ? `C` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 64: `             +coefficients(reduce(B*diff(D,T)-diff(An,T)*En,K));`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `bottom` is undefined
+   ? error occurred in or before astra/case2_exact_descent.sing line 65: `bottom=simplify(bottom,2);`
+   ? `bottom` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 66: `"BOTTOM_EQUATIONS="+string(size(bottom));`
+   ? wrong type declaration. type 'help string;'
+   ? `K` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 68: `poly corner=reduce(B(8),K);`
+   ? expected poly-expression. type 'help poly;'
+   ? `corner` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 70: `ideal I=bottom+ideal(z*corner-1);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `I` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 71: `ideal H=std(I);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `H` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 73: `"BOTTOM_DIM="+string(dim(H));`
+   ? wrong type declaration. type 'help string;'
+   ? `H` is not defined
+   ? error occurred in or before astra/case2_exact_descent.sing line 74: `"BOTTOM_SIZE="+string(size(H));`
+   ? wrong type declaration. type 'help string;'
+   ? `H` is not defined

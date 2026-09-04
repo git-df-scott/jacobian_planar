@@ -35,6 +35,13 @@
 
 ## CURRENT EXACT COMPUTATIONAL RESULTS
 
+- `EXACT-Q` with a written completeness proof: GGHV Proposition 4.3(2) is
+  excluded in characteristic zero. A five-dessin count proves completeness
+  of the five leading scaling orbits; a complete lower parametrization and
+  26-term Nullstellensatz certificate exclude every extension with the required
+  top corner. Independent FLINT verification passes. See
+  `ASTRA_2_CASE2_EXACT_DESCENT.md`. The neighboring pentagon remains open.
+
 - `EXACT-Q`: the identity-automorphism compactification control has pole
   vectors `(1,0,1)` and `(1,1,0)`, geometric degree 1, and Keller delta
   `(0,0,0)`.
@@ -49,8 +56,8 @@
 - `ADMISSIBLE-SHAPE`: the PR #24 abstract screen reproduces 5,261 rows and 635
   basic signatures.  These are not group or curve realizations.
 - `EXACT-Q`: five positive Poisson witnesses pass `{P,Q}=x^2` exactly.
-- `EMPTY-mod-p`: graded case (2) is empty at p=32003 across its five leading
-  orbits.  Characteristic zero remains `UNKNOWN`.
+- `EMPTY-mod-p`: the historical p=32003 case-(2) result remains valid in its
+  original scope; the new characteristic-zero result above supersedes UNKNOWN.
 - `EXACT-Q`: both degree-ten Briançon gradients have Groebner basis `[1]`; all
   three infinity valuations of eta on the t=1 fibres are zero.
 - PR #23's 25 monomial certificates remain exact-Q for their generated polygon
@@ -58,12 +65,12 @@
 
 ## WALLS
 
-- GAP, Singular, and msolve are unavailable in the current runtime.  No
-  timeout, installation failure, or absent executable is a mathematical
-  result.
+- Singular 4.3.1 was provisioned locally for the second Astra run. GAP and
+  msolve were not provisioned. No timeout or absent executable is evidence.
 - The full PR #24 curve-by-curve low-index enumeration was not replayed here.
-- Case (2) lacks a compact exact-Q lower-level certificate and a reconciliation
-  of the degree-35 versus degree-1144 characteristic-zero objects.
+- The historical degree-1144 object's provenance remains unresolved. The new
+  case-(2) proof reconstructs its inputs directly from the published polygon
+  and proves the five/35 count independently; it does not identify that object.
 - The highest-ranked published above-125 case, (108,144) from the chain
   `(8,28)->(7/4,3)` with (m,n)=(3,4), stops at the translation gate: the paper
   does not print the compiler's assumed A'_t and the c' ladder is uncorrected.
@@ -75,7 +82,9 @@
 
 - Stale B=16 d=6 through d=12 `EMPTY` rows are void after the GGV
   transcription correction.
-- Case-(2) `EMPTY over Qbar` is not established by the audited evidence.
+- Earlier case-(2) `EMPTY over Qbar` claims remain unsupported by their old
+  evidence. The new result has a separate completeness proof and exact
+  certificate; it does not retroactively validate those claims.
 - A modular nonempty or empty fibre is not a characteristic-zero verdict.
 - The unrestricted `general.py` / `batch.py` graded EMPTY claims are retracted;
   their common-degree restriction excluded positive witness W3.
@@ -88,8 +97,9 @@
 1. Construct an all-irreducible, gradient-unimodular, non-coordinate
    Briançon-type P whose eta has a residue-free pole divisor of degree at least
    three, then kill its elliptic de Rham component exactly.
-2. Turn the graded case-(2) modular descent into an exact-Q orbit certificate,
-   after proving that the characteristic-zero residual object is the same one.
+2. Reconstruct the complete grading for the neighboring pentagon in GGHV
+   Proposition 4.3(1). Negative grading levels prevent directly extending the
+   completed case-(2) proof.
 3. Reconstruct a published above-125 Newton case directly from its primary
    chain data; only then derive and run its graded one-variable descent.
 
@@ -110,8 +120,8 @@
    boundary skeleton.
 2. **Residue-free Briançon construction.**  Search embeddings realizing a
    triple-pole exact differential, with Gate 0 and positive controls first.
-3. **Exact-Q graded descent.**  Lift the 1+1+3 orbit factorization and lower
-   linear chain over Q; do not run another monolithic Groebner job.
+3. **Pentagon graded descent.** Start from the published supports and derive
+   all levels. Case (2) is now closed by the independent exact descent.
 
 ## DO-NOT-REPEAT LIST
 
