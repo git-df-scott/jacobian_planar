@@ -148,3 +148,19 @@ exactly the Euler characteristic of the extra factor; no restriction of the
 three-dimensional maps to a surface can give a plane Keller map with the same
 escape structure. A two-variable twist would need a target coordinate vanishing
 on K, which forces poles along K that nothing cancels. Pivot 1 closed, negative.
+
+## Rounds 14, 17, 18, 19 (03:30Z, 2026-09-04)
+
+Reducible configurations: two cuspidal cubics with transposed cusps (cc_cc_T,
+T2: 133 reps), cuspidal cubic with parabolas (90 reps each), the (3,4) curve
+with a line (115), the icosahedral (3,5)/(3,6) curve with lines through the
+(2,5)-cusp, the ordinary cusp, the node, and a generic line (54 reps each), two
+lines through both cusps (375), cubic with two lines (448), the (2,5)-curve with
+cuspidal cubics (96). Not one representation reached the Euler stage: every
+transitive representation has a component whose meridian acts freely or
+trivially, or fails the fibre condition. (2,7)+(2,3) three-strand curves have
+two nodes and 7 representations, all failing early. GAP timeouts (7200 s) at
+degree 8: cc_cc_samecusp_c (5 generators), c3525_line25_tan (4 generators),
+c38_75_0 (3 generators); rerunning at degree 6 (sweep20). Source-side tree
+enumeration: no Keller-compatible pole data on any boundary tree with at most
+six blowups.
