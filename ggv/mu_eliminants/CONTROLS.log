@@ -1,0 +1,8 @@
+
+===== chart A, d in [3], GF(1000003), memory policy: oom_score_adj=1000, no vm cap =====
+PASS CROSS-ENGINE d=3 chart A (sat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS CROSS-ENGINE d=3 chart A (unsat): msolve and Singular eliminants are identical   [msolve=['1'] singular=['1']]
+PASS NEGATIVE CONTROL d=3 chart A: the ideal of its FIRST generator alone has a different eliminant   [full=['1'] first-generator-only=[]]
+DATA d=3 chart A: drop-one-generator eliminant = ['1'] (full = ['1'])
+PASS POSITIVE CONTROL d=3 chart A: saturated eliminant is the unit ideal <1> (no admissible root), matching the known empty chart   [eliminant=['1']]
+ALL PASS

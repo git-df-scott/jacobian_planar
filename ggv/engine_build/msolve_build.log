@@ -1,0 +1,409 @@
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force 
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:17: installing './ar-lib'
+configure.ac:14: installing './compile'
+configure.ac:18: installing './config.guess'
+configure.ac:18: installing './config.sub'
+configure.ac:7: installing './install-sh'
+configure.ac:7: installing './missing'
+Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+autoreconf: Leaving directory '.'
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for library containing atan2... -lm
+checking for library containing __gmpz_init... -lgmp
+checking for library containing mpfr_init... -lmpfr
+checking for library containing fmpz_add_ui... -lflint
+checking for flint/nmod.h... yes
+checking for gcc option to support OpenMP... -fopenmp
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for inline... inline
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int8_t... yes
+checking for size_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking the number of available CPUs... 4 
+checking for x86 cpuid  output... unknown
+checking for x86-AVX xgetbv  output... unknown
+checking for x86 cpuid 0x00000000 output... 1f:756e6547:6c65746e:49656e69
+checking for x86 cpuid 0x80000000 output... 80000008:0:0:0
+checking for x86 cpuid 0x00000001 output... c06f2:40800:fffa3223:1f8bfbff
+checking for x86 cpuid 0x00000007 output... 2:f1bf2ffb:1a415f46:afc14410
+checking for x86 cpuid 0x80000001 output... 0:0:121:2c100800
+checking for x86-AVX xgetbv 0x00000000 output... 600e7:0
+checking whether RDRND is supported by the processor... yes
+checking whether RDRND is supported by the processor and OS... yes
+checking whether C compiler accepts -mrdrnd... yes
+checking whether BMI1 is supported by the processor... yes
+checking whether BMI1 is supported by the processor and OS... yes
+checking whether C compiler accepts -mbmi... yes
+checking whether BMI2 is supported by the processor... yes
+checking whether BMI2 is supported by the processor and OS... yes
+checking whether C compiler accepts -mbmi2... yes
+checking whether ADX is supported by the processor... yes
+checking whether ADX is supported by the processor and OS... yes
+checking whether C compiler accepts -madx... yes
+checking whether PREFETCHWT1 is supported by the processor... no
+checking whether ABM is supported by the processor... yes
+checking whether ABM is supported by the processor and OS... yes
+checking whether C compiler accepts -mabm... yes
+checking whether MMX is supported by the processor... yes
+checking whether MMX is supported by the processor and OS... yes
+checking whether C compiler accepts -mmmx... yes
+checking whether SSE is supported by the processor... yes
+checking whether SSE is supported by the processor and OS... yes
+checking whether C compiler accepts -msse... yes
+checking whether SSE2 is supported by the processor... yes
+checking whether SSE2 is supported by the processor and OS... yes
+checking whether C compiler accepts -msse2... yes
+checking whether SSE3 is supported by the processor... yes
+checking whether SSE3 is supported by the processor and OS... yes
+checking whether C compiler accepts -msse3... yes
+checking whether SSSE3 is supported by the processor... yes
+checking whether SSSE3 is supported by the processor and OS... yes
+checking whether C compiler accepts -mssse3... yes
+checking whether SSE4.1 is supported by the processor... yes
+checking whether SSE4.1 is supported by the processor and OS... yes
+checking whether C compiler accepts -msse4.1... yes
+checking whether SSE4.2 is supported by the processor... yes
+checking whether SSE4.2 is supported by the processor and OS... yes
+checking whether C compiler accepts -msse4.2... yes
+checking whether SSE4a is supported by the processor... no
+checking whether SHA is supported by the processor... yes
+checking whether SHA is supported by the processor and OS... yes
+checking whether C compiler accepts -msha... yes
+checking whether AES is supported by the processor... yes
+checking whether AES is supported by the processor and OS... yes
+checking whether C compiler accepts -maes... yes
+checking whether AVX is supported by the processor... yes
+checking whether AVX is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx... yes
+checking whether FMA3 is supported by the processor... yes
+checking whether FMA3 is supported by the processor and OS... yes
+checking whether C compiler accepts -mfma... yes
+checking whether FMA4 is supported by the processor... no
+checking whether XOP is supported by the processor... no
+checking whether AVX2 is supported by the processor... yes
+checking whether AVX2 is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx2... yes
+checking whether AVX512-F is supported by the processor... yes
+checking whether AVX512-F is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512f... yes
+checking whether AVX512-CD is supported by the processor... yes
+checking whether AVX512-CD is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512cd... yes
+checking whether AVX512-PF is supported by the processor... no
+checking whether AVX512-ER is supported by the processor... no
+checking whether AVX512-VL is supported by the processor... yes
+checking whether AVX512-VL is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512vl... yes
+checking whether AVX512-BW is supported by the processor... yes
+checking whether AVX512-BW is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512bw... yes
+checking whether AVX512-DQ is supported by the processor... yes
+checking whether AVX512-DQ is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512dq... yes
+checking whether AVX512-IFMA is supported by the processor... yes
+checking whether AVX512-IFMA is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512ifma... yes
+checking whether AVX512-VBMI is supported by the processor... yes
+checking whether AVX512-VBMI is supported by the processor and OS... yes
+checking whether C compiler accepts -mavx512vbmi... yes
+checking for __builtin_constant_p... yes
+checking for __builtin_clzll... yes
+checking for __builtin_clzl... yes
+checking for floor... yes
+checking for getdelim... yes
+checking for gettimeofday... yes
+checking for memmove... yes
+checking for memset... yes
+checking for malloc... yes
+checking for realloc... yes
+checking for pow... yes
+checking for sqrt... yes
+checking for strchr... yes
+checking for strstr... yes
+checking for strtol... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating msolve.pc
+config.status: creating src/fglm/Makefile
+config.status: creating src/neogb/Makefile
+config.status: creating src/usolve/Makefile
+config.status: creating src/msolve/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+Making all in src/usolve
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..    -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libusolve_la-usolve.lo -MD -MP -MF .deps/libusolve_la-usolve.Tpo -c -o libusolve_la-usolve.lo `test -f 'usolve.c' || echo './'`usolve.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libusolve_la-usolve.lo -MD -MP -MF .deps/libusolve_la-usolve.Tpo -c usolve.c  -fPIC -DPIC -o .libs/libusolve_la-usolve.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libusolve_la-usolve.lo -MD -MP -MF .deps/libusolve_la-usolve.Tpo -c usolve.c -o libusolve_la-usolve.o >/dev/null 2>&1
+mv -f .deps/libusolve_la-usolve.Tpo .deps/libusolve_la-usolve.Plo
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2   -o libusolve.la  libusolve_la-usolve.lo  -lflint -lmpfr -lgmp -lm 
+libtool: link: ar cr .libs/libusolve.a .libs/libusolve_la-usolve.o 
+libtool: link: ranlib .libs/libusolve.a
+libtool: link: ( cd ".libs" && rm -f "libusolve.la" && ln -s "../libusolve.la" "libusolve.la" )
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+Making all in src/fglm
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..    -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libfglm_la-fglm_core.lo -MD -MP -MF .deps/libfglm_la-fglm_core.Tpo -c -o libfglm_la-fglm_core.lo `test -f 'fglm_core.c' || echo './'`fglm_core.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libfglm_la-fglm_core.lo -MD -MP -MF .deps/libfglm_la-fglm_core.Tpo -c fglm_core.c  -fPIC -DPIC -o .libs/libfglm_la-fglm_core.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2 -MT libfglm_la-fglm_core.lo -MD -MP -MF .deps/libfglm_la-fglm_core.Tpo -c fglm_core.c -o libfglm_la-fglm_core.o >/dev/null 2>&1
+mv -f .deps/libfglm_la-fglm_core.Tpo .deps/libfglm_la-fglm_core.Plo
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -g -O2   -o libfglm.la  libfglm_la-fglm_core.lo  -lflint -lmpfr -lgmp -lm 
+libtool: link: ar cr .libs/libfglm.a .libs/libfglm_la-fglm_core.o 
+libtool: link: ranlib .libs/libfglm.a
+libtool: link: ( cd ".libs" && rm -f "libfglm.la" && ln -s "../libfglm.la" "libfglm.la" )
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+Making all in src/neogb
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..    -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libneogb_la-gb.lo -MD -MP -MF .deps/libneogb_la-gb.Tpo -c -o libneogb_la-gb.lo `test -f 'gb.c' || echo './'`gb.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libneogb_la-gb.lo -MD -MP -MF .deps/libneogb_la-gb.Tpo -c gb.c  -fPIC -DPIC -o .libs/libneogb_la-gb.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libneogb_la-gb.lo -MD -MP -MF .deps/libneogb_la-gb.Tpo -c gb.c -o libneogb_la-gb.o >/dev/null 2>&1
+mv -f .deps/libneogb_la-gb.Tpo .deps/libneogb_la-gb.Plo
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -version-info 3:7:0  -o libneogb.la -rpath /usr/local/lib libneogb_la-gb.lo  -lflint -lmpfr -lgmp -lm 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libneogb_la-gb.o   -lflint -lmpfr -lgmp -lm  -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2   -fopenmp -Wl,-soname -Wl,libneogb.so.3 -o .libs/libneogb.so.3.0.7
+libtool: link: (cd ".libs" && rm -f "libneogb.so.3" && ln -s "libneogb.so.3.0.7" "libneogb.so.3")
+libtool: link: (cd ".libs" && rm -f "libneogb.so" && ln -s "libneogb.so.3.0.7" "libneogb.so")
+libtool: link: ar cr .libs/libneogb.a  libneogb_la-gb.o
+libtool: link: ranlib .libs/libneogb.a
+libtool: link: ( cd ".libs" && rm -f "libneogb.la" && ln -s "../libneogb.la" "libneogb.la" )
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+Making all in src/msolve
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..    -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libmsolve_la-libmsolve.lo -MD -MP -MF .deps/libmsolve_la-libmsolve.Tpo -c -o libmsolve_la-libmsolve.lo `test -f 'libmsolve.c' || echo './'`libmsolve.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libmsolve_la-libmsolve.lo -MD -MP -MF .deps/libmsolve_la-libmsolve.Tpo -c libmsolve.c  -fPIC -DPIC -o .libs/libmsolve_la-libmsolve.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -MT libmsolve_la-libmsolve.lo -MD -MP -MF .deps/libmsolve_la-libmsolve.Tpo -c libmsolve.c -o libmsolve_la-libmsolve.o >/dev/null 2>&1
+mv -f .deps/libmsolve_la-libmsolve.Tpo .deps/libmsolve_la-libmsolve.Plo
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -version-info 3:7:0  -o libmsolve.la -rpath /usr/local/lib libmsolve_la-libmsolve.lo ../usolve/libusolve.la ../fglm/libfglm.la ../neogb/libneogb.la -lflint -lmpfr -lgmp -lm 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libmsolve_la-libmsolve.o  -Wl,--whole-archive ../usolve/.libs/libusolve.a ../fglm/.libs/libfglm.a -Wl,--no-whole-archive  -Wl,-rpath -Wl,/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb/.libs ../neogb/.libs/libneogb.so -lflint -lmpfr -lgmp -lm  -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2   -fopenmp -Wl,-soname -Wl,libmsolve.so.3 -o .libs/libmsolve.so.3.0.7
+libtool: link: (cd ".libs" && rm -f "libmsolve.so.3" && ln -s "libmsolve.so.3.0.7" "libmsolve.so.3")
+libtool: link: (cd ".libs" && rm -f "libmsolve.so" && ln -s "libmsolve.so.3.0.7" "libmsolve.so")
+libtool: link: (cd .libs/libmsolve.lax/libusolve.a && ar x "/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve/../usolve/.libs/libusolve.a")
+libtool: link: (cd .libs/libmsolve.lax/libfglm.a && ar x "/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve/../fglm/.libs/libfglm.a")
+libtool: link: ar cr .libs/libmsolve.a  libmsolve_la-libmsolve.o  .libs/libmsolve.lax/libusolve.a/libusolve_la-usolve.o  .libs/libmsolve.lax/libfglm.a/libfglm_la-fglm_core.o 
+libtool: link: ranlib .libs/libmsolve.a
+libtool: link: rm -fr .libs/libmsolve.lax
+libtool: link: ( cd ".libs" && rm -f "libmsolve.la" && ln -s "../libmsolve.la" "libmsolve.la" )
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+depbase=`echo src/msolve/main.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I.    -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2 -MT src/msolve/main.o -MD -MP -MF $depbase.Tpo -c -o src/msolve/main.o src/msolve/main.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2   -o msolve src/msolve/main.o src/neogb/libneogb.la src/fglm/libfglm.la src/usolve/libusolve.la -lflint -lmpfr -lgmp -lm 
+libtool: link: gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2 -o .libs/msolve src/msolve/main.o  src/neogb/.libs/libneogb.so src/fglm/.libs/libfglm.a src/usolve/.libs/libusolve.a -lflint -lmpfr -lgmp -lm -fopenmp
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+Making install in src/usolve
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/usr/local/include/msolve/usolve'
+ /usr/bin/install -c -m 644 libusolve.h '/usr/local/include/msolve/usolve'
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/usolve'
+Making install in src/fglm
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/usr/local/include/msolve/fglm'
+ /usr/bin/install -c -m 644 fglm.h '/usr/local/include/msolve/fglm'
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/fglm'
+Making install in src/neogb
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+ /usr/bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   libneogb.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libneogb.so.3.0.7 /usr/local/lib/libneogb.so.3.0.7
+libtool: install: (cd /usr/local/lib && { ln -s -f libneogb.so.3.0.7 libneogb.so.3 || { rm -f libneogb.so.3 && ln -s libneogb.so.3.0.7 libneogb.so.3; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libneogb.so.3.0.7 libneogb.so || { rm -f libneogb.so && ln -s libneogb.so.3.0.7 libneogb.so; }; })
+libtool: install: /usr/bin/install -c .libs/libneogb.lai /usr/local/lib/libneogb.la
+libtool: install: /usr/bin/install -c .libs/libneogb.a /usr/local/lib/libneogb.a
+libtool: install: chmod 644 /usr/local/lib/libneogb.a
+libtool: install: ranlib /usr/local/lib/libneogb.a
+libtool: finish: PATH="/root/.local/bin:/root/.cargo/bin:/usr/local/go/bin:/opt/node22/bin:/opt/maven/bin:/opt/gradle/bin:/opt/rbenv/bin:/root/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/usr/local/include/msolve/neogb'
+ /usr/bin/install -c -m 644 libneogb.h basis.h data.h engine.h f4.h sba.h hash.h io.h modular.h nf.h f4sat.h sort_r.h meta_data.h tools.h update.h '/usr/local/include/msolve/neogb'
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/neogb'
+Making install in src/msolve
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+ /usr/bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   libmsolve.la '/usr/local/lib'
+libtool: warning: relinking 'libmsolve.la'
+libtool: install: (cd /tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve; /bin/bash "/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/libtool"  --tag CC --mode=relink gcc -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -g -O2 -version-info 3:7:0 -o libmsolve.la -rpath /usr/local/lib libmsolve_la-libmsolve.lo ../usolve/libusolve.la ../fglm/libfglm.la ../neogb/libneogb.la -lflint -lmpfr -lgmp -lm )
+libtool: relink: gcc -shared  -fPIC -DPIC  .libs/libmsolve_la-libmsolve.o  -Wl,--whole-archive ../usolve/.libs/libusolve.a ../fglm/.libs/libfglm.a -Wl,--no-whole-archive  -L/usr/local/lib -lneogb -lflint -lmpfr -lgmp -lm  -mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -msha -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -mrdrnd -mbmi -mbmi2 -madx -mabm -fopenmp -g -O2   -fopenmp -Wl,-soname -Wl,libmsolve.so.3 -o .libs/libmsolve.so.3.0.7
+libtool: install: /usr/bin/install -c .libs/libmsolve.so.3.0.7T /usr/local/lib/libmsolve.so.3.0.7
+libtool: install: (cd /usr/local/lib && { ln -s -f libmsolve.so.3.0.7 libmsolve.so.3 || { rm -f libmsolve.so.3 && ln -s libmsolve.so.3.0.7 libmsolve.so.3; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libmsolve.so.3.0.7 libmsolve.so || { rm -f libmsolve.so && ln -s libmsolve.so.3.0.7 libmsolve.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmsolve.lai /usr/local/lib/libmsolve.la
+libtool: install: /usr/bin/install -c .libs/libmsolve.a /usr/local/lib/libmsolve.a
+libtool: install: chmod 644 /usr/local/lib/libmsolve.a
+libtool: install: ranlib /usr/local/lib/libmsolve.a
+libtool: finish: PATH="/root/.local/bin:/root/.cargo/bin:/usr/local/go/bin:/opt/node22/bin:/opt/maven/bin:/opt/gradle/bin:/opt/rbenv/bin:/root/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/usr/local/include/msolve/msolve'
+ /usr/bin/install -c -m 644 msolve-data.h msolve.h '/usr/local/include/msolve/msolve'
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve/src/msolve'
+make[1]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+make[2]: Entering directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+ /usr/bin/mkdir -p '/usr/local/bin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c msolve '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/msolve /usr/local/bin/msolve
+ /usr/bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 msolve.pc '/usr/local/lib/pkgconfig'
+make[2]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'
+make[1]: Leaving directory '/tmp/claude-0/-home-user-jacobian-planar/f33bada8-e7ca-56e3-83fe-743494bede0c/scratchpad/msolve'

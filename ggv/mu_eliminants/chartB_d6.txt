@@ -1,0 +1,65 @@
+# GGV B=16 mu-eliminant -- chart B, d = deg(q1) = 6
+# builder: wave5/w5_b16_reduce.py::reduced_charts(6)['B']
+# field: GF(1000003)  (p = 1 mod 3)
+# surviving variables: mu0
+# every a_i, every b_i and the saturation variable t are eliminated
+# exact polynomials below; an empty generator list means the ZERO ideal,
+# a lone '1' means the UNIT ideal <1> (no admissible root)
+
+======================================================================
+SATURATED (t*mu0-1 present; mu0 != 0 enforced) -- engine msolve
+======================================================================
+engine: msolve -e 16 -g 2
+status: OK
+n_generators_in: 24
+n_eliminated: 16
+peak_rss_kb: 5836
+wall_s: 0.01
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartB_d6_sat.msolve.ms
+generators:
+  1
+
+======================================================================
+UNSATURATED (saturation generator removed) -- engine msolve
+======================================================================
+engine: msolve -e 15 -g 2
+status: OK
+n_generators_in: 23
+n_eliminated: 15
+peak_rss_kb: 19776
+wall_s: 0.23
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+input: ggv/elim_work/chartB_d6_unsat.msolve.ms
+generators:
+  1
+
+======================================================================
+NEGATIVE CONTROL -- first generator only (engine msolve)
+======================================================================
+engine: msolve -e 16 -g 2
+status: OK
+n_generators_in: 1
+n_eliminated: 16
+peak_rss_kb: 5120
+wall_s: 0.01
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+generators:
+  <empty list: the ZERO ideal>
+
+======================================================================
+RECORDED PROBE -- one generator dropped (engine msolve; data, not a control)
+======================================================================
+engine: msolve -e 16 -g 2
+status: OK
+n_generators_in: 23
+n_eliminated: 16
+peak_rss_kb: 5984
+wall_s: 0.01
+exit: 0
+mem_policy: oom_score_adj=1000, no vm cap
+generators:
+  1
