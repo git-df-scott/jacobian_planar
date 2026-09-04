@@ -126,3 +126,25 @@ with cusps and nodes are exhausted: [3,3] dies at Euler through degree 8,
 [5,3] passes Euler only in the icosahedral representation through degree 12
 and fails the dicritical test there. Remaining 3-strand options: tacnodes
 (sweep17), reducible configurations (sweeps 14, 18, 19).
+
+## Pivot 1: restricting the dimension-three counterexamples (01:00Z, 2026-09-04)
+
+Gao (arXiv:2608.00222, section 3) gives the mechanism. Sweep S(gamma, w) =
+(p(w) + 2 gamma, q(w) + gamma w), det J = 2 gamma, ramified along gamma = 0 which
+maps onto the swept curve K = (p, q). The twist pads to three variables, sets
+C = gamma x, and maps to (C, P/C, Q/C^2); the divisibilities are the side
+conditions. Alpoge's map: K the cuspidal cubic, geometric degree 3 = class of K.
+The degree-four example (Gao Thm 3.5): K the rational quartic with two cusps
+and a node, geometric degree 4. Fibre sizes: d+1 generic, d-1 over smooth
+points of K, d-2 at cusps, d-3 at nodes (Prop 3.2).
+
+Plane shadow: the same K as non-properness curve, D = class(K), meridians with
+e = 2 escaping sheets, staying counts s = 1 at a cusp and 0 at a node. For the
+two-cusp quartic this is exactly the S4 representation on 4 sheets found in the
+first sweep (c34, D=4, s=[1,0,1]) with Euler characteristic 0 instead of 1. The
+cuspidal cubic case is D = 3, excluded by Orevkov and by the Zaidenberg-Lin
+count here. So the direct analogue of the sweep-twist fails in the plane by
+exactly the Euler characteristic of the extra factor; no restriction of the
+three-dimensional maps to a surface can give a plane Keller map with the same
+escape structure. A two-variable twist would need a target coordinate vanishing
+on K, which forces poles along K that nothing cancels. Pivot 1 closed, negative.
