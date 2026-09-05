@@ -1,0 +1,186 @@
+{
+ "hash": "f77771acc849",
+ "p": 3,
+ "family": "F1",
+ "characteristic": 3,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   6,
+   0
+  ],
+  [
+   6,
+   2
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   9,
+   1
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   11,
+   3
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 6,
+ "solutions": [
+  {
+   "a": [
+    2,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    2,
+    2,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     2
+    ],
+    "image_1_0": [
+     0,
+     2
+    ]
+   },
+   "tear": {
+    "characteristic": 3,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 18,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 18,
+    "lead_coeff_R2_in_y": {
+     "u^11 v^0": 2
+    },
+    "product": {
+     "u^11 v^0": 2
+    },
+    "tear": "TEAR-NONEMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     1
+    ],
+    "image_1_0": [
+     0,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 3,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 18,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 2
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 18,
+    "lead_coeff_R2_in_y": {
+     "u^11 v^0": 2
+    },
+    "product": {
+     "u^11 v^0": 1
+    },
+    "tear": "TEAR-NONEMPTY"
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

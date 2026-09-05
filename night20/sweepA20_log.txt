@@ -1,0 +1,3 @@
+size 2 done: 3420 A swept, 78 with a non-trivial P-space, 354 distinct P, 374s
+size 3 done: 14976 A swept, 460 with a non-trivial P-space, 2108 distinct P, 2103s
+TALLY: 2108 distinct P with a rational mate A/P ; 1938 have P itself reducible (so the fibre P = 0 is reducible) ; 170 irreducible P

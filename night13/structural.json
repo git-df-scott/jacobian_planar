@@ -1,0 +1,659 @@
+{
+ "pool_P": 1087,
+ "pool_Q": 2439,
+ "n_rows_over_maximal_carrier": 6803,
+ "constant_row_adjustable_pairs": 1,
+ "n_structural_singleton_mandatory": 37,
+ "n_repairable_by_removal": 35,
+ "n_unrepairable": 2,
+ "unrepairable_rows": [
+  {
+   "row_key": [
+    3,
+    80
+   ],
+   "P_monomial": [
+    4,
+    80
+   ],
+   "P_kind": "LEADING",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 4
+  },
+  {
+   "row_key": [
+    123,
+    2
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    123,
+    3
+   ],
+   "Q_kind": "LEADING",
+   "factor_p1a2_minus_p2a1": 3
+  }
+ ],
+ "repairable_rows": [
+  {
+   "row_key": [
+    0,
+    1
+   ],
+   "P_monomial": [
+    1,
+    1
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    2
+   ],
+   "P_monomial": [
+    1,
+    2
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    3
+   ],
+   "P_monomial": [
+    1,
+    3
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    4
+   ],
+   "P_monomial": [
+    1,
+    4
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    5
+   ],
+   "P_monomial": [
+    1,
+    5
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    6
+   ],
+   "P_monomial": [
+    1,
+    6
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    7
+   ],
+   "P_monomial": [
+    1,
+    7
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    8
+   ],
+   "P_monomial": [
+    1,
+    8
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    9
+   ],
+   "P_monomial": [
+    1,
+    9
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    10
+   ],
+   "P_monomial": [
+    1,
+    10
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    11
+   ],
+   "P_monomial": [
+    1,
+    11
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    12
+   ],
+   "P_monomial": [
+    1,
+    12
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    13
+   ],
+   "P_monomial": [
+    1,
+    13
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    14
+   ],
+   "P_monomial": [
+    1,
+    14
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    15
+   ],
+   "P_monomial": [
+    1,
+    15
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    16
+   ],
+   "P_monomial": [
+    1,
+    16
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    17
+   ],
+   "P_monomial": [
+    1,
+    17
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    18
+   ],
+   "P_monomial": [
+    1,
+    18
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    19
+   ],
+   "P_monomial": [
+    1,
+    19
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    0,
+    20
+   ],
+   "P_monomial": [
+    1,
+    20
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    3,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    3,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    3,
+    79
+   ],
+   "P_monomial": [
+    4,
+    79
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 4
+  },
+  {
+   "row_key": [
+    6,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    6,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    9,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    9,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    12,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    12,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    15,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    15,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    18,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    18,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    21,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    21,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    24,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    24,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    27,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    27,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    30,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    30,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    33,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    33,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    36,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    36,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    39,
+    0
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    39,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 1
+  },
+  {
+   "row_key": [
+    81,
+    1
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    81,
+    2
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 2
+  }
+ ],
+ "constant_row_equation": "a_(1,0) * b_(0,1) = 1",
+ "forced_equations": [
+  {
+   "row_key": [
+    3,
+    80
+   ],
+   "equation": "4 * A * b_(0, 1) = 0"
+  },
+  {
+   "row_key": [
+    123,
+    2
+   ],
+   "equation": "3 * a_(1, 0) * B*h41^3 = 0"
+  }
+ ]
+}

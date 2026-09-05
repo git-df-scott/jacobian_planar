@@ -1,0 +1,23 @@
+==============================================================================
+COVER  deg h = 1,  carrier deg Q <= 3
+==============================================================================
+  [d=0] generic                            EMPTY_over_Q(params)   denominators=['a', 'gamma']  (0.2s)
+  [d=1] generic & {a=0}                    EMPTY_over_Q(params)   denominators=['gamma', 'h1']  (0.1s)
+  [d=2] generic & {a=0} & {h1=0}           EMPTY_over_Q(params)   denominators=['gamma']  (0.0s)
+==============================================================================
+COVER  deg h = 1,  carrier deg Q <= 6
+==============================================================================
+  [d=0] generic                            EMPTY_over_Q(params)   denominators=['a', 'gamma']  (4.4s)
+  [d=1] generic & {a=0}                    EMPTY_over_Q(params)   denominators=['gamma']  (0.3s)
+==============================================================================
+COVER  deg h = 2,  carrier deg Q <= 3
+==============================================================================
+  [d=0] generic                            EMPTY_over_Q(params)   denominators=['a', 'gamma']  (1.8s)
+  [d=1] generic & {a=0}                    EMPTY_over_Q(params)   denominators=['gamma', 'h1']  (0.5s)
+  [d=2] generic & {a=0} & {h1=0}           EMPTY_over_Q(params)   denominators=['gamma']  (0.1s)
+==============================================================================
+COVER  deg h = 2,  carrier deg Q <= 6
+==============================================================================
+  [d=0] generic                            EMPTY_over_Q(params)   denominators=['a', 'gamma']  (59.5s)
+  [d=1] generic & {a=0}                    EMPTY_over_Q(params)   denominators=['gamma']  (0.9s)
+done

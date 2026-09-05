@@ -1,0 +1,948 @@
+{
+ "recheck_prime": 1000003,
+ "recheck_seed": 20260901,
+ "tally": {
+  "A | SY | True": 12,
+  "A | U_bezout | True": 12,
+  "A | R_factorisation | True": 12,
+  "A | lambda_exact | True": 14,
+  "A | rank_full_column_exact | True": 34,
+  "B | SY | True": 6,
+  "B | night14_U_test_char0 | PASS": 6,
+  "B | lambda_exact | True": 14,
+  "B | rank_full_column_exact | True": 16
+ },
+ "per_object": [
+  {
+   "hash": "09d8d1d05e63",
+   "arm": "A",
+   "tag": "F2  T=61 a=0",
+   "deg_P": 124,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 123,
+     "n_unknowns": 186,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (186 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 155,
+     "n_unknowns": 281,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (281 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 187,
+     "n_unknowns": 380,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=380=n, rank_Ae=381 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 187,
+     "n_unknowns": 2023,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2023=n, rank_Ae=2024 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    61,
+    63
+   ],
+   "secs": 169.6
+  },
+  {
+   "hash": "257de46f270b",
+   "arm": "A",
+   "tag": "F2b T=5 a=-1",
+   "deg_P": 130,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 129,
+     "n_unknowns": 254,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (254 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 161,
+     "n_unknowns": 469,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=469=n, rank_Ae=470 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 193,
+     "n_unknowns": 565,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=565=n, rank_Ae=566 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 193,
+     "n_unknowns": 2477,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2477=n, rank_Ae=2478 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    5,
+    125
+   ],
+   "secs": 12234.4
+  },
+  {
+   "hash": "333b92b5a748",
+   "arm": "B",
+   "tag": "night14 F3 a22d19d84467",
+   "deg_P": 6,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 18,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (18 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 150,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (150 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 550,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=550=n, rank_Ae=551 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 1428,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=1428=n, rank_Ae=1429 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 2310,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2310=n, rank_Ae=2311 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 218.1
+  },
+  {
+   "hash": "4b274ede86db",
+   "arm": "B",
+   "tag": "night14 F2b 3471c81e5940",
+   "deg_P": 9,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 20,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (20 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 144,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (144 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 546,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=546=n, rank_Ae=547 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 1475,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=1475=n, rank_Ae=1476 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 2331,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2331=n, rank_Ae=2332 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 422.0
+  },
+  {
+   "hash": "524d0cc3ffe5",
+   "arm": "A",
+   "tag": "F2  T=5 a=0",
+   "deg_P": 126,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 125,
+     "n_unknowns": 246,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (246 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 157,
+     "n_unknowns": 369,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=369=n, rank_Ae=370 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 189,
+     "n_unknowns": 496,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=496=n, rank_Ae=497 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 189,
+     "n_unknowns": 2085,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2085=n, rank_Ae=2086 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    5,
+    121
+   ],
+   "secs": 206.5
+  },
+  {
+   "hash": "7aabbefe44c8",
+   "arm": "A",
+   "tag": "F2  T=2 a=0",
+   "deg_P": 124,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 123,
+     "n_unknowns": 245,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (245 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 155,
+     "n_unknowns": 370,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=370=n, rank_Ae=371 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 187,
+     "n_unknowns": 498,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=498=n, rank_Ae=499 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 187,
+     "n_unknowns": 2022,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2022=n, rank_Ae=2023 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    2,
+    122
+   ],
+   "secs": 165.6
+  },
+  {
+   "hash": "88870e2c21d9",
+   "arm": "A",
+   "tag": "F2  T=1 a=0",
+   "deg_P": 124,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 123,
+     "n_unknowns": 246,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (246 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 155,
+     "n_unknowns": 371,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=371=n, rank_Ae=372 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 187,
+     "n_unknowns": 500,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=500=n, rank_Ae=501 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 187,
+     "n_unknowns": 2019,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2019=n, rank_Ae=2020 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    1,
+    123
+   ],
+   "secs": 109.9
+  },
+  {
+   "hash": "8bb5667fb3c6",
+   "arm": "B",
+   "tag": "night14 F4 948919f80bd3",
+   "deg_P": 10,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 6,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (6 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 48,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (48 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 186,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (186 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 510,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=510=n, rank_Ae=511 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 807,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=807=n, rank_Ae=808 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 8.0
+  },
+  {
+   "hash": "91c9043bde61",
+   "arm": "A",
+   "tag": "F2b T=61 a=1",
+   "deg_P": 130,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 129,
+     "n_unknowns": 198,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (198 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 161,
+     "n_unknowns": 301,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (301 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 193,
+     "n_unknowns": 397,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=397=n, rank_Ae=398 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 193,
+     "n_unknowns": 2193,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2193=n, rank_Ae=2194 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    61,
+    69
+   ],
+   "secs": 1146.7
+  },
+  {
+   "hash": "94079802c5b0",
+   "arm": "B",
+   "tag": "night14 F2b 63a7aba444df",
+   "deg_P": 9,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 20,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (20 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 144,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (144 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 546,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=546=n, rank_Ae=547 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 1475,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=1475=n, rank_Ae=1476 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 2331,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2331=n, rank_Ae=2332 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 312.3
+  },
+  {
+   "hash": "999bad8fc503",
+   "arm": "B",
+   "tag": "night14 F1b c2005a8935aa",
+   "deg_P": 9,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 7,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (7 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 51,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (51 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 196,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (196 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 572,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=572=n, rank_Ae=573 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 917,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=917=n, rank_Ae=918 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 15.6
+  },
+  {
+   "hash": "a0ab3b429039",
+   "arm": "A",
+   "tag": "F2  T=1 a=-1",
+   "deg_P": 132,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 131,
+     "n_unknowns": 262,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (262 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 163,
+     "n_unknowns": 487,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=487=n, rank_Ae=488 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 195,
+     "n_unknowns": 583,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=583=n, rank_Ae=584 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 195,
+     "n_unknowns": 1585,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=1585=n, rank_Ae=1586 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    1,
+    131
+   ],
+   "secs": 4472.2
+  },
+  {
+   "hash": "be43beb153b0",
+   "arm": "A",
+   "tag": "F2b T=2 a=0",
+   "deg_P": 132,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 131,
+     "n_unknowns": 261,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (261 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 163,
+     "n_unknowns": 386,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=386=n, rank_Ae=387 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 195,
+     "n_unknowns": 513,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=513=n, rank_Ae=514 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 195,
+     "n_unknowns": 2219,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2219=n, rank_Ae=2220 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    2,
+    130
+   ],
+   "secs": 273.6
+  },
+  {
+   "hash": "dada805afbd2",
+   "arm": "A",
+   "tag": "F2  T=3 a=1",
+   "deg_P": 126,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 125,
+     "n_unknowns": 248,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (248 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 157,
+     "n_unknowns": 463,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=463=n, rank_Ae=464 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 189,
+     "n_unknowns": 740,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=740=n, rank_Ae=741 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 189,
+     "n_unknowns": 2407,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2407=n, rank_Ae=2408 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    3,
+    123
+   ],
+   "secs": 10756.0
+  },
+  {
+   "hash": "de46dd421875",
+   "arm": "A",
+   "tag": "F2b T=3 a=0",
+   "deg_P": 130,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 129,
+     "n_unknowns": 256,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (256 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 161,
+     "n_unknowns": 380,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=380=n, rank_Ae=381 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 193,
+     "n_unknowns": 507,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=507=n, rank_Ae=508 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 193,
+     "n_unknowns": 2154,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2154=n, rank_Ae=2155 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    3,
+    127
+   ],
+   "secs": 272.5
+  },
+  {
+   "hash": "e244401b343d",
+   "arm": "A",
+   "tag": "F2b T=2 a=2",
+   "deg_P": 128,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 127,
+     "n_unknowns": 253,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (253 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 159,
+     "n_unknowns": 472,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=472=n, rank_Ae=473 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 191,
+     "n_unknowns": 568,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=568=n, rank_Ae=569 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 191,
+     "n_unknowns": 2416,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2416=n, rank_Ae=2417 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    2,
+    126
+   ],
+   "secs": 10554.6
+  },
+  {
+   "hash": "ee69918807f6",
+   "arm": "A",
+   "tag": "F2  T=1 a=1",
+   "deg_P": 128,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 127,
+     "n_unknowns": 254,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (254 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 159,
+     "n_unknowns": 475,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=475=n, rank_Ae=476 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 191,
+     "n_unknowns": 571,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=571=n, rank_Ae=572 at p=1000003"
+    },
+    {
+     "carrier": "wide_triangle",
+     "deg_Q_bound": 191,
+     "n_unknowns": 2419,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2419=n, rank_Ae=2420 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "U_recheck": true,
+   "R_recheck": true,
+   "v_shape_ok": true,
+   "factor_degs": [
+    1,
+    127
+   ],
+   "secs": 10714.8
+  },
+  {
+   "hash": "f4500b943c3b",
+   "arm": "B",
+   "tag": "x + x^2*y",
+   "deg_P": 3,
+   "stages": [
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 10,
+     "n_unknowns": 18,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (18 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 30,
+     "n_unknowns": 165,
+     "certificate": "lambda_exact",
+     "ok": true,
+     "why": "ok (165 columns)"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 60,
+     "n_unknowns": 630,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=630=n, rank_Ae=631 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 100,
+     "n_unknowns": 1683,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=1683=n, rank_Ae=1684 at p=1000003"
+    },
+    {
+     "carrier": "np_similar",
+     "deg_Q_bound": 126,
+     "n_unknowns": 2709,
+     "certificate": "rank_full_column_exact",
+     "ok": true,
+     "why": "rank_A=2709=n, rank_Ae=2710 at p=1000003"
+    }
+   ],
+   "fails": [],
+   "SY_recheck": "NON_COORDINATE",
+   "SY_recorded": "NON_COORDINATE",
+   "UT_recheck": "PASS",
+   "secs": 184.7
+  }
+ ],
+ "failures": []
+}

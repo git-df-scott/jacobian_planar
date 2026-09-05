@@ -1,0 +1,547 @@
+{
+ "brute_force_mod4": {
+  "search_space": 262144,
+  "n_solutions_mod4_total": 16,
+  "n_solutions_mod4_congruent_to_base_mod2": 0,
+  "example_solutions_mod4": [
+   [
+    1,
+    0,
+    3,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    0,
+    1,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    2,
+    1,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    0,
+    1,
+    1,
+    2,
+    0,
+    0
+   ]
+  ],
+  "all_solutions_mod4": [
+   [
+    1,
+    0,
+    3,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    0,
+    1,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    3,
+    2,
+    1,
+    1,
+    0,
+    2,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    0,
+    1,
+    1,
+    2,
+    0,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    0,
+    1,
+    1,
+    2,
+    2,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    2,
+    1,
+    1,
+    2,
+    0,
+    0
+   ],
+   [
+    1,
+    2,
+    3,
+    2,
+    1,
+    1,
+    2,
+    2,
+    0
+   ],
+   [
+    3,
+    0,
+    1,
+    0,
+    3,
+    3,
+    0,
+    0,
+    0
+   ],
+   [
+    3,
+    0,
+    1,
+    0,
+    3,
+    3,
+    0,
+    2,
+    0
+   ],
+   [
+    3,
+    0,
+    1,
+    2,
+    3,
+    3,
+    0,
+    0,
+    0
+   ],
+   [
+    3,
+    0,
+    1,
+    2,
+    3,
+    3,
+    0,
+    2,
+    0
+   ],
+   [
+    3,
+    2,
+    1,
+    0,
+    3,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    2,
+    1,
+    0,
+    3,
+    3,
+    2,
+    2,
+    0
+   ],
+   [
+    3,
+    2,
+    1,
+    2,
+    3,
+    3,
+    2,
+    0,
+    0
+   ],
+   [
+    3,
+    2,
+    1,
+    2,
+    3,
+    3,
+    2,
+    2,
+    0
+   ]
+  ],
+  "variable_names": [
+   "a_1_0",
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_0_1",
+   "b_5_0",
+   "b_6_1",
+   "b_7_2",
+   "b_8_3"
+  ],
+  "base_point": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "brute_force_mod2": {
+  "n_F2_points_of_the_E0_system": 8,
+  "base_point_is_among_them": true,
+  "solutions": [
+   [
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  ]
+ },
+ "groebner_controls": {
+  "all_generators_reduce_to_zero": true,
+  "base_point_satisfies_every_basis_element": true,
+  "n_basis_elements": 7
+ },
+ "krull_dimension_E0_over_closure_F2": {
+  "dimension": 4,
+  "a_maximal_independent_set": [
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_8_3"
+  ],
+  "leading_monomial_supports": [
+   [
+    "a_4_0",
+    "b_6_1"
+   ],
+   [
+    "a_2_1",
+    "b_5_0"
+   ],
+   [
+    "a_4_0",
+    "b_5_0"
+   ],
+   [
+    "a_2_1",
+    "b_7_2"
+   ],
+   [
+    "b_6_1",
+    "b_7_2"
+   ],
+   [
+    "a_1_0"
+   ],
+   [
+    "b_0_1"
+   ]
+  ],
+  "method": "dim V(I) = max |U| with LT(I) cap k[U] = 0 (grevlex GB, GF(2))"
+ },
+ "per_F2_point": [
+  {
+   "point": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": true,
+   "n_mod4_lifts": 16
+  },
+  {
+   "point": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "is_base_point": false,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  },
+  {
+   "point": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "is_base_point": true,
+   "rank_J_mod2": 5,
+   "nullity_mod2": 4,
+   "admits_mod4_lift": false,
+   "n_mod4_lifts": 0
+  }
+ ]
+}

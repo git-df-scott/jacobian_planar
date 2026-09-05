@@ -1,0 +1,69 @@
+{
+ "hdeg": 35,
+ "dim": 0,
+ "vdim": 35,
+ "kernel_rank": 17,
+ "kernel_dim": 2,
+ "free_cols": [
+  "s11",
+  "s12"
+ ],
+ "C1_char0": true,
+ "C2": {
+  "consistent": true,
+  "rank": 30,
+  "solution_space_dim": 2,
+  "known_point_exact": true
+ },
+ "C3": {
+  "empty": true,
+  "reason": "g identically zero on the branch"
+ },
+ "projective": {
+  "E2_rank": 18,
+  "E2_kerdim": 2,
+  "G_rank": 12,
+  "G_leftnull": 7,
+  "n_rows": 7,
+  "n_minors_nonzero": 35,
+  "gcd_degree": 0,
+  "common_zero_at_beta0": false,
+  "empty": true
+ },
+ "bezout": {
+  "verified": true,
+  "minors_used": 2
+ },
+ "spot_checks": [
+  {
+   "tag": "chart B  (alpha,beta) = (0,1)",
+   "rows": 38,
+   "cols": 32,
+   "rank": 32,
+   "n_inconsistent": 6,
+   "seconds": 10.760427236557007,
+   "consistent": false,
+   "certificate_verified": true
+  },
+  {
+   "tag": "chart A at be = 0",
+   "rows": 38,
+   "cols": 32,
+   "rank": 32,
+   "n_inconsistent": 6,
+   "seconds": 8.54499077796936,
+   "consistent": false,
+   "certificate_verified": true
+  },
+  {
+   "tag": "chart A at be = 1",
+   "rows": 38,
+   "cols": 32,
+   "rank": 32,
+   "n_inconsistent": 6,
+   "seconds": 208.6387906074524,
+   "consistent": false,
+   "certificate_verified": true
+  }
+ ]
+}

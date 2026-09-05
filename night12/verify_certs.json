@@ -1,0 +1,11 @@
+{
+ "tally": {
+  "pipeline | exact_solution | True": 20,
+  "pipeline | lambda_exact | True": 30,
+  "M1 override | rank_full_column_exact | not_recheckable": 578,
+  "M1 override | lambda_exact | True": 22,
+  "undecided override | rank_full_column_exact | not_recheckable": 26,
+  "undecided override | lambda_exact | True": 13
+ },
+ "failures": []
+}

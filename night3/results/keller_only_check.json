@@ -1,0 +1,208 @@
+{
+ "note": "Keller equations (K) alone, no collision equations, p=999983, 25 randomly chosen sweep supports",
+ "tally": {
+  "EMPTY": 25
+ },
+ "rows": [
+  {
+   "hash": "4533089a0ac8",
+   "deg_P": 135,
+   "deg_Q": 162,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.55
+  },
+  {
+   "hash": "846841aa990b",
+   "deg_P": 126,
+   "deg_Q": 168,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.56
+  },
+  {
+   "hash": "e82fd006f937",
+   "deg_P": 78,
+   "deg_Q": 130,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.62
+  },
+  {
+   "hash": "36ec7e945807",
+   "deg_P": 120,
+   "deg_Q": 160,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.57
+  },
+  {
+   "hash": "d6e8b733ae97",
+   "deg_P": 120,
+   "deg_Q": 144,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.62
+  },
+  {
+   "hash": "1c70fdfe8d4b",
+   "deg_P": 78,
+   "deg_Q": 130,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.56
+  },
+  {
+   "hash": "ded257ef1455",
+   "deg_P": 150,
+   "deg_Q": 180,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.65
+  },
+  {
+   "hash": "c5ac3b95fb9b",
+   "deg_P": 102,
+   "deg_Q": 170,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.57
+  },
+  {
+   "hash": "ae594dfc920c",
+   "deg_P": 102,
+   "deg_Q": 153,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.58
+  },
+  {
+   "hash": "922fbe7dec78",
+   "deg_P": 102,
+   "deg_Q": 136,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.61
+  },
+  {
+   "hash": "63e37980d3e9",
+   "deg_P": 105,
+   "deg_Q": 140,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.54
+  },
+  {
+   "hash": "eb667a574d02",
+   "deg_P": 110,
+   "deg_Q": 132,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.63
+  },
+  {
+   "hash": "0bcc8472d3ef",
+   "deg_P": 136,
+   "deg_Q": 170,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.65
+  },
+  {
+   "hash": "0e9f9f91b5c4",
+   "deg_P": 111,
+   "deg_Q": 185,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.64
+  },
+  {
+   "hash": "0dc4b9c7a033",
+   "deg_P": 90,
+   "deg_Q": 150,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.65
+  },
+  {
+   "hash": "83183172270e",
+   "deg_P": 114,
+   "deg_Q": 152,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.56
+  },
+  {
+   "hash": "e10fb3d5d59c",
+   "deg_P": 160,
+   "deg_Q": 192,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.51
+  },
+  {
+   "hash": "53ae1bad03a6",
+   "deg_P": 87,
+   "deg_Q": 145,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.57
+  },
+  {
+   "hash": "0e4640e336c6",
+   "deg_P": 156,
+   "deg_Q": 195,
+   "k": 10,
+   "verdict": "EMPTY",
+   "wall_s": 0.49
+  },
+  {
+   "hash": "2fec961abd48",
+   "deg_P": 124,
+   "deg_Q": 186,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.56
+  },
+  {
+   "hash": "cbf7b0c7291f",
+   "deg_P": 148,
+   "deg_Q": 185,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.55
+  },
+  {
+   "hash": "78565f2a2035",
+   "deg_P": 150,
+   "deg_Q": 200,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.53
+  },
+  {
+   "hash": "44d2b1cce6f2",
+   "deg_P": 114,
+   "deg_Q": 171,
+   "k": 10,
+   "verdict": "EMPTY",
+   "wall_s": 0.45
+  },
+  {
+   "hash": "f59b909a1a4b",
+   "deg_P": 108,
+   "deg_Q": 162,
+   "k": 14,
+   "verdict": "EMPTY",
+   "wall_s": 0.5
+  },
+  {
+   "hash": "d15b682e8efa",
+   "deg_P": 120,
+   "deg_Q": 200,
+   "k": 18,
+   "verdict": "EMPTY",
+   "wall_s": 0.6
+  }
+ ]
+}

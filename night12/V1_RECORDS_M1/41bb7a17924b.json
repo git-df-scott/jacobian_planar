@@ -1,0 +1,134 @@
+{
+ "hash": "41bb7a17924b",
+ "family": "M1",
+ "profile": "(130,195)",
+ "deg_P": 130,
+ "n_supp_P": 7,
+ "P": {
+  "1,0": 1,
+  "16,114": 2,
+  "19,0": 3,
+  "19,75": 3,
+  "19,111": 16,
+  "22,108": 32,
+  "73,56": 2
+ },
+ "SY_verdict": "NON_COORDINATE",
+ "SY_nodes": 1,
+ "SY_leaves": 1,
+ "stages": [
+  {
+   "n_unknowns": 131,
+   "n_rows_nonzero": 823,
+   "rank_A_p": 131,
+   "rank_Ae_p": 132,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      15,
+      114
+     ],
+     [
+      -1,
+      32
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "stage": "Y",
+   "deg_Q_bound": 129,
+   "n_raw": 132,
+   "thin_t": 1,
+   "n_used": 131,
+   "deflated_kernel_dim": 1,
+   "secs": 1.0
+  },
+  {
+   "n_unknowns": 300,
+   "n_rows_nonzero": 1595,
+   "rank_A_p": 300,
+   "rank_Ae_p": 301,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      15,
+      114
+     ],
+     [
+      -1,
+      32
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "stage": "C",
+   "deg_Q_bound": 195,
+   "n_raw": 301,
+   "thin_t": 1,
+   "n_used": 300,
+   "deflated_kernel_dim": 1,
+   "secs": 7.2
+  },
+  {
+   "n_unknowns": 525,
+   "n_rows_nonzero": 2465,
+   "rank_A_p": 525,
+   "rank_Ae_p": 526,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "stage": "W",
+   "deg_Q_bound": 259,
+   "n_raw": 526,
+   "thin_t": 1,
+   "n_used": 525,
+   "deflated_kernel_dim": 1,
+   "secs": 2.9
+  }
+ ],
+ "outcome": "EMPTY_all_stages_tried",
+ "hit": false,
+ "secs": 11.1,
+ "arm": "M1_override",
+ "screens_overridden": true,
+ "screen_S1": "reject",
+ "screen_S1_detail": "common zero of (P_x,P_y): HAS_COMMON_ZERO 0",
+ "screen_S2": "pass",
+ "places_at_infinity": 5,
+ "genus_newton": 4234
+}

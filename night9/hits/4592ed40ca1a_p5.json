@@ -1,0 +1,118 @@
+{
+ "hash": "4592ed40ca1a",
+ "p": 5,
+ "family": "F2",
+ "characteristic": 5,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   15
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   9,
+   7
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   12
+  ],
+  [
+   5,
+   2
+  ],
+  [
+   8,
+   6
+  ],
+  [
+   11,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 4,
+ "solutions": [
+  {
+   "a": [
+    4,
+    0,
+    1,
+    0
+   ],
+   "b": [
+    4,
+    0,
+    0,
+    0,
+    4
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    3,
+    0,
+    2,
+    0
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    0,
+    2
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    3,
+    0
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    4,
+    0
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  }
+ ]
+}

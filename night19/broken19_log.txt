@@ -1,0 +1,143 @@
+==============================================================================
+THE GENERAL ROW FORMULA, checked against expanded brackets
+==============================================================================
+  [P, x^i y^j] = sum_{(a,b) in A} p_ab (a j - b i) x^{a+i-1} y^{b+j-1}
+  checked on 637 (case, monomial) pairs, i+j <= 12: agrees with expanded bracket: True
+
+==============================================================================
+K0  base            y*(x*y + 1)          two-term, delta=(1,1)
+==============================================================================
+  P = x*y**2 + y   deg = 3
+  support A = [[0, 1], [1, 2]]   shift vectors = [[-1, 0], [0, 1]]
+  shift differences = [[1, 1]]   rank = 1   max rows per column = 2
+  bipartite incidence graph on S(12): V=192 E=164 comps=28  CYCLE RANK = 0
+  row graph (columns as edges) is a FOREST: True ; forced zeros reach (0,0): False
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 2 with residual 0 terms
+     U = (4)*x^2*y^0
+     V = (1)*x^0*y^0 + (-2)*x^1*y^1
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x*y + 1)  (2 components)
+  D=3   n=10   rows=12   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=True  (0.0s)
+  D=5   n=21   rows=26   EMPTY_over_Q   |supp lambda|=4    verified=True   diagonal support=True  (0.0s)
+  D=7   n=36   rows=42   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=True  (0.0s)
+  D=9   n=55   rows=63   EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=True  (0.0s)
+  D=11  n=78   rows=89   EMPTY_over_Q   |supp lambda|=7    verified=True   diagonal support=True  (0.0s)
+  D=13  n=105  rows=117  EMPTY_over_Q   |supp lambda|=8    verified=True   diagonal support=True  (0.0s)
+  D=15  n=136  rows=150  EMPTY_over_Q   |supp lambda|=9    verified=True   diagonal support=True  (0.0s)
+
+==============================================================================
+K1  x + x^2 y                            two-term, delta=(1,1), other ray
+==============================================================================
+  P = x**2*y + x   deg = 3
+  support A = [[1, 0], [2, 1]]   shift vectors = [[0, -1], [1, 0]]
+  shift differences = [[1, 1]]   rank = 1   max rows per column = 2
+  bipartite incidence graph on S(12): V=192 E=164 comps=28  CYCLE RANK = 0
+  row graph (columns as edges) is a FOREST: True ; forced zeros reach (0,0): False
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 2 with residual 0 terms
+     U = (1)*x^0*y^0 + (-2)*x^1*y^1
+     V = (4)*x^0*y^2
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as x*(x*y + 1)  (2 components)
+  D=3   n=10   rows=12   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=True  (0.0s)
+  D=5   n=21   rows=26   EMPTY_over_Q   |supp lambda|=4    verified=True   diagonal support=True  (0.0s)
+  D=7   n=36   rows=42   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=True  (0.0s)
+  D=9   n=55   rows=63   EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=True  (0.0s)
+  D=11  n=78   rows=89   EMPTY_over_Q   |supp lambda|=7    verified=True   diagonal support=True  (0.0s)
+  D=13  n=105  rows=117  EMPTY_over_Q   |supp lambda|=8    verified=True   diagonal support=True  (0.0s)
+  D=15  n=136  rows=150  EMPTY_over_Q   |supp lambda|=9    verified=True   diagonal support=True  (0.0s)
+
+==============================================================================
+K2  y + x y^3                            two-term, delta=(1,2)
+==============================================================================
+  P = x*y**3 + y   deg = 4
+  support A = [[0, 1], [1, 3]]   shift vectors = [[-1, 0], [0, 2]]
+  shift differences = [[1, 2]]   rank = 1   max rows per column = 2
+  bipartite incidence graph on S(12): V=203 E=165 comps=38  CYCLE RANK = 0
+  row graph (columns as edges) is a FOREST: True ; forced zeros reach (0,0): False
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 3 with residual 0 terms
+     U = (9)*x^2*y^1
+     V = (1)*x^0*y^0 + (-3)*x^1*y^2
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x*y**2 + 1)  (2 components)
+  D=3   n=10   rows=15   EMPTY_over_Q   |supp lambda|=2    verified=True   diagonal support=False (0.0s)
+  D=5   n=21   rows=29   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=False (0.0s)
+  D=7   n=36   rows=49   EMPTY_over_Q   |supp lambda|=4    verified=True   diagonal support=False (0.0s)
+  D=9   n=55   rows=71   EMPTY_over_Q   |supp lambda|=4    verified=True   diagonal support=False (0.0s)
+  D=11  n=78   rows=99   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=False (0.0s)
+  D=13  n=105  rows=129  EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=False (0.0s)
+  D=15  n=136  rows=165  EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=False (0.0s)
+
+==============================================================================
+K3  y + x y^2 + x^2 y^3                  three-term, shift diffs PARALLEL (rank 1)
+==============================================================================
+  P = x**2*y**3 + x*y**2 + y   deg = 5
+  support A = [[0, 1], [1, 2], [2, 3]]   shift vectors = [[-1, 0], [0, 1], [1, 2]]
+  shift differences = [[1, 1], [2, 2]]   rank = 1   max rows per column = 3
+  bipartite incidence graph on S(12): V=218 E=252 comps=25  CYCLE RANK = 59
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 4 with residual 0 terms
+     U = (11/3)*x^2*y^0 + (4)*x^3*y^1
+     V = (1)*x^0*y^0 + (-2)*x^1*y^1 + (-8/3)*x^2*y^2
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x**2*y**2 + x*y + 1)  (2 components)
+  D=3   n=10   rows=20   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=True  (0.0s)
+  D=5   n=21   rows=36   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=True  (0.0s)
+  D=7   n=36   rows=58   EMPTY_over_Q   |supp lambda|=4    verified=True   diagonal support=True  (0.0s)
+  D=9   n=55   rows=83   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=True  (0.0s)
+  D=11  n=78   rows=111  EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=True  (0.0s)
+  D=13  n=105  rows=145  EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=True  (0.0s)
+  D=15  n=136  rows=181  EMPTY_over_Q   |supp lambda|=7    verified=True   diagonal support=True  (0.0s)
+
+==============================================================================
+K4  y + y^2 + x y^2                      three-term, shift diffs rank 2
+==============================================================================
+  P = x*y**2 + y**2 + y   deg = 3
+  support A = [[0, 1], [0, 2], [1, 2]]   shift vectors = [[-1, 0], [-1, 1], [0, 1]]
+  shift differences = [[0, 1], [1, 1]]   rank = 2   max rows per column = 3
+  bipartite incidence graph on S(12): V=192 E=242 comps=2  CYCLE RANK = 52
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 2 with residual 0 terms
+     U = (4)*x^0*y^0 + (8)*x^1*y^0 + (4)*x^2*y^0
+     V = (1)*x^0*y^0 + (-2)*x^0*y^1 + (-2)*x^1*y^1
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x*y + y + 1)  (2 components)
+  D=3   n=10   rows=12   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=False (0.0s)
+  D=5   n=21   rows=26   EMPTY_over_Q   |supp lambda|=9    verified=True   diagonal support=False (0.0s)
+  D=7   n=36   rows=43   EMPTY_over_Q   |supp lambda|=12   verified=True   diagonal support=False (0.0s)
+  D=9   n=55   rows=63   EMPTY_over_Q   |supp lambda|=19   verified=True   diagonal support=False (0.0s)
+  D=11  n=78   rows=89   EMPTY_over_Q   |supp lambda|=27   verified=True   diagonal support=False (0.0s)
+  D=13  n=105  rows=118  EMPTY_over_Q   |supp lambda|=30   verified=True   diagonal support=False (0.0s)
+  D=15  n=136  rows=150  EMPTY_over_Q   |supp lambda|=41   verified=True   diagonal support=False (0.0s)
+
+==============================================================================
+K5  y + y^3 + x y^2                      three-term, shift diffs rank 2
+==============================================================================
+  P = x*y**2 + y**3 + y   deg = 3
+  support A = [[0, 1], [0, 3], [1, 2]]   shift vectors = [[-1, 0], [-1, 2], [0, 1]]
+  shift differences = [[0, 2], [1, 1]]   rank = 2   max rows per column = 3
+  bipartite incidence graph on S(12): V=193 E=242 comps=2  CYCLE RANK = 51
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 2 with residual 0 terms
+     U = (-3)*x^0*y^0 + (6)*x^1*y^1 + (4)*x^2*y^0
+     V = (1)*x^0*y^0 + (-2)*x^1*y^1
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x*y + y**2 + 1)  (2 components)
+  D=3   n=10   rows=13   EMPTY_over_Q   |supp lambda|=3    verified=True   diagonal support=False (0.0s)
+  D=5   n=21   rows=26   EMPTY_over_Q   |supp lambda|=6    verified=True   diagonal support=False (0.0s)
+  D=7   n=36   rows=43   EMPTY_over_Q   |supp lambda|=9    verified=True   diagonal support=False (0.0s)
+  D=9   n=55   rows=64   EMPTY_over_Q   |supp lambda|=10   verified=True   diagonal support=False (0.0s)
+  D=11  n=78   rows=89   EMPTY_over_Q   |supp lambda|=15   verified=True   diagonal support=False (0.0s)
+  D=13  n=105  rows=118  EMPTY_over_Q   |supp lambda|=20   verified=True   diagonal support=False (0.0s)
+  D=15  n=136  rows=151  EMPTY_over_Q   |supp lambda|=21   verified=True   diagonal support=False (0.0s)
+
+==============================================================================
+K6  y + y^2 + y^3 + x y^2                four-term, shift diffs rank 2
+==============================================================================
+  P = x*y**2 + y**3 + y**2 + y   deg = 3
+  support A = [[0, 1], [0, 2], [0, 3], [1, 2]]   shift vectors = [[-1, 0], [-1, 1], [-1, 2], [0, 1]]
+  shift differences = [[0, 1], [0, 2], [1, 1]]   rank = 2   max rows per column = 4
+  bipartite incidence graph on S(12): V=193 E=320 comps=1  CYCLE RANK = 128
+  unimodular: (P_x,P_y)=(1) by Groebner: True ; explicit Bezout at deg <= 2 with residual 0 terms
+     U = (1)*x^0*y^0 + (6)*x^0*y^1 + (8)*x^1*y^0 + (6)*x^1*y^1 + (4)*x^2*y^0
+     V = (1)*x^0*y^0 + (-2)*x^0*y^1 + (-2)*x^1*y^1
+  Shpilrain-Yu: NON_COORDINATE (nodes=1) ; zero fibre factors as y*(x*y + y**2 + y + 1)  (2 components)
+  D=3   n=10   rows=13   EMPTY_over_Q   |supp lambda|=5    verified=True   diagonal support=False (0.0s)
+  D=5   n=21   rows=26   EMPTY_over_Q   |supp lambda|=9    verified=True   diagonal support=False (0.0s)
+  D=7   n=36   rows=43   EMPTY_over_Q   |supp lambda|=14   verified=True   diagonal support=False (0.0s)
+  D=9   n=55   rows=64   EMPTY_over_Q   |supp lambda|=19   verified=True   diagonal support=False (0.0s)
+  D=11  n=78   rows=89   EMPTY_over_Q   |supp lambda|=27   verified=True   diagonal support=False (0.0s)
+  D=13  n=105  rows=118  EMPTY_over_Q   |supp lambda|=28   verified=True   diagonal support=False (0.0s)
+  D=15  n=136  rows=151  EMPTY_over_Q   |supp lambda|=41   verified=True   diagonal support=False (0.1s)
+
+NO MATE SYSTEM WAS CONSISTENT; no HIT directory written.

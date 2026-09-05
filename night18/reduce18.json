@@ -1,0 +1,38 @@
+{
+ "1": {
+  "deg_h": 1,
+  "p": "h1/(2*gamma)",
+  "deg_p": 0,
+  "p_is_polynomial": true,
+  "jacobian_of_substitution": "1",
+  "image": "a*h1*y - alpha/(4*gamma) + gamma*x*y**2 + h0*y",
+  "reduced_form": "a*h1*y + gamma*x*y**2 + h0*y",
+  "image_minus_reduced_form": "-alpha/(4*gamma)",
+  "difference_is_a_constant_in_x_y": true,
+  "carrier_preserving": true
+ },
+ "2": {
+  "deg_h": 2,
+  "p": "(a*h2 + h1 + h2*x)/(2*gamma)",
+  "deg_p": 1,
+  "p_is_polynomial": true,
+  "jacobian_of_substitution": "1",
+  "image": "a**2*h2*y + a*h1*y - alpha/(4*gamma) + gamma*x*y**2 + h0*y",
+  "reduced_form": "a**2*h2*y + a*h1*y + gamma*x*y**2 + h0*y",
+  "image_minus_reduced_form": "-alpha/(4*gamma)",
+  "difference_is_a_constant_in_x_y": true,
+  "carrier_preserving": false
+ },
+ "3": {
+  "deg_h": 3,
+  "p": "(a**2*h3 + a*h2 + a*h3*x + h1 + h2*x + h3*x**2)/(2*gamma)",
+  "deg_p": 2,
+  "p_is_polynomial": true,
+  "jacobian_of_substitution": "1",
+  "image": "a**3*h3*y + a**2*h2*y + a*h1*y - alpha/(4*gamma) + gamma*x*y**2 + h0*y",
+  "reduced_form": "a**3*h3*y + a**2*h2*y + a*h1*y + gamma*x*y**2 + h0*y",
+  "image_minus_reduced_form": "-alpha/(4*gamma)",
+  "difference_is_a_constant_in_x_y": true,
+  "carrier_preserving": false
+ }
+}

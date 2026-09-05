@@ -1,0 +1,196 @@
+{
+ "label": "CANDIDATE-UNVERIFIED",
+ "hash": "405a469bffcf",
+ "lift_index_in_altitude_json": 1,
+ "max_total_degree": 152,
+ "support_P": [
+  [
+   0,
+   103
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   14,
+   127
+  ],
+  [
+   15,
+   0
+  ],
+  [
+   72,
+   0
+  ],
+  [
+   103,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   144
+  ],
+  [
+   10,
+   4
+  ],
+  [
+   50,
+   102
+  ],
+  [
+   72,
+   0
+  ],
+  [
+   143,
+   0
+  ]
+ ],
+ "ring": "Z (exact integer arithmetic throughout)",
+ "lift_mod_6": {
+  "a": [
+   -1,
+   -1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "b": [
+   -1,
+   0,
+   0,
+   0,
+   -1,
+   0
+  ]
+ },
+ "single_term_residual": {
+  "monomial_x_exponent": 71,
+  "monomial_y_exponent": 102,
+  "coefficient_over_Z": -7416,
+  "bracket_coefficient_formula": "-7416*a_0*b_4"
+ },
+ "free_set": {
+  "a_indices": [
+   0
+  ],
+  "b_indices": [
+   4
+  ],
+  "size": 2
+ },
+ "box": "[-4..4] independently on each free coefficient; all other coefficients held at the lift value",
+ "assignments_examined": 81,
+ "full_residual_computed_on_all_rows": true,
+ "n_equation_rows": 26,
+ "HALT_EVENTS": [],
+ "n_halt_events": 0,
+ "assignments_with_residual_identically_zero_over_Z": {
+  "total": 17,
+  "also_satisfying_collisions": 0,
+  "also_satisfying_collisions_and_nondegenerate": 0
+ },
+ "near_miss_minimum_by_stratum": {
+  "all": {
+   "min_nonzero_residual_rows": 0,
+   "content_gcd_at_minimum": 0,
+   "attaining_assignment": {
+    "a": [
+     -4,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": -3,
+    "collision_Q_diff_over_Z": -1,
+    "collisions_hold_over_Z": false
+   },
+   "residual_rows_there": {},
+   "degenerate_by_additive_screen": true
+  },
+  "collisions_ok": {
+   "min_nonzero_residual_rows": 1,
+   "content_gcd_at_minimum": 7416,
+   "attaining_assignment": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     -1,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true
+   },
+   "residual_rows_there": {
+    "(71, 102)": -7416
+   },
+   "degenerate_by_additive_screen": false
+  },
+  "collisions_ok_and_nondegenerate": {
+   "min_nonzero_residual_rows": 1,
+   "content_gcd_at_minimum": 7416,
+   "attaining_assignment": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     -1,
+     0
+    ]
+   },
+   "collisions_there": {
+    "collision_P_diff_over_Z": 0,
+    "collision_Q_diff_over_Z": 0,
+    "collisions_hold_over_Z": true
+   },
+   "residual_rows_there": {
+    "(71, 102)": -7416
+   },
+   "degenerate_by_additive_screen": false
+  }
+ }
+}

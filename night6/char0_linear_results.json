@@ -1,0 +1,32 @@
+{
+ "kerdim": 2,
+ "rank": 17,
+ "free": [
+  "s11",
+  "s12"
+ ],
+ "hdeg": 35,
+ "results": [
+  {
+   "tag": "C2  (p_,s_)=(0,0), free",
+   "rows": 38,
+   "cols": 32,
+   "rank": 30,
+   "n_inconsistent": 0,
+   "seconds": 1.1672327518463135,
+   "consistent": true,
+   "certificate_verified": null,
+   "solution_space_dim": 2
+  },
+  {
+   "tag": "chart B, free",
+   "rows": 38,
+   "cols": 32,
+   "rank": 32,
+   "n_inconsistent": 6,
+   "seconds": 9.194830417633057,
+   "consistent": false,
+   "certificate_verified": true
+  }
+ ]
+}

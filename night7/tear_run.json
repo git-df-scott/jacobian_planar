@@ -1,0 +1,410 @@
+{
+ "C1": [
+  {
+   "label": "C1 T1 deg2  (x, y+x^2)",
+   "char": 0,
+   "P": "x",
+   "Q": "x**2 + y",
+   "deg_P": 1,
+   "deg_Q": 2,
+   "jacobian_det": "1",
+   "branches": {
+    "R1": {
+     "eliminated": "y",
+     "source_var": "x",
+     "resultant": "-u + x",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 1,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    },
+    "R2": {
+     "eliminated": "x",
+     "source_var": "y",
+     "resultant": "u**2 - v + y",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 1,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    }
+   },
+   "flags": [],
+   "locus_polynomial": "1",
+   "locus_factorisation": {
+    "unit": "1",
+    "factors": []
+   },
+   "locus_empty": true,
+   "locus_components": []
+  },
+  {
+   "label": "C1 T2 deg3  aff o (x+y^3, y)",
+   "char": 0,
+   "P": "x + y**3 + 2*y - 1",
+   "Q": "3*x + 3*y**3 + 7*y + 5",
+   "deg_P": 3,
+   "deg_Q": 3,
+   "jacobian_det": "1",
+   "branches": {
+    "R1": {
+     "eliminated": "y",
+     "source_var": "x",
+     "resultant": "27*u**3 - 27*u**2*v + 216*u**2 + 9*u*v**2 - 144*u*v + 583*u - v**3 + 24*v**2 - 194*v - x + 529",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 6,
+     "leading_coefficient": "-1",
+     "leading_coefficient_factorisation": {
+      "unit": "-1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    },
+    "R2": {
+     "eliminated": "x",
+     "source_var": "y",
+     "resultant": "3*u - v + y + 8",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 6,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    }
+   },
+   "flags": [
+    "DEGREE_DROP:R1(1<6)",
+    "DEGREE_DROP:R2(1<6)"
+   ],
+   "locus_polynomial": "-1",
+   "locus_factorisation": {
+    "unit": "-1",
+    "factors": []
+   },
+   "locus_empty": true,
+   "locus_components": []
+  },
+  {
+   "label": "C1 T3 deg4  (x, y+x^2) o (x+y^2, y)",
+   "char": 0,
+   "P": "x + y**2",
+   "Q": "x**2 + 2*x*y**2 + y**4 + y",
+   "deg_P": 2,
+   "deg_Q": 4,
+   "jacobian_det": "1",
+   "branches": {
+    "R1": {
+     "eliminated": "y",
+     "source_var": "x",
+     "resultant": "u**4 - 2*u**2*v - u + v**2 + x",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 8,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    },
+    "R2": {
+     "eliminated": "x",
+     "source_var": "y",
+     "resultant": "u**2 - v + y",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 8,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    }
+   },
+   "flags": [
+    "DEGREE_DROP:R1(1<8)",
+    "DEGREE_DROP:R2(1<8)"
+   ],
+   "locus_polynomial": "1",
+   "locus_factorisation": {
+    "unit": "1",
+    "factors": []
+   },
+   "locus_empty": true,
+   "locus_components": []
+  },
+  {
+   "label": "C1 T4 deg5  (x+y^5, y) o aff",
+   "char": 0,
+   "P": "x**5 + 5*x**4*y - 15*x**4 + 10*x**3*y**2 - 60*x**3*y + 90*x**3 + 10*x**2*y**3 - 90*x**2*y**2 + 270*x**2*y - 270*x**2 + 5*x*y**4 - 60*x*y**3 + 270*x*y**2 - 540*x*y + 407*x + y**5 - 15*y**4 + 90*y**3 - 270*y**2 + 406*y - 243",
+   "Q": "x + y - 3",
+   "deg_P": 5,
+   "deg_Q": 1,
+   "jacobian_det": "1",
+   "branches": {
+    "R1": {
+     "eliminated": "y",
+     "source_var": "x",
+     "resultant": "u - v**5 - v - x - 3",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 10,
+     "leading_coefficient": "-1",
+     "leading_coefficient_factorisation": {
+      "unit": "-1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    },
+    "R2": {
+     "eliminated": "x",
+     "source_var": "y",
+     "resultant": "u - v**5 - 2*v + y - 6",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 10,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    }
+   },
+   "flags": [
+    "DEGREE_DROP:R1(1<10)",
+    "DEGREE_DROP:R2(1<10)"
+   ],
+   "locus_polynomial": "-1",
+   "locus_factorisation": {
+    "unit": "-1",
+    "factors": []
+   },
+   "locus_empty": true,
+   "locus_components": []
+  },
+  {
+   "label": "C1 T5 deg6  (x+y^2, y) o (x, y+x^3)",
+   "char": 0,
+   "P": "x**6 + 2*x**3*y + x + y**2",
+   "Q": "x**3 + y",
+   "deg_P": 6,
+   "deg_Q": 3,
+   "jacobian_det": "1",
+   "branches": {
+    "R1": {
+     "eliminated": "y",
+     "source_var": "x",
+     "resultant": "-u + v**2 + x",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 12,
+     "leading_coefficient": "1",
+     "leading_coefficient_factorisation": {
+      "unit": "1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    },
+    "R2": {
+     "eliminated": "x",
+     "source_var": "y",
+     "resultant": "-u**3 + 3*u**2*v**2 - 3*u*v**4 + v**6 + v - y",
+     "degree_in_source_var": 1,
+     "sylvester_degree_bound": 12,
+     "leading_coefficient": "-1",
+     "leading_coefficient_factorisation": {
+      "unit": "-1",
+      "factors": []
+     },
+     "leading_coefficient_is_constant": true
+    }
+   },
+   "flags": [
+    "DEGREE_DROP:R1(1<12)",
+    "DEGREE_DROP:R2(1<12)"
+   ],
+   "locus_polynomial": "-1",
+   "locus_factorisation": {
+    "unit": "-1",
+    "factors": []
+   },
+   "locus_empty": true,
+   "locus_components": []
+  }
+ ],
+ "C2": {
+  "label": "C2 (x, x*y)",
+  "char": 0,
+  "P": "x",
+  "Q": "x*y",
+  "deg_P": 1,
+  "deg_Q": 2,
+  "jacobian_det": "x",
+  "branches": {
+   "R1": {
+    "eliminated": "y",
+    "source_var": "x",
+    "resultant": "-u + x",
+    "degree_in_source_var": 1,
+    "sylvester_degree_bound": 1,
+    "leading_coefficient": "1",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": []
+    },
+    "leading_coefficient_is_constant": true
+   },
+   "R2": {
+    "eliminated": "x",
+    "source_var": "y",
+    "resultant": "u*y - v",
+    "degree_in_source_var": 1,
+    "sylvester_degree_bound": 1,
+    "leading_coefficient": "u",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": [
+      {
+       "poly": "u",
+       "mult": 1
+      }
+     ],
+     "complete": true
+    },
+    "leading_coefficient_is_constant": false
+   }
+  },
+  "flags": [],
+  "locus_polynomial": "u",
+  "locus_factorisation": {
+   "unit": "1",
+   "factors": [
+    {
+     "poly": "u",
+     "mult": 1
+    }
+   ],
+   "complete": true
+  },
+  "locus_empty": false,
+  "locus_components": [
+   "u"
+  ]
+ },
+ "C3": {
+  "label": "C3 (x^2, y)",
+  "char": 0,
+  "P": "x**2",
+  "Q": "y",
+  "deg_P": 2,
+  "deg_Q": 1,
+  "jacobian_det": "2*x",
+  "branches": {
+   "R1": {
+    "eliminated": "y",
+    "source_var": "x",
+    "resultant": "-u + x**2",
+    "degree_in_source_var": 2,
+    "sylvester_degree_bound": 2,
+    "leading_coefficient": "1",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": []
+    },
+    "leading_coefficient_is_constant": true
+   },
+   "R2": {
+    "eliminated": "x",
+    "source_var": "y",
+    "resultant": "v**2 - 2*v*y + y**2",
+    "degree_in_source_var": 2,
+    "sylvester_degree_bound": 2,
+    "leading_coefficient": "1",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": []
+    },
+    "leading_coefficient_is_constant": true
+   }
+  },
+  "flags": [],
+  "locus_polynomial": "1",
+  "locus_factorisation": {
+   "unit": "1",
+   "factors": []
+  },
+  "locus_empty": true,
+  "locus_components": []
+ },
+ "C4": {
+  "label": "C4 mondello pair over F_2 (MEASUREMENT ONLY, char 2)",
+  "char": 2,
+  "P": "x**6*y**2 + x**4 + x**2*y + x",
+  "Q": "x**8*y**3 + x**7*y**2 + x**6*y + x**5 + y",
+  "deg_P": 8,
+  "deg_Q": 11,
+  "jacobian_det": "1",
+  "branches": {
+   "R1": {
+    "eliminated": "y",
+    "source_var": "x",
+    "resultant": "u**3*x**16 + u*v*x**16 + u*x**15 + v**2*x**18 + x**16",
+    "degree_in_source_var": 18,
+    "sylvester_degree_bound": 34,
+    "leading_coefficient": "v**2",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": [
+      {
+       "poly": "v",
+       "mult": 2
+      }
+     ],
+     "complete": true,
+     "note": "monomial; factored by inspection (sympy GF(2) multivariate factorisation unavailable)"
+    },
+    "leading_coefficient_is_constant": false
+   },
+   "R2": {
+    "eliminated": "x",
+    "source_var": "y",
+    "resultant": "u**8*y**18 + u**5*v**2*y**16 + u**5*y**18 + u**3*v**3*y**16 + u**3*v**2*y**17 + u*v**4*y**16 + u*v**2*y**18 + v**6*y**16 + v**4*y**18 + v**3*y**16 + v**2*y**17 + v*y**18 + y**19",
+    "degree_in_source_var": 19,
+    "sylvester_degree_bound": 34,
+    "leading_coefficient": "1",
+    "leading_coefficient_factorisation": {
+     "unit": "1",
+     "factors": []
+    },
+    "leading_coefficient_is_constant": true
+   }
+  },
+  "flags": [
+   "POSITIVE_CHARACTERISTIC",
+   "DEGREE_DROP:R1(18<34)",
+   "DEGREE_DROP:R2(19<34)"
+  ],
+  "locus_polynomial": "v**2",
+  "locus_factorisation": {
+   "unit": "1",
+   "factors": [
+    {
+     "poly": "v",
+     "mult": 2
+    }
+   ],
+   "complete": true,
+   "note": "monomial; factored by inspection (sympy GF(2) multivariate factorisation unavailable)"
+  },
+  "locus_empty": false,
+  "locus_components": [
+   "v"
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+CONTROL A: tame automorphism f = x + y^2, g = y  (char 0)
+  tame
+    det J = 1   Keller: True
+    N(f) triangular: True  
+    N(g) triangular: True  
+    => Keller, polygons triangular: Cor 14 gives no obstruction (consistent with being an automorphism)
+  A PASS (must NOT be certified a CE)
+
+CONTROL B: Mondello char-2 counterexample (arXiv:2608.02634)
+  P = x + x^2 y + x^4 + x^6 y^2,  Q = y + x^5 + x^6 y + x^7 y^2 + x^8 y^3   over F_2
+    N(P) triangular: False  {'k': 4, 'n': 0, 'outside_triangle': [(6, 2), (2, 1)]}
+    N(Q) triangular: False  {'k': 5, 'n': 1, 'outside_triangle': [(8, 3), (7, 2), (6, 1)]}
+  B PASS (a known counterexample must be detected as non-automorphism)
+
+==============================================================
+McKay-Wang certificate instrument: VALIDATED

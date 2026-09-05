@@ -1,0 +1,50 @@
+total P swept: 174
+
+by (arm, deg): consistent(dual) / total
+  calib  deg 4       3 /  14
+  calib  deg 6       6 /  18
+  calib  deg 9       3 /  14
+  main   deg 84      0 /  32
+  main   deg 96      0 /  32
+  main   deg 108     0 /  32
+  main   deg 126     0 /  32
+
+by tag: consistent(dual) / total
+  A_rand_sparse_lin        0 /  44
+  B_rand_sparse_nolin      0 /  22
+  C_struct_x               1 /  33
+  D_leadsq                 0 /  36
+  E_leadcube               0 /  28
+  F_coord                 11 /  11
+
+prime disagreement (p1 vs p2): 0
+has_linear_term=0 and consistent: 0
+has_linear_term=0 total: 22
+
+corank of A (n_unknowns - rank_A, p=999983): {1: 98, 2: 74, 7: 1, 10: 1}
+
+support sizes: n_full_support min/median/max, thin_k distribution
+  n_full: 6 2910 15509
+  n_unknowns: 6 589 1200
+  thin_k: {2: 35, 3: 54, 1: 74, 4: 11}
+  thinned (k>1): 100
+
+exact_status: {'not_attempted': 162, 'verified_bracket_eq_1': 12}
+
+exactly verified mates (ring: Q):
+  a4012387e160 F_coord            arm=calib deg pair (P,Q)=(4,2) div_ordered=True  |supp Q|=2
+  fbf00970ade6 F_coord            arm=calib deg pair (P,Q)=(4,2) div_ordered=True  |supp Q|=2
+  eb6976b38508 F_coord            arm=calib deg pair (P,Q)=(4,1) div_ordered=True  |supp Q|=1
+  7d595c3bd034 C_struct_x         arm=calib deg pair (P,Q)=(6,1) div_ordered=True  |supp Q|=1
+  84d01285324b F_coord            arm=calib deg pair (P,Q)=(6,2) div_ordered=True  |supp Q|=2
+  2253023eddc1 F_coord            arm=calib deg pair (P,Q)=(6,2) div_ordered=True  |supp Q|=2
+  6df7f7c0a35c F_coord            arm=calib deg pair (P,Q)=(6,3) div_ordered=True  |supp Q|=2
+  241c5be4e3a9 F_coord            arm=calib deg pair (P,Q)=(6,3) div_ordered=True  |supp Q|=2
+  40c3553b8128 F_coord            arm=calib deg pair (P,Q)=(6,1) div_ordered=True  |supp Q|=1
+  5bf4f9822cd4 F_coord            arm=calib deg pair (P,Q)=(9,3) div_ordered=True  |supp Q|=2
+  693586fd5f7e F_coord            arm=calib deg pair (P,Q)=(9,3) div_ordered=True  |supp Q|=2
+  d9103ff114e1 F_coord            arm=calib deg pair (P,Q)=(9,1) div_ordered=True  |supp Q|=1
+
+QUANTITY OF INTEREST -- main-arm exactly verified mates with a non-divisibility-ordered degree pair: 0
+
+total wall time (sum over P, s): 2124.0

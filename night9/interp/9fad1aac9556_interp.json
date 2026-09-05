@@ -1,0 +1,4838 @@
+{
+ "hash": "9fad1aac9556",
+ "support_P": [
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   3,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   3,
+   10
+  ],
+  [
+   4,
+   0
+  ]
+ ],
+ "primes_with_nondegenerate_NONEMPTY": [
+  2,
+  3,
+  5
+ ],
+ "modulus": 30,
+ "matching_criterion": "(M1) identical zero/non-zero coefficient pattern across the primes; (M2) collision images (P(0,1)=P(1,0), Q(0,1)=Q(1,0), 0^0=1) of the coefficient-wise CRT lift reduce to each prime's values -- recorded as a check, implied by coefficient-wise CRT.",
+ "nondegenerate_counts": {
+  "2": 3,
+  "3": 4,
+  "5": 20
+ },
+ "n_shared_support_patterns": 1,
+ "n_matched_tuples": 32,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_tuples": [
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     1,
+     1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": true,
+    "a": [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "1",
+     "0",
+     "1",
+     "1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-30*x**3*y**9 - 30*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-30*x**3*y**9 - 30*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      2,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     7,
+     1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "1",
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(210), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "30*x**3*y**9 - 210*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      3,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     13,
+     1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "1",
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(90), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(390), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "90*x**3*y**9 - 390*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      4,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     -11,
+     1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "1",
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(150), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(330), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-150*x**3*y**9 + 330*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      1,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     7,
+     7,
+     0,
+     0
+    ],
+    "b": [
+     13,
+     0,
+     1,
+     13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3570), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(210), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3570*x**3*y**9 - 210*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      2,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     7,
+     7,
+     0,
+     0
+    ],
+    "b": [
+     13,
+     0,
+     7,
+     13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3150), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(1470), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3150*x**3*y**9 - 1470*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      3,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     7,
+     7,
+     0,
+     0
+    ],
+    "b": [
+     13,
+     0,
+     13,
+     13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-2730*x**3*y**9 - 2730*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      4,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     7,
+     7,
+     0,
+     0
+    ],
+    "b": [
+     13,
+     0,
+     -11,
+     13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(4410), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(2310), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-4410*x**3*y**9 + 2310*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      1,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     13,
+     13,
+     0,
+     0
+    ],
+    "b": [
+     7,
+     0,
+     1,
+     7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3510), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(390), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3510*x**3*y**9 - 390*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     13,
+     13,
+     0,
+     0
+    ],
+    "b": [
+     7,
+     0,
+     7,
+     7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-2730*x**3*y**9 - 2730*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      3,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     13,
+     13,
+     0,
+     0
+    ],
+    "b": [
+     7,
+     0,
+     13,
+     7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(1950), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(5070), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-1950*x**3*y**9 - 5070*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      4,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     13,
+     13,
+     0,
+     0
+    ],
+    "b": [
+     7,
+     0,
+     -11,
+     7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(5070), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(4290), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-5070*x**3*y**9 + 4290*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      1,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -11,
+     -11,
+     0,
+     0
+    ],
+    "b": [
+     -11,
+     0,
+     1,
+     -11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(4950), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(330), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-4950*x**3*y**9 + 330*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      2,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -11,
+     -11,
+     0,
+     0
+    ],
+    "b": [
+     -11,
+     0,
+     7,
+     -11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(5610), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(2310), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-5610*x**3*y**9 + 2310*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      3,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -11,
+     -11,
+     0,
+     0
+    ],
+    "b": [
+     -11,
+     0,
+     13,
+     -11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(6270), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(4290), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-6270*x**3*y**9 + 4290*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      4,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -11,
+     -11,
+     0,
+     0
+    ],
+    "b": [
+     -11,
+     0,
+     -11,
+     -11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3630), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(3630), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-3630*x**3*y**9 - 3630*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     11,
+     11,
+     0,
+     0
+    ],
+    "b": [
+     11,
+     0,
+     11,
+     11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3630), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(3630), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-3630*x**3*y**9 - 3630*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      2,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     11,
+     11,
+     0,
+     0
+    ],
+    "b": [
+     11,
+     0,
+     -13,
+     11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(6270), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(4290), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-6270*x**3*y**9 + 4290*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      3,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     11,
+     11,
+     0,
+     0
+    ],
+    "b": [
+     11,
+     0,
+     -7,
+     11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(5610), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(2310), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-5610*x**3*y**9 + 2310*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      4,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     11,
+     11,
+     0,
+     0
+    ],
+    "b": [
+     11,
+     0,
+     -1,
+     11
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "-1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(4950), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(330), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(120))",
+    "det_minus_one_residual_str": "-4950*x**3*y**9 + 330*x**2*y**19 + 120",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      1,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -13,
+     -13,
+     0,
+     0
+    ],
+    "b": [
+     -7,
+     0,
+     11,
+     -7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(5070), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(4290), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-5070*x**3*y**9 + 4290*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      2,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -13,
+     -13,
+     0,
+     0
+    ],
+    "b": [
+     -7,
+     0,
+     -13,
+     -7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(1950), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(5070), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-1950*x**3*y**9 - 5070*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      3,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -13,
+     -13,
+     0,
+     0
+    ],
+    "b": [
+     -7,
+     0,
+     -7,
+     -7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-2730*x**3*y**9 - 2730*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      3,
+      0,
+      4,
+      3
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      3,
+      3
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -13,
+     -13,
+     0,
+     0
+    ],
+    "b": [
+     -7,
+     0,
+     -1,
+     -7
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "-1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3510), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(390), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3510*x**3*y**9 - 390*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      1,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -7,
+     -7,
+     0,
+     0
+    ],
+    "b": [
+     -13,
+     0,
+     11,
+     -13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(4410), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(2310), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-4410*x**3*y**9 + 2310*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -7,
+     -7,
+     0,
+     0
+    ],
+    "b": [
+     -13,
+     0,
+     -13,
+     -13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(2730), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-2730*x**3*y**9 - 2730*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      3,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -7,
+     -7,
+     0,
+     0
+    ],
+    "b": [
+     -13,
+     0,
+     -7,
+     -13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3150), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(1470), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3150*x**3*y**9 - 1470*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      3,
+      3,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      4,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      3,
+      3
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -7,
+     -7,
+     0,
+     0
+    ],
+    "b": [
+     -13,
+     0,
+     -1,
+     -13
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "b": [
+     "0",
+     "0",
+     "-1",
+     "0"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(3570), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(210), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))), Integer(90))",
+    "det_minus_one_residual_str": "-3570*x**3*y**9 - 210*x**2*y**19 + 90",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      1,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     11,
+     -1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "-1",
+     "-1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "-1",
+     "0",
+     "0",
+     "-1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(150), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(330), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-150*x**3*y**9 + 330*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      2,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     -13,
+     -1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "-1",
+     "-1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "-1",
+     "0",
+     "0",
+     "-1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(90), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(390), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "90*x**3*y**9 - 390*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      3,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-EMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     -7,
+     -1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": false,
+    "a": [
+     "-1",
+     "-1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "-1",
+     "0",
+     "0",
+     "-1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(210), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "30*x**3*y**9 - 210*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": null,
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  },
+  {
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     1
+    ],
+    "Q_nonzero_indices": [
+     0,
+     2,
+     3
+    ]
+   },
+   "primes": [
+    2,
+    3,
+    5
+   ],
+   "modulus": 30,
+   "matched_residues": [
+    {
+     "p": 2,
+     "characteristic": 2,
+     "a": [
+      1,
+      1,
+      0,
+      0
+     ],
+     "b": [
+      1,
+      0,
+      1,
+      1
+     ],
+     "collision_P_(v01,v10)": [
+      1,
+      1
+     ],
+     "collision_Q_(v01,v10)": [
+      1,
+      1
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 3,
+     "characteristic": 3,
+     "a": [
+      2,
+      2,
+      0,
+      0
+     ],
+     "b": [
+      2,
+      0,
+      2,
+      2
+     ],
+     "collision_P_(v01,v10)": [
+      2,
+      2
+     ],
+     "collision_Q_(v01,v10)": [
+      2,
+      2
+     ],
+     "tear": "TEAR-NONEMPTY"
+    },
+    {
+     "p": 5,
+     "characteristic": 5,
+     "a": [
+      4,
+      4,
+      0,
+      0
+     ],
+     "b": [
+      4,
+      0,
+      4,
+      4
+     ],
+     "collision_P_(v01,v10)": [
+      4,
+      4
+     ],
+     "collision_Q_(v01,v10)": [
+      4,
+      4
+     ],
+     "tear": "TEAR-NONEMPTY"
+    }
+   ],
+   "lift_R1_symmetric_integer": {
+    "a": [
+     -1,
+     -1,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     -1,
+     -1
+    ]
+   },
+   "lift_R2_rational_reconstruction": {
+    "succeeded_for_every_coefficient": true,
+    "a": [
+     "-1",
+     "-1",
+     "0",
+     "0"
+    ],
+    "b": [
+     "-1",
+     "0",
+     "-1",
+     "-1"
+    ]
+   },
+   "exact_check_over_Q_R1": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-30*x**3*y**9 - 30*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "exact_check_over_Q_R2": {
+    "det_minus_one_identically_zero": false,
+    "det_minus_one_residual": "Add(Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(3)), Pow(Symbol('y'), Integer(9))), Mul(Integer(-1), Integer(30), Pow(Symbol('x'), Integer(2)), Pow(Symbol('y'), Integer(19))))",
+    "det_minus_one_residual_str": "-30*x**3*y**9 - 30*x**2*y**19",
+    "collision_P_diff": "0",
+    "collision_Q_diff": "0",
+    "collision_ok": true
+   },
+   "criterion_M2_check": [
+    {
+     "p": 2,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 3,
+     "R1_lift_reduces_to_same_collision_images": true
+    },
+    {
+     "p": 5,
+     "R1_lift_reduces_to_same_collision_images": true
+    }
+   ]
+  }
+ ]
+}

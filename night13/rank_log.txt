@@ -1,0 +1,10 @@
+  size 3 done, 161 survivors so far (5.8s)
+  size 4 done, 581 survivors so far (25.4s)
+  size 5 done, 1372 survivors so far (67.4s)
+  size 6 done, 2478 survivors so far (124.9s)
+m=42: 2478 char-2 survivors; top 5:
+    [5, 8, 11, 17, 29, 32] 2-route rows 14 1-route rows 15 rows 3527
+    [5, 8, 11, 23, 29, 32] 2-route rows 14 1-route rows 15 rows 3527
+    [5, 8, 11, 26, 29, 32] 2-route rows 14 1-route rows 15 rows 3527
+    [5, 8, 14, 17, 29, 32] 2-route rows 14 1-route rows 15 rows 3527
+    [5, 8, 17, 20, 29, 32] 2-route rows 14 1-route rows 15 rows 3527

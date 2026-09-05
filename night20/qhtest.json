@@ -1,0 +1,27 @@
+[
+ {
+  "P": "x**3*y**2 + y + 1",
+  "deg": 5,
+  "unimodular": true,
+  "bezout_U": "4*x**4/3",
+  "bezout_V": "-2*x**3*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1
+ }
+]

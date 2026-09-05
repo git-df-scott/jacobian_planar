@@ -1,0 +1,110 @@
+{
+ "hash": "b42e4046989d",
+ "max_total_degree": 157,
+ "support_P": [
+  [
+   0,
+   152
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   28,
+   0
+  ],
+  [
+   43,
+   114
+  ],
+  [
+   50,
+   17
+  ],
+  [
+   134,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   5
+  ],
+  [
+   13,
+   45
+  ],
+  [
+   26,
+   53
+  ],
+  [
+   36,
+   51
+  ],
+  [
+   83,
+   31
+  ],
+  [
+   92,
+   0
+  ],
+  [
+   125,
+   0
+  ]
+ ],
+ "primes": [
+  2,
+  3
+ ],
+ "per_prime": {
+  "2": {
+   "hash": "b42e4046989d",
+   "p": 2,
+   "nP": 6,
+   "nQ": 8,
+   "n": 14,
+   "max_total_degree": 157,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 32,
+   "count": 12,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 4,
+   "n_nondegenerate": 8,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.01
+  },
+  "3": {
+   "hash": "b42e4046989d",
+   "p": 3,
+   "nP": 6,
+   "nQ": 8,
+   "n": 14,
+   "max_total_degree": 157,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 243,
+   "count": 0,
+   "verdict": "EMPTY",
+   "wall_s": 0.01
+  }
+ },
+ "n_shared_support_patterns": 0,
+ "n_matched_pairs_examined": 0,
+ "matched_pair_list_truncated": false,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_lifts_over_Z": []
+}

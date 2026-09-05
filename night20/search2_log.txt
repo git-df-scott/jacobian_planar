@@ -1,0 +1,16 @@
+D=10 size=3 : 6646 supports, 717768 coefficient vectors, 3024 axis-free candidates so far, 22s
+axis-free candidates: 3024
+  batch 0..250 -> 250 unimodular so far (23s)
+  batch 250..500 -> 500 unimodular so far (23s)
+  batch 500..750 -> 750 unimodular so far (23s)
+  batch 750..1000 -> 1000 unimodular so far (24s)
+  batch 1000..1250 -> 1250 unimodular so far (24s)
+  batch 1250..1500 -> 1500 unimodular so far (25s)
+  batch 1500..1750 -> 1750 unimodular so far (25s)
+  batch 1750..2000 -> 2000 unimodular so far (25s)
+  batch 2000..2250 -> 2250 unimodular so far (26s)
+  batch 2250..2500 -> 2500 unimodular so far (26s)
+  batch 2500..2750 -> 2750 unimodular so far (27s)
+  batch 2750..3000 -> 3000 unimodular so far (27s)
+  batch 3000..3024 -> 3024 unimodular so far (27s)
+UNIMODULAR FOUND: 3024

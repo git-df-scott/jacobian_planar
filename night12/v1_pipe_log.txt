@@ -1,0 +1,2 @@
+pipeline on 30 screened-and-passed P
+pipeline done. P through pipeline: 30 ; mates: 20 ; HITs: 0

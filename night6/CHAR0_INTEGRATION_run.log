@@ -1,0 +1,51 @@
+==============================================================================
+night6 -- INTEGRATION TEST IN CHARACTERISTIC ZERO
+==============================================================================
+face system over Q: dim = 0, vdim = 35
+eliminant: ONE irreducible factor over Q, degree 35 -> K = Q[T]/(h) carries all 35 face solutions at once
+face equation 2qt' - 3q't = u^2 verified exactly in K
+E3 matrix over K: 18 x 19, rank 17, KERNEL DIMENSION 2 (free columns ['s11', 's12'])
+both kernel basis vectors verified exactly: E3(p_,s_) = 0 in K
+
+CONTROLS
+   C1 (characteristic zero, exact rational): the coded E0..E4 agree with the direct (u,z) bracket P_u Q_z - P_z Q_u at 4 random rational seeds: True
+   C2  (p_,s_)=(0,0), free : linear system 38 x 32 over K ; rank = 30 ; inconsistent rows = 0   (1.2s)
+      => the linear system is CONSISTENT; solution space dimension 2
+      => the branch is NON-EMPTY, so the ideal is NOT the unit ideal.  Positive control PASSES.
+      known point f_1..f_8 = g_1..g_12 = r_1..r_12 = 0 (f and g constant, r = 0) satisfies all 38 equations exactly: True
+   C3  the same branch with the vertex non-degeneracy f_8 != 0, g_12 != 0 (Rabinowitsch f_8*Wf = 1, g_12*Wg = 1):
+      on the whole solution space of E1+E2 at (p_,s_) = (0,0), g_1..g_12 are identically zero: True
+      so g_12 = 0 throughout and g_12*Wg = 1 is unsatisfiable => EMPTY, exactly what the handoff's section 3d hand argument predicts (p = s = 0 makes f and g constant).  Control PASSES.
+
+THE FOUR IDEALS -- both charts, both variants, characteristic zero
+   chart A : alpha = 1, beta free   |   chart B : alpha = 0, beta = 1
+   (free variant, and Rabinowitsch vertex non-degeneracy f_8*Wf = 1, g_12*Wg = 1)
+
+   E2 block: 19 x 20 over K, rank 18, kernel dimension 2; consistent for all three quadratic coefficients: yes
+   E1 g-block: 19 x 12 over K, rank 12, left null space dimension 7
+   reduced system: 7 equations in (lam1, lam2) with binary-form coefficients (linear) and binary-cubic right-hand sides; 7 of them not identically zero
+   3 x 3 minors of [L1 | L2 | C]: 35 of 35 are not identically zero
+   gcd of those minors, as polynomials in alpha (beta = 1): degree 0
+   common zero at [alpha:beta] = [1:0] (i.e. beta = 0): False
+   => the minors have NO common zero in P^1: for EVERY (alpha,beta) != (0,0) the identities E1 and E2 already have no common solution in (f,g,r).
+   Bezout certificate over 2 of the minors: sum u_i(alpha)*m_i(alpha) expands to a nonzero constant: True ; normalised to exactly 1: True
+
+INDEPENDENT SPOT CHECKS (the direct 38 x 32 augmented reduction, a different code path, with its inconsistency certificate re-verified against the original rows)
+   chart B  (alpha,beta) = (0,1) : linear system 38 x 32 over K ; rank = 32 ; inconsistent rows = 6   (10.8s)
+      CERTIFICATE re-verified against the original rows: c.M = 0 : True ; c.b = (-3179184021173639701657893044648083890486689931551058837251... (nonzero: True)
+      => NO solution in (f,g,r) at all: this chart is EMPTY over characteristic zero, from E1 and E2 alone.
+   chart A at be = 0 : linear system 38 x 32 over K ; rank = 32 ; inconsistent rows = 6   (8.5s)
+      CERTIFICATE re-verified against the original rows: c.M = 0 : True ; c.b = 953903082682533344075617962064171538797730792573739686302953... (nonzero: True)
+      => NO solution in (f,g,r) at all: this chart is EMPTY over characteristic zero, from E1 and E2 alone.
+   chart A at be = 1 : linear system 38 x 32 over K ; rank = 32 ; inconsistent rows = 6   (208.6s)
+      CERTIFICATE re-verified against the original rows: c.M = 0 : True ; c.b = 734471270427150328740048951499901420865422316968041115631581... (nonzero: True)
+      => NO solution in (f,g,r) at all: this chart is EMPTY over characteristic zero, from E1 and E2 alone.
+
+VERDICT (characteristic zero, all 35 face solutions):
+   chart A free            : unit ideal
+   chart A Rabinowitsch    : unit ideal
+   chart B free            : unit ideal
+   chart B Rabinowitsch    : unit ideal
+   unit ideal = True  : 4 / 4      unit ideal = False : 0 / 4
+
+wall 343.2s

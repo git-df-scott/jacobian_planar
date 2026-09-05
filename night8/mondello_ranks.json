@@ -1,0 +1,761 @@
+{
+ "object": "night5/mondello extracted pair over F_2 (arXiv 2608.02634 Thm 1.2)",
+ "system": "(K) coefficients of P_x Q_y - P_y Q_x - 1 = 0, plus (C2) P(0,1)-P(1,0)=0, Q(0,1)-Q(1,0)=0",
+ "witness_control": {
+  "E0": {
+   "residual_mod2_all_zero": true,
+   "n_equations": 15,
+   "n_unknowns": 9
+  },
+  "E1": {
+   "residual_mod2_all_zero": true,
+   "n_equations": 34,
+   "n_unknowns": 22
+  }
+ },
+ "supports": {
+  "E0_sizes": [
+   4,
+   5
+  ],
+  "E1_sizes": [
+   9,
+   13
+  ],
+  "E1_P": [
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    0
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    6,
+    2
+   ]
+  ],
+  "E1_Q": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    3,
+    1
+   ],
+   [
+    4,
+    1
+   ],
+   [
+    4,
+    2
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    5,
+    2
+   ],
+   [
+    6,
+    1
+   ],
+   [
+    6,
+    2
+   ],
+   [
+    7,
+    2
+   ],
+   [
+    8,
+    3
+   ]
+  ],
+  "hull_vertices_P": [
+   [
+    1,
+    0
+   ],
+   [
+    4,
+    0
+   ],
+   [
+    6,
+    2
+   ],
+   [
+    2,
+    1
+   ]
+  ],
+  "hull_vertices_Q": [
+   [
+    0,
+    1
+   ],
+   [
+    5,
+    0
+   ],
+   [
+    8,
+    3
+   ]
+  ]
+ },
+ "step1_tangent_ranks": {
+  "E0": {
+   "n_unknowns": 9,
+   "n_equations": 15,
+   "rank_mod2": 5,
+   "nullity_mod2": 4,
+   "n_identically_zero_rows_mod2": 10,
+   "zero_rows_mod2": [
+    "K(13, 4)",
+    "K(12, 3)",
+    "K(11, 2)",
+    "K(10, 1)",
+    "K(9, 3)",
+    "K(9, 0)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(3, 0)",
+    "K(1, 1)"
+   ]
+  },
+  "E1": {
+   "n_unknowns": 22,
+   "n_equations": 34,
+   "rank_mod2": 14,
+   "nullity_mod2": 8,
+   "n_identically_zero_rows_mod2": 10,
+   "zero_rows_mod2": [
+    "K(13, 4)",
+    "K(11, 3)",
+    "K(9, 3)",
+    "K(9, 1)",
+    "K(7, 2)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(5, 1)",
+    "K(3, 1)",
+    "K(1, 1)"
+   ]
+  }
+ },
+ "step1_groebner_E0": {
+  "status": "COMPLETED",
+  "elapsed_s": 0.0,
+  "n_basis_elements": 7,
+  "basis": [
+   "a_2_1 + a_4_0**2*b_6_1",
+   "a_2_1*b_5_0 + a_4_0*b_6_1",
+   "a_4_0*b_5_0 + 1",
+   "a_2_1*b_7_2 + a_4_0*b_8_3",
+   "b_5_0*b_8_3 + b_6_1*b_7_2",
+   "a_1_0 + a_4_0",
+   "b_0_1 + b_5_0"
+  ],
+  "variables_with_pure_power_leading_term": [
+   "a_1_0",
+   "b_0_1"
+  ],
+  "quotient_finite_dimensional_over_GF2bar": false
+ },
+ "krull_dimension_E0": {
+  "dimension": 4,
+  "a_maximal_independent_set": [
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_8_3"
+  ],
+  "leading_monomial_supports": [
+   [
+    "a_4_0",
+    "b_6_1"
+   ],
+   [
+    "a_2_1",
+    "b_5_0"
+   ],
+   [
+    "a_4_0",
+    "b_5_0"
+   ],
+   [
+    "a_2_1",
+    "b_7_2"
+   ],
+   [
+    "b_6_1",
+    "b_7_2"
+   ],
+   [
+    "a_1_0"
+   ],
+   [
+    "b_0_1"
+   ]
+  ],
+  "method": "dim V(I) = max |U| with LT(I) cap k[U] = 0 (grevlex GB, GF(2))"
+ },
+ "step2_integral_mod2": {
+  "n_unknowns": 9,
+  "n_equations": 15,
+  "rank_J_mod2": 5,
+  "corank_in_unknowns": 4,
+  "full_unknown_rank_odd_minor_exists": false,
+  "smooth_mod2_point_of_integral_system": false,
+  "equations_with_vanishing_gradient_mod2": [
+   "K(13, 4)",
+   "K(12, 3)",
+   "K(11, 2)",
+   "K(10, 1)",
+   "K(9, 3)",
+   "K(9, 0)",
+   "K(7, 1)",
+   "K(5, 2)",
+   "K(3, 0)",
+   "K(1, 1)"
+  ],
+  "all_residuals_even": true,
+  "integer_residual_at_base": {
+   "K(13, 4)": 2,
+   "K(12, 3)": -2,
+   "K(11, 2)": 6,
+   "K(10, 1)": -2,
+   "K(9, 3)": -2,
+   "K(9, 0)": 4,
+   "K(7, 1)": -2,
+   "K(6, 0)": -4,
+   "K(5, 2)": 6,
+   "K(3, 0)": 4,
+   "K(1, 1)": 2,
+   "C2_P": -2
+  },
+  "equation_labels": [
+   "K(13, 4)",
+   "K(12, 3)",
+   "K(11, 2)",
+   "K(10, 1)",
+   "K(9, 3)",
+   "K(9, 0)",
+   "K(8, 2)",
+   "K(7, 1)",
+   "K(6, 0)",
+   "K(5, 2)",
+   "K(3, 0)",
+   "K(1, 1)",
+   "K(0, 0)",
+   "C2_P",
+   "C2_Q"
+  ],
+  "variable_names": [
+   "a_1_0",
+   "a_2_1",
+   "a_4_0",
+   "a_6_2",
+   "b_0_1",
+   "b_5_0",
+   "b_6_1",
+   "b_7_2",
+   "b_8_3"
+  ],
+  "J_mod2": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  ]
+ },
+ "step2_mod4_step": [
+  {
+   "level_from": 2,
+   "level_to": 4,
+   "rhs_s_mod2": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "rhs_nonzero_positions": [
+    "K(13, 4)",
+    "K(12, 3)",
+    "K(11, 2)",
+    "K(10, 1)",
+    "K(9, 3)",
+    "K(7, 1)",
+    "K(5, 2)",
+    "K(1, 1)",
+    "C2_P"
+   ],
+   "exists": "DOES-NOT-EXIST",
+   "reason": "J*delta = s (mod 2) inconsistent: s is not in the column space of J mod 2",
+   "rank_J_mod2": 5,
+   "rank_augmented_mod2": 6
+  }
+ ],
+ "lift_existence": {
+  "mod4": "DOES-NOT-EXIST",
+  "mod8": "NOT ATTEMPTED (conditional on mod 4)",
+  "mod16": "NOT ATTEMPTED (conditional on mod 4)"
+ },
+ "brute_force_controls": {
+  "mod4": {
+   "search_space": 262144,
+   "n_solutions_mod4_total": 16,
+   "n_solutions_mod4_congruent_to_base_mod2": 0,
+   "example_solutions_mod4": [
+    [
+     1,
+     0,
+     3,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     3,
+     0,
+     1,
+     1,
+     0,
+     2,
+     0
+    ],
+    [
+     1,
+     0,
+     3,
+     2,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     3,
+     2,
+     1,
+     1,
+     0,
+     2,
+     0
+    ],
+    [
+     1,
+     2,
+     3,
+     0,
+     1,
+     1,
+     2,
+     0,
+     0
+    ]
+   ],
+   "variable_names": [
+    "a_1_0",
+    "a_2_1",
+    "a_4_0",
+    "a_6_2",
+    "b_0_1",
+    "b_5_0",
+    "b_6_1",
+    "b_7_2",
+    "b_8_3"
+   ],
+   "base_point": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "mod2": {
+   "n_F2_points_of_the_E0_system": 8,
+   "base_point_is_among_them": true
+  },
+  "groebner_controls": {
+   "all_generators_reduce_to_zero": true,
+   "base_point_satisfies_every_basis_element": true,
+   "n_basis_elements": 7
+  },
+  "per_F2_point": [
+   {
+    "point": [
+     1,
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": true,
+    "n_mod4_lifts": 16
+   },
+   {
+    "point": [
+     1,
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    "is_base_point": false,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   },
+   {
+    "point": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "is_base_point": true,
+    "rank_J_mod2": 5,
+    "nullity_mod2": 4,
+    "admits_mod4_lift": false,
+    "n_mod4_lifts": 0
+   }
+  ]
+ }
+}

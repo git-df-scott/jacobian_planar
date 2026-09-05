@@ -1,0 +1,1075 @@
+[
+ {
+  "hash": "a03f511f7ecd",
+  "label": "G1 h0=-3 c=-1 a=2 n=1 m=2 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1)), (2, Fraction(-2, 1))]",
+  "deg_P": 5,
+  "deg_y": 2,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [
+   "1",
+   "-1",
+   "3/2"
+  ],
+  "chi_gen": 0,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.4,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": 0,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     2,
+     3
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x/3",
+       "F_expr": "Mul(Rational(1, 3), Symbol('x'))",
+       "cofactor_deg": 1,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "2*x**2 - x - 2*y + 3",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/3",
+       "F_expr": "Mul(Integer(-1), Rational(1, 3), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "2*x**3 - 5*x**2 - 2*x*y + 5*x + 4*y - 12",
+       "h_deg": 3,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.2,
+    "num_on": {
+     "verdict": "VANISHING",
+     "ls_residual": 1.9696831063281387e-14,
+     "rel_ls_residual": 1.9696831063281387e-14,
+     "max_period": 1.9367725761810136e-14,
+     "err_ls_residual": 1.923112342484979e-16,
+     "n_components": 2,
+     "chi": 1,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 2,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 80.1
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "-1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "-1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 83.5
+ },
+ {
+  "hash": "0a32a1935a5d",
+  "label": "G1 h0=2 c=2 a=0 n=2 m=3 t=[(0, Fraction(-2, 1))]",
+  "deg_P": 5,
+  "deg_y": 3,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": -1,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   -1,
+   -1,
+   -1,
+   -1,
+   -1,
+   -1
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.3,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": -1,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     1,
+     4
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 3,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "y - 1",
+       "h_deg": 1,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x/4",
+       "F_expr": "Mul(Rational(1, 4), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2*y**2 - 2*x**2*y + x**2 + 1",
+       "h_deg": 4,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.1,
+    "num_on": {
+     "verdict": "VANISHING",
+     "ls_residual": 8.045503855068884e-15,
+     "rel_ls_residual": 8.045503855068884e-15,
+     "max_period": 6.263865243763547e-15,
+     "err_ls_residual": 4.884717719704084e-15,
+     "n_components": 3,
+     "chi": 1,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 3,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 80.1
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "-1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "-1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 80.9
+ },
+ {
+  "hash": "55a9ae0456b4",
+  "label": "G1 h0=-1 c=3 a=1 n=1 m=4 t=[(0, Fraction(2, 1)), (1, Fraction(-3, 1)), (2, Fraction(-2, 1))]",
+  "deg_P": 9,
+  "deg_y": 4,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": 0,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.7,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": 0,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     2,
+     7
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x",
+       "F_expr": "Symbol('x')",
+       "cofactor_deg": 5,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "2*x**2 + 3*x - 2*y - 2",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/3",
+       "F_expr": "Mul(Integer(-1), Rational(1, 3), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "24*x**7 + 84*x**6 - 72*x**5*y - 18*x**5 - 144*x**4*y - 225*x**4 + 72*x**3*y**2 + 198*x**3*y + 45*x**3 + 36*x**2*y**2 + 234*x**2*y + 198*x**2 - 24*x*y**3 - 180*x*y**2 - 288*x*y - 132*x + 24*y**3 + 72*y**2 + 72*y + 32",
+       "h_deg": 7,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.5,
+    "num_on": {
+     "error": "transport: transport wall-clock budget exceeded",
+     "t": 40.00937342643738
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": 0,
+      "exact_periods": "NO_EXACT_CERTIFICATE",
+      "degF": [
+       null
+      ]
+     },
+     "-1/8": {
+      "exact_chi": 0,
+      "exact_periods": "NO_EXACT_CERTIFICATE",
+      "degF": [
+       null
+      ]
+     },
+     "1/64": {
+      "exact_chi": 0,
+      "exact_periods": "NO_EXACT_CERTIFICATE",
+      "degF": [
+       null
+      ]
+     },
+     "-1/64": {
+      "exact_chi": 0,
+      "exact_periods": "NO_EXACT_CERTIFICATE",
+      "degF": [
+       null
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 112.8
+ },
+ {
+  "hash": "37670b444e89",
+  "label": "G1 h0=-1 c=2 a=0 n=1 m=5 t=[(0, Fraction(1, 1))]",
+  "deg_P": 6,
+  "deg_y": 5,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": 0,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.2,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": 0,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     1,
+     5
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x",
+       "F_expr": "Symbol('x')",
+       "cofactor_deg": 4,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "2*y + 1",
+       "h_deg": 1,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/4",
+       "F_expr": "Mul(Integer(-1), Rational(1, 4), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "16*x*y**4 + 32*x*y**3 + 24*x*y**2 + 8*x*y + x - 8",
+       "h_deg": 5,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.2,
+    "num_on": {
+     "verdict": "VANISHING",
+     "ls_residual": 1.6493240309860778e-14,
+     "rel_ls_residual": 1.6493240309860778e-14,
+     "max_period": 1.5275651462939696e-14,
+     "err_ls_residual": 1.3823578092987752e-14,
+     "n_components": 2,
+     "chi": 0,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 2,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 65.1
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 69.6
+ },
+ {
+  "hash": "7887429824c2",
+  "label": "G1 h0=-3 c=1 a=-1 n=2 m=5 t=[(1, Fraction(3, 1)), (2, Fraction(-1, 1))]",
+  "deg_P": 12,
+  "deg_y": 5,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": -1,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   -1,
+   -1,
+   -1,
+   -1,
+   -1,
+   -1
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 1.3,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": -1,
+    "n_vert": 0,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     2,
+     10
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x/3",
+       "F_expr": "Mul(Rational(1, 3), Symbol('x'))",
+       "cofactor_deg": 8,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2 - 3*x - 2*y",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/12",
+       "F_expr": "Mul(Integer(-1), Rational(1, 12), Symbol('x'))",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**10 - 10*x**9 - 8*x**8*y + 31*x**8 + 56*x**7*y - 12*x**7 + 24*x**6*y**2 - 80*x**6*y - 81*x**6 - 96*x**5*y**2 - 144*x**5*y + 54*x**5 - 32*x**4*y**3 - 48*x**4*y**2 + 216*x**4*y + 81*x**4 + 32*x**3*y**3 + 288*x**3*y**2 + 216*x**3*y + 16*x**2*y**4 + 160*x**2*y**3 + 216*x**2*y**2 + 32*x*y**4 + 96*x*y**3 + 16*y**4 - 48",
+       "h_deg": 10,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.7,
+    "num_on": {
+     "error": "RuntimeError: transport wall-clock budget exceeded",
+     "t": 40.02593374252319
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     },
+     "-1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       5
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 116.7
+ },
+ {
+  "hash": "1de9e111cb5d",
+  "label": "G2 alpha=-1 beta=1 c=3 B=[(Fraction(0, 1), 2)] m=1",
+  "deg_P": 3,
+  "deg_y": 1,
+  "n15_instrument": "NUM-MONO",
+  "n15_fibres_tested": [
+   "1",
+   "-1"
+  ],
+  "chi_gen": 0,
+  "chi_gen_votes": "5/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    0
+   ],
+   [
+    "1",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "1",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.1,
+  "fibres": [
+   {
+    "c": "1",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": 0,
+    "n_vert": 1,
+    "n_Qfactors": 2,
+    "Qfactor_degs": [
+     1,
+     2
+    ],
+    "exact": {
+     "n_components_over_Q": 2,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-y",
+       "F_expr": "Mul(Integer(-1), Symbol('y'))",
+       "cofactor_deg": 1,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x",
+       "h_deg": 1,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "y",
+       "F_expr": "Symbol('y')",
+       "cofactor_deg": 0,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "3*x*y - 1",
+       "h_deg": 2,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.0,
+    "num_on": {
+     "verdict": "VANISHING",
+     "ls_residual": 9.552560239066794e-16,
+     "rel_ls_residual": 9.552560239066794e-16,
+     "max_period": 9.552560239066794e-16,
+     "err_ls_residual": 5.14065503702954e-16,
+     "n_components": 1,
+     "chi": 0,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 1,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 52.2
+    },
+    "num_near": {
+     "9/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "7/8": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "65/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "63/64": {
+      "exact_chi": 0,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 52.6
+ },
+ {
+  "hash": "11b94e5ad1be",
+  "label": "G1 h0=-1 c=1 a=1 n=2 m=3 t=[(0, Fraction(2, 1)), (1, Fraction(1, 1))] [S4 intent]",
+  "deg_P": 5,
+  "deg_y": 3,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": -1,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   -1,
+   -1,
+   -1,
+   -1,
+   -1,
+   -1
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.5,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": -1,
+    "n_vert": 0,
+    "n_Qfactors": 3,
+    "Qfactor_degs": [
+     1,
+     2,
+     2
+    ],
+    "exact": {
+     "n_components_over_Q": 3,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-2*y",
+       "F_expr": "Mul(Integer(-1), Integer(2), Symbol('y'))",
+       "cofactor_deg": 3,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x + 2*y + 2",
+       "h_deg": 1,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 2,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2 + 2*x*y + x - 2*y - 4",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 2,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2 + 2*x*y + x - 2*y",
+       "h_deg": 2,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.3,
+    "num_on": {
+     "verdict": "VANISHING",
+     "ls_residual": 1.8440116750901663e-14,
+     "rel_ls_residual": 1.8440116750901663e-14,
+     "max_period": 1.3180298831321631e-14,
+     "err_ls_residual": 2.9764620119526436e-15,
+     "n_components": 3,
+     "chi": 1,
+     "n_punctures": null,
+     "genus_sum": null,
+     "n_cycles": 3,
+     "max_abs_residue": null,
+     "sum_abs_residues": null,
+     "n_places_total": null,
+     "t": 80.1
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "-1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     },
+     "-1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       2
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 82.8
+ },
+ {
+  "hash": "ac09181bd1e3",
+  "label": "G1 h0=-1 c=1 a=0 n=2 m=3 t=[(0, Fraction(1, 1)), (1, Fraction(-3, 1)), (2, Fraction(-1, 1))] [S4 intent]",
+  "deg_P": 8,
+  "deg_y": 3,
+  "n15_instrument": "EXACT-G1",
+  "n15_fibres_tested": [],
+  "chi_gen": -1,
+  "chi_gen_votes": "6/6",
+  "generic_c": [
+   "-13",
+   "69/7",
+   "-77/5",
+   "-5/2",
+   "1",
+   "-7"
+  ],
+  "generic_chi": [
+   -1,
+   -1,
+   -1,
+   -1,
+   -1,
+   -1
+  ],
+  "candidates_tested": [
+   [
+    "0",
+    1
+   ]
+  ],
+  "atypical": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1
+   }
+  ],
+  "t_detect": 0.4,
+  "fibres": [
+   {
+    "c": "0",
+    "kind": "rational",
+    "chi": 1,
+    "chi_gen": -1,
+    "n_vert": 0,
+    "n_Qfactors": 3,
+    "Qfactor_degs": [
+     2,
+     3,
+     3
+    ],
+    "exact": {
+     "n_components_over_Q": 3,
+     "all_exact": true,
+     "components": [
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "x",
+       "F_expr": "Symbol('x')",
+       "cofactor_deg": 4,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**2 + 3*x - 2*y - 1",
+       "h_deg": 2,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 3,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**3 + 3*x**2 - 2*x*y - x - 2",
+       "h_deg": 3,
+       "mult": 1
+      },
+      {
+       "ok": true,
+       "degF": 1,
+       "F": "-x/2",
+       "F_expr": "Mul(Integer(-1), Rational(1, 2), Symbol('x'))",
+       "cofactor_deg": 3,
+       "verified": true,
+       "witness": "[P,F] - 1 = G*h verified coefficientwise over Q",
+       "h": "x**3 + 3*x**2 - 2*x*y - x + 2",
+       "h_deg": 3,
+       "mult": 1
+      }
+     ],
+     "verdict": "VANISHING_EXACT"
+    },
+    "t_exact": 0.2,
+    "num_on": {
+     "error": "RuntimeError: transport wall-clock budget exceeded",
+     "t": 40.044081926345825
+    },
+    "num_near": {
+     "1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "-1/8": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     },
+     "-1/64": {
+      "exact_chi": -1,
+      "exact_periods": "VANISHING_EXACT",
+      "degF": [
+       3
+      ]
+     }
+    }
+   }
+  ],
+  "verdict": "STILL-VANISHING",
+  "t_total": 44.5
+ }
+]

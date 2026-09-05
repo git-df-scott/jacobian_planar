@@ -1,0 +1,70 @@
+verify_mondello -- arXiv 2608.02634 Theorem 1.2, characteristic two
+object transcribed from the paper; never adjusted by this script
+======================================================================
+(1) F_2 arithmetic
+  PASS 1 + 1 = 0
+  PASS A + A = 0
+  PASS commutativity of +
+  PASS commutativity of *
+  PASS associativity of *
+  PASS distributivity
+  PASS Frobenius (A+B)^2 = A^2 + B^2
+  PASS Leibniz d/dx(A*B) = A_x*B + A*B_x
+  PASS d/dx(x^2) = 0 in char 2
+  PASS product agrees with pointwise evaluation over all 16 F_4 points  mismatches=0
+
+(2) Jacobian of the extracted pair, in F_2[x,y]
+      P   = x + x^2y + x^4 + x^6y^2
+      Q   = y + x^5 + x^6y + x^7y^2 + x^8y^3
+      P_x = 1        (paper prints: 1)
+      P_y = x^2        (paper prints: x^2)
+      Q_x = x^4 + x^6y^2   (paper prints: x^4+x^6y^2)
+      Q_y = 1 + x^6 + x^8y^2   (paper prints: 1+x^6+x^8y^2)
+  PASS P_x matches the paper
+  PASS P_y matches the paper
+  PASS Q_x matches the paper
+  PASS Q_y matches the paper
+      det JF = 1
+  PASS det JF is exactly 1 in F_2[x,y]
+
+(3) stated collision F(0,1) = F(1,0) = F(1,1) = (0,1)
+  PASS the 3 printed points are pairwise distinct
+      F(0,1) = (0,1)
+      F(1,0) = (0,1)
+      F(1,1) = (0,1)
+  PASS all images are equal
+  PASS the common image is the printed (0,1)
+  PASS F(0,0) = (0,0) as the paper states
+
+(4) night4/tail.py formal-inverse recursion mod 2, D = 24
+      imported /home/user/jacobian_planar/night4/tail.py
+      linear part mod 2 = [[1, 0], [0, 1]], det = 1
+  PASS linear part is invertible mod 2  det = 1
+      deg F = 11, D = 24
+      composition self-check: PASS
+      TAIL profile (m = 12..24):
+        m=12 : 0
+        m=13 : 1
+        m=14 : 0
+        m=15 : 4
+        m=16 : 3
+        m=17 : 2
+        m=18 : 1
+        m=19 : 2
+        m=20 : 1
+        m=21 : 2
+        m=22 : 1
+        m=23 : 0
+        m=24 : 0
+      tail vector = [0, 1, 0, 4, 3, 2, 1, 2, 1, 2, 1, 0, 0]
+      tail NONZERO somewhere: True (first nonzero degree: 13)
+  PASS composition self-check
+
+======================================================================
+SUMMARY
+  (1) F_2 arithmetic          : PASS
+  (2) Jacobian is exactly 1   : PASS
+  (3) stated collision        : PASS
+  (4) tail recursion mod 2    : self-check PASS, tail NONZERO from m=13
+      tail profile m=12..24 : [0, 1, 0, 4, 3, 2, 1, 2, 1, 2, 1, 0, 0]
+======================================================================

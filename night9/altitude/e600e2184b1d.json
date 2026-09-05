@@ -1,0 +1,506 @@
+{
+ "hash": "e600e2184b1d",
+ "max_total_degree": 159,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   83
+  ],
+  [
+   12,
+   100
+  ],
+  [
+   59,
+   34
+  ],
+  [
+   74,
+   71
+  ],
+  [
+   75,
+   8
+  ],
+  [
+   126,
+   0
+  ],
+  [
+   128,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   87
+  ],
+  [
+   22,
+   9
+  ],
+  [
+   64,
+   95
+  ],
+  [
+   75,
+   30
+  ],
+  [
+   88,
+   20
+  ],
+  [
+   102,
+   2
+  ],
+  [
+   157,
+   0
+  ]
+ ],
+ "primes": [
+  2,
+  3
+ ],
+ "per_prime": {
+  "2": {
+   "hash": "e600e2184b1d",
+   "p": 2,
+   "nP": 8,
+   "nQ": 8,
+   "n": 16,
+   "max_total_degree": 159,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 128,
+   "count": 32,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 2,
+   "n_nondegenerate": 30,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.03
+  },
+  "3": {
+   "hash": "e600e2184b1d",
+   "p": 3,
+   "nP": 8,
+   "nQ": 8,
+   "n": 16,
+   "max_total_degree": 159,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 2187,
+   "count": 102,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 6,
+   "n_nondegenerate": 96,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.6
+  }
+ },
+ "n_shared_support_patterns": 1,
+ "n_matched_pairs_examined": 4,
+ "matched_pair_list_truncated": false,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_lifts_over_Z": [
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "3780*x**200*y**29 - 126*x**125 - 30*x**75*y**29",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     6
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4,
+     7
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "-3780*x**200*y**29 - 126*x**125 + 30*x**75*y**29",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     6
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4,
+     7
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     2,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     2,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     -1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "-3780*x**200*y**29 - 126*x**125 + 30*x**75*y**29",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     6
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4,
+     7
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     -1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 3,
+   "residual_str": "3780*x**200*y**29 - 126*x**125 - 30*x**75*y**29",
+   "residual_content": 6,
+   "residual_content_factorization": {
+    "2": 1,
+    "3": 1
+   },
+   "residual_content_n_distinct_primes": 2,
+   "residual_content_n_prime_factors_with_multiplicity": 2,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     0,
+     6
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4,
+     7
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     2,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     2,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     -1,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     1
+    ]
+   }
+  }
+ ]
+}

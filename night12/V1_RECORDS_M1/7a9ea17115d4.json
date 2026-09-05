@@ -1,0 +1,131 @@
+{
+ "hash": "7a9ea17115d4",
+ "family": "M1",
+ "profile": "(128,192)",
+ "deg_P": 128,
+ "n_supp_P": 4,
+ "P": {
+  "1,0": 1,
+  "52,76": 18,
+  "55,73": 12,
+  "58,70": 2
+ },
+ "SY_verdict": "NON_COORDINATE",
+ "SY_nodes": 1,
+ "SY_leaves": 1,
+ "stages": [
+  {
+   "n_unknowns": 135,
+   "n_rows_nonzero": 473,
+   "rank_A_p": 135,
+   "rank_Ae_p": 136,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      51,
+      76
+     ],
+     [
+      -1,
+      936
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "stage": "Y",
+   "deg_Q_bound": 127,
+   "n_raw": 136,
+   "thin_t": 1,
+   "n_used": 135,
+   "deflated_kernel_dim": 1,
+   "secs": 0.3
+  },
+  {
+   "n_unknowns": 304,
+   "n_rows_nonzero": 836,
+   "rank_A_p": 304,
+   "rank_Ae_p": 305,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 2,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      51,
+      76
+     ],
+     [
+      -1,
+      936
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "stage": "C",
+   "deg_Q_bound": 192,
+   "n_raw": 305,
+   "thin_t": 1,
+   "n_used": 304,
+   "deflated_kernel_dim": 1,
+   "secs": 1.8
+  },
+  {
+   "n_unknowns": 535,
+   "n_rows_nonzero": 1211,
+   "rank_A_p": 535,
+   "rank_Ae_p": 536,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "stage": "W",
+   "deg_Q_bound": 255,
+   "n_raw": 536,
+   "thin_t": 1,
+   "n_used": 535,
+   "deflated_kernel_dim": 1,
+   "secs": 1.1
+  }
+ ],
+ "outcome": "EMPTY_all_stages_tried",
+ "hit": false,
+ "secs": 3.2,
+ "arm": "M1_override",
+ "screens_overridden": true,
+ "screen_S1": "reject",
+ "screen_S1_detail": "common zero of (P_x,P_y): HAS_COMMON_ZERO 0",
+ "screen_S2": "pass",
+ "places_at_infinity": 5,
+ "genus_newton": 414
+}

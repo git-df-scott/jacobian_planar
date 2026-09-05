@@ -1,0 +1,603 @@
+{
+ "P": "gamma*x*y^2 + c*y",
+ "DMAX": 60,
+ "row_formula_check": {
+  "carrier_D": 30,
+  "monomials": 496,
+  "agree": true,
+  "mismatches": []
+ },
+ "rows": [
+  {
+   "D": 2,
+   "n_unknowns": 6,
+   "n_equations": 8,
+   "lambda_support": 2,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 6 columns and lambda^T e = 1",
+   "secs": 0.04
+  },
+  {
+   "D": 3,
+   "n_unknowns": 10,
+   "n_equations": 12,
+   "lambda_support": 3,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 10 columns and lambda^T e = 1",
+   "secs": 0.08
+  },
+  {
+   "D": 4,
+   "n_unknowns": 15,
+   "n_equations": 18,
+   "lambda_support": 3,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 15 columns and lambda^T e = 1",
+   "secs": 0.14
+  },
+  {
+   "D": 5,
+   "n_unknowns": 21,
+   "n_equations": 26,
+   "lambda_support": 4,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 21 columns and lambda^T e = 1",
+   "secs": 0.21
+  },
+  {
+   "D": 6,
+   "n_unknowns": 28,
+   "n_equations": 33,
+   "lambda_support": 4,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 28 columns and lambda^T e = 1",
+   "secs": 0.28
+  },
+  {
+   "D": 7,
+   "n_unknowns": 36,
+   "n_equations": 42,
+   "lambda_support": 5,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 36 columns and lambda^T e = 1",
+   "secs": 0.39
+  },
+  {
+   "D": 8,
+   "n_unknowns": 45,
+   "n_equations": 53,
+   "lambda_support": 5,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 45 columns and lambda^T e = 1",
+   "secs": 0.51
+  },
+  {
+   "D": 9,
+   "n_unknowns": 55,
+   "n_equations": 63,
+   "lambda_support": 6,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 55 columns and lambda^T e = 1",
+   "secs": 0.64
+  },
+  {
+   "D": 10,
+   "n_unknowns": 66,
+   "n_equations": 75,
+   "lambda_support": 6,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 66 columns and lambda^T e = 1",
+   "secs": 0.87
+  },
+  {
+   "D": 11,
+   "n_unknowns": 78,
+   "n_equations": 89,
+   "lambda_support": 7,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 78 columns and lambda^T e = 1",
+   "secs": 0.9
+  },
+  {
+   "D": 12,
+   "n_unknowns": 91,
+   "n_equations": 102,
+   "lambda_support": 7,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 91 columns and lambda^T e = 1",
+   "secs": 1.06
+  },
+  {
+   "D": 13,
+   "n_unknowns": 105,
+   "n_equations": 117,
+   "lambda_support": 8,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 105 columns and lambda^T e = 1",
+   "secs": 1.31
+  },
+  {
+   "D": 14,
+   "n_unknowns": 120,
+   "n_equations": 134,
+   "lambda_support": 8,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 120 columns and lambda^T e = 1",
+   "secs": 1.49
+  },
+  {
+   "D": 15,
+   "n_unknowns": 136,
+   "n_equations": 150,
+   "lambda_support": 9,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 136 columns and lambda^T e = 1",
+   "secs": 1.67
+  },
+  {
+   "D": 16,
+   "n_unknowns": 153,
+   "n_equations": 168,
+   "lambda_support": 9,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+   "secs": 1.99
+  },
+  {
+   "D": 17,
+   "n_unknowns": 171,
+   "n_equations": 188,
+   "lambda_support": 10,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 171 columns and lambda^T e = 1",
+   "secs": 2.18
+  },
+  {
+   "D": 18,
+   "n_unknowns": 190,
+   "n_equations": 207,
+   "lambda_support": 10,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 190 columns and lambda^T e = 1",
+   "secs": 2.32
+  },
+  {
+   "D": 19,
+   "n_unknowns": 210,
+   "n_equations": 228,
+   "lambda_support": 11,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 210 columns and lambda^T e = 1",
+   "secs": 2.66
+  },
+  {
+   "D": 20,
+   "n_unknowns": 231,
+   "n_equations": 251,
+   "lambda_support": 11,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 231 columns and lambda^T e = 1",
+   "secs": 2.9
+  },
+  {
+   "D": 21,
+   "n_unknowns": 253,
+   "n_equations": 273,
+   "lambda_support": 12,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 253 columns and lambda^T e = 1",
+   "secs": 3.3
+  },
+  {
+   "D": 22,
+   "n_unknowns": 276,
+   "n_equations": 297,
+   "lambda_support": 12,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 276 columns and lambda^T e = 1",
+   "secs": 3.66
+  },
+  {
+   "D": 23,
+   "n_unknowns": 300,
+   "n_equations": 323,
+   "lambda_support": 13,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 300 columns and lambda^T e = 1",
+   "secs": 3.96
+  },
+  {
+   "D": 24,
+   "n_unknowns": 325,
+   "n_equations": 348,
+   "lambda_support": 13,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 325 columns and lambda^T e = 1",
+   "secs": 4.23
+  },
+  {
+   "D": 25,
+   "n_unknowns": 351,
+   "n_equations": 375,
+   "lambda_support": 14,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 351 columns and lambda^T e = 1",
+   "secs": 4.7
+  },
+  {
+   "D": 26,
+   "n_unknowns": 378,
+   "n_equations": 404,
+   "lambda_support": 14,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 378 columns and lambda^T e = 1",
+   "secs": 5.13
+  },
+  {
+   "D": 27,
+   "n_unknowns": 406,
+   "n_equations": 432,
+   "lambda_support": 15,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 406 columns and lambda^T e = 1",
+   "secs": 5.49
+  },
+  {
+   "D": 28,
+   "n_unknowns": 435,
+   "n_equations": 462,
+   "lambda_support": 15,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 435 columns and lambda^T e = 1",
+   "secs": 6.07
+  },
+  {
+   "D": 29,
+   "n_unknowns": 465,
+   "n_equations": 494,
+   "lambda_support": 16,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 465 columns and lambda^T e = 1",
+   "secs": 6.44
+  },
+  {
+   "D": 30,
+   "n_unknowns": 496,
+   "n_equations": 525,
+   "lambda_support": 16,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 496 columns and lambda^T e = 1",
+   "secs": 7.09
+  },
+  {
+   "D": 31,
+   "n_unknowns": 528,
+   "n_equations": 558,
+   "lambda_support": 17,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 528 columns and lambda^T e = 1",
+   "secs": 7.46
+  },
+  {
+   "D": 32,
+   "n_unknowns": 561,
+   "n_equations": 593,
+   "lambda_support": 17,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 561 columns and lambda^T e = 1",
+   "secs": 8.05
+  },
+  {
+   "D": 33,
+   "n_unknowns": 595,
+   "n_equations": 627,
+   "lambda_support": 18,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 595 columns and lambda^T e = 1",
+   "secs": 8.67
+  },
+  {
+   "D": 34,
+   "n_unknowns": 630,
+   "n_equations": 663,
+   "lambda_support": 18,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 630 columns and lambda^T e = 1",
+   "secs": 9.18
+  },
+  {
+   "D": 35,
+   "n_unknowns": 666,
+   "n_equations": 701,
+   "lambda_support": 19,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 666 columns and lambda^T e = 1",
+   "secs": 9.68
+  },
+  {
+   "D": 36,
+   "n_unknowns": 703,
+   "n_equations": 738,
+   "lambda_support": 19,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 703 columns and lambda^T e = 1",
+   "secs": 9.96
+  },
+  {
+   "D": 37,
+   "n_unknowns": 741,
+   "n_equations": 777,
+   "lambda_support": 20,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 741 columns and lambda^T e = 1",
+   "secs": 10.99
+  },
+  {
+   "D": 38,
+   "n_unknowns": 780,
+   "n_equations": 818,
+   "lambda_support": 20,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 780 columns and lambda^T e = 1",
+   "secs": 11.31
+  },
+  {
+   "D": 39,
+   "n_unknowns": 820,
+   "n_equations": 858,
+   "lambda_support": 21,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 820 columns and lambda^T e = 1",
+   "secs": 11.71
+  },
+  {
+   "D": 40,
+   "n_unknowns": 861,
+   "n_equations": 900,
+   "lambda_support": 21,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 861 columns and lambda^T e = 1",
+   "secs": 13.19
+  },
+  {
+   "D": 41,
+   "n_unknowns": 903,
+   "n_equations": 944,
+   "lambda_support": 22,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 903 columns and lambda^T e = 1",
+   "secs": 13.49
+  },
+  {
+   "D": 42,
+   "n_unknowns": 946,
+   "n_equations": 987,
+   "lambda_support": 22,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 946 columns and lambda^T e = 1",
+   "secs": 14.0
+  },
+  {
+   "D": 43,
+   "n_unknowns": 990,
+   "n_equations": 1032,
+   "lambda_support": 23,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 990 columns and lambda^T e = 1",
+   "secs": 14.8
+  },
+  {
+   "D": 44,
+   "n_unknowns": 1035,
+   "n_equations": 1079,
+   "lambda_support": 23,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1035 columns and lambda^T e = 1",
+   "secs": 15.83
+  },
+  {
+   "D": 45,
+   "n_unknowns": 1081,
+   "n_equations": 1125,
+   "lambda_support": 24,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1081 columns and lambda^T e = 1",
+   "secs": 16.46
+  },
+  {
+   "D": 46,
+   "n_unknowns": 1128,
+   "n_equations": 1173,
+   "lambda_support": 24,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1128 columns and lambda^T e = 1",
+   "secs": 17.52
+  },
+  {
+   "D": 47,
+   "n_unknowns": 1176,
+   "n_equations": 1223,
+   "lambda_support": 25,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1176 columns and lambda^T e = 1",
+   "secs": 18.37
+  },
+  {
+   "D": 48,
+   "n_unknowns": 1225,
+   "n_equations": 1272,
+   "lambda_support": 25,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1225 columns and lambda^T e = 1",
+   "secs": 19.49
+  },
+  {
+   "D": 49,
+   "n_unknowns": 1275,
+   "n_equations": 1323,
+   "lambda_support": 26,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1275 columns and lambda^T e = 1",
+   "secs": 20.1
+  },
+  {
+   "D": 50,
+   "n_unknowns": 1326,
+   "n_equations": 1376,
+   "lambda_support": 26,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1326 columns and lambda^T e = 1",
+   "secs": 20.22
+  },
+  {
+   "D": 51,
+   "n_unknowns": 1378,
+   "n_equations": 1428,
+   "lambda_support": 27,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1378 columns and lambda^T e = 1",
+   "secs": 21.44
+  },
+  {
+   "D": 52,
+   "n_unknowns": 1431,
+   "n_equations": 1482,
+   "lambda_support": 27,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1431 columns and lambda^T e = 1",
+   "secs": 22.0
+  },
+  {
+   "D": 53,
+   "n_unknowns": 1485,
+   "n_equations": 1538,
+   "lambda_support": 28,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1485 columns and lambda^T e = 1",
+   "secs": 23.1
+  },
+  {
+   "D": 54,
+   "n_unknowns": 1540,
+   "n_equations": 1593,
+   "lambda_support": 28,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1540 columns and lambda^T e = 1",
+   "secs": 24.49
+  },
+  {
+   "D": 55,
+   "n_unknowns": 1596,
+   "n_equations": 1650,
+   "lambda_support": 29,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1596 columns and lambda^T e = 1",
+   "secs": 26.75
+  },
+  {
+   "D": 56,
+   "n_unknowns": 1653,
+   "n_equations": 1709,
+   "lambda_support": 29,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1653 columns and lambda^T e = 1",
+   "secs": 29.59
+  },
+  {
+   "D": 57,
+   "n_unknowns": 1711,
+   "n_equations": 1767,
+   "lambda_support": 30,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1711 columns and lambda^T e = 1",
+   "secs": 30.73
+  },
+  {
+   "D": 58,
+   "n_unknowns": 1770,
+   "n_equations": 1827,
+   "lambda_support": 30,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1770 columns and lambda^T e = 1",
+   "secs": 32.41
+  },
+  {
+   "D": 59,
+   "n_unknowns": 1830,
+   "n_equations": 1889,
+   "lambda_support": 31,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1830 columns and lambda^T e = 1",
+   "secs": 32.32
+  },
+  {
+   "D": 60,
+   "n_unknowns": 1891,
+   "n_equations": 1950,
+   "lambda_support": 31,
+   "support_inside_row_set": true,
+   "verified": true,
+   "verification": "lambda^T M = 0 on all 1891 columns and lambda^T e = 1",
+   "secs": 33.47
+  }
+ ],
+ "all_verified": true
+}

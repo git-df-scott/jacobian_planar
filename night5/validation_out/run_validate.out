@@ -1,0 +1,11 @@
+VALIDATION: F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))
+  Singular (independent instrument) verdict: EMPTY
+  level 9: 1 conds, 1 solved, ideal still trivial
+  level 12: 2 conds, 0 solved, ideal has 2 relation(s)
+
+walk_ideal verdict: OPEN   (1202s, 2 relations)
+*** DISAGREES: walk_ideal says OPEN where Singular says EMPTY.
+    Either walk_ideal is incomplete (it only walks driver levels
+    and may not reach the contradiction) or it is WRONG.
+    Its verdicts on the open case cannot be trusted until this
+    is understood. ***

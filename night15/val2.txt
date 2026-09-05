@@ -1,0 +1,12 @@
+n=3 m=4 EXACT=VANISHING        | NUM=VANISHING     ls=1.677e-14 err=1.1e-15 g=0 pl=4 (74s)  MATCH=True
+n=2 m=4 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=8.604e-01 err=8.9e-16 g=0 pl=3 (62s)  MATCH=True
+n=2 m=5 EXACT=VANISHING        | NUM=VANISHING     ls=1.519e-14 err=7.7e-16 g=0 pl=3 (66s)  MATCH=True
+n=1 m=2 EXACT=VANISHING        | NUM=VANISHING     ls=2.302e-15 err=3.9e-15 g=0 pl=2 (43s)  MATCH=True
+n=2 m=2 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=2.221e+00 err=0.0e+00 g=0 pl=3 (53s)  MATCH=True
+n=3 m=2 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=3.435e+00 err=5.5e-13 g=1 pl=2 (62s)  MATCH=True
+n=4 m=3 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=3.118e+00 err=1.2e-13 g=1 pl=3 (79s)  MATCH=True
+n=2 m=3 EXACT=VANISHING        | NUM=VANISHING     ls=3.896e-15 err=1.3e-15 g=0 pl=3 (56s)  MATCH=True
+n=1 m=3 EXACT=VANISHING        | NUM=VANISHING     ls=5.345e-15 err=3.1e-15 g=0 pl=2 (46s)  MATCH=True
+n=3 m=3 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=2.103e+00 err=4.4e-16 g=0 pl=4 (68s)  MATCH=True
+n=3 m=5 EXACT=DEFERRED_TO_NUM  | NUM=NONVANISHING  ls=1.274e+00 err=6.7e-16 g=1 pl=2 (77s)  MATCH=True
+n=5 m=3 EXACT=NONVANISHING     | NUM=NONVANISHING  ls=4.797e+00 err=2.8e-14 g=2 pl=2 (92s)  MATCH=True

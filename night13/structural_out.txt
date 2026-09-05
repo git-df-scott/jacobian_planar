@@ -1,0 +1,62 @@
+{
+ "pool_P": 1087,
+ "pool_Q": 2439,
+ "n_rows_over_maximal_carrier": 6803,
+ "constant_row_adjustable_pairs": 1,
+ "n_structural_singleton_mandatory": 37,
+ "n_repairable_by_removal": 35,
+ "n_unrepairable": 2,
+ "unrepairable_rows": [
+  {
+   "row_key": [
+    3,
+    80
+   ],
+   "P_monomial": [
+    4,
+    80
+   ],
+   "P_kind": "LEADING",
+   "Q_monomial": [
+    0,
+    1
+   ],
+   "Q_kind": "lower",
+   "factor_p1a2_minus_p2a1": 4
+  },
+  {
+   "row_key": [
+    123,
+    2
+   ],
+   "P_monomial": [
+    1,
+    0
+   ],
+   "P_kind": "lower",
+   "Q_monomial": [
+    123,
+    3
+   ],
+   "Q_kind": "LEADING",
+   "factor_p1a2_minus_p2a1": 3
+  }
+ ],
+ "constant_row_equation": "a_(1,0) * b_(0,1) = 1",
+ "forced_equations": [
+  {
+   "row_key": [
+    3,
+    80
+   ],
+   "equation": "4 * A * b_(0, 1) = 0"
+  },
+  {
+   "row_key": [
+    123,
+    2
+   ],
+   "equation": "3 * a_(1, 0) * B*h41^3 = 0"
+  }
+ ]
+}

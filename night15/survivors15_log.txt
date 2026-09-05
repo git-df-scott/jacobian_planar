@@ -1,0 +1,345 @@
+survivors (PERIODS-VANISHING): 57 ; not decided by the screen: 6
+
+[1/57] c5e02d711fe5 deg=3 dy=2  G1 h0=-3 c=2 a=0 n=1 m=2 t=[(0, Fraction(1, 1))]
+    D=3    n=10    EMPTY_over_Q     lambda_exact (0.1s)
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[2/57] a3b909a78c74 deg=3 dy=2  G1 h0=-1 c=1 a=0 n=1 m=2 t=[(0, Fraction(-3, 1)), (1, Fraction(-3, 1))]
+    D=3    n=10    EMPTY_over_Q     lambda_exact (0.0s)
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[3/57] 1de9e111cb5d deg=3 dy=1  G2 alpha=-1 beta=1 c=3 B=[(Fraction(0, 1), 2)] m=1
+    D=3    n=10    EMPTY_over_Q     lambda_exact (0.0s)
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[4/57] 207b968cb4c5 deg=4 dy=3  G1 h0=1 c=3 a=0 n=1 m=3 t=[(0, Fraction(-1, 1))]
+    D=4    n=15    EMPTY_over_Q     lambda_exact (0.0s)
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[5/57] 52830078b770 deg=4 dy=3  G1 h0=-3 c=2 a=-1 n=1 m=3 t=[(0, Fraction(-1, 1)), (1, Fraction(-3, 1))]
+    D=4    n=15    EMPTY_over_Q     lambda_exact (0.0s)
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[6/57] a03f511f7ecd deg=5 dy=2  G1 h0=-3 c=-1 a=2 n=1 m=2 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1)), (2, Fraction(-2, 1))]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[7/57] 0a32a1935a5d deg=5 dy=3  G1 h0=2 c=2 a=0 n=2 m=3 t=[(0, Fraction(-2, 1))]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[8/57] fa25edeecbfe deg=5 dy=3  G1 h0=-3 c=1 a=-1 n=2 m=3 t=[(0, Fraction(-2, 1)), (1, Fraction(-3, 1))]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[9/57] 7f2b3c396f45 deg=5 dy=4  G1 h0=-1 c=1 a=2 n=1 m=4 t=[(0, Fraction(2, 1))]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[10/57] abc13407cc8e deg=5 dy=4  G1 h0=-3 c=2 a=-1 n=1 m=4 t=[(0, Fraction(-1, 1)), (1, Fraction(1, 1))]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[11/57] c3dbaae9c4ab deg=5 dy=1  G2 alpha=-1 beta=1 c=-1 B=[(Fraction(1, 1), 4)] m=1
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.3s)
+    => EMPTY_all_stages (0s)
+
+[12/57] b35d46339ef4 deg=5 dy=3  G1 h0=-1 c=1 a=1 n=2 m=3 t=[(0, Fraction(-2, 1))] [S4 intent]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[13/57] d6a8255e8c96 deg=5 dy=3  G1 h0=-1 c=1 a=-1 n=2 m=3 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1))] [S4 intent]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[14/57] 11b94e5ad1be deg=5 dy=3  G1 h0=-1 c=1 a=1 n=2 m=3 t=[(0, Fraction(2, 1)), (1, Fraction(1, 1))] [S4 intent]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[15/57] d01448b8b96a deg=5 dy=3  G1 h0=-1 c=1 a=1 n=2 m=3 t=[(0, Fraction(-1, 1))] [S4 intent]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[16/57] 7c887944e856 deg=5 dy=3  G1 h0=-1 c=1 a=0 n=2 m=3 t=[(0, Fraction(-3, 1)), (1, Fraction(3, 1))] [S4 intent]
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[17/57] 7747339a4408 deg=5 dy=3  G1 h0=-1 c=1 a=1 n=2 m=3 t=[(0, Fraction(2, 1)), (1, Fraction(1, 1))] [S4 intent] | sheared
+    D=5    n=21    EMPTY_over_Q     lambda_exact (0.0s)
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.2s)
+    => EMPTY_all_stages (0s)
+
+[18/57] 37670b444e89 deg=6 dy=5  G1 h0=-1 c=2 a=0 n=1 m=5 t=[(0, Fraction(1, 1))]
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.0s)
+    D=12   n=91    EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[19/57] 00427d4924d2 deg=6 dy=5  G1 h0=-1 c=1 a=-1 n=1 m=5 t=[(0, Fraction(-3, 1)), (1, Fraction(-1, 1))]
+    D=6    n=28    EMPTY_over_Q     lambda_exact (0.0s)
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.1s)
+    D=12   n=91    EMPTY_over_Q     lambda_exact (0.3s)
+    => EMPTY_all_stages (0s)
+
+[20/57] fef547c2b095 deg=7 dy=2  G1 h0=1 c=-1 a=0 n=1 m=2 t=[(0, Fraction(-1, 1)), (1, Fraction(1, 1)), (2, Fraction(-2, 1)), (3, Fraction(-3, 1))]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.2s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.6s)
+    => EMPTY_all_stages (1s)
+
+[21/57] 39f56b091e75 deg=7 dy=3  G1 h0=-1 c=2 a=0 n=1 m=3 t=[(0, Fraction(-3, 1)), (1, Fraction(-2, 1)), (2, Fraction(-1, 1))]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.1s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.3s)
+    => EMPTY_all_stages (0s)
+
+[22/57] 7b72f1effa40 deg=7 dy=4  G1 h0=-1 c=-1 a=1 n=3 m=4 t=[]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[23/57] cd46f9341dc7 deg=7 dy=4  G1 h0=2 c=3 a=0 n=3 m=4 t=[(0, Fraction(2, 1)), (1, Fraction(-1, 1))]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.4s)
+    => EMPTY_all_stages (0s)
+
+[24/57] 8ccaea9ee461 deg=7 dy=5  G1 h0=-1 c=3 a=0 n=2 m=5 t=[(0, Fraction(2, 1))]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[25/57] e52860893178 deg=7 dy=5  G1 h0=2 c=1 a=2 n=2 m=5 t=[(0, Fraction(2, 1)), (1, Fraction(3, 1))]
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.2s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.7s)
+    => EMPTY_all_stages (1s)
+
+[26/57] 46a40cb56510 deg=7 dy=3  G2 alpha=1 beta=1 c=-1 B=[(Fraction(1, 1), 4)] m=3
+    D=7    n=36    EMPTY_over_Q     lambda_exact (0.0s)
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.0s)
+    => EMPTY_all_stages (0s)
+
+[27/57] 1ef523b227e7 deg=8 dy=3  G1 h0=2 c=-2 a=2 n=2 m=3 t=[(0, Fraction(-3, 1)), (1, Fraction(2, 1)), (2, Fraction(-2, 1))]
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.1s)
+    D=12   n=91    EMPTY_over_Q     lambda_exact (0.3s)
+    D=16   n=153   EMPTY_over_Q     lambda_exact (2.6s)
+    => EMPTY_all_stages (3s)
+
+[28/57] ac09181bd1e3 deg=8 dy=3  G1 h0=-1 c=1 a=0 n=2 m=3 t=[(0, Fraction(1, 1)), (1, Fraction(-3, 1)), (2, Fraction(-1, 1))] [S4 intent]
+    D=8    n=45    EMPTY_over_Q     lambda_exact (0.0s)
+    D=12   n=91    EMPTY_over_Q     lambda_exact (0.2s)
+    D=16   n=153   EMPTY_over_Q     lambda_exact (1.7s)
+    => EMPTY_all_stages (2s)
+
+[29/57] 55a9ae0456b4 deg=9 dy=4  G1 h0=-1 c=3 a=1 n=1 m=4 t=[(0, Fraction(2, 1)), (1, Fraction(-3, 1)), (2, Fraction(-2, 1))]
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.1s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.9s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (5.5s)
+    => EMPTY_all_stages (6s)
+
+[30/57] c4e207c544a0 deg=9 dy=5  G1 h0=1 c=-2 a=2 n=4 m=5 t=[(0, Fraction(-1, 1))]
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.7s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (4.0s)
+    => EMPTY_all_stages (5s)
+
+[31/57] e94c47f785e6 deg=9 dy=5  G1 h0=2 c=-2 a=2 n=4 m=5 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1))]
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.1s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.8s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (5.0s)
+    => EMPTY_all_stages (6s)
+
+[32/57] 808e52fdb1b6 deg=9 dy=4  G2 alpha=2 beta=-1 c=-1 B=[(Fraction(0, 1), 2), (Fraction(1, 1), 3)] m=4
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.0s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[33/57] 83022ceaab23 deg=9 dy=5  G1 h0=-1 c=1 a=-1 n=4 m=5 t=[] [S4 intent]
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.0s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (0.1s)
+    => EMPTY_all_stages (0s)
+
+[34/57] 40d4c9f57c36 deg=9 dy=5  G1 h0=-1 c=1 a=0 n=4 m=5 t=[(0, Fraction(-1, 1)), (1, Fraction(-3, 1))] [S4 intent]
+    D=9    n=55    EMPTY_over_Q     lambda_exact (0.0s)
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.1s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (1.4s)
+    => EMPTY_all_stages (2s)
+
+[35/57] 36bc150f8dae deg=10 dy=3  G1 h0=2 c=3 a=1 n=1 m=3 t=[(0, Fraction(3, 1)), (2, Fraction(3, 1)), (3, Fraction(2, 1))]
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.1s)
+    D=15   n=136   EMPTY_over_Q     lambda_exact (1.2s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (7.9s)
+    => EMPTY_all_stages (9s)
+
+[36/57] b7612f47cd64 deg=10 dy=10  G1 h0=2 c=3 a=1 n=1 m=3 t=[(0, Fraction(3, 1)), (2, Fraction(3, 1)), (3, Fraction(2, 1))] | sheared
+    D=10   n=66    EMPTY_over_Q     lambda_exact (0.2s)
+    D=15   n=136   EMPTY_over_Q     lambda_exact (0.5s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (3.3s)
+    => EMPTY_all_stages (4s)
+
+[37/57] a4d6d040e138 deg=11 dy=3  G1 h0=2 c=-2 a=0 n=2 m=3 t=[(0, Fraction(2, 1)), (1, Fraction(-3, 1)), (2, Fraction(1, 1)), (3, Fraction(2, 1))]
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.1s)
+    D=17   n=171   EMPTY_over_Q     lambda_exact (1.5s)
+    D=22   n=276   EMPTY_over_Q     lambda_exact (4.7s)
+    => EMPTY_all_stages (6s)
+
+[38/57] 3bd161cf7a22 deg=11 dy=4  G1 h0=-1 c=2 a=0 n=3 m=4 t=[(0, Fraction(1, 1)), (1, Fraction(-3, 1)), (2, Fraction(-2, 1))]
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.1s)
+    D=17   n=171   EMPTY_over_Q     lambda_exact (0.9s)
+    D=22   n=276   EMPTY_over_Q     lambda_exact (3.5s)
+    => EMPTY_all_stages (4s)
+
+[39/57] c8aa6fd84bbc deg=11 dy=5  G1 h0=1 c=-2 a=1 n=1 m=5 t=[(0, Fraction(3, 1)), (1, Fraction(-1, 1)), (2, Fraction(-1, 1))]
+    D=11   n=78    EMPTY_over_Q     lambda_exact (0.2s)
+    D=17   n=171   EMPTY_over_Q     lambda_exact (3.7s)
+    D=22   n=276   EMPTY_over_Q     lambda_exact (3.9s)
+    => EMPTY_all_stages (8s)
+
+[40/57] 7887429824c2 deg=12 dy=5  G1 h0=-3 c=1 a=-1 n=2 m=5 t=[(1, Fraction(3, 1)), (2, Fraction(-1, 1))]
+    D=12   n=91    EMPTY_over_Q     lambda_exact (0.2s)
+    D=18   n=190   EMPTY_over_Q     lambda_exact (0.8s)
+    D=24   n=325   EMPTY_over_Q     lambda_exact (3.1s)
+    => EMPTY_all_stages (4s)
+
+[41/57] 632afa8e6433 deg=13 dy=4  G1 h0=2 c=3 a=1 n=1 m=4 t=[(0, Fraction(-2, 1)), (1, Fraction(-1, 1)), (2, Fraction(3, 1)), (3, Fraction(3, 1))]
+    D=13   n=105   EMPTY_over_Q     lambda_exact (0.8s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (4.5s)
+    D=26   n=378   EMPTY_over_Q     lambda_exact (40.1s)
+    => EMPTY_all_stages (45s)
+
+[42/57] a9b90eff1970 deg=13 dy=7  G1 h0=-1 c=1 a=1 n=6 m=7 t=[(0, Fraction(2, 1))] [S4 intent]
+    D=13   n=105   EMPTY_over_Q     lambda_exact (0.4s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (6.3s)
+    D=26   n=378   EMPTY_over_Q     lambda_exact (3.9s)
+    => EMPTY_all_stages (10s)
+
+[43/57] 762dac3fbdb1 deg=13 dy=7  G1 h0=-1 c=1 a=0 n=6 m=7 t=[(0, Fraction(-3, 1)), (1, Fraction(-2, 1))] [S4 intent]
+    D=13   n=105   EMPTY_over_Q     lambda_exact (0.1s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (0.4s)
+    D=26   n=378   EMPTY_over_Q     lambda_exact (8.3s)
+    => EMPTY_all_stages (9s)
+
+[44/57] 4667d741b2d6 deg=13 dy=13  G1 h0=-1 c=1 a=-1 n=4 m=5 t=[] [S4 intent] | sheared
+    D=13   n=105   EMPTY_over_Q     lambda_exact (0.7s)
+    D=20   n=231   EMPTY_over_Q     lambda_exact (2.5s)
+    D=26   n=378   EMPTY_over_Q     lambda_exact (23.4s)
+    => EMPTY_all_stages (26s)
+
+[45/57] 894a95da1a0d deg=14 dy=5  G1 h0=-1 c=-2 a=2 n=4 m=5 t=[(0, Fraction(-2, 1)), (1, Fraction(-1, 1)), (2, Fraction(-2, 1))]
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.8s)
+    D=21   n=253   EMPTY_over_Q     lambda_exact (3.4s)
+    D=28   n=435   EMPTY_over_Q     lambda_exact (14.8s)
+    => EMPTY_all_stages (19s)
+
+[46/57] c447da45ca02 deg=14 dy=5  G1 h0=-1 c=1 a=0 n=4 m=5 t=[(0, Fraction(-2, 1)), (2, Fraction(2, 1))] [S4 intent]
+    D=14   n=120   EMPTY_over_Q     lambda_exact (0.1s)
+    D=21   n=253   EMPTY_over_Q     lambda_exact (0.3s)
+    D=28   n=435   EMPTY_over_Q     lambda_exact (1.0s)
+    => EMPTY_all_stages (1s)
+
+[47/57] d735085d2c22 deg=15 dy=4  G1 h0=1 c=1 a=-1 n=3 m=4 t=[(0, Fraction(1, 1)), (1, Fraction(2, 1)), (2, Fraction(-1, 1)), (3, Fraction(-1, 1))]
+    D=15   n=136   EMPTY_over_Q     lambda_exact (1.2s)
+    D=23   n=300   EMPTY_over_Q     lambda_exact (14.7s)
+    D=30   n=496   EMPTY_over_Q     lambda_exact (104.6s)
+    => EMPTY_all_stages (120s)
+
+[48/57] f406b3aeda22 deg=16 dy=5  G1 h0=1 c=-1 a=0 n=1 m=5 t=[(0, Fraction(-1, 1)), (1, Fraction(2, 1)), (2, Fraction(-1, 1)), (3, Fraction(-3, 1))]
+    D=16   n=153   EMPTY_over_Q     lambda_exact (1.1s)
+    D=24   n=325   EMPTY_over_Q     lambda_exact (5.8s)
+    D=32   n=561   EMPTY_over_Q     lambda_exact (93.4s)
+    => EMPTY_all_stages (100s)
+
+[49/57] 726da7cd9516 deg=17 dy=5  G1 h0=-1 c=-2 a=0 n=2 m=5 t=[(0, Fraction(3, 1)), (1, Fraction(1, 1)), (2, Fraction(2, 1)), (3, Fraction(1, 1))]
+    D=17   n=171   EMPTY_over_Q     lambda_exact (1.5s)
+    D=26   n=378   EMPTY_over_Q     lambda_exact (20.8s)
+    D=34   n=630   EMPTY_over_Q     lambda_exact (109.9s)
+    => EMPTY_all_stages (132s)
+
+[50/57] 11b99f22adf6 deg=18 dy=18  G1 h0=2 c=-2 a=2 n=4 m=5 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1))] | sheared
+    D=18   n=190   EMPTY_over_Q     lambda_exact (3.5s)
+    D=27   n=406   EMPTY_over_Q     lambda_exact (7.4s)
+    D=36   n=703   EMPTY_over_Q     lambda_exact (183.6s)
+    => EMPTY_all_stages (194s)
+
+[51/57] d57b38902c84 deg=18 dy=9  G1 h0=-1 c=1 a=0 n=4 m=5 t=[(0, Fraction(-1, 1)), (1, Fraction(-3, 1))] [S4 intent] | sheared
+    D=18   n=190   EMPTY_over_Q     lambda_exact (4.9s)
+    D=27   n=406   EMPTY_over_Q     lambda_exact (62.9s)
+    D=36   n=703   EMPTY_over_Q     lambda_exact (278.0s)
+    => EMPTY_all_stages (346s)
+
+[52/57] c689ce7fc834 deg=18 dy=18  G1 h0=2 c=-2 a=2 n=4 m=5 t=[(0, Fraction(-3, 1)), (1, Fraction(1, 1))] | sheared
+    D=18   n=190   EMPTY_over_Q     lambda_exact (2.3s)
+    D=27   n=406   EMPTY_over_Q     lambda_exact (4.3s)
+    D=36   n=703   EMPTY_over_Q     lambda_exact (94.2s)
+    => EMPTY_all_stages (101s)
+
+[53/57] 1f53638e8cf6 deg=19 dy=5  G1 h0=-3 c=3 a=1 n=4 m=5 t=[(0, Fraction(-2, 1)), (1, Fraction(-3, 1)), (2, Fraction(-3, 1)), (3, Fraction(1, 1))]
+    D=19   n=210   EMPTY_over_Q     lambda_exact (1.5s)
+    D=29   n=465   EMPTY_over_Q     lambda_exact (44.1s)
+    D=38   n=780   EMPTY_over_Q     lambda_exact (58.3s)
+    => EMPTY_all_stages (104s)
+
+[54/57] a814ad47ed0c deg=20 dy=7  G1 h0=-1 c=1 a=0 n=6 m=7 t=[(0, Fraction(3, 1)), (1, Fraction(-2, 1)), (2, Fraction(2, 1))] [S4 intent]
+    D=20   n=231   EMPTY_over_Q     lambda_exact (1.6s)
+    D=30   n=496   EMPTY_over_Q     lambda_exact (32.3s)
+    D=40   n=861   EMPTY_over_Q     lambda_exact (178.3s)
+    => EMPTY_all_stages (212s)
+
+[55/57] cf1c601f3d1c deg=20 dy=10  G1 h0=-3 c=1 a=-1 n=2 m=3 t=[(0, Fraction(-2, 1)), (1, Fraction(-3, 1))] | sheared
+    D=20   n=231   EMPTY_over_Q     lambda_exact (3.9s)
+    D=30   n=496   EMPTY_over_Q     lambda_exact (78.6s)
+    D=40   n=861   EMPTY_over_Q     lambda_exact (328.2s)
+    => EMPTY_all_stages (411s)
+
+[56/57] 96e4a2c6d1d3 deg=24 dy=12  G1 h0=-1 c=1 a=-1 n=1 m=5 t=[(0, Fraction(-3, 1)), (1, Fraction(-1, 1))] | sheared
+    D=24   n=325   EMPTY_over_Q     lambda_exact (15.0s)
+    D=36   n=703   EMPTY_over_Q     lambda_exact (44.3s)
+    D=48   n=1225  NOT_CERTIFIED    none (8.4s)
+    => NOT_CERTIFIED (68s)
+
+[57/57] 282a9f40c368 deg=24 dy=24  G1 h0=-3 c=1 a=-1 n=2 m=5 t=[(1, Fraction(3, 1)), (2, Fraction(-1, 1))] | sheared
+    D=24   n=325   EMPTY_over_Q     lambda_exact (2.4s)
+    D=36   n=703   EMPTY_over_Q     lambda_exact (45.6s)
+    D=48   n=1225  NOT_CERTIFIED    none (8.0s)
+    => NOT_CERTIFIED (56s)
+
+MATE VERDICTS: Counter({'EMPTY_all_stages': 55, 'NOT_CERTIFIED': 2})

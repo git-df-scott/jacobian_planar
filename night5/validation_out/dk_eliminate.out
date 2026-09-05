@@ -1,0 +1,13 @@
+CHK1 derived series coefficients vs GGHV printed equations: PASS
+cascade solved by substitution: ['dm10', 'dm4', 'dm5', 'dm6', 'dm7', 'dm8']
+remaining: 3 equations in ['G', 'd0', 'd1', 'dm1', 'dm2', 'dm3']
+   E0: deg dm3=1 dm2=2 terms=3
+   E1: deg dm3=1 dm2=1 terms=2
+   E2: deg dm3=1 dm2=2 terms=5
+R1 done: deg dm2 = 3
+R2 done: deg dm2 = 3
+final resultant computed
+final eliminant: 2 irreducible factors
+
+*** CONTROL PASS: GGHV equation (5.9) reproduced exactly ***
+    8*G**3 + 18*G*d1*dm1**6 + 27*d0*dm1**9   (multiplicity 1)

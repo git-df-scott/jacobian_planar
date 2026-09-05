@@ -1,0 +1,13 @@
+[{"C0_positive_control": true}, {"Ca_leading_bracket_identically_zero": true}, {"Cb_degenerate_carrier_row_identities": true}, {"Cc_rank_sanity": true}, {"Cc_rank_sanity": true}]
+sample   0  inconsistent_both  1.3s
+sample  20  inconsistent_both  11.2s
+sample  40  inconsistent_both  21.2s
+sample  60  inconsistent_both  31.4s
+sample  80  inconsistent_both  41.8s
+sample 100  inconsistent_both  52.0s
+sample 120  inconsistent_both  62.0s
+sample 140  inconsistent_both  72.3s
+sample 160  inconsistent_both  82.7s
+sample 180  inconsistent_both  93.1s
+sample 200  inconsistent_both  103.2s
+{"consistent_both": 0, "consistent_p1_only": 0, "consistent_p2_only": 0, "inconsistent_both": 220} hits: 0 all two-row: True

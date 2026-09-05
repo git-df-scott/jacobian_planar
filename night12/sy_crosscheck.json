@@ -1,0 +1,118 @@
+[
+ {
+  "name": "x",
+  "SY": "COORDINATE",
+  "brief_label": "COORDINATE",
+  "fibre_check": "NO_FACTORISATION_FOUND",
+  "detail": {
+   "c_tried": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+   ]
+  },
+  "agreement": "-"
+ },
+ {
+  "name": "x + y^2",
+  "SY": "COORDINATE",
+  "brief_label": "COORDINATE",
+  "fibre_check": "NO_FACTORISATION_FOUND",
+  "detail": {
+   "c_tried": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+   ]
+  },
+  "agreement": "-"
+ },
+ {
+  "name": "x + x^2*y",
+  "SY": "NON_COORDINATE",
+  "brief_label": "?",
+  "fibre_check": "REDUCIBLE_FIBRE",
+  "detail": {
+   "c": 0,
+   "n_factors": 2,
+   "factors": "x | xy+1 |"
+  },
+  "agreement": "agrees"
+ },
+ {
+  "name": "x*y",
+  "SY": "NON_COORDINATE",
+  "brief_label": "NON_COORDINATE",
+  "fibre_check": "REDUCIBLE_FIBRE",
+  "detail": {
+   "c": 0,
+   "n_factors": 2,
+   "factors": "x | y |"
+  },
+  "agreement": "agrees"
+ },
+ {
+  "name": "x^2*y",
+  "SY": "NON_COORDINATE",
+  "brief_label": "NON_COORDINATE",
+  "fibre_check": "REDUCIBLE_FIBRE",
+  "detail": {
+   "c": 0,
+   "n_factors": 3,
+   "factors": "x | y |"
+  },
+  "agreement": "agrees"
+ },
+ {
+  "name": "x + y^126",
+  "SY": "COORDINATE",
+  "brief_label": "COORDINATE",
+  "fibre_check": "NO_FACTORISATION_FOUND",
+  "detail": {
+   "c_tried": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+   ]
+  },
+  "agreement": "-"
+ },
+ {
+  "name": "x^126 + y^127 + x^2*y^2",
+  "SY": "NON_COORDINATE",
+  "brief_label": "?",
+  "fibre_check": "NO_FACTORISATION_FOUND",
+  "detail": {
+   "c_tried": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+   ]
+  },
+  "agreement": "-"
+ },
+ {
+  "name": "x + y^2 + 2x^2y + x^4",
+  "SY": "COORDINATE",
+  "brief_label": "COORDINATE",
+  "fibre_check": "NO_FACTORISATION_FOUND",
+  "detail": {
+   "c_tried": [
+    0,
+    1,
+    -1,
+    2,
+    -2
+   ]
+  },
+  "agreement": "-"
+ }
+]

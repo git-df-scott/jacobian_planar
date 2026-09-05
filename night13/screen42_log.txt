@@ -1,0 +1,8 @@
+m=42 arm r2_P1_Q0
+  m=42 r2_P1_Q0 size 3: 364 supports, 0 survivors, F1 hist {'2': 364} (0.4s)
+  m=42 r2_P1_Q0 size 4: 1001 supports, 0 survivors, F1 hist {'2': 1001} (1.3s)
+  m=42 r2_P1_Q0 size 5: 2002 supports, 0 survivors, F1 hist {'2': 2002} (3.6s)
+  m=42 r2_P1_Q0 size 6: 3003 supports, 0 survivors, F1 hist {'2': 3003} (7.8s)
+m=42 arm r0_P0_Q0
+m=42 arm r1_P2_Q0
+wrote /home/user/jacobian_planar/night13/h_screen_m42.json

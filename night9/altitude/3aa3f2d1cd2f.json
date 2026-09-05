@@ -1,0 +1,278 @@
+{
+ "hash": "3aa3f2d1cd2f",
+ "max_total_degree": 154,
+ "support_P": [
+  [
+   0,
+   97
+  ],
+  [
+   0,
+   123
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   3,
+   5
+  ],
+  [
+   4,
+   106
+  ],
+  [
+   39,
+   83
+  ],
+  [
+   58,
+   72
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   14
+  ],
+  [
+   0,
+   20
+  ],
+  [
+   18,
+   136
+  ],
+  [
+   124,
+   0
+  ]
+ ],
+ "primes": [
+  2,
+  3
+ ],
+ "per_prime": {
+  "2": {
+   "hash": "3aa3f2d1cd2f",
+   "p": 2,
+   "nP": 7,
+   "nQ": 5,
+   "n": 12,
+   "max_total_degree": 154,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 16,
+   "count": 64,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 4,
+   "n_nondegenerate": 60,
+   "n_sampled": 8,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 8,
+   "wall_s": 0.01
+  },
+  "3": {
+   "hash": "3aa3f2d1cd2f",
+   "p": 3,
+   "nP": 7,
+   "nQ": 5,
+   "n": 12,
+   "max_total_degree": 154,
+   "method": "exhaustive-bilinear",
+   "truncated": false,
+   "n_enum": 81,
+   "count": 2,
+   "verdict": "NONEMPTY",
+   "n_degenerate": 0,
+   "n_nondegenerate": 2,
+   "n_sampled": 2,
+   "n_verify_fail": 0,
+   "tear_nonempty": 0,
+   "tear_empty": 0,
+   "tear_other": 2,
+   "wall_s": 0.01
+  }
+ },
+ "n_shared_support_patterns": 1,
+ "n_matched_pairs_examined": 2,
+ "matched_pair_list_truncated": false,
+ "everything_below_is_labelled": "CANDIDATE-UNVERIFIED",
+ "matched_lifts_over_Z": [
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 1,
+   "residual_str": "-15252*x**123*y**122",
+   "residual_content": 15252,
+   "residual_content_factorization": {
+    "2": 2,
+    "3": 1,
+    "31": 1,
+    "41": 1
+   },
+   "residual_content_n_distinct_primes": 4,
+   "residual_content_n_prime_factors_with_multiplicity": 5,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     1,
+     2
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "residual_is_identically_zero": false,
+   "residual_n_terms": 1,
+   "residual_str": "-15252*x**123*y**122",
+   "residual_content": 15252,
+   "residual_content_factorization": {
+    "2": 2,
+    "3": 1,
+    "31": 1,
+    "41": 1
+   },
+   "residual_content_n_distinct_primes": 4,
+   "residual_content_n_prime_factors_with_multiplicity": 5,
+   "collision_P_diff_over_Z": 0,
+   "collision_Q_diff_over_Z": 0,
+   "collisions_hold_over_Z": true,
+   "label": "CANDIDATE-UNVERIFIED",
+   "support_pattern": {
+    "P_nonzero_indices": [
+     1,
+     2
+    ],
+    "Q_nonzero_indices": [
+     0,
+     4
+    ]
+   },
+   "p2_solution": {
+    "characteristic": 2,
+    "a": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     1,
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   "p3_solution": {
+    "characteristic": 3,
+    "a": [
+     0,
+     2,
+     2,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     2,
+     0,
+     0,
+     0,
+     2
+    ]
+   },
+   "balanced_lift_mod_6": {
+    "a": [
+     0,
+     -1,
+     -1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "b": [
+     -1,
+     0,
+     0,
+     0,
+     -1
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+\section{The polynomial certificate}\label{sec:polynomial}
+
+\subsection{Jacobian and collision}
+
+Termwise differentiation gives
+\[
+ P_x=1,\qquad P_y=x^2,
+\]
+and
+\[
+ Q_x=x^4+x^6y^2,\qquad Q_y=1+x^6+x^8y^2.
+\]
+Hence
+\[
+JF=
+\begin{pmatrix}
+1&x^2\\
+x^4+x^6y^2&1+x^6+x^8y^2
+\end{pmatrix}
+\]
+and
+\[
+\det JF
+=1+x^6+x^8y^2-x^2(x^4+x^6y^2)=1.
+\]
+The values at the three indicated \(\F_2\)-points are
+\[
+ F(0,1)=F(1,0)=F(1,1)=(0,1).
+\]
+They are distinct as \(k\)-points, so \(F\) is not injective on points.  A
+coordinate-ring proof of noninvertibility is given in
+Section~\ref{sec:noniso}.
+

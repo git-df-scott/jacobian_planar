@@ -1,0 +1,233 @@
+{
+ "hash": "524d0cc3ffe5",
+ "arm": "A",
+ "family": "F2",
+ "tag": "F2  T=5 a=0",
+ "deg_P": 126,
+ "n_supp_P": 9,
+ "P": {
+  "0,1": [
+   1,
+   1
+  ],
+  "2,0": [
+   1,
+   1
+  ],
+  "5,0": [
+   1,
+   1
+  ],
+  "116,2": [
+   1,
+   1
+  ],
+  "118,1": [
+   2,
+   1
+  ],
+  "120,0": [
+   1,
+   1
+  ],
+  "121,1": [
+   2,
+   1
+  ],
+  "123,0": [
+   2,
+   1
+  ],
+  "126,0": [
+   1,
+   1
+  ]
+ },
+ "P_integerised": {
+  "0,1": [
+   1,
+   1
+  ],
+  "2,0": [
+   1,
+   1
+  ],
+  "5,0": [
+   1,
+   1
+  ],
+  "116,2": [
+   1,
+   1
+  ],
+  "118,1": [
+   2,
+   1
+  ],
+  "120,0": [
+   1,
+   1
+  ],
+  "121,1": [
+   2,
+   1
+  ],
+  "123,0": [
+   2,
+   1
+  ],
+  "126,0": [
+   1,
+   1
+  ]
+ },
+ "integerising_scale": 1,
+ "certs": {
+  "U_bezout_A_Px_plus_B_Py_eq_1": true,
+  "U_bezout_residual_terms": 0,
+  "R_factorisation_P_minus_kappa_eq_v_times_h0_plus_gv": true,
+  "R_factor_degrees": [
+   5,
+   121
+  ],
+  "R_kappa": [
+   0,
+   1
+  ],
+  "params": {
+   "n": 116,
+   "T": 5,
+   "a": "0",
+   "c": "1",
+   "h0": "1"
+  }
+ },
+ "stages": [
+  {
+   "n_unknowns": 246,
+   "n_rows_nonzero": 607,
+   "rank_A_p": 246,
+   "rank_Ae_p": 247,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "lambda_exact",
+   "lambda_support": 3,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "lambda_vector": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      116,
+      1
+     ],
+     [
+      -1,
+      2
+     ]
+    ],
+    [
+     [
+      232,
+      2
+     ],
+     [
+      117,
+      236
+     ]
+    ]
+   ],
+   "lambda_reverified": true,
+   "carrier": "np_similar",
+   "deg_Q_bound": 125,
+   "n_raw": 247,
+   "thin_t": 1,
+   "n_used": 246,
+   "deflated_kernel_dim": 1,
+   "decisive_for_published_bound": false,
+   "secs": 3.0,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 369,
+   "n_rows_nonzero": 790,
+   "rank_A_p": 369,
+   "rank_Ae_p": 370,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "np_similar",
+   "deg_Q_bound": 157,
+   "n_raw": 371,
+   "thin_t": 1,
+   "n_used": 369,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": false,
+   "secs": 1.0,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 496,
+   "n_rows_nonzero": 979,
+   "rank_A_p": 496,
+   "rank_Ae_p": 497,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "np_similar",
+   "deg_Q_bound": 189,
+   "n_raw": 498,
+   "thin_t": 1,
+   "n_used": 496,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": true,
+   "secs": 2.3,
+   "support_relative": true
+  },
+  {
+   "n_unknowns": 2085,
+   "n_rows_nonzero": 10466,
+   "rank_A_p": 2085,
+   "rank_Ae_p": 2086,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "EMPTY_over_Q",
+   "certificate": "rank_full_column_exact",
+   "lambda_support": 0,
+   "lambda_detail": "rank_p(A)=n and rank_p([A|e])=n+1; both are lower bounds for the ranks over Q",
+   "carrier": "wide_triangle",
+   "deg_Q_bound": 189,
+   "n_raw": 18145,
+   "thin_t": 3,
+   "n_used": 2085,
+   "deflated_kernel_dim": 2,
+   "decisive_for_published_bound": true,
+   "secs": 191.3,
+   "support_relative": true
+  }
+ ],
+ "SY_verdict": "NON_COORDINATE",
+ "SY_nodes": 3,
+ "SY_leaves": 1,
+ "places_at_infinity": 1,
+ "genus_newton": 120,
+ "lead_terms": 1,
+ "outcome": "EMPTY_all_stages_tried",
+ "hit": false,
+ "secs": 197.8
+}

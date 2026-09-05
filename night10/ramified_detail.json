@@ -1,0 +1,593 @@
+{
+ "ceiling": 12,
+ "points": [
+  {
+   "index": 1,
+   "bits": "101011000",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 0,
+     "branches_out": 256,
+     "death_representative": null
+    },
+    {
+     "level": 3,
+     "branches_in": 256,
+     "died": 224,
+     "branches_out": 512,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "2": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(10,1)",
+       "K(5,2)"
+      ],
+      "wmin_before": 3,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    },
+    {
+     "level": 4,
+     "branches_in": 512,
+     "died": 512,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "2": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ],
+       "3": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(3,0)",
+       "C2_P"
+      ],
+      "wmin_before": 4,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "010000100",
+    "010100100",
+    "111011100",
+    "111111100",
+    "000000010",
+    "000100010",
+    "101011010",
+    "101111010",
+    "010000110",
+    "010100110",
+    "111011110",
+    "111111110"
+   ]
+  },
+  {
+   "index": 2,
+   "bits": "101011010",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(7,1)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "000000010",
+    "000100010",
+    "101011010",
+    "101111010",
+    "010000101",
+    "010100101",
+    "111011101",
+    "111111101",
+    "010000111",
+    "010100111",
+    "111011111",
+    "111111111"
+   ]
+  },
+  {
+   "index": 3,
+   "bits": "101111000",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(10,1)",
+       "K(5,2)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "010000100",
+    "010100100",
+    "111011100",
+    "111111100",
+    "000000010",
+    "000100010",
+    "101011010",
+    "101111010",
+    "010000110",
+    "010100110",
+    "111011110",
+    "111111110"
+   ]
+  },
+  {
+   "index": 4,
+   "bits": "101111010",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(12,3)",
+       "K(10,1)",
+       "K(7,1)",
+       "K(5,2)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "000000010",
+    "000100010",
+    "101011010",
+    "101111010",
+    "010000101",
+    "010100101",
+    "111011101",
+    "111111101",
+    "010000111",
+    "010100111",
+    "111011111",
+    "111111111"
+   ]
+  },
+  {
+   "index": 5,
+   "bits": "111011100",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(1,1)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "010000100",
+    "010100100",
+    "111011100",
+    "111111100",
+    "000000011",
+    "000100011",
+    "101011011",
+    "101111011",
+    "010000111",
+    "010100111",
+    "111011111",
+    "111111111"
+   ]
+  },
+  {
+   "index": 6,
+   "bits": "111011111",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(9,3)",
+       "K(7,1)",
+       "K(1,1)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "111011100",
+    "111111100",
+    "101011010",
+    "101111010",
+    "010000110",
+    "010100110",
+    "101011001",
+    "101111001",
+    "010000101",
+    "010100101",
+    "000000011",
+    "000100011",
+    "111011111",
+    "111111111"
+   ]
+  },
+  {
+   "index": 7,
+   "bits": "111111100",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(11,2)",
+       "K(10,1)",
+       "K(5,2)",
+       "K(1,1)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "101011000",
+    "101111000",
+    "010000100",
+    "010100100",
+    "111011100",
+    "111111100",
+    "000000011",
+    "000100011",
+    "101011011",
+    "101111011",
+    "010000111",
+    "010100111",
+    "111011111",
+    "111111111"
+   ]
+  },
+  {
+   "index": 8,
+   "bits": "111111111",
+   "O2_level_census": [
+    {
+     "level": 1,
+     "branches_in": 1,
+     "died": 0,
+     "branches_out": 16,
+     "death_representative": null
+    },
+    {
+     "level": 2,
+     "branches_in": 16,
+     "died": 16,
+     "branches_out": 0,
+     "death_representative": {
+      "ds": {
+       "1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+       ]
+      },
+      "rho_rows": [
+       "K(13,4)",
+       "K(12,3)",
+       "K(11,2)",
+       "K(10,1)",
+       "K(9,3)",
+       "K(7,1)",
+       "K(5,2)",
+       "K(1,1)",
+       "C2_P"
+      ],
+      "wmin_before": 2,
+      "rank_J": 5,
+      "rank_aug": 6
+     }
+    }
+   ],
+   "O2_survivors_at_12": 0,
+   "O3_w_r_x0": 3,
+   "O3_level1_rho_zero": true,
+   "O3_step1_pass_count": 16,
+   "O3_step1_passing_d1_bits": [
+    "000000000",
+    "000100000",
+    "111011100",
+    "111111100",
+    "101011010",
+    "101111010",
+    "010000110",
+    "010100110",
+    "101011001",
+    "101111001",
+    "010000101",
+    "010100101",
+    "000000011",
+    "000100011",
+    "111011111",
+    "111111111"
+   ]
+  }
+ ]
+}

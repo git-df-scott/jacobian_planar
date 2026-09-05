@@ -1,0 +1,17 @@
+re-verifying 18 v2 records (recheck prime 1000003, seed 20260901)
+
+independent re-verification of v2 certificates
+(carriers, Keller systems and Bezout pairs rebuilt from scratch;
+ exact.decide and v2_families not used)
+
+  A    R_factorisation              True         12
+  A    SY                           True         12
+  A    U_bezout                     True         12
+  A    lambda_exact                 True         14
+  A    rank_full_column_exact       True         34
+  B    SY                           True         6
+  B    lambda_exact                 True         14
+  B    night14_U_test_char0         PASS         6
+  B    rank_full_column_exact       True         16
+
+FAILURES: 0

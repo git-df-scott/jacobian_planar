@@ -1,0 +1,13 @@
+==============================================================================
+L1  Jacobian-1 invariance of the bracket
+==============================================================================
+  T = (x + (x**2 - 5*x + y)**3, x**2 - 5*x + y) ,  det J(T) = 1
+  [P o T, Q o T] - ([P,Q] o T) expands to 0   (must be 0)
+
+==============================================================================
+L3  the explicit move to the slice, over Q(gamma, a, alpha, h0, h1)
+==============================================================================
+  P o T - ( gamma x y^2 + h(a) y ) = -alpha/(4*gamma)
+  is it free of x and y (i.e. a constant)? True
+
+TRANSPORT CHECKS PASS

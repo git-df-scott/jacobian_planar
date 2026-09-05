@@ -1,0 +1,650 @@
+{
+ "C1_high_degree": [
+  {
+   "label": "deg10 coordinate (deg_y 2)",
+   "deg_P": 10,
+   "SY": "COORDINATE",
+   "P": "x^10 + 2*x^5*y + y^2 - 1*x",
+   "Q": "-1*x^5 - 1*y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "deg10 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x + 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg10 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x - 4",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "0",
+     "tag": "deg10 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg10 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "4",
+      "s": "1",
+      "Delta0": "4*x + 6",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg12 coordinate (deg_y 2)",
+   "deg_P": 12,
+   "SY": "COORDINATE",
+   "P": "3*x^12 - 12*x^8 + 6*x^6*y + x^6 + 12*x^4 - 12*x^2*y - 2*x^2 + 3*y^2 - 1*x + y",
+   "Q": "-1*x^6 + 2*x^2 - 1*y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "deg12 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "12",
+      "s": "1",
+      "Delta0": "12*x + 13",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg12 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "-1",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "12",
+      "s": "1",
+      "Delta0": "12*x - 11",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "0",
+     "tag": "deg12 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "0",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "12",
+      "s": "1",
+      "Delta0": "12*x + 1",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    },
+    {
+     "c": "3/2",
+     "tag": "deg12 coordinate (deg_y 2)",
+     "exact_he": {
+      "applicable": true,
+      "c": "3/2",
+      "deg_Delta": 1,
+      "deg_s": 0,
+      "deg_Delta0": 1,
+      "genus": 0,
+      "Delta0_lc": "12",
+      "s": "1",
+      "Delta0": "12*x + 19",
+      "verdict": "VANISHING",
+      "case": "C",
+      "witness": "eta = -2 dw0/(s*alpha) is globally exact; genus 0 with a single puncture, H_1 = 0",
+      "n_places_at_infinity": 1,
+      "residues": [
+       "0"
+      ],
+      "sum_residues": "0",
+      "max_abs_residue": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg5 coordinate (deg_y 5)",
+   "deg_P": 5,
+   "SY": "COORDINATE",
+   "P": "y^5 + y^3 + x",
+   "Q": "y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "deg5 coordinate (deg_y 5)",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 5"
+     },
+     "num_mono": {
+      "dy": 5,
+      "n_branch": 3,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 11,
+      "ls_residual": 5.253297281293205e-15,
+      "max_period": 4.213000162292041e-15,
+      "periods": [
+       [
+        0,
+        1,
+        0,
+        2.220446049250313e-16,
+        1.1102230246251565e-16
+       ],
+       [
+        0,
+        2,
+        2,
+        4.85722573273506e-17,
+        -6.418476861114186e-16
+       ],
+       [
+        0,
+        3,
+        3,
+        -4.683753385137379e-17,
+        -1.186550857568136e-15
+       ],
+       [
+        0,
+        4,
+        4,
+        1.6792123247455493e-15,
+        2.31043482956661e-16
+       ],
+       [
+        1,
+        0,
+        0,
+        9.43689570931383e-16,
+        -2.42861286636753e-16
+       ],
+       [
+        1,
+        3,
+        3,
+        1.0842021724855044e-16,
+        9.992007221626409e-16
+       ],
+       [
+        1,
+        4,
+        2,
+        3.9968028886505635e-15,
+        1.3322676295501878e-15
+       ],
+       [
+        2,
+        0,
+        0,
+        -1.3704315460216776e-16,
+        2.5326962749261384e-16
+       ],
+       [
+        2,
+        1,
+        1,
+        2.1163626406917047e-16,
+        -6.522560269672795e-16
+       ],
+       [
+        2,
+        3,
+        2,
+        1.1102230246251565e-15,
+        -4.440892098500626e-16
+       ],
+       [
+        2,
+        4,
+        4,
+        -2.060851489460447e-15,
+        -1.4268100589909238e-16
+       ]
+      ],
+      "scale": 2.104516448899772,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          4,
+          3,
+          2,
+          1
+         ],
+         "e": 5,
+         "residue": [
+          -2.473764752249402e-16,
+          1.766974823035287e-17
+         ],
+         "abs": 2.4800673478202063e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.4800673478202063e-16,
+       "max_abs_residue": 2.4800673478202063e-16,
+       "sum_abs_lowres": 1.8019678205368174e-16
+      },
+      "x0": [
+       3.3030801480661798,
+       1.2811431094316186
+      ],
+      "err_ls_residual": 1.5006513779374886e-15,
+      "err_max_period": 2.4787763586394945e-15,
+      "rel_ls_residual": 2.496201578295858e-15,
+      "verdict": "VANISHING",
+      "secs": 60.5
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg5 coordinate (deg_y 5)",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 5"
+     },
+     "num_mono": {
+      "dy": 5,
+      "n_branch": 3,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 11,
+      "ls_residual": 5.891649241768417e-15,
+      "max_period": 4.021398830883446e-15,
+      "periods": [
+       [
+        0,
+        0,
+        0,
+        -3.0184188481996443e-16,
+        6.973588373426765e-16
+       ],
+       [
+        0,
+        1,
+        1,
+        5.898059818321144e-17,
+        -2.0816681711721685e-15
+       ],
+       [
+        0,
+        3,
+        2,
+        -4.440892098500626e-16,
+        -1.6653345369377348e-16
+       ],
+       [
+        0,
+        4,
+        4,
+        -1.3877787807814457e-15,
+        -1.8344700758454735e-16
+       ],
+       [
+        1,
+        0,
+        0,
+        8.673617379884035e-17,
+        -1.1726730697603216e-15
+       ],
+       [
+        1,
+        3,
+        3,
+        -8.465450562766819e-16,
+        1.2177758801357186e-15
+       ],
+       [
+        1,
+        4,
+        1,
+        -8.881784197001252e-16,
+        -1.6653345369377348e-15
+       ],
+       [
+        2,
+        1,
+        0,
+        -3.9968028886505635e-15,
+        4.440892098500626e-16
+       ],
+       [
+        2,
+        2,
+        2,
+        -1.8908485888147197e-15,
+        -3.469446951953614e-18
+       ],
+       [
+        2,
+        3,
+        3,
+        5.082739784612045e-16,
+        -2.0816681711721685e-17
+       ],
+       [
+        2,
+        4,
+        4,
+        1.734723475976807e-16,
+        1.2780575209259126e-15
+       ]
+      ],
+      "scale": 2.368669488708843,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1,
+          2,
+          3,
+          4
+         ],
+         "e": 5,
+         "residue": [
+          4.594134539891746e-16,
+          2.297067269945873e-16
+         ],
+         "abs": 5.136398564488832e-16
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 5.136398564488832e-16,
+       "max_abs_residue": 5.136398564488832e-16,
+       "sum_abs_lowres": 5.196828861751275e-16
+      },
+      "x0": [
+       3.3030801480661798,
+       1.2811431094316186
+      ],
+      "err_ls_residual": 1.7921619083192592e-15,
+      "err_max_period": 3.019096734368207e-15,
+      "rel_ls_residual": 2.4873243269494484e-15,
+      "verdict": "VANISHING",
+      "secs": 60.0
+     }
+    }
+   ]
+  },
+  {
+   "label": "deg6 coordinate (deg_y 3), sheared",
+   "deg_P": 6,
+   "SY": "COORDINATE",
+   "P": "x^6 + 3*x^4*y + 3*x^2*y^2 + y^3 + x",
+   "Q": "x^2 + y",
+   "fibres": [
+    {
+     "c": "1",
+     "tag": "deg6 coordinate (deg_y 3), sheared",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 3"
+     },
+     "num_mono": {
+      "dy": 3,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 2.0710941968291187e-15,
+      "max_period": 2.5989654674417885e-15,
+      "periods": [
+       [
+        0,
+        2,
+        1,
+        -2.4424906541753444e-15,
+        -8.881784197001252e-16
+       ]
+      ],
+      "scale": 2.3795533216138063,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          2,
+          1
+         ],
+         "e": 3,
+         "residue": [
+          -8.481479150569378e-16,
+          2.0408559206057566e-15
+         ],
+         "abs": 2.210078680610037e-15
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.210078680610037e-15,
+       "max_abs_residue": 2.210078680610037e-15,
+       "sum_abs_lowres": 2.818324842741283e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 6.84426083517135e-16,
+      "err_max_period": 1.0288730087580134e-15,
+      "rel_ls_residual": 8.70370996950179e-16,
+      "verdict": "VANISHING",
+      "secs": 277.2
+     }
+    },
+    {
+     "c": "-1",
+     "tag": "deg6 coordinate (deg_y 3), sheared",
+     "exact_he": {
+      "applicable": false,
+      "reason": "deg_y = 3"
+     },
+     "num_mono": {
+      "dy": 3,
+      "n_branch": 1,
+      "n_components": 1,
+      "chi": 1,
+      "n_punctures": 1,
+      "genus_sum": 0,
+      "n_independent_cycles_found": 1,
+      "ls_residual": 3.4826335462941055e-15,
+      "max_period": 5.564421850464315e-15,
+      "periods": [
+       [
+        0,
+        2,
+        1,
+        4.884981308350689e-15,
+        2.6645352591003757e-15
+       ]
+      ],
+      "scale": 2.8482937017944896,
+      "infinity": {
+       "ok": true,
+       "n_places_over_x_inf": 1,
+       "residues": [
+        {
+         "cycle": [
+          0,
+          1,
+          2
+         ],
+         "e": 3,
+         "residue": [
+          1.0248453973604666e-15,
+          -2.049690794720933e-15
+         ],
+         "abs": 2.2916239749257868e-15
+        }
+       ],
+       "y_infinity_places": [],
+       "n_places_total": 1,
+       "sum_abs": 2.2916239749257868e-15,
+       "max_abs_residue": 2.2916239749257868e-15,
+       "sum_abs_lowres": 1.4311405299822318e-15
+      },
+      "x0": [
+       3.2631457096211207,
+       1.265654011877367
+      ],
+      "err_ls_residual": 2.1867126723570934e-15,
+      "err_max_period": 4.67624343076419e-15,
+      "rel_ls_residual": 1.2227087199961041e-15,
+      "verdict": "VANISHING",
+      "secs": 293.2
+     }
+    }
+   ]
+  }
+ ],
+ "shear_control": [
+  {
+   "label": "G1 h0=1 c=2 a=1 n=2 m=2 t=[(0, Fraction(2, 1))]",
+   "base": "NONVANISHING",
+   "sheared": null,
+   "deg_base": 4,
+   "deg_sheared": 6,
+   "match": false
+  },
+  {
+   "label": "G1 h0=1 c=-2 a=-1 n=3 m=2 t=[(1, Fraction(-3, 1)), (2, Fraction(-3, 1))]",
+   "base": "NONVANISHING",
+   "sheared": null,
+   "deg_base": 7,
+   "deg_sheared": 14,
+   "match": false
+  },
+  {
+   "label": "G1 h0=-3 c=1 a=2 n=4 m=3 t=[(0, Fraction(2, 1))]",
+   "base": null,
+   "sheared": null,
+   "deg_base": 7,
+   "deg_sheared": 11,
+   "match": true
+  }
+ ]
+}

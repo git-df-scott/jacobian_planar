@@ -1,0 +1,37 @@
+{
+ "K1a": {
+  "unimodular": true,
+  "genus": 0,
+  "baker": 0,
+  "all_irr": true,
+  "ncand": 0
+ },
+ "K1b": {
+  "unimodular": true,
+  "genus": 0,
+  "baker": 4,
+  "all_irr": true,
+  "ncand": 0
+ },
+ "K1c": {
+  "unimodular": true,
+  "genus": 0,
+  "baker": 15,
+  "all_irr": true,
+  "ncand": 0
+ },
+ "K2": {
+  "unimodular": false,
+  "genus": 0,
+  "baker": 0,
+  "all_irr": false,
+  "ncand": 1
+ },
+ "K5": {
+  "unimodular": true,
+  "genus": 1,
+  "baker": 1,
+  "all_irr": false,
+  "ncand": 1
+ }
+}

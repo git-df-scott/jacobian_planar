@@ -1,0 +1,1218 @@
+[
+ {
+  "P": "x**3*y**2 + y + 1",
+  "deg": 5,
+  "unimodular": true,
+  "bezout_U": "4*x**4/3",
+  "bezout_V": "-2*x**3*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20
+  ],
+  "mate_top_D": 20,
+  "mate_deg_bound_multiple": 4,
+  "lambda_support": 6,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 231 columns and lambda^T e = 1",
+  "certificate_id": "lam-f67fd88e64-D20",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**3*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**3*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**3*y**2 + y + 1",
+  "deg": 5,
+  "unimodular": true,
+  "bezout_U": "-4*x**4/3",
+  "bezout_V": "2*x**3*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20
+  ],
+  "mate_top_D": 20,
+  "mate_deg_bound_multiple": 4,
+  "lambda_support": 6,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 231 columns and lambda^T e = 1",
+  "certificate_id": "lam-de1a255bc7-D20",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**3*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**3*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**4*y**2 + y + 1",
+  "deg": 6,
+  "unimodular": true,
+  "bezout_U": "x**5",
+  "bezout_V": "-2*x**4*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22,
+   24
+  ],
+  "mate_top_D": 24,
+  "mate_deg_bound_multiple": 4,
+  "lambda_support": 6,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 325 columns and lambda^T e = 1",
+  "certificate_id": "lam-41ab6c887c-D24",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**4*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**4*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**4*y**2 + y + 1",
+  "deg": 6,
+  "unimodular": true,
+  "bezout_U": "-x**5",
+  "bezout_V": "2*x**4*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22,
+   24
+  ],
+  "mate_top_D": 24,
+  "mate_deg_bound_multiple": 4,
+  "lambda_support": 6,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 325 columns and lambda^T e = 1",
+  "certificate_id": "lam-4df9f3e4ac-D24",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**4*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**4*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**4*y**3 + y + 1",
+  "deg": 7,
+  "unimodular": true,
+  "bezout_U": "9*x**5*y/4",
+  "bezout_V": "-3*x**4*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14
+  ],
+  "mate_top_D": 14,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 120 columns and lambda^T e = 1",
+  "certificate_id": "lam-505d96e06a-D14",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**4*y**2 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "3*x**4*y**2 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**4*y**3 + y + 1",
+  "deg": 7,
+  "unimodular": true,
+  "bezout_U": "-9*x**5*y/4",
+  "bezout_V": "3*x**4*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "3"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14
+  ],
+  "mate_top_D": 14,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 120 columns and lambda^T e = 1",
+  "certificate_id": "lam-2ef0c6a50c-D14",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**2*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**2*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "3*x**4*y**2 - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**5*y**2 + y + 1",
+  "deg": 7,
+  "unimodular": true,
+  "bezout_U": "4*x**6/5",
+  "bezout_V": "-2*x**5*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14
+  ],
+  "mate_top_D": 14,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 120 columns and lambda^T e = 1",
+  "certificate_id": "lam-f08a93028d-D14",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**5*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**5*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**5*y**2 + y + 1",
+  "deg": 7,
+  "unimodular": true,
+  "bezout_U": "-4*x**6/5",
+  "bezout_V": "2*x**5*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14
+  ],
+  "mate_top_D": 14,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 120 columns and lambda^T e = 1",
+  "certificate_id": "lam-1819e9509d-D14",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**5*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**5*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**3*y**5 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "25*x**4*y**3/3",
+  "bezout_V": "-5*x**3*y**4 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-738e90b141-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**3*y**4 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "5*x**3*y**4 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**3*y**5 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "-25*x**4*y**3/3",
+  "bezout_V": "5*x**3*y**4 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 1,
+  "genus": 1,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 1,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-81fe753e47-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**3*y**4 - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "5*x**3*y**4 - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**5*y**3 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "9*x**6*y/5",
+  "bezout_V": "-3*x**5*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-a311b54021-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**5*y**2 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "3*x**5*y**2 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**5*y**3 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "-9*x**6*y/5",
+  "bezout_V": "3*x**5*y**2 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-ce798da440-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**5*y**2 - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "3*x**5*y**2 - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**6*y**2 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "2*x**7/3",
+  "bezout_V": "-2*x**6*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-0fdecef857-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**6*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**6*y + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "-x**6*y**2 + y + 1",
+  "deg": 8,
+  "unimodular": true,
+  "bezout_U": "-2*x**7/3",
+  "bezout_V": "2*x**6*y + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16
+  ],
+  "mate_top_D": 16,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 153 columns and lambda^T e = 1",
+  "certificate_id": "lam-3f4a9dcbe6-D16",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**6*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "2*x**6*y - 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ },
+ {
+  "P": "x**5*y**4 + y + 1",
+  "deg": 9,
+  "unimodular": true,
+  "bezout_U": "16*x**6*y**2/5",
+  "bezout_V": "-4*x**5*y**3 + 1",
+  "bezout_residual": "0",
+  "bezout_ok": true,
+  "baker_interior_pts": 2,
+  "genus": 2,
+  "genus_msg": "ok",
+  "fibre_ok": true,
+  "all_fibres_irreducible": false,
+  "n_special_c": 1,
+  "fibre_rows": [
+   {
+    "m(c)": "c - 1",
+    "abs_components": "2"
+   }
+  ],
+  "reducible_c": [
+   "c - 1"
+  ],
+  "baker": 2,
+  "mate_verdict": "EMPTY",
+  "mate_carriers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18
+  ],
+  "mate_top_D": 18,
+  "mate_deg_bound_multiple": 2,
+  "lambda_support": 4,
+  "lambda_verified": true,
+  "lambda_verification": "lambda^T M = 0 on all 190 columns and lambda^T e = 1",
+  "certificate_id": "lam-285ca2b243-D18",
+  "rational_mate": [
+   {
+    "found": false,
+    "g": "y",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x**5*y**3 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "fibre c=1"
+   },
+   {
+    "found": false,
+    "g": "x",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_x"
+   },
+   {
+    "found": false,
+    "g": "4*x**5*y**3 + 1",
+    "kmax": 2,
+    "DAmax": 8,
+    "origin": "P_y"
+   }
+  ],
+  "rational_mate_found": false,
+  "rational_mate_poles": null,
+  "rational_mate_Q": null,
+  "rational_mate_origin": null
+ }
+]

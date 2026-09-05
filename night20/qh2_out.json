@@ -1,0 +1,87 @@
+[
+ {
+  "P": "x**2*y**3 + y + 1",
+  "deg": 5,
+  "baker": 0,
+  "unimodular": true,
+  "genus": 0,
+  "all_fibres_irreducible": false,
+  "reducible_c": [
+   "c - 1"
+  ],
+  "A_verdict": "A_FOUND",
+  "A_top_D": 2,
+  "A_rhs": "(P - 1)",
+  "A": "-x*y",
+  "A_residual": "0",
+  "A_verified": true
+ },
+ {
+  "P": "x**3*y**4 + y + 1",
+  "deg": 7,
+  "baker": 0,
+  "unimodular": true,
+  "genus": 0,
+  "all_fibres_irreducible": false,
+  "reducible_c": [
+   "c - 1"
+  ],
+  "A_verdict": "A_FOUND",
+  "A_top_D": 2,
+  "A_rhs": "(P - 1)",
+  "A": "-x*y",
+  "A_residual": "0",
+  "A_verified": true
+ },
+ {
+  "P": "x**4*y**5 + y + 1",
+  "deg": 9,
+  "baker": 0,
+  "unimodular": true,
+  "genus": 0,
+  "all_fibres_irreducible": false,
+  "reducible_c": [
+   "c - 1"
+  ],
+  "A_verdict": "A_FOUND",
+  "A_top_D": 2,
+  "A_rhs": "(P - 1)",
+  "A": "-x*y",
+  "A_residual": "0",
+  "A_verified": true
+ },
+ {
+  "P": "x**5*y**6 + y + 1",
+  "deg": 11,
+  "baker": 0,
+  "unimodular": true,
+  "genus": 0,
+  "all_fibres_irreducible": false,
+  "reducible_c": [
+   "c - 1"
+  ],
+  "A_verdict": "A_FOUND",
+  "A_top_D": 2,
+  "A_rhs": "(P - 1)",
+  "A": "-x*y",
+  "A_residual": "0",
+  "A_verified": true
+ },
+ {
+  "P": "x**6*y**7 + y + 1",
+  "deg": 13,
+  "baker": 0,
+  "unimodular": true,
+  "genus": 0,
+  "all_fibres_irreducible": false,
+  "reducible_c": [
+   "c - 1"
+  ],
+  "A_verdict": "A_FOUND",
+  "A_top_D": 2,
+  "A_rhs": "(P - 1)",
+  "A": "-x*y",
+  "A_residual": "0",
+  "A_verified": true
+ }
+]

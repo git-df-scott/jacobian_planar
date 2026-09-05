@@ -1,0 +1,326 @@
+{
+ "E0_coordinate_order": [
+  "a_1_0",
+  "a_2_1",
+  "a_4_0",
+  "a_6_2",
+  "b_0_1",
+  "b_5_0",
+  "b_6_1",
+  "b_7_2",
+  "b_8_3"
+ ],
+ "E0_monomials": {
+  "a_1_0": [
+   1,
+   0
+  ],
+  "a_2_1": [
+   2,
+   1
+  ],
+  "a_4_0": [
+   4,
+   0
+  ],
+  "a_6_2": [
+   6,
+   2
+  ],
+  "b_0_1": [
+   0,
+   1
+  ],
+  "b_5_0": [
+   5,
+   0
+  ],
+  "b_6_1": [
+   6,
+   1
+  ],
+  "b_7_2": [
+   7,
+   2
+  ],
+  "b_8_3": [
+   8,
+   3
+  ]
+ },
+ "star_point_vector": [
+  1,
+  0,
+  1,
+  0,
+  1,
+  1,
+  0,
+  0,
+  0
+ ],
+ "base_point_vector": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "star_pair": {
+  "P_star": "x**4 + x",
+  "Q_star": "x**5 + y"
+ },
+ "coefficients_present": [
+  "a_1_0",
+  "a_4_0",
+  "b_0_1",
+  "b_5_0"
+ ],
+ "coefficients_zero": [
+  "a_2_1",
+  "a_6_2",
+  "b_6_1",
+  "b_7_2",
+  "b_8_3"
+ ],
+ "support_P_star": [
+  [
+   1,
+   0
+  ],
+  [
+   4,
+   0
+  ]
+ ],
+ "support_Q_star": [
+  [
+   0,
+   1
+  ],
+  [
+   5,
+   0
+  ]
+ ],
+ "deg_P_star": 4,
+ "deg_Q_star": 5,
+ "deg_F_star": 5,
+ "P_star_involves_y": false,
+ "Q_star_minus_y_involves_y": false,
+ "det_J_over_Z": "4*x**3 + 1",
+ "det_J_over_F2": "1",
+ "det_J_equals_1_in_F2": true,
+ "images_over_F2": {
+  "(0, 1)": [
+   0,
+   1
+  ],
+  "(1, 0)": [
+   0,
+   1
+  ],
+  "(1, 1)": [
+   0,
+   0
+  ],
+  "(0, 0)": [
+   0,
+   0
+  ]
+ },
+ "collision_F01_equals_F10": true,
+ "collision_includes_F11": false,
+ "common_image_of_(0,1)_and_(1,0)": [
+  0,
+  1
+ ],
+ "symmetry": {
+  "base_pair": {
+   "P": "x**6*y**2 + x**4 + x**2*y + x",
+   "Q": "x**8*y**3 + x**7*y**2 + x**6*y + x**5 + y"
+  },
+  "star_is_base_with_these_coefficients_set_to_zero": [
+   "a_2_1",
+   "a_6_2",
+   "b_6_1",
+   "b_7_2",
+   "b_8_3"
+  ],
+  "equal_to_base": false,
+  "xy_swap_conjugate_of_base": {
+   "P": "x**3*y**8 + x**2*y**7 + x*y**6 + x + y**5",
+   "Q": "x**2*y**6 + x*y**2 + y**4 + y"
+  },
+  "star_equals_xy_swap_conjugate_of_base": false,
+  "xy_swap_conjugate_of_star": {
+   "P": "x + y**5",
+   "Q": "y**4 + y"
+  },
+  "star_is_xy_swap_invariant": false,
+  "frobenius_squaring_of_coefficients_note": "over F_2 every coefficient satisfies c^2 = c, so coefficientwise Frobenius is the identity on both pairs; it relates nothing that was not already equal",
+  "coefficientwise_frobenius_changes_star": false,
+  "verdict": "no obvious relation under the checked symmetries (equality, x<->y swap conjugation, coefficientwise Frobenius); the only recorded relation is the coordinate one: the star point is the base point with the listed coefficients set to 0"
+ },
+ "tail_mod2_star": {
+  "linear_part_invertible_mod2": true,
+  "deg_F": 5,
+  "D": 14,
+  "tail_profile_degrees": [
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14
+  ],
+  "tail_profile": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "tail_all_zero": false,
+  "first_nonzero_tail_degree": 8,
+  "recomposition_selfcheck_G_of_F_is_identity": true,
+  "deg_G_computed": 8,
+  "characteristic": 2
+ },
+ "tail_controls": {
+  "(x, y+x^2)": {
+   "tail_all_zero": true,
+   "selfcheck": true
+  },
+  "(x+y^3, y)": {
+   "tail_all_zero": true,
+   "selfcheck": true
+  },
+  "(x, y+x^2) o (x+y^2, y)": {
+   "tail_all_zero": true,
+   "selfcheck": true
+  }
+ },
+ "tail_mod2_base_pair": {
+  "linear_part_invertible_mod2": true,
+  "deg_F": 11,
+  "D": 26,
+  "tail_profile_degrees": [
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26
+  ],
+  "tail_profile": [
+   0,
+   1,
+   0,
+   4,
+   3,
+   2,
+   1,
+   2,
+   1,
+   2,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "tail_all_zero": false,
+  "first_nonzero_tail_degree": 13,
+  "recomposition_selfcheck_G_of_F_is_identity": true,
+  "deg_G_computed": 25,
+  "characteristic": 2
+ },
+ "tear_char2_star": {
+  "char": 2,
+  "jacobian_det": "1",
+  "branches": {
+   "R1": {
+    "eliminated": "y",
+    "source_var": "x",
+    "resultant": "u + x**4 + x",
+    "degree_in_source_var": 4,
+    "sylvester_degree_bound": 4,
+    "leading_coefficient": "1",
+    "leading_coefficient_is_constant": true
+   },
+   "R2": {
+    "eliminated": "x",
+    "source_var": "y",
+    "resultant": "u**5 + u**3*v + u**3*y + u*v**2 + u*y**2 + v**4 + v + y**4 + y",
+    "degree_in_source_var": 4,
+    "sylvester_degree_bound": 4,
+    "leading_coefficient": "1",
+    "leading_coefficient_is_constant": true
+   }
+  },
+  "flags": [
+   "POSITIVE_CHARACTERISTIC"
+  ],
+  "product_of_leading_coefficients": "1",
+  "product_is_a_nonzero_constant": true
+ },
+ "tear_char2_base": {
+  "char": 2,
+  "jacobian_det": "1",
+  "branches": {
+   "R1": {
+    "eliminated": "y",
+    "source_var": "x",
+    "resultant": "u**3*x**16 + u*v*x**16 + u*x**15 + v**2*x**18 + x**16",
+    "degree_in_source_var": 18,
+    "sylvester_degree_bound": 34,
+    "leading_coefficient": "v**2",
+    "leading_coefficient_is_constant": false
+   },
+   "R2": {
+    "eliminated": "x",
+    "source_var": "y",
+    "resultant": "u**8*y**18 + u**5*v**2*y**16 + u**5*y**18 + u**3*v**3*y**16 + u**3*v**2*y**17 + u*v**4*y**16 + u*v**2*y**18 + v**6*y**16 + v**4*y**18 + v**3*y**16 + v**2*y**17 + v*y**18 + y**19",
+    "degree_in_source_var": 19,
+    "sylvester_degree_bound": 34,
+    "leading_coefficient": "1",
+    "leading_coefficient_is_constant": true
+   }
+  },
+  "flags": [
+   "POSITIVE_CHARACTERISTIC",
+   "DEGREE_DROP:R1(18<34)",
+   "DEGREE_DROP:R2(19<34)"
+  ],
+  "product_of_leading_coefficients": "v**2",
+  "product_is_a_nonzero_constant": false
+ },
+ "tear_controls": {
+  "char0_(x, y+x^2)_leading_coeffs_constant": [
+   true,
+   true
+  ],
+  "char0_(x, x*y)_product_of_leading_coefficients": "u"
+ }
+}

@@ -1,0 +1,142 @@
+{
+ "hash": "7c3d2c44edcd",
+ "p": 5,
+ "family": "F2",
+ "characteristic": 5,
+ "support_P": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   4,
+   3
+  ],
+  [
+   7,
+   1
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   5
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   2,
+   6
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   4,
+   0
+  ],
+  [
+   8,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 4,
+ "solutions": [
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    4,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    3,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    3,
+    3,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    2,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  },
+  {
+   "a": [
+    4,
+    4,
+    0,
+    0,
+    0
+   ],
+   "b": [
+    4,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "mirror: Q in F_p[y] and P has no mixed/y-carried x-monomial"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+==============================================================================
+C1 POSITIVE -- coordinates with an exactly verified mate
+==============================================================================
+
+x + y^2   deg P=2  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   P = y^2 + x
+   c=0    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.91e-15 err=3.2e-17 sumres=0.0e+00 g=0 npunct=1
+   c=1    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=7.02e-16 err=5.6e-16 sumres=0.0e+00 g=0 npunct=1
+   c=-1   EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=2.53e-15 err=1.3e-15 sumres=0.0e+00 g=0 npunct=1
+   c=3/2  EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=2.56e-15 err=6.5e-16 sumres=0.0e+00 g=0 npunct=1
+
+deg4 triangular   deg P=2  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   P = x^2 + y
+   c=0    EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=-1   EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=3/2  EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+
+deg4 triangular (swapped)   deg P=4  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   P = x^4 + 2*x^2*y + y^2 - 1*x
+   c=0    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.90e-15 err=8.6e-16 sumres=2.8e-16 g=0 npunct=1
+   c=1    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=2.54e-15 err=1.3e-15 sumres=3.3e-16 g=0 npunct=1
+   c=-1   EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=2.54e-15 err=1.5e-15 sumres=3.5e-16 g=0 npunct=1
+   c=3/2  EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.84e-15 err=9.8e-16 sumres=5.7e-16 g=0 npunct=1
+
+deg10 coordinate   deg P=4  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   P = 2*x^4 - 12*x^3 + 4*x^2*y + 18*x^2 - 12*x*y + 2*y^2 - 1*x + 1
+   c=0    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.93e-15 err=2.9e-17 sumres=2.1e-16 g=0 npunct=1
+   c=1    EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.61e-15 err=6.2e-16 sumres=5.0e-16 g=0 npunct=1
+   c=-1   EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=5.98e-16 err=1.6e-15 sumres=5.5e-16 g=0 npunct=1
+   c=3/2  EXACT-HE=VANISHING        NUM-MONO=VANISHING ls=1.01e-15 err=3.7e-16 sumres=2.2e-16 g=0 npunct=1
+
+deg9 coordinate   deg P=3  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   P = x^3 + y
+   c=0    EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=-1   EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+   c=3/2  EXACT-HE=n/a              NUM-MONO=VANISHING ls=0.00e+00 err=0.0e+00 sumres=1.1e-14 g=0 npunct=1
+
+==============================================================================
+C2 NEGATIVE -- a demonstrably nonzero period
+==============================================================================
+
+x*y   (eta = dy/y on {xy=c}: simple pole at the place x=inf (y->0))
+   c=1    EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=6.28e+00 err=5.3e-14 sumres=1.3e-14 g=0 npunct=2
+   c=-1   EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=6.28e+00 err=5.3e-14 sumres=1.3e-14 g=0 npunct=2
+   c=3/2  EXACT-HE=n/a              NUM-MONO=NONVANISHING ls=6.28e+00 err=5.3e-14 sumres=1.3e-14 g=0 npunct=2
+
+x^2 + y^2   (eta = -dx/sqrt(4c-4x^2): residues -+ i/2 at the two places at infinity)
+   c=1    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=4.8e-12 sumres=0.0e+00 g=0 npunct=2
+   c=-1   EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=2.7e-15 sumres=0.0e+00 g=0 npunct=2
+   c=3/2  EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.14e+00 err=4.5e-12 sumres=0.0e+00 g=0 npunct=2
+
+y^2 - x^3 - x - 1   (eta = -dx/w, w^2 = 4(x^3+x+1+c): nonzero HOLOMORPHIC form, genus 1)
+   c=0    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.42e+00 err=7.7e-13 sumres=0.0e+00 g=1 npunct=1
+   c=1    EXACT-HE=NONVANISHING     NUM-MONO=NONVANISHING ls=3.06e+00 err=6.7e-13 sumres=0.0e+00 g=1 npunct=1
+
+x*y^3 + y   (deg_y 3, places over the root of lc)
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=1.56e-12 err=1.5e-09 sumres=2.0e-13 g=0 npunct=2
+
+==============================================================================
+C4 CROSS-CHECK -- night12 V2 F2-family targets (P read from record)
+==============================================================================
+
+09d8d1d05e63  F2  T=61 a=0  deg=124  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=B deg_Delta0=2 genus=0 places_inf=2
+
+7aabbefe44c8  F2  T=2 a=0  deg=124  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+
+dada805afbd2  F2  T=3 a=1  deg=126  night12: EMPTY_all_stages_tried
+   c=1    EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=-1   EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+   c=3/2  EXACT-HE=NONVANISHING   case=A deg_Delta0=120 genus=59 places_inf=2
+
+==============================================================================
+C3 CONSISTENCY -- sum of residues = 0 on every fibre measured
+==============================================================================
+violations: NONE
+
+written controls15.json

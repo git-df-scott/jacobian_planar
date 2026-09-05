@@ -1,0 +1,2 @@
+170
+Counter({(True, 0, True, 'MATE'): 170})

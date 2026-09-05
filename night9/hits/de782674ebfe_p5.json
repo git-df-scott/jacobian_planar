@@ -1,0 +1,458 @@
+{
+ "hash": "de782674ebfe",
+ "p": 5,
+ "family": "F2",
+ "characteristic": 5,
+ "support_P": [
+  [
+   0,
+   6
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   3,
+   0
+  ],
+  [
+   5,
+   1
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   2
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 20,
+ "solutions": [
+  {
+   "a": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "product": {
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    2
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    3
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    1,
+    0,
+    4
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 1,
+    "P_at_1_0": 1,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     1,
+     1
+    ],
+    "image_1_0": [
+     1,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 4
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    0
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     3
+    ],
+    "image_1_0": [
+     2,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "product": {
+     "u^0 v^0": 2
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    1
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     3
+    ],
+    "image_1_0": [
+     2,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 2
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    2,
+    0,
+    2
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 2,
+    "P_at_1_0": 2,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     2,
+     3
+    ],
+    "image_1_0": [
+     2,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 30,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "method_R2": "laplace-mod-p",
+    "deg_y_R2": 30,
+    "lead_coeff_R2_in_y": {
+     "u^0 v^0": 4
+    },
+    "product": {
+     "u^0 v^0": 2
+    },
+    "tear": "TEAR-EMPTY"
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

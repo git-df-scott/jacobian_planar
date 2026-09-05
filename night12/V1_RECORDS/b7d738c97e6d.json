@@ -1,0 +1,47 @@
+{
+ "hash": "b7d738c97e6d",
+ "family": "HDC",
+ "profile": "(128,1)",
+ "deg_P": 128,
+ "n_supp_P": 2,
+ "P": {
+  "0,128": 1,
+  "1,0": 1
+ },
+ "SY_verdict": "COORDINATE",
+ "SY_nodes": 2,
+ "SY_leaves": 0,
+ "stages": [
+  {
+   "n_unknowns": 128,
+   "n_rows_nonzero": 128,
+   "rank_A_p": 128,
+   "rank_Ae_p": 128,
+   "sched_prime": 999983,
+   "nullity_p": 0,
+   "verdict": "MATE_over_Q",
+   "certificate": "exact_solution",
+   "exact_status": "verified_bracket_eq_1",
+   "deg_Q": 1,
+   "stage": "Y",
+   "deg_Q_bound": 127,
+   "n_raw": 129,
+   "thin_t": 1,
+   "n_used": 128,
+   "deflated_kernel_dim": 1,
+   "secs": 0.3
+  }
+ ],
+ "outcome": "MATE",
+ "deg_Q": 1,
+ "div_ordered": "True",
+ "Q": {
+  "0,1": [
+   1,
+   1
+  ]
+ },
+ "bracket_is_one": true,
+ "hit": false,
+ "secs": 0.3
+}

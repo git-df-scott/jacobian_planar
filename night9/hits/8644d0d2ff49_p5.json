@@ -1,0 +1,358 @@
+{
+ "hash": "8644d0d2ff49",
+ "p": 5,
+ "family": "F2",
+ "characteristic": 5,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   2,
+   14
+  ],
+  [
+   4,
+   3
+  ],
+  [
+   8,
+   3
+  ],
+  [
+   13,
+   2
+  ],
+  [
+   15,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   3,
+   3
+  ],
+  [
+   4,
+   1
+  ],
+  [
+   5,
+   5
+  ],
+  [
+   6,
+   3
+  ],
+  [
+   8,
+   0
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 20,
+ "solutions": [
+  {
+   "a": [
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    4,
+    0,
+    0,
+    0,
+    1,
+    0,
+    4
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 4,
+    "Q_at_1_0": 4,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     4
+    ],
+    "image_1_0": [
+     0,
+     4
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 75,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 1
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 23 for elimination of x"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ],
+   "b": [
+    2,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 2,
+    "Q_at_1_0": 2,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     2
+    ],
+    "image_1_0": [
+     0,
+     2
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 75,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 2
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 23 for elimination of x"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   "b": [
+    3,
+    0,
+    0,
+    0,
+    1,
+    0,
+    3
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 3,
+    "Q_at_1_0": 3,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     3
+    ],
+    "image_1_0": [
+     0,
+     3
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 75,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 3
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 23 for elimination of x"
+   },
+   "lift_to_p2": false
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4
+   ],
+   "b": [
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "status": "VERIFIED",
+   "verify": {
+    "det_J_minus_1_residual": {},
+    "det_ok": true,
+    "P_at_0_1": 0,
+    "P_at_1_0": 0,
+    "Q_at_0_1": 1,
+    "Q_at_1_0": 1,
+    "coll_ok": true,
+    "image_0_1": [
+     0,
+     1
+    ],
+    "image_1_0": [
+     0,
+     1
+    ]
+   },
+   "tear": {
+    "characteristic": 5,
+    "method_R1": "laplace-mod-p",
+    "deg_x_R1": 75,
+    "lead_coeff_R1_in_x": {
+     "u^0 v^0": 4
+    },
+    "method_R2": "not-computed",
+    "tear": "TEAR-NOT-COMPUTED",
+    "reason": "Sylvester size 23 for elimination of x"
+   },
+   "lift_to_p2": false
+  }
+ ]
+}

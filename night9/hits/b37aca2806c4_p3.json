@@ -1,0 +1,96 @@
+{
+ "hash": "b37aca2806c4",
+ "p": 3,
+ "family": "F2",
+ "characteristic": 3,
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   5,
+   4
+  ],
+  [
+   6,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   10
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   4
+  ],
+  [
+   3,
+   10
+  ],
+  [
+   5,
+   13
+  ],
+  [
+   11,
+   1
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 2,
+ "solutions": [
+  {
+   "a": [
+    2,
+    0,
+    0,
+    1
+   ],
+   "b": [
+    2,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  },
+  {
+   "a": [
+    1,
+    0,
+    0,
+    2
+   ],
+   "b": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "status": "DEGENERATE",
+   "reason": "P in F_p[x] and Q has no mixed/x-carried y-monomial"
+  }
+ ]
+}

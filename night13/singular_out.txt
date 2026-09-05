@@ -1,0 +1,13 @@
+S1 leading bracket is zero: 1
+S1 deg P0, deg Q0: 87 130
+S2 degenerate bracket equals independent expansion: 1
+S2 coeff at 1        : a*b  expected  a*b
+S2 coeff at x3y80    : 4*h2^2*A*b  expected  4*h2^2*A*b
+S2 coeff at x123y2   : 3*h41^3*B*a  expected  3*h41^3*B*a
+S2 all three match: 1
+S3 params: h2=1, h14=19, h29=18, h41=14, A=18, B=17
+S3 deg P, deg Q: 84 126
+S3 coeff at x3y80  : 432  expected  432
+S3 coeff at x123y2 : 3778488  expected  3778488
+S3 coeff at 1      : 162  expected  162
+S3 all three match: 1

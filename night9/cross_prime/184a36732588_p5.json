@@ -1,0 +1,52 @@
+{
+ "hash": "184a36732588",
+ "p": 5,
+ "characteristic": 5,
+ "origin": "TEAR-NONEMPTY-nondegenerate",
+ "support_P": [
+  [
+   1,
+   0
+  ],
+  [
+   2,
+   8
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   5,
+   0
+  ],
+  [
+   9,
+   0
+  ]
+ ],
+ "support_Q": [
+  [
+   0,
+   1
+  ],
+  [
+   2,
+   7
+  ],
+  [
+   8,
+   0
+  ],
+  [
+   8,
+   3
+  ]
+ ],
+ "method": "exhaustive-bilinear",
+ "exact_count": 4,
+ "solution_list_is_complete": true,
+ "n_degenerate": 4,
+ "n_nondegenerate": 0,
+ "solutions": []
+}

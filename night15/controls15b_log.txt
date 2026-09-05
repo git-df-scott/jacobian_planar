@@ -1,0 +1,32 @@
+==============================================================================
+C1 (addendum) -- HIGH-DEGREE coordinates with an exact mate
+==============================================================================
+
+deg10 coordinate (deg_y 2)   deg P=10 deg_y=2  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   c=1    EXACT-HE=VANISHING        NUM-MONO=-
+   c=-1   EXACT-HE=VANISHING        NUM-MONO=-
+   c=0    EXACT-HE=VANISHING        NUM-MONO=-
+   c=3/2  EXACT-HE=VANISHING        NUM-MONO=-
+
+deg12 coordinate (deg_y 2)   deg P=12 deg_y=2  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   c=1    EXACT-HE=VANISHING        NUM-MONO=-
+   c=-1   EXACT-HE=VANISHING        NUM-MONO=-
+   c=0    EXACT-HE=VANISHING        NUM-MONO=-
+   c=3/2  EXACT-HE=VANISHING        NUM-MONO=-
+
+deg5 coordinate (deg_y 5)   deg P=5 deg_y=5  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=5.25e-15 err=1.5e-15 sumres=2.5e-16 g=0 npunct=1
+   c=-1   EXACT-HE=n/a              NUM-MONO=VANISHING ls=5.89e-15 err=1.8e-15 sumres=5.1e-16 g=0 npunct=1
+
+deg6 coordinate (deg_y 3), sheared   deg P=6 deg_y=3  [P,Q]-1 = 0 exactly, SY=COORDINATE
+   c=1    EXACT-HE=n/a              NUM-MONO=VANISHING ls=2.07e-15 err=6.8e-16 sumres=2.2e-15 g=0 npunct=1
+   c=-1   EXACT-HE=n/a              NUM-MONO=VANISHING ls=3.48e-15 err=2.2e-15 sumres=2.3e-15 g=0 npunct=1
+
+==============================================================================
+SHEAR CONTROL -- P and P o phi must give the same period verdict
+==============================================================================
+G1 h0=1 c=2 a=1 n=2 m=2 t=[(0, Fraction(2, base=NONVANISHING   sheared=None           deg 4 -> 6  MATCH=False
+G1 h0=1 c=-2 a=-1 n=3 m=2 t=[(1, Fraction( base=NONVANISHING   sheared=None           deg 7 -> 14  MATCH=False
+G1 h0=-3 c=1 a=2 n=4 m=3 t=[(0, Fraction(2 base=None           sheared=None           deg 7 -> 11  MATCH=True
+
+written controls15b.json

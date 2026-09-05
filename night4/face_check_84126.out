@@ -1,0 +1,76 @@
+face_check_84126 -- exact integer face check, stdlib only
+primes used for the modular statements: (999983, 1000003)
+
+========================================================================
+ITEM 0  bracket rule vs explicit differentiation
+========================================================================
+  compared 4096 monomial pairs, exponents 0..7
+  rule used: [x^a y^b, x^c y^d] = (a*d - b*c) x^(a+c-1) y^(b+d-1)
+PASS item 0: monomial bracket rule agrees with p_x q_y - p_y q_x
+
+========================================================================
+ITEM 1  w(i,j) = 10i - 13j,  u = x^13*y^10
+========================================================================
+  P_w = (a0)*x^1*y^0 + (a1)*x^14*y^10
+  Q_w = (b)*x^4*y^1
+  [P_w, Q_w] = (a0*b)*x^4*y^0 + (-26*a1*b)*x^17*y^10
+  w-values on P_w: [10] ; on Q_w: [27]
+  claimed    = (a0*b)*x^4*y^0 + (-26*a1*b)*x^17*y^10
+  DERIVED coefficient of x^4*u (i.e. x^17*y^10) : -26 * a1*b
+    from the rule with (a,b,c,d) = (14,10,4,1): a*d - b*c = -26
+PASS item 1: [P_w,Q_w] == x^4*(a0*b - 26*a1*b*u) coefficient by coefficient over Z
+
+========================================================================
+ITEM 2  w(i,j) = 3i - 4j,  v = x^4*y^3
+========================================================================
+  P_w = (a)*x^4*y^1
+  Q_w = (b0)*x^1*y^0 + (b1)*x^5*y^3 + (b2)*x^9*y^6 + (b3)*x^13*y^9 + (b4)*x^17*y^12 + (b5)*x^21*y^15
+  w-values on P_w: [8] ; on Q_w: [3]
+  [P_w, Q_w] = (-a*b0)*x^4*y^0 + (7*a*b1)*x^8*y^3 + (15*a*b2)*x^12*y^6 + (23*a*b3)*x^16*y^9 + (31*a*b4)*x^20*y^12 + (39*a*b5)*x^24*y^15
+
+  DERIVED coefficients (nothing copied; each read off the rule):
+    j=0 : x^4*y^0  coefficient of a*b0 = -1   (rule: a*d-b*c = 4*0 - 1*1 = -1)   8j-1 = -1
+    j=1 : x^8*y^3  coefficient of a*b1 = +7   (rule: a*d-b*c = 4*3 - 1*5 = +7)   8j-1 = +7
+    j=2 : x^12*y^6  coefficient of a*b2 = +15   (rule: a*d-b*c = 4*6 - 1*9 = +15)   8j-1 = +15
+    j=3 : x^16*y^9  coefficient of a*b3 = +23   (rule: a*d-b*c = 4*9 - 1*13 = +23)   8j-1 = +23
+    j=4 : x^20*y^12  coefficient of a*b4 = +31   (rule: a*d-b*c = 4*12 - 1*17 = +31)   8j-1 = +31
+    j=5 : x^24*y^15  coefficient of a*b5 = +39   (rule: a*d-b*c = 4*15 - 1*21 = +39)   8j-1 = +39
+
+  So [P_w,Q_w] = a*x^4 * sum_j (-1, +7, +15, +23, +31, +39) * b_j * v^j
+  The derived sign pattern is (8j - 1), i.e. NEGATIVE at j=0 (-1) and
+  positive for j >= 1.  This was computed, not assumed.
+PASS item 2: expansion is exactly a*x^4*sum_j c_j*b_j*v^j with the derived c_j
+PASS item 2: derived c_j equal (8j - 1) for j = 0..5
+
+========================================================================
+ITEM 3  the kill, with target x^4
+========================================================================
+  Target x^4 means: in the bracket, every monomial OTHER than x^4*y^0
+  must have zero coefficient, and the x^4 coefficient must be nonzero.
+
+  Orientation A  (item 1):
+    [P_w,Q_w] = (a0*b)*x^4 + (-26*a1*b)*x^17*y^10
+    off-target slot x^17*y^10 must vanish:
+    coefficient of a1*b = -26  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    => -26*a1*b = 0 with -26 invertible  =>  a1*b = 0  =>  a1 = 0 or b = 0.
+    and the target slot needs a0*b != 0, which forces b != 0,
+    hence a1 = 0.
+PASS item 3A: a1 = 0 (or b = 0) forced over Z and mod both primes
+
+  Orientation B  (item 2):
+    [P_w,Q_w] = a*x^4 * sum_j c_j*b_j*v^j,  c_j as derived above.
+    target x^4 is the j=0 slot, so every j >= 1 slot must vanish:
+    c_1 (coefficient of a*b_1) = +7  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    c_2 (coefficient of a*b_2) = +15  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    c_3 (coefficient of a*b_3) = +23  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    c_4 (coefficient of a*b_4) = +31  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    c_5 (coefficient of a*b_5) = +39  ->  Z: nonzero, mod 999983: nonzero, mod 1000003: nonzero
+    each c_j (j>=1) is invertible over Z and mod both primes, and the
+    target slot needs c_0*a*b_0 != 0, which forces a != 0;
+    hence a*b_j = 0 with a != 0 gives b_j = 0 for every j = 1..5,
+    in particular b_5 = 0.
+PASS item 3B: b_5 = 0 forced over Z and mod both primes (and likewise b_1..b_4)
+
+========================================================================
+PASS OVERALL: all items
+========================================================================

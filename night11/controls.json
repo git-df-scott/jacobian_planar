@@ -1,0 +1,194 @@
+{
+ "results": {
+  "support": {
+   "GRADED-5": {
+    "t": 5,
+    "aP": 1,
+    "aQ": 4,
+    "nP": 731,
+    "nQ": 1626,
+    "n": 2357,
+    "residual_cells": 4389,
+    "topform_dims": [
+     17,
+     26
+    ]
+   },
+   "GRADED-15": {
+    "t": 15,
+    "aP": 1,
+    "aQ": 14,
+    "nP": 245,
+    "nQ": 543,
+    "n": 788,
+    "residual_cells": 1463,
+    "topform_dims": [
+     6,
+     8
+    ]
+   },
+   "FULL": {
+    "t": 1,
+    "aP": 0,
+    "aQ": 0,
+    "nP": 3655,
+    "nQ": 8128,
+    "n": 11783,
+    "residual_cells": 21945,
+    "topform_dims": [
+     85,
+     127
+    ]
+   }
+  },
+  "N1": {
+   "monomials": 21,
+   "max_abs_err": 3.552713678800501e-15,
+   "max_abs_err_all": 3.552713678800501e-15,
+   "conv_rel_err": 1.6364359689153405e-15,
+   "grad_rel_err": 9.747968681120138e-11,
+   "fused_vs_reference": 7.105427357601002e-15,
+   "pass_": true
+  },
+  "N2": {
+   "N2a": {
+    "degrees": [
+     4,
+     8
+    ],
+    "nparam": 60,
+    "EK_at_exact": 1.624049309079232e-29,
+    "EK_at_perturbed_start": 0.006854935931013873,
+    "EK_final": 6.960110918813761e-20,
+    "nit": 528,
+    "secs": 0.21453595161437988,
+    "max_resid_exact": 2.4009778697075036e-15
+   },
+   "N2b": {
+    "degrees": [
+     84,
+     168
+    ],
+    "nparam": 18020,
+    "EK_at_exact": 1.338232352323422e-24,
+    "EK_at_perturbed_start": 6.024648027465079e-05,
+    "EK_final": 6.748826130767379e-13,
+    "nit": 4000,
+    "secs": 36.2702534198761
+   }
+  },
+  "N3": {
+   "4_8": {
+    "degrees": [
+     4,
+     8
+    ],
+    "nparam": 60,
+    "seeds": 12,
+    "n_machine_precision": 0,
+    "median": 1.42445042393787e-07,
+    "best": 2.4338939082314893e-10,
+    "finals": [
+     3.2487133181758174e-08,
+     2.309195072738355e-07,
+     1.046659643965056e-06,
+     6.947989888018401e-08,
+     8.119267057769362e-07,
+     2.4338939082314893e-10,
+     1.7126413828059614e-08,
+     8.762866352871138e-06,
+     8.727916495226654e-08,
+     1.1832247524378685e-07,
+     2.9264919240679797e-06,
+     1.6656760954378713e-07
+    ]
+   },
+   "2_4": {
+    "degrees": [
+     2,
+     4
+    ],
+    "nparam": 21,
+    "seeds": 12,
+    "n_machine_precision": 9,
+    "median": 2.127823801722425e-29,
+    "best": 7.217127681395594e-32,
+    "finals": [
+     1.5167383185599547e-24,
+     3.360683041463941e-29,
+     8.949645619809086e-30,
+     2.3140441328740056e-31,
+     1.7591916273488762e-25,
+     2.791261533463618e-17,
+     3.0406110305672765e-31,
+     1.7295212517114388e-14,
+     7.617640911072489e-16,
+     7.217127681395594e-32,
+     9.031659528648778e-31,
+     1.6993539609884805e-30
+    ]
+   },
+   "4_6": {
+    "degrees": [
+     4,
+     6
+    ],
+    "nparam": 43,
+    "seeds": 12,
+    "n_machine_precision": 1,
+    "median": 6.65684911792756e-09,
+    "best": 3.712994813468056e-19,
+    "finals": [
+     3.372283222855759e-07,
+     4.2371984373562625e-07,
+     2.6422389040779506e-08,
+     1.6009179909840791e-12,
+     1.987260062403089e-11,
+     1.939583885810603e-08,
+     1.9549886507329838e-12,
+     6.264735376095036e-07,
+     7.957096388709234e-14,
+     3.712994813468056e-19,
+     1.3272244614591365e-08,
+     4.145362126375512e-11
+    ]
+   }
+  },
+  "wall_seconds": 57.88610005378723
+ },
+ "log": [
+  "night11 numeric net -- controls   (scipy=True)",
+  "support GRADED-5   deg(84,126) t= 5 (aP=1,aQ=4):   731+ 1626 =  2357 params,  4389 residual cells, top-form dims (17,26)",
+  "support GRADED-15  deg(84,126) t=15 (aP=1,aQ=14):   245+  543 =   788 params,  1463 residual cells, top-form dims (6,8)",
+  "support FULL       deg(84,126) t= 1 (aP=0,aQ=0):  3655+ 8128 = 11783 params, 21945 residual cells, top-form dims (85,127)",
+  "N1  symbolic-vs-numeric Keller residual  (deg 3, deg 4)",
+  "      monomials compared              : 21",
+  "      max |sympy - numeric| (listed)  : 3.553e-15",
+  "      max |sympy - numeric| (all cells): 3.553e-15",
+  "      fused-vs-reference residual err : 7.105e-15",
+  "      direct-vs-FFT conv rel error    : 1.636e-15",
+  "      analytic-vs-FD gradient rel err : 9.748e-11  (43 params)",
+  "      N1 PASS",
+  "N2a automorphism (deg 4, deg 8), 60 params",
+  "      E_K at exact automorphism      : 1.624e-29",
+  "      E_K at perturbed start (1e-3)  : 6.855e-03",
+  "      E_K after L-BFGS-B ( 528 iters) : 6.960e-20",
+  "N2b automorphism (deg 84, deg 168), 18020 params",
+  "      E_K at exact automorphism      : 1.338e-24",
+  "      E_K at perturbed start (1e-8)  : 6.025e-05",
+  "      E_K after L-BFGS-B (4000 iters) : 6.749e-13  [36.3 s]",
+  "      NOTE  the campaign degree shape (2m, 3m) = (84, 126) admits no",
+  "            automorphism at all: by Jung-van der Kulk every planar",
+  "            polynomial automorphism is tame and its two degrees are",
+  "            divisibility-ordered, while 84 does not divide 126 and",
+  "            126 does not divide 84.  N2 is therefore run at (84, 168),",
+  "            the nearest same-scale shape that does carry one.",
+  "N3  degrees (4, 8), 60 params, 12 random seeds: 0 reached E_K < 1e-18, best 2.434e-10, median 1.424e-07",
+  "N3  degrees (2, 4), 21 params, 12 random seeds: 9 reached E_K < 1e-18, best 7.217e-32, median 2.128e-29",
+  "N3  degrees (4, 6), 43 params, 12 random seeds: 1 reached E_K < 1e-18, best 3.713e-19, median 6.657e-09",
+  "      (4,8) and (2,4) are shapes d | 2d where automorphisms are",
+  "      abundant; (4,6) is the mission shape (2m,3m) at m=2, where",
+  "      the same divisibility obstruction as at (84,126) applies.",
+  "total 57.9 s"
+ ]
+}

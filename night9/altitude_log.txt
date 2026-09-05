@@ -1,0 +1,137 @@
+[ 5/60] 71ac15ff1c37 D=148 n=12 p=2 NONEMPTY  cnt=32     nondeg=31     0.0s
+[ 5/60] 71ac15ff1c37 D=148 n=12 p=3 NONEMPTY  cnt=18     nondeg=16     0.1s
+      shared patterns=1 pairs=4  best content=12 (2 distinct primes)  zero=False
+[ 6/60] 42b4233a6437 D=154 n=13 p=2 NONEMPTY  cnt=16     nondeg=14     0.0s
+[ 6/60] 42b4233a6437 D=154 n=13 p=3 NONEMPTY  cnt=486    nondeg=484    0.1s
+      shared patterns=3 pairs=16  best content=6 (2 distinct primes)  zero=False
+[ 7/60] e66454742942 D=138 n=13 p=2 NONEMPTY  cnt=24     nondeg=23     0.0s
+[ 7/60] e66454742942 D=138 n=13 p=3 NONEMPTY  cnt=6      nondeg=0      0.0s
+[ 8/60] 56b7dae5d4ab D=156 n=10 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[ 8/60] 56b7dae5d4ab D=156 n=10 p=3 NONEMPTY  cnt=6      nondeg=4      0.0s
+[ 9/60] b42e4046989d D=157 n=14 p=2 NONEMPTY  cnt=12     nondeg=8      0.0s
+[ 9/60] b42e4046989d D=157 n=14 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[10/60] fd12cbe4b429 D=148 n=11 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[10/60] fd12cbe4b429 D=148 n=11 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[11/60] 0d4f9a0d7f81 D=148 n=11 p=2 NONEMPTY  cnt=4      nondeg=2      0.0s
+[11/60] 0d4f9a0d7f81 D=148 n=11 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[12/60] 492665aa006d D=146 n=14 p=2 NONEMPTY  cnt=64     nondeg=52     0.0s
+[12/60] 492665aa006d D=146 n=14 p=3 NONEMPTY  cnt=18     nondeg=18     0.0s
+      shared patterns=2 pairs=6  best content=13908 (4 distinct primes)  zero=False
+[13/60] 77aa218f7917 D=154 n=14 p=2 NONEMPTY  cnt=256    nondeg=248    0.0s
+[13/60] 77aa218f7917 D=154 n=14 p=3 NONEMPTY  cnt=54     nondeg=36     0.1s
+      shared patterns=4 pairs=24  best content=6 (2 distinct primes)  zero=False
+[14/60] c7ba7509d0b2 D=159 n=12 p=2 NONEMPTY  cnt=4      nondeg=3      0.0s
+[14/60] c7ba7509d0b2 D=159 n=12 p=3 NONEMPTY  cnt=6      nondeg=6      0.0s
+      shared patterns=1 pairs=2  best content=18876 (4 distinct primes)  zero=False
+[15/60] 2685778ac045 D=158 n=14 p=2 NONEMPTY  cnt=36     nondeg=20     0.1s
+[15/60] 2685778ac045 D=158 n=14 p=3 NONEMPTY  cnt=66     nondeg=48     0.1s
+[16/60] 6703cbfe5fe4 D=158 n=14 p=2 NONEMPTY  cnt=8      nondeg=5      0.0s
+[16/60] 6703cbfe5fe4 D=158 n=14 p=3 NONEMPTY  cnt=54     nondeg=36     0.3s
+[17/60] efae6ba71cb6 D=160 n=14 p=2 NONEMPTY  cnt=640    nondeg=638    0.0s
+[17/60] efae6ba71cb6 D=160 n=14 p=3 NONEMPTY  cnt=162    nondeg=156    0.1s
+      shared patterns=14 pairs=68  best content=9360 (4 distinct primes)  zero=False
+[18/60] 0f2efd22ee8f D=159 n=12 p=2 NONEMPTY  cnt=16     nondeg=15     0.0s
+[18/60] 0f2efd22ee8f D=159 n=12 p=3 NONEMPTY  cnt=6      nondeg=4      0.0s
+      shared patterns=1 pairs=2  best content=1716 (4 distinct primes)  zero=False
+[19/60] e07f72fc152b D=153 n=15 p=2 NONEMPTY  cnt=48     nondeg=44     0.0s
+[19/60] e07f72fc152b D=153 n=15 p=3 NONEMPTY  cnt=1458   nondeg=1440   0.2s
+      shared patterns=20 pairs=104  best content=780 (4 distinct primes)  zero=False
+[20/60] a0c736f067a4 D=160 n=13 p=2 NONEMPTY  cnt=20     nondeg=18     0.0s
+[20/60] a0c736f067a4 D=160 n=13 p=3 NONEMPTY  cnt=486    nondeg=480    0.0s
+      shared patterns=8 pairs=36  best content=15540 (5 distinct primes)  zero=False
+[21/60] abda1496949e D=158 n=15 p=2 NONEMPTY  cnt=56     nondeg=54     0.0s
+[21/60] abda1496949e D=158 n=15 p=3 NONEMPTY  cnt=162    nondeg=162    0.2s
+      shared patterns=1 pairs=2  best content=5658 (4 distinct primes)  zero=False
+[22/60] e600e2184b1d D=159 n=16 p=2 NONEMPTY  cnt=32     nondeg=30     0.0s
+[22/60] e600e2184b1d D=159 n=16 p=3 NONEMPTY  cnt=102    nondeg=96     0.6s
+      shared patterns=1 pairs=4  best content=6 (2 distinct primes)  zero=False
+[23/60] 405a469bffcf D=152 n=12 p=2 NONEMPTY  cnt=40     nondeg=35     0.0s
+[23/60] 405a469bffcf D=152 n=12 p=3 NONEMPTY  cnt=198    nondeg=132    0.1s
+      shared patterns=5 pairs=26  best content=7416 (3 distinct primes)  zero=False
+[24/60] 21bd08557217 D=145 n=15 p=2 NONEMPTY  cnt=32     nondeg=32     0.0s
+[24/60] 21bd08557217 D=145 n=15 p=3 NONEMPTY  cnt=4374   nondeg=4374   0.1s
+      shared patterns=32 pairs=264  best content=690 (4 distinct primes)  zero=False
+[25/60] 247c36e19dc3 D=153 n=13 p=2 NONEMPTY  cnt=12     nondeg=10     0.0s
+[25/60] 247c36e19dc3 D=153 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[26/60] 4f8445c930b0 D=139 n=12 p=2 NONEMPTY  cnt=16     nondeg=15     6.3s
+[26/60] 4f8445c930b0 D=139 n=12 p=3 NONEMPTY  cnt=18     nondeg=16     0.0s
+[27/60] 3aa3f2d1cd2f D=154 n=12 p=2 NONEMPTY  cnt=64     nondeg=60     0.0s
+[27/60] 3aa3f2d1cd2f D=154 n=12 p=3 NONEMPTY  cnt=2      nondeg=2      0.0s
+      shared patterns=1 pairs=2  best content=15252 (4 distinct primes)  zero=False
+[28/60] efcc92f30ccf D=160 n=15 p=2 NONEMPTY  cnt=32     nondeg=30     0.0s
+[28/60] efcc92f30ccf D=160 n=15 p=3 NONEMPTY  cnt=6      nondeg=4      0.1s
+[29/60] 1d1a31e7ba9c D=159 n=15 p=2 NONEMPTY  cnt=8      nondeg=4      0.0s
+[29/60] 1d1a31e7ba9c D=159 n=15 p=3 NONEMPTY  cnt=270    nondeg=252    0.3s
+[30/60] 6b14a35869e1 D=131 n=11 p=2 NONEMPTY  cnt=8      nondeg=4      0.0s
+[30/60] 6b14a35869e1 D=131 n=11 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[31/60] 38e6cb1f6a94 D=143 n=15 p=2 NONEMPTY  cnt=8      nondeg=8      0.0s
+[31/60] 38e6cb1f6a94 D=143 n=15 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[32/60] ba6b62170c52 D=153 n=12 p=2 NONEMPTY  cnt=4      nondeg=4      0.0s
+[32/60] ba6b62170c52 D=153 n=12 p=3 NONEMPTY  cnt=1566   nondeg=1548   1.7s
+      shared patterns=2 pairs=6  best content=15162 (4 distinct primes)  zero=False
+[33/60] 6b2a44111074 D=144 n=13 p=2 NONEMPTY  cnt=8      nondeg=6      0.0s
+[33/60] 6b2a44111074 D=144 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[34/60] 62fc1a178b8f D=160 n=14 p=2 NONEMPTY  cnt=32     nondeg=31     0.0s
+[34/60] 62fc1a178b8f D=160 n=14 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[35/60] c44d9d649a23 D=159 n=11 p=2 NONEMPTY  cnt=16     nondeg=15     0.0s
+[35/60] c44d9d649a23 D=159 n=11 p=3 NONEMPTY  cnt=6      nondeg=0      0.0s
+[36/60] 2db81810e7ad D=157 n=16 p=2 NONEMPTY  cnt=24     nondeg=22     0.0s
+[36/60] 2db81810e7ad D=157 n=16 p=3 NONEMPTY  cnt=630    nondeg=608    0.3s
+      shared patterns=3 pairs=10  best content=4080 (4 distinct primes)  zero=False
+[37/60] b8cb03dd9688 D=148 n=13 p=2 NONEMPTY  cnt=64     nondeg=63     0.0s
+[37/60] b8cb03dd9688 D=148 n=13 p=3 NONEMPTY  cnt=486    nondeg=486    0.0s
+      shared patterns=16 pairs=96  best content=10830 (4 distinct primes)  zero=False
+[38/60] c37a1c94c6f2 D=154 n=14 p=2 NONEMPTY  cnt=160    nondeg=155    0.0s
+[38/60] c37a1c94c6f2 D=154 n=14 p=3 NONEMPTY  cnt=522    nondeg=500    0.1s
+      shared patterns=16 pairs=110  best content=1320 (4 distinct primes)  zero=False
+[39/60] 168b6eb04780 D=140 n=14 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[39/60] 168b6eb04780 D=140 n=14 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[40/60] cdcf3cc59c58 D=141 n=13 p=2 NONEMPTY  cnt=8      nondeg=6      0.0s
+[40/60] cdcf3cc59c58 D=141 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[41/60] 70aab4481767 D=149 n=15 p=2 NONEMPTY  cnt=16     nondeg=14     0.0s
+[41/60] 70aab4481767 D=149 n=15 p=3 NONEMPTY  cnt=18     nondeg=16     0.1s
+[42/60] 5b6a8c32ede8 D=155 n=13 p=2 NONEMPTY  cnt=20     nondeg=12     0.0s
+[42/60] 5b6a8c32ede8 D=155 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[43/60] ad2397183dda D=159 n=15 p=2 NONEMPTY  cnt=256    nondeg=251    0.0s
+[43/60] ad2397183dda D=159 n=15 p=3 NONEMPTY  cnt=54     nondeg=52     0.1s
+      shared patterns=7 pairs=34  best content=4488 (4 distinct primes)  zero=False
+[44/60] 1751cd1e2604 D=158 n=10 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[44/60] 1751cd1e2604 D=158 n=10 p=3 NONEMPTY  cnt=18     nondeg=0      0.0s
+[45/60] 41fcb750b183 D=160 n=13 p=2 NONEMPTY  cnt=40     nondeg=36     0.0s
+[45/60] 41fcb750b183 D=160 n=13 p=3 NONEMPTY  cnt=306    nondeg=288    0.0s
+      shared patterns=4 pairs=12  best content=1068 (3 distinct primes)  zero=False
+[46/60] 6936b7b54b0c D=159 n=12 p=2 NONEMPTY  cnt=4      nondeg=2      0.0s
+[46/60] 6936b7b54b0c D=159 n=12 p=3 NONEMPTY  cnt=6      nondeg=0      0.0s
+[47/60] 3b714329e68e D=154 n=14 p=2 NONEMPTY  cnt=8      nondeg=7      0.0s
+[47/60] 3b714329e68e D=154 n=14 p=3 NONEMPTY  cnt=2      nondeg=0      0.0s
+[48/60] ef38fc7d5f53 D=160 n=14 p=2 NONEMPTY  cnt=64     nondeg=46     0.0s
+[48/60] ef38fc7d5f53 D=160 n=14 p=3 NONEMPTY  cnt=102    nondeg=84     0.1s
+      shared patterns=2 pairs=4  best content=1344 (3 distinct primes)  zero=False
+[49/60] 597332c0312f D=152 n=16 p=2 NONEMPTY  cnt=44     nondeg=28     0.0s
+[49/60] 597332c0312f D=152 n=16 p=3 EMPTY     cnt=0      nondeg=       0.1s
+[50/60] 2e2bde3ebbe3 D=154 n=13 p=2 NONEMPTY  cnt=40     nondeg=36     0.0s
+[50/60] 2e2bde3ebbe3 D=154 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[51/60] 13512b945a96 D=151 n=14 p=2 NONEMPTY  cnt=4      nondeg=4      0.1s
+[51/60] 13512b945a96 D=151 n=14 p=3 NONEMPTY  cnt=6      nondeg=4      0.1s
+[52/60] 0ba45c61d577 D=148 n=16 p=2 NONEMPTY  cnt=56     nondeg=56     0.0s
+[52/60] 0ba45c61d577 D=148 n=16 p=3 NONEMPTY  cnt=954    nondeg=954    0.5s
+      shared patterns=18 pairs=80  best content=204 (3 distinct primes)  zero=False
+[53/60] 1a08a6ed5b29 D=139 n=13 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[53/60] 1a08a6ed5b29 D=139 n=13 p=3 NONEMPTY  cnt=6      nondeg=4      0.0s
+[54/60] 60891c73f760 D=158 n=11 p=2 NONEMPTY  cnt=8      nondeg=7      0.0s
+[54/60] 60891c73f760 D=158 n=11 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[55/60] 73eb82dc7fc5 D=159 n=11 p=2 NONEMPTY  cnt=4      nondeg=2      0.0s
+[55/60] 73eb82dc7fc5 D=159 n=11 p=3 NONEMPTY  cnt=54     nondeg=48     0.0s
+      shared patterns=2 pairs=8  best content=6 (2 distinct primes)  zero=False
+[56/60] b6ef2dcad17f D=155 n=12 p=2 EMPTY     cnt=0      nondeg=       0.0s
+[56/60] b6ef2dcad17f D=155 n=12 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[57/60] bd0279288432 D=143 n=11 p=2 NONEMPTY  cnt=3      nondeg=2      0.0s
+[57/60] bd0279288432 D=143 n=11 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[58/60] 059ba1a7ab65 D=159 n=13 p=2 NONEMPTY  cnt=18     nondeg=14     0.0s
+[58/60] 059ba1a7ab65 D=159 n=13 p=3 EMPTY     cnt=0      nondeg=       0.0s
+[59/60] 92153ee43036 D=155 n=11 p=2 NONEMPTY  cnt=8      nondeg=8      0.0s
+[59/60] 92153ee43036 D=155 n=11 p=3 NONEMPTY  cnt=2      nondeg=2      0.0s
+      shared patterns=1 pairs=2  best content=8850 (4 distinct primes)  zero=False
+[60/60] fb644eab941d D=155 n=14 p=2 NONEMPTY  cnt=32     nondeg=28     0.1s
+[60/60] fb644eab941d D=155 n=14 p=3 NONEMPTY  cnt=30     nondeg=24     0.1s
+      shared patterns=4 pairs=14  best content=5658 (4 distinct primes)  zero=False
