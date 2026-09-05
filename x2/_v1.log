@@ -1,0 +1,1 @@
+CFG mu=1 r=1 s=1 k=2 tops=(4, 2) M=4 degP=8 degQ=8 vars=9 conds=1 | VERDICT dim 8 GB1 c(5)*c(7)*U-1   resonant-free: [(1, 1), (0, 0)]

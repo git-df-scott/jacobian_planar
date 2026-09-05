@@ -1,0 +1,5 @@
+// ** int division with `/`: use `div` instead in line >>int dg = 3*m/2;<<
+// ** int division with `/`: use `div` instead in line >>m) + " p=" + string(32003) + " degP=" + string(3*m) + " degQ=" + string(9*m/2)<<
+m=10 p=32003 degP=30 degQ=45 unknowns=30 E1conds=8 lower=50
+
+halt 1

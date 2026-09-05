@@ -1,0 +1,42 @@
+// Scan the minimal-width mu=2 strip family for {P,Q} = x^2.
+//   supp(P) in 0 <= 2a-j <= 2, top vertices (m,2m-2),(m,2m-1),(m,2m)
+//   supp(Q) in 0 <= 2b-k <= 3, all four slices of T-degree 3m/2
+//   deg P = 3m, deg Q = 9m/2      (the 2:3 ray)
+// m = MVAL  (even).  Unknowns: F1..F_{m-1}, A0..A_{m-1}, B0..B_m.
+int m = MVAL;
+int dg = 3*m/2;                 // T-degree of every g_sigma
+int nF = m-1; int nA = m; int nB = m+1;
+ring R0 = PCHAR, (F(1..nF), A(0..nA-1), B(0..nB-1), T), dp;
+proc cf(poly p, int k) { matrix M = coeffs(p, T); if (k+1 > nrows(M)) { return(poly(0)); } return(M[k+1,1]); }
+proc addall(poly p) { matrix M = coeffs(p,T); int k; ideal J; for (k=1; k<=nrows(M); k++) { J = J + ideal(M[k,1]); } return(J); }
+int i; int n; poly cur; poly d;
+poly f2 = T; for (i=1; i<=nF; i++) { f2 = f2 + F(i)*T^(i+1); }
+poly f1 = 0; for (i=0; i<=nA-1; i++) { f1 = f1 + A(i)*T^(i+1); }
+poly f0 = 0; for (i=0; i<=nB-1; i++) { f0 = f0 + B(i)*T^i; }
+poly g3 = 0;
+for (n=0; n<=dg-2; n++) { cur = 2*f2*diff(g3,T) - 3*diff(f2,T)*g3 - T^2; d = -cf(cur,n+2)/(1+2*n); g3 = g3 + d*T^(n+2); }
+poly R5 = 2*f2*diff(g3,T) - 3*diff(f2,T)*g3 - T^2;
+poly src4 = f1*diff(g3,T) - 3*diff(f1,T)*g3;
+poly g2 = 0;
+for (n=0; n<=dg-2; n++) { cur = 2*f2*diff(g2,T) - 2*diff(f2,T)*g2 + src4; d = -cf(cur,n+2)/(2+2*n); g2 = g2 + d*T^(n+2); }
+poly R4 = 2*f2*diff(g2,T) - 2*diff(f2,T)*g2 + src4;
+poly src3 = f1*diff(g2,T) - 2*diff(f1,T)*g2 - 3*diff(f0,T)*g3;
+poly g1 = 0;
+for (n=0; n<=dg-1; n++) { cur = 2*f2*diff(g1,T) - diff(f2,T)*g1 + src3; d = -cf(cur,n+1)/(1+2*n); g1 = g1 + d*T^(n+1); }
+poly R3 = 2*f2*diff(g1,T) - diff(f2,T)*g1 + src3;
+poly src2 = f1*diff(g1,T) - diff(f1,T)*g1 - 2*diff(f0,T)*g2;
+poly g0 = 0;
+for (n=0; n<=dg-1; n++) { cur = 2*f2*diff(g0,T) + src2; d = -cf(cur,n+1)/(2+2*n); g0 = g0 + d*T^(n+1); }
+poly R2 = 2*f2*diff(g0,T) + src2;
+poly R1 = f1*diff(g0,T) - diff(f0,T)*g1;
+ideal E1 = simplify(addall(R5),2);
+ideal REST = simplify(addall(R4)+addall(R3)+addall(R2)+addall(R1),2);
+"m = " + string(m) + "  degP = " + string(3*m) + "  degQ = " + string(9*m/2)
+  + "  unknowns = " + string(nF+nA+nB)
+  + "  E1conds = " + string(size(E1)) + "  lower = " + string(size(REST));
+ring RF = PCHAR, (A(0..nA-1), B(0..nB-1), U, F(1..nF)), dp;
+ideal I = imap(R0,E1) + imap(R0,REST) + ideal(U*B(nB-1)*F(nF)-1);
+ideal G = std(I);
+"  => dim = " + string(dim(G)) + "  GBsize = " + string(size(G));
+if (dim(G)>=0) { "  vdim = " + string(vdim(G)); "  GB:"; G; }
+quit;
