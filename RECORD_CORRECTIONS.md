@@ -6,6 +6,13 @@ source ledger is [CATCHES.md at the frozen Claude head](https://github.com/git-d
 
 ## September 5 addendum — Astra 4
 
+Subsequent [Astra 5](ASTRA_5_CONDUCTOR_STRIKE.md) correction: an immersed
+conductor trace always extends formally, and an explicit polynomial sequence
+passes every finite order while its limit is provably nonpolynomial. Formal
+success cannot be promoted to evidence of termination. The original first-jet
+trace choice is itself globally excluded by its residue. New all-degree
+mixed-weight exclusions apply with the exact scope in the Astra 5 report.
+
 The [new audit](ASTRA_4_MISSED_ROUTES.md) adds these scoped corrections:
 
 | Historical claim or priority | Correct interpretation |

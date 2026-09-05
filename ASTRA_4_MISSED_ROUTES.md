@@ -1,5 +1,10 @@
 # Astra 4 — missed routes and exact repairs
 
+Follow-up: [Astra 5 conductor strike](ASTRA_5_CONDUCTOR_STRIKE.md) resolves
+the proposed formal correction problem and adds global obstructions. Its
+results supersede the recommendation to discriminate candidates by increasing
+conductor order; the entire subalgebra remains open.
+
 September 5, 2026. Audited base:
 [`efff2dc5c31a71030ccf931d22b9cd2047c0e172`](https://github.com/git-df-scott/jacobian_planar/commit/efff2dc5c31a71030ccf931d22b9cd2047c0e172),
 the head of `astra/jc2-complete-record-2026-09-04` when checked.

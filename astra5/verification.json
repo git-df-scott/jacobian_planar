@@ -1,0 +1,145 @@
+{
+  "GLOBAL_CONDUCTOR_PERIOD": {
+    "status": "PASS",
+    "source_residue": "4/3",
+    "old_trace_residue": "-8/3",
+    "corrected_trace_residue": "4/3"
+  },
+  "COMPLETE_FORMAL_RECURRENCE": {
+    "status": "PASS",
+    "checked_symbolic_orders": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "free_kernel_retained": true,
+    "formal_existence_criterion": "(p0',q0')=C[r,r^-1]",
+    "nonimmersed_control": "p=r^2+r^-2, q=p^2: impossible at r=1"
+  },
+  "ALL_ORDER_FALSE_POSITIVE_CONTROL": {
+    "status": "PASS",
+    "checked_orders": [
+      {
+        "order": 1,
+        "degree_Q": 10,
+        "degree_sheared_P": 20,
+        "Jacobian_error_at_origin": "3/2",
+        "collision": [
+          "145/36",
+          "-1/6"
+        ],
+        "is_Keller": false
+      },
+      {
+        "order": 2,
+        "degree_Q": 17,
+        "degree_sheared_P": 34,
+        "Jacobian_error_at_origin": "15/8",
+        "collision": [
+          "145/36",
+          "-1/6"
+        ],
+        "is_Keller": false
+      },
+      {
+        "order": 3,
+        "degree_Q": 24,
+        "degree_sheared_P": 48,
+        "Jacobian_error_at_origin": "35/16",
+        "collision": [
+          "145/36",
+          "-1/6"
+        ],
+        "is_Keller": false
+      },
+      {
+        "order": 4,
+        "degree_Q": 31,
+        "degree_sheared_P": 62,
+        "Jacobian_error_at_origin": "315/128",
+        "collision": [
+          "145/36",
+          "-1/6"
+        ],
+        "is_Keller": false
+      }
+    ],
+    "formal_limit_relation": "c*(Q_hat+v)^2=1",
+    "all_order_error": "-(r+1)*(2N+1)*binomial(-1/2,N)*z^N",
+    "polynomial_termination": "IMPOSSIBLE for this explicit series"
+  },
+  "SPLIT_INFINITY_RESIDUES": {
+    "status": "PASS",
+    "necessary_residue_at_r=a": "(a + 2)/3",
+    "base_trace_extension_residue": "-(a - 2)*(a + 2)/6",
+    "polynomial_jet_anomalies": [
+      {
+        "order": 1,
+        "individual_residue_error": "a*(a - 2)*(a + 2)/16",
+        "sum_of_two_residue_errors": "0"
+      },
+      {
+        "order": 2,
+        "individual_residue_error": "5*a*(a - 2)*(a + 2)*(a**2 + 12)/1024",
+        "sum_of_two_residue_errors": "0"
+      }
+    ]
+  },
+  "HYPERBOLA_FACTOR_CONSTRAINT": {
+    "status": "PASS",
+    "minimal_trace_H": "-1/(6r)",
+    "complete_H_form": "-inv/6 + Delta*W(v,c)",
+    "necessary_factorization": "P*Q=Delta*(-inv/6+Delta*W)-2/3",
+    "factorization_alone_is_sufficient": false
+  },
+  "MIXED_WEIGHT_ALGEBRA": {
+    "status": "PASS",
+    "weighted_bracket": "v^(i+j)*(i*f*g'-j*f'*g)",
+    "written_theorem": "Keller component of max weight <=1 forces automorphism",
+    "weights": "wt(v)=1, wt(c)=-1",
+    "external_input": "Gwozdziewicz, Injectivity on one line (1993)"
+  },
+  "GLOBAL_POTENTIAL_GATE": {
+    "status": "PASS",
+    "positive_controls": [
+      {
+        "potential_in_required_class": false,
+        "gcd": "c",
+        "quotient_closure_residual": "0",
+        "P": "c",
+        "Q": "-v",
+        "P_in_B": true,
+        "Q_in_B": false,
+        "verdict": "KELLER_PAIR_OUTSIDE_COLLISION_SUBALGEBRA"
+      },
+      {
+        "potential_in_required_class": false,
+        "gcd": "c + v**2",
+        "quotient_closure_residual": "0",
+        "P": "c + v**2",
+        "Q": "-v",
+        "P_in_B": false,
+        "Q_in_B": false,
+        "verdict": "KELLER_PAIR_OUTSIDE_COLLISION_SUBALGEBRA"
+      }
+    ],
+    "negative_controls": [
+      {
+        "potential_in_required_class": true,
+        "gcd": "1",
+        "quotient_closure_residual": "-1",
+        "verdict": "QUOTIENT_NOT_CLOSED"
+      },
+      {
+        "potential_in_required_class": true,
+        "gcd": "c",
+        "quotient_closure_residual": "81*c**3*v**5/4 - 135*c**2*v**4/4 - 81*c**2*v**3/2 + 18*c*v**3 + 81*c*v**2/2 + 81*c*v/4 - 3*v**2 - 9*v - 27/4",
+        "verdict": "QUOTIENT_NOT_CLOSED"
+      }
+    ],
+    "scope": "Exact gate for a supplied potential; no exhaustive potential search"
+  },
+  "counterexample_found": false,
+  "script_sha256": "ca1240091dbb9b687e358c5b4ec71caa5a0face1394976427ccc12ac24874564"
+}

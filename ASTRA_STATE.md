@@ -1,5 +1,24 @@
 # ASTRA state — 2026-09-05
 
+## September 5 conductor strike — latest update
+
+[Astra 5](ASTRA_5_CONDUCTOR_STRIKE.md) resolves the formal correction problem
+and supersedes any recommendation to use increasing conductor order as a
+candidate discriminator.
+
+- Every immersed even Laurent trace has formal Keller extensions to all
+  orders. The complete recurrence retains its free kernels.
+- The old first-jet trace pair fails the global residue 4/3 condition and is
+  excluded with arbitrary polynomial normal corrections.
+- An explicit family passes every finite conductor order and the corrected
+  trace period, but its formal limit cannot be polynomial. Separate residues
+  at infinity detect the global failure.
+- The C[c,cv] and C[v,cv] component families are excluded from counterexamples
+  in all degrees. Stronger mixed-weight bounds are proved in the new report.
+- The remaining conductor attack is global: the exact polynomial-potential
+  gcd/closedness gate, or the necessary hyperbola factorization. The whole
+  subalgebra remains open; no polynomial counterexample was obtained.
+
 ## September 5 audit update
 
 [Astra 4](ASTRA_4_MISSED_ROUTES.md) supersedes the affected search priorities
@@ -163,9 +182,10 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 ## TOP THREE ATTACKS
 
-1. **Exact collision subalgebra.** Use Astra 4's conductor/parity presentation
-   for arbitrary-degree members, with the exact bracket as the unresolved
-   gate. The cubic and other degree-bound-excluded projection boxes are closed.
+1. **Global collision-subalgebra construction.** Use Astra 5's polynomial
+   potential and gcd/closedness gate, or its necessary hyperbola factorization,
+   subject to separate infinity residues and the new mixed-weight exclusions.
+   Increasing formal conductor order does not identify polynomial candidates.
 2. **Residue-free Briançon construction.**  Search embeddings realizing a
    triple-pole exact differential, with Gate 0 and positive controls first.
 3. **Above-125 provenance repair.** Derive the missing lower corner and c'
@@ -174,6 +194,10 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 ## DO-NOT-REPEAT LIST
 
+- Do not count arbitrary-order conductor jets, even with the correct trace
+  residue and both displayed coordinates varying, as evidence of polynomial
+  termination. The explicit Astra 5 control passes those tests and never
+  polynomializes.
 - Do not resume monic y-height (4,6) shooting; the all-degree obstruction now
   includes its formerly omitted charts and parameters.
 - Do not pursue deeper source trees as a rescue of the already excluded H3
