@@ -18,6 +18,10 @@ The inventory covers 35,078 branch/file occurrences, deduplicated to 10,062 dist
 
 ## Latest research
 
+- [Astra 10: search outside the collision algebra](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md):
+  no counterexample; arbitrary-degree obstructions for the higher Briançon
+  template and a family with a pair of poles, plus a degree-six exact elliptic
+  primitive excluded by a general mixed-power rigidity theorem.
 - [Astra 9: full collision-route closure](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md):
   an arbitrary-degree theorem excludes every polynomial Keller pair in
   C[b,c]+Delta*C[v,c]. This includes the previously open degree-15 resonance;

@@ -1,5 +1,13 @@
 # Astra handoff — 2026-09-04, third run
 
+**Current Astra 10 update:** [Search outside the collision algebra](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md) found no counterexample. Read
+`astra10/PROOFS.md` before attempting higher Briançon exponents, a single
+pair of higher-order poles, or the newly constructed exact degree-six
+elliptic twist. The first two stated families are excluded in arbitrary
+degree, and the twist is excluded in every faithful polynomial chart by
+mixed-power rigidity. Nine exact checks pass. Other embeddings and the
+general two-point collision problem remain unresolved.
+
 **Current September 5 update:** [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
 proves FULL COLLISION-ROUTE CLOSURE for C[b,c]+Delta*C[v,c] in arbitrary
 degree. The degree-15 resonance and every higher-degree potential in this

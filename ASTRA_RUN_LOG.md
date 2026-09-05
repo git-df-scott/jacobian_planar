@@ -219,3 +219,22 @@ Current counterexample status: no CEC and no CE.
   ordinary Keller controls; no conductor lifts or degree sweeps were run.
 - Updated canonical state and routing, and superseded Astra 8's OPEN report.
   This closes the specified collision construction, not the general JC2 problem.
+
+## 2026-09-05 — Astra 10, search outside the collision algebra
+
+- Continued from 1e591d8e0691 after the user requested a major new search.
+  Consulted primary sources on higher Briançon polynomials, rational mates,
+  hyperelliptic geometry, and three-point-cover monodromy.
+- Proved an arbitrary-exponent obstruction for p^m*u+s*A(p), including
+  exceptional coefficients, and an arbitrary-degree obstruction for a
+  varying hyperelliptic pencil with one pair of poles. The latter uses
+  exactness, cover rigidity, and varying branch cross-ratios.
+- Extracted the full quartic degree-six residual system. Constructed an
+  exact degree-six elliptic primitive on a rational total space, then
+  excluded all faithful polynomial Keller charts by its mixed-power identity.
+  Generalized the last argument to the mixed-power rigidity theorem.
+- Saved proofs, search audit, verifier, and exact certificate in astra10.
+  Nine groups of checks pass, including the older global-potential controls
+  and the nonterminating formal-family negative control without new jets.
+- Status OPEN: no counterexample and no universal component reduction.
+  These scoped results do not close all Briançon-type constructions or JC2.

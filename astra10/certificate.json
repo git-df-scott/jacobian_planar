@@ -1,0 +1,126 @@
+{
+  "status": "OPEN_NO_COUNTEREXAMPLE",
+  "arithmetic": "exact characteristic zero",
+  "checks": {
+    "birational_chart_and_volume": true,
+    "universal_hyperelliptic_identity": true,
+    "higher_Briancon_example_squarefree_positive_genus": true,
+    "exceptional_coefficient_residue_cases": true,
+    "complete_quartic_residual_extraction_and_elimination": true,
+    "moving_quartic_modulus_invariant": true,
+    "two_exact_elliptic_positive_controls": true,
+    "degree6_reconstruction_and_nonzero_critical_value": true,
+    "polynomial_Keller_and_rational_mate_positive_controls": true
+  },
+  "data": {
+    "degree16_source_example": {
+      "A": "p**3 - 11*p**2/5 - 3*p/5 - 1/5",
+      "B": "-16*p**3/5 + 8*p**2/5 + 2*p/5 + 1/5",
+      "D": "4*p**6*t + 256*p**6/25 - 4*p**5*t - 256*p**5/25 + 4*p**2/5 + 4*p/25 + 1/25",
+      "compact_genus": 2,
+      "time_form_infinity_orders": [
+        1,
+        1
+      ]
+    },
+    "residue_squared_denominators": [
+      "-4*t + (a1 + 1)**2",
+      "a1**2"
+    ],
+    "quartic_residual_equations": [
+      "-3*d0*v + 1",
+      "-2*d0*u - 5*d1*v/2",
+      "-3*d1*u/2 - 2*d2*v",
+      "-d2*u - 3*d3*v/2",
+      "-d3*u/2 - d4*v"
+    ],
+    "quartic_elimination": {
+      "d0": "5*d3**4/(16*d4**3)",
+      "d1": "d3**3/(2*d4**2)",
+      "d2": "3*d3**2/(4*d4)",
+      "v": "16*d4**3/(15*d3**4)",
+      "u": "-32*d4**4/(15*d3**5)"
+    },
+    "quartic_invariant_leading_terms": {
+      "I": "16*t^2",
+      "J": "-128*t^3",
+      "discriminant_degree_bound": 5
+    },
+    "exact_degree6_model": {
+      "Dstar": "z**4/5 - 2*z**3/5 + 3*z**2/5 - 4*z/5 + 1",
+      "F": "r**6/9 + 2*r**5/15 + 1/45",
+      "F_prime": "2*r**4*(r + 1)/3",
+      "critical_values": [
+        "1/45",
+        "0"
+      ],
+      "rational_chart_jacobian": "10/(z**4*(z**4 - 2*z**3 + 3*z**2 - 4*z + 5))",
+      "primitive_degree": 6,
+      "polynomial_Keller_chart": "excluded_by_Theorem_3"
+    },
+    "retained_global_potential_controls": {
+      "status": "PASS",
+      "positive_controls": [
+        {
+          "g": "v",
+          "identity_residual": "0",
+          "admissible_H": false,
+          "g_in_B": false,
+          "ambient_Keller": true,
+          "Q": "c",
+          "Q_in_B": true,
+          "collision_Keller": false
+        },
+        {
+          "g": "c",
+          "identity_residual": "0",
+          "admissible_H": false,
+          "g_in_B": true,
+          "ambient_Keller": true,
+          "Q": "-v",
+          "Q_in_B": false,
+          "collision_Keller": false
+        },
+        {
+          "g": "c + v**2",
+          "identity_residual": "0",
+          "admissible_H": false,
+          "g_in_B": false,
+          "ambient_Keller": true,
+          "Q": "-v",
+          "Q_in_B": false,
+          "collision_Keller": false
+        },
+        {
+          "g": "c**2 + v",
+          "identity_residual": "0",
+          "admissible_H": false,
+          "g_in_B": false,
+          "ambient_Keller": true,
+          "Q": "c**4 + 2*c**2*v + c + v**2",
+          "Q_in_B": false,
+          "collision_Keller": false
+        }
+      ],
+      "negative_controls": [
+        {
+          "g": "1",
+          "identity_residual": "-1",
+          "admissible_H": true,
+          "g_in_B": true,
+          "ambient_Keller": false
+        },
+        {
+          "g": "c",
+          "identity_residual": "81*c**5*v**5/4 - 135*c**4*v**4/4 - 81*c**4*v**3/2 + 18*c**3*v**3 + 81*c**3*v**2/2 + 81*c**3*v/4 - 3*c**2*v**2 - 9*c**2*v - 27*c**2/4",
+          "admissible_H": true,
+          "g_in_B": true,
+          "ambient_Keller": false
+        }
+      ],
+      "formal_limit_rejection": "valuation_c(c*(Q+v)^2)=1+2k cannot be 0",
+      "no_additional_conductor_orders": true
+    }
+  },
+  "scope": "Identities and controls only; arbitrary-degree proofs are in PROOFS.md."
+}

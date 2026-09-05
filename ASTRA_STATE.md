@@ -1,5 +1,30 @@
 # ASTRA state — 2026-09-05
 
+## September 5 search beyond the collision algebra — current
+
+[Astra 10](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md) remains **OPEN: no CE**.
+It proves three new scoped obstructions, with written proofs and nine
+passing exact checks in astra10:
+
+- Every P=p^m*u+s*A(p), m>=1, A arbitrary, has no polynomial Keller mate.
+  For A(0)!=0 the compact hyperelliptic time form is holomorphic; the
+  exceptional coefficients fail by residues or a vanishing gradient.
+- The pencil W^2=D0(p)+4t*p*(p-1), deg D0>=3, has no rational primitive
+  for dp/((p-a)^k*W), for arbitrary k>=1 and a!=0,1. Exactness would force
+  an isotrivial three-point-cover family, contradicted by branch cross-ratios.
+  The report gives the corresponding polynomial P family with arbitrary
+  coefficient degrees. This does not exclude every multiple-pole embedding.
+- A rational total-space model with an exact elliptic primitive of degree
+  six was reconstructed and excluded in every faithful polynomial chart.
+  More generally P^m Q^n=f(r), for a polynomial Keller pair, rational r,
+  and polynomial f, forces f to be a pure translated power of degree
+  dividing gcd(m,n). This closes the model with (m,n,deg f)=(1,2,6).
+
+No polynomial pair passed the global test. The new arguments are not
+externally reviewed or proof-assistant formalized. No universal finite
+component reduction for JC2 is claimed. The collision algebra remains
+fully closed by Astra 9, independently of this new search.
+
 ## September 5 full collision-route closure — current
 
 [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md) proves
@@ -243,7 +268,9 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 1. Construct an all-irreducible, gradient-unimodular, non-coordinate
    Briançon-type P whose eta has a residue-free pole divisor of degree at least
-   three, then kill its elliptic de Rham component exactly.
+   three, then kill its elliptic de Rham component exactly. It must escape
+   Astra 10's arbitrary-degree templates; exactness alone is insufficient,
+   as the new faithful-chart obstruction demonstrates.
 2. Reconstruct a published above-125 Newton case directly from its primary
    chain data; only then derive and run its graded one-variable descent.
    Both Proposition 4.3 polygons are now closed by separate proofs.
@@ -263,14 +290,21 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 1. **Global collision-subalgebra construction — CLOSED.** Astra 9's arbitrary-
    degree parity and infinity-residue theorem excludes the entire algebra.
    No further coefficient systems or conductor lifts are a live CE target here.
-2. **Residue-free Briançon construction.**  Search embeddings realizing a
-   triple-pole exact differential, with Gate 0 and positive controls first.
+2. **Residue-free construction outside Astra 10.** Multiple pole locations
+   or a different pencil may escape the proved families. An exact primitive
+   must still admit a faithful polynomial chart, and cannot violate the new
+   mixed-power rigidity theorem. No explicit survivor is currently known.
 3. **Above-125 provenance repair.** Derive the missing lower corner and c'
    range for `(8,28)->(7/4,3)`, `(m,n)=(3,4)`, before generating equations.
    The completed (2,3) pentagon descent does not transfer to this ratio.
 
 ## DO-NOT-REPEAT LIST
 
+- Do not increase m or alter A inside p^m*u+s*A(p), or increase k in
+  Astra 10's varying hyperelliptic pencil, to seek a mate. The all-degree
+  proofs cover those choices. Do not resurrect its exact degree-six twist
+  by changing a birational plane chart; the mixed-power obstruction is
+  chart-independent. The stated exceptional hypotheses remain explicit.
 - Do not reopen C[b,c]+Delta*C[v,c] in higher degrees. The full obstruction
   is now in astra9/FULL_COLLISION_OBSTRUCTION.md; a concrete flaw in that
   proof would be needed to reopen the lane.
