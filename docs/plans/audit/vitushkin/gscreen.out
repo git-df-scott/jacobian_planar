@@ -1,0 +1,426 @@
+        cusp.(k) := Set(List(Filtered(AsList(C), b -> b <> a and braidrel(a, b, k)), b -> so(a, b, D)));
+        cusp.(k) := Set(List(Filtered(AsList(C), b -> b <> a and braidrel(a, b, k)), b -> so(a, b, D)));
+        cusp.(k) := Set(List(Filtered(AsList(C), b -> b <> a and braidrel(a, b, k)), b -> so(a, b, D)));
+      node := Set(List(Filtered(AsList(C), b -> b <> a and a*b = b*a), b -> so(a, b, D)));
+      node := Set(List(Filtered(AsList(C), b -> b <> a and a*b = b*a), b -> so(a, b, D)));
+      node := Set(List(Filtered(AsList(C), b -> b <> a and a*b = b*a), b -> so(a, b, D)));
+      node := Set(List(Filtered(AsList(C), b -> b <> a and a*b = b*a), b -> so(a, b, D)));
+          opts := List(ks, k -> cusp.(k));
+            for ch in Cartesian(Concatenation(opts, List([1..nu], i -> node))) do
+D=4 done, found so far 3
+D=5 done, found so far 6
+D=6 done, found so far 27
+D=7 done, found so far 55
+D=8 done, found so far 209
+D=9 done, found so far 412
+D=10 done, found so far 897
+4 S4 cyc=[ 1 ] n=2 cusps=[ 3 ] nodes=1 s=[ 1, 0 ] chiR=1
+4 S4 cyc=[ 1 ] n=2 cusps=[ 3 ] nodes=2 s=[ 1, 0, 0 ] chiR=1
+4 S4 cyc=[ 1 ] n=2 cusps=[ 3 ] nodes=3 s=[ 1, 0, 0, 0 ] chiR=1
+5 S5 cyc=[ 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 2, 2, 1 ] chiR=1
+5 S5 cyc=[ 1 ] n=3 cusps=[ 3, 3 ] nodes=2 s=[ 2, 2, 1, 1 ] chiR=1
+5 S5 cyc=[ 1 ] n=3 cusps=[ 3, 3 ] nodes=3 s=[ 2, 2, 1, 1, 1 ] chiR=1
+6 A6 cyc=[ 2 ] n=2 cusps=[ 3, 3 ] nodes=1 s=[ 0, 1, 0 ] chiR=1
+6 A6 cyc=[ 2 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 1, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=1 s=[ 1, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=2 s=[ 1, 0, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=3 s=[ 1, 0, 0, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 2, 2, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=2 s=[ 2, 2, 0, 0 ] chiR=1
+6 A6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=3 s=[ 2, 2, 0, 0, 0 ] chiR=1
+6 S6 cyc=[ 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 2 ] chiR=1
+6 S6 cyc=[ 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 2, 2 ] chiR=1
+6 S6 cyc=[ 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 2, 2, 2 ] chiR=1
+6 S6 cyc=[ 2 ] n=2 cusps=[ 3, 3 ] nodes=1 s=[ 0, 1, 0 ] chiR=1
+6 S6 cyc=[ 2 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 1, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=1 s=[ 1, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=2 s=[ 1, 0, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 5 ] nodes=3 s=[ 1, 0, 0, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 2, 2, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=2 s=[ 2, 2, 0, 0 ] chiR=1
+6 S6 cyc=[ , 1 ] n=3 cusps=[ 3, 3 ] nodes=3 s=[ 2, 2, 0, 0, 0 ] chiR=1
+7 PSL(3,2) cyc=[ 2 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 1, 1, 1 ] chiR=1
+7 A7 cyc=[ 2 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 1, 1, 1 ] chiR=1
+7 A7 cyc=[ 2 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 2, 2, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 3, 2, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=2 s=[ 3, 2, 1, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=3 s=[ 3, 2, 1, 1, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 1, 1 ] chiR=1
+7 A7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 1, 1, 1 ] chiR=1
+7 S7 cyc=[ 2 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 1, 1, 1 ] chiR=1
+7 S7 cyc=[ 2 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 2, 2, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 3, 2, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=2 s=[ 3, 2, 1, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 5 ] nodes=3 s=[ 3, 2, 1, 1, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 1, 1 ] chiR=1
+7 S7 cyc=[ , 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 1, 1, 1 ] chiR=1
+7 S7 cyc=[ 1, 1 ] n=2 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+7 S7 cyc=[ 1, 1 ] n=2 cusps=[ 3, 5 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+7 S7 cyc=[ 1, 1 ] n=2 cusps=[ 5, 5 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+7 S7 cyc=[ 1, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 1, 1, 0 ] chiR=1
+7 S7 cyc=[ 1, 1 ] n=2 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 1, 0, 0 ] chiR=1
+8 (C2 x C2 x C2) : PSL(3,2) cyc=[ 1,, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=1 s=[ 2, 3, 0 ] chiR=2
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=2
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=2
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 2, 3, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 2, 2, 3, 2 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 2, 2, 3, 0, 2 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=3 s=[ 2, 2, 3, 0, 0, 2 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 3, 3, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 3, 3, 0, 0 ] chiR=1
+8 A8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 0 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=1 s=[ 3, 3, 2 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=2 s=[ 3, 3, 2, 2 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=3 s=[ 3, 3, 2, 2, 2 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 4, 4, 3, 2 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 4, 4, 3, 2, 2 ] chiR=1
+8 A8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 4, 4, 3, 2, 2, 2 ] chiR=1
+8 A8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 A8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 A8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 A8 cyc=[ 1,, 1 ] n=2 cusps=[ 5, 5, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=1 s=[ 2, 3, 0 ] chiR=2
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=2
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=2
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 2, 3, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 5 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 2, 2, 3, 2 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 2, 2, 3, 0, 2 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=3 s=[ 2, 2, 3, 0, 0, 2 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 3, 3, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 3, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ 3 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=1 s=[ 3, 3, 2 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=2 s=[ 3, 3, 2, 2 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 5, 5 ] nodes=3 s=[ 3, 3, 2, 2, 2 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 4, 4, 3, 2 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 4, 4, 3, 2, 2 ] chiR=1
+8 S8 cyc=[ , 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 4, 4, 3, 2, 2, 2 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 1, 1, 0 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 3, 5 ] nodes=1 s=[ 1, 1, 0 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 5, 5 ] nodes=1 s=[ 1, 1, 0 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 2, 1 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 2, 1, 1 ] chiR=1
+8 S8 cyc=[ 1, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 1, 1, 1 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 7 ] nodes=1 s=[ 1, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 7 ] nodes=2 s=[ 1, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 7 ] nodes=3 s=[ 1, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 2, 3, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 7 ] nodes=1 s=[ 4, 1, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 7 ] nodes=2 s=[ 4, 1, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 7 ] nodes=3 s=[ 4, 1, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5 ] nodes=1 s=[ 2, 3, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5 ] nodes=2 s=[ 2, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5 ] nodes=3 s=[ 2, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 2, 4, 3, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=2 s=[ 2, 4, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=3 s=[ 2, 4, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 7 ] nodes=1 s=[ 4, 4, 1, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 7 ] nodes=2 s=[ 4, 4, 1, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 3, 7 ] nodes=3 s=[ 4, 4, 1, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 4, 2, 3, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=2 s=[ 4, 2, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=3 s=[ 4, 2, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 3, 3, 3, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=2 s=[ 3, 3, 3, 0, 0 ] chiR=1
+8 S8 cyc=[ ,, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 0 ] chiR=1
+8 S8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 S8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 S8 cyc=[ 1,, 1 ] n=2 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+8 S8 cyc=[ 1,, 1 ] n=2 cusps=[ 5, 5, 5 ] nodes=1 s=[ 0, 0, 1, 0 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=1 s=[ 3, 3, 1 ] chiR=2
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=2 s=[ 3, 3, 1, 1 ] chiR=2
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=3 s=[ 3, 3, 1, 1, 1 ] chiR=2
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 3 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 1, 3 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 1, 1, 3 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 4, 4, 1 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 4, 4, 1, 1 ] chiR=1
+9 A9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 4, 4, 1, 1, 1 ] chiR=1
+9 A9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=1 s=[ 5, 4, 4, 3 ] chiR=1
+9 A9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=2 s=[ 5, 4, 4, 3, 3 ] chiR=1
+9 A9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=3 s=[ 5, 4, 4, 3, 3, 3 ] chiR=1
+9 A9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 A9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 A9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 A9 cyc=[ 2, 1 ] n=2 cusps=[ 5, 5, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 A9 cyc=[ , 2 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 2, 0 ] chiR=1
+9 A9 cyc=[ , 2 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 2, 1, 0 ] chiR=1
+9 A9 cyc=[ , 2 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 1, 1, 0 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 7 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 7, 7 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 3, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 1, 2, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 7 ] nodes=1 s=[ 0, 3, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 1, 2, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 5, 7 ] nodes=1 s=[ 1, 2, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 7, 7 ] nodes=1 s=[ 3, 0, 0, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 5, 5, 5 ] nodes=1 s=[ 1, 1, 1, 1 ] chiR=1
+9 A9 cyc=[ 1,, 1 ] n=3 cusps=[ 5, 5, 7 ] nodes=1 s=[ 1, 2, 0, 1 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=1 s=[ 3, 3, 1 ] chiR=2
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=2 s=[ 3, 3, 1, 1 ] chiR=2
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3 ] nodes=3 s=[ 3, 3, 1, 1, 1 ] chiR=2
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 3 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 1, 3 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 1, 1, 3 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 4, 4, 1 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 4, 4, 1, 1 ] chiR=1
+9 S9 cyc=[ 2 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 4, 4, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ 3 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 S9 cyc=[ 3 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 1, 2, 1 ] chiR=1
+9 S9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=1 s=[ 5, 4, 4, 3 ] chiR=1
+9 S9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=2 s=[ 5, 4, 4, 3, 3 ] chiR=1
+9 S9 cyc=[ , 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=3 s=[ 5, 4, 4, 3, 3, 3 ] chiR=1
+9 S9 cyc=[ 1, 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 2, 2, 2, 2 ] chiR=1
+9 S9 cyc=[ 1, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 2, 2, 2, 2 ] chiR=1
+9 S9 cyc=[ 1, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 2, 2, 2 ] chiR=1
+9 S9 cyc=[ 1, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 2, 2, 2, 2 ] chiR=1
+9 S9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 2, 1 ] n=2 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 2, 1 ] n=2 cusps=[ 5, 5, 5 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ , 2 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 2, 0 ] chiR=1
+9 S9 cyc=[ , 2 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 2, 1, 0 ] chiR=1
+9 S9 cyc=[ , 2 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 1, 1, 0 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3 ] nodes=1 s=[ 3, 3, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3 ] nodes=2 s=[ 3, 3, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3 ] nodes=3 s=[ 3, 3, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5 ] nodes=1 s=[ 3, 3, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5 ] nodes=2 s=[ 3, 3, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5 ] nodes=3 s=[ 3, 3, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5 ] nodes=1 s=[ 3, 3, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5 ] nodes=2 s=[ 3, 3, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5 ] nodes=3 s=[ 3, 3, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 7 ] nodes=1 s=[ 4, 2, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 7 ] nodes=2 s=[ 4, 2, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 7 ] nodes=3 s=[ 4, 2, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 5, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 5, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 5, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 5, 3, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 5, 3, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 5, 3, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=1 s=[ 3, 4, 4, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=2 s=[ 3, 4, 4, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=3 s=[ 3, 4, 4, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=1 s=[ 5, 4, 2, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=2 s=[ 5, 4, 2, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=3 s=[ 5, 4, 2, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=1 s=[ 3, 4, 4, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=2 s=[ 3, 4, 4, 1, 1 ] chiR=1
+9 S9 cyc=[ ,, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=3 s=[ 3, 4, 4, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 7 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 7, 7 ] nodes=1 s=[ 0, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 3, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 1, 2, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 3, 7 ] nodes=1 s=[ 0, 3, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 1, 2, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 5, 7 ] nodes=1 s=[ 1, 2, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 3, 7, 7 ] nodes=1 s=[ 3, 0, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 5, 5, 5 ] nodes=1 s=[ 1, 1, 1, 1 ] chiR=1
+9 S9 cyc=[ 1,, 1 ] n=3 cusps=[ 5, 5, 7 ] nodes=1 s=[ 1, 2, 0, 1 ] chiR=1
+9 S9 cyc=[ 1,,, 1 ] n=2 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 1,,, 1 ] n=2 cusps=[ 3, 3, 7 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 1,,, 1 ] n=2 cusps=[ 3, 7, 7 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+9 S9 cyc=[ 1,,, 1 ] n=2 cusps=[ 7, 7, 7 ] nodes=1 s=[ 0, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=2
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=2
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=2
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=1
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=1
+10 A10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=1
+10 A10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=1 s=[ 5, 5, 5, 4 ] chiR=1
+10 A10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=2 s=[ 5, 5, 5, 4, 4 ] chiR=1
+10 A10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=3 s=[ 5, 5, 5, 4, 4, 4 ] chiR=1
+10 A10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 A10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 2, 1 ] chiR=1
+10 A10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 1, 1, 1 ] chiR=1
+10 A10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 1, 1, 1 ] chiR=1
+10 A10 cyc=[ 2, 1 ] n=3 cusps=[ 5, 5, 5 ] nodes=1 s=[ 1, 1, 1, 0 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 2, 0, 1 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 5, 5 ] nodes=1 s=[ 0, 2, 1 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 A10 cyc=[ , 2 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3 ] nodes=1 s=[ 1, 2, 0 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 1, 2, 0 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 7 ] nodes=1 s=[ 2, 1, 0 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 7 ] nodes=1 s=[ 2, 1, 0 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 3, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 1, 3, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 7 ] nodes=1 s=[ 1, 3, 1, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 1, 2, 2, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5, 7 ] nodes=1 s=[ 1, 3, 1, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 7, 7 ] nodes=1 s=[ 3, 1, 1, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 2, 2, 3, 0 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 5, 7 ] nodes=1 s=[ 2, 2, 1, 2 ] chiR=1
+10 A10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 7, 7 ] nodes=1 s=[ 3, 1, 1, 2 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=1 s=[ 4, 2, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=2 s=[ 4, 2, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=3 s=[ 4, 2, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=1 s=[ 4, 2, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=2 s=[ 4, 2, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=3 s=[ 4, 2, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=1 s=[ 3, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=1 s=[ 5, 3, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=2 s=[ 5, 3, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=3 s=[ 5, 3, 3, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=1 s=[ 5, 3, 3, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=2 s=[ 5, 3, 3, 0, 0 ] chiR=1
+10 A10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=3 s=[ 5, 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=2
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=2
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 3 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=2
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=1
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=1
+10 S10 cyc=[ 2 ] n=6 cusps=[ 3, 3, 5 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ 3 ] n=4 cusps=[ 3, 3 ] nodes=1 s=[ 1, 2, 0 ] chiR=2
+10 S10 cyc=[ 3 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 3, 2 ] chiR=1
+10 S10 cyc=[ 3 ] n=4 cusps=[ 3, 3, 3 ] nodes=2 s=[ 1, 1, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ 3 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 3, 3, 0 ] chiR=1
+10 S10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=1 s=[ 5, 5, 5, 4 ] chiR=1
+10 S10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=2 s=[ 5, 5, 5, 4, 4 ] chiR=1
+10 S10 cyc=[ , 1 ] n=7 cusps=[ 5, 5, 5 ] nodes=3 s=[ 5, 5, 5, 4, 4, 4 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3 ] nodes=1 s=[ 3, 3, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5 ] nodes=1 s=[ 3, 3, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 7 ] nodes=1 s=[ 3, 3, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 7 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 7 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5 ] nodes=1 s=[ 3, 3, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=2
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 7 ] nodes=1 s=[ 3, 3, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 7 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 7 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=1 s=[ 3, 3, 3, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=2 s=[ 3, 3, 3, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 3 ] nodes=3 s=[ 3, 3, 3, 0, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=1 s=[ 3, 3, 3, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=2 s=[ 3, 3, 3, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=1 s=[ 3, 3, 3, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=2 s=[ 3, 3, 3, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 3, 5, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=1 s=[ 3, 3, 3, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=2 s=[ 3, 3, 3, 0, 2 ] chiR=1
+10 S10 cyc=[ 1, 1 ] n=5 cusps=[ 5, 5, 5 ] nodes=3 s=[ 3, 3, 3, 0, 0, 2 ] chiR=1
+10 S10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 2, 1 ] chiR=1
+10 S10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 1, 1, 1 ] chiR=1
+10 S10 cyc=[ 2, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 1, 1, 1 ] chiR=1
+10 S10 cyc=[ 2, 1 ] n=3 cusps=[ 5, 5, 5 ] nodes=1 s=[ 1, 1, 1, 0 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 2, 0, 1 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 5, 5 ] nodes=1 s=[ 0, 2, 1 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 S10 cyc=[ , 2 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 2, 2, 2, 1 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 7 ] nodes=1 s=[ 4, 3, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 7 ] nodes=2 s=[ 4, 3, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 7 ] nodes=3 s=[ 4, 3, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 7 ] nodes=1 s=[ 4, 3, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 7 ] nodes=2 s=[ 4, 3, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 7 ] nodes=3 s=[ 4, 3, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 5 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 5 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 5 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 7 ] nodes=1 s=[ 4, 6, 3, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 7 ] nodes=2 s=[ 4, 6, 3, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 3, 7 ] nodes=3 s=[ 4, 6, 3, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 5 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 7 ] nodes=1 s=[ 6, 4, 3, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 7 ] nodes=2 s=[ 6, 4, 3, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 3, 5, 7 ] nodes=3 s=[ 6, 4, 3, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 5 ] nodes=1 s=[ 4, 4, 5, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 5 ] nodes=2 s=[ 4, 4, 5, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 5 ] nodes=3 s=[ 4, 4, 5, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 7 ] nodes=1 s=[ 5, 5, 3, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 7 ] nodes=2 s=[ 5, 5, 3, 2, 2 ] chiR=1
+10 S10 cyc=[ ,, 1 ] n=6 cusps=[ 5, 5, 7 ] nodes=3 s=[ 5, 5, 3, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3 ] nodes=1 s=[ 1, 2, 0 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5 ] nodes=1 s=[ 1, 2, 0 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 7 ] nodes=1 s=[ 2, 1, 0 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 7 ] nodes=1 s=[ 2, 1, 0 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 3 ] nodes=1 s=[ 1, 1, 3, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 5 ] nodes=1 s=[ 1, 1, 3, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 3, 7 ] nodes=1 s=[ 1, 3, 1, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5, 5 ] nodes=1 s=[ 1, 2, 2, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 5, 7 ] nodes=1 s=[ 1, 3, 1, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 3, 7, 7 ] nodes=1 s=[ 3, 1, 1, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 5, 5 ] nodes=1 s=[ 2, 2, 3, 0 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 5, 7 ] nodes=1 s=[ 2, 2, 1, 2 ] chiR=1
+10 S10 cyc=[ 1,, 1 ] n=4 cusps=[ 5, 7, 7 ] nodes=1 s=[ 3, 1, 1, 2 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 3 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 5 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 7 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 5, 5 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 5, 7 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 7, 7 ] nodes=1 s=[ 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 3, 3 ] nodes=1 s=[ 0, 0, 3, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 3, 5 ] nodes=1 s=[ 0, 1, 2, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 3, 7 ] nodes=1 s=[ 0, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 5, 5 ] nodes=1 s=[ 0, 1, 2, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 5, 7 ] nodes=1 s=[ 1, 2, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 3, 7, 7 ] nodes=1 s=[ 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 5, 5, 5 ] nodes=1 s=[ 0, 1, 2, 0 ] chiR=1
+10 S10 cyc=[ , 1, 1 ] n=3 cusps=[ 5, 5, 7 ] nodes=1 s=[ 1, 2, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=1 s=[ 4, 2, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=2 s=[ 4, 2, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7 ] nodes=3 s=[ 4, 2, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=1 s=[ 4, 2, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=2 s=[ 4, 2, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7 ] nodes=3 s=[ 4, 2, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=1 s=[ 3, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=2 s=[ 3, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 7, 7 ] nodes=3 s=[ 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 3, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 5, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=1 s=[ 5, 3, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=2 s=[ 5, 3, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 3, 7, 7 ] nodes=3 s=[ 5, 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=1 s=[ 4, 4, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=2 s=[ 4, 4, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 5, 7 ] nodes=3 s=[ 4, 4, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=1 s=[ 5, 3, 3, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=2 s=[ 5, 3, 3, 0, 0 ] chiR=1
+10 S10 cyc=[ ,,, 1 ] n=5 cusps=[ 5, 7, 7 ] nodes=3 s=[ 5, 3, 3, 0, 0, 0 ] chiR=1
+10 S10 cyc=[ 1,,, 1 ] n=3 cusps=[ 3, 3, 7 ] nodes=1 s=[ 1, 1, 0, 1 ] chiR=1
+10 S10 cyc=[ 1,,, 1 ] n=3 cusps=[ 3, 7, 7 ] nodes=1 s=[ 1, 0, 1, 1 ] chiR=1
+10 S10 cyc=[ 1,,, 1 ] n=3 cusps=[ 5, 7, 7 ] nodes=1 s=[ 2, 0, 0, 1 ] chiR=1
+10 S10 cyc=[ 1,,, 1 ] n=3 cusps=[ 7, 7, 7 ] nodes=1 s=[ 0, 1, 1, 1 ] chiR=1

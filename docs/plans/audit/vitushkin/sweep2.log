@@ -1,0 +1,117 @@
+tac36_p-6_q-99o4 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+tac36_p-5_q-8 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+tac36_p-4_q-51 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+tac36_p-4_q5o4 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+tac36_p-2_q-55 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+tac36_p-2_q-11o4 ERROR ComputationFailed('sqf_part', 1, PolificationFailed({'gens': ()}, 0, 0))
+== cc_tanpar_A1o2 comps [('t**2', 't**3'), ('t', '3*t/2 + (t - 1)**2/2 - 1/2')] alpha 3 degs [[2, 3], [1, 2]]
+  c=(1.0, 0.0) W=[1, 2, 1, 2, 2, 2, 2, -1, -2, -1] [([1, 2], 'br', 2, 'cusps', 0)]
+  c=(0.0, 0.0) W=[2, 1, 1, 2, 1, 2, 1] [([0, 1, 2], 'br', 2, 'cusps', 1)]
+abelianization: [ 0, 0 ]
+k=[ 2, 2 ] nu=2 transitive reps: 158
+   D=4 n=[ 1, 4 ] cyc=[ [ , 1 ], [  ] ] A4 chi=[ -2, -5 ] fail=euler s=
+[ 1, 0 ] euler=0
+   D=6 n=[ 2, 6 ] cyc=[ [ ,, 1 ], [  ] ] S4 chi=[ -2, -6 ] fail=euler s=
+[ 2, 0 ] euler=0
+   D=8 n=[ 2, 8 ] cyc=[ [ , 2 ], [  ] ] SL(2,3) chi=[ -4, -10 ] fail=euler s=
+[ 2, 0 ] euler=0
+   D=6 n=[ 1, 6 ] cyc=[ [ ,,, 1 ], [  ] ] A5 chi=[ -4, -9 ] fail=euler s=
+[ 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 0 ] euler=0
+   D=8 n=[ 1, 8 ] cyc=[ [ ,,,,, 1 ], [  ] ] PSL(3,2) chi=
+[ -6, -13 ] fail=euler s=[ 1, 0 ] euler=0
+   (151 reps with a meridian acting freely)
+  [12 s]
+cc_tanpar_A2 TRACKING FAILED path to (0.375+0.649519052838329j) passes near (1+0j); change base
+== cc_tanpar_Am1 comps [('t**2', 't**3'), ('t', '3*t/2 - (t - 1)**2 - 1/2')] alpha 3 degs [[2, 3], [1, 2]]
+  c=(5.598, 0.0) W=[1, 2, 1, 1, -2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(1.0, 0.0) W=[1, 2, 2, 2, 2, -1] [([0, 1], 'br', 2, 'cusps', 0)]
+  c=(0.402, 0.0) W=[1, -2, 1, 1, 2, -1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(0.0, 0.0) W=[-2, -1, 2, 2, 2, 1, 2] [([1, 2], 'br', 1, 'cusps', 1)]
+abelianization: [ 0, 0 ]
+k=[ 4, 3 ] nu=3 transitive reps: 90
+   D=4 n=[ 1, 4 ] cyc=[ [ , 1 ], [  ] ] A4 chi=[ -2, -5 ] fail=euler s=
+[ 1, 1, 1, 0 ] euler=0
+   D=6 n=[ 2, 6 ] cyc=[ [ ,, 1 ], [  ] ] S4 chi=[ -2, -6 ] fail=euler s=
+[ 2, 2, 2, 0 ] euler=0
+   D=8 n=[ 2, 8 ] cyc=[ [ , 2 ], [  ] ] SL(2,3) chi=[ -4, -10 ] fail=euler s=
+[ 2, 2, 2, 0 ] euler=0
+   D=6 n=[ 1, 6 ] cyc=[ [ ,,, 1 ], [  ] ] A5 chi=[ -4, -9 ] fail=euler s=
+[ 1, 1, 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 1, 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 1, 1, 0 ] euler=0
+   D=8 n=[ 1, 8 ] cyc=[ [ ,,,,, 1 ], [  ] ] PSL(3,2) chi=
+[ -6, -13 ] fail=euler s=[ 1, 1, 1, 0 ] euler=0
+   (83 reps with a meridian acting freely)
+  [6 s]
+== cc_oscpar comps [('t**2', 't**3'), ('t', '3*t/2 + 3*(t - 1)**2/8 - 1/2')] alpha 3 degs [[2, 3], [1, 2]]
+  c=(1.0, 0.0) W=[2, 1, 2, 2, 2, 2, 2, 2, -1, -2] [([1, 2], 'br', 2, 'cusps', 0)]
+  c=(0.111, 0.0) W=[-1, 2, 1, 1, -2, 1] [([0, 2], 'br', 2, 'cusps', 0)]
+  c=(0.0, 0.0) W=[-1, 2, 2, 2, 1] [([0, 1], 'br', 1, 'cusps', 1)]
+abelianization: [ 0, 0 ]
+k=[ 3, 2 ] nu=2 transitive reps: 193
+   D=4 n=[ 1, 4 ] cyc=[ [ , 1 ], [  ] ] A4 chi=[ -2, -5 ] fail=euler s=
+[ 1, 1, 0 ] euler=0
+   D=8 n=[ 2, 6 ] cyc=[ [ , 2 ], [ 1 ] ] ((C4 x C2) : D8) : C3 chi=
+[ -6, -14 ] fail=euler s=[ 2, 0, 0 ] euler=0
+   D=6 n=[ 2, 6 ] cyc=[ [ ,, 1 ], [  ] ] S4 chi=[ -2, -6 ] fail=euler s=
+[ 2, 2, 0 ] euler=0
+   D=8 n=[ 2, 8 ] cyc=[ [ , 2 ], [  ] ] SL(2,3) chi=[ -4, -10 ] fail=euler s=
+[ 2, 2, 0 ] euler=0
+   D=6 n=[ 1, 6 ] cyc=[ [ ,,, 1 ], [  ] ] A5 chi=[ -4, -9 ] fail=euler s=
+[ 1, 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 1, 0 ] euler=0
+   D=7 n=[ 1, 7 ] cyc=[ [ ,,,, 1 ], [  ] ] C7 : C6 chi=
+[ -5, -11 ] fail=euler s=[ 1, 1, 0 ] euler=0
+   D=8 n=[ 1, 8 ] cyc=[ [ ,,,,, 1 ], [  ] ] PSL(3,2) chi=
+[ -6, -13 ] fail=euler s=[ 1, 1, 0 ] euler=0
+   D=8 n=[ 2, 6 ] cyc=[ [ , 2 ], [ 1 ] ] ((C2 x C2 x C2) : D8) : C3 chi=
+[ -6, -14 ] fail=euler s=[ 2, 0, 0 ] euler=0
+   D=4 n=[ 2, 2 ] cyc=[ [ 1 ], [ 1 ] ] S4 chi=[ -2, -6 ] fail=euler s=
+[ 1, 0, 1 ] euler=0
+   D=8 n=[ 4, 4 ] cyc=[ [ 2 ], [ ,, 1 ] ] (C2 x C2 x C2 x C2) : S4 chi=
+[ -4, -12 ] fail=euler s=[ 2, 0, 2 ] euler=0
+   D=8 n=[ 4, 4 ] cyc=[ [ ,, 1 ], [ 2 ] ] (C2 x C2 x C2 x C2) : S4 chi=
+[ -4, -12 ] fail=euler s=[ 2, 0, 2 ] euler=0
+   D=8 n=[ 4, 4 ] cyc=[ [ ,, 1 ], [ ,, 1 ] ] Q8 : S4 chi=
+[ -4, -12 ] fail=euler s=[ 2, 0, 2 ] euler=0
+   D=7 n=[ 1, 1 ] cyc=[ [ ,,,, 1 ], [ 3 ] ] C7 : C6 chi=
+[ -11, -23 ] fail=euler s=[ 0, 1, 0 ] euler=5
+   D=6 n=[ 1, 1 ] cyc=[ [ ,,, 1 ], [ ,,, 1 ] ] A5 chi=
+[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=8 n=[ 2, 2 ] cyc=[ [ , 2 ], [ 3 ] ] ((C4 x C2) : D8) : C3 chi=
+[ -10, -22 ] fail=euler s=[ 0, 2, 0 ] euler=4
+   D=8 n=[ 2, 2 ] cyc=[ [ , 2 ], [ 3 ] ] ((C2 x C2 x C2) : D8) : C3 chi=
+[ -10, -22 ] fail=euler s=[ 0, 2, 0 ] euler=4
+   D=6 n=[ 2, 2 ] cyc=[ [ ,, 1 ], [ ,, 1 ] ] S4 chi=[ -6, -14 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 2, 2 ] cyc=[ [ 2 ], [ 2 ] ] S4 chi=[ -6, -14 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=7 n=[ 1, 1 ] cyc=[ [ ,,,, 1 ], [ 3 ] ] C7 : C6 chi=
+[ -11, -23 ] fail=euler s=[ 0, 1, 0 ] euler=5
+   D=4 n=[ 1, 1 ] cyc=[ [ , 1 ], [ , 1 ] ] A4 chi=[ -5, -11 ] fail=euler s=
+[ 0, 1, 0 ] euler=2
+   D=6 n=[ 2, 2 ] cyc=[ [ ,, 1 ], [ ,, 1 ] ] S4 chi=[ -6, -14 ] fail=euler s=
+[ 0, 2, 0 ] euler=2
+   D=6 n=[ 1, 1 ] cyc=[ [ ,,, 1 ], [ ,,, 1 ] ] A5 chi=
+[ -9, -19 ] fail=euler s=[ 0, 1, 0 ] euler=4
+   D=8 n=[ 2, 2 ] cyc=[ [ , 2 ], [ , 2 ] ] SL(2,3) chi=
+[ -10, -22 ] fail=euler s=[ 0, 2, 0 ] euler=4
+   D=7 n=[ 1, 1 ] cyc=[ [ ,,,, 1 ], [ ,,,, 1 ] ] C7 : C6 chi=
+[ -11, -23 ] fail=euler s=[ 0, 1, 0 ] euler=5
+   D=7 n=[ 1, 1 ] cyc=[ [ ,,,, 1 ], [ ,,,, 1 ] ] C7 : C6 chi=
+[ -11, -23 ] fail=euler s=[ 0, 1, 0 ] euler=5
+   D=8 n=[ 1, 1 ] cyc=[ [ ,,,,, 1 ], [ ,,,,, 1 ] ] PSL(3,2) chi=
+[ -13, -27 ] fail=euler s=[ 0, 1, 0 ] euler=6
+   D=8 n=[ 1, 1 ] cyc=[ [ ,,,,, 1 ], [ ,,,,, 1 ] ] PSL(3,2) chi=
+[ -13, -27 ] fail=euler s=[ 0, 1, 0 ] euler=6
+   (165 reps with a meridian acting freely)
+  [102 s]
+== cc_cc_samecusp_a comps [('t**2', 't**3'), ('2*t**2', 't**3')] alpha 4 degs [[2, 3], [2, 3]]
+  c=(0.0, 0.0) W=[1, 2, 1, 3, 2, 1, 1, 2, 1, 3, 2, 1, 1, 2, 1, 3, 2, 1] [([0, 1, 2, 3], 'br', 2, 'cusps', 2)]

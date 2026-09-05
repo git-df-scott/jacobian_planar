@@ -1,0 +1,118 @@
+Read("/home/user/jacobian_planar/docs/plans/audit/vitushkin/dicrit.g");;
+CosetTableDefaultMaxLimit := 2000000;;
+CheckCurve := function(arg)
+  local G, singpts, compofgen, degs, m, Dmin, Dmax, fibres, linefail, fb, cl, loopels, grp, orb, O, chiO, Lq, cyc, iso, Hfp, rr, Q, sz, L, H, D, hom, img, gi, gens, n, e, sp, s, sums, ok, Ltot, lst, results, k, nu, res, N, r, c, cnt, i, staylifts, idx, alpha, beta, fibre1, fibre2, kk, allbr;
+  G := arg[1]; singpts := arg[2]; compofgen := arg[3]; degs := arg[4]; m := arg[5]; Dmin := arg[6]; Dmax := arg[7];
+  if Length(arg) >= 8 then fibres := arg[8]; else fibres := []; fi;
+  results := [];
+  gens := [];   # one generator per component
+  for i in [1..m] do Add(gens, GeneratorsOfGroup(G)[Position(compofgen, i)]); od;
+  # k_i = branches of component i over singular points; nu = sum (r_p - 1)
+  kk := List([1..m], i -> 0);
+  nu := 0;
+  for sp in singpts do
+    nu := nu + sp.branches - 1;
+    for c in sp.comps do kk[c] := kk[c] + 1; od;
+  od;
+  L := LowIndexSubgroupsFpGroup(G, Dmax);
+  cnt := 0;
+  for H in L do
+    D := Index(G, H);
+    if D < Dmin then continue; fi;
+    hom := FactorCosetAction(G, H);
+    img := Image(hom);
+    if not IsTransitive(img, [1..D]) then continue; fi;
+    cnt := cnt + 1;
+    n := List(gens, g -> D - NrMovedPoints(Image(hom, g)));
+    e := List(n, x -> D - x);
+    res := rec(D := D, n := n, e := e, cycles := List(gens, g -> CycleStructurePerm(Image(hom, g))), group := StructureDescription(img));
+    ok := true;
+    if Minimum(n) < 1 then ok := false; res.fail := "n=0"; fi;
+    if ok and Minimum(e) < 1 then ok := false; res.fail := "e=0"; fi;
+    fibre1 := D - Sum([1..m], i -> degs[i][1] * e[i]);
+    fibre2 := D - Sum([1..m], i -> degs[i][2] * e[i]);
+    res.chi := [fibre1, fibre2];
+    if ok and (fibre1 > -1 or fibre2 > -1) then ok := false; res.fail := "fibre chi"; fi;
+    if ok then
+      sums := 0; lst := [];
+      for sp in singpts do
+        Ltot := Group(List(sp.mer, x -> Image(hom, x)));
+        s := D - NrMovedPoints(Ltot);
+        Add(lst, s); sums := sums + s;
+      od;
+      res.s := lst;
+      res.euler := D*(1 - m + nu) + Sum([1..m], i -> n[i]*(1 - kk[i])) + sums;
+      # Euler characteristic of the escaping curve R: cycles of each meridian on moved points, orbits of size >= 2 at singular points
+      cyc := List(gens, g -> Length(Filtered(Cycles(Image(hom, g), [1..D]), c -> Length(c) > 1)));
+      res.chiR := Sum([1..m], i -> cyc[i] * (1 - kk[i])) + Sum(singpts, sp -> Length(Filtered(Orbits(Group(List(sp.mer, x -> Image(hom, x))), [1..D]), o -> Length(o) > 1)));
+      if res.euler <> 1 then ok := false; res.fail := "euler"; fi;
+    fi;
+    if ok and IsBound(longitudes) then
+      dic := DicriticalTest(hom, D, compofgen, m, kk, longitudes, fibres);
+      res.dicrit := List(dic.comps, c -> [c.d, c.chi, c.Nsing, c.unibranch, c.places_inf]);
+      if dic.fails <> [] then ok := false; res.fail := "dicritical"; fi;
+    fi;
+    if ok then
+      # Nguyen line test on every singular fibre: no component of F^-1(L) may have chi = 1
+      linefail := false;
+      for fb in fibres do
+        loopels := List(fb, cl -> Product(List(cl.mer, x -> Image(hom, x))));
+        grp := Group(loopels);
+        for O in Orbits(grp, [1..D]) do
+          chiO := Length(O) * (1 - Length(fb));
+          for cl in fb do
+            Lq := Group(List(cl.mer, x -> Image(hom, x)));
+            chiO := chiO + Length(Filtered(O, i -> ForAll(GeneratorsOfGroup(Lq), gq -> i^gq = i)));
+          od;
+          if chiO = 1 then linefail := true; fi;
+        od;
+      od;
+      if linefail then ok := false; res.fail := "line(C-component)"; fi;
+    fi;
+    if ok then
+      staylifts := [];
+      for r in RightTransversal(G, H) do
+        for i in [1..m] do
+          c := r^-1 * gens[i] * r;
+          if Image(hom, c) = Image(hom, c)^0 or 1^Image(hom, c) = 1 then Add(staylifts, c); fi;
+        od;
+      od;
+      # H as fp group; quotient by normal closure of staying lifts
+      iso := IsomorphismFpGroup(H);
+      Hfp := Range(iso);
+      rr := List(staylifts, x -> UnderlyingElement(Image(iso, x)));
+      Q := FactorGroupFpGroupByRels(Hfp, rr);
+      res.pi1_ab := AbelianInvariants(Q);
+      if res.pi1_ab <> [] then
+        ok := false; res.fail := "pi1(H1)";
+      else
+        sz := CALL_WITH_CATCH(Size, [Q]);
+        if sz[1] = true then
+          res.pi1_size := sz[2];
+          if sz[2] <> 1 then ok := false; res.fail := "pi1"; fi;
+        else
+          res.pi1_size := "unknown";
+        fi;
+      fi;
+    fi;
+    res.ok := ok;
+    Add(results, res);
+  od;
+  return rec(count := cnt, results := results, k := kk, nu := nu);
+end;;
+
+Report := function(r)
+  local x, near;
+  Print("k=", r.k, " nu=", r.nu, " transitive reps: ", r.count, "\n");
+  for x in r.results do
+    if x.ok then Print("*** SURVIVOR: ", x, "\n"); fi;
+  od;
+  near := Filtered(r.results, x -> not x.ok and not x.fail in ["n=0", "e=0"]);
+  for x in near do
+    Print("   D=", x.D, " n=", x.n, " cyc=", x.cycles, " ", x.group, " chi=", x.chi, " fail=", x.fail);
+    if IsBound(x.s) then Print(" s=", x.s, " euler=", x.euler, " chiR=", x.chiR); fi; if IsBound(x.dicrit) then Print(" R=", x.dicrit); fi;
+    if IsBound(x.pi1_ab) then Print(" pi1ab=", x.pi1_ab); fi; if IsBound(x.pi1_size) then Print(" pi1size=", x.pi1_size); fi;
+    Print("\n");
+  od;
+  Print("   (", Length(Filtered(r.results, x -> not x.ok and x.fail = "n=0")), " reps with a meridian acting freely)\n");
+end;;
