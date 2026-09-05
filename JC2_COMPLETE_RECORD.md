@@ -1,5 +1,9 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
+September 5 follow-up: [Astra 4 missed-routes audit](ASTRA_4_MISSED_ROUTES.md)
+adds scoped proofs and corrections. The historical cutoff and inventory in
+this document are unchanged.
+
 Closed-record date: **2026-09-04**. Repository:
 [git-df-scott/jacobian_planar](https://github.com/git-df-scott/jacobian_planar).
 Research cutoff: Astra 3 commit

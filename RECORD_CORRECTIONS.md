@@ -4,6 +4,24 @@ This file governs interpretation of the recovered and historical records.
 Original reports are preserved, including their retracted claims. The full
 source ledger is [CATCHES.md at the frozen Claude head](https://github.com/git-df-scott/jacobian_planar/blob/b233c708e9b43c597f6f2fa2e82a9b04fb5dd55a/CATCHES.md).
 
+## September 5 addendum — Astra 4
+
+The [new audit](ASTRA_4_MISSED_ROUTES.md) adds these scoped corrections:
+
+| Historical claim or priority | Correct interpretation |
+|---|---|
+| A rational mate with poles on proper fibre components may fail to yield D_P(A)=b(P) | False. Whole-fibre products clear all finite denominators by the valid pole theorem, even for reducible fibres. The explicit night19 control has A=-xy and D_P(A)=P. |
+| Missing initial values or greater x-degree could rescue the monic height-(4,6) lane | Superseded by Astra 4's complete algebraic-integral reduction and all-degree proof. Nonconstant leading y coefficients are outside that theorem. |
+| Monodromy-fixed sheets can universally be counted as staying by the current code | Requires a missing Keller-specific justification or explicit boundary marks. The code alone does not establish the converse to staying implies fixed. No Keller counterexample to that converse is claimed. |
+| H3 source depth should remain the first counterexample attack | Its fixed topological class already fails the escaping-curve budget and cannot be rescued by the new marks. Deeper trees do not repair that class. |
+| Cubic target projections of the x=1 subalgebra are the first open frontier | Their plane degrees are at most 12, already excluded by known degree bounds. The arbitrary-degree subalgebra instead has Astra 4's exact conductor/parity description. |
+
+The marking re-screen covers only 39 distinct complete printed signatures,
+not every historical representation. The new all-degree and geometric proofs
+are written arguments with checked algebra, without external review or
+proof-assistant formalization. The September 4 corrections below remain in
+force except where this addendum explicitly supersedes a search priority.
+
 ## 1. New correction: the recovered night26 degree-six model is impossible
 
 The recovered [night26/CLOSING_STRIKE.md](night26/CLOSING_STRIKE.md) proposes

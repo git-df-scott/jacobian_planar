@@ -1,0 +1,54 @@
+{
+  "RIBBON46_INTEGRALS": {
+    "status": "PASS",
+    "H2": "5*a**3*h/32 + 3*a**2*k/8 + 5*a*d*h/4 + a*m + 5*b**2*h/8 + 3*b*d + 2*b*ell + 3*d*k",
+    "H1": "-5*a**2*b*h/32 - 3*a*b**2/4 - 3*a*b*k/4 + 5*b*d*h/4 + b*m + 3*d**2/2 + 2*d*ell",
+    "H0": "15*a**4*h/512 + a**3*k/16 + 5*a**2*d*h/32 + a**2*m/8 - 5*a*b**2*h/16 - 3*a*b*d/4 - a*b*ell/2 - b**3/4 - 3*b**2*k/8 + 5*d**2*h/8 + d*m",
+    "normalized_Q": "Y**6 + Y**5*k5 + 3*Y**4*a/2 + Y**4*k4 + 5*Y**3*a*k5/4 + 3*Y**3*b/2 + Y**3*k3 + 3*Y**2*a**2/8 + Y**2*a*k4 + 5*Y**2*b*k5/4 + 3*Y**2*c/2 + Y**2*k2 + 5*Y*a**2*k5/32 + 3*Y*a*b/4 + 3*Y*a*k3/4 + Y*b*k4 + 5*Y*c*k5/4 + Y*k1 - a**3/16 + 5*a*b*k5/16 + 3*a*c/4 + a*k2/2 + 3*b**2/8 + 3*b*k3/4 + c*k4 + k0",
+    "degree_proof": "RIBBON46_ALL_DEGREES.md",
+    "scope": "Both leading y coefficients constant and nonzero; arbitrary polynomial x coefficients."
+  },
+  "LOCALIZATION_COUNTEREXAMPLE": {
+    "status": "PASS",
+    "P": "x*y**2 + y",
+    "Q": "-x/(x*y + 1)",
+    "A": "-x*y",
+    "clearing_denominator": "x*y**2 + y",
+    "D_P(A)": "x*y**2 + y"
+  },
+  "CONDUCTOR_AND_FIRST_JET": {
+    "status": "PASS",
+    "a": "-c*v**3 + v**2 + v",
+    "b": "-3*c*v**2 + 4*v + 2",
+    "c": "c",
+    "Delta": "-9*c + (3*c*v - 2)**2",
+    "collision_images": [
+      "-2/27",
+      "-2/3",
+      "4"
+    ],
+    "restriction": [
+      "-3/r**2 + 12/r**4",
+      "-1 + 12/r**2",
+      "r**2/9"
+    ],
+    "first_jet_P": "c + (-9*c + (3*c*v - 2)**2)*(3*c*v - 2)*(6*c*v - 5)/72",
+    "first_jet_Q": "-3*c*v**2 + 4*v + 2",
+    "first_jet_is_Keller": false,
+    "target_degree_3_total_degree_bound": 12,
+    "target_degree_26_total_degree_bound": 104
+  },
+  "AFFINE_BOUNDARY_CONTROL": {
+    "status": "PASS",
+    "surface": "u*w=v*(v-1)",
+    "open_embedding": "(x,y) -> (x,xy,y(xy-1))",
+    "omitted_curve": "u=0,v=1",
+    "volume": "du wedge dv/u = dx wedge dy",
+    "plane_projection": "(x,xy^2-y)",
+    "projection_Jacobian": "2xy-1",
+    "generic_meridian_over_u0": "identity: one staying, one escaping",
+    "is_Keller_counterexample": false
+  },
+  "counterexample_found": false,
+  "script_sha256": "85ead69a30d413c2d8ea767d52e628a9ee3d28bddfa34f4c1cdd7ed081501bc7"
+}

@@ -1,4 +1,27 @@
-# ASTRA state — 2026-09-04
+# ASTRA state — 2026-09-05
+
+## September 5 audit update
+
+[Astra 4](ASTRA_4_MISSED_ROUTES.md) supersedes the affected search priorities
+below. The September 4 record remains the frozen historical base.
+
+- A written all-degree proof excludes the full monic y-height (4,6) family,
+  including arbitrary x-degrees and initial coefficients. Exact algebra passes.
+- Rational mates and generic regular primitives are equivalent by whole-fibre
+  denominator clearing, including reducible fibres. Night21's contrary claim
+  is corrected; polynomiality remains the torsion-versus-zero question.
+- Target-code fixed-sheet counts require an additional justification before
+  they can universally be called staying counts. A marked re-screen leaves
+  no survivor among 39 retained complete signatures, but does not cover all
+  archived representations or repair the entire target implementation.
+- H3 remains topologically excluded even with the new marking relaxation.
+  Its deeper source-tree search is removed from the counterexample priorities.
+- The x=1 subalgebra has an exact conductor/parity presentation. Low-degree
+  ambient projections are already excluded; arbitrary-degree polynomial
+  Keller pairs in that subalgebra remain a restricted construction question.
+- Astra 2 and Astra 3 independent certificate verifiers were replayed and pass.
+
+The new written proofs have not been externally reviewed or formalized.
 
 Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 44 remote branches at the cutoff and recover two unpublished Codex commits.
@@ -23,8 +46,10 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 - **THEOREM — Euler/escape budgets.**  Every target blueprint in the
   stratified-cover model must satisfy both the source Euler equation and the
-  escaping-curve Euler equation in `OFF_BY_ONE.md`.  Failure of either equation
-  excludes the blueprint before curve realization.
+  escaping-curve Euler equation in `OFF_BY_ONE.md`, using actual staying and
+  escaping counts. Failure of either equation excludes that marked blueprint
+  before curve realization. The historical fixed=staying implementation has
+  the additional hypothesis identified by Astra 4.
 
 - **THEOREM — mate period obstruction.**  If the Gelfand--Leray form is a
   nonzero holomorphic differential on a compact positive-genus fibre, it is not
@@ -132,15 +157,15 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
    using the bridge equations rather than post-processing curve realizations.
 2. Enumerate peripheral braid factorizations only for group records satisfying
    both Euler budgets and source complementarity.
-3. Determine the minimum boundary depth forced by an H3 dicritical of
-   discrepancy -1 and coordinate degrees (3d,5d)/(3d,6d), instead of blindly
-   raising the tree bound.
+3. Resolve the fixed/staying-sheet distinction before claiming a complete
+   target census; use longitude-consistent marks and local boundary incidence
+   unless a Keller-specific theorem removes the distinction.
 
 ## TOP THREE ATTACKS
 
-1. **Source lower bound for H3.**  Convert the new six-blowup emptiness into a
-   depth/intersection theorem, or derive the first possible depth and unique
-   boundary skeleton.
+1. **Exact collision subalgebra.** Use Astra 4's conductor/parity presentation
+   for arbitrary-degree members, with the exact bracket as the unresolved
+   gate. The cubic and other degree-bound-excluded projection boxes are closed.
 2. **Residue-free Briançon construction.**  Search embeddings realizing a
    triple-pole exact differential, with Gate 0 and positive controls first.
 3. **Above-125 provenance repair.** Derive the missing lower corner and c'
@@ -149,6 +174,10 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 ## DO-NOT-REPEAT LIST
 
+- Do not resume monic y-height (4,6) shooting; the all-degree obstruction now
+  includes its formerly omitted charts and parameters.
+- Do not pursue deeper source trees as a rescue of the already excluded H3
+  class. A different group/curve/marking class needs its own budgets.
 - Do not scan generic coefficient boxes or restart B=16.
 - Do not run the case-(2) y-adic depth-6 wall.
 - Do not restart either Proposition 4.3 polygon without a concrete flaw in

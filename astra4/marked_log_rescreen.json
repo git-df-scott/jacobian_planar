@@ -1,0 +1,72 @@
+{
+  "scope": "Complete single-line printed Euler-stage signatures, D>=6; not all archived representations",
+  "matched_rows": 163,
+  "unique_signatures": 39,
+  "coarse_survivors": [
+    {
+      "D": 6,
+      "old_n": [
+        2,
+        2
+      ],
+      "k": [
+        3,
+        2
+      ],
+      "old_s": [
+        0,
+        2,
+        0
+      ],
+      "old_euler": 2,
+      "old_chiR": 0,
+      "escaping_fixed": [
+        0,
+        1
+      ],
+      "required_local_fixed_loss": 2,
+      "new_euler": 1,
+      "new_chiR": 1,
+      "occurrences": [
+        {
+          "file": "docs/plans/audit/vitushkin/sweep16.log",
+          "line": 80,
+          "curve": "cc_line_tan1",
+          "text": "D=6 n=[ 2, 2 ] cyc=[ [ ,, 1 ], [ 2 ] ] S4 chi=[ -6, -10 ] fail=euler s=[ 0, 2, 0 ] euler=2 chiR=0"
+        }
+      ],
+      "local_incidence_verdict": "REJECTED: loss 2 exceeds node capacity 1"
+    }
+  ],
+  "survivors_after_node_incidence": 0,
+  "H3_Euler_options": [
+    [
+      0,
+      1
+    ]
+  ],
+  "input_sha256": {
+    "docs/plans/audit/vitushkin/sweep.log": "555967d60fa07422f9c7619d8cf6d4f2f6700ada8f70c1174c13b2990e4a6eb5",
+    "docs/plans/audit/vitushkin/sweep10.log": "29dd08e77ae3f37df1257f1b049de10703db7ea2a47c227c9b4a128157aac823",
+    "docs/plans/audit/vitushkin/sweep11.log": "0f8d30ca0a302b1d7df689ee6aa911a7fb07551d011860a0735fae8e12221506",
+    "docs/plans/audit/vitushkin/sweep12.log": "2d93c6a6ecf329d282b9706628a97c1b1228c6b594ffb8428b8e3a2b856b9bc2",
+    "docs/plans/audit/vitushkin/sweep13.log": "4bf5573df6ad9b8a3f4c14d025279d68d2695b6ec8d67134cfa78d8a8c3dad40",
+    "docs/plans/audit/vitushkin/sweep14.log": "6314c61e0333c32d081f825e72a34ce9b25ac03e8d7d2a1926fca14f0c437759",
+    "docs/plans/audit/vitushkin/sweep15.log": "8d857b6b2fc88e770ad5401d6af5075c96c7ca40afb5326cd9b93c92947da105",
+    "docs/plans/audit/vitushkin/sweep16.log": "c3cad0f9f6fb2fc9a663fe57bc4ce66b5f920b67d2c622cc29ac23bf564317d1",
+    "docs/plans/audit/vitushkin/sweep17.log": "b5a929b2fee00f0a50fa2221d9c20d0f79a13a1f393231229b16857488d92007",
+    "docs/plans/audit/vitushkin/sweep18.log": "dfb1c9cef59605b10204874d09087aeb17da5b141cab9d4ff23c76aedf7c51df",
+    "docs/plans/audit/vitushkin/sweep19.log": "4d37739b68ec4acba88b1e6252aba365735e41572458fc2a6fef198d42f3624c",
+    "docs/plans/audit/vitushkin/sweep2.log": "342a75043c97c9097f109c94fe5e6e20b2d68ab52a857cf111fb3ca2cc3842ff",
+    "docs/plans/audit/vitushkin/sweep20.log": "1dbf6ca7e45e5a875000f5553132ebe48aa537eeb3fd5956ba508a7fddeca7ea",
+    "docs/plans/audit/vitushkin/sweep3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/plans/audit/vitushkin/sweep4.log": "61b76f05fa1f8e16e93d4dcc7ba47436774e6f90826664f7dbb5b08c36255d92",
+    "docs/plans/audit/vitushkin/sweep5.log": "426eec4f5bf54bf353319137125f182a3b92d094e52475a9d9e0db00f85a9f44",
+    "docs/plans/audit/vitushkin/sweep6.log": "534a42c8e284bf8ff2d14cc99e2e2536981033e654c0ed25bf993a44e1eb53ac",
+    "docs/plans/audit/vitushkin/sweep7.log": "038b626f22054b2774ec5d2692730dbd943ae2126d0a1d71a18c6957d34c2927",
+    "docs/plans/audit/vitushkin/sweep8.log": "1af8c223d29fd68686d5e19a9e6cd75fe050d864ebf738b6316d6db5abd07ead",
+    "docs/plans/audit/vitushkin/sweep9.log": "6c39266aabb008f9445c3e5ff53ca614f15340c7617985c8911ec9e9254f0f4f",
+    "docs/plans/audit/vitushkin/sweep_rest.log": "21193090662e59fcf85294c4e0d63fb4a396c234ae44ca369503bb09cead0e21"
+  },
+  "script_sha256": "fc751e8ce6efd51f8a8977a620caf6d3483d1bf5b049f8695396a79de16f02ae"
+}
