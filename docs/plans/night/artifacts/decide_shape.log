@@ -1,0 +1,6 @@
+s4f232a_j6_p65521 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 2s
+s4f232a_j6_p1000003 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 2s
+s4f232a_j6_p1000033 | charts 1 | BRANCHES Counter({'EMPTY': 1}) | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 1s
+sab7d9e_j6_p65521 | charts 1 | BRANCHES Counter({'END': 35, 'BRANCH': 1}) | END decided: 27 (EMPTY 20, NONUNIT 0, WALL 7) | 5342s
+scb0881_j6_p65521 | charts 1 |  | END decided: 0 (EMPTY 0, NONUNIT 0, WALL 0) | 3000s
+QUEUE STOPPED 09:59:38Z by operator: remaining jobs (s20640c: already killed exactly; s440259 twin of scb0881; second-prime reruns) deferred to the next session
