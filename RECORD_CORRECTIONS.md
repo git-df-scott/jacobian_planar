@@ -175,3 +175,17 @@ include both rho=2/3 and rho=4/3; dividing by 2-3rho would lose a branch.
 Even trace of the quadratic approximate root is sufficient for a further
 obstruction, but is not established for arbitrary candidates. No new
 finite-order conductor lift is used as evidence for polynomial termination.
+
+# Astra 13 chart and leading-solution update — 2026-09-05
+
+The additional-root argument in `JC2_RETHINK_AND_COUNTEREXAMPLE_PLAN.md`
+excludes twelve of the seventeen marked Astra 11 leading solutions under
+the standard-pair hypotheses; five remain. This is a scoped written proof.
+
+The subsequent chart audit retains a possible type-III shift
+`Y=t^(-1)+eta*t^(-2)+Z`. Astra 12's p11=0 proof remains valid under its
+stated direct-chart terminal bound, but must not be promoted to a proof
+that p11 vanishes in the entire degree-(108,144) case. The broader first
+row and subsequent surviving necessary systems are recorded in
+`ASTRA_13_SHIFTED_CHART_CONSTRUCTION.md`. No full nonzero-shift Keller pair
+has been constructed, and no claim that such a pair exists is made.

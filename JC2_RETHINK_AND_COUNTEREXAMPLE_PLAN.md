@@ -2,6 +2,12 @@
 
 September 5, 2026. No counterexample has been constructed.
 
+**Continuation:** [Astra 13](ASTRA_13_SHIFTED_CHART_CONSTRUCTION.md) executes the
+chart check and part of this plan. It retains a previously unremoved fractional
+shift, widens the rational first row to a nonzero-mu family, and records exact
+coupled construction attempts. Read that report before applying the older
+direct-chart row restrictions below to the full case.
+
 **Recommendation:** continue the corrected degree-(108,144) construction, but first apply the additional-root obstruction below. Under the recorded standard-pair hypotheses, it excludes twelve of Astra 11's seventeen marked leading solutions. The five remaining marked solutions are the rational one already studied and four conjugate solutions with two triple roots. Work on the four conjugates together, enforce compatibility at both triple roots, and continue the rational branch with its previously invisible p9 row retained.
 
 This is a strategy review with new written deductions and exact supporting calculations. It is not an independent verification of all historical proofs or a solution of the remaining coefficient system.

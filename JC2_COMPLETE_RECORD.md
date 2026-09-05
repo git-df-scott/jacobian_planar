@@ -1,12 +1,12 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
-**Updated September 5, 2026, through Astra 12. No explicit planar Jacobian
+**Updated September 5, 2026, through Astra 13. No explicit planar Jacobian
 counterexample has been produced. The general conjecture remains unresolved.**
 
 This is the mass report: the September 4 campaign synthesis, followed by the
 complete September 5 continuation, corrections, exact results, failed
-attempts, and stopping point. All Astra 4–12 reports, scripts, and saved
-certificates are included on this branch. Start with sections 15–19 for the
+attempts, and stopping point. All Astra 4–13 reports, scripts, and saved
+certificates are included on this branch. Start with sections 15–20 for the
 latest work; sections 1–14 preserve the earlier campaign and its evidence.
 
 The strongest collision result is the arbitrary-degree obstruction in
@@ -21,6 +21,13 @@ separate degree-(108,144) case. [Astra 12](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.
 forces one entire next row to vanish and reduces the following row to one
 scalar for the rational leading solution. That scalar survives the next
 necessary test; no finite Keller pair has been reconstructed.
+
+[Astra 13](ASTRA_13_SHIFTED_CHART_CONSTRUCTION.md) gives a written additional-
+root argument excluding twelve of the seventeen marked leading solutions,
+under the recorded standard-pair assumptions. It also restores a possible
+extra fractional shift. Astra 12's p11=0 statement is valid in its stated
+direct terminal chart; the expanded necessary system permits a nonzero p11.
+Exact coupled row families survive, but no full Keller pair has been obtained.
 
 **Archive boundary:** the frozen inventory in section 1 has cutoff
 September 4, Astra 3 commit `64e925e320afb74f1dcf285fee0803d6a6c2b659`,
@@ -835,3 +842,35 @@ completeness within their stated hypotheses. The scripts check the exact
 algebra; they do not independently formalize every geometric step. No
 external peer review or proof-assistant verification is claimed. This
 report records both what was achieved and the precise limitations.
+
+## 20. Astra 13 — five leading solutions, restored shift and coupled attempt
+
+The [review](JC2_RETHINK_AND_COUNTEREXAMPLE_PLAN.md) was pushed first in
+`9e764c064b374ba6f7e4e60b2c5e346e33ff20bb`. Applying the published corner
+restrictions to every eligible multiple root excludes the additional
+double/quadruple-root patterns: twelve of the seventeen marked leading
+solutions. The rational solution and four conjugates with two triple roots
+remain. This is a written scoped argument with exact supporting checks.
+
+The [Astra 13 continuation](ASTRA_13_SHIFTED_CHART_CONSTRUCTION.md) identifies
+a possible intermediate type-III normal (2,-1), requiring the fuller chart
+`X=t^4, Y=t^(-1)+eta*t^(-2)+Z`. No proof that eta vanishes had been supplied.
+For the rational root the widened first row is
+`p11=mu*y^8*(1+y^5)^2*(3+5y^4+8y^5)`, with `eta=-mu/12`.
+The complete next necessary row has one further scalar tau and recovers
+Astra 12 when mu=0. The four algebraic leading solutions also survive
+the corresponding first-two-row tests over their quartic coefficient field.
+
+On the nonzero-mu rational branch, the coupled p9,p8 global primitive test
+has 21 free parameters at fixed tau. Its easiest particular section fails
+the next q9 polynomiality gate for every complex tau, with a saved Bezout
+certificate. Retaining the parameters gives two 17-dimensional uniform
+local slices and a 13-dimensional intersection, each surviving for all tau.
+Mixed choices between local factors remain unclassified. These dimensions
+belong to necessary row systems, not full Keller components.
+
+The remaining lower rows, bottom boundary, finite polynomial reconstruction
+and noninvertibility witness were not obtained. No counterexample resulted.
+Reproduction, exact equations and scope are in the Astra 13 report; all new
+code and certificates are in `astra13/`. The earlier frozen inventory counts
+and Astra 4–12 continuation manifest retain their original cutoff.
