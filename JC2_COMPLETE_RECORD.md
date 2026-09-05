@@ -1,40 +1,36 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
-Current September 5 result: [Astra 9 full collision-route closure](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
-proves that no finite P,Q in C[b,c]+Delta*C[v,c] have a nonzero constant
-Jacobian, in arbitrary degrees. Collision parity forces a forbidden
-slope-one Newton edge unless both components have nonpositive mixed weight;
-then their Jacobian vanishes on c=0. The following earlier OPEN verdicts
-are superseded for this construction. The general JC2 problem is not settled.
+**Updated September 5, 2026, through Astra 12. No explicit planar Jacobian
+counterexample has been produced. The general conjecture remains unresolved.**
 
-September 5 follow-up: [Astra 8 degree-15 strike](ASTRA_8_DEGREE15_STRIKE.md)
-excludes the noncube-h (6,9) component and proves a necessary leading-coefficient
-invariant in arbitrary degree. The exact resonant degree-15 system, and the
-full collision route, remain open. No irreducibility or full-route reduction
-is claimed.
+This is the mass report: the September 4 campaign synthesis, followed by the
+complete September 5 continuation, corrections, exact results, failed
+attempts, and stopping point. All Astra 4–12 reports, scripts, and saved
+certificates are included on this branch. Start with sections 15–19 for the
+latest work; sections 1–14 preserve the earlier campaign and its evidence.
 
-September 5 follow-up: [Astra 7 live-system closure](ASTRA_7_LIVE_SYSTEMS_CLOSED.md)
-proves the two complete degree-14 collision systems impossible and retains
-(6,9) as the next unexcluded coordinate-degree range. The historical
-archive below is preserved.
+The strongest collision result is the arbitrary-degree obstruction in
+[Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md): the specified collision
+subalgebra contains no polynomial pair with nonzero constant Jacobian.
+It supersedes the OPEN collision verdicts in Astra 5–8. It does not close
+other approaches to JC2.
 
-September 5 follow-up: [Astra 4 missed-routes audit](ASTRA_4_MISSED_ROUTES.md)
-adds scoped proofs and corrections. The historical cutoff and inventory in
-this document are unchanged.
+Outside that algebra, [Astra 11](ASTRA_11_CORRECTED_DEGREE144.md) repairs a
+lost-support error and classifies 17 marked leading solutions for the
+separate degree-(108,144) case. [Astra 12](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md)
+forces one entire next row to vanish and reduces the following row to one
+scalar for the rational leading solution. That scalar survives the next
+necessary test; no finite Keller pair has been reconstructed.
 
-Closed-record date: **2026-09-04**. Repository:
-[git-df-scott/jacobian_planar](https://github.com/git-df-scott/jacobian_planar).
-Research cutoff: Astra 3 commit
-[`64e925e320af`](https://github.com/git-df-scott/jacobian_planar/commit/64e925e320afb74f1dcf285fee0803d6a6c2b659).
-This closeout also recovers two previously unpublished Codex commits and
-corrects the proposed model in the second of them.
+**Archive boundary:** the frozen inventory in section 1 has cutoff
+September 4, Astra 3 commit `64e925e320afb74f1dcf285fee0803d6a6c2b659`,
+plus the two recovered local commits. Its counts have not been relabeled
+as September 5 totals. The separate [continuation inventory](record/CONTINUATION_INDEX.md)
+catalogs the subsequent reports and exact artifacts. “Complete” means the
+preserved repository work and recorded explorations, not a reconstruction
+of unavailable conversations or an independent audit of every old proof.
 
-**No explicit counterexample to the planar Jacobian conjecture has been
-produced.** The strongest latest explicit-polygon result is the
-computer-assisted characteristic-zero exclusion of both configurations in
-GGHV Proposition 4.3. That closes the original case called `(8,28)` in that
-proposition. It does not settle every JC2 degree configuration, the disputed
-`(9,27)` reduction, or the different above-125 `(3,4)` chain.
+Repository: [git-df-scott/jacobian_planar](https://github.com/git-df-scott/jacobian_planar).
 
 ## 1. What is preserved
 
@@ -467,9 +463,13 @@ address this necessary condition. The original files are preserved unchanged,
 with the full superseding proof in
 [RECORD_CORRECTIONS.md](RECORD_CORRECTIONS.md).
 
-## 13. What remains open and what should not be repeated
+## 13. September 4 frontier — historical, superseded where noted
 
-| Lane | Current boundary |
+The table records the September 4 stopping point. Astra 4 closes the monic
+height-(4,6) lane, Astra 9 closes the prescribed collision algebra, and
+Astra 11–12 revise the above-125 lane. See section 18 for current status.
+
+| Lane | September 4 boundary |
 |---|---|
 | Above-125 chain `(8,28)->(7/4,3)`, `(m,n)=(3,4)` | Derive the missing lower corner and correct c' range from primary definitions before solving. The matching `(8,28)` label does not transfer Astra's `(2,3)` proof. |
 | Actual `(9,27)`/Corollary 5.7 issue | Resolve the disputed source step and complete support translation; do not substitute a smaller compiler stratum. |
@@ -485,7 +485,7 @@ vertex, an ambient map, a quotient control, or a formal jet to a JC2 result.
 
 ## 14. Reproduction and navigation
 
-The latest scoped algebraic results replay from this branch with Python and
+The September 4 scoped algebraic results replay from this branch with Python and
 python-flint 0.9.0:
 
 ```bash
@@ -509,9 +509,329 @@ mapping for every file occurrence. The archive's integrity checks are in
 
 This closeout preserves the work and makes its evidence reviewable. It does
 not claim that the counterexample objective has been achieved.
-# September 5 continuation: global potential strike
 
-The frozen September 4 archive is followed by
-`ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md`, with exact scripts and certificates in
-`astra6/`. Its verdict is OPEN; the new obstructions and two surviving
-degree-14 systems are distinguished explicitly from the historical record.
+## 15. September 5 — missed routes through collision-route closure
+
+### Astra 4: audit and all-degree monic height obstruction
+
+[Astra 4](ASTRA_4_MISSED_ROUTES.md) revisited missed routes without treating
+bounded coefficient searches as complete. The [monic height-(4,6) proof](astra4/RIBBON46_ALL_DEGREES.md)
+excludes that class with unrestricted degree in the other variable and
+retains the required kernel charts. The [localization audit](astra4/LOCALIZATION_AND_CONDUCTOR.md)
+corrects the alleged rational-mate obstruction: a regular primitive on the
+generic fibre must be handled by clearing whole-fibre denominators, rather
+than by the earlier unsupported localization assertion. It also identifies
+the collision algebra by its conductor and parity condition.
+
+The [target-marking audit](astra4/TARGET_MARKING_AUDIT.md) separates a fixed
+sheet from the stronger absence of boundary marking, gives an explicit
+non-Keller control, and rescreens marked Euler data. The H3 obstruction
+survives the stated relaxation. This does not turn a finite boundary-tree
+census into a theorem about all larger source configurations.
+
+### Astra 5: formal compatibility is not termination
+
+[Astra 5](ASTRA_5_CONDUCTOR_STRIKE.md) proves an all-order formal correction
+criterion in terms of trace derivatives generating the unit ideal in the
+Laurent ring. The old trace fails an exact residue comparison: `-8/3`
+versus the required `4/3`. More significantly, an explicit deceptive family
+passes arbitrary finite conductor orders but its limit obeys
+`c(Q+v)^2=1`, which is impossible in the rational function field by the odd
+valuation at `c`. A target shear makes both coordinates vary without
+removing that obstruction.
+
+The [termination report](astra5/CONDUCTOR_TERMINATION.md) also closes the
+stated unrestricted families with a component in `C[c,cv]` and introduces
+a global potential gate. Formal lifting was thereby retired as a route to
+polynomial existence. Its apparent success remains a negative control,
+not evidence toward a counterexample.
+
+### Astra 6: an exact global potential criterion
+
+Write `r=3cv-2`, `Delta=r^2-9c`, `b=-3cv^2+4v+2`, and
+`B=C[b,c]+Delta*C[v,c]`. For a polynomial potential `H`, set
+
+\[
+A_H=H_v,\quad C_H=H_c+v,\quad
+ g=\gcd(A_H,C_H),\quad X_H=C_H\partial_v-A_H\partial_c.
+\]
+
+The [global theorem](astra6/GLOBAL_POTENTIAL_THEOREM.md) gives the exact
+criterion, with its normalizations and nonzero-gcd convention:
+
+\[
+H+\tfrac23r\in B,\qquad g\in B,\qquad X_H(g)=g.
+\]
+
+These conditions reconstruct `P=g` and a polynomial `Q` from the closed
+form `(H_v/g)dv+((H_c+v)/g)dc`; the trace condition places `Q` in `B`.
+The reverse implication supplies necessity. [Astra 6](ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md)
+excludes potential degree in `v` at most 13 with unrestricted `c` degree,
+and extracts the first residual systems `(4,10)` and `(6,8)`. Ordinary
+polynomial Keller controls pass the ambient global test; collision
+membership is a separate restriction. The nonterminating family fails
+globally, as required.
+
+### Astra 7: both live degree-14 systems closed
+
+[Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) closes both complete systems,
+including their exceptional coefficient choices and both leading
+alternatives. For [(4,10)](astra7/OBSTRUCTION_410.md), first integrals yield
+`y^2+64Z^3+AZ=B` and
+`kappa=u(10yZ'+15Zy')/16`, with `y=u^2/h`. Valuations at a simple zero of
+`h` force regularity and then `kappa=0`.
+
+For [(6,8)](astra7/OBSTRUCTION_68.md), four first integrals and the
+antisymmetry under the square-root field involution reduce the possible
+poles. The exact resultant `-73728 A0^3 B0^9`, together with the handled
+degenerate cases, gives the remaining contradiction. This involution must
+not be confused with collision parity. Thus all admissible potentials of
+`v` degree at most 14 are excluded. These were structural arguments, not
+finite sweeps in the unrestricted coefficient variable.
+
+### Astra 8: noncube degree-15 obstruction and genuine resonance
+
+[Astra 8](ASTRA_8_DEGREE15_STRIKE.md) attacks `(6,9)`. The noncube leading
+case is eliminated by four first integrals, pole orders, and an exact
+exceptional-case resultant `567/32768` with a Bezout certificate. The
+[leading-coefficient invariant](astra8/LEADING_COEFFICIENT_INVARIANT.md)
+also gives the stated arbitrary-degree necessary condition: a nonconstant
+leading root must be a power of one linear factor, with exponent at least
+two in the normalized setting.
+
+The resonant collision branch survives that argument. Its normalized six
+fractional-power constants and all polynomiality/parity conditions are
+preserved in the [exact system](astra8/RESONANT_69_SYSTEM.md) and its JSON
+output. Astra 8 did not prove this system irreducible or reduce the full
+route to it. Its OPEN verdict was accurate at that stage and is superseded
+by the next theorem.
+
+### Astra 9: the entire prescribed collision algebra is excluded
+
+[Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md) gives an arbitrary-degree
+obstruction for
+
+\[
+a=-cv^3+v^2+v,\qquad
+B=\mathbb C[a,b,c]=\mathbb C[b,c]+\Delta\mathbb C[v,c].
+\]
+
+On `Delta=0`, use `c=r^2/9`, `v=3(r+2)/r^2`. Membership in `B` is even
+Laurent trace in `r`. If a component has positive mixed weight for
+`wt(v)=1, wt(c)=-1`, parity forces a nonmonomial leading expression
+`v^d L(vc)` with a nonzero root `lambda`. The resulting branch at infinity
+of a generic fibre gives a nonzero residue `kappa*e*lambda` for `v dc`.
+That contradicts the exact differential supplied by a polynomial Keller
+mate. The proof connects this argument to the published prohibition on
+the corresponding Newton edge. If both components have nonpositive mixed
+weight, both lie in `C[c,cv]`, and their Jacobian is divisible by `c`.
+
+The [full proof](astra9/FULL_COLLISION_OBSTRUCTION.md),
+[proof audit](astra9/PROOF_AUDIT.md), and exact certificate cover these
+alternatives. The closure includes the earlier resonant degree-15 system
+and every higher degree in this particular algebra. It does **not** prove
+the planar Jacobian conjecture. It is a written mathematical proof with
+supporting exact checks, not an externally reviewed or machine-formalized
+resolution of the campaign.
+
+## 16. September 5 — work outside the closed collision algebra
+
+### Astra 10: larger mateless families and a deceptive exact primitive
+
+[Astra 10](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md) investigates constructions
+outside `B`. With `s=xy+1`, `p=xs+1`, `u=s^2+y`, it excludes polynomial
+mates for every `P=p^m u+s A(p)`, `m>=1`, with arbitrary polynomial `A`.
+The proof handles both the positive-genus differential case and the
+exceptional residue/gradient cases.
+
+A second theorem excludes the stated rational primitives on the varying
+hyperelliptic pencil `w^2=D0(p)+4t p(p-1)`, for `deg D0>=3`, pole location
+`a!=0,1`, and order `k>=1`. Odd-degree pole orders and, in the even case,
+the incompatibility of the resulting isotrivial cover with varying branch
+data provide the obstruction. Its hypotheses are essential; this is not
+a theorem that positive genus alone prevents exact meromorphic forms.
+
+A third rigidity theorem says that, for a polynomial Keller pair,
+`P^m Q^n=f(r)` with rational `r` forces `r` polynomial and `f` a translated
+pure power, whose degree divides `gcd(m,n)` in the stated setting. This
+rejects an otherwise exact degree-six elliptic construction:
+
+\[
+D_*(z)=\frac{z^4-2z^3+3z^2-4z+5}{5},\quad
+W^2=tD_*(z),\quad Q=\frac{(z+1)W}{3tz^3},
+\]
+\[
+dQ=-\frac{dz}{z^4W},\qquad
+tQ^2=\frac{r^6}{9}+\frac{2r^5}{15}+\frac1{45},\quad r=z^{-1}.
+\]
+
+Thus an exact curve primitive can exist and still admit no faithful
+polynomial-plane Keller realization. The [proofs](astra10/PROOFS.md) and
+[search audit](astra10/SEARCH_AND_AUDIT.md) preserve the construction,
+its rejection, sources, and limitations. No counterexample resulted.
+
+### Astra 11: support repair, 17 leading solutions, scoped extension closure
+
+[Astra 11](ASTRA_11_CORRECTED_DEGREE144.md) audits the distinct published
+above-125 ratio-(3,4) case. The old `trackD_chain_map.py` used terminal
+height plus one to produce `(4,4)`, while its stated transformations take
+`(8,28)` through `(28,8)` to `(4,8)`. No extra map justifying the smaller
+support was supplied. Therefore the old small coefficient system did not
+exhaust the published case. This correction does not invalidate Astra 2–3,
+which address the separate ratio-(2,3) proposition.
+
+The corrected leading root is `S=X h(XY^4)`, with
+`h(T)=(T-1)^3 B(T)`, `B` a monic quartic and `B(0)B(1)!=0`.
+The exact identity
+
+\[
+4Thf'+(h-3Th')f=h,\qquad \deg f\le5
+\]
+
+reduces to seven quadratic equations in seven variables. The saved
+[lexicographic elimination](astra11/leading_lex.txt) classifies 17 marked
+normalized leading solutions, with eliminant factor degrees `1,2,4,4,6`.
+These are leading solutions, not 17 full counterexample components.
+The rational solution has `B=(1+(T-1)^5)/T` and gives the transformed
+leading root `c(y)=y^3(1+y^5)`.
+
+Both normalized terminal alternatives are solved exactly in the fractional
+chart. Their polynomial expressions after adjoining a fourth root have
+Jacobian proportional to `t^3`, not a nonzero constant, so they are not
+plane Keller maps. A separate simple-root theorem excludes the joint
+slice with `P` rows `2,7,12` and `Q` rows `1,6,11,16` for all 17 leading
+solutions. The full support, including the missing rows, remains open.
+
+## 17. Astra 12 — current work, complete stopping point
+
+The [full Astra 12 report](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md) attacks
+the rational leading solution without assuming the old reduced support.
+Use the exact birational chart
+
+\[
+X=x^4(y+1),\qquad Y=x^{-1},\qquad J(X,Y)=x^2.
+\]
+
+All finite Laurent rows are retained. A row `x^k p_k(y)` descends to an
+original polynomial precisely when `p_k` is divisible by
+`(y+1)^max(0,ceil(k/4))`; the original rectangle imposes the additional
+explicit degree bounds in the report. The terminal corner gives
+`4k-5j<=3` for `P` and `<=4` for `Q`.
+
+Let `h=1+y^5`, `c=y^3h`, and write
+`P=c^3 x^12+sum p_k x^k`, `Q=c^4 x^16+sum q_k x^k`.
+A finite mate with `J(P,Q)=kappa*x^2` forces global rational primitives
+on `w^4=c(y)`. These are necessary conditions on complete algebraic
+curves, extracted from the inverse expansion of `P^(1/12)`; they are
+not a return to conductor jets or a claim of polynomial termination.
+
+The entire first row satisfies
+
+\[
+\boxed{p_{11}=0.}
+\]
+
+High-coefficient polynomiality gives `p11=y^9h^2 a`, `deg a<=4`.
+On `z^2=y+y^6`, exactness is equivalent to the complete finite identity
+`2(y+y^6)B'-(1+6y^5)B=2a`, `deg B<=3`.
+It forces `p11=lambda*y^12h^2`, whose order two at `y=-1` contradicts
+the required order three unless `lambda=0`.
+
+The next row is completely reduced to
+
+\[
+\boxed{p_{10}=\tau y^8(1+y^5)^2(3+5y^2+8y^5).}
+\]
+
+Local radical certificates first force `h^2|p10` and `h|p9`.
+On `V^4=1+u^5`, with `u=1/y`, the relevant primitive is
+`4*tau*(u^2-1)/V`. Its classification follows from
+`4(1+u^5)B'-5u^4 B=4u^6a(1/u)`, `deg B<=2`, followed by original-plane
+descent at `y=-1`. The nonzero scalar can be normalized to one; both zero
+and nonzero branches remain possible at this stage.
+
+A direct attempt to eliminate the nonzero branch failed for an exact
+reason. Set `E=3+5y^2+8y^5`. The admissible row
+
+\[
+p_8=\frac{11}{24}\tau^2 y^7(1+y^5)E^2
+\]
+
+makes the next forcing numerator `24c^3p8-11p10^2` identically zero.
+This is a control against an incorrect exclusion, not a full solution.
+The larger next meromorphic linear problem has 11 free parameters in the
+saved exploratory calculation. Lower rows, including `p9`, are unresolved.
+The other 16 marked leading solutions were not classified further.
+
+Other work recorded in the report includes a bracket-divisibility rejection
+of a restricted cubic/quartic polynomial-part ansatz, a cyclic projection
+strengthening the old joint slice when `P` is already in that slice, and an
+uncompleted attempt to use other multiple roots in the published corner
+theorem. The required root-selection hypotheses were not established, so
+no elimination is claimed from that attempt.
+
+**Exact stopping point:** solve the complete finite Laurent coefficient
+identity `J(P,Q)=kappa*x^2`, `kappa!=0`, with the original-plane descent,
+endpoint conditions, and the two boxed row restrictions. No full solution,
+full contradiction, irreducible global-component reduction, collision, or
+noninvertibility certificate has been obtained. Work stopped for the user's
+requested report consolidation, not because this remaining system was
+shown impossible.
+
+## 18. Current verdicts and governing corrections
+
+| Object | Current status and scope |
+|---|---|
+| Planar Jacobian conjecture | Unresolved in this campaign; no counterexample |
+| Prescribed algebra `C[b,c]+Delta*C[v,c]` | Closed in arbitrary degree by Astra 9's written proof and exact supporting checks |
+| Formal conductor approximations | Can persist without rational or polynomial termination; retired as an existence argument |
+| Original GGHV Proposition 4.3 ratio-(2,3) polygons | Both excluded in Astra 2–3's computer-assisted record |
+| Separate above-125 ratio-(3,4) degree-(108,144) case | Open; old smaller support is insufficient |
+| Its corrected leading system | 17 marked normalized solutions classified; full extensions not classified |
+| Rational leading solution, full Laurent support | `p11=0`, `p10` is the displayed one-parameter row; lower equations open |
+| Briançon and hyperelliptic templates of Astra 10 | Closed only under the stated family hypotheses |
+| Other historical geometric and corrected support frontiers | No blanket closure; retain their specific evidence limits |
+
+The [correction ledger](RECORD_CORRECTIONS.md) governs contradictory old
+claims. A historical OPEN collision verdict is superseded by Astra 9;
+a historical reduced-support exclusion does not transfer to a larger
+published support; and an exact rational primitive, fractional-chart
+bracket, leading root, or surviving row is not a polynomial Keller pair.
+There is no claim that the entire JC2 problem has been reduced to one
+irreducible component.
+
+## 19. Reproduction, inventory, and what was actually verified
+
+The [September 5 artifact index](record/CONTINUATION_INDEX.md) lists every
+Astra 4–12 report, proof, script, saved certificate, and recorded exploration
+with SHA-256 hashes. The [machine-readable manifest](record/CONTINUATION_FILES.json)
+is reproducible with `python record/build_continuation.py`; its scope is
+separate from the immutable September 4 inventory.
+
+| Run | Principal exact replay entry point |
+|---|---|
+| Astra 4 | `python astra4/verify_missed_routes.py` |
+| Astra 5 | `python astra5/verify_conductor_strike.py` |
+| Astra 6 | `python astra6/verify_global_potential.py`; derivation scripts and root certificate in `astra6/` |
+| Astra 7 | `python astra7/verify_410_obstruction.py`; `python astra7/verify_68_obstruction.py`; input/control verifier |
+| Astra 8 | `python astra8/run_certificates.py`; resonance derivation in `astra8/` |
+| Astra 9 | `python astra9/verify_full_obstruction.py` |
+| Astra 10 | `python astra10/verify.py` |
+| Astra 11 | `python astra11/verify.py` |
+| Astra 12 | `python astra12/verify.py` |
+
+Dependencies and optional certificate regeneration flags are documented
+in the individual reports/scripts. Earlier PASS records are preserved;
+this closeout does not claim to have rerun every historical computation.
+Astra 12's seven verification groups were run successfully against its
+saved certificate. They cover the chart and positive control, high
+coefficient identities and radical certificates, inverse coefficients,
+both global linear classifications and descent, and the surviving next
+numerator control. The exploratory scripts are preserved separately and
+are not promoted to full coefficient-system certificates.
+
+The written valuation and pole-order arguments supply mathematical
+completeness within their stated hypotheses. The scripts check the exact
+algebra; they do not independently formalize every geometric step. No
+external peer review or proof-assistant verification is claimed. This
+report records both what was achieved and the precise limitations.

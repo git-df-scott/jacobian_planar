@@ -258,3 +258,27 @@ Current counterexample status: no CEC and no CE.
 - Saved the exact reproducible computation, certificate and report in
   astra11 and ASTRA_11_CORRECTED_DEGREE144.md. Status OPEN, no CE.
   No generic degree sweeps, numerical searches or conductor lifts were run.
+
+## 2026-09-05 — Astra 12 and complete-record consolidation
+
+**Astra 12 / September 5 closeout:** [Global differential descent](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md)
+retains full Laurent support for the rational one of the 17 marked leading
+solutions. It proves `p11=0` and
+`p10=tau*y^8*(1+y^5)^2*(3+5*y^2+8*y^5)` under the stated original support
+and terminal conditions. The nonzero parameter passes the next necessary
+global test; the lower rows and other leading solutions remain open.
+No counterexample was found. The [mass report](JC2_COMPLETE_RECORD.md)
+and [continuation inventory](record/CONTINUATION_INDEX.md) now include
+all work through this stopping point. Earlier dated updates are historical
+where the later reports supersede them.
+
+Derived an exact original-plane Laurent chart and rowwise descent bounds.
+Applied global meromorphic exactness on genus-two and genus-six curves to
+eliminate p11 and classify p10. Directly tested the nonzero survivor: an
+admissible p8 makes the next forcing numerator zero, so no closure is claimed.
+Saved the two exploratory linear calculations and all exact certificates.
+Seven Astra 12 verification groups PASS. On the user's request, consolidated
+the historical campaign plus Astra 4–12, corrected stale current verdicts,
+and built a separate September 5 artifact manifest without changing the
+frozen September 4 inventories. No counterexample or full degree-144
+obstruction was obtained. See the mass report for precise residual scope.

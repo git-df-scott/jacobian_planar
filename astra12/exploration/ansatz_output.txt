@@ -1,0 +1,3 @@
+PASS universal polynomial-part bracket identity
+PASS specialized bracket divisible by x^3*y for every polynomial R
+quotient = 4*(-9*r*rx*u*v*x**2*y + 15*r*ry*u*v*x*y**2 + 2*rx*u**3*x**6*y**4 - 3*rx*v**2*x - 3*ry*u**3*x**5*y**5 + 6*ry*v**2*y + u**2*v*x**4*y**3)/9

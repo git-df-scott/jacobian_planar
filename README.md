@@ -1,6 +1,6 @@
 # jacobian_planar
 
-**Complete campaign record — Claude, earlier Codex/Sol, and Astra, through September 4, 2026.**
+**Complete campaign record — Claude, earlier Codex/Sol, and Astra, through September 5, 2026 (Astra 12).**
 
 Start with [JC2_COMPLETE_RECORD.md](JC2_COMPLETE_RECORD.md). It covers the full research history, results, failed attempts, corrections, evidence and remaining targets. **No planar Jacobian counterexample has been produced.**
 
@@ -16,8 +16,16 @@ Start with [JC2_COMPLETE_RECORD.md](JC2_COMPLETE_RECORD.md). It covers the full 
 
 The inventory covers 35,078 branch/file occurrences, deduplicated to 10,062 distinct path/blob records. It preserves original source links and evidence scope; a historical title or solver log is not automatically an accepted verdict.
 
+The counts above describe the frozen September 4 archive. The separate
+[September 5 continuation index](record/CONTINUATION_INDEX.md) includes all
+Astra 4–12 artifacts and checksums.
+
 ## Latest research
 
+- [Astra 12: global differential descent](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md):
+  full-support proof that `p11=0` and classification of `p10` by one scalar
+  for the rational leading solution. The nonzero scalar survives the next
+  exact test; no counterexample or full component closure.
 - [Astra 11: corrected degree-(108,144) leading system](ASTRA_11_CORRECTED_DEGREE144.md):
   identifies lost upper support in the archived compiler, classifies 17
   marked leading solutions exactly, and excludes their simplest graded

@@ -1,5 +1,22 @@
 # JC2 closing-record corrections — 2026-09-04
 
+## September 5 closeout — governing current scope
+
+Astra 9 supersedes every earlier OPEN verdict for the prescribed collision
+algebra, including Astra 8's resonant system. It does not settle JC2.
+[Astra 11](ASTRA_11_CORRECTED_DEGREE144.md) identifies lost upper support
+in the archived above-125 compiler: the stated chain gives `(4,8)`, while
+the compiler used `(4,4)`. No full-case exclusion follows from that smaller
+system. The unrelated Astra 2–3 ratio-(2,3) results are not retracted.
+[Astra 12](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md) retains negative Laurent
+rows and exact inverse polynomiality. Its row classification is necessary,
+not sufficient; a nonzero row survives the next global differential test.
+The 17 leading solutions are not 17 classified full components. No exact
+rational primitive or fractional-coordinate bracket is a plane Keller map
+without faithful polynomial reconstruction and a nonzero constant Jacobian.
+Older addenda below remain chronological records; current status is in
+[sections 15–19 of the mass report](JC2_COMPLETE_RECORD.md#15-september-5--missed-routes-through-collision-route-closure).
+
 Current September 5 correction: [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
 closes the full collision subalgebra in arbitrary degree. The missed input
 in Astra 6--8 was the no-slope-one-edge theorem for a polynomial Keller

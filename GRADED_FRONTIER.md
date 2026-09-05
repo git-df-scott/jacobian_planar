@@ -1,5 +1,16 @@
 # Graded frontier
 
+**Astra 12 / September 5 closeout:** [Global differential descent](ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md)
+retains full Laurent support for the rational one of the 17 marked leading
+solutions. It proves `p11=0` and
+`p10=tau*y^8*(1+y^5)^2*(3+5*y^2+8*y^5)` under the stated original support
+and terminal conditions. The nonzero parameter passes the next necessary
+global test; the lower rows and other leading solutions remain open.
+No counterexample was found. The [mass report](JC2_COMPLETE_RECORD.md)
+and [continuation inventory](record/CONTINUATION_INDEX.md) now include
+all work through this stopping point. Earlier dated updates are historical
+where the later reports supersede them.
+
 ## Astra 11 correction — current
 
 Read [ASTRA_11_CORRECTED_DEGREE144.md](ASTRA_11_CORRECTED_DEGREE144.md).

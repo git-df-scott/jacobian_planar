@@ -1,0 +1,80 @@
+{
+  "bounds": {
+    "7": {
+      "max_y": 22,
+      "min_y": 5,
+      "multiplicity_at_minus_one": 2
+    },
+    "8": {
+      "max_y": 23,
+      "min_y": 6,
+      "multiplicity_at_minus_one": 2
+    },
+    "9": {
+      "max_y": 23,
+      "min_y": 7,
+      "multiplicity_at_minus_one": 3
+    },
+    "10": {
+      "max_y": 23,
+      "min_y": 8,
+      "multiplicity_at_minus_one": 3
+    },
+    "11": {
+      "max_y": 23,
+      "min_y": 9,
+      "multiplicity_at_minus_one": 3
+    },
+    "12": {
+      "max_y": 24,
+      "min_y": 9,
+      "multiplicity_at_minus_one": 3
+    }
+  },
+  "first": {
+    "conclusion": "p11=0",
+    "linear_solution": [
+      "0",
+      "0",
+      "0",
+      "5*b3/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "b3"
+    ],
+    "p11_second_derivative_at_minus_one": "50*lambda"
+  },
+  "next_control": {
+    "identity": "24*c**3*p8-11*p10**2=0",
+    "p8_control": "11*tau**2*y**7*(y**5 + 1)*(8*y**5 + 5*y**2 + 3)**2/24",
+    "scope": "One necessary global differential condition; not a Keller pair."
+  },
+  "q_rows": {
+    "10": "4*C*p6/3 + 4*p10*p8/(9*C**2) + 4*p11*p7/(9*C**2) + 2*p9**2/(9*C**2) - 4*p10**3/(81*C**5) - 8*p10*p11*p9/(27*C**5) - 4*p11**2*p8/(27*C**5) + 10*p10**2*p11**2/(81*C**8) + 20*p11**3*p9/(243*C**8) - 40*p10*p11**4/(729*C**11) + 44*p11**6/(6561*C**14)",
+    "11": "4*C*p7/3 + 4*p10*p9/(9*C**2) + 4*p11*p8/(9*C**2) - 4*p10**2*p11/(27*C**5) - 4*p11**2*p9/(27*C**5) + 20*p10*p11**3/(243*C**8) - 8*p11**5/(729*C**11)",
+    "12": "4*C*p8/3 + 2*p10**2/(9*C**2) + 4*p11*p9/(9*C**2) - 4*p10*p11**2/(27*C**5) + 5*p11**4/(243*C**8)",
+    "13": "4*C*p9/3 + 4*p10*p11/(9*C**2) - 4*p11**3/(81*C**5)",
+    "14": "4*C*p10/3 + 2*p11**2/(9*C**2)",
+    "15": "4*C*p11/3"
+  },
+  "scope": "Rational Astra 11 leading solution only",
+  "second": {
+    "linear_solution": [
+      "3*b2/4",
+      "0",
+      "-5*b0/4",
+      "0",
+      "0",
+      "2*b2",
+      "b0",
+      "0",
+      "b2"
+    ],
+    "nonzero_parameter_not_excluded": true,
+    "p10": "tau*y**8*(y**5 + 1)**2*(8*y**5 + 5*y**2 + 3)",
+    "primitive": "4*tau*(u**2-1)/V, V**4=1+u**5"
+  },
+  "status": "OPEN: no counterexample"
+}

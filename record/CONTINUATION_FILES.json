@@ -1,0 +1,538 @@
+{
+  "scope": "September 5 continuation through Astra 12; separate from frozen September 4 inventory",
+  "archive_branch_parent": "efff2dc5c31a71030ccf931d22b9cd2047c0e172",
+  "research_parent_before_closeout": "5206d825b1e4baf6524b7af0febad58d9f1af4f5",
+  "closeout_commit": "The commit containing this manifest; deliberately not self-referenced by SHA.",
+  "inventory_policy": "All Astra 4–12 report and directory files, plus listed canonical reports. Excludes generated manifest/index themselves and Python caches. Git blob SHA is calculated from current bytes, including newly added files.",
+  "prior_continuation_commits": [
+    {
+      "sha": "cd1cbeab08e3770a56774ada2d6720d411993756",
+      "subject": "Audit missed JC2 routes and prove monic height 4,6 obstruction",
+      "tree": "5ea22bc134c5e1d92b84d3d3efe6da540514b6ef"
+    },
+    {
+      "sha": "b52277a36aabbd5ab047be7c4070dccbc34de9a6",
+      "subject": "Resolve conductor formal corrections and add global polynomial gates",
+      "tree": "c64dfc28f9372b92dd26a7ef21064f16fd45c616"
+    },
+    {
+      "sha": "080661cc2fa78d2fcc8cd0e23ac4d185e133371b",
+      "subject": "Prove exact global potential criterion and isolate remaining collision components",
+      "tree": "cb5088733f2bfd32a711e273433298eac55bc27f"
+    },
+    {
+      "sha": "c983d81d55d90bd1e31543c90128cd0e443027e1",
+      "subject": "Close both live collision potential systems by exact valuation obstructions",
+      "tree": "53acb32fe9171422340f3ef81d3af563252b0c98"
+    },
+    {
+      "sha": "05a36d66cd0aafc2b279276aa9d3d3548264c098",
+      "subject": "Astra 8: prove noncube (6,9) obstruction and isolate live resonance",
+      "tree": "8878ec74161509d880680a12d8a0e394b7a5bcfc"
+    },
+    {
+      "sha": "1e591d8e0691db30958ebf7486db37c3ce2d812b",
+      "subject": "Astra 9: close the full collision subalgebra by parity and infinity residue",
+      "tree": "a0a278a9799b47b07e367f219f3dab62701c0714"
+    },
+    {
+      "sha": "9fc59779c8d50d8bb36fa54e4ef36a3f3355236f",
+      "subject": "Astra 10: exact search beyond collision algebra and scoped all-degree obstructions",
+      "tree": "cec79bed2171e831b7dfc06ccb89db9a4531630f"
+    },
+    {
+      "sha": "5206d825b1e4baf6524b7af0febad58d9f1af4f5",
+      "subject": "Astra 11: repair degree-144 support and classify exact leading system",
+      "tree": "eb68e34e3e76623790246d945f4ed9682e2530f8"
+    }
+  ],
+  "file_count": 81,
+  "files": [
+    {
+      "path": "ASTRA_10_OUTSIDE_COLLISION_SEARCH.md",
+      "bytes": 4749,
+      "sha256": "5f159d29991c13af06b99837b3cd34943371ef2f95a7172436bf17c36001220b",
+      "git_blob_sha1": "ad8692b1f83cf7beeb7733cbbd4111c133780760"
+    },
+    {
+      "path": "ASTRA_11_CORRECTED_DEGREE144.md",
+      "bytes": 11376,
+      "sha256": "db10354f4dd1e3c81491bcea94b61c6a58c7aa9d6e73734ecc6d0d897fb7db33",
+      "git_blob_sha1": "e6d96ba4063fa5aed1c4d58d7a095bafc210c416"
+    },
+    {
+      "path": "ASTRA_12_GLOBAL_DIFFERENTIAL_DESCENT.md",
+      "bytes": 11219,
+      "sha256": "5388c3a16c8dec41749c49e546246bd16e6b4bde1c6d3dff53266d40bb62c0aa",
+      "git_blob_sha1": "f684535cfa69af7b69737a2ba355daba071f2d4a"
+    },
+    {
+      "path": "ASTRA_4_MISSED_ROUTES.md",
+      "bytes": 10606,
+      "sha256": "d462b0e06c3e04fcb628709354001e2d418b14ee46f403116e9950ea8810cdf8",
+      "git_blob_sha1": "11580b436259ea4ed92b67567c7256c9ad648705"
+    },
+    {
+      "path": "ASTRA_5_CONDUCTOR_STRIKE.md",
+      "bytes": 5490,
+      "sha256": "ec1050fb3babd829b52ef8134f7dd2ab66d272db18ebbce97acf9fe27b6a79d8",
+      "git_blob_sha1": "fce874631b271ed2046610ca746b9df5c19549cb"
+    },
+    {
+      "path": "ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md",
+      "bytes": 3519,
+      "sha256": "39b78d6d2ae4f1a82e3bfe66c20ef477b8f6d9a19001fe8da50a12b5b29962df",
+      "git_blob_sha1": "4315d6599405fc6caa8c7f2fbd8172e918eb85a4"
+    },
+    {
+      "path": "ASTRA_7_LIVE_SYSTEMS_CLOSED.md",
+      "bytes": 3792,
+      "sha256": "0d0b3c52cb749cb3dbf0ff3a3f555e553a5a47e3cfe719eb677f418ed9e3bdc9",
+      "git_blob_sha1": "6d7cd299fe7eccb01822cef79b0da6a2a733b7e9"
+    },
+    {
+      "path": "ASTRA_8_DEGREE15_STRIKE.md",
+      "bytes": 5476,
+      "sha256": "7e764205a0d04c6861bd5d79a99a03cc626504df9067ec518d3e6777249d4fcb",
+      "git_blob_sha1": "f87e2fc04af9f87c4d6d57842cca6d0f137912ae"
+    },
+    {
+      "path": "ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md",
+      "bytes": 4161,
+      "sha256": "695db31480504b7acd63e5c177aaad1d067800f951472c80b608766f26c3ba76",
+      "git_blob_sha1": "f5b69ae11b95a3b3a0aff3190d02bd5af75b79b1"
+    },
+    {
+      "path": "ASTRA_HANDOFF.md",
+      "bytes": 6935,
+      "sha256": "49a0b1ebb74d69c8e954981ba9540b5851fc7e9519ea7c163410589c7b96f179",
+      "git_blob_sha1": "f892046ad8b7f1245da8f68b7d3f4799bf87aa86"
+    },
+    {
+      "path": "ASTRA_RUN_LOG.md",
+      "bytes": 16285,
+      "sha256": "225a33530e95d13bea90c84453d742a5b61617801529b9a83d297000b9a139aa",
+      "git_blob_sha1": "77c6203e7a193bf78c6bee3efd66d5c202fe5672"
+    },
+    {
+      "path": "ASTRA_STATE.md",
+      "bytes": 21365,
+      "sha256": "12e39d8e175df87030e410289f7c0aa11779125c007ec140bf6939d12e2fc47a",
+      "git_blob_sha1": "dac98e58c548ab6050d27acf69f361b2f2ad8833"
+    },
+    {
+      "path": "GRADED_FRONTIER.md",
+      "bytes": 6995,
+      "sha256": "c87253b5c8ff58d2c363d7de3b583f997fdfef12a20e976e4ec465c669bf4452",
+      "git_blob_sha1": "1b03da3642593975f7adafa23dbd79d1a9740bd6"
+    },
+    {
+      "path": "JC2_COMPLETE_RECORD.md",
+      "bytes": 50350,
+      "sha256": "568e61aab8c2e0efde22b019554a1dad328a0534c3742e9017c9953e26442fba",
+      "git_blob_sha1": "4607d1ccea86f9d97cd13741df4f4b7d061a9ea8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3917,
+      "sha256": "63d2e6c3d63654a17f4e905259850894a6b16c47f22af29a1dedee146de79402",
+      "git_blob_sha1": "1bb3d1a5c7ae8c6214d808a1a763fa409c7a8054"
+    },
+    {
+      "path": "RECORD_CORRECTIONS.md",
+      "bytes": 14246,
+      "sha256": "f4fec2e6670dea0c40a9eefce7182df93d03a8ece69a7c49a02a9ac6997e8f33",
+      "git_blob_sha1": "f4c1adc35b33ae9cdc81d1f0d29d53acdb48880a"
+    },
+    {
+      "path": "astra10/PROOFS.md",
+      "bytes": 13018,
+      "sha256": "8854bcb8847685a214ab9c362853bb355568aceaa19b7749151b9d7e9c5aa79b",
+      "git_blob_sha1": "0e27c5c82926db2643b505c72eeaf7e07976fd32"
+    },
+    {
+      "path": "astra10/SEARCH_AND_AUDIT.md",
+      "bytes": 4700,
+      "sha256": "a9f8b2fb010fbbcc7d424e8179d6f4cb0822902cb3031b37bd161cae7dba6a8e",
+      "git_blob_sha1": "5b804bfa8a8ad7314ecc8fd881115b390d366e1c"
+    },
+    {
+      "path": "astra10/certificate.json",
+      "bytes": 3796,
+      "sha256": "be418105538ad2e83d25e929f3d3e9efc8f014d577c85b8993226a96d6c8afdc",
+      "git_blob_sha1": "b452830cf0fcfed764215e6440b595e610c1acba"
+    },
+    {
+      "path": "astra10/verify.py",
+      "bytes": 6198,
+      "sha256": "284ceb7e266a52f1ba1ca9a3076acfe3f7d885ec17fe101d52ecae74d3cdcc3f",
+      "git_blob_sha1": "8a4a41c2c3c85b3ee0d70c8d42664fa93571bf6c"
+    },
+    {
+      "path": "astra11/certificate.json",
+      "bytes": 17586,
+      "sha256": "c0fb02cd46ed371e3efc1458cc3e7addcb66d0e33f06d90f3b3385f5a805ce40",
+      "git_blob_sha1": "bf9f64e48f9f3ce8d60bb15fdb5bd4b3d89135c2"
+    },
+    {
+      "path": "astra11/leading_lex.txt",
+      "bytes": 12296,
+      "sha256": "9b982df586c70db730c0a4097025090c446f31b871c294b0c77bf2284554b1be",
+      "git_blob_sha1": "fc3987f3d1d1db8bd5a22e89a1ae23e871d62f29"
+    },
+    {
+      "path": "astra11/verify.py",
+      "bytes": 7664,
+      "sha256": "95c1e91f21c4d8f1dd49ca58e267385ff8ae40ada4acc698e97fb8cb39cc5f4e",
+      "git_blob_sha1": "3512f8aca6c61b53da3bb0d244f91b2b08c256cc"
+    },
+    {
+      "path": "astra12/certificate.json",
+      "bytes": 2119,
+      "sha256": "c210ca86e4a9022326f535bee71a67a01a7be7efd0af5477e5bee271fbee47b9",
+      "git_blob_sha1": "8d8be0ea44fe7f0e183635f4e5b9efdd73acf2f2"
+    },
+    {
+      "path": "astra12/exploration/README.md",
+      "bytes": 984,
+      "sha256": "94b92c50806f074b4de52db690b2f11ef2c1839e72c91968aa21715fa8b698fa",
+      "git_blob_sha1": "a1ad8bd8719da548cb28a52af959ec3123cdb05d"
+    },
+    {
+      "path": "astra12/exploration/ansatz.py",
+      "bytes": 817,
+      "sha256": "eed5be8b5f4b395c9b6238a8d5c98a4e942b7abf356fa10420209f2d44dfc16a",
+      "git_blob_sha1": "3941368b60326cae281a5a31633a40cf3082c4b5"
+    },
+    {
+      "path": "astra12/exploration/ansatz_output.txt",
+      "bytes": 263,
+      "sha256": "0ed280e96fd2d43a2248b22dac133631e42301864c4eb0a8fb5b2dd1ed0126f8",
+      "git_blob_sha1": "894fcc935825b5156be1fc75b7728f58e84c99c1"
+    },
+    {
+      "path": "astra12/exploration/cohomology.py",
+      "bytes": 765,
+      "sha256": "c10ae18516738fd1c58b7b9c76cff96673a73b48d213fc51833ebf30b69c9e0d",
+      "git_blob_sha1": "e35e0b4e3603a5fa62eecc5c8802f2f4fd4002f8"
+    },
+    {
+      "path": "astra12/exploration/cohomology_output.txt",
+      "bytes": 301,
+      "sha256": "d8b8254ffd53f379e93ebcc7b175cdd801f7d42018b5c9aff687ec1c66fe9456",
+      "git_blob_sha1": "657bdf9cab7c757137c7b03c76b00c5659439ff4"
+    },
+    {
+      "path": "astra12/exploration/next_exact.py",
+      "bytes": 957,
+      "sha256": "d446d06c0b952d58fd25b7b57d32700be057041fb80f8bc1c4c57078d639d4dd",
+      "git_blob_sha1": "489f575eacbee4d641a5268aed6a95e84e3af283"
+    },
+    {
+      "path": "astra12/exploration/next_exact_output.txt",
+      "bytes": 231,
+      "sha256": "6e679efec743f9d7cc4ba72932be5bd44bc05569026eae1f9796ebe409fcba48",
+      "git_blob_sha1": "f367889a99dfb38e88b93fcf416f17a533d4b7fe"
+    },
+    {
+      "path": "astra12/verify.py",
+      "bytes": 6894,
+      "sha256": "63a8820b6ab5945457c7c89da8ad61bf014f96f62d21104f35eb26330f729d1d",
+      "git_blob_sha1": "7df22d713e85f007b050f0463614c90f6c543c34"
+    },
+    {
+      "path": "astra4/LOCALIZATION_AND_CONDUCTOR.md",
+      "bytes": 7388,
+      "sha256": "9eaf7ba2f6466ef1f46cb9902bec9bc734584fa4d67fda40afbe79016c3b569f",
+      "git_blob_sha1": "e2ff16ea6b4d646524f8a9808c6809cb29c3b6c0"
+    },
+    {
+      "path": "astra4/RIBBON46_ALL_DEGREES.md",
+      "bytes": 6594,
+      "sha256": "e99c5b63dfbc2ca22d0ce9a57b0e470472659704ab9bb475cfe5c958da033dda",
+      "git_blob_sha1": "2649cb35e2095e269841c60c4d78285e60de26c4"
+    },
+    {
+      "path": "astra4/TARGET_MARKING_AUDIT.md",
+      "bytes": 7132,
+      "sha256": "781645f5b3a351f112d38b4849d4c7786c4f2e86c2e713df6bb4a01e077f7942",
+      "git_blob_sha1": "b75b645b2be82db81340a9bbf48f57f5a8b4e9d4"
+    },
+    {
+      "path": "astra4/marked_log_rescreen.json",
+      "bytes": 3500,
+      "sha256": "d3d189ef013b7df8331d966e21f7cb75578eb694080a5e2bd10bbad4377ca16b",
+      "git_blob_sha1": "c154078c80d16ff454f4a1e6f5c368eafcd75952"
+    },
+    {
+      "path": "astra4/rescreen_marked_logs.py",
+      "bytes": 4284,
+      "sha256": "fc751e8ce6efd51f8a8977a620caf6d3483d1bf5b049f8695396a79de16f02ae",
+      "git_blob_sha1": "6ad7318ec62e00efd690eb99bb39fcd8b1e4e445"
+    },
+    {
+      "path": "astra4/verification.json",
+      "bytes": 2150,
+      "sha256": "25ec074e72d11c6764d2240111e293086c2428eb83e4c4046e7f274cb0812021",
+      "git_blob_sha1": "00221911c5e194cdd189c893381ebd83af65362d"
+    },
+    {
+      "path": "astra4/verify_missed_routes.py",
+      "bytes": 8375,
+      "sha256": "85ead69a30d413c2d8ea767d52e628a9ee3d28bddfa34f4c1cdd7ed081501bc7",
+      "git_blob_sha1": "c1ca0e7a98eaa776a0365d07699768ad11439de5"
+    },
+    {
+      "path": "astra5/CONDUCTOR_TERMINATION.md",
+      "bytes": 13245,
+      "sha256": "40e252481070db0dc9ae087f8bbb3e577efd807c27fb70ade41320eadf36923b",
+      "git_blob_sha1": "4480a9c4405217dede92d8862ba68576dcd730c6"
+    },
+    {
+      "path": "astra5/verification.json",
+      "bytes": 4034,
+      "sha256": "01ecceabe790db08b305bc4114d647610217fae556ce2596d274b9db5edd95ac",
+      "git_blob_sha1": "b712f47f648243b31a87757d9571230c8ac84405"
+    },
+    {
+      "path": "astra5/verify_conductor_strike.py",
+      "bytes": 10828,
+      "sha256": "ca1240091dbb9b687e358c5b4ec71caa5a0face1394976427ccc12ac24874564",
+      "git_blob_sha1": "bd4fb56d274cf984223a299b0c711f3a8536acf2"
+    },
+    {
+      "path": "astra6/DEGREE_COLLAPSE.md",
+      "bytes": 7437,
+      "sha256": "c64be6aac572f567af9c7ca857b92a84d85a3c7fd9451778349752a682336a6d",
+      "git_blob_sha1": "5e44e33a354a84c63295721a76b8ab01e043341e"
+    },
+    {
+      "path": "astra6/EXCEPTIONAL_410.md",
+      "bytes": 1475,
+      "sha256": "fae741c29ba1ef0d32a1d7820a5d810603f8de8d7a792685f136dce1cdb30117",
+      "git_blob_sha1": "3e31cf8e7ac15db212c9217bce1d08b60c36d693"
+    },
+    {
+      "path": "astra6/EXCEPTIONAL_68.md",
+      "bytes": 7050,
+      "sha256": "beca324190f89c5a63682583724a354b22ff532b37eb5e10d7694ac26e02c8c4",
+      "git_blob_sha1": "7e92e4dcd519eb42927003f324bbb00a2a130687"
+    },
+    {
+      "path": "astra6/GLOBAL_POTENTIAL_THEOREM.md",
+      "bytes": 5591,
+      "sha256": "6307f77f083160c8cc1f8c0e9f39a7530866d59b1dcd83e8b59520d58408aabd",
+      "git_blob_sha1": "09f60c34dc8914911b84640e326d18918b4a4020"
+    },
+    {
+      "path": "astra6/derive_exceptional_system.py",
+      "bytes": 2992,
+      "sha256": "4d027b8a7dd1e77ace1457c0d3f2248466b7b61659de0a1e8d03f054ec30fe61",
+      "git_blob_sha1": "e2caa54ff8cffe74882a786b8e7e8ce721fba398"
+    },
+    {
+      "path": "astra6/derive_quartic10_system.py",
+      "bytes": 2978,
+      "sha256": "c27389aab6c39cd82599dc603e2980918df921e9c4bede4d9c0032395b9fa5e0",
+      "git_blob_sha1": "9151508b8fa677f2f3627ed22824b03e1b7a8af6"
+    },
+    {
+      "path": "astra6/exceptional_system.json",
+      "bytes": 20388,
+      "sha256": "d9fdf9a84777c8d49677e37bc7f12f5406802be64a5df9467d251a4bd98648de",
+      "git_blob_sha1": "49dd526b39e6989b94a2f28d909c5506e6c2970e"
+    },
+    {
+      "path": "astra6/polynomial_root_certificate.json",
+      "bytes": 6276,
+      "sha256": "ab1139fea9f12396f6bd8a38e59cfb0fd1f6fe672dbe8da21d917d553da6ef17",
+      "git_blob_sha1": "96d7ca73cc633ade5ba36cc9c510143a9338cfa8"
+    },
+    {
+      "path": "astra6/quartic10_system.json",
+      "bytes": 15347,
+      "sha256": "c3710fd0c70c37978b61b5d169d87a5b236d45c915e33f86eab68add2f093008",
+      "git_blob_sha1": "d2cd7e1c628ab4dc659d082b973938bdc70ef5fc"
+    },
+    {
+      "path": "astra6/verification.json",
+      "bytes": 2836,
+      "sha256": "07596ef3f4f2c5ba17f97e99478eb0c80e911098cfe9abb95b274fdac5fcd389",
+      "git_blob_sha1": "2a45fe0a200d51a88c906c0a0a8c3ca31aab6c6c"
+    },
+    {
+      "path": "astra6/verify_global_potential.py",
+      "bytes": 6282,
+      "sha256": "663202710bfe977d85d475b2a589d3dcb3c6aa4621db13bac23be76e8b1eeaff",
+      "git_blob_sha1": "1358510416580aa6432a2986e95052a18deb5aac"
+    },
+    {
+      "path": "astra6/verify_polynomial_root.py",
+      "bytes": 2818,
+      "sha256": "3d1aa9143e55f71c8a9e52e3166ee7962ff4b1b8f7e47d71d84806261531d03c",
+      "git_blob_sha1": "3a765d6ba6c432524da0c882bbfe81a0a2ebfc78"
+    },
+    {
+      "path": "astra7/OBSTRUCTION_410.md",
+      "bytes": 4585,
+      "sha256": "b61bf9d70566b4c5bd1b62eff03ec13ecb7fbc5aded54f662fdae89943f43d36",
+      "git_blob_sha1": "102d7f45c711565043e7af7d3ca0783114f740ae"
+    },
+    {
+      "path": "astra7/OBSTRUCTION_68.md",
+      "bytes": 6660,
+      "sha256": "d6ebc5b7ed94e9cc4a836d3b14fdac936cc01f99fab56f158f743997d3e7023e",
+      "git_blob_sha1": "633aa8253b7c88a4d2ef78edfb3cf61e85adbbdc"
+    },
+    {
+      "path": "astra7/certificate_410.json",
+      "bytes": 2070,
+      "sha256": "e692d82ba58e73f8d63669c8143c188b27d6bfabaeda4b75efff53e71e74d704",
+      "git_blob_sha1": "1341fa0ae7b096b85e097aadadc01c875a586924"
+    },
+    {
+      "path": "astra7/certificate_68.json",
+      "bytes": 3771,
+      "sha256": "623547fdca91544a2818e365a1e99eb16bab884bc3bd2cbb2b8872cc104547e0",
+      "git_blob_sha1": "7b31275e796c4b80afbfdac8556a315cb3c504d9"
+    },
+    {
+      "path": "astra7/controls_and_inputs.json",
+      "bytes": 2562,
+      "sha256": "24bedb25d158224e7d99ddbcfb230e3d85443510bc4085a3034ac6dc264183db",
+      "git_blob_sha1": "3da701d643202a91ea9a4c66f5d1e9e28085951b"
+    },
+    {
+      "path": "astra7/exact_tools.py",
+      "bytes": 1117,
+      "sha256": "c55318b33ec799f7fc513254885b2f20c57ddc35a0643ef85ab394efb9c6334e",
+      "git_blob_sha1": "b44b529ec9303d339b7f0433eb1e6afb076faaac"
+    },
+    {
+      "path": "astra7/verification_summary.json",
+      "bytes": 1850,
+      "sha256": "0170472a43735e8ed3266e5c6597cd1775a77f89c09fd28308fd97c7e7e9dedf",
+      "git_blob_sha1": "0d575e2e4b352c57f2f8c3ce6c81500213483077"
+    },
+    {
+      "path": "astra7/verify_410_obstruction.py",
+      "bytes": 3432,
+      "sha256": "3eb6b97ada0a5a0fa0890560d7f4817cb758cee05cae770de07f62512bab713b",
+      "git_blob_sha1": "ef43bcaf39637f2c1d2e1cdbb4146ed50c7861be"
+    },
+    {
+      "path": "astra7/verify_68_obstruction.py",
+      "bytes": 5943,
+      "sha256": "42baee7272fd25458e52a94390b62c8b745df667506715e7a226ac1c3b6bf3e6",
+      "git_blob_sha1": "38dea7ba8085bde769ea1491a049e23143535ae4"
+    },
+    {
+      "path": "astra7/verify_inputs_and_controls.py",
+      "bytes": 3396,
+      "sha256": "a61307e4baf6fa9a9b6bc64aca67b62f52396401ffe8f713bc93f248a9dd06ea",
+      "git_blob_sha1": "c8c584a311bb4dff9cfccb2f8443999d86833b3b"
+    },
+    {
+      "path": "astra8/LEADING_COEFFICIENT_INVARIANT.md",
+      "bytes": 3420,
+      "sha256": "125ee11253ffcf9987196c1e695c047d82895635dfd8dd40b5d9380daa4ed153",
+      "git_blob_sha1": "cc0dc71f79334571fb9170335312b086ae1db335"
+    },
+    {
+      "path": "astra8/OBSTRUCTION_69_NONCUBE.md",
+      "bytes": 6093,
+      "sha256": "396fbecbcf317f3f8cd2eef99451056c2602f01a2f4e4f570c28d6a903416c70",
+      "git_blob_sha1": "1e2b1e4389d9d47bde4f2989b1b2da31ec8b23e3"
+    },
+    {
+      "path": "astra8/RESONANT_69_SYSTEM.md",
+      "bytes": 7485,
+      "sha256": "7e086f5b0b597684a4f8ac99b89edc4c574b2640b3e5a8c383653057bb5112b5",
+      "git_blob_sha1": "211d0c024f7230419bc5d44f42bb9450e9b78711"
+    },
+    {
+      "path": "astra8/certificate_69_noncube.json",
+      "bytes": 2006,
+      "sha256": "1521f01ede848ecd6fb6a6c179f5dd4a933df0bb0f2db8b02d7e90eea29aadfb",
+      "git_blob_sha1": "8078d0ef774194e17a86417cd7e103b0a703f786"
+    },
+    {
+      "path": "astra8/derive_69_resonance.py",
+      "bytes": 4306,
+      "sha256": "0519bab9896b91fa7d87b5c6a2d830dc7683a70e92157962a6d2a672beb5c664",
+      "git_blob_sha1": "40425c2b0e66a3eb6f8d2867a7180bd76f40d4d3"
+    },
+    {
+      "path": "astra8/inputs_and_controls.json",
+      "bytes": 3436,
+      "sha256": "9000bef99662f827a486ce5dc9d46bfa642bc712db8020e192c74310895ef002",
+      "git_blob_sha1": "6b08de6c7ceb158eb0cf2a4582601ea07d8cadfd"
+    },
+    {
+      "path": "astra8/resonant_69_system.json",
+      "bytes": 6003,
+      "sha256": "d0cc0bf4c055dfe405c8907338af8fa333a580d5c65fbebe59bf33bb9f08716b",
+      "git_blob_sha1": "38d681e03e05b28d7870ba9a870212bb4b699655"
+    },
+    {
+      "path": "astra8/run_certificates.py",
+      "bytes": 1287,
+      "sha256": "3d93fe2461d9ac381aacbabb19d50641a5779020c1ac59b875e0c9a496d228c3",
+      "git_blob_sha1": "4d653e06f2d180a771ccce391f05fe2ab069b8a2"
+    },
+    {
+      "path": "astra8/verification_summary.json",
+      "bytes": 2187,
+      "sha256": "1491743edad4ac51e3f60226de547c920e7097292bd6ae36f21c4a084772349f",
+      "git_blob_sha1": "1704c739b96f6e72a0ba407bea1d6b14cea2af16"
+    },
+    {
+      "path": "astra8/verify_69_inputs_and_controls.py",
+      "bytes": 4788,
+      "sha256": "fda6fb13361af81f88028b511bfd67a7426a93863fd12a13d1b72eb4b8c8b0f3",
+      "git_blob_sha1": "73abfd209713d2b52d742e252b1901edeb0d2e7d"
+    },
+    {
+      "path": "astra8/verify_69_noncube.py",
+      "bytes": 4212,
+      "sha256": "204e7b62dd6c349262095439b1f89b3d17807896f2af9fb2209baa89eb2d0c61",
+      "git_blob_sha1": "7c7bf09693ca9dfc67a17cdff7ae2af47efff89f"
+    },
+    {
+      "path": "astra9/FULL_COLLISION_OBSTRUCTION.md",
+      "bytes": 5275,
+      "sha256": "9bc6a41b3519e4080a08af21e4abd7bfd23c840579e8658a496d6362892fa5b7",
+      "git_blob_sha1": "755cc1fdf7874d9b9ad5c2af05e9691a9cef8a13"
+    },
+    {
+      "path": "astra9/PROOF_AUDIT.md",
+      "bytes": 3452,
+      "sha256": "d6c2139ffce9b6a9f8fa60ea30b244aec73decede02b4257d57b4c9cdde54ea2",
+      "git_blob_sha1": "12b84130a708687e394b4975982d9ebdfb4d5d7f"
+    },
+    {
+      "path": "astra9/full_obstruction_certificate.json",
+      "bytes": 4657,
+      "sha256": "b048ed40c4335ef1deab88451691a72cc8a4304783f13cd7c142d8869cc4b7a8",
+      "git_blob_sha1": "b8ffba95a2b8794e0855361fe7380fa4934d1b6b"
+    },
+    {
+      "path": "astra9/verify_full_obstruction.py",
+      "bytes": 6033,
+      "sha256": "788798a04c9c947f8fc3821fc131ae53f7a16d36e40301b0dbc101fe785649b3",
+      "git_blob_sha1": "096fc46f447f8669a2f110b98a242419f31c4bf6"
+    },
+    {
+      "path": "record/README.md",
+      "bytes": 4592,
+      "sha256": "b6d4dc641af45e00ba615915cacd641227206dd7e87f0737fe0c091d9142c0e6",
+      "git_blob_sha1": "afe8e21fda847b0b4cc3794b68ef991eaa197ef0"
+    },
+    {
+      "path": "record/build_continuation.py",
+      "bytes": 4236,
+      "sha256": "c94edc04b3ab30ec01f496c4feb4e100d1c0ddc3d4f4a91ea2827f8d92981790",
+      "git_blob_sha1": "ff765859e75d493c3ae1ec4cc340a7cb1baf3c23"
+    }
+  ]
+}

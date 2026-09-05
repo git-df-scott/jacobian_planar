@@ -1,5 +1,13 @@
 # JC2 complete-record archive
 
+The frozen archive below retains its September 4 scope and counts. Work
+through September 5, Astra 12, is preserved in the separate
+[continuation index](CONTINUATION_INDEX.md),
+[checksummed manifest](CONTINUATION_FILES.json), and sections 15–19 of the
+[full campaign report](../JC2_COMPLETE_RECORD.md). Rebuild that supplement
+with `python record/build_continuation.py`; do not overwrite the frozen
+inventory to make its old counts appear current.
+
 Start with [JC2_COMPLETE_RECORD.md](../JC2_COMPLETE_RECORD.md). This directory
 is the exhaustive source index accompanying that readable campaign history.
 The frozen cutoff precedes the closing record commit on 2026-09-04.
