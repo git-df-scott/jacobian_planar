@@ -1,5 +1,8 @@
 # Astra 6 — global polynomial-potential strike
 
+Subsequent result: [Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) closes both
+degree-14 systems left open below. This file preserves the Astra 6 record.
+
 Date: 2026-09-05. Working branch: `astra/jc2-missed-routes-2026-09-05`.
 
 **Verdict: OPEN.** No polynomial counterexample was found. There is no

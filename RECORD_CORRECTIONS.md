@@ -1,5 +1,12 @@
 # JC2 closing-record corrections — 2026-09-04
 
+September 5 continuation: [Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) resolves
+both live degree-14 systems retained by Astra 6. This is a complete
+arbitrary-c-degree obstruction for (4,10) and (6,8), not a full obstruction
+for the collision subalgebra. The next unexcluded potential v-degree is
+15, with coordinate degrees (6,9). Both leading branches and the non-even
+root-trace cases in (6,8) are included in the new valuation proof.
+
 This file governs interpretation of the recovered and historical records.
 Original reports are preserved, including their retracted claims. The full
 source ledger is [CATCHES.md at the frozen Claude head](https://github.com/git-df-scott/jacobian_planar/blob/b233c708e9b43c597f6f2fa2e82a9b04fb5dd55a/CATCHES.md).

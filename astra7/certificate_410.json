@@ -1,0 +1,41 @@
+{
+  "status": "CLOSED_WITH_WRITTEN_LOCAL_VALUATION_PROOF",
+  "normalized_P": "a**2 + 2*a*x**2 + b*x + x**4 + z",
+  "normalized_Q": "a**5 + 5*a**4*x**2 + 5*a**3*b*x/2 + a**3*k + 10*a**3*x**4 + 5*a**3*z/2 + 15*a**2*b*x**3/2 + 3*a**2*k*x**2 + 10*a**2*x**6 + 15*a**2*x**2*z/2 + 15*a*b**2*x**2/8 + 3*a*b*k*x/2 + 15*a*b*x**5/2 + 15*a*b*x*z/4 + 3*a*k*x**4 + 3*a*k*z/2 + a*l + 5*a*x**8 + 15*a*x**4*z/2 + 15*a*z**2/8 + 5*b**3*x/16 + 3*b**2*k/8 + 15*b**2*x**4/8 + 15*b**2*z/16 + 3*b*k*x**3/2 + 5*b*x**7/2 + 15*b*x**3*z/4 + k*x**6 + 3*k*x**2*z/2 + l*x**2 + x**10 + 5*x**6*z/2 + 15*x**2*z**2/8",
+  "Jacobian_rows": {
+    "0": "b*(-5*a*b**2*da + 5*b**2*dz + 6*b*db*k + 15*b*db*z + 12*da*k*z + 8*da*l + 15*da*z**2)/8",
+    "1": "-(-30*a*b**2*dz - 24*a*b*db*k - 60*a*b*db*z - 5*b**3*db - 12*b**2*da*k - 30*b**2*da*z + 24*dz*k*z + 16*dz*l + 30*dz*z**2)/8",
+    "2": "-(-15*a*b**2*db - 5*b**3*da + 12*b*dz*k + 30*b*dz*z + 12*db*k*z + 8*db*l + 15*db*z**2)/4"
+  },
+  "first_integrals": {
+    "I2": "b*(5*a*b**2 - 12*k*z - 8*l - 15*z**2)/4",
+    "I1": "3*a*b**2*k/2 + 15*a*b**2*z/4 + 5*b**4/32 - 3*k*z**2/2 - 2*l*z - 5*z**3/4"
+  },
+  "Galois_anti_invariant_integral": "I2=0",
+  "beta_zero_case": "constant Jacobian row is identically zero",
+  "eliminated_a": "(12*k*z + 8*l + 15*z**2)/(5*b**2)",
+  "shift": "Z=z+2*k/5",
+  "cubic": "y^2+64*Z^3+A*Z=B",
+  "A": "-192*k**2/25 + 128*l/5",
+  "constant_offset_absorbed_into_B": "-128*k**3/125 + 128*k*l/25",
+  "original_Jacobian": "u*(10*y*Z_prime+15*Z*y_prime)/16",
+  "valuation_certificate": {
+    "initial": "nu(y),nu(Z)>=-1",
+    "if_Z_has_pole": {
+      "64Z^3": -3,
+      "y^2_lower_bound": -2,
+      "AZ_lower_bound": -1,
+      "B": 0
+    },
+    "conclusion": "Z,y regular; u vanishes; the Jacobian vanishes at c=0"
+  },
+  "leading_branches_covered": [
+    "rho=2/3",
+    "rho=4/3"
+  ],
+  "coefficient_degree_bound": null,
+  "source_sha256": {
+    "verify_410_obstruction.py": "3eb6b97ada0a5a0fa0890560d7f4817cb758cee05cae770de07f62512bab713b",
+    "exact_tools.py": "c55318b33ec799f7fc513254885b2f20c57ddc35a0643ef85ab394efb9c6334e"
+  }
+}

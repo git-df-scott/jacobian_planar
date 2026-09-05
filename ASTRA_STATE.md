@@ -1,5 +1,25 @@
 # ASTRA state — 2026-09-05
 
+## September 5 first live systems resolved — latest update
+
+[Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) proves **BOTH LIVE SYSTEMS CLOSED**:
+the complete (4,10) and (6,8) coordinate v-degree systems are impossible,
+with arbitrary coefficient degrees in c.
+
+- (4,10) reduces to a cubic first-integral relation and a Jacobian with a
+  forced vanishing factor at c=0.
+- (6,8) reduces to four algebraic first integrals. Exact pole comparisons
+  and a resultant force a final Jacobian expression to vanish at c=0.
+- Both leading roots, rho=2/3 and rho=4/3, and the whole non-even-trace
+  root component are covered. No division by an unknown function occurs
+  in the (6,8) proof.
+- Combined with Astra 6, no admissible potential has v-degree at most 14.
+  The next unexcluded range is potential v-degree 15, coordinate degrees
+  (6,9), up to exchange and the existing target reductions.
+- The full collision subalgebra and JC2 remain open. Written proofs and
+  exact certificates are in astra7; they are not externally reviewed or
+  machine-formalized. No conductor lifting or coefficient sweep was run.
+
 ## September 5 global polynomial-potential strike — latest update
 
 [Astra 6](ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md) continues the global problem

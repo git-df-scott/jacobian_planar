@@ -1,5 +1,10 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
+September 5 follow-up: [Astra 7 live-system closure](ASTRA_7_LIVE_SYSTEMS_CLOSED.md)
+proves the two complete degree-14 collision systems impossible and retains
+(6,9) as the next unexcluded coordinate-degree range. The historical
+archive below is preserved.
+
 September 5 follow-up: [Astra 4 missed-routes audit](ASTRA_4_MISSED_ROUTES.md)
 adds scoped proofs and corrections. The historical cutoff and inventory in
 this document are unchanged.

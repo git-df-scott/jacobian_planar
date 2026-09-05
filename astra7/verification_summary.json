@@ -1,0 +1,42 @@
+{
+  "verdict": "BOTH LIVE SYSTEMS CLOSED",
+  "coefficient_degree_bound": null,
+  "verification_commands": [
+    {
+      "command": "python astra7/verify_410_obstruction.py",
+      "exit_code": 0,
+      "result": "3 exact check groups PASS"
+    },
+    {
+      "command": "python astra7/verify_68_obstruction.py",
+      "exit_code": 0,
+      "result": "5 exact check groups PASS"
+    },
+    {
+      "command": "python astra7/verify_inputs_and_controls.py",
+      "exit_code": 0,
+      "result": "2 exact check groups PASS"
+    }
+  ],
+  "source_hashes_match_certificates": true,
+  "new_conductor_lifts": 0,
+  "generic_coefficient_sweeps": 0,
+  "next_unexcluded_coordinate_degrees": [
+    6,
+    9
+  ],
+  "next_unexcluded_potential_v_degree": 15,
+  "full_collision_subalgebra_closed": false,
+  "sha256": {
+    "ASTRA_7_LIVE_SYSTEMS_CLOSED.md": "0d0b3c52cb749cb3dbf0ff3a3f555e553a5a47e3cfe719eb677f418ed9e3bdc9",
+    "astra7/OBSTRUCTION_410.md": "b61bf9d70566b4c5bd1b62eff03ec13ecb7fbc5aded54f662fdae89943f43d36",
+    "astra7/OBSTRUCTION_68.md": "d6ebc5b7ed94e9cc4a836d3b14fdac936cc01f99fab56f158f743997d3e7023e",
+    "astra7/certificate_410.json": "e692d82ba58e73f8d63669c8143c188b27d6bfabaeda4b75efff53e71e74d704",
+    "astra7/certificate_68.json": "623547fdca91544a2818e365a1e99eb16bab884bc3bd2cbb2b8872cc104547e0",
+    "astra7/controls_and_inputs.json": "24bedb25d158224e7d99ddbcfb230e3d85443510bc4085a3034ac6dc264183db",
+    "astra7/exact_tools.py": "c55318b33ec799f7fc513254885b2f20c57ddc35a0643ef85ab394efb9c6334e",
+    "astra7/verify_410_obstruction.py": "3eb6b97ada0a5a0fa0890560d7f4817cb758cee05cae770de07f62512bab713b",
+    "astra7/verify_68_obstruction.py": "42baee7272fd25458e52a94390b62c8b745df667506715e7a226ac1c3b6bf3e6",
+    "astra7/verify_inputs_and_controls.py": "a61307e4baf6fa9a9b6bc64aca67b62f52396401ffe8f713bc93f248a9dd06ea"
+  }
+}

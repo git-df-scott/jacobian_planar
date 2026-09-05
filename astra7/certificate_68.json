@@ -1,0 +1,111 @@
+{
+  "status": "CLOSED_WITH_WRITTEN_LOCAL_VALUATION_PROOF",
+  "normalized_P": "a**3 + 3*a**2*x**2 + a*b*x - 3*a*k/2 + a*t + 3*a*x**4 + b*x**3 - 3*k*x**2/2 - 3*l/4 + t*x**2 + u*x + w + x**6",
+  "normalized_Q": "a**4 + 4*a**3*x**2 + 4*a**2*b*x/3 - a**2*k + 4*a**2*t/3 + 6*a**2*x**4 + 8*a*b*x**3/3 - 2*a*k*x**2 + 8*a*t*x**2/3 + 4*a*u*x/3 + 4*a*w/3 + 4*a*x**6 + 2*b**2*x**2/9 + 4*b*t*x/9 + 4*b*u/9 + 4*b*x**5/3 - k**2/2 - k*x**4 + 2*t**2/9 + 4*t*x**4/3 + 4*u*x**3/3 + 4*w*x**2/3 + x**8",
+  "redundant_parameter": "l is an additive target translation of P",
+  "invariants": {
+    "F4": "b**3 - 9*b*w - 9*t*u",
+    "C": "-12*a*b*u + 3*b**2*k - 4*b**2*t + 12*t*w + 6*u**2",
+    "F2": "-2*a*b**3 + 6*b**2*u - 9*b*k*t + 6*b*t**2 - 18*u*w",
+    "D": "27*a*b**2*k - 36*a*b**2*t + 54*a*u**2 + b**4 - 18*b**2*w - 54*b*k*u + 18*b*t*u - 27*k*t**2 + 12*t**3 - 54*w**2"
+  },
+  "row_identities": {
+    "4": "8*b**2*db/9 - 8*b*dw/3 - 8*db*w/3 - 8*dt*u/3 - 8*du*t/3",
+    "3": "8*a*b*du/3 + 8*a*db*u/3 + 8*b**2*dt/9 + 8*b*da*u/3 - 4*b*db*k/3 + 16*b*db*t/9 - 8*dt*w/3 - 8*du*u/3 - 8*dw*t/3",
+    "2": "-8*a*b*dw/3 - 8*a*db*w/3 - 8*a*dt*u/3 - 8*a*du*t/3 - 4*b**3*da/9 + 8*b**2*du/9 + 4*b*da*w/3 + 16*b*db*u/9 - 4*b*dt*k/3 + 16*b*dt*t/9 + 4*da*t*u/3 - 4*db*k*t/3 + 8*db*t**2/9 - 8*du*w/3 - 8*dw*u/3",
+    "1": "8*a**2*b*du/3 + 8*a**2*db*u/3 + 8*a*b*da*u/3 - 8*a*dt*w/3 - 8*a*dw*t/3 + 2*b**2*da*k/3 - 8*b**2*da*t/9 - 4*b**2*dw/9 + 4*b*dt*u/9 - 4*b*du*k/3 + 4*b*du*t/9 + 4*da*u**2/3 - 4*db*k*u/3 + 4*db*t*u/3 - 4*dt*k*t/3 + 8*dt*t**2/9 - 8*dw*w/3",
+    "0": "4*a*b**2*du/9 + 4*a*b*da*w/3 + 4*a*b*db*u/9 + 4*a*da*t*u/3 + 2*b*da*k*t/3 - 4*b*da*t**2/9 + 4*b*du*u/9 - 4*b*dw*t/9 + 4*da*u*w/3 + 4*db*u**2/9 + 4*dt*t*u/9"
+  },
+  "identity_residuals": {
+    "0": "0",
+    "1": "0",
+    "2": "0",
+    "3": "0",
+    "4": "0"
+  },
+  "Galois_consequences": [
+    "F4=0",
+    "F2=0",
+    "C constant",
+    "D constant"
+  ],
+  "scaled_residue_equations": [
+    "-2*A*B**3 + 6*B*TT**2",
+    "-36*A*B**2*TT + 12*TT**3"
+  ],
+  "resultant": "-73728*A**3*B**9",
+  "Bezout": {
+    "target": "1024*A^3*B^8",
+    "multipliers": [
+      "-512*A**2*B**5 + 192*A*B**3*TT**2",
+      "-96*A*B**4*TT"
+    ]
+  },
+  "valuation_checks": {
+    "first_u_pole": {
+      "unique_minimum": "-4",
+      "term": "54*a*u**2",
+      "bounds": {
+        "a": "-1",
+        "b": "-1/2",
+        "t": "-1",
+        "u": "-3/2",
+        "w": "-1"
+      }
+    },
+    "first_w_pole": {
+      "unique_minimum": "-4",
+      "term": "-54*w**2",
+      "bounds": {
+        "a": "-1",
+        "b": "-1/2",
+        "t": "-1",
+        "u": "-1/2",
+        "w": "-2"
+      }
+    },
+    "second_u_pole": {
+      "unique_minimum": "-2",
+      "term": "54*a*u**2",
+      "bounds": {
+        "a": "-1",
+        "b": "1/2",
+        "t": "0",
+        "u": "-1/2",
+        "w": "1"
+      }
+    },
+    "second_w_pole": {
+      "unique_minimum": "-2",
+      "term": "-54*w**2",
+      "bounds": {
+        "a": "-1",
+        "b": "1/2",
+        "t": "0",
+        "u": "1/2",
+        "w": "-1"
+      }
+    },
+    "second_F2_constraint": "all terms except -18*u*w have order >=1/2"
+  },
+  "final_orders": {
+    "a": "-1",
+    "b": ">=1/2",
+    "u": ">=1/2",
+    "t": ">=0",
+    "w": ">=0"
+  },
+  "original_Jacobian": "4/9*(B*(a*b*u)prime+U*(b*u)prime-B*t*wprime+U*t*tprime)",
+  "contradiction": "B=sqrt(h)*b and U=sqrt(h)*u vanish at c=0; all other factors are regular",
+  "leading_branches_covered": [
+    "rho=2/3",
+    "rho=4/3"
+  ],
+  "even_trace_assumption": false,
+  "division_by_unknown_function": false,
+  "coefficient_degree_bound": null,
+  "source_sha256": {
+    "verify_68_obstruction.py": "42baee7272fd25458e52a94390b62c8b745df667506715e7a226ac1c3b6bf3e6",
+    "exact_tools.py": "c55318b33ec799f7fc513254885b2f20c57ddc35a0643ef85ab394efb9c6334e"
+  }
+}

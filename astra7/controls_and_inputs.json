@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "root_conversion": "R=x^2+a",
+  "cubic_remainder_conversion": {
+    "b": "S3/h**(3/2)",
+    "d": "S2/h - 3*S3*ss/(2*h**2)",
+    "e": "S1/sqrt(h) - S2*ss/h**(3/2) + 3*S3*ss**2/(4*h**(5/2))",
+    "f": "S0 - S1*ss/(2*h) + S2*ss**2/(4*h**2) - S3*ss**3/(8*h**3)"
+  },
+  "original_Jacobian_factor": "sqrt(h)",
+  "leading_root_pole_cancellations": "0 for both systems, for generic rho",
+  "coefficient_of_c_minus_1_in_a": "-h1*rho**2/4",
+  "branches_checked": [
+    "2/3",
+    "4/3"
+  ],
+  "global_gate_controls": {
+    "status": "PASS",
+    "positive_controls": [
+      {
+        "g": "v",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "c",
+        "Q_in_B": true,
+        "collision_Keller": false
+      },
+      {
+        "g": "c",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": true,
+        "ambient_Keller": true,
+        "Q": "-v",
+        "Q_in_B": false,
+        "collision_Keller": false
+      },
+      {
+        "g": "c + v**2",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "-v",
+        "Q_in_B": false,
+        "collision_Keller": false
+      },
+      {
+        "g": "c**2 + v",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "c**4 + 2*c**2*v + c + v**2",
+        "Q_in_B": false,
+        "collision_Keller": false
+      }
+    ],
+    "negative_controls": [
+      {
+        "g": "1",
+        "identity_residual": "-1",
+        "admissible_H": true,
+        "g_in_B": true,
+        "ambient_Keller": false
+      },
+      {
+        "g": "c",
+        "identity_residual": "81*c**5*v**5/4 - 135*c**4*v**4/4 - 81*c**4*v**3/2 + 18*c**3*v**3 + 81*c**3*v**2/2 + 81*c**3*v/4 - 3*c**2*v**2 - 9*c**2*v - 27*c**2/4",
+        "admissible_H": true,
+        "g_in_B": true,
+        "ambient_Keller": false
+      }
+    ],
+    "formal_limit_rejection": "valuation_c(c*(Q+v)^2)=1+2k cannot be 0",
+    "no_additional_conductor_orders": true
+  },
+  "next_unexcluded_potential_v_degree": 15,
+  "next_coordinate_v_degrees": [
+    [
+      6,
+      9
+    ]
+  ],
+  "degree_13_obstruction_reopened": false,
+  "new_conductor_lifts": 0,
+  "source_sha256": {
+    "verify_inputs_and_controls.py": "a61307e4baf6fa9a9b6bc64aca67b62f52396401ffe8f713bc93f248a9dd06ea",
+    "exact_tools.py": "c55318b33ec799f7fc513254885b2f20c57ddc35a0643ef85ab394efb9c6334e"
+  }
+}
