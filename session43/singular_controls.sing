@@ -1,0 +1,18 @@
+ring R=1000003,(x,y,z),dp;
+// (1) a system WITH a solution: must NOT report EMPTY
+ideal A = x-1, y-2, z-3;
+ideal GA = slimgb(A);
+"CTL1 has-solution:"; if (size(GA)==1 and GA[1]==1) { "WRONG: reported EMPTY"; } else { "OK: not the unit ideal"; }
+// (2) a genuinely inconsistent system: must report EMPTY
+ideal B = x-1, x-2;
+ideal GB = slimgb(B);
+"CTL2 inconsistent:"; if (size(GB)==1 and GB[1]==1) { "OK: reported EMPTY"; } else { "WRONG: missed the inconsistency"; }
+// (3) a saturated system with no solution in the chart: t*x-1 with x=0
+ideal C = x, x*z-1;
+ideal GC = slimgb(C);
+"CTL3 saturation-empty:"; if (size(GC)==1 and GC[1]==1) { "OK: reported EMPTY"; } else { "WRONG"; }
+// (4) positive-dimensional: must NOT be the unit ideal
+ideal D = x*y;
+ideal GD = slimgb(D);
+"CTL4 positive-dim:"; if (size(GD)==1 and GD[1]==1) { "WRONG"; } else { "OK: not the unit ideal"; } dim(std(GD));
+quit;

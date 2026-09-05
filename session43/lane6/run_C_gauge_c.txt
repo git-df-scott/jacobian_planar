@@ -1,0 +1,9 @@
+sweeping c (a = 1 pinned by the problem) ; conditions to rung 24
+  p     points        N1       N2      N3   first-fail of the N3 points
+  29     659344     21420      980      56   [('p3', 25)]   [19.4s]
+  37    1774224     47196     1332      72   [('p3', 25)]   [52.7s]
+  41    2689600     66160     1520      40   [('p3', 25)]   [78.0s]
+  43    3261636     74508     1554       0   -   [97.2s]
+
+points surviving EVERY condition to rung 40: NONE
+wrote lane6_gauge_c.json

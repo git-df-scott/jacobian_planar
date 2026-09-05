@@ -1,0 +1,27 @@
+{
+ "t44": {
+  "levels": 7,
+  "d": 1,
+  "completed_descents": 0,
+  "trials": 120,
+  "failures": {
+   "('INCONSISTENT', 2, 6)": 120
+  },
+  "collision_pattern_of_completed": {},
+  "level_dims(k,g,rows,nullity)": [
+   [
+    0,
+    8,
+    0,
+    0
+   ],
+   [
+    1,
+    7,
+    8,
+    5
+   ]
+  ],
+  "sample": null
+ }
+}
