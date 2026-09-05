@@ -1,5 +1,9 @@
 # Astra 8 — degree-15 strike: a noncube obstruction and a live resonance
 
+**Superseded by [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md): the entire
+collision route is now closed in arbitrary degree.** The OPEN status and
+residual systems below are preserved as the historical Astra 8 result.
+
 Date: 2026-09-05. Branch: `astra/jc2-missed-routes-2026-09-05`.
 Continues directly from Astra 7, commit `c983d81d55d9`.
 

@@ -18,6 +18,10 @@ The inventory covers 35,078 branch/file occurrences, deduplicated to 10,062 dist
 
 ## Latest research
 
+- [Astra 9: full collision-route closure](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md):
+  an arbitrary-degree theorem excludes every polynomial Keller pair in
+  C[b,c]+Delta*C[v,c]. This includes the previously open degree-15 resonance;
+  the general planar Jacobian conjecture is not settled by this result.
 - [Astra 1: target/source compatibility](TARGET_SOURCE_COMPATIBILITY.md), exact H3 controls and the bounded six-blowup exclusion.
 - [Astra 2: quadrilateral exact descent](ASTRA_2_CASE2_EXACT_DESCENT.md), with a five-orbit completeness proof and explicit characteristic-zero contradiction.
 - [Astra 3: pentagon projective obstruction](ASTRA_3_PENTAGON_PROJECTIVE.md), with both projective charts certified and exact good reduction checked.

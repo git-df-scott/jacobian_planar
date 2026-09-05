@@ -203,3 +203,19 @@ Current counterexample status: no CEC and no CE.
   enumerated, and original recovered file bytes were checked by SHA-256.
 - This was a closeout and reconciliation, not a new full solver campaign or
   a claim that every historical computation was independently replayed.
+
+## 2026-09-05 — Astra 9, full collision-route closure
+
+- Continued from Astra 8 commit 05a36d66cd0a and its exact degree-15 resonance.
+- Located the missing no-slope-one-edge obstruction in Guccione--Guccione--
+  Valqui, arXiv:1605.09430v2, Corollary 1.6; verified its unrestricted polynomial
+  hypotheses and supplied the exact fibre-residue proof used here.
+- Proved collision parity forces the forbidden edge at every positive mixed
+  weight, in arbitrary degrees. If neither component has positive weight,
+  the Jacobian is divisible by c. Therefore the full collision algebra has
+  no polynomial pair with a nonzero constant Jacobian.
+- Saved the full theorem, boundary-case audit, exact symbolic verifier and
+  certificate in astra9. All seven checks passed, including ramified and
+  ordinary Keller controls; no conductor lifts or degree sweeps were run.
+- Updated canonical state and routing, and superseded Astra 8's OPEN report.
+  This closes the specified collision construction, not the general JC2 problem.

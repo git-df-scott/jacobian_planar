@@ -1,6 +1,25 @@
 # ASTRA state — 2026-09-05
 
-## September 5 degree-15 strike — latest update
+## September 5 full collision-route closure — current
+
+[Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md) proves
+**FULL COLLISION-ROUTE CLOSURE**. For arbitrary finite P,Q in
+C[b,c]+Delta*C[v,c], a constant Jacobian must be zero.
+
+- Collision parity forces a nonmonomial positive mixed-weight leading form.
+- Such a form has the forbidden slope-one Newton edge: an exact algebraic
+  fibre branch makes the polynomial potential have a nonzero residue.
+- Thus both components must have nonpositive mixed weight, which makes their
+  Jacobian divisible by c and therefore zero on c=0.
+- This covers the entire (6,9) resonance, both rho alternatives, every N,
+  and all higher degrees. No polynomial potential passes the global criterion.
+- The proof is in astra9, with seven passing exact checks and an independent
+  published match for the slope-one obstruction. It is not proof-assistant
+  formalized. The general JC2 conjecture is not settled by this scoped theorem.
+
+The older OPEN paragraphs below are historical and superseded for this lane.
+
+## September 5 degree-15 strike — historical
 
 [Astra 8](ASTRA_8_DEGREE15_STRIKE.md) remains **OPEN**. The requested full-route
 decisive outcome has not been established.
@@ -239,12 +258,11 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
    target census; use longitude-consistent marks and local boundary incidence
    unless a Keller-specific theorem removes the distinction.
 
-## TOP THREE ATTACKS
+## ATTACK ROUTING AFTER ASTRA 9
 
-1. **Global collision-subalgebra construction.** Use Astra 5's polynomial
-   potential and gcd/closedness gate, or its necessary hyperbola factorization,
-   subject to separate infinity residues and the new mixed-weight exclusions.
-   Increasing formal conductor order does not identify polynomial candidates.
+1. **Global collision-subalgebra construction — CLOSED.** Astra 9's arbitrary-
+   degree parity and infinity-residue theorem excludes the entire algebra.
+   No further coefficient systems or conductor lifts are a live CE target here.
 2. **Residue-free Briançon construction.**  Search embeddings realizing a
    triple-pole exact differential, with Gate 0 and positive controls first.
 3. **Above-125 provenance repair.** Derive the missing lower corner and c'
@@ -253,6 +271,9 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
 
 ## DO-NOT-REPEAT LIST
 
+- Do not reopen C[b,c]+Delta*C[v,c] in higher degrees. The full obstruction
+  is now in astra9/FULL_COLLISION_OBSTRUCTION.md; a concrete flaw in that
+  proof would be needed to reopen the lane.
 - Do not count arbitrary-order conductor jets, even with the correct trace
   residue and both displayed coordinates varying, as evidence of polynomial
   termination. The explicit Astra 5 control passes those tests and never

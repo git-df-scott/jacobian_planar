@@ -1,5 +1,12 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
+Current September 5 result: [Astra 9 full collision-route closure](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
+proves that no finite P,Q in C[b,c]+Delta*C[v,c] have a nonzero constant
+Jacobian, in arbitrary degrees. Collision parity forces a forbidden
+slope-one Newton edge unless both components have nonpositive mixed weight;
+then their Jacobian vanishes on c=0. The following earlier OPEN verdicts
+are superseded for this construction. The general JC2 problem is not settled.
+
 September 5 follow-up: [Astra 8 degree-15 strike](ASTRA_8_DEGREE15_STRIKE.md)
 excludes the noncube-h (6,9) component and proves a necessary leading-coefficient
 invariant in arbitrary degree. The exact resonant degree-15 system, and the

@@ -1,5 +1,15 @@
 # JC2 closing-record corrections — 2026-09-04
 
+Current September 5 correction: [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
+closes the full collision subalgebra in arbitrary degree. The missed input
+in Astra 6--8 was the no-slope-one-edge theorem for a polynomial Keller
+component. Their collision-parity leading forms already force that forbidden
+edge at positive mixed weight. The complementary nonpositive-weight case
+has Jacobian divisible by c. Thus their residual systems cannot produce a
+Keller pair, and their OPEN verdicts for this algebra are now superseded.
+The older records and certificates remain historical; they are not relabelled
+as finite certificates of the new arbitrary-degree theorem.
+
 September 5 continuation: [Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) resolves
 both live degree-14 systems retained by Astra 6. This is a complete
 arbitrary-c-degree obstruction for (4,10) and (6,8), not a full obstruction

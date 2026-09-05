@@ -1,5 +1,12 @@
 # Astra handoff — 2026-09-04, third run
 
+**Current September 5 update:** [Astra 9](ASTRA_9_FULL_COLLISION_ROUTE_CLOSURE.md)
+proves FULL COLLISION-ROUTE CLOSURE for C[b,c]+Delta*C[v,c] in arbitrary
+degree. The degree-15 resonance and every higher-degree potential in this
+algebra are excluded by parity, the slope-one Newton-edge residue obstruction,
+and a final factor c in the Jacobian. Use ASTRA_STATE.md for current routing;
+the older run-specific handoff below is historical.
+
 **Closeout update:** the complete historical record and recovered nights 25–26
 are on `astra/jc2-complete-record-2026-09-04`. Start with
 `JC2_COMPLETE_RECORD.md` and `RECORD_CORRECTIONS.md`; the latter excludes the
