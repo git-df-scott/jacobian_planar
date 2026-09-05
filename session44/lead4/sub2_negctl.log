@@ -1,0 +1,4 @@
+NEGATIVE CONTROL: 46 conditions, 23 free, vertex non-degeneracies DROPPED (nondeg=[])
+  a broken engine would report EMPTY here; a sound one must find the
+  all-zero / face-only solutions alive.
+TIMEOUT after 1700s

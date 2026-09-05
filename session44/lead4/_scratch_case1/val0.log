@@ -1,0 +1,15 @@
+=== POSITIVE CONTROL: the face-only point (all parameters 0) ===
+  parameters: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+  conditions satisfied at this point: YES
+  P has 8 monomials, all inside N(P): True
+  Q has 11 monomials, all inside N(Q): True
+  [P,Q] computed directly = x^2  -- CASCADE VERIFIED
+  vertex coefficients: {(0, 8): 0, (8, 16): 0, (0, 12): 0, (12, 24): 0}
+
+=== POSITIVE CONTROL: a non-trivial point of the cascade ===
+  parameters: [0, 0, 3, 0, 0, 7, 0, 0, 0]
+  conditions satisfied at this point: YES
+  P has 9 monomials, all inside N(P): True
+  Q has 12 monomials, all inside N(Q): True
+  [P,Q] computed directly = x^2  -- CASCADE VERIFIED
+  vertex coefficients: {(0, 8): 0, (8, 16): 0, (0, 12): 0, (12, 24): 0}

@@ -1,0 +1,45 @@
+=== p=8053 cover 0/5  f=[1, 7884, 5385, 6199, 6178, 7329, 4243, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_8053 for this face point
+
+=== p=8053 cover 1/5  f=[1, 1759, 6389, 3603, 2589, 1196, 5553, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_8053 for this face point
+
+=== p=8053 cover 2/5  f=[1, 7027, 1088, 376, 5362, 18, 3325, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_8053 for this face point
+
+=== p=8053 cover 3/5  f=[1, 1159, 6277, 4809, 5780, 7110, 6061, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1281 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_8053 for this face point
+
+=== p=8053 cover 4/5  f=[1, 8047, 2566, 5721, 1334, 1355, 5896, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_8053 for this face point
+

@@ -1,0 +1,7 @@
+target: (8,28) case (2) quadrilaterals  [OPEN in GGHV] | DIRECT (72,108)
+gauge: a_0_1 = 1; method: ideal reduction (no radicals, all branches carried at once)
+
+  level 4: 1 conds, 0 solved, ideal has 1 relation(s)
+  level 6: 1 conds, 0 solved, ideal has 2 relation(s)
+  level 8: 1 conds, 0 solved, ideal has 3 relation(s)
+  level 10: 1 conds, 0 solved, ideal has 4 relation(s)

@@ -1,0 +1,8 @@
+W=   3 eqs  18 unk  19 rank  17 newparams 2 newconds  0 (deg<=0)  params 2 conds 0
+W=   2 eqs  19 unk  21 rank  18 newparams 3 newconds  0 (deg<=0)  params 5 conds 0
+W=   1 eqs  20 unk  21 rank  18 newparams 3 newconds  0 (deg<=0)  params 8 conds 0
+W=   0 eqs  20 unk  19 rank  18 newparams 1 newconds  2 (deg<=4)  params 9 conds 2
+      ideal after this level: dim 8
+W=  -1 eqs  21 unk  17 rank  17 newparams 0 newconds  2 (deg<=5)  params 9 conds 4
+      ideal after this level: dim 7
+W=  -2 eqs  20 unk  15 rank  15 newparams 0 newconds  4 (deg<=6)  params 9 conds 8

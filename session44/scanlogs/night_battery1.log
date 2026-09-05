@@ -1,0 +1,31 @@
+### 900 1 --gauge 0
+j=1 (pair 64,48) mu3=0 sat[mu0!=0]=True: EMPTY
+### 1800 2 --gauge 1
+j=2 (pair 112,80) mu3=1 sat[mu0!=0]=True: NONEMPTY
+### 1800 2 --gauge 0
+j=2 (pair 112,80) mu3=0 sat[mu0!=0]=True: EMPTY
+### 1800 2 --gauge 1 --satvar mu1
+j=2 (pair 112,80) mu3=1 sat[mu1!=0]=True: EMPTY
+### 1800 2 --gauge 1 --satvar mu2
+### 1800 2 --gauge 1 --satvar mu2
+### 1800 2 --gauge 1 --satvar mu2
+j=2 (pair 112,80) mu3=1 sat[mu2!=0]=True: UNPARSED
+### 2400 3 --gauge 1
+j=3 (pair 160,112) mu3=1 sat[mu0!=0]=True: UNPARSED
+### 2400 3 --gauge 0
+j=3 (pair 160,112) mu3=0 sat[mu0!=0]=True: UNPARSED
+### 2400 3 --gauge 1 --satvar mu1
+j=3 (pair 160,112) mu3=1 sat[mu1!=0]=True: UNPARSED
+### 3000 4 --gauge 1
+j=4 (pair 208,144) mu3=1 sat[mu0!=0]=True: UNPARSED
+### 3000 4 --gauge 1 --satvar mu1
+j=4 (pair 208,144) mu3=1 sat[mu1!=0]=True: UNPARSED
+### 3600 5 --gauge 1
+j=5 (pair 256,176) mu3=1 sat[mu0!=0]=True: UNPARSED
+### 3600 6 --gauge 1
+j=6 (pair 304,208) mu3=1 sat[mu0!=0]=True: UNPARSED
+### 3600 7 --gauge 1
+j=7 (pair 352,240) mu3=1 sat[mu0!=0]=True: UNPARSED
+### 3600 7 --gauge 1 --satvar mu1
+j=7 (pair 352,240) mu3=1 sat[mu1!=0]=True: UNPARSED
+BATTERY2-DONE

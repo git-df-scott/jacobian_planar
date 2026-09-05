@@ -1,0 +1,9 @@
+ring R = 32003, (b1,z), dp;
+ideal I;
+I = I + ideal((3)*1*b1 + (-2)*1*1);
+I = I + ideal(z*b1 - 1);
+"equations: 1  unknowns: 2";
+ideal G = std(I);
+if (size(G)==1 && G[1]==1) { "VERDICT: EMPTY"; }
+else { "VERDICT: NONEMPTY  dim = " + string(dim(G)); if (dim(G)==0) { "  vdim = " + string(vdim(G)); } }
+quit;

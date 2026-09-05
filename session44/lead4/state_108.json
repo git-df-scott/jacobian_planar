@@ -1,0 +1,17 @@
+{
+ "(8,28) case (2) quadrilaterals  [OPEN in GGHV] | DIRECT (72,108)": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 799,
+    "out": "params: 25 | conditions: 140 |  | Singular error: no more memory | System 5468356k:5468356k Appl 5208987k/102631k Malloc 5618k/0k Valloc 5306000k/102631k Pages 1326500/0 Regions 3010:3010 Internal: 393384 |  | halt 14"
+   }
+  },
+  "max": 108,
+  "params": 25,
+  "tier": "deg108-open",
+  "budget": 3600,
+  "secs": 799
+ }
+}

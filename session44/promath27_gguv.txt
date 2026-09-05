@@ -1,0 +1,775 @@
+A DIFFERENTIAL EQUATION FOR
+POLYNOMIALS RELATED TO THE
+JACOBIAN CONJECTURE
+Christian Valqui1 , Jorge A. Guccione 2 and Juan
+J. Guccione 2
+October, 2013
+
+Abstract
+We analyze a possible minimal counterexample to the
+Jacobian Conjecture P, Q with gcd(deg(P ), deg(Q)) = 16
+and show that its existence depends only on the existence of
+solutions for a certain Abel differential equation of the
+second kind.
+MSC(2010): 16S32, 16W20
+Keywords: Jacobian, Abel differential equation.
+
+1
+
+Sección Matemáticas, PUCP; Inst. Mat. y Ciencias Afines (IMCA).
+PUCP-DGI-2013-3036, PUCP-DGI-2012-0011.
+2
+Dpto. de Mat. Fac. de Ciencias Exactas y Naturales-UBA, Argentina.
+PIP 112-200801-00900 (CONICET).
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+1
+
+Introduction
+
+In a recent article [1], we managed to describe the shape of possible
+minimal counterexample to JC (the Jacobian conjecture as stated in [3])
+given by a pair of polynomials (P, Q) with gcd(deg(P ), deg(Q)) = B,
+where
+
+
+∞
+if JC is true,
+
+
+
+
+B :=
+
+
+min gcd(deg(P ), deg(Q)) where (P, Q) is a counterexample
+
+
+
+
+to JC, if JC is false.
+We arrived at the following theorem (See [1, Theorem 8.10]):
+Theorem 1.1 If B = 16, then there exist µ0 , µ1 , µ2 , µ3 ∈ K with
+µ0 6= 0 and P, Q ∈ L := K[x, y] such that
+`1,−1 (P ) = x3 y + µ3 x2 ,
+
+`1,−1 (Q) = x2 y + µ3 x
+
+and
+[P, Q] = x4 y + µ0 + µ1 x + µ2 x2 + µ3 x3 .
+
+(1.1)
+
+Moreover, there exists j ∈ N such that {(j, 1)} = Dir(P ) = Dir(Q),
+stj,1 (P ) = (3, 1), stj,1 (Q) = (2, 1), enj,1 (P ) = (0, m), enj,1 (Q) = (0, n),
+where m = 3j + 1 and n = 2j + 1.
+By [2, Theorem 2.23] we know that B ≥ 16. Hence, if we can prove that
+such a pair cannot exist, necessarily B > 16.
+In Section 2 we will show how the existence of such a pair (P, Q) would
+allow the construction of a counterexample to the Jacobian Conjecture.
+We use the notations of [1].
+In Section 3 we write, according to Theorem 1.1,
+P = x3 y + x2 p2 (y) + xp1 (y) + p0 (y)
+84
+
+and Q = x2 y + xq1 (y) + q0 (y).
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+Then the condition (1.1) translates into a system of four first order differential equations for the polynomials p0 , p1 , q0 , q1 , q2 . We reduce this
+system to a single equation for two polynomials and we prove the following theorem:
+Theorem 1.2 B = 16 if and only if there exist A, q1 ∈ K[y] and
+µ0 , µ1 , µ2 , µ3 ∈ K with µ0 6= 0,
+1
+A(0) = − µ23 ,
+4
+
+A0 (0) = µ2
+
+and
+
+µ3 A00 (0) = −6µ1 − 2µ3 q100 (0), (1.2)
+
+such that
+µ3
+µ2
+q2
+q1 −
+y
+6 A− 1 +
+4
+4
+6
+
+
+2
+
+=4yAA0 + 6
+
+µ
+
+3
+
+4
+
+q1 −
+
+µ2 2
+y
+6
+
+− µ2 yq12 + 3µ1 y 2 q1 − 6µ0 y 3 .
+
+(1.3)
+
+We were not able to obtain a solution of (1.3) satisfying (1.2) with
+µ0 6= 0 (which would yield a counterexample to the JC), nor could we
+discard the existence of such a solution (which would prove B > 16). We
+analyze some particular cases of (1.3), for example we show that for µ3 =
+µ2 = µ1 = µ0 = 0 the only possible solutions are (ρ, σ)-homogeneous
+for (ρ, σ) = (j, 1), where j + 1 = deg(q1 ). We also recognize (1.3) as an
+Abel differential equation of second kind, for which no general solution
+is known. Using a standard trick we write this equation in a shorter
+form in (3.7) and in (3.8).
+
+2
+
+Construction of an counterexample
+
+We reverse the order of the construction leading to Theorem 8.10
+of [1]. Starting from a pair (P, Q) as in Theorem 1.1, we apply different
+automorphisms of L and L(1) and obtain a counterexample (P̃ , Q̃) with
+gcd(deg(P̃ ), deg(Q̃)) = 16.
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+85
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+Recall from [1] the automorphisms ψ1 ∈ Aut(L) and ψ3 ∈ Aut(L(1) )
+given by
+ψ1 (x) := y,
+
+ψ3 (x) := x−1 ,
+
+ψ1 (y) := −x,
+
+ψ3 (y) := x3 y.
+
+For (ρ, σ) ∈ V and k ∈ {1, 3}, we define (ρk , σk ) := ψ k (ρ, σ) by
+ψ 1 (ρ, σ) := (σ, ρ)
+
+and ψ 3 (ρ, σ) :=
+
+(
+(−ρ, 3ρ + σ)
+
+if (ρ, σ) ≤ (−1, 2),
+
+(ρ, −3ρ − σ)
+
+if (ρ, σ) > (−1, 2).
+
+We have following lemma (See [1, Lemma 6.6]):
+Lemma 2.1 Let P ∈ L(1) . The maps ψ1 and ψ3 satisfy the following
+properties:
+1. For all i, j ∈ N0 we have vρ1 ,σ1 (ψ1 (xi y j )) = vρ,σ (xi y j ), and if
+P ∈ L, then
+`ρ1 ,σ1 (ψ1 (P )) = ψ1 (`ρ,σ (P )) and ``ρ1 ,σ1 (ψ1 (P )) = ψ1 (``ρ,σ (P )) .
+2. If (ρ, σ) ≤ (−1, 2), then we have vρ3 ,σ3 (ψ3 (xi y j )) = vρ,σ (xi y j ) for
+all i ∈ N0 and j ∈ Z,
+`ρ3 ,σ3 (ψ3 (P )) = ψ3 (`ρ,σ (P )) and ``ρ3 ,σ3 (ψ3 (P )) = ψ3 (``ρ,σ (P )) .
+3. If (ρ, σ) > (−1, 2), then vρ3 ,σ3 (ψ3 (xi y j )) = −vρ,σ (xi y j ) for all
+i ∈ N0 and j ∈ Z,
+`ρ3 ,σ3 (ψ3 (P )) = ψ3 (``ρ,σ (P )) and ``ρ3 ,σ3 (ψ3 (P )) = ψ3 (`ρ,σ (P )) .
+Moreover clearly Jac(ψ1 ) = [ψ1 (x), ψ1 (y)] = 1 and Jac(ψ3 ) = −x.
+Let (P, Q) be as in Theorem 1.1.
+86
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+FIRST STEP:
+Set P1 := ψ3 (P ) and Q1 := ψ3 (Q) and (ρ̃, σ̃) := (−j, 3j + 1). Using
+Lemma 2.1 one checks that PredP1 (ρ̃, σ̃) = PredQ1 (ρ̃, σ̃) = (1, −1),
+enρ̃,σ̃ (P1 ) = (0, 1),
+
+enρ̃,σ̃ (Q1 ) = (1, 1),
+
+w(``−1,3 (P1 )) = m(3, 1),
+
+and
+w(``−1,3 (Q1 )) = n(3, 1), `−1,2 (P1 ) = y+µ3 x−2 , `−1,2 (Q1 ) = xy+µ3 x−1 ,
+where m := 3j + 1 and n := 2j + 1. Moreover, using that
+[ϕ(P ), ϕ(Q)] = ϕ([P, Q])[ϕ(x), ϕ(y)],
+for all morphisms ϕ, we obtain
+[P1 , Q1 ] = −(y + µ0 x + µ1 + µ2 x−1 + µ3 x−2 ).
+
+SECOND STEP
+Set P2 := ϕ0 (P1 ) and Q2 := ϕ0 (Q1 ), where ϕ0 (y) := y − (µ0 x + µ1 +
+µ2 x−1 + µ3 x−2 ) and ϕ0 (x) := x (note that Jac(ϕ0 ) = 1). Then P2 , Q2 ∈
+L and
+[P2 , Q2 ] = −y, Dir(P2 ) = Dir(Q2 ) = {(ρ̃, σ̃), (1, 1)}, enρ̃,σ̃ (P2 ) = (0, 1),
+and
+enρ̃,σ̃ (Q2 ) = (1, 1), `1,1 (P2 ) = λP R2m
+
+and `1,1 (Q2 ) = λQ R2n ,
+
+for R2 = x3 (y − µ0 x).
+THIRD STEP
+Since P2 , Q2 ∈ L, we can apply ψ1 . We set P3 := ψ1 (P2 ), Q3 := ψ1 (Q2 )
+and (ρ, σ) := (3j + 1, −j). Then
+[P3 , Q3 ] = −x, Dir(P3 ) = Dir(Q3 ) = {(ρ, σ), (1, 1)}, enρ,σ (P3 ) = (1, 0),
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+87
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+y
+
+y
+
+Q1
+Q
+x
+
+ψ3
+
+x
+y
+
+y
+
+P1
+
+P
+x
+
+x
+ϕ0
+y
+Q2
+
+x
+y
+P2
+
+x
+
+Figure 1: Illustration of the first two steps, for j = 1.
+and
+enρ,σ (Q3 ) = (1, 1), `1,1 (P3 ) = λ̃P R3m
+
+and `1,1 (Q3 ) = λ̃Q R3n ,
+
+for R3 = y 3 (y + µ10 x).
+FOURTH STEP(Figure 2)
+We set P4 := ψ3 (P3 ), Q4 := ψ3 (Q3 ) and (ρ̂, σ̂) := (−3j −1, 8j +3). Then
+Dir(P4 ) = Dir(Q4 ) = {(ρ̂, σ̂), (−1, 4)}, enρ̂,σ̂ (P4 ) = (−1, 0).
+88
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+y
+
+y
+Q4
+Q3
+
+x
+
+ψ3
+
+y
+
+x
+y
+P4
+
+P3
+
+x
+
+x
+
+Figure 2: Illustration of the fourth step.
+Moreover [P4 , Q4 ] = 1 and
+enρ̂,σ̂ (Q4 ) = (2, 1), `−1,4 (P4 ) = λ̃P R4m
+
+and `−1,4 (Q4 ) = λ̃Q R4n ,
+
+for R4 = y 3 x12 (y + µ10 x−4 ).
+FIFTH STEP
+Set P5 := ϕ1 (P4 ) and Q5 := ϕ1 (Q4 ), where ϕ1 (y) := y − µ10 x−4 and
+ϕ1 (x) := x (note that Jac(ϕ1 ) = 1). Then
+`−1,4 (P5 ) = λ̃P R5m
+
+and `−1,4 (Q5 ) = λ̃Q R5n ,
+
+for R5 = yx12 (y − µ10 x−4 )3 .
+SIXTH STEP(Figure 3)
+If P5 , Q5 ∈ L, then we have a counterexample to JC, since [P5 , Q5 ] = 1,
+deg(P ) = 16m and deg(Q) = 16n with m - n and n - m.
+Else set (ρ1 , σ1 ) := SuccP5 (−1, 4). Then [`ρ1 ,σ1 (P5 ), `ρ1 ,σ1 (Q5 )] = 0
+and so
+`ρ1 ,σ1 (P5 ) = λ̂P R6m and `−1,4 (Q5 ) = λ̂Q R6n ,
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+89
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+y
+Q5
+
+x
+y
+P5
+
+x
+ϕ(1) ◦ ϕ(2) ◦ ϕ(3)
+y
+Q̃
+
+x
+y
+P̃
+
+x
+
+Figure 3: Illustration of the sixth step.
+
+90
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+for some R6 = y + λk x−k with λk ∈ K × and k ∈ {1, 2, 3}. Note
+that (ρ1 , σ1 ) = (−1, k). If necessary, we apply successively ϕ(k) given
+by ϕ(k) (y) := y − λk x−k and ϕ(k) (x) := x, to obtain finally the desired
+counterexample (P̃ , Q̃) given by
+(P̃ , Q̃) := (ϕ(1) (ϕ(2) (ϕ(3) (P5 ))), ϕ(1) (ϕ(2) (ϕ(3) (Q5 )))) ∈ L.
+
+3
+
+Differential equations for polynomials
+According to Theorem 1.1 we write
+
+P = x3 y + x2 p2 (y) + xp1 (y) + p0 (y)
+
+and Q = x2 y + xq1 (y) + q0 (y).
+
+Then the equality (1.1) yields
+x4 y = [x3 y, x2 y]
+µ3 x3 = [x3 y, xq1 (y)] + [x2 p2 (y), x2 y]
+µ2 x2 = [x3 y, q0 (y)] + [x2 p2 (y), xq1 (y)] + [xp1 (y), x2 y]
+µ1 x = [x2 p2 (y), q0 (y)] + [xp1 (y), xq1 (y)] + [p0 (y), x2 y]
+µ0 = [xp1 (y), q0 (y)] + [p0 (y), xq1 (y)].
+The first equality is trivially true. Noting that
+[xk pk (y), xj qj (y)] = xk+j−1 (kpk (y)qj0 (y) − jp0k (y)qj (y)),
+we obtain the system of four differential equations for the five polynomials p0 , p1 , p2 , q0 , q1 :
+µ3 = 3yq10 − q1 + 2p2 − 2yp02
+µ2 = 3yq00 + 2p2 q10 − p02 q1 + p1 − 2yp01
+µ1 = 2p2 q00 + p1 q10 − p01 q1 − 2yp00
+µ0 = p1 q00 − p00 q1 .
+Note that `1,−1 (P ) = x3 y + µ3 x2 and `1,−1 (Q) = x2 y + µ3 x imply
+P
+q1 (0) = µ3 and p2 (0) = µ3 . Moreover, if we write P = i,j ai,j xi y j ,
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+91
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+then we can assume a2,1 = p02 (0) = 0, replacing P by P − a2,1 Q. Writing
+P
+P
+Q = i,j bi,j xi y j , [P, Q] = i,j ci,j xi y j and noting that
+ci,j =
+
+X
+
+(kt − ls)ak,l bs,t ,
+
+(3.1)
+
+(k,l)+(s,t)=(i,j)+(1,1)
+
+one verifies that
+0 = c3,1 = 2a3,1 b1,1 = 2b1,1 ,
+using b2,0 = b2,2 = a3,2 = a3,0 = 0 and b3,k = a4,k = 0 for all k. It
+follows that q10 (0) = b1,1 = 0 and so we can and will assume
+q1 (0) = µ3 ,
+
+q10 (0) = 0,
+
+p2 (0) = µ3
+
+and p02 (0) = 0.
+
+This allows to solve the first equation in full generality. In fact, write
+q1 = µ3 + y 2 F 0 and p2 = µ3 + yG for some F, G ∈ K[y]. From the first
+equation we obtain
+µ3 = 3y(2yF 0 + y 2 F 00 ) − (µ3 + y 2 F 0 ) + 2(µ3 + yG) − 2y(G + yG0 ),
+from which we deduce the equality
+2G0 = 5F 0 + 3yF 00 = (2F + 3yF 0 )0
+and so G = F + (3/2)yF 0 + const. Since G(0) = 0, we can assume
+F (0) = 0 and G = F + (3/2)yF 0 . Hence the general solution to the first
+equation is q1 = µ3 + y 2 F 0 and p2 = µ3 + yF + (3/2)y 2 F 0 , for any choice
+of F ∈ yK[y].
+Using the second equation we can express q00 as a function of F and p1 :
+q00 = −2p1 + 2µ2 + 2µ3 F + 4yp01 − 6y 2 F F 0 − µ3 y 2 F 00 − 4y 3 (F 0 )2
+
+−4y 3 F F 00 − 3y 4 F 0 F 00 /6y
+(3.2)
+The third equation yields p00 as a function of F, p1 and q00 :
+p00 =
+
+92
+
+yp1 (2F 0 + yF 00 ) − µ1 − p01 (µ3 + y 2 F 0 ) + (2µ3 + y(2F + 3yF 0 ))q00
+2y
+(3.3)
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+Inserting the values into the fourth equation we obtain a (very big)
+differential equation for p1 and F :
+
+6µ0 y 2 = yp1 2(p1 − µ2 − µ3 F ) − 4yp01 + y 2 (6F F 0 + µ3 F 00 )
+
++4y 3 ((F 0 )2 + F F 00 ) + 3y 4 F 0 F 00 − 3y 2 p1 (2F 0 + yF 00 )
+−3µ1 y − 3yp01 (µ3 + y 2 F 0 ) − 21 (2µ3 + y(2F + 3yF 0 )) · (2p1
+−2µ2 − 2µ3 F − 4yp01 +!6y 2 F F 0 + µ3 y 2 F 00 + 4y 3 (F 0 )2
++4y 3 F F 00 + 3y 4 F 0 F 00 ) (µ3 + y 2 F 0 )
+(3.4)
+Now we set
+1
+3
+3
+A := yp1 −q1 p2 + q12 = − µ23 +yp1 −µ3 yF −µ3 y 2 F 0 −y 3 F F 0 − y 4 (F 0 )2
+4
+4
+4
+and we can express (3.4) as a differential equation for A and q1 :
+q2
+µ3
+µ2
+6 A− 1 +
+q1 −
+y
+4
+4
+6
+
+
+2
+
+=4yAA0 + 6
+
+µ
+
+3
+
+4
+
+q1 −
+
+µ2 2
+y
+6
+
+− µ2 yq12 + 3µ1 y 2 q1 − 6µ0 y 3
+
+(3.5)
+
+Moreover we have
+1
+A(0) = − µ23 ,
+4
+
+A0 (0) = µ2
+
+and u3 A00 (0) = −6µ1 − 2µ3 q100 (0). (3.6)
+
+In fact, from the definition of A we have that A(0) = −q1 (0)p2 (0) +
+3
+1 2
+2
+4 q1 (0) = − 4 µ3 . The other two conditions follow from the requirement
+0
+that q0 (y) and p00 (y) defined by (3.2) and (3.3) are polynomials.
+This proves Theorem 1.2 and is a great simplification with respect
+to (3.4), not only in the number of terms involved, but in the type of
+differential equation. In fact, (3.4) is a quadratic first order differential
+equation for A, called an Abel differential equation of second kind. For
+q1 it is a cuartic equation with no derivative of q1 involved. However
+we were not able to obtain a solution of (3.5) with µ0 6= 0 and such
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+93
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+that (3.6) is satisfied (which would yield a counterexample to the JC),
+nor could we discard the existence of such a solution (which would prove
+B > 16). In the sequel, we will analyze some aspects of this differential
+equation.
+
+3.1
+
+Solutions without (3.6).
+
+If we don’t require (3.6), then there exist solutions of (3.5) with
+µ0 6= 0. Take for example A = 1 − y 3 − y 6 /4 and q1 (y) = y 3 + 2.
+Then (3.5) is satisfied for µ0 = 1, µ1 = 0 = µ2 and µ3 = 2. If we try to
+construct a counterexample, we obtain p1 (y) = y 5 + 2y 2 + y2 ∈
+/ K[y]. In
+fact this solution yields
+
+
+y7
+y4
+1
+2
++
++
++ 2
+P = x3 y + 2x2 (y 3 + 1) + x y 5 + 2y 2 +
+y
+7
+2
+y
+and
+Q = x2 y + x(y 3 + 2) +
+
+y5
+2
++ y2 + .
+5
+y
+
+Note that P, Q ∈ K[x, y, y −1 ] and [P, Q] = x4 y + µ0 + µ1 x + µ2 x2 + µ3 x3 ,
+with µ0 = 1 6= 0.
+
+3.2
+
+The case µ3 = µ2 = µ1 = µ0 = 0: Homogeneous
+solutions.
+Consider the case µ3 = µ2 = µ1 = µ0 = 0. Then (3.5) reads
+
+2
+q12
+6 A−
+= 4yAA0 ,
+4
+
+and clearly, any irreducible factor of A must be y, since any other linear
+factor of A would have multiplicity 2t on the left hand side and 2k − 1
+on the right hand side.
+we can assume A = y k for some k and
+ Then
+q 
+necessarily q12 = 4y k 1 ± 2k
+, hence k = 2(j + 1) and q1 = 2Ry j+1 ,
+3
+94
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+r
+
+q
+for R := ±2 1 ± 4j+2
+3 . Then it is straightforward to verify that
+
+
+
+
+ 
+p2 = 32 + 1j Ry j+1 and p1 = y 2j+1 1 − 1j + 43 R2 . We also obtain
+q0 = λy 2j+1 and p0 = λ1 y 3j+1 for some λ, λ1 . Hence P and Q are
+(ρ, σ)-homogeneous for (ρ, σ) = (j, 1).
+
+3.3
+
+Standard methods for solving Abel differential
+equations.
+
+For Abel differential equations no general solution is known. However, some methods are available: The standard method for simplifying
+an Abel differential equation of the second kind suggests the substitution
+A = y 3/2 T in (3.5). This yields the equation
+T T 0 = F1 (y)T + F0 (y)
+with
+F1 (y) = −
+
+(3.7)
+
+1
+(3q12 − 3µ3 q1 + 2µ2 y)
+4y 5/2
+
+and
+F0 (y) =
+
+3
+(q 4 − 2µ3 q13 + 4µ2 yq12 − 8µ1 y 2 q1 + 16µ0 y 3 )
+32y 4 1
+
+We could’t bring the equation (3.7) into any of the 80 solvable cases
+listed in [4, 1.3.3], nor could we discard the existence of solutions.
+Following the book [4] we set U = T1 and then (3.7) reads
+U 0 + F1 (y)U 2 + F0 (y)U 3 = 0,
+
+(3.8)
+
+an Abel differential equation of the first kind. Again, we couldn’t find a
+solvable case in [4] that corresponds to (3.8) and it is also impossible to
+choose µ0 6= 0, µ1 , µ2 , µ3 , q1 and α such that
+ 0
+F0
+= αF1 ,
+F1
+which is one of the known cases that allow further simplification of equation (3.8).
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+95
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+3.4
+
+The case µ3 = 0 = µ1 .
+
+Let us analyze the equation (3.7) in one particular case. Note
+that by (3.1) we have
+µ1 = c1,0 = 2a2,0 b0,1 − a1,1 b1,1 = µ3 (2b0,1 − a1,1 ).
+Consequently, if µ3 = 0, then µ1 = 0. We will consider the case µ3 =
+0 = µ1 . In this case
+F1 (y) = −
+and
+F0 (y) =
+
+1
+(3q12 − 2µ2 y)
+4y 5/2
+
+1
+(3q14 + 4µ2 yq12 + 48µ0 y 3 ).
+32y 4
+
+Again, we were unable to transform (3.7) into one of the solvable cases
+of [4].
+We also can try to solve the case µ1 = 0 and µ3 = 0 directly in (3.5).
+q2
+In that case we can set S := 41 + µ62 y and then (3.5) reads
+3(A − S)2 = 2yAA0 − 2µ2 yS +
+
+5 2 2
+µ y − 3µ0 y 3 .
+12 2
+
+We couldn’t find solutions with µ0 6= 0 such that S − µ62 y is a square.
+
+3.5
+
+Low degree cases.
+
+Finally we solve (3.5) with the initial conditions (3.6) for some
+low degree cases. One can show that deg(A) = 2 deg(q1 ), and we were
+able to solve the cases deg(q1 ) = 2, 3, 4, assuming q1 monic and setting
+µ0 , µ1 , µ2 , µ3 and the coefficients of q1 and A as variables. For deg(q1 ) =
+3 we obtain the solution µ2 = µ1 = µ0 = 0 and A = −y 6 /4 − µ3 y 3 /2 −
+µ23 /4 which gives
+ y7
+µ3 y 4
++
+P = x3 y + x2 (2y 3 + µ3 ) + x y 5 + µ3 y 2 +
+7
+4
+96
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+A differential equation for polynomials related to the Jacobian conjecture
+
+and
+Q = x2 y + x(y 3 + µ3 ) +
+
+µ3 y 2
+y5
++
+.
+5
+2
+
+Note that P, Q ∈ K[x, y] and [P, Q] = x4 y+µ3 x3 . This example is closely
+related to the example obtained in 3.1, in fact if we apply the procedure
+of section 1, with µ0 = 1, µ1 = 0 = µ2 and µ3 = 2 as in 3.1 then we can
+construct a pair P, Q ∈ K[x, y] with deg(P ) = 112, deg(Q) = 80 and
+[P, Q] = 2x3 + x4 y.
+The only other solutions were the homogeneous solutions with µ3 =
+µ2 = µ1 = µ0 = 0. For deg(q1 ) = 5, after an hour the PC hadn’t
+solved the resulting system. We also were able to show that in the
+case µ1 = 0 = µ2 (and q1 with arbitrary degree), any solution of (3.5)
+satisfying (3.6) must have µ0 = 0.
+Based on this partial results, we state the following conjecture:
+CONJECTURE: The only solutions of (3.5) are the solutions with
+µ2 = µ1 = 0.
+If the conjecture is true, then the only solutions of (3.5) satisfying (3.6) are the solutions with µ2 = µ1 = µ0 = 0, which implies B > 16.
+
+References
+[1] Guccione, Jorge Alberto; Guccione, Juan José; Valqui, Christian,
+On the shape of possible counterexamples to the Jacobian conjecture,
+arXiv:1401.1784[math.AC], (8 Jan 2014).
+[2] Heitmann, R, On the Jacobian conjecture, Journal of Pure and Applied Algebra, vol. 64, pgs. 35–72, (1990).
+[3] Keller, Ott-Heinrich Ganze Cremona-Transformationen, Monatsh.
+Math. Phys. vol. 47 no. 1, pgs. 299–306, (1939)
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+97
+
+Christian Valqui, Juan Guccione, Jorge Guccione
+
+[4] Polyanin, A. D. and Zaitsev, V. F., Handbook of Exact Solutions
+for Ordinary Differential Equations, Chapman& Hall/CRC, Boca
+Raton, (2003).
+
+Resumen
+Analizamos un posible contraejemplo P, Q a la conjetura del jacobiano
+con gcd(deg(P ), deg(Q)) = 16 y mostramos que su existencia depende
+exclusivamente de la existencia de soluciones de una cierta ecuación diferencial de Abel de segundo tipo.
+Palabras clave: Jacobiano, ecuación diferencial de Abel
+
+Christian Valqui
+Sección Matemáticas, Departamento de Ciencias, PUCP,
+Instituto de Matemática y Ciencias Afines (IMCA),
+cvalqui@pucp.edu.pe
+Jorge A. Guccione
+Departamento de Matemática
+Instituto de Investigaciones Matemáticas “Luis A. Santaló”
+Fac. de Ciencias Exactas y Naturales-UBA, Pabellón 1-Ciudad Universitaria. Intendente Guiraldes 2160 (C1428EGA), Buenos Aires, Argentina.
+vander@dm.uba.ar
+Juan J. Guccione
+Departamento de Matemática
+Fac. de Ciencias Exactas y Naturales-UBA, Pabellón 1-Ciudad Universitaria. Intendente Guiraldes 2160 (C1428EGA) Buenos Aires, Argentina.
+Instituto Argentino de Matemática-CONICET
+Savedra 15 3er piso, (C1083ACA) Buenos Aires, Argentina.
+jjgucci@dm.uba.ar
+
+98
+
+Pro Mathematica, 27, 53-54 (2013), 83-98, ISSN 1012-3938
+
+

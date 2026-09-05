@@ -1,0 +1,107 @@
+{
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 50 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 50 | conditions: 50 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 50,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 3
+ },
+ "F1(m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 900,
+    "out": ""
+   }
+  },
+  "max": 64,
+  "params": 51,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 900
+ },
+ "(8,28)/7/4,3 (m,n)=3,4 | a=4 b=4 c'=0 r=2 eps=((2, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 900,
+    "out": ""
+   }
+  },
+  "max": 144,
+  "params": 51,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 900
+ },
+ "(10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 900,
+    "out": ""
+   }
+  },
+  "max": 150,
+  "params": 66,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 900
+ },
+ "(10,40)/18/5,8/8/5,3 (m,n)=3,2 | a=5 b=4 c'=4 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 66 | conditions: 66 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 66 | conditions: 66 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 150,
+  "params": 66,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 6
+ },
+ "(12,36)/21/4,9/12/4,5 (m,n)=2,3 | a=4 b=6 c'=6 r=3 eps=((1, 0),(3, 1))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 86,
+    "out": "params: 74 | conditions: 46 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 100,
+    "out": "params: 74 | conditions: 46 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 144,
+  "params": 74,
+  "tier": "loose",
+  "budget": 900,
+  "secs": 185
+ }
+}

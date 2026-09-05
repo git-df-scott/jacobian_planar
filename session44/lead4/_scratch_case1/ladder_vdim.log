@@ -1,0 +1,28 @@
+=== k=0  deg f = 1, deg g = 1 (k=3 IS subcase 1's essential face) ===
+  char 0 sat(b1!=0) : 
+      equations: 1  unknowns: 2
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 1
+  char 32003 sat(b1!=0) : 
+      equations: 1  unknowns: 2
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 1
+=== k=1  deg f = 3, deg g = 4 (k=3 IS subcase 1's essential face) ===
+  char 0 sat(b4!=0) : 
+      equations: 6  unknowns: 7
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 3
+  char 32003 sat(b4!=0) : 
+      equations: 6  unknowns: 7
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 3
+=== k=2  deg f = 5, deg g = 7 (k=3 IS subcase 1's essential face) ===
+  char 0 sat(b7!=0) : 
+      equations: 11  unknowns: 12
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 10
+  char 32003 sat(b7!=0) : 
+      equations: 11  unknowns: 12
+      VERDICT: NONEMPTY  dim = 0
+        vdim = 10
+=== k=3  deg f = 7, deg g = 10 (k=3 IS subcase 1's essential face) ===

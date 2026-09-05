@@ -1,0 +1,13 @@
+=== deg q = 6 branch (a_14_8 = 0, outside subcase 2)
+eliminating polynomial of degree 10 over GF(999983) factors as [(1, 0), (1, 2), (1, 4), (1, 4)]  (multiplicity, degree)
+  factor 0 (deg 0): denominator vanishes, skipped
+  factor 1: deg 2, mult 1, q verifies: True
+     p-kernel dim 4, ker(M) dim 4, f-layer solvable False
+     -> no solution for this q at all
+  factor 2: deg 4, mult 1, q verifies: True
+     p-kernel dim 4, ker(M) dim 4, f-layer solvable False
+     -> no solution for this q at all
+  factor 3: deg 4, mult 1, q verifies: True
+     p-kernel dim 4, ker(M) dim 4, f-layer solvable False
+     -> no solution for this q at all
+total degree covered: 10 (should be 35)

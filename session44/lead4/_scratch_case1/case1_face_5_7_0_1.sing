@@ -1,0 +1,19 @@
+ring R = 0, (a1,a2,a3,a4,b1,b2,b3,b4,b5,b6,b7,z), dp;
+ideal I;
+I = I + ideal((3)*1*b1 + (-2)*a1*1);
+I = I + ideal((5)*1*b2 + (-5)*a2*1);
+I = I + ideal((7)*1*b3 + (2)*a1*b2 + (-3)*a2*b1 + (-8)*a3*1);
+I = I + ideal((9)*1*b4 + (4)*a1*b3 + (-1)*a2*b2 + (-6)*a3*b1 + (-11)*a4*1);
+I = I + ideal((11)*1*b5 + (6)*a1*b4 + (1)*a2*b3 + (-4)*a3*b2 + (-9)*a4*b1 + (-14)*1*1);
+I = I + ideal((13)*1*b6 + (8)*a1*b5 + (3)*a2*b4 + (-2)*a3*b3 + (-7)*a4*b2 + (-12)*1*b1);
+I = I + ideal((15)*1*b7 + (10)*a1*b6 + (5)*a2*b5 + (-5)*a4*b3 + (-10)*1*b2);
+I = I + ideal((12)*a1*b7 + (7)*a2*b6 + (2)*a3*b5 + (-3)*a4*b4 + (-8)*1*b3);
+I = I + ideal((9)*a2*b7 + (4)*a3*b6 + (-1)*a4*b5 + (-6)*1*b4);
+I = I + ideal((6)*a3*b7 + (1)*a4*b6 + (-4)*1*b5);
+I = I + ideal((3)*a4*b7 + (-2)*1*b6);
+I = I + ideal(z*b7 - 1);
+"equations: 11  unknowns: 12";
+ideal G = std(I);
+if (size(G)==1 && G[1]==1) { "VERDICT: EMPTY"; }
+else { "VERDICT: NONEMPTY  dim = " + string(dim(G)); if (dim(G)==0) { "  vdim = " + string(vdim(G)); } }
+quit;

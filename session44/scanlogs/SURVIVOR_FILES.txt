@@ -1,0 +1,2 @@
+scanlogs/p29_u0.log
+scanlogs/p31_u0.log

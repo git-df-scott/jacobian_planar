@@ -1,0 +1,45 @@
+=== p=11827 cover 0/5  f=[1, 7848, 7048, 4012, 4431, 5599, 5040, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_11827 for this face point
+
+=== p=11827 cover 1/5  f=[1, 5078, 1943, 5605, 10003, 738, 7475, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_11827 for this face point
+
+=== p=11827 cover 2/5  f=[1, 456, 9351, 8670, 10983, 5340, 2329, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_11827 for this face point
+
+=== p=11827 cover 3/5  f=[1, 9223, 4909, 2859, 3873, 6809, 5796, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 274 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_11827 for this face point
+
+=== p=11827 cover 4/5  f=[1, 6405, 10900, 8517, 5641, 1784, 10136, 1]
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 6  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_11827 for this face point
+

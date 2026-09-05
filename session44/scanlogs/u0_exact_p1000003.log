@@ -1,0 +1,56 @@
+COLLISION RIBBON (4,6) UPPER REDUCTION: PASS
+q5,...,q0 integrated exactly; Jacobian rows y^3,...,y^9 vanish
+surviving formal term counts: {2: 52, 1: 57, 0: 43}
+degree-126 coefficient equations: {2: 147, 1: 168, 0: 189} total=504
+reduced frontier: 212 P coefficients + 7 constants; E2=E1=0, E0=1
+rung 3: solved slot-1 kernel in K, deg ~ 10
+rung 4: solved slot-1 kernel in K, deg ~ 20
+rung 5: solved slot-1 kernel in K, deg ~ 30
+rung 6: solved slot-1 kernel in K, deg ~ 40
+rung 7: solved slot-1 kernel in K, deg ~ 50
+rung 8: solved slot-1 kernel in K, deg ~ 60
+rung 9: solved slot-1 kernel in K, deg ~ 70
+rung 10: solved slot-1 kernel in K, deg ~ 80
+rung 11: solved slot-1 kernel in K, deg ~ 90
+rung 12: solved slot-1 kernel in K, deg ~ 100
+rung 13: solved slot-1 kernel in K, deg ~ 110
+rung 14: solved slot-1 kernel in K, deg ~ 120
+rung 15: solved slot-1 kernel in K, deg ~ 130
+rung 16: solved slot-1 kernel in K, deg ~ 140
+rung 17: solved slot-1 kernel in K, deg ~ 150
+rung 18: solved slot-1 kernel in K, deg ~ 160
+rung 19: solved slot-1 kernel in K, deg ~ 170
+rung 20: solved slot-1 kernel in K, deg ~ 180
+rung 21: solved slot-1 kernel in K, deg ~ 190
+rung 22: solved slot-1 kernel in K, deg ~ 200
+rung 23: PURE CONDITION, num deg ~ 209
+rung 24: PURE CONDITION, num deg ~ 219
+rung 25: PURE CONDITION, num deg ~ 229
+rung 26: PURE CONDITION, num deg ~ 239
+== conditions mod 1000003 ==
+N_23: deg 419
+N_24: deg 439
+N_25: deg 459
+N_26: deg 479
+gcd of all condition norms mod 1000003: deg 64
+NONTRIVIAL FACTOR: x^64
+stratum rung 3: c1 numerator degs (0,1)
+stratum rung 4: c1 numerator degs (0,1)
+stratum rung 5: c1 numerator degs (0,1)
+stratum rung 6: c1 numerator degs (0,1)
+stratum rung 7: c1 numerator degs (0,1)
+stratum rung 8: c1 numerator degs (0,1)
+stratum rung 9: c1 numerator degs (0,1)
+stratum rung 10: c1 numerator degs (0,1)
+stratum rung 11: c1 numerator degs (0,1)
+stratum rung 12: c1 numerator degs (0,1)
+stratum rung 13: c1 numerator degs (0,1)
+stratum rung 14: c1 numerator degs (0,1)
+stratum rung 15: c1 numerator degs (0,1)
+stratum rung 16: c1 numerator degs (0,1)
+stratum rung 17: c1 numerator degs (0,1)
+stratum rung 18: c1 numerator degs (0,1)
+stratum rung 19: c1 numerator degs (0,1)
+stratum rung 20: c1 numerator degs (0,1)
+stratum rung 21: c1 numerator degs (0,1)
+stratum rung 22: c1 numerator degs (0,1)

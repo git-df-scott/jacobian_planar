@@ -1,0 +1,5 @@
+(8,28) case (1) pentagons  [OPEN in GGHV] | DIRECT  p=65521: TIMEOUT   Appl 5339726k/128205k Malloc 35k/0k Valloc 5467896k/128205k Pages 1366974/0 Regions 3115:3115 Internal: 349224
+
+halt 14
+  => TIMEOUT
+

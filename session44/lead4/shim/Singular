@@ -1,0 +1,3 @@
+#!/bin/bash
+ulimit -v 5500000
+exec /usr/bin/Singular "$@"

@@ -1,0 +1,8 @@
+COLLISION RIBBON (4,6) UPPER REDUCTION: PASS
+q5,...,q0 integrated exactly; Jacobian rows y^3,...,y^9 vanish
+surviving formal term counts: {2: 52, 1: 57, 0: 43}
+degree-126 coefficient equations: {2: 147, 1: 168, 0: 189} total=504
+reduced frontier: 212 P coefficients + 7 constants; E2=E1=0, E0=1
+u=4 done; depth histogram so far: {22: 819, 23: 22}
+FINAL histogram: {22: 819, 23: 22}
+survivors: []

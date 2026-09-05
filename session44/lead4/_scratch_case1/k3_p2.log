@@ -1,0 +1,65 @@
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.84 sec
+overall(cpu)            0.80 sec
+select                  0.03 sec   3.4%
+symbolic prep.          0.04 sec   4.6%
+update                  0.68 sec  81.1%
+convert                 0.01 sec   1.6%
+linear algebra          0.07 sec   8.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   108
+#terms in basis                 561
+#pairs reduced                 5517
+#GM criterion                950136
+#redundant elements            1275
+#rows reduced                 11168
+#zero reductions               4164
+max. matrix data               8344 x 8936 (0.180%)
+max. symbolic hash table size  2^14
+max. basis hash table size     2^18
+-----------------------------------------
+
+
+ERR 
+--------------- INPUT DATA ---------------
+#variables                      17
+#equations                      17
+#invalid equations               0
+field characteristic    2147483647
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 35
+------------------------------------------------------------------------------------
+msolve overall time           0.84 sec (elapsed) /  0.80 sec (cpu)
+------------------------------------------------------------------------------------
+
+output size 9567
+#Reduced Groebner basis data
+#---
+#field characteristic: 2147483647
+#variable order:       a1, a2, a3, a4, a5, a6, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, z
+#monomial order:       graded reverse lexicographical
+#length of basis:      108 elements sorted by increasing leading monomials
+#---
+[1*a3^1+268435455*b3^1,
+1*a2^1+2147483646*b2^1,
+1*a1^1+1073741822*b1^1,
+1*b10^1*z^1+2147483646,
+1*b9^1*z^1+1073741822*a6^1,
+1*b6^1*b10^1+1524540402*a5^1*z^1+392996403*b5^1*z^1+19252013*b2^1+300732423*b9^1,
+1*b5^1*b10^1+1385941882*a4^1*z^1+363640238*b4^1*z^1+235058929*z^2+1103456419*b1^1+359362985*b8^1,
+1*b2

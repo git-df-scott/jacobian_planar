@@ -1,0 +1,8 @@
+target: F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((1, 0),(4, 1))
+expected (independent Singular pipeline): EMPTY
+status RAN 11s
+    params: 50
+    conditions: 50
+    time: 0
+    components: 1
+    VERDICT: EMPTY -- no non-degenerate realization

@@ -1,0 +1,387 @@
+{
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 154,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 149,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 303
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 142,
+    "out": ""
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 91,
+    "out": ""
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 233
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 75,
+    "out": "Singular error: no more memory | System 5468180k:5468275k Appl 5382448k/85483k Malloc 35k/0k Valloc 5467896k/85483k Pages 1366974/0 Regions 3115:3115 Internal: 351504 |  | halt 14"
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 72,
+    "out": "Singular error: no more memory | System 5468180k:5468275k Appl 5382448k/85483k Malloc 35k/0k Valloc 5467896k/85483k Pages 1366974/0 Regions 3115:3115 Internal: 351344 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 147
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=2 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "UNKNOWN",
+  "per_prime": {
+   "65521": {
+    "verdict": "UNKNOWN",
+    "secs": 77,
+    "out": "Singular error: no more memory | System 5468180k:5468263k Appl 5382436k/85483k Malloc 35k/0k Valloc 5467884k/85483k Pages 1366971/0 Regions 3112:3112 Internal: 351720 |  | halt 14"
+   },
+   "65539": {
+    "verdict": "UNKNOWN",
+    "secs": 75,
+    "out": "Singular error: no more memory | System 5468180k:5468263k Appl 5382436k/85483k Malloc 35k/0k Valloc 5467884k/85483k Pages 1366971/0 Regions 3112:3112 Internal: 351968 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 51,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 152
+ },
+ "(7,42)/13/7,6 (m,n)=3,2 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 55 | conditions: 90 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 55 | conditions: 90 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 147,
+  "params": 55,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 4
+ },
+ "(7,42)/13/7,6 (m,n)=2,3 | a=7 b=7 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 55 | conditions: 90 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 55 | conditions: 90 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 147,
+  "params": 55,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 4
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=4 eps=((4, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 85 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 82 | conditions: 85 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 82,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 5
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=5 eps=((5, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 82 | conditions: 100 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 82 | conditions: 100 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 82,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 5
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=6 eps=((6, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 113 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 113 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 82,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 5
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=7 eps=((7, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 127 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 127 | time: 1 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 82,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 5
+ },
+ "F24(m,n)=3,4 | a=8 b=4 c'=0 r=8 eps=((8, 1),(1, 0))": {
+  "verdict": "EMPTY",
+  "per_prime": {
+   "65521": {
+    "verdict": "EMPTY",
+    "secs": 3,
+    "out": "params: 82 | conditions: 137 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   },
+   "65539": {
+    "verdict": "EMPTY",
+    "secs": 2,
+    "out": "params: 82 | conditions: 137 | time: 0 | components: 1 | VERDICT: EMPTY -- no non-degenerate realization"
+   }
+  },
+  "max": 128,
+  "params": 82,
+  "tier": "sec6>=125",
+  "budget": 600,
+  "secs": 5
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=2 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1500,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 53,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 1500
+ },
+ "(8,40)/8,28/11/4,7 (m,n)=3,2 | a=4 b=8 c'=4 r=2 eps=((1, 0),(2, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1500,
+    "out": ""
+   }
+  },
+  "max": 144,
+  "params": 61,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 1500
+ },
+ "F16(j=0;m,n=3,5) | a=3 b=8 c'=0 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1500,
+    "out": ""
+   }
+  },
+  "max": 165,
+  "params": 65,
+  "tier": "gen>150",
+  "budget": 1500,
+  "secs": 1500
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=5 eps=((1, 0),(5, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 50,
+    "out": "Singular error: no more memory | System 5468188k:5468282k Appl 5403812k/64131k Malloc 35k/0k Valloc 5467908k/64131k Pages 1366977/0 Regions 3118:3118 Internal: 346664 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 66,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 50
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=6 eps=((1, 0),(6, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 47,
+    "out": "Singular error: no more memory | System 5468184k:5468270k Appl 5403800k/64131k Malloc 35k/0k Valloc 5467896k/64131k Pages 1366974/0 Regions 3115:3115 Internal: 346552 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 66,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 47
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=7 eps=((1, 0),(7, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 51,
+    "out": "Singular error: no more memory | System 5468184k:5468278k Appl 5403808k/64131k Malloc 35k/0k Valloc 5467904k/64131k Pages 1366976/0 Regions 3117:3117 Internal: 346736 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 66,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 51
+ },
+ "F11(m,n)=2,5 | a=7 b=4 c'=3 r=8 eps=((1, 0),(8, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 53,
+    "out": "Singular error: no more memory | System 5468184k:5468270k Appl 5403800k/64131k Malloc 35k/0k Valloc 5467896k/64131k Pages 1366974/0 Regions 3115:3115 Internal: 346784 |  | halt 14"
+   }
+  },
+  "max": 140,
+  "params": 66,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 53
+ },
+ "(7,35)/19/7,5 (m,n)=2,3 | a=7 b=6 c'=3 r=4 eps=((1, 0),(4, 1))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1500,
+    "out": ""
+   }
+  },
+  "max": 126,
+  "params": 68,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 1500
+ },
+ "F2(m,n)=3,5 | a=5 b=3 c'=0 r=3 eps=((3, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 230,
+    "out": "params: 75 | conditions: 149 |  | Singular error: no more memory | System 5458388k:5458388k Appl 5339539k/84954k Malloc 54681k/0k Valloc 5369812k/84954k Pages 1342453/0 Regions 3122:3122 Internal: 371864 |  | halt 14"
+   }
+  },
+  "max": 125,
+  "params": 75,
+  "tier": "sec6>=125",
+  "budget": 1500,
+  "secs": 230
+ },
+ "F17(m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1800,
+    "out": ""
+   }
+  },
+  "max": 99,
+  "params": 127,
+  "tier": "dim3-loose",
+  "budget": 1800,
+  "secs": 1800
+ },
+ "(9,27)/9,24/11/3,8 (m,n)=2,3 | a=3 b=9 c'=6 r=1 eps=((1, 1),(1, 0))": {
+  "verdict": "TIMEOUT",
+  "per_prime": {
+   "65521": {
+    "verdict": "TIMEOUT",
+    "secs": 1800,
+    "out": ""
+   }
+  },
+  "max": 108,
+  "params": 127,
+  "tier": "dim3-loose",
+  "budget": 1800,
+  "secs": 1800
+ }
+}

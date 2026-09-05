@@ -1,0 +1,13 @@
+=== j=2 mu0 gauge 0 (with calibration) ===
+D0 (eq3 identity for the paper's q1,p2 ansatz): PASS
+D1 (derived q0' == printed (3.2)): PASS
+D2 (derived p0' == printed (3.3)): PASS
+D3 (planted deg-3 solution annihilates j=2 system): PASS
+F-system j=2 (deg q1=3) mu3=1 sat[mu0!=0]: EMPTY
+D4 (j=2 mu0!=0 must be EMPTY): PASS
+F-system j=2 (deg q1=3) mu3=0 sat[mu0!=0]: TIMEOUT
+=== j=2 mu1 gauge 0 ===
+D0 (eq3 identity for the paper's q1,p2 ansatz): PASS
+F-system j=2 (deg q1=3) mu3=0 sat[mu1!=0]: TIMEOUT
+=== j=3 mu0 gauge 0 ===
+D0 (eq3 identity for the paper's q1,p2 ansatz): PASS

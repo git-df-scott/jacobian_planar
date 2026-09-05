@@ -1,0 +1,4 @@
+deg(q1)=7 mu2!=0: EMPTY
+deg(q1)=7 mu1!=0: EMPTY
+deg(q1)=8 mu2!=0: EMPTY
+deg(q1)=8 mu1!=0: NONEMPTY

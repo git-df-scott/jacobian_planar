@@ -1,0 +1,5 @@
+ring R = 999983, T, dp;
+poly f = 5847*T^0+337461*T^5+1*T^10;
+list L = factorize(f);
+for (int i=1; i<=size(L[1]); i++) { "FACTOR " + string(L[2][i]) + " : " + string(L[1][i]); }
+exit;

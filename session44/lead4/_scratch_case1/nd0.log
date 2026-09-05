@@ -1,0 +1,8 @@
+=== p=5189 cover 0  (cascade to W=-11) ===
+  P(0,8)    slice w=-8   coeff k=0 : 275 terms, degree 10
+  P(8,16)   slice w=0    coeff k=8 : 2 terms, degree 2
+  Q(0,12)   slice w=-12  coeff k=0 : 1282 terms, degree 15
+  Q(12,24)  slice w=0    coeff k=12 : 2 terms, degree 3
+conditions: 88
+time 7  components 1
+VERDICT: EMPTY -- no non-degenerate solution over the algebraic closure of F_5189 for this face point

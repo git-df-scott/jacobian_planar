@@ -1,0 +1,14 @@
+ring R = 32003, (a1,a2,b1,b2,b3,b4,z), dp;
+ideal I;
+I = I + ideal((3)*1*b1 + (-2)*a1*1);
+I = I + ideal((5)*1*b2 + (-5)*a2*1);
+I = I + ideal((7)*1*b3 + (2)*a1*b2 + (-3)*a2*b1 + (-8)*1*1);
+I = I + ideal((9)*1*b4 + (4)*a1*b3 + (-1)*a2*b2 + (-6)*1*b1);
+I = I + ideal((6)*a1*b4 + (1)*a2*b3 + (-4)*1*b2);
+I = I + ideal((3)*a2*b4 + (-2)*1*b3);
+I = I + ideal(z*b4 - 1);
+"equations: 6  unknowns: 7";
+ideal G = std(I);
+if (size(G)==1 && G[1]==1) { "VERDICT: EMPTY"; }
+else { "VERDICT: NONEMPTY  dim = " + string(dim(G)); if (dim(G)==0) { "  vdim = " + string(vdim(G)); } }
+quit;
