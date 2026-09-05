@@ -1,0 +1,111 @@
+{
+  "EXACT_CRITERION": {
+    "status": "PASS",
+    "positive_controls": [
+      {
+        "g": "v",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "c",
+        "Q_in_B": true,
+        "collision_Keller": false
+      },
+      {
+        "g": "c",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": true,
+        "ambient_Keller": true,
+        "Q": "-v",
+        "Q_in_B": false,
+        "collision_Keller": false
+      },
+      {
+        "g": "c + v**2",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "-v",
+        "Q_in_B": false,
+        "collision_Keller": false
+      },
+      {
+        "g": "c**2 + v",
+        "identity_residual": "0",
+        "admissible_H": false,
+        "g_in_B": false,
+        "ambient_Keller": true,
+        "Q": "c**4 + 2*c**2*v + c + v**2",
+        "Q_in_B": false,
+        "collision_Keller": false
+      }
+    ],
+    "negative_controls": [
+      {
+        "g": "1",
+        "identity_residual": "-1",
+        "admissible_H": true,
+        "g_in_B": true,
+        "ambient_Keller": false
+      },
+      {
+        "g": "c",
+        "identity_residual": "81*c**5*v**5/4 - 135*c**4*v**4/4 - 81*c**4*v**3/2 + 18*c**3*v**3 + 81*c**3*v**2/2 + 81*c**3*v/4 - 3*c**2*v**2 - 9*c**2*v - 27*c**2/4",
+        "admissible_H": true,
+        "g_in_B": true,
+        "ambient_Keller": false
+      }
+    ],
+    "formal_limit_rejection": "valuation_c(c*(Q+v)^2)=1+2k cannot be 0",
+    "no_additional_conductor_orders": true
+  },
+  "LOWEST_DEGREES": {
+    "status": "PASS",
+    "quadratic_minors": [
+      "a*d - b0**2 - b0",
+      "a*f - b0*e - e",
+      "b0*f - d*e"
+    ],
+    "cubic_and_unbounded_F_family": "gcd=1 by the written irreducible-factor proof"
+  },
+  "NONSQUARE_46_POLE": {
+    "status": "PASS",
+    "upper_integrals": [
+      "3*a**2*bb/4 - 3*bb*d - 2*bb*k",
+      "-3*a**4/32 + 3*a**2*d/4 + a**2*k/2 + 3*a*bb**2/4 - 3*d**2/2 - 2*d*k"
+    ],
+    "last_row_on_z_zero": "3*bb^2*bb_prime/4",
+    "rational_equation": "u*(3*u^2/(8*h))prime=kappa",
+    "uncancelled_pole_coefficient": "-E/3"
+  },
+  "DEGREE_STRATA": {
+    "status": "PASS",
+    "first_unexcluded_stratum": [
+      [
+        14,
+        4,
+        10
+      ],
+      [
+        14,
+        6,
+        8
+      ]
+    ],
+    "leading_odd_coefficients": [
+      "-12*(3*rho - 4)*(3*rho - 2)**2",
+      "32*(3*rho - 4)*(3*rho - 2)**3"
+    ],
+    "both_branches": [
+      "2/3",
+      "4/3"
+    ],
+    "scope": "Arithmetic coverage of the written arbitrary-coefficient proofs; no degree-box search"
+  },
+  "verdict": "OPEN",
+  "counterexample_found": false,
+  "script_sha256": "663202710bfe977d85d475b2a589d3dcb3c6aa4621db13bac23be76e8b1eeaff"
+}

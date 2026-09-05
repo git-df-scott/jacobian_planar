@@ -119,3 +119,14 @@ proof-assistant formalization.
 The statements “pentagon open” in earlier reports remain historical. The
 separate above-125 `(3,4)` chain and other JC2 configurations are not settled
 by these exclusions. No explicit JC2 counterexample has been produced.
+# Astra 6 global-potential update — 2026-09-05
+
+`ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md` supersedes the previous global search
+formulation with an exact gcd eigenfunction criterion. It proves a
+v-degree-at-most-13 obstruction with unbounded c-degree, but leaves the
+full collision subalgebra open. The degree-14 coverage list contains both
+(4,10) and (6,8), not only the latter. The (6,8) leading-root alternatives
+include both rho=2/3 and rho=4/3; dividing by 2-3rho would lose a branch.
+Even trace of the quadratic approximate root is sufficient for a further
+obstruction, but is not established for arbitrary candidates. No new
+finite-order conductor lift is used as evidence for polynomial termination.

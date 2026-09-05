@@ -491,3 +491,9 @@ mapping for every file occurrence. The archive's integrity checks are in
 
 This closeout preserves the work and makes its evidence reviewable. It does
 not claim that the counterexample objective has been achieved.
+# September 5 continuation: global potential strike
+
+The frozen September 4 archive is followed by
+`ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md`, with exact scripts and certificates in
+`astra6/`. Its verdict is OPEN; the new obstructions and two surviving
+degree-14 systems are distinguished explicitly from the historical record.

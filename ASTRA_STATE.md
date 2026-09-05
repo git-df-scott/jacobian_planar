@@ -1,5 +1,24 @@
 # ASTRA state — 2026-09-05
 
+## September 5 global polynomial-potential strike — latest update
+
+[Astra 6](ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md) continues the global problem
+without further conductor-adic lifting. Verdict: **OPEN**.
+
+- The potential test is necessary and sufficient: admissible H, its actual
+  gcd g in B, and (H_c+v)g_v-H_v g_c=g. The mate's membership is automatic.
+- Written global arguments exclude every potential of v-degree at most 13,
+  with no bound on c-degree. This is not a full subalgebra obstruction.
+- The first remaining degree range is 14, with coordinate degrees (4,10)
+  and (6,8). Both exact rational coefficient systems are retained.
+- In (6,8), the two possible highest common roots are v(cv-2/3) and
+  v(cv-4/3). The first must not be discarded by division in a residue test.
+- Any (6,8) candidate must have a quadratic approximate root with non-even
+  rational trace. The even-root branch, including denominators away from
+  c=0, is excluded by an exact half-integer valuation obstruction.
+- Exact verification scripts and expanded residual equations are in astra6.
+  The new written proofs are not externally reviewed or formally mechanized.
+
 ## September 5 conductor strike — latest update
 
 [Astra 5](ASTRA_5_CONDUCTOR_STRIKE.md) resolves the formal correction problem
