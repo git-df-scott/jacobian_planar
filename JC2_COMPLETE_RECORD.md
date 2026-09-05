@@ -1,5 +1,11 @@
 # JC2 — complete Claude, Codex/Sol and Astra campaign record
 
+September 5 follow-up: [Astra 8 degree-15 strike](ASTRA_8_DEGREE15_STRIKE.md)
+excludes the noncube-h (6,9) component and proves a necessary leading-coefficient
+invariant in arbitrary degree. The exact resonant degree-15 system, and the
+full collision route, remain open. No irreducibility or full-route reduction
+is claimed.
+
 September 5 follow-up: [Astra 7 live-system closure](ASTRA_7_LIVE_SYSTEMS_CLOSED.md)
 proves the two complete degree-14 collision systems impossible and retains
 (6,9) as the next unexcluded coordinate-degree range. The historical

@@ -1,5 +1,25 @@
 # ASTRA state — 2026-09-05
 
+## September 5 degree-15 strike — latest update
+
+[Astra 8](ASTRA_8_DEGREE15_STRIKE.md) remains **OPEN**. The requested full-route
+decisive outcome has not been established.
+
+- The entire noncube-h (6,9) component is excluded by an exact global pole
+  argument and a nonzero resultant, with unbounded coefficient degrees.
+- A necessary invariant valid in arbitrary degree says that a nonconstant
+  polynomial m-th root f of a component's leading coefficient must be a power
+  of one linear factor, of exponent at least two.
+- Consequently the remaining (6,9) collision system has h=c^(3N), N>=2,
+  after constant target scalings. It reduces to five explicit algebraic
+  first-integral equations, polynomial reconstruction and two parity identities.
+- Both rho=2/3 and rho=4/3 force a double-root leading cubic. The resonant
+  system is not eliminated and its irreducibility is not established.
+- This is not a single irreducible gap for the entire collision route:
+  no reduction from arbitrary larger degrees to degree 15 is proved.
+- Exact scripts, proofs and certificates are in astra8. No conductor lifting,
+  coefficient sweep, counterexample, or full-route closure is claimed.
+
 ## September 5 first live systems resolved — latest update
 
 [Astra 7](ASTRA_7_LIVE_SYSTEMS_CLOSED.md) proves **BOTH LIVE SYSTEMS CLOSED**:

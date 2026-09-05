@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "Exact identities and controls; mathematical scope as in Astra 8 report",
+  "counterexample_found": false,
+  "full_collision_route_closed": false,
+  "single_irreducible_gap_proved": false,
+  "degree_15_fully_closed": false,
+  "noncube_69_obstruction_certificate": "PASS",
+  "results": [
+    {
+      "script": "verify_69_noncube.py",
+      "exit_code": 0,
+      "output": [
+        "UNCONSTRAINED_POLYNOMIAL_PART_AND_FOUR_ROW_IDENTITIES: PASS",
+        "ZERO_BRANCH_AND_RATIONAL_JACOBIAN_ELIMINATION: PASS",
+        "RESTORED_POLYNOMIALS_AND_NONZERO_POLE_RESULTANT: PASS"
+      ]
+    },
+    {
+      "script": "derive_69_resonance.py",
+      "exit_code": 0,
+      "output": [
+        "ALL_JACOBIAN_ROWS_AND_FIVE_RESIDUE_IDENTITIES: PASS",
+        "NONCUBE_SPECIALIZATION: PASS"
+      ]
+    },
+    {
+      "script": "verify_69_inputs_and_controls.py",
+      "exit_code": 0,
+      "output": [
+        "REDUNDANT_K3_REMOVAL_AND_TWO_EXACT_COEFFICIENT_ROWS: PASS",
+        "BOTH_COLLISION_PARITIES_AND_DOUBLE_ROOT_LEADING_CANCELLATION: PASS",
+        "ORDINARY_KELLER_AND_SAVED_GLOBAL_TERMINATION_CONTROLS: PASS"
+      ]
+    }
+  ],
+  "file_sha256": {
+    "LEADING_COEFFICIENT_INVARIANT.md": "125ee11253ffcf9987196c1e695c047d82895635dfd8dd40b5d9380daa4ed153",
+    "OBSTRUCTION_69_NONCUBE.md": "396fbecbcf317f3f8cd2eef99451056c2602f01a2f4e4f570c28d6a903416c70",
+    "RESONANT_69_SYSTEM.md": "7e086f5b0b597684a4f8ac99b89edc4c574b2640b3e5a8c383653057bb5112b5",
+    "certificate_69_noncube.json": "1521f01ede848ecd6fb6a6c179f5dd4a933df0bb0f2db8b02d7e90eea29aadfb",
+    "derive_69_resonance.py": "0519bab9896b91fa7d87b5c6a2d830dc7683a70e92157962a6d2a672beb5c664",
+    "inputs_and_controls.json": "9000bef99662f827a486ce5dc9d46bfa642bc712db8020e192c74310895ef002",
+    "resonant_69_system.json": "d0cc0bf4c055dfe405c8907338af8fa333a580d5c65fbebe59bf33bb9f08716b",
+    "run_certificates.py": "3d93fe2461d9ac381aacbabb19d50641a5779020c1ac59b875e0c9a496d228c3",
+    "verify_69_inputs_and_controls.py": "fda6fb13361af81f88028b511bfd67a7426a93863fd12a13d1b72eb4b8c8b0f3",
+    "verify_69_noncube.py": "204e7b62dd6c349262095439b1f89b3d17807896f2af9fb2209baa89eb2d0c61"
+  }
+}

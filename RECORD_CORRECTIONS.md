@@ -126,6 +126,17 @@ proof-assistant formalization.
 The statements “pentagon open” in earlier reports remain historical. The
 separate above-125 `(3,4)` chain and other JC2 configurations are not settled
 by these exclusions. No explicit JC2 counterexample has been produced.
+# Astra 8 degree-15 scope guard — 2026-09-05
+
+`ASTRA_8_DEGREE15_STRIKE.md` excludes only the noncube-h part of the (6,9)
+system and derives a complete residual system for its cube-h resonance.
+The order-three Galois argument must not be used when h is a cube. In that
+case extra fractional-power constants survive, and three earlier character
+integrals need not vanish. The leading-coefficient theorem forces h=c^(3N),
+N>=2, after normalization, but does not eliminate that case or higher degrees.
+The residual system has not been proved irreducible. The report is OPEN,
+not FULL COLLISION-ROUTE CLOSURE or SINGLE IRREDUCIBLE GAP.
+
 # Astra 6 global-potential update — 2026-09-05
 
 `ASTRA_6_GLOBAL_POTENTIAL_STRIKE.md` supersedes the previous global search
