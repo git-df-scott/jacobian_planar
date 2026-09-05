@@ -1,5 +1,14 @@
 # Astra handoff — 2026-09-04, third run
 
+**Current Astra 11 update:** [Corrected degree-144 strike](ASTRA_11_CORRECTED_DEGREE144.md)
+found no counterexample. The old compiler loses the top corner `(4,8)` and
+uses `(4,4)` without a justified extra transformation. Read the new report
+before using any old degree-144 system. Exact elimination gives 17 marked
+leading solutions; the two terminal shapes are also explicit. A simple-root
+theorem excludes all their extensions with P rows 2,7,12 and Q rows
+1,6,11,16, but other rows remain open. The reduced upper boundary is not yet
+proved. Reproduce with `python astra11/verify.py`.
+
 **Current Astra 10 update:** [Search outside the collision algebra](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md) found no counterexample. Read
 `astra10/PROOFS.md` before attempting higher Briançon exponents, a single
 pair of higher-order poles, or the newly constructed exact degree-six

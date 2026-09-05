@@ -18,6 +18,10 @@ The inventory covers 35,078 branch/file occurrences, deduplicated to 10,062 dist
 
 ## Latest research
 
+- [Astra 11: corrected degree-(108,144) leading system](ASTRA_11_CORRECTED_DEGREE144.md):
+  identifies lost upper support in the archived compiler, classifies 17
+  marked leading solutions exactly, and excludes their simplest graded
+  extensions by a simple-root theorem. The full published case remains open.
 - [Astra 10: search outside the collision algebra](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md):
   no counterexample; arbitrary-degree obstructions for the higher Briançon
   template and a family with a pair of poles, plus a degree-six exact elliptic

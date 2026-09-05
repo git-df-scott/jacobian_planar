@@ -1,5 +1,21 @@
 # Graded frontier
 
+## Astra 11 correction — current
+
+Read [ASTRA_11_CORRECTED_DEGREE144.md](ASTRA_11_CORRECTED_DEGREE144.md).
+The original lower corner for the `(108,144)` target is now derived, but
+the old compiler has a more serious support loss: its stated map retains
+the base corner `(4,8)`, whereas its output uses `(4,4)`. The old smaller
+system does not establish exhaustive treatment of the published case.
+
+The corrected first leading auxiliary equation has 17 marked normalized
+solutions, fully parameterized over five number fields. The terminal
+equation has two conjugate shapes. Their simplest graded row extension
+is excluded in arbitrary coefficient degrees by a simple-root obstruction.
+Nongraded compatibility and the reduced upper boundary remain open.
+The historical provenance warning below is superseded by these more
+precise findings, not by a claim that the full translation gate is passed.
+
 ## Current characteristic-zero results
 
 **Both polygons in GGHV Proposition 4.3 are excluded.** Astra 3 closes the

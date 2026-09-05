@@ -1,5 +1,22 @@
 # ASTRA state — 2026-09-05
 
+## September 5 corrected degree-144 strike — current
+
+[Astra 11](ASTRA_11_CORRECTED_DEGREE144.md): **OPEN, no CE**.
+The archived compiler sends the original top corner to `(4,8)` under its
+stated maps but uses `(4,4)` in its output. Its degree-144 slice calculations
+therefore do not establish treatment of the full published `(108,144)` case.
+The original lower corner `(1,0)` is now derived. The reduced upper-axis
+boundary still requires proof; do not substitute the old `c'` ladder.
+
+The corrected first auxiliary leading equation has 17 marked normalized
+solutions in five number-field factors, with degrees `1,2,4,4,6`.
+The type-I.b terminal equation has two conjugate shapes. These are endpoint
+classifications, not global Keller components. A new simple-root theorem
+excludes the complete slice with P rows `2,7,12` and Q rows `1,6,11,16`
+for all 17 leading solutions, in arbitrary coefficient degrees. Other rows
+remain live. Run `python astra11/verify.py` for exact reproduction.
+
 ## September 5 search beyond the collision algebra — current
 
 [Astra 10](ASTRA_10_OUTSIDE_COLLISION_SEARCH.md) remains **OPEN: no CE**.
@@ -271,8 +288,9 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
    three, then kill its elliptic de Rham component exactly. It must escape
    Astra 10's arbitrary-degree templates; exactness alone is insufficient,
    as the new faithful-chart obstruction demonstrates.
-2. Reconstruct a published above-125 Newton case directly from its primary
-   chain data; only then derive and run its graded one-variable descent.
+2. Complete the upper-boundary reconstruction and nongraded compatibility
+   for Astra 11's corrected published degree-(108,144) case. Retain its
+   17 leading solutions and two terminal shapes; avoid the excluded row slice.
    Both Proposition 4.3 polygons are now closed by separate proofs.
 
 ## LIVE TOPOLOGICAL LANES
@@ -294,12 +312,17 @@ Closing record: `JC2_COMPLETE_RECORD.md` and `record/README.md` inventory all
    or a different pencil may escape the proved families. An exact primitive
    must still admit a faithful polynomial chart, and cannot violate the new
    mixed-power rigidity theorem. No explicit survivor is currently known.
-3. **Above-125 provenance repair.** Derive the missing lower corner and c'
-   range for `(8,28)->(7/4,3)`, `(m,n)=(3,4)`, before generating equations.
-   The completed (2,3) pentagon descent does not transfer to this ratio.
+3. **Corrected above-125 target.** Astra 11 derives the lower corner and
+   catches the lost upper support for `(8,28)->(7/4,3)`, `(m,n)=(3,4)`.
+   Prove the reduced upper boundary and handle the remaining coefficient
+   rows. The completed (2,3) pentagon descent does not transfer to this ratio.
 
 ## DO-NOT-REPEAT LIST
 
+- Do not use the old `(4,3)->(4,4)` base as the full degree-144 case.
+  The displayed transformation retains `(4,8)`. Do not equate the 17
+  leading solutions with global candidates, or silently discard nongraded
+  rows after the simple-root obstruction.
 - Do not increase m or alter A inside p^m*u+s*A(p), or increase k in
   Astra 10's varying hyperelliptic pencil, to seek a mate. The all-degree
   proofs cover those choices. Do not resurrect its exact degree-six twist

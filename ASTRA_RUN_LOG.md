@@ -238,3 +238,23 @@ Current counterexample status: no CEC and no CE.
   and the nonterminating formal-family negative control without new jets.
 - Status OPEN: no counterexample and no universal component reduction.
   These scoped results do not close all Briançon-type constructions or JC2.
+
+## 2026-09-05 — Astra 11, corrected degree-144 leading system
+
+- Continued from 9fc59779c8d5. Re-read the primary chain data and archived
+  compiler/lift sources. Derived the original lower corner `(1,0)` and
+  found that the stated compiler maps preserve `(4,8)`, not its emitted
+  `(4,4)`. The old degree-144 slice is not a full published-case search.
+- Derived the degree-seven leading auxiliary equation and solved its
+  seven-variable quadratic ideal exactly over Q. The reduced eliminant
+  has degree 17 and five irreducible factors of degrees 1,2,4,4,6.
+  Saved every parameterization and checked all nonvanishing conditions.
+- Reconstructed the rational leading root `x^4*y^3*(1+y^5)` and the two
+  conjugate terminal shapes. Verified their identities exactly, with
+  ordinary polynomial Keller and ramified-chart controls.
+- Proved a simple-root obstruction to the entire P-row 2,7,12 / Q-row
+  1,6,11,16 slice, applying to all 17 leading solutions and unrestricted
+  coefficient degrees. Nongraded extensions are not excluded.
+- Saved the exact reproducible computation, certificate and report in
+  astra11 and ASTRA_11_CORRECTED_DEGREE144.md. Status OPEN, no CE.
+  No generic degree sweeps, numerical searches or conductor lifts were run.
