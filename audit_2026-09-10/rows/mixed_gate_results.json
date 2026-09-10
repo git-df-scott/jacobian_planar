@@ -1,0 +1,133 @@
+{
+ "scope": "q9 local gate, all 32 assignments, parameters in Q(zeta5), tau symbolic",
+ "results": {
+  "11111": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11112": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11121": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11122": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11211": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11212": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11221": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "11222": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12111": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12112": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12121": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12122": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12211": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12212": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12221": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "12222": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21111": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21112": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21121": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21122": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21211": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21212": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21221": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "21222": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22111": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22112": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22121": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22122": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22211": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22212": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22221": {
+   "soluble": true,
+   "free_rational_dim": 68
+  },
+  "22222": {
+   "soluble": true,
+   "free_rational_dim": 68
+  }
+ }
+}

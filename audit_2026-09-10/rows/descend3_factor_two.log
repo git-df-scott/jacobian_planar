@@ -1,0 +1,9 @@
+[factor_two] row x^26 (q15,p11): solved, free params 0  t=0.4s
+[factor_two] row x^25 (q14,p10): solved, free params 0  t=0.9s
+[factor_two] row x^24 (q13,p9): solved, free params 0  t=1.7s
+[factor_two] row x^23 (q12,p8): solved, free params 1  t=2.7s
+[factor_two] row x^22 (q11,p7): solved, free params 18  t=4.6s
+[factor_two] row x^21 (q10,p6): solved, free params 36  t=8.7s
+[factor_two] row x^20 (q9,p5): solved, free params 55  t=17.9s
+[factor_two] row x^19 (q8,p4): NO SOLUTION for any tau -> this particular section is excluded  t=32.0s
+exit=0

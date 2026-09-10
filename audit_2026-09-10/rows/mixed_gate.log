@@ -1,0 +1,34 @@
+11111 {'soluble': True, 'free_rational_dim': 68} 5.9
+11112 {'soluble': True, 'free_rational_dim': 68} 10.7
+11121 {'soluble': True, 'free_rational_dim': 68} 15.5
+11122 {'soluble': True, 'free_rational_dim': 68} 20.1
+11211 {'soluble': True, 'free_rational_dim': 68} 24.8
+11212 {'soluble': True, 'free_rational_dim': 68} 29.4
+11221 {'soluble': True, 'free_rational_dim': 68} 33.9
+11222 {'soluble': True, 'free_rational_dim': 68} 38.7
+12111 {'soluble': True, 'free_rational_dim': 68} 43.3
+12112 {'soluble': True, 'free_rational_dim': 68} 47.8
+12121 {'soluble': True, 'free_rational_dim': 68} 52.6
+12122 {'soluble': True, 'free_rational_dim': 68} 57.4
+12211 {'soluble': True, 'free_rational_dim': 68} 62.2
+12212 {'soluble': True, 'free_rational_dim': 68} 67.1
+12221 {'soluble': True, 'free_rational_dim': 68} 71.7
+12222 {'soluble': True, 'free_rational_dim': 68} 76.3
+21111 {'soluble': True, 'free_rational_dim': 68} 80.2
+21112 {'soluble': True, 'free_rational_dim': 68} 84.5
+21121 {'soluble': True, 'free_rational_dim': 68} 88.9
+21122 {'soluble': True, 'free_rational_dim': 68} 93.5
+21211 {'soluble': True, 'free_rational_dim': 68} 97.8
+21212 {'soluble': True, 'free_rational_dim': 68} 102.5
+21221 {'soluble': True, 'free_rational_dim': 68} 107.0
+21222 {'soluble': True, 'free_rational_dim': 68} 111.8
+22111 {'soluble': True, 'free_rational_dim': 68} 115.8
+22112 {'soluble': True, 'free_rational_dim': 68} 120.3
+22121 {'soluble': True, 'free_rational_dim': 68} 124.7
+22122 {'soluble': True, 'free_rational_dim': 68} 129.5
+22211 {'soluble': True, 'free_rational_dim': 68} 133.7
+22212 {'soluble': True, 'free_rational_dim': 68} 138.4
+22221 {'soluble': True, 'free_rational_dim': 68} 143.0
+22222 {'soluble': True, 'free_rational_dim': 68} 147.6
+done
+exit=0

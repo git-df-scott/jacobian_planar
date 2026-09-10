@@ -1,0 +1,10 @@
+[intersection] row x^26 (q15,p11): solved, free params 0  t=0.4s
+[intersection] row x^25 (q14,p10): solved, free params 0  t=0.9s
+[intersection] row x^24 (q13,p9): solved, free params 0  t=1.7s
+[intersection] row x^23 (q12,p8): solved, free params 1  t=2.7s
+[intersection] row x^22 (q11,p7): solved, free params 18  t=4.5s
+[intersection] row x^21 (q10,p6): solved, free params 36  t=8.5s
+[intersection] row x^20 (q9,p5): solved, free params 55  t=17.9s
+[intersection] row x^19 (q8,p4): solved, free params 77  t=39.0s
+[intersection] row x^18 (q7,p3): NO SOLUTION for any tau -> this particular section is excluded  t=72.7s
+exit=0

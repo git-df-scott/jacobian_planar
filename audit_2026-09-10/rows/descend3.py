@@ -15,12 +15,13 @@ t0=time.time(); free=[]
 for l in range(15,-1,-1):
     kk=l-4
     unk=[]
-    if kk>=-84:
+    newp = kk<=7 and kk>=-84
+    if newp:
         lo,m1,hi=pb(kk); pc=s.symbols(f'p{kk}_0:{hi-lo+1}'); P[kk]=sum(cf*y**(lo+i) for i,cf in enumerate(pc)); unk+=list(pc)
     qlo,qm1,qhi=qb(l); qc=s.symbols(f'q{l}_0:{qhi-qlo+1}'); Q[l]=sum(cf*y**(qlo+i) for i,cf in enumerate(qc)); unk+=list(qc)
     eq=s.Poly(row_equation(P,Q,l+11),y).all_coeffs()
     eq+=[s.diff(Q[l],y,j).subs(y,-1) for j in range(qm1)]
-    if kk>=-84: eq+=[s.diff(P[kk],y,j).subs(y,-1) for j in range(m1)]
+    if newp: eq+=[s.diff(P[kk],y,j).subs(y,-1) for j in range(m1)]
     eq=[q for q in eq if q!=0]
     sol=list(s.linsolve(eq,unk))
     if not sol:
