@@ -1,0 +1,8 @@
+row 22: q11 with p7 (19 coeffs): solutions=1 t=8.7s
+  free parameters now: 41
+row 21: q10 with p6 (20 coeffs): solutions=1 t=62.5s
+  free parameters now: 59
+row 20: q9 with p5 (21 coeffs): solutions=0 t=255.2s
+  generic parameters admit no solution; attempting joint solve including Astra-13 parameters (linear part)
+  joint linear solve failed (nonlinear in parameters): NonlinearError
+exit=2

@@ -1,0 +1,9 @@
+[factor_one] slice parameters: 17
+[factor_one] row x^26 (q15,p11): solved, free 17  t=0.9s
+[factor_one] row x^25 (q14,p10): solved, free 17  t=1.8s
+[factor_one] row x^24 (q13,p9): solved, free 17  t=4.0s
+[factor_one] row x^23 (q12,p8): solved, free 18  t=7.7s
+[factor_one] row x^22 (q11,p7): solved, free 35  t=15.4s
+[factor_one] row x^21 (q10,p6): solved, free 53  t=50.2s
+[factor_one] row x^20 (q9,p5): solved, free 72  t=124.0s
+[factor_one] row x^19: no generic solution; extracting consistency conditions on the 17 slice parameters  t=366.3s
