@@ -1,0 +1,8 @@
+[factor_two] slice parameters: 17
+[factor_two] row x^26 (q15,p11): solved, free 17  t=0.9s
+[factor_two] row x^25 (q14,p10): solved, free 17  t=1.9s
+[factor_two] row x^24 (q13,p9): solved, free 17  t=4.4s
+[factor_two] row x^23 (q12,p8): solved, free 18  t=8.2s
+[factor_two] row x^22 (q11,p7): solved, free 35  t=16.4s
+[factor_two] row x^21 (q10,p6): solved, free 53  t=59.0s
+[factor_two] row x^20 (q9,p5): solved, free 72  t=149.1s

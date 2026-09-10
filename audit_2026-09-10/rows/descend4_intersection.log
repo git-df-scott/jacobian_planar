@@ -1,0 +1,9 @@
+[intersection] slice parameters: 13
+[intersection] row x^26 (q15,p11): solved, free 13  t=0.7s
+[intersection] row x^25 (q14,p10): solved, free 13  t=1.5s
+[intersection] row x^24 (q13,p9): solved, free 13  t=3.2s
+[intersection] row x^23 (q12,p8): solved, free 14  t=5.9s
+[intersection] row x^22 (q11,p7): solved, free 31  t=11.5s
+[intersection] row x^21 (q10,p6): solved, free 49  t=33.4s
+[intersection] row x^20 (q9,p5): solved, free 68  t=81.1s
+[intersection] row x^19 (q8,p4): solved, free 90  t=220.3s
